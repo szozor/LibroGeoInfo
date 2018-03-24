@@ -19,6 +19,7 @@
 %\RequirePackage{setspace} % space package
 \RequirePackage{etoolbox,ifthen} % conditioning packages
 \RequirePackage{titletoc,tocloft} % table of content managment package
+\RequirePackage{footmisc} % to manage the numeration and reference to footnote
 %\RequirePackage{xargs}
 %\providecommand{\BIBand}{e}
 \RequirePackage{apacite}
@@ -164,7 +165,9 @@
 \newcounter{seccion}[capitulo]
 \newcounter{subseccion}[seccion]
 \newcounter{subsubseccion}[subseccion]
-
+\renewcommand{\theseccion}{\arabic{capitulo}.\arabic{seccion}}
+\renewcommand{\thesubseccion}{\arabic{capitulo}.\arabic{seccion}.\arabic{subseccion}}
+\renewcommand{\thesubseccion}{\arabic{capitulo}.\arabic{seccion}.\arabic{subseccion}.\arabic{subsubseccion}}
 
 %% Definition de los capitulos ========================================================
 %% EDULP: titulo de capitulo 18 negrita
