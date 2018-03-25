@@ -1,0 +1,55 @@
+
+\seccion{Entropias y divergencias generalizadas}
+\label{sec:SZ:Generalizadas}
+
+A pesar de que la entropia de Shannon y sus cantidades asociadas demostraron sus
+potencias tan de un punto de vista descriptivo que en termino de aplicaciones en
+la  transmisi\'on  de  la  informaci\'on  y  la  compresi\'on,  varios  nociones
+informacionales, de  tipo entropias o  divergencias, aparecieron luego.  En esta
+secci\'on no se  desarollar\'a todos los enfoques ni  todas las aplicaciones tan
+la  literatura es  importante. La  meta  es dar  los caminos  conduciendo a  las
+generalizaciones de la  entropia de Shannon por un lado, y  de la divergencia de
+Kullback-Leibler por el otro lado. No son siempre vinculados, a pesar de que sea
+desirable que a cada entropia sean asociados nociones de entropias condicionales
+y relativas.
+
+% ================================= Salicru
+
+\subseccion{Entropias y propiedades}
+\label{sec:SZ:Salicru}
+
+Si  la entropia  de  Shannon  fue el  punto  de salida  fundamental  en todo  el
+desarollo de la teoria de la informaci\'on, un poco mas de una decada despues de
+su    papel   clave    y   muy    completo,   R\'enyi    propuso    una   medida
+generalizada~\cite{Ren61}. Su  punto de  vista fue mas  matematico que  fisico o
+ingeniero.  Retom\'o  los axiomas de  Fadeev~\cite{Fad56, Fad58, Khi57},  (i) la
+invarianza por permutaci\'on, (ii) la continuidad con respeto a los $p_i$, (iii)
+$h_2\left(  \frac12 \right)  =  $, (iv)  la  aditividad $H(X,Y)  = H(X)+H(Y)$  y
+consider\'o  en lugar  de la  recursividad un  axioma dicho  de  valor promedio,
+axioma muy  parecido. Para $p = (p_1,\ldots,p_n),  \quad p_i \ge 0,  \quad W_p =
+\sum_i  p_i  \le  1$ \  y  \  $q  =  (q_1,\ldots,q_m)$  con la  misma  propiedad
+(probabilidades incompletas),  $p \cup q  = (p_1,\ldots,p_n,q_1,\ldots,q_m)$ con
+$W_p +  W_q \le 1$, este  axioma (v) es que  $H(p\cup q) = \frac{W_p  H(p) + W_q
+  H(q)}{W_p +  W_q}$. Demostr\'o  que con  (v) en lugar  de la  recursividad, el
+conjunto  de   axiomas  conduce  de  nuevo   a  la  entropia   de  Shannon.   La
+generalizaci\'on  propuesta  por  R\'enyi  era  de  generalizar  el  axioma  (v)
+remplazando el promedio  aritmetico por un promedio generalizado  (v') $H(p \cup
+q) =  g^{-1} \left( \frac{W_p g\big( H(p)  \big) + W_q g\big(  H(q) \big)}{W_p +
+    W_q}\right)$  con $g$  estrictamente monotona  y continua,  llamado promedio
+tipo  {\it  quasi-aritmetica,  o  quasi-lineal, o  Kolmogorov-Nagumo}.   De  las
+propiedades  del   promedio  de  Kolmogorov-Nagumo~\cite{Nag30,   Kol30,  Kol91,
+  HarLit52},  eso es  equivalente a  buscar  una entropia  elemental $H(p_i)$  y
+remplazar  el   promedio  usual   $\sum_i  p_i  H(p_i)$   por  un   promedio  de
+Kolmogorov-Nagumo, $g^{-1)} \left( \sum_i p_i g\big( H(p_i) \big) \right)$.
+% Feinstein, cf ref de Rényi
+
+{\bf  Salicru, Buerbea-Rao,  poner  ac\'a la  codificaci\'on  a la  Renyi, y  la
+  cuantificacion fina; EPI generalizada  por Madiman, etc. Lutwak, Bercher etc.,
+  Kagan}
+
+% ================================= Salicru
+
+\subseccion{Divergencias y propiedades}
+\label{sec:SZ:Czizar}
+
+{\bf Czizar, Bregmann, Burbea Rao}

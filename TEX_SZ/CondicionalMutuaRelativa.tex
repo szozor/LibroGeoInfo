@@ -1,0 +1,230 @@
+\seccion{Entropia condicional, informaci\'on mutua, entropia relativa}
+\label{s:SZ:Mutua}
+
+Tratando de un par de variable  aleatorias $X$ e $Y$, una cuesti\'on natural que
+occure es de cuantificar la incerteza que queda sobre una de las variable cuando
+se  observa  la  otra.  Dicho  de  otra  manera, si  se  mide  $Y  =  y$,  ?`que
+informaci\'on lleva sobre  $X$? La respuesta a esta  interogaci\'on se encuentra
+en la  noci\'on de entropia condicional. Si  uno mide $Y =  y$, la descripci\'on
+estadistica de $X$ conociendo este $Y$ se resuma a la distribuci\'on condicional
+de  probabilidad $p_{X|Y}  = \frac{p_{X,Y}}{p_Y}$.   Con esta  restricci\'on, se
+puede  evaluar una  incerteza sobre  $X$, sabiendo  de que  $Y=y$,
+%
+\[
+H(X|Y=y) = H\left( p_{X|Y}(\cdot,y) \right)
+\]
+%
+Entonces, condicionalmente a la variable aleatoria $Y$, la incerteza va a ser el
+promedio  estadistico sobre  todos los  estados $Y$  es decir  $H(X|Y)  = \sum_y
+p_Y(y) H(X|Y=y)$:
+%
+\begin{definicion}[Entropia condicional]\label{def:SZ:entropiacondicional}
+  Sean $X$ e $Y$ dos  variables aleatorias discretas, la entropia condicional de
+  $X$ sabiendo  $Y$ es  definida por
+  %
+  \[
+  H(X|Y) = - \sum_{x,y} p_{X,Y}(x,y) \log p_{X|Y}(x,y)
+  \]
+\end{definicion}
+%
+Esta definici\'on se transpone naturalmente a la entropia diferencial:
+%
+\begin{definicion}[Entropia diferencial condicional]\label{def:SZ:entropiadiferencialcondicional}
+  Sean $X$ e $Y$ dos  variables aleatorias continuas, la entropia condicional de
+  $X$ sabiendo $Y$ es definida por
+  %
+  \[
+  H(X|Y) = - \int_{\Rset^d} p_{X,Y}(x,y) \log p_{X|Y}(x,y) \, dx \, dy
+  \]
+\end{definicion}
+
+Si $X$ e $Y$ son indepedientes, $p_{X|Y}$ se reduce a $p_X$, as\'i que vale cero
+la entropia condicional:
+%
+\begin{propiedades}
+\item\label{prop:SZ:independenciacondicional}
+  %
+  \[
+  X \: \mbox{e} \: Y \: \mbox{independientes} \quad \Leftrightarrow \quad H(X|Y)
+  = H(X)
+  \]
+\end{propiedades}
+%
+Esta  propiedad  vale  en ambos  casos,  discreto  como  continuo.  En  el  caso
+discreto, se interpreta como el hecho  de que $Y$ no lleva ninguna informaci\'on
+sobre $X$, y intonces ninguna medici\'on  de $Y$ va a cambiar la incerteza sobre
+$X$.
+
+Siendo $H(X|Y=y)$  una entropia,  va a  heredir de todas  las propiedades  de la
+entropia  (diferencial).  Ademas,  de  $p_{X,Y}  = p_{X|Y}  p_Y$  de  deduce  la
+propiedad siguiente (valida para la entropia como su extensi\'on diferencial)
+%
+\begin{propiedades}
+\item\label{prop:SZ:cadena}  {\it Regla de  cadena}
+  %
+  \[
+  H(X,Y) =  H(X|Y) +  H(Y)
+  \]
+  %
+  Esta  regla, valida  en ambos  casos,  discreto como  continuo, se  generaliza
+  sencillamente a
+  %
+  \[
+  H(X_1 , \ldots , X_n) = H(X_1) + \sum_{i=2}^n H(X_i|X_{i-1} , \ldots , X_1)
+  \]
+  %
+  De       esta       regla      de       cadena       se      recupera       la
+  propiedad~\ref{prop:SZ:independenciacondicional}     a     partir    de     la
+  propiedad~\ref{prop:SZ:aditividad}.
+\end{propiedades}
+%
+Siendo  $H(X|Y=y)$  una   entropia,  en  el  caso  discreto   esta  cantidad  es
+positiva. Entonces, en  el caso discreto, $H(X|Y)$ es positiva,  lo que proba la
+la super-aditividad~\ref{prop:SZ:superaditividad}.
+
+De la regla de  cadena $H(X,Y) = H(X|Y) + H(Y) = H(Y|X)  + H(X)$ aparece que las
+cantidades  $H(X|Y)-H(X)$, $H(Y|X)-H(Y)$  y $H(X,Y)  -  H(X) -  H(Y)$ son  todas
+iguales. Estas canditades definen lo que se llama la informaci\'on mutua entre \
+$X$ \ e \ $Y$:
+
+%
+\begin{definicion}[Informaci\'on mutua]\label{def:SZ:mutua}
+  Sean $X$ e $Y$ dos variables  aleatorias, la informaci\'on mutua entre \ $X$ \
+  e  \ $Y$ \  es la  cantida simetrica
+  %
+  \[
+  I(X;Y) = H(X|Y)-H(X) = H(Y|X)-H(Y) = H(X,Y) - H(X) - H(Y)
+  \]
+  %
+  En el caso discreto se  expresa
+  %
+  \[
+  I(X;Y)  =  \sum_{x,y}   p_{X,Y}(x,y)  \log  \left(  \frac{p_{X,Y}(x,y)}{p_X(x)
+      p_Y(y)} \right)
+  \]
+  %
+  y su forma diferencial, se escribe
+  %
+  \[
+  I(X;Y)  = \int_{\Rset^d}  p_{X,Y}(x,y) \log  \left( \frac{p_{X,Y}(x,y)}{p_X(x)
+      p_Y(y)} \right) \, dx \, dy
+  \]
+\end{definicion}
+
+Las diferentes cantitades  peden ser vista a trav\'es  una visi\'on ensemblista,
+como  descrita el la  figura~\ref{fig:SZ:Venn}. Este  diagrama es  conocido como
+diagrama de Venn.
+%
+\begin{figure}[h!]
+%
+\begin{center} \input{TIKZ_SZ/Venn} \end{center}
+%
+\leyenda{Diagrama  de Venn:  Ilustraci\'on  de la  definici\'on  de la  entropia
+  condicional,  informaci\'on  mutua, y  los  vinculos  entre  cada medida.   La
+  superficia  del elipse en  linea llena  (parte grise)  representa $H(X)$  y el
+  interior  de la en  linea punteada  representa $H(Y)$.   La parte  grise clara
+  representa $H(X|Y)$  superficia del ``conjunto $H(X)$'' quitando  la parte que
+  partenece  a  $H(Y)$.  La  parte  blanca  representa  $H(Y|X)$ superficia  del
+  ``conjunto $H(Y)$''  quitando la  parte que partenece  a $H(X)$.  La  parte en
+  grise oscuro es entonces lo que $X$ e $Y$ comparten, es decir $I(X;Y)$.}
+%
+\label{fig:SZ:Venn}
+\end{figure}
+
+Como se lo va a probar, $I$ es positiva; representa realmente una informaci\'on,
+la compartida  entre \ $X$  \ e  \ $Y$. Si  de la incerteza  de $X$ se  quita la
+incerteza  de  $X$   una  vez  que  $Y$  es  medida,  lo   que  queda  tiene  la
+significaci\'on de la informaci\'on que  estas variables tienen en com\'un. Para
+probar la positividad de $I$, se  introduce de manera mas general la noci\'on de
+entropia     relativa,     conocida     tambi\'en    como     divergencia     de
+Kullback-Leibler~\cite{CovTho06, Rio07, Kul}:
+%
+\SZ{Buscar ref de Kullback and so on}
+%
+\begin{definicion}[Entropia relativa]\label{def:SZ:entropiarelativa}
+  La entropia relativa, o divergencia de una distribuci\'on de probabilidad $q$,
+  con  respeco a  una distribuci\'on  de referencia  $p$, donde  el  alfabeto de
+  definici\'on de $p$ inluye lo de $q$, es definida como
+  %
+  \[
+  D(q\|p) = \sum_x q(x) \log \left( \frac{q(x)}{p(x)} \right)
+  \]
+  %
+ o, en su forma diferencial
+  %
+ \[
+ D(q\|p) = \int_{\Rset^d} q(x) \log \left( \frac{q(x)}{p(x)} \right) \, dx
+ \]
+\end{definicion}
+%
+Esta  medida se  puede ser  vista como  una entropia  de la  distribuci\'on $q$,
+relativamente a  una distribuci\'on de referencia  $p$. Por ejemplo,  en el caso
+discreto  finito, si  $p$ es  la distribuci\'on  uniforme sobre  un  alfabeto de
+cardinal  $\alpha$,  $D(q\|p) =  \log  \alpha -  H(q)$,  lo  que representa  una
+desviaci\'on  de la  entropia con  su valor  maximal. La  misma interpretaci\'on
+queda en  el caso continuo  con la  lei uniforme ($p$  y $q$ definidas  sobre el
+mismo espacio de  volumen finito) o con  la gaussiana ($p$ y $q$  dando la misma
+matriz de  covarianza). {\it  Como para la  entropia, cuando se  necesitar\'a un
+  logaritmo especificamente de base $a$, se notar\'a la divergencia $D_a$.}
+
+\begin{lema}[Positividad de la entropia relativa]
+  %
+  \[
+  D(q\|p) \ge 0 \quad \mbox{con igualdad ssi} \quad p = q \: (c.s.)
+  \]
+  %
+  donde $(c.s.)$ significa ``casi siempre''.
+\end{lema}
+%
+\begin{proof}
+  Existen varias pruebas,  pero la mas linda puede ser  la usando la desigualdad
+  de   Jensen:   para   $\phi$   estrictamente   convexa,   $\Esp[\phi(X)]   \ge
+  \phi(\Esp[X])$ con igualdad ssi $X$  es deterministica (casi siempre). Sea $X$
+  de distribuci\'on  o densidad  de probabilidad $p$.  En el caso  discreto como
+  diferencial,   se  escribe   la  entropia   relativa  $D(q\|p)   =  \Esp\left[
+    \frac{q(X)}{p(X)} \log  \left( \frac{q(X)}{p(X)} \right) \right]$.  Sea $Y =
+  \frac{q(X)}{p(X)}$   y  $\phi(u)   =  u   \log  u$,   funci\'on  estrictamente
+  convexa. Entonces $D(q\|p) =  \Esp[\phi(Y)] \ge \phi(\Esp[Y])$. Con $\Esp[Y] =
+  \Esp\left[ \frac{q(X)}{p(X)} \right] = \sum_x q(x) = 1$ (y con una integral en
+  el caso diferencial) y $\phi(1) = 0$ sz termina la prueba. El caso de igualdad
+  apareciendo   ssi  $Y$   es  deterministica,   es   decir  $\frac{p(X)}{q(X)}$
+  deterministica, es equivalente a $p(x) \propto  q(x) \: (c.s.)$, \ie $p = q \:
+  (c.s.)$ porque ambas suman a uno.
+\end{proof}
+
+
+\SZ{Eso es la desigualdad de Gibbs}
+
+Esta propiedad, valide  en el caso discreto como  continuo, tiene consecuencias,
+cuando  se fije  de que
+%
+\[
+I(X;Y) = D \left( \left. p_{X,Y} \right\| p_X p_Y \right)
+\]
+%
+\ie  la  informaci\'on  mutua  es  la  divergencia  de  Kullback-Leibler  de  la
+distribuci\'on conjunta relativa al producto de las marginales.
+%
+\begin{propiedades}
+\item\label{prop:SZ:Ipositive}   {\it   $I$   es   positiva,  como   medida   de
+    independencia:}
+  %
+  \[
+  I(X;Y) \ge 0 \quad \mbox{con igualdad ssi $X$ e $Y$ son independientes}
+  \]
+%
+\item\label{prop:SZ:condicionar} {\it  Condicionar reduce la  entropia}
+  %
+  \[
+  H(X|Y) \le H(X) \quad \mbox{con igualdad ssi $X$ e $Y$ son independientes}
+  \]
+  %
+  Esta    desigualdad,     con    la     regla    de    cadena,     prueba    la
+  sub-aditividad~\ref{prop:SZ:subaditividad}.    Esta    reducci\'on   vale   en
+  promedio, pero el conocimiento de un valor particular puede ser tal que $H(X|Y
+  = y) > H(X)$, \ie aumentar la entropia!  (ver ejemplos en~\cite[p.~59]{Rio07})
+\end{propiedades}
+
+Fijense  que  si  $D$ es  positiva,  no  es  simetrica  y tampoco  satisface  la
+desigualdad triangular. Por  eso, no es una distancia y tiene  el nombre de {\it
+  divergencia}. La distribuci\'on de referencia $p$ juega un rol fundamental.
