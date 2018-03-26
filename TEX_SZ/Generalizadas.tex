@@ -22,34 +22,157 @@ Si  la entropia  de  Shannon  fue el  punto  de salida  fundamental  en todo  el
 desarollo de la teoria de la informaci\'on, un poco mas de una decada despues de
 su    papel   clave    y   muy    completo,   R\'enyi    propuso    una   medida
 generalizada~\cite{Ren61}. Su  punto de  vista fue mas  matematico que  fisico o
-ingeniero.  Retom\'o  los axiomas de  Fadeev~\cite{Fad56, Fad58, Khi57},  (i) la
-invarianza por permutaci\'on, (ii) la continuidad con respeto a los $p_i$, (iii)
-$h_2\left(  \frac12 \right)  =  $, (iv)  la  aditividad $H(X,Y)  = H(X)+H(Y)$  y
-consider\'o  en lugar  de la  recursividad un  axioma dicho  de  valor promedio,
-axioma muy  parecido. Para $p = (p_1,\ldots,p_n),  \quad p_i \ge 0,  \quad W_p =
-\sum_i  p_i  \le  1$ \  y  \  $q  =  (q_1,\ldots,q_m)$  con la  misma  propiedad
-(probabilidades incompletas),  $p \cup q  = (p_1,\ldots,p_n,q_1,\ldots,q_m)$ con
-$W_p +  W_q \le 1$, este  axioma (v) es que  $H(p\cup q) = \frac{W_p  H(p) + W_q
-  H(q)}{W_p +  W_q}$. Demostr\'o  que con  (v) en lugar  de la  recursividad, el
+ingeniero.  Retom\'o los axiomas de Fadeev~\cite{Fad56, Fad58, Khi57}
+% Feinstein, cf ref  de Rényi
+%
+a  probabilidades  incompletas   $p  =  \begin{bmatrix}  p_1  &   \cdots  &  p_n
+\end{bmatrix}^t,  \quad p_i  \ge  0,  \quad w_p  =  \sum_i p_i  \le  1$: (i)  la
+invarianza de  $H(p)$ por permutaci\'on de  os $p_i$, (ii) la  continuidad de la
+incerteza elemental  $H(p_i)$ ($p_i$ visto como  probabilidad incompleta), (iii)
+$H\left( \frac12 \right) = 1 $,  (iv) la aditividad $H(p \otimes q) = H(p)+H(q)$
+donde $p \otimes q$ es el producto de Kronecker~\footnote{$\begin{bmatrix} p_1 &
+\cdots & p_n \end{bmatrix}^t \otimes \begin{bmatrix} q_1 & \cdots & q_m
+\end{bmatrix}^t = \begin{bmatrix} p_1 q_1 & \cdots  & p_1 q_m & \cdots & p_n q_1
+&  \cdots  &  p_n  q_m  \end{bmatrix}^t$.}, \ie  probabilidad  conjunta  de  dos
+variables independientes,  y consider\'o en  lugar de la recursividad  un axioma
+dicho de valor promedio,  axioma muy parecido a la recursividad. Para  $p$ \ y \
+$q$ probabilidades incompletas tales que $p \, \cup \, q = \begin{bmatrix} p_1 &
+\cdots & p_n  & q_1 & \cdots  & q_m \end{bmatrix}^t$ sea incompleta  ($w_p + w_q
+\le 1$),  el axioma  (v) es  $H(p \, \cup  \, q)  = \frac{w_p \,  H(p) +  w_q \,
+H(q)}{w_p  + w_q}$.   Demostr\'o que  con (v)  en lugar  de la  recursividad, el
 conjunto  de   axiomas  conduce  de  nuevo   a  la  entropia   de  Shannon.   La
 generalizaci\'on  propuesta  por  R\'enyi  era  de  generalizar  el  axioma  (v)
-remplazando el promedio  aritmetico por un promedio generalizado  (v') $H(p \cup
-q) =  g^{-1} \left( \frac{W_p g\big( H(p)  \big) + W_q g\big(  H(q) \big)}{W_p +
-    W_q}\right)$  con $g$  estrictamente monotona  y continua,  llamado promedio
-tipo  {\it  quasi-aritmetica,  o  quasi-lineal, o  Kolmogorov-Nagumo}.   De  las
-propiedades  del   promedio  de  Kolmogorov-Nagumo~\cite{Nag30,   Kol30,  Kol91,
-  HarLit52},  eso es  equivalente a  buscar  una entropia  elemental $H(p_i)$  y
-remplazar  el   promedio  usual   $\sum_i  p_i  H(p_i)$   por  un   promedio  de
-Kolmogorov-Nagumo, $g^{-1)} \left( \sum_i p_i g\big( H(p_i) \big) \right)$.
-% Feinstein, cf ref de Rényi
+remplazando la media  aritm\'etico por una media generalizada  (v') $H^\ren(p \,
+\cup \, q) =  g^{-1} \left( \frac{w_p \, g\big( H^\ren(p) \big)  + w_q \, g\big(
+H^\ren(q) \big)}{w_p  + w_q}\right)$ con $g$ estrictamente  monotona y continua,
+llamado media {\it cuasi-aritm\'etica,  o quasi-lineal, o de Kolmogorov-Nagumo}.
+De  las  propiedades de  la  media  cuasi-aritmetica~\cite{Nag30, Kol30,  Kol91,
+HarLit52}, eso  es equivalente a  buscar una entropia elemental  $H^\ren(p_i)$ y
+remplazar  la media  aritm\'etica  $\sum_i  p_i H^\ren(p_i)$  por  una media  de
+Kolmogorov-Nagumo, $g^{-1} \left( \sum_i  p_i g\big( H^\ren(p_i) \big) \right)$.
+R\'enyi propus\'o la funci\'on de Kolmogorov-Nagumo $g_\alpha(x) = 2^{(\alpha-1)
+x},  \quad \alpha >0,  \quad \alpha  \ne 1$,  probando que  la entropia  que los
+axiomas (i)-(ii)-(iii)-(iv)-(v') se  cumplen y conduce a la  entropia de R\'enyi
+de un vector de probabilidad $p$,
+%
+\[
+H_\alpha^\ren(p) = \frac{1}{1-\alpha} \log_2 \left( \sum_{i=1}^n p_i^\alpha \right)
+\]
+%
+\noindent   Relaxando  el  axioma   (iii),  se   puede  elegir   $g_\alpha(x)  =
+a^{(\alpha-1) x}, \quad  a > 0, \quad a  \ne 1$; el logaritmo ser\'a  de la base
+$a$ cualquiera; En  lo que sigue, usaremog $\log$ sin  precisar la elecci\'on de
+base.   R\'enyi  nombr\'o  esta  medida  de incerteza  {\it  entropia  de  orden
+$\alpha$}. Notablemente,
+%
+\[
+H_1^\ren(p)  \equiv   \lim_{\alpha  \to   1}  H_\alpha^\ren(p)   =   H(p)  \quad
+\mbox{entropia de Shannon}
+\]
+%
+\noindent En otros  terminos, la clase de R\'enyi  contiene como caso particular
+la  entropia  de  Shannon.  En  su  papel,  R\'enyi  introdujo una  ganancia  de
+informaci\'on,  parecida  a  una  entropia  relativa,  probando  que  las  solas
+entropias admisibles  son la  de Shannon  y la que  introdujo. Volveremos  en la
+secci\'on  siguiente sobre  esta entropia  relativa, o  divergencia  de R\'enyi.
+\SZ{Preciser les quelques  proprietes qui se conservent, dont  la concavite pour
+$\alpha \le 1$.}
 
-{\bf  Salicru, Buerbea-Rao,  poner  ac\'a la  codificaci\'on  a la  Renyi, y  la
+Unos a\~nos despu\'es de R\'enyi, de la famosa escuela matematica \SZ{checa}, J.
+Havrda \& F.  Charv\'at en~\cite{HavCha67} volvieron a los axiomas de Khintchin,
+para  extender la entopia  de Shannon,  \ie considerando  (i) la  invarianza por
+permutaci\'on, (ii) la continuidad, (iii) la expensividad, (iv) $H^\hc(1) = 0$ y
+$H^\hc\left( \frac12 , \frac12 \right)  = 1$, pero generalisando la recursividad
+por (v) $H^\hc(p_1,\ldots,p_n)  = H^\hc(p_1,\ldots,p_{n-2},p_{n-1}+p_n) + \alpha
+(p_{n-1}+p_n)^\alpha         H^\hc\left(         \frac{p_{n-1}}{p_{n-1}        +
+p_p},\frac{p_n}{p_{n-1}  +  p_p} \right),  \quad  \alpha  > 0$~\footnote{En  sus
+papel, lo imponen  para cualquier pars $p_i, p_j$ sin  imponer la invarianza por
+permutaci\'on,  pero es  equivalente a  la exposici\'on  de este  parafo.}.  Con
+$\alpha = 1$  se recupera la recursividad estandar, pero con  $\alpha \ne 1$ eso
+permite  dar  un   peso  diferente  a  la  incerteza   del  estado  interno  \ie
+probabilidades  que  se juntan  (la  describen  como clasificaci\'on  refinada).
+Estos axiomas conducen necesariamente a la entropia (teorema~1)
+%
+\[
+H_\alpha^\hc(p) = \frac{1}{1-2^{1-\alpha}} \left( 1 - \sum_i p_i^\alpha \right)
+\]
+%
+que nombraron {\it $\alpha$-entropia structural}.  De nuevo, relaxando el axioma
+(iv),  se puede  remplazar en  el coeficient  $2^{1-\alpha}$  por $a^{1-\alpha},
+\quad a >  0, \quad a \ne 1$. De  nuevo, parae que la entropia  de Shannon es un
+caso particular,
+%
+\[
+H_1^\hc(p)  \equiv   \lim_{\alpha  \to   1}  H_\alpha^\hc(p)   =   H(p)  \quad
+\mbox{entropia de Shannon}
+\]
+%
+Luego, proban que $H_\alpha^\hc(p)$ es concava  con respeto a los $p_i$ y maxima
+para una  distribuci\'on uniforma  (teorema~2). Aun que  no aparece as\'i  en el
+papel, satisface  la propiedad de  Schur-concavidad (teorema~3). A pesar  de que
+mencionan que $H_\alpha^\hc$ sea  diferente que $H_\alpha^\ren$, es sencillo ver
+que hay un mapa uno-uno entre las dos entropias.
+
+Independiente de  Havrda \&  Charv\'at, todav\'ia en  la escuela  \SZ{checa}, Z.
+Dar\'oczy  en~\cite{Dar70}  defino  la  entropia  $H^f$ a  partir  de  una  {\it
+funci\'on   informaci\'on}   $f$   satifaciendo   (i)  $f(0)   =   f(1)$,   (ii)
+$f\left(\frac12\right)  = 1$  \ y  la ecuaci\'on  funcional (ii)  $f(x)  + (1-x)
+f\left(  \frac{y}{1-x} \right)  = f(y)  + (1-y)  f\left(  \frac{x}{1-y} \right)$
+sobre  $\{  (x,y)  \in [0  ;  1)^2,  \quad  x+y  \le  1 \}$,  siendo  $H^f(p)  =
+\sum_{i=2}^n s_i  f\left( \frac{p_i}{s_i} \right), \quad  s_i = \sum_{j=1}^{i-1}
+p_j$.   Dar\'oczy mostr\'o  que  si $f$  es medible,  o  continua en  $0$, o  no
+negatiba  y  acotada, necesariamente  $f(x)  =  h_2(x) =  -x  \log_2  x -  (1-x)
+\log_2(1-x)$,   conduciendo   a  la   entropia   de   Shannon  (teorema~1;   ver
+tambi\'en~\cite{Lee64, Tve58}). En otros  terminos, su axioma (v) es alternativa
+a la recursividad.  Para extender  la entropia de Shannon, propuso extender este
+axioma   (v)   por  la   ecuaci\'on   funcional   $f_\alpha(x)  +   (1-x)^\alpha
+f_\alpha\left( \frac{y}{1-x} \right) = f_\alpha(y) + (1-y)^\alpha f_\alpha\left(
+\frac{x}{1-y} \right)$, lo que  condujo necesariamente a la entropia (teoremas~2
+y~3)
+%
+\[
+H_\alpha^\dar(p) = \frac{1}{1-2^{1-\alpha}} \left( 1 - \sum_i p_i^\alpha \right)
+\]
+%
+\noindent  es  decir  nada  mas  que  la  entropia  introducida  por  Havdra  \&
+Charv\'at. Sin  embargo, el  estudio de  Dar\'oczy fue mas  intensivo que  el de
+Havdra  \&  Charv\'at.  Primero,  not\'o  el  mapa entre  su  entropia  y la  de
+R\'enty. Luego, prob\'o que se  conserva la invarianza por permutaci\'on (no era
+un  axioma), $H_\alpha^\dar\left(  \frac12  ,  \frac12 \right)  =  1$ (lo  llama
+normalizaci\'on), la  expansividad, una additividad  extendida, una recursividad
+extendida  precisamente  del modelo  de  Havrda-Charv\'at (teorema~4).   Prob\'o
+tambi\'en  que $H_\alpha^\dar  \ge 0$  (alcanzado en  el caso  deterministico) y
+m\'axima    en    el   caso    uniforme    (teorema~6),   que    incidentalmente
+$H_\alpha^\dar\left(  \frac1d ,  \ldots ,  \frac1d \right)$  crece con  $d$. Muy
+interesante tambi\'en es  se puede definir una entropia  condicional en el mismo
+modelo  que  en   el  caso  de  Shannon  $H_\alpha^\dar(X|Y)   =  \sum_y  \left[
+p_{X|Y}(x,y) \right]^\alpha  H_\alpha^\dar( p_{X|Y}(\cdot,y) )$,  que existe una
+regla de cadena, $H_\alpha^\dar(X,Y)  = H_\alpha^\dar(Y) + H_\alpha^\dar(X|Y)$ y
+que  condicionar reduce  la entropia  $H_\alpha^\dar(X|Y)  \le H_\alpha^\dar(X)$
+(teorema~8). Mostr\'o tambi\'en que si  se pierde la additividad, se obiene para
+\ $X$  \ e  \ $Y$  \ independientes \  $H_\alpha^\dar(X,Y) =  H_\alpha^\dar(X) +
+H_\alpha^\dar(Y)   +   \left(   2^{1-\alpha}   -  1   \right)   H_\alpha^\dar(X)
+H_\alpha^\dar(Y)$. La propiedades de regla  de cadena le permiti\'o revisitar la
+caracterisaci\'on de un  canal de transmisi\'on y redefinir  una capacidad canal
+extendidas (capacidad  tipo $\alpha$;  basicamente se usa  el mismo  enfoque que
+Shannon,  pero usando  $H_\alpha^\dar$ en  lugar  de $H$,  ver secci\'on~6  del
+papel).
+
+
+\SZ{redecouverte Tsallis 1988..., Lindhardt \& Nielsen Studies in Dynamical
+Systems Kongelige Danske Videnskabernes Selskab, 38(9):1-42, 1971, De nombreuses
+autres, Varama 66, mais premier pas unifie Burbea-Rao; puis Salicru\newline proprietes et voir conditionnelle... moyenne adqueate}
+
+
+\SZ{versiones dferenciales poner  ac\'a la  codificaci\'on  a la  Renyi, y  la
   cuantificacion fina; EPI generalizada  por Madiman, etc. Lutwak, Bercher etc.,
   Kagan}
+
+{\bf Revisite capacite a la Daroczy?}
 
 % ================================= Salicru
 
 \subseccion{Divergencias y propiedades}
 \label{sec:SZ:Czizar}
 
-{\bf Czizar, Bregmann, Burbea Rao}
+{\bf Extension a la Renyi, a la HC/D/T, Cressie Reads, Cressie Pardo, Vajda; cf Burbea Rao: generalization  Czizar et voir avec h phi avant meme Salicru. Cf aussi Bregmann}
