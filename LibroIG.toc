@@ -1,0 +1,24 @@
+\select@language {spanish}
+\contentsline {part}{ \hspace {-6.25pt} {\fontsize {10}{10}\selectfont \bf Cap\'itulo~1}\newline {\fontsize {10}{10}\selectfont \normalfont Elementos de teor\IeC {\'\i }a de probabilidades} \newline {\fontsize {10}{10}\selectfont \normalfont \em Mariela A. Portesi} \vspace {1.5mm} }{}
+\contentsline {section}{ \fontsize {9}{9}\selectfont \normalfont 1-1~~Probabilidades }{15}
+\contentsline {section}{ \fontsize {9}{9}\selectfont \normalfont 1-2~~Variables aleatorias y distribuciones de probabilidad }{17}
+\contentsline {section}{ \fontsize {9}{9}\selectfont \normalfont 1-3~~Esperanza, momentos y funciones generadoras }{23}
+\contentsline {subsection}{\numberline {0.1}Funciones generatrices}{23}
+\contentsline {section}{ \fontsize {9}{9}\selectfont \normalfont 1-4~~Algunos ejemplos de distribuciones de probabilidad }{23}
+\contentsline {part}{ \hspace {-6.25pt} {\fontsize {10}{10}\selectfont \bf Cap\'itulo~2}\newline {\fontsize {10}{10}\selectfont \normalfont Nociones de teor\'ia de la informaci\'on} \newline {\fontsize {10}{10}\selectfont \normalfont \em Steeve Zozor} \vspace {1.5mm} }{}
+\contentsline {section}{ \fontsize {9}{9}\selectfont \normalfont 2-1~~Introducci\'on }{25}
+\contentsline {section}{ \fontsize {9}{9}\selectfont \normalfont 2-2~~Entrop\'ia como medida de incerteza }{26}
+\contentsline {section}{ \fontsize {9}{9}\selectfont \normalfont 2-3~~Entropia condicional, informaci\'on mutua, entropia relativa }{36}
+\contentsline {section}{ \fontsize {9}{9}\selectfont \normalfont 2-4~~Unas identidades y desigualdades }{39}
+\contentsline {section}{ \fontsize {9}{9}\selectfont \normalfont 2-5~~Unos ejemplos y aplicaciones }{55}
+\contentsline {section}{ \fontsize {9}{9}\selectfont \normalfont 2-6~~Entropias y divergencias generalizadas }{73}
+\contentsline {section}{ \fontsize {9}{9}\selectfont \normalfont 2-7~~Entropias cuanticas discretas }{78}
+\contentsline {part}{ \hspace {-6.25pt} {\fontsize {10}{10}\selectfont \bf Cap\'itulo~3}\newline {\fontsize {10}{10}\selectfont \normalfont Elementos de geometr\'ia diferencial} \newline {\fontsize {10}{10}\selectfont \normalfont \em Pedro Walter Lamberti} \vspace {1.5mm} }{}
+\contentsline {section}{ \fontsize {9}{9}\selectfont \normalfont 3-1~~Estructuras }{79}
+\contentsline {section}{ \fontsize {9}{9}\selectfont \normalfont 3-2~~Estructuras }{83}
+\contentsline {part}{ \hspace {-6.25pt} {\fontsize {10}{10}\selectfont \bf Cap\'itulo~4}\newline {\fontsize {10}{10}\selectfont \normalfont Geometr\'ia de la informaci\'on} \vspace {1.5mm} }{}
+\contentsline {section}{ \fontsize {9}{9}\selectfont \normalfont 4-1~~La Secci\'on 4.1 }{87}
+\contentsline {part}{ \hspace {-6.25pt} {\fontsize {10}{10}\selectfont \bf Cap\'itulo~5}\newline {\fontsize {10}{10}\selectfont \normalfont Aplicaciones} \vspace {1.5mm} }{}
+\contentsline {section}{ \fontsize {9}{9}\selectfont \normalfont 5-1~~La Secci\'on 5.1 }{89}
+\contentsline {section}{\fontsize {18}{18}\selectfont \bf Referenc\'ias\vspace {4cm}}{93}
+\contentsfinish 

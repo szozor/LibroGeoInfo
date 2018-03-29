@@ -1,4 +1,3 @@
-
 \seccion{Entropias y divergencias generalizadas}
 \label{sec:SZ:Generalizadas}
 
@@ -23,7 +22,7 @@ desarollo de la teoria de la informaci\'on, un poco mas de una decada despues de
 su    papel   clave    y   muy    completo,   R\'enyi    propuso    una   medida
 generalizada~\cite{Ren61}. Su  punto de  vista fue mas  matematico que  fisico o
 ingeniero.  Retom\'o los axiomas de Fadeev~\cite{Fad56, Fad58, Khi57}
-% Feinstein, cf ref  de Rényi
+% Feinstein, cf ref  de Rényi
 %
 a  probabilidades  incompletas   $p  =  \begin{bmatrix}  p_1  &   \cdots  &  p_n
 \end{bmatrix}^t,  \quad p_i  \ge  0,  \quad w_p  =  \sum_i p_i  \le  1$: (i)  la
@@ -50,72 +49,80 @@ De  las  propiedades de  la  media  cuasi-aritmetica~\cite{Nag30, Kol30,  Kol91,
 HarLit52}, eso  es equivalente a  buscar una entropia elemental  $H^\ren(p_i)$ y
 remplazar  la media  aritm\'etica  $\sum_i  p_i H^\ren(p_i)$  por  una media  de
 Kolmogorov-Nagumo, $g^{-1} \left( \sum_i  p_i g\big( H^\ren(p_i) \big) \right)$.
-R\'enyi propus\'o la funci\'on de Kolmogorov-Nagumo $g_\alpha(x) = 2^{(\alpha-1)
-x},  \quad \alpha >0,  \quad \alpha  \ne 1$,  probando que  la entropia  que los
+R\'enyi propus\'o la funci\'on de Kolmogorov-Nagumo $g_\beta(x) = 2^{(\beta-1)
+x},  \quad \beta >0,  \quad \beta  \ne 1$,  probando que  la entropia  que los
 axiomas (i)-(ii)-(iii)-(iv)-(v') se  cumplen y conduce a la  entropia de R\'enyi
 de un vector de probabilidad $p$,
 %
 \[
-H_\alpha^\ren(p) = \frac{1}{1-\alpha} \log_2 \left( \sum_{i=1}^n p_i^\alpha \right)
+H_\beta^\ren(p) = \frac{1}{1-\beta} \log_2 \left( \sum_{i=1}^n p_i^\beta \right)
 \]
 %
-\noindent   Relaxando  el  axioma   (iii),  se   puede  elegir   $g_\alpha(x)  =
-a^{(\alpha-1) x}, \quad  a > 0, \quad a  \ne 1$; el logaritmo ser\'a  de la base
+\noindent   Relaxando  el  axioma   (iii),  se   puede  elegir   $g_\beta(x)  =
+a^{(\beta-1) x}, \quad  a > 0, \quad a  \ne 1$; el logaritmo ser\'a  de la base
 $a$ cualquiera; En  lo que sigue, usaremog $\log$ sin  precisar la elecci\'on de
 base.   R\'enyi  nombr\'o  esta  medida  de incerteza  {\it  entropia  de  orden
-$\alpha$}. Notablemente,
+$\beta$}. Notablemente,
 %
 \[
-H_1^\ren(p)  \equiv   \lim_{\alpha  \to   1}  H_\alpha^\ren(p)   =   H(p)  \quad
+H_1^\ren(p)  \equiv   \lim_{\beta  \to   1}  H_\beta^\ren(p)   =   H(p)  \quad
 \mbox{entropia de Shannon}
 \]
-%
-\noindent En otros  terminos, la clase de R\'enyi  contiene como caso particular
+% \noindent En otros terminos, la clase de R\'enyi contiene como caso particular
 la  entropia  de  Shannon.  En  su  papel,  R\'enyi  introdujo una  ganancia  de
 informaci\'on,  parecida  a  una  entropia  relativa,  probando  que  las  solas
 entropias admisibles  son la  de Shannon  y la que  introdujo. Volveremos  en la
-secci\'on  siguiente sobre  esta entropia  relativa, o  divergencia  de R\'enyi.
-\SZ{Preciser les quelques  proprietes qui se conservent, dont  la concavite pour
-$\alpha \le 1$.}
+secci\'on siguiente sobre esta entropia  relativa, o divergencia de R\'enyi. Por
+axiomas,     las     propiedades    \ref{prop:SZ:continuidad}     (continuidad),
+\ref{prop:SZ:permutacion}       (invarianza      por       permutaci\'on)      y
+\ref{prop:SZ:aditividad} (additividad)  de la  entropia de Shannon  se conservan
+entonces  en  el  marco   de  R\'enyi  y  se  pierde  \ref{prop:SZ:recursividad}
+(recursividad), todav\'ia por axiomas. Veremos luego la otras que se conservan o
+modifican en un marco mas general.
 
-Unos a\~nos despu\'es de R\'enyi, de la famosa escuela matematica \SZ{checa}, J.
-Havrda \& F.  Charv\'at en~\cite{HavCha67} volvieron a los axiomas de Khintchin,
-para  extender la entopia  de Shannon,  \ie considerando  (i) la  invarianza por
-permutaci\'on, (ii) la continuidad, (iii) la expensividad, (iv) $H^\hc(1) = 0$ y
-$H^\hc\left( \frac12 , \frac12 \right)  = 1$, pero generalisando la recursividad
-por (v) $H^\hc(p_1,\ldots,p_n)  = H^\hc(p_1,\ldots,p_{n-2},p_{n-1}+p_n) + \alpha
-(p_{n-1}+p_n)^\alpha         H^\hc\left(         \frac{p_{n-1}}{p_{n-1}        +
-p_p},\frac{p_n}{p_{n-1}  +  p_p} \right),  \quad  \alpha  > 0$~\footnote{En  sus
-papel, lo imponen  para cualquier pars $p_i, p_j$ sin  imponer la invarianza por
-permutaci\'on,  pero es  equivalente a  la exposici\'on  de este  parafo.}.  Con
-$\alpha = 1$  se recupera la recursividad estandar, pero con  $\alpha \ne 1$ eso
-permite  dar  un   peso  diferente  a  la  incerteza   del  estado  interno  \ie
-probabilidades  que  se juntan  (la  describen  como clasificaci\'on  refinada).
-Estos axiomas conducen necesariamente a la entropia (teorema~1)
+Unos  a\~nos despu\'es de  R\'enyi, de  la famosa  escuela matematica  checa, J.
+Havrda   \&    F.    Charv\'at   en~\cite{HavCha67}    (ver   tambi\'en~\cite[en
+checo]{Vaj68}) volvieron a los axiomas de Khintchin, para extender la entopia de
+Shannon,  \ie  considerando  (i)   la  invarianza  por  permutaci\'on,  (ii)  la
+continuidad, (iii) la expensividad, (iv) $H^\hc(1) = 0$ y $H^\hc\left( \frac12 ,
+  \frac12   \right)  =   1$,  pero   generalisando  la   recursividad   por  (v)
+$H^\hc(p_1,\ldots,p_n)    =   H^\hc(p_1,\ldots,p_{n-2},p_{n-1}+p_n)    +   \beta
+(p_{n-1}+p_n)^\beta H^\hc\left( \frac{p_{n-1}}{p_{n-1} + p_p},\frac{p_n}{p_{n-1}
+    + p_p}  \right), \quad  \beta > 0$~\footnote{En  sus papel, lo  imponen para
+  cualquier pars $p_i, p_j$ sin imponer la invarianza por permutaci\'on, pero es
+  equivalente a la  exposici\'on de este parafo.}.  Con $\beta  = 1$ se recupera
+la  recursividad estandar,  pero  con $\beta  \ne  1$ eso  permite  dar un  peso
+diferente a la incerteza del estado interno \ie probabilidades que se juntan (la
+describen como clasificaci\'on refinada).  Estos axiomas conducen necesariamente
+a la entropia (teorema~1)
 %
 \[
-H_\alpha^\hc(p) = \frac{1}{1-2^{1-\alpha}} \left( 1 - \sum_i p_i^\alpha \right)
+H_\beta^\hc(p) = \frac{1}{1-2^{1-\beta}} \left( 1 - \sum_i p_i^\beta \right)
 \]
 %
-que nombraron {\it $\alpha$-entropia structural}.  De nuevo, relaxando el axioma
-(iv),  se puede  remplazar en  el coeficient  $2^{1-\alpha}$  por $a^{1-\alpha},
+que nombraron {\it $\beta$-entropia structural}.  De nuevo, relaxando el axioma
+(iv),  se puede  remplazar en  el coeficient  $2^{1-\beta}$  por $a^{1-\beta},
 \quad a >  0, \quad a \ne 1$. De  nuevo, parae que la entropia  de Shannon es un
 caso particular,
 %
 \[
-H_1^\hc(p)  \equiv   \lim_{\alpha  \to   1}  H_\alpha^\hc(p)   =   H(p)  \quad
+H_1^\hc(p)  \equiv   \lim_{\beta  \to   1}  H_\beta^\hc(p)   =   H(p)  \quad
 \mbox{entropia de Shannon}
 \]
-%
-Luego, proban que $H_\alpha^\hc(p)$ es concava  con respeto a los $p_i$ y maxima
-para una  distribuci\'on uniforma  (teorema~2). Aun que  no aparece as\'i  en el
-papel, satisface  la propiedad de  Schur-concavidad (teorema~3). A pesar  de que
-mencionan que $H_\alpha^\hc$ sea  diferente que $H_\alpha^\ren$, es sencillo ver
-que hay un mapa uno-uno entre las dos entropias.
+% Por   axioma,   se   conservan   las   propiedades   \ref{prop:SZ:continuidad}
+(continuidad), \ref{prop:SZ:expansabilidad} (expansabilidad)  de Shannon en este
+marco. Se  prob\'o tambi\'en  que se conserva  la propiedad de  concavavidad con
+respeto    a   los   $p_i$    \ref{prop:SZ:concavidad},   la    de   maximalidad
+\ref{prop:SZ:cotamaxima}    alcanzada   para    una    distribuci\'on   uniforma
+(teorema~2). Aun  que no aparece  as\'i en el  papel, satisface la  propiedad de
+Schur-concavidad  \ref{prop:SZ:Schurconcavidad}  (teorema~3).  A  pesar  de  que
+mencionan que $H_\beta^\hc$ sea  diferente que $H_\beta^\ren$, es sencillo ver
+que hay  un mapa  uno-uno entre  las dos entropias.  Se notara  en un  marco mas
+general otras propiedades.
 
-Independiente de  Havrda \&  Charv\'at, todav\'ia en  la escuela  \SZ{checa}, Z.
-Dar\'oczy  en~\cite{Dar70}  defino  la  entropia  $H^f$ a  partir  de  una  {\it
-funci\'on   informaci\'on}   $f$   satifaciendo   (i)  $f(0)   =   f(1)$,   (ii)
+Independiente  de Havrda  \&  Charv\'at, todav\'ia  en  el este,  en la  escuela
+h\'ugara, Z.  Dar\'oczy en~\cite{Dar70} defino la entropia $H^f$ a partir de una
+{\it  funci\'on  informaci\'on}  $f$   satifaciendo  (i)  $f(0)  =  f(1)$,  (ii)
 $f\left(\frac12\right)  = 1$  \ y  la ecuaci\'on  funcional (ii)  $f(x)  + (1-x)
 f\left(  \frac{y}{1-x} \right)  = f(y)  + (1-y)  f\left(  \frac{x}{1-y} \right)$
 sobre  $\{  (x,y)  \in [0  ;  1)^2,  \quad  x+y  \le  1 \}$,  siendo  $H^f(p)  =
@@ -123,56 +130,247 @@ sobre  $\{  (x,y)  \in [0  ;  1)^2,  \quad  x+y  \le  1 \}$,  siendo  $H^f(p)  =
 p_j$.   Dar\'oczy mostr\'o  que  si $f$  es medible,  o  continua en  $0$, o  no
 negatiba  y  acotada, necesariamente  $f(x)  =  h_2(x) =  -x  \log_2  x -  (1-x)
 \log_2(1-x)$,   conduciendo   a  la   entropia   de   Shannon  (teorema~1;   ver
-tambi\'en~\cite{Lee64, Tve58}). En otros  terminos, su axioma (v) es alternativa
-a la recursividad.  Para extender  la entropia de Shannon, propuso extender este
-axioma   (v)   por  la   ecuaci\'on   funcional   $f_\alpha(x)  +   (1-x)^\alpha
-f_\alpha\left( \frac{y}{1-x} \right) = f_\alpha(y) + (1-y)^\alpha f_\alpha\left(
-\frac{x}{1-y} \right)$, lo que  condujo necesariamente a la entropia (teoremas~2
-y~3)
+tambi\'en~\cite{Lee64,  Tve58, Ken64}).   En otros  terminos, su  axioma  (v) es
+alternativa a  la recursividad.  Para  extender la entropia de  Shannon, propuso
+extender este axioma  (v) por la ecuaci\'on funcional  $f_\beta(x) + (1-x)^\beta
+f_\beta\left(  \frac{y}{1-x} \right)  = f_\beta(y)  +  (1-y)^\beta f_\beta\left(
+  \frac{x}{1-y}  \right)$,   lo  que   condujo  necesariamente  a   la  entropia
+(teoremas~2 y~3)
 %
 \[
-H_\alpha^\dar(p) = \frac{1}{1-2^{1-\alpha}} \left( 1 - \sum_i p_i^\alpha \right)
+H_\beta^\dar(p) = \frac{1}{1-2^{1-\beta}} \left( 1 - \sum_i p_i^\beta \right)
 \]
 %
 \noindent  es  decir  nada  mas  que  la  entropia  introducida  por  Havdra  \&
-Charv\'at. Sin  embargo, el  estudio de  Dar\'oczy fue mas  intensivo que  el de
-Havdra  \&  Charv\'at.  Primero,  not\'o  el  mapa entre  su  entropia  y la  de
-R\'enty. Luego, prob\'o que se  conserva la invarianza por permutaci\'on (no era
-un  axioma), $H_\alpha^\dar\left(  \frac12  ,  \frac12 \right)  =  1$ (lo  llama
-normalizaci\'on), la  expansividad, una additividad  extendida, una recursividad
+Charv\'at. En lo que sigue, se la denota $H_\beta^\hcd$. Sin embargo, el estudio
+de Dar\'oczy fue  mas intensivo que el de Havdra  \& Charv\'at.  Primero, not\'o
+el mapa  entre su  entropia y la  de R\'enyi. Adicionalmente  a Havdra-Charv\'at
+probaron que se conserva  la propiedad \ref{prop:SZ:permutacion} (invarianza por
+permutaci\'on, que no era un  axioma en su enfoque), $H_\beta^\hcd\left( \frac12
+  ,  \frac12   \right)  =  1$   (lo  llama  normalizaci\'on),   la  expansividad
+\ref{prop:SZ:expansabilidad},   una  additividad  extendida,   una  recursividad
 extendida  precisamente  del modelo  de  Havrda-Charv\'at (teorema~4).   Prob\'o
-tambi\'en  que $H_\alpha^\dar  \ge 0$  (alcanzado en  el caso  deterministico) y
-m\'axima    en    el   caso    uniforme    (teorema~6),   que    incidentalmente
-$H_\alpha^\dar\left(  \frac1d ,  \ldots ,  \frac1d \right)$  crece con  $d$. Muy
-interesante tambi\'en es  se puede definir una entropia  condicional en el mismo
-modelo  que  en   el  caso  de  Shannon  $H_\alpha^\dar(X|Y)   =  \sum_y  \left[
-p_{X|Y}(x,y) \right]^\alpha  H_\alpha^\dar( p_{X|Y}(\cdot,y) )$,  que existe una
-regla de cadena, $H_\alpha^\dar(X,Y)  = H_\alpha^\dar(Y) + H_\alpha^\dar(X|Y)$ y
-que  condicionar reduce  la entropia  $H_\alpha^\dar(X|Y)  \le H_\alpha^\dar(X)$
-(teorema~8). Mostr\'o tambi\'en que si  se pierde la additividad, se obiene para
-\ $X$  \ e  \ $Y$  \ independientes \  $H_\alpha^\dar(X,Y) =  H_\alpha^\dar(X) +
-H_\alpha^\dar(Y)   +   \left(   2^{1-\alpha}   -  1   \right)   H_\alpha^\dar(X)
-H_\alpha^\dar(Y)$. La propiedades de regla  de cadena le permiti\'o revisitar la
-caracterisaci\'on de un  canal de transmisi\'on y redefinir  una capacidad canal
-extendidas (capacidad  tipo $\alpha$;  basicamente se usa  el mismo  enfoque que
-Shannon,  pero usando  $H_\alpha^\dar$ en  lugar  de $H$,  ver secci\'on~6  del
-papel).
+tambi\'en   \ref{prop:SZ:positividad},   positividad   alcanzado  en   el   caso
+deterministico y  la m\'aximalidad \ref{prop:SZ:cotamaxima} en  el caso uniforme
+(teorema~6),  que incidentalmente  $H_\beta^\hcd\left( \frac1\alpha  ,  \ldots ,
+  \frac1\alpha \right)$ crece con el  cardinal $|\X| = \alpha$.  Muy interesante
+tambi\'en es se puede definir una entropia condicional en el mismo modelo que en
+el caso de Shannon $H_\beta^\hcd(X|Y) = \sum_y \left[ p_{X|Y}(x,y) \right]^\beta
+H_\beta^\hcd(   p_{X|Y}(\cdot,y)   )$,   que   existe  una   regla   de   cadena
+\ref{prop:SZ:cadena}, $H_\beta^\hcd(X,Y)  = H_\beta^\hcd(Y) + H_\beta^\hcd(X|Y)$
+y    que    \ref{prop:SZ:condicionar}    condicionar    reduce    la    entropia
+$H_\beta^\hcd(X|Y) \le H_\beta^\hcd(X)$  (teorema~8).  Mostr\'o tambi\'en que si
+se pierde  la additividad, se  obiene para \  $X$ \ e  \ $Y$ \  independientes \
+$H_\beta^\hcd(X,Y) = H_\beta^\hcd(X) +  H_\beta^\hcd(Y) + \left( 2^{1-\beta} - 1
+\right) H_\beta^\hcd(X) H_\beta^\hcd(Y)$.  La  propiedades de regla de cadena le
+permiti\'o  revisitar  la  caracterisaci\'on  de  un canal  de  transmisi\'on  y
+redefinir una capacidad canal extendidas (capacidad tipo $\beta$; basicamente se
+usa el  mismo enfoque que Shannon,  pero usando $H_\beta^\hcd$ en  lugar de $H$,
+ver secci\'on~6 del papel).
+
+Estas  entropia fueron (re)descubiertos  varios otras  veces y/o  estudiados mas
+detenidamente    en    varios     campos    y    varios    extensiones    fueron
+introducidas~\cite[entre  otros]{Var66, Oni66,  Kap67,  Vaj68, LinNie71,  Ari71,
+Bur72, AczDar75,  ShaMit75, ShaMit75,  ShaTan75, Mit75, BoeLub80,  Fer80, Tsa88,
+Rat91, Kan01}.   Un primer enfoque  mas general es  debido a S.  Arimoto  en los
+primeros a\~nos de  la decada 1970~\cite{Ari71} y rediscubierto  y estudiado con
+mas  detaller y  una decada  despues por  Burbea y  Rao~\cite{BurRao82}  y luego
+estudiado   por   Salicr\'u~\cite{Sal87}.     La   medida   propuesta,   llamada
+$\phi$-entropia, es definida por
+%
+\[
+H_\phi(p) = -\sum_i \phi(p_i) \qquad \mbox{con} \qquad \phi \mbox{ convexa}
+\]
+%
+Burbea  y  Rao  asociaron  una  medida  de  divegencia  a  esta  entropia.   Las
+$\phi$-entropias contienen Shannon como caso  particular ($\phi(x) = x \log x$),
+as\'i  que  la  clase   de  Havdra-Charv\'at-Dar\'oczy  ($\phi(x)  =  \frac{x  -
+x^\beta}{2^{1-\beta}-1}$)  como mencionado, pero  no la  clase de  R\'enyi. De
+hecho, las $\phi$-entropias se enmarcan en una clase un poco mas amplia, llamada
+$(h,\phi)$-entropias~\cite{SalMen93, MenMor97},
+%
+\begin{definicion}[$(h,\phi)$-entropia]
+La $(h,\phi)$-entropia de una  distribuci\'on de probabilidad $p_X$ definida sobre
+$\X$ de cardinal finito $|\X| = \alpha$ es definida por
+%
+\[
+H_{(h,\phi)}(X)  = H_{(h,\phi)}\left(  p_X  \right) =  h\left(  \sum_{x \in  \X}
+\phi\left( p_X(x) \right) \right)
+\]
+%
+donde o
+%
+\begin{itemize}
+\item $\phi$ es concava y $h$ creciente, o
+\item $\phi$ es convexa y $h$ decreciente
+\end{itemize}
+%
+Frecuentemente, se  supone adicionalmente que $\phi$  y $h$ son  de clase $C^2$,
+que $\phi(0) = 0$ (incerteza elemental asociada a un estado de probabilidad nula
+vale cero) y, sin perdida de generalidad, que $h(\phi(1)) = 0$.
+\end{definicion}
+%
+\noindent  (ver  tambi\'en~\cite{Est97}  para  una  generalizaci\'on  a\'un  mas
+amplia). Cu\'ando  $h(x) = x$ se  recupera la $\phi$-entropia,  incluyendo la de
+Shannon y las  de Havdra-Charv\'at-Dar\'oczy. Ademas, la familia  de R\'enyi cae
+tamb\'ien  en   esta  familia  ($\phi(x)   =  x^\beta$  y  $h(x)   =  \frac{\log
+  x}{1-\beta}$) as\'i que todas las entropias evocadas en el parafo anterior.
+
+Obviamente,  de  las  propiedades  de  la  entropia  de  Shannon,  se  conservan
+\ref{prop:SZ:continuidad}  (continuidad),  \ref{prop:SZ:permutacion}  (invariaza
+por  permutaci\'on),  \ref{prop:SZ:biyeccion}  (invarianza por  transformaci\'on
+biyectiva  de  $X$),   \ref{prop:SZ:expansabilidad}  (expansabilidad,  debido  a
+$\phi(0) = 0$).
+
+Ademas  se conserva  la  Schur  convavidad \ con una reciproca
+%
+\begin{propiedadesPhi}\setcounter{enumi}{\value{PropSchurConcavidad}}
+%
+\item  \centerline{$\forall \:  (h,\phi),  \quad  p \prec  q  \: \Rightarrow  \:
+    H_{(h,\phi)}(p) \ge H_{(h,\phi)}(q)$}
+  %
+  \centerline{Reciprocamente,   si    $\quad   \forall   \:    (h,\phi),   \quad
+    H_{(h,\phi)}(p) \ge  H_{(h,\phi)}(q) \quad \mbox{  entonces } \quad  p \prec
+    q$}
+  %
+  En otros terminos, se obtiene la  relaci\'on de mayorisaci\'on si se cumple la
+  relaci\'on  de ordre  entropicas para  cualquier par  de  funciones entropicas
+  $(h,\phi)$.   La  Schur-concavidad (y  su  reciproca)  es  consecuencia de  la
+  desigualdad  de Schur~\cite{Sch23}  o Hardy-Littlewood-P\'olya~\cite{HarLit29,
+    HarLit52} o Karamata~\cite{Kar32}  (ver tambi\'en~\cite[Cap.~3, Prop.~C.1 \&
+  Cap.~4,  Prop.~B.1]{MarOlk11} o~\cite[Teorema~II.3.1]{Bha97}):  $p \prec  q \:
+  \Rightarrow  \: \sum_i  \phi(p_i) \le  \sum_i \phi(q_i)$  para  toda funci\'on
+  $\phi$ convexa.
+\end{propiedadesPhi}
+% Schur, I.  (1923). Issai Schur Collected  Works (A.  Brauer  and H.  Rohrbach,
+% eds.), Vol. II. pp. 416œôòó427. Springer-Verlag, Berlin, 1973]
+%
+%
+% Ver Schur-Ostrowski f  sym, Scur-convexe ssi (xi - xj)  (df/dx_i - df/dxj) \ge
+% 0, 1 \le i \ne j \le alpha
+%
+Como consecuencia, se conserva la positividad \ref{prop:SZ:positividad} gracia a
+$\phi(0) =  0$ y  $h(\phi(1)) = 0$  (alcanzado en  el caso deterministico)  y la
+maximalidad \ref{prop:SZ:cotamaxima} (caso uniforme),
+%
+\[
+0 \le H_{(h,\phi)}(X) \le h\left( \alpha \, \phi\left( \frac1\alpha \right) \right)
+\]
+
+Con respeto a la concavidad  \ref{prop:SZ:concavidad}, no se conserva en general:
+%
+\begin{propiedadesPhi}\setcounter{enumi}{\value{PropConcavidad}}
+\item  Si  $h$ est  concava,  entonces $H_{(h,\phi)}$  es  concava.  Eso es  una
+consecuencia   de    la   concavidad   de   $\phi$   y    decrecencia   de   $h$
+(resp. convexidad/crecencia) conjuntamente a  la concavidad de $h$. La reciproca
+no es  verdad. Por  ejemplo, se puede  ver que  si $\beta <  1$, la  entropia de
+R\'enyi es  concava, pero se proba que  existe un $\beta^*(\alpha) >  1$ tal que
+para cualquier $\beta \le \beta^*(\alpha)$ se conserva la concavidad, a pesar de
+que $h$ no sea necesariamente concava~\cite[p.~57]{BenZyc06}.
+\end{propiedadesPhi}
+
+Se pierde la propiedad de recursividad \ref{prop:SZ:recursividad}, pero se puede
+vincular  la  entropia  total con  la  obtenida  juntando  dos estados  por  una
+desigualdad:
+%
+\begin{propiedadesPhi}\setcounter{enumi}{\value{PropRecursividad}}
+\item  Sean \  $X$ \  definido  sobre \  $\X$ \  y  \ $\overline{X}$  \ sobre  \
+  $\overline{X}$,
+  %
+  \[
+  \left\{  \begin{array}{l}\overline{\X} =  \{  x_1 ,  \ldots  , x_{\alpha-2}  ,
+      \overline{x}_{\alpha-1}\}  \quad   \mbox{con  el  estado   interno}  \quad
+      \overline{x}_{\alpha-1}   =  \{   x_{\alpha-1}  ,   x_\alpha  \},\\[2.5mm]
+      p_{\overline{X}}(x_i)  = p_X(x_i),  \quad 1  \le i  \le \alpha-1  \quad \mbox{y}
+      \quad p_{\overline{X}}(\overline{x}_{\alpha-1}) = p_X(x_{\alpha-1}) +
+      p(x_\alpha)  \quad  \mbox{distribuci\'on  sobre  }  \overline{\X}\\[2.5mm]
+      \displaystyle   \overline{q}(x_j)    =   \frac{p_X(x_j)}{p_X(x_{\alpha-1})   +
+        p_X(x_\alpha)}, \quad j =  \alpha-1, \alpha \quad \mbox{distribuci\'on del
+        estado   interno}\end{array}\right.
+  \]
+\[
+  H(p_X)  \ge H(p_{\overline{X}})
+\]
+%
+Esta   desigualdad   es   una   de  la   desigualdad   de   Petrovi\'c~\cite[43,
+Teorema~8.7.1]{Kuc09}, $\phi(a +  b) \le \phi(a) + \phi(b)$  para $\phi$ concava
+cancelando  en 0  (y la  conversa  en el  caso convexo),  conjuntamente con  $h$
+creciente  (resp.   decreciente).   A parte  en  el  caso  de  Shannon y  el  de
+Havdra-Charv\'at-Dar\'oczy, no  hay un  vinculo inmediato entre  $H(p_X)$ \  y \
+$H(p_{\overline{X}})$.
+\end{propiedadesPhi}
+
+Se  conserva  la  superadditividad~\ref{prop:SZ:superaditividad}. De  hecho,  si
+$\phi$ es convexa (resp. concava) con \ $\phi(0) = 0$, \ $\forall \: 0 \le a \le
+1,  \: \phi(a  u)  = \phi(a  u  + (1-a)  0) \le  a  \phi(u)$ (resp.  desigualdad
+reversa).  Entonces,   \  $\phi\left(  p_{X,Y}(x_i,y_j)   \right)  =  \phi\left(
+  p_{X|Y}(x_i,y_j)  p_Y(y_j)  \right)  \le  p_{X|Y}(x_i,y_j)  \phi\left(p_Y(y_j)
+\right)$, \ \ie \ $\sum_{i,j} \phi\left( p_{X,Y}(x_i,y_j) \right) \le \sum_{i,j}
+p_{X|Y}(x_i,y_j) \phi\left(p_Y(y_j) \right) = \sum_i \phi\left(p_Y(y_j) \right)$
+\  (resp.  desigualdad  reversa).  Se   cierra  la  prueba  con  la  decrecencia
+(resp. crecencia) de $h$.
 
 
-\SZ{redecouverte Tsallis 1988..., Lindhardt \& Nielsen Studies in Dynamical
-Systems Kongelige Danske Videnskabernes Selskab, 38(9):1-42, 1971, De nombreuses
-autres, Varama 66, mais premier pas unifie Burbea-Rao; puis Salicru\newline proprietes et voir conditionnelle... moyenne adqueate}
+Sin  embargo, en  general, se  pierden las  propiedades \ref{prop:SZ:aditividad}
+(additividad),     \SZ{ver      con     detalles     \ref{prop:SZ:subaditividad}
+  (subadditividad) QINP prop. 11, }
+
+\
+
+La  definici\'on  de entropias  generalizadas  condicionales  aparece mucho  mas
+problematico. Por  ejemplo, si  se define  a la Shannon,  es decir  definiendo \
+$H_{(h,\phi)}(X|Y)$     \    tomando     \    $\sum_{y     \in     \Y}    p_Y(y)
+H_{(h,\phi)}(p_{X|Y}(\cdot,y)$     \      se     pierde     la      regla     de
+cadena~\ref{prop:SZ:cadena}. Como se lo ha visto,  en el marco de la entropia de
+Havdra-Charv\'at-Dar\'oczy, se conserva la regla  de cadena si se remplaza $p_Y$
+por su potencia  $p_Y^\beta$.  Sin embargo, generalizar este  esquema en el caso
+general falla (la gracia en  Havdra-Charv\'at-Dar\'oczy viene de la propiedad de
+morfismo de la  exponencial y del logaritmo). Como  consecuencia, generalizar la
+noci\'on se vuelve problematico tambi\'en.  Por ejemple se pierde el diagrama de
+Venn  aparte si  se  define la  entropia condicional  a  partir de  la regla  de
+cadena. Pero en este caso, si la superadditividad garantiza la positividad de la
+entropia             condicional,            se             pierde            la
+propiedad~\ref{prop:SZ:independenciacondicional} por  perdida de la additividad,
+y          por           consecuencia          la          propiedad          de
+positividad/independencia~\ref{prop:SZ:Ipositive}  de  una  informaci\'on  mutua
+construida sobre un  modelo diagrama de Venn. Veremos  en la secci\'on siguiente
+que  un  tercero  camino  puede  ser usar  divergencia.   \SZ{ver  con  detalles
+  \ref{prop:SZ:condicionar} (condiconar)}
+%\SZ{VajVas85 pour la Schur-concavite}
 
 
-\SZ{versiones dferenciales poner  ac\'a la  codificaci\'on  a la  Renyi, y  la
-  cuantificacion fina; EPI generalizada  por Madiman, etc. Lutwak, Bercher etc.,
-  Kagan}
-
-{\bf Revisite capacite a la Daroczy?}
+\SZ{versiones diferenciales y ver \ref{prop:SZ:biyeccionC} (biyeccion), \ref{prop:SZ:permutacionC} (invarianza por rearreglo~\cite{toto})}
 
 % ================================= Salicru
 
 \subseccion{Divergencias y propiedades}
 \label{sec:SZ:Czizar}
 
-{\bf Extension a la Renyi, a la HC/D/T, Cressie Reads, Cressie Pardo, Vajda; cf Burbea Rao: generalization  Czizar et voir avec h phi avant meme Salicru. Cf aussi Bregmann}
+\SZ{ (1) Extension a la Renyi, (2) a  la HC/D/T, Cressie Reads, Cressie Pardo, Vajda;
+(3) cf Burbea Rao:  (4) generalization Czizar Vajda, et voir avec h phi  avant meme Salicru. Cf
+aussi  Bregmann, autres  de Csizsar  2012  versikon Bregman;  gupta Sharma  1976
+BoeLub79, Vajda72, Salicru94 Orsak et  Paris; application a le test d'adequation
+Pardo 99; MenMor97:5, Cf Pardo 2006 et ref.}
+
+\SZ{FriSri08 pour Bregman; reapparition Fisher comme courbure, cf Varma, Jizba, MenMor97...}
+
+
+
+\SZ{
+
+Aplicaciones poner ac\'a  MaxEnt nous, Kesavan,  Kagan 63 A.M. \
+
+   On the theory  of Fisher's
+  amount  of  information Sov.  Math.  Dokl., 4  (1963),  pp.  991-993, etc,  la
+  codificaci\'on a la Renyi (Cambell,  Hooda 2001, Bercher) 
+
+\
+
+ y la cuantificacion
+  fina; EPI generalizada por Madiman, etc. Lutwak, Bercher etc., Kagan; Boeke 77
+  An extension  of the Fisher information  measure I. Csisz\'ar,  P. Elias (Eds.),
+  Topics   in  Information  Theory,   North-Holland,  Berlin/New   York  (1977),
+  pp. 113-123  o Hammad o  Vajda 73 o  Ferentinos81 en el marco  Fisher; Kesavan
+  gene MaxEnt}
+
+\SZ{Revisite capacite a la Daroczy? codage; parler de la quantification fine et HCD}

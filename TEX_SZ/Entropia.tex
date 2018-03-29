@@ -86,7 +86,7 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
 %
 \setcounter{PropPermutacion}{\value{enumi}}
 \item\label{prop:SZ:permutacion}   {\it  Invariance  bajo   una  permutaci\'on:}
-  Obviosamente,  la  entropia  es  invariante  bajo  una  permutaci\'on  de  las
+  Obviamente,  la   entropia  es  invariante  bajo  una   permutaci\'on  de  las
   probabilidades, \ie,
   %
   \[
@@ -191,6 +191,7 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   %
   Esta propiedad es obvia, consecuencia de $\lim_{p \to 0} p \log p = 0$.
 %
+\setcounter{PropRecursividad}{\value{enumi}}
 \item\label{prop:SZ:recursividad} {\it Recursividad:} Juntar dos estados baja la
   entropia de una cantidad igual a la entropia interna de los dos estados por la
   probabilidad de ocurencia de este  conjunto de estados, y vice-versa, \ie sean
@@ -230,6 +231,7 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   \label{fig:SZ:Recursividad}
   \end{figure}
 %
+\setcounter{PropConcavidad}{\value{enumi}}
 \item\label{prop:SZ:concavidad} {\it Concavidad:} La  entropia es concava, en el
   sentido  de que  la entropia  de una  combinaci\'on convexa  de distribuciones
   (mezcla) de probabilidades es siempre major o igual a la combinaci\'on convexa
@@ -269,6 +271,7 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   \label{fig:SZ:Concavidad}
   \end{figure}
 %
+\setcounter{PropSchurConcavidad}{\value{enumi}}
 \item\label{prop:SZ:Schurconcavidad}  {\it Schur-concavidad:}  Como se  lo puede
   querrer,  lo mas  ``concentrado'' es  una distribuci\'on  de  probabilidad, lo
   menos hay  incerteza, y entonces lo  mas peque\~no debe ser  la entropia. Esta
@@ -299,9 +302,18 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   %
   Fijense de que las cotas sobre $H$ pueden ser vistas como consecuencia de esta
   desiguldad:  la  distribuci\'on  cierta  mayoriza cualquier  distribuci\'on  y
-  cualquier  distribuci\'on mayoriza  la distribuci\'on  uniforme.  \SZ{prueba a
-    partir del teorema de Karamata?}
+  cualquier  distribuci\'on   mayoriza  la  distribuci\'on  uniforme~\cite[p.~9,
+  (6)-(8)]{MarOlk11}.   La  prueba de  la  Schur-concavidad  se  apoya sobre  la
+  desigualdad  de  Schur  (o Hardy-Littlewood-P\'olya  o  Karamata)~\cite{Sch23,
+    HarLit29,      Kar32,      HarLit52},~\cite[Cap.~3,     Prop.~C.1]{MarOlk11}
+  o~\cite[Teorema~II.3.1]{Bha97}: $p \prec q  \: \Rightarrow \: \sum_i \phi(p_i)
+  \le  \sum_i  \phi(q_i)$  para  cualquier  funci\'on  $\phi$  convexa.   Sufice
+  considerar $\phi(u) = u \log u$ para concluir.
 \end{propiedades}
+%
+% Ver Schur-Ostrowski f  sym, Scur-convexe ssi (xi - xj)  (df/dx_i - df/dxj) \ge
+% 0, 1 \le i \ne j \le alpha
+
 
 En muchos  casos, uno tiene que  trabajar con varias  variables aleatorias. Para
 simplificar les  notaciones, considera una par  de variables \  $X$ \ y \  $Y$ \

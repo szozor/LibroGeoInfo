@@ -2,44 +2,19 @@
 %
 % Provisoire...
 \newcommand{\SZ}[1]{{\color{red}\bf #1}}
-%
-\def\A{\mathcal{A}}
-\def\B{\mathcal{B}}
-\def\C{\mathcal{C}}
-\def\D{\mathcal{D}}
-\def\E{\mathcal{E}}
-\def\H{\mathcal{H}}
-\def\P{\mathcal{P}}
-\def\X{\mathcal{X}}
-\def\Y{\mathcal{Y}}
-%
-\def\Cset{\mathbb{C}}
-\def\Nset{\mathbb{N}}
-\def\Rset{\mathbb{R}}
-\def\Zset{\mathbb{Z}}
-%
-\def\Esp{\operatorname{E}}
-\def\e{\operatorname{e}}
-\def\Jac{\operatorname{J}}
-\def\Hess{\mathcal{H}}
-\def\Tr{\operatorname{Tr}}
-\def\diag{\operatorname{diag}}
-\def\Gauss{\mathcal{N}}
-\def\argmax{\operatorname*{argm\acute{a}x}}
-%
-\def\un{\mathbbm{1}}
-\def\opt{\mathrm{opt}}
-\def\sh{\mathrm{sh}}
-\def\fa{\mathrm{fa}}
-\def\huf{\mathrm{huf}}
-%
-\def\ie{{\it i. e.,}\xspace}
-%\def\;{\, , \,}
-%
+
+% counters de propiedades, 
 \newcounter{propiedad}
+%
 \newcounter{PropPermutacion}
 \newcounter{PropBiyeccion}
 \newcounter{PropCotamaxima}
+\newcounter{PropConcavidad}
+\newcounter{PropSchurConcavidad}
+\newcounter{PropRecursividad}
+\newcounter{PropCadena}
+\newcounter{PropIndependenciaCondicional}
+%
 %
 % propiedades generales
 \newenvironment{propiedades}
@@ -49,6 +24,11 @@
 % propiedades cambiadas en el caso continuo
 \newenvironment{propiedadesC}
 {\begin{enumerate}[label={[P'\arabic*]}]}
+{\end{enumerate}}
+%
+% propiedades cambiadas en el caso de (h,phi)-entropias
+\newenvironment{propiedadesPhi}
+{\begin{enumerate}[label={[P$_\phi$\arabic*]}]}
 {\end{enumerate}}
 
 
@@ -105,9 +85,4 @@
 
 % =============================== Cuanticas ================================== %
 
-
 \input{TEX_SZ/Cuanticas}
-
-
-
-

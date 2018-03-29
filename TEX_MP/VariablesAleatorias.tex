@@ -1,0 +1,393 @@
+\seccion{Variables aleatorias y distribuciones de probabilidad}
+\label{s:variablealeatoria}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\emph{En  un  experimento  o  un  dado  proceso,  los  posibles  resultados  son
+  t\'ipicamente  n\'umeros reales,  siendo cada  n\'umero un  evento.  Luego los
+  resultados  son mutuamente  excluyentes. Se  considera a  esos  n\'umeros como
+  valores de una  \emph{variable aleatoria} $X$ a valores  reales, que puede ser
+  discreta  (cuando  el espacio  muestral  es  finito  o infinito  numerable)  o
+  continua.  La ley  de la variable aleatoria $X$ es  una medida de probabilidad
+  definida por  \ $P_X(x) =  \Pr(X=x)$ o, en  general, por $P_X(A)  = \Pr(X=x\in
+  A)$.   Puede ser  \'util tambi\'en  considerar variables  aleatorias complejas
+  $Z=X+iY$, donde $X$ e $Y$ son variables aleatorias reales. }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subseccion{Variable aleatoria discreta}
+
+Los  posibles valores de  una variable  aleatoria discreta  $X$ consisten  en un
+conjunto  contable   (finito  o  infinito   numerable)  de  n\'umeros   reales:  \
+$x\in\Omega=\{x_1,   x_2,  \ldots\}$.   A  cada   uno  de   los   valores  $x_n$
+($n=1,2,\ldots$) se puede asociar una  probabilidad $p_n=p(x_n)$, de modo que se
+satisface la condici\'on de normalizaci\'on:
+%
+$$\sum_n p_n = 1 . $$ 
+%
+La \emph{funci\'on (de masa) de probabilidad} es  de la forma: 
+%
+$$
+p(x) = \left\{
+\begin{array}{cl}
+\Pr(X=x) & \mbox{si} \ x=x_1, x_2, \ldots \\ 0 &
+\mbox{en~todo~otro~punto}
+\end{array} \right.
+$$
+%
+En  la   Fig.~\ref{fig:distribprobdiscreta}  se  muestra   una  representaci\'on
+gr\'afica de una distribuci\'on de probabilidad discreta.
+%
+\begin{figure}[h!] %%ojo numeracion de figs !
+%\centerline{\includegraphics[width=3cm]{distribprobdiscreta.jpg}} %%rehacer
+%
+\leyenda{Una distribuci\'on de probabilidad discreta.}
+\label{fig:distribprobdiscreta}
+\end{figure}
+
+Tambi\'en, se puede caracterizar la ley de la variable discreta $X$ por medio de
+su \emph{funci\'on de repartici\'on}:
+%
+$$
+F_X(x)= \Pr(X\in(-\infty,x]) = \Pr (X\leq x) = \sum_{\forall
+  n \,:\, x_n\leq x} p(x_n)
+$$
+%
+que es una funci\'on discontinua, con saltos finitos, y no decreciente. 
+
+Sin  p\'erdida de  generalidad, el  conjunto de  valores que  toma  una variable
+aleatoria discreta $X$ puede considerarse como $\{0,1,2,\ldots,N\}$ para alg\'un
+$N$ natural, o todo $\Nset$. Entonces la ley de una variable aleatoria a valores
+naturales est\'a dada por  \ $\{p_n = \Pr(X=n), \ n\in \Nset  \}$.  Luego \ $\Pr
+(X\in  A)=\sum_{n\in A\cap  \Nset}  p_n$,  y la  funci\'on  de repartici\'on  se
+calcula como  \ $\Pr(X\leq x) = \sum_{n  \leq x} \Pr(X=n)$ que  es una funci\'on
+que presenta un  salto finito en cada n\'umero natural.  En  general un salto de
+la funci\'on  de repartici\'on corresponde a  la presencia de  una \emph{masa de
+  Dirac} en el entorno del salto. %%
+
+Un caso especial se tiene cuando un  valor $x_j$ es cierto o seguro, y no ocurre
+ninguno de  los otros valores $x_i \  (i\neq j)$. La forma  de la distribuci\'on
+es: \ $p_n=\delta_{nj}$, donde
+%
+$$
+\delta_{ij} = \left\{
+\begin{array}{cl}
+1 & \mbox{si} \ i=j \\
+0 & \mbox{si} \ i\neq j 
+\end{array} \right.
+$$
+%
+es el s\'imbolo \emph{delta de  Kronecker}. Cuando el espacio muestral es finito
+de dimensi\'on $N$, la ley de  distribuci\'on se puede representar por medio del
+siguiente vector columna:
+%
+$$
+p = \begin{pmatrix}
+% \left(  
+%\begin{array}{c}
+0 \\ \vdots \\ 0 \\ 1  \\ 0 \\ \vdots \\ 0
+\end{pmatrix}
+%\end{array} \right)
+$$
+%
+con  un  1  en  el  lugar  $j$-\'esimo,  que tambi\'en  se  escribe  como  \  $p
+= \begin{pmatrix} 0  & \cdots & 0 &  1 & 0 & \cdots &  0 \end{pmatrix}^t$, donde
+$t$ indica transposici\'on.  La funci\'on de repartici\'on resulta una funci\'on
+escal\'on o de Heaviside: \ $F(x)=\Theta(x-x_j)$.
+
+Otra    situaci\'on   particular    es   la    de    \emph{equiprobabilidad}   o
+\emph{distribuci\'on uniforme}.  La forma  de la distribuci\'on es: \ $p_n=\frac
+1N \ \ \forall\ n=1,\ldots,N$, donde  $N$ señala el tamaño del espacio muestral.
+La ley  de distribuci\'on  se puede representar  por medio del  siguiente vector
+columna:
+%
+$$
+p = \begin{pmatrix}
+% \left(  
+%\begin{array}{c}
+1/N \\ 1/N  \\ \vdots \\ 1/N
+\end{pmatrix}
+%array} \right) , 
+$$
+%
+que tambi\'en se escribe como \  $p = \begin{pmatrix} \frac1N & \frac1N & \cdots
+  &  \frac1N  \end{pmatrix}^t$.  La   funci\'on  de  repartici\'on  resulta  una
+funci\'on escalonada,  con saltos de  altura $\frac1N$ para  cada $n$ entre  1 y
+$N$.
+
+\hfill 
+
+\emph{Reordenamiento y relaci\'on de mayorizaci\'on} 
+
+Para comparar dos  distribuciones es \'util reordenar el  vector de probabilidad
+permutando  sus  elementos  hasta  listarlos  de forma  descendente.   Se  anota
+$p^\downarrow$, de  modo que \  $p^\downarrow_1 \geq p^\downarrow_2  \geq \ldots
+\geq  p^\downarrow_N$.   En  el  ejemplo   del  caso  con  certeza  se  tiene  \
+$p^\downarrow =  \begin{pmatrix} 1 & 0  & \cdots &  0 \end{pmatrix}^t$, mientras
+que la distribuci\'on uniforme no var\'ia.
+
+Se  define  \emph{mayorizaci\'on} del  siguiente  modo,  para distribuciones  de
+dimensi\'on  $N$ (con  sus elementos  acomodados  en forma  decreciente): \  una
+distribuci\'on $p$  es mayorizada por otra $q$,  y se denota $p\prec  q$, si las
+primeras $N-1$  sumas parciales de $p^\downarrow$ y  $q^\downarrow$ satisfacen \
+$\sum_{i=1}^n  p^\downarrow_i   \leq  \sum_{i=1}^n  q^\downarrow_i$   para  todo
+$n=1,\ldots,N-1$, con \ $\sum_{i=1}^N p_i = 1 = \sum_{i=1}^N q_i$.
+
+Por    ejemplo,   $\begin{pmatrix}    \frac12    &   \frac14    &   \frac18    &
+  \frac18 \end{pmatrix}^t  \prec \begin{pmatrix} \frac12  & \frac14 &  \frac14 &
+  0 \end{pmatrix}^t$.  Es posible  comparar por mayorizaci\'on distribuciones de
+distinta  dimensionalidad, completando con  ceros el  vector de  probabilidad de
+menor  dimensi\'on.  Es  importante  resaltar que  la  mayorizaci\'on provee  un
+\emph{orden  parcial}  (no  total)  entre distribuciones,  existiendo  pares  de
+distribuciones   tales  que   ninguna  mayoriza   a  la   otra.    Por  ejemplo,
+$\begin{pmatrix} 0.50 &  0.40 & 0.10 \end{pmatrix}^t$ y  $\begin{pmatrix} 0.70 &
+  0.15 & 0.15 \end{pmatrix}^t$ no se comparan por mayorizaci\'on.
+
+Es  interesante  notar  que  la   siguiente  propiedad  es  v\'alida  para  toda
+distribuci\'on $p$ de tamaño~$N$:
+%
+$$
+\begin{pmatrix} \frac1N & \frac1N & \cdots & \frac1N \end{pmatrix}^t \ \prec \ p
+\ \prec \ \begin{pmatrix} 1 & 0 & \cdots & 0 \end{pmatrix}^t.
+$$
+%
+En este  sentido, los  casos particulares de  equiprobabilidad y de  certeza, se
+dice  que  son  distribuciones  extremas.  Notamos que  uno  implica  ignorancia
+m\'axima  en el  resultado de  la variable  mientras que  el otro  corresponde a
+conocimiento completo.
+%% graficamente 
+%
+\begin{figure}[h!] %%ojo numeracion de figs !
+%\centerline{\includegraphics[width=3cm]{majorizationplot.pdf}} %%rehacer
+%
+\leyenda{Orden parcial por mayorizaci\'on}
+\label{fig:majorizationplot}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subseccion{Variable aleatoria continua}
+
+Los posibles valores de una  variable aleatoria continua $X$ son cualesquiera de
+los n\'umeros en un dado  intervalo de la recta real: \ $x\in\Omega\subset\Rset$
+que  puede ser  un intervalo  $[x_m,x_M]$  o un  subconjunto (semi)infinito.  Es
+conveniente asociar una  \emph{funci\'on densidad de probabilidad} (com\'unmente
+anotada por su  sigla en ingl\'es: pdf por  \emph{probability density function})
+$p(x)$ que tiene el  sentido de que la probabilidad de que  $X$ tome valor entre
+$a$ y $b$ est\'a dada por:
+%
+$$
+\Pr(a\leq X\leq b) = \int_a^b p(x) \, dx ,
+$$
+%
+siendo $p(x)  \, dx$  la densidad de  probabilidad de  hallar a la  variable con
+valores  en el intervalo  infinitesimal entre  $x$ y  $x+dx$. La  condici\'on de
+normalizaci\'on se escribe
+%
+$$
+\int_{x_m}^{x_M} p(x) \, dx=1 . 
+$$ 
+
+En  la   Fig.~\ref{fig:distribprobcontinua}  se  muestra   una  representaci\'on
+gr\'afica de una funci\'on densidad de probabilidad para una variable continua.
+%
+\begin{figure}[h!] %%ojo numeracion de figs !
+%\centerline{\includegraphics[width=3cm]{distribprobcontinua.png}} %%rehacer
+%
+\leyenda{Una distribuci\'on de probabilidad continua.}
+\label{fig:distribprobcontinua}
+\end{figure}
+
+Tambi\'en, se puede caracterizar la ley de la variable continua $X$ por medio de
+su  \emph{funci\'on  de   repartici\'on}  o  \emph{funci\'on  de  distribuci\'on
+  cumulativa} (CDF por \emph{cumulative distribution function}):
+%
+$$
+F_X(x) = \Pr(X\leq x) = \int_{x_m}^x p(t) \, dt
+$$
+%
+que da la  probabilidad de que $X$ sea  menor o igual que cierto  valor $x$ dado
+(dentro del conjunto~$\Omega$ de todos  los valores posibles de la variable). En
+forma an\'aloga,  \ $\Pr(X\in  A) = \int_A  p(x) \,  dx$ acumula la  densidad de
+probabilidad en un subconjunto $A$ del espacio muestral.  Por la propiedad de la
+inclusi\'on, se tiene \ $\Pr(X\leq  x_1) \leq \Pr(X\leq x_2)$ siempre que $x_1\leq
+x_2$; luego $F_X(x)$ es una funci\'on creciente %%no decreciente ?? SI, LO DIRIA ASI
+de   $x$,  acotada   por  la   unidad,  con   valores  extremos   dados   por  \
+$\lim_{x\rightarrow -\infty} F_X(x)=0$  y $\lim_{x\rightarrow \infty} F_X(x)=1$,
+tomando $\Omega=\Rset$.  Adem\'as la derivada respecto de $x$ es la pdf:
+%
+$$
+\frac{dF_X(x)}{dx}=p(x) . 
+$$ 
+%
+De aqu\'i  se observa que  la densidad de  probabilidad $p(x)$ puede no  ser una
+funci\'on  ``ordinaria'' cuando  $\Pr(X\leq x)$  es discontinua,  pero  como mucho
+tiene  la  singularidad  de   una  distribuci\'on  \emph{delta  de  Dirac}  cuya
+representaci\'on integral es:
+%
+$$
+\delta (x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{itx} dt . 
+$$
+% SZ: LA  VERDAD ES  QUE NO ME  GUSTA MUCHO  escribir una distribucion  como una
+% fuccion porque no viven en el mismo espacio. Pero no importa. Para mi, cuando hay una discontinuidad X no admite une pdf por definicion del 'f' de pdf\sum_{}
+
+Un caso especial  se tiene cuando la variable aleatoria $X$  toma el valor $x_0$
+con certeza.  La forma  de la pdf  es: \ $p(x)=\delta(x-x_0)$.  Otra situaci\'on
+particular es la distribuci\'on uniforme en  un intervalo; la pdf es de la forma
+\  $p(x)=\frac{1}{b-a} \  \forall  \  x\in[a,b]$, donde  $[a,b]$  es el  espacio
+muestral.
+
+Usando las  funciones delta de  Dirac, se puede  unificar el tratamiento  de las
+variables  aleatorias discretas  con las  continuas: si  una  variable aleatoria
+discreta  toma los  valores $x_1,  x_2,  \ldots$ con  probabilidades $p_1,  p_2,
+\ldots$ respectivamente,  entonces formalmente  se puede describir  mediante una
+variable  aleatoria  continua  $X$  con  funci\'on densidad  de  probabilidad  \
+$p(x)=\sum_j p_j \,\delta(x-x_j)$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subseccion{Vector aleatorio}
+
+
+Cuando se trabaja  con $d\geq 2$ variables aleatorias  es conveniente definir un
+\emph{vector aleatorio} de dimensi\'on $d$,  y apelar para su estudio a nociones
+del \'algebra  lineal y  a notaci\'on matricial.   Se tiene el  vector aleatorio
+$d$-dimensional  \  $\mathbf{X} =  \{X^1,  \ldots,  X^d  \}$, o  simplemente  $X
+=  \begin{pmatrix}  X^1  &  \cdots  & X^d  \end{pmatrix}^t$,  caracterizado  por
+$d$-uplas de variables aleatorias reales, con funci\'on densidad de probabilidad
+conjunta~$p(x^1, \ldots, x^d)$. La ley  del vector $\mathbf{X}$ es una medida de
+probabilidad sobre $\Rset^d$, con
+%
+$$
+P_{\mathbf{X}}(\mathbf{A})  =   \Pr(\mathbf{X}\in\mathbf{A})  =  \int_{\mathbf{A}}
+p(x^1, \ldots, x^d)\ dx^1\ldots dx^d
+$$
+%
+para  $\mathbf{A}  \subset \mathbf{\Omega}$,  siendo  la  pdf  conjunta $p$  una
+funci\'on positiva, definida sobre $\mathbf{\Omega}\subset\Rset^d$, y tal que se
+satisface la condici\'on de normalizaci\'on:
+%
+$$
+\int_{\mathbf{\Omega}} p(x^1, \ldots, x^d)\ dx^1\ldots dx^d  = 1 .
+$$
+
+La  \emph{funci\'on densidad  de  probabilidad marginal}  que  caracteriza a  la
+variable aleatoria  $X^i$ es la  ley que se  obtiene integrando la  pdf conjunta
+sobre todas las variables excepto la $i$-\'esima:
+%
+$$
+p_{X^i}(x^i)  =  \int_{\mathbf{\Omega}^{(i)}}  p(x^1, \ldots,  x^d)\  dx^1\ldots
+dx^{i-1} dx^{i+1} \ldots dx^d
+$$
+%
+donde $\mathbf{\Omega}^{(i)}\subset\Rset^{d-1}$  barre el espacio  muestral para
+$X^1, \ldots, X^{i-1}, X^{i+1}, \ldots, X^d$.
+
+Las  $d$  variables  aleatorias  $X^1,  \ldots,  X^d$  de  un  vector  aleatorio
+$\mathbf{X}$ se dicen \emph{independientes} si corresponden a eventos mutuamente
+independientes. Esto se  da si y s\'olo  si la pdf conjunta se  factoriza en las
+$d$ pdf marginales:
+%
+$$
+p(x^1, \ldots, x^d) = p_{X^1}(x^1) \cdots p_{X^d}(x^d) . 
+$$
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subseccion{Transformaci\'on de variables aleatorias}
+
+
+Sea $X$ una  variable aleatoria (continua, en general)  definida en el intervalo
+$[x_m, x_M]$ con funci\'on densidad  de probabilidad $p(x)$. Sea $Y=\Psi(X)$ una
+funci\'on real  de $X$, luego $Y$  toma los valores $y=\Psi(x)$  en el intervalo
+$[y_m,y_M]$.  La funci\'on  densidad  de probabilidad  $q(y)$  para la  variable
+aleatoria transformada $Y$ se obtiene  de la siguiente manera, dependiendo de la
+forma de la transformaci\'on:
+
+\begin{itemize}
+\item Si  $\Psi$ es inversible, con  inversa (\'unica), se  tiene \ $x=\Phi(y)$,
+  con  $\Phi=\Psi^{-1}$.  A partir  de  la  propiedad  de conservaci\'on  de  la
+  probabilidad
+  %
+  $$
+  |q(y)\, dy| = |p(x) \, dx|
+  $$ 
+  %
+  para  una correspondencia  biun\'ivoca  entre $x$  e  $y$, se  obtiene la  pdf
+  transformada
+  %
+  $$
+  q(y)  = p(x)  \left| \frac{dx}{dy}  \right| =  p\left(\Phi(y)\right)  \ \left|
+    \Phi'(y)   \right|   =  \frac{p\left(\Phi(y)\right)}{\left|   \Psi'(\Phi(y))
+    \right|} .
+  $$
+  %
+  Una forma alternativa  de derivar este resultado es partir  de la funci\'on de
+  repartici\'on:
+  %
+  $$
+  F_Y(y)  =  P(Y\leq  y)  =  P(\Psi(X)  \leq  y)  =  P(X\leq  \Psi^{-1}  (y))  =
+  F_X(\Phi(y))
+  $$
+  %
+  y  calcular las  derivadas del  primer y  \'ultimo t\'erminos  respecto  de la
+  variable transformada~$y$.
+%
+\item Si la inversa de $\Psi$  es multivaluada, cada valor de $y$ se corresponde
+  con  un conjunto de  valores de  $x$, digamos  $\{x_k =  \Phi_k(y), \  k=1, 2,
+  \ldots\}$.  Debido a  que  estas soluciones  son  mutuamente excluyentes,  las
+  probabilidades se suman, de modo que
+  %
+  $$
+  q(y)   =    \sum_k   p(x_k)   \left|   \frac{dx_k}{dy}    \right|   =   \sum_k
+  \frac{p\left(\Phi_k(y)\right)}{\left| \Psi'(\Phi_k(y)) \right|} ,
+  $$
+  %
+  que   formalmente  se   puede  expresar   como  \   $q(y)  =   \int   p(x)  \,
+  \delta(y-\Psi(x)\,) \ dx$ , donde se  usa la expansi\'on de la funci\'on delta
+  en  t\'erminos de sus  ceros: \  $\delta(y-\Psi(x)\,)= \sum_k  \delta(x-x_k) /
+  |\Psi'(x_k)| $.\newline  Por ejemplo, para la transformaci\'on  de variables \
+  $Y=X^2$ se tiene \  $Y=\Psi(X)=X^2$ cuyas inversas son \ $X_1=\Phi_1(Y)=+\sqrt
+  Y$  y   $X_2=\Phi_2(Y)=-\sqrt  Y$;  luego   \  $q(y)=\frac{p(\sqrt  y)}{2\sqrt
+    y}+\frac{p(-\sqrt y)}{|-2\sqrt y|}$ , para $y>0$.
+\end{itemize}
+
+\hfill
+
+Consideramos ahora el  caso de un vector aleatorio  $\mathbf{X} = \{X^1, \ldots,
+X^d\}$  con  funci\'on  densidad  de  probabilidad conjunta  \  $p(x^1,  \ldots,
+x^d)$. Se  define otro vector aleatorio  \ $\mathbf{Y} =  \{Y^1, \ldots, Y^d\}$,
+por   medio   de   las   transformaciones  \   $Y^j=\Psi^j(X^1,\ldots,X^d)$,   \
+$j=1,\ldots,d$. Suponiendo que las  funciones $\Psi^j$ tienen inversa (\'unica),
+se  puede escribir \  $X^j=\Phi^j(Y^1,\ldots,Y^d)$ para  cada $j$.  La funci\'on
+densidad de probabilidad conjunta $q(y^1,\ldots,y^d)$ para $\mathbf{Y}$ se puede
+obtener a partir de la propiedad de conservaci\'on de la probabilidad
+%
+$$
+|q(y^1,\ldots,y^d)\ dy^1\cdots dy^d| = |p(x^1,\ldots,x^d) \ dx^1\cdots dx^d| .
+$$ 
+%
+Para  una  correspondencia biun\'ivoca  entre  $\mathbf{x}$  e $\mathbf{y}$,  se
+obtiene la pdf transformada
+%
+$$
+q(y^1,\ldots,y^d) = \left| \Jac_\Phi \right| \, p(x^1,\ldots, x^d) 
+%%= \int  p(x^1,\ldots, x^d) \delta(y^1-\Psi^1) .......  dx^1 .....
+$$
+%
+donde  $\Jac_\Phi =  \frac{\partial(\Phi^1  , \ldots  , \Phi^d)}{\partial(y^1  ,
+  \ldots , y^d)}$ es el Jacobiano de la transformaci\'on.
+
+%% Ejercicio: Estudiar el caso multivaluado / Resolver un ej. 
+
+\hfill
+
+Una  \emph{variable  aleatoria  compleja}   $Z=X+i  Y$  puede  interpretarse  en
+t\'erminos de las  dos variables aleatorias reales $X$ e $Y$.  La pdf asociada \
+$P(z)=p(x,y)$ est\'a dada por la  funci\'on densidad de probabilidad conjunta de
+las variables reales. La condici\'on de normalizaci\'on se escribe
+%
+$$
+\int P(z) \, d^2 z = 1
+$$
+%
+donde $d^2 z=dx\,dy$.
