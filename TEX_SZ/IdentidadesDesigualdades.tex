@@ -94,7 +94,7 @@ p^*(x) = \e^{\lambda^t M(x)}
 \]
 %
 con $\lambda$ tal que se  satisfacen los vinculos de normalizaci\'on y momentos.
-Esta distribuci\'on  cae el la  familia conocida como {\it  familia exponencial}
+Esta distribuci\'on  cae en la  familia conocida como {\it  familia exponencial}
 donde  los  $M_k$  son  conocidos  como {\it  esdadisticas  suficientes}  y  los
 $\lambda_k$  {\it   parametros  naturales}~\cite{Dar35,  Koo36,   And70,  Kay93,
   LehCas98, Rob07}.
@@ -102,9 +102,10 @@ $\lambda_k$  {\it   parametros  naturales}~\cite{Dar35,  Koo36,   And70,  Kay93,
 Un problema que  puede aparecer es que no se puede  determinar $\lambda$ tal que
 se  satisfacen todos  los vinculos,  en particular  la de  normalizaci\'on.  Por
 ejemplo, si $\X = \Rset$ y $K = 0$, \ $p$ \ deberia ser constante (lei uniforme)
-sobre\ldots $\Rset$, lo que no es normalizable~\footnote{En el enfoque aayesiano
-  se   puede    que   no   sea    problematico,   si   el   a    posteriori   es
-  normalizable~\cite{Rob07}, pero va  mas all\'a de la meta  de esta secci\'on.}.
+sobre\ldots $\Rset$, lo que no es normalizable. De la misma manera, si $K = 3$ \
+y \ $M_k(x)  = x^k$, tampoco es normalizable  la funci\'on obtenida~\footnote{En
+  el enfoque Bayesiano  se puede que no sea problematico, si  el a posteriori es
+  normalizable~\cite{Rob07}, pero va mas all\'a  de la meta de esta secci\'on.}.
 En otros terminos,  en este caso, el problema  no tiene soluci\'on~\footnote{Mas
   precisamente,  existen casos en  los cuales  se puede  acotar la  entropia por
   arriba por un $H^{\sup}$, tal que  $\sup_p H(p) \le H^{\sup}$ pero no se puede
@@ -115,14 +116,14 @@ Existe una prueba informacional de este resultado, saliendo de la soluci\'on:
 %
 \begin{lema}
   Sea \ $\displaystyle \P_m = \left\{ p \ge 0: \: \int_\X M_k(x) \, p^*(x) \, dx
-    =  m \right\}$  \  y \  $p^*  \in \P_m$  \  que sea  de la  forma  \ $p^*  =
+    =  m \right\}$ \  y \  $p^* \in  \P_m$ \  que sea  de la  forma \  $p^*(x) =
   \e^{\lambda^t M(x)}$. Entonces
-%
-\[
-\forall \,  p \in  \P_m, \quad  H(p) \le H(p^*)  \qquad \mbox{con  igualdad ssi}
-\quad p = p^*
-\]
-%
+  %
+  \[
+  \forall \,  p \in \P_m, \quad  H(p) \le H(p^*) \qquad  \mbox{con igualdad ssi}
+  \quad p = p^*
+  \]
+  %
 \end{lema}
 \begin{proof}
 \begin{eqnarray*}

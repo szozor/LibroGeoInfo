@@ -180,41 +180,44 @@ estudiado   por   Salicr\'u~\cite{Sal87}.     La   medida   propuesta,   llamada
 $\phi$-entropia, es definida por
 %
 \[
-H_\phi(p) = -\sum_i \phi(p_i) \qquad \mbox{con} \qquad \phi \mbox{ convexa}
+\hphi{p} = -\sum_i \phi(p_i) \qquad \mbox{con} \qquad \phi \: \mbox{ convexa}
 \]
 %
 Burbea  y  Rao  asociaron  una  medida  de  divegencia  a  esta  entropia.   Las
 $\phi$-entropias contienen Shannon como caso  particular ($\phi(x) = x \log x$),
 as\'i  que  la  clase   de  Havdra-Charv\'at-Dar\'oczy  ($\phi(x)  =  \frac{x  -
-x^\beta}{2^{1-\beta}-1}$)  como mencionado, pero  no la  clase de  R\'enyi. De
+  x^\beta}{2^{1-\beta}-1}$)  como mencionado, pero  no la  clase de  R\'enyi. De
 hecho, las $\phi$-entropias se enmarcan en una clase un poco mas amplia, llamada
-$(h,\phi)$-entropias~\cite{SalMen93, MenMor97},
+$(h,\phi)$-entropias~\cite{SalMen93, MenMor97}. Cambiamos ac\`a substancialmente
+su escritura por razones homogeneidad con la $\phi$-entropia (y las divergencias
+que se introducira luego)~\footnote{En la literatura, no hay el signo $-$, y hay
+  que invertir concava y convexa.}
 %
 \begin{definicion}[$(h,\phi)$-entropia]
 La $(h,\phi)$-entropia de una  distribuci\'on de probabilidad $p_X$ definida sobre
 $\X$ de cardinal finito $|\X| = \alpha$ es definida por
 %
 \[
-H_{(h,\phi)}(X)  = H_{(h,\phi)}\left(  p_X  \right) =  h\left(  \sum_{x \in  \X}
-\phi\left( p_X(x) \right) \right)
+\hhphi{X}  = \hhphi{p_X}  = h\left(  - \sum_{x \in  \X} \phi\left(  p_X(x) \right)
+\right)
 \]
 %
 donde o
 %
 \begin{itemize}
-\item $\phi$ es concava y $h$ creciente, o
-\item $\phi$ es convexa y $h$ decreciente
+\item $\phi$ \ es convexa y \ $h$ \ creciente, o
+\item $\phi$ \ es concava y \ $h$ \ decreciente
 \end{itemize}
 %
 Frecuentemente, se  supone adicionalmente que $\phi$  y $h$ son  de clase $C^2$,
 que $\phi(0) = 0$ (incerteza elemental asociada a un estado de probabilidad nula
-vale cero) y, sin perdida de generalidad, que $h(\phi(1)) = 0$.
+vale cero) y, sin perdida de generalidad, que $h(-\phi(1)) = 0$.
 \end{definicion}
 %
 \noindent  (ver  tambi\'en~\cite{Est97}  para  una  generalizaci\'on  a\'un  mas
 amplia). Cu\'ando  $h(x) = x$ se  recupera la $\phi$-entropia,  incluyendo la de
 Shannon y las  de Havdra-Charv\'at-Dar\'oczy. Ademas, la familia  de R\'enyi cae
-tamb\'ien  en   esta  familia  ($\phi(x)   =  x^\beta$  y  $h(x)   =  \frac{\log
+tamb\'ien  en esta  familia ($\phi(x)  = -  x^\beta$ \  y \  $h(x)  = \frac{\log
   x}{1-\beta}$) as\'i que todas las entropias evocadas en el parafo anterior.
 
 Obviamente,  de  las  propiedades  de  la  entropia  de  Shannon,  se  conservan
@@ -223,16 +226,19 @@ por  permutaci\'on),  \ref{prop:SZ:biyeccion}  (invarianza por  transformaci\'on
 biyectiva  de  $X$),   \ref{prop:SZ:expansabilidad}  (expansabilidad,  debido  a
 $\phi(0) = 0$).
 
-Ademas  se conserva  la  Schur  convavidad \ con una reciproca
+Ademas  se conserva  la  Schur-convavidad \ con una reciproca:
 %
 \begin{propiedadesPhi}\setcounter{enumi}{\value{PropSchurConcavidad}}
 %
-\item  \centerline{$\forall \:  (h,\phi),  \quad  p \prec  q  \: \Rightarrow  \:
-    H_{(h,\phi)}(p) \ge H_{(h,\phi)}(q)$}
+\item Schur-convavidad:
   %
-  \centerline{Reciprocamente,   si    $\quad   \forall   \:    (h,\phi),   \quad
-    H_{(h,\phi)}(p) \ge  H_{(h,\phi)}(q) \quad \mbox{  entonces } \quad  p \prec
-    q$}
+  \[
+  p \prec q \quad \Longleftrightarrow \quad \hhphi{p} \ge \hhphi{q} \quad \forall \:
+  (h,\phi)
+  \]
+  %
+  % \centerline{Reciprocamente,  si $\quad \forall \:  (h,\phi), \quad \hhphi{p}
+  %   \ge \hhphi{q} \quad \mbox{ entonces } \quad p \prec q$}
   %
   En otros terminos, se obtiene la  relaci\'on de mayorisaci\'on si se cumple la
   relaci\'on  de ordre  entropicas para  cualquier par  de  funciones entropicas
@@ -250,24 +256,32 @@ Ademas  se conserva  la  Schur  convavidad \ con una reciproca
 % Ver Schur-Ostrowski f  sym, Scur-convexe ssi (xi - xj)  (df/dx_i - df/dxj) \ge
 % 0, 1 \le i \ne j \le alpha
 %
-Como consecuencia, se conserva la positividad \ref{prop:SZ:positividad} gracia a
-$\phi(0) =  0$ y  $h(\phi(1)) = 0$  (alcanzado en  el caso deterministico)  y la
+Como consecuencia, se  conservan la positividad \ref{prop:SZ:positividad} gracia
+a $\phi(0)  = 0$ y  $h(\phi(1)) = 0$  (alcanzado en el caso  deterministico), la
 maximalidad \ref{prop:SZ:cotamaxima} (caso uniforme),
 %
 \[
-0 \le H_{(h,\phi)}(X) \le h\left( \alpha \, \phi\left( \frac1\alpha \right) \right)
+0 \le \hhphi{p_X} \le h\left( - \alpha \, \phi\left( \frac1\alpha \right) \right)
+\]
+%
+as\'i que
+%
+\[
+\hhphi{\begin{bmatrix}  \frac1\alpha &  \cdots  & \frac1\alpha  \end{bmatrix}^t}
+\quad \mbox{funci\'on creciente de } \alpha
 \]
 
 Con respeto a la concavidad  \ref{prop:SZ:concavidad}, no se conserva en general:
 %
 \begin{propiedadesPhi}\setcounter{enumi}{\value{PropConcavidad}}
-\item  Si  $h$ est  concava,  entonces $H_{(h,\phi)}$  es  concava.  Eso es  una
-consecuencia   de    la   concavidad   de   $\phi$   y    decrecencia   de   $h$
-(resp. convexidad/crecencia) conjuntamente a  la concavidad de $h$. La reciproca
-no es  verdad. Por  ejemplo, se puede  ver que  si $\beta <  1$, la  entropia de
-R\'enyi es  concava, pero se proba que  existe un $\beta^*(\alpha) >  1$ tal que
-para cualquier $\beta \le \beta^*(\alpha)$ se conserva la concavidad, a pesar de
-que $h$ no sea necesariamente concava~\cite[p.~57]{BenZyc06}.
+\item Si  $h$ est concava,  entonces $\hhphi{p}$ es  concava con respeto  a $p$.
+  Eso  es una  consecuencia de  la  concavidad de  $\phi$ y  decrecencia de  $h$
+  (resp.  convexidad/crecencia)  conjuntamente  a   la  concavidad  de  $h$.  La
+  reciproca no  es verdad.  Por ejemplo,  se puede ver  que si  $\beta <  1$, la
+  entropia de R\'enyi es concava, pero se proba que existe un $\beta^*(\alpha) >
+  1$  tal  que  para  cualquier  $\beta  \le  \beta^*(\alpha)$  se  conserva  la
+  concavidad,    a     pesar    de    que    $h$     no    sea    necesariamente
+  concava~\cite[p.~57]{BenZyc06}.
 \end{propiedadesPhi}
 
 Se pierde la propiedad de recursividad \ref{prop:SZ:recursividad}, pero se puede
@@ -289,16 +303,17 @@ desigualdad:
         p_X(x_\alpha)}, \quad j =  \alpha-1, \alpha \quad \mbox{distribuci\'on del
         estado   interno}\end{array}\right.
   \]
-\[
-  H(p_X)  \ge H(p_{\overline{X}})
-\]
-%
-Esta   desigualdad   es   una   de  la   desigualdad   de   Petrovi\'c~\cite[43,
-Teorema~8.7.1]{Kuc09}, $\phi(a +  b) \le \phi(a) + \phi(b)$  para $\phi$ concava
-cancelando  en 0  (y la  conversa  en el  caso convexo),  conjuntamente con  $h$
-creciente  (resp.   decreciente).   A parte  en  el  caso  de  Shannon y  el  de
-Havdra-Charv\'at-Dar\'oczy, no  hay un  vinculo inmediato entre  $H(p_X)$ \  y \
-$H(p_{\overline{X}})$.
+  %
+  \[
+  H(p_X) \ge H(p_{\overline{X}})
+  \]
+  %
+  Esta  desigualdad es  consecuencia de  la desigualdad  de Petrovi\'c~\cite[43,
+  Teorema~8.7.1]{Kuc09}, $\phi(a + b) \ge \phi(a) + \phi(b)$ para $\phi$ convexa
+  y que de  cancela en 0 (y  la conversa en el caso  concavo), conjuntamente con
+  $h$ creciente  (resp.  decreciente).  A  parte en el  caso de Shannon y  el de
+  Havdra-Charv\'at-Dar\'oczy, no hay  un vinculo inmediato entre $H(p_X)$  \ y \
+  $H(p_{\overline{X}})$.
 \end{propiedadesPhi}
 
 Se  conserva  la  superadditividad~\ref{prop:SZ:superaditividad}. De  hecho,  si
@@ -308,8 +323,8 @@ reversa).  Entonces,   \  $\phi\left(  p_{X,Y}(x_i,y_j)   \right)  =  \phi\left(
   p_{X|Y}(x_i,y_j)  p_Y(y_j)  \right)  \le  p_{X|Y}(x_i,y_j)  \phi\left(p_Y(y_j)
 \right)$, \ \ie \ $\sum_{i,j} \phi\left( p_{X,Y}(x_i,y_j) \right) \le \sum_{i,j}
 p_{X|Y}(x_i,y_j) \phi\left(p_Y(y_j) \right) = \sum_i \phi\left(p_Y(y_j) \right)$
-\  (resp.  desigualdad  reversa).  Se   cierra  la  prueba  con  la  decrecencia
-(resp. crecencia) de $h$.
+\  (resp.  desigualdad  reversa).  Se   cierra  la  prueba  con  la  crecencia
+(resp. decrecencia) de $h$.
 
 
 Sin  embargo, en  general, se  pierden las  propiedades \ref{prop:SZ:aditividad}
@@ -317,13 +332,12 @@ Sin  embargo, en  general, se  pierden las  propiedades \ref{prop:SZ:aditividad}
 particular, se conserva solamente en el caso Shannon:
 %
 \begin{teorema}
-  Sea $p_{X,Y}$ distribuci\'on conjunta  de variables aleatorias discretas $X$ y
-  $Y$ y $p_x$ y $p_Y$ las de $X$ y de $Y$ (marginales) cualquieras.
+  Sea $p_{X,Y}$ distribuci\'on conjunta  de variables aleatorias discretas \ $X$
+  \ y \ $Y$ \ y \ $p_X$ \ y \ $p_Y$ \ las de \ $X$ \ y de \ $Y$ (marginales).
 %
 \[
-\forall \: p_{X,Y} \quad H_{(h,\phi)}\left( p_{X,Y} \right) \: \le \:
-H_{(h,\phi)}\left (p_X \otimes p_Y \right) \qquad \Leftrightarrow \qquad \phi(x)
-= - x \log x
+\hhphi{p_{X,Y}} \:  \le \:  \hhphi{p_X \otimes  p_Y }
+\quad \forall  \: p_{X,Y}  \qquad \Longleftrightarrow \qquad \phi(x) = x \log x
 \]
 %
 \ie $H_{(h,\phi)}$ es una funci\'on creciente de la entropia de Shannon
@@ -331,13 +345,9 @@ H_{(h,\phi)}\left (p_X \otimes p_Y \right) \qquad \Leftrightarrow \qquad \phi(x)
 %
 \begin{proof}
   La     reciproca    de    este     teorema    es     nada    mas     que    la
-  propidad~\ref{prop:SZ:subaditividad} con el hecho de que $h$ es decreciente en
+  propidad~\ref{prop:SZ:subaditividad} con  el hecho de que $h$  es creciente en
   este caso.
 
-  %Si $\phi$ es convexa (resp. concava), equivalentemente la desigualdad esperada
-  %es  $H_\phi\left( p_{X,Y} \right)  \ge H_\phi\left(  p_X \otimes  p_Y \right)$
-  %(resp.    desigualdad   reversa)    debido   a    la   decrecencia    de   $h$
-  %(resp.  crecencia).
   A continuaci\'on, la parte directa se demuestra en dos etapas:
   %
   \begin{itemize}
@@ -373,45 +383,45 @@ H_{(h,\phi)}\left (p_X \otimes p_Y \right) \qquad \Leftrightarrow \qquad \phi(x)
   -\alpha b \big\} \big]
   \]
   %
-  Ahora, si $\phi$ es concava (resp.  convexa)
+  Ahora, si $\phi$ es  convexa (resp. concava)
   %
   \[
-  \forall \, u,v \quad \phi(v)  - \phi(u) \:  \le \:  (v-u) \, \phi'(u),
+  \forall \, u,v \quad \phi(v)  - \phi(u) \:  \ge \:  (v-u) \, \phi'(u),
   \]
   %
-  \ie la variaci\'on  (cuerda) es menore que la derivada  en $b$, como ilustrado
-  figura~\ref{fig:SZ:ConvcavidadDerivada}   (desigualdad  reversa   para  $\phi$
-  convexa).
+  \ie la variaci\'on  (cuerda) es mayor que la derivada  en $b$, como ilustrado
+  figura~\ref{fig:SZ:ConvexidadDerivada}   (desigualdad  reversa   para  $\phi$
+  concava).
   %
   \begin{figure}[h!]
   %
-  \begin{center} \input{TIKZ_SZ/ConcavidadDerivada} \end{center}
+  \begin{center} \input{TIKZ_SZ/ConvexidadDerivada} \end{center}
   %
-  \leyenda{$\phi$   concava:   la    variaci\'on   (cuerda)   $\frac{\phi(v)   -
-      \phi(u)}{v-u}$  es menore  que  la derivada  $\phi'(u)$.   Aplicado a  dos
-    distribuciones  $p$  y  $q$,  de  componentes  $p_i$  y  $q_i$,  se  obtiene
-    $H_\phi(q) -  H_\phi(p) \le \sum_i (q_i-p_i) \phi'(q_i)$  con $H_\phi \equiv
-    H_{(\id,\phi)}, \: \id$ siendo la identidad.}
+  \leyenda{$\phi$   convexa:   la    variaci\'on   (cuerda)   $\frac{\phi(v)   -
+      \phi(u)}{v-u}$  es  mayor que  la  derivada  $\phi'(u)$.   Aplicado a  dos
+    distribuciones $p$ y $q$, de componentes $p_i$ y $q_i$, con $u = p_i$ y $v =
+    q_i$  y  sumando, se  obtiene  $\hphi{q}  -  \hphi{p} \ge  \sum_i  (p_i-q_i)
+    \phi'(p_i)$ con $H_\phi \equiv H_{(\id,\phi)}, \: \id$ siendo la identidad.}
   %
-  \label{fig:SZ:ConcavidadDerivada}
+  \label{fig:SZ:ConvexidadDerivada}
   \end{figure}
-  %
+  
   Aplicamos esta desigualdad a \ $u = p_{X,Y}(x,y)$ \ y \ $v = p_X(x)
   p_Y(y)$ \ y sumamos en  $x, y$, \ para \ $(a,b) \in ( 0  \, , \, 1)^2$ \ (para
   que  $C_{a,\alpha,b,\beta}$  \ no  sea  reducido  a \  $\{0\}$),  y  \ $c  \in
   \mathring{C}_{a,\alpha,b,\beta}$  \  donde \  $\mathring{\cdot}$  \ denota  el
-  interior de un conjunto, se obtiene para $\phi$ concava,
+  interior de un conjunto, se obtiene para $\phi$ convexa,
   %
   \[
-  H_\phi\left( p_X \otimes p_Y \right)  - H_\phi\left( p_{X,Y} \right) \: \le \:
-  c \: g(a,\alpha,b,\beta,c),
+  \hphi{p_X \otimes p_Y} - \hphi{p_{X,Y}} \: \le \: c \: g(a,\alpha,b,\beta,c),
   \]
   %
-  (y la reversa para $\phi$ convexa), donde
+  (para $\phi$  concava se  remplaza $H_\phi$ por  $-H_{-\phi}$ con  la igualdad
+  inversa), donde
   %
   \begin{equation}
-  g(a , \alpha , b , \beta , c) = \phi'\big( a b - c \big) + \phi'\big( \alpha
-  \beta - c \big) - \phi'\big( a \beta + c \big) - \phi'\big( \alpha b + c \big).
+  g(a , \alpha , b , \beta , c) = \phi'\big( a b + c \big) + \phi'\big( \alpha
+  \beta + c \big) - \phi'\big( a \beta - c \big) - \phi'\big( \alpha b - c \big).
   \end{equation}
   %
   Si existe \ $(s,u,t,v) \in \mathring{D}$  \ tal que \ $g(s,u,t,v,0) \ne 0$. De
@@ -421,11 +431,10 @@ H_{(h,\phi)}\left (p_X \otimes p_Y \right) \qquad \Leftrightarrow \qquad \phi(x)
   $V_0$. \ Eso permite  concluir que \ $c \mapsto c \,  g(x,u,y,v,c)$ \ no tiene
   un  signo constante  sobre  \ $V_0$,  \ y  entonces  de concluire  que, de  la
   desigualdad  dedibo   a  la  concavidad  de  $\phi$   (resp.   convexidad),  \
-  $H_\phi\left(   p_{X,Y}  \right)$   puede   ser  major   (resp.   menor)   que
-  $H_\phi\left( p_X  \otimes p_Y \right)$,  y entonces, con la  crecencia (resp.
-  decrecencia) de  $h$ que si  $g(a,\alpha,b,\beta,0)$ no es  identicamente cero
-  sobre  $\mathring{D}$, $H_{(h,\phi)}$  no puede  ser subadditiva  (conjunta vs
-  product of marginales).
+  $\hphi{p_{X,Y}}$ puede ser major  (resp.  menor) que $\hphi{p_X \otimes p_Y}$,
+  y   entonces,  con   la  crecencia   (resp.   decrecencia)   de  $h$   que  si
+  $g(a,\alpha,b,\beta,0)$  no   es  identicamente  cero   sobre  $\mathring{D}$,
+  $H_{(h,\phi)}$ no puede ser subadditiva (conjunta vs product of marginales).
 
   {\bf Etapa 2}.  Si  $g(a,\alpha,b,\beta,0) = 0$ sobre $\mathring{D}$, entonces
   $\phi'$ satisface la ecuaci\'on funcional
@@ -450,24 +459,37 @@ H_{(h,\phi)}\left (p_X \otimes p_Y \right) \qquad \Leftrightarrow \qquad \phi(x)
   Eso significa  de que $x \,  \phi''(x)$ es constante sobre  $x \in (0  \, , \,
   (1-a)  \max\{b,1-b\})$, y  para cualquier  par $(a,b)  \in (0  \, ,  \, 1)^2$.
   Entonces, $x \, \phi''(x)$ es constante sobre $x \in (0 \, , \, 1 )$, es decir
-  que $\phi$ es necesariamebte de la forma $\phi(x) = - \lambda \, x \ln x + \mu
-  x + \nu$. Debido a la continuidad de $\phi$, queda valide sobre el cerrado $[0
+  que $\phi$ es necesariamente de la forma $\phi(x) = \lambda \, x \ln x + \mu x
+  + \nu$. Debido  a la continuidad de $\phi$, queda valide  sobre el cerrado $[0
   \, , \, 1]$.  De que se aplica  a un vector de probabilidad, sumando a uno, se
   puede reducir el problema a $\mu =  0$ (poniendo $\mu$ en $\nu$ sin cambiar el
   valor  de entropia).   Ademas,  la  constante $\nu$  no  altera la  concavidad
-  (resp. convexidad) de  $\phi$, as\'i que se la puede  translatar en la funci\'on
-  $h$   (sin  cambia   la   monotonicidad).   Para   que   $\phi$  sea   concava
-  (resp. convexa)  hace falta tener $\lambda  > 0$ (resp.  $\lambda  < 0$) as\'i
+  (resp. convexidad) de $\phi$, as\'i que se la puede translatar en la funci\'on
+  $h$   (sin  cambiar   la  monotonicidad).    Para  que   $\phi$   sea  convexa
+  (resp. concava)  hace falta tener $\lambda  > 0$ (resp.  $\lambda  < 0$) as\'i
   que,  sin perdida  de generalidad,  $\lambda$  puede ser  puesta tambi\'en  en
-  $h$. Tomar $\phi (x) = - x \, \ln  x$ con $h$ creciente o $\phi (x) = x \, \ln
-  x$ con $h$ decreciente es  completamente equivalente, as\'i que se puede fijar
-  $\phi  (x) =  -  x \,  \ln x$  satisfaciendo  la ecuaci\'on  funcional, y  $h$
-  creciente.
+  $h$. Tomar \ $\phi (x) = x \, \ln x$ \ con \ $h$ \ creciente o \ $\phi (x) = -
+  x \, \ln x$ \ con \  $h$ œôó¢ decreciente es completamente equivalente, as\'i que
+  se puede fijar $\phi (x) =  x \, \ln x$ satisfaciendo la ecuaci\'on funcional,
+  y $h$ creciente.
 
-  $H_\phi   =  H$  siendo   subadditiva  (propidad~\ref{prop:SZ:subaditividad}),
-  cualquier funci\'on queda subadditiva, lo que cierra la prueba.
+  $\H_\phi  =   H$  siendo  subadditiva  (propidad~\ref{prop:SZ:subaditividad}),
+  cualquier funci\'on creciente de $H$  va obviamente quedar subadditiva, lo que
+  cierra la prueba.
   %
 \end{proof}
+%
+Al rev\'es, a partir de $p_{XY}  = \frac12 \begin{bmatrix} 1 & 0 \end{bmatrix}^t
+\otimes\begin{bmatrix}  1 &  0  \end{bmatrix}^t +  \frac12  \begin{bmatrix} 0  &
+  1  \end{bmatrix}^t \otimes\begin{bmatrix}  0 &  1 \end{bmatrix}^t$  se obtiene
+$p_X = p_Y =  \frac12 \begin{bmatrix} 1 & 1 \end{bmatrix}^t$ \  y entonces \ (i)
+$\hhphi{p_{XY}}  =  h\left(  -  2  \, \phi\left(  \frac12  \right)  \right)$,  \
+$\hhphi{p_X \otimes p_Y} = h\left( -  4 \, \phi\left( \frac14 \right) \right)$ \
+y \ $\hhphi{p_X} + \hhphi{p_Y} = 2  \, h\left( - 2 \, \phi\left( \frac12 \right)
+\right)$, \  as\'i que, en este  ejemplo \ $\hhphi{p_{XY}}  > \hhphi{p_X \otimes
+  p_Y}$  \   (consecuencia  de  la  Schur-convavidad)  y   \  $\hhphi{p_{XY}}  >
+\hhphi{p_X}   +   \hhphi{p_Y}$:   Tampoco   las   $(h,\phi)$-entropia   no   son
+super-additivas.
 
 \
 
@@ -495,7 +517,7 @@ que  un  tercero  camino  puede  ser usar  divergencia.   \SZ{ver  con  detalles
 
 \SZ{versiones diferenciales y ver \ref{prop:SZ:biyeccionC} (biyeccion), \ref{prop:SZ:permutacionC} (invarianza por rearreglo~\cite{toto})}
 
-% ================================= Salicru
+% ================================= Csiszar & Bregman
 
 \subseccion{Divergencias y propiedades}
 \label{sec:SZ:Czizar}
@@ -509,11 +531,122 @@ Pardo 99; MenMor97:5, Cf Pardo 2006 et ref.}
 \SZ{FriSri08 pour Bregman; reapparition Fisher comme courbure, cf Varma, Jizba, MenMor97...}
 
 
+% ================================= Identidades
+
+\subseccion{?`Como se generalizan las identidades y desigualdades?}
+
+\paragraph{Principio de entropia m\'axima} Si este principio naci\'o en el marco de la termodynamica o f\'isica, con la entropia de Shannon (Boltzman), tratando de las nociones generalizadas de incertas, vuelve natural preguntarse sobre la extensi\'on de este problema en el marco general. \SZ{Tal estudio fue hecho en varios trabajos~\cite{ref}  nous, Kesavan,  Kagan 63}.
+
+El problema  se formaliza  como en el caso Shannon,   buscando  la entropia
+m\'axima sujeto  a vinculos: sea $X$ variable aleatoria viviendo  sobre $\X \subset \Rset^d$ con $K$ momentos
+\  $\Esp\left[ M_k(X)  \right]  = m_k$  \ fijos,  con  $M_x: \X  \to \Rset$,  el
+problema  de $(h,phi)$-entropia  m\'axima se  formula de  la manera  siguiente en  el caso
+continuo (es el caso discreto, hay que re-emplazar integrales por sumas): sean \
+$M(x) = \begin{bmatrix} 1  & M_1(x) & \cdots & M_K(x) \end{bmatrix}^t$  \ y \ $m
+= \begin{bmatrix} 1 & m_1 & \cdots & m_K \end{bmatrix}^t$, \ se busca,
+%
+\[
+p^* = \argmax_p \hhphi{p} \qquad \mbox{sujeto a} \qquad p \ge 0, \quad \int_\X M(x)
+\, p(x) \, dx = m
+\]
+%
+donde   los  dos  primeros   vinculos  aseguran   de  que   $p^*$  (positividad,
+normalizaci\'on) sea  una distribuci\'on de  probabilidad. Si $\phi$  es convexa
+(resp.   concava), $h$  es creciente  (resp.  decreciente)  as\'i  que maximizar
+$H_{(h,\phi)}$  es equivalente  a maximizar  $H_\phi$ (resp.  $H_{-\phi}$).  Sin
+perdida de generalidad, se puede  considerar la situaci\'on $\phi$ convexa. Como
+en   el  caso   de  Shannon,   introduciendo  factores   de   Lagrange  $\lambda
+= \begin{bmatrix}  \lambda_0 & \lambda_1  & \cdots &  \lambda_K \end{bmatrix}^t$
+para  tener  en  cuenta  los   vinculos,  el  problema  variacional  consiste  a
+resolver~\cite{GelFom63, Bru04, Mil00, CamMar09, CovTho06}
+%
+\[
+p^* =  \argmax_p \int_\X \left(  - \phi\left( p(x)  \right) + \lambda^t  M(x) \,
+  p(x) \right) dx
+\]
+%
+donde $\lambda$ ser\'a  determinado para satisfacer los vinculos.   De nuevo, de
+la ecuaci\'on de Euler-Lagrange~\cite{GelFom63,  Bru04} se obtiene la ecuaci\'on
+$- \phi'(p(x)) + \lambda^t M(x) = 0$. La funci\'on entropica $\phi$ es concava y
+de clase $C^2$, as\'i que $\phi'$ es continua decreciente, y de la monotonicidad
+es invertible. Entonces,
+%
+\[
+p^*(x) = \phi'^{-1}\left( \lambda^t M(x) \right)
+\]
+%
+con $\lambda$ tal que se  satisfacen los vinculos de normalizaci\'on y momentos.
+Si el resultado no es positivo en  $\X$, de las condiciones KKT, $p^*(x) = \Big(
+\phi'^{-1}\left(  \lambda^t M(x)  \right) \Big)_+$.   Estas  distribuci\'ones no
+caen  en  general en  la  familia exponencial.  De  una  forma, usando  entropia
+generales permite escaparse de esta familia.
+
+Como  en el  caso de  Shannon, queda  obviamente  el hecho  de que  no se  puede
+determinar $\lambda$ tal  que se satisfacen todos los  vinculos (y en particular
+la de normalizaci\'on).
+
+Tal como en el caso Shannon, existe una prueba informacional:
+%
+\begin{lema}
+  Sea \ $\displaystyle \P_m = \left\{ p \ge 0: \: \int_\X M_k(x) \, p^*(x) \, dx
+    =  m \right\}$  \ y  \ $p^*  \in \P_m$  \ que  satisfaga \  $\phi'(p^*(x)) =
+  -\lambda^t M(x)$. Entonces
+  %
+  \[
+  \forall  \, p  \in  \P_m,  \quad \hhphi{p}  \le  \hhphi{p^*} \qquad  \mbox{con
+    igualdad ssi} \quad p = p^*
+  \]
+  %
+\end{lema}
+\begin{proof}
+Sin perdida de generalidad, consideramos $\phi$ convexa.
+%
+\SZ{
+\begin{eqnarray*}
+\hphi{p} & = & - \int_\X p(x) \, \log p(x) \, dx\\[2.5mm]
+%
+& = & - \int_\X p(x) \, \log\left( \frac{p(x)}{p^*(x)} \right) \, dx - int_\X
+p(x) \, \log p^*(x) \, dx
+\end{eqnarray*}
+%
+De $\log p^* = \lambda^t M$ se obtiene
+%
+\begin{eqnarray*}
+H(p) & = & - D\left( p \left\| p^* \right. \right) - \int_\X \lambda^t M(x) p(x)
+\, dx\\[2.5mm]
+%
+& = & - D\left( p \left\| p^* \right. \right) - \int_\X \lambda^t M(x) \, p^*(x)
+\, dx\\[2.5mm]
+%
+& = & - D\left( p \left\| p^* \right. \right) - \int_\X p^*(x) \log p^*(x) \,
+dx\\[2.5mm]
+%
+& = & - D\left( p \left\| p^* \right. \right) + H(p^*)
+\end{eqnarray*}
+%
+porque $p,  p^* \in \P_m$ \  y \ $\lambda^t M  = \log p^*$. La  prueba se cierra
+notando que $D \ge 0$ con igualdad si y solamente si $p = p^*$.
+\end{proof}
+%
+Este lema prueba que, dando  vinculos ``razonables'', la entropia es acotada por
+arriba,  y  que  se alcanza  la  cota  para  una  distribuci\'on de  la  familia
+exponencial. Por ejemplo,
+%
+\begin{itemize}
+\item Con  $K =  0$ \  y \  $\X$ \ de  volumen finito  \ $|\X|  < +  \infty$, la
+  distribuci\'on  de  entropia m\'axima  es  la  distribuci\'on  uniforme de  la
+  propiedad~\ref{prop:SZ:cotamaximauniforme}   secci\'on~\ref{sec:SZ:Diferencial}
+  en     el      caso     continuo,     o     propiedad~\ref{prop:SZ:cotamaxima}
+  secci\'on~\ref{sec:SZ:DefinicionShannon} en el caso discreto.
+%
+\item Con  $K =  1$, \ $\X  = \Rset^d$  \ y \  $M(x) = x  x^t$ (visto  con $d^2$
+  vinculos),  la  distribuci\'on  de  entropia  m\'axima  es  la  distribuci\'on
+  gausiana        de        la       propiedad~\ref{prop:SZ:cotamaximagaussiana}
+  secci\'on~\ref{sec:SZ:Diferencial}.
+\end{itemize}}
+
 
 \SZ{
-
-Aplicaciones poner ac\'a  MaxEnt nous, Kesavan,  Kagan 63 A.M. \ MinDiv revisited...
-
    On the theory  of Fisher's
   amount  of  information Sov.  Math.  Dokl., 4  (1963),  pp.  991-993, etc,  la
   codificaci\'on a la Renyi (Cambell,  Hooda 2001, Bercher) 
