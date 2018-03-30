@@ -259,7 +259,7 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   %
   \begin{center} \input{TIKZ_SZ/Concavidad} \end{center}
   %
-  \leyenda{(a) $\phi(u)  = u \log u$ es  concava: la curva es  siempre debajo de
+  \leyenda{(a) $\phi(u)  = u \log u$ es  convexa: la curva es  siempre debajo de
     sus cuerdas; entonces, cada promedio de $\phi(u_1)$ y $\phi(u_2)$ estando en
     la cuerda  juntando estos punto, queda  arriba de la funci\'on  tomada en el
     promedio de $u_1$  y $u_2$.  Escribiendo eso para (mas  de dos puntos) sobre
@@ -356,15 +356,30 @@ fundamentales, de la entropia de Shannon.
   Dicho de otra manera, para dos variables aleatorias, la incerteza global es la
   suma   de  las  incertezas   de  cada   variable  individual.    La  propiedad
   ``$\Rightarrow$'' es consecuencia directa de \ $p_{X,Y}(x,y) = p_X(x) p_Y(y)$.
-  Se  va  a  probar  en  la  secci\'on siguiente  la  reciproca.  Se  generaliza
-  sencillamente a un conjunto de variables aleatorias $\{ X_i \}$.
+  Se  va a  probar en  la secci\'on  siguiente la  reciproca. Esta  propiedad se
+  escribe tambi\'en
+  %
+  \[
+  H\left( p_X \otimes p_Y \right) = H\left( p_X \right) + H\left( p_Y \right)
+  \]
+  %
+  donde  $\otimes$   es  el  producto   de  Kronecker~\footnote{$\begin{bmatrix}
+      p_X(x_1) & \cdots  & p_X(x_\alpha) \end{bmatrix}^t \otimes \begin{bmatrix}
+      p_Y(y_1)  &  \cdots   &  p_Y(y_\beta)  \end{bmatrix}^t  =  \begin{bmatrix}
+      p_X(x_1)   p_Y(y_1)  &  \cdots   &  p_X(x_1)   p_Y(y_\beta)  &   \cdots  &
+      p_X(x_\alpha)       p_Y(y_1)      &      \cdots       &      p_X(x_\alpha)
+      p_Y(y_\beta)   \end{bmatrix}^t$.\label{foot:SZ:Kronecker}}  Se  generaliza
+  sencillamente a  un conjunto  de variables aleatorias  $\{ X_i  \}$ (Kronecker
+  product de un conjunto de vectores de probabilidades).
 %
 \item\label{prop:SZ:subaditividad} {\it Sub-aditividad:} La entropia conjunta de
   dos variables aleatorias  $\{ X_i \}_{i=1}^n$ es siempre menor  que la suma de
   cada entropia individual:
   %
   \[
-  H(X_1,\ldots,X_n)  \,  \le \,  \sum_{i=1}^n  H(X_i)
+  H(X_1,\ldots,X_n)  \,  \le \,  \sum_{i=1}^n  H(X_i)  \qquad \mbox{\ie}  \qquad
+  H\left(  p_{X_1,, \ldots  , X_n}  \right) \,  \le \,  H\left(  p_{X_1} \otimes
+    \cdots \otimes p_{X_n} \right) = \sum_{i=1}^n H\left( p_{X_i} \right)
   \]
   %
   Dicho de otra manera, variables  pueden compartir informaci\'on, de tal manera

@@ -29,30 +29,31 @@ a  probabilidades  incompletas   $p  =  \begin{bmatrix}  p_1  &   \cdots  &  p_n
 invarianza de  $H(p)$ por permutaci\'on de  os $p_i$, (ii) la  continuidad de la
 incerteza elemental  $H(p_i)$ ($p_i$ visto como  probabilidad incompleta), (iii)
 $H\left( \frac12 \right) = 1 $,  (iv) la aditividad $H(p \otimes q) = H(p)+H(q)$
-donde $p \otimes q$ es el producto de Kronecker~\footnote{$\begin{bmatrix} p_1 &
-\cdots & p_n \end{bmatrix}^t \otimes \begin{bmatrix} q_1 & \cdots & q_m
-\end{bmatrix}^t = \begin{bmatrix} p_1 q_1 & \cdots  & p_1 q_m & \cdots & p_n q_1
-&  \cdots  &  p_n  q_m  \end{bmatrix}^t$.}, \ie  probabilidad  conjunta  de  dos
-variables independientes,  y consider\'o en  lugar de la recursividad  un axioma
-dicho de valor promedio,  axioma muy parecido a la recursividad. Para  $p$ \ y \
-$q$ probabilidades incompletas tales que $p \, \cup \, q = \begin{bmatrix} p_1 &
-\cdots & p_n  & q_1 & \cdots  & q_m \end{bmatrix}^t$ sea incompleta  ($w_p + w_q
-\le 1$),  el axioma  (v) es  $H(p \, \cup  \, q)  = \frac{w_p \,  H(p) +  w_q \,
-H(q)}{w_p  + w_q}$.   Demostr\'o que  con (v)  en lugar  de la  recursividad, el
-conjunto  de   axiomas  conduce  de  nuevo   a  la  entropia   de  Shannon.   La
-generalizaci\'on  propuesta  por  R\'enyi  era  de  generalizar  el  axioma  (v)
-remplazando la media  aritm\'etico por una media generalizada  (v') $H^\ren(p \,
-\cup \, q) =  g^{-1} \left( \frac{w_p \, g\big( H^\ren(p) \big)  + w_q \, g\big(
-H^\ren(q) \big)}{w_p  + w_q}\right)$ con $g$ estrictamente  monotona y continua,
-llamado media {\it cuasi-aritm\'etica,  o quasi-lineal, o de Kolmogorov-Nagumo}.
-De  las  propiedades de  la  media  cuasi-aritmetica~\cite{Nag30, Kol30,  Kol91,
-HarLit52}, eso  es equivalente a  buscar una entropia elemental  $H^\ren(p_i)$ y
-remplazar  la media  aritm\'etica  $\sum_i  p_i H^\ren(p_i)$  por  una media  de
-Kolmogorov-Nagumo, $g^{-1} \left( \sum_i  p_i g\big( H^\ren(p_i) \big) \right)$.
-R\'enyi propus\'o la funci\'on de Kolmogorov-Nagumo $g_\beta(x) = 2^{(\beta-1)
-x},  \quad \beta >0,  \quad \beta  \ne 1$,  probando que  la entropia  que los
-axiomas (i)-(ii)-(iii)-(iv)-(v') se  cumplen y conduce a la  entropia de R\'enyi
-de un vector de probabilidad $p$,
+donde $p \otimes q$ es el producto de Kronecker~\footref{foot:SZ:Kronecker},
+%\footnote{$\begin{bmatrix} p_1 &
+%\cdots & p_n \end{bmatrix}^t \otimes \begin{bmatrix} q_1 & \cdots & q_m
+%\end{bmatrix}^t = \begin{bmatrix} p_1 q_1 & \cdots  & p_1 q_m & \cdots & p_n q_1
+%&  \cdots  &  p_n  q_m  \end{bmatrix}^t$.}, 
+\ie  probabilidad conjunta  de dos  variables independientes,  y  consider\'o en
+lugar de la recursividad un axioma  dicho de valor promedio, axioma muy parecido
+a la recursividad. Para $p$ \ y \ $q$ probabilidades incompletas tales que $p \,
+\cup  \,  q   =  \begin{bmatrix}  p_1  &   \cdots  &  p_n  &  q_1   &  \cdots  &
+  q_m \end{bmatrix}^t$ sea incompleta ($w_p + w_q \le 1$), el axioma (v) es $H(p
+\, \cup \,  q) = \frac{w_p \, H(p)  + w_q \, H(q)}{w_p +  w_q}$.  Demostr\'o que
+con (v) en lugar  de la recursividad, el conjunto de axiomas  conduce de nuevo a
+la  entropia de  Shannon.   La  generalizaci\'on propuesta  por  R\'enyi era  de
+generalizar  el axioma  (v)  remplazando  la media  aritm\'etico  por una  media
+generalizada (v')  $H^\ren(p \, \cup \,  q) = g^{-1} \left(  \frac{w_p \, g\big(
+    H^\ren(p) \big) + w_q \,  g\big( H^\ren(q) \big)}{w_p + w_q}\right)$ con $g$
+estrictamente  monotona y  continua,  llamado media  {\it cuasi-aritm\'etica,  o
+  quasi-lineal,  o  de  Kolmogorov-Nagumo}.   De  las propiedades  de  la  media
+cuasi-aritmetica~\cite{Nag30,  Kol30,  Kol91, HarLit52},  eso  es equivalente  a
+buscar una  entropia elemental $H^\ren(p_i)$  y remplazar la  media aritm\'etica
+$\sum_i  p_i H^\ren(p_i)$  por una  media de  Kolmogorov-Nagumo,  $g^{-1} \left(
+  \sum_i p_i g\big( H^\ren(p_i)  \big) \right)$.  R\'enyi propus\'o la funci\'on
+de Kolmogorov-Nagumo $g_\beta(x) = 2^{(\beta-1)  x}, \quad \beta >0, \quad \beta
+\ne 1$,  probando que  la entropia que  los axiomas  (i)-(ii)-(iii)-(iv)-(v') se
+cumplen y conduce a la entropia de R\'enyi de un vector de probabilidad $p$,
 %
 \[
 H_\beta^\ren(p) = \frac{1}{1-\beta} \log_2 \left( \sum_{i=1}^n p_i^\beta \right)
@@ -312,15 +313,168 @@ p_{X|Y}(x_i,y_j) \phi\left(p_Y(y_j) \right) = \sum_i \phi\left(p_Y(y_j) \right)$
 
 
 Sin  embargo, en  general, se  pierden las  propiedades \ref{prop:SZ:aditividad}
-(additividad),     \SZ{ver      con     detalles     \ref{prop:SZ:subaditividad}
-  (subadditividad) QINP prop. 11, }
+(additividad),  y la  propidad~\ref{prop:SZ:subaditividad}  (subadditividad). En
+particular, se conserva solamente en el caso Shannon:
+%
+\begin{teorema}
+  Sea $p_{X,Y}$ distribuci\'on conjunta  de variables aleatorias discretas $X$ y
+  $Y$ y $p_x$ y $p_Y$ las de $X$ y de $Y$ (marginales) cualquieras.
+%
+\[
+\forall \: p_{X,Y} \quad H_{(h,\phi)}\left( p_{X,Y} \right) \: \le \:
+H_{(h,\phi)}\left (p_X \otimes p_Y \right) \qquad \Leftrightarrow \qquad \phi(x)
+= - x \log x
+\]
+%
+\ie $H_{(h,\phi)}$ es una funci\'on creciente de la entropia de Shannon
+\end{teorema}
+%
+\begin{proof}
+  La     reciproca    de    este     teorema    es     nada    mas     que    la
+  propidad~\ref{prop:SZ:subaditividad} con el hecho de que $h$ es decreciente en
+  este caso.
+
+  %Si $\phi$ es convexa (resp. concava), equivalentemente la desigualdad esperada
+  %es  $H_\phi\left( p_{X,Y} \right)  \ge H_\phi\left(  p_X \otimes  p_Y \right)$
+  %(resp.    desigualdad   reversa)    debido   a    la   decrecencia    de   $h$
+  %(resp.  crecencia).
+  A continuaci\'on, la parte directa se demuestra en dos etapas:
+  %
+  \begin{itemize}
+  \item Con  un caso particular  sobre $\X$  e $\Y$ de  cardenal 3 cada  unos se
+    proba  de que  la desigualdad  no se  puede cumplir,  salvo si  la funci\'on
+    entropica $\phi'$ satisface a una ecuaci\'on funcional.
+  %
+  \item la sola soluci\'on admisible de esta ecuaci\'on se recuce a $\phi(x) = -
+    x \ln x$.
+  \end{itemize}
+  %
+  {\bf Etapa 1}: Sea el vector de probabildad
+  %
+  \[
+  p_{X,Y}  =  p_X  \otimes   p_Y  -  c  \begin{bmatrix}  1\\-1\\0  \end{bmatrix}
+  \otimes  \begin{bmatrix} 1\\-1\\0 \end{bmatrix}  \qquad \mbox{con}  \qquad p_X
+  = \begin{bmatrix} a\\\alpha\\1-a-\alpha \end{bmatrix} \quad \mbox{y} \quad p_Y
+  = \begin{bmatrix} b\\\beta\\1-b-\beta \end{bmatrix}
+  \]
+  %
+  donde $(a,\alpha,b,\beta) \in D$,
+  %
+  \[
+  D = \{  a, \alpha, b, \beta: \quad 0  < a,b < 1 \quad \wedge  \quad 0 < \alpha
+  \le  1-a \quad  \wedge  \quad 0  < \beta  \le  1-b \}
+  \]
+  %
+  y \ $c \in C_{a,\alpha,b,\beta}$,
+  %
+  \[
+  C_{a,\alpha,b,\beta} = \big[ - 1 + \max\big\{ a b , \alpha \beta , 1 - a \beta
+  , 1 - \alpha b \big\} \, , \, \min\big\{  a b , \alpha \beta , 1 - a \beta , 1
+  -\alpha b \big\} \big]
+  \]
+  %
+  Ahora, si $\phi$ es concava (resp.  convexa)
+  %
+  \[
+  \forall \, u,v \quad \phi(v)  - \phi(u) \:  \le \:  (v-u) \, \phi'(u),
+  \]
+  %
+  \ie la variaci\'on  (cuerda) es menore que la derivada  en $b$, como ilustrado
+  figura~\ref{fig:SZ:ConvcavidadDerivada}   (desigualdad  reversa   para  $\phi$
+  convexa).
+  %
+  \begin{figure}[h!]
+  %
+  \begin{center} \input{TIKZ_SZ/ConcavidadDerivada} \end{center}
+  %
+  \leyenda{$\phi$   concava:   la    variaci\'on   (cuerda)   $\frac{\phi(v)   -
+      \phi(u)}{v-u}$  es menore  que  la derivada  $\phi'(u)$.   Aplicado a  dos
+    distribuciones  $p$  y  $q$,  de  componentes  $p_i$  y  $q_i$,  se  obtiene
+    $H_\phi(q) -  H_\phi(p) \le \sum_i (q_i-p_i) \phi'(q_i)$  con $H_\phi \equiv
+    H_{(\id,\phi)}, \: \id$ siendo la identidad.}
+  %
+  \label{fig:SZ:ConcavidadDerivada}
+  \end{figure}
+  %
+  Aplicamos esta desigualdad a \ $u = p_{X,Y}(x,y)$ \ y \ $v = p_X(x)
+  p_Y(y)$ \ y sumamos en  $x, y$, \ para \ $(a,b) \in ( 0  \, , \, 1)^2$ \ (para
+  que  $C_{a,\alpha,b,\beta}$  \ no  sea  reducido  a \  $\{0\}$),  y  \ $c  \in
+  \mathring{C}_{a,\alpha,b,\beta}$  \  donde \  $\mathring{\cdot}$  \ denota  el
+  interior de un conjunto, se obtiene para $\phi$ concava,
+  %
+  \[
+  H_\phi\left( p_X \otimes p_Y \right)  - H_\phi\left( p_{X,Y} \right) \: \le \:
+  c \: g(a,\alpha,b,\beta,c),
+  \]
+  %
+  (y la reversa para $\phi$ convexa), donde
+  %
+  \begin{equation}
+  g(a , \alpha , b , \beta , c) = \phi'\big( a b - c \big) + \phi'\big( \alpha
+  \beta - c \big) - \phi'\big( a \beta + c \big) - \phi'\big( \alpha b + c \big).
+  \end{equation}
+  %
+  Si existe \ $(s,u,t,v) \in \mathring{D}$  \ tal que \ $g(s,u,t,v,0) \ne 0$. De
+  la continuidad de $\phi'$, la funci\'on  $g$ es continua, y entonces exista un
+  vecinaje  \ $V_0  \subset \mathring{C}_{s,u,t,v}$  \  de \  $0$ \  tal que  la
+  funci\'on  \ $c  \mapsto  g(x,u,y,v,c)$ \  tiene  un signo  constante sobre  \
+  $V_0$. \ Eso permite  concluir que \ $c \mapsto c \,  g(x,u,y,v,c)$ \ no tiene
+  un  signo constante  sobre  \ $V_0$,  \ y  entonces  de concluire  que, de  la
+  desigualdad  dedibo   a  la  concavidad  de  $\phi$   (resp.   convexidad),  \
+  $H_\phi\left(   p_{X,Y}  \right)$   puede   ser  major   (resp.   menor)   que
+  $H_\phi\left( p_X  \otimes p_Y \right)$,  y entonces, con la  crecencia (resp.
+  decrecencia) de  $h$ que si  $g(a,\alpha,b,\beta,0)$ no es  identicamente cero
+  sobre  $\mathring{D}$, $H_{(h,\phi)}$  no puede  ser subadditiva  (conjunta vs
+  product of marginales).
+
+  {\bf Etapa 2}.  Si  $g(a,\alpha,b,\beta,0) = 0$ sobre $\mathring{D}$, entonces
+  $\phi'$ satisface la ecuaci\'on funcional
+  %
+  \[
+  \phi'\big( a  b \big)  + \phi'\big(  \alpha \beta \big)  - \phi'\big(  a \beta
+  \big) - \phi'\big( \alpha b \big) = 0,
+  \]
+  %
+  as\'i que  no se  puede usar el  argumento de  la etata~1 para  concluir.  Sin
+  embargo,     se     puede     solucionar    esta     ecuaci\'on     funcional,
+  siguiendo~\cite[\S~6]{DarJar79} donde una  ecuaci\'on funcional muy similar es
+  estudiada.  Por  eso, se fija \  $(a,b) \in (0 \,  , \, 1)^2$, \  se deriva la
+  identidad precediente  con respeto a \  $\alpha$ \ se  multiplica el resultado
+  por $\alpha$ \ para obtener
+  %
+  \[
+  \alpha \beta  \, \phi''(\alpha  \beta) = \alpha  b \, \phi''(\alpha  b) \qquad
+  \mbox{for} \qquad (\alpha,\beta) \in (0 \, , \, 1-a) \times (0 \, , \, 1-b).
+  \]
+  %
+  Eso significa  de que $x \,  \phi''(x)$ es constante sobre  $x \in (0  \, , \,
+  (1-a)  \max\{b,1-b\})$, y  para cualquier  par $(a,b)  \in (0  \, ,  \, 1)^2$.
+  Entonces, $x \, \phi''(x)$ es constante sobre $x \in (0 \, , \, 1 )$, es decir
+  que $\phi$ es necesariamebte de la forma $\phi(x) = - \lambda \, x \ln x + \mu
+  x + \nu$. Debido a la continuidad de $\phi$, queda valide sobre el cerrado $[0
+  \, , \, 1]$.  De que se aplica  a un vector de probabilidad, sumando a uno, se
+  puede reducir el problema a $\mu =  0$ (poniendo $\mu$ en $\nu$ sin cambiar el
+  valor  de entropia).   Ademas,  la  constante $\nu$  no  altera la  concavidad
+  (resp. convexidad) de  $\phi$, as\'i que se la puede  translatar en la funci\'on
+  $h$   (sin  cambia   la   monotonicidad).   Para   que   $\phi$  sea   concava
+  (resp. convexa)  hace falta tener $\lambda  > 0$ (resp.  $\lambda  < 0$) as\'i
+  que,  sin perdida  de generalidad,  $\lambda$  puede ser  puesta tambi\'en  en
+  $h$. Tomar $\phi (x) = - x \, \ln  x$ con $h$ creciente o $\phi (x) = x \, \ln
+  x$ con $h$ decreciente es  completamente equivalente, as\'i que se puede fijar
+  $\phi  (x) =  -  x \,  \ln x$  satisfaciendo  la ecuaci\'on  funcional, y  $h$
+  creciente.
+
+  $H_\phi   =  H$  siendo   subadditiva  (propidad~\ref{prop:SZ:subaditividad}),
+  cualquier funci\'on queda subadditiva, lo que cierra la prueba.
+  %
+\end{proof}
 
 \
 
 La  definici\'on  de entropias  generalizadas  condicionales  aparece mucho  mas
 problematico. Por  ejemplo, si  se define  a la Shannon,  es decir  definiendo \
-$H_{(h,\phi)}(X|Y)$     \    tomando     \    $\sum_{y     \in     \Y}    p_Y(y)
-H_{(h,\phi)}(p_{X|Y}(\cdot,y)$     \      se     pierde     la      regla     de
+$H_{(h,\phi)}(X|Y)$  \  tomando \  $\sum_{y  \in  \Y} p_Y(y)  H_{(h,\phi)}\left(
+  p_{X|Y}(\cdot,y)     \right)$     \      se     pierde     la     regla     de
 cadena~\ref{prop:SZ:cadena}. Como se lo ha visto,  en el marco de la entropia de
 Havdra-Charv\'at-Dar\'oczy, se conserva la regla  de cadena si se remplaza $p_Y$
 por su potencia  $p_Y^\beta$.  Sin embargo, generalizar este  esquema en el caso
@@ -358,7 +512,7 @@ Pardo 99; MenMor97:5, Cf Pardo 2006 et ref.}
 
 \SZ{
 
-Aplicaciones poner ac\'a  MaxEnt nous, Kesavan,  Kagan 63 A.M. \
+Aplicaciones poner ac\'a  MaxEnt nous, Kesavan,  Kagan 63 A.M. \ MinDiv revisited...
 
    On the theory  of Fisher's
   amount  of  information Sov.  Math.  Dokl., 4  (1963),  pp.  991-993, etc,  la
