@@ -53,8 +53,8 @@ priori~\footnote{A partir  de una distribuci\'on parametrizada  por un parametro
     priori} $p_\Theta$.   Si se conocen  momentos por una  razon o una  otra, se
   puede  elegir esta  distribuci\'on la  ``menos informativa''  posible,  \ie de
   entropia  m\'axima dados  los momentos.\label{foot:SZ:Prior}}  conociendo unos
-momentos de la lei~\cite{Rob07, Jay68, Jay82}, hacer estimaci\'on espectral o de
-procesos      estocasticos     autoregesivos~\cite{Bur67,      Bur75,     Jay82}
+momentos  de  la  lei~\cite{Rob07,  Jay68,  Jay82,  Csi91},  hacer  estimaci\'on
+espectral  o de procesos  estocasticos autoregesivos~\cite{Bur67,  Bur75, Jay82}
 o~\cite[cap.~12]{CovTho06}, entre otros~\cite[\& ref.]{KapKes92}.
 
 Sea $X$ variable aleatoria viviendo  sobre $\X \subset \Rset^d$ con $K$ momentos
@@ -418,6 +418,7 @@ desorganizado.
 
 \subseccion{\SZ{Principio de incerteza entropico}}
 
+\SZ{Bourret 58, Leipnik 59 entre otros que ya citamos un par de veces}
 
 % ================================= Fisher
 
@@ -693,9 +694,9 @@ a la identidad (igualdad en la relaci\'on determinente-traza).
 
 Se notar\'a que,  al imagen de las leyes de  entropia m\'axima, la informaci\'on
 de  Fisher  juega tambi\'en  un  rol particular  en  la  inferencia bayesiana  a
-trav\'es del  prior de Jeffrey~\cite{Jef46,  LehCas98, Rob07}~\footnote{Ver nota
-  de pie~\ref{foot:SZ:Prior}.  A veces, se toma como distribuci\'on a priori
-  $p_\Theta(\theta)  \propto   |J_\theta(X)|^\frac12$  por  su   invarianza  por
+trav\'es del prior de Jeffrey~\cite{Jef46, Jef48, LehCas98, Rob07}~\footnote{Ver
+  nota  de pie~\ref{foot:SZ:Prior}.   A  veces, se  toma  como distribuci\'on  a
+  priori $p_\Theta(\theta) \propto  |J_\theta(X)|^\frac12$ por su invarianza por
   reparametrizaci\'on $\eta =  \eta(\theta)$, \ie el prior de  Jeffrey en $\eta$
   es uniquevocamente obtenido con la Fisher  en $\eta$ o por cambio de variables
   saliendo de $p_\Theta$.}.
@@ -708,14 +709,13 @@ relativa~\cite{CovTho06, Fri04}:
 %
 \begin{teorema}[Fisher como curvatura de la entropia relativa]
   Sea $X$  parametrizado por $\theta_0  \in \Theta$ con $\Theta$  conteniendo un
-  vecinaje  de   $\theta_0$.   Siendo   $D\left(  p_X(\cdot;\theta)  \,   \|  \,
-    p_X(\cdot;\theta_0)  \right)$  funci\'on  de  $\theta \in  \Theta$,  aparece
-  que
+  vecinaje de $\theta_0$.  Siendo $\Dkl[p_X(\cdot;\theta)]{p_X(\cdot;\theta_0)}$
+  funci\'on de $\theta \in \Theta$, aparece que
   %
   \[
-  D  \left( p_X(\cdot;\theta)  \, \|  \, p_X(\cdot;\theta_0)  \right)  = \frac12
-  \left( \theta  - \theta_0 \right)^t  J_{\theta_0}(X) \left( \theta  - \theta_0
-  \right) + o\left( \| \theta - \theta_0 \|\right)
+  \Dkl[p_X(\cdot;\theta)]{p_X(\cdot;\theta_0)}   =  \frac12   \left(   \theta  -
+      \theta_0  \right)^t J_{\theta_0}(X)  \left(  \theta -  \theta_0 \right)  +
+    o\left( \| \theta - \theta_0 \|\right)
   \]
   %
   donde $o(\cdot)$ es un resto peque\~no  con respecto a su argumento.  En otros
@@ -725,14 +725,14 @@ relativa~\cite{CovTho06, Fri04}:
 %
 \begin{proof}
   La relaci\'on  es consecuencia  de un desarrollo  de Taylor  al orden 2  de la
-  funci\'on $D\left( p_X(\cdot;\theta) \,  \| \, p_X(\cdot;\theta_0) \right)$ de
-  $\theta$, tomada en $\theta =  \theta_0$. Por propiedad de $D$, la divergencia
-  es  positiva y  se cancela  cuando $\theta  = \theta_0$.  Entonces,  el primer
-  termino del desarrollo  vale cero y el secundo  tambi\'en, $D$ siendo m\'inima
-  en $\theta = \theta_0$. Ademas,
+  funci\'on $\Dkl[p_X(\cdot;\theta)]{p_X(\cdot;\theta_0)]}$  de $\theta$, tomada
+  en $\theta = \theta_0$. Por  propiedad de $\Dkl{}$, la divergencia es positiva
+  y  se cancela cuando  $\theta =  \theta_0$.  Entonces,  el primer  termino del
+  desarrollo  vale cero  y el  secundo  tambi\'en, $\Dkl{}$  siendo m\'inima  en
+  $\theta = \theta_0$. Ademas,
   %
   \begin{eqnarray*}
-  \nabla_\theta D\left( p_X(\cdot;\theta) \, \| \, p_X(\cdot;\theta_0) \right) & =
+  \nabla_\theta \Dkl[p_X(\cdot;\theta)]{p_X(\cdot;\theta_0)} & =
   & \nabla_\theta \int_\X p_X(x;\theta) \log \left(
   \frac{p_X(x;\theta)}{p_X(x;\theta_0)} \right) dx\\[2.5mm]
   %
@@ -751,10 +751,9 @@ relativa~\cite{CovTho06, Fri04}:
   la \'ultimo ecuaci\'on como consecuencia de que $p_X$ suma a 1.  Entonces,
   %
   \[
-  \Hess_\theta D\left( p_X(\cdot;\theta) \,  \| \, p_X(\cdot;\theta_0) \right) =
-  \int_\X         \Hess_\theta         p_X(x;\theta)         \log         \left(
-    \frac{p_X(x;\theta)}{p_X(x;\theta_0)}      \right)     dx      +     \int_\X
-  \frac{\nabla_\theta          p_X(x;\theta)          \,         \nabla^t_\theta
+  \Hess_\theta     \Dkl[p_X(\cdot;\theta)]{p_X(\cdot;\theta_0)}     =    \int_\X
+  \Hess_\theta  p_X(x;\theta) \log  \left( \frac{p_X(x;\theta)}{p_X(x;\theta_0)}
+  \right)  dx  + \int_\X  \frac{\nabla_\theta  p_X(x;\theta) \,  \nabla^t_\theta
     p_X(x;\theta)}{p_X(x;\theta)} \, dx
   \]
   %
@@ -774,11 +773,11 @@ una  alta incerteza  o  peque\~a informaci\'on  sobre  $\theta_0$. Y  vice-versa
 %
 \begin{center} \input{TIKZ_SZ/JCurvatura} \end{center}
 %
-\leyenda{Caso escalar $\Theta \subseteq \Rset$ (para la representaci\'on) de $D$
-  en funci\'on de $\theta$.  (a)  Caso con $J_{\theta_0}(X)$ ``peque\~no'' y (b)
-  caso con  $J_{\theta_0}(X)$ ``grande''. En  el caso (b) la  determinaci\'on de
-  $\theta$  usando $D$  va a  ser  mas ``sencillo''  porque el  m\'inimo es  mas
-  ``picado''.}
+\leyenda{Caso  escalar $\Theta  \subseteq \Rset$  (para la  representaci\'on) de
+  $\Dkl{}$   en  funci\'on   de  $\theta$.    (a)  Caso   con  $J_{\theta_0}(X)$
+  ``peque\~no'' y (b)  caso con $J_{\theta_0}(X)$ ``grande''. En  el caso (b) la
+  determinaci\'on de $\theta$  usando $\Dkl{}$ va a ser  mas ``sencillo'' porque
+  el m\'inimo es mas ``picado''.}
 %
 \label{fig:SZ:JCurvatura}
 \end{figure}

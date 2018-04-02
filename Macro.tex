@@ -51,6 +51,31 @@
 \def\id{\mathrm{id}} % identidad
 %
 %
+% Entropia y divergencias
+% -----------------------
+% Kullback-Leibler
+\newcommand{\Dkl}[2][]{
+D_{\mathrm{kl}}\ifthenelse{\isempty{#1}}{}{\left( \left. #1 \right\| #2 \right)}
+}
+% Jensen-Shannon
+\def\Djs
+%newcommand{\Djs}[3][]{
+{D_{\mathrm{js}}^\pi}
+%\ifthenelse{\isempty{#1}}{}{\left( \left. #1 \right\| #2 \right)}
+%}
+ % H_\phi
+\newcommand{\hphi}[1][]{
+H_\phi\ifthenelse{\isempty{#1}}{}{\left( #1 \right)}
+}
+ % H_{(h,\phi)}
+\newcommand{\hhphi}[1][]{
+H_{(h,\phi)}\ifthenelse{\isempty{#1}}{}{\left( #1 \right)}
+}
+% Bregman D_\phi
+\newcommand{\bphi}[2][]{
+D^{\mathrm{b}}_\phi\ifthenelse{\isempty{#1}}{}{\left( \left. #1 \right\| #2 \right)}
+}
+%
 % abreviaciones ej. en lugar de {\it i.e.,} \ie, etc.
 % ---------------------------------------------------
 %

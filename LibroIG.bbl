@@ -40,6 +40,22 @@ Barron, A.~R. (1986).
 \newblock Entropy and the central limit theorem.
 \newblock {\em The Annals of Probability}, {\em 14\/}(1), 336--342.
 
+\bibitem[\protect\citeauthoryear{Basseville}{Basseville}{1989}]{Bas89}
+Basseville, M. (1989).
+\newblock Distance measures for signal processing and pattern recognition.
+\newblock {\em Signal Processing}, {\em 18\/}(4), 349--369.
+
+\bibitem[\protect\citeauthoryear{Basseville}{Basseville}{2013}]{Bas13}
+Basseville, M. (2013).
+\newblock Divergence measures for statistical data processing -- an annotated
+  bibliography.
+\newblock {\em Signal Processing}, {\em 93\/}(4), 621--633.
+
+\bibitem[\protect\citeauthoryear{Beck}{Beck}{2009}]{Bec09}
+Beck, C. (2009).
+\newblock Generalised information and entropy measures in physics.
+\newblock {\em Contemporary Physics}, {\em 50\/}(4), 495--510.
+
 \bibitem[\protect\citeauthoryear{Bengtsson \& {\.Z}yczkowski}{Bengtsson \&
   {\.Z}yczkowski}{2006}]{BenZyc06}
 Bengtsson, I. \& {\.Z}yczkowski, K. (2006).
@@ -79,6 +95,13 @@ Boltzmann, L. (1898).
 \newblock {\em vorlesungen {\"u}ber Gastheorie - {II}}.
 \newblock Leipzig, Germany: Verlag von Johann Ambrosius Barth.
 
+\bibitem[\protect\citeauthoryear{Bregman}{Bregman}{1967}]{Bre67}
+Bregman, L.~M. (1967).
+\newblock The relaxation method of finding the common point of convex sets and
+  its application to the solution of problem in convex programming.
+\newblock {\em USSR Computational Mathematics and Mathematical Physics}, {\em
+  7\/}(3), 200--217.
+
 \bibitem[\protect\citeauthoryear{Burbea \& Rao}{Burbea \& Rao}{1982}]{BurRao82}
 Burbea, J. \& Rao, C.~R. (1982).
 \newblock On the convexity of some divergence measures based on entropy
@@ -117,6 +140,12 @@ Chenciner, A. (2017).
 \newblock {\em Gazette de la Soci{\'e}t{\'e} de Math{\'e}matiques
   {F}ran{\c{c}}aise}, {\em 152}, 16--22.
 
+\bibitem[\protect\citeauthoryear{Chong}{Chong}{1974}]{Cho74}
+Chong, K.~M. (1974).
+\newblock Some extensions of a theorem of {H}ardy, {L}ittlewood and {P\'o}lya
+  and their applications.
+\newblock {\em Journal canadien de math{\'e}matiques}, {\em 26}, 1321--1340.
+
 \bibitem[\protect\citeauthoryear{Clavier}{Clavier}{1948}]{Cla48}
 Clavier, A.~G. (1948).
 \newblock Evaluation of transmission efficiency according to {H}artley's
@@ -141,6 +170,12 @@ Cram{\'e}r, H. (1946).
 \newblock {\em Mathematical Methods of Statistics}.
 \newblock New-York: Princeton University Press.
 
+\bibitem[\protect\citeauthoryear{Csisz{\`a}r}{Csisz{\`a}r}{1991}]{Csi91}
+Csisz{\`a}r, I. (1991).
+\newblock Why least squares and maximum entropy? an axiomatic approach to
+  inference for linear inverse problems.
+\newblock {\em The Annals of Statistics}, {\em 19\/}(4), 2031--2066.
+
 \bibitem[\protect\citeauthoryear{Darmois}{Darmois}{1935}]{Dar35}
 Darmois, G. (1935).
 \newblock Sur les lois de probabilit{\'e}s {\`a} estimation exhaustive.
@@ -157,6 +192,14 @@ Darmois, G. (1945).
 Dar{\'o}czy, Z. (1970).
 \newblock Generalized information functions.
 \newblock {\em Information and Control}, {\em 16\/}(1), 36--51.
+
+\bibitem[\protect\citeauthoryear{Dar{\'o}czy \& J{\'a}rai}{Dar{\'o}czy \&
+  J{\'a}rai}{1979}]{DarJar79}
+Dar{\'o}czy, Z. \& J{\'a}rai, A. (1979).
+\newblock On the measurable solution of a functional equation arising in
+  information theory.
+\newblock {\em Acta Mathematica Academiae Scientiarum Hungaricae}, {\em
+  34\/}(1-2), 105--116.
 
 \bibitem[\protect\citeauthoryear{Dembo, Cover \& Thomas}{Dembo
   et~al.}{1991}]{DemCov91}
@@ -182,6 +225,13 @@ Elias, P. (1957).
 \newblock List decoding for noisy channels.
 \newblock Technical Report 335, Research Laboratory of Electronics, MIT, MIT,
   Cambridge, MA.
+
+\bibitem[\protect\citeauthoryear{Endres \& Schindelin}{Endres \&
+  Schindelin}{2003}]{EndSch03}
+Endres, D. \& Schindelin, J. (2003).
+\newblock A new metric for probability distributions.
+\newblock {\em IEEE Transactions on Information Theory}, {\em 49\/}(7),
+  1858--1860.
 
 \bibitem[\protect\citeauthoryear{Esteban}{Esteban}{1997}]{Est97}
 Esteban, M.~D. (1997).
@@ -277,6 +327,12 @@ Hardy, G., Littlewood, J.~E., \& P{\'o}lya, G. (1952).
 \newblock {\em Inequalities\/} (2nd ed.).
 \newblock Cambridge, UK: Cambridge University Press.
 
+\bibitem[\protect\citeauthoryear{Hardy, Littlewood \& P{\'o}lya}{Hardy
+  et~al.}{1929}]{HarLit29}
+Hardy, G.~H., Littlewood, J.~E., \& P{\'o}lya, G. (1929).
+\newblock Some simple inequalities satisfied by convex functions.
+\newblock {\em Messenger of Mathematics}, {\em 58}, 145--152.
+
 \bibitem[\protect\citeauthoryear{Hartley}{Hartley}{1928}]{Har28}
 Hartley, R. V.~L. (1928).
 \newblock Transmission of informations.
@@ -288,6 +344,12 @@ Havrda, J. \& Charv{\'a}t, F. (1967).
 \newblock Quantification method of classification processes: Concept of
   structural $\alpha$-entropy.
 \newblock {\em Kybernetika}, {\em 3\/}(1), 30--35.
+
+\bibitem[\protect\citeauthoryear{Holevo}{Holevo}{2011}]{Hol11}
+Holevo, A. (2011).
+\newblock {\em Probabilistic and statistical aspects of quantum theory\/} (2nd
+  ed.)., volume~1 of {\em Quaderni Monographs}.
+\newblock Pisa: Edizioni Della Normale.
 
 \bibitem[\protect\citeauthoryear{Huffman}{Huffman}{1952}]{Huf52}
 Huffman, D.~A. (1952).
@@ -326,10 +388,22 @@ Jeffrey (1946).
 \newblock {\em Proceedings of the Royal Society A}, {\em 186\/}(1007),
   453--461.
 
+\bibitem[\protect\citeauthoryear{Jeffrey}{Jeffrey}{1948}]{Jef48}
+Jeffrey, H. (1948).
+\newblock {\em Theory of Probability\/} (2nd ed.).
+\newblock Oxford: Clarendon.
+
 \bibitem[\protect\citeauthoryear{Johnson}{Johnson}{2004}]{Joh04}
 Johnson, O. (2004).
 \newblock {\em Information Theory and The Central Limit Theorem}.
 \newblock London: Imperial college Press.
+
+\bibitem[\protect\citeauthoryear{Kafka, {\"O}esterreicher \& Vincze}{Kafka
+  et~al.}{1991}]{KafOes91}
+Kafka, P., {\"O}esterreicher, F., \& Vincze, I. (1991).
+\newblock On powers of {$f$}-divergences defining a distance.
+\newblock {\em Studia Scientiarum Mathematicarum Hungarica}, {\em 24\/}(4),
+  415--422.
 
 \bibitem[\protect\citeauthoryear{Kaniadakis}{Kaniadakis}{2001}]{Kan01}
 Kaniadakis, G. (2001).
@@ -415,6 +489,17 @@ Kuczma, M. (2009).
   Inequalities: {C}auchy's Equation and {J}ensen's Inequality\/} (2nd ed.).
 \newblock Basel: Birkh{\"a}user.
 
+\bibitem[\protect\citeauthoryear{Kullback}{Kullback}{1968}]{Kul68}
+Kullback, S. (1968).
+\newblock {\em Information Theory and Statistics}.
+\newblock Dover Publications.
+
+\bibitem[\protect\citeauthoryear{Kullback \& Leibler}{Kullback \&
+  Leibler}{1951}]{KulLei51}
+Kullback, S. \& Leibler, R. (1951).
+\newblock On information and sufficiency.
+\newblock {\em The Annals of Mathematical Statistics}, {\em 22\/}(1), 79--86.
+
 \bibitem[\protect\citeauthoryear{Laplume}{Laplume}{1948}]{Lap48}
 Laplume, J. (1948).
 \newblock Sur le nombre de signaux discernables en pr{\'e}sence de bruit
@@ -450,6 +535,12 @@ Lieb, E.~H. (1978).
 Lieb, E.~H. \& Loss, M. (2001).
 \newblock {\em Analysis\/} (2nd ed.).
 \newblock Providence, Rhode Island: American Mathematical Society.
+
+\bibitem[\protect\citeauthoryear{Lin}{Lin}{1991}]{Lin91}
+Lin, J. (1991).
+\newblock Divergence measures based on the {S}hannon entropy.
+\newblock {\em IEEE Transactions on Information Theory}, {\em 37\/}(1),
+  145--151.
 
 \bibitem[\protect\citeauthoryear{Lindhard \& Nielsen}{Lindhard \&
   Nielsen}{1971}]{LinNie71}
@@ -528,6 +619,14 @@ Onicescu, O. (1966).
 \newblock Energie informationnelle.
 \newblock {\em Comptes rendus de l'acad{\'e}mie des Sciences. s{\'e}rie 1,
   math{\'e}matiques}, {\em 263\/}(3), 841--842.
+
+\bibitem[\protect\citeauthoryear{{\"O}sterreicher \& Vajda}{{\"O}sterreicher \&
+  Vajda}{2003}]{OesVaj03}
+{\"O}sterreicher, F. \& Vajda, I. (2003).
+\newblock A new class of metric divergences on probability spaces and its
+  applicability in statistics.
+\newblock {\em Annals of the Institute of Statistical Mathematics}, {\em
+  55\/}(3), 639--653.
 
 \bibitem[\protect\citeauthoryear{Palomar \& Verd{\'u}}{Palomar \&
   Verd{\'u}}{2006}]{PalVer06}
@@ -648,6 +747,13 @@ Sayood, K. (Ed.). (2003).
 \newblock {\em Lossless Compression Handbook}.
 \newblock San Diego, CA: Academic Press.
 
+\bibitem[\protect\citeauthoryear{Schur}{Schur}{1923}]{Sch23}
+Schur, I. (1923).
+\newblock {\"U}ber eine klasse von mittelbildungen mit anwendungen auf die
+  determinantentheorie.
+\newblock {\em Sitzungsberichte der Berliner Mathematischen Gesellschaft}, {\em
+  22}, 9--20.
+
 \bibitem[\protect\citeauthoryear{Shannon}{Shannon}{1948}]{Sha48}
 Shannon, C.~E. (1948).
 \newblock A mathematical theory of communication.
@@ -751,5 +857,12 @@ Wiener, N. (1948).
 \newblock {\em Cybernetics: or Control and Communication in the Animal end the
   Machine\/} (2nd ed.).
 \newblock Cambridge, MA: MIT Press.
+
+\bibitem[\protect\citeauthoryear{Wong \& You}{Wong \& You}{1985}]{WonYou85}
+Wong, A. K.~C. \& You, M. (1985).
+\newblock Entropy and distance of random graphs with application to structural
+  pattern recognition.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  {\em 7\/}(5), 599--609.
 
 \end{thebibliography}

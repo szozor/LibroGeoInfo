@@ -137,40 +137,52 @@ incerteza  de  $X$   una  vez  que  $Y$  es  medida,  lo   que  queda  tiene  la
 significaci\'on de la informaci\'on que  estas variables tienen en com\'un. Para
 probar la positividad de $I$, se  introduce de manera mas general la noci\'on de
 entropia     relativa,     conocida     tambi\'en    como     divergencia     de
-Kullback-Leibler~\cite{CovTho06, Rio07, Kul}:
+Kullback-Leibler~\cite{KulLei51, Kul68, CovTho06, Rio07}:
 %
-\SZ{Buscar ref de Kullback and so on}
+%\SZ{Buscar ref de Kullback and so on Kul68, }
 %
 \begin{definicion}[Entropia relativa]\label{def:SZ:entropiarelativa}
   La entropia relativa, o divergencia de una distribuci\'on de probabilidad $q$,
-  con  respeco a  una distribuci\'on  de referencia  $p$, donde  el  alfabeto de
-  definici\'on de $p$ inluye lo de $q$, es definida como
+  con  respeco  a una  distribuci\'on  de  referencia  $p$, donde  \underline{el
+    alfabeto de definici\'on de $p$ (o  soporte) incluye lo de $q$}, es definida
+  como
   %
   \[
-  D(q\|p) = \sum_x q(x) \log \left( \frac{q(x)}{p(x)} \right)
+  \Dkl[q]{p} = \sum_x q(x) \log \left( \frac{q(x)}{p(x)} \right)
   \]
   %
  o, en su forma diferencial
   %
  \[
- D(q\|p) = \int_{\Rset^d} q(x) \log \left( \frac{q(x)}{p(x)} \right) \, dx
+ \Dkl[q]{p} = \int_{\Rset^d} q(x) \log \left( \frac{q(x)}{p(x)} \right) \, dx
  \]
+  %
+ (en este caso,  la condici\'on de inclusi\'on del soporte de  $q$ dentro del de
+ $p$ se formula como de que $q$ es absolutamebte continua con respeto a $p$).
 \end{definicion}
 %
-Esta  medida se  puede ser  vista como  una entropia  de la  distribuci\'on $q$,
-relativamente a  una distribuci\'on de referencia  $p$. Por ejemplo,  en el caso
-discreto  finito, si  $p$ es  la distribuci\'on  uniforme sobre  un  alfabeto de
-cardinal  $\alpha$,  $D(q\|p) =  \log  \alpha -  H(q)$,  lo  que representa  una
+Inicialmente, esta  medida fue introducido por  Kullback y Leibler  con la misma
+linea  que   Shannon,  interpretando  $\log\left(\frac{q}{p}\right)$   como  una
+informaci\'on de  discriminaci\'on entre dos  hypotesis de distribuciones  $q$ y
+$p$  por  la  obsrvaci\'on  $x$,  la  divergencia  siendo  la  informaci\'on  de
+discriminaci\'on promedia.  Introdujeron tambi\'en una  versi\'on simetriza, que
+veremos mas adelante.
+
+Esta medida  puede ser  vista tambi\'en como  una entropia de  la distribuci\'on
+$q$, relativamente  a una distribuci\'on de  referencia $p$. Por  ejemplo, en el
+caso discreto finito, si $p$ es  la distribuci\'on uniforme sobre un alfabeto de
+cardinal  $\alpha$, $\Dkl[q]{p} =  \log \alpha  - H(q)$,  lo que  representa una
 desviaci\'on  de la  entropia con  su valor  maximal. La  misma interpretaci\'on
 queda en  el caso continuo  con la  lei uniforme ($p$  y $q$ definidas  sobre el
 mismo espacio de  volumen finito) o con  la gaussiana ($p$ y $q$  dando la misma
 matriz de  covarianza). {\it  Como para la  entropia, cuando se  necesitar\'a un
-  logaritmo especificamente de base $a$, se notar\'a la divergencia $D_a$.}
+  logaritmo   especificamente  de   base   $a$,  se   notar\'a  la   divergencia
+  $D_{\mathrm{kl},a}$.}
 
 \begin{lema}[Positividad de la entropia relativa]
   %
   \[
-  D(q\|p) \ge 0 \quad \mbox{con igualdad ssi} \quad p = q \: (c.s.)
+  \Dkl[q]{p} \ge 0 \quad \mbox{con igualdad ssi} \quad p = q \: (c.s.)
   \]
   %
   donde $(c.s.)$ significa ``casi siempre''.
@@ -180,14 +192,14 @@ matriz de  covarianza). {\it  Como para la  entropia, cuando se  necesitar\'a un
   Existen varias pruebas,  pero la mas linda puede ser  la usando la desigualdad
   de   Jensen:   para   $\phi$   estrictamente   convexa,   $\Esp[\phi(X)]   \ge
   \phi(\Esp[X])$ con igualdad ssi $X$  es deterministica (casi siempre). Sea $X$
-  de distribuci\'on  o densidad  de probabilidad $p$.  En el caso  discreto como
-  diferencial,   se  escribe   la  entropia   relativa  $D(q\|p)   =  \Esp\left[
-    \frac{q(X)}{p(X)} \log  \left( \frac{q(X)}{p(X)} \right) \right]$.  Sea $Y =
+  de distribuci\'on  o densidad de probabilidad  $p$.  En el  caso discreto como
+  diferencial,  se  escribe  la   entropia  relativa  $\Dkl[q]{p}  =  \Esp\left[
+    \frac{q(X)}{p(X)} \log \left( \frac{q(X)}{p(X)}  \right) \right]$.  Sea $Y =
   \frac{q(X)}{p(X)}$   y  $\phi(u)   =  u   \log  u$,   funci\'on  estrictamente
-  convexa. Entonces $D(q\|p) =  \Esp[\phi(Y)] \ge \phi(\Esp[Y])$. Con $\Esp[Y] =
-  \Esp\left[ \frac{q(X)}{p(X)} \right] = \sum_x q(x) = 1$ (y con una integral en
-  el caso diferencial) y $\phi(1) = 0$ sz termina la prueba. El caso de igualdad
-  apareciendo   ssi  $Y$   es  deterministica,   es   decir  $\frac{p(X)}{q(X)}$
+  convexa. Entonces $\Dkl[q]{p} = \Esp[\phi(Y)] \ge \phi(\Esp[Y])$. Con $\Esp[Y]
+  = \Esp\left[ \frac{q(X)}{p(X)} \right] = \sum_x  q(x) = 1$ (y con una integral
+  en el  caso diferencial)  y $\phi(1)  = 0$ sz  termina la  prueba. El  caso de
+  igualdad apareciendo  ssi $Y$ es deterministica,  es decir $\frac{p(X)}{q(X)}$
   deterministica, es equivalente a $p(x) \propto  q(x) \: (c.s.)$, \ie $p = q \:
   (c.s.)$ porque ambas suman a uno.
 \end{proof}
@@ -199,7 +211,7 @@ Esta propiedad, valide  en el caso discreto como  continuo, tiene consecuencias,
 cuando  se fije  de que
 %
 \[
-I(X;Y) = D \left( \left. p_{X,Y} \right\| p_X p_Y \right)
+I(X;Y) = \Dkl[p_{X,Y}]{p_X p_Y}
 \]
 %
 \ie  la  informaci\'on  mutua  es  la  divergencia  de  Kullback-Leibler  de  la
@@ -225,6 +237,7 @@ distribuci\'on conjunta relativa al producto de las marginales.
   = y) > H(X)$, \ie aumentar la entropia!  (ver ejemplos en~\cite[p.~59]{Rio07})
 \end{propiedades}
 
-Fijense  que  si  $D$ es  positiva,  no  es  simetrica  y tampoco  satisface  la
-desigualdad triangular. Por  eso, no es una distancia y tiene  el nombre de {\it
-  divergencia}. La distribuci\'on de referencia $p$ juega un rol fundamental.
+Fijense   que  si   $\Dkl{}$  es   positiva,  \underline{no   es   simetrica}  y
+\underline{tampoco no satisface  la desigualdad triangular}. Por eso,  no es una
+distancia  y  tiene  el  nombre  de {\it  divergencia}.   La  distribuci\'on  de
+referencia $p$ juega un rol fundamental.

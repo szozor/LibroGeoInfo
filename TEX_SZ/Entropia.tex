@@ -1,4 +1,3 @@
-
 \seccion{Entrop\'ia como medida de incerteza}
 \label{s:SZ:Entropia}
 
@@ -303,7 +302,7 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   Fijense de que las cotas sobre $H$ pueden ser vistas como consecuencia de esta
   desiguldad:  la  distribuci\'on  cierta  mayoriza cualquier  distribuci\'on  y
   cualquier  distribuci\'on   mayoriza  la  distribuci\'on  uniforme~\cite[p.~9,
-  (6)-(8)]{MarOlk11}.  Ademas, de la Schur-coincavidad se obtiene
+  (6)-(8)]{MarOlk11}.  Ademas, de la Schur-concavidad se obtiene
   %
   \[
   H\left( \begin{bmatrix}  \frac1\alpha & \cdots  & \frac1\alpha \end{bmatrix}^t
@@ -635,9 +634,10 @@ alla,  sobre $\P_{\tau+d\tau}  \backslash \P_\tau$  la funci\'on  $p_X$ ``vale''
 $\tau$ \ y \ sobre $\P_{\tau+d\tau}^\downarrow \backslash \P_\tau^\downarrow$ la
 funci\'on $p_X^\downarrow$  ``vale'' tambien $\tau$, lo que  da \ $\displaystyle
 \int_{\P_\tau^\downarrow} p_X^\downarrow(x) \, dx = \int_{\P_\tau} p_X(x) \, dx$
-(ver~\cite{LieLos01, WanMad04} para une prueba mas rigorosa).  La representaci\'on de la
-definici\'on es conocida como representaci\'on en capas de pastel (layer cake en
-ingles). Eso es ilustrado en la figura~\ref{fig:SZ:ensemblerearreglado}-b
+(ver~\cite{LieLos01,   WanMad04}   para    une   prueba   mas   rigorosa).    La
+representaci\'on de  la definici\'on es conocida como  representaci\'on en capas
+de   pastel    (layer   cake    en   ingles).   Eso    es   ilustrado    en   la
+figura~\ref{fig:SZ:ensemblerearreglado}-b
   %
   \begin{figure}[h!]
   %
@@ -665,9 +665,42 @@ ingles). Eso es ilustrado en la figura~\ref{fig:SZ:ensemblerearreglado}-b
   \]
 \end{propiedadesC}
 %
-\noindent Esta propiedad es probada por ejemplo en~\cite{LieLos01, WanMad04}.
+\noindent Esta  propiedad es probada para  funciones convexas de  la densidad de
+probabilidad              por             ejemplo             en~\cite{LieLos01}
+o~\cite[Lema~7.2]{WanMad04}~\footnote{En~\cite[Sec.~3.3]{LieLos01}  lo  muestran
+  para $\phi(p_X)$  donde $\phi$  es la diferencia  de dos  funciones monotonas,
+  siendo $\phi(t)  = t  \log t$ un  caso particular.},  y entonces para  el caso
+particular $\phi(t) = t \log t$.
 
-\SZ{A ver que pasa en termino de mayorizacion~\ref{prop:SZ:mayorizacion}?}
+Una pregunta  natural es saber  que se pasa  en termino de mayorizaci\'on  en el
+contexto  continuo $d$-dimensional. Por  eso, se  necesita primero  redefinir la
+noci\'on de mayorizaci\'on en este contexto:
+%
+\begin{definicion}[Mayorizaci\'on en el contexto continuo]\label{def:SZ:MayorizacionC}
+  Una densidad  de probabilidad $p$  es dicha mayorizada por  una distribuci\'on
+  $q$:
+  %
+  \[
+  p  \prec q  \quad \mbox{ssi}  \quad \int_{\B(0,r)}  p^\downarrow(x) \,  dx \le
+  \int_{\B(0,r)} q^\downarrow(x)  \, dx  \quad \forall \,  r > 0  \quad \mbox{y}
+  \quad \int_{\Rset^d} p^\downarrow(x) \, dx = \int_{\Rset^d} q^\downarrow(x) \,
+  dx
+  \]
+  %
+  donde $\B(0,r) = \{  x \in \Rset^d: \: \|x\| \ge r \}$  es la bola centrada en
+  $0$ y de rayo $r$ (las \'ultimas integrales son obviamente igual a 1).
+\end{definicion}
+%
+\noindent  La Schur-concavidad~\ref{prop:SZ:Schurconcavidad}  se conserva  en el
+caso  continuo, \ie
+%
+\[
+p \prec  q  \quad \Rightarrow  \quad H(p)  \ge H(q)
+\]
+%
+La desigualdad inversa es probada  para cualquier funci\'on $\phi$ convexa de la
+densidad~\cite{Cho74} o~\cite[Prop.~7.3]{WanMad04},  en particular para $\phi(t)
+= t \log t$.
 
 Como  se lo  ha visto,  la  entropia diferencial  no es  siempre positiva,  como
 consecuencia  de~\ref{prop:SZ:biyeccionC}.   Tambi\'en,  la  propiedad  de  cota

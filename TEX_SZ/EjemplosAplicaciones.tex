@@ -1,4 +1,3 @@
-
 \seccion{Unos ejemplos y aplicaciones}
 \label{s:SZ:Ejemplos}
 
@@ -742,8 +741,8 @@ de la codificaci\'on de fuente sin perdida:
   \ se obtiene
   %
   \[
-  L(c) = H_d(X)  + D_d\left( \left.  p_X \right\| q \right)  - \log_d \sum_{x \in
-    \X} d^{-l_c(x)}
+  L(c)  = H_d(X)  + D_{\mathrm{kl},d}\left(  \left.   p_X \right\|  q \right)  -
+  \log_d \sum_{x \in \X} d^{-l_c(x)}
   \]
   %
   El resultado proviene de la  positividad de la divergencia de Kullback-Leibler
@@ -1174,8 +1173,9 @@ obvia, pero tratando del c/'odigo de Shannon se puede contestar:
   $X$ \ satisface las desigualdades siguientes
   %
   \[
-  H_d(p_X) + D_d\left( \left. p_X \right\| q  \right) \: \le \: L_{c^\sh(q)} \: < \:
-  H_d(p_X) + D_d\left( \left. p_X \right\| q \right) + 1
+  H_d(p_X) +  D_{\mathrm{kl},d}\left( \left.  p_X \right\| q  \right) \:  \le \:
+  L_{c^\sh(q)} \: < \: H_d(p_X)  + D_{\mathrm{kl},d}\left( \left. p_X \right\| q
+  \right) + 1
   \]
 \end{teorema}
 %
@@ -1225,3 +1225,8 @@ codificaci\'on/compresi\'on.
 En el marco del gas perfecto
 
 \SZ{Va donner un lien avec Boltzmann}
+
+
+\
+
+\SZ{Feder Merhav IT'94 et lien avec discrimination; Vacisek en test de Gaussianite et cf plus loin avec generaloses Go75 etc}

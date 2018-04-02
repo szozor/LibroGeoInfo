@@ -2,28 +2,27 @@
 \shorthandoff{>}
 %
 % Concavidad de - u ln u
-\begin{scope}[xscale=6.5,yscale=3.5]
+\begin{scope}[xscale=6,yscale=3.5]
 \pgfmathsetmacro{\u}{.25};
 \pgfmathsetmacro{\v}{1};
-\pgfmathsetmacro{\l}{.7};
 %
 \draw[>=stealth,->] (-.1,-.5)--(1.6,-.5) node[right]{\small $t$};
 \draw[>=stealth,->] (0,-.6)--(0,.5) node[above]{\small $\phi(t)$};
 \draw[thick,domain=.005:1.2,samples=200] (0,0)-- plot (\x,{\x*ln(\x)});
-\draw[dotted] (\u,-.55) node[below]{\small $u$} -- (\u,{\u*ln(\u)});
-\draw[dotted] (\v,-.55) node[below]{\small $v$} -- (\v,{\v*ln(\v)});
+\draw[dotted] (\u,-.5) node[below]{\small $u$} -- (\u,{\u*ln(\u)});
+%\draw[dotted] (\v,-.55) node[below]{\small $v$} -- (\v,{\v*ln(\v)});
+\draw[>=stealth,<->] (\v,{(1+ln(\u))*(\v-\u)+\u*ln(\u)}) -- (\v,{\v*ln(\v)});
+\draw (\v,-.5) node[below right]{\small $v$};
+\draw (\v,{.5*((1+ln(\u))*(\v-\u)+\u*ln(\u)+\v*ln(\v))}) 
+node[right]{\small $B_\phi(v\|u)$};
 %
-%\draw (\u,{-\u*ln(\u)})--(\v,{-\v*ln(\v)});
 \draw (.02,{(.02-\u)*(\v*ln(\v)-\u*ln(\u))/(\v-\u)+\u*ln(\u)})
 -- (1.25,{(1.25-\u)*(\v*ln(\v)-\u*ln(\u))/(\v-\u)+\u*ln(\u)})
 node[right,scale=.7]
 {$\displaystyle \quad \frac{\phi(v)-\phi(u)}{v-u} \, (t-u) + \phi(u)$};;
 %
-%\draw ({.5*(\u+\v)},{.5*(\v-\u)*(\u*ln(\u)-\v*ln(\v))/(\v-\u)-\u*ln(\u)-.05})
-%node[below,scale=.7]{$\displaystyle \phi(u) + (t-u) \, \frac{\phi(v)-\phi(u)}{v-u}$};
-%
 \draw (.02,{(1+ln(\u))*(.02-\u)+\u*ln(\u)})--
-(.5,{(1+ln(\u))*(.5-\u)+\u*ln(\u)})
+(1.1,{(1+ln(\u))*(1.1-\u)+\u*ln(\u)})
 node[right,scale=.7]{$\quad \phi'(u) \, (t-u) + \phi(u)$};
 \end{scope}
 %

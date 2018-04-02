@@ -17,7 +17,7 @@
 \RequirePackage{enumitem} % to manage the labels... en enumerate
 %\RequirePackage[labelsep=endash]{caption}
 %\RequirePackage{setspace} % space package
-\RequirePackage{etoolbox,ifthen} % conditioning packages
+\RequirePackage{etoolbox,ifthen,xifthen} % conditioning packages
 \RequirePackage{titletoc,tocloft} % table of content managment package
 \RequirePackage{footmisc} % to manage the numeration and reference to footnote
 %\RequirePackage{xargs}
