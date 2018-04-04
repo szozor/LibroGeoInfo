@@ -63,6 +63,16 @@ D_{\mathrm{kl}}\ifthenelse{\isempty{#1}}{}{\left( \left. #1 \right\| #2 \right)}
 {D_{\mathrm{js}}^\pi}
 %\ifthenelse{\isempty{#1}}{}{\left( \left. #1 \right\| #2 \right)}
 %}
+%
+% f-Jensen
+%\def\Djsf
+%{\Jf}
+%D_{\mathrm{js},f}^\pi}
+%
+% H^g generales 
+\newcommand{\hgene}[1][]{
+H^{\mathrm{g}}\ifthenelse{\isempty{#1}}{}{\left( #1 \right)}
+}
  % H_\phi
 \newcommand{\hphi}[1][]{
 H_\phi\ifthenelse{\isempty{#1}}{}{\left( #1 \right)}
@@ -74,6 +84,10 @@ H_{(h,\phi)}\ifthenelse{\isempty{#1}}{}{\left( #1 \right)}
 % Bregman D_\phi
 \newcommand{\bphi}[2][]{
 D^{\mathrm{b}}_\phi\ifthenelse{\isempty{#1}}{}{\left( \left. #1 \right\| #2 \right)}
+}
+% Bregman D_{h,\phi}
+\newcommand{\bhphi}[2][]{
+D^{\mathrm{b}}_{(h,\phi)}\ifthenelse{\isempty{#1}}{}{\left( \left. #1 \right\| #2 \right)}
 }
 %
 % abreviaciones ej. en lugar de {\it i.e.,} \ie, etc.

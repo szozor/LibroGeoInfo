@@ -1,0 +1,52 @@
+\begin{tikzpicture}[xscale=8,yscale=6.5]
+\shorthandoff{>}
+%
+\pgfmathsetmacro{\u}{.22};
+\pgfmathsetmacro{\v}{1};
+\pgfmathsetmacro{\al}{.65};
+\pgfmathsetmacro{\mid}{\al*\u+(1-\al)*\v};
+%
+% Axes et f convexe (t log t ici)
+\draw[>=stealth,->] (-.1,-.5)--(1.6,-.5) node[right]{\small $t$};
+\draw[>=stealth,->] (0,-.7)--(0,.3) node[above]{\small $f(t)$};
+\draw[thick,domain=.005:1.2,samples=199] (0,0)-- plot (\x,{\x*ln(\x)});
+%
+%\draw[dotted] (\u,-.5)--(\u,{\u*ln(\u)});
+\draw (\u,-.5)--(\u,-.52) node[below]{\small $u_1$};
+\draw (\v,-.5) node[below right]{\small $u_2$};
+%
+% ---
+% tangente en u_1 y B_f(u_2 || u_1)
+\draw (.02,{(1+ln(\u))*(.02-\u)+\u*ln(\u)})--
+(1.05,{(1+ln(\u))*(1.05-\u)+\u*ln(\u)})
+node[right,scale=.7]{$\quad f'(u_1) \, (t-u_1) + f(u_1)$};
+%
+\draw[>=stealth,<->] (\v,{(1+ln(\u))*(\v-\u)+\u*ln(\u)}) -- (\v,{\v*ln(\v)});
+\draw (\v,{.5*((1+ln(\u))*(\v-\u)+\u*ln(\u)+\v*ln(\v))}) 
+node[right,scale=.9]{$B_f(u_2\|u_1)$};
+%
+% ---
+% tangente en pi_1 iu_1 + pi_2 u_2
+% y B_f(u_1 || pi_1 u_1 + pi_2 u_2)
+%\draw[dashed] (.02,{(1+ln(\mid))*(.02-\mid)+\mid*ln(\mid)})--
+%(1.1,{(1+ln(\mid))*(1.1-\mid)+\mid*ln(\mid)})
+%node[right,scale=.7]{$\quad \displaystyle f'\big(\sum_i \pi_i u_i \big)
+%\, \left( t-\sum_i \pi_i u_i \right) + f\left( \sum_i \pi_i u_i \right)$};
+%%
+%\draw[>=stealth,dashed,<->] (\v+.01,{(1+ln(\mid))*(\v-\mid)+\mid*ln(\mid)})
+% -- (\v+.01,{\v*ln(\v)});
+%\draw (\v,{.5*((1+ln(\mid))*(\v-\mid)+\mid*ln(\mid)+\v*ln(\v))}) 
+%node[right,scale=.7]{$B_f\big( u_1\|\sum_i \pi_i u_i \big)$};
+%
+% ---
+% corde u_1 - u_2 et f-Jensen
+\draw[dashed] (\u,{\u*ln(\u)})--(\v,{\v*ln(\v)});
+%
+\draw[>=stealth,<->] (\mid,{\mid*ln(\mid)}) --
+(\mid,{\al*\u*ln(\u)+(1-\al)*\v*ln(\v)});
+\draw (\mid,{.75*\mid*ln(\mid)+.25*(\al*\u*ln(\u)+(1-\al)*\v*ln(\v))})
+node[left,scale=.85]{$J_f^\pi(u_1,u_2)$};
+\draw (\mid,-.5) -- (\mid,-.52) node[below]{\small $\pi_1 u_1 + \pi_2 u_2$};
+%node[right,scale=.9]{$B_f(u_2\|u_1)$};
+%
+\end{tikzpicture}

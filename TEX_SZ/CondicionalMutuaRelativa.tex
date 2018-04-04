@@ -144,8 +144,8 @@ Kullback-Leibler~\cite{KulLei51, Kul68, CovTho06, Rio07}:
 \begin{definicion}[Entropia relativa]\label{def:SZ:entropiarelativa}
   La entropia relativa, o divergencia de una distribuci\'on de probabilidad $q$,
   con  respeco  a una  distribuci\'on  de  referencia  $p$, donde  \underline{el
-    alfabeto de definici\'on de $p$ (o  soporte) incluye lo de $q$}, es definida
-  como
+    alfabeto   de   definici\'on   de    $p$   (o   soporte)   incluye   lo   de
+    $q$}, es definida como
   %
   \[
   \Dkl[q]{p} = \sum_x q(x) \log \left( \frac{q(x)}{p(x)} \right)
@@ -157,8 +157,16 @@ Kullback-Leibler~\cite{KulLei51, Kul68, CovTho06, Rio07}:
  \Dkl[q]{p} = \int_{\Rset^d} q(x) \log \left( \frac{q(x)}{p(x)} \right) \, dx
  \]
   %
- (en este caso,  la condici\'on de inclusi\'on del soporte de  $q$ dentro del de
- $p$ se formula como de que $q$ es absolutamebte continua con respeto a $p$).
+ (en este \'ultimo caso, la condici\'on de inclusi\'on del soporte de $q$ dentro
+ del de $p$ se  formula como de que $q$ es absolutamebte  continua con respeto a
+ $p$)~\footnote{M\'as rigorosamente, en el  caso discreto, esta cantidad depende
+   solamente de $p$ y  $q$ y no de los estados. La  condici\'on necesaria es que
+   $p$ y $q$  tienen los mismos n\'umeros de componentes  (se completa el vector
+   lo mas corto) y  si la $i$-esima componente de $q$ vale  cero, entonces la de
+   $p$ vale cero  tambi\'en.  Ademas, con $p$ y $q$ de  mismo tama\~no, se puede
+   poner en  biyecci\'on los  alfabetos asociados  a $p$ y  $q$, sin  perdida de
+   generalidad.  En el  caso continuo,  esta  razonamiento no  vale m\'as,  esta
+   cantidad dependiendo de los estados\ldots}.
 \end{definicion}
 %
 Inicialmente, esta  medida fue introducido por  Kullback y Leibler  con la misma
@@ -241,3 +249,7 @@ Fijense   que  si   $\Dkl{}$  es   positiva,  \underline{no   es   simetrica}  y
 \underline{tampoco no satisface  la desigualdad triangular}. Por eso,  no es una
 distancia  y  tiene  el  nombre  de {\it  divergencia}.   La  distribuci\'on  de
 referencia $p$ juega un rol fundamental.
+
+Al  final, a  pesar  de que  la forma  diferencial  de $\Dkl{}$  depende de  los
+estados, queda invariante bajo  una misma transformaci\'on biyectiva sobre ambos
+$p$ y $q$.
