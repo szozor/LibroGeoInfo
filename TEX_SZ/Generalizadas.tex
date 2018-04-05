@@ -788,22 +788,30 @@ ref.]{Bas89, Bas13}:
   respeto a $f$ en la figura~\ref{fig:SZ:BregmanFJensen} m\'as adelante.
 \end{definicion}
 %
-Esta  definici\'on fue  generalizada  a funciones  actuando  sobre espacios  m\'as
+Esta  definici\'on fue generalizada  a funciones  actuando sobre  espacios m\'as
 generales (ej.  actuando  sobre matrices o operadores en  espacios de Hilbert de
-dimensi\'on infinita)~\cite{Pet07,  NieNoc17}. En lo  que nos concierna  en este
-capitulo,  tratando posiblemente  de densidad  de probabilidad,  nos  interesa a
-funciones de funciones:
+dimensi\'on infinita)~\cite{Pet07}.   En lo que nos concierna  en este capitulo,
+tratando posiblemente de  densidad de probabilidad, nos interesa  a funciones de
+funciones~\cite{FriSri08, NieNoc17}:
 %
-\begin{definicion}[Divergencia de Bregman funcionale]
+\begin{definicion}[Divergencia de Bregman funcional]
   Sea \ $f: \Omega \mapsto \Rset$ \ convexa y de clase $C^1$ \ sobre \ $\Omega$,
   \ un cerrado convexo de un espacio de Banach.  La divergencia de Bregman de un
-  ``punto'' \ $v \in  \Omega$ \ relativamente a un ``punto'' \  $u \in \Omega$ \
-  es definida por
+  ``punto'' (una funci\'on)  \ $v \in \Omega$ \ relativamente  a un ``punto'' (\
+  $u \in \Omega$ \ es definida por
   %
   \[
   B_f(v\|u) = f(v) - f(u) - \lim_{t \to 0}\frac{f( u + t (v-u) ) - f(u)}{t}
   \]
   %
+  El \'ultimo de esta formula es connocida como derivada de G\^ateau (o derivada
+  direccionel)  de  $f$  en  $u$   en  la  direcci\'on  $v-u$  (siendo  $u$  una
+  funci\'on)~\footnote{De   hecho,   en    la   extensi\'ion   de   Frigyik   et
+    al.~\cite{FriSri08}, se usa  la derivada de F\'echet, que  es m\'as general.
+    Viene  de  un  l\'imite   identica  independientemente  de  la  direcci\'on.
+    Entonces,  si   una  funci\'on  tiene  una  derivada   de  Fr\'echet,  tiene
+    necesariamente derivadas de G\^ateau,  pero no es reciproca.  Esta subtileza
+    va m\'as alla de la meta de esta secci\'on.}.
 \end{definicion}
 %
 En  el  caso  de que  $\Omega  \subset  \Rset^d$  se recupera  sencillamente  la
@@ -903,12 +911,27 @@ La divergencia de Bregman tiene las propiedades siguientes
   % Dualidad:  si $\phi$  tiene un  convex conjugado  $\phi^*$  (transformada de
   % Legendre)  D^{\mathrm{b}}_{\phi^*}\left(  \left.  -\nabla \hphi[q]  \right\|
   %   -\nabla \hphi[p] \right) = \bphi[q]{p}$.
+%
+  % Mean as minimizer: A key result about Bregman divergences is that, given a
+  % random vector, the mean vector minimizes the expected Bregman divergence
+  % from the random vector~\cite{FriSri08}.  This result is important because it
+  % further justifies using a
+  % mean as a representative of a random set, particularly in Bayesian
+  % estimation.
 \end{enumerate}
+%
+\noindent Ver~\cite{FriSri08, NieBol11, NieNoc17} para tener m\'as propiedades.
 
+Se notar\'a que la clase de  las divergencias de Bregman contiene el cuadrado de
+la  distancia  $L^2$  ($\displaystyle f(p)  =  \int  p^2$),  el cuadrado  de  la
+distancia $L^1$ ($\displaystyle  f(p) = \left( \int p  \right)^2$), la distancia
+de Itakura-Saito cuando $\phi(u) = - \log u$ (asociado a la entrop\'ia de Burg),
+entre otros.
 
-\SZ{Contiene squared  Mahalanobis distance $u^t  Q u$  con distancia
-  euclideana  $Q  =  I$.  Itakura-Saito  cuando  $\phi(u)  =  -  \log  u$  (Burg
-  entropy)~\cite{toto}.}
+%\SZ{Contiene squared  Mahalanobis distance $u^t  Q u$  con distancia
+%  euclideana  $Q  =  I$.  Itakura-Saito  cuando  $\phi(u)  =  -  \log  u$  (Burg
+%  entropy)~\cite{toto}.}
+
 
 
 \
