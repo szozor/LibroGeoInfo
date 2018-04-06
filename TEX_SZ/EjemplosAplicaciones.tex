@@ -9,22 +9,22 @@
 
 Siguiendo el  esquema de comunicaci\'on de  Shannon, un mensaje  que se modelisa
 como  un vector  aleatorio~\footnote{De  punto  de vista  de  un receptor,  este
-  mensaje es  desconocido. Ademas,  se lo  puede ver como  una instancia  de una
+  mensaje es  desconocido. Adem\'as,  se lo  puede ver como  una instancia  de una
   clase  importante   de  posibles  mensajes,   justificando  la  modelisaci\'on
   aleatoria.} $X$  pasa por un  canal de comunicaci\'on  y se recibe  un mensaje
 $Y$, vector  aleatorio. En el trabajo de  Shannon, el canal es  supuesto a ruido
 additiva,  es decir que  se a\~nade  un ruido  a $X$.   De manera  general, para
 conocer la informaci\'on de $X$ que se recibe, se calcula la informaci\'on mutua
 $I(X;Y)$, es decir  la cuantidad de informaci\'on que comparten  la entrada y la
-salida del canal.   Lo mas $I$ es grande, lo mas  de informaci\'on se transmite.
+salida del canal.   Lo m\'as $I$ es grande, lo m\'as  de informaci\'on se transmite.
 Dado el canal,  se puede arreglar $X$ (su distribuci\'on)  de manera a maximizar
-$I(X;Y)$, es decir la cantidad maxima  que se puede transmitir en este canal. Es
+$I(X;Y)$, es decir la cantidad m\'axima  que se puede transmitir en este canal. Es
 lo que  es conocido como capacidad  del canal~\cite[part.~II~\&~III]{Sha48} (ver
 tambi\'en~\cite{CovTho06, Rio07} entre otros):
 %
 \begin{definicion}[Capacidad de canal]
   Sea un canal de transmici\'on, $X$  su entrada e $Y$ su salida, como ilustrado
-  figura~\ref{fig:SZ:CanalComunicacion}.   Sea   $p_X$   la  distribuci\'on   de
+  figura Fig.~\ref{fig:SZ:CanalComunicacion}.   Sea   $p_X$   la  distribuci\'on   de
   probabilidad  de  $X$. La  capacidad  $C$  del canal  es  definida  por
   %
   \[
@@ -57,7 +57,7 @@ tambi\'en~\cite{CovTho06, Rio07} entre otros):
 
 Suponiendo  que el  mensaje  mandado en  un  canal es  una  cadena de  simbolos,
 variables   aleatorias  independientes,   se  puede   concentrarse   sobre  cada
-simbolo. En  este marco, un  canal de comunicaci\'on  lo mas simple  es conocido
+simbolo. En  este marco, un  canal de comunicaci\'on  lo m\'as simple  es conocido
 como  {\it canal  binario}~\cite[Sec.~15]{Sha48}: $X$  es una  variable definida
 sobre  $\X =  \{ 0  , 1  \}$;  tal tipo  de entrada  es natural,  pensando a  la
 c\'odificaci\'on binaria.   La salida $Y$  es tambi\'en definida sobre  $\X$; se
@@ -72,7 +72,7 @@ p = \Pr[Y = 1 | X = 0] = 1 - \Pr[Y = 0 | X = 0] \qquad \mbox{y} \qquad q = \Pr[Y
 \]
 %
 $p$  y  $q$  representan  errores  de comunicaci\'on.   Tal  canal  es  descrito
-figura~\ref{fig:SZ:CanalBinario}-(a).   La  figura~\ref{fig:SZ:CanalBinario}-(b)
+figura Fig.~\ref{fig:SZ:CanalBinario}-(a).   La  figura Fig.~\ref{fig:SZ:CanalBinario}-(b)
 da un esquema ``f\'isico'' que puede se  al origen de tal canal. Cuando $p = q$,
 el canal es conocido como {\it canal binario simetrico}. Cuando $p = 0$ y $q \in
 (0 \, ; \, 1)$, el canal es conocido como {\it canal binario en Z}.
@@ -95,7 +95,7 @@ el canal es conocido como {\it canal binario simetrico}. Cuando $p = 0$ y $q \in
 \label{fig:SZ:CanalBinario}
 \end{figure}
 
-En este caso, trabajando con bits, el logaritmo lo mas l\'ogico es el de base 2.
+En este caso, trabajando con bits, el logaritmo lo m\'as l\'ogico es el de base 2.
 Sea
 %
 \[
@@ -118,8 +118,8 @@ I_2(X;Y) = h_2(\beta) - \alpha h_2(p) - (1-\alpha) h_2(q)
 \]
 %
 donde $h_2(\lambda) = - \lambda \log_2 \lambda - (1-\lambda) \log_2 (1-\lambda)$
-es la entropia binaria en bits.   Para calcular la capacidad $C_2$ en bits, hace
-falta  m\'aximizar  $I_2$  con  respeto  a  $\alpha$.   Diferenciando  $I_2$  en
+es la entrop\'ia binaria en bits.   Para calcular la capacidad $C_2$ en bits, hace
+falta  maximizar  $I_2$  con  respeto  a  $\alpha$.   Diferenciando  $I_2$  en
 $\alpha$,  \ie  $\frac{\partial   I_2(X;Y)}{\partial  \alpha}  =  \frac{\partial
   h_2(\beta)}{\partial \beta} \frac{\partial  \beta}{\partial \alpha} - h_2(p) +
 h_2(q)$, es decir
@@ -162,7 +162,7 @@ h_2(q)$, es decir
     \, h_2(p) - p \, h_2(q)}{1-p-q}
   \]
   %
-  Cuando $q  \to 1-p$, notando  que $h_2(p) =  h_2(1-p)$ y tomando el  limite de
+  Cuando $q  \to 1-p$, notando  que $h_2(p) =  h_2(1-p)$ y tomando el  l\'imite de
   esta formula, se recupera que $C_2 \to 0$.
   %
   % ---
@@ -174,24 +174,24 @@ h_2(q)$, es decir
 \end{itemize}
 %
 \noindent De  \ $I_2(X;Y) = H_2(Y)  - H_2(Y|X) \le H_2(Y)  \le 1$ bit  \ ($Y$ es
-binario, de entropia maxima en el caso uniforme), aparece sin calculos que
+binario, de entrop\'ia m\'axima en el caso uniforme), aparece sin calculos que
 %
 \[
 C_2 \le 1 \: \mbox{bit}
 \]
 %
 \ie la capacidad es menor que 1 bit~\footnote{De manera general, de la escritura
-  de $I$ con  entropias condicionales, para $X$ definido sobre  $\X$ e $Y$ sobre
-  $\B$, da $0 \le C \le \min( \log  |\X| \, , \, \log |\B| )$. Ademas, $p_{Y|X}$
+  de $I$ con  entrop\'ias condicionales, para $X$ definido sobre  $\X$ e $Y$ sobre
+  $\B$, da $0 \le C \le \min( \log  |\X| \, , \, \log |\B| )$. Adem\'as, $p_{Y|X}$
   depende solo  del canal  y no  de la entrada,  as\'i que  para $p_X  = \lambda
   p_X^{(1)}  + (1-\lambda)  p_X^{(2)}$ se  obtiene  $p_Y =  \lambda p_Y^{(1)}  +
   (1-\lambda) p_Y^{(2)}$ con $p_Y^{(i)}$  salida corespondiente a $p_X^{(i)}$ de
   $I(X;Y) = H(Y)-H(Y|X)$,  el secundo termino dependiente solo  del canal, de la
-  concavidad de  $H$ se obtiene  que $I$ es  concava con respeto a  $p_X$. $p_X$
+  concavidad de  $H$ se obtiene  que $I$ es  c\'oncava con respeto a  $p_X$. $p_X$
   parteciendo a  un convexo, $I$  tiene un m\'aximo, \'unico.}:  para transmitir
 informaci\'on en  este canal, hace  falta introducir redundancia en  el mensaje.
 Se alcanza  \ $C_2  = 1$  bit si, (i)  por un  lado $H_2(Y|X) =  0$, es  decir \
-$\alpha h_2(p)  + (1-\alpha) h_2(q)  = 0$  \ y ademas  (ii) \ $h_2(\beta)  = 1$.
+$\alpha h_2(p)  + (1-\alpha) h_2(q)  = 0$  \ y adem\'as  (ii) \ $h_2(\beta)  = 1$.
 Estudiando cada caso (ej.  con  \ $\alpha = 0$ \ y \ $q =  0$ \ se satisface (i)
 pero no (ii) porque \ $\beta = 0$), se obtiene que
 %
@@ -204,10 +204,10 @@ Para $p = q = 0$ el canal es perfecto, mientras que para $p = q = 1$ el canal es
 llamado  {\it  canal volteando};  en  ambos casos,  se  recupera  la entrada  (o
 directamente, o tomando el opuesto) ``sin perdida''.
 
-La figura~\ref{fig:SZ:ICanalBinario} representa  la informaci\'on mutua $I(X;Y)$
+La figura Fig.~\ref{fig:SZ:ICanalBinario} representa  la informaci\'on mutua $I(X;Y)$
 para unos canales  ($p$ y $q$ dados)  en funci\'on de $\alpha$.  Se  nota que la
-curva   es   concava  y   tiene   un   m\'aximo,   capacidad  del   canal.    La
-figura~\ref{fig:SZ:CCanalBinario} representa la capacidad del canal en funci\'on
+curva   es  c\'oncava   y  tiene   un   m\'aximo,  capacidad   del  canal.    La
+figura Fig.~\ref{fig:SZ:CCanalBinario} representa la capacidad del canal en funci\'on
 de \ $p$ \ y \ $q$ as\'i que unos casos particulares/cortes.
 
 En el caso particular $p = q$, conocido como {\it canal simetrico}, la capacidad
@@ -223,7 +223,7 @@ capacidad vale 1 bit si y solamente si \ $h_2(p)  = 0$, \ es decir \ $p = 0$ \ o
 decir para \ $p = q = \frac12$, \  y \ $C_2 = 0$ \ (instancia particular de \ $q
 =  1-p$). \  $h_2(p)$ \  es la  perdida  en bit  para cada  bit transmitido.  La
 capacidad    \    $C_2$    \    en    funci\'on    de    \    $p$\    es    dada
-figura~\ref{fig:SZ:CCanalBinario}-(b).
+figura Fig.~\ref{fig:SZ:CCanalBinario}-(b).
 
 En el  caso particular $p  = 0$,  conocido como {\it  canal en Z},  la capacidad
 es
@@ -235,7 +235,7 @@ C_2 = \log_2\left( 1 +  2^{- \frac{h_2(q)}{1-q}} \right)
 Se nota  en este caso tambi\'en  que la capacidad  alcanza 1, su m\'aximo,  si y
 solamente si \ $q = 0$ \ (canal perfecto).  Al rev\'es, cuando \ $q \to 1$, \ $C
 \to  0$, \ instancia  particular de  \ $q  = 1-p$.   La capacidad  \ $C_2$  \ en
-funci\'on de $q$ es dada figura~\ref{fig:SZ:CCanalBinario}-(c).
+funci\'on de $q$ es dada figura Fig.~\ref{fig:SZ:CCanalBinario}-(c).
 
 %{\bf\color{red} C parecido a la de Shannon caso continuo. Interpretacion?}
 
@@ -265,7 +265,7 @@ funci\'on de $q$ es dada figura~\ref{fig:SZ:CCanalBinario}-(c).
 \end{figure}
 
 En~\cite{CovTho06,  Rio07}   entre  otros,  se  estudia   diversos  otros  canal
-discretos,  binario  o   con  mas  estados.   Unos  sont   representados  en  la
+discretos,  binario  o   con  m\'as  estados.   Unos  sont   representados  en  la
 figure~\ref{fig:SZ:CanalesDiscretos}   (ver   tambi\'en~\cite{Sha48,
   Eli57} o ej.~\cite{Ari72} para el calculo  numerico de la capacidad en el caso
 general).
@@ -276,7 +276,7 @@ general).
 \begin{center} \input{TIKZ_SZ/CanalesDiscretos} \end{center}
 %
 \leyenda{Ejemplos de canales discretos usuales.  (a): canal borrador, donde un 0
-  (de probabilidad  de ocurrencia $\alpha$)  o 1 (de probabilidad  de occurencia
+  (de probabilidad de  ocurrencia $\alpha$) o 1 (de  probabilidad de occurrencia
   $1-\alpha$)  puede transmitirse  correctamente or  ser  borado/perdido (estado
   $\emptyset$)  con  una probabilidad  $\varepsilon$.   Se  calcula $I_2(X;Y)  =
   (1-\varepsilon)  h_2(\alpha)$,  dando  la  capacidad  $C_2  =  1-\varepsilon$,
@@ -304,7 +304,7 @@ versi\'on ruidosa de $X$, \ie $Y =  X + \xi$ con el ruido $\xi$ independiente de
 $X$; En  el canal gaussiano, $\xi  \equiv \Gauss$ es un  vector gaussiano.  Este
 canal es tambi\'en definido por  su densidad de probabilidad ``de transici\'on''
 $p_{Y|X}$,  \ie  por  la  distribuci\'on  del  ruido.   Tal  canal  es  descrito
-figura~\ref{fig:SZ:CanalGaussiano}.  Se supone  conicida la matriz de covarianza
+figura Fig.~\ref{fig:SZ:CanalGaussiano}.  Se supone  conicida la matriz de covarianza
 $\Sigma_\Gauss$ del ruide,  y se nota $\Sigma_X$ la de  la entrada. En practica,
 no se puede mandar un mensaje a una  potencia tan alta que se quierre, lo que se
 traduce  por  una limitaci\'on
@@ -313,7 +313,7 @@ traduce  por  una limitaci\'on
 \Tr\left(  \Sigma_X  \right) \le  P
 \]
 %
-potencia limite permitida por componente (sampleo).
+potencia l\'imite permitida por componente (sampleo).
 
 \begin{figure}[h!]
 %
@@ -333,10 +333,10 @@ Por  definici\'on, la informaci\'on  mutua $I(X;Y)$  entrada-salida es  dada por
 $I(X;Y) = H(Y) - H(Y|X) = H(Y) - H(\Gauss)$. Maximizar $I(X;Y)$ es equivalente a
 maximizar  $H(Y) =  H(X  + \Gauss)$  sujeto  a $\Tr\left(  \Sigma_X \right)  \le
 P$. Fijando un  $\Sigma_X$, la propiedad~\ref{prop:SZ:cotamaximagaussiana} de le
-entropia diferencial  implica que $H(Y)$  sea maximal si  y solamente si  $Y$ es
+entrop\'ia diferencial  implica que $H(Y)$  sea m\'axima si  y solamente si  $Y$ es
 gaussiana, es decir si y solamente si $X$ est gaussiana, dando $I(X;Y) = \frac12
 \log \left| \Sigma_X + \Sigma_\Gauss \right| - \frac12 \log \left| \Sigma_\Gauss
-\right|$. Tomando en cuenta el  limite de potencia, hace falta maximizar $\left|
+\right|$. Tomando en cuenta el  l\'imite de potencia, hace falta maximizar $\left|
   \Sigma_X +  \Sigma_\Gauss \right|$ sujeto a  $\Tr \Sigma_X \le  P$ y $\Sigma_X
 \ge   0$  simetrica   lo  que   no  es   trivial.   Se   encuentra   el  enfoque
 en~\cite[Sec.~9.4]{CovTho06}.  Sea $U$,  matriz ortogonal ($U U^t =  U^t U = I$)
@@ -361,7 +361,7 @@ desigualdad de Hadamard ya evocada da \ $\left| R_X + \Lambda_\Gauss \right| \le
 \prod_i \left(  R_X + \Lambda_\Gauss  \right)_{i,i} = \prod_i \left(  \left( R_X
   \right)_{i,i} + \lambda^\Gauss_i  \right)$ \ con igualdad si  y solamente si \
 $R_X$ \ es  diagonal: para maximizar \ $\left| R_X  + \Lambda_\Gauss \right|$, \
-$R_X$ \ debe ser diagonal (dada una  diagonal, se alcanza el maximo si los otros
+$R_X$ \ debe ser diagonal (dada una  diagonal, se alcanza el m\'aximo si los otros
 terminos son nulos).   Es decir que la base que  diagonaliza \ $\Sigma_\Gauss$ \
 debe  diagonalizar tambi\'en $\Sigma_X$.   Sean \  $\lambda^X_i$ \  los terminos
 diagonales  de  $R_X$: queda  que  maximizar  \  $\prod_i \left(  \lambda^X_i  +
@@ -371,8 +371,8 @@ se resolva con el enfoque de Karush-Kuhn-Tucker~\footnote{Se introduce el factor
   de Lagrange  y se  maximiza \ $\prod_i  \left( \lambda^X_i  + \lambda^\Gauss_i
   \right) + \mu \sum_i \lambda^X_i$.  Eso da \ $\lambda^X_i + \lambda^\Gauss_i =
   \lambda$ \  constante si  esta cantidad es  positiva, y  cero si no,  es decir
-  $\lambda^X_i = \left( \lambda - \lambda^\Gauss_i \right)_+$. Deben ser los mas
-  grande,  es decir $\lambda$  lo mas  grande que  se puede,  pero satisfaciendo
+  $\lambda^X_i = \left( \lambda - \lambda^\Gauss_i \right)_+$. Deben ser los m\'as
+  grande,  es decir $\lambda$  lo m\'as  grande que  se puede,  pero satisfaciendo
   $\sum_i  \lambda^X_i \le P$,  \ie alcanzando  la igualdad.\label{foot:SZ:KKT}}
 (KKT)~\cite{Mil00,  CamMar09},   dando  \   $\lambda^X_i  =  \left(   \lambda  -
   \lambda^\Gauss_i  \right)_+$  \  con  \  $(\cdot)_+ =  \max(\cdot,0)$  \  y  \
@@ -390,7 +390,7 @@ C =  \frac12 \log \left(  \frac{\left| \Sigma_\Gauss +  \Sigma_X \right|}{\left|
 \end{eqnarray*}
 %
 alcanzada por $X$ gausiano de matriz de covarianza $\Sigma_X$ así construida.
-% En conclusi\'on, tomando en cuenta  el limite de potencia, $$C = \max_{\frac1d
+% En conclusi\'on, tomando en cuenta  el l\'imite de potencia, $$C = \max_{\frac1d
 %   \Tr  \Sigma_X   \le  P}  \:  \frac12  \log\left(   \frac{\left|  \Sigma_X  +
 %       \Sigma_\Gauss \right|}{\left| \Sigma_X \right|} \right)$$
 
@@ -407,7 +407,7 @@ $\lambda^X_i$~\cite[Sec.~9.4]{CovTho06}.
 \begin{center} \input{TIKZ_SZ/WaterFilling} \end{center}
 %
 \leyenda{Principio   del  ``water-filling''   para  obtener   los  $\lambda^X_i$
-  satisfaciendo  el  vinculo  de  potencia  limite y  permitiendo  de  construir
+  satisfaciendo  el  vinculo  de  potencia  l\'imite y  permitiendo  de  construir
   $\Sigma_X$ a partir  de la matriz diagonal de los $\lambda^X_i$  y la base que
   diagonaliza  la  covariance  $\Sigma_\Gauss$  del  ruido.  La  zone  en  grise
   representa esquematicamente $P$.}
@@ -427,9 +427,9 @@ se\~nale-ruido~\footnote{Esta formula es muy  parecida a la de Shannon, Laplume,
   o~\cite[Sec.~11.2]{Rio07}).   De  hecho, si  se  considera simbolos  mandandos
   durante $T$ secundos (simbolos puesto en forma para dar una se\~nal analogica)
   usando  una  banda de  transmisi\'on  $B$,  por el  teorema  de  Nyquist $B  =
-  \frac{1}{2  T}$ (caso  limite). Si  el ruido  es blanco  en la  banda  $B$, de
+  \frac{1}{2  T}$ (caso  l\'imite). Si  el ruido  es blanco  en la  banda  $B$, de
   densidad espectral de potencia por unidad de frecuencia igual a $N_0$, para un
-  simbolo la  relaci\'on se\~nal-ruido se escribe $\frac{P}{N_0  B}$. Ademas, se
+  simbolo la  relaci\'on se\~nal-ruido se escribe $\frac{P}{N_0  B}$. Adem\'as, se
   calcula en general la capacidad por unidad de tiempo es decir la capacidad por
   simbolo divido por $T$, \ie $C = B \log\left( 1 + \frac{P}{N_0 B} \right)$ por
   secundos, lo que es precisamente  la capacidad calculdada por Shannon.  Esa es
@@ -441,7 +441,7 @@ se\~nal/proceso, canal filtrando, canal con feedback, etc.).
 
 % ================================= codificacion
 
-\subseccion{Codificaci\'on entropica sin perdida}
+\subseccion{Codificaci\'on entr\'opica sin perdida}
 \label{sec:SZ:Codificacion}
 
 El  problema  de  codificaci\'on  de  fuente  puede  presentarse  de  la  manera
@@ -469,7 +469,7 @@ c\'odigo llamado  {\it palabras c\'odigos}, y  a secuencias $s_1  \cdots s_n$ la
 concatenaci\'on de las palabras c\'odigos correspondiente a cada simbolo, \ie el
 c\'odigo $c(s_1) \cdots c(s_n)$. En el sistema Moorse por ejemplo, $\C$ consiste
 en un  punto, barra,  espacio letras, espacio  palabras.  En una  computadora en
-general todo se codifica en bits $\C = \{ 0 \, , \, 1\}$.  Mas formalmente, sean
+general todo se codifica en bits $\C = \{ 0 \, , \, 1\}$.  M\'as formalmente, sean
 %
 \[
 F_\X   =   \bigcup_{k=0}^{\infty}   \X^k   \qquad   \mbox{y}   \qquad   F_\C   =
@@ -508,7 +508,7 @@ base \  $d$ \ de un  intero, \ie para  $1 \le i \le  \alpha, \, i-1 =  (i_0-1) +
 (i_1-1)  d +  \cdots  + (i_K-1)  d^K$  \ donde  \ $K  =  \Big\lceil \log_d  |\X|
 \Big\rceil$ \  y \ $1 \le  i_k \le \alpha$, y  de asignar la  palabra c\'odigo \
 $\zeta_{i_0} \cdots \zeta_{i_k}$ \ al  simbolo $x_i$. Haciendo eso, cada palabra
-c\'odigo  tieno  el   mismo  largo.   Pero,  parece  mas   economico  hacer  una
+c\'odigo  tieno  el   mismo  largo.   Pero,  parece  m\'as   economico  hacer  una
 codificaci\'on dicha de largos  variables, teniendo en cuenta las probabilidades
 de aparici\'on de cada $x_i$. Implicitamente, es la idea del c\'odigo de Moorse,
 que asigna  un punto (o  series de  puntos) a las  letras muy frecuentes,  y una
@@ -546,7 +546,7 @@ toda la secuencia  antes de decodificar. Obviamente, un  c\'odigo instantaneo es
 tal que ninguna palabra c\'odigo es prefijo  de una otra, \ie si $c_m(x)$ es una
 palabra c\'odigo, las otras palabras c\'odigo no pueden empezar con $c_m(x)$; el
 c\'odigo es  tambi\'en dicho {\it  libre de prefijo}.  Estas  distinciones estan
-ilustradas           en           la           figura~\ref{fig:SZ:ClasesCodigos}
+ilustradas           en           la           figura Fig.~\ref{fig:SZ:ClasesCodigos}
 (ver~\cite[cap.~5]{CovTho06}).
 
 \begin{figure}[h!]
@@ -562,7 +562,7 @@ ilustradas           en           la           figura~\ref{fig:SZ:ClasesCodigos}
 \label{fig:SZ:ClasesCodigos}
 \end{figure}
 
-Ademas de  la decodificaci\'on sin ambiguedad,  una caracterizaci\'on importante
+Adem\'as de  la decodificaci\'on sin ambiguedad,  una caracterizaci\'on importante
 del c\'odigo es la taza de codificaci\'on~\footnote{En~\cite{Rio07} por ejemplo,
   se define esta taza suponiendo que  cada secuencia fuente es codificado por el
   mismo numero de bits. La taza es entonces el numero de bits por simbolo.}
@@ -591,7 +591,7 @@ decodificable, que minimizar el largo promedio
 L(c) = \sum_{x \in \X} p_X(x) \, l(x)
 \]
 %
-Antes de ir mas adelante, falta traducir en ecuaci\'on el vinculo de que $c$ sea
+Antes de ir m\'as adelante, falta traducir en ecuaci\'on el vinculo de que $c$ sea
 unicamente    decodificale.    Eso    es    dado   por    la   desigualdad    de
 Kraft-McMillan~~\cite{Kra49,   McM56,   Kar61}~\footnote{Esta  desigualdad   fue
   probabada   por   Kraft  para   c\'odigos   instantaneos   en   su  tesis   de
@@ -614,7 +614,7 @@ Kraft-McMillan~~\cite{Kra49,   McM56,   Kar61}~\footnote{Esta  desigualdad   fue
 \end{teorema}
 %
 \begin{proof}
-  Para cualquier $k \ge 1$ y cualquier  cadena $s = s_1 \cdots s_k \in \X^k$, la
+  Para cualquier $k \ge 1$ y cualquiera  cadena $s = s_1 \cdots s_k \in \X^k$, la
   extensi\'on  del  c\'odigo,  $c_k(s_1  \cdots  s_k) =  c(s_1)  \cdots  c(s_k)$
   satisface $l_{c_k}(s) = \sum_i l_c(s_i)$. Entonces
   %
@@ -626,7 +626,7 @@ Kraft-McMillan~~\cite{Kra49,   McM56,   Kar61}~\footnote{Esta  desigualdad   fue
   re-escribiendo la secunda suma, agrupando  los terminos de mismo largos, donde
   $\#(m)$ es el numero de c\'odicos  de $\X^k$ tiendo el largo $m$ y $l_c^{\max}
   = \max_{x \in  \X} l_c(x)$ largo mayor.  $c$  siendo unicamente decodificable,
-  $c_k$ debe ser  inyectiva, imponiendo $\#(m) \le d^m$ (no  hay mas palabras de
+  $c_k$ debe ser  inyectiva, imponiendo $\#(m) \le d^m$ (no  hay m\'as palabras de
   largo $m$ que el cardinal de $\C^m$), dando inmediatemente que necesariamente
   %
   \[
@@ -650,7 +650,7 @@ Kraft-McMillan~~\cite{Kra49,   McM56,   Kar61}~\footnote{Esta  desigualdad   fue
   otras  ramas, y  los nudos  de ``padre''  \ $\zeta_i$  \ se  va a  asociar las
   palabras c\'odigos \ $\zeta_i \zeta_1 , \ldots , \zeta_i \zeta_\alpha$, \ etc.
   Este   arbol,   conocido  como   arbol   de   Kraft,   es  ilustrado   en   la
-  figura~\ref{fig:SZ:ArbolKraft}  para \ $d  = 2$  \ y  \ $\C  = \{0  \, ,  \, 1
+  figura Fig.~\ref{fig:SZ:ArbolKraft}  para \ $d  = 2$  \ y  \ $\C  = \{0  \, ,  \, 1
   \}$. Claramente, \ $n_1 \le d$ \ si no \ $n_1 \, d^{-1} > 1$ \ y los largos no
   podr\'ian  satisfacer  la  desigualdad  de Kraft-McMillan.   El  principio  es
   entonce de asociar a los \ $n_1$ \ (posiblemente igual a 0) largos iguales a \
@@ -677,7 +677,7 @@ A este punto, se menciona los hechos siguientes
   de Kraft-McMillan,  pero con el  conjunto de largos correspondientes  se puede
   siempre  construir un c\'odigo  instantaneo.  Claramente,  se puede  buscar un
   c\'odigo de largo promedio m\'inimo  en los c\'odigos instantaneo, sin perdida
-  de optimalidad (buscar  el la clase mas amplia de  los unicamente decodable no
+  de optimalidad (buscar  el la clase m\'as amplia de  los unicamente decodable no
   permite bajar el largo promedio).
 %
 \item  En los  c\'odigos  libre de  prefijo, si  se  fija los  numeros de  hojas
@@ -714,12 +714,12 @@ A este punto, se menciona los hechos siguientes
 \label{fig:SZ:ArbolKraft}
 \end{figure}
 
-El formalismo dado, se va a ver  ahora reapacer la entropia de Shannon como cota
+El formalismo dado, se va a ver  ahora reapacer la entrop\'ia de Shannon como cota
 de la codificaci\'on de fuente sin perdida:
 
 \begin{teorema}[Cota inferior de c\'odigos unicamente decodable]
   Para cualquier  c\'odigo \  $c$ \  unicamente decodable de  la fuente  $X$, su
-  largo promedio esta acotado por debajo  por la entropia de Shannon de base $d$
+  largo promedio esta acotado por debajo  por la entrop\'ia de Shannon de base $d$
   de $X$,
   %
   \[
@@ -751,15 +751,15 @@ de la codificaci\'on de fuente sin perdida:
 \end{proof}
 %
 \noindent Este  resultado significa que la  taza de compresi\'on  sin perdida no
-puede ser mas bajo que el contenido informacional de la fuente. En este sentido,
+puede ser m\'as bajo que el contenido informacional de la fuente. En este sentido,
 $H$ tiene realmente un sabor de informaci\'on sobre la fuente $X$.
 
-La entropia aparece tambi\'en el la cota superior del c\'odigo \'optimo:
+La entrop\'ia aparece tambi\'en el la cota superior del c\'odigo \'optimo:
 %
 \begin{teorema}[Cota superior del c\'odigo unicamente decodable \'optimo]
   El largo promedio \ $L^\opt$ \ del c\'odigo \ $c^\opt$ \ unicamente decodable,
-  de largo promedio m\'inimo esta acotado  por arriba por la entropia de Shannon
-  de base $d$ de $X$ mas un {\it dit} (1 simbolo de $\C$), 
+  de largo promedio m\'inimo esta acotado  por arriba por la entrop\'ia de Shannon
+  de base $d$ de $X$ m\'as un {\it dit} (1 simbolo de $\C$), 
   %
   \[
   L^\opt \: < \: H_d(X) + 1
@@ -812,8 +812,8 @@ La entropia aparece tambi\'en el la cota superior del c\'odigo \'optimo:
 \end{proof}
 %
 De  $$H_d(X) \le  L^\opt <  H_d(X) +  1$$  se revela  el rol  fundamental de  la
-entropia en  la codificaci\'on  de fuente sin  perdida.  La codificaci\'on  es a
-veces dicha {\it codificaci\'on entropica} y da un rol operacional a la entropia
+entrop\'ia en  la codificaci\'on  de fuente sin  perdida.  La codificaci\'on  es a
+veces dicha {\it codificaci\'on entr\'opica} y da un rol operacional a la entrop\'ia
 de  Shannon. Se  notara  de la  demostraci\'on  precediente de  que aparece  un
 c\'odigo particular:
 %
@@ -884,7 +884,7 @@ el c\'odigo de Shannon es ``competitivo'' en el sentido de que:
 %
 Este  teorema  traduce el  hecho  de  que si  $c^\sh$  no  es \'optimo,  tomando
 cualquier otro c\'odigo (incluyendo el \'optimo), la probabilidad que $c^\sh(X)$
-tiene un largo mas importante  que $c(X)+k$ decrece exponencialmente con $k$. El
+tiene un largo m\'as importante  que $c(X)+k$ decrece exponencialmente con $k$. El
 el ejemplo anterior, si se compara $c^\sh$  y el c\'odigo \'optimo, para $k = 9$
 (caso del  c\'odigo de  $1$), $\Pr\Big[  l^\sh(X) \ge l_c(X)  + 9  \Big] \le
 0.391  \%$.  De hecho,  una  palabra  c\'odigo de  largo  $10$  aparece con  una
@@ -901,12 +901,12 @@ y~\cite[\& ref.]{CovTho06}).  El c\'odigo conocido como {\it  c\'odigo de Fano}n
 el hecho de  que se alcanza la cota m\'inima  para una distribuci\'on $d$-adica.
 El principio es de clasificar  $\X$ para obtener las probabilidades clasificadas
 en orden decreciences ($p_X^\downarrow$). Luego, se divide $\X$ en $d$ ensembles
-a lo  mas equiprobables  que se  puede (\ie de  probabilidad a  lo mas  cerca de
+a lo  m\'as equiprobables  que se  puede (\ie de  probabilidad a  lo m\'as  cerca de
 $d^{-1}$) y de asignar $\zeta_i$ al conjunto $i$.  Luego, se repite el proceso a
-cada sub-conjunto (para tener sub-conjuntos  de probabilidades a lo mas cerca de
+cada sub-conjunto (para tener sub-conjuntos  de probabilidades a lo m\'as cerca de
 $d^{-2}$) y  al subconjunto  $j$ del conjunto  $i$ se  va a asignar  le c\'odigo
 $\zeta_i      \zeta_j$,      etc.      Eso      es      ilustrado     en      la
-figura~\ref{fig:SZ:FanoHuffmanCodes}-(a).  \SZ{Probar/mencionar que tambi\'en $$
+figura Fig.~\ref{fig:SZ:FanoHuffmanCodes}-(a).  \SZ{Probar/mencionar que tambi\'en $$
   H(X) \le L\left( c^\fa \right) < H(X)+1$$}
 %  \qquad \mbox{con}  \qquad L^\fa  =  L_{c^\fa}$$}
 
@@ -929,7 +929,7 @@ Una soluci\'on para construir un  c\'odigo \'optima fue propuesta por Huffman en
   Suponemos que existe un $q \in \Nset$ tal que~\footnote{Si no, se puede elegir
     $q = \left\lceil \frac{n-d}{d-1} \right\rceil$,  y completar $\X$ con $d + q
     (d-1) - \alpha$ simbolos fuente  fictivos de probabilidades ceros, le que no
-    va a cambiar ni la entropia,  ni el largo promededio del c\'odico aferente.}
+    va a cambiar ni la entrop\'ia,  ni el largo promededio del c\'odico aferente.}
   $\alpha = |\X| = d + q (d-1)$. El algoritmo de Huffman consiste a construir un
   arbol donde cana nudo es asociado a un conjunto de simbolos fuente y una letra
   de $\C$ de la manera siguiente:
@@ -952,7 +952,7 @@ Una soluci\'on para construir un  c\'odigo \'optima fue propuesta por Huffman en
     + \ldots  + p_n$.  El \'utimo ``super-simbolo''  fuente es asociado  al nudo
     padre de la etapa~\ref{Huffman:padre}.
   %
-  \item   Si  quedan   mas   de   un  (super-)simbolo   fuente,   volver  a   la
+  \item   Si  quedan   m\'as   de   un  (super-)simbolo   fuente,   volver  a   la
     etapa~\ref{Huffman:clasificar}  con \  $p  \equiv \widetilde{p}$  \  y \  $x
     \equiv \widetilde{x}$.
   \end{enumerate}
@@ -960,7 +960,7 @@ Una soluci\'on para construir un  c\'odigo \'optima fue propuesta por Huffman en
   Como descrito tratando del c\'odigo  usando el arbol de Kraft, \ $c^\huf(x_i)$
   \ se construye  saliendo de la raiz del arbol  as\'i construido, agregando las
   letras  del camino que  llega a  la hoja  \ $x_i$.  \ Eso  es ilustrado  en la
-  figura~\ref{fig:SZ:FanoHuffmanCodes}-(b) en el caso binario.
+  figura Fig.~\ref{fig:SZ:FanoHuffmanCodes}-(b) en el caso binario.
 \end{definicion}
 %
 Se  mencionara que  a cada  etapa, el  nuevo conjunto  de  super-simbolos fuente
@@ -973,7 +973,7 @@ etapa tendriamos $2$ estados a juntar, dando un c\'odigo de largos $2, 2, 2, 1$.
 Empezando la primera etapa con la  asociaciaci\'on de $2$ estados, est decir $3$
 teniendo en cuenta un  estado fictivo ($n = 5$, $q = 1$)  van a quedar 3 estados
 en la secunda etapa, dando un c\'odigo de largos $2, 2, 1, 1$, es decir de largo
-promedio mas peque\~no.
+promedio m\'as peque\~no.
 
 \begin{teorema}[\'Optimalidad del c\'odigo de Huffman]
   El algoritmo de Huffman da un c\'odigo \ $c^\huf$ \ de largo promedio m\'inimo
@@ -985,8 +985,8 @@ promedio mas peque\~no.
 %
 \begin{proof}
   Una  prueba  es  dada  por  ejemplo en~\cite[Sec.~5.8]{CovTho06}  en  el  caso
-  binario, pero la  extensi\'on para $d >  2$ es un poco mas  subtile. La prueba
-  mas general es dada por Huffman~\cite{Huf52} y se consigue tambi\'en por parte
+  binario, pero la  extensi\'on para $d >  2$ es un poco m\'as  subtile. La prueba
+  m\'as general es dada por Huffman~\cite{Huf52} y se consigue tambi\'en por parte
   en~\cite{Pig03}. Suponnemos que  $q \ge 1$ (sino, el  resultado es obvio). Las
   etapas son
   %
@@ -1000,13 +1000,13 @@ promedio mas peque\~no.
   %
   \item Sea $m$ el n\'umero de simbolos fuente con un c\'odigo de largo m\'aximo
     \ $l_{\max}$ \  y \ $m' = \min(m,d)$.  Del punto  anterior, los $m$ simbolos
-    con  palabra  c\'odigo de  largo  m\'aximo  son  los de  probabilidades  mas
+    con  palabra  c\'odigo de  largo  m\'aximo  son  los de  probabilidades  m\'as
     peque\~nas.
   %
   \item  Como descrito  antes, se  puede permutar  las letras  c\'odigos  de una
     profundez del arbol de Kraft sin  cambiar ni el aspecto libre de prefijo, ni
     el largo promedio. Se puede  entonces considera el c\'odigo \'optimo tal que
-    los $m'$ simbolos de probabilidades  las mas peque\~nas tienen el mismo nudo
+    los $m'$ simbolos de probabilidades  las m\'as peque\~nas tienen el mismo nudo
     padre, \ie solamente la \'ultima letra c\'odigo cambia entre ellos.
   %
   \item Suponemos que \ $m' = m  < d$.  \ Sea una ``super-fuente'' \ $\X^{(2)} =
@@ -1036,7 +1036,7 @@ promedio mas peque\~no.
     \frac{d^k-d}{d-1}   +   \frac{m'-1}{d-1}$.  \   La   primera  fracci\'on   \
     $\frac{d^k-d}{d-1} = d^{k-1} + \cdots + 1$ \ siendo entera, $q$ no puede ser
     entero con \  $m' < d$.  \  En otros terminos, necesariamente $m'  = d$, \ie
-    los $d$ simbolos de probabilidad mas  debiles son el la \'ultima profundez y
+    los $d$ simbolos de probabilidad m\'as  debiles son el la \'ultima profundez y
     se puede elegir que compartent el mismo nudo padre.
   %
   \item Sea \ $c^{\opt,(1)}$ \ el c\'odigo \'optimo correspondiente a \ $\X$ \ y
@@ -1057,7 +1057,7 @@ promedio mas peque\~no.
   %
   \item Notando que \ $|\X^{(2)}| = n-(q-1) (d-1)$, \ el razonamiento se progaga
     por  inducci\'on, pasando  de  \  $c^{\opt,(k)}$ \  a  \ $c^{\opt,(k+1)}$  \
-    juntando los  $d$ super-simbolos de probabilidades mas  debiles, hasta tener
+    juntando los  $d$ super-simbolos de probabilidades m\'as  debiles, hasta tener
     un super-simobolo  tendiendo todos los simbolos, $\left|  \X^{(K)} \right| =
     1$, raiz del arbol.
 \end{itemize}
@@ -1071,9 +1071,9 @@ De esta  prueba, se puede ver que
 \item Si si \ $\frac{n - d}{d-1}$ \ no es entero, en lugar de completar $\X$ con
   simbolos fictivos se puede empezar el algoritmo de Huffman juntando los \ $n -
   d - \left\lfloor \frac{n - d}{d-1} \right\rfloor (d-1) + 1$ \ simbolos fuentes
-  de  probabilidades mas debiles  en un  super-simbolo, y  luego hacer  la bucla
+  de  probabilidades m\'as debiles  en un  super-simbolo, y  luego hacer  la bucla
   descrita (juntando por super-simbolos de  $d$ simbolos en cada bucla); en este
-  caso, no se satura mas la desigualdad de Kraft-McMillan.
+  caso, no se satura m\'as la desigualdad de Kraft-McMillan.
 %
 \item Obviamente, en el caso binario $d = 2$, no es necesario completar $\X$ por
   estados  fuentes,  o  empezar con  menos  de  $d$  simbolos juntados  ($n$  es
@@ -1086,7 +1086,7 @@ De esta  prueba, se puede ver que
 \end{itemize}
 
 Volviendo al c\'odigo  ingenuo, ser\'ia \'optimo (y equivalente a  los de Fano y
-de Shannon) para  una distribuci\'on uniforme. En este  contexto, la entropia es
+de Shannon) para  una distribuci\'on uniforme. En este  contexto, la entrop\'ia es
 $H_d(X)  = \log_d |X|$,  precisamente la  incerteza del  enfoque de  Hartley que
 corresponde a los numeros de  dit necesarios para condificar (ingenuosamente) la
 fuente.
@@ -1100,7 +1100,7 @@ fuente.
   \approx 2.1514$\ (a): enfoque de Fano,  saliendo de la raiz.  En cada nudo, se
   menciona el conjunto  de simbolos que van a  tener el c\'odigo correspondiente
   (en negro  cuando es un  solo simbolo).   Se pasa de  una profundez a  la otra
-  dividiendo  los conjunto  en sub-conjuntos  a  lo mas  equiprobables. En  esta
+  dividiendo  los conjunto  en sub-conjuntos  a  lo m\'as  equiprobables. En  esta
   construcci\'on  da el  c\'odigo \  $c^\fa(x_1) =  00, \:  c^\fa(x_2) =  01, \:
   c^\fa(x_3) = 10, \: c^\fa(x_4) = 110, \: c^\fa(x_5) = 111$ \ de largo promedio
   \ $L\left(  c^\fa \right) = 2.25$.  \  \ (b): enfoque de  Huffman, saliendo de
@@ -1135,8 +1135,8 @@ H_d(X) \: \le  \: \frac{L^{\opt,n}}{n} \: < \: H_d(X)  + \frac{1}{n} \quad \mbox
 (ver  tambi\'en~\cite[cap. 13,  teorema de  Shannon]{Rio07}). Fijense  que  si \
 $\displaystyle   \lim_{n   \to  \infty}   \frac{L^{\opt,n}}{n}   \to  H(X)$,   \
 $\frac{L^{\opt,n}}{n}$ \ no  es necesariamente decreciente con respeto  a \ $n$.
-Eso es  descrito figura~\ref{fig:SZ:CodigosExtensiones}.  Lo  mismo puede ocurir
-con el c\'odigo  de Shannon \SZ{y lo de Fano}. Ademas,  el cardinal del alfabeto
+Eso es  descrito figura Fig.~\ref{fig:SZ:CodigosExtensiones}.  Lo  mismo puede ocurir
+con el c\'odigo  de Shannon \SZ{y lo de Fano}. Adem\'as,  el cardinal del alfabeto
 extendido $\X^n$ crece exponencialmente con $n$, lo que no permite elegir un $n$
 muy grande.
 
@@ -1147,7 +1147,7 @@ muy grande.
 \leyenda{$\frac{L^{\opt,n}}{n}-H_d(X)$  (puntos),   diferencia  entre  el  largo
   promedio \'optimo por simbolo de las extensiones \ $\X^n$ \ de orden $n$ de la
   fuente $\X$ y  la cota inferior en  funci\'on de $n$. La linea  llena en grise
-  sirve como guia. En  esta ilustraci\'on se usa el ejemplo lo  mas simple con \
+  sirve como guia. En  esta ilustraci\'on se usa el ejemplo lo  m\'as simple con \
   $d = 2$ \ y \ $p = [0.33 \quad 0.67]^t$.}
 %
 \label{fig:SZ:CodigosExtensiones}
@@ -1190,7 +1190,7 @@ obvia, pero tratando del c/'odigo de Shannon se puede contestar:
 \end{proof}
 %
 Olvidando el posible extra dit  (penser a la c\'odification block), este teorema
-da una  interpretaci\'on operacional  a la entropia  relativa, o  divergencia de
+da una  interpretaci\'on operacional  a la entrop\'ia  relativa, o  divergencia de
 Kullback-Leibler.   Esta cuantifica  la  perdida en  termino  de largo  promedio
 codificando con  una distribuci\'on falsa. Dicho  de otra manera,  usando $q$ en
 lugar de $p_X$, se usa la  informaci\'on de $p_X$ porque se c\'odifica la fuente
@@ -1204,9 +1204,9 @@ Existent varios otros modos de codificar simbolos. En particular, con la meta de
 transmitir los simbolos codificados en un canal de comunicaci\'on, a veces no es
 oportuno  de compresar  drasticamente.  Existen  por ejemplo  codificaciones que
 permiten una correcci\'on de error en la recepci\'on. Pueden tomar en cuenta las
-caracteristicas  del  canal  de  transmisi\'on.    Estos  van  mas  alla  de  la
+caracteristicas  del  canal  de  transmisi\'on.    Estos  van  m\'as  all\'a  de  la
 ilustraci\'on  de  esta  secci\'on.   Ver~\cite{Ber74, Gal78,  Say03,  CovTho06,
-  Rio07}  entre  otros  para  tener   mas  detalles  sobre  varios  esquemas  de
+  Rio07}  entre  otros  para  tener   m\'as  detalles  sobre  varios  esquemas  de
 codificaci\'on/compresi\'on.
 
 % R.  M.  Fano.  Class  notes  for Transmission  of  Information,  course  6.574

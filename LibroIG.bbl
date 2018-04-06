@@ -278,6 +278,11 @@ Fisher, R.~A. (1925).
 Flandrin, P. \& Rioul, O. (2016).
 \newblock Laplume, sous le masque.
 
+\bibitem[\protect\citeauthoryear{Fran{\c{c}}ois}{Fran{\c{c}}ois}{2009}]{Fra09}
+Fran{\c{c}}ois, O. (2009).
+\newblock Notes de cours de probabilit{\'e}s appliqu{\'e}es.
+\newblock Ensimag.
+
 \bibitem[\protect\citeauthoryear{Fr{\'e}chet}{Fr{\'e}chet}{1943}]{Fre43}
 Fr{\'e}chet, M. (1943).
 \newblock Sur l'extension de certaines evaluations statistiques au cas de
@@ -289,6 +294,14 @@ Fr{\'e}chet, M. (1943).
 Frieden, B.~R. (2004).
 \newblock {\em Science from {F}isher Information: A Unification}.
 \newblock Cambridge, UK: Cambridge University Press.
+
+\bibitem[\protect\citeauthoryear{Frigyik, Srivastava \& Gupta}{Frigyik
+  et~al.}{2008}]{FriSri08}
+Frigyik, B.~A., Srivastava, S., \& Gupta, M.~R. (2008).
+\newblock Functional {B}regman divergence and {B}ayesian estimation of
+  distributions.
+\newblock {\em IEEE Transactions on Infomation Theory}, {\em 54\/}(11),
+  5130--5139.
 
 \bibitem[\protect\citeauthoryear{Gallager}{Gallager}{1978}]{Gal78}
 Gallager, R. (1978).
@@ -312,6 +325,11 @@ Gelfand, I.~M. \& Fomin, S.~V. (1963).
 Gibbs, J.~W. (1902).
 \newblock {\em Elementary Principle in Statistical Mechanics}.
 \newblock Cambridge, USA: University Press - John Wilson and son.
+
+\bibitem[\protect\citeauthoryear{Golberg}{Golberg}{1961}]{Gol61}
+Golberg, R.~R. (1961).
+\newblock {\em Fourier Transforms}.
+\newblock Cambridge University Press.
 
 \bibitem[\protect\citeauthoryear{Guo, Shamai \& Verd{\'u}}{Guo
   et~al.}{2005}]{GuoSha05}
@@ -350,6 +368,12 @@ Holevo, A. (2011).
 \newblock {\em Probabilistic and statistical aspects of quantum theory\/} (2nd
   ed.)., volume~1 of {\em Quaderni Monographs}.
 \newblock Pisa: Edizioni Della Normale.
+
+\bibitem[\protect\citeauthoryear{Holevo}{Holevo}{1973}]{Hol73}
+Holevo, A.~S. (1973).
+\newblock Bounds for the quantity of information transmitted by a quantum
+  communication channel.
+\newblock {\em Problems of Information Transmission}, {\em 9\/}(3), 177--183.
 
 \bibitem[\protect\citeauthoryear{Huffman}{Huffman}{1952}]{Huf52}
 Huffman, D.~A. (1952).
@@ -549,6 +573,13 @@ Lindhard, J. \& Nielsen, V. (1971).
 \newblock {\em Det Kongelige Danske Videnskabernes Selskab Matematisk-fysiske
   Meddelelser}, {\em 38\/}(9), 1--42.
 
+\bibitem[\protect\citeauthoryear{Lukacs}{Lukacs}{1961}]{Luk61}
+Lukacs, E. (1961).
+\newblock Recent developments in the theory of characteristic functions.
+\newblock In {\em Proceeding of the 4th Berkeley Symposium on Mathematical
+  Statistics and Probability}, volume 2: Contributions to Probability Theory,
+  (pp.\ 307--335). University of California Press, Berkeley, CA.
+
 \bibitem[\protect\citeauthoryear{Lundheim}{Lundheim}{2002}]{Lun02}
 Lundheim, L. (2002).
 \newblock On {S}hannon and ``{S}hannon's formula''.
@@ -614,11 +645,32 @@ Nagumo, M. (1930).
 \newblock {\em Japanese journal of mathematics: transactions and abstracts},
   {\em 7}, 71--79.
 
+\bibitem[\protect\citeauthoryear{Nielsen \& Boltz}{Nielsen \&
+  Boltz}{2011}]{NieBol11}
+Nielsen, F. \& Boltz, S. (2011).
+\newblock The {B}urbea-{R}ao and {B}hattacharyya centroids.
+\newblock {\em IEEE Transactions on Information Theory}, {\em 57\/}(8),
+  5455--5466.
+
+\bibitem[\protect\citeauthoryear{Nielsen \& Nock}{Nielsen \&
+  Nock}{2017}]{NieNoc17}
+Nielsen, F. \& Nock, R. (2017).
+\newblock Generalizing skew {J}ensen divergences and {B}regman divergences with
+  comparative convexity.
+\newblock {\em IEEE Signal Processing Letters}, {\em 24\/}(8), 1123--1127.
+
 \bibitem[\protect\citeauthoryear{Onicescu}{Onicescu}{1966}]{Oni66}
 Onicescu, O. (1966).
 \newblock Energie informationnelle.
 \newblock {\em Comptes rendus de l'acad{\'e}mie des Sciences. s{\'e}rie 1,
   math{\'e}matiques}, {\em 263\/}(3), 841--842.
+
+\bibitem[\protect\citeauthoryear{Os{\'a}n, Bussandri \& Lamberti}{Os{\'a}n
+  et~al.}{2018}]{OsaBus18}
+Os{\'a}n, T.~M., Bussandri, D.~G., \& Lamberti, P.~W. (2018).
+\newblock Monoparametric family of metrics derived from classical
+  {J}ensen-{S}hannon divergence.
+\newblock {\em Physica A}, {\em 495}, 336--344.
 
 \bibitem[\protect\citeauthoryear{{\"O}sterreicher \& Vajda}{{\"O}sterreicher \&
   Vajda}{2003}]{OesVaj03}
@@ -651,6 +703,11 @@ Pearson, K. \& Filon, L. N.~G. (1898).
   selection on variation and correlation.
 \newblock {\em Philosophical Transactions of the Royal Society of London A},
   {\em 191}, 229--311.
+
+\bibitem[\protect\citeauthoryear{Petz}{Petz}{2007}]{Pet07}
+Petz, D. (2007).
+\newblock Bregman divergence as relative operator entropy.
+\newblock {\em Acta Mathematica Hungarica}, {\em 116\/}(1-2), 127--131.
 
 \bibitem[\protect\citeauthoryear{Pigeon}{Pigeon}{2003}]{Pig03}
 Pigeon, S. (2003).
@@ -692,8 +749,9 @@ Rathie, P.~N. (1991).
 \bibitem[\protect\citeauthoryear{R{\'e}nyi}{R{\'e}nyi}{1961}]{Ren61}
 R{\'e}nyi, A. (1961).
 \newblock On measures of entropy and information.
-\newblock {\em in Proceeding of the 4th Berkeley Symposium on Mathematical
-  Statistics and Probability}, {\em 1}, 547--561.
+\newblock In {\em Proceedings of the Fourth Berkeley Symposium on Mathematical
+  Statistics and Probability}, volume 1: Contributions to the Theory of
+  Statistics, (pp.\ 547--561). University of California Press, Berkeley, CA.
 
 \bibitem[\protect\citeauthoryear{Rioul}{Rioul}{2007}]{Rio07}
 Rioul, O. (2007).
@@ -864,5 +922,10 @@ Wong, A. K.~C. \& You, M. (1985).
   pattern recognition.
 \newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
   {\em 7\/}(5), 599--609.
+
+\bibitem[\protect\citeauthoryear{Zhang}{Zhang}{2004}]{Zha04}
+Zhang, J. (2004).
+\newblock Divergence function, duality, and convex analysis.
+\newblock {\em Neural Computation}, {\em 16\/}(1), 159--195.
 
 \end{thebibliography}

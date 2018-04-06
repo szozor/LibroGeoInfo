@@ -1,49 +1,50 @@
-
 \seccion{Introducci\'on}
 \label{s:SZ:Introduccion}
 
 La  noci\'on  de  informaci\'on encuentra  su  origen  con  el desarollo  de  la
-comunicaci\'on  moderna,  por ejemplo  a  trav\'es  del  telegrafo siguiendo  el
-patente de Moorse  en 1840. La idea  de asignar un c\'odigo (punto  o barra, mas
+comunicaci\'on  moderna, por  ejemplo a  trav\'es del  t\'elegrafo  siguiendo el
+patente de Moorse en 1840. La idea  de asignar un c\'odigo (punto o barra, m\'as
 espacio entre letras  y entre palabras) a las letras del  alfabeto es la semilla
-de  la  codificaci\'on   entropica,  la  que  se  basa   precisamente  sobre  la
-asignaci\'on de un c\'odigo a  simbolos de una fuente (codificaci\'on de fuente)
-seg\'un las frequencias  (o probabilidad de aparici\'on) de  cada simbolo en una
-cadena.  De  hecho, el principio de  codificar un mensage y  mandar la versi\'on
-codificada por un canal de transmisi\'on es mucho mas antiguo, a pesar de que no
-habia ninguna formalizaci\'on matematica ni siquiera explicitamente una noci\'on
-de informaci\'on.  Entre otros, se puede mencionar el telegrafo optico de Claude
-Chappe (1794), experimentos con luces por Guillaume Amontons (en los a\~nos 1690
-en Paris), o a\'un mas antiguamente la transmisi\'on de mensaje con antorchas en
-la   Grecia   antigua,   con  humo   por   los   indios   o  chiflando   en   la
-prehistoria~\cite{Mon08}.  Cada  forma es una instancia practica  del esquema de
-comunicaci\'on de Shannon~\cite{Sha48, ShaWea64},  es decir la codificaci\'on de
-la informaci\'on,  potencialmente de  manera la mas  economica que se  puede, su
-transmisi\'on   a   un   ``receptor''    (por   un   canal   ruidoso)   que   la
-interpreta/lee/decodifica.   Implicitamente, la noci\'on  de informaci\'on  a lo
-menos tan antigua que la humanidad.
+de  la  codificaci\'on  entr\'opica,  la  que  se  basa  precisamente  sobre  la
+asignaci\'on  de un  c\'odigo  a  s\'imbolos de  una  fuente (codificaci\'on  de
+fuente)  seg\'un  las  frequencias  (o  probabilidad  de  aparici\'on)  de  cada
+s\'imbolo  en una  cadena.  De  hecho, el  principio de  codificar un  mensage y
+mandar  la versi\'on codificada  por un  canal de  transmisi\'on es  mucho m\'as
+antiguo,  a pesar  de que  no  hab\'ia ninguna  formalizaci\'on matem\'atica  ni
+siquiera explicitamente  una noci\'on de  informaci\'on.  Entre otros,  se puede
+mencionar  el t\'elegrafo  \'optico de  Claude Chappe  (1794),  experimentos con
+luces  por Guillaume  Amontons (en  los  a\~nos 1690  en Paris),  o a\'un  m\'as
+antiguamente la transmisi\'on de mensaje con antorchas en la Grecia antigua, con
+humo por los  indios o chiflando en la  prehistoria~\cite{Mon08}.  Cada forma es
+una instancia  pr\'actica del esquema de  comunicaci\'on de Shannon~\cite{Sha48,
+ShaWea64},  es decir la  codificaci\'on de  la informaci\'on,  potencialmente de
+manera la  m\'as econ\'omica  que se puede,  su transmisi\'on a  un ``receptor''
+(por  un canal  ruidoso) que  la interpreta/lee/decodifica.   Implicitamente, la
+noci\'on de informaci\'on es al menos tan antigua que la humanidad.
 
 A  pesar  de  que  la  idea  de codificar  y  transmitir  ``informaci\'on''  sea
-tremendamente antigua, la formalizaci\'on matematica de la noci\'on de incerteza
-o falta de informaci\'on, intimamente  vinculado a la noci\'on de informaci\'on,
-naci\'o bajo el  impulso de C.  Shannon y la publicaci\'on  de su papel seminal,
-``A  mathematical theory  of communication''  en 1948~\cite{Sha48},  o  un a\~no
-depues  en su  libre re-titulado  ``The mathematical  theory  of communication''
-reamplanzando el ``A'' por un ``The''. Desde esto a\~nos, las herramientas de la
-dicha teoria de  la informaci\'on dio lugar a  muchas aplicaciones especialmente
-en communicaci\'on (ver por  ejemplo~\cite[y ref.]{CovTho06, Ver98, Gal01}, pero
-tambi\'en en otros campos muy diversos tal como \SZ{Completar con ref, Boltzman,
-  von Neumann, Gibbs, Maxwell, Planck\ldots}.
+tremendamente  antigua,  la  formalizaci\'on  matem\'atica  de  la  noci\'on  de
+incerteza  o falta  de informaci\'on,  intimamente  vinculado a  la noci\'on  de
+informaci\'on, naci\'o bajo  el impulso de C.  Shannon y  la publicaci\'on de su
+papel seminal, ``A mathematical  theory of communication'' en 1948~\cite{Sha48},
+o  un a\~no  despu\'es  en su  libro  re-titulado ``The  mathematical theory  of
+communication'' reamplanzando el  ``A'' por un ``The''. Desde  estos a\~nos, las
+herramientas  de  la  dicha  teor\'ia  de  la informaci\'on  dio  lugar  a  muchas
+aplicaciones   especialmente  en   communicaci\'on   (ver  por   ejemplo~\cite[y
+ref.]{CovTho06, Ver98, Gal01},  pero tambi\'en en otros campos  muy diversos tal
+como   \SZ{Completar   con  ref,   Boltzman,   von   Neumann,  Gibbs,   Maxwell,
+Planck\ldots}.
 
 {\color{red} La  meta de este cap\'itulo es  de describir las ideas  y los pasos
-  dando lugar a la definicion de  la entropia, como medida de incerteza o (falta
-  de)  informaci\'on.   En este  cap\'itulo,  se  empieza  con la  descripci\'on
+  dando lugar  a la definici\'on  de la entrop\'ia,  como medida de  incerteza o
+  (falta de) informaci\'on.  En este cap\'itulo, se empieza con la descripci\'on
   intuitiva que subtiende a la noci\'on de informaci\'on contenida en una cadena
-  de simobolo, lo que condujo a  la definici\'on de la entropia. Esta defici\'on
-  puede  ser deducida  tambi\'en  de  una seria  de  propiedades razonables  que
-  deber\'ia cumplir  una medida de incerteza (enfoque  axiomatico).  Se continua
-  con la descripci\'on  de tal noci\'on de entropia,  pasando del mundo discreto
-  (simbolos,  alfabeta) al  mundo continuo,  lo que  no es  trivial  ni siquiera
-  intuitivo.  Se  adelanto presentando  el concepto de  informaci\'on compartida
-  entre dos sistemas o variables aleatorias, concepto fundamental en el marco de
-  la transmisi\'on de informaci\'on o de mensajes. \bf Seguir. }
+  de  s\'imbolos, lo  que  condujo a  la  definici\'on de  la entrop\'ia.   Esta
+  definici\'on  puede  ser deducida  tambi\'en  de  un  conjunto de  propiedades
+  ``razonables''  que  deber\'ia  cumplir   una  medida  de  incerteza  (enfoque
+  axiom\'atico).   Se  continuar\'a con  la  descripci\'on  de  tal noci\'on  de
+  entrop\'ia,  pasando  del  mundo  discreto  (s\'imbolos,  alfabeto)  al  mundo
+  continuo,  lo  que no  es  trivial  ni  siquiera intuitivo.   Se  adelantar\'a
+  presentando  el concepto  de  informaci\'on compartida  entre  dos sistemas  o
+  variables aleatorias, concepto fundamental en  el marco de la transmisi\'on de
+  informaci\'on o de mensajes. \bf Seguir. }

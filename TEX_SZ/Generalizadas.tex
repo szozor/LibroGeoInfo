@@ -1,25 +1,25 @@
-\seccion{Entropias y divergencias generalizadas}
+\seccion{Entrop\'ias y divergencias generalizadas}
 \label{sec:SZ:Generalizadas}
 
-A pesar de que la entropia de Shannon y sus cantidades asociadas demostraron sus
+A pesar de que la entrop\'ia de Shannon y sus cantidades asociadas demostraron sus
 potencias tan de un punto de vista descriptivo que en termino de aplicaciones en
 la  transmisi\'on  de  la  informaci\'on  y  la  compresi\'on,  varios  nociones
-informacionales, de  tipo entropias o  divergencias, aparecieron luego.  En esta
+informacionales, de  tipo entrop\'ias o  divergencias, aparecieron luego.  En esta
 secci\'on no se  desarollar\'a todos los enfoques ni  todas las aplicaciones tan
 la  literatura es  importante. La  meta  es dar  los caminos  conduciendo a  las
-generalizaciones de la  entropia de Shannon por un lado, y  de la divergencia de
+generalizaciones de la  entrop\'ia de Shannon por un lado, y  de la divergencia de
 Kullback-Leibler por el otro lado. No son siempre vinculados, a pesar de que sea
-desirable que a cada entropia sean asociados nociones de entropias condicionales
+desirable que a cada entrop\'ia sean asociados nociones de entrop\'ias condicionales
 y relativas.
 
 % ================================= Salicru
 
-\subseccion{Entropias y propiedades}
+\subseccion{Entrop\'ias y propiedades}
 \label{sec:SZ:Salicru}
 
 % ----- Entropias generalizadas particulares
-\paragraph{Unas  primeras  generalizaciones  particulares}  Si  la  entropia  de
-Shannon fue el punto de salida fundamental  en todo el desarollo de la teoria de
+\paragraph{Unas  primeras  generalizaciones  particulares}  Si  la  entrop\'ia  de
+Shannon fue el punto de salida fundamental  en todo el desarollo de la teor\'ia de
 la informaci\'on, un  poco m\'as de una  decada despues de su papel  clave y muy
 completo,  R\'enyi propuso  una medida  generalizada~\cite{Ren61}.  Su  punto de
 vista fue m\'as matem\'atico que  f\'isico o ingeniero.  Retom\'o los axiomas de
@@ -43,19 +43,19 @@ a la recursividad. Para $p$ \ y \ $q$ probabilidades incompletas tales que $p \,
   q_m \end{bmatrix}^t$ sea incompleta ($w_p + w_q \le 1$), el axioma (v) es $H(p
 \, \cup \,  q) = \frac{w_p \, H(p)  + w_q \, H(q)}{w_p +  w_q}$.  Demostr\'o que
 con (v) en lugar  de la recursividad, el conjunto de axiomas  conduce de nuevo a
-la  entropia de  Shannon.   La  generalizaci\'on propuesta  por  R\'enyi era  de
+la  entrop\'ia de  Shannon.   La  generalizaci\'on propuesta  por  R\'enyi era  de
 generalizar  el axioma  (v)  remplazando  la media  aritm\'etico  por una  media
 generalizada (v')  $H^\ren(p \, \cup \,  q) = g^{-1} \left(  \frac{w_p \, g\big(
     H^\ren(p) \big) + w_q \,  g\big( H^\ren(q) \big)}{w_p + w_q}\right)$ con $g$
 estrictamente  monotona y  continua,  llamado media  {\it cuasi-aritm\'etica,  o
   quasi-lineal,  o  de  Kolmogorov-Nagumo}.   De  las propiedades  de  la  media
 cuasi-aritmetica~\cite{Nag30,  Kol30,  Kol91, HarLit52},  eso  es equivalente  a
-buscar una  entropia elemental $H^\ren(p_i)$  y remplazar la  media aritm\'etica
+buscar una  entrop\'ia elemental $H^\ren(p_i)$  y remplazar la  media aritm\'etica
 $\sum_i  p_i H^\ren(p_i)$  por una  media de  Kolmogorov-Nagumo,  $g^{-1} \left(
   \sum_i p_i g\big( H^\ren(p_i)  \big) \right)$.  R\'enyi propus\'o la funci\'on
 de Kolmogorov-Nagumo $g_\beta(x) = 2^{(\beta-1)  x}, \quad \beta >0, \quad \beta
-\ne 1$,  probando que  la entropia que  los axiomas  (i)-(ii)-(iii)-(iv)-(v') se
-cumplen y conduce a la entropia de R\'enyi de un vector de probabilidad $p$,
+\ne 1$,  probando que  la entrop\'ia que  los axiomas  (i)-(ii)-(iii)-(iv)-(v') se
+cumplen y conduce a la entrop\'ia de R\'enyi de un vector de probabilidad $p$,
 %
 \[
 H_\beta^\ren(p) = \frac{1}{1-\beta} \log_2 \left( \sum_{i=1}^n p_i^\beta \right)
@@ -64,21 +64,21 @@ H_\beta^\ren(p) = \frac{1}{1-\beta} \log_2 \left( \sum_{i=1}^n p_i^\beta \right)
 \noindent   Relaxando  el  axioma   (iii),  se   puede  elegir   $g_\beta(x)  =
 a^{(\beta-1) x}, \quad  a > 0, \quad a  \ne 1$; el logaritmo ser\'a  de la base
 $a$ cualquiera; En  lo que sigue, usaremog $\log$ sin  precisar la elecci\'on de
-base.   R\'enyi  nombr\'o  esta  medida  de incerteza  {\it  entropia  de  orden
+base.   R\'enyi  nombr\'o  esta  medida  de incerteza  {\it  entrop\'ia  de  orden
 $\beta$}. Notablemente,
 %
 \[
 H_1^\ren(p)  \equiv   \lim_{\beta  \to   1}  H_\beta^\ren(p)   =   H(p)  \quad
-\mbox{entropia de Shannon}
+\mbox{entrop\'ia de Shannon}
 \]
 % \noindent En otros terminos, la clase de R\'enyi contiene como caso particular
-la  entropia  de  Shannon.  En  su  papel,  R\'enyi  introdujo una  ganancia  de
-informaci\'on,  parecida  a  una  entropia  relativa,  probando  que  las  solas
-entropias admisibles  son la  de Shannon  y la que  introdujo. Volveremos  en la
-secci\'on siguiente sobre esta entropia  relativa, o divergencia de R\'enyi. Por
+la  entrop\'ia  de  Shannon.  En  su  papel,  R\'enyi  introdujo una  ganancia  de
+informaci\'on,  parecida  a  una  entrop\'ia  relativa,  probando  que  las  solas
+entrop\'ias admisibles  son la  de Shannon  y la que  introdujo. Volveremos  en la
+secci\'on siguiente sobre esta entrop\'ia  relativa, o divergencia de R\'enyi. Por
 axiomas,     las     propiedades    \ref{prop:SZ:continuidad}     (continuidad),
 \ref{prop:SZ:permutacion}       (invarianza      por       permutaci\'on)      y
-\ref{prop:SZ:aditividad} (additividad)  de la  entropia de Shannon  se conservan
+\ref{prop:SZ:aditividad} (additividad)  de la  entrop\'ia de Shannon  se conservan
 entonces  en  el  marco   de  R\'enyi  y  se  pierde  \ref{prop:SZ:recursividad}
 (recursividad), todav\'ia por axiomas. Veremos luego la otras que se conservan o
 modifican en un marco m\'as general.
@@ -92,25 +92,25 @@ continuidad, (iii) la expensividad, (iv) $H^\hc(1) = 0$ y $H^\hc\left( \frac12 ,
 $H^\hc(p_1,\ldots,p_n)    =   H^\hc(p_1,\ldots,p_{n-2},p_{n-1}+p_n)    +   \beta
 (p_{n-1}+p_n)^\beta H^\hc\left( \frac{p_{n-1}}{p_{n-1} + p_p},\frac{p_n}{p_{n-1}
     + p_p}  \right), \quad  \beta > 0$~\footnote{En  sus papel, lo  imponen para
-  cualquier pars $p_i, p_j$ sin imponer la invarianza por permutaci\'on, pero es
+  cualquiera par $(p_i, p_j)$ sin imponer la invarianza por permutaci\'on, pero es
   equivalente a la  exposici\'on de este parafo.}.  Con $\beta  = 1$ se recupera
 la  recursividad estandar,  pero  con $\beta  \ne  1$ eso  permite  dar un  peso
 diferente a la incerteza del estado interno \ie probabilidades que se juntan (la
 describen como clasificaci\'on refinada).  Estos axiomas conducen necesariamente
-a la entropia (teorema~1)
+a la entrop\'ia (teorema~1)
 %
 \[
 H_\beta^\hc(p) = \frac{1}{1-2^{1-\beta}} \left( 1 - \sum_i p_i^\beta \right)
 \]
 %
-que nombraron {\it $\beta$-entropia structural}.  De nuevo, relaxando el axioma
+que nombraron {\it $\beta$-entrop\'ia structural}.  De nuevo, relaxando el axioma
 (iv),  se puede  remplazar en  el coeficient  $2^{1-\beta}$  por $a^{1-\beta},
-\quad a >  0, \quad a \ne 1$. De  nuevo, parae que la entropia  de Shannon es un
+\quad a >  0, \quad a \ne 1$. De  nuevo, parae que la entrop\'ia  de Shannon es un
 caso particular,
 %
 \[
 H_1^\hc(p)  \equiv   \lim_{\beta  \to   1}  H_\beta^\hc(p)   =   H(p)  \quad
-\mbox{entropia de Shannon}
+\mbox{entrop\'ia de Shannon}
 \]
 % Por   axioma,   se   conservan   las   propiedades   \ref{prop:SZ:continuidad}
 (continuidad), \ref{prop:SZ:expansabilidad} (expansabilidad)  de Shannon en este
@@ -120,11 +120,11 @@ respeto    a   los   $p_i$    \ref{prop:SZ:concavidad},   la    de   maximalidad
 (teorema~2). Aun  que no aparece  as\'i en el  papel, satisface la  propiedad de
 Schur-concavidad  \ref{prop:SZ:Schurconcavidad}  (teorema~3).  A  pesar  de  que
 mencionan que $H_\beta^\hc$ sea  diferente que $H_\beta^\ren$, es sencillo ver
-que hay  un mapa  uno-uno entre  las dos entropias.  Se notara  en un  marco m\'as
+que hay  un mapa  uno-uno entre  las dos entrop\'ias.  Se notara  en un  marco m\'as
 general otras propiedades.
 
 Independiente  de Havrda  \&  Charv\'at, todav\'ia  en  el este,  en la  escuela
-h\'ugara, Z.  Dar\'oczy en~\cite{Dar70} defino la entropia $H^f$ a partir de una
+h\'ugara, Z.  Dar\'oczy en~\cite{Dar70} defino la entrop\'ia $H^f$ a partir de una
 {\it  funci\'on  informaci\'on}  $f$   satifaciendo  (i)  $f(0)  =  f(1)$,  (ii)
 $f\left(\frac12\right)  = 1$  \ y  la ecuaci\'on  funcional (ii)  $f(x)  + (1-x)
 f\left(  \frac{y}{1-x} \right)  = f(y)  + (1-y)  f\left(  \frac{x}{1-y} \right)$
@@ -132,36 +132,36 @@ sobre  $\{  (x,y)  \in [0  ;  1)^2,  \quad  x+y  \le  1 \}$,  siendo  $H^f(p)  =
 \sum_{i=2}^n s_i  f\left( \frac{p_i}{s_i} \right), \quad  s_i = \sum_{j=1}^{i-1}
 p_j$.   Dar\'oczy mostr\'o  que  si $f$  es medible,  o  continua en  $0$, o  no
 negatiba  y  acotada, necesariamente  $f(x)  =  h_2(x) =  -x  \log_2  x -  (1-x)
-\log_2(1-x)$,   conduciendo   a  la   entropia   de   Shannon  (teorema~1;   ver
+\log_2(1-x)$,   conduciendo   a  la   entrop\'ia   de   Shannon  (teorema~1;   ver
 tambi\'en~\cite{Lee64,  Tve58, Ken64}).   En otros  terminos, su  axioma  (v) es
-alternativa a  la recursividad.  Para  extender la entropia de  Shannon, propuso
+alternativa a  la recursividad.  Para  extender la entrop\'ia de  Shannon, propuso
 extender este axioma  (v) por la ecuaci\'on funcional  $f_\beta(x) + (1-x)^\beta
 f_\beta\left(  \frac{y}{1-x} \right)  = f_\beta(y)  +  (1-y)^\beta f_\beta\left(
-  \frac{x}{1-y}  \right)$,   lo  que   condujo  necesariamente  a   la  entropia
+  \frac{x}{1-y}  \right)$,   lo  que   condujo  necesariamente  a   la  entrop\'ia
 (teoremas~2 y~3)
 %
 \[
 H_\beta^\dar(p) = \frac{1}{1-2^{1-\beta}} \left( 1 - \sum_i p_i^\beta \right)
 \]
 %
-\noindent  es  decir  nada  m\'as  que  la  entropia  introducida  por  Havdra  \&
+\noindent  es  decir  nada  m\'as  que  la  entrop\'ia  introducida  por  Havdra  \&
 Charv\'at. En lo que sigue, se la denota $H_\beta^\hcd$. Sin embargo, el estudio
 de Dar\'oczy fue  m\'as intensivo que el de Havdra  \& Charv\'at.  Primero, not\'o
-el mapa  entre su  entropia y la  de R\'enyi. Adicionalmente  a Havdra-Charv\'at
+el mapa  entre su  entrop\'ia y la  de R\'enyi. Adicionalmente  a Havdra-Charv\'at
 probaron que se conserva  la propiedad \ref{prop:SZ:permutacion} (invarianza por
 permutaci\'on, que no era un  axioma en su enfoque), $H_\beta^\hcd\left( \frac12
   ,  \frac12   \right)  =  1$   (lo  llama  normalizaci\'on),   la  expansividad
 \ref{prop:SZ:expansabilidad},   una  additividad  extendida,   una  recursividad
 extendida  precisamente  del modelo  de  Havrda-Charv\'at (teorema~4).   Prob\'o
 tambi\'en   \ref{prop:SZ:positividad},   positividad   alcanzado  en   el   caso
-deterministico y  la m\'aximalidad \ref{prop:SZ:cotamaxima} en  el caso uniforme
+determinista y  la maximalidad \ref{prop:SZ:cotamaxima} en  el caso uniforme
 (teorema~6),  que incidentalmente  $H_\beta^\hcd\left( \frac1\alpha  ,  \ldots ,
   \frac1\alpha \right)$ crece con el  cardinal $|\X| = \alpha$.  Muy interesante
-tambi\'en es se puede definir una entropia condicional en el mismo modelo que en
+tambi\'en es se puede definir una entrop\'ia condicional en el mismo modelo que en
 el caso de Shannon $H_\beta^\hcd(X|Y) = \sum_y \left[ p_{X|Y}(x,y) \right]^\beta
 H_\beta^\hcd(   p_{X|Y}(\cdot,y)   )$,   que   existe  una   regla   de   cadena
 \ref{prop:SZ:cadena}, $H_\beta^\hcd(X,Y)  = H_\beta^\hcd(Y) + H_\beta^\hcd(X|Y)$
-y    que    \ref{prop:SZ:condicionar}    condicionar    reduce    la    entropia
+y    que    \ref{prop:SZ:condicionar}    condicionar    reduce    la    entrop\'ia
 $H_\beta^\hcd(X|Y) \le H_\beta^\hcd(X)$  (teorema~8).  Mostr\'o tambi\'en que si
 se pierde  la additividad, se  obiene para \  $X$ \ e  \ $Y$ \  independientes \
 $H_\beta^\hcd(X,Y) = H_\beta^\hcd(X) +  H_\beta^\hcd(Y) + \left( 2^{1-\beta} - 1
@@ -172,7 +172,7 @@ usa el  mismo enfoque que Shannon,  pero usando $H_\beta^\hcd$ en  lugar de $H$,
 ver secci\'on~6 del papel).
 
 % ----- Entropias generalizadas h,phi
-\paragraph{Una  clase  m\'as  general   y  sus  propiedades}  Las  entropias  tipo
+\paragraph{Una  clase  m\'as  general   y  sus  propiedades}  Las  entrop\'ias  tipo
 Havdra-Charv\'at-Dar\'oczy  fueron  (re)descubiertos   varios  otras  veces  y/o
 estudiados  m\'as  detenidamente en  varios  campos  y  varios extensiones  fueron
 introducidas~\cite[entre  otros]{Var66, Oni66,  Kap67,  Vaj68, LinNie71,  Ari71,
@@ -181,25 +181,25 @@ introducidas~\cite[entre  otros]{Var66, Oni66,  Kap67,  Vaj68, LinNie71,  Ari71,
 en  los  primeros  a\~nos  de  la decada  1970~\cite{Ari71}  y  rediscubierto  y
 estudiado con m\'as detaller y una decada despues por Burbea y Rao~\cite{BurRao82}
 y  luego estudiado  por  Salicr\'u~\cite{Sal87}.  La  medida propuesta,  llamada
-$\phi$-entropia, es definida por
+$\phi$-entrop\'ia, es definida por
 %
 \[
 \hphi[p]  =   -\sum_i  \phi(p_i)  \qquad   \mbox{con}  \qquad  \phi   \:  \mbox{
   estrictamente convexa}
 \]
 %
-Burbea  y  Rao  asociaron  una  medida  de  divegencia  a  esta  entropia.   Las
-$\phi$-entropias contienen Shannon como caso  particular ($\phi(x) = x \log x$),
+Burbea  y  Rao  asociaron  una  medida  de  divegencia  a  esta  entrop\'ia.   Las
+$\phi$-entrop\'ias contienen Shannon como caso  particular ($\phi(x) = x \log x$),
 as\'i  que  la  clase   de  Havdra-Charv\'at-Dar\'oczy  ($\phi(x)  =  \frac{x  -
   x^\beta}{2^{1-\beta}-1}$)  como mencionado, pero  no la  clase de  R\'enyi. De
-hecho, las $\phi$-entropias se enmarcan en una clase un poco m\'as amplia, llamada
-$(h,\phi)$-entropias~\cite{SalMen93, MenMor97}. Cambiamos ac\`a substancialmente
-su escritura por razones homogeneidad con la $\phi$-entropia (y las divergencias
+hecho, las $\phi$-entrop\'ias se enmarcan en una clase un poco m\'as amplia, llamada
+$(h,\phi)$-entrop\'ias~\cite{SalMen93, MenMor97}. Cambiamos ac\`a substancialmente
+su escritura por razones homogeneidad con la $\phi$-entrop\'ia (y las divergencias
 que se introducira luego)~\footnote{En la literatura, no hay el signo $-$, y hay
-  que invertir concava y convexa.}
+  que invertir c\'oncava y convexa.}
 %
-\begin{definicion}[$(h,\phi)$-entropia]\label{def:SZ:HPhiEntropia}
-La $(h,\phi)$-entropia de una  distribuci\'on de probabilidad $p_X$ definida sobre
+\begin{definicion}[$(h,\phi)$-entrop\'ia]\label{def:SZ:HPhiEntropia}
+La $(h,\phi)$-entrop\'ia de una  distribuci\'on de probabilidad $p_X$ definida sobre
 $\X$ de cardinal finito $|\X| = \alpha$ es definida por
 %
 \[
@@ -211,7 +211,7 @@ donde o
 %
 \begin{itemize}
 \item $\phi$ \ es estrictamente convexa y \ $h$ \ creciente, o
-\item $\phi$ \ es estrictamente concava y \ $h$ \ decreciente
+\item $\phi$ \ es estrictamente c\'oncava y \ $h$ \ decreciente
 \end{itemize}
 %
 Frecuentemente, se  supone adicionalmente que $\phi$  y $h$ son  de clase $C^2$,
@@ -220,21 +220,21 @@ vale cero) y, sin perdida de generalidad, que $h(-\phi(1)) = 0$.
 \end{definicion}
 %
 \noindent  (ver  tambi\'en~\cite{Est97}  para  una  generalizaci\'on  a\'un  m\'as
-amplia). Cu\'ando  $h(x) = x$ se  recupera la $\phi$-entropia,  incluyendo la de
-Shannon y las  de Havdra-Charv\'at-Dar\'oczy. Ademas, la familia  de R\'enyi cae
+amplia). Cu\'ando  $h(x) = x$ se  recupera la $\phi$-entrop\'ia,  incluyendo la de
+Shannon y las  de Havdra-Charv\'at-Dar\'oczy. Adem\'as, la familia  de R\'enyi cae
 tamb\'ien  en esta  familia ($\phi(x)  = -  x^\beta$ \  y \  $h(x)  = \frac{\log
-  x}{1-\beta}$) as\'i que todas las entropias evocadas en el parafo anterior.
+  x}{1-\beta}$) as\'i que todas las entrop\'ias evocadas en el parafo anterior.
 
-Como en el caso de  Shannon, para $X = (X_1,\ldots,X_d)$, la $(h,\phi)$-entropia
-de $X$ es una $(h,\phi)$-entropia conjunta de los $X_i$.
+Como en el caso de  Shannon, para $X = (X_1,\ldots,X_d)$, la $(h,\phi)$-entrop\'ia
+de $X$ es una $(h,\phi)$-entrop\'ia conjunta de los $X_i$.
 
-Obviamente,  de  las  propiedades  de  la  entropia  de  Shannon,  se  conservan
+Obviamente,  de  las  propiedades  de  la  entrop\'ia  de  Shannon,  se  conservan
 \ref{prop:SZ:continuidad}  (continuidad),  \ref{prop:SZ:permutacion}  (invariaza
 por  permutaci\'on),  \ref{prop:SZ:biyeccion}  (invarianza por  transformaci\'on
 biyectiva  de  $X$),   \ref{prop:SZ:expansabilidad}  (expansabilidad,  debido  a
 $\phi(0) = 0$).
 
-Ademas  se conserva  la  Schur-convavidad \ con una reciproca:
+Adem\'as  se conserva  la  Schur-convavidad \ con una reciproca:
 %
 \begin{propiedadesPhi}\setcounter{enumi}{\value{PropSchurConcavidad}}
 %
@@ -249,7 +249,7 @@ Ademas  se conserva  la  Schur-convavidad \ con una reciproca:
   %   \ge \hhphi[q] \quad \mbox{ entonces } \quad p \prec q$}
   %
   En otros terminos, se obtiene la  relaci\'on de mayorisaci\'on si se cumple la
-  relaci\'on  de ordre  entropicas para  cualquier par  de  funciones entropicas
+  relaci\'on  de ordre  entr\'opicas para  cualquiera par  de  funciones entr\'opicas
   $(h,\phi)$.   La  Schur-concavidad (y  su  reciproca)  es  consecuencia de  la
   desigualdad  de Schur~\cite{Sch23}  o Hardy-Littlewood-P\'olya~\cite{HarLit29,
     HarLit52} o Karamata~\cite{Kar32}  (ver tambi\'en~\cite[Cap.~3, Prop.~C.1 \&
@@ -265,7 +265,7 @@ Ademas  se conserva  la  Schur-convavidad \ con una reciproca:
 % 0, 1 \le i \ne j \le alpha
 %
 Como consecuencia, se  conservan la positividad \ref{prop:SZ:positividad} gracia
-a $\phi(0)  = 0$ y  $h(\phi(1)) = 0$  (alcanzado en el caso  deterministico), la
+a $\phi(0)  = 0$ y  $h(\phi(1)) = 0$  (alcanzado en el caso  determinista), la
 maximalidad \ref{prop:SZ:cotamaxima} (caso uniforme),
 %
 \[
@@ -282,18 +282,18 @@ as\'i que
 Con respeto a la concavidad  \ref{prop:SZ:concavidad}, no se conserva en general:
 %
 \begin{propiedadesPhi}\setcounter{enumi}{\value{PropConcavidad}}
-\item\label{prop:SZ:concavidadHPhi} Si $h$  est concava, entonces $\hhphi[p]$ es
-  concava con respeto a $p$.  Eso es una consecuencia de la concavidad de $\phi$
+\item\label{prop:SZ:concavidadHPhi} Si $h$  es c\'oncava, entonces $\hhphi[p]$ es
+  c\'oncava con respeto a $p$.  Eso es una consecuencia de la concavidad de $\phi$
   y  decrecencia  de  $h$   (resp.   convexidad/crecencia)  conjuntamente  a  la
   concavidad de $h$.  La reciproca no  es verdad.  Por ejemplo, se puede ver que
-  si $\beta < 1$, la entropia de R\'enyi es concava, pero se proba que existe un
+  si $\beta < 1$, la entrop\'ia de R\'enyi es c\'oncava, pero se proba que existe un
   $\beta^*(\alpha) >  1$ tal que  para cualquier $\beta \le  \beta^*(\alpha)$ se
   conserva  la   concavidad,  a   pesar  de  que   $h$  no   sea  necesariamente
-  concava~\cite[p.~57]{BenZyc06}.
+  c\'oncava~\cite[p.~57]{BenZyc06}.
 \end{propiedadesPhi}
 
 Se pierde la propiedad de recursividad \ref{prop:SZ:recursividad}, pero se puede
-vincular  la  entropia  total con  la  obtenida  juntando  dos estados  por  una
+vincular  la  entrop\'ia  total con  la  obtenida  juntando  dos estados  por  una
 desigualdad:
 %
 \begin{propiedadesPhi}\setcounter{enumi}{\value{PropRecursividad}}
@@ -318,14 +318,14 @@ desigualdad:
   %
   Esta  desigualdad es  consecuencia de  la desigualdad  de Petrovi\'c~\cite[43,
   Teorema~8.7.1]{Kuc09}, $\phi(a + b) \ge \phi(a) + \phi(b)$ para $\phi$ convexa
-  y que se  cancela en 0 (y  la conversa en el caso  concavo), conjuntamente con
+  y que se  cancela en 0 (y  la conversa en el caso  c\'oncavo), conjuntamente con
   $h$ creciente  (resp.  decreciente).  A  parte en el  caso de Shannon y  el de
   Havdra-Charv\'at-Dar\'oczy, no hay un  vinculo inmediato entre $\hhphi[p_X]$ \
   y \ $\hhphi[p_{\overline{X}}]$.
 \end{propiedadesPhi}
 
 Se  conserva  la  superadditividad~\ref{prop:SZ:superaditividad}. De  hecho,  si
-$\phi$ es convexa (resp. concava) con \ $\phi(0) = 0$, \ $\forall \: 0 \le a \le
+$\phi$ es convexa (resp. c\'oncava) con \ $\phi(0) = 0$, \ $\forall \: 0 \le a \le
 1,  \: \phi(a  u)  = \phi(a  u  + (1-a)  0) \le  a  \phi(u)$ (resp.  desigualdad
 reversa).  Entonces,   \  $\phi\left(  p_{X,Y}(x_i,y_j)   \right)  =  \phi\left(
   p_{X|Y}(x_i,y_j)  p_Y(y_j)  \right)  \le  p_{X|Y}(x_i,y_j)  \phi\left(p_Y(y_j)
@@ -348,7 +348,7 @@ particular, se conserva solamente en el caso Shannon:
 \quad \forall  \: p_{X,Y}  \qquad \Longleftrightarrow \qquad \phi(x) = x \log x
 \]
 %
-\ie $\hhphi$ es una funci\'on creciente de la entropia de Shannon
+\ie $\hhphi$ es una funci\'on creciente de la entrop\'ia de Shannon
 \end{teorema}
 %
 \begin{proof}
@@ -361,7 +361,7 @@ particular, se conserva solamente en el caso Shannon:
   \begin{itemize}
   \item Con  un caso particular  sobre $\X$  e $\Y$ de  cardenal 3 cada  unos se
     proba  de que  la desigualdad  no se  puede cumplir,  salvo si  la funci\'on
-    entropica $\phi'$ satisface a una ecuaci\'on funcional.
+    entr\'opica $\phi'$ satisface a una ecuaci\'on funcional.
   %
   \item la sola soluci\'on admisible de esta ecuaci\'on se recuce a $\phi(x) = -
     x \ln x$.
@@ -391,15 +391,15 @@ particular, se conserva solamente en el caso Shannon:
   -\alpha b \big\} \big]
   \]
   %
-  Ahora, si $\phi$ es  convexa (resp. concava)
+  Ahora, si $\phi$ es  convexa (resp. c\'oncava)
   %
   \[
   \forall \, u,v \quad \phi(v)  - \phi(u) \:  \ge \:  (v-u) \, \phi'(u),
   \]
   %
   \ie la variaci\'on  (cuerda) es mayor que la derivada  en $b$, como ilustrado
-  figura~\ref{fig:SZ:ConvexidadDerivada}   (desigualdad  reversa   para  $\phi$
-  concava).
+  figura Fig.~\ref{fig:SZ:ConvexidadDerivada}   (desigualdad  reversa   para  $\phi$
+  c\'oncava).
   %
   \begin{figure}[h!]
   %
@@ -424,7 +424,7 @@ particular, se conserva solamente en el caso Shannon:
   \hphi[p_X \otimes p_Y] - \hphi[p_{X,Y}] \: \le \: c \: g(a,\alpha,b,\beta,c),
   \]
   %
-  (para $\phi$  concava se  remplaza $\hphi$ por  $-H_{-\phi}$ con  la igualdad
+  (para $\phi$  c\'oncava se  remplaza $\hphi$ por  $-H_{-\phi}$ con  la igualdad
   inversa), donde
   %
   \begin{equation}
@@ -465,16 +465,16 @@ particular, se conserva solamente en el caso Shannon:
   \]
   %
   Eso significa  de que $x \,  \phi''(x)$ es constante sobre  $x \in (0  \, , \,
-  (1-a)  \max\{b,1-b\})$, y  para cualquier  par $(a,b)  \in (0  \, ,  \, 1)^2$.
+  (1-a)  \max\{b,1-b\})$, y  para cualquiera  par $(a,b)  \in (0  \, ,  \, 1)^2$.
   Entonces, $x \, \phi''(x)$ es constante sobre $x \in (0 \, , \, 1 )$, es decir
   que $\phi$ es necesariamente de la forma $\phi(x) = \lambda \, x \ln x + \mu x
-  + \nu$. Debido  a la continuidad de $\phi$, queda valide  sobre el cerrado $[0
+  + \nu$. Debido  a la continuidad de $\phi$, queda v\'alido  sobre el cerrado $[0
   \, , \, 1]$.  De que se aplica  a un vector de probabilidad, sumando a uno, se
   puede reducir el problema a $\mu =  0$ (poniendo $\mu$ en $\nu$ sin cambiar el
-  valor  de entropia).   Ademas,  la  constante $\nu$  no  altera la  concavidad
+  valor  de entrop\'ia).   Adem\'as,  la  constante $\nu$  no  altera la  concavidad
   (resp. convexidad) de $\phi$, as\'i que se la puede translatar en la funci\'on
   $h$   (sin  cambiar   la  monotonicidad).    Para  que   $\phi$   sea  convexa
-  (resp. concava)  hace falta tener $\lambda  > 0$ (resp.  $\lambda  < 0$) as\'i
+  (resp. c\'oncava)  hace falta tener $\lambda  > 0$ (resp.  $\lambda  < 0$) as\'i
   que,  sin perdida  de generalidad,  $\lambda$  puede ser  puesta tambi\'en  en
   $h$. Tomar \ $\phi (x) = x \, \ln x$ \ con \ $h$ \ creciente o \ $\phi (x) = -
   x \, \ln x$ \ con \  $h$ \ decreciente es completamente equivalente, as\'i que
@@ -482,7 +482,7 @@ particular, se conserva solamente en el caso Shannon:
   y $h$ creciente.
 
   $\hphi  =   H$  siendo  subadditiva  (propidad~\ref{prop:SZ:subaditividad}),
-  cualquier funci\'on creciente de $H$  va obviamente quedar subadditiva, lo que
+  cualquiera funci\'on creciente de $H$  va obviamente quedar subadditiva, lo que
   cierra la prueba.
   %
 \end{proof}
@@ -496,23 +496,23 @@ $\hhphi[p_X \otimes p_Y] = h\left( -  4 \, \phi\left( \frac14 \right) \right)$ \
 y \ $\hhphi[p_X] + \hhphi[p_Y] = 2  \, h\left( - 2 \, \phi\left( \frac12 \right)
 \right)$, \  as\'i que, en este  ejemplo \ $\hhphi[p_{XY}]  > \hhphi[p_X \otimes
   p_Y]$  \   (consecuencia  de  la  Schur-convavidad)  y   \  $\hhphi[p_{XY}]  >
-\hhphi[p_X]   +   \hhphi[p_Y]$:   Tampoco   las   $(h,\phi)$-entropia   no   son
+\hhphi[p_X]   +   \hhphi[p_Y]$:   Tampoco   las   $(h,\phi)$-entrop\'ia   no   son
 super-additivas.
 
 \
 
-La  definici\'on  de entropias  generalizadas  condicionales  aparece mucho  m\'as
+La  definici\'on  de entrop\'ias  generalizadas  condicionales  aparece mucho  m\'as
 problematico. Por  ejemplo, si  se define  a la Shannon,  es decir  definiendo \
 $\hhphi[X|Y]$ \ tomando \ $\sum_{y \in \Y} p_Y(y) \hhphi[p_{X|Y}(\cdot,y)]$ \ se
 pierde la regla de cadena~\ref{prop:SZ:cadena}. Como se lo ha visto, en el marco
-de la entropia de Havdra-Charv\'at-Dar\'oczy,  se conserva la regla de cadena si
+de la entrop\'ia de Havdra-Charv\'at-Dar\'oczy,  se conserva la regla de cadena si
 se remplaza  $p_Y$ por su  potencia $p_Y^\beta$.  Sin embargo,  generalizar este
 esquema en el caso general  falla (la gracia en Havdra-Charv\'at-Dar\'oczy viene
 de  la  propiedad  de  morfismo   de  la  exponencial  y  del  logaritmo).  Como
 consecuencia,  generalizar la  noci\'on se  vuelve problematico  tambi\'en.  Por
-ejemple  se  pierde  el  diagrama  de  Venn aparte  si  se  define  la  entropia
+ejemple  se  pierde  el  diagrama  de  Venn aparte  si  se  define  la  entrop\'ia
 condicional  a  partir  de  la  regla  de  cadena. Pero  en  este  caso,  si  la
-superadditividad garantiza la positividad  de la entropia condicional, se pierde
+superadditividad garantiza la positividad  de la entrop\'ia condicional, se pierde
 la   propiedad~\ref{prop:SZ:independenciacondicional}    por   perdida   de   la
 additividad,       y      por       consecuencia      la       propiedad      de
 positividad/independencia~\ref{prop:SZ:Ipositive}  de  una  informaci\'on  mutua
@@ -523,16 +523,16 @@ que un tercero camino puede ser usar divergencia.
 
 \
 
-Como en el caso de Shannon, se puede extender la generalizaci\'on de la entropia
+Como en el caso de Shannon, se puede extender la generalizaci\'on de la entrop\'ia
 al  casi  de  vectores  aleatorios  admitiendo  una  densidad  de  probabilidad,
 remplazando la suma por una integraci\'on.
 
-\begin{definicion}[$(h,\phi)$-entropia diferencial]
+\begin{definicion}[$(h,\phi)$-entrop\'ia diferencial]
   \label{def:SZ:HPhiEntropiaDiferencial}
   %
   Sea $X$ una  variable aleatoria definida sobre un  espacio $d$-dimensional $\X
   \subseteq \Rset^d$ y sea $p_X(x)$ la densidad (distribuci\'on) de probabilidad
-  de $X$, La $(h,\phi)$-entropia diferencial de la variable $X$ es definida por
+  de $X$, La $(h,\phi)$-entrop\'ia diferencial de la variable $X$ es definida por
   %
   \[
   \hhphi[p_X] =  \hhphi[X] = h\left( -  \int_\X \phi\left( p_X(x)  \right) \, dx
@@ -544,19 +544,19 @@ remplazando la suma por una integraci\'on.
   integraci\'on en $\Rset^d$).
 \end{definicion}
 
-De nuevo para $X =  (X_1,\ldots,X_d)$, la $(h,\phi)$-entropia diferencial de $X$
-es una $(h,\phi)$-entropia diferencial conjunta de los $X_i$.
+De nuevo para $X =  (X_1,\ldots,X_d)$, la $(h,\phi)$-entrop\'ia diferencial de $X$
+es una $(h,\phi)$-entrop\'ia diferencial conjunta de los $X_i$.
 
-La  versi\'on  diferencial de  la  $(h,\phi)$-entropia  comparte obviamente  las
+La  versi\'on  diferencial de  la  $(h,\phi)$-entrop\'ia  comparte obviamente  las
 mismas debilidades  del caso particular de  Shannon: se pierden  la propiedad de
 invarianza    por   transformaci\'on    biyectiva~\ref{prop:SZ:biyeccion},   \ie
 independencia  de los estados,  la positividad~\ref{prop:SZ:positividad},  la de
 cota  superior~\ref{prop:SZ:cotamaxima}  (salvo si  se  pone  vinculos, ver  m\'as
 adelante), en adici\'on de las que ya la versi\'on discreta perdi\'o.
 
-Sin embargo, se conservan unas propidedades, y entre otros si $h$ es concava, la
-$(h,\phi)$-entropia  diferencia el  concava~\ref{prop:SZ:concavidadHPhi}.  M\'as
-sopredentemente a  primer vista,  se conserva la  $(h,\phi)$-entropia diferencia
+Sin embargo, se conservan unas propidedades, y entre otros si $h$ es c\'oncava, la
+$(h,\phi)$-entrop\'ia  diferencia el  c\'oncava~\ref{prop:SZ:concavidadHPhi}.  M\'as
+sopredentemente a  primer vista,  se conserva la  $(h,\phi)$-entrop\'ia diferencia
 bajo un rearreglo~\ref{prop:SZ:permutacionC},
 %
 \[
@@ -570,9 +570,9 @@ otros  en~\cite{LieLos01} o  \cite[Lema~7.2]{WanMad04}~\footnote{Recuerdense que
 
 Se  prob\'o  en~~\cite{Cho74} o~\cite[Prop.~7.3]{WanMad04}  que  se conserva  la
 Schur-concavidad~\ref{prop:SZ:Schurconcavidad}              para             las
-$\phi$-entropias. Entonces,  de $h$  creciente (para $\phi$  concava desigualdad
+$\phi$-entrop\'ias. Entonces,  de $h$  creciente (para $\phi$  c\'oncava desigualdad
 reversa  para  la  integral, pero  $h$  es  decreciente),  se generaliza  a  las
-$(h,\phi)$-entropias,\ie
+$(h,\phi)$-entrop\'ias,\ie
 %
 \[
 p \prec  q  \quad \Rightarrow  \quad \hhphi[p]  \ge \hhphi[q]
@@ -589,7 +589,7 @@ p \prec  q  \quad \Rightarrow  \quad \hhphi[p]  \ge \hhphi[q]
 \paragraph{Primer  generalizaciones, saliendo  de Shannon  y  Kullback-Leibler -
   divergencia de Jensen-Shannon}
 
-Como  se  lo ha  visto  tratando  de la  entropia  relativa,  la divergencia  de
+Como  se  lo ha  visto  tratando  de la  entrop\'ia  relativa,  la divergencia  de
 Kullback-Leibler no define una distancia entre distribuciones de probabilidades,
 siendo no simetrica  entre otros. Un primer paso para  recuperar la simetria sin
 perder la positividad de  esta medida informacional fue simetrizarla, definiendo
@@ -606,7 +606,7 @@ D_J(q\|p) = \Dkl[p]{q} + \Dkl[p]{q}
 \noindent  Esta  versi\'on  simetrizada  de la  divergencia  queda  naturalmente
 positiva,  pero sufre  todav\'ia  de  unas debilidades  de  $\Dkl{}$. Esta  bien
 definida  siempre  que   el  soporte  de  $p$  es  incluido  en   lo  de  $q$  y
-vice-versa. Ademas, no cumple tampoco  la desigualdad triangular. A pesar de sus
+vice-versa. Adem\'as, no cumple tampoco  la desigualdad triangular. A pesar de sus
 debilidades, se  us\'o bastante  en problemas de  discriminaci\'on, debido  a su
 positividad con igualdad  si y solamente si $p = q$  (propiedad herida del hecho
 de que la suma de terminos positivos es nula si y solo si cada uno vale cero).
@@ -619,7 +619,7 @@ generalizarla    bajo     la    terminologia    de     {\it    divergencia    de
   en reconocimiento de patrones~\cite{WonYou85}}.
 %La introdujo  Lin  a
 %  trav\'es de  $\Dkl$, sin los factores  $\frac12$, pero desde  este trabajo, se
-%  usa casi siempre la formulaci\'on dada. La formulaci\'ion con la entropia (con
+%  usa casi siempre la formulaci\'on dada. La formulaci\'ion con la entrop\'ia (con
 %  un factor 2) aparece como consecuencia y no una definici\'on.}
 %
 \begin{eqnarray*}
@@ -634,11 +634,11 @@ p_2}\\[2.5mm]
 %
 \noindent $\Djs$ heride obviamente de  $\Dkl{}$ su positividad con igualdad si y
 solamente si $p_1 =  p_2$.  La misma propiedad puede ser visto  a trav\'es de la
-desigualdad  de Jensen,  dando este  nombre  a la  medida. Ademas,  se quita  el
+desigualdad  de Jensen,  dando este  nombre  a la  medida. Adem\'as,  se quita  el
 problema de  definici\'on, siendo de que el  soporte de $\pi_1 p_1  + \pi_2 p_2$
 siempre contiene el de $p_1$ y el  de $p_2$. No es simetrica en general, pero se
 obtiene  esta propiedad  cuando $\pi  = \pi_{\mathrm{u}}  \equiv  [\frac12 \quad
-\frac12]^t$. Ademas,  en este caso, a pesar  de que la divergencia  no cumpla la
+\frac12]^t$. Adem\'as,  en este caso, a pesar  de que la divergencia  no cumpla la
 desigualdad           triangular,          aparece           que          $\Big(
 J_{\mathrm{js}}^{\pi_{\mathrm{u}}}(p_1,p_2) \Big)^s, \quad 0 < s \le \frac12$ es
 una  metrica~\cite{OsaBus18}  o~\cite[para  $s =  \frac12$]{EndSch03,  OesVaj03,
@@ -676,10 +676,10 @@ informacionales a la Shannon viene todav\'ia del campo de la clasificaci\'on. Si
 unos datos  pueden provenir  de una distribuci\'on  $p_i$, $i  = 1, 2$,  con una
 probabilidad  $\pi_i$, la variable  aleatoria $X$  dada por  los datos  tiene la
 distribuci\'on   de   mezcla   $p   =   \sum_i   \pi_i   p_i$   como   ilustrado
-figura~\ref{fig:SZ:Concavidad}-(b). Sea $Z$  la variable aleatoria binaria sobre
+figura Fig.~\ref{fig:SZ:Concavidad}-(b). Sea $Z$  la variable aleatoria binaria sobre
 $\{ 1 ,  2 \}$ tal que $\Pr[Z  = i] = \pi_i$, variable de  selecci\'on entre las
 distribuciones  $p_i$ (ej.  la  moneda de  la  figura). Por  definici\'on de  la
-entropia  condicional,  $H(X|Z)  =  \sum_i  \pi_i  H(X|Z =  i)  =  \sum_i  \pi_i
+entrop\'ia  condicional,  $H(X|Z)  =  \sum_i  \pi_i  H(X|Z =  i)  =  \sum_i  \pi_i
 H(p_i)$. De $\Djs(p_1,p_2) = H(p) - \sum_i H(p_i)$ viene $\Djs(p_1,p_2) = H(X) -
 H(X|Z)$, es decir
 %
@@ -702,7 +702,7 @@ distancia  $L^1$  entre  distribuciones   o  divergencia  de  variaci\'on  total
 en~\cite{Lin91}.
 %~\cite{SchEla03}.
 
-M\'as alla, en  el campo de la  clasificaci\'on, se puedre tratar de  m\'as de dos
+M\'as all\'a, en  el campo de la  clasificaci\'on, se puedre tratar de  m\'as de dos
 clases, dando lugar a la  generalizaci\'on de la divergencia de Jensen-Shannon a
 $n$  distribucionese   probabilidad  y   $\pi$  un  $n$-componentes   vector  de
 probabilidad,
@@ -728,10 +728,10 @@ de distribuci\'on $\pi$.
 \paragraph{Clase de Burbea-Rao o   $f$-Jensen}
 %$\phi$-Jensen divergencia y generalized $f$-Jensen}
 
-\SZ{ (0)  Jensen generalizada  caso H  phi Ref. Nielsen ArXiv 2010, Nielsen Boltz 2011 -> cualquier funcion concava $\hgene$ de la distribucion de proba., en particular h phi
+\SZ{ (0)  Jensen generalizada  caso H  phi Ref. Nielsen ArXiv 2010, Nielsen Boltz 2011 -> cualquiera funcion c\'oncava $\hgene$ de la distribucion de proba., en particular h phi
 
   Se  ilustra  a  que  corresponde  esta  cantidad  con  respeto  a  $f$  en  la
-  figura~\ref{fig:SZ:BregmanFJensen} m\'as adelante.  }
+  figura Fig.~\ref{fig:SZ:BregmanFJensen} m\'as adelante.  }
 
 % ----- (h,phi)-divergence
 \paragraph{Clase de Csisz\'ar y versi\'on simetrizada}
@@ -769,7 +769,7 @@ Pardo 99; MenMor97:5, Cf Pardo 2006 et ref. }
 intoducidos  en el  campo de  la  programaci\'on lineal  convexa, para  resolver
 problemas de  minimizaci\'on convexa~\footnote{A\'un que aparece  en una revista
   de matematica  y f\'isica matematica, una  gracia del papel de  Bregman es que
-  toma  el  ejemplo  de  maximizaci\'on  de  la entropia  de  Shannon  sujeto  a
+  toma  el  ejemplo  de  maximizaci\'on  de  la entrop\'ia  de  Shannon  sujeto  a
   momentos\ldots}~\cite{Bre67}, pero  con aplicaciones en  varios campos~\cite[y
 ref.]{Bas89, Bas13}:
 %
@@ -785,7 +785,7 @@ ref.]{Bas89, Bas13}:
   %
   Dicho de otra  manera, $B_f$ corresponde al desarollo de Taylor  al orden 1 de
   $f$ en  la referencia  $u$.  Se  ilustra a que  corresponde esta  cantidad con
-  respeto a $f$ en la figura~\ref{fig:SZ:BregmanFJensen} m\'as adelante.
+  respeto a $f$ en la figura Fig.~\ref{fig:SZ:BregmanFJensen} m\'as adelante.
 \end{definicion}
 %
 Esta  definici\'on fue generalizada  a funciones  actuando sobre  espacios m\'as
@@ -811,7 +811,7 @@ funciones~\cite{FriSri08, NieNoc17}:
     Viene  de  un  l\'imite   identica  independientemente  de  la  direcci\'on.
     Entonces,  si   una  funci\'on  tiene  una  derivada   de  Fr\'echet,  tiene
     necesariamente derivadas de G\^ateau,  pero no es reciproca.  Esta subtileza
-    va m\'as alla de la meta de esta secci\'on.}.
+    va m\'as all\'a de la meta de esta secci\'on.}.
 \end{definicion}
 %
 En  el  caso  de que  $\Omega  \subset  \Rset^d$  se recupera  sencillamente  la
@@ -822,7 +822,7 @@ definici\'on original.
 %B_f(v\|u) \ge 0 \qquad \mbox{con igualdad sii} \quad v = u
 %\]
 
-Para $(h,\phi)$-entropias discretas \underline{concavas} (ej.  con $h$ concava),
+Para $(h,\phi)$-entrop\'ias discretas \underline{c\'oncavas} (ej.  con $h$ c\'oncava),
 se puede entonces asociar una divergencia de Bregman
 %
 \begin{eqnarray*}
@@ -847,7 +847,7 @@ definici\'on inicial con  \ $\Omega = [0 \, ;  \, 1]$, $u$ \ y \  $v = q(y_i)$ \
 $i$-esima  componente  de  \ $p$  \  y  \  $q$  \  respectivamente, y  sumar  la
 divergencia obtenida sobre $i$.
 
-En el caso continuo, para las $(h,\phi)$-entropias, se obtiene
+En el caso continuo, para las $(h,\phi)$-entrop\'ias, se obtiene
 %
 \[
 \bhphi[q]{p} =  \hhphi[p] - \hhphi[q] -  h'\big(\hphi[p] \big) \int_\X  ( q(x) -
@@ -870,7 +870,7 @@ J_f^\pi(p_1,p_2) = \pi_1  B_f(p_1 \| \pi_1 p_1 + \pi_2 p_2)  + \pi_2 \B_f(p_1 \|
 %
 \cite{Zha04, NieBol11, NieNoc17}}
 
-La figura~\ref{fig:SZ:BregmanFJensen} ilustra  a que corresponden \ $D_f$  \ y \
+La figura Fig.~\ref{fig:SZ:BregmanFJensen} ilustra  a que corresponden \ $D_f$  \ y \
 $J_f$ con respeto a la funci\'on convexa $f$.
 %
 \begin{figure}[h!]
@@ -899,7 +899,7 @@ La divergencia de Bregman tiene las propiedades siguientes
   \]
   %
   Esta propiedad  es la  consecuencia directa de  la convexidad estricta de  $f$, como
-  ilustrado \SZ{figura~\ref{fig:SZ:ConvexidadDerivada}.}
+  ilustrado \SZ{figura Fig.~\ref{fig:SZ:ConvexidadDerivada}.}
 %
 \item  $B_f(q\|p)$ es  convexa con  respeto a  $q$, pero  no  necesariamente con
   respeto a $p$. Es tambi\'en consecuencia directa de la convexidad de $f$.
@@ -944,16 +944,16 @@ entre otros.
 
 \subseccion{?`Como se generalizan las identidades y desigualdades?}
 
-\paragraph{Principio de entropia m\'axima} Si este principio naci\'o en el marco
-de la termodynamica o f\'isica,  con la entropia de Shannon (Boltzman), tratando
+\paragraph{Principio de entrop\'ia m\'axima} Si este principio naci\'o en el marco
+de la termodynamica o f\'isica,  con la entrop\'ia de Shannon (Boltzman), tratando
 de las nociones  generalizadas de incertas, vuelve natural  preguntarse sobre la
 extensi\'on de este  problema en el marco general. \SZ{Tal  estudio fue hecho en
   varios trabajos~\cite{ref} nous, Kesavan, Kagan 63}.
 
-El problema se formaliza como en  el caso Shannon, buscando la entropia m\'axima
+El problema se formaliza como en  el caso Shannon, buscando la entrop\'ia m\'axima
 sujeto  a  vinculos: sea  $X$  variable  aleatoria  viviendo sobre  $\X  \subset
 \Rset^d$ con $K$ momentos \ $\Esp\left[ M_k(X) \right] = m_k$ \ fijos, con $M_x:
-\X  \to \Rset$,  el problema  de $(h,phi)$-entropia  m\'axima se  formula  de la
+\X  \to \Rset$,  el problema  de $(h,phi)$-entrop\'ia  m\'axima se  formula  de la
 manera siguiente en  el caso continuo (es el caso  discreto, hay que re-emplazar
 integrales por  sumas): sean  \ $M(x) =  \begin{bmatrix} 1  & M_1(x) &  \cdots &
   M_K(x)  \end{bmatrix}^t$ \  y  \  $m =  \begin{bmatrix}  1 &  m_1  & \cdots  &
@@ -966,7 +966,7 @@ p^* = \argmax_p \hhphi[p] \qquad \mbox{sujeto a} \qquad p \ge 0, \quad \int_\X M
 %
 donde   los  dos  primeros   vinculos  aseguran   de  que   $p^*$  (positividad,
 normalizaci\'on) sea  una distribuci\'on de  probabilidad. Si $\phi$  es convexa
-(resp.   concava), $h$  es creciente  (resp.  decreciente)  as\'i  que maximizar
+(resp.   c\'oncava), $h$  es creciente  (resp.  decreciente)  as\'i  que maximizar
 $\hhphi$ es  equivalente a maximizar $\hphi$ (resp.   $H_{-\phi}$).  Sin perdida
 de generalidad,  se puede considerar la  situaci\'on $\phi$ convexa.  Como en el
 caso de  Shannon, introduciendo factores de Lagrange  $\lambda = \begin{bmatrix}
@@ -981,7 +981,7 @@ p^* =  \argmax_p \int_\X \left(  - \phi\left( p(x)  \right) + \lambda^t  M(x) \,
 %
 donde $\lambda$ ser\'a  determinado para satisfacer los vinculos.   De nuevo, de
 la ecuaci\'on de Euler-Lagrange~\cite{GelFom63,  Bru04} se obtiene la ecuaci\'on
-$- \phi'(p(x)) + \lambda^t M(x) = 0$. La funci\'on entropica $\phi$ es concava y
+$- \phi'(p(x)) + \lambda^t M(x) = 0$. La funci\'on entr\'opica $\phi$ es c\'oncava y
 de clase $C^2$, as\'i que $\phi'$ es continua decreciente, y de la monotonicidad
 es invertible. Entonces,
 %
@@ -992,7 +992,7 @@ p^*(x) = \phi'^{-1}\left( \lambda^t M(x) \right)
 con $\lambda$ tal que se  satisfacen los vinculos de normalizaci\'on y momentos.
 Si el resultado no es positivo en  $\X$, de las condiciones KKT, $p^*(x) = \Big(
 \phi'^{-1}\left(  \lambda^t M(x)  \right) \Big)_+$.   Estas  distribuci\'ones no
-caen  en  general en  la  familia exponencial.  De  una  forma, usando  entropia
+caen  en  general en  la  familia exponencial.  De  una  forma, usando  entrop\'ia
 generales permite escaparse de esta familia.
 
 Como  en el  caso de  Shannon, queda  obviamente  el hecho  de que  no se  puede
@@ -1031,16 +1031,16 @@ Tal como en el caso Shannon, existe una prueba informacional:
   p^*$ conjuntamente a la crecencia de $h$.
 \end{proof}
 %
-Este lema  prueba que, dando vinculos ``razonables'',  la $(h,\phi)$-entropia es
+Este lema  prueba que, dando vinculos ``razonables'',  la $(h,\phi)$-entrop\'ia es
 acotada por arriba, y que se alcanza la cota. Por ejemplo,
 %
 \begin{itemize}
 \item Con  $K =  0$ \  y \  $\X$ \ de  volumen finito  \ $|\X|  < +  \infty$, la
-  distribuci\'on de  $(h,\phi)$-entropia m\'axima es  la distribuci\'on uniforme
+  distribuci\'on de  $(h,\phi)$-entrop\'ia m\'axima es  la distribuci\'on uniforme
   en el caso discreto tal como en el caso continuo.
 %
 \item \SZ{Con  $K =  1$, \ $\X  = \Rset^d$  \ y \  $M(x) = x  x^t$ (visto  con $d^2$
-  vinculos), y $\phi(u) = u^\beta$ (R\'enyi o Havrda-Charv\'at-Dar\'oczy), la  distribuci\'on  de  entropia  m\'axima  es \SZ{Student; Costa and son on. Gausiana se recupera caso limite}.}
+  vinculos), y $\phi(u) = u^\beta$ (R\'enyi o Havrda-Charv\'at-Dar\'oczy), la  distribuci\'on  de  entrop\'ia  m\'axima  es \SZ{Student; Costa and son on. Gausiana se recupera caso l\'imite}.}
 \end{itemize}
 
 \SZ{

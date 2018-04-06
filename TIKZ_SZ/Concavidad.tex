@@ -7,26 +7,26 @@
 \pgfmathsetmacro{\v}{1.25};
 \pgfmathsetmacro{\l}{.7};
 %
-\draw[>=stealth,->] (-.5,0)--(1.6,0) node[right]{\small $u$};
-\draw[>=stealth,->] (0,-.7)--(0,{1.5*log2(1.5)}) node[above]{\small $\phi(u) = u \log u$};
+\draw[>=stealth,->] (-.5,0)--(1.6,0) node[right]{\small $t$};
+\draw[>=stealth,->] (0,-.7)--(0,{1.5*log2(1.5)}) node[above]{\small $\phi(t) = t \log t$};
 \draw[thick,domain=.005:1.5,samples=200] (0,0)-- plot (\x,{\x*log2(\x)});
 \draw[dashed] (\u,{\u*log2(\u)})--(\v,{\v*log2(\v)});
-\draw (\u,0)--(\u,-.05) node[below]{\small $u_1$};
-\draw (\v,0)--(\v,-.05) node[below]{\small $u_2$};
+\draw (\u,0)--(\u,-.05) node[below]{\small $t_1$};
+\draw (\v,0)--(\v,-.05) node[below]{\small $t_2$};
 %
-\draw[dashed] ({\l*\u+(1-\l)*\v},.05) node[above]{\small $\lambda u_1 + (1-\lambda) u_2$}
+\draw[dashed] ({\l*\u+(1-\l)*\v},.05) node[above]{\small $\lambda t_1 + (1-\lambda) t_2$}
 --({\l*\u+(1-\l)*\v},{(\l*\u+(1-\l)*\v)*log2(\l*\u+(1-\l)*\v)});
 %
 % l phi(u) + (1-l) phi(v)
 \draw[dotted]
 ({\l*\u+(1-\l)*\v},{\l*\u*log2(\u)+(1-\l)*\v*log2(\v)})--(-.05,{\l*\u*log2(\u)+(1-\l)*\v*log2(\v)})
-node[left]{\small $\lambda \phi(u_1) + (1-\lambda) \phi(u_2)$};
+node[left]{\small $\lambda \phi(t_1) + (1-\lambda) \phi(t_2)$};
 %
 % phi(l u + (1-l) v)
 \draw[dotted]
 ({\l*\u+(1-\l)*\v},{(\l*\u+(1-\l)*\v)*log2(\l*\u+(1-\l)*\v)})--
 (-.05,{(\l*\u+(1-\l)*\v)*log2(\l*\u+(1-\l)*\v)})
-node[left]{\small $\phi(\lambda u_1 + (1-\lambda) u_2)$};
+node[left]{\small $\phi(\lambda t_1 + (1-\lambda) t_2)$};
 \end{scope}
 %
 %

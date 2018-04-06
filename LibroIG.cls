@@ -167,7 +167,7 @@
 \newcounter{subsubseccion}[subseccion]
 \renewcommand{\theseccion}{\arabic{capitulo}.\arabic{seccion}}
 \renewcommand{\thesubseccion}{\arabic{capitulo}.\arabic{seccion}.\arabic{subseccion}}
-\renewcommand{\thesubseccion}{\arabic{capitulo}.\arabic{seccion}.\arabic{subseccion}.\arabic{subsubseccion}}
+\renewcommand{\thesubsubseccion}{\arabic{capitulo}.\arabic{seccion}.\arabic{subseccion}.\arabic{subsubseccion}}
 
 %% Definition de los capitulos ========================================================
 %% EDULP: titulo de capitulo 18 negrita
@@ -290,7 +290,7 @@
 \newcommand{\bibliografia}[1]{
 \cleardoublepage
 \thispagestyle{empty}
-\renewcommand{\refname}{\fontsize{18}{18}\selectfont\bf Referenc\'ias\vspace{4cm}}
+\renewcommand{\refname}{\fontsize{18}{18}\selectfont\bf Referencias\vspace{4cm}}
 % Bibliograf\'ia sugerida\vspace{4cm}}
  \bibliography{#1}
 \cleardoublepage

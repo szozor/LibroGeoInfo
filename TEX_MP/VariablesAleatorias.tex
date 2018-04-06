@@ -4,22 +4,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \emph{En  un  experimento  o  un  dado  proceso,  los  posibles  resultados  son
-  t\'ipicamente  n\'umeros reales,  siendo cada  n\'umero un  evento.  Luego los
+  t\'ipicamente  n\'umeros reales, siendo  cada n\'umero  un evento.   Luego los
   resultados  son mutuamente  excluyentes. Se  considera a  esos  n\'umeros como
   valores de una  \emph{variable aleatoria} $X$ a valores  reales, que puede ser
   discreta  (cuando  el espacio  muestral  es  finito  o infinito  numerable)  o
   continua.  La ley  de la variable aleatoria $X$ es  una medida de probabilidad
   definida por  \ $P_X(x) =  \Pr(X=x)$ o, en  general, por $P_X(A)  = \Pr(X=x\in
-  A)$.   Puede ser  \'util tambi\'en  considerar variables  aleatorias complejas
-  $Z=X+iY$, donde $X$ e $Y$ son variables aleatorias reales. }
-
+  A)$.  Para indicar  que la variable~$X$ sigue la ley  de distribuci\'on $p$ se
+  escribe  \  $X\sim p  $.   Puede  ser  \'util tambi\'en  considerar  variables
+  aleatorias  complejas  $Z=X+iY$, donde  $X$  e  $Y$  son variables  aleatorias
+  reales. }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subseccion{Variable aleatoria discreta}
 
 Los  posibles valores de  una variable  aleatoria discreta  $X$ consisten  en un
-conjunto  contable   (finito  o  infinito   numerable)  de  n\'umeros   reales:  \
-$x\in\Omega=\{x_1,   x_2,  \ldots\}$.   A  cada   uno  de   los   valores  $x_n$
+conjunto  contable  (finito  o   infinito  numerable)  de  n\'umeros  reales:  \
+$x\in\Omega=\{x_1,   x_2,  \ldots\}$.   A   cada  uno   de  los   valores  $x_n$
 ($n=1,2,\ldots$) se puede asociar una  probabilidad $p_n=p(x_n)$, de modo que se
 satisface la condici\'on de normalizaci\'on:
 %
@@ -111,7 +112,7 @@ p = \begin{pmatrix}
 $$
 %
 que tambi\'en se escribe como \  $p = \begin{pmatrix} \frac1N & \frac1N & \cdots
-  &  \frac1N  \end{pmatrix}^t$.  La   funci\'on  de  repartici\'on  resulta  una
+  &  \frac1N  \end{pmatrix}^t$.   La  funci\'on  de  repartici\'on  resulta  una
 funci\'on escalonada,  con saltos de  altura $\frac1N$ para  cada $n$ entre  1 y
 $N$.
 
@@ -209,8 +210,9 @@ que da la  probabilidad de que $X$ sea  menor o igual que cierto  valor $x$ dado
 (dentro del conjunto~$\Omega$ de todos  los valores posibles de la variable). En
 forma an\'aloga,  \ $\Pr(X\in  A) = \int_A  p(x) \,  dx$ acumula la  densidad de
 probabilidad en un subconjunto $A$ del espacio muestral.  Por la propiedad de la
-inclusi\'on, se tiene \ $\Pr(X\leq  x_1) \leq \Pr(X\leq x_2)$ siempre que $x_1\leq
-x_2$; luego $F_X(x)$ es una funci\'on creciente %%no decreciente ?? SI, LO DIRIA ASI
+inclusi\'on,  se  tiene \  $\Pr(X\leq  x_1)  \leq  \Pr(X\leq x_2)$  siempre  que
+$x_1\leq x_2$; luego $F_X(x)$ es una funci\'on creciente
+%%no decreciente ?? SI, LO DIRIA ASI
 de   $x$,  acotada   por  la   unidad,  con   valores  extremos   dados   por  \
 $\lim_{x\rightarrow -\infty} F_X(x)=0$  y $\lim_{x\rightarrow \infty} F_X(x)=1$,
 tomando $\Omega=\Rset$.  Adem\'as la derivada respecto de $x$ es la pdf:
@@ -220,7 +222,7 @@ $$
 $$ 
 %
 De aqu\'i  se observa que  la densidad de  probabilidad $p(x)$ puede no  ser una
-funci\'on  ``ordinaria'' cuando  $\Pr(X\leq x)$  es discontinua,  pero  como mucho
+funci\'on ``ordinaria''  cuando $\Pr(X\leq x)$  es discontinua, pero  como mucho
 tiene  la  singularidad  de   una  distribuci\'on  \emph{delta  de  Dirac}  cuya
 representaci\'on integral es:
 %
@@ -228,7 +230,9 @@ $$
 \delta (x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{itx} dt . 
 $$
 % SZ: LA  VERDAD ES  QUE NO ME  GUSTA MUCHO  escribir una distribucion  como una
-% fuccion porque no viven en el mismo espacio. Pero no importa. Para mi, cuando hay una discontinuidad X no admite une pdf por definicion del 'f' de pdf\sum_{}
+% fuccion porque no viven en el  mismo espacio. Pero no importa. Para mi, cuando
+% hay  una  discontinuidad  X no  admite  une  pdf  por  definicion del  'f'  de
+% pdf\sum_{}
 
 Un caso especial  se tiene cuando la variable aleatoria $X$  toma el valor $x_0$
 con certeza.  La forma  de la pdf  es: \ $p(x)=\delta(x-x_0)$.  Otra situaci\'on

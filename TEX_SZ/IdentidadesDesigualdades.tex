@@ -8,13 +8,13 @@
 
 % ================================= MaxEnt
 
-\subseccion{El principio de entropia m\'axima}
+\subseccion{El principio de entrop\'ia m\'axima}
 \label{sec:SZ:MaxEnt}
 
 En la termodynamica, el estudio de las caracteristicas macroscopias (dynamica de
 las  moleculas) es prohibitivo  tan el  numero de  moleculas es  importante. Por
 ejemplo,  un  litro  del  gas  que  respiramos  contiene  $2.7  \times  10^{22}$
-moleculas. De  esta constataci\'on se desaroll\'o la  f\'isica estadisticas bajo
+moleculas. De esta constataci\'on se desaroll\'o la f\'isica estad\'isticas bajo
 el    impulso    de    Boltzmann~\cite{Bol96,   Bol98},    Maxwell~\cite{Max67},
 Gibbs~\cite{Gib02},  Planck~\cite{Pla15}  entre  otros (see  also~\cite{Jay65}),
 considerando el  sistema macroscopico  a trav\'es de  lo que  llamaron ensembles
@@ -22,26 +22,26 @@ esdadisticos:  el  sistema  global  (macroscopio)  es  al  equilibrio  pero  las
 configuraciones (micro-estados)  son flucuantes. Se una forma,  se puede asociar
 una  configuraci\'on  por su  frecuencia  de  ocurrencia  (imaginando tener  une
 infinidad de  copias del sistema  en el mismo  estado macroscopio), es  decir su
-probabilidad de occurencia.   En este marco, la entropia,  describiendo la falta
+probabilidad de occurencia.  En este marco, la entrop\'ia, describiendo la falta
 de informaci\'on, juega un rol  fundamental.  Un sistema sujeto a vinculos, como
-por  ejemplo  teniendo  una energia  dada,  debe  estar  en  sus estado  lo  mas
+por  ejemplo teniendo  una  energia dada,  debe  estar en  sus  estado lo  m\'as
 desorganizado dandos  los vinculos.   En su marco,  se introdujo la  noci\'on de
-entropia termodynamica, pero  la misma es tremendamente vinculada  a la entropia
-de  Shannon  (claramente,  identificando  las frecuencias  a  probabilidades  de
-ocurrencia)~\footnote{Ver ep\'igrafe  del cap\'itulo\ldots}.  En  otro terminos,
-la distribuci\'on describiendo los  micro-estados debe ser de entropia m\'axima,
-dando los  vinculos. Por ejemplo,  en un gas  perfecto, donde las  particulas no
-interactuan (aparte chocandose), la energia es dada por las velocidades (suma de
-las energias cineticas individuales).  Dando una energia fija, la distribuci\'on
-de las  velocidad debe ser de entropia  m\'axima sujeto a la  energia dada (nada
-mas  que   la  energia  va   a  ``organizar''  las   configuraciones  posibles).
-Intuitivamente, en un sistema aislado de $N$ particulas, las configuraciones van
-a ser equiprobables, precisamente la distribuci\'on maximizando la entropia.  En
-la  secci\'on~\ref{sec:SZ:GasPerfecto}  se va  a  desarollar  un  poco mas  este
-ejemplo.
+entrop\'ia  termodynamica,  pero  la  misma  es  tremendamente  vinculada  a  la
+entrop\'ia   de   Shannon   (claramente,   identificando   las   frecuencias   a
+probabilidades  de ocurrencia)~\footnote{Ver  ep\'igrafe  del cap\'itulo\ldots}.
+En otro terminos,  la distribuci\'on describiendo los micro-estados  debe ser de
+entrop\'ia m\'axima, dando los vinculos.  Por ejemplo, en un gas perfecto, donde
+las particulas  no interactuan (aparte chocandose),  la energia es  dada por las
+velocidades (suma  de las energias  cineticas individuales).  Dando  una energia
+fija, la distribuci\'on de las  velocidad debe ser de entrop\'ia m\'axima sujeto
+a  la  energia  dada  (nada  m\'as   que  la  energia  va  a  ``organizar''  las
+configuraciones  posibles).   Intuitivamente,  en  un  sistema  aislado  de  $N$
+particulas,  las  configuraciones  van  a  ser  equiprobables,  precisamente  la
+distribuci\'on    maximizando   la   entrop\'ia.     \SZ{   En    la   secci\'on
+  Sec.~\ref{sec:SZ:GasPerfecto} se va a desarollar un poco m\'as este ejemplo.}
 
-De  manera general,  el problema  se formaliza  como la  buscada de  la entropia
-m\'axima sujeto  a vinculos. Si  este principio naci\'o en  mecanica estadistica
+De  manera general,  el problema  se formaliza  como la  buscada de  la entrop\'ia
+m\'axima sujeto  a vinculos. Si  este principio naci\'o en  mecanica estad\'istica
 (ver  tambi\'en~\cite{Jay57,  Jay57:2, Jay65}),  encontr\'o  un  echo en  varios
 dominio:   en   inferencia   bayesiana   para  elegir   distribuciones   del   a
 priori~\footnote{A partir  de una distribuci\'on parametrizada  por un parametro
@@ -52,14 +52,14 @@ priori~\footnote{A partir  de una distribuci\'on parametrizada  por un parametro
   $p_{\Theta|X}$.  Por  eso, hace  falta darse una  distribuci\'on dicha  {\it a
     priori} $p_\Theta$.   Si se conocen  momentos por una  razon o una  otra, se
   puede  elegir esta  distribuci\'on la  ``menos informativa''  posible,  \ie de
-  entropia  m\'axima dados  los momentos.\label{foot:SZ:Prior}}  conociendo unos
-momentos  de  la  lei~\cite{Rob07,  Jay68,  Jay82,  Csi91},  hacer  estimaci\'on
+  entrop\'ia  m\'axima dados  los momentos.\label{foot:SZ:Prior}}  conociendo unos
+momentos  de  la  ley~\cite{Rob07,  Jay68,  Jay82,  Csi91},  hacer  estimaci\'on
 espectral  o de procesos  estocasticos autoregesivos~\cite{Bur67,  Bur75, Jay82}
 o~\cite[cap.~12]{CovTho06}, entre otros~\cite[\& ref.]{KapKes92}.
 
 Sea $X$ variable aleatoria viviendo  sobre $\X \subset \Rset^d$ con $K$ momentos
 \  $\Esp\left[ M_k(X)  \right]  = m_k$  \ fijos,  con  $M_x: \X  \to \Rset$,  el
-problema  de entropia  m\'axima se  formula de  la manera  siguiente en  el caso
+problema  de entrop\'ia  m\'axima se  formula de  la manera  siguiente en  el caso
 continuo (es el caso discreto, hay que re-emplazar integrales por sumas): sean \
 $M(x) = \begin{bmatrix} 1  & M_1(x) & \cdots & M_K(x) \end{bmatrix}^t$  \ y \ $m
 = \begin{bmatrix} 1 & m_1 & \cdots & m_K \end{bmatrix}^t$, \ se busca,
@@ -101,13 +101,13 @@ $\lambda_k$  {\it   parametros  naturales}~\cite{Dar35,  Koo36,   And70,  Kay93,
 
 Un problema que  puede aparecer es que no se puede  determinar $\lambda$ tal que
 se  satisfacen todos  los vinculos,  en particular  la de  normalizaci\'on.  Por
-ejemplo, si $\X = \Rset$ y $K = 0$, \ $p$ \ deberia ser constante (lei uniforme)
+ejemplo, si $\X = \Rset$ y $K = 0$, \ $p$ \ deberia ser constante (ley uniforme)
 sobre\ldots $\Rset$, lo que no es normalizable. De la misma manera, si $K = 3$ \
 y \ $M_k(x)  = x^k$, tampoco es normalizable  la funci\'on obtenida~\footnote{En
   el enfoque Bayesiano  se puede que no sea problematico, si  el a posteriori es
-  normalizable~\cite{Rob07}, pero va mas all\'a  de la meta de esta secci\'on.}.
-En otros terminos,  en este caso, el problema  no tiene soluci\'on~\footnote{Mas
-  precisamente,  existen casos en  los cuales  se puede  acotar la  entropia por
+  normalizable~\cite{Rob07}, pero va m\'as all\'a  de la meta de esta secci\'on.}.
+En otros terminos,  en este caso, el problema  no tiene soluci\'on~\footnote{M\'as
+  precisamente,  existen casos en  los cuales  se puede  acotar la  entrop\'ia por
   arriba por un $H^{\sup}$, tal que  $\sup_p H(p) \le H^{\sup}$ pero no se puede
   alcanzar     esta     cota,     \ie      es     un     supremum,     no     un
   m\'aximo~\cite[sec.~12.3]{CovTho06}.}.
@@ -152,37 +152,38 @@ porque $p,  p^* \in \P_m$ \  y \ $\lambda^t M  = \log p^*$. La  prueba se cierra
 notando que $D \ge 0$ con igualdad si y solamente si $p = p^*$.
 \end{proof}
 %
-Este lema prueba que, dando  vinculos ``razonables'', la entropia es acotada por
+Este lema prueba que, dando  vinculos ``razonables'', la entrop\'ia es acotada por
 arriba,  y  que  se alcanza  la  cota  para  una  distribuci\'on de  la  familia
 exponencial. Por ejemplo,
 %
 \begin{itemize}
 \item Con  $K =  0$ \  y \  $\X$ \ de  volumen finito  \ $|\X|  < +  \infty$, la
-  distribuci\'on  de  entropia m\'axima  es  la  distribuci\'on  uniforme de  la
-  propiedad~\ref{prop:SZ:cotamaximauniforme}   secci\'on~\ref{sec:SZ:Diferencial}
-  en     el      caso     continuo,     o     propiedad~\ref{prop:SZ:cotamaxima}
-  secci\'on~\ref{sec:SZ:DefinicionShannon} en el caso discreto.
+  distribuci\'on  de entrop\'ia  m\'axima es  la distribuci\'on  uniforme  de la
+  propiedad~\ref{prop:SZ:cotamaximauniforme}                            secci\'on
+  Sec.~\ref{sec:SZ:Diferencial}      en       el      caso      continuo,      o
+  propiedad~\ref{prop:SZ:cotamaxima}                                    secci\'on
+  Sec.~\ref{sec:SZ:DefinicionShannon} en el caso discreto.
 %
 \item Con  $K =  1$, \ $\X  = \Rset^d$  \ y \  $M(x) = x  x^t$ (visto  con $d^2$
-  vinculos),  la  distribuci\'on  de  entropia  m\'axima  es  la  distribuci\'on
-  gausiana        de        la       propiedad~\ref{prop:SZ:cotamaximagaussiana}
-  secci\'on~\ref{sec:SZ:Diferencial}.
+  vinculos),  la  distribuci\'on de  entrop\'ia  m\'axima  es la  distribuci\'on
+  gausiana    de   la    propiedad~\ref{prop:SZ:cotamaximagaussiana}   secci\'on
+  Sec.~\ref{sec:SZ:Diferencial}.
 \end{itemize}
 
 
 % ================================= EPI
 
-\subseccion{Desigualdad de la potencia entropica}
+\subseccion{Desigualdad de la potencia entr\'opica}
 
 Sean $X$  e $Y$ dos variables indepedientes.  Si se sabe las  relaciones entre \
 $H(X,Y)$, \ $H(X)$,  \ $H(Y)$, una pregunta natural  concierna la relaci\'on que
-podrian tener $X+Y$ con cada variable en termino de entropia. La respuesta no es
+podrian tener $X+Y$ con cada variable en termino de entrop\'ia. La respuesta no es
 trivial, y el  resultado general concierna el caso  de variables continuas sobre
-$\Rset^d$.   Es conocido  como desigualdad  de la  potencia entropica  (EPI para
-entropy power  inequality en ingl\'es). No  vincula las entropias,  sino que las
-potencias entropicas.
+$\Rset^d$.   Es conocido  como desigualdad  de la  potencia entr\'opica  (EPI para
+entropy power  inequality en ingl\'es). No  vincula las entrop\'ias,  sino que las
+potencias entr\'opicas.
 %
-\begin{teorema}[Desigualdad de la potencia entropica]
+\begin{teorema}[Desigualdad de la potencia entr\'opica]
   Sean  $X$  e  $Y$  dos variables  $d$-dimensionales  continuas  indepedientes,
   entonces
   %
@@ -236,8 +237,8 @@ juega un rol particular en esta desigualdad, saturandola.
   forma, de Madiman, a traver rearreglo}
 
 Esta desigualdad se usa para  probar otras desigualdades, como por ejemplo la
-desigualdad de  Minkowsky $|R_1 +  R_2|^{\frac1d} \ge $ para  cualquier matrices
-$R_1,  R_2$ simetricas  definidas positivas  (viene de  $X$ e  $Y$  gaussianas de
+desigualdad de  Minkowsky $|R_1 +  R_2|^{\frac1d} \ge $ para  cualquieras matrices
+$R_1,  R_2$ sim\'etricas  definidas positivas  (viene de  $X$ e  $Y$  gaussianas de
 covarianza $R_1$  y $R_2$).  Aparece  tambi\'en para acotar  informaci\'on mutua
 entre variables y  calcular la capacidad de un canal  de communicaci\'on como se
 le va a ver~\cite{CovTho06, DemCov91, Rio07, Joh04}.
@@ -285,7 +286,7 @@ satisface la informaci\'on mutua aplicada a un proceso de Markov.
   \]
   %
   con igualdad sii $X \mapsto Z \mapsto Y$ es tambi\'en un proceso de Markov. En
-  particular, es  sencillo ver  que para cualquier  funci\'on $g$, $X  \mapsto Y
+  particular, es  sencillo ver  que para cualquiera  funci\'on $g$, $X  \mapsto Y
   \mapsto g(Y)$ es un proceso de Markov,  lo que da
   %
   \[
@@ -294,7 +295,7 @@ satisface la informaci\'on mutua aplicada a un proceso de Markov.
   %
   La  \'ultima  desigualdad  se  escribe  tambi\'en  $H(X|g(Y))  \ge  H(X|Y)$  y
   significa que  procesar $Y$ no aumenta  la informaci\'on que $Y$  da sobre $X$
-  (la incerteza condicional es mas importante).
+  (la incerteza condicional es m\'as importante).
 \end{teorema}
 %
 \begin{proof}
@@ -323,7 +324,7 @@ I(X ; Y,Z) & = & H(X) - H(X|Z) + H(X|Z) - H(X|Y,Z)\\[2.5mm]
 & = & I(X;Y) + H(X|Z) - H(X|Y,Z)
 \end{eqnarray*}
 %
-\noindent  Ademas,   escribiendo  $\frac{p_{X|Y,Z}}{p_{X|Z}}  =  \frac{p_{X|Y,Z}
+\noindent  Adem\'as,   escribiendo  $\frac{p_{X|Y,Z}}{p_{X|Z}}  =  \frac{p_{X|Y,Z}
   p_{Y|Z}}{p_{X|Z} p_{Y|Z}} = \frac{p_{X,Y|Z}}{p_{X|Z} p_{Y|Z}}$
 % $H(X|Z) -  H(X|Y,Z) \Esp\left[ \log \left(
 % \frac{p_{X|Y,Z}(X,Y,Z)}{p_{X|Z}(X,Z)}\right)\right] = $
@@ -348,17 +349,17 @@ I(X;Y) = I(X;Z) + I(X;Y|Z)
 \]
 %
 lo  que  proba  la  desigualdad  del   hecho  de  que  una  divergencia  sea  no
-negativa. Ademas, se obtiene la igualdad sii  $I(X;Y|Z) = 0$, es decir $X$ e $Y$
+negativa. Adem\'as, se obtiene la igualdad sii  $I(X;Y|Z) = 0$, es decir $X$ e $Y$
 independientes  condicionalmente a  $Z$, lo  que es  la definici\'on  de  que $X
 \mapsto Z \mapsto Y$ sea un proceso de Markov.
 \end{proof}
 
 % ================================= Data Processing Theorem
 
-\subseccion{Secunda lei de la termodinamica}
+\subseccion{Secunda ley de la termodinamica}
 
-Tratando de procesos  de Markov, aparece el equivalente de la  secunda lei de la
-termodinamica:  un  sistema  aislado  evolua  hasta  llegar  su  estado  lo  mas
+Tratando de procesos  de Markov, aparece el equivalente de la  secunda ley de la
+termodinamica:  un  sistema  aislado  evolua  hasta  llegar  su  estado  lo  m\'as
 desorganizado.
 
 \begin{lema}[ver~\cite{CovTho06}]
@@ -385,7 +386,7 @@ desorganizado.
   %
   la distribuci\'on no se aleja de la distribuci\'on estacionaria.
 %
-\item Ademas, si  los $X_n$ viven sobre  $\X$ de cardinal o volumen  finito y si
+\item Adem\'as, si  los $X_n$ viven sobre  $\X$ de cardinal o volumen  finito y si
   $p^*$ es  uniforme sobre $\X$,
   %
   \[
@@ -393,7 +394,7 @@ desorganizado.
   \]
   %
   el  sistema tiende  a desorganizarse  (y recuerdese  de que  la distribuci\'on
-  uniforme es la de entropia m\'axima).
+  uniforme es la de entrop\'ia m\'axima).
 \end{itemize}
 \end{lema}
 %
@@ -403,12 +404,12 @@ desorganizado.
   $q_{n+1|n}$  las  distribuciones  condicionales  de $X_{n+1}|X_n$  as\'i  que,
   $p_{n|n+1}$ y  $q_{n|n+1}$ las distribuciones  condicionales de $X_n|X_{n+1}$,
   se muestra sencillamente  que $D(p_{n+1,n}\|q_{n+1,n}) = D(p_{n+1}\|q_{n+1}) +
-  D(p_{n+1|n}\|q_{n+1|n})  =  D(p_n\|q_n)  +  D(p_{n|n+1}\|q_{n|n+1})$.  Ademas,
+  D(p_{n+1|n}\|q_{n+1|n})  =  D(p_n\|q_n)  +  D(p_{n|n+1}\|q_{n|n+1})$.  Adem\'as,
   $p_{n+1|n}     =    p_{X_{n+1}|X_n}     =     q_{n+1|n}$,    conduciendo     a
   $D(p_{n+1|n}\|q_{n+1|n}) = 0$ y  entonces $D(p_{n+1}\|q_{n+1}) = D(p_n\|q_n) +
   D(p_{n|n+1}\|q_{n|n+1})$.   $p_{n|n+1}$   no   es   necesariamente   igual   a
   $q_{n|n+1}$,  pero la divergencia  siendo nonnegativa,  se obtiene  la primera
-  desigualdad.  La secunda desigualdad se  obtiene tomando $q_n = p^*$.  Ademas,
+  desigualdad.  La secunda desigualdad se  obtiene tomando $q_n = p^*$.  Adem\'as,
   si $p^*$  es uniforme  $p^*(x) = \frac{1}{|\X|}$  da $D(p_n\|p^*) =  -H(X_n) +
   \log |\X|$, dando la \'ultima desigualdad.
 \end{proof}
@@ -416,7 +417,7 @@ desorganizado.
 
 % ================================= Principop de incerteza
 
-\subseccion{\SZ{Principio de incerteza entropico}}
+\subseccion{\SZ{Principio de incerteza entr\'opico}}
 
 \SZ{Bourret 58, Leipnik 59 entre otros que ya citamos un par de veces}
 
@@ -424,9 +425,9 @@ desorganizado.
 
 \subseccion{Un foco sobre la informaci\'on de Fisher}
 
-Si  la entropia  y las  heramientas relacionadas  son naturales  como  medida de
+Si  la entrop\'ia  y las  heramientas relacionadas  son naturales  como  medida de
 informaci\'on, no se  puede resumir una distribuci\'on a  una medida escalar. En
-el marco  de la teoria de la  estimaci\'on, R. Fisher introdujo  una noci\'on de
+el marco  de la teor\'ia de la  estimaci\'on, R. Fisher introdujo  una noci\'on de
 informaci\'on intimamente relacionada al  error cuadratico en la estimaci\'on de
 un   parametro    a   partir   de   una   variable    parametrizado   por   este
 parametro~\cite{Fis22,  Fis25:07,   Kay93,  Bos07,  CovTho06, Fri04}.
@@ -440,7 +441,7 @@ parametro~\cite{Fis22,  Fis25:07,   Kay93,  Bos07,  CovTho06, Fri04}.
   $\theta  \in  \Theta \subseteq  \Rset^m$,  de  distribuci\'on de  probabilidad
   $p_X(\cdot;\theta)$ continua  sobre $\X  \subseteq \Rset^d$ su  soporte. Asume
   que $p_X$ sea diferenciable en  $\theta$ sobre $\Theta$.  La matriz de Fisher,
-  de  tamanio $m \times  m$ es  definida por
+  de tama\~no $m \times m$ es definida por
   %
   \[
   J_\theta(X)  =  \Esp\left[  \Big(  \nabla_\theta \log  p_X(X;\theta)  \Big)
@@ -462,10 +463,10 @@ parametro~\cite{Fis22,  Fis25:07,   Kay93,  Bos07,  CovTho06, Fri04}.
   informaci\'on de Fisher.
 \end{definicion}
 %
-Como  para   la  entropia,   la  matriz  de   Fisher  se   escribe  generalmente
+Como  para   la  entrop\'ia,   la  matriz  de   Fisher  se   escribe  generalmente
 $J_\theta(X)$, a  pesar de que no  sea funci\'on de  $X$ pero de la  densidad de
 probabilidad. Se  la notara tambi\'en  $J_\theta(p_X)$ seg\'un la  escritura la
-mas conveniente.
+m\'as conveniente.
 
 Tomando el gradiente  en $x$ en lugar de $\theta$ da  la matriz de informaci\'on
 de Fisher no parametrica,
@@ -495,18 +496,18 @@ parametrica se reduce a la informaci\'on no parametrica.
 %
 \item  Si $X$  es  gaussiano de  matriz  de covarianza  $\Sigma_X$, entonces  se
   muestra sencillamente de que $J(X)  = \Sigma_X^{-1}$ (o, de una forma, inversa
-  de la dispersi\'on o incerteza en termino de estadisticas de orden 2).
+  de la dispersi\'on o incerteza en termino de estad\'isticas de orden 2).
 %
 \item Es sencillo ver  que, por definici\'on \ $J_\theta(X)$ \ y  \ $J(X)$ \ son
-  simetricas  y  que \  $J_\theta(X)  > 0$  \  y  \ $J(X)  >  0$  \ donde  estas
+  sim\'etricas  y  que \  $J_\theta(X)  > 0$  \  y  \ $J(X)  >  0$  \ donde  estas
   desiguladades  significan  que  las  matrices  son  definidas  positivas  (los
-  autovalores son positivos).  Ademas,
+  autovalores son positivos).  Adem\'as,
   %
   \[
   \forall \ a \ne 0, \quad J(aX) = \frac{1}{|a|^2} J(X)
   \]
   %
-  (queda valide  para $a$  matriz invertible).  Esta  relaci\'on da a  $J(X)$ un
+  (queda v\'alido  para $a$  matriz invertible).  Esta  relaci\'on da a  $J(X)$ un
   sabor de  informaci\'on en el sentido  de que, cuando $a$  tiende al infinito,
   $J(aX)$  tiende a  0;  $a X$  tiende  a ser  muy diepersas  as\'i  que no  hay
   informaci\'on sobre su posici\'on.
@@ -547,7 +548,7 @@ Una otra interpretaci\'on  de $J$ como informaci\'on es  debido a la desigualdad
 de  Cram\'er-Rao que  la vincula  a la  covarianza  de estimaci\'on~\footnote{De
   hecho,  pareci\'o esta  formula tambi\'en  en los  papeles de  Fr\'echet  y de
   Darmois~\cite{Fre43, Dar45}. Como citado por Fr\'echet, aparece que la primera
-  versi\'on  de esta  formula  es mucho  mas vieja  y  debido a  K.  Pearson  \&
+  versi\'on  de esta  formula  es mucho  m\'as vieja  y  debido a  K.  Pearson  \&
   Filon~\cite{PeaFil98} en 1898; luego fue extendido por Edgeworth~\cite{Edg08},
   Fisher~\cite{Fis25:07}  o  Doob~\cite{Doo36}.}~\cite{Rao45,  Rao92,  RaoWis47,
   Cra46,  Rio07, CovTho06,  Fri04,  Kay93, Bos07}.   Sea  $X$ parametrizada  por
@@ -594,7 +595,7 @@ promedio). La desigualdad de Cram\'er-Rao acota por debajo esta covarianza.
   \sigma_X^2 \ge \frac{1}{J(X)}
   \]
   %
-  Ademas, en el caso no parametrico, se alcanza la cota si y solamente si $X$ es
+  Adem\'as, en el caso no parametrico, se alcanza la cota si y solamente si $X$ es
   un vector gaussiano.
 \end{teorema}
 %
@@ -626,12 +627,12 @@ tiene sobre $\theta$.
   & = & \left( I + \Jac_b(\theta) \right)^t
   \end{eqnarray*}
   %
-  Ademas,  fijandose  que  $\Esp\left[  S(X)  S(X)^t \right]  =  J_\theta(X)$  y
+  Adem\'as,  fijandose  que  $\Esp\left[  S(X)  S(X)^t \right]  =  J_\theta(X)$  y
   $\Esp\left[   \left(    \widehat{\theta}(X)   -   \theta_0    \right)   \left(
       \widehat{\theta}(X)      -      \theta_0      \right)^t     \right]      =
   \Sigma_{\widehat{\theta}}$,            la            desigualdad            de
   Cauchy-Bunyakovsky-Schwarz~\footnote{De  hecho, fue  probada  por Cauchy  para
-    sumas en 1821, para integrales por  Bunyakovsky en 1859 y mas elegamente por
+    sumas en 1821, para integrales por  Bunyakovsky en 1859 y m\'as elegamente por
     Schwarz  en  1888~\cite{Ste04}.}   conduce  a
   %
   \[
@@ -641,7 +642,7 @@ tiene sobre $\theta$.
   \]
   %
   La prueba se termina tomando \ $u = J_\theta(X)^{-1} \left( I + \Jac_b(\theta)
-  \right)^t \, v$ (recordandose que $J$ es simetrica).\newline Con la elecci\'on
+  \right)^t \, v$ (recordandose que $J$ es sim\'etrica).\newline Con la elecci\'on
   de  $u$,  en  la  desigualdad  de Cauchy-Bunyakovsky-Schwarz,  se  obtiene  la
   igualdad  cuando, \  $v^t J(X)^{-1}  S(x)  \propto v^t  (x -  \theta)$ \  para
   cualquier \  $v$ \ y \  $x$, est decir \  $\nabla_x p_X (x) \propto  J(X) (x -
@@ -652,7 +653,7 @@ tiene sobre $\theta$.
 \end{proof}
 %
 \noindent En el  caso parametrico, no se puede estudiar el  caso de igualdad del
-hecho  de  que  $\widehat{\theta}$ no  es  algo  dado.   Ademas, a\'un  dado  un
+hecho  de  que  $\widehat{\theta}$ no  es  algo  dado.   Adem\'as, a\'un  dado  un
 estimador  (independiente explicitamente de  $\theta$), no  hay garantia  de que
 existe  una  densidad parametrizado  por  $\theta$ que  alcanza  la  cota, o  al
 rev\'es, dado una  familia de densidades, tampoco no hay  garantia que existe un
@@ -673,7 +674,7 @@ deducen     desigualdades     de     Cram\'er-Rao    escalares
 \]
 %
 Obviamente,  en la secunda,  se alcanza  la igualdad  si y  solamente si  $X$ es
-gaussiano.  Ademas,  para   una  matriz  $A  \ge  0$,   existe  la  ``relaci\'on
+gaussiano.  Adem\'as,  para   una  matriz  $A  \ge  0$,   existe  la  ``relaci\'on
 determinente-traza''  \ $|A|^{\frac1d} \le  \frac1d \Tr(A)$,  con igualdad  si y
 solamente  si $A  = I$~\cite[cap.~11,  sec.~4]{MagNeu99}, dando  otras versiones
 escalares de la desigualdad de Cram\'er-Rao, por ejemplo
@@ -689,10 +690,10 @@ escalares de la desigualdad de Cram\'er-Rao, por ejemplo
 \]
 %
 En  estos casos,  se obtiene  la igualdad  si y  solamente si  $X$  es gaussiana
-(igualdad de la Cram\'er-Rao no parametrica) y ademas de covarianza proporcional
+(igualdad de la Cram\'er-Rao no parametrica) y adem\'as de covarianza proporcional
 a la identidad (igualdad en la relaci\'on determinente-traza).
 
-Se notar\'a que,  al imagen de las leyes de  entropia m\'axima, la informaci\'on
+Se notar\'a que,  al imagen de las leyes de  entrop\'ia m\'axima, la informaci\'on
 de  Fisher  juega tambi\'en  un  rol particular  en  la  inferencia bayesiana  a
 trav\'es del prior de Jeffrey~\cite{Jef46, Jef48, LehCas98, Rob07}~\footnote{Ver
   nota  de pie~\ref{foot:SZ:Prior}.   A  veces, se  toma  como distribuci\'on  a
@@ -704,10 +705,10 @@ trav\'es del prior de Jeffrey~\cite{Jef46, Jef48, LehCas98, Rob07}~\footnote{Ver
 \
 
 Si  la  desigualdad de  Cram\'er-Rao  da  a la  matriz  de  Fisher  un sabor  de
-informaci\'on,  aparece   que  $J$  es  tambi\'en  relacionado   a  la  entropia
+informaci\'on,  aparece   que  $J$  es  tambi\'en  relacionado   a  la  entrop\'ia
 relativa~\cite{CovTho06, Fri04}:
 %
-\begin{teorema}[Fisher como curvatura de la entropia relativa]
+\begin{teorema}[Fisher como curvatura de la entrop\'ia relativa]
   Sea $X$  parametrizado por $\theta_0  \in \Theta$ con $\Theta$  conteniendo un
   vecinaje de $\theta_0$.  Siendo $\Dkl[p_X(\cdot;\theta)]{p_X(\cdot;\theta_0)}$
   funci\'on de $\theta \in \Theta$, aparece que
@@ -719,7 +720,7 @@ relativa~\cite{CovTho06, Fri04}:
   \]
   %
   donde $o(\cdot)$ es un resto peque\~no  con respecto a su argumento.  En otros
-  terminos,  $J_{\theta_0}(X)$  es  la  curvatura  de la  entropia  relativa  en
+  terminos,  $J_{\theta_0}(X)$  es  la  curvatura  de la  entrop\'ia  relativa  en
   $\theta_0$.
 \end{teorema}
 %
@@ -729,7 +730,7 @@ relativa~\cite{CovTho06, Fri04}:
   en $\theta = \theta_0$. Por  propiedad de $\Dkl{}$, la divergencia es positiva
   y  se cancela cuando  $\theta =  \theta_0$.  Entonces,  el primer  termino del
   desarrollo  vale cero  y el  secundo  tambi\'en, $\Dkl{}$  siendo m\'inima  en
-  $\theta = \theta_0$. Ademas,
+  $\theta = \theta_0$. Adem\'as,
   %
   \begin{eqnarray*}
   \nabla_\theta \Dkl[p_X(\cdot;\theta)]{p_X(\cdot;\theta_0)} & =
@@ -761,13 +762,13 @@ relativa~\cite{CovTho06, Fri04}:
   $J_\theta(X)$, lo que termina la prueba.
 \end{proof}
 %
-Este teorema, ilsutrado en la figura~\ref{fig:SZ:JCurvatura}, vincula claramente
-dos  objectos viniendo  de  la  teoria de  la  estimaci\'on y  la  teoria de  la
-informaci\'on, mundos  a priori diferentes.  Como  se lo puede ver  en la figura
-cuando $J_\theta(X)$  tiene peque\~nas  autovalores (figura (a)),  $p_\theta$ se
-``aleja'' lentamente de  $\theta_0$ cuando $\theta$ se aleja  de $\theta_0$: hay
-una  alta incerteza  o  peque\~a informaci\'on  sobre  $\theta_0$. Y  vice-versa
-(figura (b)).
+Este  teorema,  ilsutrado  en  la figura  Fig.~\ref{fig:SZ:JCurvatura},  vincula
+claramente dos objectos viniendo de la teor\'ia de la estimaci\'on y la teor\'ia
+de la  informaci\'on, mundos a  priori diferentes.  Como  se lo puede ver  en la
+figura   cuando  $J_\theta(X)$  tiene   peque\~nas  autovalores   (figura  (a)),
+$p_\theta$ se  ``aleja'' lentamente  de $\theta_0$ cuando  $\theta$ se  aleja de
+$\theta_0$: hay una alta incerteza  o peque\~a informaci\'on sobre $\theta_0$. Y
+vice-versa (figura (b)).
 %
 \begin{figure}[h!]
 %
@@ -776,8 +777,8 @@ una  alta incerteza  o  peque\~a informaci\'on  sobre  $\theta_0$. Y  vice-versa
 \leyenda{Caso  escalar $\Theta  \subseteq \Rset$  (para la  representaci\'on) de
   $\Dkl{}$   en  funci\'on   de  $\theta$.    (a)  Caso   con  $J_{\theta_0}(X)$
   ``peque\~no'' y (b)  caso con $J_{\theta_0}(X)$ ``grande''. En  el caso (b) la
-  determinaci\'on de $\theta$  usando $\Dkl{}$ va a ser  mas ``sencillo'' porque
-  el m\'inimo es mas ``picado''.}
+  determinaci\'on de $\theta$  usando $\Dkl{}$ va a ser  m\'as ``sencillo'' porque
+  el m\'inimo es m\'as ``picado''.}
 %
 \label{fig:SZ:JCurvatura}
 \end{figure}
@@ -790,17 +791,17 @@ trav\'es  de la  identidad de  de Bruijn~\footnote{A  pesar de  que  tom\'o este
   papel~\cite{Sta59}, menciona que esta identidad fue comunicada al Profesor van
   Soest por el Profesor  de Bruijn.}~\cite{Sta59, CovTho06, Joh04, Bar84, Bar86,
   PalVer06}. Esta identidad caracterisa lo  que es conocido como canal gaussiano
-figura~\ref{fig:SZ:deBruijnVerdu}-(a),  \ie  la  salida  $Y$  es  una  versi\'on
-ruidosa  de la  entrada. La  identidad vincula  las variaciones  de  entropia de
+figura Fig~\ref{fig:SZ:deBruijnVerdu}-(a),  \ie la  salida $Y$ es  una versi\'on
+ruidosa de  la entrada.  La identidad vincula  las variaciones de  entrop\'ia de
 salida con respeto al nivel de ruido, y la informaci\'on de Fisher.
 
 \begin{teorema}[Identidad de de Bruijn]
   Sea $X$ un  vector aleatorio continuo sobre un  abierto $\Rset^d$ y admitiendo
-  una  matriz  de  covarianza,  y  sea  $Y   =  X  +  T  \Gauss$  donde  $T$  es
-  deterministica, $d \times  d'$ con $ d \le d'$, de  rango m\'aximo, y $\Gauss$
-  un vector gaussiano centrado y de covarianza $\Sigma_\Gauss$, independiente de
-  $X$  (ver  figura~\ref{fig:SZ:deBruijnVerdu}-(a)).  Entonces, la  entropia  de
-  Shannon y la informaci\'on de Fisher  de $Y$ satisfacen
+  una matriz de covarianza, y sea $Y  = X + T \Gauss$ donde $T$ es determinista,
+  $d  \times d'$  con $  d \le  d'$,  de rango  m\'aximo, y  $\Gauss$ un  vector
+  gaussiano centrado y de  covarianza $\Sigma_\Gauss$, independiente de $X$ (ver
+  figura  Fig.~\ref{fig:SZ:deBruijnVerdu}-(a)).    Entonces,  la  entrop\'ia  de
+  Shannon y la informaci\'on de Fisher de $Y$ satisfacen
   %
   \[
   \nabla_T H(Y) = J(Y) \, T \, \Sigma_\Gauss
@@ -836,7 +837,7 @@ salida con respeto al nivel de ruido, y la informaci\'on de Fisher.
     |R|^{-\frac12}}{\partial R_{k,l}}  \frac{\partial R_{k,l}}{\partial T_{i,j}}
   =   -\frac12    |R|^{-\frac12}   \sum_{k,l}   \left(    R^{-1}   \right)_{l,k}
   \frac{\partial  R_{k,l}}{\partial  T_{i,j}}$ con  $R  =  T \Sigma_\Gauss  T^t$
-  (simetrica)  y calculos  basicos  se obtiene  finalmente
+  (sim\'etrica)  y calculos  basicos  se obtiene  finalmente
   %
   \[
   \nabla_T  \left|   T  \Sigma_\Gauss  T^t  \right|^{-\frac12}  =   -  \left|  T
@@ -844,7 +845,7 @@ salida con respeto al nivel de ruido, y la informaci\'on de Fisher.
   T \Sigma_\Gauss
   \]
   %
-  Ademas,  de $\left(  T \Sigma_\Gauss  T^t \right)  \left( T  \Sigma_\Gauss T^t
+  Adem\'as,  de $\left(  T \Sigma_\Gauss  T^t \right)  \left( T  \Sigma_\Gauss T^t
   \right)^{-1}   =  I$   viene  $\frac{\partial   \left(  T   \Sigma_\Gauss  T^t
     \right)^{-1}}{\partial T_{i,j}} = -  \left( T \Sigma_\Gauss T^t \right)^{-1}
   \frac{\partial \left( T \Sigma_\Gauss  T^t \right)}{\partial T_{i,j}} \left( T
@@ -889,7 +890,7 @@ salida con respeto al nivel de ruido, y la informaci\'on de Fisher.
   Suponiende que  se puede intervertir derivadas  y integrales (ver~\cite{Bar84,
     Bar86}  donde  se  dan   condiciones  rigorosas),  $\displaystyle  p_Y(y)  =
   \int_{\Rset^d}  p_X(x)  p(y-x)  \,   dx$  satisface  tambi\'en  la  ecuaci\'on
-  diferencial, y ademas
+  diferencial, y adem\'as
   %
   \begin{eqnarray*}
   \nabla_T H(Y) & = & - \int_{\Rset^d} \nabla_T \, p_Y(y) \log p_Y(y)
@@ -914,7 +915,7 @@ salida con respeto al nivel de ruido, y la informaci\'on de Fisher.
   componentes de $\nabla_y p_Y \log  p_Y$ y $\nabla_y p_Y$, suponiendo que estos
   gradientes  se cancelan  en el  borde del  dominio de  integraci\'on,  los dos
   terminos  integrales valen cero,  lo que  cierra la  prueba de  la desigualdad
-  general.   Ademas,  si  $T  =  T(\theta)$, la  secunda  desigualdad  sigue  de
+  general.   Adem\'as,  si  $T  =  T(\theta)$, la  secunda  desigualdad  sigue  de
   $\frac{\partial   \cdot}{\partial    \theta}   =   \sum_{i,j}   \frac{\partial
     \cdot}{\partial   T_{i,j}}   \frac{\partial   T_{i,j}}{\partial  \theta}   =
   \Tr\left( \nabla_T \, \frac{\partial T^t}{\partial \theta} \right)$.
@@ -931,33 +932,33 @@ I$,
 se  recupera en el  caso particular  $T =  \sqrt{\theta} I$.   En este  caso, la
 ecuac\'ion diferencial satisfada por la  densidad de probabilidad $p$ es la {\it
   ecuaci\'on  del  calor}.   Esta  desigualdad  cuantifica  las  variaciones  de
-entropias   bajo   varaciones   de   ``niveles''   del  ruido   del   canal   de
+entrop\'ias   bajo   varaciones   de   ``niveles''   del  ruido   del   canal   de
 comunicaci\'on. De una  forma, caracteriza la robustez del  canal con respeto al
 nivel de ruido gaussiano (la gaussiana juega de nuevo un rol central ac\'a).
 
 \
 
 Existe una  otra forma  muy similar  de esta desigualdad  debido a  Guo, Shamai,
-Verd\'u, Palomar~\cite{GuoSha05, PalVer06}. Esta versi\'on vincula a\'un mas los
-mundo  de  la   informaci\'on  y  el  de  la  estimaci\'on.    Del  lado  de  la
+Verd\'u, Palomar~\cite{GuoSha05,  PalVer06}. Esta versi\'on  vincula a\'un m\'as
+los  mundo  de la  informaci\'on  y  el de  la  estimaci\'on.   Del  lado de  la
 comunicaci\'on, consiste a caracterisar  la informaci\'on mutua entre la entrada
 $X$ de un canal  ruidoso y su salida, $Y = S X +  \Gauss$ donde $S$ coresponde a
-un  pre-tratamiento antes  de la  salida, figura~\ref{fig:SZ:deBruijnVerdu}-(b).
-Del lado de  la estimaci\'on, uno puede querer  estimar $X$ observando solamente
-$Y$.  Es  conocido que el estimador  que minimiza el  error cuandratico promedio
-$\Esp\left[  \left\| \widehat{X}(Y)  -  X \right\|^2  \right]$  es la  esperanza
-condicional  $\widehat{X}(Y) =  \Esp[X|Y]$. Una  caracteristica de  un estimador
-siendo su  matriz de covarianza,  se notar\'a $\E(X|Y)  = \Esp\left[ \left(  X -
-    \Esp[X|Y]  \right) \left(  X  - \Esp[X|Y]  \right)^2  \right]$ esta  matriz.
-Sorpredentemente,  existe  tambi\'en  una  identidad  entre \  $I(X;Y)$  \  y  \
-$\E(X|Y)$:
+un       pre-tratamiento       antes       de      la       salida,       figura
+Fig.~\ref{fig:SZ:deBruijnVerdu}-(b).   Del lado  de la  estimaci\'on,  uno puede
+querer estimar $X$  observando solamente $Y$.  Es conocido  que el estimador que
+minimiza el  error cuandratico promedio  $\Esp\left[ \left\| \widehat{X}(Y)  - X
+  \right\|^2   \right]$   es   la   esperanza  condicional   $\widehat{X}(Y)   =
+\Esp[X|Y]$. Una caracteristica  de un estimador siendo su  matriz de covarianza,
+se  notar\'a $\E(X|Y)  = \Esp\left[  \left(  X -  \Esp[X|Y] \right)  \left( X  -
+    \Esp[X|Y]   \right)^2  \right]$   esta  matriz.    Sorpredentemente,  existe
+tambi\'en una identidad entre \ $I(X;Y)$ \ y \ $\E(X|Y)$:
 %
 \begin{teorema}[Identidad de Guo--Shamai--Verd\'u]
   Sea  $X$  un  vector  aleatorio  continuo  sobre  un  abierto  $\Rset^{d'}$  y
   admitiendo una  matriz de covarianza, y  sea $Y = S  X + \Gauss$  donde $S$ es
-  deterministica, $d  \times d'$, y $\Gauss$  un vector gaussiano  centrado y de
+  determinista, $d  \times d'$, y $\Gauss$  un vector gaussiano  centrado y de
   covarianza      $\Sigma_\Gauss$,      independiente      de      $X$      (ver
-  figura~\ref{fig:SZ:deBruijnVerdu}-(b)). Entonces, la informaci\'on mutua entre
+  figura Fig.~\ref{fig:SZ:deBruijnVerdu}-(b)). Entonces, la informaci\'on mutua entre
   \ $X$ \  e \ $Y$ y la  matriz de covarianza del estimador  de error cuadratico
   m\'inimo satisfacen
   %
@@ -1017,7 +1018,7 @@ $\E(X|Y)$:
   primera integral y  integrando en $x$ en la secunda  integral; la quinta linea
   se obtiene usando el teorema  de la divergencia (intergraci\'on por partes) en
   la integraci\'on en  $y$ de la primera integral,  e intercambiando gradiente e
-  integral el la secunda ($p_Y$ sumando a 1, el termino se cancela). Ademas,
+  integral el la secunda ($p_Y$ sumando a 1, el termino se cancela). Adem\'as,
   %
   \begin{eqnarray*}
   \nabla_y p_Y(y) & = & \int_{\Rset^{d'}} \nabla_Y p_{Y|X}(y,x) \, p_X(x) \,
@@ -1062,7 +1063,7 @@ $\E(X|Y)$:
 $\Sigma_\Gauss  =  I$  y $X$  de  covarianza  identidad;  $s$ es  conocido  como
 relaci\'on se\~nale/ruido es este caso.
 
-Existen versiones  a\'un mas completas (con  gradientes con respeto  a la matriz
+Existen versiones  a\'un m\'as completas (con  gradientes con respeto  a la matriz
 $\Sigma_\Gauss$ por  ejemplo) que se pueden  consultar en~\cite{Joh04, PalVer06,
   PayPal09}.
 
@@ -1078,13 +1079,13 @@ $\Sigma_\Gauss$ por  ejemplo) que se pueden  consultar en~\cite{Joh04, PalVer06,
 \end{figure}
 \
 
-De la desigualdad de la potencia entropica  y de la identidad de de Bruijn surge
-una otra desigualdad implicando la  potencia entropica $N$ y la informaci\'on de
+De la desigualdad de la potencia entr\'opica  y de la identidad de de Bruijn surge
+una otra desigualdad implicando la  potencia entr\'opica $N$ y la informaci\'on de
 Fisher $J$. Esta desigualdad es conocida como desigualdad de Stam~\footnote{Como
   por  la identidad  de  de Bruijn,  stam  mencion\'o que  esta desigualdad  fue
   comunicada al Profesor van Soest por el Profesor de Bruijn quien da una prueba
   variacional  de  la desigualdad.}~\cite{CovTho06,  Rio07,  Sta59},  o a  veces
-``desigualdad isoperimetrica para la entropia''~\cite{WanMad04}.
+``desigualdad isoperimetrica para la entrop\'ia''~\cite{WanMad04}.
 %
 \begin{teorema}[Desigualdad de Stam]
   Sea   $X$    una   variable    aleatoria   continua   sobre    $\X   \subseteq
@@ -1099,31 +1100,31 @@ Fisher $J$. Esta desigualdad es conocida como desigualdad de Stam~\footnote{Como
 \end{teorema}
 %
 \begin{proof}
-  De la  desigualdad de  la potencia entropica  se obtiene $N(X  + \sqrt{\theta}
+  De la  desigualdad de  la potencia entr\'opica  se obtiene $N(X  + \sqrt{\theta}
   \Gauss)  \ge N(X)  + \theta  \left| \Sigma_\Gauss  \right|^{\frac1d}$. Tomando
   $\Sigma_\Gauss  = I$,  se obtiene  $\forall  \, \theta  > 0,$  \ $\frac{N(X  +
-    \sqrt{\theta} \Gauss)  - N(X)}{\theta} \ge  $.  Entonces, tomando  el limite
+    \sqrt{\theta} \Gauss)  - N(X)}{\theta} \ge  $.  Entonces, tomando  el l\'imite
   $\theta  \to 0$,  aparece que  $\left. \frac{d}{d\theta}  N(X  + \sqrt{\theta}
     \Gauss)   \right|_{\theta  =   0}  \ge   1$.   La   prueba  se   cierra  con
   $\frac{d}{d\theta}  N(X   +  \sqrt{\theta}   \Gauss)  =  \frac{1}{2   \pi  \e}
   \frac{d}{d\theta}  \exp\left( \frac2d  H(X +  \sqrt{\theta} \Gauss)  \right) =
   \frac2d  N(X +  \sqrt{\theta}  \Gauss) \frac{d}{d\theta}  H(X +  \sqrt{\theta}
   \Gauss) = d N(X +  \sqrt{\theta} \Gauss) \Tr\left( J(X + \sqrt{\theta} \Gauss)
-  \right)$  (por la identitad  de de  Bruijn).  Ademas,  la igualdad  se obtiene
-  cuando se obtiene  la igualdad en la desigualdad de  la potencia entropica, es
+  \right)$  (por la identitad  de de  Bruijn).  Adem\'as,  la igualdad  se obtiene
+  cuando se obtiene  la igualdad en la desigualdad de  la potencia entr\'opica, es
   decir cuando $X$ es gaussiano de  varianza proporcional a la del ruido, que es
   la identidad en este caso.
 \end{proof}
 %
 Se  puede  ver  de  nuevo  el  rol  central  que  juega  la  gaussiana  en  esta
-desigualdad. Ademas,  de la desigualdad de  Stam se puede  deducir tamb\'ien las
+desigualdad. Adem\'as,  de la desigualdad de  Stam se puede  deducir tamb\'ien las
 versiones escalares de la desigualdad Cram\'er-Rao. Viene del hecho de que, dado
-una matriz de covarianza, le entropia  $H(X)$ es maxima cuando $X$ es gaussiano.
+una matriz de covarianza, le entrop\'ia  $H(X)$ es m\'axima cuando $X$ es gaussiano.
 Entonces, para cualquier $X$ de covarianza $\Sigma_X$, $N(X) \le \left| \Sigma_X
 \right|^{\frac1d}$,   dando  de   la  desiguldad   de  Stam,   $\left|  \Sigma_X
 \right|^{\frac1d} \Tr\left( J(X) \right) \ge d$ (y las otras versiones escalares
 de la relaci\'on  determinente-traza).  Como se lo puede  esperar, se obtiene la
-igualdad si y solamente $X$  es gaussiana (potencia entropica alcanzando su cota
+igualdad si y solamente $X$  es gaussiana (potencia entr\'opica alcanzando su cota
 superior) y de matriz la identidad (desiguladad de Stam se saturando).
 
 Varias otras pruebas de la desigualdad de Stam pueden venir de generalizaciones,
