@@ -320,7 +320,7 @@ desigualdad:
   Teorema~8.7.1]{Kuc09}, $\phi(a + b) \ge \phi(a) + \phi(b)$ para $\phi$ convexa
   y que se  cancela en 0 (y  la conversa en el caso  c\'oncavo), conjuntamente con
   $h$ creciente  (resp.  decreciente).  A  parte en el  caso de Shannon y  el de
-  Havdra-Charv\'at-Dar\'oczy, no hay un  vinculo inmediato entre $\hhphi[p_X]$ \
+  Havdra-Charv\'at-Dar\'oczy, no hay un  v\'inculo inmediato entre $\hhphi[p_X]$ \
   y \ $\hhphi[p_{\overline{X}}]$.
 \end{propiedadesPhi}
 
@@ -551,7 +551,7 @@ La  versi\'on  diferencial de  la  $(h,\phi)$-entrop\'ia  comparte obviamente  l
 mismas debilidades  del caso particular de  Shannon: se pierden  la propiedad de
 invarianza    por   transformaci\'on    biyectiva~\ref{prop:SZ:biyeccion},   \ie
 independencia  de los estados,  la positividad~\ref{prop:SZ:positividad},  la de
-cota  superior~\ref{prop:SZ:cotamaxima}  (salvo si  se  pone  vinculos, ver  m\'as
+cota  superior~\ref{prop:SZ:cotamaxima}  (salvo si  se  pone  v\'inculos, ver  m\'as
 adelante), en adici\'on de las que ya la versi\'on discreta perdi\'o.
 
 Sin embargo, se conservan unas propidedades, y entre otros si $h$ es c\'oncava, la
@@ -671,7 +671,7 @@ inmediato ver de que $\Djs(p_1,p_2) \le H_2(\pi) - 2 P_e \le H_2(\pi)$:
 %
 \noindent (cota igual a 1 usando el logaritmo de base 2).
 
-Un otro  vinculo natural  entre la divergencia  de Jensen-Shannon y  las medidas
+Un otro  v\'inculo natural  entre la divergencia  de Jensen-Shannon y  las medidas
 informacionales a la Shannon viene todav\'ia del campo de la clasificaci\'on. Si
 unos datos  pueden provenir  de una distribuci\'on  $p_i$, $i  = 1, 2$,  con una
 probabilidad  $\pi_i$, la variable  aleatoria $X$  dada por  los datos  tiene la
@@ -951,7 +951,7 @@ extensi\'on de este  problema en el marco general. \SZ{Tal  estudio fue hecho en
   varios trabajos~\cite{ref} nous, Kesavan, Kagan 63}.
 
 El problema se formaliza como en  el caso Shannon, buscando la entrop\'ia m\'axima
-sujeto  a  vinculos: sea  $X$  variable  aleatoria  viviendo sobre  $\X  \subset
+sujeto  a  v\'inculos: sea  $X$  variable  aleatoria  viviendo sobre  $\X  \subset
 \Rset^d$ con $K$ momentos \ $\Esp\left[ M_k(X) \right] = m_k$ \ fijos, con $M_x:
 \X  \to \Rset$,  el problema  de $(h,phi)$-entrop\'ia  m\'axima se  formula  de la
 manera siguiente en  el caso continuo (es el caso  discreto, hay que re-emplazar
@@ -964,14 +964,14 @@ p^* = \argmax_p \hhphi[p] \qquad \mbox{sujeto a} \qquad p \ge 0, \quad \int_\X M
 \, p(x) \, dx = m
 \]
 %
-donde   los  dos  primeros   vinculos  aseguran   de  que   $p^*$  (positividad,
+donde   los  dos  primeros   v\'inculos  aseguran   de  que   $p^*$  (positividad,
 normalizaci\'on) sea  una distribuci\'on de  probabilidad. Si $\phi$  es convexa
 (resp.   c\'oncava), $h$  es creciente  (resp.  decreciente)  as\'i  que maximizar
 $\hhphi$ es  equivalente a maximizar $\hphi$ (resp.   $H_{-\phi}$).  Sin perdida
 de generalidad,  se puede considerar la  situaci\'on $\phi$ convexa.  Como en el
 caso de  Shannon, introduciendo factores de Lagrange  $\lambda = \begin{bmatrix}
   \lambda_0  & \lambda_1  & \cdots  & \lambda_K  \end{bmatrix}^t$ para  tener en
-cuenta los vinculos, el problema variacional consiste a resolver~\cite{GelFom63,
+cuenta los v\'inculos, el problema variacional consiste a resolver~\cite{GelFom63,
   Bru04, Mil00, CamMar09, CovTho06}
 %
 \[
@@ -979,7 +979,7 @@ p^* =  \argmax_p \int_\X \left(  - \phi\left( p(x)  \right) + \lambda^t  M(x) \,
   p(x) \right) dx
 \]
 %
-donde $\lambda$ ser\'a  determinado para satisfacer los vinculos.   De nuevo, de
+donde $\lambda$ ser\'a  determinado para satisfacer los v\'inculos.   De nuevo, de
 la ecuaci\'on de Euler-Lagrange~\cite{GelFom63,  Bru04} se obtiene la ecuaci\'on
 $- \phi'(p(x)) + \lambda^t M(x) = 0$. La funci\'on entr\'opica $\phi$ es c\'oncava y
 de clase $C^2$, as\'i que $\phi'$ es continua decreciente, y de la monotonicidad
@@ -989,14 +989,14 @@ es invertible. Entonces,
 p^*(x) = \phi'^{-1}\left( \lambda^t M(x) \right)
 \]
 %
-con $\lambda$ tal que se  satisfacen los vinculos de normalizaci\'on y momentos.
+con $\lambda$ tal que se  satisfacen los v\'inculos de normalizaci\'on y momentos.
 Si el resultado no es positivo en  $\X$, de las condiciones KKT, $p^*(x) = \Big(
 \phi'^{-1}\left(  \lambda^t M(x)  \right) \Big)_+$.   Estas  distribuci\'ones no
 caen  en  general en  la  familia exponencial.  De  una  forma, usando  entrop\'ia
 generales permite escaparse de esta familia.
 
 Como  en el  caso de  Shannon, queda  obviamente  el hecho  de que  no se  puede
-determinar $\lambda$ tal  que se satisfacen todos los  vinculos (y en particular
+determinar $\lambda$ tal  que se satisfacen todos los  v\'inculos (y en particular
 la de normalizaci\'on).
 
 Tal como en el caso Shannon, existe una prueba informacional:
@@ -1031,7 +1031,7 @@ Tal como en el caso Shannon, existe una prueba informacional:
   p^*$ conjuntamente a la crecencia de $h$.
 \end{proof}
 %
-Este lema  prueba que, dando vinculos ``razonables'',  la $(h,\phi)$-entrop\'ia es
+Este lema  prueba que, dando v\'inculos ``razonables'',  la $(h,\phi)$-entrop\'ia es
 acotada por arriba, y que se alcanza la cota. Por ejemplo,
 %
 \begin{itemize}
@@ -1040,7 +1040,7 @@ acotada por arriba, y que se alcanza la cota. Por ejemplo,
   en el caso discreto tal como en el caso continuo.
 %
 \item \SZ{Con  $K =  1$, \ $\X  = \Rset^d$  \ y \  $M(x) = x  x^t$ (visto  con $d^2$
-  vinculos), y $\phi(u) = u^\beta$ (R\'enyi o Havrda-Charv\'at-Dar\'oczy), la  distribuci\'on  de  entrop\'ia  m\'axima  es \SZ{Student; Costa and son on. Gausiana se recupera caso l\'imite}.}
+  v\'inculos), y $\phi(u) = u^\beta$ (R\'enyi o Havrda-Charv\'at-Dar\'oczy), la  distribuci\'on  de  entrop\'ia  m\'axima  es \SZ{Student; Costa and son on. Gausiana se recupera caso l\'imite}.}
 \end{itemize}
 
 \SZ{
