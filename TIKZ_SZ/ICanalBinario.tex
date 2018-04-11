@@ -17,14 +17,14 @@
 \pgfmathsetmacro{\aopt}{(\bopt-\q)/\dpr};
 \pgfmathsetmacro{\Capa}{-log2(\bopt)-((1-\q)*\hp-\p*\hq)/\dpr};
 %
-\draw[>=stealth,->] (-.2,0)--(1.2,0) node[right]{\small $\alpha$};
+\draw[>=stealth,->] (-.2,0)--(1.2,0) node[right]{\small $\pi_x$};
 \draw[>=stealth,->] (0,-.2)--(0,1.2) node[above]{\small $I_2(X;Y)$};
 %
 \draw[thick,domain=0:1,samples=100] (0,0)-- plot (\x,
 {-(\q+\dpr*\x)*log2(\q+\dpr*\x)-(1-\q-\dpr*\x)*log2(1-\q-\dpr*\x)-\x*\hp-(1-\x)*\hq)})
 --(1,0);
 %
-\draw (\aopt,0)--(\aopt,-.05) node[below]{\small $\alpha^\opt$};
+\draw (\aopt,0)--(\aopt,-.05) node[below]{\small $\pi_x^\opt$};
 \draw (1,0)--(1,-.05) node[below]{\small 1};
 \draw (0,\Capa)--(-.05,\Capa) node[left]{\small $C_2$};
 \draw (0,1)--(-.05,1) node[left]{\small 1};
@@ -41,14 +41,14 @@
 %
 \pgfmathsetmacro{\Capa}{1-\hp};
 %
-\draw[>=stealth,->] (-.2,0)--(1.2,0) node[right]{\small $\alpha$};
+\draw[>=stealth,->] (-.2,0)--(1.2,0) node[right]{\small $\pi_x$};
 \draw[>=stealth,->] (0,-.2)--(0,1.2) node[above]{\small $I_2(X;Y)$};
 %
 \draw[thick,domain=0:1,samples=100] (0,0)-- plot (\x,
 {-(\p+\dpr*\x)*log2(\p+\dpr*\x)-(1-\p-\dpr*\x)*log2(1-\p-\dpr*\x)-\hp)})
 --(1,0);
 %
-\draw (.5,0)--(.5,-.05) node[below]{\small $\alpha^\opt$};
+\draw (.5,0)--(.5,-.05) node[below]{\small $\pi_x^\opt$};
 \draw (1,0)--(1,-.05) node[below]{\small 1};
 \draw (0,\Capa)--(-.05,\Capa) node[left]{\small $C_2$};
 \draw (0,1)--(-.05,1) node[left]{\small 1};
@@ -67,14 +67,14 @@
 \pgfmathsetmacro{\aopt}{(\bopt-\q)/\dpr};
 \pgfmathsetmacro{\Capa}{-log2(\bopt)};
 %
-\draw[>=stealth,->] (-.2,0)--(1.2,0) node[right]{\small $\alpha$};
+\draw[>=stealth,->] (-.2,0)--(1.2,0) node[right]{\small $\pi_x$};
 \draw[>=stealth,->] (0,-.2)--(0,1.2) node[above]{\small $I_2(X;Y)$};
 %
 \draw[thick,domain=0:1,samples=100] (0,0)-- plot (\x,
 {-(\q+\dpr*\x)*log2(\q+\dpr*\x)-(1-\q-\dpr*\x)*log2(1-\q-\dpr*\x)-(1-\x)*\hq)})
 -- (1,0);
 %
-\draw (\aopt,0)--(\aopt,-.05) node[below]{\small $\alpha^\opt$};
+\draw (\aopt,0)--(\aopt,-.05) node[below]{\small $\pi_x^\opt$};
 \draw (1,0)--(1,-.05) node[below]{\small 1};
 \draw (0,\Capa)--(-.05,\Capa) node[left]{\small $C_2$};
 \draw (0,1)--(-.05,1) node[left]{\small 1};

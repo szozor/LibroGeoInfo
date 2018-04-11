@@ -74,34 +74,33 @@ p^* = \argmax_p H(p) \qquad \mbox{sujeto a} \qquad p \ge 0, \quad \int_\X M(x)
 donde los dos primeros v\'inculos (positividad, normalizaci\'on) aseguran de que
 $p^*$ sea una distribuci\'on de probabilidad. En  el ejemplo del gas, $K = 1, \,
 M_1(x) = \sum_i x_i^2$ \ (los $x_i$ son las velocidades). Introduciendo factores
-de  Lagrange  $\lambda  =  \begin{bmatrix}  \lambda_0 &  \lambda_1  &  \cdots  &
-  \lambda_K \end{bmatrix}^t$  para tener en  cuenta los v\'inculos,  el problema
+de   Lagrange   $\mu   =   \begin{bmatrix}    \mu_0   &   \mu_1   &   \cdots   &
+  \mu_K  \end{bmatrix}^t$  para tener  en  cuenta  los  v\'inculos, el  problema
 variacional   consiste  a   resolver~\cite{GelFom63,  Bru04,   Mil00,  CamMar09,
   CovTho06}
 %
 \[
-p^* = \argmax_p \int_\X \left( - p(x) \log p(x) + \lambda^t M(x) \, p(x) \right)
-dx
+p^* = \argmax_p \int_\X \left( - p(x) \log p(x) + \mu^t M(x) \, p(x) \right) dx
 \]
 %
-donde  $\lambda$ ser\'a  determinado para  satisfacer a  los v\'inculos.   De la
+donde  $\mu$  ser\'a  determinado  para  satisfacer a  los  v\'inculos.   De  la
 ecuaci\'on  de Euler-Lagrange~\cite{GelFom63, Bru04},  esquematicamente anulando
 la ``derivada''  del integrande con respeto  a $p$ (sera  realmente un gradiente
 con respeto a los componentes de  $p$ en el caso discreto), reparametrizando los
 factores de Lagrange, se obtiene
 %
 \[
-p^*(x) = \e^{\lambda^t M(x)}
+p^*(x) = \e^{\mu^t M(x)}
 \]
 %
-con $\lambda$ tal que se  satisfacen los v\'inculos de normalizaci\'on y momentos.
+con $\mu$  tal que se satisfacen  los v\'inculos de  normalizaci\'on y momentos.
 Esta distribuci\'on  cae en la  familia conocida como {\it  familia exponencial}
 donde  los $M_k$  son  conocidos  como {\it  estad\'isticas  suficientes} y  los
-$\lambda_k$  {\it   par\'ametros  naturales}~\cite{Dar35,  Koo36,   And70,  Kay93,
-  LehCas98, Rob07}.
+$\mu_k$ {\it par\'ametros naturales}~\cite{Dar35, Koo36, And70, Kay93, LehCas98,
+  Rob07}.
 
-Un problema que  puede aparecer es que no se puede  determinar $\lambda$ tal que
-se satisfacen  todos los v\'inculos,  en particular la de  normalizaci\'on.  Por
+Un problema que  puede aparecer es que  no se puede determinar $\mu$  tal que se
+satisfacen  todos los  v\'inculos,  en particular  la  de normalizaci\'on.   Por
 ejemplo,  si $\X  = \Rset$  y $K  = 0$,  \ $p$  \ deber\'ia  ser  constante (ley
 uniforme) sobre\ldots $\Rset$, lo que no es normalizable. De la misma manera, si
 $K  =  3$  \  y  \   $M_k(x)  =  x^k$,  tampoco  es  normalizable  la  funci\'on
@@ -118,7 +117,7 @@ Existe una prueba informacional de este resultado, saliendo de la soluci\'on:
 \begin{lema}
   Sea \ $\displaystyle \P_m = \left\{ p \ge 0: \: \int_\X M_k(x) \, p^*(x) \, dx
     =  m \right\}$ \  y \  $p^* \in  \P_m$ \  que sea  de la  forma \  $p^*(x) =
-  \e^{\lambda^t M(x)}$. Entonces
+  \e^{\mu^t M(x)}$. Entonces
   %
   \[
   \forall \,  p \in \P_m, \quad  H(p) \le H(p^*) \qquad  \mbox{con igualdad ssi}
@@ -134,20 +133,20 @@ Existe una prueba informacional de este resultado, saliendo de la soluci\'on:
   p(x) \, \log p^*(x) \, dx
   \end{eqnarray*}
   %
-  De $\log p^* = \lambda^t M$ se obtiene
+  De $\log p^* = \mu^t M$ se obtiene
   %
   \begin{eqnarray*}
-  H(p) & = & - \Dkl[p]{p^*} - \int_\X \lambda^t M(x) p(x)
+  H(p) & = & - \Dkl[p]{p^*} - \int_\X \mu^t M(x) p(x)
   \, dx\\[2.5mm]
   %
-  & = & - \Dkl[p]{p^*} - \int_\X \lambda^t M(x) \, p^*(x) \, dx\\[2.5mm]
+  & = & - \Dkl[p]{p^*} - \int_\X \mu^t M(x) \, p^*(x) \, dx\\[2.5mm]
   %
   & = & - \Dkl[p]{p^*} - \int_\X p^*(x) \log p^*(x) \, dx\\[2.5mm]
   %
   & = & - \Dkl[p]{p^*} + H(p^*)
   \end{eqnarray*}
   %
-  porque $p, p^* \in  \P_m$ \ y \ $\lambda^t M = \log  p^*$. La prueba se cierra
+  porque $p,  p^* \in  \P_m$ \ y  \ $\mu^t M  = \log  p^*$. La prueba  se cierra
   notando que $\Dkl[p]{p^*} \ge 0$ con igualdad si y solamente si $p = p^*$.
 \end{proof}
 %
@@ -213,8 +212,8 @@ desiguladad~\cite{Sha48, Lie78, CovTho06, DemCov91, Rio07}:
     covarianza:}
   %
   \[
-  \forall  \:   0  \le  \lambda  \le   1,  \quad  H\left(   \sqrt{\lambda}  X  +
-    \sqrt{1-\lambda} Y \right) \ge \lambda H(X) + (1-\lambda) H(Y)
+  \forall  \:   0  \le  \mu  \le   1,  \quad  H\left(   \sqrt{\mu}  X  +
+    \sqrt{1-\mu} Y \right) \ge \mu H(X) + (1-\mu) H(Y)
   \]
   %
   con igualdad si y solmente si \ $X$ \ e \ $Y$ \ son gaussianas con matrices de
@@ -222,9 +221,9 @@ desiguladad~\cite{Sha48, Lie78, CovTho06, DemCov91, Rio07}:
 \end{enumerate}
 %
 %\noindent La  forma del teorema implica la  forma~\ref{EPI:SZ:PresCov} tomando \
-%$\sqrt{\lambda} X$ \ y  \ $\sqrt{1-\lambda} Y$ \ en lugar de \ $X$  \ e \ $Y$, y
+%$\sqrt{\mu} X$ \ y  \ $\sqrt{1-\mu} Y$ \ en lugar de \ $X$  \ e \ $Y$, y
 %recordandose que \ $N(a X) =  a^2 N(X)$. Reciprocamente, la forma del teorema se
-%recupera de la forma~\ref{EPI:SZ:PresCov} tomando \ $\lambda = \frac12$.
+%recupera de la forma~\ref{EPI:SZ:PresCov} tomando \ $\mu = \frac12$.
 
 La  prueba  de  esta(s)  desigualdad(es)  no es  trivial.   N\'umeras  versiones
 existen,  dadas por  ejemplo  en las  referencias~\cite{Bla65, Sta59,  ShaWea64,
@@ -243,10 +242,10 @@ desigualdad  de Minkowsky  de los  determinentes  \ $|R_1  + R_2|^{\frac1d}  \ge
 sim\'etricas definidas  positivas, con igualdad  si y solamente si  $R_2 \propto
 R_1$  (viene de  $X$ e  $Y$ gaussianas  de covarianza  $R_1$ y  $R_2$).  Aparece
 tambi\'en  para acotar  la informaci\'on  mutua  entre variables  y calcular  la
-capacidad  de  un   canal  de  communicaci\'on  como  se  lo   va  a  ver  m\'as
+capacidad  de   un  canal  de  comunicaci\'on   como  se  lo  va   a  ver  m\'as
 adelante~\cite{CovTho06, DemCov91, Rio07, Joh04}.
 
-\SZ{En el caso discreto, no hay un resultado general.  Existent solamento
+\SZ{En el caso discreto, no hay un resultado general.  Existen solamente 
   resultados para variables particulares~\cite{toto, titi}.}
 
 
@@ -443,7 +442,7 @@ par\'ametro~\cite{Fis22, Fis25:07, Kay93, Bos07, CovTho06, Fri04}.
   Sea   $X$   una   variable   aleatoria  parametrizada   por   un   par\'ametro
   $m$-dimensional, $\theta  \in \Theta \subseteq \Rset^m$,  de distribuci\'on de
   probabilidad  $p_X(\cdot;\theta)$  continua sobre  $\X  \subseteq \Rset^d$  su
-  soporte. Suponga  que $p_X$ sea  diferenciable en $\theta$ sobre  $\Theta$.  La
+  soporte. Suponga que  $p_X$ sea diferenciable en $\theta$  sobre $\Theta$.  La
   matriz de Fisher, de tama\~no $m \times m$, es definida por
   %
   \[
@@ -468,7 +467,7 @@ par\'ametro~\cite{Fis22, Fis25:07, Kay93, Bos07, CovTho06, Fri04}.
 %
 Como  para  la  entrop\'ia,  la  matriz  de Fisher  se  escribe  generalmente  \
 $J_\theta(X)$, \ a pesar de que no sea  funci\'on de \ $X$ \ pero de la densidad
-de  probabilidad.  Se la  notar\'a  tambi\'en  \  $J_\theta(p_X)$ \  seg\'un  la
+de  probabilidad.  Se  la  notar\'a  tambi\'en \  $J_\theta(p_X)$  \ seg\'un  la
 escritura la m\'as conveniente.
 
 Tomando  el gradiente  en \  $x$ \  en lugar  de \  $\theta$ \  da la  matriz de
@@ -504,7 +503,7 @@ Es interesante notar que:
   2).
 %
 \item Es sencillo ver  que, por definici\'on \ $J_\theta(X)$ \ y  \ $J(X)$ \ son
-  sim\'etricas  y  que \  $J_\theta(X)  > 0$  \  y  \ $J(X)  >  0$  \ donde  estas
+  sim\'etricas  y que  \ $J_\theta(X)  >  0$ \  y \  $J(X)  > 0$  \ donde  estas
   desiguladades  significan  que  las  matrices  son  definidas  positivas  (los
   autovalores son positivos).  Adem\'as,
   %
@@ -518,34 +517,33 @@ Es interesante notar que:
   que no hay informaci\'on sobre su posici\'on.
 %
 \item $J_\theta$ \  y \ $J$ \ son  convexas en el sentido de  que para cualquier
-  conjunto de \ $\lambda_k \ge 0, \, \sum_{k=1}^K \lambda_k = 1$ \ y \ cualquier
+  conjunto de \ $\pi_k \ge 0, \, \sum_{k=1}^K \pi_k = 1$ \ y \ cualquier
   conjunto de distribuciones \ $p_k, \ k = 1, \ldots , K$~\cite{Coh68, Fri04},
   %
   \[
-  J_\theta\left(  \sum_{k=1}^K  \lambda_k  p_k  \right)  \:  <  \:  \sum_{k=1}^K
-  \lambda_k  \,  J_\theta\left(  p_k  \right)  \qquad  \mbox{y}  \qquad  J\left(
-    \sum_{k=1}^K \lambda_k  p_k \right) \:  < \: \sum_{k=1}^K  \lambda_k J\left(
+  J_\theta\left(  \sum_{k=1}^K  \pi_k  p_k  \right)  \:  <  \:  \sum_{k=1}^K
+  \pi_k  \,  J_\theta\left(  p_k  \right)  \qquad  \mbox{y}  \qquad  J\left(
+    \sum_{k=1}^K \pi_k  p_k \right) \:  < \: \sum_{k=1}^K  \pi_k J\left(
     p_k \right)
   \]
   %
   donde $A < B$ significa que $B-A$ es definida positiva.  La prueba es dada por
   Cohen en  el caso  escalar, pero se  extiende sin  costo adicional en  el caso
-  multivariado.  Hace falta  probarlo  para \  $K=2$  \ y,  por recurrencia,  se
+  multivariado.   Hace falta  probarlo para  \ $K=2$  \ y,  por  recurrencia, se
   extiende para  cualquier \ $K$. En  este caso, observando que  \ $\big( \nabla
   \log p  \big) \big( \nabla \log  p \big)^t \,  p = \frac{\big( \nabla  p \big)
     \big(  \nabla p  \big)^t}{p}$, considerando  el  gradiente con  respeto a  \
   $\theta$ (resp. a \ $x$) tratando de  \ $J_\theta$ (resp. \ $J$), se obtiene \
-  $\sum_k \lambda_k \frac{\big( \nabla  p_k \big) \big( \nabla p_k \big)^t}{p_k}
-  -  \frac{\left(  \nabla \sum_k  \lambda_k  p_k  \right)  \left( \nabla  \sum_k
-      \lambda_k p_k \right)^t}{\sum_k \lambda_k p_k} = \frac{1}{\sum_k \lambda_k
-    p_k} \,  \sum_{k,l} \lambda_k  \lambda_l \Big( \frac{p_l}{p_k}  \big( \nabla
-  p_k \big) \big(  \nabla p_k \big)^t - \big( \nabla p_k  \big) \big( \nabla p_l
-  \big)^t \Big)$,  lo que vale, tratando del  caso $K = 2$,  \ $ \frac{\lambda_1
-    \lambda_2}{p_2 p_2 (\lambda_1  p_1 + \lambda_2 p_2)} \big(  p_2 \nabla p_1 -
-  p_1 \nabla p_2 \big) \big( p_2 \nabla  p_1 - p_1 \nabla p_2 \big)^t \ge 0$. No
-  puede ser  id\'enticamente cero (salvo  si \ $\lambda_1  \lambda_2 = 0$ \  o \
-  $p_1 =  p_2$\ldots) as\'i  que se  obtiene la desigualdad  sobre la  matriz de
-  Fisher integrando esta \'ultima desigualdad.
+  $\sum_k \pi_k  \frac{\big( \nabla p_k  \big) \big( \nabla p_k  \big)^t}{p_k} -
+  \frac{\left( \nabla  \sum_k \pi_k p_k  \right) \left( \nabla \sum_k  \pi_k p_k
+    \right)^t}{\sum_k  \pi_k p_k}  =  \frac{1}{\sum_k \pi_k  p_k} \,  \sum_{k,l}
+  \pi_k  \pi_l \Big(  \frac{p_l}{p_k} \big(  \nabla p_k  \big) \big(  \nabla p_k
+  \big)^t - \big( \nabla p_k \big) \big( \nabla p_l \big)^t \Big)$, lo que vale,
+  tratando del caso $K  = 2$, \ $ \frac{\pi_1 \pi_2}{p_2 p_2  (\pi_1 p_1 + \pi_2
+    p_2)} \big( p_2 \nabla p_1 - p_1 \nabla p_2 \big) \big( p_2 \nabla p_1 - p_1
+  \nabla  p_2 \big)^t  \ge 0$.  No puede  ser id\'enticamente  cero (salvo  si \
+  $\pi_1 \pi_2 = 0$ \ o \ $p_1 = p_2$\ldots) as\'i que se obtiene la desigualdad
+  sobre la matriz de Fisher integrando esta \'ultima desigualdad.
 \end{itemize}
 
 
@@ -839,17 +837,17 @@ Fisher.
   \pi)^{-\frac{d}{2}} \left| T \Sigma_\Gauss T^t \right|^{-\frac12} \exp\left( -
     \frac12 x^t \left(  T \Sigma_\Gauss T^t \right)^{-1} x  \right)$ \ (el rango
   m\'aximo de  \ $T$ \  asegura que \  $T \Sigma_\Gauss T^t$ \  sea invertible).
-  Para una matriz invertible $R$, desarollando \ $|R|$ \ con respecto a su l\'inea
-  \ $i$, se obtiene que  \ $\frac{\partial |R|}{\partial R_{i,j}} = R_{i,j}^*$ \
-  cofactor de \ $R_{i,j}$, dando por la  regla de Cram\'er \ $\nabla_R |R| = |R|
-  \, \left( R^{-1} \right)^t$ \ (ver tambi\'en~\cite[cap.~1~\&~9]{MagNeu99}), es
-  decir  \  $\nabla_R |R|^{-\frac12}  =  -\frac12  |R|^{-\frac12} \left(  R^{-1}
-  \right)^t$.  De $\frac{\partial |R|^{-\frac12}}{\partial T_{i,j}} = \sum_{k,l}
-  \frac{\partial      |R|^{-\frac12}}{\partial      R_{k,l}}      \frac{\partial
-    R_{k,l}}{\partial  T_{i,j}}  =  -\frac12  |R|^{-\frac12}  \sum_{k,l}  \left(
-    R^{-1} \right)_{l,k} \frac{\partial R_{k,l}}{\partial T_{i,j}}$ \ con \ $R =
-  T  \Sigma_\Gauss  T^t$  \  (sim\'etrica)  y c\'alculos  b\'asicos  se  obtiene
-  finalmente
+  Para  una matriz  invertible $R$,  desarollando \  $|R|$ \  con respecto  a su
+  l\'inea  \ $i$,  se obtiene  que  \ $\frac{\partial  |R|}{\partial R_{i,j}}  =
+  R_{i,j}^*$  \ cofactor  de  \ $R_{i,j}$,  dando  por la  regla  de Cram\'er  \
+  $\nabla_R    |R|   =    |R|    \,   \left(    R^{-1}    \right)^t$   \    (ver
+  tambi\'en~\cite[cap.~1~\&~9]{MagNeu99}), es decir \ $\nabla_R |R|^{-\frac12} =
+  -\frac12   |R|^{-\frac12}  \left(   R^{-1}  \right)^t$.    De  $\frac{\partial
+    |R|^{-\frac12}}{\partial     T_{i,j}}     =    \sum_{k,l}     \frac{\partial
+    |R|^{-\frac12}}{\partial R_{k,l}}  \frac{\partial R_{k,l}}{\partial T_{i,j}}
+  =   -\frac12    |R|^{-\frac12}   \sum_{k,l}   \left(    R^{-1}   \right)_{l,k}
+  \frac{\partial R_{k,l}}{\partial T_{i,j}}$ \ con \ $R = T \Sigma_\Gauss T^t$ \
+  (sim\'etrica) y c\'alculos b\'asicos se obtiene finalmente
   %
   \[
   \nabla_T  \left|   T  \Sigma_\Gauss  T^t  \right|^{-\frac12}  =   -  \left|  T
@@ -920,10 +918,10 @@ Fisher.
   \, \Sigma_\Gauss
   \end{eqnarray*}
   %
-  usando la ecuaci\'on diferencial en la  segunda l\'inea, el hecho de que \ $p_Y$
-  \  suma a  1  en  la tercera  l\'inea  (su gradiente  es  cero  entonces), y  la
-  definici\'on de la matriz de Fisher en la \'ultima l\'inea. Usando el teorema de
-  la  divergencia (intergraci\'on  por  partes) aplicada  respectivamente a  los
+  usando la  ecuaci\'on diferencial  en la  segunda l\'inea, el  hecho de  que \
+  $p_Y$ \ suma a  1 en la tercera l\'inea (su gradiente  es cero entonces), y la
+  definici\'on de la matriz de Fisher  en la \'ultima l\'inea. Usando el teorema
+  de la  divergencia (intergraci\'on por partes) aplicada  respectivamente a los
   componentes de \ $\nabla_y p_Y \log  p_Y$ \ y \ $\nabla_y p_Y$, suponiendo que
   estos gradientes se cancelan en el borde del dominio de integraci\'on, los dos
   t\'erminos integrales  valen cero, lo que  cierra la prueba  de la desigualdad
@@ -1024,14 +1022,15 @@ $\E(X|Y)$:
   & = & - \int_{\Rset^d} \nabla_y p_Y(y) \, \Esp\left[X^t | Y = y \right] \, dy
   \end{eqnarray*}
   %
-  La segunda l\'inea  viene de la escritura de \ $H(Y)$  usando $p_Y$ como marginale
-  de $p_{X,Y}$  en $x$ y  intercambiando gradiente e  integral (ver pasos  de la
-  prueba de la desigualdad de de Bruijn); la tercera de $p_{X,Y}/p_Y = p_{X|Y}$;
-  en la cuarta  se usa la ecuaci\'on diferencial satisfecha  por $p_{X,Y}$ en la
-  primera integral y  integrando en $x$ en la segunda  integral; la quinta l\'inea
-  se obtiene usando el teorema  de la divergencia (intergraci\'on por partes) en
-  la integraci\'on en  $y$ de la primera integral,  e intercambiando gradiente e
-  integral el la segunda ($p_Y$ sumando a 1, el t\'ermino se cancela). Adem\'as,
+  La  segunda l\'inea  viene  de la  escritura  de \  $H(Y)$  usando $p_Y$  como
+  marginale de $p_{X,Y}$ en $x$ y intercambiando gradiente e integral (ver pasos
+  de la  prueba de la  desigualdad de de  Bruijn); la tercera de  $p_{X,Y}/p_Y =
+  p_{X|Y}$;  en  la cuarta  se  usa  la  ecuaci\'on diferencial  satisfecha  por
+  $p_{X,Y}$ en la  primera integral y integrando en $x$  en la segunda integral;
+  la  quinta   l\'inea  se   obtiene  usando  el   teorema  de   la  divergencia
+  (intergraci\'on por partes) en la integraci\'on en $y$ de la primera integral,
+  e intercambiando  gradiente e integral  el la segunda  ($p_Y$ sumando a  1, el
+  t\'ermino se cancela). Adem\'as,
   %
   \begin{eqnarray*}
   \nabla_y p_Y(y) & = & \int_{\Rset^{d'}} \nabla_Y p_{Y|X}(y,x) \, p_X(x) \,
@@ -1057,8 +1056,8 @@ $\E(X|Y)$:
   \Esp\left[ \Esp\left[X | Y \right] \Esp\left[X | Y \right]^t \right]
   \right)\\[2.5mm]
   %
-  & = & \Sigma_\Gauss^{-1} \left( \Esp\left[ Y X^t \right] - S \Esp\left[ \Esp\left[X
-  | Y \right] \Esp\left[X | Y \right]^t \right] \right)\\[2.5mm]
+  & = & \Sigma_\Gauss^{-1} \left( \Esp\left[ Y X^t \right] - S \Esp\left[
+  \Esp\left[X | Y \right] \Esp\left[X | Y \right]^t \right] \right)\\[2.5mm]
   %
   & = & \Sigma_\Gauss^{-1} S \left( \Esp\left[ X X^t \right] - \Esp\left[
   \Esp\left[X | Y \right] \Esp\left[X | Y \right]^t \right] \right)

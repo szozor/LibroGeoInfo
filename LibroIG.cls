@@ -12,6 +12,7 @@
 \RequirePackage[latin1]{inputenc} % encoding
 \RequirePackage[T1]{fontenc} % font encoding
 \RequirePackage{amsmath,amssymb,amsthm,bbm} % mathematical packages
+\RequirePackage{stix} % hebrew letters
 \RequirePackage{xspace} % spacing package
 \RequirePackage{epsfig,graphics,graphicx,color,tikz,pgfplots,etoolbox} % figures packages
 \RequirePackage{enumitem} % to manage the labels... en enumerate
@@ -94,6 +95,7 @@
 %\vfill
 %\begin{center}
 %\includegraphics[width=4cm]{logo_large}
+%\end{center}
 
 %\AtEndEnvironment{\newpage}
 }{\cleardoublepage}
