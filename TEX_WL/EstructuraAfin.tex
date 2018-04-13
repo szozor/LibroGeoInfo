@@ -1,0 +1,136 @@
+%\sub
+\seccion{Estructura Afin}
+\label{s:WL:EstructuraAfin}
+
+En  el espacio  eucl\'ideo  $n$-dimensional (pensado  aqu\'i  como una  variedad
+diferenciable),  cuando  usamos coordenadas  cartesianas,  caracterizamos a  dos
+vectors paralelos como aquellos  que tienen iguales componentes. Si reemplazamos
+las coordenadas cartesianas por las polares, por ejemplo, esta caracterizaci\'on
+deja  de  ser  v\'alida.  Veamos   c\'omo  podemos  introducir  la  noci\'on  de
+paralelismo de vectores, usando  cualquier sistema de coordenadas. Sea $\{x^a\}$
+el sistema de  coordenadas cartesiano del espacio. En  este sistema, hemos dicho
+que  dos vectores  paralelos,  por ejemplo  $\mathbb{V}$ y  $\tilde{\mathbb{V}}$
+tienen iguales componentes:
+%
+\[
+V^a = \tilde{V}^a
+\]
+%
+Si el vector $\mathbb{V}$ es tangente al espacio en el punto $p$ con coordenadas
+$\{ x^a \}$  y el vector paralelo $\tilde{\mathbb{V}}$ es  tangente al punto $q$
+con coordenadas ${x^a+\delta x^a}$, vale
+%
+\[
+\tilde{V}^a(q)-V^a(p) = 0
+\]
+%
+Dado  un  vector $\mathbb{V}$  en  $p$, podemos  definir  un  campo de  vectores
+paralelos  a $\mathbb{V}$  en un  entorno  de $p$.  Denotemos a  este campo  por
+$\tilde{\mathbb{V}}$.  Este  campo cumple  que  en  el  punto $p$  coincide  con
+$\mathbb{V}$ y con la condici\'on:
+%
+\[
+\tilde{V}^a(x+\delta x) -  V^a(x) = \frac{\partial \tilde{V}^a}{\partial x^b}(p)
+\delta x^b
+\]
+%
+Sea ${\xi^a}$ otro sistema de  coordenadas para el espacio eucl\'ideo, vinculado
+con ${x^a}$ mediante las relaciones
+%
+\begin{equation}
+\xi^a = \xi^a(x^b), \quad x^b=x^b(\xi^a) \label{cambcoor}
+\end{equation}
+%
+A partir de ellas, resulta
+%
+\begin{equation}
+\delta \xi^a = \frac{\partial \xi^a}{\partial x^b} \delta x^b, \qquad \delta x^b = \frac{\partial x^b}{\partial \xi^a} \delta \xi^a
+\end{equation}
+%
+Las componentes de $\tilde{\mathbb{V}}$ se transforman de acuerdo con
+%
+\[
+\tilde{V}^a = \frac{\partial x^a}{\partial \xi^b} \tilde{V'}^b
+\]
+%
+donde  $\tilde{V'}^a$  son  las   componentes  de  $\tilde{\mathbb{V}}$  en  las
+coordenadas $\{\xi^a\}$. Entonces, podemos escribir
+%
+\begin{eqnarray}
+\frac{\partial \tilde{V}^a}{\partial x^b} &=& \frac{\partial}{\partial \xi^c} \left(\frac{\partial x^a}{\partial \xi^d} \tilde{V'}^d \right) \frac{\partial \xi^c}{\partial x^b}  \nonumber \\
+%
+& = & \frac{\partial^2 x^a}{\partial \xi^c \partial \xi^d} \tilde{V'}^d \frac{\partial \xi^c}{\partial x^a}+ \frac{\partial x^a}{\partial \xi^d} \frac{\partial{\tilde{V'}^d}}{\partial \xi^c} \frac{\partial \xi^c}{\partial x^b}
+\end{eqnarray}
+%
+Si    definimos   la    cantidad   $\delta    \tilde{V'}^d    =   \frac{\partial
+  \tilde{V'}^d}{\partial x^e} \delta \xi^e$ y despu\'es de un poco de \'algebra,
+llegamos a la relaci\'on
+%
+\begin{equation}
+\delta \tilde{V'}^n = - \frac{\partial^2 x^a}{\partial \xi^e \partial \xi^d} \frac{\partial \xi^n}{\partial x^a} \tilde{V'}^d \delta \xi^e \label{con}
+\end{equation}
+%
+Esta expresi\'on puede reescribirse de la siguiente forma:
+%
+\begin{equation}
+\delta \tilde{V'}^n = - \Gamma'^n_{ed} \tilde{V'}^d \delta \xi^e
+\end{equation}
+%
+\noindent  en   donde  los  coeficientes  $\Gamma'$  est\'an   definidos  en  la
+expresi\'on~\eqref{con}. De su definici\'on resulta que las cantidades $\Gamma'$
+se anulan para cambios {\it lineales} de coordenadas~\eqref{cambcoor}.
+
+Obs\'ervese que al haber arribado a la definici\'on de los coeficientes $\Gamma$
+no hemos hecho uso de ninguna  propiedad especial del espacio eucl\'ideo. Es por
+ello  que  la  expresi\'on~\eqref{con}   es  v\'alida  para  cualquier  variedad
+n-dimensional. Es f\'acil ver que frente a un cambio de coordenadas
+%
+\begin{equation}
+x^a \rightarrow x'^a= x'^a\left(x^b\right) \label{camb2}
+\end{equation}
+%
+las cantidades $\Gamma$ cambian seg\'un la expresi\'on
+%
+\begin{equation}
+\Gamma ^f_{de} = \Gamma'^a_{mn} \frac{\partial x^f}{\partial x'^a} \frac{\partial x'^m}{\partial x^d} \frac{\partial x'^n}{\partial x^e}+\frac{\partial x^f}{\partial x'^a} \frac{\partial^2 x'^a}{\partial x^e \partial x^d} \label{camcon}
+\end{equation}
+%
+Debemos  remarcar que  esta  ley  de transformaci\'on  es  lineal y  homog\'enea
+(tensorial)   s\'olo  cuando  el   cambio  de   coordenadas~\eqref{cambcoor}  es
+lineal. Esta propiedad  de los coeficientes $\Gamma$ nos  permite generalizar la
+idea de paralelismo en una variedad arbitraria:
+%
+\begin{definicion}[Conexi\'on af\'in]
+  Cuando  en una  variedad  n-dimensional arbitraria  $\M$  se introducen  $n^3$
+  coeficientes $\Gamma$ que se transforman de acuerdo con la ley~\eqref{camcon},
+  diremos que sobre esa variedad se ha definido una {\it conexi\'on af\'in}
+\end{definicion}
+
+A partir de los coeficientes $\Gamma$ es posible definir una nueva derivada para
+un campo vectorial arbitrario, digamos $V^a(x)$:
+%
+\begin{definicion}[Derivada covariante de campo]
+  Sea  un campo vectorial  $V$ definido  en un  entorno del  punto $x$.  La {\it
+    derivada covariante  del campo  $V$} est\'a dado  por las componentes  de un
+  tensor de tipo $(1,1)$
+  %
+  \[
+  V^a_{;c} = V^a_{,c} + \Gamma^a_{bc} V^b
+  \]
+\end{definicion}
+
+\begin{definicion}[Derivada covariante en una direcci\'on]
+  Dados dos campos  vectoriales $U(x)$ y $V(x)$, la  {\it derivada covariante de
+    $V$ en la direcci\'on de $U$} es el campo vectorial definido por
+  %
+  \[
+  U(x) \cdot \nabla V(x) \equiv \sum_{ab} V^a_{;b}(x) U^b(x) \mathbb{E}_a \equiv
+  \nabla_U V
+  \]
+% hdot => cdot?
+\end{definicion}
+%
+donde  $\mathbb{E}^a$ es  el campo  de  vectores coordenados  asociados con  las
+coordenadas $x^a$. Esta \'ultima  definici\'on permite trasladar paralelamente a
+un vector a  lo largo de una  curva. Basta con tomar como  $\mathbb{U}$ al campo
+tangente a la curva.

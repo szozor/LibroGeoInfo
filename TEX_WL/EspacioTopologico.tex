@@ -1,0 +1,132 @@
+%Comenzaremos con la noci\'on de espacio topol\'ogico.
+%\sub
+\seccion{Espacio Topol\'ogico}
+\label{s:WL:EspacioTopologico}
+
+Un conjunto  arbitrario $X$  est\'a desprovisto de  toda estructura  que permita
+definir nociones tales como la {\it convergencia} de una sucesi\'on de elementos
+de  $X$, la  {\it proximidad}  de dos  elementos de  $X$, etc.  En  principio se
+dispone s\'olo de las operaciones  elementales de {\it uni\'on} $\bigcup$ e {\it
+  intersecci\'on} $\bigcap$ de  subconjuntos. Estas operaciones tambi\'en pueden
+realizarse entre  distintos conjuntos.  Denotaremos con $\emptyset$  al conjunto
+vac\'io. Surge entonces el desaf\'io de construir alguna estructura matem\'atica
+definida  sobre $X$  que  permita definir,  de  manera precisa  las nociones  de
+proximidad, continuidad, convergencia, etc. Esto  se logra a trav\'es de la idea
+de una {\bf topolog\'ia} sobre $X$.
+
+\begin{definicion}[Topolog\'ia]
+  Una  {\it topolog\'ia}  $\Upsilon$ sobre  el conjunto  $X$ es  una  familia de
+  subconjuntos de $X$ que cumple con las siguientes condiciones:
+  %
+  \begin{enumerate}
+  \item $X$ y $\emptyset$ est\'an en $\Upsilon$: $X, \emptyset \in \Upsilon$
+  %
+  \item  La  intersecci\'on de  cualquier  colecci\'on  finita  de elementos  de
+    $\Upsilon$ est\'a en $\Upsilon$:
+    \[
+    A_i \in  \Upsilon, \quad \forall  \: i  = 1 ,  \ldots , n  \quad \Rightarrow
+    \quad \bigcap_{i=1}^n A_i \in \Upsilon
+    \]
+  %
+  \item La uni\'on de una colecci\'on arbitraria --finita o no-- de elementos de
+    $\Upsilon$, pertenece a $\Upsilon$:
+    \[
+    A_i \in \Upsilon \quad \Rightarrow \quad \bigcup_i A_i \in \Upsilon
+    \]
+  \end{enumerate}
+\end{definicion}
+
+\begin{definicion}[Espacio topol\'ogico y abiertos]
+  Al par $(X,\Upsilon)$ lo  llamaremos {\it espacio topol\'ogico}. Los conjuntos
+  que est\'an en $\Upsilon$ se llaman {\it abiertos}.
+\end{definicion}
+
+
+%{\it 
+Ejemplos:
+%}:
+%
+\begin{itemize}
+\item {\it  Topolog\'ia trivial}. Es la  que consta de s\'olo  dos elementos, el
+  conjunto vac\'io y el conjunto total $X: \Upsilon = \{ \emptyset , X \}$.
+%
+\item {\it Topolog\'ia discreta}. Es la que en todo subconjunto de $X$ est\'a en
+  $\Upsilon$, es decir $\Upsilon =  \P(X)$ donde $\P(X)$ representa a las partes
+  de $X$.
+%
+\item En  los cursos elementales  de an\'alisis matem\'atico hemos  estudiado en
+  $\Rset^n$, es decir el conjunto de $n$-tuplas de n\'umeros reales, la noci\'on
+  de bolas abiertas. M\'as precisamente,  una bola abierta en $\Rset^n$ centrada
+  en el punto $p = (p_1,...,p_n) \in \Rset^n$ y de radio $r > 0$ es el conjunto
+  \[
+  \B_{r,p} = \left\{ (x_1 , \ldots , x_n) \in \Rset^n:   \: 0 \le   \sqrt{\sum_i
+      (x_i-p_i)^2} < r \right\}
+  % \text{tal que} \;\; 0\leq \sqrt{\sum_i (x_i-p_i)^2}<r}
+  \]
+  %
+  La  colecci\'on de  todas  las  bolas abiertas  en  $\Rset^n$ constituyen  una
+  topolog\'ia  para $\Rset^n$.   Se conoce  como la  {\it topolog\'ia  usual} de
+  $\Rset^n$.\newline Obs\'ervese que un  subconjunto $A$ de $\Rset^n$ es abierto
+  (en el sentido  usual), cuando para todo  $x \in A$, existe un  $\varepsilon > 0$
+  tal que $\B_{\varepsilon,x} \subset A$.
+\end{itemize}
+
+\begin{definicion}[Entorno]
+  Un {\it entorno} de un punto $x \in X$ es un conjunto $U$ que contiene a $x$ y
+  tal que existe un  abierto $V$ contenido en $U$: $x \in  V \subseteq U$ con $V
+  \in \Upsilon$.
+\end{definicion}
+
+\begin{definicion}[Funci\'on continua]
+  Sea $f: X  \rightarrow Y$ una funci\'on entre  dos espacios topol\'ogicos $(X,
+  \Upsilon)$ e  $(Y,\omega)$. $f$ es una  {\bf funci\'on continua} en  $x \in X$
+  sii dado cualquier entorno abierto $U  \subset Y$ de $f(x)$, existe un entorno
+  de $x$,  $V \subset  X$ tal  que $f(V) \subset  U$. Equivalentemente  se puede
+  definir  una  funci\'on continua  de  la siguiente  manera:  $f$  es una  {\it
+    funci\'on continua}  sii la  imagen inversa de  cada conjunto abierto  es un
+  abierto.
+\end{definicion}
+%
+%Equivalentemente se puede definir una funci\'on continua de la siguiente manera:
+%
+%\begin{definicion}[Funci\'on continua]
+%  Sea $f: X \rightarrow Y$  una funci\'on entre dos espacios topol\'ogicos $(X,
+%  \Upsilon)$ e $(Y,\omega)$. $f$ es  una {\bf funci\'on continua} sii la imagen
+%  inversa de cada conjunto abierto es un abierto.
+%\end{definicion}
+Es f\'acil demostrar la equivalencia entre ambas definiciones, y hacerlo queda como ejercicio para el lector.
+
+\begin{definicion}[Homomorfismo]
+  Un {\it homomorfismo} $\Psi$ entre dos espacios topol\'ogicos $(X,\Upsilon)$ e
+  $(Y,\omega)$ es una funci\'on $\Psi: X \rightarrow V \subseteq Y$
+  %
+  % \[
+  % \Psi: X \rightarrow V \subseteq Y
+  % \]
+  biyectiva, continua y con inversa continua.
+\end{definicion}
+
+\begin{definicion}[Sucesi\'on]
+  Una  {\it  sucesi\'on}  en un  conjunto  $X$  es  una aplicaci\'on  $s:  \Nset
+  \rightarrow   X$   donde   $\Nset$   es   el   conjunto   de   los   n\'umeros
+  naturales. Denotaremos a la sucesi\'on por $\{ x_n \}_{n \in \Nset}$.
+  % \text{donde } n \in \Nset$
+\end{definicion}
+
+En un espacio topol\'ogico podemos introducir la noci\'on de convergencia de una
+sucesi\'on. Obs\'ervese  que \'esto  es posible gracias  a que disponemos  de la
+noci\'on de conjunto abierto.
+
+\begin{definicion}[L\'imite]
+  Sea $(X,  \Upsilon)$ un espacio topol\'ogico  y $\{ x_n \}_{n  \in \Nset}$ una
+  sucesi\'on en $X$. Diremos que $x$ es  el {\it l\'imite} de $x_n$ si para todo
+  entorno $V$ de $x$,  existe un $n_0 \in \Nset$ tal que  $\forall n \ge n_0$ se
+  tiene que $x_n \in V$.
+\end{definicion}
+
+Los l\'imites de  las sucesiones no tienen porque  ser \'unicos. Una condici\'on
+que debe cumplir el espacio  topol\'ogico $(X,\Upsilon)$ para que las sucesiones
+tengan un \'unico l\'imite es que  dados dos puntos distintos $x \ne y$,con $x,y
+\in X$ existen entornos disjuntos de $x$ e $y$. A los espacios topol\'ogicos que
+cumplen  con esta  condici\'on se  los llama  espacios de  Hausdorff  o espacios
+$T_2$.

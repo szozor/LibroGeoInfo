@@ -1,0 +1,30 @@
+%\sub
+\seccion{Espacios m\'etricos}
+\label{s:WL:Metrico}
+
+En el  tercer ejemplo de espacio  topol\'ogico, usamos la  noci\'on de m\'etrica
+eucl\'idea  para definir las  bolas abiertas  en $\Rset^n$.  El disponer  de una
+m\'etrica  no es  algo que  ocurre  en todo  conjunto. Eso  motiva la  siguiente
+definici\'on:
+%
+\begin{definicion}[Espacio m\'etrico]
+  Un {\it  espacio m\'etrico} en un conjunto  $X$ munido de una  funci\'on $d: X
+  \times X \rightarrow \Rset_+$ tal que se cumplen las condiciones:
+%
+\begin{enumerate}
+\item $d(x,y) \ge 0 \quad \forall \: x , y \in X$ y la igualdad se cumple sii $x
+  = y$,
+%
+\item\label{Metrica:simetria} $d(x,y) = d(y,x)$ \ simetr\'ia.
+%
+\item\label{Metrica:triangular} $d(x,y) \le d(x,z) +  d(z,y) \quad \forall x , y
+  , z \in X$.
+\end{enumerate}
+\end{definicion}
+%
+\noindent   La   \'ultima   condici\'on   se  conoce   como   {\it   desigualdad
+  triangular}.  Mas adelante  en este  libro veremos  funciones $d:  X  \times X
+\rightarrow \Rset_+$ que  no satisfacen ni la condici\'on~\ref{Metrica:simetria}
+ni  la condici\'on~\ref{Metrica:triangular},  pero que  sin embargo  sirven para
+medir cu\'an separados est\'an dos puntos de $X$. En ese caso diremos que $d$ es
+una {\it distancia} definida sobre $X$.%%% ??? DIVERGENCIA?

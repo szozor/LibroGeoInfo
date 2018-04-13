@@ -1,0 +1,122 @@
+%\sub
+\seccion{Variedad Riemmanniana}
+\label{s:WL:VariedadRiemmanniana}
+
+Sea $\M$ una variedad diferenciable  $n$-dimensional. Si $\M$ tiene definida una
+m\'etrica  no   singular  sobre  ella,   recibe  el  nombre  de   {\it  variedad
+  Riemanniana}. La existencia de una m\'etrica sobre $\M$ permite introducir una
+conexi\'on af\'in  particular, conocida como la conexi\'on  de Levi-Civita. Sean
+$g_{ab}$ y  $g^{ab}$ los coeficientes de la  m\'etrica $g$ y su  inversa, en las
+coordenadas $\{x^a\}$, respectivamente.
+
+Para  dos puntos  pr\'oximos,  la separaci\'on  entre  ellos viene  dada por  la
+expresi\'on:
+%
+\begin{equation}
+ds^2 = \sum_{ab} g_{ab} dx^a dx^b \label{quad}
+\end{equation}
+
+Adem\'as de definir una distancia  entre puntos pr\'oximos, la existencia de una
+m\'etrica  permite   definir  una  conexi\'on  particular   sobre  una  variedad
+riemanniana:
+%
+\begin{definicion}[Conexi\'on de Levi-Civita]
+  La conexi\'on de Levi-Civita en las coordenadas $x^a$ est\'a dada por:
+  %
+  \begin{equation}
+  \Gamma^a_{bc} = \frac{1}{2} \sum_d g^{ad} \left(g_{bd,c} + g_{cd.b} - g_{bc.d} \right) \label{levi}
+  \end{equation}
+\end{definicion}
+
+La existencia  de esta  particular conexi\'on no  imposibilita la  existencia de
+otras conexiones definidas sobre $\M$.
+
+Como hemos visto  m\'as arriba, el tener definida  una m\'etrica permite definir
+la  longitud de  una curva.  Bajo ciertas  condiciones, que  supondremos  que se
+satisfacen, podemos plantearnos el problema  de determinar la curva que minimiza
+(en  realidad  extremiza)  su  longitud  al  unir  dos  puntos  fijos  sobre  la
+variedad. Esto se puede tratar  resolviendo el problema variacional asociado con
+el funcional~\eqref{longitud}. La ecuaci\'on de Euler-Lagrange  conduce en este
+caso a:
+%
+\begin{equation}
+\frac{d^2 x^d}{dt^2} + \Gamma^d_{ca} \frac{dx^c}{dt} \frac{dx^a}{dt} = 0 \label{geode}
+\end{equation}
+%
+\noindent donde $x^a(t)$ son las coordenadas de la curva y $t$ es un par\'ametro
+adecuadamente elegido. Una curva  que satisface~\eqref{geode}, se llama una {\it
+  curva geod\'esica}.  Es posible caracterizar  a una curva geod\'esica  de otro
+modo. Sea  $\mathbb{U}(t)$ el vector  tangente a una curva  $\gamma(t)$ definida
+sobre $\M$.  La curva $\gamma$ se  dice una geod\'esica si su vector tangente es
+trasladado paralelamente a lo largo de ella:
+%
+\[
+\mathbb{U} \cdot \nabla \mathbb{U} = f(t) \mathbb{U}
+\]
+% 
+% hdot => cdot?
+Siempre es posible  elegir al par\'ametro $t$ de forma tal  que $f(t)=0$, con lo
+cual reobtenemos la ecuaci\'on~\eqref{geode}.
+
+El disponer de geod\'esicas, permite dar a una variedad riemanniana el car\'cter
+de espacio m\'etrico.  En efecto, podemos definir la  distancia entre dos puntos
+$p$ y $q$ de la variedad $\M$ a trav\'es de la expresi\'on:
+%
+\begin{equation}
+d(p,q) = \min_{\gamma} L(\gamma) \label{distt}
+\end{equation}
+%
+\noindent donde  el m\'inimo  se eval\'ua  entre todas las  curvas que  unen los
+puntos $p$ y $q$, y $L$ es la longitud~\eqref{longitud}. Como siempre, todo esto
+es  posible ser  realizado  localmente.   Las geod\'esicas  son  las curvas  que
+localmente  minimizan  la distancia  entre  dos  puntos.  La distancia  definida
+por~\eqref{distt}  verifica  la  desigualdad   triangular,  y  por  eso  es  una
+m\'etrica.
+
+Dada una conexi\'on  $\nabla$ se define un tensor de  tipo $(1,3)$, llamado {\it
+  tensor de curvatura} asociado a la conexi\'on $\nabla$, cuya espresi\'on es:
+%
+\[
+\R\left( \mathbb{X} , \mathbb{Y} \right) \mathbb{Z} = \nabla_{\mathbb{X}} \left(
+  \nabla_{\mathbb{Y}}   \mathbb{Z}    \right)   -   \nabla_{\mathbb{Y}}   \left(
+  \nabla_{\mathbb{X}}  \mathbb{Z}   \right)  -  \nabla_{[\mathbb{X},\mathbb{Y}]}
+\mathbb{Z}
+\]
+%
+Si los  vectores $\mathbb{X}$, $\mathbb{Y}$ y $\mathbb{Z}$  son reemplazados por
+los       vectors       coordenados       $\frac{\partial}{\partial       x^a}$,
+$\frac{\partial}{\partial     x^b}$    y     $\frac{\partial}{\partial    x^c}$,
+respectivamente, resulta
+%
+\[
+\R\left( \frac{\partial}{\partial  x^a} , \frac{\partial}{\partial  x^b} \right)
+\frac{\partial}{\partial x^c} = R^d_{cab} \frac{\partial}{\partial x^d}
+\]
+%
+con
+%
+\[
+R^d_{cba}   \equiv  \left(  \frac{   \partial  \Gamma^d_{cb}}{\partial   x^a}  +
+  \Gamma^d_{ra} \Gamma^r_{cb}  - \frac{ \partial  \Gamma^d_{ca}}{\partial x^b} -
+  \Gamma^d_{rb} \Gamma^r_{ca}\right) \frac{\partial}{\partial x^d}
+\]
+
+{\bf  Nota:} Si  bien existe  una motivaci\'on  geom\'etrica para  introducir el
+tensor de curvatura, aqu\'i no la hemos  dado. Ella tiene que ver con la idea de
+cu\'anto cambia un  vector al desplazarlo paralelamente a lo  largo de una curva
+cerrada. En general diremos que una  variedad es plana, si todas las componentes
+de su tensor de curvatura, se anulan.
+
+Concluimos  este cap\'itulo  con una  breve  nota hist\'orica.  En sus  trabajos
+originales sobre geometr\'ia, B. Riemann  introdujo el elemento de l\'inea entre
+dos puntos vecinos $p$ y $q$ por medio de la expresi\'on
+\begin{equation}
+ds = F(p, \mathbb{X})dt \label{linea}
+\end{equation}
+%
+con $F(  p , \mathbb{X} )$  una funci\'on homog\'enea  de grado 2 en  la segunda
+variable. Aqu\'i estamos suponiendo que  los puntos $p$ y $q$ tienen coordenadas
+${x^a}$  y ${x^a +  X^a dt}$,  respectivamente. La  geometr\'ia basada  sobre el
+elemento de l\'inea  se conoce como geometr\'ia de  Finsler.  Obs\'ervese que el
+elemento~\eqref{quad} (de  Riemann) es un  caso particular de la  geometr\'ia de
+Finsler.
