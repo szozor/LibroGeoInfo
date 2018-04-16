@@ -182,9 +182,10 @@ introducidas~\cite[entre  otros]{Var66, Oni66,  Kap67,  Vaj68, LinNie71,  Ari71,
   Bur72, AczDar75, ShaMit75, ShaMit75,  ShaTan75, Mit75, BoeLub80, Fer80, Tsa88,
   Rat91, Kan01, Bec09}.  Un primer enfoque m\'as general es debido a S.  Arimoto
 en  los primeros  a\~nos de  la decada  1970~\cite{Ari71}.  Fue  rediscubierto y
-estudiado   con   m\'as   detalles   una   decada   despu\'es   por   Burbea   y
-Rao~\cite{BurRao82}  y luego por  Salicr\'u~\cite{Sal87}.  La  medida propuesta,
-llamada {\it $\phi$-entrop\'ia}, es definida por
+estudiado   con  m\'as   detalles  una   decada  despu\'es   por  J.   Burbea  y
+C.   R.   Rao~\cite{BurRao82}   y   luego  por   M.   Salicr\'u~\cite{Sal87}   o
+M.  Teboulle~\cite{Teb92}  entre  otros.   La  medida  propuesta,  llamada  {\it
+  $\phi$-entrop\'ia}, es definida por
 %
 \[
 \hphi[p]  =   -\sum_i  \phi(p_i)  \qquad   \mbox{con}  \qquad  \phi   \:  \mbox{
@@ -855,38 +856,6 @@ $L^2$ con un nucleo.
 %  distancia  de Itakura-Saito  cuando  $\phi(u)  = -  \log  u$  (asociado a  la
 % entrop\'ia de Burg), entre otros.
 
-% ----- (h,phi)-divergence
-\paragraph{Clase de Csisz\'ar y versi\'on simetrizada}
-
-\SZ{(1) Extension a la Renyi,
-
-(2) a  la HC/D/T, Cressie Reads, Cressie Pardo, Vajda;
-
-
-(3) generalization Czizar (et cf Burbea Rao aussi avec csiszar), Ali-Silvey, Ben-Tal
-
-(4) generalization
-Czizar Vajda, et voir avec h phi  avant meme Salicru, Ben-Tal
-
-Ver Jensen en la clase de Csiszar tambien
-
-BenTal livre cap. 17 p. 255 
-
-Csiszar 1995 dans appli
-
-autres  de Csizsar  2012  versikon Bregman; 
-
-gupta Sharma  1976
-
-BoeLub79,
-Vajda72,
-Salicru94
-Orsak et  Paris;
-Voir OesVaj en termes de metrique pour les Arimoto, Vajda 2009, Kafka 91
-Bas89, Bas13,
-application a le test d'adequation
-Pardo 99; MenMor97:5, Cf Pardo 2006 et ref. }
-
 \
 
 \paragraph{La clase de las divergencias  de Bregman} \ Estas divergencias fueron
@@ -1054,17 +1023,126 @@ $\displaystyle   f(u)  =  \left(   \sum_i  u_i   \right)^2$,  la   distancia  de
 Itakura-Saito cuando $f(u) = - \log u$ (asociado a la entrop\'ia de Burg), entre
 otros.  Unas se exteinden sencillamente al caso continuo~\cite{FriSri08}.
 
-Notablemente, cuando  $f(u) = u \log u$  se recupera de nuevo  la divergencia de
-Kullback-Leibler:  esta  \'ultima  partenece   simultaneamente  a  la  clase  de
-Csisz\`ar  y a  la  de Bregman  y es  la  sola en  este caso~\cite{Csi91}.
-
 Como en  el caso de  divergencias de Jensen, Nielsen  propus\'o generalizaciones
 m\'as avanzadas, usando las generalizaciones  de la noci\'on de convexidad usada
 para generalizar  las divergencias  de Jensen. Estas  generalizaciones tambi\'en
 van  m\'as all\'a  de  la  meta del  cap\'itulo  y el  lector  so puede  referir
 a~\cite{NieNoc17}.
 
+Tambi\'en,   varias  aplicaciones   se  encuentran   en   la  literatura~\cite[y
+ref.]{Bas89, Csi95,  CsiMat12, Bas13}  en adici\'on de  las referencias  de esta
+secci\'on, para dar unas.
+
 \
+
+
+% ----- (h,phi)-divergence
+\paragraph{Clase de Csisz\'ar y versi\'on simetrizada}
+
+Un primer paso  generalizando la noci\'on de entrop\'ia  relativa o divergencia,
+siguiendo el enfoque de Kullback  y Leibler y sus versiones tipo $J$-divergencia
+o divergencia de Jensen-Shannon fue  debido a R\'enyi. En su papel~\cite{Ren61},
+A. R\'enyi introdujo una noci\'on de  ganancia o perdida de informaci\'on de una
+distribuci\'ion (incompleta) de probabilidad  $q$ relativa a una referencia $p$,
+\  $I^\ren(q\|p)$, teniendo  un enfoque  axiom\'atico  similar al  que uso  para
+definir su entrop\'ia: (i) la medida sea invariante a una misma permutaci\'on de
+los componentes de $p$ y de $q$, (ii) si $\forall \, i, \: p_i \le q_i$ entonces
+$I^\ren(q\|p) \ge 0$ y vice versa $I(p\|q)  \le 0$, (iii) $I([1] \| [1/2]) = 1$,
+(iv)  $I( q_{(1)}  \otimes  q_{(2)} \|  p_{(1)}  \otimes p_{(2)})  =  I( q_{(1)}  \|
+p_{(1)}) +  I( q_{(2)} \|  p_{(2)})$ y (v)  una propiedad de  media generalizada
+$I(q_{(1)} \cup q_{(2)}  \| p_{(1)} \cup p_{(2)}) =  g^{-1} \left( \frac{w_{q_1}
+    I^\ren(q_{(1)} \|  p_{(1)}) + w_{q_2} I^\ren(q_{(2)}  \| p_{(2)})}{w_{q_1} +
+    w_{q_2}} \right)$ conduciendo a
+%
+\[
+I_\lambda^\ren(q\|p)  =  \frac{1}{\lambda-1}   \log_2\left(  \sum_i  p_i  \left(
+    \frac{q_i}{p_i} \right)^\lambda \right)
+\]
+
+Unos  a\~nos  despu\'es,  se introdujo  una  clase  m\'as  general debido  a  I.
+Csisz\'ar~\cite{Csi63, Csi67}, T.  Morimoto~\cite{Mor63} o  S.  M.  Ali \& S. D.
+Silvey~\cite{AliSil66},  clase   que  llamaremos  {\it   $\phi$-divergencias  de
+  Csisz\`ar}. En el caso continuo toma la forma
+%
+\[
+\cphi[q]{p} = \int_\X p(x) \phi\left( \frac{q(x)}{p(x)} \right) \, dx
+\]
+%
+donde $\phi$ es una funci\'on convexa y  donde el soporte $\X$ de $p$ incluye lo
+de $q$, y en el caso discreto una suma reemplaza la integral. Estas divergencias
+o  casos particulares  fueron muy  estudiadas las  decadas que  siguieron, dando
+lugar a varias aplicaciones~\cite{BurRao82, CreRea84, BenCha89, Teb92, BenBor92,
+  SalMen93, Sal94, Csi95, CrePar00, LieVaj06}.
+
+Como para el caso de las $\phi$-entrop\'ias, esta clase se enmarca dentro de una
+clase    un     poco    m\'as    general~\cite[Secs.~4.5~\&~5]{AliSil66}    (ver
+tambi\'en~\cite[Sec.~I]{OrsPar95}):
+%
+\begin{definicion}[$(h,\phi)$-divergencia]\label{def:SZ:HPhiDivergencia}
+  La  $(h,\phi)$-divergencia  de  una  distribuci\'on de  probabilidad  $q$  con
+  respeto a una distribuci\'on $p$ de  soporte $\X$ incluyendo el soporte de $q$
+  es definida por
+  %
+  \[
+  \chphi[q]{p}  h\left( \sum_{x  \in  \X}  p(x) \phi\left(  \frac{q(x)}{p(x)}
+    \right) \right)
+  \]
+  %
+  en el caso discreto, y
+  %
+  \[
+  \chphi[q]{p} h\left( \int_\X  p(x) \phi\left( \frac{q(x)}{p(x)}  \right) dx
+  \right)
+  \]
+  %
+  en su versi\'on diferencial, donde o
+  %
+  %\begin{itemize}
+  %\item 
+  $\phi$ \ es estrictamente convexa y \ $h$ \ creciente.
+%, o
+%  \item $\phi$ \ es estrictamente c\'oncava y \ $h$ \ decreciente
+%  \end{itemize}
+  %
+  Frecuentemente, se supone adicionalmente que $\phi$ y $h$ son de clase $C^2$ y
+  \SZ{completer}.
+  % , que $\phi(0) = 0$.  , sin perdida de generalidad, que $h(-\phi(1)) = 0$.
+\end{definicion}
+%
+\noindent Se notar\'a de que, obviamente, $\cphi = D_{(\id,\phi)}^{\mathrm{c}}$.
+
+\SZ{
+
+gupta Sharma  1976
+
+Vajda72,
+Voir OesVaj en termes de metrique pour les Arimoto, Vajda 2009, Kafka 91
+}
+
+Notablemente, cuando $\phi(u)  = u \log u$ y  $h = \id$ se recupera  de nuevo la
+divergencia de  Kullback-Leibler: esta  \'ultima partenece simultaneamente  a la
+clase de  Csisz\`ar y a la  de Bregman y  es la sola en  este caso~\cite{Csi91}.
+Adem\'as  de   $\Dkl{}$,  la  clase   de  Csisz\'ar  contiene  la   ganancia  de
+informaci\'on  de  R\'enyi para  $\phi(u)  =  u^\lambda$  y $h(u)  =  \frac{\log
+  u}{\lambda-1}$, la $J$-divergencia para  $\phi(u) = u \log u - \log  u$ y $h =
+\id$, la distancia de  Bhattacharyya~\cite{Bat43, Bat46} $-\log \int \sqrt{p q}$
+para $\phi(u) = \sqrt{u}$ y $h(u) = - \log u$, entre otros.
+
+\SZ{
+JENSEN CAEN
+
+PROPIEDADES, SYMETRIZACION, METRICA
+}
+
+Varias  aplicaciones se  encuentran en  la literatura  que sea  en estimaci\'on,
+discriminaci\'on,  reconocimiento   de  patrones,  pruebas   de  adecuaci\'on  o
+inferencia  estad\'istica,  entre  otros~\cite[y ref.]{Kai67,  BoeLub79,  Poo88,
+  Bas89, Csi95,  OrsPar95, MenMor97:5, Par99, LieVaj06,  Par06, CsiMat12, Bas13}
+en adici\'on de las referencias de esta secci\'on, para dar unas.
+
+\SZ{
+Bhattacharyya 46, Chernov 52 dans les ref de Liese Vajda, cf Bat 43 egalement
+}
 
 
 % ================================= Identidades
@@ -1075,7 +1153,7 @@ a~\cite{NieNoc17}.
 marco de la  termodynamica o f\'isica, con la  entrop\'ia de Shannon (Boltzman),
 tratando de  las nociones generalizadas de incertas,  vuelve natural preguntarse
 sobre la extensi\'on  de este problema en el marco  general. \SZ{Tal estudio fue
-  hecho en varios trabajos~\cite{ref} nous, Kesavan, Kagan 63}.
+  hecho en varios trabajos~\cite{ref, BenBor92} nous, Kesavan, Kagan 63}.
 
 El  problema  se formaliza  como  en el  caso  Shannon,  buscando la  entrop\'ia
 m\'axima  sujeto a  v\'inculos: sea  $X$ variable  aleatoria viviendo  sobre $\X
