@@ -72,6 +72,16 @@ H_\phi\ifthenelse{\isempty{#1}}{}{\left( #1 \right)}
 H_{(h,\phi)}\ifthenelse{\isempty{#1}}{}{\left( #1 \right)}
 }
 %
+% Csizar D_\phi^{c}
+\newcommand{\cphi}[2][]{
+D^{\mathrm{c}}_{\phi}\ifthenelse{\isempty{#1}}{}{\left( \left. #1 \right\| #2 \right)}
+}
+%
+% Csizar D_{h,\phi}^{c}
+\newcommand{\chphi}[2][]{
+D^{\mathrm{c}}_{(h,\phi)}\ifthenelse{\isempty{#1}}{}{\left( \left. #1 \right\| #2 \right)}
+}
+%
 % Jensen-Shannon
 \def\Djs{D_{\mathrm{js}}^\pi}
 %
