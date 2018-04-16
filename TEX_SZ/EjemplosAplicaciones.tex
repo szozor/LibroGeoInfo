@@ -68,16 +68,17 @@ probabilidades que un 0 (resp. un 1) se transmite correctamente o cambia en un 1
 (resp. 0), \ie
 %
 \[
-p = \Pr[Y = 1 | X = 0] = 1 - \Pr[Y = 0 | X = 0] \qquad \mbox{y} \qquad q = \Pr[Y
-= 0 | X = 1] = 1 - \Pr[Y = 1 | X = 1]
+\varepsilon = \Pr[Y = 1 | X = 0] = 1 - \Pr[Y = 0 | X = 0] \qquad \mbox{y} \qquad
+\vartheta = \Pr[Y = 0 | X = 1] = 1 - \Pr[Y = 1 | X = 1]
 \]
 %
-$p$ y $q$  representan errores de comunicaci\'on.  Tal  canal es descrito figura
-Fig.~\ref{fig:SZ:CanalBinario}-(a).                   La                  figura
+$\varepsilon$ y $\vartheta$ representan errores de comunicaci\'on.  Tal canal es
+descrito      figura     Fig.~\ref{fig:SZ:CanalBinario}-(a).       La     figura
 Fig.~\ref{fig:SZ:CanalBinario}-(b) da un esquema ``pr\'actico'' que podr\'ia ser
-al origen  de un tal  canal. Cuando \  $p = q$, el  canal es conocido  como {\it
-  canal binario sim\'etrico}.  Cuando \ $p = 0$ \  y \ $q \in (0 \, ; \, 1)$, el
-canal es conocido como {\it canal binario en Z}.
+al origen  de un  tal canal.  Cuando  \ $\varepsilon  = \vartheta$, el  canal es
+conocido como {\it canal binario sim\'etrico}.  Cuando \ $\varepsilon = 0$ \ y \
+$\vartheta \in (0 \,  ; \, 1)$, el canal es conocido  como {\it canal binario en
+  Z}.
 
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_SZ/CanalBinario} \end{center}
@@ -90,89 +91,98 @@ canal es conocido como {\it canal binario en Z}.
   alto, codificando 1).   Se puede imaginar que este  voltaje es transmitido por
   un  canal  a\~nandiendo  un ruido  $\xi$.   En  la  recepci\'on, se  toma  una
   decisi\'on, por ejemplo 0 (resp.  1)  si la medida es mayor (resp.  menor) que
-  $\eta = \frac{v_0 + v_1}{2}+\Esp[\xi]$.  En este  ejemplo, $p$ \ y \ $q$ \ van
-  a ser caracterizados  completamente por la distribuci\'on del  ruido (y de los
-  dos niveles posibles de la entrada), pero no de la distribuci\'on $p_X$.}
+  $\eta = \frac{v_0 + v_1}{2}+\Esp[\xi]$.   En este ejemplo, $\varepsilon$ \ y \
+  $\vartheta$ \ van a ser caracterizados completamente por la distribuci\'on del
+  ruido  (y  de  los  dos  niveles  posibles  de la  entrada),  pero  no  de  la
+  distribuci\'on $p_X$.}
 %~\cite{Sha48}.}
 \label{fig:SZ:CanalBinario}
 \end{figure}
 
 En este caso, trabajando con bits, aparece leg\'itimo usar el logaritmo de base
-2. Luego, sea
+2. Luego, sean
 %
 \[
-\pi_x = \Pr[X = 0]
+r = \Pr[X = 0]
 \]
 %
 dando la distribuci\'on  de la entrada. La distribuci\'on de la  salida va a ser
-dada a partir de $\pi_y = \Pr[Y = 0] = \Pr[Y = 0 | X = 0] \Pr[X = 0] + \Pr[Y = 0
-| X = 1] \Pr[X = 1]$ es decir
+dada a partir de $s = \Pr[Y = 0] = \Pr[Y = 0 | X = 0] \Pr[X = 0] + \Pr[Y = 0 | X
+= 1] \Pr[X = 1]$ es decir
 %
 \[
-\pi_y = \Pr[Y  = 0] = q +  \pi_x (1-p-q)
+s = \Pr[Y  = 0] = \vartheta +  r (1-\varepsilon-\vartheta)
 \]
 %
 La informaci\'on  mutua se escribe  \ $I_2(X;Y) =  H_2(Y) - H_2(Y|X) =  H_2(Y) -
 H_2(Y|X=0) \Pr[X = 0] + H_2(Y|X=1) \Pr[X = 1]$, lo que toma la expresi\'on
 %
 \[
-I_2(X;Y) = h_2(\pi_y) - \pi_x h_2(p) - (1-\pi_x) h_2(q)
+I_2(X;Y) = h_2(s) - r h_2(\varepsilon) - (1-r) h_2(\vartheta)
 \]
 %
 donde $h_2(\lambda) = - \lambda \log_2 \lambda - (1-\lambda) \log_2 (1-\lambda)$
 es la  entrop\'ia binaria en  bits.  Para calcular  la capacidad $C_2$  en bits,
-hace  falta maximizar  $I_2$  con  respeto a  $\pi_x$.   Diferenciando $I_2$  en
-$\pi_x$,   \ie  $\frac{\partial   I_2(X;Y)}{\partial  \pi_x}   =  \frac{\partial
-  h_2(\pi_y)}{\partial \pi_y}  \frac{\partial \pi_y}{\partial \pi_x}  - h_2(p) +
-h_2(q)$, es decir
+hace falta maximizar  $I_2$ con respeto a $r$.  Diferenciando  $I_2$ en $r$, \ie
+$\frac{\partial  I_2(X;Y)}{\partial  r}  =  \frac{\partial  h_2(s)}{\partial  s}
+\frac{\partial s}{\partial r} - h_2(\varepsilon) + h_2(\vartheta)$, es decir
 %
 \[
-\frac{\partial    I_2(X;Y)}{\partial   \pi_x}    =    (1-p-q)   \log_2    \left(
-  \frac{1-\pi_y}{\pi_y} \right) - h_2(p) + h_2(q)
+\frac{\partial I_2(X;Y)}{\partial  r} = (1-\varepsilon-\vartheta)  \log_2 \left(
+  \frac{1-s}{s} \right) - h_2(\varepsilon) + h_2(\vartheta)
 \]
 %
 \begin{itemize}
 \item Claramente,
   %
   \[
-  q = 1-p \quad \Rightarrow \quad C_2 = 0
+  \vartheta = 1-\varepsilon \quad \Rightarrow \quad C_2 = 0
   \]
   %
-  Viene del hecho  de que para $q =  1-p$, de $h_2(p) = h_2(1-p)$  se deduce que
-  $I_2(X;Y) =  0$ constante. De  hecho, en  este caso, un  0 en la  salida puede
-  venir de  un 0  o 1 con  probabilidades iguales, y  lo mismo  para un 1  en la
-  salida;  en  otros t\'erminos,  la  salida  aparece  ser independiente  de  la
-  entrada.  Eso se verifica formalmente con  $\pi_y = q$, dando $p_{Y|X} = p_Y$,
-  dando una informaci\'on mutua nula, y entonces una capacidad nula.
+  Viene del hecho de que  para $\vartheta = 1-\varepsilon$, de $h_2(\varepsilon)
+  = h_2(1-\varepsilon)$  se deduce  que $I_2(X;Y) =  0$ constante. De  hecho, en
+  este  caso, un 0  en la  salida puede  venir de  un 0  o 1  con probabilidades
+  iguales, y  lo mismo para un  1 en la  salida; en otros t\'erminos,  la salida
+  aparece ser independiente de la entrada.  Eso se verifica formalmente con $s =
+  \vartheta$,  dando $p_{Y|X}  = p_Y$,  dando  una informaci\'on  mutua nula,  y
+  entonces una capacidad nula.
 %
-\item Si $q \ne  1-p$, la derivada de $I_2$ con respeto  a $\pi_x$ se anula para
-  $\pi_y = \pi_y^\opt$ ($\pi_x = \pi_x^\opt$),
+\item Si $\vartheta  \ne 1-\varepsilon$, la derivada de $I_2$  con respeto a $r$
+  se anula para $s = s^\opt$ ($r = r^\opt$),
   %
   \[
-  \pi_y^\opt  =   \frac{1}{1+2^{\frac{h(p)-h(q)}{1-p-q}}}  \qquad  \mbox{siendo}
-  \qquad \pi_x^\opt = \frac{\pi_y^\opt - q}{1-p-q}
+  s^\opt = \frac{1}{1 +  2^{\frac{h(\varepsilon) - h(\vartheta)}{1 - \varepsilon
+        -  \vartheta}}}  \qquad \mbox{siendo}  \qquad  r^\opt  = \frac{s^\opt  -
+    \vartheta}{1 - \varepsilon - \vartheta}
   \]
   %
   y  dando   un  extremo   para  $I_2$.   A   continuaci\'on,  $\frac{\partial^2
-    I_2}{\partial  \pi_x^2}   =  \frac{(1-p-q)^2}{\pi_y  (1-\pi_y)}   >  0$  (en
-  particular para  el $\pi_y$  ``\'optimo''), probando de  que el extremo  es un
-  m\'aximo.   Poniendo el  $\pi_x^\opt$ en  la formula  de $I_2(X;Y)$,  luego de
-  muchos c\'alculos (b\'asicos), se obtiene
+    I_2}{\partial  r^2} = \frac{(1-\varepsilon-\vartheta)^2}{s  (1-s)} >  0$ (en
+  particular  para  el $s$  ``\'optimo''),  probando de  que  el  extremo es  un
+  m\'aximo.  Poniendo el  $r^\opt$ en la formula de  $I_2(X;Y)$, luego de muchos
+  c\'alculos (b\'asicos), se obtiene
   %
   \[
-  C_2 =  \log_2\left( 1 + 2^{\frac{h_2(p)-h_2(q)}{1-p-q}}  \right) - \frac{(1-q)
-    \, h_2(p) - p \, h_2(q)}{1-p-q}
+  C_2  =  \log_2\left(  1  +  2^{\frac{h_2(\varepsilon)  -  h_2(\vartheta)}{1  -
+        \varepsilon   -  \vartheta}}   \right)  -   \frac{(1  -   \vartheta)  \,
+    h_2(\varepsilon)  -   \varepsilon  \,  h_2(\vartheta)}{1   -  \varepsilon  -
+    \vartheta}
   \]
   %
-  Cuando $q \to  1-p$, notando que $h_2(p) = h_2(1-p)$ y  tomando el l\'imite de
-  esta formula, se recupera que $C_2 \to 0$.
+  Cuando  $\vartheta   \to  1-\varepsilon$,  notando   que  $h_2(\varepsilon)  =
+  h_2(1-\varepsilon)$ y  tomando el  l\'imite de esta  formula, se  recupera que
+  $C_2 \to 0$.
   %
   % ---
   %
-  %  \newline{\color{red}\bf   ¿Interpretacion?   no  hay   combinacion  convexa
-  %   $\frac{p}{1-p-q}$ siendo del mismo signo que $\frac{1-q}{1-p-q}$; nota: $C
-  %   = \log_2\left( 1 +  2^{- \frac{h(1-q)-h(p)}{(1-q)-p}} \right) + \frac{1}{p
-  %     (1-q)} \frac{(1-q) h(1-q) - p h(p)}{q - (1-p)}$}
+  % \newline{\color{red}\bf ¿Interpretacion?  no hay combinacion convexa
+  %   $\frac{\varepsilon}{1-\varepsilon-\vartheta}$ siendo del mismo signo que
+  %   $\frac{1-\vartheta}{1-\varepsilon-\vartheta}$; nota: $C
+  %   = \log_2\left( 1 + 2^{-
+  %       \frac{h(1-\vartheta)-h(\varepsilon)}{(1-\vartheta)-\varepsilon}}
+  %   \right) + \frac{1}{\varepsilon
+  %     (1-\vartheta)} \frac{(1-\vartheta) h(1-\vartheta) - \varepsilon
+  %     h(\varepsilon)}{\vartheta - (1-\varepsilon)}$}
 \end{itemize}
 %
 \noindent De  \ $I_2(X;Y) = H_2(Y)  - H_2(Y|X) \le H_2(Y)  \le 1$ bit  \ ($Y$ es
@@ -186,59 +196,64 @@ C_2 \le 1 \: \mbox{bit}
   de $I$ con entrop\'ias condicionales, para $X$ definido sobre $\X$ e $Y$ sobre
   $\Y$, da  \ $0 \le C \le  \min( \log |\X| \,  , \, \log |\Y|  )$.  \ Adem\'as,
   $p_{Y|X}$ depende solo del  canal y no de la entrada, as\'i  que para \ $p_X =
-  \pi_1 p_X^{(1)} +  \pi_2 p_X^{(2)}$ \ ($\pi_2 = 1-\pi_1$) se  obtiene \ $p_Y =
-  \pi_1 p_Y^{(1)} + \pi_2 p_Y^{(2)}$ \ con \ $p_Y^{(i)}$ \ salida corespondiente
-  a  la entrada \  $p_X^{(i)}$.  Ahora,  de $I(X;Y)  = H(Y)-H(Y|X)$,  el segundo
-  t\'ermino siendo dependiente  solamente del canal, de la  concavidad de $H$ se
-  obtiene de que $I$ es c\'oncava  con respeto a $p_X$. $p_X$ parteneciendo a un
-  convexo, $I$ tiene un m\'aximo que es \'unico.}: para transmitir informaci\'on
-en este  canal, hace falta introducir  redundancia en el mensaje.   Se alcanza \
-$C_2 =  1$ bit si, (i) por  un lado $H_2(Y|X) =  0$, es decir \  $\pi_x h_2(p) +
-(1-\pi_x) h_2(q)  = 0$ \  y adem\'as (ii)  \ $h_2(\pi_y) = 1$.   Estudiando cada
-caso (ej.   con \ $\pi_x  = 0$ \  y \ $q  = 0$ \ se  satisface (i) pero  no (ii)
-porque \ $\pi_y = 0$), se obtiene que
+  \pi_1 p_{(1)} + \pi_2 p_{(2)}$ \ ($\pi_2 = 1-\pi_1$) se obtiene \ $p_Y = \pi_1
+  q_{(1)}  + \pi_2  q_{(2)}$ \  con \  $q_{(i)}$ \  distribuci\'on de  la salida
+  corespondiente a una entrada de distribuci\'on \ $p_{(i)}$.  Ahora, de $I(X;Y)
+  = H(Y)-H(Y|X)$,  el segundo t\'ermino siendo dependiente  solamente del canal,
+  de la  concavidad de  $H$ se  obtiene de que  $I$ es  c\'oncava con  respeto a
+  $p_X$.   $p_X$  parteneciendo a  un  convexo, $I$  tiene  un  m\'aximo que  es
+  \'unico.}: para transmitir informaci\'on  en este canal, hace falta introducir
+redundancia en  el mensaje.   Se alcanza \  $C_2 =  1$ bit si,  (i) por  un lado
+$H_2(Y|X) = 0$, es  decir \ $r h_2(\varepsilon) + (1-r) h_2(\vartheta)  = 0$ \ y
+adem\'as (ii) \  $h_2(s) = 1$.  Estudiando cada caso  (ej.  con \ $r =  0$ \ y \
+$\vartheta = 0$  \ se satisface (i) pero  no (ii) porque \ $s =  0$), se obtiene
+que
 %
 \[
-C_2 = 1 \qquad \Leftrightarrow \qquad  \pi_x = \frac12 \quad \mbox{y} \quad p =
-q = \frac{1 \pm 1}{2}
+C_2  =  1  \qquad  \Leftrightarrow  \qquad  r =  \frac12  \quad  \mbox{y}  \quad
+\varepsilon = \vartheta = \frac{1 \pm 1}{2}
 \]
 %
-Para $p = q = 0$ el canal es perfecto, mientras que para $p = q = 1$ el canal es
-llamado  {\it  canal volteando};  en  ambos casos,  se  recupera  la entrada  (o
-directamente, o tomando el opuesto) ``sin perdida''.
+Para  $\varepsilon =  \vartheta =  0$ el  canal es  perfecto, mientras  que para
+$\varepsilon =  \vartheta =  1$ el  canal es llamado  {\it canal  volteando}; en
+ambos casos, se recupera la entrada (o directamente, o tomando el opuesto) ``sin
+perdida''.
 
 La  figura  Fig.~\ref{fig:SZ:ICanalBinario}  representa la  informaci\'on  mutua
-$I(X;Y)$ para unos  canales ($p$ y $q$ dados) en funci\'on  de $\pi_x$.  Se nota
-que la curva  es c\'oncava y tiene un m\'aximo, capacidad  del canal.  La figura
-Fig.~\ref{fig:SZ:CCanalBinario} representa  la capacidad del  canal en funci\'on
-de \ $p$ \ y \ $q$ as\'i que unos casos particulares/cortes.
+$I(X;Y)$ para unos  canales ($\varepsilon$ y $\vartheta$ dados)  en funci\'on de
+$r$.   Se nota que  la curva  es c\'oncava  y tiene  un m\'aximo,  capacidad del
+canal.   La figura Fig.~\ref{fig:SZ:CCanalBinario}  representa la  capacidad del
+canal en  funci\'on de \  $\varepsilon$ \ y  \ $\vartheta$ as\'i que  unos casos
+particulares/cortes.
 
-En  el  caso particular  $p  =  q$, conocido  como  {\it  canal sim\'etico},  la
-capacidad es
+En  el caso  particular  $\varepsilon  = \vartheta$,  conocido  como {\it  canal
+  sim\'etico}, la capacidad es
 %
 \[
-C_2 = 1 - h_2(p)
+C_2 = 1 - h_2(\varepsilon)
 \]
 %
 (alcanzada  con  una entrada  uniforme).   Como visto  en  el  caso general,  la
-capacidad vale 1 bit si y solamente si \ $h_2(p)  = 0$, \ es decir \ $p = 0$ \ o
-\ $p = 1$.   Al rev\'es, la capacidad es m\'inima cuando  $H_2$ est m\'aximo, es
-decir para \ $p = q = \frac12$, \  y \ $C_2 = 0$ \ (instancia particular de \ $q
-=  1-p$). \  $h_2(p)$ \  es la  perdida  en bit  para cada  bit transmitido.  La
-capacidad    \    $C_2$    \    en    funci\'on    de    \    $p$\    es    dada
-figura Fig.~\ref{fig:SZ:CCanalBinario}-(b).
+capacidad vale 1  bit si y solamente si  \ $h_2(\varepsilon) = 0$, \  es decir \
+$\varepsilon = 0$ \ o \ $\varepsilon = 1$.  Al rev\'es, la capacidad es m\'inima
+cuando $H_2$ est m\'aximo, es decir  para \ $\varepsilon = \vartheta = \frac12$,
+\ y  \ $C_2 = 0$  \ (instancia particular  de \ $\vartheta =  1-\varepsilon$). \
+$h_2(\varepsilon)$  \  es la  perdida  en bit  para  cada  bit transmitido.   La
+capacidad  \  $C_2$   \  en  funci\'on  de  \   $\varepsilon$\  es  dada  figura
+Fig.~\ref{fig:SZ:CCanalBinario}-(b).
 
-En el  caso particular $p  = 0$,  conocido como {\it  canal en Z},  la capacidad
-es
+En el  caso particular  $\varepsilon = 0$,  conocido como  {\it canal en  Z}, la
+capacidad es
 %
 \[
-C_2 = \log_2\left( 1 +  2^{- \frac{h_2(q)}{1-q}} \right)
+C_2 = \log_2\left( 1 +  2^{- \frac{h_2(\vartheta)}{1-\vartheta}} \right)
 \]
 %
 Se nota  en este caso tambi\'en  que la capacidad  alcanza 1, su m\'aximo,  si y
-solamente si \ $q = 0$ \ (canal perfecto).  Al rev\'es, cuando \ $q \to 1$, \ $C
-\to  0$, \ instancia  particular de  \ $q  = 1-p$.   La capacidad  \ $C_2$  \ en
-funci\'on de $q$ es dada figura Fig.~\ref{fig:SZ:CCanalBinario}-(c).
+solamente  si \  $\vartheta  = 0$  \  (canal perfecto).   Al  rev\'es, cuando  \
+$\vartheta  \to 1$,  \  $C \to  0$, \  instancia  particular de  \ $\vartheta  =
+1-\varepsilon$.   La capacidad \  $C_2$ \  en funci\'on  de $\vartheta$  es dada
+figura Fig.~\ref{fig:SZ:CCanalBinario}-(c).
 
 %{\bf\color{red} C parecido a la de Shannon caso continuo. Interpretacion?}
 
@@ -247,9 +262,10 @@ funci\'on de $q$ es dada figura Fig.~\ref{fig:SZ:CCanalBinario}-(c).
 \begin{center} \input{TIKZ_SZ/ICanalBinario} \end{center}
 %
 \leyenda{Informaci\'on mutua  (en bits) entrada-salida \ $I_2(X;Y)$  \ del canal
-  binario en funci\'on de \ $\pi_x = \Pr[X = 0]$.  \ (a): \ $p = 0.4$ \ y \ $q =
-  0.01$; \ (b): \ $p = q = 0.05$ \ (canal sim\'etico); \ (c): \ $p = 0$ \ y \ $q
-  = 0.05$ \ (canal en Z).}
+  binario en funci\'on de \ $r = \Pr[X  = 0]$.  \ (a): \ $\varepsilon = 0.4$ \ y
+  \  $\vartheta = 0.01$;  \ (b):  \ $\varepsilon  = \vartheta  = 0.05$  \ (canal
+  sim\'etico); \ (c): \  $\varepsilon = 0$ \ y \ $\vartheta  = 0.05$ \ (canal en
+  Z).}
 %
 \label{fig:SZ:ICanalBinario}
 \end{figure}
@@ -260,9 +276,10 @@ funci\'on de $q$ es dada figura Fig.~\ref{fig:SZ:CCanalBinario}-(c).
 %
 \begin{center} \input{TIKZ_SZ/CCanalBinario} \end{center}
 %
-\leyenda{Capacidad \ $C_2$ \ del canal binario. \ (a): \ en funci\'on de \ $p$ \
-  y \ $q$. \ (b): \ en funci\'on de \ $p$ \ para el canal sim\'etico ($p = q$); \
-  (c): \ en funci\'on de \ $q$ \ para \ $p = 0$ \ (canal en Z).}
+\leyenda{Capacidad  \ $C_2$ \  del canal  binario. \  (a): \  en funci\'on  de \
+  $\varepsilon$ \  y \ $\vartheta$. \ (b):  \ en funci\'on de  \ $\varepsilon$ \
+  para el canal sim\'etico ($\varepsilon = \vartheta$); \ (c): \ en funci\'on de
+  \ $\vartheta$ \ para \ $\varepsilon = 0$ \ (canal en Z).}
 %
 \label{fig:SZ:CCanalBinario}
 \end{figure}
@@ -278,17 +295,16 @@ o~\cite{Ari72} para el c\'alculo num\'erico de la capacidad en el caso general).
 \begin{center} \input{TIKZ_SZ/CanalesDiscretos} \end{center}
 %
 \leyenda{Ejemplos de canales discretos usuales.  (a): canal borrador, donde un 0
-  (de probabilidad  de ocurrencia $\pi_x$)  o 1 (de probabilidad  de occurrencia
-  $1-\pi_x$)  puede  transmitirse correctamente  or  ser borado/perdido  (estado
-  $\emptyset$)  con  una probabilidad  $\varepsilon$.   Se  calcula $I_2(X;Y)  =
-  (1-\varepsilon)  h_2(\pi_x)$,  dando   la  capacidad  $C_2  =  1-\varepsilon$,
-  alcanzada para  una entrada  uniforme.  (b): canal  tipo machina  de escribir,
-  donde  cada letra  de  un ensemble  de  $n$ letras  (ac\'a con  $n  = 26$)  se
-  transmite  correctamente con  una probabilidad  $1-\varepsilon$ o  a  la letra
-  siguiente  (de  manera  c\'iclica)  con una  probabilidad  $\varepsilon$.   De
-  $I_n(X;Y) = H_n(Y) - H_n(Y|X) = H_n(Y) - h_n(\varepsilon)$ se deduce que $I_n$
-  es m\'axima si  $Y$ es uniforme, lo  que es posible si $X$  es uniforma, dando
-  $C_n = 1 - h_n(\varepsilon)$.}
+  (de probabilidad de ocurrencia $r$) o 1 (de probabilidad de occurrencia $1-r$)
+  puede  transmitirse correctamente or  ser borado/perdido  (estado $\emptyset$)
+  con una  probabilidad $\varepsilon$.   Se calcula $I_2(X;Y)  = (1-\varepsilon)
+  h_2(r)$, dando la capacidad $C_2  = 1-\varepsilon$, alcanzada para una entrada
+  uniforme.   (b):  canal tipo  machina  de escribir,  donde  cada  letra de  un
+  ensemble de $n$ letras (ac\'a con $n = 26$) se transmite correctamente con una
+  probabilidad $1-\varepsilon$ o a la  letra siguiente (de manera c\'iclica) con
+  una probabilidad $\varepsilon$.   De $I_n(X;Y) = H_n(Y) -  H_n(Y|X) = H_n(Y) -
+  h_n(\varepsilon)$ se deduce  que $I_n$ es m\'axima si $Y$  es uniforme, lo que
+  es posible si $X$ es uniforma, dando $C_n = 1 - h_n(\varepsilon)$.}
 %~\cite{Sha48}.}
 \label{fig:SZ:CanalesDiscretos}
 \end{figure}
@@ -396,13 +412,13 @@ C =  \frac12 \log \left(  \frac{\left| \Sigma_\Gauss +  \Sigma_X \right|}{\left|
 \end{eqnarray*}
 %
 alcanzada por $X$ gausiano de matriz de covarianza $\Sigma_X$ así construida.
-% En conclusi\'on, tomando en cuenta  el l\'imite de potencia, $$C = \max_{\frac1d
-%   \Tr  \Sigma_X   \le  P}  \:  \frac12  \log\left(   \frac{\left|  \Sigma_X  +
-%       \Sigma_\Gauss \right|}{\left| \Sigma_X \right|} \right)$$
+% En  conclusi\'on,   tomando  en  cuenta   el  l\'imite  de  potencia,   $$C  =
+% \max_{\frac1d \Tr \Sigma_X \le  P} \: \frac12 \log\left( \frac{\left| \Sigma_X
+%       + \Sigma_\Gauss \right|}{\left| \Sigma_X \right|} \right)$$
 
 La  \'ultima condici\'on  se resuelva  a  trav\'es de  lo que  es conocido  como
 ``llenado   de   agua''   (water-filling   en   ingl\'es),   illustrado   figura
-Fig.~\ref{fig:SZ:WaterFilling}.  El  principio   es  parecido  a  tener  niveles
+Fig.~\ref{fig:SZ:WaterFilling}.   El  principio  es  parecido  a  tener  niveles
 $\lambda^\Gauss_i$  representando  las  potencias  del  ruido (en  la  base  que
 diagonaliza la  matriz de covarianza), y  de ``llenar con agua''  hasta un nivel
 $\lambda$ tal que el ``volumen''  a\~nadido vale $P$; en cada $\lambda^\Gauss_i$
@@ -571,10 +587,11 @@ Fig.~\ref{fig:SZ:ClasesCodigos} (ver~\cite[cap.~5]{CovTho06}).
 \label{fig:SZ:ClasesCodigos}
 \end{figure}
 
-Adem\'as de  la decodificaci\'on sin ambig\"uedad,  una caracterizaci\'on importante
-del c\'odigo es la taza de codificaci\'on~\footnote{En~\cite{Rio07} por ejemplo,
-  se define esta taza suponiendo que  cada secuencia fuente es codificado por el
-  mismo n\'umero de bits. La taza es entonces el n\'umero de bits por s\'imbolo.}
+Adem\'as  de   la  decodificaci\'on  sin   ambig\"uedad,  una  caracterizaci\'on
+importante del  c\'odigo es la  taza de codificaci\'on~\footnote{En~\cite{Rio07}
+  por  ejemplo, se  define esta  taza suponiendo  que cada  secuencia  fuente es
+  codificado por el  mismo n\'umero de bits. La taza es  entonces el n\'umero de
+  bits por s\'imbolo.}
 %
 \[
 R_{c_m} = \frac{\log_d \left( \sum_{x \in \X^m} l(x) \Pr[X = x] \right)}{m}
@@ -582,8 +599,8 @@ R_{c_m} = \frac{\log_d \left( \sum_{x \in \X^m} l(x) \Pr[X = x] \right)}{m}
 %
 donde $X$  representa una  secuencia de $m$  variables $X_t$.  El  argumento del
 logaritmo (de base adecuada al cardinal  de $\C$) es el {\it largo promedio} del
-c\'odigo. Por ejemplo, para $d = 2$, $R_{c_m}$ es el n\'umero de bits promedio del
-c\'odigo por s\'imbolo.
+c\'odigo. Por ejemplo,  para $d = 2$, $R_{c_m}$ es el  n\'umero de bits promedio
+del c\'odigo por s\'imbolo.
 
 En general,  se quiere minimizar $R_{c_m}$  (compresar el mensaje  a mandar), lo
 que puede  ser contradictorio con la  necesidad de a\~nadir  redundancia para no
@@ -610,7 +627,7 @@ Kraft-McMillan~~\cite{Kra49,   McM56,   Kar61}~\footnote{Esta  desigualdad   fue
   verano en Ann Arbor, MI en agosto 1955).}
 %
 \begin{teorema}[Desigualdad de Kraft-McMillan]
-  Los largos  $l_c(x)$ de  las palabras c\'odigo  de un c\'odigo  $c$ descifrable
+  Los largos  $l_c(x)$ de las palabras  c\'odigo de un  c\'odigo $c$ descifrable
   deben satisfacer la desigualdad
   %
   \[
@@ -793,10 +810,10 @@ La entrop\'ia aparece tambi\'en el la cota superior del c\'odigo \'optimo:
   p_X(x) \, \log_d q(x) - \log_d \sum_{x \in \X} d^{-l_c(x)}
   \]
   %
-  Olvidando que  los \ $l_i \equiv l(x_i)$  \ son enteros, $L(c)$  es convexa con
-  respecto a los $l_i$ as\'i que el v\'inculo, garantizando que el m\'inimo existe
-  y    es    \'unico.    El    problema    se    resuelva    con   el    enfoque
-  KKT~\footref{foot:SZ:KKT},      optimizaci\'on      con     v\'inculos      tipo
+  Olvidando que los  \ $l_i \equiv l(x_i)$ \ son enteros,  $L(c)$ es convexa con
+  respecto  a los $l_i$  as\'i que  el v\'inculo,  garantizando que  el m\'inimo
+  existe   y   es  \'unico.    El   problema   se   resuelva  con   el   enfoque
+  KKT~\footref{foot:SZ:KKT},     optimizaci\'on      con     v\'inculos     tipo
   desigualdades~\cite{Mil00, CamMar09}, conduciendo a los ``largos''
   %
   \[
@@ -823,7 +840,7 @@ La entrop\'ia aparece tambi\'en el la cota superior del c\'odigo \'optimo:
 De  $$H_d(X) \le  L^\opt <  H_d(X) +  1$$  se revela  el rol  fundamental de  la
 entrop\'ia en la  codificaci\'on de fuente sin perdida.   La codificaci\'on es a
 veces  dicha {\it  codificaci\'on  entr\'opica} y  da  un rol  operacional a  la
-entrop\'ia  de Shannon.  Se notar\'a  de  la demostraci\'on  precediente de  que
+entrop\'ia  de Shannon.   Se notar\'a  de la  demostraci\'on precediente  de que
 aparece un c\'odigo particular:
 %
 \begin{definicion}[C\'odigo de Shannon]
@@ -1137,8 +1154,8 @@ $c$. As\'i, \ $H_d(X_1 , \ldots ,  X_n) \le L^{\opt,n} < H_d(X_1 , \ldots , X_n)
 + 1$, es decir, de la independencia,
 %
 \[
-H_d(X) \: \le  \: \frac{L^{\opt,n}}{n} \: < \: H_d(X)  + \frac{1}{n} \quad \mbox{por
-  s\'imbolo}
+H_d(X)  \:  \le \:  \frac{L^{\opt,n}}{n}  \: <  \:  H_d(X)  + \frac{1}{n}  \quad
+\mbox{por s\'imbolo}
 \]
 %
 (ver  tambi\'en~\cite[cap. 13,  teorema de  Shannon]{Rio07}). Fijense  que  si \

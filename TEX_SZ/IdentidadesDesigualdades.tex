@@ -366,22 +366,24 @@ desorganizadover (ver ej.~\cite{CovTho06}).
   Sea $X_1 \mapsto X_2 \mapsto \cdots  \mapsto X_n \mapsto \cdots$ un proceso de
   Markov,  con probabilidades  de transici\'on  $p_{X_{n+1}|X_n}$  dadas.  Estas
   \'ultimas modelizan  el sistema,  independiente de las  condiciones iniciales.
-  Sean  dos distribuciones  (condiciones)  iniciales diferentes  $p_1$ y  $q_1$,
-  conduciendo a las distribuciones $p_n$ y $q_n$ para $X_n$. Entonces:
+  Sean  dos  distribuciones   (condiciones)  iniciales  diferentes  $p_{(1)}$  y
+  $q_{(1)}$,  conduciendo  a  las  distribuciones  $p_{(n)}$  y  $q_{(n)}$  para
+  $X_n$. Entonces:
 %
 \begin{itemize}
 \item  Para cualquier  $n \ge  1$,
   %
   \[
-  \Dkl[q_{n+1}]{p_{n+1}} \le \Dkl[q_n]{p_n}
+  \Dkl[q_{(n+1)}]{p_{(n+1)}} \le \Dkl[q_{(n)}]{p_{(n)}}
   \]
   %
-  las distribuciones $p_n$ y $q_n$ no se ``alejan'' (tiende a acercarse);
+  las  distribuciones   $p_{(n)}$  y  $q_{(n)}$  no  se   ``alejan''  (tiende  a
+  acercarse);
 %
 \item  Si  $p^*$  es  una  distribuci\'on  estacionaria,
   %
   \[
-  \Dkl[p_{n+1}]{p^*} \le \Dkl[p_n]{p^*}
+  \Dkl[p_{(n+1)}]{p^*} \le \Dkl[p_{(n)}]{p^*}
   \]
   %
   la distribuci\'on no se aleja de la distribuci\'on estacionaria.
@@ -400,20 +402,23 @@ desorganizadover (ver ej.~\cite{CovTho06}).
 \end{lema}
 %
 \begin{proof}
-  Escribiendo \ $p_{n+1,n}$ \ y  \ $q_{n+1,n}$ \ las distribuciones conjuntas de
-  $(X_{n+1},X_n)$  \ para las  dos condiciones  iniciales, \  $p_{n+1|n}$ \  y \
-  $q_{n+1|n}$ \ las distribuciones condicionales  de \ $X_{n+1}|X_n$ \ as\'i que
-  $p_{n|n+1}$  \  y  \  $q_{n|n+1}$  \ las  distribuciones  condicionales  de  \
-  $X_n|X_{n+1}$,  se muestra sencillamente  que \  $\Dkl[p_{n+1,n}]{q_{n+1,n}} =
-  \Dkl[p_{n+1}]{q_{n+1}}   +  \Dkl[p_{n+1|n}]{q_{n+1|n}}   =   \Dkl[p_n]{q_n}  +
-  \Dkl[p_{n|n+1}]{q_{n|n+1}}$.    Adem\'as,  $p_{n+1|n}   =   p_{X_{n+1}|X_n}  =
-  q_{n+1|n}$, conduciendo a $\Dkl[p_{n+1|n}]{q_{n+1|n}}  = 0$ \ con consecuencia
-  de      que     \      $\Dkl[p_{n+1}]{q_{n+1}}     =      \Dkl[p_n]{q_n}     +
-  \Dkl[p_{n|n+1}]{q_{n|n+1}}$.   \ $p_{n|n+1}$  no es  necesariamente igual  a \
-  $q_{n|n+1}$, pero  la divergencia  siendo no negativa,  se obtiene  la primera
-  desigualdad.   La  segunda desigualdad  se  obtiene  tomando  \ $q_n  =  p^*$.
-  Adem\'as,  si \ $p^*$  \ es  uniforme \  $p^*(x) =  \frac{1}{|\X|}$ \  dando \
-  $\Dkl[p_n]{p^*} = -H(X_n) + \log |\X|$, llevando a la \'ultima desigualdad.
+  Escribiendo  \ $p_{(n+1),(n)}$  \  y \  $q_{(n+1),(n)}$  \ las  distribuciones
+  conjuntas  de  $(X_{n+1},X_n)$  \   para  las  dos  condiciones  iniciales,  \
+  $p_{(n+1)|(n)}$ \ y \ $q_{(n+1)|(n)}$  \ las distribuciones condicionales de \
+  $X_{n+1}|X_n$  \  as\'i  que  $p_{(n)|(n+1)}$  \ y  \  $q_{(n)|(n+1)}$  \  las
+  distribuciones condicionales de \  $X_n|X_{n+1}$, se muestra sencillamente que
+  \    $\Dkl[p_{(n+1),(n)}]{q_{(n+1),(n)}}   =    \Dkl[p_{(n+1)}]{q_{(n+1)}}   +
+  \Dkl[p_{(n+1)|(n)}]{q_{(n+1)|(n)}}       =       \Dkl[p_{(n)}]{q_{(n)}}      +
+  \Dkl[p_{(n)|(n+1)}]{q_{(n)|(n+1)}}$.       Adem\'as,      $p_{(n+1)|(n)}     =
+  p_{X_{n+1}|X_n}         =         q_{(n+1)|(n)}$,        conduciendo         a
+  $\Dkl[p_{(n+1)|(n)}]{q_{(n+1)|(n)}}  =   0$  \  con  consecuencia   de  que  \
+  $\Dkl[p_{(n+1)}]{q_{(n+1)}}         =         \Dkl[p_{(n)}]{q_{(n)}}         +
+  \Dkl[p_{(n)|(n+1)}]{q_{(n)|(n+1)}}$.   \ $p_{(n)|(n+1)}$ no  es necesariamente
+  igual a \ $q_{(n)|(n+1)}$, pero  la divergencia siendo no negativa, se obtiene
+  la primera desigualdad.  La segunda  desigualdad se obtiene tomando \ $q_{(n)}
+  = p^*$.   Adem\'as, si  \ $p^*$ \  es uniforme  \ $p^*(x) =  \frac{1}{|\X|}$ \
+  dando \ $\Dkl[p_{(n)}]{p^*} = -H(X_n)  + \log |\X|$, conduciendo a la \'ultima
+  desigualdad.
 \end{proof}
 
 
@@ -518,13 +523,13 @@ Es interesante notar que:
 %
 \item $J_\theta$ \  y \ $J$ \ son  convexas en el sentido de  que para cualquier
   conjunto de \ $\pi_k \ge 0, \, \sum_{k=1}^K \pi_k = 1$ \ y \ cualquier
-  conjunto de distribuciones \ $p_k, \ k = 1, \ldots , K$~\cite{Coh68, Fri04},
+  conjunto de distribuciones \ $p_{(k)}, \ k = 1, \ldots , K$~\cite{Coh68, Fri04},
   %
   \[
-  J_\theta\left(  \sum_{k=1}^K  \pi_k  p_k  \right)  \:  <  \:  \sum_{k=1}^K
-  \pi_k  \,  J_\theta\left(  p_k  \right)  \qquad  \mbox{y}  \qquad  J\left(
-    \sum_{k=1}^K \pi_k  p_k \right) \:  < \: \sum_{k=1}^K  \pi_k J\left(
-    p_k \right)
+  J_\theta\left(  \sum_{k=1}^K  \pi_k  p_{(k)}  \right)  \:  <  \:  \sum_{k=1}^K
+  \pi_k  \,  J_\theta\left(  p_{(k)}  \right)  \qquad  \mbox{y}  \qquad  J\left(
+    \sum_{k=1}^K \pi_k  p_{(k)} \right) \:  < \: \sum_{k=1}^K  \pi_k J\left(
+    p_{(k)} \right)
   \]
   %
   donde $A < B$ significa que $B-A$ es definida positiva.  La prueba es dada por
@@ -534,16 +539,18 @@ Es interesante notar que:
   \log p  \big) \big( \nabla \log  p \big)^t \,  p = \frac{\big( \nabla  p \big)
     \big(  \nabla p  \big)^t}{p}$, considerando  el  gradiente con  respeto a  \
   $\theta$ (resp. a \ $x$) tratando de  \ $J_\theta$ (resp. \ $J$), se obtiene \
-  $\sum_k \pi_k  \frac{\big( \nabla p_k  \big) \big( \nabla p_k  \big)^t}{p_k} -
-  \frac{\left( \nabla  \sum_k \pi_k p_k  \right) \left( \nabla \sum_k  \pi_k p_k
-    \right)^t}{\sum_k  \pi_k p_k}  =  \frac{1}{\sum_k \pi_k  p_k} \,  \sum_{k,l}
-  \pi_k  \pi_l \Big(  \frac{p_l}{p_k} \big(  \nabla p_k  \big) \big(  \nabla p_k
-  \big)^t - \big( \nabla p_k \big) \big( \nabla p_l \big)^t \Big)$, lo que vale,
-  tratando del caso $K  = 2$, \ $ \frac{\pi_1 \pi_2}{p_2 p_2  (\pi_1 p_1 + \pi_2
-    p_2)} \big( p_2 \nabla p_1 - p_1 \nabla p_2 \big) \big( p_2 \nabla p_1 - p_1
-  \nabla  p_2 \big)^t  \ge 0$.  No puede  ser id\'enticamente  cero (salvo  si \
-  $\pi_1 \pi_2 = 0$ \ o \ $p_1 = p_2$\ldots) as\'i que se obtiene la desigualdad
-  sobre la matriz de Fisher integrando esta \'ultima desigualdad.
+  $\sum_k  \pi_k   \frac{\big(  \nabla   p_{(k)}  \big)  \big(   \nabla  p_{(k)}
+    \big)^t}{p_{(k)}} - \frac{\left( \nabla  \sum_k \pi_k p_{(k)} \right) \left(
+      \nabla   \sum_k   \pi_k  p_{(k)}   \right)^t}{\sum_k   \pi_k  p_{(k)}}   =
+  \frac{1}{\sum_k   \pi_k    p_{(k)}}   \,   \sum_{k,l}    \pi_k   \pi_l   \Big(
+  \frac{p_l}{p_{(k)}} \big( \nabla p_{(k)}  \big) \big( \nabla p_{(k)} \big)^t -
+  \big(  \nabla p_{(k)}  \big) \big(  \nabla p_l  \big)^t \Big)$,  lo  que vale,
+  tratando  del caso  $K =  2$, \  $ \frac{\pi_1  \pi_2}{p_{(2)}  p_{(2)} (\pi_1
+    p_{(1)}  + \pi_2  p_{(2)})} \big(  p_{(2)} \nabla  p_{(1)} -  p_{(1)} \nabla
+  p_{(2)} \big)  \big( p_{(2)} \nabla  p_{(1)} - p_{(1)} \nabla  p_{(2)} \big)^t
+  \ge 0$.  No puede ser id\'enticamente cero (salvo si \ $\pi_1 \pi_2 = 0$ \ o \
+  $p_{(1)} = p_{(2)}$\ldots) as\'i que se obtiene la desigualdad sobre la matriz
+  de Fisher integrando esta \'ultima desigualdad.
 \end{itemize}
 
 

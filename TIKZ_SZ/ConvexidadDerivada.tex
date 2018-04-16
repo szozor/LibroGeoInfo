@@ -3,27 +3,34 @@
 %
 \pgfmathsetmacro{\u}{.25};
 \pgfmathsetmacro{\v}{1};
+\pgfmathsetmacro{\dc}{.02};% debut tracé de corde & tangente
+\pgfmathsetmacro{\fc}{1.25};% fin tracé de corde
+\pgfmathsetmacro{\ft}{1.1};% fin tracé de corde
+%
+\pgfmathdeclarefunction{sha}{1}{\pgfmathparse{#1*ln(#1)}}
+\pgfmathdeclarefunction{shap}{1}{\pgfmathparse{1+ln(#1)}}
 %
 % Convexidad (t ln t aca)
 \draw[>=stealth,->] (-.1,-.5)--(1.6,-.5) node[right]{\small $t$};
 \draw[>=stealth,->] (0,-.6)--(0,.5) node[above]{\small $\phi(t)$};
-\draw[thick,domain=.005:1.2,samples=200] (0,0)-- plot (\x,{\x*ln(\x)});
-\draw[dotted] (\u,-.5) node[below]{\small $u$} -- (\u,{\u*ln(\u)});
-\draw[dotted] (\v,-.5) node[below]{\small $v$} -- (\v,{\v*ln(\v)});
+\draw[thick,domain=.005:1.2,samples=200] (0,0)-- plot (\x,{sha(\x)});
+\draw[dotted] (\u,-.5) node[below]{\small $u$} -- (\u,{sha(\u)});
+\draw[dotted] (\v,-.5) node[below]{\small $v$} -- (\v,{sha(\v)});
 %
-%\draw[dotted] (\v,-.55) node[below]{\small $v$} -- (\v,{\v*ln(\v)});
-%\draw[>=stealth,<->] (\v,{(1+ln(\u))*(\v-\u)+\u*ln(\u)}) -- (\v,{\v*ln(\v)});
+%\draw[dotted] (\v,-.55) node[below]{\small $v$} -- (\v,{sha(\v)});
+%\draw[>=stealth,<->] (\v,{shap(\u)*(\v-\u)+sha(\u)}) -- (\v,{sha(\v)});
 %\draw (\v,-.5) node[below right]{\small $v$};
-%\draw (\v,{.5*((1+ln(\u))*(\v-\u)+\u*ln(\u)+\v*ln(\v))}) 
+%\draw (\v,{.5*(shap(\u)*(\v-\u)+sha(\u)+sha(\v))}) 
 %node[right]{\small $B_\phi(v\|u)$};
 %
-\draw (.02,{(.02-\u)*(\v*ln(\v)-\u*ln(\u))/(\v-\u)+\u*ln(\u)})
--- (1.25,{(1.25-\u)*(\v*ln(\v)-\u*ln(\u))/(\v-\u)+\u*ln(\u)})
+% Corde entre u et v
+\draw (\dc,{(\dc-\u)*(sha(\v)-sha(\u))/(\v-\u)+sha(\u)})
+-- (\fc,{(\fc-\u)*(sha(\v)-sha(\u))/(\v-\u)+sha(\u)})
 node[right,scale=.7]
 {$\displaystyle \quad \frac{\phi(v)-\phi(u)}{v-u} \, (t-u) + \phi(u)$};;
 %
-\draw (.02,{(1+ln(\u))*(.02-\u)+\u*ln(\u)})--
-(1.1,{(1+ln(\u))*(1.1-\u)+\u*ln(\u)})
+% tangente
+\draw (\dc,{shap(\u)*(\dc-\u)+sha(\u)})--(\ft,{shap(\u)*(\ft-\u)+sha(\u)})
 node[right,scale=.7]{$\quad \phi'(u) \, (t-u) + \phi(u)$};
 %
 \end{tikzpicture}

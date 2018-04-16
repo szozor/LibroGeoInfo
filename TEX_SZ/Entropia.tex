@@ -83,7 +83,8 @@ indistintamente  tanto  la notaci\'on  $H(p_X)$  como  $H(X)$  seg\'un lo  m\'as
 conveniente.  Adem\'as, $p_X$  podr\'a denotar indistintamente la distribuci\'on
 de  probabilidad,  o  el  vector  de probabilidad  $p_X  \equiv  \begin{bmatrix}
   p_X(x_1) &  \cdots & p_X(x_\alpha) \end{bmatrix}^t$ donde  $\cdot^t$ denota la
-transpuesta.
+transpuesta. En  lo que sigue, de  vez a cuando, usaremos  $p_i \equiv p_X(x_i)$
+por simplificaci\'on de escritura.
 
 $H$ es el equivalente de la entrop\'ia de Gibbs en mec\'anica estad\'istica.
 %termodin\'amica. %%%termost\'atica. ???
@@ -94,8 +95,8 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
 %
 \begin{propiedades}
 \item\label{prop:SZ:continuidad} {\it Continuidad:}  Vista como una funci\'on de
-  \ $\alpha$ \ variables  \ $t_i = p_X(x_i)$, \ $H$ \  es continua con respeto a
-  los $t_i$.
+  \ $\alpha$ \ variables  \ $p_i = p_X(x_i)$, \ $H$ \  es continua con respeto a
+  los $p_i$.
 %
 \setcounter{PropPermutacion}{\value{enumi}}
 \item\label{prop:SZ:permutacion}   {\it  Invariance  bajo   una  permutaci\'on:}
@@ -109,9 +110,10 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   \]
   %
   lo que se  escribe tambi\'en $H(\sigma(X)) = H(X)$.   En particular, denotando
-  $p_X^\downarrow$ la distribuci\'on de probabilidad obtenida a partir de $p_X$,
-  clasificando las probabilidades en orden decreciente, $p_X^\downarrow(x_1) \ge
-  p_X^\downarrow(x_2) \ge \cdots \ge p_X^\downarrow(x_\alpha)$,
+  $p_X^\downarrow$  el vector  de  probabilidades obtenido  a  partir de  $p_X$,
+  clasificando  las  probabilidades en  orden  decreciente, $p_1^\downarrow  \ge
+  p_2^\downarrow \ge  \cdots \ge p_\alpha^\downarrow$  donde $p_i^\downarrow$ es
+  la $i$-esima componente de $p_X^\downarrow$,
   %
   \[
   H(p_X^\downarrow) = H(p_X)
@@ -173,21 +175,22 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   aparecer con la misma probabilidad; cada observaci\'on lleva una informaci\'on
   importante sobre el  sistema que genera $X$.  La cota  m\'axima resuelta de la
   maximizaci\'on de $H$ sujeto a $\sum_x p_X(x) = 1$, es decir, con la t\'ecnica
-  del Lagrangiano, notando $t_i =  p_X(x_i)$, de la minimizaci\'on de $\sum_i (-
-  t_i \log  t_i + \mu  t_i)$.  Se obtiene  sencillamente que $\log t_i  = -\mu$,
+  del Lagrangiano, notando $p_i =  p_X(x_i)$, de la minimizaci\'on de $\sum_i (-
+  p_i \log  p_i + \mu  p_i)$.  Se obtiene  sencillamente que $\log p_i  = -\mu$,
   dando       la      distribuci\'on      uniforma.\newline       La      figura
   Fig.~\ref{fig:SZ:EntropiaBinaria} representa la entrop\'ia de un sistema a dos
-  estados, de probabilidades \ $p$ \ y  \ $1-p$ \ (ley de Bernoulli de parametro
-  $p$), entrop\'ia a veces dicha  {\it entrop\'ia binaria}, en funci\'on de $p$.
-  Esta figura  ilustra ambas cotas  ($p = 1$  o 1, $p  = \frac12$) as\'i  que la
-  invariancia bajo una permutaci\'on ($h(p) = H(p,1-p) = H(1-p,p) = h(1-p)$).
+  estados, de probabilidades \ $p_X = \begin{bmatrix} r & 1-r \end{bmatrix}^t$ \
+  (ley de Bernoulli de parametro  $r$), entrop\'ia a veces dicha {\it entrop\'ia
+    binaria}, en funci\'on  de $r$.  Esta figura ilustra ambas cotas  ($r = 1$ o
+  1, $r  = \frac12$) as\'i  que la invariancia  bajo una permutaci\'on  ($h(r) =
+  H(r,1-r) = H(1-r,r) = h(1-r)$).
   %
   \begin{figure}[h!]
   %
   \begin{center}\input{TIKZ_SZ/EntropiaBinaria}\end{center}
   %
-  \leyenda{Entrop\'ia binaria  (de una variable de Bernoulli)  $h(p) = H(p,1-p)$
-    en funci\'on de $p \in [0 , 1]$.}
+  \leyenda{Entrop\'ia binaria  (de una variable de Bernoulli)  $h(r) = H(r,1-r)$
+    en funci\'on de $r \in [0 , 1]$.}
   %
   \label{fig:SZ:EntropiaBinaria}
   \end{figure}
@@ -210,25 +213,24 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
 \item\label{prop:SZ:recursividad} {\it Recursividad:} Juntar dos estados baja la
   entrop\'ia de  una cantidad igual a  la entrop\'ia interna de  los dos estados
   por la  probabilidad de ocurrencia de  este conjunto de  estados, y vice-versa,
-  \ie  sean \  $X$ \  definido  sobre \  $\X$ \  y  \ $\overline{X}$  \ sobre  \
-  $\overline{\X}$,
+  \ie  sean \  $X$ \  definido  sobre \  $\X$ \  y  \ $\bar{X}$  \ sobre  \
+  $\bar{\X}$,
   %
   \[
-  \left\{  \begin{array}{l}\overline{\X} =  \{  x_1 ,  \ldots  , x_{\alpha-2}  ,
-      \overline{x}_{\alpha-1}\} \quad \mbox{con el estado interno} \quad
-      \overline{x}_{\alpha-1}   =  \{   x_{\alpha-1}  ,   x_\alpha  \},\\[2.5mm]
-      p_{\overline{X}}(x_i)  =  p_X(x_i),  \quad  1  \le i  \le  \alpha-1  \quad
-      \mbox{y}       \quad      p_{\overline{X}}(\overline{x}_{\alpha-1})      =
-      p_X(x_{\alpha-1}) +
-      p(x_\alpha)  \quad  \mbox{distribuci\'on  sobre  }  \overline{\X}\\[2.5mm]
-      \displaystyle  \overline{q}(x_j)   =  \frac{p_X(x_j)}{p_X(x_{\alpha-1})  +
+  \left\{  \begin{array}{l}\bar{\X}   =  \{  x_1  ,  \ldots   ,  x_{\alpha-2}  ,
+      \bar{x}_{\alpha-1}\} \quad \mbox{con el estado interno} \quad
+      \bar{x}_{\alpha-1}   =  \{   x_{\alpha-1}  ,   x_\alpha  \},\\[2.5mm]
+      p_{\bar{X}}(x_i) =  p_X(x_i), \quad  1 \le i  \le \alpha-1  \quad \mbox{y}
+      \quad p_{\bar{X}}(\bar{x}_{\alpha-1}) = p_X(x_{\alpha-1}) +
+      p(x_\alpha)  \quad  \mbox{distribuci\'on  sobre  }  \bar{\X}\\[2.5mm]
+      \displaystyle    \bar{q}(x_j)   =    \frac{p_X(x_j)}{p_X(x_{\alpha-1})   +
         p_X(x_\alpha)},  \quad j =  \alpha-1, \alpha  \quad \mbox{distribuci\'on
         del estado interno}\end{array}\right.
   \]
   %
   \[
-  H(p_X)  = H(p_{\overline{X}})  +  p_{\overline{X}}(\overline{x}_{\alpha-1}) \,
-  H(\overline{q})
+  H(p_X)  = H(p_{\bar{X}})  +  p_{\bar{X}}(\bar{x}_{\alpha-1}) \,
+  H(\bar{q})
   \]
   %
   Esta relaci\'on  viene de $a \log  a + b  \log b = (a+b)  \left( \frac{a}{a+b}
@@ -256,21 +258,21 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   %
   \[
   \forall \:  \{ \pi_i \}_{i=1}^n, \quad  0 \le \pi_i \le  1, \quad \sum_{i=1}^n
-  \pi_i = 1  \quad \mbox{and cualquier conjunto de  distribuciones} \quad \{ p_i
-  \}_{i=1}^n,
+  \pi_i  = 1  \quad \mbox{and  cualquier  conjunto de  distribuciones} \quad  \{
+  p_{(i)} \}_{i=1}^n,
   \]
   %
   \[
-  H\left( \sum_{i=1}^n \pi_i p_i \right) \ge \sum_{i=1}^n \pi_i H(p_i)
+  H\left( \sum_{i=1}^n \pi_i p_{(i)} \right) \ge \sum_{i=1}^n \pi_i H(p_{(i)})
   \]
   %
   Esta relaci\'on es  conocida como desigualdad de Jensen.   Es una consecuencia
   directa de  la convexidad  de la funci\'on  $\phi: t  \mapsto t \log  t$, como
   ilustrado   en   la   figura  Fig.~\ref{fig:SZ:Concavidad}-(a).    La   figura
   Fig.~\ref{fig:SZ:Concavidad}-(b) ilustra  como se puede obtener  una mezcla de
-  distribuciones  de  dos probabilidad  $p_1$  (dado  izquierda)  y $p_2$  (dado
-  derecho)  haciendo una elecci\'on  aleatoria a  partir de  una moneda  en este
-  ejemplo   (probabilidad   $\pi_1   =   1   -  \pi_2$   de   elegir   el   dado
+  distribuciones  de dos  probabilidad  $p_{(1)}$ (dado  izquierda) y  $p_{(2)}$
+  (dado derecho)  haciendo una  elecci\'on aleatoria a  partir de una  moneda en
+  este  ejemplo   (probabilidad  $\pi_1  =  1   -  \pi_2$  de   elegir  el  dado
   izquierda).\newline
   %
   \begin{figure}[h!]
@@ -281,9 +283,9 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
     sus cuerdas; entonces, cada promedio de $\phi(t_1)$ y $\phi(t_2)$ estando en
     la cuerda juntando  estos puntos, queda arriba de la  funci\'on tomada en el
     promedio de $t_1$ y $t_2$.  Escribiendo eso para (m\'as de dos puntos) sobre
-    los  $\sum_i \pi_i  p_i(x)$ y  sumando sobre  los $x$  da la  desigualdad de
+    los $\sum_i \pi_i  p_{(i)}(x)$ y sumando sobre los $x$  da la desigualdad de
     Jensen.  (b) Ilustraci\'on de  una distribuci\'on de mezcla, ac\'a mezclando
-    $p_1$  y  $p_2$  a  partir  de  una tercera  variable  aleatoria  (ac\'a  de
+    $p_{(1)}$ y $p_{(2)}$  a partir de una tercera  variable aleatoria (ac\'a de
     Bernoulli).}
   %
   \label{fig:SZ:Concavidad}
@@ -297,13 +299,13 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   mayorizaci\'on:
   %
   \begin{definicion}[Mayorizaci\'on]\label{def:SZ:Mayorizacion}
-    Una distribuci\'on  discreta finita de  probabilidad $p$ mayorizada  por una
-    distribuci\'on $q$, notado $p \prec q$, se define como:
+    Un vector de  probabilidad (distribuci\'on) $p$ mayorizado por  un vector de
+    probabilidad (distribuci\'on) $q$, notado $p \prec q$, se define como:
     %
     \[
-    p  \prec  q  \quad   \mbox{ssi}  \quad  \sum_{i=1}^k  p^\downarrow(x_i)  \le
-    \sum_{i=1}^k q^\downarrow(x_i), \quad 1 \le  k < \alpha \quad \mbox{y} \quad
-    \sum_{i=1}^\alpha p^\downarrow(x_i)  = \sum_{i=1}^\alpha q^\downarrow(x_i)
+    p   \prec  q   \quad  \mbox{ssi}   \quad  \sum_{i=1}^k   p_i^\downarrow  \le
+    \sum_{i=1}^k q_i^\downarrow,  \quad 1  \le k <  \alpha \quad  \mbox{y} \quad
+    \sum_{i=1}^\alpha p_i^\downarrow = \sum_{i=1}^\alpha q_i^\downarrow
     \]
     %
     (las \'ultimas sumas siendo igual a 1).  Si los alfabetos de definici\'on de
