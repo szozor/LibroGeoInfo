@@ -407,18 +407,21 @@ desorganizadover (ver ej.~\cite{CovTho06}).
   $p_{(n+1)|(n)}$ \ y \ $q_{(n+1)|(n)}$  \ las distribuciones condicionales de \
   $X_{n+1}|X_n$  \  as\'i  que  $p_{(n)|(n+1)}$  \ y  \  $q_{(n)|(n+1)}$  \  las
   distribuciones condicionales de \  $X_n|X_{n+1}$, se muestra sencillamente que
-  \    $\Dkl[p_{(n+1),(n)}]{q_{(n+1),(n)}}   =    \Dkl[p_{(n+1)}]{q_{(n+1)}}   +
-  \Dkl[p_{(n+1)|(n)}]{q_{(n+1)|(n)}}       =       \Dkl[p_{(n)}]{q_{(n)}}      +
-  \Dkl[p_{(n)|(n+1)}]{q_{(n)|(n+1)}}$.       Adem\'as,      $p_{(n+1)|(n)}     =
+  \          $\displaystyle         \Dkl[p_{(n+1),(n)}]{q_{(n+1),(n)}}         =
+  \Dkl[p_{(n+1)}]{q_{(n+1)}}                        +                       \int
+  \Dkl[p_{(n)|(n+1)}(\cdot,y)]{q_{(n)|(n+1)}(\cdot,y)}            dy           =
+  \Dkl[p_{(n)}]{q_{(n)}}                          +                         \int
+  \Dkl[p_{(n+1)|(n)}(\cdot,y)]{q_{(n+1)|(n+1)}(\cdot,y)} dy$  \ (y con  una suma
+  en  lugar de la  integral en  el caso  discreto).  Adem\'as,  $p_{(n+1)|(n)} =
   p_{X_{n+1}|X_n}         =         q_{(n+1)|(n)}$,        conduciendo         a
-  $\Dkl[p_{(n+1)|(n)}]{q_{(n+1)|(n)}}  =   0$  \  con  consecuencia   de  que  \
-  $\Dkl[p_{(n+1)}]{q_{(n+1)}}         =         \Dkl[p_{(n)}]{q_{(n)}}         +
-  \Dkl[p_{(n)|(n+1)}]{q_{(n)|(n+1)}}$.   \ $p_{(n)|(n+1)}$ no  es necesariamente
-  igual a \ $q_{(n)|(n+1)}$, pero  la divergencia siendo no negativa, se obtiene
-  la primera desigualdad.  La segunda  desigualdad se obtiene tomando \ $q_{(n)}
-  = p^*$.   Adem\'as, si  \ $p^*$ \  es uniforme  \ $p^*(x) =  \frac{1}{|\X|}$ \
-  dando \ $\Dkl[p_{(n)}]{p^*} = -H(X_n)  + \log |\X|$, conduciendo a la \'ultima
-  desigualdad.
+  $\Dkl[p_{(n+1)|(n)}(\cdot,y)]{q_{(n+1)|(n)}(\cdot,y)} =  0$ \ con consecuencia
+  de que \  $\displaystyle \Dkl[p_{(n)}]{q_{(n)}} = \Dkl[p_{(n+1)}]{q_{(n+1)}} +
+  \int      \Dkl[p_{(n)|(n+1)}(\cdot,y)]{q_{(n)|(n+1)}(\cdot,y)}     dy$.      \
+  $p_{(n)|(n+1)}$  no  es necesariamente  igual  a  \  $q_{(n)|(n+1)}$, pero  la
+  divergencia siendo no negativa, se obtiene la primera desigualdad.  La segunda
+  desigualdad se obtiene  tomando \ $q_{(n)} = p^*$.  Adem\'as, si  \ $p^*$ \ es
+  uniforme \ $p^*(x) = \frac{1}{|\X|}$ \ dando \ $\Dkl[p_{(n)}]{p^*} = -H(X_n) +
+  \log |\X|$, conduciendo a la \'ultima desigualdad.
 \end{proof}
 
 
@@ -1150,12 +1153,12 @@ de Stam se saturando).
 
 Varias   otras  pruebas   de  la   desigualdad  de   Stam  pueden   provenir  de
 generalizaciones, por ejemplo debido a Lutwak o Bercher~\cite{Lut, Ber}.  \SZ{La
-  secci\'on ZZZ lo va a rapidamente evocar.}
+  secci\'on ZZZ lo va a rapidamente evocar. Ver caso discreto Kagan~\cite{Kag01}.}
 
 \
 
 \SZ{(1) Existe un data  proc ineq con Fisher, cf Rioul 07  ou Stam 59 ou Frieden
-  04; cf  aussi si $I_\theta(g(X)) \le  I_\theta(X)$ used in  Kagan-Smith 1999 ;
+  04 o Kagan~\cite{KagYu08}; cf  aussi si $I_\theta(g(X)) \le  I_\theta(X)$ used in  Kagan-Smith 1999 ;
   (2) ver MinFisher Frieden p. 235, Berchet Vignat 2009, Ernst 2017; cf. travaux
   rederivant MQ de Frieden-Plastino-Soffer  (1999, 2002), Reginato 98, Bickel 81
 }

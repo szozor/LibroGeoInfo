@@ -1,6 +1,9 @@
 \seccion{Entrop\'ias y divergencias generalizadas}
 \label{sec:SZ:Generalizadas}
 
+\SZ{Partout, voir convexite stricte, en 1,  idem pour h monotone, etc. vis a vis
+  des cas d'egalite avec les divergences.}
+
 A pesar de  que la entrop\'ia de Shannon y  sus cantidades asociadas demostraron
 sus  potencias  tan  de un  punto  de  vista  descriptivo  que en  t\'ermino  de
 aplicaciones en la  transmisi\'on de la informaci\'on y  la compresi\'on, varias
@@ -303,30 +306,31 @@ vincular  la  entrop\'ia  total con  la  obtenida  juntando  dos estados  por  u
 desigualdad:
 %
 \begin{propiedadesPhi}\setcounter{enumi}{\value{PropRecursividad}}
-\item Sean \ $X$ \ definido sobre \ $\X$ \ y \ $\bar{X}$ \ sobre \ $\bar{X}$,
+\item  Sean \  $X$  \ definido  sobre  \ $\X$  \  y \  $\widebar{X}$  \ sobre  \
+  $\widebar{X}$,
   %
   \[
-  \left\{  \begin{array}{l}\bar{\X}   =  \{  x_1  ,  \ldots   ,  x_{\alpha-2}  ,
-      \bar{x}_{\alpha-1}\} \quad \mbox{con el estado interno} \quad
-      \bar{x}_{\alpha-1}   =  \{   x_{\alpha-1}  ,   x_\alpha  \},\\[2.5mm]
-      p_{\bar{X}}(x_i) =  p_X(x_i), \quad  1 \le i  \le \alpha-1  \quad \mbox{y}
-      \quad p_{\bar{X}}(\bar{x}_{\alpha-1}) = p_X(x_{\alpha-1}) +
-      p(x_\alpha)  \quad  \mbox{distribuci\'on  sobre  }  \bar{\X}\\[2.5mm]
-      \displaystyle    \bar{q}(x_j)   =    \frac{p_X(x_j)}{p_X(x_{\alpha-1})   +
+  \left\{  \begin{array}{l}\widebar{\X}  = \{  x_1  ,  \ldots  , x_{\alpha-2}  ,
+      \widebar{x}_{\alpha-1}\} \quad \mbox{con el estado interno} \quad
+      \widebar{x}_{\alpha-1}   =  \{   x_{\alpha-1}  ,   x_\alpha  \},\\[2.5mm]
+      p_{\widebar{X}}(x_i) = p_X(x_i), \quad 1 \le i \le \alpha-1 \quad \mbox{y}
+      \quad p_{\widebar{X}}(\widebar{x}_{\alpha-1}) = p_X(x_{\alpha-1}) +
+      p(x_\alpha)  \quad  \mbox{distribuci\'on  sobre  }  \widebar{\X}\\[2.5mm]
+      \displaystyle   \widebar{q}(x_j)  =   \frac{p_X(x_j)}{p_X(x_{\alpha-1})  +
         p_X(x_\alpha)},  \quad j =  \alpha-1, \alpha  \quad \mbox{distribuci\'on
         del estado interno}\end{array}\right.
   \]
   %
   \[
-  \hhphi[p_X] \ge \hhphi[p_{\bar{X}}]
+  \hhphi[p_X] \ge \hhphi[p_{\widebar{X}}]
   \]
   %
   Esta  desigualdad es  consecuencia de  la desigualdad  de Petrovi\'c~\cite[43,
   Teorema~8.7.1]{Kuc09}, $\phi(a + b) \ge \phi(a) + \phi(b)$ para $\phi$ convexa
   y que se cancela en 0 (y  la conversa en el caso c\'oncavo), conjuntamente con
   $h$ creciente  (resp.  decreciente).   Aparte en  el caso de  Shannon y  el de
-  Havdra-Charv\'at-Dar\'oczy, no hay  nung\'un v\'inculo explicito general entre
-  $\hhphi[p_X]$ \ y \ $\hhphi[p_{\bar{X}}]$.
+  Havdra-Charv\'at-Dar\'oczy, no hay  ning\'un v\'inculo explicito general entre
+  $\hhphi[p_X]$ \ y \ $\hhphi[p_{\widebar{X}}]$.
 \end{propiedadesPhi}
 
 Se  conserva  la  super-aditividad~\ref{prop:SZ:superaditividad}. De  hecho,  si
@@ -658,7 +662,7 @@ en general, pero se obtiene esta propiedad cuando $\pi = \pi_{\mathrm{u}} \equiv
 divergencia   no  cumpla   la   desigualdad  triangular,   aparece  que   $\Big(
 J_{\mathrm{js}}^{\pi_{\mathrm{u}}}(p_{(1)},p_{(2)})  \Big)^s, \quad  0  < s  \le
 \frac12$  es una metrica~\cite{OsaBus18}  o~\cite[para $s  = \frac12$]{EndSch03,
-  OesVaj03, KafOes91}.  Si puede  parecer m\'as l\'ogico definir tal divergencia
+  OstVaj03, KafOst91}.  Si puede  parecer m\'as l\'ogico definir tal divergencia
 con a priori/proporciones $\pi_i$ iguales, de hecho la versi\'on no sim\'etrica,
 con pesos  $\pi_i$ se vuelve  natural en el  marco de la  discriminaci\'on donde
 apareci\'o implicitamente esta cantidad.  En particular, cuando estamos frente a
@@ -754,7 +758,7 @@ de Jensen de la manera siguiente:
 \begin{definicion}[Divergencias  de Jensen]
   Sea \ $f: \Omega  \subset \Rset^m \mapsto \Rset$ \ convexa y  de clase $C^1$ \
   sobre  \   $\Omega$,  \  un   cerrado  convexo  de   $\Rset^d$  \  y   \  $\pi
-  = \begin{bmatrix} \pi_1 \& \pi_2 \end{bmatrix}^t$ \ con $0 \le \pi_1 = 1-\pi_2
+  = \begin{bmatrix} \pi_1 & \pi_2 \end{bmatrix}^t$ \ con $0 \le \pi_1 = 1-\pi_2
   \le 1$.  Las divergencias de Jensen entre dos puntos \ $u _1 , u_2 \in \Omega$
   \ son definidas por
   %
@@ -784,17 +788,17 @@ La definici\'on  se generaliza a  cualquier conjunto $\{ p_{(i)}  \}_{i=1}^n$ de
 distribuciones de probabilidades y $\pi$ vector de probabilidad $n$-dimensional,
 %
 \[
-D_{(h,\phi)}^{\mathrm{j},\pi}( \{ p_{(i)} \} ) = \hhphi{\sum_i  \pi_i p_{(i)}} -
-\sum_i \pi_i \hhphi{p_{(i)}}
+D_{(h,\phi)}^{\mathrm{j},\pi}( \{ p_{(i)} \} ) = \hhphi[\sum_i  \pi_i p_{(i)}] -
+\sum_i \pi_i \hhphi[p_{(i)}]
 \]
 %
 \noindent Por analog\'ia a la  informaci\'on mutua, Burbea y Rao llamar\'on esta
 medida ``informaci\'on mutua  generalizada''. Eso viene de que  si se define una
 informaci\'on  condicional  en   el  mismo  esquema  que  el   de  Shannon,  \ie
-$\hhphi{X|Y}  =  \sum_y  p_Y(y)  \hhphi{p_{X|Y}(\cdot,y)}$, entonces,  con  $\pi
+$\hhphi[X|Y]  =  \sum_y  p_Y(y)  \hhphi[p_{X|Y}(\cdot,y)]$, entonces,  con  $\pi
 \equiv p_Y$ \ y  \ $\{ p_{(i)} \}_i \equiv \{ p_{X|Y}(\cdot  , y) \}_y $ aparece
 de  que  \  $D_{(h,\phi)}^{\mathrm{j},p_Y}(  \{  p_{X|Y}(\cdot ,  y)  \}_y  )  =
-\hhphi{X} - \hhphi{X|Y}$.  \ Esta expresi\'on es parecida a una de las formas de
+\hhphi[X] - \hhphi[X|Y]$.  \ Esta expresi\'on es parecida a una de las formas de
 la   informaci\'on  mutua   de  Shannon,   justificando  la   terminilog\'ia  de
 Burbea-Rao. Sin  embargo, hay que tener  conciencia de que no  todo se translata
 obviamente  del mundo  Shannon  al  mundo generalizado.   Por  ejemplo, con  tal
@@ -1060,9 +1064,9 @@ I_\lambda^\ren(q\|p)  =  \frac{1}{\lambda-1}   \log_2\left(  \sum_i  p_i  \left(
 \]
 
 Unos  a\~nos  despu\'es,  se introdujo  una  clase  m\'as  general debido  a  I.
-Csisz\'ar~\cite{Csi63, Csi67}, T.  Morimoto~\cite{Mor63} o  S.  M.  Ali \& S. D.
-Silvey~\cite{AliSil66},  clase   que  llamaremos  {\it   $\phi$-divergencias  de
-  Csisz\`ar}. En el caso continuo toma la forma
+Csisz\'ar~\cite{Csi63, Csi67, CsiShi04}, T.  Morimoto~\cite{Mor63} o S.  M.  Ali
+\& S. D.  Silvey~\cite{AliSil66},  clase que llamaremos {\it $\phi$-divergencias
+  de Csisz\`ar}. En el caso continuo toma la forma
 %
 \[
 \cphi[q]{p} = \int_\X p(x) \phi\left( \frac{q(x)}{p(x)} \right) \, dx
@@ -1071,8 +1075,8 @@ Silvey~\cite{AliSil66},  clase   que  llamaremos  {\it   $\phi$-divergencias  de
 donde $\phi$ es una funci\'on convexa y  donde el soporte $\X$ de $p$ incluye lo
 de $q$, y en el caso discreto una suma reemplaza la integral. Estas divergencias
 o  casos particulares  fueron muy  estudiadas las  decadas que  siguieron, dando
-lugar a varias aplicaciones~\cite{BurRao82, CreRea84, BenCha89, Teb92, BenBor92,
-  SalMen93, Sal94, Csi95, CrePar00, LieVaj06}.
+tambi\'en  lugar  a   varias  aplicaciones~\cite{GupSha76,  BurRao82,  CreRea84,
+  BenCha89, Teb92, BenBor92, SalMen93, Sal94, Csi95, CrePar00, LieVaj06}.
 
 Como para el caso de las $\phi$-entrop\'ias, esta clase se enmarca dentro de una
 clase    un     poco    m\'as    general~\cite[Secs.~4.5~\&~5]{AliSil66}    (ver
@@ -1084,64 +1088,194 @@ tambi\'en~\cite[Sec.~I]{OrsPar95}):
   es definida por
   %
   \[
-  \chphi[q]{p}  h\left( \sum_{x  \in  \X}  p(x) \phi\left(  \frac{q(x)}{p(x)}
+  \chphi[q]{p}  =  h\left( \sum_{x  \in  \X}  p(x) \phi\left(  \frac{q(x)}{p(x)}
     \right) \right)
   \]
   %
   en el caso discreto, y
   %
   \[
-  \chphi[q]{p} h\left( \int_\X  p(x) \phi\left( \frac{q(x)}{p(x)}  \right) dx
+  \chphi[q]{p} =  h\left( \int_\X  p(x) \phi\left( \frac{q(x)}{p(x)}  \right) dx
   \right)
   \]
   %
-  en su versi\'on diferencial, donde o
+  en  su versi\'on  diferencial~\footnote{En  general, por  convenci\'on, $0  \,
+    \phi\left(  \frac{0}{0}  \right)  =   0$.   Adem\'as,  se  requiere  de  que
+    $\displaystyle 0  \, \phi\left( \frac{a}{0} \right)  = \lim_{\varepsilon \to
+      0^+} \varepsilon  \, \phi\left( \frac{a}{\varepsilon} \right)  = a \lim_{u
+      \to +\infty} \frac{\phi(u)}{u}$.}, donde o
   %
-  %\begin{itemize}
-  %\item 
-  $\phi$ \ es estrictamente convexa y \ $h$ \ creciente.
-%, o
-%  \item $\phi$ \ es estrictamente c\'oncava y \ $h$ \ decreciente
-%  \end{itemize}
+  \begin{itemize}
+  \item $\phi$ \ es estrictamente convexa y \ $h$ \ creciente, o
+  \item $\phi$ \ es estrictamente c\'oncava y \ $h$ \ decreciente
+  \end{itemize}
   %
   Frecuentemente, se supone adicionalmente que $\phi$ y $h$ son de clase $C^2$ y
-  \SZ{completer}.
-  % , que $\phi(0) = 0$.  , sin perdida de generalidad, que $h(-\phi(1)) = 0$.
+  sin perdida de generalidad, que $h(\phi(1)) = 0$.
 \end{definicion}
 %
-\noindent Se notar\'a de que, obviamente, $\cphi = D_{(\id,\phi)}^{\mathrm{c}}$.
+\noindent Se notar\'a de que, obviamente, $\cphi{} = D_{(\id,\phi)}^{\mathrm{c}}$.
 
 \SZ{
 
-gupta Sharma  1976
 
 Vajda72,
-Voir OesVaj en termes de metrique pour les Arimoto, Vajda 2009, Kafka 91
+Voir OstVaj en termes de metrique pour les Arimoto, Vajda 2009, Kafka 91
 }
 
-Notablemente, cuando $\phi(u)  = u \log u$ y  $h = \id$ se recupera  de nuevo la
-divergencia de  Kullback-Leibler: esta  \'ultima partenece simultaneamente  a la
-clase de  Csisz\`ar y a la  de Bregman y  es la sola en  este caso~\cite{Csi91}.
-Adem\'as  de   $\Dkl{}$,  la  clase   de  Csisz\'ar  contiene  la   ganancia  de
-informaci\'on  de  R\'enyi para  $\phi(u)  =  u^\lambda$  y $h(u)  =  \frac{\log
-  u}{\lambda-1}$, la $J$-divergencia para  $\phi(u) = u \log u - \log  u$ y $h =
-\id$, la distancia de  Bhattacharyya~\cite{Bat43, Bat46} $-\log \int \sqrt{p q}$
-para $\phi(u) = \sqrt{u}$ y $h(u) = - \log u$, entre otros.
+Notablemente, cuando  \ $\phi(u) = u \log  u$ \ y \  $h = \id$ \  se recupera de
+nuevo   la   divergencia    de   Kullback-Leibler:   esta   \'ultima   partenece
+simultaneamente a la clase  de Csisz\`ar y a la de Bregman y  es la sola en este
+caso~\cite{Csi91}.   Cuando \ $\phi(u)  = \pi_2  u \log  u -  (\pi_1 +  \pi_2 u)
+\log(\pi_1  + \pi_2  u)$  \ y  \  $h =  \id$  \ se  recupera  la divergencia  de
+Jensen-Shannon  \SZ{sola de  la clase  de Jensen  en este  caso?}.   Adem\'as de
+$\Dkl{}$, la clase de Csisz\'ar contiene la ganancia de informaci\'on de R\'enyi
+para  \ $\phi(u)  =  u^\lambda$ \  y \  $h(u)  = \frac{\log  u}{\lambda-1}$ \  o
+divergencias  relacionadas   como  la  de   Chernov~\cite{CreRea84,  Che52},  la
+$J$-divergencia  para \ $\phi(u)  = u  \log u  - \log  u$ \  y \  $h =  \id$, la
+distancia  de Bhattacharyya~\cite{Bha43, Bha46:07}  \ $\displaystyle  -\log \int
+\sqrt{p q}$  \ para \ $\phi(u)  = \sqrt{u}$ \ y  \ $h(u) = -  \log u$, instancia
+particular de la de R\'enyi ($\lambda = \frac12$), entre otros.
 
 \SZ{
-JENSEN CAEN
+HELLINGER
 
 PROPIEDADES, SYMETRIZACION, METRICA
 }
+Las divergencias de Csisz\'ar tienen las propiedades siguientes
+%
+\begin{enumerate}
+\item Positividad:
+  %
+  \[
+  \chphi[q]{p} \ge 0 \quad \mbox{con igualdad si y solamente si} \quad p = q
+  \]
+  %
+  Esta propiedad es la consecuencia  directa de la convexidad estricta de $\phi$
+  conjuntamente a  $h(\phi(1)) = 0$. De  hecho, de la desigualdad  de Jensen con
+  $X$ de  distribuci\'on $p$ tenemos en  el caso $\phi$ convexa  y $h$ creciente
+  $\chphi[q]{p}  =  h\left(   \Esp\left[  \phi\left(  \frac{q(X)}{p(X)}  \right)
+    \right]  \right)  \ge  h  \left( \phi  \left(  \Esp\left[  \frac{q(X)}{p(X)}
+      \right] \right)  \right) = h(\phi(1))$  (y similarmente en el  caso $\phi$
+  c\'oncava  y  $h$  decreciente).  Fijense  de  que la  positividad  no  es  en
+  contradicci\'on con  el enfoque  de R\'enyi en  su caso, porque  conider\'o el
+  caso discreto  finito con  probabilidades incompletas, \ie  su axioma  (ii) se
+  cumpla   potencialemente  solamente  para   los  vectores   de  probabilidades
+  incompletos.
+%
+\item $\chphi{}$ satisface un teorema de  procesamiento de datos (o secunda ley de
+  la  termodin\'amica)  en   el  sentido  de  que  si   dos  distribuciones  son
+  consecuencias   de  la  misma   probabilidad  de   transici\'on  (condicional)
+  $p_{(n+1)|(n)} = q_{(n+1)|(n)}$, entonces
+  %
+  \[
+  \chphi[q_{(n+1)}]{p_{(n+1)}} \le \chphi[q_{(n)}]{p_{(n)}}
+  \]
+  \SZ{Probar}
+  %
+\item $\chphi{}$ es convexa con  respecto al par $(p,q)$, pero no necesariamente
+  con  respecto  a  $p$  solamente  y/o  $q$. En  el  caso  $\phi$  convexa,  es
+  consecuencia directa de la convexidad~\footnote{Con la hipotesis de que $\phi$
+    sea  de clase $C^2$,  es sencillo  ver de  que la  Hessiana de  la funci\'on
+    $(u,v) \mapsto  u \phi\left(\frac{v}{u}\right)$ con respeto a  $(u,v)$ es no
+    negativa,     implicando     la     convexidad     de     esta     funci\'on
+    bi-variada~\cite{CamMar09}.}   (resp.   c\'oncavidad)  de $(u,v)  \mapsto  u
+  \phi\left(\frac{v}{u}\right)$ sobre  $\Rset_+^2$ conjuntamente a  la crecencia
+  (resp. decrecencia) de $h$.
+%
+\item Pensando a $\cphi{}$  con respecto a $\phi$, es lineal en  el sentido de que
+  $D_{\lambda_1   \phi_1   +    \lambda_2   \phi_2}^{\mathrm{c}}   =   \lambda_1
+  D_{\phi_1}^{\mathrm{c}}  +  \lambda_2  D_{\phi_2}^{\mathrm{c}}$ (con  $\phi_i$
+  convexas y $\lambda_i \ge 0$).
+%
+\item Sea $\phi^*(u) = u \phi\left(  \frac1u \right)$. Es sencillo ver de que si
+  $\phi$  es   convexa  (resp.    c\'oncava),  $\phi^*$  es   tambi\'en  convexa
+  (resp.   c\'oncava).   $\phi^*$  es   llamada   {\it  $^*$-conjugada   convexa
+    (resp. c\'oncava)} de $\phi$. Luego,
+  %
+  \[
+  \chphi[q]{p} = D^{\mathrm{c}}_{(h,\phi^*)}\left( \left. p \right\| q \right)
+  \]
+%
+\item $\chphi{}$ es  sim\'etrica si y solamente si $\phi =  \phi^* + c (\id-1)$;
+  sin perdida  de generalidad, consideramos  $c = 0$.   Sin embargo, en  el caso
+  general,  se  puede  definir  una   versi\'on  simetrizada  al  imagen  de  la
+  $J$-divergencia,  considerando $\chphi{}  +  D^{\mathrm{c}}_{(h,\phi^*)}$.  En
+  particular, cuando $h = \id$, tenemos
+  %
+  \[
+  \chphi{} + D^{\mathrm{c}}_{\phi^*} = D^{\mathrm{c}}_{\phi+\phi^*}
+  \]
+  %
+  que es sim\'etrica ($(\phi^*)^* = \phi$).
+  % Dualidad:  si $\phi$  tiene un  convex conjugado  $\phi^*$  (transformada de
+  % Legendre)  D^{\mathrm{b}}_{\phi^*}\left(  \left.  -\nabla \hphi[q]  \right\|
+  %   -\nabla \hphi[p] \right) = \bphi[q]{p}$~\cite{NieNoc17}.
+%
+\end{enumerate}
+%
+\noindent  Estas  propiedades  con   varias  otras  se  encuentran  por  ejemplo
+en~\cite{Vaj72, Csi74, LieVaj87, KafOst91, Ost96, OstVaj03, KumChi05, LieVaj06}.
+Como  en el  caso de  las  divegencias de  Jensen, en  general las  divergencias
+sim\'eticas  ($\phi  =  \phi^*$)  no  satisfacen en  general  a  la  desigualdad
+triangular,  y entonces no  dan lugar  a una  distancia entre  distribuciones de
+probabilidad,  \SZ{aparte en casos  particulares~\cite{toto}}.  Sin  embargo, se
+prob\'o  en~\cite[Teoremas~1~\&~2,   Remark~6]{KafOst91}  \  y   \  \cite{Ost96,
+  OstVaj03} el lema  siguiente, condici\'on suficiente para que  una potencia de
+la divergencia satisfaga a la desigualdad triangular:
+%
+\begin{lema}
+  Sea \ $\phi$ \ una funci\'on convexa tal que \ $\phi^* = \phi$, \ $\phi(0) \ne
+  0$   \  y   \  $\cphi{}$   su  divergencia   de  Csisz\'ar   asociada   ($h  =
+  \id$).  Adicionalmente  de supone  de  que  $\phi(1)  = 0$  (ver  definici\'on
+  Def.~\ref{def:SZ:HPhiDivergencia}) y de que $\phi$ es estrictamente convexa en
+  $1$.  Si existe $\kappa \in \Rset_+^*$ tal que
+  %
+  \[
+  h(u) = \frac{\left( 1-u^\kappa  \right)^{\frac{1}{\kappa}}}{\phi(u)}, \quad u \in [ 0
+  \, , \, 1) \quad \mbox{es no decreciente}
+  \]
+  %
+  \noindent entonces
+  %
+  \[
+  \left( \cphi{} \right)^s \quad s \in  (0 \, , \, \kappa] \quad \mbox{satisface
+    la desigualdad triangular}
+  \]
+  %
+  \noindent   y  entonces   es   una  metrica   entre   dos  discribuciones   de
+  probabilidades.
+\end{lema}
+%
+\noindent Adem\'as, en~\cite[Sec.~3]{KafOst91} se dan condiciones necesarias que
+debe cumplir $\kappa$ cuando $\phi$ tiene un comportamiento particular en $u \to
+0$ \  y/o \ $u \to  0$; eso va  m\'as all\'a de la  meta de esta secci\'on  y el
+lector se  podr\'a referir a~\cite{KafOst91,  Ost96, OstVaj03} para  tener m\'as
+detalles.
 
-Varias  aplicaciones se  encuentran en  la literatura  que sea  en estimaci\'on,
-discriminaci\'on,  reconocimiento   de  patrones,  pruebas   de  adecuaci\'on  o
-inferencia  estad\'istica,  entre  otros~\cite[y ref.]{Kai67,  BoeLub79,  Poo88,
-  Bas89, Csi95,  OrsPar95, MenMor97:5, Par99, LieVaj06,  Par06, CsiMat12, Bas13}
-en adici\'on de las referencias de esta secci\'on, para dar unas.
+Este   lema   se  us\'o   para   probar   el   caracter  m\'etrico   de   $\Big(
+J_{\mathrm{js}}^{\pi_{\mathrm{u}}}(p_{(1)},p_{(2)})  \Big)^s, \quad  0  < s  \le
+\frac12$~\cite[y   ref.]{OstVaj03,  OsaBus18},   siendo   $J_{\mathrm{js}}$  una
+divergencia  de Csisz\'ar  particular.  Se  us\'o tambi\'en  para probar  de que
+$\left( \cphi{}  \right)^s$ \ con \ $\phi(u)  = \frac{\lambda}{\lambda-1} \left(
+  \left( 1+u^\lambda \right)^{\frac{1}{\lambda}} - 2^{\frac{1}{\lambda}-1} (1+u)
+\right)$ \  y \ $\kappa  = \min\left( \beta  \, , \,  \frac12 \right)$ \  es una
+m\'etrica~\cite{OstVaj03}.
+
+\SZ{voir borne sup dphi et avec h quand phi = phi*; Kumar China ou Vajda 72, Liese Vajda 03 eq. 35}
+% I.Csiszár,Informationmeasures:Acriticalsurvey,In:Trans.7thPragueConf.onInformationTheory,Vol.A,1974,73œôòó86.
+% [22]
+% F.Liese,I.Vajda,ConvexStatisticalDistances,In:Band95,TeubnerTextezurMathematik,Leipzig,1987.
+
+Para  cerrar esta  secci\'on,  se  mencionar\'a de  que  varias aplicaciones  se
+encuentran  en   la  literatura  que  sea   en  estimaci\'on,  discriminaci\'on,
+reconocimiento de patrones, pruebas  de adecuaci\'on o inferencia estad\'istica,
+entre  otros~\cite[y  ref.]{Kai67,  BoeLub79,  Poo88,  Bas89,  Csi95,  OrsPar95,
+  MenMor97:5,  Par99, LieVaj06,  Par06,  NieBol11, CsiMat12, Bas13}  en  adici\'on de  las
+referencias de esta secci\'on, para dar unas.
 
 \SZ{
-Bhattacharyya 46, Chernov 52 dans les ref de Liese Vajda, cf Bat 43 egalement
+Chernov 52 Che52, dans les ref de Liese Vajda, cf Bha 43 egalement
 }
 
 
@@ -1248,9 +1382,11 @@ es acotada por arriba, y que se alcanza la cota. Por ejemplo,
   v\'inculos), y $\phi(u) = u^\lambda$ (R\'enyi o Havrda-Charv\'at-Dar\'oczy), la  distribuci\'on  de  entrop\'ia  m\'axima  es \SZ{Student; Costa and son on. Gausiana se recupera caso l\'imite}.}
 \end{itemize}
 
+\
 
 \SZ{reapparition Fisher comme courbure, cf Varma, Jizba, MenMor97...}
 
+\SZ{EPI variaciones Madiman Barron MadBar07}
 
 \SZ{
    On the theory  of Fisher's

@@ -6,6 +6,13 @@ Acz{\'e}l, J. \& Dar{\'o}czy, Z. (1975).
 \newblock {\em On Measures of Information and Their Characterizations}.
 \newblock New-York: Academic Press.
 
+\bibitem[\protect\citeauthoryear{Ali \& Silvey}{Ali \& Silvey}{1966}]{AliSil66}
+Ali, S.~M. \& Silvey, S.~D. (1966).
+\newblock A general class of coefficients of divergence of one distribution
+  from another.
+\newblock {\em Journal of the Royal Statistical Society B}, {\em 28\/}(1),
+  131--142.
+
 \bibitem[\protect\citeauthoryear{Amari \& Nagaoka}{Amari \&
   Nagaoka}{2000}]{AmaNag00}
 Amari, S.-I. \& Nagaoka, H. (2000).
@@ -56,6 +63,21 @@ Beck, C. (2009).
 \newblock Generalised information and entropy measures in physics.
 \newblock {\em Contemporary Physics}, {\em 50\/}(4), 495--510.
 
+\bibitem[\protect\citeauthoryear{{Ben-Tal}, Bornwein \& Teboulle}{{Ben-Tal}
+  et~al.}{1992}]{BenBor92}
+{Ben-Tal}, A., Bornwein, J.~M., \& Teboulle, M. (1992).
+\newblock Spectral estimation via convex programming.
+\newblock In F.~Y. Phillips \& J.~J. Rousseau (Eds.), {\em Systems and
+  Management Science by Extremal Methods}  chapter~18, (pp.\ 275--290).
+  Springer.
+
+\bibitem[\protect\citeauthoryear{{Ben-Tal}, Charnes \& Teboulle}{{Ben-Tal}
+  et~al.}{1989}]{BenCha89}
+{Ben-Tal}, A., Charnes, A., \& Teboulle, M. (1989).
+\newblock Entropic means.
+\newblock {\em Journal of Mathematical Analysis and Applications}, {\em
+  139\/}(2), 537--551.
+
 \bibitem[\protect\citeauthoryear{Bengtsson \& {\.Z}yczkowski}{Bengtsson \&
   {\.Z}yczkowski}{2006}]{BenZyc06}
 Bengtsson, I. \& {\.Z}yczkowski, K. (2006).
@@ -73,11 +95,23 @@ Bhatia, R. (1997).
 \newblock {\em Matrix Analysis}.
 \newblock New-York: Springer Verlag.
 
+\bibitem[\protect\citeauthoryear{Bhattacharyya}{Bhattacharyya}{1946}]{Bha46:07}
+Bhattacharyya, A. (1946).
+\newblock On a measure of divergence between two multinomial populations.
+\newblock {\em Sankhy{\={a}}: The Indian Journal of Statistics}, {\em 7\/}(4),
+  401--406.
+
 \bibitem[\protect\citeauthoryear{Blachman}{Blachman}{1965}]{Bla65}
 Blachman, N.~M. (1965).
 \newblock The convolution inequality for entropy powers.
 \newblock {\em IEEE Transactions on Information Theory}, {\em 11\/}(2),
   267--271.
+
+\bibitem[\protect\citeauthoryear{Boekee \& {van der Lubbe}}{Boekee \& {van der
+  Lubbe}}{1979}]{BoeLub79}
+Boekee, D.~E. \& {van der Lubbe}, J. C.~A. (1979).
+\newblock Some aspects of error bounds in feature selection.
+\newblock {\em Pattern Recognition}, {\em 11\/}(5-6), 353--360.
 
 \bibitem[\protect\citeauthoryear{Boekee \& {van der Lubbe}}{Boekee \& {van der
   Lubbe}}{1980}]{BoeLub80}
@@ -101,6 +135,17 @@ Bregman, L.~M. (1967).
   its application to the solution of problem in convex programming.
 \newblock {\em USSR Computational Mathematics and Mathematical Physics}, {\em
   7\/}(3), 200--217.
+
+\bibitem[\protect\citeauthoryear{Br{\'e}maud}{Br{\'e}maud}{1988}]{Bre88}
+Br{\'e}maud, P. (1988).
+\newblock {\em An Introduction to Probabilitic Modeling}.
+\newblock New-York: Springer.
+
+\bibitem[\protect\citeauthoryear{Bullet, Fearn \& Smith}{Bullet
+  et~al.}{2017}]{BulFea17}
+Bullet, S., Fearn, T., \& Smith, F. (2017).
+\newblock {\em Analysis and Mathematical Physics}.
+\newblock London: World Scientific.
 
 \bibitem[\protect\citeauthoryear{Burbea \& Rao}{Burbea \& Rao}{1982}]{BurRao82}
 Burbea, J. \& Rao, C.~R. (1982).
@@ -133,6 +178,11 @@ Cambini, A. \& Martein, L. (2009).
 \newblock {\em Generalized Convexity and Optimization: Theory and
   Applications}.
 \newblock Heidelberg: Springer Verlag.
+
+\bibitem[\protect\citeauthoryear{Cencov}{Cencov}{1982}]{Cen82}
+Cencov, N.~N. (1982).
+\newblock {\em Statistical Decision Rules and Optimal Inference}.
+\newblock Providence, Rhode Island, USA: American Mathematical Society.
 
 \bibitem[\protect\citeauthoryear{Chenciner}{Chenciner}{2017}]{Che17}
 Chenciner, A. (2017).
@@ -170,11 +220,57 @@ Cram{\'e}r, H. (1946).
 \newblock {\em Mathematical Methods of Statistics}.
 \newblock New-York: Princeton University Press.
 
+\bibitem[\protect\citeauthoryear{Cressie \& Pardo}{Cressie \&
+  Pardo}{2000}]{CrePar00}
+Cressie, N. \& Pardo, L. (2000).
+\newblock Minimum {$\phi$-}divergence estimator and hierarchical testing in
+  loglinear models.
+\newblock {\em Statistica Sinica}, {\em 10\/}(3), 867--884.
+
+\bibitem[\protect\citeauthoryear{Cressie \& Read}{Cressie \&
+  Read}{1984}]{CreRea84}
+Cressie, N. \& Read, L. (1984).
+\newblock Multinomial goodness-of-fit tests.
+\newblock {\em Journal of the Royal Statistical Society B}, {\em 46\/}(3),
+  440--464.
+
+\bibitem[\protect\citeauthoryear{Csisz{\'a}r}{Csisz{\'a}r}{1963}]{Csi63}
+Csisz{\'a}r, I. (1963).
+\newblock Eine informationstheoretische ungleichung und ihre anwendung auf den
+  beweis der ergodizitat von markoffschen ketten.
+\newblock {\em A Magyar Tudom{\'a}nyos Akad{\'e}mia Matematikai Kutat{\'o}
+  Int{\'e}zet{\'e}nek K{\"o}zlem{\'e}nyei}, {\em 8\/}(1-2), 85--108.
+
+\bibitem[\protect\citeauthoryear{Csisz{\`a}r}{Csisz{\`a}r}{1967}]{Csi67}
+Csisz{\`a}r, I. (1967).
+\newblock Information-type measures of difference of probability distributions
+  and indirect observations.
+\newblock {\em Studia Scientiarum Mathematicarum Hungarica}, {\em 2}, 299--318.
+
 \bibitem[\protect\citeauthoryear{Csisz{\`a}r}{Csisz{\`a}r}{1991}]{Csi91}
 Csisz{\`a}r, I. (1991).
 \newblock Why least squares and maximum entropy? an axiomatic approach to
   inference for linear inverse problems.
 \newblock {\em The Annals of Statistics}, {\em 19\/}(4), 2031--2066.
+
+\bibitem[\protect\citeauthoryear{Csisz{\'a}r}{Csisz{\'a}r}{1995}]{Csi95}
+Csisz{\'a}r, I. (1995).
+\newblock Generalized projections for non-negative functions.
+\newblock {\em Acta Mathematica Hungarica}, {\em 68\/}(1-2), 161--186.
+
+\bibitem[\protect\citeauthoryear{Csisz{\`a}r \& Mat{\'u\u{s}}}{Csisz{\`a}r \&
+  Mat{\'u\u{s}}}{2012}]{CsiMat12}
+Csisz{\`a}r, I. \& Mat{\'u\u{s}}, F. (2012).
+\newblock Generalized minimizers of convex integral functionals, {B}regman
+  distance, {P}ythgorean identities.
+\newblock {\em Kybernetica}, {\em 48\/}(4), 637--689.
+
+\bibitem[\protect\citeauthoryear{Csisz{\'a}r \& Shields}{Csisz{\'a}r \&
+  Shields}{2004}]{CsiShi04}
+Csisz{\'a}r, I. \& Shields, P.~C. (2004).
+\newblock Information theory and statistics: A tutorial.
+\newblock {\em Foundations and Trends{\texttrademark} in Communications and
+  Information Theory}, {\em 1\/}(4), 417--528.
 
 \bibitem[\protect\citeauthoryear{Darmois}{Darmois}{1935}]{Dar35}
 Darmois, G. (1935).
@@ -339,6 +435,12 @@ Guo, D., Shamai, S., \& Verd{\'u}, S. (2005).
 \newblock {\em IEEE Transactions on Information Theory}, {\em 51\/}(4),
   1261--1282.
 
+\bibitem[\protect\citeauthoryear{Gupta \& Sharma}{Gupta \&
+  Sharma}{1976}]{GupSha76}
+Gupta, H.~C. \& Sharma, B.~D. (1976).
+\newblock On non-additive measures of inaccuracy.
+\newblock {\em Czechoslovak Mathematical Journal}, {\em 26\/}(4), 584--595.
+
 \bibitem[\protect\citeauthoryear{Hardy, Littlewood \& P{\'o}lya}{Hardy
   et~al.}{1952}]{HarLit52}
 Hardy, G., Littlewood, J.~E., \& P{\'o}lya, G. (1952).
@@ -422,12 +524,30 @@ Johnson, O. (2004).
 \newblock {\em Information Theory and The Central Limit Theorem}.
 \newblock London: Imperial college Press.
 
-\bibitem[\protect\citeauthoryear{Kafka, {\"O}esterreicher \& Vincze}{Kafka
-  et~al.}{1991}]{KafOes91}
-Kafka, P., {\"O}esterreicher, F., \& Vincze, I. (1991).
+\bibitem[\protect\citeauthoryear{Kafka, {\"O}sterreicher \& Vincze}{Kafka
+  et~al.}{1991}]{KafOst91}
+Kafka, P., {\"O}sterreicher, F., \& Vincze, I. (1991).
 \newblock On powers of {$f$}-divergences defining a distance.
 \newblock {\em Studia Scientiarum Mathematicarum Hungarica}, {\em 24\/}(4),
   415--422.
+
+\bibitem[\protect\citeauthoryear{Kagan}{Kagan}{2001}]{Kag01}
+Kagan, A. (2001).
+\newblock A discrete version of the stam inequality and a characterization of
+  the {P}oisson distributions.
+\newblock {\em Journal of Statistical Planning and Inference}, {\em 92\/}(1-2),
+  7--12.
+
+\bibitem[\protect\citeauthoryear{Kagan \& Yu}{Kagan \& Yu}{2008}]{KagYu08}
+Kagan, A. \& Yu, T. (2008).
+\newblock Some inequalities related to the {S}tam inequality.
+\newblock {\em Applications of Mathematics}, {\em 53\/}(3), 195--205.
+
+\bibitem[\protect\citeauthoryear{Kailath}{Kailath}{1967}]{Kai67}
+Kailath, T. (1967).
+\newblock The divergence and {B}hattacharyya distance measures in signal
+  selection.
+\newblock {\em IEEE Transactions on Communications}, {\em 15\/}(1), 52--60.
 
 \bibitem[\protect\citeauthoryear{Kaniadakis}{Kaniadakis}{2001}]{Kan01}
 Kaniadakis, G. (2001).
@@ -524,6 +644,14 @@ Kullback, S. \& Leibler, R. (1951).
 \newblock On information and sufficiency.
 \newblock {\em The Annals of Mathematical Statistics}, {\em 22\/}(1), 79--86.
 
+\bibitem[\protect\citeauthoryear{Kumar \& Chhina}{Kumar \&
+  Chhina}{2005}]{KumChi05}
+Kumar, P. \& Chhina, S. (2005).
+\newblock A symmetric information divergence measure of the {C}sisz\'ar's
+  $f$-divergence class and its bounds.
+\newblock {\em Computers and Mathematics with Applications}, {\em 49\/}(4),
+  575--588.
+
 \bibitem[\protect\citeauthoryear{Laplume}{Laplume}{1948}]{Lap48}
 Laplume, J. (1948).
 \newblock Sur le nombre de signaux discernables en pr{\'e}sence de bruit
@@ -559,6 +687,13 @@ Lieb, E.~H. (1978).
 Lieb, E.~H. \& Loss, M. (2001).
 \newblock {\em Analysis\/} (2nd ed.).
 \newblock Providence, Rhode Island: American Mathematical Society.
+
+\bibitem[\protect\citeauthoryear{Liese \& Vajda}{Liese \&
+  Vajda}{2006}]{LieVaj06}
+Liese, F. \& Vajda, I. (2006).
+\newblock On divergence and informations in statistics and information theory.
+\newblock {\em IEEE Transactions on Information Theory}, {\em 52\/}(10),
+  4394--4412.
 
 \bibitem[\protect\citeauthoryear{Lin}{Lin}{1991}]{Lin91}
 Lin, J. (1991).
@@ -623,6 +758,13 @@ Men{\'e}ndez, M.~L., Morales, D., Pardo, L., \& Salicr{\'u}, M. (1997).
 \newblock $(h,\phi)$-entropy differential metric.
 \newblock {\em Applications of Mathematics}, {\em 42\/}(1-2), 81--98.
 
+\bibitem[\protect\citeauthoryear{Men{\'e}ndez, Morales, Pardo \&
+  Vajda}{Men{\'e}ndez et~al.}{1977}]{MenMor97:5}
+Men{\'e}ndez, M.~L., Morales, D., Pardo, L., \& Vajda, I. (1977).
+\newblock Testing in stationary models based on divergences of observed and
+  theoretical frequencies.
+\newblock {\em Kybernetica}, {\em 33\/}(5), 465--475.
+
 \bibitem[\protect\citeauthoryear{Miller}{Miller}{2000}]{Mil00}
 Miller, R.~E. (2000).
 \newblock {\em Optimization: Foundations and Applications}.
@@ -638,6 +780,12 @@ Montagn{\'e}, J.-C.~B. (2008).
 \newblock {\em Transmissions. L'histoire des moyens de communication {\`a}
   distance depuis l'Antiquit{\'e} jusqu'au milieu du xxe si{\`e}cle}.
 \newblock Bagneux, JCB Montagn{\'e}.
+
+\bibitem[\protect\citeauthoryear{Morimoto}{Morimoto}{1963}]{Mor63}
+Morimoto, T. (1963).
+\newblock Markov processes and the {H-}theorem.
+\newblock {\em Journal of the Physical Society of Japan}, {\em 18\/}(3),
+  328--331.
 
 \bibitem[\protect\citeauthoryear{Nagumo}{Nagumo}{1930}]{Nag30}
 Nagumo, M. (1930).
@@ -665,6 +813,14 @@ Onicescu, O. (1966).
 \newblock {\em Comptes rendus de l'acad{\'e}mie des Sciences. s{\'e}rie 1,
   math{\'e}matiques}, {\em 263\/}(3), 841--842.
 
+\bibitem[\protect\citeauthoryear{Orsak \& Paris}{Orsak \&
+  Paris}{1995}]{OrsPar95}
+Orsak, G.~C. \& Paris, B.-P. (1995).
+\newblock On the relationship between measures of discrimination and the
+  performance of suboptimal detectors.
+\newblock {\em IEEE Transactions on Information Theory}, {\em 41\/}(1),
+  188--203.
+
 \bibitem[\protect\citeauthoryear{Os{\'a}n, Bussandri \& Lamberti}{Os{\'a}n
   et~al.}{2018}]{OsaBus18}
 Os{\'a}n, T.~M., Bussandri, D.~G., \& Lamberti, P.~W. (2018).
@@ -672,8 +828,13 @@ Os{\'a}n, T.~M., Bussandri, D.~G., \& Lamberti, P.~W. (2018).
   {J}ensen-{S}hannon divergence.
 \newblock {\em Physica A}, {\em 495}, 336--344.
 
+\bibitem[\protect\citeauthoryear{{\"O}sterreicher}{{\"O}sterreicher}{1996}]{Ost96}
+{\"O}sterreicher, F. (1996).
+\newblock On a class of perimeter-type distances of probability distributions.
+\newblock {\em Kybernetika}, {\em 32\/}(4), 389--393.
+
 \bibitem[\protect\citeauthoryear{{\"O}sterreicher \& Vajda}{{\"O}sterreicher \&
-  Vajda}{2003}]{OesVaj03}
+  Vajda}{2003}]{OstVaj03}
 {\"O}sterreicher, F. \& Vajda, I. (2003).
 \newblock A new class of metric divergences on probability spaces and its
   applicability in statistics.
@@ -686,6 +847,17 @@ Palomar, D.~P. \& Verd{\'u}, S. (2006).
 \newblock Gradient of mutual information in linear vector {G}aussian channels.
 \newblock {\em IEEE Transactions on Information Theory}, {\em 52\/}(1),
   141--154.
+
+\bibitem[\protect\citeauthoryear{Pardo}{Pardo}{2006}]{Par06}
+Pardo, L. (2006).
+\newblock {\em Statistical Inference Based on Divergence Measures}.
+\newblock Boca Raton, FL, USA: Chapman \& Hall.
+
+\bibitem[\protect\citeauthoryear{Pardo}{Pardo}{1999}]{Par99}
+Pardo, M.~C. (1999).
+\newblock On {B}urbea-{R}ao divergence based goodness-of-fit tests for
+  multinomial models.
+\newblock {\em Journal of Multivariate Analysis}, {\em 69\/}(1), 65--87.
 
 \bibitem[\protect\citeauthoryear{Payar{\'o} \& Palomar}{Payar{\'o} \&
   Palomar}{2009}]{PayPal09}
@@ -719,6 +891,12 @@ Pigeon, S. (2003).
 Planck, M. (2015).
 \newblock {\em Eight Lectures on Theoretical Physics}.
 \newblock New-York: Columbia University Press.
+
+\bibitem[\protect\citeauthoryear{Poor}{Poor}{1988}]{Poo88}
+Poor, H.~V. (1988).
+\newblock Fine quantization in signal detection and estimation.
+\newblock {\em IEEE Transactions on Information Theory}, {\em 34\/}(5),
+  960--972.
 
 \bibitem[\protect\citeauthoryear{Rao}{Rao}{1945}]{Rao45}
 Rao, C.~R. (1945).
@@ -793,6 +971,11 @@ Salicr{\'u}, M. (1987).
 \newblock Funciones de entrop{\'i}a asociada a medidas de {C}sisz{\'a}r.
 \newblock {\em Q{\"u}estii{\'o}}, {\em 11\/}(3), 3--12.
 
+\bibitem[\protect\citeauthoryear{Salicr{\'u}}{Salicr{\'u}}{1994}]{Sal94}
+Salicr{\'u}, M. (1994).
+\newblock Measures of information associated with {C}sisz{\'a}r's divergences.
+\newblock {\em Kybernetica}, {\em 30\/}(5), 563--573.
+
 \bibitem[\protect\citeauthoryear{Salicr{\'u}, Men{\'e}ndez, Morales \&
   Pardo}{Salicr{\'u} et~al.}{1993}]{SalMen93}
 Salicr{\'u}, M., Men{\'e}ndez, M.~L., Morales, D., \& Pardo, L. (1993).
@@ -854,6 +1037,13 @@ Stix, G. (1991).
 \newblock Profile: {D}avis a. {H}uffman.
 \newblock {\em Scientific American}, {\em 265\/}(3), 54--58.
 
+\bibitem[\protect\citeauthoryear{Teboulle}{Teboulle}{1992}]{Teb92}
+Teboulle, M. (1992).
+\newblock On {$\Phi$}-divrgence and its applications.
+\newblock In F.~Y. Phillips \& J.~J. Rousseau (Eds.), {\em Systems and
+  Management Science by Extremal Methods}  chapter~17, (pp.\ 255--273).
+  Springer.
+
 \bibitem[\protect\citeauthoryear{Tribus \& {McI}rvine}{Tribus \&
   {McI}rvine}{1971}]{TriMcI71}
 Tribus, M. \& {McI}rvine, E.~C. (1971).
@@ -872,8 +1062,13 @@ Tverberg, H. (1958).
 
 \bibitem[\protect\citeauthoryear{Vajda}{Vajda}{1968}]{Vaj68}
 Vajda, I. (1968).
-\newblock Axioms for a-entropy of a generalized probability scheme.
+\newblock Axioms for {$a$}-entropy of a generalized probability scheme.
 \newblock {\em Kybernetika}, {\em 4\/}(2), 105--112.
+
+\bibitem[\protect\citeauthoryear{Vajda}{Vajda}{1972}]{Vaj72}
+Vajda, I. (1972).
+\newblock On the {$f$}-divergence and singularity of probability measures.
+\newblock {\em Periodica Mathematica Hungarica}, {\em 2\/}(1-4), 223--234.
 
 \bibitem[\protect\citeauthoryear{{van Brunt}}{{van Brunt}}{2004}]{Bru04}
 {van Brunt}, B. (2004).
