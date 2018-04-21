@@ -21,12 +21,12 @@ entrop\'ias condicionales y relativas.
 \label{sec:SZ:Salicru}
 
 % ----- Entropias generalizadas particulares
-\paragraph{Unas  primeras  generalizaciones particulares}  Si  la entrop\'ia  de
-Shannon fue el  punto de salida fundamental en todo el  desarollo de la teor\'ia
-de la informaci\'on, un  poco m\'as de una decada despu\'es de  su papel clave y
-muy completo, R\'enyi propuso una medida generalizada~\cite{Ren61}.  Su punto de
-vista fue m\'as matem\'atico que  f\'isico o ingeniero.  Retom\'o los axiomas de
-Fadeev~\cite{Fad56, Fad58, Khi57}
+%\paragraph{Unas  primeras  generalizaciones particulares}  
+Si  la entrop\'ia  de Shannon  fue el  punto de  salida fundamental  en  todo el
+desarollo  de la  teor\'ia de  la  informaci\'on, un  poco m\'as  de una  decada
+despu\'es  de  su  papel  clave  y  muy completo,  R\'enyi  propuso  una  medida
+generalizada~\cite{Ren61}.   Su  punto  de  vista  fue  m\'as  matem\'atico  que
+f\'isico o ingeniero.  Retom\'o los axiomas de Fadeev~\cite{Fad56, Fad58, Khi57}
 % Feinstein, cf ref  de RÅÈnyi
 %
 para  probabilidades  incompletas~\footnote{En  esta  secci\'on, los  $p_i$  son
@@ -37,7 +37,8 @@ para  probabilidades  incompletas~\footnote{En  esta  secci\'on, los  $p_i$  son
 invarianza de  $H(p)$ por permutaci\'on de  os $p_i$, (ii) la  continuidad de la
 incerteza elemental  $H(p_i)$ ($p_i$ visto como  probabilidad incompleta), (iii)
 $H\left( \frac12 \right) = 1 $,  (iv) la aditividad $H(p \otimes q) = H(p)+H(q)$
-donde $p \otimes q$ es el producto de Kronecker~\footref{foot:SZ:Kronecker}, \ie
+donde  $p  \otimes  q$  es   el  producto  de  Kronecker~\footnote{Ver  nota  de
+  pie~\ref{foot:SZ:Kronecker}      pagina~\pageref{foot:SZ:Kronecker}},      \ie
 probabilidad conjunta de dos variables independientes, y consider\'o en lugar de
 la recursividad  un axioma  dicho de  valor promedio, axioma  muy parecido  a la
 recursividad. Para $p$ \ y \ $q$ probabilidades incompletas tales que $p \, \cup
@@ -178,16 +179,19 @@ tipo $\lambda$;  basicamente se  usa el mismo  enfoque que Shannon,  pero usando
 $H_\lambda^\hcd$ en lugar de $H$, ver secci\'on~6 del papel).
 
 % ----- Entropias generalizadas h,phi
-\paragraph{Una  clase m\'as  general  y sus  propiedades}  Las entrop\'ias  tipo
-Havdra-Charv\'at-Dar\'oczy  fueron  (re)descubiertos   varias  otras  veces  y/o
-estudiadas  m\'as detenidamente  en varios  campos y  varios  extensiones fueron
-introducidas~\cite[entre  otros]{Var66, Oni66,  Kap67,  Vaj68, LinNie71,  Ari71,
-  Bur72, AczDar75, ShaMit75, ShaMit75,  ShaTan75, Mit75, BoeLub80, Fer80, Tsa88,
-  Rat91, Kan01, Bec09}.  Un primer enfoque m\'as general es debido a S.  Arimoto
-en  los primeros  a\~nos de  la decada  1970~\cite{Ari71}.  Fue  rediscubierto y
-estudiado   con  m\'as   detalles  una   decada  despu\'es   por  J.   Burbea  y
-C.   R.   Rao~\cite{BurRao82}   y   luego  por   M.   Salicr\'u~\cite{Sal87}   o
-M.  Teboulle~\cite{Teb92}  entre  otros.   La  medida  propuesta,  llamada  {\it
+%\paragraph{Una  clase m\'as  general  y sus  propiedades}
+
+\
+
+Las entrop\'ias  tipo Havdra-Charv\'at-Dar\'oczy fueron  (re)descubiertos varias
+otras  veces  y/o estudiadas  m\'as  detenidamente  en  varios campos  y  varios
+extensiones fueron  introducidas~\cite[entre otros]{Var66, Oni66,  Kap67, Vaj68,
+  LinNie71,  Ari71,  Bur72,   AczDar75,  ShaMit75,  ShaMit75,  ShaTan75,  Mit75,
+  BoeLub80, Fer80, Tsa88, Rat91, Kan01, Bec09}.  Un primer enfoque m\'as general
+es debido a  S.  Arimoto en los primeros a\~nos  de la decada 1970~\cite{Ari71}.
+Fue rediscubierto  y estudiado  con m\'as detalles  una decada despu\'es  por J.
+Burbea y C.  R.  Rao~\cite{BurRao82} y luego por M.  Salicr\'u~\cite{Sal87} o M.
+Teboulle~\cite{Teb92}   entre  otros.    La  medida   propuesta,   llamada  {\it
   $\phi$-entrop\'ia}, es definida por
 %
 \[
@@ -209,22 +213,22 @@ luego)~\footnote{En  la literatura,  no hay  el signo  $-$, y  hay  que invertir
 \begin{definicion}[$(h,\phi)$-entrop\'ia]\label{def:SZ:HPhiEntropia}
   La $(h,\phi)$-entrop\'ia de una  distribuci\'on de probabilidad $p_X$ definida
   sobre $\X$ de cardinal finito $|\X| = \alpha$ es definida por
-%
-\[
-\hhphi[X] =  \hhphi[p_X] = h\left( -  \sum_{x \in \X}  \phi\left( p_X(x) \right)
-\right)
-\]
-%
-donde o
-%
-\begin{itemize}
-\item $\phi$ \ es estrictamente convexa y \ $h$ \ creciente, o
-\item $\phi$ \ es estrictamente c\'oncava y \ $h$ \ decreciente
-\end{itemize}
-%
-Frecuentemente, se  supone adicionalmente que $\phi$  y $h$ son  de clase $C^2$,
-que $\phi(0) =  0$ (la incerteza elemental asociada a  un estado de probabilidad
-nula vale cero) y, sin perdida de generalidad, que $h(-\phi(1)) = 0$.
+  %
+  \[
+  \hhphi[X] = \hhphi[p_X] = h\left(  - \sum_{x \in \X} \phi\left( p_X(x) \right)
+  \right)
+  \]
+  %
+  donde o
+  %
+  \begin{itemize}
+  \item $\phi$ \ es estrictamente convexa y \ $h$ \ creciente, o
+  \item $\phi$ \ es estrictamente c\'oncava y \ $h$ \ decreciente
+  \end{itemize}
+  %
+  Frecuentemente, se supone adicionalmente que  $\phi$ y $h$ son de clase $C^2$,
+  que $\phi(0) = 0$ (la incerteza elemental asociada a un estado de probabilidad
+  nula vale cero) y, sin perdida de generalidad, que $h(-\phi(1)) = 0$.
 \end{definicion}
 %
 \noindent  (ver  tambi\'en~\cite{Est97}  para  una  generalizaci\'on  aun  m\'as
@@ -394,7 +398,7 @@ conserva solamente en el caso Shannon:
   %
   y \ $c \in C_{a,\tilde{a},b,\tilde{b}}$,
   %
-  \[
+ \[
   C_{a,\tilde{a},b,\tilde{b}} = \big[ - 1 + \max\big\{ a b , \tilde{a} \tilde{b}
   , 1 - a \tilde{b} , 1 - \tilde{a}  b \big\} \, , \, \min\big\{ a b , \tilde{a}
   \tilde{b} , 1 - a \tilde{b} , 1 - \tilde{a} b \big\} \big]
@@ -606,11 +610,24 @@ p  \prec q  \quad \Rightarrow  \quad \hhphi[p]  \ge \hhphi[q]  \quad  \forall \:
 % ================================= Csiszar & Bregman
 
 \subseccion{Divergencias y propiedades}
-\label{sec:SZ:Czizar}
+\label{sec:SZ:JensenBregmanCzizar}
+
+En esta sub-secci\'on  vamos a ver que la  literatura trat\'o casi conjuntamente
+de  tres  enfoques   dando  lugar  a  generalizaciones  de   la  divergencia  de
+Kullback-Leibler. Lamentablemente, ninguna  generalizaci\'on contiene las otras,
+a  pesar  de   que  divergencias  conocidas  pueden  partenecer   a  dos  clases
+distinctas. Practicamente,  cada clase tiene  sus ventajas y  justificaci\'on en
+termino de aplicaciones.
+
+
+% ----- Clase de Jensen
+
+\subsubseccion{Clase de Jensen}
+\label{sec:SZ:Jensen}
 
 % ----- Jensen-Shannon
-\paragraph{Primer  generalizaciones, saliendo  de Shannon  y  Kullback-Leibler -
-  divergencia de Jensen-Shannon}
+%\paragraph{Primer  generalizaciones, saliendo  de Shannon  y  Kullback-Leibler -
+%  divergencia de Jensen-Shannon}
 
 Como  se lo  ha visto  tratando  de la  entrop\'ia relativa,  la divergencia  de
 Kullback-Leibler no define una distancia entre distribuciones de probabilidades,
@@ -744,7 +761,10 @@ de selecci\'on de distribuci\'on $\pi$.
 \SZ{convexidad?}
 
 % ----- f-Jensen
-\paragraph{Clase de Burbea-Rao o   divergencias de Jensen}
+%\paragraph{Clase de Burbea-Rao o   divergencias de Jensen}
+
+\
+
 Un  punto  clave  que  dio  lugar   a  la  definici\'on  de  la  divergencia  de
 Jensen-Shannon es la  concavidad de la entrop\'ia de  Shannon.  Naturalmente, el
 mismo enfoque  se generaliza  a cualquier entrop\'ia  c\'oncava de un  vector de
@@ -827,8 +847,8 @@ Las divergencias de Jensen tiene las propiedades siguientes
   %     consecuencia directa de la convexidad de $f$.}
 %
 \item  Pensando a  $J_f$ con  respecto a  $f$, es  lineal en  el sentido  de que
-  $J_{\lambda_1 f_1  + \lambda_2 f_2}  = \lambda_1 J_{f_1} +  \lambda_2 J_{f_2}$
-  (con $f_i$ convexas y $\lambda_i \ge 0$).
+  $J_{\mu_1 f_1  + \mu_2 f_2}  = \mu_1 J_{f_1} +  \mu_2 J_{f_2}$
+  (con $f_i$ convexas y $\mu_i \ge 0$).
 %
   % Dualidad:  si $\phi$  tiene un  convex conjugado  $\phi^*$  (transformada de
   % Legendre)  D^{\mathrm{b}}_{\phi^*}\left(  \left.  -\nabla \hphi[q]  \right\|
@@ -860,15 +880,18 @@ $L^2$ con un nucleo.
 %  distancia  de Itakura-Saito  cuando  $\phi(u)  = -  \log  u$  (asociado a  la
 % entrop\'ia de Burg), entre otros.
 
-\
 
-\paragraph{La clase de las divergencias  de Bregman} \ Estas divergencias fueron
-intoducidos  en el  campo de  la  programaci\'on lineal  convexa, para  resolver
-problemas de  minimizaci\'on convexa~\footnote{A\'un que aparece  en una revista
-  de matem\'atica  y f\'isica matem\'atica, una  gracia del papel  de Bregman es
-  que toma  el ejemplo de  maximizaci\'on de la  entrop\'ia de Shannon  sujeto a
-  momentos\ldots}~\cite{Bre67}, pero  con aplicaciones en  varios campos~\cite[y
-ref.]{Bas89, Bas13}:
+% ----- Clase de Bregman
+
+\subsubseccion{Clase de Bregman}
+\label{sec:SZ:Bregman}
+
+Estas divergencias  fueron intoducidos en  el campo de la  programaci\'on lineal
+convexa, para  resolver problemas de  minimizaci\'on convexa~\footnote{A\'un que
+  aparece en una revista de matem\'atica y f\'isica matem\'atica, una gracia del
+  papel de Bregman es que toma  el ejemplo de maximizaci\'on de la entrop\'ia de
+  Shannon sujeto a momentos\ldots}~\cite{Bre67}, pero con aplicaciones en varios
+campos~\cite[y ref.]{Bas89, Bas13}:
 %
 \begin{definicion}[Divergencias de Bregman]
   Sea \ $f: \Omega  \subset \Rset^m \mapsto \Rset$ \ convexa y  de clase $C^1$ \
@@ -1003,8 +1026,8 @@ La divergencia de Bregman tiene las propiedades siguientes
   respecto a $p$. Es tambi\'en consecuencia directa de la convexidad de $f$.
 %
 \item  Pensando a  $B_f$ con  respecto a  $f$, es  lineal en  el sentido  de que
-  $B_{\lambda_1 f_1  + \lambda_2 f_2}  = \lambda_1 B_{f_1} +  \lambda_2 B_{f_2}$
-  (con $f_i$ convexas y $\lambda_i \ge 0$).
+  $B_{\mu_1 f_1  + \mu_2 f_2}  = \mu_1 B_{f_1} +  \mu_2 B_{f_2}$
+  (con $f_i$ convexas y $\mu_i \ge 0$).
 %
   % Dualidad:  si $\phi$  tiene un  convex conjugado  $\phi^*$  (transformada de
   % Legendre)  D^{\mathrm{b}}_{\phi^*}\left(  \left.  -\nabla \hphi[q]  \right\|
@@ -1037,11 +1060,11 @@ Tambi\'en,   varias  aplicaciones   se  encuentran   en   la  literatura~\cite[y
 ref.]{Bas89, Csi95,  CsiMat12, Bas13}  en adici\'on de  las referencias  de esta
 secci\'on, para dar unas.
 
-\
 
+% ----- Clase de Csiszar o Ali-Silvey
 
-% ----- (h,phi)-divergence
-\paragraph{Clase de Csisz\'ar y versi\'on simetrizada}
+\subsubseccion{Clase de Csisz\'ar o Ali-Silvey}
+\label{sec:SZ:Csiszar}
 
 Un primer paso  generalizando la noci\'on de entrop\'ia  relativa o divergencia,
 siguiendo el enfoque de Kullback  y Leibler y sus versiones tipo $J$-divergencia
@@ -1116,13 +1139,6 @@ tambi\'en~\cite[Sec.~I]{OrsPar95}):
 %
 \noindent Se notar\'a de que, obviamente, $\cphi{} = D_{(\id,\phi)}^{\mathrm{c}}$.
 
-\SZ{
-
-
-Vajda72,
-Voir OstVaj en termes de metrique pour les Arimoto, Vajda 2009, Kafka 91
-}
-
 Notablemente, cuando  \ $\phi(u) = u \log  u$ \ y \  $h = \id$ \  se recupera de
 nuevo   la   divergencia    de   Kullback-Leibler:   esta   \'ultima   partenece
 simultaneamente a la clase  de Csisz\`ar y a la de Bregman y  es la sola en este
@@ -1130,18 +1146,17 @@ caso~\cite{Csi91}.   Cuando \ $\phi(u)  = \pi_2  u \log  u -  (\pi_1 +  \pi_2 u)
 \log(\pi_1  + \pi_2  u)$  \ y  \  $h =  \id$  \ se  recupera  la divergencia  de
 Jensen-Shannon  \SZ{sola de  la clase  de Jensen  en este  caso?}.   Adem\'as de
 $\Dkl{}$, la clase de Csisz\'ar contiene la ganancia de informaci\'on de R\'enyi
-para  \ $\phi(u)  =  u^\lambda$ \  y \  $h(u)  = \frac{\log  u}{\lambda-1}$ \  o
-divergencias  relacionadas   como  la  de   Chernov~\cite{CreRea84,  Che52},  la
-$J$-divergencia  para \ $\phi(u)  = u  \log u  - \log  u$ \  y \  $h =  \id$, la
-distancia  de Bhattacharyya~\cite{Bha43, Bha46:07}  \ $\displaystyle  -\log \int
-\sqrt{p q}$  \ para \ $\phi(u)  = \sqrt{u}$ \ y  \ $h(u) = -  \log u$, instancia
-particular de la de R\'enyi ($\lambda = \frac12$), entre otros.
+para  \  $\phi(u)  = u^\lambda$  \  y  \  $h(u)  = \frac{\log  u}{\lambda-1}$  \
+apareciendo tambien  en una forma muy parecida  en~\cite{Hel09, Che52, CreRea84,
+  LieVaj06} y  conocida como  divergencia de Chernoff  o de  Hellinger. Contiene
+varias otra como la  $J$-divergencia para \ $\phi(u) = u \log u -  \log u$ \ y \
+$h = \id$, la distancia de Bhattacharyya~\cite{Bha43, Bha46:07} \ $\displaystyle
+-\log \int \sqrt{p  q}$ \ para \ $\phi(u) =  \sqrt{u}$ \ y \ $h(u)  = - \log u$,
+instancia particular de  la de R\'enyi ($\lambda =  \frac12$), la divergencia de
+variaci\'on total (o $L^1$ distancia) para $\phi(u) = |u-1|$ \ y \ $h = \id$, la
+divergencia de Pearson  o divergencia $\chi^2$ para \ $\phi(u) =  (u-1)^2$ \ o \
+$u^2-1$ \ y \ $h = \id$, para mencionar una.
 
-\SZ{
-HELLINGER
-
-PROPIEDADES, SYMETRIZACION, METRICA
-}
 Las divergencias de Csisz\'ar tienen las propiedades siguientes
 %
 \begin{enumerate}
@@ -1184,9 +1199,9 @@ Las divergencias de Csisz\'ar tienen las propiedades siguientes
   (resp. decrecencia) de $h$.
 %
 \item Pensando a $\cphi{}$  con respecto a $\phi$, es lineal en  el sentido de que
-  $D_{\lambda_1   \phi_1   +    \lambda_2   \phi_2}^{\mathrm{c}}   =   \lambda_1
-  D_{\phi_1}^{\mathrm{c}}  +  \lambda_2  D_{\phi_2}^{\mathrm{c}}$ (con  $\phi_i$
-  convexas y $\lambda_i \ge 0$).
+  $D_{\mu_1   \phi_1   +    \mu_2   \phi_2}^{\mathrm{c}}   =   \mu_1
+  D_{\phi_1}^{\mathrm{c}}  +  \mu_2  D_{\phi_2}^{\mathrm{c}}$ (con  $\phi_i$
+  convexas y $\mu_i \ge 0$).
 %
 \item Sea $\phi^*(u) = u \phi\left(  \frac1u \right)$. Es sencillo ver de que si
   $\phi$  es   convexa  (resp.    c\'oncava),  $\phi^*$  es   tambi\'en  convexa
@@ -1204,25 +1219,36 @@ Las divergencias de Csisz\'ar tienen las propiedades siguientes
   particular, cuando $h = \id$, tenemos
   %
   \[
-  \chphi{} + D^{\mathrm{c}}_{\phi^*} = D^{\mathrm{c}}_{\phi+\phi^*}
+  \cphi[q]{p}  + D^{\mathrm{c}}_{\phi^*}\left(  \left.  q \right\|  p \right)  =
+  D^{\mathrm{c}}_{\phi+\phi^*}\left( \left. q \right\| p \right)
   \]
   %
   que es sim\'etrica ($(\phi^*)^* = \phi$).
-  % Dualidad:  si $\phi$  tiene un  convex conjugado  $\phi^*$  (transformada de
-  % Legendre)  D^{\mathrm{b}}_{\phi^*}\left(  \left.  -\nabla \hphi[q]  \right\|
-  %   -\nabla \hphi[p] \right) = \bphi[q]{p}$~\cite{NieNoc17}.
+%
+\item Cota superior:
+  %
+  \[
+  \chphi[q]{p} \le h\left( \phi(0) + \phi^*(0) \right)
+  \]
+  %
+  posiblemente   infinita~\footnote{Por   ejemplo,   para  la   divergencia   de
+    Kullback-Leibler,  $\phi(u) =  u \log  u$, dando  $\phi^*(u) =  - \frac{\log
+      u}{u}$,  tales que  $\phi(0) =  0$ \  y \  $\phi^*(0) =  + \infty$:  no es
+    acotada por arriba.}.
 %
 \end{enumerate}
 %
 \noindent  Estas  propiedades  con   varias  otras  se  encuentran  por  ejemplo
-en~\cite{Vaj72, Csi74, LieVaj87, KafOst91, Ost96, OstVaj03, KumChi05, LieVaj06}.
-Como  en el  caso de  las  divegencias de  Jensen, en  general las  divergencias
-sim\'eticas  ($\phi  =  \phi^*$)  no  satisfacen en  general  a  la  desigualdad
-triangular,  y entonces no  dan lugar  a una  distancia entre  distribuciones de
-probabilidad,  \SZ{aparte en casos  particulares~\cite{toto}}.  Sin  embargo, se
-prob\'o  en~\cite[Teoremas~1~\&~2,   Remark~6]{KafOst91}  \  y   \  \cite{Ost96,
-  OstVaj03} el lema  siguiente, condici\'on suficiente para que  una potencia de
-la divergencia satisfaga a la desigualdad triangular:
+en~\cite{Vaj72,  Csi74, LieVaj87,  KafOst91, Ost96,  OstVaj03,  Vaj09, KumChi05,
+  LieVaj06}.   Como en  el caso  de las  divegencias de  Jensen, en  general las
+divergencias  sim\'etricas ($\phi  =  \phi^*$)  no satisfacen  en  general a  la
+desigualdad  triangular,  y  entonces  no   dan  lugar  a  una  distancia  entre
+distribuciones de probabilidad, aparte en casos particulares (ej. divergencia de
+la  variaci\'on  total,  divergencia  de  Hellinger o  R\'enyi  con  $\lambda  =
+\frac12$).      Sin     embargo,     se    prob\'o     en~\cite[Teoremas~1~\&~2,
+Remark~6]{KafOst91}  \ y  \  \cite{Ost96, OstVaj03,  Vaj09}  el lema  siguiente,
+condici\'on suficiente  para que una potencia  de la divergencia  satisfaga a la
+desigualdad triangular:
 %
 \begin{lema}
   Sea \ $\phi$ \ una funci\'on convexa tal que \ $\phi^* = \phi$, \ $\phi(0) \ne
@@ -1239,11 +1265,11 @@ la divergencia satisfaga a la desigualdad triangular:
   \noindent entonces
   %
   \[
-  \left( \cphi{} \right)^s \quad s \in  (0 \, , \, \kappa] \quad \mbox{satisface
+  \left( \cphi[\cdot]{\cdot} \right)^s \quad s \in  (0 \, , \, \kappa] \quad \mbox{satisface
     la desigualdad triangular}
   \]
   %
-  \noindent   y  entonces   es   una  metrica   entre   dos  discribuciones   de
+  \noindent   y  entonces  es   una  m\'etrica   entre  dos   discribuciones  de
   probabilidades.
 \end{lema}
 %
@@ -1259,10 +1285,9 @@ J_{\mathrm{js}}^{\pi_{\mathrm{u}}}(p_{(1)},p_{(2)})  \Big)^s, \quad  0  < s  \le
 divergencia  de Csisz\'ar  particular.  Se  us\'o tambi\'en  para probar  de que
 $\left( \cphi{}  \right)^s$ \ con \ $\phi(u)  = \frac{\lambda}{\lambda-1} \left(
   \left( 1+u^\lambda \right)^{\frac{1}{\lambda}} - 2^{\frac{1}{\lambda}-1} (1+u)
-\right)$ \  y \ $\kappa  = \min\left( \beta  \, , \,  \frac12 \right)$ \  es una
+\right)$ \ y  \ $\kappa = \min\left( \lambda  \, , \, \frac12 \right)$  \ es una
 m\'etrica~\cite{OstVaj03}.
 
-\SZ{voir borne sup dphi et avec h quand phi = phi*; Kumar China ou Vajda 72, Liese Vajda 03 eq. 35}
 % I.CsiszÅ·r,Informationmeasures:Acriticalsurvey,In:Trans.7thPragueConf.onInformationTheory,Vol.A,1974,73úÙÚÛ86.
 % [22]
 % F.Liese,I.Vajda,ConvexStatisticalDistances,In:Band95,TeubnerTextezurMathematik,Leipzig,1987.
@@ -1275,7 +1300,7 @@ entre  otros~\cite[y  ref.]{Kai67,  BoeLub79,  Poo88,  Bas89,  Csi95,  OrsPar95,
 referencias de esta secci\'on, para dar unas.
 
 \SZ{
-Chernov 52 Che52, dans les ref de Liese Vajda, cf Bha 43 egalement
+cf Bha 43 egalement
 }
 
 
@@ -1308,34 +1333,34 @@ normalizaci\'on) sea  una distribuci\'on de  probabilidad. Si $\phi$  es convexa
 (resp.  c\'oncava),  $h$ es creciente  (resp.  decreciente) as\'i  que maximizar
 $\hhphi$ es  equivalente a maximizar $\hphi$ (resp.   $H_{-\phi}$).  Sin perdida
 de generalidad, se  puede considerar la situaci\'on $\phi$  convexa.  Como en el
-caso de  Shannon, introduciendo factores de Lagrange  $\lambda = \begin{bmatrix}
-  \lambda_0  & \lambda_1  & \cdots  & \lambda_K  \end{bmatrix}^t$ para  tener en
+caso de  Shannon, introduciendo factores de Lagrange  $\mu = \begin{bmatrix}
+  \mu_0  & \mu_1  & \cdots  & \mu_K  \end{bmatrix}^t$ para  tener en
 cuenta    los     v\'inculos,    el    problema     variacional    consiste    a
 resolver~\cite{GelFom63, Bru04, Mil00, CamMar09, CovTho06}
 %
 \[
-p^* =  \argmax_p \int_\X \left(  - \phi\left( p(x)  \right) + \lambda^t  M(x) \,
+p^* =  \argmax_p \int_\X \left(  - \phi\left( p(x)  \right) + \mu^t  M(x) \,
   p(x) \right) dx
 \]
 %
-donde $\lambda$ ser\'a determinado para satisfacer los v\'inculos.  De nuevo, de
+donde $\mu$ ser\'a determinado para satisfacer los v\'inculos.  De nuevo, de
 la ecuaci\'on de Euler-Lagrange~\cite{GelFom63,  Bru04} se obtiene la ecuaci\'on
-$-  \phi'(p(x))  + \lambda^t  M(x)  = 0$.  La  funci\'on  entr\'opica $\phi$  es
+$-  \phi'(p(x))  + \mu^t  M(x)  = 0$.  La  funci\'on  entr\'opica $\phi$  es
 c\'oncava y de  clase $C^2$, as\'i que $\phi'$ es continua  decreciente, y de la
 monotonicidad es invertible. Entonces,
 %
 \[
-p^*(x) = \phi'^{-1}\left( \lambda^t M(x) \right)
+p^*(x) = \phi'^{-1}\left( \mu^t M(x) \right)
 \]
 %
-con  $\lambda$  tal  que  se  satisfacen los  v\'inculos  de  normalizaci\'on  y
+con  $\mu$  tal  que  se  satisfacen los  v\'inculos  de  normalizaci\'on  y
 momentos.   Si el  resultado no  es positivo  en $\X$,  de las  condiciones KKT,
-$p^*(x)  =  \Big(  \phi'^{-1}\left(  \lambda^t  M(x)  \right)  \Big)_+$.   Estas
+$p^*(x)  =  \Big(  \phi'^{-1}\left(  \mu^t  M(x)  \right)  \Big)_+$.   Estas
 distribuci\'ones no  caen en general en  la familia exponencial.   De una forma,
 usando entrop\'ia generales permite escaparse de esta familia.
 
 Como  en el  caso de  Shannon, queda  obviamente  el hecho  de que  no se  puede
-determinar $\lambda$ tal que se satisfacen todos los v\'inculos (y en particular
+determinar $\mu$ tal que se satisfacen todos los v\'inculos (y en particular
 la de normalizaci\'on).
 
 Tal como en el caso Shannon, existe una prueba informacional:
@@ -1343,7 +1368,7 @@ Tal como en el caso Shannon, existe una prueba informacional:
 \begin{lema}
   Sea \ $\displaystyle \P_m = \left\{ p \ge 0: \: \int_\X M_k(x) \, p^*(x) \, dx
     =  m \right\}$  \ y  \ $p^*  \in \P_m$  \ que  satisfaga \  $\phi'(p^*(x)) =
-  \lambda^t M(x)$. Entonces
+  \mu^t M(x)$. Entonces
   %
   \[
   \forall  \, p  \in  \P_m,  \quad \hhphi[p]  \le  \hhphi[p^*] \qquad  \mbox{con
@@ -1359,7 +1384,7 @@ Tal como en el caso Shannon, existe una prueba informacional:
   \bphi[p]{p^*} & = & \hphi[p^*] - \hphi[p] - \int_\X \big( p(x) - p^*(x) \big)
   \, \phi'\left( p^*(x) \right) \, dx\\[2.5mm]
   %
-  & = & \hphi[p^*] - \hphi[p] - \lambda^t \int_\X \big( p(x) - p^*(x) \big)
+  & = & \hphi[p^*] - \hphi[p] - \mu^t \int_\X \big( p(x) - p^*(x) \big)
   \, M(x) \, dx\\[2.5mm]
   %
   & = & \hphi[p^*] - \hphi[p]

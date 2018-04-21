@@ -47,7 +47,6 @@ otros):
   importante es el v\'inculo entre la entrada  $X$ y la salida $Y$ del canal, es
   decir la  cantidad de informaci\'on que  tienen en com\'un.   La capacidad del
   canal es la informaci\'on $I(X;Y)$ m\'axima con respeto a su entrada.}
-%~\cite{Sha48}.}
 \label{fig:SZ:CanalComunicacion}
 \end{figure}
 
@@ -95,7 +94,6 @@ $\vartheta \in (0 \,  ; \, 1)$, el canal es conocido  como {\it canal binario en
   $\vartheta$ \ van a ser caracterizados completamente por la distribuci\'on del
   ruido  (y  de  los  dos  niveles  posibles  de la  entrada),  pero  no  de  la
   distribuci\'on $p_X$.}
-%~\cite{Sha48}.}
 \label{fig:SZ:CanalBinario}
 \end{figure}
 
@@ -305,7 +303,6 @@ o~\cite{Ari72} para el c\'alculo num\'erico de la capacidad en el caso general).
   una probabilidad $\varepsilon$.   De $I_n(X;Y) = H_n(Y) -  H_n(Y|X) = H_n(Y) -
   h_n(\varepsilon)$ se deduce  que $I_n$ es m\'axima si $Y$  es uniforme, lo que
   es posible si $X$ es uniforma, dando $C_n = 1 - h_n(\varepsilon)$.}
-%~\cite{Sha48}.}
 \label{fig:SZ:CanalesDiscretos}
 \end{figure}
 
@@ -411,10 +408,7 @@ C =  \frac12 \log \left(  \frac{\left| \Sigma_\Gauss +  \Sigma_X \right|}{\left|
 \sum_i \left(\lambda - \lambda^\Gauss_i \right)_+ = P
 \end{eqnarray*}
 %
-alcanzada por $X$ gausiano de matriz de covarianza $\Sigma_X$ así construida.
-% En  conclusi\'on,   tomando  en  cuenta   el  l\'imite  de  potencia,   $$C  =
-% \max_{\frac1d \Tr \Sigma_X \le  P} \: \frac12 \log\left( \frac{\left| \Sigma_X
-%       + \Sigma_\Gauss \right|}{\left| \Sigma_X \right|} \right)$$
+alcanzada por $X$ gausiano de matriz de covarianza $\Sigma_X$ as\'i construida.
 
 La  \'ultima condici\'on  se resuelva  a  trav\'es de  lo que  es conocido  como
 ``llenado   de   agua''   (water-filling   en   ingl\'es),   illustrado   figura
@@ -508,8 +502,6 @@ s\'imbolos de tama\~no $m \ge 1$:
 \[
 \begin{array}{lccl}
 c_m: & \X^m & \rightarrow & F_\C\\[.5mm]
-% & \forall \, n \ge 1, \quad s_1 \cdots s_n
-%\in \X^{n m}, \: c_m(s_1 \cdots s_n) \equiv c_m(s_1) \cdots c_m(s_n)\\[1.5mm]
 %
 & x & \mapsto & c_m(x) \in \C^{l_{c_m}(x)}
 % &
@@ -812,9 +804,10 @@ La entrop\'ia aparece tambi\'en el la cota superior del c\'odigo \'optimo:
   %
   Olvidando que los  \ $l_i \equiv l(x_i)$ \ son enteros,  $L(c)$ es convexa con
   respecto  a los $l_i$  as\'i que  el v\'inculo,  garantizando que  el m\'inimo
-  existe   y   es  \'unico.    El   problema   se   resuelva  con   el   enfoque
-  KKT~\footref{foot:SZ:KKT},     optimizaci\'on      con     v\'inculos     tipo
-  desigualdades~\cite{Mil00, CamMar09}, conduciendo a los ``largos''
+  existe y es \'unico.  El problema se resuelva con el enfoque KKT~\footnote{Ver
+    nota de pie~\ref{foot:SZ:KKT} pagina~\pageref{foot:SZ:KKT}.}, optimizaci\'on
+  con  v\'inculos tipo desigualdades~\cite{Mil00,  CamMar09}, conduciendo  a los
+  ``largos''
   %
   \[
   \widetilde{l}(x) = - \log_d p_X(x)
@@ -832,7 +825,6 @@ La entrop\'ia aparece tambi\'en el la cota superior del c\'odigo \'optimo:
   %
   \[
    L^\opt \le L\left( c^\sh \right) < H_d(X) + 1
-% \qquad \mbox{con} \qquad L^\sh = L(c^\sh)
   \]
   %
 \end{proof}
@@ -1255,4 +1247,4 @@ En el marco del gas perfecto
 \
 
 \SZ{Feder  Merhav  IT'94  et  lien  avec  discrimination;  Vacisek  en  test  de
-  Gaussianite et cf plus loin avec generaloses Go75 etc}
+  Gaussianite et cf plus loin avec generalises Gok75 etc}

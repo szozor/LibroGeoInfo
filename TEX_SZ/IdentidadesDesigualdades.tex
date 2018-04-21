@@ -17,46 +17,47 @@ importante. Por  ejemplo, un litro del  gas que respiramos  contiene $2.7 \times
 10^{22}$  mol\'eculas.   De  esta  constataci\'on  se  desaroll\'o  la  f\'isica
 estad\'isticas    bajo   el    impulso    de   Boltzmann~\cite{Bol96,    Bol98},
 Maxwell~\cite{Max67},  Gibbs~\cite{Gib02}, Planck~\cite{Pla15} entre  otros (ver
-tambi\'en~\cite{Jay65}), considerando el sistema macrosc\'opico a trav\'es de lo
-que llamaron ensembles estad\'isticos:  el sistema global (macrosc\'opico) es al
-equilibrio  pero las  configuraciones  (micro-estados) son  fluctuantes. De  una
-forma,  se puede  asociar  a  una configuraci\'on  su  frecuencia de  ocurrencia
-(imaginando  tener  une infinidad  de  copias del  sistema  en  el mismo  estado
-macrosc\'opico),  es decir  su probabilidad  de occurencia.   En este  marco, la
-entrop\'ia, describiendo  la falta de  informaci\'on, juega un  rol fundamental.
-Un sistema  sujeto a v\'inculos, como  por ejemplo teniendo  una energ\'ia dada,
-debe estar  en sus estado  lo m\'as desorganizado  dados los v\'inculos.   En su
-marco, se introdujo la noci\'on  de entrop\'ia termodin\'amica, pero la misma es
-tremendamente vinculada  a la  entrop\'ia de Shannon  (claramente, identificando
-las  frecuencias a  probabilidades de  ocurrencia)~\footnote{Ver  ep\'igrafe del
-  cap\'itulo\ldots}.   En  otro  terminos,  la distribuci\'on  describiendo  los
-micro-estados  debe  ser de  entrop\'ia  m\'axima,  dados  los v\'inculos.   Por
-ejemplo,  en un  gas perfecto,  donde  las part\'iculas  no interactuan  (aparte
-chocandose), la  energ\'ia es dada por  las velocidades (suma  de las energ\'ias
-cin\'eticas individuales).   Dada una energ\'ia  fija, la distribuci\'on  de las
-velocidad debe ser de entrop\'ia m\'axima sujeto a la energ\'ia dada (nada m\'as
-que   la   energ\'ia  va   a   ``organizar''   las  configuraciones   posibles).
-Intuitivamente, en  un sistema aislado de $N$  part\'iculas, las configuraciones
-van  a   ser  equiprobables,  precisamente  la   distribuci\'on  maximizando  la
-entrop\'ia.   \SZ{  En  la   secci\'on  Sec.~\ref{sec:SZ:GasPerfecto}  se  va  a
-  desarollar un poco m\'as este ejemplo.}
+tambi\'en~\cite[y   ref.]{Jay65,  Mer10,   Mer18}),   considerando  el   sistema
+macrosc\'opico  a  trav\'es de  lo  que  llamaron  ensembles estad\'isticos:  el
+sistema  global  (macrosc\'opico)  es  al equilibrio  pero  las  configuraciones
+(micro-estados)  son  fluctuantes.  De  una   forma,  se  puede  asociar  a  una
+configuraci\'on su  frecuencia de ocurrencia (imaginando tener  une infinidad de
+copias del sistema en el  mismo estado macrosc\'opico), es decir su probabilidad
+de  occurencia.   En  este  marco,  la  entrop\'ia,  describiendo  la  falta  de
+informaci\'on, juega un  rol fundamental.  Un sistema sujeto  a v\'inculos, como
+por  ejemplo teniendo  una energ\'ia  dada, debe  estar en  sus estado  lo m\'as
+desorganizado dados  los v\'inculos.  En su  marco, se introdujo  la noci\'on de
+entrop\'ia  termodin\'amica,  pero la  misma  es  tremendamente  vinculada a  la
+entrop\'ia   de   Shannon   (claramente,   identificando   las   frecuencias   a
+probabilidades  de ocurrencia)~\footnote{Ver  ep\'igrafe  del cap\'itulo\ldots}.
+En otro terminos,  la distribuci\'on describiendo los micro-estados  debe ser de
+entrop\'ia m\'axima,  dados los  v\'inculos.  Por ejemplo,  en un  gas perfecto,
+donde las part\'iculas no interactuan  (aparte chocandose), la energ\'ia es dada
+por las velocidades (suma de las energ\'ias cin\'eticas individuales).  Dada una
+energ\'ia  fija, la  distribuci\'on  de  las velocidad  debe  ser de  entrop\'ia
+m\'axima  sujeto  a  la  energ\'ia  dada  (nada m\'as  que  la  energ\'ia  va  a
+``organizar''  las  configuraciones posibles).   Intuitivamente,  en un  sistema
+aislado  de  $N$ part\'iculas,  las  configuraciones  van  a ser  equiprobables,
+precisamente la distribuci\'on maximizando  la entrop\'ia.  \SZ{ En la secci\'on
+  Sec.~\ref{sec:SZ:GasPerfecto} se va a desarollar un poco m\'as este ejemplo.}
 
 De manera general, el problema se  formaliza como la b\'usqueda de la entrop\'ia
 m\'axima  sujeto  a  v\'inculos.    Si  este  principio  naci\'o  en  mec\'anica
-estad\'istica (ver  tambi\'en~\cite{Jay57, Jay57:2, Jay65}),  encontr\'o un echo
-en  varios campos:  en inferencia  bayesiana  para elegir  distribuciones del  a
-priori~\footnote{A partir de una distribuci\'on parametrizada por un par\'ametro
-  $\theta$.  El  enfoque de bayesiano  consiste a modelizar  $\theta$ aleatorio,
-  digamos  $\Theta$,  tal que  la  distribuci\'on  de  observaciones se  escribe
-  entonces  $p_{X|\Theta}$.   Inferir $\theta$  a  partir  de observaciones  $x$
-  consiste   a   determinar  la   distribuci\'on   dicha   {\it  a   posteriori}
-  $p_{\Theta|X}$.  Por  eso, hace  falta darse una  distribuci\'on dicha  {\it a
-    priori} $p_\Theta$.  Si  se conocen momentos por una raz\'on  o una otra, se
-  puede elegir esta distribuci\'on como la ``menos informativa'' posible, \ie de
-  entrop\'ia m\'axima dados  los momentos.\label{foot:SZ:Prior}} conociendo unos
-momentos  de  la  ley~\cite{Rob07,  Jay68,  Jay82,  Csi91},  hacer  estimaci\'on
-espectral o  de procesos estocasticos  autoregresivos~\cite{Bur67, Bur75, Jay82}
-o~\cite[cap.~12]{CovTho06}, entre otros~\cite[\& ref.]{KapKes92}.
+estad\'istica  (ver  tambi\'en~\cite{Jay57,   Jay57:2,  Jay65,  Mer10,  Mer18}),
+encontr\'o  un  echo en  varios  campos:  en  inferencia bayesiana  para  elegir
+distribuciones   del   a  priori~\footnote{A   partir   de  una   distribuci\'on
+  parametrizada por un par\'ametro $\theta$.  El enfoque de bayesiano consiste a
+  modelizar $\theta$  aleatorio, digamos $\Theta$, tal que  la distribuci\'on de
+  observaciones se  escribe entonces $p_{X|\Theta}$.  Inferir  $\theta$ a partir
+  de  observaciones $x$  consiste a  determinar la  distribuci\'on dicha  {\it a
+    posteriori} $p_{\Theta|X}$.   Por eso,  hace falta darse  una distribuci\'on
+  dicha {\it a priori} $p_\Theta$.  Si se conocen momentos por una raz\'on o una
+  otra,  se  puede elegir  esta  distribuci\'on  como  la ``menos  informativa''
+  posible, \ie de  entrop\'ia m\'axima dados los momentos.\label{foot:SZ:Prior}}
+conociendo  unos momentos  de la  ley~\cite{Rob07, Jay68,  Jay82,  Csi91}, hacer
+estimaci\'on  espectral o  de procesos  estocasticos autoregresivos~\cite{Bur67,
+  Bur75,     Jay82}     o~\cite[cap.~12]{CovTho06},     entre     otros~\cite[\&
+ref.]{KapKes92}.
 
 Sea $X$ variable aleatoria viviendo  sobre $\X \subset \Rset^d$ con $K$ momentos
 \  $\Esp\left[ M_k(X)  \right]  = m_k$  \ fijos,  con  $M_x: \X  \to \Rset$,  el
@@ -220,10 +221,6 @@ desiguladad~\cite{Sha48, Lie78, CovTho06, DemCov91, Rio07}:
   covarianza proporcionales.
 \end{enumerate}
 %
-%\noindent La  forma del teorema implica la  forma~\ref{EPI:SZ:PresCov} tomando \
-%$\sqrt{\mu} X$ \ y  \ $\sqrt{1-\mu} Y$ \ en lugar de \ $X$  \ e \ $Y$, y
-%recordandose que \ $N(a X) =  a^2 N(X)$. Reciprocamente, la forma del teorema se
-%recupera de la forma~\ref{EPI:SZ:PresCov} tomando \ $\mu = \frac12$.
 
 La  prueba  de  esta(s)  desigualdad(es)  no es  trivial.   N\'umeras  versiones
 existen,  dadas por  ejemplo  en las  referencias~\cite{Bla65, Sta59,  ShaWea64,
@@ -326,23 +323,11 @@ satisface la informaci\'on mutua aplicada a un proceso de Markov.
   \end{eqnarray*}
   %
   \noindent  Adem\'as, escribiendo $\frac{p_{X|Y,Z}}{p_{X|Z}}  = \frac{p_{X|Y,Z}
-    \, p_{Y|Z}}{p_{X|Z} p_{Y|Z}} = \frac{p_{X,Y|Z}}{p_{X|Z} p_{Y|Z}}$
-  % $H(X|Z)        -        H(X|Y,Z)        \Esp\left[        \log        \left(
-  %     \frac{p_{X|Y,Z}(X,Y,Z)}{p_{X|Z}(X,Z)}\right)\right]  =  $  &  =  &  \int
-  % p_{X,Y,Z} \log \left(
-  %   \frac{p_{X|Y,Z}}{p_{X|Z}} \right)\\[2.5mm]
-  %%
-  % & = & \int p_{X,Y,Z} \log \left( \frac{p_{X|Y,Z}
-  %     p_{Y|Z}}{p_{X|Z}   p_{Y|Z}}   \right)\\[2.5mm]
-  %%
-  % & = & \int p_{X,Y,Z} \log \left( \frac{p_{X,Y|Z}}{p_{X|Z} p_{Y|Z}} \right)
-  % \end{eqnarray*}
-  %
-  % \noindent (y similaramente en el caso discreto) Calculos sencillos,
-  se nota de  que \ $H(X|Z) - H(X|Y,Z)$ \ es  la divergencia de Kullback-Leibler
-  de \ $p_{X,Y|Z}$ \ relativamente  a \ $p_{X|Z} p_{Y|Z}$, o informaci\'on mutua
-  \ $I(X;Y|Z)$ entre  \ $X$ \ e  \ $Y$, condicionalmente a \  $Z$.  Entonces, de
-  las dos formas de $H(X;Y,Z)$ viene
+    \, p_{Y|Z}}{p_{X|Z} p_{Y|Z}} = \frac{p_{X,Y|Z}}{p_{X|Z} p_{Y|Z}}$ se nota de
+  que  \ $H(X|Z)  -  H(X|Y,Z)$ \  es  la divergencia  de  Kullback-Leibler de  \
+  $p_{X,Y|Z}$ \  relativamente a  \ $p_{X|Z} p_{Y|Z}$,  o informaci\'on  mutua \
+  $I(X;Y|Z)$ entre \ $X$ \ e \  $Y$, condicionalmente a \ $Z$.  Entonces, de las
+  dos formas de $H(X;Y,Z)$ viene
   %
   \[
   I(X;Y) = I(X;Z) + I(X;Y|Z)
@@ -360,9 +345,9 @@ satisface la informaci\'on mutua aplicada a un proceso de Markov.
 
 Tratando de procesos  de Markov, aparece el equivalente de la  segunda ley de la
 termodin\'amica:  un sistema  aislado evolua  hasta  llegar su  estado lo  m\'as
-desorganizadover (ver ej.~\cite{CovTho06}).
+desorganizado (ver ej.~\cite[y ref.]{CovTho06, Mer10, Mer18}).
 
-\begin{lema}%[]
+\begin{lema}[Versi\'on informacional de la segunda ley de la termodin\'amica]
   Sea $X_1 \mapsto X_2 \mapsto \cdots  \mapsto X_n \mapsto \cdots$ un proceso de
   Markov,  con probabilidades  de transici\'on  $p_{X_{n+1}|X_n}$  dadas.  Estas
   \'ultimas modelizan  el sistema,  independiente de las  condiciones iniciales.
@@ -374,7 +359,7 @@ desorganizadover (ver ej.~\cite{CovTho06}).
 \item  Para cualquier  $n \ge  1$,
   %
   \[
-  \Dkl[q_{(n+1)}]{p_{(n+1)}} \le \Dkl[q_{(n)}]{p_{(n)}}
+  \Dkl[p_{(n+1)}]{q_{(n+1)}} \le \Dkl[p_{(n)}]{q_{(n)}}
   \]
   %
   las  distribuciones   $p_{(n)}$  y  $q_{(n)}$  no  se   ``alejan''  (tiende  a
@@ -388,16 +373,17 @@ desorganizadover (ver ej.~\cite{CovTho06}).
   %
   la distribuci\'on no se aleja de la distribuci\'on estacionaria.
 %
-\item Adem\'as, si los $X_n$ viven sobre  $\X$ de cardinal o volumen finito y si
-  $p^*$ es uniforme sobre $\X$,
+\item Adem\'as, si  los $X_n$ tienen $K$ momentos fijos  $m = \Esp[M(X_n)] \quad
+  \forall \,  n$ y si $p^*$  es la distribuci\'on de  entrop\'ia m\'axima tiendo
+  los mismos momentos como  descrito secci\'on Sec.~\ref{sec:SZ:MaxEnt}, (ej. $K
+  = 0$,  $\X$ de cardinal o  volumen finito y ley  uniforme, $K =  2$, $T_k(x) =
+  x^k$ y ley gausiana),
   %
   \[
   H(X_{n+1}) \ge H(X_n)
   \]
   %
-  el  sistema   tiende  a  desorganizarse  (adem\'as,  recuerdense   de  que  la
-  distribuci\'on uniforme es la de entrop\'ia m\'axima, \ie de desorganizaci\'on
-  m\'axima).
+  el  sistema   tiende  a  desorganizarse (dando los vinculos/momentos).
 \end{itemize}
 \end{lema}
 %
@@ -420,8 +406,10 @@ desorganizadover (ver ej.~\cite{CovTho06}).
   $p_{(n)|(n+1)}$  no  es necesariamente  igual  a  \  $q_{(n)|(n+1)}$, pero  la
   divergencia siendo no negativa, se obtiene la primera desigualdad.  La segunda
   desigualdad se obtiene  tomando \ $q_{(n)} = p^*$.  Adem\'as, si  \ $p^*$ \ es
-  uniforme \ $p^*(x) = \frac{1}{|\X|}$ \ dando \ $\Dkl[p_{(n)}]{p^*} = -H(X_n) +
-  \log |\X|$, conduciendo a la \'ultima desigualdad.
+  le entrop\'ia  m\'axima de mismos momentos  $m = \Esp[M(X_n)]$  que los $X_n$,
+  hemos  visto  de  que  \  $p^*(x)  =  \e{\mu^t M(x)}$  \  ley  de  la  familia
+  exponencial, dando \  $\Dkl[p_{(n)}]{p^*} = -H(X_n) - \mu^t  m$, conduciendo a
+  la \'ultima desigualdad.
 \end{proof}
 
 
@@ -712,11 +700,12 @@ proporcional a la identidad (igualdad en la relaci\'on determinente-traza).
 Se notar\'a que, al imagen de las leyes de entrop\'ia m\'axima, la informaci\'on
 de  Fisher  juega tambi\'en  un  rol particular  en  la  inferencia bayesiana  a
 trav\'es del prior de Jeffrey~\cite{Jef46, Jef48, LehCas98, Rob07}~\footnote{Ver
-  nota  de pie~\ref{foot:SZ:Prior}.   A  veces, se  toma  como distribuci\'on  a
-  priori \ $p_\Theta(\theta) \propto  |J_\theta(X)|^\frac12$ \ por su invarianza
-  por reparametrizaci\'on \ $\eta = \eta(\theta)$,  \ie el prior de Jeffrey en \
-  $\eta$ \ es un\'ivocamente  obtenido con la Fisher en \ $\eta$  \ o por cambio
-  de variables saliendo de \ $p_\Theta$.}.
+  nota de  pie~\ref{foot:SZ:Prior} pagina~\pageref{foot:SZ:Prior}.  A  veces, se
+  toma    como   distribuci\'on   a    priori   \    $p_\Theta(\theta)   \propto
+  |J_\theta(X)|^\frac12$ \  por su invarianza por reparametrizaci\'on  \ $\eta =
+  \eta(\theta)$,  \ie  el prior  de  Jeffrey en  \  $\eta$  \ es  un\'ivocamente
+  obtenido con la Fisher  en \ $\eta$ \ o por cambio  de variables saliendo de \
+  $p_\Theta$.}.
 
 \
 
@@ -840,24 +829,22 @@ Fisher.
 %
 \begin{proof}
   La clave de este resultado viene del hecho  de que la densidad \ $p$ \ de \ $T
-  \Gauss$ \ satisface una ecuaci\'on diferencial particular.
-  %  $$\nabla_T p_{T \Gauss}(x) =  \Hess_x p_{T
-  %    \Gauss}(x) \, T \, \Sigma_\Gauss$$ Esta ecuaci\'on viene de
-  La   distribuci\'on  de   \  $T   \Gauss$   \  se   escribe  \   $p(x)  =   (2
-  \pi)^{-\frac{d}{2}} \left| T \Sigma_\Gauss T^t \right|^{-\frac12} \exp\left( -
-    \frac12 x^t \left(  T \Sigma_\Gauss T^t \right)^{-1} x  \right)$ \ (el rango
-  m\'aximo de  \ $T$ \  asegura que \  $T \Sigma_\Gauss T^t$ \  sea invertible).
-  Para  una matriz  invertible $R$,  desarollando \  $|R|$ \  con respecto  a su
-  l\'inea  \ $i$,  se obtiene  que  \ $\frac{\partial  |R|}{\partial R_{i,j}}  =
-  R_{i,j}^*$  \ cofactor  de  \ $R_{i,j}$,  dando  por la  regla  de Cram\'er  \
-  $\nabla_R    |R|   =    |R|    \,   \left(    R^{-1}    \right)^t$   \    (ver
-  tambi\'en~\cite[cap.~1~\&~9]{MagNeu99}), es decir \ $\nabla_R |R|^{-\frac12} =
-  -\frac12   |R|^{-\frac12}  \left(   R^{-1}  \right)^t$.    De  $\frac{\partial
-    |R|^{-\frac12}}{\partial     T_{i,j}}     =    \sum_{k,l}     \frac{\partial
-    |R|^{-\frac12}}{\partial R_{k,l}}  \frac{\partial R_{k,l}}{\partial T_{i,j}}
-  =   -\frac12    |R|^{-\frac12}   \sum_{k,l}   \left(    R^{-1}   \right)_{l,k}
-  \frac{\partial R_{k,l}}{\partial T_{i,j}}$ \ con \ $R = T \Sigma_\Gauss T^t$ \
-  (sim\'etrica) y c\'alculos b\'asicos se obtiene finalmente
+  \Gauss$ \ satisface una  ecuaci\'on diferencial particular.  La distribuci\'on
+  de  \ $T  \Gauss$  \ se  escribe \  $p(x)  = (2  \pi)^{-\frac{d}{2}} \left|  T
+    \Sigma_\Gauss  T^t  \right|^{-\frac12} \exp\left(  -  \frac12  x^t \left(  T
+      \Sigma_\Gauss T^t \right)^{-1} x \right)$ \  (el rango m\'aximo de \ $T$ \
+  asegura  que \  $T  \Sigma_\Gauss T^t$  \  sea invertible).   Para una  matriz
+  invertible $R$,  desarollando \ $|R|$  \ con respecto  a su l\'inea \  $i$, se
+  obtiene que  \ $\frac{\partial |R|}{\partial R_{i,j}} =  R_{i,j}^*$ \ cofactor
+  de \ $R_{i,j}$, dando por la regla de Cram\'er \ $\nabla_R |R| = |R| \, \left(
+    R^{-1} \right)^t$ \ (ver tambi\'en~\cite[cap.~1~\&~9]{MagNeu99}), es decir \
+  $\nabla_R |R|^{-\frac12}  = -\frac12 |R|^{-\frac12}  \left( R^{-1} \right)^t$.
+  De    $\frac{\partial   |R|^{-\frac12}}{\partial    T_{i,j}}    =   \sum_{k,l}
+  \frac{\partial      |R|^{-\frac12}}{\partial      R_{k,l}}      \frac{\partial
+    R_{k,l}}{\partial  T_{i,j}}  =  -\frac12  |R|^{-\frac12}  \sum_{k,l}  \left(
+    R^{-1} \right)_{l,k} \frac{\partial R_{k,l}}{\partial T_{i,j}}$ \ con \ $R =
+  T  \Sigma_\Gauss  T^t$  \  (sim\'etrica)  y c\'alculos  b\'asicos  se  obtiene
+  finalmente
   %
   \[
   \nabla_T  \left|   T  \Sigma_\Gauss  T^t  \right|^{-\frac12}  =   -  \left|  T

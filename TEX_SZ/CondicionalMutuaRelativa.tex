@@ -199,16 +199,16 @@ matriz de covarianza).  {\it Como para la entrop\'ia,  cuando se necesitar\'a un
   de Jensen~\footnote{Se  puede usar tambi\'en  la desigualdad \ $\sum  t_i \log
     t_i \ge \sum t_i \log t'_i$  \ una instancia de la desigualdad conocida como
     desigualdad log-sum, o conocida  tambi\'en como desigualdad de Gibbs (debido
-    a   J.  W.   Gibbs   mismo)~\cite{CovTho06,  Rio07,   Gib}.}:  para   $\phi$
-  estrictamente convexa, $\Esp[\phi(X)] \ge  \phi(\Esp[X])$ con igualdad ssi $X$
-  es  determinista (casi  siempre).  Sea  $X$ de  distribuci\'on  o densidad  de
-  probabilidad  $p$.   En el  caso  discreto  como  diferencial, se  escribe  la
-  entrop\'ia  relativa $\Dkl[q]{p}  = \Esp\left[  \frac{q(X)}{p(X)}  \log \left(
-      \frac{q(X)}{p(X)}  \right)  \right]$.    Sea  $Y  =  \frac{q(X)}{p(X)}$  y
-  $\phi(u) = u \log u$, funci\'on estrictamente convexa.  Entonces $\Dkl[q]{p} =
-  \Esp[\phi(Y)]   \ge   \phi(\Esp[Y])$.  \   Pero   \   $\Esp[Y]  =   \Esp\left[
-    \frac{q(X)}{p(X)} \right]  = \sum_x q(x)  = 1$ \  (y con una integral  en el
-  caso diferencial)  y \  $\phi(1) =  0$, lo que  cierra la  prueba. El  caso de
+    a    J.    W.    Gibbs    mismo)~\cite{Gib02,   CovTho06,    Rio07,   Mer10,
+      Mer18}.}~\cite{Jen06}:  para $\phi$ estrictamente  convexa, $\Esp[\phi(X)]
+  \ge \phi(\Esp[X])$ con  igualdad ssi $X$ es determinista  (casi siempre).  Sea
+  $X$ de  distribuci\'on o  densidad de probabilidad  $p$.  En el  caso discreto
+  como diferencial,  se escribe la entrop\'ia relativa  $\Dkl[q]{p} = \Esp\left[
+    \frac{q(X)}{p(X)} \log \left( \frac{q(X)}{p(X)}  \right) \right]$.  Sea $Y =
+  \frac{q(X)}{p(X)}$ y  $\phi(u) = u  \log u$, funci\'on  estrictamente convexa.
+  Entonces $\Dkl[q]{p} = \Esp[\phi(Y)] \ge  \phi(\Esp[Y])$.  \ Pero \ $\Esp[Y] =
+  \Esp\left[ \frac{q(X)}{p(X)} \right] = \sum_x q(x)  = 1$ \ (y con una integral
+  en el caso diferencial) y \ $\phi(1) = 0$, lo que cierra la prueba. El caso de
   igualdad  apareciendo  si  y  solamente  si  $Y$  es  determinista,  es  decir
   $\frac{p(X)}{q(X)}$  determinista,  es equivalente  a  $p(x)  \propto q(x)  \:
   (c.s.)$, \ie $p = q \: (c.s.)$ porque ambas suman a uno.
