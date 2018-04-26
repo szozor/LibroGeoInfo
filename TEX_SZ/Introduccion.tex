@@ -15,12 +15,13 @@ siquiera expl\'icitamente una noci\'on  de informaci\'on.  Entre otros, se puede
 mencionar  el tel\'egrafo  \'optico de  Claude Chappe  (1794),  experimentos con
 luces  por Guillaume  Amontons (en  los  a\~nos 1690  en Paris),  o a\'un  m\'as
 antiguamente la transmisi\'on de mensaje con antorchas en la Grecia antigua, con
-humo por los  indios o chiflando en la  prehistoria~\cite{Mon08}.  Cada forma es
-una instancia  pr\'actica del esquema de  comunicaci\'on de Shannon~\cite{Sha48,
-ShaWea64}, es decir la codificaci\'on  de la informaci\'on, potencialmente de la
-manera m\'as econ\'omica  que se puede, su transmisi\'on  a un ``receptor'' (por
-un  canal  ruidoso)  que  la  interpreta/lee/decodifica.   Impl\'icitamente,  la
-noci\'on de informaci\'on es al menos tan antigua como la humanidad.
+humo   por    los   indios   o   chiflando    en   la   prehistoria~\cite{Mon08}
+o~\cite[Cap.~3]{Arn01}.  Cada  forma es una instancia pr\'actica  del esquema de
+comunicaci\'on de Shannon~\cite{Sha48, ShaWea64},  es decir la codificaci\'on de
+la informaci\'on, potencialmente de la manera m\'as econ\'omica que se puede, su
+transmisi\'on   a   un   ``receptor''    (por   un   canal   ruidoso)   que   la
+interpreta/lee/decodifica.  Impl\'icitamente, la noci\'on de informaci\'on es al
+menos tan antigua como la humanidad.
 
 A  pesar  de  que  la  idea  de codificar  y  transmitir  ``informaci\'on''  sea
 tremendamente  antigua,  la  formalizaci\'on  matem\'atica  de  la  noci\'on  de
@@ -30,21 +31,34 @@ su   papel   seminal,   ``A    mathematical   theory   of   communication''   en
 1948~\cite{Sha48},  o   un  a\~no  despu\'es  en  su   libro  re-titulado  ``The
 mathematical  theory  of communication''  reemplazando  el  ``A''  (Una) por  un
 ``The''  (La). Desde  estos a\~nos,  las herramientas  de dicha  teor\'ia  de la
-informaci\'on dieron lugar a muchas aplicaciones especialmente en comunicaci\'on
-(ver por ejemplo~\cite[y ref.]{CovTho06,  Ver98, Gal01}, pero tambi\'en en otros
-campos  muy diversos  tal como  \SZ{Completar con  ref, Boltzmann,  von Neumann,
-Gibbs, Maxwell, Planck\ldots}.
+informaci\'on   dieron   lugar    a   muchas   aplicaciones   especialmente   en
+comunicaci\'on~\cite[y  ref.]{CovTho06, Ver98, Gal01},  pero tambi\'en  en otros
+campos  muy diversos  tal  como la  estimaci\'on  o la  discriminaci\'on~\cite[y
+ref.]{CovTho06,      Kay93,       Bos07,      LehCas98},      la      inferencia
+estad\'istica~\cite{Rob07,   Par06},   el   procesamiento   de  se\~nal   o   de
+datos~\cite[y   Ref.]{PhiRou92,   EbeMol00,    Bas13},   en   ciencias   de   la
+ingeneria~\cite{Arn01, Kap89, KapKes92, PhiRou92}, f\'isica~\cite[y Ref.]{Arn01,
+OhyPet93,  Mer18}  entre muchas  otras  (ver  por  ejemplo el  esquema  pagina~2
+de~\cite{CovTho06}).
 
-{\color{red} La meta de este cap\'itulo es describir las ideas y los pasos dando
-  lugar a  la definici\'on de la  entrop\'ia, como medida de  incerteza o (falta
-  de)  informaci\'on.   En este  cap\'itulo,  se  empieza  con la  descripci\'on
-  intuitiva que subyace  a la noci\'on de informaci\'on  contenida en una cadena
-  de  s\'imbolos, lo  que  condujo a  la  definici\'on de  la entrop\'ia.   Esta
-  definici\'on  puede  ser deducida  tambi\'en  de  un  conjunto de  propiedades
-  ``razonables''  que  deber\'ia  cumplir   una  medida  de  incerteza  (enfoque
-  axiom\'atico).   Se  continuar\'a con  la  descripci\'on  de  tal noci\'on  de
-  entrop\'ia,  pasando  del  mundo  discreto  (s\'imbolos,  alfabeto)  al  mundo
-  continuo,  lo  que no  es  trivial  ni  siquiera intuitivo.   Se  adelantar\'a
-  presentando  el concepto  de  informaci\'on compartida  entre  dos sistemas  o
-  variables aleatorias, concepto fundamental en  el marco de la transmisi\'on de
-  informaci\'on o de mensajes. \bf Seguir. }
+La meta de este  cap\'itulo es describir las ideas y los  pasos dando lugar a la
+definici\'on  de  la   entrop\'ia,  como  medida  de  incerteza   o  (falta  de)
+informaci\'on.  En  este cap\'itulo, se  empieza con la  descripci\'on intuitiva
+que  subyace  a  la  noci\'on  de  informaci\'on  contenida  en  una  cadena  de
+s\'imbolos,  lo  que   condujo  a  la  definici\'on  de   la  entrop\'ia.   Esta
+definici\'on  puede  ser  deducida  tambi\'en  de  un  conjunto  de  propiedades
+``razonables''  que   deber\'ia  cumplir   una  medida  de   incerteza  (enfoque
+axiom\'atico).   Se  continuar\'a  con  la  descripci\'on  de  tal  noci\'on  de
+entrop\'ia, pasando del mundo discreto (s\'imbolos, alfabeto) al mundo continuo,
+lo  que no es  trivial ni  siquiera intuitivo.   Se adelantar\'a  presentando el
+concepto  de entrop\'ia condicional,  lo que  va a  dar lugar  a la  noci\'on de
+informaci\'on  compartida entre  dos sistemas  o variables  aleatorias, concepto
+fundamental en  el marco de la  transmisi\'on de informaci\'on o  de mensajes. A
+continuaci\'on,  se  presentar\'a  la  noci\'on  de entrop\'ia  relativa  a  una
+distribuci\'on de probabilidad de referencia, as\'i que el concepto de distancia
+estad\'istica  o   divergencia  de  una   distribuci\'on  con  respecto   a  una
+referencia. En  este cap\'itulo veremos  como estas medidas  informacionales son
+entrelazadas  a trav\'es varias  identidades y  desigualdades, as\'i  que varias
+relaciones  con medidas  del  mundo de  la  estimaci\'on. Al  final, se  dar\'an
+ejemplos  y aplicaciones,  as\'i que  varias generalizaciones  de  las medidades
+informacionales.

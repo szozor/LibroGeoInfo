@@ -20,10 +20,8 @@ tomando  un logaritmo  de  base 2,  esta  informaci\'on es  nada  m\'as que  los
 n\'umeros de bits (0-1) necesarios  para codificar todas las cadenas de longitud
 $n$  de s\'imbolos de  un alfabeto  de cardinal  $\alpha$.  La  informaci\'on de
 Hartley  es  el equivalente  de  la entrop\'ia  de  Boltzmann  de la  mec\'anica
-estad\'istica
-% termoestad\'istica,
-%%%%%termost\'atica, ??? => Thermostatistique en francés, thermostatistics en inglés
-la famosa f\'ormula $S = k_B \log W$~\cite{Bol96, Bol98, Jay65, Mer10, Mer18}.
+estad\'istica la  famosa f\'ormula $S  = k_B \log W$~\cite{Bol96,  Bol98, Jay65,
+  Mer10, Mer18}.
 
 Una debilidad del enfoque de Hartley es que considera impl\'icitamente que en un
 mensaje, cada cadena de longitud dada  puede aparecer con la misma frecuencia, o
@@ -33,7 +31,7 @@ probabilidades.  Al  contrario, parece m\'as l\'ogico  considerar que secuencias
 muy frecuentes  no llevan mucha  informaci\'on (se sabe que  aparecen), mientras
 que las que  aparecen raramente llevan m\'as informaci\'on  (hay m\'as sorpresa,
 m\'as incerteza  en observarlas).  Volviendo  a los s\'imbolos  elementales $x$,
-vistos  como  aleatorios (o  valores  o estados  que  puede  tomar una  variable
+vistos  como aleatorios  (o  valores, o  estados  que puede  tomar una  variable
 aleatoria), la  (falta de)  informaci\'on o incerteza  va a  estar \'intimamente
 vinculada a la probabilidad de aparici\'on de estos s\'imbolos $x$. Siguiendo la
 idea de Hartley,  la informaci\'on elemental asociada al estado $x$  va a ser $-
@@ -44,22 +42,22 @@ todos  los  estados posibles  $x$~\cite{Sha48,  ShaWea64}~\footnote{En la  misma
   en  c\'alculos de  capacidad  de canal  en  varios trabajos  como  los de  los
   ingenieros     franceses     Andr\'e     Clavier~\cite{Cla48}    o     Jacques
   Laplume~\cite{Lap48},   o    en   el   libro    del   estadounidense   Norbert
-  Wiener~\cite[Cap.~III]{Wie48}  entre  varios  otros  (ver~\cite{Ver98,  Lun02,
-    RioMag14, FlaRio16, RioFla17, Che17}).}.
+  Wiener~\cite[Cap.~III]{Wie48}  entre  varios  otros (ver~\cite[y  Ref.]{Ver98,
+    Lun02, RioMag14, FlaRio16, RioFla17, Che17}).}.
 %
 \begin{definicion}[Entrop\'ia de Shannon]\label{def:SZ:Shannon}
-  Sea $X$ una  variable aleatoria definida sobre una alfabeto  discreto $\X = \{
-  x_1 , \ldots , x_\alpha \}$ de cardinal $\alpha = |\X| < + \infty$ finito. Sea
-  $p_X$ la  distribuci\'on de probabilidad  de $X$, \ie  $ \forall \, x  \in \X,
-  \quad  p_X(x) = \Pr[X  = x]$.   La entrop\'ia  de Shannon  de la  variable $X$
-  est\'a definida por
+  Sea $X$ una variable aleatoria  definida sobre una alfabeto o espacio muestral
+  discreto $\X = \{  x_1 , \ldots , x_\alpha \}$ de cardinal  $\alpha = |\X| < +
+  \infty$  finito. Sea $p_X$  la distribuci\'on  de probabilidad  de $X$,  \ie $
+  \forall \, x \in \X, \quad p_X(x)  = \Pr[X = x]$.  La entrop\'ia de Shannon de
+  la variable $X$ est\'a definida por
   %
   \[
     H(p_X) = H(X) = - \sum_{x \in \X} p_X(x) \, \log p_X(x)
   \]
   %
-  con la convenci\'on $0 \log 0 = 0$ \ ($\displaystyle \lim_{t \to 0} t \log t =
-  0$).
+  con la convenci\'on $0 \log 0 =  0$ \ ($\displaystyle \lim_{t \to 0} \, t \log
+  t = 0$).
 \end{definicion}
 %
 \noindent La  base del logaritmo es  arbitraria; si es $\log_2$  el logaritmo de
@@ -140,20 +138,21 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   H(X) \ge 0 
   \]
   %
-  con igualdad si y solamente si existe un $x_0 \in \X$ tal que $p_X(x_0) = 1$ \
-  y \  $p_X(x) = 0$ \ para  \ $x \ne x_0$,
+  con igualdad si y solamente si existe un  $x_j \in \X$ ($j \in \{ 1 , \ldots ,
+  \alpha \}$) tal  que $p_X(x_j) = 1$  \ y \ $p_X(x) =  0$ \ para \  $x \ne x_j$
+  ($p_X = \un_j$),
   %
   \[
   H(X)  =  0 \quad  \mbox{ssi}  \quad X  \mbox{  es  determinista}
   \]
   %
-  En  otras  palabras, cuando  $X$  no  es aleatoria,  \ie  $X  =  x_0$, no  hay
+  En  otras  palabras, cuando  $X$  no  es aleatoria,  \ie  $X  =  x_j$, no  hay
   incerteza, o  la observaci\'on  no lleva  informaci\'on (se sabe  lo que  va a
   salir, sin duda): $H = 0$.   La positividad es consecuencia de $p_X(x) \le 1$,
   dando $- p_X(x) \log p_X(x) \ge 0$.  Adem\'as, la suma de t\'erminos positivos
-  vale cero si y solamente si cada termino de la suma vale cero, dando \ $p_X(x)
-  =  0$ \  o \  $p_X(x) =  1$. Se  concluye $p_X$  siendo una  distribuci\'on de
-  probabilidad, sumando a 1.
+  vale cero  si y  solamente si  cada t\'ermino de  la suma  vale cero,  dando \
+  $p_X(x) = 0$ \  o \ $p_X(x) = 1$. Se concluye  $p_X$ siendo una distribuci\'on
+  de probabilidad, sumando a 1.
 %
 \setcounter{PropCotamaxima}{\value{enumi}}
 \item\label{prop:SZ:cotamaxima} {\it Maximalidad:}  La entrop\'ia es acotada por
@@ -174,15 +173,16 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   aparecer con la misma probabilidad; cada observaci\'on lleva una informaci\'on
   importante sobre el  sistema que genera $X$.  La cota  m\'axima resuelta de la
   maximizaci\'on de $H$ sujeto a $\sum_x p_X(x) = 1$, es decir, con la t\'ecnica
-  del Lagrangiano, notando $p_i =  p_X(x_i)$, de la minimizaci\'on de $\sum_i (-
-  p_i \log  p_i + \mu  p_i)$.  Se obtiene  sencillamente que $\log p_i  = -\mu$,
-  dando       la      distribuci\'on      uniforma.\newline       La      figura
-  Fig.~\ref{fig:SZ:EntropiaBinaria} representa la entrop\'ia de un sistema a dos
-  estados, de probabilidades \ $p_X = \begin{bmatrix} r & 1-r \end{bmatrix}^t$ \
-  (ley de Bernoulli de parametro  $r$), entrop\'ia a veces dicha {\it entrop\'ia
-    binaria}, en funci\'on  de $r$.  Esta figura ilustra ambas cotas  ($r = 1$ o
-  1, $r  = \frac12$) as\'i  que la invariancia  bajo una permutaci\'on  ($h(r) =
-  H(r,1-r) = H(1-r,r) = h(1-r)$).
+  del  Lagrangiano para  tomar  en cuenta  el v\'inculo~\cite{Mil00,  CamMar09},
+  notando $p_i  = p_X(x_i)$,  hay que minimizar  $\sum_i (-  p_i \log p_i  + \mu
+  p_i)$ donde  el factor de Lagrange  $\mu$ se determinar\'a  para satisfacer el
+  v\'inculo.   Se  obtiene  sencillamente  que  $\log  p_i  =  -\mu$,  dando  la
+  distribuci\'on  uniforma.\newline La  figura Fig.~\ref{fig:SZ:EntropiaBinaria}
+  representa la entrop\'ia de un sistema a dos estados, de probabilidades \ $p_X
+  = \begin{bmatrix}  r & 1-r \end{bmatrix}^t$  \ (ley de  Bernoulli de parametro
+  $r$), entrop\'ia a veces dicha  {\it entrop\'ia binaria}, en funci\'on de $r$.
+  Esta figura  ilustra ambas cotas  ($r = 1$  o 1, $r  = \frac12$) as\'i  que la
+  invariancia bajo una permutaci\'on ($h(r) = H(r,1-r) = H(1-r,r) = h(1-r)$).
   %
   \begin{figure}[h!]
   %
@@ -205,15 +205,17 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   H(p_{\widetilde{X}}) = H(p_X)
   \]
   %
-  Esta propiedad es obvia, consecuencia  de $\displaystyle \lim_{t \to 0} t \log
-  t = 0$.
+  Esta propiedad  es obvia, consecuencia de  $\displaystyle \lim_{t \to  0} \, t
+  \log t = 0$.
 %
 \setcounter{PropRecursividad}{\value{enumi}}
 \item\label{prop:SZ:recursividad} {\it Recursividad:} Juntar dos estados baja la
   entrop\'ia de  una cantidad igual a  la entrop\'ia interna de  los dos estados
-  por la probabilidad  de ocurrencia de este conjunto  de estados, y vice-versa,
-  \ie  sean \  $X$  \ definido  sobre  \ $\X$  \  y \  $\widebar{X}$  \ sobre  \
-  $\widebar{\X}$,
+  por  la   probabilidad  de   ocurrencia  de  este   conjunto  de   estados,  y
+  vice-versa. De la  invarianza de la entrop\'ia por  permutaci\'on, sin perdida
+  de generalidad se  puede considerar que los estados que se  juntan son los dos
+  \'ultimos, \ie sean \ $X$ \ definido  sobre \ $\X$ \ y \ $\widebar{X}$ \ sobre
+  \ $\widebar{\X}$,
   %
   \[
   \left\{  \begin{array}{l}\widebar{\X}  = \{  x_1  ,  \ldots  , x_{\alpha-2}  ,
@@ -232,6 +234,15 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   H(\widebar{q})
   \]
   %
+  lo que se escribe tambi\'en
+  %
+  \[
+  H(p_1,\ldots,p_\alpha)  =  H(p_1,\ldots,p_{\alpha-2},p_{\alpha-1}+p_\alpha)  +
+  \left(             p_{\alpha-1}+p_\alpha            \right)            H\left(
+    \frac{p_{\alpha-1}}{p_{\alpha-1}+p_\alpha}                                  ,
+    \frac{p_\alpha}{p_{\alpha-1}+p_\alpha}\right)
+  \]
+  %
   Esta relaci\'on  viene de $a \log  a + b  \log b = (a+b)  \left( \frac{a}{a+b}
     \log\left(  \frac{a}{a+b} \right)  + \frac{b}{a+b}  \log\left( \frac{a}{a+b}
     \right)   -   \log(  a   +   b  )\right)$   es   ilustrada   en  la   figura
@@ -248,6 +259,7 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   %
   \label{fig:SZ:Recursividad}
   \end{figure}
+  %
 %
 \setcounter{PropConcavidad}{\value{enumi}}
 \item\label{prop:SZ:concavidad} {\it Concavidad:} La entrop\'ia es c\'oncava, en
@@ -265,9 +277,9 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   H\left( \sum_{i=1}^n \pi_i p_{(i)} \right) \ge \sum_{i=1}^n \pi_i H(p_{(i)})
   \]
   %
-  Esta relaci\'on es  conocida como desigualdad de Jensen.   Es una consecuencia
-  directa de  la convexidad  de la funci\'on  $\phi: t  \mapsto t \log  t$, como
-  ilustrado   en   la   figura  Fig.~\ref{fig:SZ:Concavidad}-(a).    La   figura
+  Esta relaci\'on  es conocida como desigualdad de  Jensen~\cite{Jen06}.  Es una
+  consecuencia directa de la convexidad de  la funci\'on $\phi: t \mapsto t \log
+  t$, como  ilustrado en la figura  Fig.~\ref{fig:SZ:Concavidad}-(a).  La figura
   Fig.~\ref{fig:SZ:Concavidad}-(b) ilustra  como se puede obtener  una mezcla de
   distribuciones  de dos  probabilidad  $p_{(1)}$ (dado  izquierda) y  $p_{(2)}$
   (dado derecho)  haciendo una  elecci\'on aleatoria a  partir de una  moneda en
@@ -351,13 +363,13 @@ $\alpha \beta$ tal que se  define naturalmente la entrop\'ia para esta variable;
 tal entrop\'ia es llamada {\it entrop\'ia conjunta} de $X$ y $Y$:
 %
 \begin{definicion}[Entrop\'ia conjunta]\label{def:SZ:EntropiaConjunta}
-  Sean \ $X$ \  e \ $Y$ \ dos variable aleatorias  definidas sobre los alfabetos
-  discretos \  $\X$ \ y \ $\Y$,  de cardinal \ $\alpha  = |\X| < +\infty$  \ y \
-  $\beta  =  |\Y|   <  +\infty$  \  respectivamente.   Sea   \  $p_{X,Y}$  \  la
-  distribuci\'on de probabilidad conjunta de \ $X$ \ e \ $Y$, \ \ie $ \forall \,
-  (x,y)  \in \X  \times \Y,  \quad  p_{X,Y}(x,y) =  \Pr[X =  x  , Y  = y]$.   La
-  entrop\'ia conjunta de Shannon de las variables  \ $X$ \ e \ $Y$ \ es definida
-  por
+  Sean \ $X$ \ e \ $Y$  \ dos variables aleatorias definidas sobre los alfabetos
+  o espacios  muestrales discretos \ $\X$  \ y \  $\Y$, de cardinal \  $\alpha =
+  |\X| <  +\infty$ \  y \  $\beta = |\Y|  < +\infty$  \ respectivamente.   Sea \
+  $p_{X,Y}$ \ la distribuci\'on  de probabilidad conjunta de \ $X$ \  e \ $Y$, \
+  \ie $ \forall \, (x,y) \in \X \times  \Y, \quad p_{X,Y}(x,y) = \Pr[X = x , Y =
+  y]$.  La entrop\'ia conjunta de Shannon de las  variables \ $X$ \ e \ $Y$ \ es
+  definida por
   %
   \[
   H(p_{X,Y}) =  H(X,Y) = -  \sum_{(x,y) \in \X  \times \Y} p_{X,Y}(x,y)  \, \log
@@ -390,14 +402,12 @@ fundamentales, de la entrop\'ia de Shannon.
   H\left( p_X \otimes p_Y \right) = H\left( p_X \right) + H\left( p_Y \right)
   \]
   %
-  donde  $\otimes$   es  el  producto   de  Kronecker~\footnote{$\begin{bmatrix}
-      p_X(x_1) & \cdots  & p_X(x_\alpha) \end{bmatrix}^t \otimes \begin{bmatrix}
-      p_Y(y_1)  &  \cdots   &  p_Y(y_\beta)  \end{bmatrix}^t  =  \begin{bmatrix}
-      p_X(x_1)   p_Y(y_1)  &  \cdots   &  p_X(x_1)   p_Y(y_\beta)  &   \cdots  &
-      p_X(x_\alpha)       p_Y(y_1)      &      \cdots       &      p_X(x_\alpha)
-      p_Y(y_\beta)   \end{bmatrix}^t$.\label{foot:SZ:Kronecker}}  Se  generaliza
-  sencillamente  a  un conjunto  de  variables  aleatorias  $\{ X_i  \}_{i=1}^n$
-  (Kronecker product de un conjunto de vectores de probabilidades).
+  donde $\otimes$ es el producto  de Kronecker~\footnote{$p_X \otimes p_Y$ es un
+    vector  de tama\~no  $\alpha \beta$  de component  $(i-1) \alpha  + j$-esima
+    $p_X(x_i)  p_Y(y_j),   \quad  1  \le   i  \le  \alpha,   \:  1  \le   j  \le
+    \beta$.\label{foot:SZ:Kronecker}} Se generaliza  sencillamente a un conjunto
+  de variables aleatorias $\{ X_i  \}_{i=1}^n$ (o, equivalmente a un producto de
+  Kronecker de un conjunto de vectores de probabilidades).
 %
 \item\label{prop:SZ:subaditividad} {\it  Sub-aditividad:} La entrop\'ia conjunta
   de dos variables  aleatorias $\{ X_i \}_{i=1}^n$ es siempre  menor que la suma
@@ -438,11 +448,11 @@ conjunta  divido por el  n\'umero de  s\'imbolos, $\frac{H(X_1,\ldots,x_n)}{n}$,
 as\'i que una tasa de entrop\'ia cuando $n$ va al infinito.
 %
 \begin{definicion}[Tasa de entrop\'ia]\label{def:SZ:TasaDeEntropia}
-  Sea $\X  = \{  X_i \}_{i \in  \Nset^*}$ una  serie de variables  aleatorias, o
+  Sea $X \equiv \{ X_i \}_{i  \in \Nset^*}$ una serie de variables aleatorias, o
   proceso estoc\'astico.  La tasa de entrop\'ia del proceso es definida por
   %
   \[
-  \H(\X) = \lim_{n \to \infty} \frac{H(X_1,\ldots,X_n)}{n}
+  \H(X) = \lim_{n \to \infty} \frac{H(X_1,\ldots,X_n)}{n}
   \]
   %
 \end{definicion}
@@ -481,10 +491,10 @@ una densidad de  probabilidad.  Eso da lugar  a lo que es conocido  como la {\it
   entrop\'ia diferencial}:
 
 \begin{definicion}[Entrop\'ia diferencial]\label{def:SZ:EntropiaDiferencial}
-  Sea  $X$  una variable  aleatoria  continua  definida  sobre $\Rset^d$  y  $\X
-  \subseteq \Rset^d$ el  soporte de $p_X(x)$ ($0 \not\in  p_X(\X)$), su densidad
-  (distribuci\'on) de probabilidad. La entrop\'ia diferencial de la variable $X$
-  es definida por
+  Sea $X$ una variable aleatoria continua  definida sobre $\Rset^d$ y $\X = \{ x
+  \in \Rset^d:  \: p_X(x) > 0 \}  \subseteq \Rset^d$ el soporte  de $p_X(x)$, su
+  densidad  (distribuci\'on) de  probabilidad. La  entrop\'ia diferencial  de la
+  variable $X$ es definida por
   %
   \[
   H(p_X) = H(X) = - \int_\X p_X(x) \, \log p_X(x) \, dx
@@ -566,8 +576,8 @@ H(Y) & = & - \int_{\Rset^d} p_Y(y) \log p_Y(y) \, dy\\[2.5mm]
 %
 donde $\Jac_g$ es la  matriz de componentes $\frac{\partial g_i}{\partial x_j}$,
 Jacobiano  de  la  transformaci\'on  \   $g:  \Rset^d  \mapsto  \Rset^d$  \  ($g
-\equiv \begin{bmatrix}  g_1(x_1 , \ldots  , x_d) &  \cdots & g_d(x_1 ,  \ldots ,
-  x_d)  \end{bmatrix}^t$) \  y  \  $|\cdot|$ representa  el  valor absoluto  del
+\equiv [ g_1(x_1 , \ldots  , x_d) \quad  \cdots \quad g_d(x_1 ,  \ldots ,
+  x_d) ]^t$) \  y  \  $|\cdot|$ representa  el  valor absoluto  del
 determinante de la matriz.  Recordando  que $p_X(x) = p_Y(g(x)) |\Jac_g(x)|$, se
 obtiene
 %
@@ -580,7 +590,7 @@ Para  cualquiera biyecci\'on $g:  \Rset^d \mapsto  \Rset^d$
   H(g(X)) = H(X) + \int_{\Rset^d} p_X(x) \log |\Jac_g(x)| \, dx
   \]
   %
-  donde el \'ultimo termino, $\Esp\left[  \log |\Jac_g(X)| \right]$ no vale cero
+  donde el \'ultimo t\'ermino, $\Esp\left[  \log |\Jac_g(X)| \right]$ no vale cero
   en general.  En particular, si $H$ es invariante bajo una translaci\'on,
   %
   \[
@@ -695,9 +705,9 @@ o~\cite[Lema~7.2]{WanMad04}~\footnote{En~\cite[Sec.~3.3]{LieLos01}  lo  muestran
   siendo $\phi(t)  = t  \log t$ un  caso particular.},  y entonces para  el caso
 particular $\phi(t) = t \log t$.
 
-Una pregunta natural es de saber lo  que pasa en termino de mayorizaci\'on en el
-contexto continuo $d$-dimensional. Por eso,  se necesita primero de redefinir la
-noci\'on de mayorizaci\'on en este contexto:
+Una pregunta natural  es de saber lo que pasa en  t\'ermino de mayorizaci\'on en
+el contexto continuo $d$-dimensional. Por  eso, se necesita primero de redefinir
+la noci\'on de mayorizaci\'on en este contexto:
 %
 \begin{definicion}[Mayorizaci\'on en el contexto continuo]\label{def:SZ:MayorizacionC}
   Una densidad  de probabilidad $p$  es dicha mayorizada por  una distribuci\'on
@@ -764,7 +774,14 @@ consecuencia de la propiedad~\ref{prop:SZ:biyeccionC}.  Tambi\'en, \underline{la
 \end{propiedadesC}
 
 Al      final,     \underline{se      conservan      las     propiedades      de
-  concavidad~\ref{prop:SZ:concavidad},  de aditividad~\ref{prop:SZ:aditividad} y
+  concavidad~\ref{prop:SZ:concavidad}~\footnote{Es  nuevamente  una consecuencia
+    de la  desigualdad de Jensen $\Esp[\phi(X)] \ge  \phi\left( \Esp[X] \right)$
+    para  $\phi$ convexa.  Si  $\phi$ es  estrictamente en  $1$, la  igualdad se
+    alcanza si  y solamente si $X$  es determinista casi  siempre.  Se refier\'a
+    a~\cite{Jen06} en  el caso discreto  y integral, o~\cite{Hol89,  Had93} para
+    las  primeras semillas  de  esta desigualdad,  y entre  otros~\cite{Jes31:I,
+      Jes31:II,       Per74,       Rud91}       para       versiones       m\'as
+    generales.\label{foot:SZ:Jensen}},  de aditividad~\ref{prop:SZ:aditividad} y
   de sub-aditividad~\ref{prop:SZ:subaditividad}}.   Es interesante notar  que de
 la  desigualdad~\ref{prop:SZ:subaditividad},  puramente  entr\'opica,  se  puede
 deducir la  desigualdad de Hadamard,  desigualdad puramente matricial:  $|R| \le
