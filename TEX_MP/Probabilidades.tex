@@ -122,7 +122,7 @@ Con esta propiedades, $\A$ es llamado {\it $\sigma$-\'algebra}.
 \end{definicion}
 %
 \noindent Es  sencillo mostrar de  que $\Omega$ tambi\'en  es en $\A$, y  de que
-$\A$   est   cerrado   por   la   intersecci\'on  numerable.   Un   ejemplo   de
+$\A$   est   cerrado  por   la   intersecci\'on   numerable.    Un  ejemplo   de
 $\sigma$-\'algebra sobre \ $\Omega = \{ 1 \, , \,  2 \, , \, 3 \, , \, 4 \, , \,
 5 \, , \, 6 \}$ \ puede ser \ $\big\{ \emptyset \, , \, \Omega \, , \, \{ 1 \, ,
 \, 2 \, , \, 3 \} \, , \, \{ 4 \, , \, 5 \, , \, 6 \} \big\}$.}
@@ -245,9 +245,9 @@ La  igualdad  vale  en  el  caso  especial  de  eventos  mutuamente  excluyentes
     probabilidad condicional}:
 %
 \begin{definicion}[Probabilidad condicional]
-  La  {\it probabilidad  condicional} de  $A$ dado  $B$ es  la raz\'on  entre la
-  probabilidad del evento conjunto y la  probabilidad de que se d\'e $B$ (cuando
-  \'este es un evento no nulo):
+  \modif{  \underline{Por definici\'on}, l}a  {\it probabilidad  condicional} de
+  $A$ dado  $B$ es  la raz\'on entre  la probabilidad  del evento conjunto  y la
+  probabilidad de que se d\'e $B$ (cuando \'este es un evento no nulo):
   %
   \[
   P(A|B) = \frac{P(A \cap B)}{P(B)}.
@@ -263,7 +263,26 @@ aditiva  para  una  uni\'on  de  eventos  mutuamente  excluyentes  referidos  al
 cumplimiento   de    $B$.    Luego,   $P(A|B)$   es    una   \modif{medida   de}
 probabilidad~\footnote{ \modif{  se puede definir un espacio  de probabilidad $(
     \Omega_B, \A_B  , P_B)$ donde  $P_B(A) \equiv P(A|B)$.}}; \modif{Por  eso, a
-  veces  en   la  literatura  se  la  denota   $P_B(A)$}.   Algunas  propiedades
+  veces en la literatura se  la denota $P_B(A)$}. \modif{Diversas situaciones de
+  probabilidades   condicionales  son   ilustradas  en   la   figura  siguiente,
+  Fig.~\ref{fig:MP:Condicional}.
+
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/Condicional} \end{center}
+%
+\leyenda{Ilustraci\'on  de  la probabilidad  condicional  con  $A$ interior  del
+  elipse  en linea  llena  y unos  $B_i$  interiores de  los  elipses en  lineas
+  discontinuas.   \ $\omega  \in B_1  \Rightarrow \omega  \in A$  \ as\'i  que \
+  $P(A|B_1) = 1$. Al rev\'es, \  $\omega \in B_3 \Rightarrow \omega \not\in A$ \
+  as\'i que \  $P(A|B_3) = 0$.  Entre estas  situaciones extremas, si $P(\bar{A}
+  \cap B_2)  \ne 0$ \ y  \ $P(A \cap  B_2) \ne 0$ \  tenemos $0 < P(A|B_2)  < 1$
+  (ej.  con   probabilidades  iguales  a   las  superficias  relativas   de  los
+  conjuntos).}
+\label{fig:MP:Condicional}
+\end{figure}
+}
+
+    Algunas  propiedades
 interesantes son las siguientes:
 %
 \begin{itemize}
@@ -328,5 +347,3 @@ P\left( \bigcap_{i=1}^n A_i \right) = \prod_{i=1}^n P(A_i).
 %
 Se  deduce que  los  eventos mutuamente  excluyentes  no son  estad\'isticamente
 independientes.
-
-%\cite{ManWol95}
