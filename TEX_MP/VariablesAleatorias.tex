@@ -1,27 +1,221 @@
 \seccion{Variables aleatorias y distribuciones de probabilidad}
 \label{s:variablealeatoria}
 
-
-\SZ{\cite[\& Ref.]{BarNov78}}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \emph{En  un  experimento  o  un  dado  proceso,  los  posibles  resultados  son
   t\'ipicamente  n\'umeros reales, siendo  cada n\'umero  un evento.   Luego los
   resultados  son mutuamente  excluyentes. Se  considera a  esos  n\'umeros como
   valores de una  \emph{variable aleatoria} $X$ a valores  reales, que puede ser
-  discreta  (cuando  el espacio  muestral  es  finito  o infinito  numerable)  o
-  continua.  La ley  de la variable aleatoria $X$ es  una medida de probabilidad
-  definida por  \ $P_X(x) =  \Pr(X=x)$ o, en  general, por $P_X(A)  = \Pr(X=x\in
-  A)$.  Para indicar  que la variable~$X$ sigue la ley  de distribuci\'on $p$ se
-  escribe  \  $X\sim p  $.   Puede  ser  \'util tambi\'en  considerar  variables
-  aleatorias  complejas  $Z=X+iY$, donde  $X$  e  $Y$  son variables  aleatorias
-  reales. }
+  discreta o continua.}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  (cuando  el espacio  muestral  es  finito  o infinito  numerable)  o
+%  continua.  La ley  de la variable aleatoria $X$ es  una medida de probabilidad
+%  definida por  \ $P_X(x) =  \Pr(X=x)$ o, en  general, por $P_X(A)  = \Pr(X=x\in
+%  A)$.  Para indicar  que la variable~$X$ sigue la ley  de distribuci\'on $p$ se
+%  escribe  \  $X\sim p  $.   Puede  ser  \'util tambi\'en  considerar  variables
+%  aleatorias  complejas  $Z=X+iY$, donde  $X$  e  $Y$  son variables  aleatorias
+%  reales. }
+
+
+\modif{  Formalmente,  la noci\'on  de  variable  aleatoria  se apoya  sobre  la
+  noci\'on de funci\'on medible~\cite{AthLah06, Coh13}:
+%
+\begin{definicion}[Funci\'on medible]
+  Sean  \ $(\Omega,\A)$  \ y  \ $(\Upsilon,\B)$  \ dos  espacios  medibles.  Una
+  funci\'on $f: \Omega \mapsto \Upsilon$ es dicha {\it $(\A,\B)$-medible} si
+  %
+  \[
+  \forall \,  B \in  \B, \quad  A \equiv f^{-1}(B)  = \left\{  \omega \in  A: \,
+    f(\omega) \in B \right\} \: \in \: \A
+  \]
+  %
+  Dicho de  otra manera,  la pre-imagen  de un elemento  dada de  $\B$ (elemento
+  medible)  partenece  a  $\A$  (elemento  medible).  A  veces,  se  dice  m\'as
+  simplemente de que $f: (\Omega,\A) \mapsto (\Upsilon,\B)$ es medible por abuso
+  de escritura.
+\end{definicion}
+
+Adem\'as, saliendo de un espacio de medida y una funci\'on $f$ medible, se puede
+definir una medida imagen sobre el espacio de llegada~\cite{AthLah06, Coh13}:
+%
+\begin{teorema}[Teorema de la medida imagen]
+  Sean  \ $(\Omega,\A,\mu)$  \  un espacio  de  medida, \  $(\Upsilon,\B)$ \  un
+  espacios  medibles  y una  funci\'on  $f:  (\Omega,\A) \mapsto  (\Upsilon,\B)$
+  medible. Sea $\mu_f$ tal que
+  %
+  \[
+  \forall \,  B \in  \B, \quad  \mu_f(B) = \mu\left( f^{-1}(B) \right)
+  \]
+  %
+  Entonces, $\mu_f$ es una medida sobre el espacio medible $(\Upsilon,\B)$ \ \ie
+  \ $(\Upsilon,\B,\mu_f)$ \ define un espacio de medida.  Adem\'as, $\mu(\Omega)
+  = \mu_f(\Upsilon)$ (posiblemente infinitas).
+\end{teorema}
+%
+\begin{proof}
+  Por  definici\'on,  claramente $\mu_f  \ge  0$ \  y  por  definici\'on de  una
+  funci\'on,  $f^{-1}(\emptyset)  =   \emptyset$  \  dando  $\mu_f(\emptyset)  =
+  \mu(\emptyset) =  0$.  Luego,  si para  un conjunto numerable  $\{ B_i  \}$ de
+  elementos  de $\B$  disjuntos entre  s\'i, las  preimagenes de  los  $B_i$ son
+  disjuntos tambi\'en entre  s\'i (para $i \ne j$ no se  puede tener $\omega \in
+  f^{-1}(B_i) \cap f^{-1}(B_j)$ si no $\omega$ tendr\'ia dos imagenes distinctas
+  por  $f$).   Entonces  $\displaystyle f^{-1}\left( \bigcup_i  B_i  \right)  =
+  \bigcup_i  f^{-1}(B_i)$.   Eso  implica  de   que  $\displaystyle  \mu_f\left(
+    \bigcup_i B_i \right) = \mu\left( f^{-1}\left( \bigcup_i B_i \right) \right)
+  =  \bigcup_i  \mu\left( f^{-1}(B_i)  \right)  =  \sum_i \mu\left(  f^{-1}(B_i)
+  \right) = \sum_i  \mu_f(B_i)$.  Finalmente, necesariamente $f^{-1}(\Upsilon) =
+  \Omega$  (es incluida y  $f(\Omega)$ siendo  en $\Upsilon$  son necesariamente
+  iguales) lo  que cierra la  prueba~\footnote{De hecho, se  puede sencillamente
+    probar que la  preimagen de una uni\'on numerable (que  sean disjuntos o no)
+    es la uni\'on  de las preimagenes; lo mismo occure  para la intersecci\'on y
+    adem\'as la preimagen del complemento es el complemento de la preimagen. Eso
+    es conocido como {\it leyes de de Morgan}~\cite{AthLah06, Coh13}.}.
+\end{proof}
+
+Un espacio  jugando un  rol particular es  $\Rset$, a  lo cual se  puede asociar
+$\B(\Rset)$ la  $\sigma$-\'algebra m\'as  peque\~na generada por  los intervalos
+$(-\infty  \,  ;  \, b]$  (equivalentemente,  por  los  abiertos de  $\Rset$,  o
+tambi\'en  por  los  intervalos  $(a  \,  ; \,  b]$),  \ie  uniones  numerables,
+intersecciones  numerables,  complementos  de  estos  intervalos~\cite{AthLah06,
+  Coh13}.   $\B(\Rset)$  es  llamada   {\it  Borelianos   de  $\Rset$}   o  {\it
+  $\sigma$-\'algebra de Borel de $\Rset$}.
+
+Con  estas   definiciones,  tenemos  todo   lo  necesario  para   introducir  la
+definici\'on de una variable aleatoria real~\cite{AthLah06, Coh13, Bre88}:
+%
+\begin{definicion}[Variable aleatoria real]
+  Una variable aleatoria real es una funci\'on medible
+  %
+  \[
+  X: (\Omega,\A,P) \mapsto (\Rset,\B(\Rset),P_X)
+  \]
+  %
+  donde la medida  $P_X$ sobre $\B(\Rset)$ es la medida imagen  de $P$.  \ $P_X$
+  es frecuentemente llamada {\it  distribuci\'on de probabilidad} de la variable
+  aleatoria $X$. En lo que sigue, escribiremos los eventos
+  %
+ \[
+ (X \in B) \equiv X^{-1}(B) = \{ \omega \in \Omega: \: X(\omega) \in B \}
+ \]
+  %
+ as\'i que, por definici\'on,
+  %
+ \[
+ P_X(B) = P(X \in B)
+ \]
+\end{definicion}
+%
+Para  ilustrar esta definici\'on,  tomando el  ejemplo de  un dado,  $\Omega$ es
+discreto y representa  las caras, mientras de que los  numeros ser\'an la imagen
+de $\Omega$ por $X$ (ej. $X(\omega_i) = i, \quad i = 1, \ldots , 6$).
+
+Fijense de que,  por la propiedades de una  medida sobre una $\sigma$-\'algebra,
+para caracterizar completamente la  distribuci\'on $P_X$ es suficiente conocerla
+sobre  los intervalos de  la forma  $(-\infty \,  ; \,  b]$. Eso  da lugar  a la
+definici\'on de la funci\'on de repartici\'on~\cite{AthLah06, Coh13, Bre88}:
+%
+\begin{definicion}[Funci\'on de repartici\'on]
+  Por  definici\'on,  la  funci\'on  de  repartici\'on  $F_X$  de  una  variable
+  aleatoria es definida por
+  %
+  \[
+  F_X(x) = P_X((-\infty \, ; \, x]) = P(X \le x)
+  \]
+\end{definicion}
+%
+Naturalmente, de las propiedades de una medida de probabilidad,
+%
+\begin{itemize}
+\item $0 \le F_X(x) \le 1$;
+%
+\item $\displaystyle \, \lim_{x \to -\infty} F_X(x) = 0$ \ y \ $\displaystyle \,
+  \lim_{x \to +\infty} F_X(x) = 1$  (viene de $P_X(\emptyset) = 0$ y $P_X(\Rset)
+  = 1$);
+%
+\item $F_X$ es creciente (viene de que $x_1 \le x_2 \Rightarrow (-\infty \, ; \,
+  x_1] \subseteq (-\infty \, ; \, x_2]$);
+%
+\item $F_X$ no es necesariamente continua  (lo vamos a ver m\'as adelante), pero
+  en cada punto $x$ es continua a su derecha (ver punto anterior).
+\end{itemize}
+}
+
+Cuando se trabaja  con $d\geq 2$ variables aleatorias  es conveniente definir un
+{\it vector aleatorio}  de dimensi\'on $d$, y apelar para  su estudio a nociones
+del \'algebra  lineal y  a notaci\'on matricial.   Se tiene el  vector aleatorio
+$d$-dimensional  \ $X  = \begin{bmatrix}  X_1 &  \cdots &  X_d \end{bmatrix}^t$,
+caracterizado por  $d$-uplas de  variables aleatorias reales.   Como en  el caso
+univariado, se define este vector de la manera siguiente\modif{:~\cite{AthLah06,
+    Coh13, Bre88}
+%
+\begin{definicion}[Vector aleatorio real]
+  Un variable aleatorio real es una funci\'on medible
+  %
+  \[
+  X: (\Omega,\A,P) \mapsto (\Rset^d,\B(\Rset^d),P_X)
+  \]
+  %
+  donde  $\B(\Rset^d)$  son  los  borelianos  de  $\Rset^d$,  $\sigma$-\'algebra
+  generada por  los productos cartesianos $(-\infty  \, ; \,  b_1] \times \cdots
+  \times (-\infty \,  ; \, b_d]$ y donde la medida  $P_X$ sobre $\B(\Rset^d)$ es
+  la  medida imagen  de $P$  llamada  {\it distribuci\'on  de probabilidad}  del
+  vector aleatorio $X$. como el el caso escalar,
+  %
+ \[
+ (X \in B) \equiv X^{-1}(B) = \{ \omega \in \Omega: \: X(\omega) \in B \} \qquad
+ \mbox{y} \qquad P_X(B) = P(X \in B)
+ \]
+\end{definicion}
+%
+
+De la propiedades de una  medida sobre una $\sigma$-\'algebra, para caracterizar
+completamente la distribuci\'on $P_X$ de nuevo es suficiente conocerla sobre los
+elementos de la forma $(-\infty \, ;  \, b_1] \times \cdots \times (-\infty \, ;
+\, b_d]$, \ie la  funci\'on de repartici\'on multivariada~\cite{AthLah06, Coh13,
+  Bre88}:
+%
+\begin{definicion}[Funci\'on de repartici\'on mutlivariada]
+  Por  definici\'on,  la  funci\'on  de  repartici\'on  $F_X$  de  un vector
+  aleatorio es definida en $x = (x_1 , \ldots , x_d)$ por
+  %
+  \[
+  F_X(x) = P_X((-\infty \, ; \, x_1] \times \cdots \times (-\infty \, ; \, x_d])
+  = P\left( \bigcap_{i=1}^d (X_i \le x_i) \right)
+  \]
+\end{definicion}
+%
+De nuevo, de las propiedades de una medida de probabilidad,
+%
+\begin{itemize}
+\item $0 \le F_X(x) \le 1$;
+%
+\item $\displaystyle  \, \lim_{\forall  i, x_i \to  -\infty} F_X(x)  = 0$ \  y \
+  $\displaystyle \, \lim_{\forall i, x_ \to +\infty} F_X(x) = 1$;
+%
+\item $F_X$ es creciente con respecto a cada variable $x_i$.
+\end{itemize}
+%
+Al  final, para  un subconjunto  $I_k =  (i_1,\ldots,i_k)$ de  $1 \le  k  \le d$
+elementos de  $\{ 1  , \ldots ,  d \}^k$,  $X_{I_k} = \begin{bmatrix}  X_{i_1} &
+  \cdots   &   X_{i_k}\end{bmatrix}^t$  es   obviamente   un  vector   aleatorio
+$k$-dimensional. Es entonces sencillo ver de que
+%
+\[
+F_{X_{I_k}}(x_{I_k}) = \lim_{\forall i \not\in I_k, x_i \to +\infty} F_X(x)
+\]
+%
+(viene de  que $\bigcap_{j=1}^k (X_{i_j}  \le x_{i_j}) =  \left( \bigcap_{j=1}^k
+  (X_{i_j} \le x_{i_j}) \right) \bigcap  \left( \bigcap_{i \not\in I_k} (X_i \in
+  \Rset)  \right)$). Esta  funci\'on es  dicha {\it  funci\'on  de repartici\'on
+  marginale} de $F_X$. 
+
+\SZ{Independencia}}
+
+
+
+% ================================= MaxEnt
+
 \subseccion{Variable aleatoria discreta}
+\label{sec:MP:VADiscreta}
 
 Los  posibles valores de  una variable  aleatoria discreta  $X$ consisten  en un
 conjunto  contable  (finito  o   infinito  numerable)  de  n\'umeros  reales:  \

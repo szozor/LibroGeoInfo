@@ -21,26 +21,42 @@ Otra  definici\'on  de  probabilidad  se  basa  en  la  frecuencia  relativa  de
 ocurrencia  de  un evento.   Si  en  una cantidad  $K$  muy  grande de  procesos
 independientes  cierto   atributo  aparece  $k$   veces,  se  identifica   a  la
 probabilidad  asociada a  un  proceso o  ensayo  con la  frecuencia relativa  de
-ocurrencia  $\frac{k}{K}$ del  atributo\modif{~\cite{Ber1713,  Ber1713:2, Dem56}
-  o~\cite[\& Ref.]{Bra76, Hal90, ShaVov06}.}
+ocurrencia    $\frac{k}{K}$    del    atributo~\cite[\&   Ref.]{Bra76,    Hal90,
+  ShaVov06}~\footnote{A pesar de que la  noci\'on de azar (viniendo del arabe) o
+  de  alea  (en  latin)  es   muy  antiguo,  el  italiano  Gerolamo  Cardano  es
+  ``probablemente'' un de los  primeros tratando matematicamente del concepto de
+  probabilidad en el siglo XVI, escribiando un libro sobre los juegos de azar en
+  1564~\cite{Bel05}  o~\cite[Cap.~4]{Hal90}.   Entre  los numerosos  matematicos
+  desarollando  la teoria  de las  probabildades, (en  particular  los franceses
+  Pierre de  Fermat y Blaise  Pascal~\cite[Cap.~5]{Hal90}) hay que  mencionar el
+  suizo  Jacob Bernoulli  y el  franc\'es Abraham  de Moivre,  quizas un  de los
+  primeros  llevandos un  aporte importante  al desarollo  de la  teoria  de las
+  probabilidades  en  el  siglo  XVIII   a  trav\'es  de  este  punto  de  vista
+  ``frequencista''  y combinatorial~\cite[en  latin]{Ber1713} o~\cite{Ber1713:2,
+    Dem56} y~\cite[Cap.~13, 15 \&~22]{Hal90}.}.
 %lim N->infty n/N indef.
 
-Los  axiomas  de  Kolmogorov  proveen  requisitos  suficientes  para  determinar
-completamente las propiedades de la medida de probabilidad \modif{$P(A)$} que se
-puede asociar a  un evento $A$ entre  un conjunto de resultados o  eventos de un
-proceso.
+Los axiomas de Kolmogorov~\footnote{Un paso importante es debido a Kolmogorov en
+  1933  que  se apoy\'o  sobre  trabajos  de  Richard von  Mises~\cite{Mis32}  y
+  tambi\'en sobre  la teoria de  la medida y  de la integraci\'ion  debido entre
+  otros a Emile Borel y Henri-L\'eon Lebesgues~\cite{Bor98, Bor09, Leb04, Leb18,
+    Hal50}    para    formalizar    anal\'iticamente    la   teoria    de    las
+  probabilidades~\cite{Kol56,    BarNov78,   JacPro03}.}    proveen   requisitos
+suficientes  para  determinar completamente  las  propiedades  de  la medida  de
+probabilidad $P(A)$  que se puede asociar a  un evento $A$ entre  un conjunto de
+resultados o eventos de un proceso.
 
-\modif{Llamemos $\Omega$ al {\it  espacio muestral} o {\it espacio fundamental},
-  que  es el  espacio de  {\it muestras  (outcomes en  ingl\'es)} \  $\omega \in
-  \Omega$.  Se asocia \ $\A$ \ una colecci\'on de conjuntos de \ $\Omega$, donde
-  los elementos de $\A$ son llamados {\it eventos}.
-  % total de eventos.
-  Por ejemplo, $\Omega$ puede ser las caras de un dado de 6 caras (los n\'umeros
-  naturales del 1 al 6, o las letras {\it a, b, c, d, e, f}, u otro etiquetado),
-  $\A$ teniendo los eventos
-  % si $A$ es el evento
-  $A$ ``es  un n\'umero natural par''  y $B$ indicando ``es  un n\'umero natural
-  impar''.}
+Llamemos $\Omega$ al {\it espacio  muestral} o {\it espacio fundamental}, que es
+el espacio de  {\it muestras (outcomes en ingl\'es)} \  $\omega \in \Omega$.  Se
+asocia \ $\A$ \ una colecci\'on  de conjuntos de \ $\Omega$, donde los elementos
+de $\A$ son llamados {\it eventos}.
+% total de eventos.
+Por ejemplo, $\Omega$ puede  ser las caras de un dado de  6 caras (los n\'umeros
+naturales del 1 al  6, o las letras {\it a, b, c, d,  e, f}, u otro etiquetado),
+$\A$ teniendo los eventos
+% si $A$ es el evento
+$A$ ``es  un n\'umero  natural par''  y $B$ indicando  ``es un  n\'umero natural
+impar''.
 % ,  el espacio  muestral  $\Omega  = \{  A  , B  \}$  indica  ``es un  n\'umero
 % natural'';
 En el caso de analizar el tiempo de vida de un aparato, $\Omega \equiv \Rset_+$.
@@ -51,91 +67,86 @@ El  conjunto  de  resultados  posibles  se  supone  conocido,  a\'un  cuando  se
 desconozca de antemano el resultado de una prueba.
 
 Entre  los eventos  se  pueden considerar  operaciones  an\'alogas a  las de  la
-teor\'ia  de conjuntos \modif{(ej.~\cite{Spi76,  Bre88, ManWol95,  Sie75, Sie76,
-    Bor98, Bor09}):}
-%% <-- Ej: representar mediante conjuntos las operaciones entre eventos
+teor\'ia de  conjuntos (ej.~\cite{Spi76,  Bre88, ManWol95, Sie75,  Sie76, Bor98,
+  Bor09}):
+%
 \begin{itemize}
-\item Combinaci\'on o uni\'on de eventos: \
-  % $A+B$ se corresponde con
-  $A \cup B$, implicando  que se da $A$, \'o $B$, o ambos  (ej. por un dado, $A$
-  eventos ``cara par'' y $B$ evento ``cara menor o igual a 3'' tal que $A \cup B
-  =  \{1 \,  , \,  2 \,  , \,  3 \,  , \,  4 \,  , \,  6\}$);  \modif{Seg\'un la
-    literatura, se denota a veces \ $A+B$ \ o \ $A \wedge B$. }
+\item Combinaci\'on  o uni\'on de  eventos: \ $A  \cup B$, implicando que  se da
+  $A$, \'o $B$, o ambos (ej. por  un dado, $A$ eventos ``cara par'' y $B$ evento
+  ``cara menor o igual a 3'' tal que $A \cup B = \{1 \, , \, 2 \, , \, 3 \, , \,
+  4 \,  , \, 6\}$); Seg\'un la  literatura, se denota a  veces \ $A+B$ \  o \ $A
+  \wedge B$.
 %
-\item  Intersecci\'on  de  eventos:  \ 
-  % $A,B$ se corresponde con
-  $A\cap B$, implicando que se  dan ambos $A$~y~$B$ (con el ejemplo precediente,
-  $A \cap B = \{ 2 \}$); \modif{Se denota a veces \ $(A,B)$ \ o \ $A \vee B$.}
+\item  Intersecci\'on de  eventos:  \ $A\cap  B$,  implicando que  se dan  ambos
+  $A$~y~$B$ (con  el ejemplo precediente,  $A \cap  B = \{  2 \}$); Se  denota a
+  veces \ $(A,B)$ \ o \ $A \vee B$.
 %
-\item Complemento  de un evento: \ 
-  % $-A$ se corresponde con
-  $\bar{A}$ e  indica que no se  da $A$; \modif{Se denota  a veces \ $-A$  \ o \
-    $A^c$ (con  el ejemplo  precediente, $\bar{A} =  \{ 1 \,  , \,  3 \, ,  \, 5
-    \}$).}
+\item Complemento de un evento: \ $\bar{A}$ e indica que no se da $A$; Se denota
+  a veces \ $-A$  \ o \ $A^c$ (con el ejemplo precediente, $\bar{A}  = \{ 1 \, ,
+  \, 3 \, , \, 5 \}$).
 %
-\item  Eventos {\it  disjuntos} o  {\it mutuamente  excluyentes} o  \modif{\it o
-    incompatibles}: \  son aquellos que no se  superponen, se anota \ $A  \cap B =
-  \emptyset$ \ donde \ $\emptyset = \bar{\Omega}$ \
-  % $A,B = \emptyset$ donde $\emptyset=-\Omega$
-  denota  el evento  nulo (evento  que no  puede ocurrir,  es el  complemento de
-  $\Omega$, por ejemplo $A$ ``cara par'' y $B$ ``cara impar'').
+\item  Eventos  {\it  disjuntos}  o   {\it  mutuamente  excluyentes}  o  {\it  o
+    incompatibles}: \ son aquellos que no se  superponen, se anota \ $A \cap B =
+  \emptyset$  \ donde  \  $\emptyset =  \bar{\Omega}$  \ denota  el evento  nulo
+  (evento que no  puede ocurrir, es el complemento de  $\Omega$, por ejemplo $A$
+  ``cara par'' y $B$ ``cara impar'').
 \end{itemize}
 %
-\modif{\noindent Eso es ilustrado  en la figura Fig.~\ref{fig:MP:Ensembles}. La uni\'on
+\noindent Eso es ilustrado  en la figura Fig.~\ref{fig:MP:Ensembles}. La uni\'on
 e intersecci\'on satisfacen a las mismas reglas que en la teoria ensemblista, es
 decir cada una es comutativa \ $A \cup B = B \cup A$, \ $A \cap B = B \cap A$, \
 asociativa \ $(A \cup B)  \cup C = A \cup (B \cup C)$, \ $(A  \cap B) \cap C = A
 \cap (B \cap C)$, \ distributiva con respeto a la otra \ $(A \cup B) \cap C = (A
 \cap C) \cup (B \cap C)$ \ y \ $(A  \cap B) \cup C = (A \cup C) \cap (B \cup C)$
-\  (ver  ej.~\cite{Jef48,  Jef73,   Hal50,  Fel71,  Bre88,  ManWol95,  ManWol95,
-  IbaPar97, LehCas98, AthLah06, Coh13}).
+\  (ver  ej.~\cite{Jef48,  Jef73,   Hal50,  Fel71,  Bre88,  ManWol95,  IbaPar97,
+  LehCas98, AthLah06, Coh13}).
 
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/Ensembles} \end{center}
 %
-\leyenda{\modif{Ilustraci\'on   de  la  operaciones   de  uni\'on   $A  \cup   B$  (a),
+\leyenda{Ilustraci\'on   de  la  operaciones   de  uni\'on   $A  \cup   B$  (a),
   intersecci\'on $A \cap B$ (b), complemento $\bar{A}$ (c), enventos excluyentes
   $A \cap B =  \emptyset$ (d). $A$ es representado en linea  llena, $B$ en linea
   discontinua; (a)-(c)  el resultado de  la operaci\'on es  la zona en  grise. A
   veces, esta representaci\'on ensemblista se  denota {\it diagrama de Venn o de
-    Euler}.}}
+    Euler}.}
 \label{fig:MP:Ensembles}
 \end{figure}
-}
 
-\modif{Formalmente,   se  define   de  manera   abstracta  un   espacio  medible
-  $(\Omega,\A)$ de  la manera siguiente~\cite{Hal50,  Bre88, IbaPar97, AthLah06,
-    Coh13} (ver  tambi\'en~\cite[\& Ref.]{BarNov78, Bor98,  Sie18, Sie75, Sie76}
-  para notas hist\'oricas):
+
+Formalmente, se define  de manera abstracta un espacio  medible $(\Omega,\A)$ de
+la  manera   siguiente~\cite{Hal50,  Bre88,  IbaPar97,   AthLah06,  Coh13}  (ver
+tambi\'en~\cite[\&  Ref.]{BarNov78,  Bor98,  Sie18,  Sie75,  Sie76}  para  notas
+hist\'oricas):
 %
 \begin{definicion}[Espacio medible]
   $(\Omega, \A)$ \ formado de un espacio muestral \ $\Omega$ \ y una colecci\'on
   \ $\A$  \ de conjuntos  de \  $\Omega$ \ es  llamado {\it espacio  medible} si
   satisface a los requisitos
-%
-\begin{enumerate}%[label={(\Roman*)}]
-\item  $\emptyset \in \A$,
-%
-\item si $A \in \A$, entonces \ $\bar{A} \in \A$,
-%
-\item la uni\'on  numerable de conjuntos de $\A$ queda en  $\A$ ($\A$ es cerrado
-  por la un\'ion numerable).
-%
-\end{enumerate}
-%
-Con esta propiedades, $\A$ es llamado {\it $\sigma$-\'algebra}.
+  %
+  \begin{enumerate}%[label={(\Roman*)}]
+  \item $\emptyset \in \A$,
+  %
+  \item si $A \in \A$, entonces \ $\bar{A} \in \A$,
+  %
+  \item la uni\'on numerable de conjuntos de $\A$ queda en $\A$ ($\A$ es cerrado
+    por la un\'ion numerable).
+  %
+  \end{enumerate}
+  %
+  Con esta propiedades, $\A$  es llamado {\it $\sigma$-\'algebra}. Los elementos
+  de $\A$ son dichos {\it medibles}.
 \end{definicion}
 %
 \noindent Es  sencillo mostrar de  que $\Omega$ tambi\'en  es en $\A$, y  de que
 $\A$   est   cerrado  por   la   intersecci\'on   numerable.    Un  ejemplo   de
 $\sigma$-\'algebra sobre \ $\Omega = \{ 1 \, , \,  2 \, , \, 3 \, , \, 4 \, , \,
 5 \, , \, 6 \}$ \ puede ser \ $\big\{ \emptyset \, , \, \Omega \, , \, \{ 1 \, ,
-\, 2 \, , \, 3 \} \, , \, \{ 4 \, , \, 5 \, , \, 6 \} \big\}$.}
+\, 2 \, , \, 3 \} \, , \, \{ 4 \, , \, 5 \, , \, 6 \} \big\}$.
 
 Las propiedades de la probabilidad $P$ de un dado evento quedan determinadas por
-los siguientes \modif{(ej.~\cite{Spi76, Kol56, ShaVov06, Pla05}):}
+los siguientes (ej.~\cite{Spi76, Kol56, ShaVov06, Pla05}):
 
-\modif{
 \noindent {\it Axiomas de Kolmogorov}
 %
 \begin{enumerate}
@@ -147,10 +158,11 @@ los siguientes \modif{(ej.~\cite{Spi76, Kol56, ShaVov06, Pla05}):}
 \item $P(\Omega) = 1$
 \end{enumerate}
 %
-Formalmente,   se   define   un   espacio   de   probabilidad   de   la   manera
-siguiente~\cite{Hal50, Bre88, IbaPar97, AthLah06, Coh13}:
+Formalmente,  se  define  un  {\it  espacio  de  probabilidad}  o  {\it  espacio
+  probabil\'istico}  de   la  manera  siguiente~\cite{Hal50,   Bre88,  IbaPar97,
+  AthLah06, JacPro03, Coh13}:
 %
-\begin{definicion}[Espacio de probabilidad]
+\begin{definicion}[Espacio probabil\'istico]
   Sea $(\Omega,\A)$ un espacio medible.  Una funci\'on $\mu: \A \mapsto \Rset_+$
   tal que
   %
@@ -166,14 +178,14 @@ siguiente~\cite{Hal50, Bre88, IbaPar97, AthLah06, Coh13}:
 
   Cuando $\mu$  es acotada por  arriba, $\mu(\Omega) <  + \infty$, la  medida es
   dicha  {\it  finita} y  el  espacio tambi\'n  es  dicho  finito. Adem\'as,  si
-  $\mu(\Omega) =  1$, la  medida es dich  medida de {\it  probabilidad}, $\sigma
-  \equiv P$.  En este caso, el  espacio $(\Omega,\A,P)$ es llamado {\it espacio de
-    probabilidad}.
+  \[ P \equiv  \mu, \quad \P(\Omega) = 1  \], la medida es dicha  medida de {\it
+    probabilidad}, $\mu \equiv P$.  En  este caso, el espacio $(\Omega,\A,P)$ es
+  llamado {\it espacio probabil\'istico}.
 \end{definicion}
-}
 
-A partir de \modif{los axiomas de Kolmogorov} se pueden probar varios corolarios
-y propiedades:
+
+A  partir de  los axiomas  de Kolmogorov  se pueden  probar varios  corolarios y
+propiedades:
 %
 \begin{itemize}
 \item la probabilidad de un evento seguro o cierto es 1;
@@ -185,30 +197,28 @@ y propiedades:
   \forall \ A \in \A$;
 %
 \item condici\'on de  normalizaci\'on: \ si $\Omega =  \bigcup_{i=1}^n A_i$, con
-  $A_i$ mutuamente  excluyentes, entonces  \ \modif{$\sum_{i=1}^n P(A_i)  = 1$;}
-  \modif{el  conjunto $\{  A_i \}_{i=1}^n$  es dicho  {\it conjunto  completo de
-      eventos    posibles    excluyentes   entre    s\'i}   y   es    ilustrado
-    figure~\ref{fig:MP:CompletoSub};}
+  $A_i$  mutuamente  excluyentes,  entonces  \  $\sum_{i=1}^n P(A_i)  =  1$;  el
+  conjunto  $\{ A_i  \}_{i=1}^n$  es  dicho {\it  conjunto  completo de  eventos
+    posibles      excluyentes      entre      s\'i}     y      es      ilustrado
+  figure~\ref{fig:MP:CompletoSub};
 %
-\item si $A$ es subconjunto de $B$, \modif{lo que escribiremos $A \subset B$, es
-    decir si $B$ se realiza, $A$ se realiza tambi\'en (pero no necesariamente al
-    rev\'es)},     entonces    \    $P(A)     \leq    P(B)$;  \modif{   Es    ilustrado
-  figure~\ref{fig:MP:CompletoSub};}
+\item si $A$ es subconjunto de $B$,  lo que escribiremos $A \subset B$, es decir
+  si  $B$  se realiza,  $A$  se realiza  tambi\'en  (pero  no necesariamente  al
+  rev\'es),     entonces     \     $P(A)     \leq    P(B)$;     Es     ilustrado
+  figure~\ref{fig:MP:CompletoSub};
 \end{itemize}
 
-\modif{
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/CompletoSub} \end{center}
 %
-\leyenda{\modif{Ilustraci\'on  de  conjunto completo  de  eventos posibles  excluyentes
+\leyenda{Ilustraci\'on  de  conjunto completo  de  eventos posibles  excluyentes
   entre s\'i  (a), y de  la inclusi\'on  (b) donde $A$  es en grise  (claro como
-  oscuro) mientras de que $B$ es en grise oscuro.}}
+  oscuro) mientras de que $B$ es en grise oscuro.}
 \label{fig:MP:CompletoSub}
 \end{figure}
-}
 
-\modif{Nota: la probabilidad \ $P(A \cap B)$  \ del evento $A \cap B$ \ se llama
-  tambi\'en {\it probabilidad conjunta} de \ $A$ \ y \ $B$.}
+Nota:  la probabilidad  \ $P(A  \cap B)$  \ del  evento $A  \cap B$  \  se llama
+tambi\'en {\it probabilidad conjunta} de \ $A$ \ y \ $B$.
 %$P(A  \cap B)  = P(B  \cap A)$}  es la
 %probabilidad del evento conjunto dado por  la composici\'on de los eventos $A$ y
 %$B$. 
@@ -217,20 +227,19 @@ Se demuestra que
 %
 \begin{itemize}
 \item $P(A  \cap B)$ est\'a acotada:  \ $0 \leq P(A  \cap B) \leq  \min\{ P(A) ,
-  P(B)\}$; \modif{(viene de \ $A \cap B \subset A$ \ y \ $A \cap B \subset B$)}.
+  P(B)\}$; (viene de \ $A \cap B \subset A$ \ y \ $A \cap B \subset B$).
 %
 \item Si  $A$ y $B$ son  mutuamente excluyentes, entonces  \ $p(A \cap B)  = 0$;
-  \modif{(viene de \ $A \cap B = \emptyset$)}.
+  (viene de \ $A \cap B = \emptyset$).
 %
-\item si \modif{$\{ B_j \}_{j=1}^m$} es un conjunto completo de eventos posibles
-  excluyentes entre s\'i, entonces \ \modif{$\sum_{j=1}^m P(A \cap B_j) = P(A)$;
-    (viene de $\{  A \cap B_j \}$ mutualmente excluyentes  y $\bigcup_j \left( A
-      \cap B_j\right)  = A \cap \left( \bigcup_j  B_j \right) = A  \cap \Omega =
-    A$).}
+\item  si  $\{ B_j  \}_{j=1}^m$  es un  conjunto  completo  de eventos  posibles
+  excluyentes entre s\'i, entonces \ $\sum_{j=1}^m P(A \cap B_j) = P(A)$; (viene
+  de  $\{ A  \cap B_j  \}$ mutualmente  excluyentes y  $\bigcup_j \left(  A \cap
+    B_j\right) = A \cap \left( \bigcup_j B_j \right) = A \cap \Omega = A$).
 \end{itemize}
 
 En el caso de eventos no necesariamente mutuamente excluyentes, se prueba que la
-{\it ley de composici\'on} o \modif {\it formula de inclusi\'on-exclusi\'on} es
+{\it ley de composici\'on} o {\it formula de inclusi\'on-exclusi\'on} es
 %
 \[
 P(A \cup B) = P(A) + P(B) - P(A \cap B) \leq P(A) + P(B), 
@@ -239,15 +248,15 @@ P(A \cup B) = P(A) + P(B) - P(A \cap B) \leq P(A) + P(B),
 y que para $n$ eventos resulta
 %
 \[
-\modif{P\left( \bigcup_{i=1}^n A_i \right) \leq \sum_{i=1}^n P\left( A_i \right). }
+P\left( \bigcup_{i=1}^n A_i \right) \leq \sum_{i=1}^n P\left( A_i \right).
 \]
 %
 La  igualdad  vale  en  el  caso  especial  de  eventos  mutuamente  excluyentes
 (recuperando el segundo axioma de Kolmogorov).
 
-\modif{Se  prueba  tambi\'en  de  que  si $\{  A_i  \}_{i=1}^{+\infty}$  es  una
-  secuencia creciente  de eventos, \ie $\forall  \, i \ge 1,  \quad A_i \subset
-  A_{i+1}$, entonces
+Se  prueba tambi\'en  de que  si $\{  A_i \}_{i=1}^{+\infty}$  es  una secuencia
+creciente  de eventos,  \ie $\forall  \, i  \ge 1,  \quad A_i  \subset A_{i+1}$,
+entonces
 %
 \[
 P\left( \bigcup_{i=1}^{+\infty} A_i \right) = \lim_{i \to +\infty} P(A_i)
@@ -259,20 +268,18 @@ eventos, \ie $\forall \, i \ge 1, \quad A_{i+1} \subset A_i$, entonces
 \[
 P\left( \bigcap_{i=1}^{+\infty} A_i \right) = \lim_{i \to +\infty} P(A_i)
 \]
-}
 
 
-\modif{Se puede  preguntarse de  cual es  la probabilidad de  un evento  $A$, si
-  sabemos que tenemos un evento $B$, dado.   Por ejemplo, por un dado de 6 caras
-  equilibriado, cual  es la probabilidad de  tener un n\'umero  par sabiendo que
-  tenemos un numero menor  a igual a 3.  La respuesta es  en la noci\'on de {\it
-    probabilidad   condicional}~\cite{Hau01,  Jef48,  Jef73,   Bre88,  ManWol95,
-    ShaVov06}:
+Se puede preguntarse de cual es la probabilidad de un evento $A$, si sabemos que
+tenemos un evento $B$, dado.  Por  ejemplo, por un dado de 6 caras equilibriado,
+cual es la probabilidad de tener  un n\'umero par sabiendo que tenemos un numero
+menor  a igual  a  3.   La respuesta  es  en la  noci\'on  de {\it  probabilidad
+  condicional}~\cite{Hau01, Jef48, Jef73, Bre88, ManWol95, JacPro03, ShaVov06}:
 %
 \begin{definicion}[Probabilidad condicional]
-  \modif{  \underline{Por definici\'on}, l}a  {\it probabilidad  condicional} de
-  $A$ dado  $B$ es  la raz\'on entre  la probabilidad  del evento conjunto  y la
-  probabilidad de que se d\'e $B$ (cuando \'este es un evento no nulo):
+  \underline{Por definici\'on},  la {\it  probabilidad condicional} de  $A$ dado
+  $B$ es la raz\'on entre la  probabilidad del evento conjunto y la probabilidad
+  de que se d\'e $B$ (cuando \'este es un evento no nulo):
   %
   \[
   P(A|B) = \frac{P(A \cap B)}{P(B)}.
@@ -280,32 +287,30 @@ P\left( \bigcap_{i=1}^{+\infty} A_i \right) = \lim_{i \to +\infty} P(A_i)
 \end{definicion}
 %
 En  el  ejemplo precediente,  la  probabilidad  va a  ser  $P(A|B)  = \frac13  =
-\frac{\frac16}{\frac12}  = \frac{P(A  \cup B)}{P(B)}$.   }
-%
+\frac{\frac16}{\frac12}  = \frac{P(A  \cup B)}{P(B)}$. 
+
 Es f\'acil demostrar %% <-- ejercicio
 que esta  cantidad toma valores  entre 0 y  1, con $P(\Omega|B)  = 1$, y  que es
 aditiva  para  una  uni\'on  de  eventos  mutuamente  excluyentes  referidos  al
-cumplimiento   de    $B$.    Luego,   $P(A|B)$   es    una   \modif{medida   de}
-probabilidad~\footnote{ \modif{  se puede definir un espacio  de probabilidad $(
-    \Omega_B, \A_B  , P_B)$ donde  $P_B(A) \equiv P(A|B)$.}}; \modif{Por  eso, a
-  veces en la literatura se  la denota $P_B(A)$}. \modif{Diversas situaciones de
-  probabilidades   condicionales  son   ilustradas  en   la   figura  siguiente,
-  Fig.~\ref{fig:MP:Condicional}.
+cumplimiento de $B$.  Luego, $P(A|B)$ es una medida de probabilidad~\footnote{Se
+  puede  definir un  espacio de  probabilidad $(  \Omega_B, \A_B  ,  P_B)$ donde
+  $P_B(A)  \equiv P(A|B)$.};  Por eso,  a veces  en la  literatura se  la denota
+$P_B(A)$.  Diversas  situaciones de probabilidades  condicionales son ilustradas
+en la figura siguiente, Fig.~\ref{fig:MP:Condicional}.
 
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/Condicional} \end{center}
 %
-\leyenda{\modif{Ilustraci\'on  de  la probabilidad  condicional  con  $A$ interior  del
+\leyenda{Ilustraci\'on  de  la probabilidad  condicional  con  $A$ interior  del
   elipse  en linea  llena  y unos  $B_i$  interiores de  los  elipses en  lineas
   discontinuas.   \ $\omega  \in B_1  \Rightarrow \omega  \in A$  \ as\'i  que \
   $P(A|B_1) = 1$. Al rev\'es, \  $\omega \in B_3 \Rightarrow \omega \not\in A$ \
   as\'i que \  $P(A|B_3) = 0$.  Entre estas  situaciones extremas, si $P(\bar{A}
   \cap B_2)  \ne 0$ \ y  \ $P(A \cap  B_2) \ne 0$ \  tenemos $0 < P(A|B_2)  < 1$
   (ej.  con   probabilidades  iguales  a   las  superficias  relativas   de  los
-  conjuntos).}}
+  conjuntos).}
 \label{fig:MP:Condicional}
 \end{figure}
-}
 
 Algunas propiedades interesantes son las siguientes:
 %
@@ -318,8 +323,8 @@ Algunas propiedades interesantes son las siguientes:
   P(B|A)  = \frac{P(B)}{P(A)}  P(A|B)$, de  donde \  $p(A|B)$ \  y \  $p(B|A)$ \
   coinciden s\'olo cuando \ $A$ \ y \ $B$ \ tienen la misma probabilidad;
 %
-\item \modif{{\it f\'ormula  de probabilidades totales}: \ si $\{  B_j \}$ es un
-    conjunto completo de eventos no nulos mutuamente excluyentes, entonces
+\item {\it f\'ormula de probabilidades totales}: \ si $\{ B_j \}$ es un conjunto
+  completo de eventos no nulos mutuamente excluyentes, entonces
   %
   \[
   P(A) = \sum_j P(A|B_j) P(B_j)
@@ -327,24 +332,24 @@ Algunas propiedades interesantes son las siguientes:
   %
   Viene de \ $A = A \cap  \left( \bigcup_j B_j \right) = \bigcup_j \left( A \cap
     B_j \right)$  \ donde  los \ $A  \cap B_j$  \ son mutuamente  excluyentes, y
-  $P\left( A \cap B_j \right) = P(A|B_j) P(B_j)$.}
+  $P\left( A \cap B_j \right) = P(A|B_j) P(B_j)$.
 %
-\item {\it f\'ormula de Bayes}: \ si $\{ B_j \}$ es un conjunto completo
-  de eventos no nulos mutuamente excluyentes, entonces
+\item {\it  f\'ormula de Bayes}:  \ si  $\{ B_j \}$  es un conjunto  completo de
+  eventos no nulos mutuamente excluyentes, entonces
   %
   \[
   P(B_i|A) = \frac{P(A \cap B_i)}{P(A)} = \frac{P(A|B_i) P(B_i)}{\sum_j P(A|B_j)
     P(B_j)} .
   \]
   %
-\modif{(ver~\cite{Bre88, Bay63, Bar58}).}
+  (ver~\cite{Bre88, JacPro03, Bay63, Bar58}).
 \end{itemize}
 
-\modif{ Terminamos  esta secci\'on  por la noci\'on  de independencia  entre dos
-  eventos. Por ejemplo,  si dos dados son tirado sobre  dos mesas diferentes, no
-  hay ninguna raz\'on de que la muestra de uno ``influye'' la del otro. Dicho de
-  otra manera, dos  eventos son indeêndientes si conciendo  uno no lleva ninguna
-  ``informaci\'on'' sobre el otro~\cite{Bre88, ManWol95, Hau01, Bor09}:
+Terminamos  esta   secci\'on  por  la   noci\'on  de  independencia   entre  dos
+eventos. Por ejemplo, si dos dados son tirado sobre dos mesas diferentes, no hay
+ninguna raz\'on de que la muestra de  uno ``influye'' la del otro. Dicho de otra
+manera,  dos  eventos  son  indeêndientes  si conciendo  uno  no  lleva  ninguna
+``informaci\'on'' sobre el otro~\cite{Bre88, ManWol95, Hau01, JacPro03, Bor09}:
 %
 \begin{definicion}[Independencia estad\'istica]
   Dos eventos \ $A$ \ y \ $B$ \ se dicen {\it estad\'isticamente independientes}
@@ -360,16 +365,15 @@ Algunas propiedades interesantes son las siguientes:
   \[
    P(A \cap B) = P(A) P(B).
    \]
-\end{definicion}}
+\end{definicion}
 %
-\modif{Por  inducci\'on, l}a  condici\'on necesaria  y suficiente  para  que $n$
-eventos  $A_1,\ldots,A_n$  sean  estad\'isticamente  independientes  es  que  la
-probabilidad conjunta se factorice como
+Por  inducci\'on, la  condici\'on necesaria  y suficiente  para que  $n$ eventos
+$A_1,\ldots,A_n$ sean  estad\'isticamente independientes es  que la probabilidad
+conjunta se factorice como
 %
-\modif{
 \[
 P\left( \bigcap_{i=1}^n A_i \right) = \prod_{i=1}^n P(A_i).
-\]}
+\]
 %
 Se  deduce que  los  eventos mutuamente  excluyentes  no son  estad\'isticamente
 independientes.
