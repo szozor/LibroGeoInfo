@@ -99,7 +99,7 @@ asociativa \ $(A \cup B)  \cup C = A \cup (B \cup C)$, \ $(A  \cap B) \cap C = A
 \cap (B \cap C)$, \ distributiva con respeto a la otra \ $(A \cup B) \cap C = (A
 \cap C) \cup (B \cap C)$ \ y \ $(A  \cap B) \cup C = (A \cup C) \cap (B \cup C)$
 \  (ver  ej.~\cite{Jef48,  Jef73,   Hal50,  Fel71,  Bre88,  ManWol95,  IbaPar97,
-  LehCas98, AthLah06, Coh13}).
+  LehCas98, AthLah06, Coh13, HogMck13}).
 
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/Ensembles} \end{center}
@@ -368,8 +368,8 @@ manera,  dos  eventos  son  indeêndientes  si conciendo  uno  no  lleva  ninguna
 \end{definicion}
 %
 Por  inducci\'on, la  condici\'on necesaria  y suficiente  para que  $n$ eventos
-$A_1,\ldots,A_n$ sean  estad\'isticamente independientes es  que la probabilidad
-conjunta se factorice como
+$A_1,\ldots,A_n$ sean estad\'isticamente {\em mutuamente} independientes es que
+la probabilidad conjunta se factorice como
 %
 \[
 P\left( \bigcap_{i=1}^n A_i \right) = \prod_{i=1}^n P(A_i).
@@ -377,3 +377,11 @@ P\left( \bigcap_{i=1}^n A_i \right) = \prod_{i=1}^n P(A_i).
 %
 Se  deduce que  los  eventos mutuamente  excluyentes  no son  estad\'isticamente
 independientes.
+
+Es importante notar  que la independencia mutua \underline{no  es equivalente} a
+la  independencia  por   pares  de  eventos.   Por  ejemplo,   tiramos  2  dados
+independientemente y  consideramos los  eventos \  $A_i$: el dado  $i$ es  par y
+$A_3$ la  suma es  impar. Es  claro de que  $A_1$ y  $A_2$ son  independientes y
+ademas  $P(A_1 \cap A_3)  = \frac14  = P(A_1)  P(A_3)$ (es  tener par  y impar),
+mientras  que $P(A_1  \cap  A_2 \cap  A_3) =  0  \ne \frac18$:  los eventos  son
+independientes pares, pero no son mutuamente independientes~\cite{HogMck13}.

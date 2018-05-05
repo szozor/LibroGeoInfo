@@ -68,7 +68,7 @@ definir una medida imagen sobre el espacio de llegada~\cite{AthLah06, Coh13}:
     probar que la  preimagen de una uni\'on numerable (que  sean disjuntos o no)
     es la uni\'on  de las preimagenes; lo mismo occure  para la intersecci\'on y
     adem\'as la preimagen del complemento es el complemento de la preimagen. Eso
-    es conocido como {\it leyes de de Morgan}~\cite{AthLah06, Coh13}.}.
+    es conocido como {\it leyes de de Morgan}~\cite{AthLah06, Coh13, HogMck13}.}.
 \end{proof}
 
 Un espacio  jugando un  rol particular es  $\Rset$, a  lo cual se  puede asociar
@@ -90,18 +90,18 @@ definici\'on de una variable aleatoria real~\cite{AthLah06, Coh13, Bre88}:
   \]
   %
   donde la medida  $P_X$ sobre $\B(\Rset)$ es la medida imagen  de $P$.  \ $P_X$
-  es frecuentemente llamada {\it  distribuci\'on de probabilidad} de la variable
-  aleatoria $X$. En lo que sigue, escribiremos los eventos
+  es frecuentemente llamada {\it distribuci\'on  de probabilidad} o {\it ley} de
+  la variable aleatoria $X$. En lo que sigue, escribiremos los eventos
   %
- \[
- (X \in B) \equiv X^{-1}(B) = \{ \omega \in \Omega: \: X(\omega) \in B \}
- \]
+  \[
+  (X \in B) \equiv X^{-1}(B) = \{ \omega \in \Omega: \: X(\omega) \in B \}
+  \]
   %
- as\'i que, por definici\'on,
+  as\'i que, por definici\'on,
   %
- \[
- P_X(B) = P(X \in B)
- \]
+  \[
+  P_X(B) = P(X \in B)
+  \]
 \end{definicion}
 %
 Para  ilustrar esta definici\'on,  tomando el  ejemplo de  un dado,  $\Omega$ es
@@ -111,7 +111,8 @@ de $\Omega$ por $X$ (ej. $X(\omega_i) = i, \quad i = 1, \ldots , 6$).
 Fijense de que,  por la propiedades de una  medida sobre una $\sigma$-\'algebra,
 para caracterizar completamente la  distribuci\'on $P_X$ es suficiente conocerla
 sobre  los intervalos de  la forma  $(-\infty \,  ; \,  b]$. Eso  da lugar  a la
-definici\'on de la funci\'on de repartici\'on~\cite{AthLah06, Coh13, Bre88}:
+definici\'on  de  la funci\'on  de  repartici\'on~\cite{AthLah06, Coh13,  Bre88,
+  HogMck13}:
 %
 \begin{definicion}[Funci\'on de repartici\'on]
   Por  definici\'on,  la  funci\'on  de  repartici\'on  $F_X$  de  una  variable
@@ -120,6 +121,9 @@ definici\'on de la funci\'on de repartici\'on~\cite{AthLah06, Coh13, Bre88}:
   \[
   F_X(x) = P_X((-\infty \, ; \, x]) = P(X \le x)
   \]
+  %
+  A veces, por abuso de terminologia,  se denomina $F_X$ como ley de la variable
+  aleatoria.
 \end{definicion}
 %
 Naturalmente, de las propiedades de una medida de probabilidad,
@@ -142,10 +146,10 @@ Naturalmente, de las propiedades de una medida de probabilidad,
 Cuando se trabaja  con $d\geq 2$ variables aleatorias  es conveniente definir un
 {\it vector aleatorio}  de dimensi\'on $d$, y apelar para  su estudio a nociones
 del \'algebra  lineal y  a notaci\'on matricial.   Se tiene el  vector aleatorio
-$d$-dimensional  \ $X  = \begin{bmatrix}  X_1 &  \cdots &  X_d \end{bmatrix}^t$,
-caracterizado por  $d$-uplas de  variables aleatorias reales.   Como en  el caso
-univariado, se define este vector de la manera siguiente\modif{:~\cite{AthLah06,
-    Coh13, Bre88}
+$d$-dimensional  \ $X  = \begin{bmatrix}  X_1  & \cdots  & X_d  \end{bmatrix}^t$
+\modif{donde $\cdot^t$  denota la  transpuesta,} caracterizado por  $d$-uplas de
+variables aleatorias reales.  Como en  el caso univariado, se define este vector
+de la manera siguiente\modif{:~\cite{AthLah06, Coh13, Bre88}
 %
 \begin{definicion}[Vector aleatorio real]
   Un variable aleatorio real es una funci\'on medible
@@ -171,9 +175,9 @@ De la propiedades de una  medida sobre una $\sigma$-\'algebra, para caracterizar
 completamente la distribuci\'on $P_X$ de nuevo es suficiente conocerla sobre los
 elementos de la forma $(-\infty \, ;  \, b_1] \times \cdots \times (-\infty \, ;
 \, b_d]$, \ie la  funci\'on de repartici\'on multivariada~\cite{AthLah06, Coh13,
-  Bre88}:
+  Bre88, HogMck13}:
 %
-\begin{definicion}[Funci\'on de repartici\'on mutlivariada]
+\begin{definicion}[Funci\'on de repartici\'on multivariada]
   Por  definici\'on,  la  funci\'on  de  repartici\'on  $F_X$  de  un vector
   aleatorio es definida en $x = (x_1 , \ldots , x_d)$ por
   %
@@ -208,7 +212,52 @@ F_{X_{I_k}}(x_{I_k}) = \lim_{\forall i \not\in I_k, x_i \to +\infty} F_X(x)
   \Rset)  \right)$). Esta  funci\'on es  dicha {\it  funci\'on  de repartici\'on
   marginale} de $F_X$. 
 
-\SZ{Independencia}}
+Cerramos estas generalidades con el caso de variables independientes:
+%
+\begin{definicion}[Independencia]
+  Sean       $d$        variables       aleatorias       $X_i$        y       $X
+  = \begin{bmatrix}  \end{bmatrix}^t$. Los $X_i$  son mutualmente independientes
+  si y  solamente si, para cualiquier  ensemble de conjuntos  $B_i$, los eventos
+  $(X_i \in \B_i)$ son mutualmente inependientes, \ie
+  %
+  \[
+  P_X(\times_{i=1}^d B_i) = \prod_{i=1}^d P_{X_i}(B_i)
+  \]
+  %
+  donde $\times$ denota el producto cartesiano entre elementos de $\B(\Rset)$.
+  %
+  Es equivalente a
+  %
+  \[
+  F_X(x) = \prod_{i=1}^d F_{X_i}(x_i)
+  \]
+  %
+  La ley del vector aleatorio se factoriza.
+\end{definicion}
+%
+Es importante notar de que no es equivalente a tener la independencia por pares,
+como ilustrado en el fin de la seci\'on precediente.
+
+\
+
+M\'as  all\'a de  este  enfoque  general, dos  casos  particulares de  variables
+aleatorias son  de inter\'es:  las variables discretas  y las continuas.   En el
+primer  caso $\Omega$  es discreto,  finito  o no.  La meta  de las  susecciones
+siguientes es estudiar las particularidades de cada caso.
+
+Par fijar unas notaciones, en todo lo que sigue, escribiremos
+%
+\[
+\X = X(\Omega)
+\]
+%
+conjuntos de llegada  de $X$, o conjunto de valores que  puede tomar la variable
+aleatoria.  A veces,  por razones  de simplificaciones,  se considera  $\X$ como
+siendo el  espacio muestral  y se olvida  de que  $X$ sea una  funci\'on medibel
+entre espacios de probabilidades,  \ie se trabaja en $(\Rset^d,\B(\Rset^d),P_X)$
+como es el espacio preimagen.
+
+}
 
 
 
