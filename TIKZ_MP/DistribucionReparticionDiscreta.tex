@@ -1,0 +1,81 @@
+\begin{tikzpicture}%[scale=.9]
+\shorthandoff{>}
+%
+\pgfmathsetmacro{\sx}{1.6};% x-scaling 
+\pgfmathsetmacro{\r}{.05};% radius arc non continuity F_X
+% masa
+\begin{scope}
+%
+\pgfmathsetmacro{\sy}{6};% y-scaling 
+%
+\draw[>=stealth,->] (-.25,0)--({\sx*sqrt(11)+.75},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.25)--(0,{\sy/3+.5}) node[above]{\small $p_X$};
+%
+\draw (\sx,-.1) node[below,scale=.8]{\small $1$} --(\sx,0);
+\draw[dotted] (\sx,0)--(\sx,{\sy/8}) node[scale=.7]{$\bullet$};
+\draw (0,{\sy/8})--(-.1,{\sy/8}) node[left,scale=.7]{\small $1/8$};
+%
+\draw ({\sx*sqrt(3)},-.1) node[below,scale=.8]{\small $\sqrt3$} --({\sx*sqrt(3)},0);
+\draw[dotted] ({\sx*sqrt(3)},0)--({\sx*sqrt(3)},{\sy/4}) node[scale=.7]{$\bullet$};
+\draw (0,{\sy/4})--(-.1,{\sy/4}) node[left,scale=.7]{\small $1/4$};
+%
+\draw ({\sx*sqrt(5)},-.1) node[below,scale=.8]{\small $\sqrt5$} --({\sx*sqrt(5)},0);
+\draw[dotted] ({\sx*sqrt(5)},0)--({\sx*sqrt(5)},{\sy/6}) node[scale=.7]{$\bullet$};
+\draw (0,{\sy/6})--(-.1,{\sy/6}) node[left,scale=.7]{\small $1/6$};
+%
+\draw ({\sx*sqrt(7)},-.1) node[below,scale=.8]{\small $\sqrt7$} --({\sx*sqrt(7)},0);
+\draw[dotted] ({\sx*sqrt(7)},0)--({\sx*sqrt(7)},{\sy/8}) node[scale=.7]{$\bullet$};
+%
+\draw ({\sx*sqrt(11)},-.1) node[below,scale=.8]{\small $\sqrt{11}$} --({\sx*sqrt(11)},0);
+\draw[dotted] ({\sx*sqrt(11)},0)--({\sx*sqrt(11)},{\sy/3}) node[scale=.7]{$\bullet$};
+\draw (0,{\sy/3})--(-.1,{\sy/3}) node[left,scale=.7]{\small $1/3$};
+%
+\draw ({\sx*sqrt(3)},-1) node{\small (a)};
+\end{scope}
+%
+%
+% reparticion
+\begin{scope}[xshift=8.5cm]
+%
+\pgfmathsetmacro{\sy}{2.5};% y-scaling 
+%
+\draw[>=stealth,->] (-.6,0)--({\sx*sqrt(11)+1.5},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.25)--(0,{\sy+.5}) node[above]{\small $F_X$};
+%
+\draw (\sx,0)--(\sx,-.1) node[below,scale=.8]{\small $1$};
+\draw ({\sx*sqrt(3)},0)--({\sx*sqrt(3)},-.1) node[below,scale=.8]{\small $\sqrt{3}$};
+\draw ({\sx*sqrt(5)},0)--({\sx*sqrt(5)},-.1) node[below,scale=.8]{\small $\sqrt{5}$};
+\draw ({\sx*sqrt(7)},0)--({\sx*sqrt(7)},-.1) node[below,scale=.8]{\small $\sqrt{7}$};
+\draw ({\sx*sqrt(11)},0)--({\sx*sqrt(11)},-.1) node[below,scale=.8]{\small $\sqrt{11}$};
+%
+\draw[thick](-.5,0)--(\sx,0);
+\draw ({\sx+\r},\r) arc (90:270:\r);
+%
+\draw[dotted] (\sx,0)--(\sx,{\sy/8});
+\draw[thick](\sx,{\sy/8}) node[scale=.7]{$\bullet$}--({\sx*sqrt(3)},{\sy/8});
+\draw ({\sx*sqrt(3)+\r},{\r+\sy/8}) arc (90:270:\r);
+\draw (0,{\sy/8})--(-.1,{\sy/8}) node[left,scale=.7]{\small $1/8$};
+%
+\draw[dotted] ({\sx*sqrt(3)},{\sy/8})--({\sx*sqrt(3)},{3*\sy/8});
+\draw[thick]({\sx*sqrt(3)},{3*\sy/8}) node[scale=.7]{$\bullet$}--({\sx*sqrt(5)},{3*\sy/8});
+\draw ({\sx*sqrt(5)+\r},{\r+3*\sy/8}) arc (90:270:\r);
+\draw (0,{3*\sy/8})--(-.1,{3*\sy/8}) node[left,scale=.7]{\small $3/8$};
+%
+\draw[dotted] ({\sx*sqrt(5)},{3*\sy/8})--({\sx*sqrt(5)},{13*\sy/24});
+\draw[thick]({\sx*sqrt(5)},{13*\sy/24}) node[scale=.7]{$\bullet$}--({\sx*sqrt(7)},{13*\sy/24});
+\draw ({\sx*sqrt(7)+\r},{\r+13*\sy/24}) arc (90:270:\r);
+\draw (0,{13*\sy/24})--(-.1,{13*\sy/24}) node[left,scale=.7]{\small $13/24$};
+%
+\draw[dotted] ({\sx*sqrt(7)},{13*\sy/24})--({\sx*sqrt(7)},{2*\sy/3});
+\draw[thick]({\sx*sqrt(7)},{2*\sy/3}) node[scale=.7]{$\bullet$}--({\sx*sqrt(11)},{2*\sy/3});
+\draw ({\sx*sqrt(11)+\r},{\r+2*\sy/3}) arc (90:270:\r);
+\draw (0,{2*\sy/3})--(-.1,{2*\sy/3}) node[left,scale=.7]{\small $2/3$};
+%
+\draw[dotted] ({\sx*sqrt(11)},{2*\sy/3})--({\sx*sqrt(11)},\sy);
+\draw[thick]({\sx*sqrt(11)},\sy) node[scale=.7]{$\bullet$}--({\sx*sqrt(11)+1.4},\sy);
+\draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{\small $1$};
+%
+\draw ({\sx*sqrt(5)},-1) node{\small (b)};
+\end{scope}
+%
+\end{tikzpicture}

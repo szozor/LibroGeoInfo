@@ -1,6 +1,8 @@
 \seccion{Variables aleatorias y distribuciones de probabilidad}
 \label{s:variablealeatoria}
 
+\SZ{Measure: Bogachev}
+
 \emph{En  un  experimento  o  un  dado  proceso,  los  posibles  resultados  son
   t\'ipicamente  n\'umeros reales, siendo  cada n\'umero  un evento.   Luego los
   resultados  son mutuamente  excluyentes. Se  considera a  esos  n\'umeros como
@@ -123,7 +125,8 @@ definici\'on  de  la funci\'on  de  repartici\'on~\cite{AthLah06, Coh13,  Bre88,
   \]
   %
   A veces, por abuso de terminologia,  se denomina $F_X$ como ley de la variable
-  aleatoria.
+  aleatoria. Se  encuentra tambi\'en  el la literatura  la terminologia  de {\it
+    funci\'on cumulativa}.
 \end{definicion}
 %
 Naturalmente, de las propiedades de una medida de probabilidad,
@@ -170,7 +173,6 @@ de la manera siguiente\modif{:~\cite{AthLah06, Coh13, Bre88}
  \]
 \end{definicion}
 %
-
 De la propiedades de una  medida sobre una $\sigma$-\'algebra, para caracterizar
 completamente la distribuci\'on $P_X$ de nuevo es suficiente conocerla sobre los
 elementos de la forma $(-\infty \, ;  \, b_1] \times \cdots \times (-\infty \, ;
@@ -261,241 +263,433 @@ como es el espacio preimagen.
 
 
 
-% ================================= MaxEnt
+% ================================= Discreta
 
 \subseccion{Variable aleatoria discreta}
 \label{sec:MP:VADiscreta}
 
-Los  posibles valores de  una variable  aleatoria discreta  $X$ consisten  en un
-conjunto  contable  (finito  o   infinito  numerable)  de  n\'umeros  reales:  \
-$x\in\Omega=\{x_1,   x_2,  \ldots\}$.   A   cada  uno   de  los   valores  $x_n$
-($n=1,2,\ldots$) se puede asociar una  probabilidad $p_n=p(x_n)$, de modo que se
-satisface la condici\'on de normalizaci\'on:
+\modif{
+\begin{definicion}[Variable aleatoria discreta]
+  Una  variable aleatoria es  dicha {\it  discreta} cuando  $\X =  X(\Omega)$ es
+  discreto, finito o infinito numerable.  En lo que sigue, denotaremos por $|X|$
+  el cardinal de $\X$, posiblemente infinito.
+\end{definicion}
 %
-$$\sum_n p_n = 1 . $$ 
+\noindent En  otras palabras,  l}os posibles valores  de una  variable aleatoria
+discreta $X$ consisten en un  conjunto contable (finito o infinito numerable) de
+n\'umeros  reales:   \  $\modif{\X  =  \{   x_i  \}_i}$~\cite{Ath06,  HogMck13}.
+\modif{En este caso, las probabilidades $P_X(\{ x_i \}) = P(X = x_i), \: x_i \in
+  \X$ caracterisan completamente la variable aleatoria~\cite{Ath06, HogMck13}:
 %
-La \emph{funci\'on (de masa) de probabilidad} es  de la forma: 
+\begin{definicion}[Funci\'on de masa de probabilidad]
+  Por  definici\'on, la  funci\'on  de  masa de  probabilidad  de $X$,  variable
+  aleatoria discreta tomando sus valores sobre $\X$ es dada por
+  %
+  \[
+  p_X(x) \equiv P(X = x) = P_X( \{ x\} ) \quad x \in \X
+  \]
+  %
+  Por   abuso  de   denominaci\'on,  llamaremos   en  este   libro   $p_X$  {\it
+    distribuci\'on de probabilidad}. Adem\'as, usaremos tambi\'en la notaci\'on
+  %
+  \[
+  p_X = \begin{bmatrix} \cdots & p_X(x_i) & \cdots \end{bmatrix}^t
+  \]
+  %
+  dicho {\it vector de probabilidad}, de tama\~no $|\X|$, posiblemente infinito.
+\end{definicion}
 %
-$$
-p(x) = \left\{
-\begin{array}{cl}
-\Pr(X=x) & \mbox{si} \ x=x_1, x_2, \ldots \\ 0 &
-\mbox{en~todo~otro~punto}
-\end{array} \right.
-$$
-%
-En  la   Fig.~\ref{fig:distribprobdiscreta}  se  muestra   una  representaci\'on
+En  la  Fig.~\ref{fig:MP:ProbaDiscreta}-(a)   se  muestra  una  representaci\'on
 gr\'afica de una distribuci\'on de probabilidad discreta.
 %
-\begin{figure}[h!] %%ojo numeracion de figs !
+En particular,
+%
+\[
+\forall \, B \in \B(\Rset), \quad P_X(B) = \sum_{x \in \X \cap B} p_X(x)
+\]
+%
+lo que da, tratando de la funci\'on de repartici\'on,
+%
+\[
+F_X(x) = \sum_{x_i \le x} p_X(x_i)
+\]
+%
+De   esta  forma,  se   justifica  la   denominaci\'on  {\it   cumulativa}  para
+$F_X$.  Tambi\'en,  se  puede ver  inmediato  de  que  $F_X$} es  una  funci\'on
+discontinua,   con   saltos   finitos   \modif{(en  $x_i$,   salto   de   altura
+  $p_X(x_i)$)}. Eso es ilustrado figura Fig.~\ref{fig:MP:ProbaDiscreta}-(b).
+%, y no decreciente. 
+
+\modif{
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/DistribucionReparticionDiscreta} \end{center}
+%
+\leyenda{\modif{Ilustraci\'on  de u}na  distribuci\'on de  probabilidad discreta
+  \modif{ (a), y  la funci\'on de repartici\'on asociada (b),  con $\X = \big\{
+      \, 1 \,  , \, \sqrt3 \,  , \, \sqrt5 \, ,  \, \sqrt7 \, ,  \, \sqrt{11} \,
+    \big\}$ \  y \  $p_X =  \left[ \frac18 \quad  \frac14 \quad  \frac16 \quad
+      \frac18 \quad \frac13 \right]^t$.  }}
+\label{fig:MP:ProbaDiscreta}
+\end{figure}
+}
+%   A   cada  uno   de  los   valores  $x_n$
+%($n=1,2,\ldots$) se puede asociar una  probabilidad $p_n=p(x_n)$, de modo que se
+%satisface la condici\'on de normalizaci\'on:
+%%
+%$$\sum_n p_n = 1 . $$ 
+%
+%La \emph{funci\'on (de masa) de probabilidad} es  de la forma: 
+%
+%$$
+%p(x) = \left\{
+%\begin{array}{cl}
+%\Pr(X=x) & \mbox{si} \ x=x_1, x_2, \ldots \\ 0 &
+%\mbox{en~todo~otro~punto}
+%\end{array} \right.
+%$$
+%%
+%En  la   Fig.~\ref{fig:distribprobdiscreta}  se  muestra   una  representaci\'on
+%gr\'afica de una distribuci\'on de probabilidad discreta.
+%
+%\begin{figure}[h!] %%ojo numeracion de figs !
 %\centerline{\includegraphics[width=3cm]{distribprobdiscreta.jpg}} %%rehacer
 %
-\leyenda{Una distribuci\'on de probabilidad discreta.}
-\label{fig:distribprobdiscreta}
-\end{figure}
+%\leyenda{Una distribuci\'on de probabilidad discreta.}
+%\label{fig:distribprobdiscreta}
+%\end{figure}
 
-Tambi\'en, se puede caracterizar la ley de la variable discreta $X$ por medio de
-su \emph{funci\'on de repartici\'on}:
+%Tambi\'en, se puede caracterizar la ley de la variable discreta $X$ por medio de
+%su \emph{funci\'on de repartici\'on}:
 %
-$$
-F_X(x)= \Pr(X\in(-\infty,x]) = \Pr (X\leq x) = \sum_{\forall
-  n \,:\, x_n\leq x} p(x_n)
-$$
+%$$
+%F_X(x)= \Pr(X\in(-\infty,x]) = \Pr (X\leq x) = \sum_{\forall
+%  n \,:\, x_n\leq x} p(x_n)
+%$$
 %
-que es una funci\'on discontinua, con saltos finitos, y no decreciente. 
+%que es una funci\'on discontinua, con saltos finitos, y no decreciente. 
 
-Sin  p\'erdida de  generalidad, el  conjunto de  valores que  toma  una variable
-aleatoria discreta $X$ puede considerarse como $\{0,1,2,\ldots,N\}$ para alg\'un
-$N$ natural, o todo $\Nset$. Entonces la ley de una variable aleatoria a valores
-naturales est\'a dada por  \ $\{p_n = \Pr(X=n), \ n\in \Nset  \}$.  Luego \ $\Pr
-(X\in  A)=\sum_{n\in A\cap  \Nset}  p_n$,  y la  funci\'on  de repartici\'on  se
-calcula como  \ $\Pr(X\leq x) = \sum_{n  \leq x} \Pr(X=n)$ que  es una funci\'on
-que presenta un  salto finito en cada n\'umero natural.  En  general un salto de
-la funci\'on  de repartici\'on corresponde a  la presencia de  una \emph{masa de
-  Dirac} en el entorno del salto. %%
+%Sin  p\'erdida de  generalidad, el  conjunto de  valores que  toma  una variable
+%aleatoria discreta $X$ puede considerarse como $\{0,1,2,\ldots,N\}$ para alg\'un
+%$N$ natural, o todo $\Nset$. Entonces la ley de una variable aleatoria a valores
+%naturales est\'a dada por  \ $\{p_n = \Pr(X=n), \ n\in \Nset  \}$.  Luego \ $\Pr
+%(X\in  A)=\sum_{n\in A\cap  \Nset}  p_n$,  y la  funci\'on  de repartici\'on  se
+%calcula como  \ $\Pr(X\leq x) = \sum_{n  \leq x} \Pr(X=n)$ que  es una funci\'on
+%que presenta un  salto finito en cada n\'umero natural.  En  general un salto de
+%la funci\'on  de repartici\'on corresponde a  la presencia de  una \emph{masa de
+%  Dirac} en el entorno del salto. %%
 
 Un caso especial se tiene cuando un  valor $x_j$ es cierto o seguro, y no ocurre
 ninguno de  los otros valores $x_i \  (i\neq j)$. La forma  de la distribuci\'on
-es: \ $p_n=\delta_{nj}$, donde
+es: \ \modif{$p_X(x) = \un_{\{ x_i \}}(x)$ \ o \ $p_X = \un_i$}, donde
 %
-$$
-\delta_{ij} = \left\{
-\begin{array}{cl}
-1 & \mbox{si} \ i=j \\
-0 & \mbox{si} \ i\neq j 
+\[
+\un_A(x) = \left\{
+\begin{array}{clr}
+1 & \mbox{si} \quad x \in A\\
+0 & \mbox{si no}
+% \ i\neq j 
 \end{array} \right.
-$$
+\]
 %
-es el s\'imbolo \emph{delta de  Kronecker}. Cuando el espacio muestral es finito
-de dimensi\'on $N$, la ley de  distribuci\'on se puede representar por medio del
-siguiente vector columna:
+\modif{es  la  funci\'on indicator  y  $\un_i$  es  el vector  (posiblemente  de
+  dimensi\'on infinita) de componentes $j$-esima $\delta_{ij} = \un_{\{i\}}(j)$}
+s\'imbolo \emph{delta de Kronecker},
 %
-$$
-p = \begin{pmatrix}
-% \left(  
-%\begin{array}{c}
-0 \\ \vdots \\ 0 \\ 1  \\ 0 \\ \vdots \\ 0
-\end{pmatrix}
-%\end{array} \right)
-$$
+\[
+\delta_{ij} = 
+\left\{
+\begin{array}{clr}
+1 & \mbox{si} \: i=j \\
+0 & \mbox{si no}
+\end{array} \right.
+\]
+%. Cuando el espacio muestral es finito
+%de dimensi\'on $N$, la ley de  distribuci\'on se puede representar por medio del
+%siguiente vector columna:
+%%
+%$$
+%p = \begin{pmatrix}
+%% \left(  
+%%\begin{array}{c}
+%0 \\ \vdots \\ 0 \\ 1  \\ 0 \\ \vdots \\ 0
+%\end{pmatrix}
+%%\end{array} \right)
+%$$
 %
-con  un  1  en  el  lugar  $j$-\'esimo,  que tambi\'en  se  escribe  como  \  $p
-= \begin{pmatrix} 0  & \cdots & 0 &  1 & 0 & \cdots &  0 \end{pmatrix}^t$, donde
-$t$ indica transposici\'on.  La funci\'on de repartici\'on resulta una funci\'on
-escal\'on o de Heaviside: \ $F(x)=\Theta(x-x_j)$.
+%con  un  1  en  el  lugar  $j$-\'esimo,  que tambi\'en  se  escribe  como  \  $p
+%= \begin{pmatrix} 0  & \cdots & 0 &  1 & 0 & \cdots &  0 \end{pmatrix}^t$, donde
+%$t$ indica transposici\'on.  La funci\'on de repartici\'on resulta una funci\'on
+%escal\'on o de Heaviside: \ $F(x)=\Theta(x-x_j)$.
 
-Otra    situaci\'on   particular    es   la    de    \emph{equiprobabilidad}   o
-\emph{distribuci\'on uniforme}.  La forma  de la distribuci\'on es: \ $p_n=\frac
-1N \ \ \forall\ n=1,\ldots,N$, donde  $N$ señala el tamaño del espacio muestral.
-La ley  de distribuci\'on  se puede representar  por medio del  siguiente vector
-columna:
+Otra   situaci\'on  particular   es  la   de  {\it   equiprobabilidad}   o  {\it
+  distribuci\'on uniforme}  \modif{cuando $|\X| = \alpha <  +\infty$}.  La forma
+de la distribuci\'on es: \ \modif{$p_X(x_i)  = \frac1\alpha \quad \forall \, i =
+  1  , \ldots  , \alpha$,  \ie $p_X  = \begin{bmatrix}  \frac1\alpha &  \cdots &
+    \frac1\alpha \end{bmatrix}^t$.}
+%, donde  $N$ señala el tamaño del espacio muestral.
+%La ley  de distribuci\'on  se puede representar  por medio del  siguiente vector
+%columna:
 %
-$$
-p = \begin{pmatrix}
-% \left(  
-%\begin{array}{c}
-1/N \\ 1/N  \\ \vdots \\ 1/N
-\end{pmatrix}
-%array} \right) , 
-$$
+%$$
+%p = \begin{pmatrix}
+%% \left(  
+%%\begin{array}{c}
+%1/N \\ 1/N  \\ \vdots \\ 1/N
+%\end{pmatrix}
+%%array} \right) , 
+%$$
 %
-que tambi\'en se escribe como \  $p = \begin{pmatrix} \frac1N & \frac1N & \cdots
-  &  \frac1N  \end{pmatrix}^t$.   La  funci\'on  de  repartici\'on  resulta  una
-funci\'on escalonada,  con saltos de  altura $\frac1N$ para  cada $n$ entre  1 y
-$N$.
+%que tambi\'en se escribe como \  $p = \begin{pmatrix} \frac1N & \frac1N & \cdots
+%  &  \frac1N  \end{pmatrix}^t$.
+La funci\'on  de repartici\'on resulta  una funci\'on escalonada, con  saltos de
+altura \modif{$\frac1\alpha$ en cada $x_i, \quad 1 \le i \le \alpha$}.
 
-\hfill 
+\
+%hfill 
 
-\emph{Reordenamiento y relaci\'on de mayorizaci\'on} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\SZ{Reordenamiento y relaci\'on de mayorizaci\'on  : a ver como trasladar lo que
+  ya estaba en en cap. 2 mas los ejemplos. Todo comentado por ahora}
 
-Para comparar dos  distribuciones es \'util reordenar el  vector de probabilidad
-permutando  sus  elementos  hasta  listarlos  de forma  descendente.   Se  anota
-$p^\downarrow$, de  modo que \  $p^\downarrow_1 \geq p^\downarrow_2  \geq \ldots
-\geq  p^\downarrow_N$.   En  el  ejemplo   del  caso  con  certeza  se  tiene  \
-$p^\downarrow =  \begin{pmatrix} 1 & 0  & \cdots &  0 \end{pmatrix}^t$, mientras
-que la distribuci\'on uniforme no var\'ia.
+% Para comparar dos  distribuciones es \'util reordenar el  vector de probabilidad
+% permutando  sus  elementos  hasta  listarlos  de forma  descendente.   Se  anota
+% $p^\downarrow$, de  modo que \  $p^\downarrow_1 \geq p^\downarrow_2  \geq \ldots
+% \geq  p^\downarrow_N$.   En  el  ejemplo   del  caso  con  certeza  se  tiene  \
+% $p^\downarrow =  \begin{pmatrix} 1 & 0  & \cdots &  0 \end{pmatrix}^t$, mientras
+% que la distribuci\'on uniforme no var\'ia.
 
-Se  define  \emph{mayorizaci\'on} del  siguiente  modo,  para distribuciones  de
-dimensi\'on  $N$ (con  sus elementos  acomodados  en forma  decreciente): \  una
-distribuci\'on $p$  es mayorizada por otra $q$,  y se denota $p\prec  q$, si las
-primeras $N-1$  sumas parciales de $p^\downarrow$ y  $q^\downarrow$ satisfacen \
-$\sum_{i=1}^n  p^\downarrow_i   \leq  \sum_{i=1}^n  q^\downarrow_i$   para  todo
-$n=1,\ldots,N-1$, con \ $\sum_{i=1}^N p_i = 1 = \sum_{i=1}^N q_i$.
+% Se  define  \emph{mayorizaci\'on} del  siguiente  modo,  para distribuciones  de
+% dimensi\'on  $N$ (con  sus elementos  acomodados  en forma  decreciente): \  una
+% distribuci\'on $p$  es mayorizada por otra $q$,  y se denota $p\prec  q$, si las
+% primeras $N-1$  sumas parciales de $p^\downarrow$ y  $q^\downarrow$ satisfacen \
+% $\sum_{i=1}^n  p^\downarrow_i   \leq  \sum_{i=1}^n  q^\downarrow_i$   para  todo
+% $n=1,\ldots,N-1$, con \ $\sum_{i=1}^N p_i = 1 = \sum_{i=1}^N q_i$.
 
-Por    ejemplo,   $\begin{pmatrix}    \frac12    &   \frac14    &   \frac18    &
-  \frac18 \end{pmatrix}^t  \prec \begin{pmatrix} \frac12  & \frac14 &  \frac14 &
-  0 \end{pmatrix}^t$.  Es posible  comparar por mayorizaci\'on distribuciones de
-distinta  dimensionalidad, completando con  ceros el  vector de  probabilidad de
-menor  dimensi\'on.  Es  importante  resaltar que  la  mayorizaci\'on provee  un
-\emph{orden  parcial}  (no  total)  entre distribuciones,  existiendo  pares  de
-distribuciones   tales  que   ninguna  mayoriza   a  la   otra.    Por  ejemplo,
-$\begin{pmatrix} 0.50 &  0.40 & 0.10 \end{pmatrix}^t$ y  $\begin{pmatrix} 0.70 &
-  0.15 & 0.15 \end{pmatrix}^t$ no se comparan por mayorizaci\'on.
+% Por    ejemplo,   $\begin{pmatrix}    \frac12    &   \frac14    &   \frac18    &
+%   \frac18 \end{pmatrix}^t  \prec \begin{pmatrix} \frac12  & \frac14 &  \frac14 &
+%   0 \end{pmatrix}^t$.  Es posible  comparar por mayorizaci\'on distribuciones de
+% distinta  dimensionalidad, completando con  ceros el  vector de  probabilidad de
+% menor  dimensi\'on.  Es  importante  resaltar que  la  mayorizaci\'on provee  un
+% \emph{orden  parcial}  (no  total)  entre distribuciones,  existiendo  pares  de
+% distribuciones   tales  que   ninguna  mayoriza   a  la   otra.    Por  ejemplo,
+% $\begin{pmatrix} 0.50 &  0.40 & 0.10 \end{pmatrix}^t$ y  $\begin{pmatrix} 0.70 &
+%   0.15 & 0.15 \end{pmatrix}^t$ no se comparan por mayorizaci\'on.
 
-Es  interesante  notar  que  la   siguiente  propiedad  es  v\'alida  para  toda
-distribuci\'on $p$ de tamaño~$N$:
-%
-$$
-\begin{pmatrix} \frac1N & \frac1N & \cdots & \frac1N \end{pmatrix}^t \ \prec \ p
-\ \prec \ \begin{pmatrix} 1 & 0 & \cdots & 0 \end{pmatrix}^t.
-$$
-%
-En este  sentido, los  casos particulares de  equiprobabilidad y de  certeza, se
-dice  que  son  distribuciones  extremas.  Notamos que  uno  implica  ignorancia
-m\'axima  en el  resultado de  la variable  mientras que  el otro  corresponde a
-conocimiento completo.
-%% graficamente 
-%
-\begin{figure}[h!] %%ojo numeracion de figs !
-%\centerline{\includegraphics[width=3cm]{majorizationplot.pdf}} %%rehacer
-%
-\leyenda{Orden parcial por mayorizaci\'on}
-\label{fig:majorizationplot}
-\end{figure}
+% Es  interesante  notar  que  la   siguiente  propiedad  es  v\'alida  para  toda
+% distribuci\'on $p$ de tamaño~$N$:
+% %
+% $$
+% \begin{pmatrix} \frac1N & \frac1N & \cdots & \frac1N \end{pmatrix}^t \ \prec \ p
+% \ \prec \ \begin{pmatrix} 1 & 0 & \cdots & 0 \end{pmatrix}^t.
+% $$
+% %
+% En este  sentido, los  casos particulares de  equiprobabilidad y de  certeza, se
+% dice  que  son  distribuciones  extremas.  Notamos que  uno  implica  ignorancia
+% m\'axima  en el  resultado de  la variable  mientras que  el otro  corresponde a
+% conocimiento completo.
+% %% graficamente 
+% %
+% \begin{figure}[h!] %%ojo numeracion de figs !
+% %\centerline{\includegraphics[width=3cm]{majorizationplot.pdf}} %%rehacer
+% %
+% \leyenda{Orden parcial por mayorizaci\'on}
+% \label{fig:majorizationplot}
+% \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% ================================= Discreta
+
 \subseccion{Variable aleatoria continua}
+\label{sec:MP:VADiscreta}
 
-\SZ{\cite[\& Ref.]{BarNov78}}
-
-Los posibles valores de una  variable aleatoria continua $X$ son cualesquiera de
-los n\'umeros en un dado  intervalo de la recta real: \ $x\in\Omega\subset\Rset$
-que  puede ser  un intervalo  $[x_m,x_M]$  o un  subconjunto (semi)infinito.  Es
+\modif{En varios contextos, puede tomar valores en un conjunto no numerable, por
+  ejemplo}  cualesquiera de  los  n\'umeros en  un  dado intervalo  de la  recta
+real\modif{.  No son  variables discretas  m\'as. En  las variables  que  no son
+  discretas,   el   caso   particular   de   inter\'es  es   el   de   variables
+  continuas~\cite{Ath06, HogMck13}:
+%
+\begin{definicion}[Variable aleatoria continua]
+  Una  variable $X$ es  dicha {\it  continua} si  su funci\'on  de repartici\'on
+  $F_X$ es continua sobre $\Rset$ (on respeto a la medida de Lebesgue).
+\end{definicion}
+%
+}
+%Los posibles valores de una  variable aleatoria continua $X$ son cualesquiera de
+%los n\'umeros en un dado  intervalo de la recta real: \ $x\in\Omega\subset\Rset$
+%que  puede ser  un intervalo  $[x_m,x_M]$  o un  subconjunto (semi)infinito.  
+\modif{Cuando se puede, es}
 conveniente asociar una  \emph{funci\'on densidad de probabilidad} (com\'unmente
-anotada por su  sigla en ingl\'es: pdf por  \emph{probability density function})
-$p(x)$ que tiene el  sentido de que la probabilidad de que  $X$ tome valor entre
-$a$ y $b$ est\'a dada por:
+anotada por su  sigla en ingl\'es: pdf por  \emph{probability density function})\modif{:
 %
-$$
-\Pr(a\leq X\leq b) = \int_a^b p(x) \, dx ,
-$$
+\begin{definicion}[Variable aleatoria continua admitiendo una densidad de probabilidad]
+  Sea $X$  variable aleatoria continua  y \ $P_X$  su medida de probabiidad  y \
+  $F_X$ \ su  funci\'on de repartici\'on. Si existe una  funci\'on no negativa \
+  $p_X$ \ sobre $\Rset$ tal que
+  %
+  \[
+  \forall \, B \in \B(\Rset), \quad P_X(B) = \int_B p_X(x) \, dx
+  \]
+  %
+  (la    integral    debe   ser    entendido    como    en    el   sentido    de
+  Lebesgue~\footnote{\SZ{Decir un poquito sobre la medida de Lebesgue y ref.}}),
+  entonces $X$  es dicha {\it admitiendo  una densidad} y $p_X$  es llamada {\it
+    densidad de probabilidad} de $X$. En particular,
+  %
+  \[
+  F_X(x) = \int_{-\infty}^x p_X(u) \, du
+  \]
+  %
+  Dicho de  otra manera, si $F_X$ es  derivable sobre $\Rset$ (con  respeto a la
+  medida  de Lebesgue),  por lo  menos por  partes, $X$  admite una  densidad de
+  probabilidad y
+  %
+  \[
+  p_X(x) = \frac{d F_X(x)}{dx}
+  \]
+  %
+  Por abuso  de terminologia,  en lo que  sigue llamaremos $p_X$  tambi\'en {\it
+    distribuci\'on de  probabilidad}, a pesar de  que no tiene  el mismo sentido
+  que la masa de probabilidad del caso discreto.
+\end{definicion}
 %
-siendo $p(x)  \, dx$  la densidad de  probabilidad de  hallar a la  variable con
-valores  en el intervalo  infinitesimal entre  $x$ y  $x+dx$. La  condici\'on de
-normalizaci\'on se escribe
+La  escritura  integral de  $F_X$  justifica  de  nuevo la  denominaci\'on  {\it
+  cumulativa} para  $F_X$. Adem\'as, se puede  ver por ejemplo que  en este caso
+$\displaystyle P(a < x \le b) = \int_a^b p_X(x) \, dx = F_X(b) - F_X(a)$,}
 %
-$$
-\int_{x_m}^{x_M} p(x) \, dx=1 . 
-$$ 
-
-En  la   Fig.~\ref{fig:distribprobcontinua}  se  muestra   una  representaci\'on
-gr\'afica de una funci\'on densidad de probabilidad para una variable continua.
+%$p(x)$ que tiene el  sentido de que la probabilidad de que  $X$ tome valor entre
+%$a$ y $b$ est\'a dada por:
+%%
+%$$
+%\Pr(a\leq X\leq b) = \int_a^b p(x) \, dx ,
+%$$
 %
-\begin{figure}[h!] %%ojo numeracion de figs !
-%\centerline{\includegraphics[width=3cm]{distribprobcontinua.png}} %%rehacer
+siendo   $\modif{p_X(x)}  \,   dx$  \modif{esquematicamente}   la   densidad  de
+probabilidad de hallar a la variable con valores en el ``intervalo infinitesimal
+entre $x$ y $x+dx$''.  La condici\'on de normalizaci\'on se escribe
 %
-\leyenda{Una distribuci\'on de probabilidad continua.}
-\label{fig:distribprobcontinua}
+\[
+\int_\X p_X(x) \, dx = \int_\Rset p_X(x) \, dx = 1. 
+\] 
+%
+En   la  \modif{figure   Fig.~\ref{fig:MP:ProbaContinua}-(a)}  se   muestra  una
+representaci\'on gr\'afica  de una funci\'on  densidad de probabilidad  para una
+variable continua  \modif{y en Fig.~\ref{fig:MP:ProbaContinua}-(b)  la funci\'on
+  cumulativa correspondiente.
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/DistribucionReparticionContinua} \end{center}
+%
+  \leyenda{\modif{Ilustraci\'on de  una distribuci\'on de  probabilidad continua
+      (a), y la funci\'on de repartici\'on asociada  (b), con \ $\X = [0 \, ; \,
+      1) \cup [2  \, ; \, 3)$ \ y  \ $p_X(x) = \frac12 \un_{[0 \,  ; \, 1)}(x) +
+      \frac1{4 \sqrt{x-2}} \un_{[2 \, ; \,  3)}(x)$, \ \ie \ $F_X(x) = \frac{x}{2}
+      \,  \un_{[0 \, ;  \, 1)}(x)  + \frac{\sqrt{x-2}}{2}  \un_{[2 \,  ; \,
+        3)}(x) + \frac12 \un_{[1 \, ; \, +\infty)}(x)$.  }}
+\label{fig:ProbaContinua}
 \end{figure}
+}
 
-Tambi\'en, se puede caracterizar la ley de la variable continua $X$ por medio de
-su  \emph{funci\'on  de   repartici\'on}  o  \emph{funci\'on  de  distribuci\'on
-  cumulativa} (CDF por \emph{cumulative distribution function}):
-%
-$$
-F_X(x) = \Pr(X\leq x) = \int_{x_m}^x p(t) \, dt
-$$
-%
-que da la  probabilidad de que $X$ sea  menor o igual que cierto  valor $x$ dado
-(dentro del conjunto~$\Omega$ de todos  los valores posibles de la variable). En
-forma an\'aloga,  \ $\Pr(X\in  A) = \int_A  p(x) \,  dx$ acumula la  densidad de
-probabilidad en un subconjunto $A$ del espacio muestral.  Por la propiedad de la
-inclusi\'on,  se  tiene \  $\Pr(X\leq  x_1)  \leq  \Pr(X\leq x_2)$  siempre  que
-$x_1\leq x_2$; luego $F_X(x)$ es una funci\'on creciente
+%Tambi\'en, se puede caracterizar la ley de la variable continua $X$ por medio de
+%su  \emph{funci\'on  de   repartici\'on}  o  \emph{funci\'on  de  distribuci\'on
+%  cumulativa} (CDF por \emph{cumulative distribution function}):
+%%
+%$$
+%F_X(x) = \Pr(X\leq x) = \int_{x_m}^x p(t) \, dt
+%$$
+%%
+%que da la  probabilidad de que $X$ sea  menor o igual que cierto  valor $x$ dado
+%(dentro del conjunto~$\Omega$ de todos  los valores posibles de la variable). En
+%forma an\'aloga,  \ $\Pr(X\in  A) = \int_A  p(x) \,  dx$ acumula la  densidad de
+%probabilidad en un subconjunto $A$ del espacio muestral.  Por la propiedad de la
+%inclusi\'on,  se  tiene \  $\Pr(X\leq  x_1)  \leq  \Pr(X\leq x_2)$  siempre  que
+%$x_1\leq x_2$; luego $F_X(x)$ es una funci\'on creciente
 %%no decreciente ?? SI, LO DIRIA ASI
-de   $x$,  acotada   por  la   unidad,  con   valores  extremos   dados   por  \
-$\lim_{x\rightarrow -\infty} F_X(x)=0$  y $\lim_{x\rightarrow \infty} F_X(x)=1$,
-tomando $\Omega=\Rset$.  Adem\'as la derivada respecto de $x$ es la pdf:
+%de   $x$,  acotada   por  la   unidad,  con   valores  extremos   dados   por  \
+%$\lim_{x\rightarrow -\infty} F_X(x)=0$  y $\lim_{x\rightarrow \infty} F_X(x)=1$,
+%tomando $\Omega=\Rset$.  Adem\'as la derivada respecto de $x$ es la pdf:
+%%
+%$$
+%\frac{dF_X(x)}{dx}=p(x) . 
+%$$ 
 %
-$$
-\frac{dF_X(x)}{dx}=p(x) . 
-$$ 
+\modif{Fijense de que una variable aleatoria puede ser ni continua, ni discreta:
 %
-De aqu\'i  se observa que  la densidad de  probabilidad $p(x)$ puede no  ser una
-funci\'on ``ordinaria''  cuando $\Pr(X\leq x)$  es discontinua, pero  como mucho
-tiene  la  singularidad  de   una  distribuci\'on  \emph{delta  de  Dirac}  cuya
-representaci\'on integral es:
+\begin{itemize}
+\item Sean $U$  \ y \ $V$ \ variables continuas,  independientes, de densidad de
+  probabilidad $p_U  = p_V = \un_{[0 \,  ; \, 1)}$ ($U$  \ y \ $V$  \ son dichas
+  uniformes sobre $[0  \, ; \, 1)$)  \ y sea \ $X  = V \un_{U <  \frac12}$, \ es
+  decir \ $X(\omega)  = V(\omega)$ \ si \  $U(\omega) < \frac12$ \ y \  $0$ \ si
+  no.  Entonces de la formula de  probabilidades totales, \ $F_X(x) = P(X \le x)
+  = P\left(  (X \le  x) \left| \left(  U <  \frac12 \right) \right.   \right) \,
+  P\left( U  < \frac12 \right)  \, + \,  P\left( (X \le  x) \left| \left(  U \ge
+        \frac12 \right)  \right.  \right) \, P\left(  U \ge \frac12  \right) $ \
+  \ie \ $F_X(x)  = \frac12 P\left( (V  \le x) \left| \left( U  < \frac12 \right)
+    \right.   \right) \, +  \, P\left(  (0 \le  x) \left|  \left( U  \ge \frac12
+      \right)\right. \right)$. \ Ahora, de la  independencia de \ $U$ \ y \ $V$,
+  \ tenemos \ $F_X(x) =  \frac12 F_V(x) + \frac12 \un_{\Rset_+}(x) = \frac{x}{2}
+  \un_{[0 \, ; \, 1)}(x) + \un_{\Rset_+}(x)$. Esta funci\'on de repartici\'on es
+  representada figura Fig.~\ref{fig:MP:}: es ni discreta, ni continua. Entonces,
+  a pesar  de que $\X  = [0  \, ; \,  1)$, un intervalo,  $X$ no es  continua (y
+  tampoco no puede ser discreta).
+  %
+  \begin{figure}[h!]
+  \begin{center} \input{TIKZ_MP/ReparticionMixta} \end{center}
+  %
+  \leyenda{\modif{Funci\'on de repartici\'on $F_X(x)  = \frac{x}{2} \un_{[0 \, ;
+        \, 1)}(x) +  \un_{\Rset_+}(x)$ asociada a \ $X = V  \un_{U < \frac12}$ \
+      con \ $U$ \ y \ $V$ \ variables continuas uniformes sobre $\X = [0 \, ; \,
+      1)$. Noes tipo escalon, as\'i que $X$ no es discreta. A pesar de que $\X =
+      [0 \,  ; \, 1)$  es un intervalo,  de la presencia del  salto en $x  = 0$,
+      tampoco $X$ no es continua.}}
+  \label{fig:ProbaMixta}
+  \end{figure}
 %
-$$
-\delta (x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{itx} dt . 
-$$
+\item Sea  $U$ \ variable  continua uniforme sobre $[0  \, ; \,  1)$ \ y \  $X =
+  \un_{U \not\in \Qset}$. Claramente  $X$ no es continua, pero $\X =  [0 \, ; \,
+  1)   \backslash    \Qset$   \   siendo   no   numerable,    $X$   tampoco   es
+  discreta~\footnote{\SZ{$X = 1$ casi siempre\ldots}}.
+\end{itemize}
+}
+
+\modif{De  hecho, en el  caso continu,  discreto, o  cualquiera, se  conserva la
+  forma integral  de la  medida de probabilidad  en una  forma tipo \  $P_X(B) =
+  \int_B  dP_X(x)$   \  basado   sobre  la   teoria  de  la   medida  y   de  la
+  integraci\'on~\cite{AthLah06, Coh13}. En el caso discreto cierto $X = x_0$, la
+  distribuci\'on discreta es  dada por $p_X(x) = \un_{\{ x_0  \}}(x) = \un_{\{ 0
+    \}}(x-x_0)$. En este caso, $P_X$ es  dicha {\it medida de Dirac} y $dP_X(x)$
+  es denotado \ $\delta_{x_0}(x)$ \ o \ $\delta(x-x_0)$ \ tambi\'en llamado {\it
+    delta de Dirac}. Se puede ver este Dirac como una}
+%De aqu\'i  se observa que  la 
+densidad de  probabilidad $p_X(x)$ \modif{pero} no es
+% puede no  ser 
+una funci\'on ``ordinaria''~\footnote{\SZ{El Dirac es tambi\'en definida como una distribuci\'on dicha de Schwarz, o funci\'on generalizada, cuya representaci\'on integral es \ $\displaystyle \delta(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{itx} dt$, lo que muestra claramente su caracter no ordinario (la inetrgral siendo divergente en el sentido usual). Eso va m\'as all\'a de la meta del capitulo y el lector se podr\'a referir a~\cite{Sch, Kol, GelShi}}}.
+%  cuando $\Pr(X\leq x)$  es discontinua, pero  como mucho
+%tiene  la  singularidad  de   una  distribuci\'on  \emph{delta  de  Dirac}  cuya
+%representaci\'on integral es:
+%
+%$$
+%\delta (x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{itx} dt . 
+%$$
 % SZ: LA  VERDAD ES  QUE NO ME  GUSTA MUCHO  escribir una distribucion  como una
 % fuccion porque no viven en el  mismo espacio. Pero no importa. Para mi, cuando
 % hay  una  discontinuidad  X no  admite  une  pdf  por  definicion del  'f'  de
 % pdf\sum_{}
 
-Un caso especial  se tiene cuando la variable aleatoria $X$  toma el valor $x_0$
-con certeza.  La forma  de la pdf  es: \ $p(x)=\delta(x-x_0)$.  Otra situaci\'on
-particular es la distribuci\'on uniforme en  un intervalo; la pdf es de la forma
-\  $p(x)=\frac{1}{b-a} \  \forall  \  x\in[a,b]$, donde  $[a,b]$  es el  espacio
-muestral.
-
-Usando las  funciones delta de  Dirac, se puede  unificar el tratamiento  de las
-variables  aleatorias discretas  con las  continuas: si  una  variable aleatoria
-discreta  toma los  valores $x_1,  x_2,  \ldots$ con  probabilidades $p_1,  p_2,
-\ldots$ respectivamente,  entonces formalmente  se puede describir  mediante una
-variable  aleatoria  continua  $X$  con  funci\'on densidad  de  probabilidad  \
-$p(x)=\sum_j p_j \,\delta(x-x_j)$.
+%Un caso especial  se tiene cuando la variable aleatoria $X$  toma el valor $x_0$
+%con certeza.  La forma  de la pdf  es: \ $p(x)=\delta(x-x_0)$.  Otra situaci\'on
+%particular es la distribuci\'on uniforme en  un intervalo; la pdf es de la forma
+%\  $p(x)=\frac{1}{b-a} \  \forall  \  x\in[a,b]$, donde  $[a,b]$  es el  espacio
+%muestral.
+Usando las  \modif{medidas de  Dirac}, se puede  unificar el tratamiento  de las
+variables aleatorias  discretas con las continuas \modif{(entre  otros)}: si una
+variable aleatoria discreta toma los valores $x_i$ con probabilidades $p_X(x_i)$
+respectivamente, entonces  formalmente se puede describir  mediante una variable
+aleatoria continua  $X$ con ``funci\'on  densidad de probabilidad'' \  $p_X(x) =
+\sum_i p_X(x_i) \, \delta(x-x_i)$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -544,6 +738,11 @@ $d$ pdf marginales:
 $$
 p(x^1, \ldots, x^d) = p_{X^1}(x^1) \cdots p_{X^d}(x^d) . 
 $$
+
+\
+
+\SZ{Reordenamiento y relaci\'on de mayorizaci\'on  : a ver como trasladar lo que
+  ya estaba en en cap. 2 mas los ejemplos. Todo comentado por ahora}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
