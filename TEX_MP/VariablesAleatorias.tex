@@ -1,8 +1,6 @@
 \seccion{Variables aleatorias y distribuciones de probabilidad}
 \label{s:variablealeatoria}
 
-\SZ{Measure: Bogachev}
-
 \emph{En  un  experimento  o  un  dado  proceso,  los  posibles  resultados  son
   t\'ipicamente  n\'umeros reales, siendo  cada n\'umero  un evento.   Luego los
   resultados  son mutuamente  excluyentes. Se  considera a  esos  n\'umeros como
@@ -19,7 +17,7 @@
 
 
 \modif{  Formalmente,  la noci\'on  de  variable  aleatoria  se apoya  sobre  la
-  noci\'on de funci\'on medible~\cite{AthLah06, Coh13}:
+  noci\'on de funci\'on medible~\cite{KolFom61, AthLah06, Bog07:v1, Coh13}:
 %
 \begin{definicion}[Funci\'on medible]
   Sean  \ $(\Omega,\A)$  \ y  \ $(\Upsilon,\B)$  \ dos  espacios  medibles.  Una
@@ -37,7 +35,8 @@
 \end{definicion}
 
 Adem\'as, saliendo de un espacio de medida y una funci\'on $f$ medible, se puede
-definir una medida imagen sobre el espacio de llegada~\cite{AthLah06, Coh13}:
+definir una medida imagen  sobre el espacio de llegada~\cite{AthLah06, Bog07:v1,
+  Coh13}:
 %
 \begin{teorema}[Teorema de la medida imagen]
   Sean  \ $(\Omega,\A,\mu)$  \  un espacio  de  medida, \  $(\Upsilon,\B)$ \  un
@@ -60,8 +59,8 @@ definir una medida imagen sobre el espacio de llegada~\cite{AthLah06, Coh13}:
   elementos  de $\B$  disjuntos entre  s\'i, las  preimagenes de  los  $B_i$ son
   disjuntos tambi\'en entre  s\'i (para $i \ne j$ no se  puede tener $\omega \in
   f^{-1}(B_i) \cap f^{-1}(B_j)$ si no $\omega$ tendr\'ia dos imagenes distinctas
-  por  $f$).   Entonces  $\displaystyle f^{-1}\left( \bigcup_i  B_i  \right)  =
-  \bigcup_i  f^{-1}(B_i)$.   Eso  implica  de   que  $\displaystyle  \mu_f\left(
+  por  $f$).   Entonces  $\displaystyle  f^{-1}\left( \bigcup_i  B_i  \right)  =
+  \bigcup_i  f^{-1}(B_i)$.   Eso   implica  de  que  $\displaystyle  \mu_f\left(
     \bigcup_i B_i \right) = \mu\left( f^{-1}\left( \bigcup_i B_i \right) \right)
   =  \bigcup_i  \mu\left( f^{-1}(B_i)  \right)  =  \sum_i \mu\left(  f^{-1}(B_i)
   \right) = \sum_i  \mu_f(B_i)$.  Finalmente, necesariamente $f^{-1}(\Upsilon) =
@@ -70,7 +69,8 @@ definir una medida imagen sobre el espacio de llegada~\cite{AthLah06, Coh13}:
     probar que la  preimagen de una uni\'on numerable (que  sean disjuntos o no)
     es la uni\'on  de las preimagenes; lo mismo occure  para la intersecci\'on y
     adem\'as la preimagen del complemento es el complemento de la preimagen. Eso
-    es conocido como {\it leyes de de Morgan}~\cite{AthLah06, Coh13, HogMck13}.}.
+    es conocido  como {\it leyes de de  Morgan}~\cite{AthLah06, Coh13, HogMck13}
+    (ver tambi\'en~\cite[Cap.~1]{KolFom57} y~\cite[Caps.~5~\&~6]{KolFom61}).}.
 \end{proof}
 
 Un espacio  jugando un  rol particular es  $\Rset$, a  lo cual se  puede asociar
@@ -78,8 +78,8 @@ $\B(\Rset)$ la  $\sigma$-\'algebra m\'as  peque\~na generada por  los intervalos
 $(-\infty  \,  ;  \, b]$  (equivalentemente,  por  los  abiertos de  $\Rset$,  o
 tambi\'en  por  los  intervalos  $(a  \,  ; \,  b]$),  \ie  uniones  numerables,
 intersecciones  numerables,  complementos  de  estos  intervalos~\cite{AthLah06,
-  Coh13}.   $\B(\Rset)$  es  llamada   {\it  Borelianos   de  $\Rset$}   o  {\it
-  $\sigma$-\'algebra de Borel de $\Rset$}.
+  Bog07:v1,  Bog07:v2,  Coh13}.   $\B(\Rset)$  es  llamada  {\it  Borelianos  de
+  $\Rset$} o {\it $\sigma$-\'algebra de Borel de $\Rset$}.
 
 Con  estas   definiciones,  tenemos  todo   lo  necesario  para   introducir  la
 definici\'on de una variable aleatoria real~\cite{AthLah06, Coh13, Bre88}:
@@ -277,9 +277,10 @@ como es el espacio preimagen.
 %
 \noindent En  otras palabras,  l}os posibles valores  de una  variable aleatoria
 discreta $X$ consisten en un  conjunto contable (finito o infinito numerable) de
-n\'umeros  reales:   \  $\modif{\X  =  \{   x_i  \}_i}$~\cite{Ath06,  HogMck13}.
+n\'umeros  reales:  \  $\modif{\X  = \{  x_i  \}_i}$~\cite{AthLah06,  HogMck13}.
 \modif{En este caso, las probabilidades $P_X(\{ x_i \}) = P(X = x_i), \: x_i \in
-  \X$ caracterisan completamente la variable aleatoria~\cite{Ath06, HogMck13}:
+  \X$   caracterisan   completamente   la   variable   aleatoria~\cite{AthLah06,
+    HogMck13}:
 %
 \begin{definicion}[Funci\'on de masa de probabilidad]
   Por  definici\'on, la  funci\'on  de  masa de  probabilidad  de $X$,  variable
@@ -504,13 +505,13 @@ altura \modif{$\frac1\alpha$ en cada $x_i, \quad 1 \le i \le \alpha$}.
 % ================================= Discreta
 
 \subseccion{Variable aleatoria continua}
-\label{sec:MP:VADiscreta}
+\label{sec:MP:VAContinua}
 
 \modif{En varios contextos, puede tomar valores en un conjunto no numerable, por
   ejemplo}  cualesquiera de  los  n\'umeros en  un  dado intervalo  de la  recta
 real\modif{.  No son  variables discretas  m\'as. En  las variables  que  no son
   discretas,   el   caso   particular   de   inter\'es  es   el   de   variables
-  continuas~\cite{Ath06, HogMck13}:
+  continuas~\cite{AthLah06, HogMck13}:
 %
 \begin{definicion}[Variable aleatoria continua]
   Una  variable $X$ es  dicha {\it  continua} si  su funci\'on  de repartici\'on
@@ -535,9 +536,10 @@ anotada por su  sigla en ingl\'es: pdf por  \emph{probability density function})
   \]
   %
   (la    integral    debe   ser    entendido    como    en    el   sentido    de
-  Lebesgue~\footnote{\SZ{Decir un poquito sobre la medida de Lebesgue y ref.}}),
-  entonces $X$  es dicha {\it admitiendo  una densidad} y $p_X$  es llamada {\it
-    densidad de probabilidad} de $X$. En particular,
+  Lebesgue~\footnote{\SZ{Decir  un  poquito  sobre   la  medida  de  Lebesgue  y
+      ref.~\cite{Leb04, Leb18, KolFom61, AthLah06, Bog07:v1, Coh13}}}), entonces
+  $X$ es dicha {\it admitiendo una densidad} y $p_X$ es llamada {\it densidad de
+    probabilidad} de $X$. En particular,
   %
   \[
   F_X(x) = \int_{-\infty}^x p_X(u) \, du
@@ -658,15 +660,37 @@ variable continua  \modif{y en Fig.~\ref{fig:MP:ProbaContinua}-(b)  la funci\'on
 \modif{De  hecho, en el  caso continu,  discreto, o  cualquiera, se  conserva la
   forma integral  de la  medida de probabilidad  en una  forma tipo \  $P_X(B) =
   \int_B  dP_X(x)$   \  basado   sobre  la   teoria  de  la   medida  y   de  la
-  integraci\'on~\cite{AthLah06, Coh13}. En el caso discreto cierto $X = x_0$, la
-  distribuci\'on discreta es  dada por $p_X(x) = \un_{\{ x_0  \}}(x) = \un_{\{ 0
-    \}}(x-x_0)$. En este caso, $P_X$ es  dicha {\it medida de Dirac} y $dP_X(x)$
-  es denotado \ $\delta_{x_0}(x)$ \ o \ $\delta(x-x_0)$ \ tambi\'en llamado {\it
-    delta de Dirac}. Se puede ver este Dirac como una}
+  integraci\'on~\cite{Leb04, KolFom61, AthLah06,  Bog07:v1, Bog07:v2, Coh13}. En
+  el caso  discreto cierto  $X =  x_0$, la distribuci\'on  discreta es  dada por
+  $p_X(x) = \un_{\{  x_0 \}}(x) = \un_{\{ 0 \}}(x-x_0)$. En  este caso, $P_X$ es
+  dicha {\it medida de Dirac} y  $dP_X(x)$ es denotado \ $\delta_{x_0}(x)$ \ o \
+  $\delta(x-x_0)$ \  tambi\'en llamado {\it delta  de Dirac}. Se  puede ver este
+  Dirac como una}
 %De aqu\'i  se observa que  la 
 densidad de  probabilidad $p_X(x)$ \modif{pero} no es
 % puede no  ser 
-una funci\'on ``ordinaria''~\footnote{\SZ{El Dirac es tambi\'en definida como una distribuci\'on dicha de Schwarz, o funci\'on generalizada, cuya representaci\'on integral es \ $\displaystyle \delta(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{itx} dt$, lo que muestra claramente su caracter no ordinario (la inetrgral siendo divergente en el sentido usual). Eso va m\'as all\'a de la meta del capitulo y el lector se podr\'a referir a~\cite{Sch, Kol, GelShi}}}.
+una funci\'on ``ordinaria'' pero  una funci\'on generalizada o distribuci\'on de
+Schwarz~\footnote{\modif{El  Dirac,  visto  como  distribuci\'on de  Schwarz,  o
+    funci\'on   generalizada,   tiene   una  ``representaci\'on   integral''   \
+    $\displaystyle  \delta(x) =  \frac{1}{2\pi}  \int_{-\infty}^{\infty} e^{itx}
+    dt$ \ o  m\'as rigurosamente transformada de Fourier de $x  \mapsto 1$ en el
+    sentido  de  las  funciones  generalizadas o  distribuciones.   Eso  muestra
+    claramente su  caracter no  ordinario (la integral  siendo divergente  en el
+    sentido usual). Eso va m\'as all\'a de la meta del cap\'itulo y el lector se
+    podr\'a  referir  a~\cite{Sch66,  GelShi64,  GelShi68} por  ejemplo.}}.   En
+particular,   $F_X(x)  =   \un_{\Rset_+}(x-x_0)$  y   en  el   sentido   de  las
+distribuciones, $\frac{d F_X}{dx} =  \delta_{x_0}$. Adem\'as, se usan en general
+las propiedades, para cualquier function $f$,
+%
+\[
+f(x) \delta(x-x_0) = f(x_0) \delta(x-x_0) \qquad \mbox{y} \qquad \int_\Rset f(x)
+\delta(x-x_0) \, dx = f(x_0)
+% \mbox{y} \qquad \int_{x_0}^{+\infty} f(x)  \delta(x-x_0) \, dx =
+%\frac12 f(x_0)
+\]
+%
+pero  hay que  entender la  integraci\'on a  trav\'es de  la medida  Dirac (esta
+notaci\'on es un abuso de escritura, ej.~\cite{GelShi64}).
 %  cuando $\Pr(X\leq x)$  es discontinua, pero  como mucho
 %tiene  la  singularidad  de   una  distribuci\'on  \emph{delta  de  Dirac}  cuya
 %representaci\'on integral es:
@@ -688,8 +712,8 @@ Usando las  \modif{medidas de  Dirac}, se puede  unificar el tratamiento  de las
 variables aleatorias  discretas con las continuas \modif{(entre  otros)}: si una
 variable aleatoria discreta toma los valores $x_i$ con probabilidades $p_X(x_i)$
 respectivamente, entonces  formalmente se puede describir  mediante una variable
-aleatoria continua  $X$ con ``funci\'on  densidad de probabilidad'' \  $p_X(x) =
-\sum_i p_X(x_i) \, \delta(x-x_i)$.
+aleatoria   continua  $X$   con   ``funci\'on  densidad   de  probabilidad''   \
+\modif{$p_X(x) = \sum_i p_i \, \delta(x-x_i)$ donde $p_i = P(X = x_i)$.}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
