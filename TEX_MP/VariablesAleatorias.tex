@@ -577,7 +577,7 @@ entre $x$ y $x+dx$''.  La condici\'on de normalizaci\'on se escribe
 \int_\X p_X(x) \, dx = \int_\Rset p_X(x) \, dx = 1. 
 \] 
 %
-En   la  \modif{figure   Fig.~\ref{fig:MP:ProbaContinua}-(a)}  se   muestra  una
+En   la  \modif{figura   Fig.~\ref{fig:MP:ProbaContinua}-(a)}  se   muestra  una
 representaci\'on gr\'afica  de una funci\'on  densidad de probabilidad  para una
 variable continua  \modif{y en Fig.~\ref{fig:MP:ProbaContinua}-(b)  la funci\'on
   cumulativa correspondiente.
@@ -591,7 +591,7 @@ variable continua  \modif{y en Fig.~\ref{fig:MP:ProbaContinua}-(b)  la funci\'on
       \frac1{4 \sqrt{x-2}} \un_{[2 \, ; \,  3)}(x)$, \ \ie \ $F_X(x) = \frac{x}{2}
       \,  \un_{[0 \, ;  \, 1)}(x)  + \frac{\sqrt{x-2}}{2}  \un_{[2 \,  ; \,
         3)}(x) + \frac12 \un_{[1 \, ; \, +\infty)}(x)$.  }}
-\label{fig:ProbaContinua}
+\label{fig:MP:ProbaContinua}
 \end{figure}
 }
 
@@ -634,9 +634,9 @@ variable continua  \modif{y en Fig.~\ref{fig:MP:ProbaContinua}-(b)  la funci\'on
       \right)\right. \right)$. \ Ahora, de la  independencia de \ $U$ \ y \ $V$,
   \ tenemos \ $F_X(x) =  \frac12 F_V(x) + \frac12 \un_{\Rset_+}(x) = \frac{x}{2}
   \un_{[0 \, ; \, 1)}(x) + \un_{\Rset_+}(x)$. Esta funci\'on de repartici\'on es
-  representada figura Fig.~\ref{fig:MP:}: es ni discreta, ni continua. Entonces,
-  a pesar  de que $\X  = [0  \, ; \,  1)$, un intervalo,  $X$ no es  continua (y
-  tampoco no puede ser discreta).
+  representada   figura  Fig.~\ref{fig:MP:ProbaMixta}:   es   ni  discreta,   ni
+  continua. Entonces, a pesar de que $\X =  [0 \, ; \, 1)$, un intervalo, $X$ no
+  es continua (y tampoco no puede ser discreta).
   %
   \begin{figure}[h!]
   \begin{center} \input{TIKZ_MP/ReparticionMixta} \end{center}
@@ -644,10 +644,10 @@ variable continua  \modif{y en Fig.~\ref{fig:MP:ProbaContinua}-(b)  la funci\'on
   \leyenda{\modif{Funci\'on de repartici\'on $F_X(x)  = \frac{x}{2} \un_{[0 \, ;
         \, 1)}(x) +  \un_{\Rset_+}(x)$ asociada a \ $X = V  \un_{U < \frac12}$ \
       con \ $U$ \ y \ $V$ \ variables continuas uniformes sobre $\X = [0 \, ; \,
-      1)$. Noes tipo escalon, as\'i que $X$ no es discreta. A pesar de que $\X =
-      [0 \,  ; \, 1)$  es un intervalo,  de la presencia del  salto en $x  = 0$,
+      1)$. No es tipo escalon, as\'i que  $X$ no es discreta. A pesar de que $\X
+      = [0 \,  ; \, 1)$ es un intervalo,  de la presencia del salto  en $x = 0$,
       tampoco $X$ no es continua.}}
-  \label{fig:ProbaMixta}
+  \label{fig:MP:ProbaMixta}
   \end{figure}
 %
 \item Sea  $U$ \ variable  continua uniforme sobre $[0  \, ; \,  1)$ \ y \  $X =
@@ -658,8 +658,8 @@ variable continua  \modif{y en Fig.~\ref{fig:MP:ProbaContinua}-(b)  la funci\'on
 }
 
 \modif{De  hecho, en el  caso continu,  discreto, o  cualquiera, se  conserva la
-  forma integral  de la  medida de probabilidad  en una  forma tipo \  $P_X(B) =
-  \int_B  dP_X(x)$   \  basado   sobre  la   teoria  de  la   medida  y   de  la
+  forma integral de la medida de probabilidad en una forma tipo \ $\displaystyle
+  P_X(B)  = \int_B  dP_X(x)$ \  basado sobre  la  teoria de  la medida  y de  la
   integraci\'on~\cite{Leb04, KolFom61, AthLah06,  Bog07:v1, Bog07:v2, Coh13}. En
   el caso  discreto cierto  $X =  x_0$, la distribuci\'on  discreta es  dada por
   $p_X(x) = \un_{\{  x_0 \}}(x) = \un_{\{ 0 \}}(x-x_0)$. En  este caso, $P_X$ es
