@@ -58,7 +58,7 @@
 \fontsize{10}{10}\selectfont
 %%
 
-\pagestyle{empty}
+%\pagestyle{empty}
 
 
 
@@ -322,11 +322,13 @@
 
 \newtheorem{definicion}{Definici\'on}
 \newtheorem{teorema}{Teorema}
+\newtheorem{corolario}{Corolario}
 \newtheorem{lema}{Lema}
 \newtheorem{propuesta}{Propuesta}
 
 % numerotacion con el numero de capitulo
 \renewcommand\thedefinicion{\arabic{capitulo}-\arabic{definicion}}
 \renewcommand\theteorema{\arabic{capitulo}-\arabic{teorema}}
+\renewcommand\thecorolario{\arabic{capitulo}-\arabic{corolario}}
 \renewcommand\thelema{\arabic{capitulo}-\arabic{lema}}
 \renewcommand\thepropuesta{\arabic{capitulo}-\arabic{propuesta}}

@@ -43,7 +43,7 @@
 \draw[>=stealth,->] (-.6,0)--({\sx*4+.25},0) node[right]{\small $x$};
 \draw[>=stealth,->] (0,-.25)--(0,{\sy+.5}) node[above]{\small $F_X$};
 %
-\draw[thick] (0,-.25)--(0,0)--(\sx,{\sy/2})--({2*\sx},{\sy/2})
+\draw[thick] (-.5,0)--(0,0)--(\sx,{\sy/2})--({2*\sx},{\sy/2})
 -- plot[domain=2:3,samples=100] ({\sx*\x},{\sy*(1+(\x-2)^(3/2))/2})
 -- ({\sx*4},\sy);
 %
