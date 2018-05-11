@@ -1,7 +1,7 @@
 \seccion{Variables aleatorias y distribuciones de probabilidad}
 \label{s:variablealeatoria}
 
-\emph{En  un  experimento  o  un  dado  proceso,  los  posibles  resultados  son
+{\it  En  un  experimento  o  un  dado  proceso,  los  posibles  resultados  son
   t\'ipicamente  n\'umeros reales, siendo  cada n\'umero  un evento.   Luego los
   resultados  son mutuamente  excluyentes. Se  considera a  esos  n\'umeros como
   valores de una  \emph{variable aleatoria} $X$ a valores  reales, que puede ser
@@ -465,52 +465,56 @@ altura \modif{$\frac1\alpha$ en cada $x_j, \quad 1 \le j \le \alpha$}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \SZ{Reordenamiento y relaci\'on de mayorizaci\'on  : a ver como trasladar lo que
-  ya estaba en en cap. 2 mas los ejemplos. Todo comentado por ahora}
+  ya estaba en en cap.  2 mas los ejemplos, pagina~\pageref{def:SZ:Mayorizacion}
+  (cf  pagina~\pageref{prop:SZ:permutacion}).  Todo  tal  cual por  ahora,  pero
+  ser\'ia la parte azul a cambiar.}
 
-% Para comparar dos  distribuciones es \'util reordenar el  vector de probabilidad
-% permutando  sus  elementos  hasta  listarlos  de forma  descendente.   Se  anota
-% $p^\downarrow$, de  modo que \  $p^\downarrow_1 \geq p^\downarrow_2  \geq \ldots
-% \geq  p^\downarrow_N$.   En  el  ejemplo   del  caso  con  certeza  se  tiene  \
-% $p^\downarrow =  \begin{pmatrix} 1 & 0  & \cdots &  0 \end{pmatrix}^t$, mientras
-% que la distribuci\'on uniforme no var\'ia.
+\aver{
+Para comparar dos  distribuciones es \'util reordenar el  vector de probabilidad
+permutando  sus  elementos  hasta  listarlos  de forma  descendente.   Se  anota
+$p^\downarrow$, de  modo que \  $p^\downarrow_1 \geq p^\downarrow_2  \geq \ldots
+\geq  p^\downarrow_N$.   En  el  ejemplo   del  caso  con  certeza  se  tiene  \
+$p^\downarrow =  \begin{pmatrix} 1 & 0  & \cdots &  0 \end{pmatrix}^t$, mientras
+que la distribuci\'on uniforme no var\'ia.
 
-% Se  define  \emph{mayorizaci\'on} del  siguiente  modo,  para distribuciones  de
-% dimensi\'on  $N$ (con  sus elementos  acomodados  en forma  decreciente): \  una
-% distribuci\'on $p$  es mayorizada por otra $q$,  y se denota $p\prec  q$, si las
-% primeras $N-1$  sumas parciales de $p^\downarrow$ y  $q^\downarrow$ satisfacen \
-% $\sum_{i=1}^n  p^\downarrow_i   \leq  \sum_{i=1}^n  q^\downarrow_i$   para  todo
-% $n=1,\ldots,N-1$, con \ $\sum_{i=1}^N p_i = 1 = \sum_{i=1}^N q_i$.
+Se  define  \emph{mayorizaci\'on} del  siguiente  modo,  para distribuciones  de
+dimensi\'on  $N$ (con  sus elementos  acomodados  en forma  decreciente): \  una
+distribuci\'on $p$  es mayorizada por otra $q$,  y se denota $p\prec  q$, si las
+primeras $N-1$  sumas parciales de $p^\downarrow$ y  $q^\downarrow$ satisfacen \
+$\sum_{i=1}^n  p^\downarrow_i   \leq  \sum_{i=1}^n  q^\downarrow_i$   para  todo
+$n=1,\ldots,N-1$, con \ $\sum_{i=1}^N p_i = 1 = \sum_{i=1}^N q_i$.
 
-% Por    ejemplo,   $\begin{pmatrix}    \frac12    &   \frac14    &   \frac18    &
-%   \frac18 \end{pmatrix}^t  \prec \begin{pmatrix} \frac12  & \frac14 &  \frac14 &
-%   0 \end{pmatrix}^t$.  Es posible  comparar por mayorizaci\'on distribuciones de
-% distinta  dimensionalidad, completando con  ceros el  vector de  probabilidad de
-% menor  dimensi\'on.  Es  importante  resaltar que  la  mayorizaci\'on provee  un
-% \emph{orden  parcial}  (no  total)  entre distribuciones,  existiendo  pares  de
-% distribuciones   tales  que   ninguna  mayoriza   a  la   otra.    Por  ejemplo,
-% $\begin{pmatrix} 0.50 &  0.40 & 0.10 \end{pmatrix}^t$ y  $\begin{pmatrix} 0.70 &
-%   0.15 & 0.15 \end{pmatrix}^t$ no se comparan por mayorizaci\'on.
+Por    ejemplo,   $\begin{pmatrix}    \frac12    &   \frac14    &   \frac18    &
+  \frac18 \end{pmatrix}^t  \prec \begin{pmatrix} \frac12  & \frac14 &  \frac14 &
+  0 \end{pmatrix}^t$.  Es posible  comparar por mayorizaci\'on distribuciones de
+distinta  dimensionalidad, completando con  ceros el  vector de  probabilidad de
+menor  dimensi\'on.  Es  importante  resaltar que  la  mayorizaci\'on provee  un
+\emph{orden  parcial}  (no  total)  entre distribuciones,  existiendo  pares  de
+distribuciones   tales  que   ninguna  mayoriza   a  la   otra.    Por  ejemplo,
+$\begin{pmatrix} 0.50 &  0.40 & 0.10 \end{pmatrix}^t$ y  $\begin{pmatrix} 0.70 &
+  0.15 & 0.15 \end{pmatrix}^t$ no se comparan por mayorizaci\'on.
 
-% Es  interesante  notar  que  la   siguiente  propiedad  es  v\'alida  para  toda
-% distribuci\'on $p$ de tamaÅÒo~$N$:
-% %
-% $$
-% \begin{pmatrix} \frac1N & \frac1N & \cdots & \frac1N \end{pmatrix}^t \ \prec \ p
-% \ \prec \ \begin{pmatrix} 1 & 0 & \cdots & 0 \end{pmatrix}^t.
-% $$
-% %
-% En este  sentido, los  casos particulares de  equiprobabilidad y de  certeza, se
-% dice  que  son  distribuciones  extremas.  Notamos que  uno  implica  ignorancia
-% m\'axima  en el  resultado de  la variable  mientras que  el otro  corresponde a
-% conocimiento completo.
-% %% graficamente 
-% %
-% \begin{figure}[h!] %%ojo numeracion de figs !
-% %\centerline{\includegraphics[width=3cm]{majorizationplot.pdf}} %%rehacer
-% %
-% \leyenda{Orden parcial por mayorizaci\'on}
-% \label{fig:majorizationplot}
-% \end{figure}
+Es  interesante  notar  que  la   siguiente  propiedad  es  v\'alida  para  toda
+distribuci\'on $p$ de tama\~no~$N$:
+%
+$$
+\begin{pmatrix} \frac1N & \frac1N & \cdots & \frac1N \end{pmatrix}^t \ \prec \ p
+\ \prec \ \begin{pmatrix} 1 & 0 & \cdots & 0 \end{pmatrix}^t.
+$$
+%
+En este  sentido, los  casos particulares de  equiprobabilidad y de  certeza, se
+dice  que  son  distribuciones  extremas.  Notamos que  uno  implica  ignorancia
+m\'axima  en el  resultado de  la variable  mientras que  el otro  corresponde a
+conocimiento completo.
+%% graficamente 
+%
+\begin{figure}[h!] %%ojo numeracion de figs !
+%\centerline{\includegraphics[width=3cm]{majorizationplot.pdf}} %%rehacer
+%
+\leyenda{Orden parcial por mayorizaci\'on}
+\label{fig:majorizationplot}
+\end{figure}
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -537,9 +541,9 @@ real\modif{.  No son  variables discretas  m\'as. En  las variables  que  no son
 %Los posibles valores de una  variable aleatoria continua $X$ son cualesquiera de
 %los n\'umeros en un dado  intervalo de la recta real: \ $x\in\Omega\subset\Rset$
 %que  puede ser  un intervalo  $[x_m,x_M]$  o un  subconjunto (semi)infinito.  
-\modif{Cuando se puede, es}
-conveniente asociar una  \emph{funci\'on densidad de probabilidad} (com\'unmente
-anotada por su  sigla en ingl\'es: pdf por  \emph{probability density function})\modif{:
+\modif{Cuando se puede,  es} conveniente asociar una {\it  funci\'on densidad de
+  probabilidad} (com\'unmente  anotada por  su sigla en  ingl\'es: pdf  por {\it
+  probability density function})\modif{:
 %
 \begin{definicion}[Variable aleatoria continua admitiendo una densidad de probabilidad]
   Sea $X$  variable aleatoria continua y \  $P_X$ su medida de  probabilidad y \
@@ -553,9 +557,18 @@ anotada por su  sigla en ingl\'es: pdf por  \emph{probability density function})
   (la    integral    debe   ser    entendido    como    en    el   sentido    de
   Lebesgue~\footnote{\SZ{Decir  un  poquito  sobre   la  medida  de  Lebesgue  y
       ref.~\cite{Leb04,      Leb18,      KolFom61,      AthLah06,      Bog07:v1,
-        Coh13}}.   \label{foot:MP:Lebesgue}}),  entonces   $X$  es   dicha  {\it
+        Coh13}}.   \label{foot:MP:Lebesgue}}),   entonces  $X$  es   dicha  {\it
     admitiendo  una  densidad}  y  \   $p_X$  \  es  llamada  {\it  densidad  de
-    probabilidad} de $X$. En particular,
+    probabilidad} de  $X$. Notando de que  $P_X(B) = P_X(B  \cap \X)$, el
+    soporte de $p_X$ es  necesariamente $\X = X(\Omega)$ (\ie $p_X(\widebar{\X})
+    = 0$ \ y \ $p_X(\X) \ne 0$), y
+    %
+    \[
+    \forall \, B \in \B(\Rset), \quad P_X(B) = \int_{B \cap \X} p_X(x) \, dx
+    \]
+  %
+    Tratando de la funci\'on de repartici\'on, tenemos
+  % En particular,
   %
   \[
   F_X(x) = \int_{-\infty}^x p_X(u) \, du
@@ -571,16 +584,14 @@ anotada por su  sigla en ingl\'es: pdf por  \emph{probability density function})
   %
   Por abuso  de terminologia,  en lo que  sigue llamaremos $p_X$  tambi\'en {\it
     distribuci\'on de  probabilidad}, a pesar de  que no tiene  el mismo sentido
-  que la masa de probabilidad del caso discreto.
-
-  Fijense de que  $\X$ es el soporte de  $p_X$, \ie $p_X(\X) \ne 0$.   En lo que
-  sigue,  denotaremos  $|\X|$  el  volumen  (o  medida  de  Lebesgue)  de  $\X$,
-  posiblemente infinito.
+  que la masa de probabilidad del  caso discreto y denotaremos $|\X|$ el volumen
+  (o medida de Lebesgue) de $\X$, posiblemente infinito.
 \end{definicion}
 %
 La  escritura  integral de  $F_X$  justifica  de  nuevo la  denominaci\'on  {\it
   cumulativa} para  $F_X$. Adem\'as, se puede  ver por ejemplo que  en este caso
-$\displaystyle P(a < X \le b) = \int_a^b p_X(x) \, dx = F_X(b) - F_X(a)$ \ y que claramente
+$\displaystyle P(a < X \le b) = \int_a^b p_X(x) \, dx = F_X(b) - F_X(a)$ \ y que
+claramente
 %
 \[
 \forall x \in \Rset, \quad P_X(\{x\}) = P(X = x) = 0
@@ -596,15 +607,15 @@ de $\Rset$).}
 %\Pr(a\leq X\leq b) = \int_a^b p(x) \, dx ,
 %$$
 %
-Fijense de  que si  $0 \le F_X  \le 1$, no  $p_X$ puede  ser mayor que  uno, por
-ejemplo, para \ $F_X(x) = 2 \, x  \, \un_{\left[ 0 \, ; \, \frac12 \right)}(x) +
-\un_{\left[ \frac12 \,  ; \, +\infty \right)}(x)$, que  define correctamente una
-funci\'on  de  repartici\'on,  \  $p_X(x)  =  2  \un_{\left[  \frac12  \,  ;  \,
-    +\infty\right)}(x)$. No es  contradictorio en el sentido de  que $p_X$ no es
-una probabilidad, sino que $\modif{p_X(x)} \, dx$ \modif{es esquematicamente} la
-probabilidad de hallar a la variable con valores en el ``intervalo infinitesimal
-entre $x$  y $x+dx$''.  \modif{Al  final, l}a condici\'on de  normalizaci\'on se
-escribe
+\modif{Fijense de que  si $0 \le F_X \le  1$, no $p_X$ puede ser  mayor que uno,
+  por  ejemplo, para  \ $F_X(x)  =  2 \,  x \,  \un_{\left[  0 \,  ; \,  \frac12
+    \right)}(x) + \un_{\left[  \frac12 \, ; \, +\infty  \right)}(x)$, que define
+  correctamente  una  funci\'on de  repartici\'on,  \  $p_X(x)  = 2  \un_{\left[
+      \frac12 \, ; \, +\infty\right)}(x)$. No es contradictorio en el sentido de
+  que $p_X$ no  es una probabilidad, sino que}  $\modif{p_X(x)} \, dx$ \modif{es
+  esquematicamente} la  probabilidad de hallar a  la variable con  valores en el
+``intervalo  infinitesimal   entre  $x$   y  $x+dx$''.   \modif{Al   final,  l}a
+condici\'on de normalizaci\'on se escribe
 %
 \[
 \int_\X p_X(x) \, dx = \int_\Rset p_X(x) \, dx = 1. 
@@ -812,19 +823,21 @@ masa se factoriza, \ie
 %
 \[
 X_i  \:  \mbox{mutualmente independientes}  \quad  \Leftrightarrow  \quad p_X  =
-p_{X_1} \otimes \cdots \otimes p_{X_d}
+p_{X_1} \ldots  p_{X_d}
 \]
 %
-donde $\otimes$ denota el producto tensorial o externo, $p_{X_j} \otimes p_{X_k}
-(x_j,x_k) = p_{X_j} (x_j) p_{X_k} (x_k)$.  Cuando los $\alpha_i$ son finito y la
-notaci\'on  vectorial de  la definici\'on  es adoptada,  esta  expresi\'on queda
-valide donde  $\otimes$ representa el producto de  Kronecker~\footnote{Para \ $p
-  =   \begin{bmatrix}  p_1  &   \cdots  &   p_n  \end{bmatrix}^t$   \  y   \  $q
-  =  \begin{bmatrix}  q_1 &  \cdots  & q_m  \end{bmatrix}^t$  \  el producto  de
-  Kronecker es dado por \ $p \otimes q$ \ vector de tama\~no $n m$ de componente
-  \ $(j-1) m + k$-esima \ el producto \  $p_j q_k, \quad 1 \le j \le n, \: 1 \le
-  k  \le   m$.  Fijense  de  que   este  producto  es  asociativo   pero  no  es
-  comutativo.\label{foot:MP:Kronecker}} 
+En notaciones tensoriales, $p_X =  p_{X_1} \otimes \cdots \otimes p_{X_d}$ donde
+$\otimes$  denota  el  producto  tensorial  o  externo  entre  los  vectores  de
+probabilidades~\footnote{\modif{Tensor  de   componentes  $(j_1,\ldots,j_d)$  el
+    producto $\prod_i p_{X_i} (x_{j_i})$}.}.  Cuando los $\alpha_i$ son finito y
+la notaci\'on vectorial  de la definici\'on es adoptada,  esta expresi\'on queda
+valide donde $\otimes$ representa el producto de Kronecker~\footnote{\modif{Para
+    \  $p =  \begin{bmatrix}  p_1  & \cdots  &  p_n \end{bmatrix}^t$  \  y \  $q
+    =  \begin{bmatrix} q_1  & \cdots  & q_m  \end{bmatrix}^t$ \  el  producto de
+    Kronecker  es dado  por  \ $p  \otimes  q$ \  vector de  tama\~no  $n m$  de
+    componente \ $(j-1) m + k$-esima \ el producto \ $p_j q_k, \quad 1 \le j \le
+    n, \: 1 \le k \le m$.  Fijense de que este producto es asociativo pero no es
+    comutativo.\label{foot:MP:Kronecker}}}
 
 Al  final, de la  formula de  calculo de  funci\'on de  repartici\'on marginales
 visto  pagina~\pageref{pagina:MP:MarginalesF},   para  un  subconjunto   $I_k  =
@@ -853,15 +866,16 @@ p_{X_{I_k}}(x_{I_k}) = \sum_{\forall i \not\in I_k, x_i \in \X_i} p_X(x)
   que
   %
   \[
-  \forall \, B \in \B(\Rset^d), \quad P_X(B) = \int_B p_X(x) \, dx
+  \forall \,  B \in \B(\Rset^d),  \quad P_X(B) =  \int_B p_X(x) \, dx  = \int_{B
+    \cap \X} p_X(x) \, dx
   \]
   %
-  (la   integral  multiple   debe  ser   entendido   como  en   el  sentido   de
-  Lebesgue~\footnote{Ver        nota        de       pie~\ref{foot:MP:Lebesgue},
-    pagina~\pageref{foot:MP:Lebesgue}.} y  \ $dx = dx_1  \cdots dx_d$), entonces
-  $X$ es dicha {\it admitiendo una densidad} y $p_X$ es llamada {\it densidad de
-    probabilidad} de \ $X$, o  tambi\'en {\it densidad de probabilidad conjunta}
-  de los \ $X_i$. En particular,
+  con $\X = X(\Omega)$ soporte de $p_X$ (la integral multiple debe ser entendido
+  como     en     el    sentido     de     Lebesgue~\footnote{Ver    nota     de
+    pie~\ref{foot:MP:Lebesgue},  pagina~\pageref{foot:MP:Lebesgue}.} y  \  $dx =
+  dx_1  \cdots dx_d$), entonces  $X$ es  dicha {\it  admitiendo una  densidad} y
+  $p_X$ es  llamada {\it densidad  de probabilidad} de  \ $X$, o  tambi\'en {\it
+    densidad de probabilidad conjunta} de los \ $X_i$. En particular,
   %
   \[
   F_X(x) =  \int_{(-\infty \, ;  \, x_1] \times  \cdots \times (-\infty \,  ; \,
@@ -876,8 +890,8 @@ p_{X_{I_k}}(x_{I_k}) = \sum_{\forall i \not\in I_k, x_i \in \X_i} p_X(x)
   \]
   %
   Usaremos  todav\'ia la terminolog\'ia  (por abuso)  de {\it  distribuci\'on de
-    probabilidad}; $\X$ es el soporte de $p_X$, denotaremos todav\'ia \ $|\X|$ \
-  el volumen (o medida de Lebesgue) de \ $\X$, posiblemente infinito.
+    probabilidad} y  denotaremos todav\'ia  \ $|\X|$ \  el volumen (o  medida de
+  Lebesgue) de \ $\X$, posiblemente infinito.
 \end{definicion}
 }
 
@@ -946,10 +960,12 @@ $i$-\'esima.
 % %
 % donde $\mathbf{\Omega}^{(i)}\subset\Rset^{d-1}$  barre el espacio  muestral para
 % $X^1, \ldots, X^{i-1}, X^{i+1}, \ldots, X^d$.
+
 \
 
 \SZ{Reordenamiento y relaci\'on de mayorizaci\'on  : a ver como trasladar lo que
-  ya estaba en en cap. 2 mas los ejemplos.}
+  ya estaba  en en cap.  2 mas los  ejemplos, paginas~\pageref{def:SZ:rearreglo}
+  y~\pageref{def:SZ:MayorizacionC}.}
 
 
 % ================================= Transformacion
@@ -1070,7 +1086,7 @@ dada por el teorema siguiente~\cite{Bre88, JacPro03, AthLah06, Coh13, HogMck13}:
     g_1(x_1 , \ldots , x_d) & \cdots & g_d(x_1 , \ldots , x_d) \end{bmatrix}^t$)
   \  y  \  $|\cdot|$  representa  el  valor  absoluto  del  determinante  de  la
   matriz. Sea \ $Y = g(X)$.  Entonces $Y$ es continua admitiendo una densidad de
-  probabilidad $p_Y$ tal que
+  probabilidad $p_Y$ de soporte $\Y = g(\X) = Y(\Omega)$ tal que
   %
   \[
   \forall \,  y \in  \Y, \quad p_Y(y)  = p_X(g^{-1}(y))  \left| \Jac_{g^{-1}}(y)
@@ -1082,16 +1098,17 @@ dada por el teorema siguiente~\cite{Bre88, JacPro03, AthLah06, Coh13, HogMck13}:
 Por definici\'on, $X$ admitiendo una densidad y $g$ siendo medible,
 %
 \[
-\forall \, B  \in \B(\Rset^d), \quad P_Y(B) =  P_X(g^{-1}(B)) = \int_{g^{-1}(B)}
+\forall \, B  \in \B(\Rset^d), \quad P_Y(B) =  P_X(g^{-1}(B)) = \int_{g^{-1}(B) \cap \X}
 p_X(x) \, dx
 \]
 %
 Por cambio de variable $x =  g^{-1}(y)$ ($g$ siendo inyectiva, el antecedante es
-\'unico por definic\'on),
+\'unico por definic\'on) y notando de que $g\left( g^{-1}(B) \cap \X \right) = B
+\cap \Y$,
 %
 \[
-\forall \,  B \in  \B(\Rset^d), \quad P_Y(B)  = \int_B p_X(g^{-1}(y))  \, \left|
-  \Jac_{g^{-1}}(y) \right| \, dy
+\forall \, B \in \B(\Rset^d), \quad  P_Y(B) = \int_{B \cap \Y} p_X(g^{-1}(y)) \,
+\left| \Jac_{g^{-1}}(y) \right| \, dy
 \]
 %
 lo que cierra la prueba.
@@ -1113,7 +1130,11 @@ El caso escalar puede ser visto como caso particular, dando:
 %
 }
 \noindent  Una forma  alternativa  de derivar  este  resultado es  partir de  la
-funci\'on de repartici\'on, notando de que $g$ es necesariamente monotona:
+funci\'on  de  repartici\'on\modif{,  notando   de  que  $g$  es  necesariamente
+  monotona~\footnote{\modif{Fijense de que $P(X \ge x) =  1 - P(X < x) = 1 - P(X
+      \le x) +  P(X = x)$, pero $X$ siendo  continua, $ P(X = x)  = 0$.}}: si $y
+  \not\in \Y$, necesariamente $p_Y = 0$ ($F_Y(y) = 1$ \ si \ $y > \sup \Y$ \ y \
+  $F_Y(y) = 0$ \ si \ $y < \inf \Y$) \ y para cualquier \ $y \in \Y$,}
 %
 \[
 F_Y(y) = P(Y \le y) = P(g(X) \le y) =
@@ -1121,16 +1142,16 @@ F_Y(y) = P(Y \le y) = P(g(X) \le y) =
 \left\{\begin{array}{lll}
 P(X \le g^{-1}(y)) = F_X(g^{-1}(y)) & \mbox{si} & g \quad \mbox{es creciente}\\[2.5mm]
 %
-P(X \ge g^{-1}(y)) = 1 - F_X(g^{-1}(y)) & \mbox{si} & g \quad \mbox{es decreciente~\footnote{\modif{Fijense de que $P(X \ge x) = 1 - P(X < x) = 1 - P(X \le x) + P(X = x)$, pero $X$ siendo continua, $ P(X = x) = 0$.}}}
+P(X \ge g^{-1}(y)) = 1 - F_X(g^{-1}(y)) & \mbox{si} & g \quad \mbox{es decreciente}
 \end{array}\right.
 }
 \]
 %
-y  calcular  las derivadas  del  primer y  \'ultimo  t\'erminos  respecto de  la
-variable transformada $y$.
+\modif{el resultado se  obtiene calculando} las derivadas del  primer y \'ultimo
+t\'erminos respecto de la variable transformada $y$.
 
 \modif{ Si $g$  no es inyectiva, $g^{-1}$ es multivaluada  o multiforme. En este
-  caso,  se  puede  todav\'ia  tratar  el  problema,  particiendo  $\Rset^d$  en
+  caso,  se  puede todav\'ia  tratar  el  problema,  particionando $\Rset^d$  en
   conjuntos donde $g$ es inyectiva, dando
 %
 \begin{teorema}
@@ -1172,14 +1193,48 @@ variable transformada $y$.
   $g^{-1}\left( B \cap g(\X_k) \right) = g_k^{-1}\left( B \cap g(\X_k) \right)$.
 \end{proof}
 %
+Por ejemplo, \modif{sea  $X$ definido sobre $\X =  \Rset$ y} la transformaci\'on
+de  variables \  $Y  = X^2$.   Se  tiene \  $y =  g(x)  = x^2$,  \modif{continua
+  diferenciable de  derivada nula sobre $\X_{[0]}  = \{ 0 \}$,  de medida nula,}
+cuyas  inversas  son \  $g_1^{-1}(y)  =  \sqrt{y}$  \ \modif{sobre  $\X_{[1]}  =
+  \Rset_-^*$}  \  y  \  $g_2^{-1}(y)  = -  \sqrt{y}$  \modif{sobre  $\X_{[2]}  =
+  \Rset_+^*$};  luego  \   $p_Y(y)  =  \frac{p_X(\sqrt{y})  +  p_X(-\sqrt{y})}{2
+  \sqrt{y}}$, \ \modif{sobre $\Y = \Rset_+^*$.}
+
 De nuevo, en el caso escalar, se puede salir de la funci\'on de repartici\'on
 %
 \[
-F_Y(y)  =  P(Y \le  y)  =  P\left(  g(X) \in  (-\infty  \,  ;  \, y]  \right)  =
-\sum_{k=1}^m P\left( X \in g_k^{-1}(-\infty \, ; \, y] \right)
+F_Y(y) =  P(Y \le y) = P(  g(X) \le y )  = \sum_{k=1}^m P\left( X  \in \X_{[k]} \cap
+  g_k^{-1}(-\infty \, ; \, y] \right)
 \]
 %
-\noindent (Ver figura~\ref{fig:MP:TransformacionVA}).
+($\X_{[0]}$  siendo  de medida  nula,  sobre  este  dominio la  probabilidad  es
+cero). Sea $\Y_{[k]} = g_k(\X_{[k]})$. Ahora, si $y \not\in I(y)$,
+%
+\[
+P\left(   X   \in  \X_k   \cap   g_k^{-1}(-\infty  \,   ;   \,   y]  \right)   =
+\left\{\begin{array}{lll}
+%
+P(X \in \X_{[k]}) & \mbox{si} & y > \sup \Y_{[k]}\\[2.5mm]
+%
+0 & \mbox{si} & y < \inf \Y_{[k]}\\[2.5mm]
+\end{array}\right.
+\]
+%
+dando una derivada nula. Si $y \in I(y)$,
+%
+\[
+P\left(   X   \in  \X_k   \cap   g_k^{-1}(-\infty  \,   ;   \,   y]  \right)   =
+\left\{\begin{array}{lll}
+%
+F_X(g_k^{-1}(y)) - F_X(\inf \Y_{[k]}) & \mbox{si} & g_k \quad \mbox{es creciente}\\[2.5mm]
+%
+F_X(\sup \Y_{[k]}) - F_X(g_k^{-1}(y))  & \mbox{si} & g_k \quad \mbox{es decreciente}
+\end{array}\right.
+\]
+%
+El  resultado  sigue  diferenciando  este  resultado. Eso  es  ilustrado  figura
+Fig.~\ref{fig:MP:TransformacionVA}.
 
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/TransformacionVA} \end{center}
@@ -1189,10 +1244,17 @@ F_Y(y)  =  P(Y \le  y)  =  P\left(  g(X) \in  (-\infty  \,  ;  \, y]  \right)  =
     punteadas  ($x$  correspondiente),  es  de  medida de  Lebesgue  nula.   Los
     $\X_{[k]}$ son descrito debajo de  cada dominio.  La linea discontinua da un
     nivel $y$  y los  puntos en el  eje $x$  representan $g_k^{-1}(y), \:  k \in
-    I(y)$; en el ejemplo, $I(y) = \{ 1 \, ; \, 2 \}$.}}
+    I(y)$; en el ejemplo, $I(y) = \{ 1 \,  ; \, 2 \}$ \ y, suponiendo de que $\X
+    = \Rset$, \ $F_Y(y) = F_X(g_1^{-1}(y)) + 1-F_X(g_2^{-1}(y))$.}}
 \label{fig:MP:TransformacionVA}
 \end{figure}
 
+\modif{Una tercera alternativa,  a pesar que sea delicado,  es de apoyarse sobre
+  la teoria  de las  distribuciones y} expresar  como \ $\displaystyle  p_Y(y) =
+\int_\X  p_X(x) \,  \delta(y-g(x)) \,  dx$, donde  se usa  la expansi\'on  de la
+funci\'on delta  en t\'erminos  de sus ceros:  \ $\delta(y-g(x)\,)=  \sum_{k \in
+  I(y)}    \frac{1}{\left|   g_k'\left(    g_k^{-1}    (y)   \right)    \right|}
+\delta(x-g_k^{-1}(y))$~\cite{ManWol95}.
 
 Es  importante  notar  de  que  la  condici\'on $\X_{[0]}$  de  medida  nula  es
 importante. El el caso contrario,  $Y$ no queda continua. Por ejemplo, considera
@@ -1202,8 +1264,8 @@ $X$ uniforme sobre  \ $\X = (  3 \, ; \,  3)$ \ y \ $Y  = g(X)$ \ con  \ $g(x) =
 Fig.~\ref{fig:MP:TransformacionVANoContinua}-(a).    Claramente,  \  $g$   \  es
 continua y diferenciable sobre $\X$, pero con \ $\X_{[0]} = [ -2 \, ; \, 1]$ que
 no  es  de medida  nula.   Saliendo  de $F_Y(y)  =  P(g(X)  \le  y)$ se  calcula
-sencillamente $F_Y(y) = \frac23 \left(  1 - \frac1\pi \acos(y-1) \right) \un_{[0
-  \,  ;   \,  2)}  +   \un_{[  2  \,   ;  \,  +\infty)}(y)$,   ilustrada  figura
+sencillamente  $F_Y(y)  = \frac23  \left(  1  -  \frac1\pi \arccos(y-1)  \right)
+\un_{[0  \,  ; \,  2)}  +  \un_{[ 2  \,  ;  \,  +\infty)}(y)$, ilustrada  figura
 Fig.~\ref{fig:MP:TransformacionVANoContinua}-(b).   Claramente   \  $F_Y$  \  es
 discontinua en \ $y = 2$: \ $Y$ \ no es continua.
 
@@ -1220,93 +1282,84 @@ discontinua en \ $y = 2$: \ $Y$ \ no es continua.
 \end{figure}
   }
 
-
-
-
-
-
-Sea $X$ una  variable aleatoria (continua, en general)  definida en el intervalo
-$[x_m, x_M]$ con funci\'on densidad  de probabilidad $p(x)$. Sea $Y=\Psi(X)$ una
-funci\'on real  de $X$, luego $Y$  toma los valores $y=\Psi(x)$  en el intervalo
-$[y_m,y_M]$.  La funci\'on  densidad  de probabilidad  $q(y)$  para la  variable
-aleatoria transformada $Y$ se obtiene  de la siguiente manera, dependiendo de la
-forma de la transformaci\'on:
-
-\begin{itemize}
-\item Si  $\Psi$ es inversible, con  inversa (\'unica), se  tiene \ $x=\Phi(y)$,
-  con  $\Phi=\Psi^{-1}$.  A partir  de  la  propiedad  de conservaci\'on  de  la
-  probabilidad
-  %
-  $$
-  |q(y)\, dy| = |p(x) \, dx|
-  $$ 
-  %
-  para  una correspondencia  biun\'ivoca  entre $x$  e  $y$, se  obtiene la  pdf
-  transformada
-  %
-  $$
-  q(y)  = p(x)  \left| \frac{dx}{dy}  \right| =  p\left(\Phi(y)\right)  \ \left|
-    \Phi'(y)   \right|   =  \frac{p\left(\Phi(y)\right)}{\left|   \Psi'(\Phi(y))
-    \right|} .
-  $$
-  %
-  Una forma alternativa  de derivar este resultado es partir  de la funci\'on de
-  repartici\'on:
-  %
-  $$
-  F_Y(y)  =  P(Y\leq  y)  =  P(\Psi(X)  \leq  y)  =  P(X\leq  \Psi^{-1}  (y))  =
-  F_X(\Phi(y))
-  $$
-  %
-  y  calcular las  derivadas del  primer y  \'ultimo t\'erminos  respecto  de la
-  variable transformada~$y$.
+%Sea $X$ una  variable aleatoria (continua, en general)  definida en el intervalo
+%$[x_m, x_M]$ con funci\'on densidad  de probabilidad $p(x)$. Sea $Y=\Psi(X)$ una
+%funci\'on real  de $X$, luego $Y$  toma los valores $y=\Psi(x)$  en el intervalo
+%$[y_m,y_M]$.  La funci\'on  densidad  de probabilidad  $q(y)$  para la  variable
+%aleatoria transformada $Y$ se obtiene  de la siguiente manera, dependiendo de la
+%forma de la transformaci\'on:
 %
-\item Si la inversa de $\Psi$  es multivaluada, cada valor de $y$ se corresponde
-  con  un conjunto de  valores de  $x$, digamos  $\{x_k =  \Phi_k(y), \  k=1, 2,
-  \ldots\}$.  Debido a  que  estas soluciones  son  mutuamente excluyentes,  las
-  probabilidades se suman, de modo que
-  %
-  $$
-  q(y)   =    \sum_k   p(x_k)   \left|   \frac{dx_k}{dy}    \right|   =   \sum_k
-  \frac{p\left(\Phi_k(y)\right)}{\left| \Psi'(\Phi_k(y)) \right|} ,
-  $$
-  %
-  que   formalmente  se   puede  expresar   como  \   $q(y)  =   \int   p(x)  \,
-  \delta(y-\Psi(x)\,) \ dx$ , donde se  usa la expansi\'on de la funci\'on delta
-  en  t\'erminos de sus  ceros: \  $\delta(y-\Psi(x)\,)= \sum_k  \delta(x-x_k) /
-  |\Psi'(x_k)| $.\newline  Por ejemplo, para la transformaci\'on  de variables \
-  $Y=X^2$ se tiene \  $Y=\Psi(X)=X^2$ cuyas inversas son \ $X_1=\Phi_1(Y)=+\sqrt
-  Y$  y   $X_2=\Phi_2(Y)=-\sqrt  Y$;  luego   \  $q(y)=\frac{p(\sqrt  y)}{2\sqrt
-    y}+\frac{p(-\sqrt y)}{|-2\sqrt y|}$ , para $y>0$.
-\end{itemize}
-
-\hfill
-
-Consideramos ahora el  caso de un vector aleatorio  $\mathbf{X} = \{X^1, \ldots,
-X^d\}$  con  funci\'on  densidad  de  probabilidad conjunta  \  $p(x^1,  \ldots,
-x^d)$. Se  define otro vector aleatorio  \ $\mathbf{Y} =  \{Y^1, \ldots, Y^d\}$,
-por   medio   de   las   transformaciones  \   $Y^j=\Psi^j(X^1,\ldots,X^d)$,   \
-$j=1,\ldots,d$. Suponiendo que las  funciones $\Psi^j$ tienen inversa (\'unica),
-se  puede escribir \  $X^j=\Phi^j(Y^1,\ldots,Y^d)$ para  cada $j$.  La funci\'on
-densidad de probabilidad conjunta $q(y^1,\ldots,y^d)$ para $\mathbf{Y}$ se puede
-obtener a partir de la propiedad de conservaci\'on de la probabilidad
+%\begin{itemize}
+%\item Si  $\Psi$ es inversible, con  inversa (\'unica), se  tiene \ $x=\Phi(y)$,
+%  con  $\Phi=\Psi^{-1}$.  A partir  de  la  propiedad  de conservaci\'on  de  la
+%  probabilidad
+%  %
+%  $$
+%  |q(y)\, dy| = |p(x) \, dx|
+%  $$ 
+%  %
+%  para  una correspondencia  biun\'ivoca  entre $x$  e  $y$, se  obtiene la  pdf
+%  transformada
+%  %
+%  $$
+%  q(y)  = p(x)  \left| \frac{dx}{dy}  \right| =  p\left(\Phi(y)\right)  \ \left|
+%    \Phi'(y)   \right|   =  \frac{p\left(\Phi(y)\right)}{\left|   \Psi'(\Phi(y))
+%    \right|} .
+%  $$
+%  %
+%  Una forma alternativa  de derivar este resultado es partir  de la funci\'on de
+%  repartici\'on:
+%  %
+%  $$
+%  F_Y(y)  =  P(Y\leq  y)  =  P(\Psi(X)  \leq  y)  =  P(X\leq  \Psi^{-1}  (y))  =
+%  F_X(\Phi(y))
+%  $$
+%  %
+%  y  calcular las  derivadas del  primer y  \'ultimo t\'erminos  respecto  de la
+%  variable transformada~$y$.
 %
-$$
-|q(y^1,\ldots,y^d)\ dy^1\cdots dy^d| = |p(x^1,\ldots,x^d) \ dx^1\cdots dx^d| .
-$$ 
+%\item Si la inversa de $\Psi$  es multivaluada, cada valor de $y$ se corresponde
+%  con  un conjunto de  valores de  $x$, digamos  $\{x_k =  \Phi_k(y), \  k=1, 2,
+%  \ldots\}$.  Debido a  que  estas soluciones  son  mutuamente excluyentes,  las
+%  probabilidades se suman, de modo que
+%  %
+%  $$
+%  q(y)   =    \sum_k   p(x_k)   \left|   \frac{dx_k}{dy}    \right|   =   \sum_k
+%  \frac{p\left(\Phi_k(y)\right)}{\left| \Psi'(\Phi_k(y)) \right|} ,
+%  $$
+%  %
+%  que   formalmente  
+%\hfill
 %
-Para  una  correspondencia biun\'ivoca  entre  $\mathbf{x}$  e $\mathbf{y}$,  se
-obtiene la pdf transformada
-%
-$$
-q(y^1,\ldots,y^d) = \left| \Jac_\Phi \right| \, p(x^1,\ldots, x^d) 
-%%= \int  p(x^1,\ldots, x^d) \delta(y^1-\Psi^1) .......  dx^1 .....
-$$
-%
-donde  $\Jac_\Phi =  \frac{\partial(\Phi^1  , \ldots  , \Phi^d)}{\partial(y^1  ,
-  \ldots , y^d)}$ es el Jacobiano de la transformaci\'on.
+%Consideramos ahora el  caso de un vector aleatorio  $\mathbf{X} = \{X^1, \ldots,
+%X^d\}$  con  funci\'on  densidad  de  probabilidad conjunta  \  $p(x^1,  \ldots,
+%x^d)$. Se  define otro vector aleatorio  \ $\mathbf{Y} =  \{Y^1, \ldots, Y^d\}$,
+%por   medio   de   las   transformaciones  \   $Y^j=\Psi^j(X^1,\ldots,X^d)$,   \
+%$j=1,\ldots,d$. Suponiendo que las  funciones $\Psi^j$ tienen inversa (\'unica),
+%se  puede escribir \  $X^j=\Phi^j(Y^1,\ldots,Y^d)$ para  cada $j$.  La funci\'on
+%densidad de probabilidad conjunta $q(y^1,\ldots,y^d)$ para $\mathbf{Y}$ se puede
+%obtener a partir de la propiedad de conservaci\'on de la probabilidad
+%%
+%$$
+%|q(y^1,\ldots,y^d)\ dy^1\cdots dy^d| = |p(x^1,\ldots,x^d) \ dx^1\cdots dx^d| .
+%$$ 
+%%
+%Para  una  correspondencia biun\'ivoca  entre  $\mathbf{x}$  e $\mathbf{y}$,  se
+%obtiene la pdf transformada
+%%
+%$$
+%q(y^1,\ldots,y^d) = \left| \Jac_\Phi \right| \, p(x^1,\ldots, x^d) 
+%%%= \int  p(x^1,\ldots, x^d) \delta(y^1-\Psi^1) .......  dx^1 .....
+%$$
+%%
+%donde  $\Jac_\Phi =  \frac{\partial(\Phi^1  , \ldots  , \Phi^d)}{\partial(y^1  ,
+%  \ldots , y^d)}$ es el Jacobiano de la transformaci\'on.
 
 %% Ejercicio: Estudiar el caso multivaluado / Resolver un ej. 
+
+\
+
+\aver{\SZ{No toque todav\'ia. Se puede hacerlo con vectores. Caso circular\ldots}
 
 \hfill
 
@@ -1320,6 +1373,7 @@ $$
 $$
 %
 donde $d^2 z=dx\,dy$.
+}
 
 
-\SZ{Tratar el caso de leyes condicionales}
+\SZ{Tratar el caso de leyes condicionales; hablar de simulaci\'on? Metoto inverso, mezcla, rejeccion, a traves de la condicional para el caso vectorial?}
