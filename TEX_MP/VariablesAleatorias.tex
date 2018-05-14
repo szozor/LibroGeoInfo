@@ -66,12 +66,13 @@ definir una medida imagen  sobre el espacio de llegada~\cite{AthLah06, Bog07:v1,
   =  \bigcup_j  \mu\left( f^{-1}(B_j)  \right)  =  \sum_j \mu\left(  f^{-1}(B_j)
   \right) = \sum_j  \mu_f(B_j)$.  Finalmente, necesariamente $f^{-1}(\Upsilon) =
   \Omega$  (es incluida y  $f(\Omega)$ siendo  en $\Upsilon$  son necesariamente
-  iguales) lo  que cierra la  prueba~\footnote{De hecho, se  puede sencillamente
-    probar que la  preimagen de una uni\'on numerable (que  sean disjuntos o no)
-    es la uni\'on  de las preimagenes; lo mismo occure  para la intersecci\'on y
-    adem\'as la preimagen del complemento es el complemento de la preimagen. Eso
-    es conocido  como {\it leyes de de  Morgan}~\cite{AthLah06, Coh13, HogMck13}
-    (ver tambi\'en~\cite[Cap.~1]{KolFom57} y~\cite[Caps.~5~\&~6]{KolFom61}).}.
+  iguales)  lo   que  cierra  la  prueba~\footnote{\modif{De   hecho,  se  puede
+      sencillamente probar que  la preimagen de una uni\'on  numerable (que sean
+      disjuntos o no) es la uni\'on  de las preimagenes; lo mismo occure para la
+      intersecci\'on y  adem\'as la preimagen del complemento  es el complemento
+      de   la   preimagen.   Eso   es   conocido   como   {\it   leyes   de   de
+        Morgan}~\cite{AthLah06,          Coh13,          HogMck13}          (ver
+      tambi\'en~\cite[Cap.~1]{KolFom57} y~\cite[Caps.~5~\&~6]{KolFom61}).}.}
 \end{proof}
 
 Un espacio  jugando un  rol particular es  $\Rset$, a  lo cual se  puede asociar
@@ -533,8 +534,7 @@ real\modif{.  No son  variables discretas  m\'as. En  las variables  que  no son
 %
 \begin{definicion}[Variable aleatoria continua]
   Una variable  aleatoria \  $X$ \ es  dicha {\it  continua} si su  funci\'on de
-  repartici\'on  $F_X$ es  continua sobre  $\Rset$ (on  respeto a  la  medida de
-  Lebesgue).
+  repartici\'on  $F_X$ es  continua sobre  $\Rset$.
 \end{definicion}
 %
 }
@@ -555,13 +555,46 @@ real\modif{.  No son  variables discretas  m\'as. En  las variables  que  no son
   \]
   %
   (la    integral    debe   ser    entendido    como    en    el   sentido    de
-  Lebesgue~\footnote{\SZ{Decir  un  poquito  sobre   la  medida  de  Lebesgue  y
-      ref.~\cite{Leb04,      Leb18,      KolFom61,      AthLah06,      Bog07:v1,
-        Coh13}}.   \label{foot:MP:Lebesgue}}),   entonces  $X$  es   dicha  {\it
+  Lebesgue~\footnote{\modif{Recordamos  que  la medida  de  Lebesgue $\mu_L$  es
+      definida sobre  $(\Rset^d,\B(\Rset^d)$ tal que  $\displaystyle \mu_L\left(
+        \times_{i=1}^d  (a_i \, ;  \, b_i]  \right) =  \prod_{i=1}^d (b_i-a_i)$.
+      Ahora,   para  una  medida   cualquiera,  sobre   un  espacio   de  medida
+      $(\Omega,\A,\mu)$, se  define la integraci\'on a  partir de $\displaystyle
+      \forall  \,  A \in  \A,  \quad  \int_A  d\mu(\omega) =  \int_\Omega  \un_A
+      d\mu(\omega) =  \mu(A)$. Claramente, por  propiedades de una  medida, para
+      $A_i, A_j$ disjuntos  $\un_{A_i} + \un_{A_j} = \un_{A_i  \cup A_i}$, dando
+      $\displaystyle   \int_\Omega   \left(   \un_{A_i}  +   \un_{A_j}   \right)
+      d\mu(\omega) =  \mu(A_i \cup A_j)  = \int_\Omega \un_{A_i}  d\mu(\omega) +
+      \int_\Omega \un_{A_j}  d\mu(\omega)$.  Como consecuencia,  es sencillo ver
+      de  que la  integral de  la  {\it funci\'on  escalonada} $\sum_i  \alpha_i
+      \un_{A_i}$,  \ $\alpha_i  \ge 0$  \ y  \ $\A_i  \in \A$  no necesariamente
+      (mutualmente) disjuntos  es la combinaci\'on linear de  las integrales las
+      funciones indicadoras  \ $\un_{A_i}$ (linealidad).   Se proba de  que para
+      cualquier   funci\'on    positiva   medible   $g:    (\Omega,\A)   \mapsto
+      (\Rset,\B(\Rset))$, existe una series  $\{ g_n \}_{n \in \Nset}$ creciente
+      de funciones escalonadas que converge hacia $g$ y se define $\displaystyle
+      \int_{\Omega}  g(\omega) d\mu(\omega)  = \lim_{n  \to  \infty} \int_\Omega
+      g_n(\omega) d\mu(\omega)$. $g$ es dicha integrable (con respeto a $\mu$ si
+      la integral es  finita. Por fin, para  $g$ medible, se escribe $g  = g_+ +
+      g_-$ con $g_+ = \max(g,0)$ y $g_- = \min(g,0)$. $g$ es dicha integrable si
+      y solamente si $g_+$ y $g_-$ son integrables, y $\displaystyle \int_\Omega
+      g(\omega)   d\mu(\omega)   =   \int_\Omega  g_+(\omega)   d\mu(\omega)   -
+      \int_\Omega  \left( -  g(\omega) \right)  d\mu(\omega)$ (equivalentemente,
+      $|g|$  es  integrable.  Ahora,  si  $\displaystyle \nu(B)  =  \int_B  p(x)
+      d\mu(x)$ con  $\mu, \nu$ dos medida  cualquieras sobre $(\Rset,\B(\Rset)$,
+      $p$ es llamado densidad  de $\nu$ con respeto a $\mu$ y  es a veces notada
+      $p =  \frac{d\nu}{d\mu}$ (derivada de  Radon-Nikod\'ym). Si $\mu(B)  = 0$,
+      necesariamente $\nu(B)  = 0$ y  $\nu$ es dicha absolutamente  continua con
+      respeto a  $\mu$. Se muestra de  que si una medida  $\nu$ es absolutamente
+      continua con respeto  a $\mu$, entonces admite una  densidad con respeto a
+      $\mu$. En  esta definici\'on,  consideramos $\mu =  \mu_L$ y $\nu  = P_X$,
+      denotando  $d\mu_L(x) \equiv dx$.   Para m\'as  detalles, ver~\cite{Leb04,
+        Leb18,             KolFom61,             AthLah06,             Bog07:v1,
+        Coh13}.    \label{foot:MP:Lebesgue}}},  entonces   $X$  es   dicha  {\it
     admitiendo  una  densidad}  y  \   $p_X$  \  es  llamada  {\it  densidad  de
-    probabilidad} de  $X$. Notando de que  $P_X(B) = P_X(B  \cap \X)$, el
-    soporte de $p_X$ es  necesariamente $\X = X(\Omega)$ (\ie $p_X(\widebar{\X})
-    = 0$ \ y \ $p_X(\X) \ne 0$), y
+    probabilidad} de $X$.  Notando de que  $P_X(B) = P_X(B \cap \X)$, el soporte
+  de $p_X$ es necesariamente $\X = X(\Omega)$ (\ie $p_X(\widebar{\X}) = 0$ \ y \
+  $p_X(\X) \ne 0$), y
     %
     \[
     \forall \, B \in \B(\Rset), \quad P_X(B) = \int_{B \cap \X} p_X(x) \, dx
@@ -574,9 +607,8 @@ real\modif{.  No son  variables discretas  m\'as. En  las variables  que  no son
   F_X(x) = \int_{-\infty}^x p_X(u) \, du
   \]
   %
-  Dicho de  otra manera, si $F_X$  es (continua y) derivable  sobre $\Rset$ (con
-  respeto a  la medida  de Lebesgue), por  lo menos  por partes, $X$  admite una
-  densidad de probabilidad y
+  Dicho de otra manera, si $F_X$ es (continua y) derivable sobre $\Rset$, por lo
+  menos por partes, $X$ admite una densidad de probabilidad y
   %
   \[
   p_X(x) = \frac{d F_X(x)}{dx}
@@ -707,12 +739,13 @@ variable continua  \modif{y en Fig.~\ref{fig:MP:ProbaContinua}-(b)  la funci\'on
 \modif{De  hecho, en el  caso continu,  discreto, o  cualquiera, se  conserva la
   forma integral de la medida de probabilidad en una forma tipo \ $\displaystyle
   P_X(B)  = \int_B  dP_X(x)$ \  basado sobre  la  teoria de  la medida  y de  la
-  integraci\'on~\cite{Leb04, KolFom61, AthLah06,  Bog07:v1, Bog07:v2, Coh13}. En
-  el caso  discreto cierto  $X =  x_0$, la distribuci\'on  discreta es  dada por
-  $p_X(x) = \un_{\{  x_0 \}}(x) = \un_{\{ 0 \}}(x-x_0)$. En  este caso, $P_X$ es
-  dicha {\it medida de Dirac} y  $dP_X(x)$ es denotado \ $\delta_{x_0}(x)$ \ o \
-  $\delta(x-x_0)$ \  tambi\'en llamado {\it delta  de Dirac}. Se  puede ver este
-  Dirac como una}
+  integraci\'on~\footnote{\modif{Ver    nota    de   pie~\ref{foot:MP:Lebesgue},
+      pagina~\pageref{foot:MP:Lebesgue}}}~\cite{Leb04,    KolFom61,    AthLah06,
+    Bog07:v1,  Bog07:v2,  Coh13}. En  el  caso discreto  cierto  $X  = x_0$,  la
+  distribuci\'on discreta es  dada por $p_X(x) = \un_{\{ x_0  \}}(x) = \un_{\{ 0
+    \}}(x-x_0)$. En este caso, $P_X$ es  dicha {\it medida de Dirac} y $dP_X(x)$
+  es denotado \ $\delta_{x_0}(x) \, dx$  \ o \ $\delta(x-x_0) \, dx$ \ tambi\'en
+  llamado {\it delta de Dirac}. Se puede ver este Dirac como una}
 %De aqu\'i  se observa que  la 
 densidad de  probabilidad $p_X(x)$ \modif{pero} no es
 % puede no  ser 
@@ -861,9 +894,8 @@ p_{X_{I_k}}(x_{I_k}) = \sum_{\forall i \not\in I_k, x_i \in \X_i} p_X(x)
 \modif{
 \begin{definicion}[Vector aleatorio continuo y densidad de probabilidad multivariada]
   Un  vector aleatorio  \  $X$ \  es dicho  {\it  continuo} si  su funci\'on  de
-  repartici\'on $F_X$  es continua  sobre $\Rset^d$ (on  respeto a la  medida de
-  Lebesgue). Si existe  una funci\'on no negativa \ $p_X$  \ sobre $\Rset^d$ tal
-  que
+  repartici\'on $F_X$  es continua sobre  $\Rset^d$. Si existe una  funci\'on no
+  negativa \ $p_X$ \ sobre $\Rset^d$ tal que
   %
   \[
   \forall \,  B \in \B(\Rset^d),  \quad P_X(B) =  \int_B p_X(x) \, dx  = \int_{B
@@ -871,8 +903,8 @@ p_{X_{I_k}}(x_{I_k}) = \sum_{\forall i \not\in I_k, x_i \in \X_i} p_X(x)
   \]
   %
   con $\X = X(\Omega)$ soporte de $p_X$ (la integral multiple debe ser entendido
-  como     en     el    sentido     de     Lebesgue~\footnote{Ver    nota     de
-    pie~\ref{foot:MP:Lebesgue},  pagina~\pageref{foot:MP:Lebesgue}.} y  \  $dx =
+  como    en    el   sentido    de    Lebesgue~\footnote{\modif{Ver   nota    de
+      pie~\ref{foot:MP:Lebesgue}, pagina~\pageref{foot:MP:Lebesgue}.}} y \ $dx =
   dx_1  \cdots dx_d$), entonces  $X$ es  dicha {\it  admitiendo una  densidad} y
   $p_X$ es  llamada {\it densidad  de probabilidad} de  \ $X$, o  tambi\'en {\it
     densidad de probabilidad conjunta} de los \ $X_i$. En particular,
