@@ -7,18 +7,22 @@
   valores de una  \emph{variable aleatoria} $X$ a valores  reales, que puede ser
   discreta o continua.}
 
-%  (cuando  el espacio  muestral  es  finito  o infinito  numerable)  o
-%  continua.  La ley  de la variable aleatoria $X$ es  una medida de probabilidad
-%  definida por  \ $P_X(x) =  \Pr(X=x)$ o, en  general, por $P_X(A)  = \Pr(X=x\in
-%  A)$.  Para indicar  que la variable~$X$ sigue la ley  de distribuci\'on $p$ se
-%  escribe  \  $X\sim p  $.   Puede  ser  \'util tambi\'en  considerar  variables
-%  aleatorias  complejas  $Z=X+iY$, donde  $X$  e  $Y$  son variables  aleatorias
-%  reales. }
+Formalmente, la noci\'on de variable aleatoria  se var a apoya sobre la noci\'on
+de funci\'on medible. M\'as adelante, vamos a necesitar definir la integraci\'on
+de manera general, m\'as all\'a del enfoque de Riemann (``a la Lebesgue'') as\'i
+que la  noci\'on de derivada de  una medida con  respeto a una otra  para defnir
+densidades de  probabilidades al imagen de  densidad de masas  en mec\'anica por
+ejemplo~\cite{Leb04, Leb18, KolFom61, AthLah06, Bog07:v1, Coh13}.
 
 
-\modif{  Formalmente,  la noci\'on  de  variable  aleatoria  se apoya  sobre  la
-  noci\'on de funci\'on medible~\cite{KolFom61, AthLah06, Bog07:v1, Coh13}:
-%
+% ================================= Medida, integral, densidades
+
+\subseccion{Consideraciones preliminarias}
+\label{sec:MP:VAPreliminaria}
+
+La  primera noci\'on  que subtiende  a la  definici\'on formal  de  una variable
+aleatoria es la de funci\'on medible:
+
 \begin{definicion}[Funci\'on medible]
   Sean  \ $(\Omega,\A)$  \ y  \ $(\Upsilon,\B)$  \ dos  espacios  medibles.  Una
   funci\'on $f: \Omega \mapsto \Upsilon$ es dicha {\it $(\A,\B)$-medible} si
@@ -66,25 +70,212 @@ definir una medida imagen  sobre el espacio de llegada~\cite{AthLah06, Bog07:v1,
   =  \bigcup_j  \mu\left( f^{-1}(B_j)  \right)  =  \sum_j \mu\left(  f^{-1}(B_j)
   \right) = \sum_j  \mu_f(B_j)$.  Finalmente, necesariamente $f^{-1}(\Upsilon) =
   \Omega$  (es incluida y  $f(\Omega)$ siendo  en $\Upsilon$  son necesariamente
-  iguales)  lo   que  cierra  la  prueba~\footnote{\modif{De   hecho,  se  puede
-      sencillamente probar que  la preimagen de una uni\'on  numerable (que sean
-      disjuntos o no) es la uni\'on  de las preimagenes; lo mismo occure para la
-      intersecci\'on y  adem\'as la preimagen del complemento  es el complemento
-      de   la   preimagen.   Eso   es   conocido   como   {\it   leyes   de   de
-        Morgan}~\cite{AthLah06,          Coh13,          HogMck13}          (ver
-      tambi\'en~\cite[Cap.~1]{KolFom57} y~\cite[Caps.~5~\&~6]{KolFom61}).}.}
+  iguales) lo  que cierra la  prueba~\footnote{De hecho, se  puede sencillamente
+    probar que la  preimagen de una uni\'on numerable (que  sean disjuntos o no)
+    es la uni\'on  de las preimagenes; lo mismo occure  para la intersecci\'on y
+    adem\'as la  preimagen del  complemento es el  complemento de  la preimagen.
+    Eso  es  conocido  como  {\it  leyes de  de  Morgan}~\cite{AthLah06,  Coh13,
+      HogMck13}              (ver              tambi\'en~\cite[Cap.~1]{KolFom57}
+    y~\cite[Caps.~5~\&~6]{KolFom61}).}
 \end{proof}
 
-Un espacio  jugando un  rol particular es  $\Rset$, a  lo cual se  puede asociar
-$\B(\Rset)$ la  $\sigma$-\'algebra m\'as  peque\~na generada por  los intervalos
-$(-\infty  \,  ;  \, b]$  (equivalentemente,  por  los  abiertos de  $\Rset$,  o
-tambi\'en  por  los  intervalos  $(a  \,  ; \,  b]$),  \ie  uniones  numerables,
-intersecciones  numerables,  complementos  de  estos  intervalos~\cite{AthLah06,
-  Bog07:v1,  Bog07:v2,  Coh13}.   $\B(\Rset)$  es  llamada  {\it  Borelianos  de
-  $\Rset$} o {\it $\sigma$-\'algebra de Borel de $\Rset$}.
+\
 
-Con  estas   definiciones,  tenemos  todo   lo  necesario  para   introducir  la
-definici\'on de una variable aleatoria real~\cite{AthLah06, Coh13, Bre88}:
+Un espacio  jugando un rol particular es  $\Rset^d$, a lo cual  se puede asociar
+una $\sigma$-\'algebra particular~\cite{AthLah06, Bog07:v1, Bog07:v2, Coh13}:
+%
+\begin{definicion}[$\Rset^d$ y Borelianos]
+  Para  cualquier  $d  \ge  1$  entero,  llamamos  Borelianos  $\B(\Rset^d)$  de
+  $\Rset^d$  la $\sigma$-\'algebra  m\'as peque\~na  generada por  los productos
+  cartesianos   $\displaystyle   \optimes_{i=1}^d  (-\infty   \,   ;  \,   b_i]$
+  \big(equivalentemente,  por los  abiertos de  $\Rset^d$, o  tambi\'en  por los
+  productos cartesianos de intervalos  $\displaystyle \optimes_{i=1}^d (a_i \, ;
+  \, b_i]$\big), \ie uniones numerables, intersecciones numerables, complementos
+  de   estos   intervalos.    $\B(\Rset^d)$   es  tambi\'en   llamado   o   {\it
+    $\sigma$-\'algebra de Borel de $\Rset^d$}.
+\end{definicion}
+
+\
+
+Se necesita ahora definir la  noci\'on de integraci\'on de una funci\'on medible
+con respeto a una medida:
+%
+\begin{definicion}[Medida e intrgraci\'on]
+  Para una medida  cualquiera, sobre un espacio de  medida $(\Omega,\A,\mu)$, se
+  define la integraci\'on a partir de
+  %
+  \[
+  \forall \, A \in \A,  \quad \int_A d\mu(\omega) = \int_\Omega \un_A(\omega) \,
+  d\mu(\omega) = \mu(A)
+  \]
+  %
+  donde
+  %
+  \[
+  \un_A(\omega) = \left\{
+  \begin{array}{clr}
+  1 & \mbox{si} \quad \omega \in A\\
+  0 & \mbox{si no}
+  \end{array} \right.
+  \]
+  %
+  es  la funci\'on  indicadora del  conjunto $A$.   $d\mu(\omega)$ se  escribe a
+  veces  tambi\'en $\mu(d\omega)$, medida  de un  ``infinitesimo''.  Claramente,
+  por  propiedades  de una  medida,  para $  A_i,  A_j$  disjuntos $\un_{A_i}  +
+  \un_{A_j}  =  \un_{A_i \cup  A_i}$,  dando  $\displaystyle \int_\Omega  \left(
+    \un_{A_i} + \un_{A_j} \right) d\mu(\omega) = \mu(A_i \cup A_j) = \int_\Omega
+  \un_{A_i} d\mu(\omega)  + \int_\Omega \un_{A_j} d\mu(\omega)$  y entonces, sin
+  perdida  de  generalidad~\footnote{Si  $A_i,  A_j$ no  son  disjuntos,  sufice
+    considerar  $A_i\backslash A_j,  \: A_j\backslash  A_j,  A_i \cap  A_j$ \  y
+    respectivamente los  coefficientes \ $\alpha_i,  \: \alpha_j, \:  \alpha_i +
+    \alpha_j$.}   para  un  conjunto  $\{  A_j  \}$  numerable,  con  los  $A_j$
+  disjuntos, y $\{ \alpha_j \}$ reales no negativos, la integral de la funci\'on
+  escalonada \ $\displaystyle \sum_j \alpha_j \un_{A_j}$ \ es dada por
+  %
+  \[
+  \int_\Omega \left( \sum_j \alpha_j \un_{A_j}(\omega) \right) \, d\mu(\omega) =
+  \sum_j \alpha_j \int_\Omega \un_{A_j}(\omega) \, d\mu(\omega)
+  \]
+  %
+\end{definicion}
+
+
+Antes de definir la integraci\'on de una funci\'on real, medible, cualquiera, el
+\'ultimo paso que falta es el siguiente:
+%
+\begin{teorema}[Funci\'on medible como limite]
+  Sea $g: (\Omega,\A) \mapsto  (\Rset,\B(\Rset))$, no negativa y medible, existe
+  una serie  $\{ g_n  \}_{n \in \Nset}$  creciente de funciones  escalonadas que
+  converge simplemente (punto a punto) hacia $g$.
+\end{teorema}
+%
+\begin{proof}
+  La  serie   $\displaystyle  g_n   =  \sum_{k=0}^{n  2^n-1}   \frac{k}{2^n}  \,
+  \un_{g^{-1}\left(  \left[  \frac{k}{2^n}   \,  ;  \,  \frac{k+1}{2^n}  \right)
+    \right)} + n \, \un_{g^{-1}\left( \left[ n \, ; \, +\infty \right) \right)}$
+  es  escalonada, creciente  y  converge hacia  $g$  \ (fijense  que esta  serie
+  comparte la idea subtendido a la integraci\'on de Riemann).
+\end{proof}
+
+De  este resultado, se  puede generalizar  la noci\'on  de integraci\'on  de una
+funci\'on real:
+%
+\begin{definicion}[Integraci\'on de una funci\'on real]
+  Sea $g: (\Omega,\A)  \mapsto (\Rset,\B(\Rset))$, no negativa y  medible, y $\{
+  g_n  \}_{n  \in  \Nset}$  creciente  de  funciones  escalonadas  que  converge
+  simplemente hacia $g$. Por definici\'on,
+  %
+  \[
+  \int_{\Omega}  g(\omega) \,  d\mu(\omega)  = \lim_{n  \to \infty}  \int_\Omega
+  g_n(\omega) \, d\mu(\omega)
+  \]
+  %
+  Fijense de que el limite puede ser infinita.\newline Sea ahora $g: (\Omega,\A)
+  \mapsto  (\Rset,\B(\Rset))$ medible cualquiera.  Se verifica  sencillamente de
+  que tambi\'en $|g|$ es medible y,  por definici\'on, $g$ es dicha integrable a
+  $\mu$ si la integral de $|g|$ es finita,
+  %
+  \[
+  g\: \mbox{ integrable} \quad  \Leftrightarrow \quad \int_\Omega |g(\omega)| \,
+  d\mu(\omega) < +\infty
+  \]
+  %
+  Por  fin,  se escribe  $g  =  g_+  + g_-$  con  $g_+  =  \max(g,0)$ y  $g_-  =
+  \min(g,0)$. Es  sencillo ver de que  si $g_+$ y  $g_-$ son medible. Si  $g$ es
+  integrable, necesariamente $g_+$ y $g_-$ son integrables, y, por definici\'on
+  %
+  \[
+  \int_\Omega   g(\omega)   \,  d\mu(\omega)   =   \int_\Omega  g_+(\omega)   \,
+  d\mu(\omega) - \int_\Omega \left( - g_-(\omega) \right) \, d\mu(\omega)
+  \]
+\end{definicion}
+
+\
+
+Seguimos esta secci\'on con la noci\'on  de derivada de una medida con respeto a
+una otra, dando una definici\'on muy general de una densidad:
+%
+\begin{definicion}[Densidad de una medida]\label{def:MP:DensidadMedida}
+  Sean  $\mu$  y  $\nu$  dos  medidas  cualquieras  sobre  une  espacio  medible
+  $(\Omega,\A)$.  Si  existe una funci\'on  real no negativa $p:  \Omega \mapsto
+  \Rset_+$ medible tal que
+  %
+  \[
+  \forall \, A \in \A, \quad \nu(A) = \int_A p(\omega) d\mu(\omega)
+  \]
+  %
+  $p$ es llamado densidad de $\nu$ con respeto a $\mu$ y es a veces notado
+  %
+  \[
+  p = \frac{d\nu}{d\mu}
+  \]
+  %
+  tambi\'en llamada derivada de Radon-Nikod\'ym.
+\end{definicion}
+%
+Es sencillo ver  de que si $\mu(A)  = 0$, necesariamente $\nu(B) =  0$: $\nu$ es
+dicha  {\it  absolutamente continua}  con  respeto  a  $\mu$. Reciprocamente  se
+muestra de que  si una medida $\nu$ es absolutamente continua  con respeto a una
+medida  $\mu$, \  $\nu$ admite  una densidad  (derivada de  Radon-Nikod\'ym) con
+respeto a  $\mu$~\cite{Nyk30, AthLah06, Bog07:v1,  Coh13}.  Se muestra  que esta
+derivada  es \'unica  en un  sentido patrticular,  basado sobre  la  noci\'on de
+igualdad casi siempre:
+
+\begin{definicion}[Igualidad $\mu$-casi siempre]
+  Dos funciones  medibles \ $p_1$  \ y \  $p_2$ \ son dichas  iguales $\mu$-casi
+  siempre,
+  %
+  \[
+  p_1 = p_2 \quad (\mu-c.s.)
+  \]
+  %
+  si y solamente son iguales excepto sobre un conjunto de medida nula,
+  %
+  \[
+  \mu\left( \left\{ \omega: \: p_1(\omega) \ne p_2(\omega) \right\} \right) = 0
+  \]
+\end{definicion}
+%
+\noindent Ahora, si  dos funciones \ $p_1  = p_2 \quad (\mu-c.s.)$, y  $C$ es el
+conjunto  donde   no  son  iguales,  de  \   $\displaystyle  \int_A  p_1(\omega)
+d\mu(\omega) = \int_{A\backslash C} p_1(\omega) d\mu(\omega) = \int_{A\backslash
+  C} p_2(\omega) d\mu(\omega)  = \int_A p_2(\omega) d\mu(\omega)$ se  ve que dos
+funciones iguales casi  siempre pueden ser densidad de una  medida con respeto a
+una otra.   En todo lo que sigue,  hablaremos de ``la'' densidad  de una medida,
+salvo si se encesita explicitamente tener en cuenta esta sutileza.
+
+\
+
+En todo lo que sigue, una medida que juega un rol particular es la medida de Lebesgue,
+%
+\begin{definicion}
+  La medida de  Lebesgue $\mu_L$ sobre $(\Rset^d,\B(\Rset^d))$ la,  tal que para
+  cualquier porducto cartesiano de intervalos,
+  %
+  \[
+  \mu_L\left(  \optimes_{i=1}^d  (a_i  \,  ;  \, b_i)  \right)  =  \prod_{i=1}^d
+  (b_i-a_i)
+  \]
+  %
+\end{definicion}
+
+En lo que sigue, tratando  de igualdad $\mu_L$-casi siempre, diremos simplemente
+``casi  siempre''  $(c.s.)$, subentiendo  que  es con  respeto  a  la medida  de
+Lebesgue.
+
+\
+
+Con  estas  series de definiciones,  tenemos  todo   lo  necesario  para   introducir  la
+definici\'on de variables/vectors aleatoria(o)s reales y sus caracterizaciones.
+
+
+% ================================= VA y distribuci\'on de probabilidad
+
+\subseccion{Variables aleatorias, vectores aleatorios y distribuci\'on de probabilidad}
+\label{sec:MP:VAGeneral}
+
+Empezamos con la  noci\'on de variable aleatoria real, que  queremos var como el
+resultado de un experimento o de un evento dado~\cite{AthLah06, Coh13, Bre88}:
 %
 \begin{definicion}[Variable aleatoria real]
   Una variable aleatoria real es una funci\'on medible
@@ -127,7 +318,7 @@ definici\'on  de  la funci\'on  de  repartici\'on~\cite{AthLah06, Coh13,  Bre88,
   \]
   %
   A veces, por abuso de terminologia,  se denomina $F_X$ como ley de la variable
-  aleatoria. Se  encuentra tambi\'en  el la literatura  la terminologia  de {\it
+  aleatoria. Se  encuentra tambi\'en  en la literatura  la terminologia  de {\it
     funci\'on cumulativa} (cdf por cumulative density function en ingl\'es).
 \end{definicion}
 %
@@ -140,21 +331,21 @@ Naturalmente, de las propiedades de una medida de probabilidad,
   \lim_{x \to +\infty} F_X(x) = 1$  (viene de $P_X(\emptyset) = 0$ y $P_X(\Rset)
   = 1$);
 %
-\item $F_X$ es creciente (viene de que $x_1 \le x_2 \Rightarrow (-\infty \, ; \,
-  x_1] \subseteq (-\infty \, ; \, x_2]$);
+\item  $F_X$ es creciente  \big(viene de  que \  $x_1 \le  x_2 \:  \Leftightarrow \:
+  (-\infty \, ; \, x_1] \subseteq (-\infty \, ; \, x_2]$\big);
 %
 \item $F_X$ no es necesariamente continua  (lo vamos a ver m\'as adelante), pero
   en cada punto $x$ es continua a su derecha (ver punto anterior).
 \end{itemize}
-}
+
 
 Cuando se trabaja  con $d\geq 2$ variables aleatorias  es conveniente definir un
 {\it vector aleatorio}  de dimensi\'on $d$, y apelar para  su estudio a nociones
 del \'algebra  lineal y  a notaci\'on matricial.   Se tiene el  vector aleatorio
-$d$-dimensional  \ $X  = \begin{bmatrix}  X_1  & \cdots  & X_d  \end{bmatrix}^t$
-\modif{donde $\cdot^t$  denota la  transpuesta,} caracterizado por  $d$-uplas de
-variables aleatorias reales.  Como en  el caso univariado, se define este vector
-de la manera siguiente\modif{:~\cite{AthLah06, Coh13, Bre88}
+$d$-dimensional \ $X = \begin{bmatrix} X_1 & \cdots & X_d \end{bmatrix}^t$ donde
+$\cdot^t$  denota  la  transpuesta,  caracterizado por  $d$-uplas  de  variables
+aleatorias reales.   Como en  el caso  univariado, se define  este vector  de la
+manera siguiente~\cite{AthLah06, Coh13, Bre88}:
 %
 \begin{definicion}[Vector aleatorio real]
   Un variable aleatorio real es una funci\'on medible
@@ -177,17 +368,17 @@ de la manera siguiente\modif{:~\cite{AthLah06, Coh13, Bre88}
 %
 De las propiedades de una medida sobre una $\sigma$-\'algebra, para caracterizar
 completamente la distribuci\'on $P_X$ de nuevo es suficiente conocerla sobre los
-elementos de la forma $(-\infty \, ;  \, b_1] \times \cdots \times (-\infty \, ;
-\, b_d]$, \ie la  funci\'on de repartici\'on multivariada~\cite{AthLah06, Coh13,
-  Bre88, HogMck13}:
+elementos de  la forma $\displaystyle  \optimes_{i=1}^d (-\infty \, ;  \, b_i]$,
+\ie  la funci\'on  de repartici\'on  multivariada~\cite{AthLah06,  Coh13, Bre88,
+  HogMck13}:
 %
 \begin{definicion}[Funci\'on de repartici\'on multivariada]
   Por  definici\'on,  la  funci\'on  de  repartici\'on  $F_X$  de  un vector
   aleatorio es definida en $x = (x_1 , \ldots , x_d)$ por
   %
   \[
-  F_X(x) = P_X((-\infty \, ; \, x_1] \times \cdots \times (-\infty \, ; \, x_d])
-  = P\left( \bigcap_{i=1}^d (X_i \le x_i) \right)
+  F_X(x) =  P_X\left( \optimes_{i=1}^d (-\infty \,  ; \, x_i]  \right) = P\left(
+    \bigcap_{i=1}^d (X_i \le x_i) \right)
   \]
 \end{definicion}
 %
@@ -226,10 +417,8 @@ Cerramos estas generalidades con el caso de variables independientes:
   \in \B_i)$ son mutualmente independientes, \ie
   %
   \[
-  P_X(\times_{i=1}^d B_i) = \prod_{i=1}^d P_{X_i}(B_i)
+  P_X\left( \optimes_{i=1}^d B_i \right) = \prod_{i=1}^d P_{X_i}(B_i)
   \]
-  %
-  donde $\times$ denota el producto cartesiano entre elementos de $\B(\Rset)$.
   %
   Es equivalente a
   %
@@ -262,8 +451,6 @@ siendo el  espacio muestral  y se olvida  de que  $X$ sea una  funci\'on medible
 entre espacios de probabilidades,  \ie se trabaja en $(\Rset^d,\B(\Rset^d),P_X)$
 como en el espacio preimagen.
 
-}
-
 
 
 % ================================= Discreta
@@ -271,24 +458,28 @@ como en el espacio preimagen.
 \subseccion{Variable aleatoria discreta}
 \label{sec:MP:VADiscreta}
 
-\modif{
 \begin{definicion}[Variable aleatoria discreta]
   Una  variable aleatoria es  dicha {\it  discreta} cuando  $\X =  X(\Omega)$ es
   discreto,  finito o  infinito numerable.   En  lo que  sigue, denotaremos  por
-  $|\X|$ el cardinal de $\X$, posiblemente infinito.
+  $|\X|$  el cardinal  de $\X$,  posiblemente infinito.  En otras  palabras, los
+  posibles  valores de  una  variable  aleatoria discreta  $X$  consisten en  un
+  conjunto contable (finito  o infinito numerable) de n\'umeros  reales, \ $\X =
+  \{ x_j \}$ \ y se puede escribir \ $X$ \ como una {\it variable escalonadas},
+  %
+  \[
+  X = \sum_j x_j \un_{A_j} \quad \mbox{con} \quad A_j = X^{-1}(\{ x_j \})
+  \]
 \end{definicion}
 %
-\noindent En  otras palabras,  l}os posibles valores  de una  variable aleatoria
-discreta $X$ consisten en un  conjunto contable (finito o infinito numerable) de
-n\'umeros  reales:  \  $\modif{\X  = \{  x_j  \}_j}$~\cite{AthLah06,  HogMck13}.
-\modif{Fijense de  que $\Omega$ no  es necesariamente discreto. Por  ejemplo, si
-  $\omega$ es la  posici\'on de un punto  sobre una linea, y $X(\omega)  = 0$ si
-  $\omega$ es a la izquierda de un umbral, y $X(\omega) = 1$ si $\omega$ es a su
-  derecha, $\X = \{ 0 \, ; \, 1 \}$ mientras de que $\Omega$ no es discreto.
+\noindent (ver ej.  ~\cite{AthLah06, HogMck13}).  Fijense de que  $\Omega$ no es
+necesariamente discreto.  Por ejemplo, si  $\omega$ es la posici\'on de un punto
+sobre una linea, y \ $X(\omega) = 0$ si $\omega$ es a la izquierda de un umbral, y
+$X(\omega) = 1$ si $\omega$  es a su derecha, $\X = \{ 0 \,  ; \, 1 \}$ mientras
+de que $\Omega$ no es discreto.
 
-  En el caso de una  variable aleatoria discreta $X$, las probabilidades $P_X(\{
-  x_j \}) = P(X = x_j),  \: x_j \in \X$ caracterisan completamente esta variable
-  aleatoria~\cite{AthLah06, HogMck13}:
+En el  caso de una variable  aleatoria discreta $X$,  las probabilidades $P_X(\{
+x_j \})  = P(X = x_j), \:  x_j \in \X$ caracterisan  completamente esta variable
+aleatoria~\cite{AthLah06, HogMck13}:
 %
 \begin{definicion}[Funci\'on de masa de probabilidad]
   Por  definici\'on, la  funci\'on  de  masa de  probabilidad  de $X$,  variable
@@ -321,7 +512,8 @@ gr\'afica de una distribuci\'on de probabilidad discreta.
 En particular,
 %
 \[
-\forall \, B \in \B(\Rset), \quad P_X(B) = \sum_{x \in \X \cap B} p_X(x)
+\forall \,  B \in  \B(\Rset), \quad  P_X(B) = \sum_{x  \in \X  \cap B}  p_X(x) =
+\int_B dP_X(x)
 \]
 %
 lo que da, tratando de la funci\'on de repartici\'on,
@@ -330,85 +522,27 @@ lo que da, tratando de la funci\'on de repartici\'on,
 F_X(x) = \sum_{x_j \le x} p_X(x_j)
 \]
 %
-De   esta  forma,  se   justifica  la   denominaci\'on  {\it   cumulativa}  para
-$F_X$.  Tambi\'en,  se  puede ver  inmediato  de  que  $F_X$} es  una  funci\'on
-discontinua,   con   saltos   finitos   \modif{(en  $x_j$,   salto   de   altura
-  $p_X(x_j)$)}. Eso es ilustrado figura Fig.~\ref{fig:MP:ProbaDiscreta}-(b).
-%, y no decreciente. 
+De  esta forma,  se justifica  la  denominaci\'on {\it  cumulativa} para  $F_X$.
+Tambi\'en, se puede ver inmediato de que $F_X$ es una funci\'on discontinua, con
+saltos finitos (en  $x_j$, salto de altura $p_X(x_j)$).  Eso es ilustrado figura
+Fig.~\ref{fig:MP:ProbaDiscreta}-(b).
 
-\modif{
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/DistribucionReparticionDiscreta} \end{center}
 %
-\leyenda{\modif{Ilustraci\'on  de u}na  distribuci\'on de  probabilidad discreta
-  \modif{ (a), y la funci\'on de repartici\'on asociada (b), con $\X = \big\{ \,
-    1 \, , \, \sqrt3 \, , \, \sqrt5  \, , \, \sqrt7 \, , \, \sqrt{11} \, \big\}$
-    \ y \ $p_X = \protect\begin{bmatrix} \frac18 & \frac14 & \frac16 & \frac18 &
-      \frac13 \protect\end{bmatrix}^t$.}}
+\leyenda{Ilustraci\'on de una distribuci\'on  de probabilidad discreta (a), y la
+  funci\'on de repartici\'on asociada (b), con $\X  = \big\{ \, 1 \, , \, \sqrt3
+  \, ,  \, \sqrt5  \, , \,  \sqrt7 \,  , \, \sqrt{11}  \, \big\}$ \  y \  $p_X =
+  \protect\begin{bmatrix}  \frac18  & \frac14  &  \frac16  &  \frac18 &  \frac13
+    \protect\end{bmatrix}^t$.}
 \label{fig:MP:ProbaDiscreta}
 \end{figure}
-}
-%   A   cada  uno   de  los   valores  $x_n$
-%($n=1,2,\ldots$) se puede asociar una  probabilidad $p_n=p(x_n)$, de modo que se
-%satisface la condici\'on de normalizaci\'on:
-%%
-%$$\sum_n p_n = 1 . $$ 
-%
-%La \emph{funci\'on (de masa) de probabilidad} es  de la forma: 
-%
-%$$
-%p(x) = \left\{
-%\begin{array}{cl}
-%\Pr(X=x) & \mbox{si} \ x=x_1, x_2, \ldots \\ 0 &
-%\mbox{en~todo~otro~punto}
-%\end{array} \right.
-%$$
-%%
-%En  la   Fig.~\ref{fig:distribprobdiscreta}  se  muestra   una  representaci\'on
-%gr\'afica de una distribuci\'on de probabilidad discreta.
-%
-%\begin{figure}[h!] %%ojo numeracion de figs !
-%\centerline{\includegraphics[width=3cm]{distribprobdiscreta.jpg}} %%rehacer
-%
-%\leyenda{Una distribuci\'on de probabilidad discreta.}
-%\label{fig:distribprobdiscreta}
-%\end{figure}
-
-%Tambi\'en, se puede caracterizar la ley de la variable discreta $X$ por medio de
-%su \emph{funci\'on de repartici\'on}:
-%
-%$$
-%F_X(x)= \Pr(X\in(-\infty,x]) = \Pr (X\leq x) = \sum_{\forall
-%  n \,:\, x_n\leq x} p(x_n)
-%$$
-%
-%que es una funci\'on discontinua, con saltos finitos, y no decreciente. 
-
-%Sin  p\'erdida de  generalidad, el  conjunto de  valores que  toma  una variable
-%aleatoria discreta $X$ puede considerarse como $\{0,1,2,\ldots,N\}$ para alg\'un
-%$N$ natural, o todo $\Nset$. Entonces la ley de una variable aleatoria a valores
-%naturales est\'a dada por  \ $\{p_n = \Pr(X=n), \ n\in \Nset  \}$.  Luego \ $\Pr
-%(X\in  A)=\sum_{n\in A\cap  \Nset}  p_n$,  y la  funci\'on  de repartici\'on  se
-%calcula como  \ $\Pr(X\leq x) = \sum_{n  \leq x} \Pr(X=n)$ que  es una funci\'on
-%que presenta un  salto finito en cada n\'umero natural.  En  general un salto de
-%la funci\'on  de repartici\'on corresponde a  la presencia de  una \emph{masa de
-%  Dirac} en el entorno del salto. %%
 
 Un caso especial se tiene cuando un  valor $x_k$ es cierto o seguro, y no ocurre
-ninguno de  los otros valores $x_j \  (j \ne k)$. La forma  de la distribuci\'on
-es: \ \modif{$p_X(x) = \un_{\{ x_k \}}(x)$ \ o \ $p_X = \un_k$}, donde
-%
-\[
-\un_A(x) = \left\{
-\begin{array}{clr}
-1 & \mbox{si} \quad x \in A\\
-0 & \mbox{si no}
-% \ i\neq j 
-\end{array} \right.
-\]
-%
-\modif{es  la  funci\'on indicator  y  $\un_k$  es  el vector  (posiblemente  de
-  dimensi\'on infinita) de componentes $k$-esima $\delta_{jk} = \un_{\{k\}}(j)$}
+ninguno de los  otros valores $x_j \  (j \ne k)$. La forma  de la distribuci\'on
+es: \ $p_X(x) = \un_{\{ x_k \}}(x)$ \ o el vector de probabilidad de escribir\'a
+\  $p_X  =  \un_k$  donde  $\un_k$  denotar\'a es  el  vector  (posiblemente  de
+dimensi\'on  infinita) de componentes  $k$-esima $\delta_{jk}  = \un_{\{k\}}(j)$
 s\'imbolo \emph{delta de Kronecker},
 %
 \[
@@ -419,49 +553,28 @@ s\'imbolo \emph{delta de Kronecker},
 0 & \mbox{si no}
 \end{array} \right.
 \]
-%. Cuando el espacio muestral es finito
-%de dimensi\'on $N$, la ley de  distribuci\'on se puede representar por medio del
-%siguiente vector columna:
-%%
-%$$
-%p = \begin{pmatrix}
-%% \left(  
-%%\begin{array}{c}
-%0 \\ \vdots \\ 0 \\ 1  \\ 0 \\ \vdots \\ 0
-%\end{pmatrix}
-%%\end{array} \right)
-%$$
 %
-%con  un  1  en  el  lugar  $j$-\'esimo,  que tambi\'en  se  escribe  como  \  $p
-%= \begin{pmatrix} 0  & \cdots & 0 &  1 & 0 & \cdots &  0 \end{pmatrix}^t$, donde
-%$t$ indica transposici\'on.  La funci\'on de repartici\'on resulta una funci\'on
-%escal\'on o de Heaviside: \ $F(x)=\Theta(x-x_j)$.
+En este  caso, $P_X$ es  conocida como  {\it medida de  Dirac} centrada en  $x =
+x_k$, a veces  denotada $\delta_{x_k}(x) = \delta(x-x_k)$. Vamos  a volver m\'as
+adelante sobre esta medida particular.
 
 Otra   situaci\'on  particular   es  la   de  {\it   equiprobabilidad}   o  {\it
-  distribuci\'on uniforme}  \modif{cuando $|\X| = \alpha <  +\infty$}.  La forma
-de la distribuci\'on es: \ \modif{$p_X(x_j)  = \frac1\alpha \quad \forall \, j =
-  1  , \ldots  , \alpha$,  \ie $p_X  = \begin{bmatrix}  \frac1\alpha &  \cdots &
-    \frac1\alpha \end{bmatrix}^t$.}
-%, donde  $N$ señala el tamaño del espacio muestral.
-%La ley  de distribuci\'on  se puede representar  por medio del  siguiente vector
-%columna:
+  distribuci\'on uniforme}  cuando $|\X|  = \alpha <  +\infty$.  La forma  de la
+distribuci\'on es: \ $p_X(x_j) = \frac1\alpha \quad  \forall \, j = 1 , \ldots ,
+\alpha$,    \ie   $p_X    =    \begin{bmatrix}   \frac1\alpha    &   \cdots    &
+  \frac1\alpha \end{bmatrix}^t$ \  o, en termino de medida,  $P_X = \frac1\alpha
+\sum_{j=1}^\alpha  \delta_{x_j}$.   La funci\'on  de  repartici\'on resulta  una
+funci\'on escalonada, con saltos de  altura \ $\frac1\alpha$ en cada $x_j, \quad
+1 \le j \le \alpha$.
+
+De manera general, la medida de probabilidad de una variable discreta se escribe
+como combinaci\'on convexa de medida de Dirac,
 %
-%$$
-%p = \begin{pmatrix}
-%% \left(  
-%%\begin{array}{c}
-%1/N \\ 1/N  \\ \vdots \\ 1/N
-%\end{pmatrix}
-%%array} \right) , 
-%$$
-%
-%que tambi\'en se escribe como \  $p = \begin{pmatrix} \frac1N & \frac1N & \cdots
-%  &  \frac1N  \end{pmatrix}^t$.
-La funci\'on  de repartici\'on resulta  una funci\'on escalonada, con  saltos de
-altura \modif{$\frac1\alpha$ en cada $x_j, \quad 1 \le j \le \alpha$}.
+\[
+P_X = \sum_j p_j \delta_{x_j} \quad p_j = P(X=x_j) \ge 0, \: \sum_j p_j = 1, 
+\]
 
 \
-%hfill 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -526,89 +639,58 @@ conocimiento completo.
 \subseccion{Variable aleatoria continua}
 \label{sec:MP:VAContinua}
 
-\modif{En varios contextos, puede tomar valores en un conjunto no numerable, por
-  ejemplo}  cualesquiera de  los  n\'umeros en  un  dado intervalo  de la  recta
-real\modif{.  No son  variables discretas  m\'as. En  las variables  que  no son
-  discretas,   el   caso   particular   de   inter\'es  es   el   de   variables
-  continuas~\cite{AthLah06, HogMck13}:
+En  varios contextos,  puede  tomar valores  en  un conjunto  no numerable,  por
+ejemplo cualesquiera de los n\'umeros en un dado intervalo de la recta real.  No
+son variables  discretas m\'as. En las  variables que no son  discretas, el caso
+particular de inter\'es es el de variables continuas~\cite{AthLah06, HogMck13}:
 %
 \begin{definicion}[Variable aleatoria continua]
   Una variable  aleatoria \  $X$ \ es  dicha {\it  continua} si su  funci\'on de
   repartici\'on  $F_X$ es  continua sobre  $\Rset$.
 \end{definicion}
-%
-}
-%Los posibles valores de una  variable aleatoria continua $X$ son cualesquiera de
-%los n\'umeros en un dado  intervalo de la recta real: \ $x\in\Omega\subset\Rset$
-%que  puede ser  un intervalo  $[x_m,x_M]$  o un  subconjunto (semi)infinito.  
-\modif{Cuando se puede,  es} conveniente asociar una {\it  funci\'on densidad de
+
+Cuando  se  puede,  es  conveniente  asociar  una  {\it  funci\'on  densidad  de
   probabilidad} (com\'unmente  anotada por  su sigla en  ingl\'es: pdf  por {\it
-  probability density function})\modif{:
+  probability   density   function}).   Por   eso,   nos   apoyamos   sobre   la
+definici\'on~\ref{def:MP:DensidadMedida}  aplicada a  la medida  de probabilidad
+$P_X$:
 %
-\begin{definicion}[Variable aleatoria continua admitiendo una densidad de probabilidad]
-  Sea $X$  variable aleatoria continua y \  $P_X$ su medida de  probabilidad y \
-  $F_X$ \ su  funci\'on de repartici\'on. Si existe una  funci\'on no negativa \
-  $p_X$ \ sobre $\Rset$ tal que
+\begin{definicion}[Variable aleatoria admitiendo una densidad de probabilidad]
+  Sea $X$ variable  aleatoria continua y \ $P_X$ su  medida de probabilidad. Por
+  definici\'on, se dice que $X$  admite una densidad de probabilidad con respeto
+  a  una medida  $\mu$  sobre $\Rset$  si  $P_X$ es  absolutamente continua  con
+  respeto  a  $\mu$ seg\'un  la  definici\'on~\ref{def:MP:DensidadMedida} (y  la
+  reciproca  evocaca al  seguir).\newline  En general,  nos  enfocamos sobre  la
+  medida (dicha de referencia) $\mu  = \mu_L$ de Lebesgue y denotando $d\mu_L(x)
+  \equiv dx$, la definici\'on se reduce a: Si existe una funci\'on no negativa \
+  $p_X$ \ medible sobre $\Rset$ tal que
   %
   \[
   \forall \, B \in \B(\Rset), \quad P_X(B) = \int_B p_X(x) \, dx
   \]
   %
-  (la    integral    debe   ser    entendido    como    en    el   sentido    de
-  Lebesgue~\footnote{\modif{Recordamos  que  la medida  de  Lebesgue $\mu_L$  es
-      definida sobre  $(\Rset^d,\B(\Rset^d)$ tal que  $\displaystyle \mu_L\left(
-        \times_{i=1}^d  (a_i \, ;  \, b_i]  \right) =  \prod_{i=1}^d (b_i-a_i)$.
-      Ahora,   para  una  medida   cualquiera,  sobre   un  espacio   de  medida
-      $(\Omega,\A,\mu)$, se  define la integraci\'on a  partir de $\displaystyle
-      \forall  \,  A \in  \A,  \quad  \int_A  d\mu(\omega) =  \int_\Omega  \un_A
-      d\mu(\omega) =  \mu(A)$. Claramente, por  propiedades de una  medida, para
-      $A_i, A_j$ disjuntos  $\un_{A_i} + \un_{A_j} = \un_{A_i  \cup A_i}$, dando
-      $\displaystyle   \int_\Omega   \left(   \un_{A_i}  +   \un_{A_j}   \right)
-      d\mu(\omega) =  \mu(A_i \cup A_j)  = \int_\Omega \un_{A_i}  d\mu(\omega) +
-      \int_\Omega \un_{A_j}  d\mu(\omega)$.  Como consecuencia,  es sencillo ver
-      de  que la  integral de  la  {\it funci\'on  escalonada} $\sum_i  \alpha_i
-      \un_{A_i}$,  \ $\alpha_i  \ge 0$  \ y  \ $\A_i  \in \A$  no necesariamente
-      (mutualmente) disjuntos  es la combinaci\'on linear de  las integrales las
-      funciones indicadoras  \ $\un_{A_i}$ (linealidad).   Se proba de  que para
-      cualquier   funci\'on    positiva   medible   $g:    (\Omega,\A)   \mapsto
-      (\Rset,\B(\Rset))$, existe una series  $\{ g_n \}_{n \in \Nset}$ creciente
-      de funciones escalonadas que converge hacia $g$ y se define $\displaystyle
-      \int_{\Omega}  g(\omega) d\mu(\omega)  = \lim_{n  \to  \infty} \int_\Omega
-      g_n(\omega) d\mu(\omega)$. $g$ es dicha integrable (con respeto a $\mu$ si
-      la integral es  finita. Por fin, para  $g$ medible, se escribe $g  = g_+ +
-      g_-$ con $g_+ = \max(g,0)$ y $g_- = \min(g,0)$. $g$ es dicha integrable si
-      y solamente si $g_+$ y $g_-$ son integrables, y $\displaystyle \int_\Omega
-      g(\omega)   d\mu(\omega)   =   \int_\Omega  g_+(\omega)   d\mu(\omega)   -
-      \int_\Omega  \left( -  g(\omega) \right)  d\mu(\omega)$ (equivalentemente,
-      $|g|$  es  integrable.  Ahora,  si  $\displaystyle \nu(B)  =  \int_B  p(x)
-      d\mu(x)$ con  $\mu, \nu$ dos medida  cualquieras sobre $(\Rset,\B(\Rset)$,
-      $p$ es llamado densidad  de $\nu$ con respeto a $\mu$ y  es a veces notada
-      $p =  \frac{d\nu}{d\mu}$ (derivada de  Radon-Nikod\'ym). Si $\mu(B)  = 0$,
-      necesariamente $\nu(B)  = 0$ y  $\nu$ es dicha absolutamente  continua con
-      respeto a  $\mu$. Se muestra de  que si una medida  $\nu$ es absolutamente
-      continua con respeto  a $\mu$, entonces admite una  densidad con respeto a
-      $\mu$. En  esta definici\'on,  consideramos $\mu =  \mu_L$ y $\nu  = P_X$,
-      denotando  $d\mu_L(x) \equiv dx$.   Para m\'as  detalles, ver~\cite{Leb04,
-        Leb18,             KolFom61,             AthLah06,             Bog07:v1,
-        Coh13}.    \label{foot:MP:Lebesgue}}},  entonces   $X$  es   dicha  {\it
-    admitiendo  una  densidad}  y  \   $p_X$  \  es  llamada  {\it  densidad  de
-    probabilidad} de $X$.  Notando de que  $P_X(B) = P_X(B \cap \X)$, el soporte
-  de $p_X$ es necesariamente $\X = X(\Omega)$ (\ie $p_X(\widebar{\X}) = 0$ \ y \
-  $p_X(\X) \ne 0$), y
-    %
-    \[
-    \forall \, B \in \B(\Rset), \quad P_X(B) = \int_{B \cap \X} p_X(x) \, dx
-    \]
+  entonces $X$  es dicha {\it  admitiendo una densidad}  y \ $p_X$ \  es llamada
+  {\it densidad de probabilidad} de  $X$ (subentendido ``con respeto a la medida
+  de Lebesgue'').  Notando de que $P_X(B) = P_X(B \cap \X)$, el soporte de $p_X$
+  es necesariamente $\X = X(\Omega)$ (\ie $p_X(\widebar{\X}) = 0$ \ y \ $p_X(\X)
+  \ne 0$), y
   %
-    Tratando de la funci\'on de repartici\'on, tenemos
-  % En particular,
+  \[
+  \forall \, B \in \B(\Rset), \quad P_X(B) = \int_{B \cap \X} p_X(x) \, dx
+  \]
+  %
+  Tratando de la funci\'on de repartici\'on \ $F_X$, tenemos entonces
   %
   \[
   F_X(x) = \int_{-\infty}^x p_X(u) \, du
   \]
   %
-  Dicho de otra manera, si $F_X$ es (continua y) derivable sobre $\Rset$, por lo
-  menos por partes, $X$ admite una densidad de probabilidad y
+  (queda valid con cualquier medida $\mu$, densidad con respeto a esta medida de
+  referencia,  e integraci\'on  sobre $(-\infty;  x]$ con  la  ``diferencial'' \
+  $d\mu(x)$).  Dicho  de otra manera, si  $F_X$ es (continua  y) derivable sobre
+  $\Rset$, por lo menos por partes, $X$ admite una densidad de probabilidad (con
+  respeto a  la medida de Lebesgue)  y~\footnote{Recuendense que, rigurosamente,
+    la igualdad debe ser entendido ``casi siempre''.}
   %
   \[
   p_X(x) = \frac{d F_X(x)}{dx}
@@ -630,73 +712,41 @@ claramente
 \]
 %
 $\{ x \}$ es dicho de medida $P_X$ nula (es el caso de todos conjuntos numerable
-de $\Rset$).}
-%
-%$p(x)$ que tiene el  sentido de que la probabilidad de que  $X$ tome valor entre
-%$a$ y $b$ est\'a dada por:
-%%
-%$$
-%\Pr(a\leq X\leq b) = \int_a^b p(x) \, dx ,
-%$$
-%
-\modif{Fijense de que  si $0 \le F_X \le  1$, no $p_X$ puede ser  mayor que uno,
-  por  ejemplo, para  \ $F_X(x)  =  2 \,  x \,  \un_{\left[  0 \,  ; \,  \frac12
-    \right)}(x) + \un_{\left[  \frac12 \, ; \, +\infty  \right)}(x)$, que define
-  correctamente  una  funci\'on de  repartici\'on,  \  $p_X(x)  = 2  \un_{\left[
-      \frac12 \, ; \, +\infty\right)}(x)$. No es contradictorio en el sentido de
-  que $p_X$ no  es una probabilidad, sino que}  $\modif{p_X(x)} \, dx$ \modif{es
-  esquematicamente} la  probabilidad de hallar a  la variable con  valores en el
-``intervalo  infinitesimal   entre  $x$   y  $x+dx$''.   \modif{Al   final,  l}a
-condici\'on de normalizaci\'on se escribe
+de $\Rset$).
+
+Fijense de  que si  $0 \le  F_X \le  1$, \ $p_X$  puede ser  mayor que  uno. Por
+ejemplo, para \ $F_X(x) = 2 \, x  \, \un_{\left[ 0 \, ; \, \frac12 \right)}(x) +
+\un_{\left[ \frac12 \,  ; \, +\infty \right)}(x)$, que  define correctamente una
+funci\'on  de  repartici\'on,  \  $p_X(x)  =  2  \un_{\left[  \frac12  \,  ;  \,
+    +\infty\right)}(x)$. No es  contradictorio en el sentido de  que $p_X$ no es
+una probabilidad, sino  que $p_X(x) \, dx$ puede ser  visto como la probabilidad
+de hallar a la variable con  valores en el ``intervalo infinitesimal entre $x$ y
+$x+dx$''.  Al final, la condici\'on de normalizaci\'on se escribe
 %
 \[
 \int_\X p_X(x) \, dx = \int_\Rset p_X(x) \, dx = 1. 
 \] 
 %
 
-En   la  \modif{figura   Fig.~\ref{fig:MP:ProbaContinua}-(a)}  se   muestra  una
-representaci\'on gr\'afica  de una funci\'on  densidad de probabilidad  para una
-variable continua  \modif{y en Fig.~\ref{fig:MP:ProbaContinua}-(b)  la funci\'on
-  cumulativa correspondiente.
+En la figura Fig.~\ref{fig:MP:ProbaContinua}-(a) se muestra una representaci\'on
+gr\'afica de una  funci\'on densidad de probabilidad para  una variable continua
+admitiendo una  densidad, y en  Fig.~\ref{fig:MP:ProbaContinua}-(b) la funci\'on
+cumulativa correspondiente.
 %
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/DistribucionReparticionContinua} \end{center}
 %
-\leyenda{\modif{Ilustraci\'on  de una  distribuci\'on  de probabilidad  continua
-    (a), y la funci\'on de repartici\'on asociada (b), con \ $\X = [0 \, ; \, 1)
-    \cup [2 \, ; \, 3)$ \ y \ $p_X(x) = \frac12 \un_{[0 \, ; \, 1)}(x) + \frac{3
-      \sqrt{x-2}}{4} \un_{[2 \,  ; \, 3)}(x)$, \ \ie \  $F_X(x) = \frac{x}{2} \,
-    \un_{[0   \,  ;   \,  1)}(x)   +   \frac12  \un_{[1   \,  ;   \,  2)}(x)   +
-    \frac{(x-2)^{\frac32}}{2}  \un_{[2  \,  ;  \,  3)}(x)  +  \un_{[3  \,  ;  \,
-      +\infty)}(x)$.  }}
+\leyenda{Ilustraci\'on de una distribuci\'on  de probabilidad continua (a), y la
+  funci\'on de repartici\'on asociada (b), con \ $\X  = [0 \, ; \, 1) \cup [2 \,
+  ;  \,  3)$  \  y \  $p_X(x)  =  \frac12  \un_{[0  \,  ; \,  1)}(x)  +  \frac{3
+    \sqrt{x-2}}{4} \un_{[2  \, ; \,  3)}(x)$, \ \ie  \ $F_X(x) =  \frac{x}{2} \,
+  \un_{[0   \,   ;  \,   1)}(x)   +   \frac12  \un_{[1   \,   ;   \,  2)}(x)   +
+  \frac{(x-2)^{\frac32}}{2}  \un_{[2  \,   ;  \,  3)}(x)  +  \un_{[3   \,  ;  \,
+    +\infty)}(x)$.  }
 \label{fig:MP:ProbaContinua}
 \end{figure}
-}
 
-%Tambi\'en, se puede caracterizar la ley de la variable continua $X$ por medio de
-%su  \emph{funci\'on  de   repartici\'on}  o  \emph{funci\'on  de  distribuci\'on
-%  cumulativa} (CDF por \emph{cumulative distribution function}):
-%%
-%$$
-%F_X(x) = \Pr(X\leq x) = \int_{x_m}^x p(t) \, dt
-%$$
-%%
-%que da la  probabilidad de que $X$ sea  menor o igual que cierto  valor $x$ dado
-%(dentro del conjunto~$\Omega$ de todos  los valores posibles de la variable). En
-%forma an\'aloga,  \ $\Pr(X\in  A) = \int_A  p(x) \,  dx$ acumula la  densidad de
-%probabilidad en un subconjunto $A$ del espacio muestral.  Por la propiedad de la
-%inclusi\'on,  se  tiene \  $\Pr(X\leq  x_1)  \leq  \Pr(X\leq x_2)$  siempre  que
-%$x_1\leq x_2$; luego $F_X(x)$ es una funci\'on creciente
-%%no decreciente ?? SI, LO DIRIA ASI
-%de   $x$,  acotada   por  la   unidad,  con   valores  extremos   dados   por  \
-%$\lim_{x\rightarrow -\infty} F_X(x)=0$  y $\lim_{x\rightarrow \infty} F_X(x)=1$,
-%tomando $\Omega=\Rset$.  Adem\'as la derivada respecto de $x$ es la pdf:
-%%
-%$$
-%\frac{dF_X(x)}{dx}=p(x) . 
-%$$ 
-%
-\modif{Fijense de que una variable aleatoria puede ser ni continua, ni discreta:
+Fijense de que una variable aleatoria puede ser ni continua, ni discreta:
 %
 \begin{itemize}
 \item Sean $U$  \ y \ $V$ \ variables continuas,  independientes, de densidad de
@@ -720,87 +770,62 @@ variable continua  \modif{y en Fig.~\ref{fig:MP:ProbaContinua}-(b)  la funci\'on
   \begin{figure}[h!]
   \begin{center} \input{TIKZ_MP/ReparticionMixta} \end{center}
   %
-  \leyenda{\modif{Funci\'on de repartici\'on $F_X(x)  = \frac{x}{2} \un_{[0 \, ;
-        \, 1)}(x) +  \un_{\Rset_+}(x)$ asociada a \ $X = V  \un_{U < \frac12}$ \
-      con \ $U$ \ y \ $V$ \ variables continuas uniformes sobre $\X = [0 \, ; \,
-      1)$. No es tipo escalon, as\'i que  $X$ no es discreta. A pesar de que $\X
-      = [0 \, ; \, 1)$ \ sea un intervalo, de la presencia del salto en $x = 0$,
-      tampoco $X$ no es continua.}}
+  \leyenda{Funci\'on  de repartici\'on  $F_X(x) =  \frac{x}{2} \un_{[0  \,  ; \,
+      1)}(x) + \un_{\Rset_+}(x)$ asociada a \ $X  = V \un_{U < \frac12}$ \ con \
+    $U$ \ y \ $V$ \ variables continuas uniformes sobre $\X = [0 \, ; \, 1)$. No
+    es tipo escalon, as\'i que $X$ no es  discreta. A pesar de que $\X = [0 \, ;
+    \, 1)$ \ sea un intervalo, de la presencia del salto en $x = 0$, tampoco $X$
+    no es continua.}
   \label{fig:MP:ProbaMixta}
   \end{figure}
 %
 \item Sea  $U$ \ variable  continua uniforme sobre $[0  \, ; \,  1)$ \ y \  $X =
   \un_{U \not\in \Qset}$. Claramente  $X$ no es continua, pero $\X =  [0 \, ; \,
   1)   \backslash    \Qset$   \   siendo   no   numerable,    $X$   tampoco   es
-  discreta~\footnote{\SZ{$X = 1$ casi siempre\ldots}}.
+  discreta~\footnote{\SZ{$X = 1$ casi siempre\ldots quizas m\'as adelante}}.
 \end{itemize}
-}
 
-\modif{De  hecho, en el  caso continu,  discreto, o  cualquiera, se  conserva la
-  forma integral de la medida de probabilidad en una forma tipo \ $\displaystyle
-  P_X(B)  = \int_B  dP_X(x)$ \  basado sobre  la  teoria de  la medida  y de  la
-  integraci\'on~\footnote{\modif{Ver    nota    de   pie~\ref{foot:MP:Lebesgue},
-      pagina~\pageref{foot:MP:Lebesgue}}}~\cite{Leb04,    KolFom61,    AthLah06,
-    Bog07:v1,  Bog07:v2,  Coh13}. En  el  caso discreto  cierto  $X  = x_0$,  la
-  distribuci\'on discreta es  dada por $p_X(x) = \un_{\{ x_0  \}}(x) = \un_{\{ 0
-    \}}(x-x_0)$. En este caso, $P_X$ es  dicha {\it medida de Dirac} y $dP_X(x)$
-  es denotado \ $\delta_{x_0}(x) \, dx$  \ o \ $\delta(x-x_0) \, dx$ \ tambi\'en
-  llamado {\it delta de Dirac}. Se puede ver este Dirac como una}
-%De aqu\'i  se observa que  la 
-densidad de  probabilidad $p_X(x)$ \modif{pero} no es
-% puede no  ser 
-una funci\'on ``ordinaria'' pero  una funci\'on generalizada o distribuci\'on de
-Schwartz~\footnote{\modif{La  teor\'ia de  la distribuciones  vali\'o  a Laurent
-    Schwarz la meddala Field en 1950.  Entre otros en el trabajo de Schwartz, se
-    prob\'o que  el Dirac,  visto como distribuci\'on  de Schwartz,  o funci\'on
-    generalizada,  tiene  una  ``representaci\'on  integral''  \  $\displaystyle
-    \delta(x) =  \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{\imath  t x} dt$  \ o
-    m\'as rigurosamente transformada  de Fourier de $x \mapsto  1$ en el sentido
-    de las funciones generalizadas  o distribuciones.  Eso muestra claramente su
-    caracter  no  ordinario  (la   integral  siendo  divergente  en  el  sentido
-    usual). Eso va m\'as all\'a de la meta del cap\'itulo y el lector se podr\'a
-    referir a~\cite{Sch66,  GelShi64, GelShi68} por  ejemplo.}}.  En particular,
-$F_X(x) = \un_{\Rset_+}(x-x_0)$ y en  el sentido de las distribuciones, $\frac{d
-  F_X}{dx} = \delta_{x_0}$.  Adem\'as, se  usan en general las propiedades, para
-cualquier function $f$,
+
+Recordamonos de  que cualquier  medida de probabilidad  (caso continuo o  no) se
+escribe tambi\'en con una integral \ $\displaystyle P_X(B) = \int_B dP_X(x)$ \ y
+que en el caso discreto cierto \ $X = x_k$, \ la medida de probabilidad $P_X$ es
+la medida de  Dirac. A veces, por  abuso de escritura \ $dP_X(x)$  es denotado \
+$\delta_{x_k}(x) \,  dx$ \ o \ $\delta(x-x_k)  \, dx$ \ donde  ahora $\delta$ es
+llamada {\it distribuci\'on (delta) de Dirac}.  Se puede ver este Dirac como una
+densidad de probabilidad  $p_X(x)$ pero no es una  funci\'on ``ordinaria'' dando
+de que  $P_X$ no es  diferenciable con  respeto a la  medida de Lebesgue.  Se la
+llama    {\it    funci\'on    generalizada}    o    {\it    distribuci\'on    de
+  Schwartz}~\footnote{La teor\'ia de la distribuciones vali\'o a Laurent Schwarz
+  la medalla Field  en 1950.  Entre otros en el trabajo  de Schwartz, se prob\'o
+  que el Dirac, visto como distribuci\'on de Schwartz, o funci\'on generalizada,
+  tiene   una  ``representaci\'on  integral''   \  $\displaystyle   \delta(x)  =
+  \frac{1}{2\pi}  \int_{-\infty}^{\infty}   e^{\imath  t   x}  dt$  \   o  m\'as
+  rigurosamente transformada  de Fourier de $x  \mapsto 1$ en el  sentido de las
+  funciones generalizadas o distribuciones.   Eso muestra claramente su caracter
+  no  ordinario (la integral  siendo divergente  en el  sentido usual).   Eso va
+  m\'as  all\'a  de la  meta  del  cap\'itulo y  el  lector  se podr\'a  referir
+  a~\cite{Sch66, GelShi64,  GelShi68} por  ejemplo.}.  En particular,  $F_X(x) =
+\un_{\Rset_+}(x-x_k)$ y en el sentido de las distribuciones, $\frac{d F_X}{dx} =
+\delta_{x_k}$.   Adem\'as, se usan  en general  las propiedades,  para cualquier
+function \ $f$ \ y real \ $x_0$,
 %
 \[
 f(x) \delta(x-x_0) = f(x_0) \delta(x-x_0) \qquad \mbox{y} \qquad \int_\Rset f(x)
 \delta(x-x_0) \, dx = f(x_0)
-% \mbox{y} \qquad \int_{x_0}^{+\infty} f(x)  \delta(x-x_0) \, dx =
-%\frac12 f(x_0)
 \]
 %
-pero  hay que  entender la  integraci\'on a  trav\'es de  la medida  Dirac (esta
-notaci\'on es un abuso de escritura, ej.~\cite{GelShi64}).
-%  cuando $\Pr(X\leq x)$  es discontinua, pero  como mucho
-%tiene  la  singularidad  de   una  distribuci\'on  \emph{delta  de  Dirac}  cuya
-%representaci\'on integral es:
-%
-%$$
-%\delta (x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{itx} dt . 
-%$$
-% SZ: LA  VERDAD ES  QUE NO ME  GUSTA MUCHO  escribir una distribucion  como una
-% fuccion porque no viven en el  mismo espacio. Pero no importa. Para mi, cuando
-% hay  una  discontinuidad  X no  admite  une  pdf  por  definicion del  'f'  de
-% pdf\sum_{}
-
-%Un caso especial  se tiene cuando la variable aleatoria $X$  toma el valor $x_0$
-%con certeza.  La forma  de la pdf  es: \ $p(x)=\delta(x-x_0)$.  Otra situaci\'on
-%particular es la distribuci\'on uniforme en  un intervalo; la pdf es de la forma
-%\  $p(x)=\frac{1}{b-a} \  \forall  \  x\in[a,b]$, donde  $[a,b]$  es el  espacio
-%muestral.
-Usando las  \modif{medidas de  Dirac}, se puede  unificar el tratamiento  de las
-variables aleatorias  discretas con las continuas \modif{(entre  otros)}: si una
-variable aleatoria  discreta toma  los valores $x_j$  con probabilidades  $P(X =
-x_j)$  respectivamente, entonces  formalmente  se puede  describir mediante  una
-variable  aleatoria continua $X$  con ``funci\'on  densidad de  probabilidad'' \
-\modif{$p_X(x) = \sum_j p_j \, \delta(x-x_j)$ donde $p_j = P(X = x_j)$.}
+pero hay que entender la integraci\'on a trav\'es de la medida Dirac (insistamos
+en   el   hecho   de  que   esta   notaci\'on   es   un  abuso   de   escritura,
+ej.~\cite{GelShi64}).  Usando las distribuciones  de Dirac, se puede unificar el
+tratamiento de las  variables aleatorias discretas con las  continuas en termino
+de densidad: si  una variable aleatoria discreta toma los valores  \ $x_j$ \ con
+probabilidades \ $p_j  = P(X = x_j)$ \  respectivamente, entonces formalmente se
+puede describir mediante una variable aleatoria continua \ $X$ \ con ``funci\'on
+densidad de probabilidad'' \ $p_X(x) = \sum_j p_j \, \delta(x-x_j)$.
 
 
 % ================================= Vector discreto
 
-\modif{
 \subseccion{Vector aleatorio discreto}
 \label{sec:MP:VecDiscreto}
 
@@ -809,16 +834,16 @@ dados (que podr\'ian  ser dependientes si son ligados por  un hilo por ejemplo).
 
 \begin{definicion}[Vector aleatorio discreto]
   Un  vector aleatorio $d$-dimensional  \ $X  = \begin{bmatrix}  X_1 &  \cdots &
-    X_d \end{bmatrix}^t$ \ y $\X = X(\Omega) = \X_1 \times \cdots \times \X_d$ \
-  donde  \ $\X_i =  X_i(\Omega)$. \  $X$ \  es dicho  {\it discreto}  cuando $\X
-  \subseteq \Nset^d$,  \ es  discreto, finito o  infinito numerable.  En  lo que
+    X_d \end{bmatrix}^t$ \ y \  $\displaystyle \X = X(\Omega) = \optimes_{i=1}^d
+  \X_i$ \ donde \  $\X_i = X_i(\Omega)$. \ $X$ \ es  dicho {\it discreto} cuando
+  $\X \subseteq \Nset^d$, \ es discreto, finito o infinito numerable.  En lo que
   sigue,  denotaremos tambi\'en  por $|\X|$  el cardinal  de  $\X$, posiblemente
   infinito.
 \end{definicion}
 
-Obviamente, la medida  de probabilidad en los $x  = (x_1 \, , \, \ldots  \, , \,
-x_d) \in \X_1  \times \cdots \times \X_d$ caracterisa  completamente este vector
-aleatorio:
+Obviamente, la  medida de probabilidad  en los $\displaystyle  x = (x_1 \,  , \,
+\ldots \, , \, x_d)  \in \optimes_{i=1}^d \X_i$ \ caracterisa completamente este
+vector aleatorio:
 %
 \begin{definicion}[Funci\'on de masa de probabilidad conjunta]
   Por  definici\'on,  la  funci\'on  de  masa de  probabilidad  de  $X$,  vector
@@ -834,10 +859,10 @@ aleatorio:
     $X_i$}, o, por  abuso de denominaci\'on, la llamaremos  todav\'ia $p_X$ {\it
     distribuci\'on  de probabilidad  (conjunta)}.  En  el caso  multivariado, la
   notaci\'on vectorial  es m\'as  delicada a usar:  $p_X$ ser\'ia  un ``tensor''
-  $d$-dimensional (una  matriz para $d  = 2$,\ldots).  Pero queda  posible unsar
-  una  notaci\'on  vectorial,  recordandose   de  que  $\Nset^d$  puede  ser  en
-  biyecci\'on con $\Nset$ y una  biyecci\'on elegida, usar la para etiquetar los
-  componentes de $p_X$ puesto en vector.  En el caso finito \ $\X_i = \{ x_{j_i}
+  $d$-dimensional (una matriz para $d = 2$,\ldots).  Pero queda posible usar una
+  notaci\'on vectorial,  recordandose de que $\Nset^d$ puede  ser en biyecci\'on
+  con $\Nset$ y  una biyecci\'on elegida, usarla para  etiquetar los componentes
+  de  $p_X$  puesto  en  vector.   En  el  caso finito  \  $\X_i  =  \{  x_{j_i}
   \}_{j=1}^{\alpha_i}$  \  con \  $\alpha_i  = |\X_i|  <  +\infty$,  \ se  puede
   organizar  los  componentes tales  que  $p_X(x_{j_1}\, ,  \,  \ldots  \, ,  \,
   x_{j_d})$  sea   la  $\displaystyle  j   =  \sum_{i=1}^{d-1}  (j_i  -   1)  \,
@@ -861,16 +886,16 @@ p_{X_1} \ldots  p_{X_d}
 %
 En notaciones tensoriales, $p_X =  p_{X_1} \otimes \cdots \otimes p_{X_d}$ donde
 $\otimes$  denota  el  producto  tensorial  o  externo  entre  los  vectores  de
-probabilidades~\footnote{\modif{Tensor  de   componentes  $(j_1,\ldots,j_d)$  el
-    producto $\prod_i p_{X_i} (x_{j_i})$}.}.  Cuando los $\alpha_i$ son finito y
-la notaci\'on vectorial  de la definici\'on es adoptada,  esta expresi\'on queda
-valide donde $\otimes$ representa el producto de Kronecker~\footnote{\modif{Para
-    \  $p =  \begin{bmatrix}  p_1  & \cdots  &  p_n \end{bmatrix}^t$  \  y \  $q
-    =  \begin{bmatrix} q_1  & \cdots  & q_m  \end{bmatrix}^t$ \  el  producto de
-    Kronecker  es dado  por  \ $p  \otimes  q$ \  vector de  tama\~no  $n m$  de
-    componente \ $(j-1) m + k$-esima \ el producto \ $p_j q_k, \quad 1 \le j \le
-    n, \: 1 \le k \le m$.  Fijense de que este producto es asociativo pero no es
-    comutativo.\label{foot:MP:Kronecker}}}
+probabilidades~\footnote{``Tensor''      $d$-dimensional      de     componentes
+  $(j_1,\ldots,j_d)$  el  producto $\prod_i  p_{X_i}  (x_{j_i})$.}.  Cuando  los
+$\alpha_i$ son finito y la  notaci\'on vectorial de la definici\'on es adoptada,
+esta  expresi\'on  queda  valide  donde  $\otimes$  representa  el  producto  de
+Kronecker~\footnote{Para   \    $p   =   \begin{bmatrix}   p_1    &   \cdots   &
+    p_n  \end{bmatrix}^t$   \  y  \  $q   =  \begin{bmatrix}  q_1   &  \cdots  &
+    q_m \end{bmatrix}^t$ \ el producto de  Kronecker es dado por \ $p \otimes q$
+  \ vector de tama\~no $n m$ de componente \ $(j-1) m + k$-esima \ el producto \
+  $p_j  q_k, \quad 1  \le j  \le n,  \: 1  \le k  \le m$.   Fijense de  que este
+  producto es asociativo pero no es comutativo.\label{foot:MP:Kronecker}}.
 
 Al  final, de la  formula de  calculo de  funci\'on de  repartici\'on marginales
 visto  pagina~\pageref{pagina:MP:MarginalesF},   para  un  subconjunto   $I_k  =
@@ -883,35 +908,40 @@ p_{X_{I_k}}(x_{I_k}) = \sum_{\forall i \not\in I_k, x_i \in \X_i} p_X(x)
 \]
 
 
-}
-
 
 % ================================= Vector continuo
 
-\subseccion{Vector aleatorio \modif{continuo}}
+\subseccion{Vector aleatorio continuo}
 \label{sec:MP:VecContinuo}
 
-\modif{
+Como para  el caso  de una  variable, se puede  considerar cualquiera  medida de
+referencia  $\mu$  sobre  $\Rset^d$   para  definir  una  noci\'on  de  densidad
+($d$-variada),  pero  en general  nos  enfocamos  en el  caso  de  la medida  de
+Lebesgue.
+
 \begin{definicion}[Vector aleatorio continuo y densidad de probabilidad multivariada]
   Un  vector aleatorio  \  $X$ \  es dicho  {\it  continuo} si  su funci\'on  de
-  repartici\'on $F_X$  es continua sobre  $\Rset^d$. Si existe una  funci\'on no
-  negativa \ $p_X$ \ sobre $\Rset^d$ tal que
+  repartici\'on  $F_X$ es  continua sobre  $\Rset^d$.  Como  en el  caso escalar
+  tambi\'en,   por  definici\'on~\ref{def:MP:DensidadMedida}  (y   la  reciproca
+  evocaca al  seguir), se dice que  $X$ admite una densidad  de probabilidad con
+  respeto a una medida $\mu$  sobre $\Rset^d$ si $P_X$ es absolutamente continua
+  con  respeto a  $\mu$.  De  nuevo,  nos enfocamos  sobre la  medida (dicha  de
+  referencia) $\mu  = \mu_L$ de  Lebesgue as\'i que  si existe una  funci\'on no
+  negativa y medible \ $p_X: \Rset^d \mapsto \Rset$ \ tal que
   %
   \[
   \forall \,  B \in \B(\Rset^d),  \quad P_X(B) =  \int_B p_X(x) \, dx  = \int_{B
     \cap \X} p_X(x) \, dx
   \]
   %
-  con $\X = X(\Omega)$ soporte de $p_X$ (la integral multiple debe ser entendido
-  como    en    el   sentido    de    Lebesgue~\footnote{\modif{Ver   nota    de
-      pie~\ref{foot:MP:Lebesgue}, pagina~\pageref{foot:MP:Lebesgue}.}} y \ $dx =
-  dx_1  \cdots dx_d$), entonces  $X$ es  dicha {\it  admitiendo una  densidad} y
-  $p_X$ es  llamada {\it densidad  de probabilidad} de  \ $X$, o  tambi\'en {\it
-    densidad de probabilidad conjunta} de los \ $X_i$. En particular,
+  con $\X  = X(\Omega)$ soporte  de \ $p_X$  \ y \  $d\mu_L(x) \equiv dx  = dx_1
+  \cdots dx_d$, entonces  $X$ es dicha {\it admitiendo una  densidad} y $p_X$ es
+  llamada {\it densidad de probabilidad} de \ $X$ (`subentendido ``con respeto a
+  la medida de Lebesgue''), o  tambi\'en {\it densidad de probabilidad conjunta}
+  de los \ $X_i$. En particular,
   %
   \[
-  F_X(x) =  \int_{(-\infty \, ;  \, x_1] \times  \cdots \times (-\infty \,  ; \,
-    x_d]} p_X(u) \, du
+  F_X(x) =  \int_{\optimes_{i=1}^d (-\infty \, ;  \, x_i]} p_X(u) \, du
   \]
   %
   o, equivalentemente, para $F_X$ es (continua y) derivable sobre $\Rset^d$ (con
@@ -925,54 +955,30 @@ p_{X_{I_k}}(x_{I_k}) = \sum_{\forall i \not\in I_k, x_i \in \X_i} p_X(x)
     probabilidad} y  denotaremos todav\'ia  \ $|\X|$ \  el volumen (o  medida de
   Lebesgue) de \ $\X$, posiblemente infinito.
 \end{definicion}
-}
 
-% Cuando se trabaja  con $d\geq 2$ variables aleatorias  es conveniente definir un
-% \emph{vector aleatorio} de dimensi\'on $d$,  y apelar para su estudio a nociones
-% del \'algebra  lineal y  a notaci\'on matricial.   Se tiene el  vector aleatorio
-% $d$-dimensional  \  $\mathbf{X} =  \{X^1,  \ldots,  X^d  \}$, o  simplemente  $X
-% =  \begin{pmatrix}  X^1  &  \cdots  & X^d  \end{pmatrix}^t$,  caracterizado  por
-% $d$-uplas de variables aleatorias reales, con funci\'on densidad de probabilidad
-% conjunta~$p(x^1, \ldots, x^d)$. La ley  del vector $\mathbf{X}$ es una medida de
-% probabilidad sobre $\Rset^d$, con
-% %
-% $$
-% P_{\mathbf{X}}(\mathbf{A})  =   \Pr(\mathbf{X}\in\mathbf{A})  =  \int_{\mathbf{A}}
-% p(x^1, \ldots, x^d)\ dx^1\ldots dx^d
-% $$
-% %
-% para  $\mathbf{A}  \subset \mathbf{\Omega}$,  siendo  la  pdf  conjunta $p$  una
-% funci\'on positiva, definida sobre $\mathbf{\Omega}\subset\Rset^d$, y tal que se
-% satisface la condici\'on de normalizaci\'on:
-% %
-\modif{Como en  el caso escalar, $p_X  \ge 0$ \ no  es necesario menor  que 1 y}
-satisface la condici\'on de normalizaci\'on
+Como en el caso  escalar, $p_X \ge 0$ \ no es necesario  menor que 1 y satisface
+la condici\'on de normalizaci\'on
 %
 \[
-\modif{\int_\X p_X(x) \, dx = \int_{\Rset^d} p_X(x) \ dx  = 1}
+\int_\X p_X(x) \, dx = \int_{\Rset^d} p_X(x) \ dx  = 1
 \]
 
-\modif{Mencionamos  de que}  las $d$  variables aleatorias  $X_1,  \ldots, X_d$,
-\modif{componentes}  de  un  vector  aleatorio  $X$  \modif{son}  independientes
-\modif{si y solamente  si se factoriza la funci\'on de  repartici\'on, lo que da
-  derivando esta,}
-% corresponden a eventos mutuamente
-% independientes. Esto se  da si y s\'olo  si la pdf conjunta se  factoriza en las
-% $d$ pdf marginales:
+Mencionamos de que las $d$  variables aleatorias $X_1, \ldots, X_d$, componentes
+de un vector aleatorio $X$ son  independientes si y solamente si se factoriza la
+funci\'on de repartici\'on, lo que da derivando esta,
+%
 \[
-\modif{X_i  \:  \mbox{mutualmente  independientes} \quad  \Leftrightarrow  \quad
-  p_X(x) = p_{X_1}(x_1) \ldots p_{X_d}(x_d)}
+X_i \:  \mbox{ mutualmente independientes} \quad \Leftrightarrow  \quad p_X(x) =
+p_{X_1}(x_1) \ldots p_{X_d}(x_d)
 \]
-% p(x^1, \ldots, x^d) = p_{X^1}(x^1) \cdots p_{X^d}(x^d) . 
-% $$
 
 
-\modif{Terminamos esta  secci\'on mencionando que,  de la formula de  calculo de
-  funci\'on          de          repartici\'on         marginales          visto
-  pagina~\pageref{pagina:MP:MarginalesF},    para   un   subconjunto    $I_k   =
-  (i_1,\ldots,i_k)$ de $1  \le k \le d$ elementos  de $\{ 1 , \ldots  , d \}^k$,
-  $X_{I_k} = \begin{bmatrix} X_{i_1}  & \cdots & X_{i_k}\end{bmatrix}^t$ la {\it
-    densidad de probabilidad marginal} de $X_{I_k}$ es dada por
+Terminamos esta secci\'on mencionando que, de la formula de calculo de funci\'on
+de  repartici\'on marginales visto  pagina~\pageref{pagina:MP:MarginalesF}, para
+un subconjunto $I_k = (i_1,\ldots,i_k)$ de $1  \le k \le d$ elementos de $\{ 1 ,
+\ldots   ,  d   \}^k$,   $X_{I_k}   =  \begin{bmatrix}   X_{i_1}   &  \cdots   &
+  X_{i_k}\end{bmatrix}^t$  la   {\it  densidad  de   probabilidad  marginal}  de
+$X_{I_k}$ es dada por
 %
 \[
 p_{X_{I_k}}(x_{I_k})  = \int_{\times_{i  \not\in  I_k} \X_i}  p_X(x) \,  \prod_{i
@@ -980,18 +986,9 @@ p_{X_{I_k}}(x_{I_k})  = \int_{\times_{i  \not\in  I_k} \X_i}  p_X(x) \,  \prod_{
       I_k} dx_i
 \]
 %
-En particular, l}a funci\'on densidad de probabilidad marginal que caracteriza a
-la  variable   aleatoria  $X_i$  es  la   ley  que  se   obtiene  integrando  la
-\modif{densidad de  probabilidad} conjunta sobre todas las  variables excepto la
-$i$-\'esima.
-% %
-% $$
-% p_{X^i}(x^i)  =  \int_{\mathbf{\Omega}^{(i)}}  p(x^1, \ldots,  x^d)\  dx^1\ldots
-% dx^{i-1} dx^{i+1} \ldots dx^d
-% $$
-% %
-% donde $\mathbf{\Omega}^{(i)}\subset\Rset^{d-1}$  barre el espacio  muestral para
-% $X^1, \ldots, X^{i-1}, X^{i+1}, \ldots, X^d$.
+En particular, la funci\'on densidad  de probabilidad marginal que caracteriza a
+la variable aleatoria  $X_i$ es la ley que se obtiene  integrando la densidad de
+probabilidad conjunta sobre todas las variables excepto la $i$-\'esima.
 
 \
 
@@ -1005,17 +1002,17 @@ $i$-\'esima.
 \subseccion{Transformaci\'on de variables y vectores aleatorios}
 \label{sec:MP:Transformacion}
 
-\modif{En esta secci\'on  nos interesamos al effect de una  variable o un vector
-  aleatorio. Por ejemplo,en  un juego con dos dados, nos  podemos interesar a la
-  ley de la suma que dar\'ia el  n\'umero de casilla de que debemos adelantar en
-  un juego de la oca.
+En  esta  secci\'on nos  interesamos  al  effect de  una  variable  o un  vector
+aleatorio. Por  ejemplo, en un juego con  dos dados, nos podemos  interesar a la
+ley de la suma que dar\'ia el n\'umero de casilla de que debemos adelantar en un
+juego de la oca.
 %
 \begin{teorema}[Transformaci\'on medible de un vector aleatorio]
-  Sea $X: (\Omega,\A) \mapsto (\Rset^d , \B(\Rset^d))$ \ una variable aleatoria,
-  y  $g: (\Rset^d  ,  \B(\Rset^d)) \mapsto  (\Rset^{d'}  , \B(\Rset^{d'}))$  una
-  funci\'on medible. Entonces, $Y = g(X)$ es una variable aleatoria $(\Omega,\A)
-  \mapsto (\Rset^{d'} ,  \B(\Rset^{d'}))$. Adem\'as, la medida imagen  \ $P_Y$ \
-  es vinculada \ a \ $P_X$ \ por
+  Sea  \  $X:  (\Omega,\A)  \mapsto  (\Rset^d ,  \B(\Rset^d))$  \  una  variable
+  aleatoria,   y  \   $g:  (\Rset^d   ,  \B(\Rset^d))   \mapsto   (\Rset^{d'}  ,
+  \B(\Rset^{d'}))$ \  una funci\'on  medible. Entonces,  \ $Y =  g(X)$ \  es una
+  variable aleatoria  \ $(\Omega,\A)  \mapsto (\Rset^{d'} ,  \B(\Rset^{d'}))$. \
+  Adem\'as, la medida imagen \ $P_Y$ \ es vinculada \ a \ $P_X$ \ por
   %
   \[
   \forall \, B \in \B(\Rset^{d'}), \quad P_Y(B) = P_X(g^{-1}(B))
@@ -1042,7 +1039,7 @@ $(\B(\Rset^d),\B(\Rset^{d'}))$-medible~\cite{AthLah06}.
   funciones medibles (quizas, tratando de los momentos/integraci\'on).}
 
 
-Mencionamos  que  si $\X  =  X(\Omega)$  es discreto,  entonces  $\Y  = g(\X)  =
+Mencionamos  de que si  $\X =  X(\Omega)$ es  discreto, entonces  $\Y =  g(\X) =
 Y(\Omega)$ ser\'a discreto tambi\'en, y:
 %
 \begin{teorema}[Funci\'on de masa por transformaci\'on medible]
@@ -1090,7 +1087,7 @@ continuas (y diferenciables):
 
 En lo  que sigue, nos interesamos  m\'as especialmente al caso  de funciones $g:
 (\Rset^d ,  \B(\Rset^d)) \mapsto (\Rset^d ,  \B(\Rset^d))$.  De hecho,  si $d' <
-d$,    es   sencillo    llegar   al    caso   considerado    a\~nandido   $d-d'$
+d$,   es    sencillo   llegar   al   caso    considerado   a\~nandiendo   $d-d'$
 transformaciones. Por ejemplo, con $d = 2$  si nos interesamos a $X_1 + X_2$, se
 puede considerar $\begin{bmatrix} X_1 + X_2 & X_2 - X_1\end{bmatrix}^t$ y llegar
 a la variable de  inter\'es por calculo de marginal. Si $d'  > d$ la situaci\'on
@@ -1104,7 +1101,7 @@ dada por el teorema siguiente~\cite{Bre88, JacPro03, AthLah06, Coh13, HogMck13}:
 %
 \begin{teorema}[Densidad de probabilidad por transformaci\'on continua inyectiva diferenciable]
   Sean $X$, vector aleatorio  $d$-dimensional continuo y admitiendo una densidad
-  de  probabilidad $p_X$,  $g:\Rset^d \mapsto  \Rset^d$ una  funci\'on continua,
+  de probabilidad  $p_X$, \ $g:\Rset^d  \mapsto \Rset^d$ una  funci\'on continua
   inyectiva y diferenciable tal que
   %  ~\footnote{\modif{De  hecho,  se   puede  extender  el  resultado  para  un
   %      determinente del  Jacobiano cancelandose  en  un conjunto  de punto  de
@@ -1113,12 +1110,12 @@ dada por el teorema siguiente~\cite{Bre88, JacPro03, AthLah06, Coh13, HogMck13}:
   %     integrable).}}
  $\left| \Jac_g \right| > 0$,
   %
-  donde $\Jac_g$  denota la matriz de  componentes $\frac{\partial g_i}{\partial
-    x_j}$, matriz  Jacobiana de la transformaci\'on \  $g \equiv \begin{bmatrix}
-    g_1(x_1 , \ldots , x_d) & \cdots & g_d(x_1 , \ldots , x_d) \end{bmatrix}^t$)
-  \  y  \  $|\cdot|$  representa  el  valor  absoluto  del  determinante  de  la
-  matriz. Sea \ $Y = g(X)$.  Entonces $Y$ es continua admitiendo una densidad de
-  probabilidad $p_Y$ de soporte $\Y = g(\X) = Y(\Omega)$ tal que
+ donde $\Jac_g$ denota la  matriz de componentes \ $\frac{\partial g_i}{\partial
+   x_j}$, \ matriz Jacobiana de  la transformaci\'on \ $g \equiv \begin{bmatrix}
+   g_1(x_1 , \ldots , x_d) & \cdots & g_d(x_1 , \ldots , x_d) \end{bmatrix}^t$ \
+ y \ $|\cdot|$ representa el valor absoluto del determinante de la matriz. Sea \
+ $Y = g(X)$.   Entonces $Y$ es continua admitiendo  una densidad de probabilidad
+ $p_Y$ de soporte $\Y = g(\X) = Y(\Omega)$ tal que
   %
   \[
   \forall \,  y \in  \Y, \quad p_Y(y)  = p_X(g^{-1}(y))  \left| \Jac_{g^{-1}}(y)
@@ -1160,31 +1157,32 @@ El caso escalar puede ser visto como caso particular, dando:
   \]
 \end{corolario}
 %
-}
-\noindent  Una forma  alternativa  de derivar  este  resultado es  partir de  la
-funci\'on  de  repartici\'on\modif{,  notando   de  que  $g$  es  necesariamente
-  monotona~\footnote{\modif{Fijense de que $P(X \ge x) =  1 - P(X < x) = 1 - P(X
-      \le x) +  P(X = x)$, pero $X$ siendo  continua, $ P(X = x)  = 0$.}}: si $y
-  \not\in \Y$, necesariamente $p_Y = 0$ ($F_Y(y) = 1$ \ si \ $y > \sup \Y$ \ y \
-  $F_Y(y) = 0$ \ si \ $y < \inf \Y$) \ y para cualquier \ $y \in \Y$,}
+\noindent  De hecho,  se puede  ver estos  resultados esquematicamente  como una
+``conservaci\'on'' de  probabilidad, $p_X(x)  dx = p_Y(y)  dy$, el  volumen $dy$
+siendo relacionado al $dx$ a traves de la Jacobiana.
+
+Una forma  alternativa de derivar  este resultado es  partir de la  funci\'on de
+repartici\'on, notando  de que $g$  es necesariamente monotona~\footnote{Fijense
+  de que  $P(X \ge x) =  1 - P(X <  x) = 1  - P(X \le x)  + P(X = x)$,  pero $X$
+  siendo continua, $ P(X  = x) = 0$.}: si $y \not\in  \Y$, necesariamente $p_Y =
+0$ ($F_Y(y) = 1$ \ si \ $y > \sup \Y$ \ y \ $F_Y(y) = 0$ \ si \ $y < \inf \Y$) \
+y para cualquier \ $y \in \Y$,
 %
 \[
 F_Y(y) = P(Y \le y) = P(g(X) \le y) =
-\modif{
 \left\{\begin{array}{lll}
 P(X \le g^{-1}(y)) = F_X(g^{-1}(y)) & \mbox{si} & g \quad \mbox{es creciente}\\[2.5mm]
 %
 P(X \ge g^{-1}(y)) = 1 - F_X(g^{-1}(y)) & \mbox{si} & g \quad \mbox{es decreciente}
 \end{array}\right.
-}
 \]
 %
-\modif{el resultado se  obtiene calculando} las derivadas del  primer y \'ultimo
+El  resultado  se  obtiene  calculando  las  derivadas  del  primer  y  \'ultimo
 t\'erminos respecto de la variable transformada $y$.
 
-\modif{ Si $g$  no es inyectiva, $g^{-1}$ es multivaluada  o multiforme. En este
-  caso,  se  puede todav\'ia  tratar  el  problema,  particionando $\Rset^d$  en
-  conjuntos donde $g$ es inyectiva, dando
+Si $g$ no es inyectiva, $g^{-1}$  es multivaluada o multiforme. En este caso, se
+puede todav\'ia  tratar el problema, particionando $\Rset^d$  en conjuntos donde
+$g$ es inyectiva, dando
 %
 \begin{teorema}
   Sean $X$, vector aleatorio  $d$-dimensional continuo y admitiendo una densidad
@@ -1225,13 +1223,12 @@ t\'erminos respecto de la variable transformada $y$.
   $g^{-1}\left( B \cap g(\X_k) \right) = g_k^{-1}\left( B \cap g(\X_k) \right)$.
 \end{proof}
 %
-Por ejemplo, \modif{sea  $X$ definido sobre $\X =  \Rset$ y} la transformaci\'on
-de  variables \  $Y  = X^2$.   Se  tiene \  $y =  g(x)  = x^2$,  \modif{continua
-  diferenciable de  derivada nula sobre $\X_{[0]}  = \{ 0 \}$,  de medida nula,}
-cuyas  inversas  son \  $g_1^{-1}(y)  =  \sqrt{y}$  \ \modif{sobre  $\X_{[1]}  =
-  \Rset_-^*$}  \  y  \  $g_2^{-1}(y)  = -  \sqrt{y}$  \modif{sobre  $\X_{[2]}  =
-  \Rset_+^*$};  luego  \   $p_Y(y)  =  \frac{p_X(\sqrt{y})  +  p_X(-\sqrt{y})}{2
-  \sqrt{y}}$, \ \modif{sobre $\Y = \Rset_+^*$.}
+Por ejemplo, sea  $X$ definido sobre \  $\X = \Rset$ \ y  la transformaci\'on de
+variables \ $Y =  X^2$.  Se tiene \ $y = g(x)  = x^2$, continua diferenciable de
+derivada nula sobre \ $\X_{[0]} = \{ 0 \}$, de medida nula, cuyas inversas son \
+$g_1^{-1}(y) = \sqrt{y}$  \ sobre $\X_{[1]} = \Rset_-^*$ \ y  \ $g_2^{-1}(y) = -
+\sqrt{y}$ sobre $\X_{[2]} = \Rset_+^*$;  luego \ $p_Y(y) = \frac{p_X(\sqrt{y}) +
+  p_X(-\sqrt{y})}{2 \sqrt{y}}$, \ sobre $\Y = \Rset_+^*$.
 
 De nuevo, en el caso escalar, se puede salir de la funci\'on de repartici\'on
 %
@@ -1271,21 +1268,21 @@ Fig.~\ref{fig:MP:TransformacionVA}.
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/TransformacionVA} \end{center}
 %
-\leyenda{\modif{(a): Ilustraci\'on de una transformaci\'on $g$ no inyectiva, tal
-    que  $\X_{[0]} =  \{  x,  \: g'(x)  =  0 \}$,  representado  por las  lineas
-    punteadas  ($x$  correspondiente),  es  de  medida de  Lebesgue  nula.   Los
-    $\X_{[k]}$ son descrito debajo de  cada dominio.  La linea discontinua da un
-    nivel $y$  y los  puntos en el  eje $x$  representan $g_k^{-1}(y), \:  k \in
-    I(y)$; en el ejemplo, $I(y) = \{ 1 \,  ; \, 2 \}$ \ y, suponiendo de que $\X
-    = \Rset$, \ $F_Y(y) = F_X(g_1^{-1}(y)) + 1-F_X(g_2^{-1}(y))$.}}
+\leyenda{(a): Ilustraci\'on  de una transformaci\'on  $g$ no inyectiva,  tal que
+  $\X_{[0]} = \{ x, \: g'(x) = 0 \}$, representado por las lineas punteadas ($x$
+  correspondiente), es de medida de  Lebesgue nula.  Los $\X_{[k]}$ son descrito
+  debajo de cada dominio.  La linea discontinua  da un nivel $y$ y los puntos en
+  el eje $x$ representan $g_k^{-1}(y), \: k \in I(y)$; en el ejemplo, $I(y) = \{
+  1  \,  ;  \,  2 \}$  \  y,  suponiendo  de  que  $\X  = \Rset$,  \  $F_Y(y)  =
+  F_X(g_1^{-1}(y)) + 1-F_X(g_2^{-1}(y))$.}
 \label{fig:MP:TransformacionVA}
 \end{figure}
 
-\modif{Una tercera alternativa,  a pesar que sea delicado,  es de apoyarse sobre
-  la teoria  de las  distribuciones y} expresar  como \ $\displaystyle  p_Y(y) =
-\int_\X  p_X(x) \,  \delta(y-g(x)) \,  dx$, donde  se usa  la expansi\'on  de la
-funci\'on delta  en t\'erminos  de sus ceros:  \ $\delta(y-g(x)\,)=  \sum_{k \in
-  I(y)}    \frac{1}{\left|   g_k'\left(    g_k^{-1}    (y)   \right)    \right|}
+Una  tercera alternativa,  a pesar  que sea  delicado, es  de apoyarse  sobre la
+teoria de las  distribuciones y expresar como \  $\displaystyle p_Y(y) = \int_\X
+p_X(x) \,  \delta(y-g(x)) \, dx$,  donde se usa  la expansi\'on de  la funci\'on
+delta  en  t\'erminos de  sus  ceros:  \  $\delta(y-g(x)\,)= \sum_{k  \in  I(y)}
+\frac{1}{\left|      g_k'\left(      g_k^{-1}      (y)     \right)      \right|}
 \delta(x-g_k^{-1}(y))$~\cite{ManWol95}.
 
 Es  importante  notar  de  que  la  condici\'on $\X_{[0]}$  de  medida  nula  es
@@ -1304,88 +1301,17 @@ discontinua en \ $y = 2$: \ $Y$ \ no es continua.
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/TransformacionVANoContinua} \end{center}
 %
-\leyenda{\modif{En (a)  se dibuja $g(x) = \left( 1  + \cos\left( (1-|x|) \frac{\pi}{2}
+\leyenda{En (a)  se dibuja $g(x) =  \left( 1 +  \cos\left( (1-|x|) \frac{\pi}{2}
     \right)   \right)   \un_{(1  \,   ;   \,  3)}(|x|)   +   2   \un_{[0  \,   ;
     1]}(|x|)$. Suponiendo de que $\X = (-3 \, ; \, 3)$, claramente $\X_{[0]} = [
   -1 \,  ; \, 1]$ no  es de medida nula,  dando para $X$ uniforme  sobre $\X$ la
   variable $Y = g(X)$ no continua de funci\'on de repartici\'on representenda en
-  (b).  }}
+  (b).  }
 \label{fig:MP:TransformacionVANoContinua}
 \end{figure}
-  }
 
-%Sea $X$ una  variable aleatoria (continua, en general)  definida en el intervalo
-%$[x_m, x_M]$ con funci\'on densidad  de probabilidad $p(x)$. Sea $Y=\Psi(X)$ una
-%funci\'on real  de $X$, luego $Y$  toma los valores $y=\Psi(x)$  en el intervalo
-%$[y_m,y_M]$.  La funci\'on  densidad  de probabilidad  $q(y)$  para la  variable
-%aleatoria transformada $Y$ se obtiene  de la siguiente manera, dependiendo de la
-%forma de la transformaci\'on:
-%
-%\begin{itemize}
-%\item Si  $\Psi$ es inversible, con  inversa (\'unica), se  tiene \ $x=\Phi(y)$,
-%  con  $\Phi=\Psi^{-1}$.  A partir  de  la  propiedad  de conservaci\'on  de  la
-%  probabilidad
-%  %
-%  $$
-%  |q(y)\, dy| = |p(x) \, dx|
-%  $$ 
-%  %
-%  para  una correspondencia  biun\'ivoca  entre $x$  e  $y$, se  obtiene la  pdf
-%  transformada
-%  %
-%  $$
-%  q(y)  = p(x)  \left| \frac{dx}{dy}  \right| =  p\left(\Phi(y)\right)  \ \left|
-%    \Phi'(y)   \right|   =  \frac{p\left(\Phi(y)\right)}{\left|   \Psi'(\Phi(y))
-%    \right|} .
-%  $$
-%  %
-%  Una forma alternativa  de derivar este resultado es partir  de la funci\'on de
-%  repartici\'on:
-%  %
-%  $$
-%  F_Y(y)  =  P(Y\leq  y)  =  P(\Psi(X)  \leq  y)  =  P(X\leq  \Psi^{-1}  (y))  =
-%  F_X(\Phi(y))
-%  $$
-%  %
-%  y  calcular las  derivadas del  primer y  \'ultimo t\'erminos  respecto  de la
-%  variable transformada~$y$.
-%
-%\item Si la inversa de $\Psi$  es multivaluada, cada valor de $y$ se corresponde
-%  con  un conjunto de  valores de  $x$, digamos  $\{x_k =  \Phi_k(y), \  k=1, 2,
-%  \ldots\}$.  Debido a  que  estas soluciones  son  mutuamente excluyentes,  las
-%  probabilidades se suman, de modo que
-%  %
-%  $$
-%  q(y)   =    \sum_k   p(x_k)   \left|   \frac{dx_k}{dy}    \right|   =   \sum_k
-%  \frac{p\left(\Phi_k(y)\right)}{\left| \Psi'(\Phi_k(y)) \right|} ,
-%  $$
-%  %
-%  que   formalmente  
-%\hfill
-%
-%Consideramos ahora el  caso de un vector aleatorio  $\mathbf{X} = \{X^1, \ldots,
-%X^d\}$  con  funci\'on  densidad  de  probabilidad conjunta  \  $p(x^1,  \ldots,
-%x^d)$. Se  define otro vector aleatorio  \ $\mathbf{Y} =  \{Y^1, \ldots, Y^d\}$,
-%por   medio   de   las   transformaciones  \   $Y^j=\Psi^j(X^1,\ldots,X^d)$,   \
-%$j=1,\ldots,d$. Suponiendo que las  funciones $\Psi^j$ tienen inversa (\'unica),
-%se  puede escribir \  $X^j=\Phi^j(Y^1,\ldots,Y^d)$ para  cada $j$.  La funci\'on
-%densidad de probabilidad conjunta $q(y^1,\ldots,y^d)$ para $\mathbf{Y}$ se puede
-%obtener a partir de la propiedad de conservaci\'on de la probabilidad
-%%
-%$$
+
 %|q(y^1,\ldots,y^d)\ dy^1\cdots dy^d| = |p(x^1,\ldots,x^d) \ dx^1\cdots dx^d| .
-%$$ 
-%%
-%Para  una  correspondencia biun\'ivoca  entre  $\mathbf{x}$  e $\mathbf{y}$,  se
-%obtiene la pdf transformada
-%%
-%$$
-%q(y^1,\ldots,y^d) = \left| \Jac_\Phi \right| \, p(x^1,\ldots, x^d) 
-%%%= \int  p(x^1,\ldots, x^d) \delta(y^1-\Psi^1) .......  dx^1 .....
-%$$
-%%
-%donde  $\Jac_\Phi =  \frac{\partial(\Phi^1  , \ldots  , \Phi^d)}{\partial(y^1  ,
-%  \ldots , y^d)}$ es el Jacobiano de la transformaci\'on.
 
 %% Ejercicio: Estudiar el caso multivaluado / Resolver un ej. 
 
