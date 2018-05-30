@@ -126,8 +126,9 @@ con respeto a una medida:
     \un_{A_i} + \un_{A_j} \right) d\mu(\omega) = \mu(A_i \cup A_j) = \int_\Omega
   \un_{A_i} d\mu(\omega)  + \int_\Omega \un_{A_j} d\mu(\omega)$  y entonces, sin
   perdida  de  generalidad~\footnote{Si  $A_i,  A_j$ no  son  disjuntos,  sufice
-    considerar  $A_i\backslash A_j,  \: A_j\backslash  A_j,  A_i \cap  A_j$ \  y
-    respectivamente los  coefficientes \ $\alpha_i,  \: \alpha_j, \:  \alpha_i +
+    considerar $A_i\backslash A_j, \: A_j\backslash  A_j, A_i \cap A_j$ \ con $A
+    \backslash B = \{ \omega: \omega \in  A \: \mbox{y} \: \omega \not\in B\}$ \
+    y respectivamente los coefficientes \  $\alpha_i, \: \alpha_j, \: \alpha_i +
     \alpha_j$.}   para  un  conjunto  $\{  A_j  \}$  numerable,  con  los  $A_j$
   disjuntos, y $\{ \alpha_j \}$ reales no negativos, la integral de la funci\'on
   escalonada \ $\displaystyle \sum_j \alpha_j \un_{A_j}$ \ es dada por
@@ -237,7 +238,8 @@ igualdad casi siempre:
 \end{definicion}
 %
 \noindent Ahora, si  dos funciones \ $p_1  = p_2 \quad (\mu-c.s.)$, y  $C$ es el
-conjunto  donde   no  son  iguales,  de  \   $\displaystyle  \int_A  p_1(\omega)
+conjunto donde no son iguales, notando \ $A \backslash B = \{ \omega: \omega \in
+A \:  \mbox{y} \:  \omega \not\in B\}$,  de \ $\displaystyle  \int_A p_1(\omega)
 d\mu(\omega) = \int_{A\backslash C} p_1(\omega) d\mu(\omega) = \int_{A\backslash
   C} p_2(\omega) d\mu(\omega)  = \int_A p_2(\omega) d\mu(\omega)$ se  ve que dos
 funciones iguales casi  siempre pueden ser densidad de una  medida con respeto a
@@ -265,8 +267,8 @@ Lebesgue.
 
 \
 
-Con  estas  series de definiciones,  tenemos  todo   lo  necesario  para   introducir  la
-definici\'on de variables/vectors aleatoria(o)s reales y sus caracterizaciones.
+Con estas series  de definiciones, tenemos todo lo  necesario para introducir la
+definici\'on de variables/vectores aleatoria(o)s reales y sus caracterizaciones.
 
 
 % ================================= VA y distribuci\'on de probabilidad
@@ -331,7 +333,7 @@ Naturalmente, de las propiedades de una medida de probabilidad,
   \lim_{x \to +\infty} F_X(x) = 1$  (viene de $P_X(\emptyset) = 0$ y $P_X(\Rset)
   = 1$);
 %
-\item  $F_X$ es creciente  \big(viene de  que \  $x_1 \le  x_2 \:  \Leftightarrow \:
+\item  $F_X$ es creciente  \big(viene de  que \  $x_1 \le  x_2 \:  \Leftrightarrow \:
   (-\infty \, ; \, x_1] \subseteq (-\infty \, ; \, x_2]$\big);
 %
 \item $F_X$ no es necesariamente continua  (lo vamos a ver m\'as adelante), pero
@@ -348,7 +350,7 @@ aleatorias reales.   Como en  el caso  univariado, se define  este vector  de la
 manera siguiente~\cite{AthLah06, Coh13, Bre88}:
 %
 \begin{definicion}[Vector aleatorio real]
-  Un variable aleatorio real es una funci\'on medible
+  Un vector real es una funci\'on medible
   %
   \[
   X: (\Omega,\A,P) \mapsto (\Rset^d,\B(\Rset^d),P_X)
@@ -357,8 +359,8 @@ manera siguiente~\cite{AthLah06, Coh13, Bre88}:
   donde  $\B(\Rset^d)$  son  los  borelianos  de  $\Rset^d$,  $\sigma$-\'algebra
   generada por  los productos cartesianos $(-\infty  \, ; \,  b_1] \times \cdots
   \times (-\infty \,  ; \, b_d]$ y donde la medida  $P_X$ sobre $\B(\Rset^d)$ es
-  la  medida imagen  de $P$  llamada  {\it distribuci\'on  de probabilidad}  del
-  vector aleatorio $X$. Como en el caso escalar,
+  la medida  imagen de  $P$ llamada {\it  distribuci\'on de probabilidad}  de la
+  variable aleatoria (o vector aleatorio) \ $X$. Como en el caso escalar,
   %
  \[
  (X \in B) \equiv X^{-1}(B) = \{ \omega \in \Omega: \: X(\omega) \in B \} \qquad
@@ -1334,4 +1336,31 @@ donde $d^2 z=dx\,dy$.
 }
 
 
-\SZ{Tratar el caso de leyes condicionales; hablar de simulaci\'on? Metoto inverso, mezcla, rejeccion, a traves de la condicional para el caso vectorial?}
+% ================================= Vector discreto
+
+\modif{
+\subseccion{Leyes condicionales}
+\label{sec:MP:LeyesCondicionales}
+
+Tratando de un par de vectores aleatorios  \ $X$ \ e \ $Y$, una pregunta natural
+puede ser de caracterisar el vector  $Y$ si ``observamos $X = x$''. En palabras,
+la pregunta es de describir la lei de $Y$ ``sabiendo de que $X = x$''.
+
+Un caso  sencillo a  estudiar es cuando  $\X =  X(\Omega)$ es discreto.  En este
+caso, para  cualquier $x  \in \X$, tenemos  $P_X(x) = P(X  = x)  \ne 0$ y  de la
+definici\'on  de  la  probabilidad condicional  Def.~\ref{def:ProbaCondicional},
+$P(Y \in A | X = x) = \frac{P(Y  \in A \cap X = x}{P(X=x)}$ define una medida de
+probabilidad que notaremos
+%
+\[
+P_{Y|X=x}(A) = P(Y \in A | X = x)
+\]
+%
+
+}
+
+
+%%%%%%%%%%%%%
+
+
+\SZ{hablar de simulaci\'on? Metoto inverso, mezcla, rejeccion, a traves de la condicional para el caso vectorial?}
