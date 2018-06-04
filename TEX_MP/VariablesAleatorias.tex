@@ -100,7 +100,7 @@ una $\sigma$-\'algebra particular~\cite{AthLah06, Bog07:v1, Bog07:v2, Coh13}:
 Se necesita ahora definir la  noci\'on de integraci\'on de una funci\'on medible
 con respeto a una medida:
 %
-\begin{definicion}[Medida e intrgraci\'on]
+\begin{definicion}[Medida e intergraci\'on]
   Para una medida  cualquiera, sobre un espacio de  medida $(\Omega,\A,\mu)$, se
   define la integraci\'on a partir de
   %
@@ -144,24 +144,24 @@ con respeto a una medida:
 Antes de definir la integraci\'on de una funci\'on real, medible, cualquiera, el
 \'ultimo paso que falta es el siguiente:
 %
-\begin{teorema}[Funci\'on medible como limite]
+\begin{teorema}[Funci\'on medible como limite]\label{Th:MP:MedibleLimite}
   Sea $g: (\Omega,\A) \mapsto  (\Rset,\B(\Rset))$, no negativa y medible, existe
-  una serie  $\{ g_n  \}_{n \in \Nset}$  creciente de funciones  escalonadas que
-  converge simplemente (punto a punto) hacia $g$.
+  una sucesi\'on  $\{ g_n \}_{n  \in \Nset}$ creciente de  funciones escalonadas
+  que converge simplemente (punto a punto) hacia $g$.
 \end{teorema}
 %
 \begin{proof}
-  La  serie   $\displaystyle  g_n   =  \sum_{k=0}^{n  2^n-1}   \frac{k}{2^n}  \,
+  La  sucesi\'on  $\displaystyle g_n  =  \sum_{k=0}^{n  2^n-1} \frac{k}{2^n}  \,
   \un_{g^{-1}\left(  \left[  \frac{k}{2^n}   \,  ;  \,  \frac{k+1}{2^n}  \right)
     \right)} + n \, \un_{g^{-1}\left( \left[ n \, ; \, +\infty \right) \right)}$
-  es  escalonada, creciente  y  converge hacia  $g$  \ (fijense  que esta  serie
+  es escalonada, creciente  y converge hacia $g$ \  (fijense que esta sucesi\'on
   comparte la idea subtendido a la integraci\'on de Riemann).
 \end{proof}
 
 De  este resultado, se  puede generalizar  la noci\'on  de integraci\'on  de una
 funci\'on real:
 %
-\begin{definicion}[Integraci\'on de una funci\'on real]
+\begin{definicion}[Integraci\'on de una funci\'on real]\label{Def:MP:IntegracionReal}
   Sea $g: (\Omega,\A)  \mapsto (\Rset,\B(\Rset))$, no negativa y  medible, y $\{
   g_n  \}_{n  \in  \Nset}$  creciente  de  funciones  escalonadas  que  converge
   simplemente hacia $g$. Por definici\'on,
@@ -172,24 +172,113 @@ funci\'on real:
   \]
   %
   Fijense de que el limite puede ser infinita.\newline Sea ahora $g: (\Omega,\A)
-  \mapsto  (\Rset,\B(\Rset))$ medible cualquiera.  Se verifica  sencillamente de
-  que tambi\'en $|g|$ es medible y,  por definici\'on, $g$ es dicha integrable a
-  $\mu$ si la integral de $|g|$ es finita,
+  \mapsto (\Rset,\B(\Rset))$  medible cualquiera.  Se  verifica sencillamente de
+  que  tambi\'en   $|g|$  es   medible  y,  por   definici\'on,  $g$   es  dicha
+  $\mu$-integrable si la integral de $|g|$ es finita,
   %
   \[
-  g\: \mbox{ integrable} \quad  \Leftrightarrow \quad \int_\Omega |g(\omega)| \,
-  d\mu(\omega) < +\infty
+  g\: \mu-\mbox{integrable} \quad  \Leftrightarrow \quad \int_\Omega |g(\omega)|
+  \, d\mu(\omega) < +\infty
   \]
   %
   Por  fin,  se escribe  $g  =  g_+  + g_-$  con  $g_+  =  \max(g,0)$ y  $g_-  =
   \min(g,0)$. Es  sencillo ver de que  si $g_+$ y  $g_-$ son medible. Si  $g$ es
-  integrable, necesariamente $g_+$ y $g_-$ son integrables, y, por definici\'on
+  $\mu$-integrable, necesariamente  $g_+$ y $g_-$ son  $\mu$-integrables, y, por
+  definici\'on
   %
   \[
   \int_\Omega   g(\omega)   \,  d\mu(\omega)   =   \int_\Omega  g_+(\omega)   \,
   d\mu(\omega) - \int_\Omega \left( - g_-(\omega) \right) \, d\mu(\omega)
   \]
 \end{definicion}
+
+\modif{
+\SZ{Poner eso en un apendice?}
+
+A  continuaci\'on,  damos unos  teoremas  que  ser\'an  muy \'util  m\'as
+  adelante, sin detallar las pruebas. Por eso, se puede referirse a~\cite{toto}.
+%
+\begin{teorema}[Teorema de convergencia monotona]
+  Sea  \ $\{  f_n \}_{n  \in  \Nset}$ \  una sucesi\'on  creciente de  funciones
+  medibles  sobre $(\Omega,\A,\mu)$,  positivas, convergiendo  simplemente hacia
+  una funci\'on \ $f$, medible. Entonces
+  %
+  \[
+  \lim_{n  \to  +\infty}  \int_\Omega  f_n(\omega)  d\mu(\omega)  =  \int_\Omega
+  f(\omega) d\mu(\omega)
+  \]
+\end{teorema}
+%
+De hecho se proba este teorema a partir de la definici\'on de la definici\'on de
+la  integraci\'on. Este  teorema  dice dan  una  condici\'on simple  permitiendo
+intercambia integraci\'on y limite.
+
+\begin{corolario}
+  Sea \ $\{  f_n \}_{n \in \Nset}$ \ una sucesi\'on  de funciones medibles sobre
+  $(\Omega,\A,\mu)$,  positivas,   tal  que  la  serie   $\sum_n  f_n$  converge
+  simplemente hacia una funci\'on \ $f$, $\mu$-integrable. Entonces
+  %
+  \[
+  \int_\Omega  \sum_{n   \in  \Nset}  f_n(\omega)   d\mu(\omega)  =  \int_\Omega
+  f(\omega) d\mu(\omega)
+  \]
+\end{corolario}
+%
+Es  una  consecuencia del  teorema  de  convergencia  monotona, considerando  la
+sucesi\'on creciente $\{ \sum_{k=0}^n f_n \}_{n \in \Nset}$.
+
+\begin{teorema}[Teorema de convergencia dominada]
+  Sea  \ $\{  f_n \}_{n  \in  \Nset}$ \  una sucesi\'on  creciente de  funciones
+  medibles sobre $(\Omega,\A,\mu)$  convergiendo simplemente hacia una funci\'on
+  \ $f$, medible.  Suponemos que existe una funci\'ion  \ $g$ \ $\mu$-integrable
+  que  domina  la  sucesi\'on,  \ie  $\forall  \, \omega  \in  \Omega,  \quad  |
+  f_n(\omega) | \le g(\omega)$. Entonces
+  %
+  \[
+  \lim_{n  \to  +\infty}  \int_\Omega  f_n(\omega)  d\mu(\omega)  =  \int_\Omega
+  f(\omega) d\mu(\omega)
+  \]
+\end{teorema}
+%
+Este  teorema  da  una  condici\'on  suficiente  muy \'util  y  muy  usada  para
+asegurarse de que se puede intercambiar limite e integraci\'on.
+
+El   \'ultimo  teorema   que  vamos   a  necesitar   permite   intercambiar  dos
+integraci\'ones.  Antes,  necesitamos definir  la  noci\'on  de espacio  medible
+producto y medida producto.
+%
+\begin{definicion}[Espacio medible producto, medida producto]
+  Sean dos  espacios de  medida \  $(\Omega_1, \A_1, \mu_1)$  \ y  \ $(\Omega_2,
+  \A_2, \mu_2)$. Llamamos  {\it espacio medible producto} el  espacio $(\Omega ,
+  \A)$ el  espacio del producto  cartesiano $\Omega = \Omega_1  \times \Omega_2$
+  con  la $\sigma$-\'algebra $\A$  generada por  los productos  cartesianos $A_1
+  \times A_2$  donde $A_i  \in \A_i$. Al  final, llamamos medida  producto $\mu$
+  definida sobre $\A$ tal que $\forall  \: (A_1,A_2) \in \A_1 \times \A_2, \quad
+  \mu(A_1 \times A_2) = \mu_1(A_1) \mu_2(A_2)$.
+\end{definicion}
+
+\begin{teorema}[Teorema de Fubini]\label{th:MP:Fubini}
+  Sea $(\Omega,\A,\mu)$ espacio de medida productode \ $(\Omega_1, \A_1, \mu_1)$
+  \ y  \ $(\Omega_2, \A_2,  \mu_2)$ donde $\mu$  es la medida producto.  Sea $f$
+  funci\'on medible sobre $(\Omega,\A,\mu)$ y suponemos la funci\'on
+  %
+  \[
+  g(\omega_1)   =  \int_{\Omega_2}   \left|   f(\omega_1,\omega_2)  \right|   \,
+  d\mu_2(\omega_2) \quad \mu_1-\mbox{integrable}
+  \]
+  %
+  Entonces, $f$ es $mu$-integrable y
+  %
+  \[
+  \int_{\Omega_1  \times \Omega_2}  f(\omega) \,  d\mu(\omega)  = int_{\Omega_1}
+  \left(    \int_{\Omega_2}   f(\omega)    \,   d\mu_2(\omega_2)    \right)   \,
+  d\mu_1(\omega_1)   =  int_{\Omega_2}   \left(  \int_{\Omega_1}   f(\omega)  \,
+    d\mu_1(\omega_1) \right) \, d\mu_2(\omega_2)
+  \]
+  %
+  (obviamente, se puede intercambiar los roles de los $\Omega_i$ el la condici\'on del teorema).
+\end{teorema}
+  }
 
 \
 
@@ -385,6 +474,15 @@ manera siguiente~\cite{AthLah06, Coh13, Bre88}:
  \]
 \end{definicion}
 %
+\noindent  \modif{Nota: a  veces, tenemos  que  considerar el  caso de  matrices
+  aleatorias, o funciones medibles matriz-valuadas. Siendo de que se puede poner
+  en biyecci\'on,  una matriz con un  vector (por ejemplo  poniendo cada columna
+  ``debajo'' de  su columna antecedante),  no desarollaremos m\'as este  caso, a
+  pesar de que  a veces sea m\'as conveniente trabajar con  matrices en lugar de
+  su forma en vector.}
+
+\
+
 De las propiedades de una medida sobre una $\sigma$-\'algebra, para caracterizar
 completamente la distribuci\'on $P_X$ de nuevo es suficiente conocerla sobre los
 elementos de  la forma $\displaystyle  \optimes_{i=1}^d (-\infty \, ;  \, b_i]$,
@@ -772,44 +870,45 @@ cumulativa correspondiente.
 \label{fig:MP:ProbaContinua}
 \end{figure}
 
-Fijense de que una variable aleatoria puede ser ni continua, ni discreta:
+Fijense   de  que   una   variable   aleatoria  puede   ser   ni  continua,   ni
+discreta:\label{Ej:MP:Mixta}
 %
-\begin{itemize}
-\item Sean $U$  \ y \ $V$ \ variables continuas,  independientes, de densidad de
-  probabilidad $p_U  = p_V = \un_{[0 \,  ; \, 1)}$ ($U$  \ y \ $V$  \ son dichas
-  uniformes sobre $[0  \, ; \, 1)$)  \ y sea \ $X  = V \un_{U <  \frac12}$, \ es
-  decir \ $X(\omega)  = V(\omega)$ \ si \  $U(\omega) < \frac12$ \ y \  $0$ \ si
-  no.  Entonces de la formula de  probabilidades totales, \ $F_X(x) = P(X \le x)
-  = P\left(  (X \le  x) \left| \left(  U <  \frac12 \right) \right.   \right) \,
-  P\left( U  < \frac12 \right)  \, + \,  P\left( (X \le  x) \left| \left(  U \ge
-        \frac12 \right)  \right.  \right) \, P\left(  U \ge \frac12  \right) $ \
-  \ie \ $F_X(x)  = \frac12 P\left( (V  \le x) \left| \left( U  < \frac12 \right)
-    \right.   \right) \, +  \, P\left(  (0 \le  x) \left|  \left( U  \ge \frac12
-      \right)\right. \right)$. \ Ahora, de la  independencia de \ $U$ \ y \ $V$,
-  \  tenemos   \  $F_X(x)  =   \frac12  F_V(x)  +  \frac12   \un_{\Rset_+}(x)  =
-  \frac{x+1}{2} \un_{[0  \, ; \,  1)}(x) + \un_{[1  \, ; \,  +\infty)}(x)$. Esta
-  funci\'on       de       repartici\'on       es      representada       figura
-  Fig.~\ref{fig:MP:ProbaMixta}: es ni discreta,  ni continua.  Entonces, a pesar
-  de que $\X = [0 \, ; \, 1)$  \ sea un intervalo, $X$ no es continua (y tampoco
-  no puede ser discreta).
-  %
-  \begin{figure}[h!]
-  \begin{center} \input{TIKZ_MP/ReparticionMixta} \end{center}
-  %
-  \leyenda{Funci\'on  de repartici\'on  $F_X(x) =  \frac{x}{2} \un_{[0  \,  ; \,
-      1)}(x) + \un_{\Rset_+}(x)$ asociada a \ $X  = V \un_{U < \frac12}$ \ con \
-    $U$ \ y \ $V$ \ variables continuas uniformes sobre $\X = [0 \, ; \, 1)$. No
-    es tipo escalon, as\'i que $X$ no es  discreta. A pesar de que $\X = [0 \, ;
-    \, 1)$ \ sea un intervalo, de la presencia del salto en $x = 0$, tampoco $X$
-    no es continua.}
-  \label{fig:MP:ProbaMixta}
-  \end{figure}
+%\begin{itemize}
+%\item 
+Sean  $U$ \  y  \ $V$  \  variables continuas,  independientes,  de densidad  de
+probabilidad $p_U  = p_V =  \un_{[0 \,  ; \, 1)}$  ($U$ \ y  \ $V$ \  son dichas
+uniformes sobre $[0 \, ; \, 1)$) \ y sea \ $X = V \un_{U < \frac12} + \un_{U \ge
+  \frac12}$, \ es decir \ $X(\omega) = V(\omega)$ \ si \ $U(\omega) < \frac12$ \
+y \ $1$ \ si no.  Entonces  de la formula de probabilidades totales, \ $F_X(x) =
+P(X  \le x)  = P\left(  (X \le  x)  \left| \left(  U <  \frac12 \right)  \right.
+\right) \, P\left( U < \frac12 \right) \, + \, P\left( (X \le x) \left| \left( U
+      \ge \frac12 \right) \right.  \right) \,  P\left( U \ge \frac12 \right) $ \
+\ie \  $F_X(x) = \frac12  P\left( (V  \le x) \left|  \left( U <  \frac12 \right)
+  \right.   \right) \,  +  \, P\left(  (1 \le  x)  \left| \left(  U \ge  \frac12
+    \right)\right. \right)$. \ Ahora, de la independencia  de \ $U$ \ y \ $V$, \
+tenemos  \  $F_X(x)  =  \frac12  F_V(x)  + \frac12  \un_{[1  \,  +\infty)}(x)  =
+\frac{x}{2}  \un_{[0 \,  ;  \, 1)}(x)  +  \un_{[1 \,  ;  \, +\infty)}(x)$.  Esta
+funci\'on de repartici\'on  es representada figura Fig.~\ref{fig:MP:ProbaMixta}:
+es ni discreta,  ni continua.  Entonces, a pesar de  que $\X = [0 \,  ; \, 1]$ \
+sea un intervalo, $X$ no es continua (y tampoco no puede ser discreta).
 %
-\item Sea  $U$ \ variable  continua uniforme sobre $[0  \, ; \,  1)$ \ y \  $X =
-  \un_{U \not\in \Qset}$. Claramente  $X$ no es continua, pero $\X =  [0 \, ; \,
-  1)   \backslash    \Qset$   \   siendo   no   numerable,    $X$   tampoco   es
-  discreta~\footnote{\SZ{$X = 1$ casi siempre\ldots quizas m\'as adelante}}.
-\end{itemize}
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/ReparticionMixta} \end{center}
+%
+\leyenda{Funci\'on de repartici\'on $F_X(x) = \frac{x}{2} \un_{[0 \, ; \, 1)}(x)
+  + \un_{[1 \, ; \, +\infty)}(x)$ asociada a \ $X = V \un_{U < \frac12} + \un_{U
+    \ge \frac12}$ \  con \ $U$ \  y \ $V$ \ variables  continuas uniformes sobre
+  $\X =  [0 \, ; \, 1)$.   No es tipo escalon,  as\'i que $X$ no  es discreta. A
+  pesar de  que $\X =  [0 \, ; \,  1]$ \ sea  un intervalo, de la  presencia del
+  salto en $x = 1$, tampoco $X$ no es continua.}
+\label{fig:MP:ProbaMixta}
+\end{figure}
+%
+%\item Sea  $U$ \ variable  continua uniforme sobre $[0  \, ; \,  1)$ \ y \  $X =
+%  \un_{U \not\in \Qset}$. Claramente  $X$ no es continua, pero $\X =  [0 \, ; \,
+%  1)   \backslash    \Qset$   \   siendo   no   numerable,    $X$   tampoco   es
+%  discreta~\footnote{\SZ{$X = 1$ casi siempre\ldots quizas m\'as adelante}}.
+%\end{itemize}
 
 
 Recordamonos de  que cualquier  medida de probabilidad  (caso continuo o  no) se
@@ -1062,7 +1161,8 @@ que si $\{ f_k \}_{k=1}^{d'}$ son $(\B(\Rset^d),\B(\Rset))$-medible, entonces $f
 $(\B(\Rset^d),\B(\Rset^{d'}))$-medible~\cite{AthLah06}.
 
 \SZ{No se  todav\'ia si  ser\'a \'util tratar  del caso  de limite de  series de
-  funciones medibles (quizas, tratando de los momentos/integraci\'on).}
+  funciones        medibles        (quizas,        tratando        de        los
+  momentos/integraci\'on). Cf. Fubini tambi\'en.}
 
 
 Mencionamos  de que si  $\X =  X(\Omega)$ es  discreto, entonces  $\Y =  g(\X) =
@@ -1317,7 +1417,7 @@ $X$ uniforme sobre  \ $\X = (  3 \, ; \,  3)$ \ y \ $Y  = g(X)$ \ con  \ $g(x) =
 \left(  1 + \cos\left(  (|x|-1) \frac{\pi}{2}  \right) \right)  \un_{(1 \,  ; \,
   3)}(|x|) +  2 \un_{[0 \, ;  1]}(|x|)$.  Esta funci\'on  es representado figura
 Fig.~\ref{fig:MP:TransformacionVANoContinua}-(a).    Claramente,  \  $g$   \  es
-continua y diferenciable sobre $\X$, pero con \ $\X_{[0]} = [ -2 \, ; \, 1]$ que
+continua y diferenciable sobre $\X$, pero con \ $\X_{[0]} = [ -1 \, ; \, 1]$ que
 no  es  de medida  nula.   Saliendo  de $F_Y(y)  =  P(g(X)  \le  y)$ se  calcula
 sencillamente  $F_Y(y)  = \frac23  \left(  1  -  \frac1\pi \arccos(y-1)  \right)
 \un_{[0  \,  ; \,  2)}  +  \un_{[ 2  \,  ;  \,  +\infty)}(y)$, ilustrada  figura
@@ -1336,6 +1436,51 @@ discontinua en \ $y = 2$: \ $Y$ \ no es continua.
 \label{fig:MP:TransformacionVANoContinua}
 \end{figure}
 
+\modif{Un  ejemplo de  cambio  de  transformaci\'on puede  sevir  a calcular  la
+  densidad de probabilidad de un vector $$V = X + Y$$ a partir de la densidad de
+  $(X,Y)$,  con $X$ e  $Y$ $d$-dimensionales.  Por eso,  se puede  considerar la
+  transformaci\'on biyectiva
+%
+\[
+g: (x,y) \mapsto (u,v) = (x,x+y)
+\]
+%
+Entonces
+%
+\[
+g^{-1}(u,v) = (u,v-u)
+\]
+%
+y la matriz Jacobiana es
+%
+\[
+J_{g^{-1}} = \begin{bmatrix} I & -I \\ 0 & I \end{bmatrix}
+\]
+%
+donde $I$ es  la matriz identidad $d$-dimensional y $0$ la  matriz nula de misma
+dimension. Claramente\ $\left| J_{g^{-1}} \right| = 1$ \ as\'i que
+%
+\[
+p_{U,V}(u,v) = p_{X,Y}(u,v-u)
+\]
+%
+como lo pudimos intuir. Adem\'as, por marginalizaci\'on, inmediatamente
+%
+\[
+p_V(v) = \int_{\Rset^d} p_{X,Y}(u,v-u) \, du
+\]
+%
+Si $X$ e $Y$ son independientes, $p_{U,V}(u,v) = p_X(u) p_V(v-u)$ y la formula integral se escribe
+%
+\[
+p_V(v) = \int_{\Rset^d} p_X(u) p_Y(v-u) \, du = \int_{\Rset^d} p_Y(u) p_X(v-u) \, du
+\]
+%
+(por cambio  de variable  en la secunda  expresi\'on). Esta formula  es conocida
+como {\it  producto de convoluci\'on}  entre las funciones~\footnote{\modif{Este
+    producto no  impone de  que las funciones  sean densidades  de probabilidad.
+    Una condici\'on suficiente  para que existe es que  las funciones sean $L^1$
+    (ver desigualdad de Cauchy-Bunyakovsky-Schwarz).}} $p_X$ y $p_Y$.  }
 
 %|q(y^1,\ldots,y^d)\ dy^1\cdots dy^d| = |p(x^1,\ldots,x^d) \ dx^1\cdots dx^d| .
 
@@ -1497,6 +1642,11 @@ continuaci\'on, la funci\'on de repartici\'on condicional:
       x_{d_X}} F_{X,Y}(x,y)}{p_X(x)}
   \]
 \end{definicion}
+%
+\noindent Nota: Tomando $A = \X$,  de la primera formula definiendo la medida de
+probabilidad condicional  se recupera el \underline{equivalente  continuo} de la
+\underline{formula de probabilidad total}, que  se escribe con la densidad $dP_X
+= p_X d\mu_L$ si $X$ admite una densidad.
 
 Al final, si $(X,Y)$ admite una  densidad, en sencillo ver de que $P_{Y|X=x} \ll
 \mu_L$,  y  entonces  admite  una  densidad  que  llamaremos  {\it  densidad  de
@@ -1546,16 +1696,69 @@ funci\'on     de     repartici\'on     condicional    de     la     definici\'on
 Def.~\ref{Def:MP:FRCondicional}. En  el caso multivariado, hace  falta hacer los
 desarollos hasta el orden $d_X$ para concluir.
 
+Fijense de  que,
+%
+\begin{itemize}
+\item Si $X$ e $Y$ son independientes,
+  %
+  \[
+  p_{Y|X=x} = p_Y
+  \]
+%
+\item por  la expresi\'on \ $p_{Y|X=x}(y) =  \frac{p_{X,Y}(x,y)}{p_X(x)}$, \ por
+  integraci\'on con respeto a $y$ obtenemos la condici\'on de normalizaci\'on
+  %
+  \[
+  \int_{\Rset^{d_Y}} p_{Y|X=x}(y) \, dy = 1;
+  \]
+%
+\item escribiendo  \ $p_{X,Y}(x,y)  = p_{Y|X=x}(y) \,  p_X(x) =  p_{X|Y=y}(x) \,
+  p_Y(y)$, \ se obtiene
+  %
+  \[
+  p_{Y|X=x}(y)   =  \frac{p_{X|Y=y}(x) \,   p_Y(y)}{p_X(x)}   =  \frac{p_{X|Y=y}(x)
+    \, p_Y(y)}{\displaystyle \int_{\Rset^{d_Y}} p_{X|Y=y}(x) \, p_Y(y) \, dy}
+  \]
+  %
+  equivalente continuo, con densidades, de la formula de Bayes;
+%
+\item  por la  expresi\'on  \ $p_{X,Y}(x,y)  =  p_{Y|X=x}(y) \,  p_X(x)$, \  por
+  integraci\'on con respeto a $x$ obtenemos
+  %
+  \[
+  p_Y(y) = \int_{\Rset^{d_X}} p_{Y|X=x}(y) \, p_X(x) \, dx
+  \]
+  %
+  generalizaci\'on de la formula de  probabilidades totales al caso continuo con
+  densidad de probabilidad.
+\end{itemize}
+
+Una densidad condicional que vamos a  encontrar en el capitulo siguiente la de \
+$V = X + Y$ \ condicionalmente a $X =  x$, \ con \ $X$ \ e \ $Y$ \ independiente
+y  $d$-dimensionales. De  manera  general,  introduciendo $U  =  X$ obtuvimos  \
+$p_{U,V}(u,v)  = p_{X,Y}(u,v-u)$  \ dando  tambi\'en \  $\displaystyle  p_V(v) =
+\int_{\Rset^d} p_{X,Y}(u,v-u) \, du$. Entonces,  recordandose de que $U = X$, se
+obtiene
+%
+\[
+p_{V|X=x}(v)             =            \frac{p_{X,Y}(x,v-x)}{p_X(x)}            =
+\frac{p_{X,Y}(x,v-x)}{\displaystyle \int_{\Rset^d} p_{X,Y}(x,v-x) \, dv}
+\]
+%
+dando en el caso \ $X$ \ e \ $Y$ \ \underline{independientes}
+%
+\[
+p_{V|X=x}(v) = p_Y(v-x)
+\]
+%
+Eso corresponde  a la intuci\'on  de que, con $V  = X +  Y$, fijando $X =  x$ el
+vector aleatorio $V$ es nada mas que $Y$ desplazado de $x$. \underline{Pero} hay
+que  tomar   \underline{muchas  precauciones}  con   este  razonamiento,  valide
+\'unicamente porque \ $X$ \ e \  $Y$ \ son independiente.  En el caso contrario,
+fijando   $X$   no  coincide   con   un   desplazamiento   por  la   dependencia
+(esquemat\'icamente,  fijando $X$ no  s\'olo mueve  \ $Y$  \ pero  ``cambia'' su
+estad\'istica).
+
   }
 
 
-%%%%%%%%%%%%%
-
-\
-
-\
-
-\
-
-\SZ{hablar de  simulaci\'on? Metoto inverso,  mezcla, rejeccion, a traves  de la
-  condicional para el caso vectorial?}

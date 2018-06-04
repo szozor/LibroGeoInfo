@@ -1,27 +1,169 @@
 \seccion{Esperanza, momentos y funciones generadoras}
-\label{s:esperanzamomento}
+\label{s:MP:esperanzamomento}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \emph{introducci\'on...} %%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subseccion{Momentos de una distribuci\'on}
+
+% ================================= Media
+
+\subseccion{\modif{Media de un vector aleatorio}}
+\label{sec:MP:VectorMedio}
 
 
-Una  variable  aleatoria  continua  $X$  tiene  asociado  un  \emph{promedio}  o
-\emph{media} (tambi\'en llamado \emph{valor esperado o de expectaci\'on}) que se
-obtiene pesando  cada valor  de $x$  con la probabilidad  asociada a  ese valor,
-$p(x)\,dx$, e integrando sobre el rango permitido de $x$:
-$$
-E[X] = \langle x\rangle = \int_{\Omega} x \ p(x)\,dx \equiv \mu
-$$
-si  la  integral  existe.  La  \emph{esperanza} de  la  variable  aleatoria  $X$
-representa  el valor  medio  que puede  tomar  entre todos  los  eventos de  una
-prueba. Una  variable aleatoria $X$  se dice \emph{integrable} cuando  $E[|X|] <
-\infty$.
+Una  variable aleatoria  $X$  tiene asociado  un  {\it promedio}  o {\it  media}
+(tambi\'en  llamado   {\it  valor  esperado  o  de   expectaci\'on  o  esperanza
+  matem\'atica})  que  se obtiene  pesando  cada  valor  de \modif{$X$}  con  la
+\modif{medida de} probabilidad asociada a ese valor,
+%
+\modif{
+\begin{definicion}[Media o valor/vector medio]
+  Formalmente, la media de  una variable aleatoria $X$ \underline{integrable} es
+  definida por
+  %
+  \[
+  \Esp[X] = \int_\Omega X(\omega) dP(\omega)
+  \]
+  %
+  Claramente,  por  el  teorema de  la  medida  imagen,  esta media  se  escribe
+  tambi\'en a partir de la medida de probabilidad $P_X$ como
+  %
+  \[
+  \Esp[X] = \int_\Rset x \, dP_X(x)
+  \]
+  %
+  En  el caso vectorial  $d$-dimensional, hay  que entender  la media,  o vector
+  medio, como  un vector de componentes  $i$-\'esima la media  $\Esp[X_i]$ de la
+  componente $i$-\'esima $X_i$ de $X$, dando
+  %
+  \[
+  \Esp[X] = \int_{\Rset^d} x \, dP_X(x)
+  \]
+\end{definicion}
+%
+La secunda formulaci\'on se proba  sencillamente, empezando por $X = \un_A$ para
+unos $A$. Entonces $P_X =  (1-P(A)) \delta_{\{0\}} + P(A) \delta_{\{1\}}$. Luego
+$\displaystyle \int_\Omega \un_A(\omega) dP(\omega) = P(A) = (1-P(A)) \times 0 +
+P(A)  \times  1   =  \int_\Rset  x  dP_X(x)$.   Se  cierra   la  prueba  con  el
+teorema~\ref{Th:MP:MedibleLimite} dando cualquier  funci\'on medible como limite
+de funciones escalonadas,  y por la definici\'on~\ref{Def:MP:IntegracionReal} de
+la integral de cualquier funci\'on medible.
 
+Luego,   de    la   distribuci\'on   marginal    $\displaystyle   P_{X_i}(B)   =
+\int_{\Rset^{i-1}   \times   B   \times   \Rset^{d-i}}  dP_X(x)$,   se   obtiene
+$\displaystyle  \Esp[X_i] = \int_{\Rset^d}  x_i \,  dP_X(x)$, dando  la \'ultima
+formulaci\'on en el caso vectorial.
+
+
+Fijense de que }
+%$p(x)\,dx$, e integrando sobre el rango permitido de $x$:
+%$$
+%E[X] = \langle x\rangle = \int_{\Omega} x \ p(x)\,dx \equiv \mu
+%$$
+%si  la  integral  existe.  La  \emph{esperanza} de  la  variable  aleatoria  $X$
+%representa  el valor  medio  que puede  tomar  entre todos  los  eventos de  una
+%prueba. U
+una   variable   aleatoria   $X$   se   dice   integrable   cuando   $E[|X|]   <
+\infty$. \modif{De  la misma manera, un  vector aleatorio admite una  media si y
+  solamente si cada componente es integrable. Veremos m\'as adelante que existen
+  variables aleatorias que no admiten una media.
+
+  M\'as  all\'a de  la  formulaci\'on matem\'atica  de  la media  \ $\Esp[X]$  \
+  representa   la  posici\'on  alrededor   de  la   cual  se   ``distribuye  las
+  probabilidades de  occurencia''. Es el equivalente  probabil\'istico de centro
+  de gravedad o barycentro en meca\'anica.
+
+  En el  caso de variables  aleatorias discretas, de  soporte $\X = \{  x_i \}$,
+  inmediatamente
+%
+\[
+\Esp[X] = \sum_i x_i P_X(\{x_i\}) = \sum_i x_i P(X = x_i)
+\]
+%
+\noindent  Fijense de  que $\Esp[X]$  no partenece  necesariamente a  $\X$.  Por
+ejemplo para $X$ uniforme sobre $\X = \{ 1 \, , \, 3 \, , \, 7 \}$, \ie $\forall
+\, i \in \X, \quad P(X = i) = \frac13$. Se calcula $\Esp[X] = 1 \times \frac13 +
+3 \times  \frac13 + 7 \times \frac13  = \frac{11}{3} \not\in \X$.  Tampoco es el
+promedio de los valores extremos.
+
+Un  ejemplo de  variable aleatoria  discreta  no integrable  es dada  por $\X  =
+\Nset^*$   con   $P(X   =    n)   =   \frac{6}{\pi^2   \,   n^2}$.   Claramente,
+$\sum_n\frac{6}{\pi^2 \, n}$ diverge, as\'i que $X$ no tiene una media.
+
+En el caso  de vectores aleatorios continuo, obtenemos  la expresi\'on siguiente
+de la media (o vector medio):
+%
+\[
+\Esp[X] = \int_{\Rset^d} x \, p_X(x) \, dx
+\]
+%
+\noindent  Un ejemplo  de  no  teniende de  media  es dado  en  el  caso de  una
+distribuci\'on de Cauchy-Lorentz (ver  m\'as adelante) \ $\displaystyle p_X(x) =
+\frac{\alpha}{\left( 1 + x^t x  \right)^{\frac{d+1}{2}}}$ \ donde $\alpha$ es un
+factor de normalizaci\'on.
+
+En el caso general, para calcular  la media, hay que pasar por la distribuci\'on
+$P_X$.   Por ejemplo\label{Ej:MP:EspMixta},  volvemos al  la variable  mixta del
+ejemplo pagina~\ref{Ej:MP:ProbaMixta}, $X = V  \, \un_{U < \frac12} + \un_{U \ge
+  \frac12}$  \ con  \  $U$ \  y  \ $V$  variables  aleatorias independientes  de
+distribuci\'on uniformas sobre  $[0 \, ; \,  1)$, \ie $p_U(x) = \un_{[0  \, ; \,
+  1)}(x)$.   De \  $X \in  B \:  \Leftrightarrow \:  \left( \left(  U  < \frac12
+  \right) \cap  \left( V \in B  \right) \right) \,  \cup \, \left( \left(  U \ge
+    \frac12 \right) \cap \left( 1 \in B \right) \right)$, \ del hecho de que los
+eventos de la  uni\'on son incompatibles y  de la independencia de $U$  y $V$ (o
+saliendo de la funci\'on de  repartici\'on), se obtiene $P_X(B) = \frac12 P_V(B)
++  \frac12 \delta_{\{1\}}(x)$.   A  continuaci\'on, \  $\displaystyle \Esp[X]  =
+\frac12  \int_\Rset dP_V(x)  + \frac12  \int_\Rset d\delta_{\{1\}}(x)  = \frac12
+\int_\Rset p_V(x)  \, dx + \frac12  \times 1 =  \frac12 \int_0^1 dx +  \frac12 =
+\frac34$.
+
+\
+
+Una nota intersante es de que, en el  caso escalar, si \ $\X \ge 0$ \ admitiendo
+una media, se obtiene
+%
+\[
+\Esp[X]  = \int_{\Rset_+} P(X  > t)  \, dt  = \int_{\Rset_+}  \left( 1  - F_X(t)
+\right) \, dt
+\]
+%
+Se proba saliendo de $\displaystyle x  = \int_0^x dt = \int_{\Rset_+} \un_{(t \,
+  ;  \, +\infty)}(x)  \, dt$  dando $\displaystyle  \Esp[X] =  \int_\Rset \left(
+  \int_{\Rset_+}  \un_{(t  \, ;  \,  +\infty)}(x) \,  dt  \right)  \, dP_X(x)  =
+\int_{\Rset_+} \left( \int_\Rset \un_{(t \, ; \, +\infty)}(x) \, dP_X(x) \right)
+\,     dt$     por    el     teorema     de    Fubini     Th.~\ref{th:MP:Fubini}
+pagina~\pageref{th:MP:Fubini}. Se  cierra la  prueba observando que  la integral
+interior es nada  m\'as que $P(X > t)$.   En el caso discreto con  $\X = \Nset$,
+viene  inmediatamente \ $\displaystyle  \sum_{n \in  \Nset} P(X>n)$  que podemos
+probar directamente  saliendo de~\footnote{Hay que  tener precauciones separando
+  la series  de una diferencia de  terminos. En el caso  $X$ continuo admitiendo
+  una densidad, el resultado se obtiene tambi\'en haciendo una integraci\'on por
+  partes,  pero  hay que  mirar  bien el  comportamiento  de  $t (1-F_X(t))$  al
+  infinito.} $P(X = n) = P(X>n)- P(X>n-1)$.
+
+\
+
+Terminamos  esta  secci\'on con  la  propiedad  de  linealidad de  la  esperanza
+matem\'atica  $\Esp$, como consecuencia  de la  linealidad de  la integraci\'on:
+para cualquieras matrices  $C$ \ y \ $D$ \ dadas  de dimensiones compatibles con
+las de \  $X$ \ e \  $Y$ \ (incluyendo el caso  escalar), $$\Esp[C X + D  Y] = C
+\Esp[X] + D \Esp[Y]$$
+%
+
+
+}
+
+
+% ================================= Momentos
+\modif{
+\subseccion{Momentos de un vector aleatorio}
+\label{sec:MP:Momentos}
+
+}
+
+\aver{
 En  general,  si $X$  es  una  variable  aleatoria, cualquier  funci\'on  $f(X)$
 tambi\'en lo es, y su valor de expectaci\'on, si existe, est\'a dado por
 $$
@@ -188,6 +330,14 @@ Teorema: \  Sean $X$ e $Y$ dos  variables aleatorias reales Las  variables $X$ e
 $Y$ son independientes  si y s\'olo si $E[f(X)  g(Y)]=E[f(X)] E[g(Y)]$ para todo
 par de funciones $f$ y $g$ en $\Rset$, continuas y acotadas.
 %
+
+\modif{Volviendo al ejemplo de la pagina~\pageref{Ej:MP:ProbaMixta}, tratando de
+  la media de \ $X = V \, \un_{U < \frac12} + \un_{U \ge \frac12}$ \ con \ $U$ \
+  y \ $V$ \ variables independientes  de distribuci\'on uniformas sobre $(0 \, ;
+  \, 1)$,  se calcula gracia  a la  linealidad y a  la indepencia, \  $\Esp[X] =
+  \Esp[V] \Esp[\un_{U <  \frac12}] + \Esp[\un_{U \ge \frac12}]  = \frac12 \times
+  \frac12  + \frac12 =  \frac34$ \  como lo  hemos obtenido  usando $P_X$  en la
+  pagina~\pageref{Ej:MP:ProbaMixta}.}
  
 Proposici\'on: \  Sea $X$ una variable  aleatoria de cuadrado  integrable, y sea
 $\Var(X)=E[(X-\langle X\rangle)^2]\equiv \sigma^2$ su varianza. Luego:
@@ -463,7 +613,7 @@ aleatorio. ... %%
 
 
 ....
-
+}
 
 
 

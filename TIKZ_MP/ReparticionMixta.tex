@@ -43,10 +43,12 @@
 \draw[>=stealth,->] (-.6,0)--({\sx*2+.25},0) node[right]{\small $x$};
 \draw[>=stealth,->] (0,-.25)--(0,{\sy+.5}) node[above]{\small $F_X$};
 %
-\draw[thick] (-.5,0)--(0,0);
- \draw (\r,\r) arc (90:270:\r);
+\draw[thick] (-.5,0)--(0,0)--(\sx,{\sy/2});
+ \draw ({\sx+\r},{\sy/2+\r}) arc (90:270:\r);
 %
-\draw[thick] (0,{\sy/2}) node[scale=.7]{$\bullet$} --(\sx,\sy)--({2*\sx},\sy);
+\draw[dotted] (\sx,{\sy/2})--(\sx,\sy);
+\draw[thick] (\sx,\sy) node[scale=.7]{$\bullet$} --({2*\sx},\sy);
+% (0,{\sy/2}) node[scale=.7]{$\bullet$} --(\sx,\sy)--({2*\sx},\sy);
 \draw (\sx,0)--(\sx,-.1) node[below,scale=.8]{\small $1$};
 \draw (0,{\sy/2})--(-.1,{\sy/2}) node[left,scale=.7]{\small $1/2$};
 \draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{\small $1$};
