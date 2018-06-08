@@ -44,7 +44,7 @@ Una  variable aleatoria  $X$  tiene asociado  un  {\it promedio}  o {\it  media}
 \end{definicion}
 %
 La secunda formulaci\'on se proba  sencillamente, empezando por $X = \un_A$ para
-unos $A$. Entonces $P_X =  (1-P(A)) \delta_{\{0\}} + P(A) \delta_{\{1\}}$. Luego
+unos  $A$.   Entonces  $P_X  =   (1-P(A))  \delta_0  +  P(A)   \delta_1$.  Luego
 $\displaystyle \int_\Omega \un_A(\omega) dP(\omega) = P(A) = (1-P(A)) \times 0 +
 P(A)  \times  1   =  \int_\Rset  x  dP_X(x)$.   Se  cierra   la  prueba  con  el
 teorema~\ref{Th:MP:MedibleLimite} dando cualquier  funci\'on medible como limite
@@ -114,10 +114,9 @@ distribuci\'on uniformas sobre  $[0 \, ; \,  1)$, \ie $p_U(x) = \un_{[0  \, ; \,
     \frac12 \right) \cap \left( 1 \in B \right) \right)$, \ del hecho de que los
 eventos de la  uni\'on son incompatibles y  de la independencia de $U$  y $V$ (o
 saliendo de la funci\'on de  repartici\'on), se obtiene $P_X(B) = \frac12 P_V(B)
-+  \frac12 \delta_{\{1\}}(x)$.   A  continuaci\'on, \  $\displaystyle \Esp[X]  =
-\frac12  \int_\Rset dP_V(x)  + \frac12  \int_\Rset d\delta_{\{1\}}(x)  = \frac12
-\int_\Rset p_V(x)  \, dx + \frac12  \times 1 =  \frac12 \int_0^1 dx +  \frac12 =
-\frac34$.
++ \frac12  \delta_1(x)$.  A continuaci\'on,  \ $\displaystyle \Esp[X]  = \frac12
+\int_\Rset dP_V(x) + \frac12 \int_\Rset d\delta_1(x) = \frac12 \int_\Rset p_V(x)
+\, dx + \frac12 \times 1 = \frac12 \int_0^1 dx + \frac12 = \frac34$.
 
 \
 
@@ -133,15 +132,15 @@ Se proba saliendo de $\displaystyle x  = \int_0^x dt = \int_{\Rset_+} \un_{(t \,
   ;  \, +\infty)}(x)  \, dt$  dando $\displaystyle  \Esp[X] =  \int_\Rset \left(
   \int_{\Rset_+}  \un_{(t  \, ;  \,  +\infty)}(x) \,  dt  \right)  \, dP_X(x)  =
 \int_{\Rset_+} \left( \int_\Rset \un_{(t \, ; \, +\infty)}(x) \, dP_X(x) \right)
-\,     dt$     por    el     teorema     de    Fubini     Th.~\ref{th:MP:Fubini}
-pagina~\pageref{th:MP:Fubini}. Se  cierra la  prueba observando que  la integral
+\,     dt$     por    el     teorema     de    Fubini     Th.~\ref{Th:MP:Fubini}
+pagina~\pageref{Th:MP:Fubini}. Se  cierra la  prueba observando que  la integral
 interior es nada  m\'as que $P(X > t)$.   En el caso discreto con  $\X = \Nset$,
 viene  inmediatamente \ $\displaystyle  \sum_{n \in  \Nset} P(X>n)$  que podemos
 probar directamente  saliendo de~\footnote{Hay que  tener precauciones separando
   la series  de una diferencia de  terminos. En el caso  $X$ continuo admitiendo
   una densidad, el resultado se obtiene tambi\'en haciendo una integraci\'on por
-  partes,  pero  hay que  mirar  bien el  comportamiento  de  $t (1-F_X(t))$  al
-  infinito.} $P(X = n) = P(X>n)- P(X>n-1)$.
+  partes, pero hay que mirar bien  el comportamiento de $t \mapsto t (1-F_X(t))$
+  al infinito.} $P(X = n) = P(X>n)- P(X>n-1)$.
 
 \
 

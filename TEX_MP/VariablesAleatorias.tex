@@ -42,7 +42,7 @@ Adem\'as, saliendo de un espacio de medida y una funci\'on $f$ medible, se puede
 definir una medida imagen  sobre el espacio de llegada~\cite{AthLah06, Bog07:v1,
   Coh13}:
 %
-\begin{teorema}[Teorema de la medida imagen]\label{th:MP:MedidaImagen}
+\begin{teorema}[Teorema de la medida imagen]\label{Th:MP:MedidaImagen}
   Sean  \ $(\Omega,\A,\mu)$  \  un espacio  de  medida, \  $(\Upsilon,\B)$ \  un
   espacio  medible  y  una  funci\'on  $f:  (\Omega,\A)  \mapsto  (\Upsilon,\B)$
   medible. Sea $\mu_f$ tal que
@@ -257,7 +257,7 @@ producto y medida producto.
   \mu(A_1 \times A_2) = \mu_1(A_1) \mu_2(A_2)$.
 \end{definicion}
 
-\begin{teorema}[Teorema de Fubini]\label{th:MP:Fubini}
+\begin{teorema}[Teorema de Fubini]\label{Th:MP:Fubini}
   Sea $(\Omega,\A,\mu)$ espacio de medida productode \ $(\Omega_1, \A_1, \mu_1)$
   \ y  \ $(\Omega_2, \A_2,  \mu_2)$ donde $\mu$  es la medida producto.  Sea $f$
   funci\'on medible sobre $(\Omega,\A,\mu)$ y suponemos la funci\'on
@@ -336,7 +336,7 @@ dicha {\it absolutamente continua} con  respeto a $\mu$ \modif{y se denota $$\nu
   Def.~\ref{def:MP:DensidadMedida} resultado  a trav\'es  de lo que  es conocido
   como teorema de Radon-Nikod\'ym~\cite{Nyk30, AthLah06, Bog07:v1, Coh13}:
 %
-\begin{teorema}[Radon-Nikod\'ym]\label{th:MP:RadonNikodym}
+\begin{teorema}[Radon-Nikod\'ym]\label{Th:MP:RadonNikodym}
 Sean dos medidas $\mu$ \ y \ $\nu$, entonces
 %
 \[
@@ -679,9 +679,26 @@ s\'imbolo \emph{delta de Kronecker},
 \end{array} \right.
 \]
 %
-En este  caso, $P_X$ es  conocida como  {\it medida de  Dirac} centrada en  $x =
-x_k$, a veces  denotada $\delta_{x_k}(x) = \delta(x-x_k)$. Vamos  a volver m\'as
-adelante sobre esta medida particular.
+\modif{En este  caso, $P_X$ es  conocida como  {\it medida de  Dirac} centrada en \  $x =
+x_k$, \  denotada \ $\delta_{x_k}$, \ \ie \
+%
+\[
+\delta_{x_k}(B) = \int_B d\delta_{x_k}(x) = \left\{\begin{array}{ll}
+1 & \mbox{si} \quad x_k \in B\\[2.5mm]
+%
+0 & \mbox{si no}
+\end{array}\right.
+\]
+%
+Fijense de que, para $f$ medible, tenemos
+%
+\[
+\int_B f(x) \, d\delta_{x_k}(x) = f(x_k)
+\]
+%
+Se proba saliendo de \  $f = \un_{B'}$ \ y del teorema~\ref{Th:MP:MedibleLimite}
+conjuntamente  a la definici\'on  Def.~\ref{Def:MP:IntegracionReal}.  }  Vamos a
+volver m\'as adelante sobre esta medida particular.
 
 Otra   situaci\'on  particular   es  la   de  {\it   equiprobabilidad}   o  {\it
   distribuci\'on uniforme}  cuando $|\X|  = \alpha <  +\infty$.  La forma  de la
@@ -784,7 +801,7 @@ $P_X$:
   Sea $X$ variable  aleatoria continua y \ $P_X$ su  medida de probabilidad. Por
   definici\'on, se dice que $X$  admite una densidad de probabilidad con respeto
   a   una  medida   $\mu$  sobre   $\Rset$  si   $P_X  \ll   \mu$   (teorema  de
-  Radon-Nikod\'ym~\ref{th:MP:RadonNikodym}).\newline En  general, nos enfocamos
+  Radon-Nikod\'ym~\ref{Th:MP:RadonNikodym}).\newline En  general, nos enfocamos
   sobre la  medida (dicha de referencia)  $\mu = \mu_L$ de  Lebesgue y denotando
   $d\mu_L(x) \equiv dx$, la definici\'on se reduce a: Si existe una funci\'on no
   negativa \ $p_X$ \ medible sobre $\Rset$ tal que
@@ -1148,7 +1165,7 @@ juego de la oca.
   Este resultado es obvio. $g$ siendo medible, para todo $B \in \B(\Rset^{d'})$,
   por definici\'on $g^{-1}(B) \in \B(\Rset^d)$.  Adem\'as, si $P_X$ es la medida
   (de  probabilidad) asociado  al  espacio de  salida  de $g$,  el resultado  es
-  consecuencia del teorema~\ref{th:MP:MedidaImagen}.
+  consecuencia del teorema~\ref{Th:MP:MedidaImagen}.
 \end{proof}
 %
 \noindent (Ver ej.~\cite{JacPro03, AthLah06, Bog07:v2, Coh13}).
@@ -1567,7 +1584,7 @@ probabilidad, se puede definir una densidad de probabilidad condicional:
   = 0  \: \Rightarrow  \: P_{Y|X=x}(B) =  0$.  Si  $Y$ adminte una  densidad con
   respeto a la medida de Lebesgue,  $P_Y \ll \mu_L$ medida de Lebesgue, es claro
   de    que   tambi\'en   $P_{Y|X=x}    \ll   \mu_L$,    y   por    teorema   de
-  Radon-Nikod\'ym~\ref{th:MP:RadonNikodym}, admite  una densidad de probabilidad
+  Radon-Nikod\'ym~\ref{Th:MP:RadonNikodym}, admite  una densidad de probabilidad
   (con respeto a la medida de Lebesgue) que denotaremos $p_{Y|X=x}$,
   %
   \[
@@ -1596,7 +1613,7 @@ Por eso, sea $B \in \B(\Rset^{d_Y})$ y definimos la medida $\nu_B(A) = P(X \in A
 \cap Y  \in B)$ sobre  $(\Rset^{d_Y},\B(\Rset^{d_Y}))$.  Es sencillo ver  de que
 $B$ siendo dado, $\nu_B$ define una medida de probabilidad. Adem\'as, $\nu_B \ll
 P_X$, i.e., $P_X(A) = P(X \in A) = 0  \: \Rightarrow \: 0 = P(X \in A \cap Y \in
-B)  =  \nu_B(A)$.    Por  teorema  de  Radon-Nikod\'ym~\ref{th:MP:RadonNikodym},
+B)  =  \nu_B(A)$.    Por  teorema  de  Radon-Nikod\'ym~\ref{Th:MP:RadonNikodym},
 $\nu_B$ admite una densidad $g_B$ con respeto a $P_X$,
 %
 \[
