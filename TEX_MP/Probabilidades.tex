@@ -26,15 +26,17 @@ ocurrencia    $\frac{k}{K}$    del    atributo~\cite[\&   Ref.]{Bra76,    Hal90,
   de alea (en  latin) es muy antiguo, el matem\'atico  y jugador (dados, cartas)
   italiano  Gerolamo Cardano es  ``probablemente'' un  de los  primeros tratando
   matematicamente del concepto  de probabilidad en el siglo  XVI, escribiando un
-  libro sobre  los juegos  de azar en  1564~\cite{Bel05} o~\cite[Cap.~4]{Hal90}.
-  Entre los  numerosos matematicos desarollando la teoria  de las probabildades,
-  (en    particular    los    franceses    Pierre    de    Fermat    y    Blaise
-  Pascal~\cite[Cap.~5]{Hal90})  hay  que  mencionar  el  suizo  Jacob  Bernoulli
-  (miembro de una  dinastia de m\'atematicos!)  y el  franco-ingl\'es Abraham de
-  Moivre, quizas un de los  primeros llevandos un aporte importante al desarollo
-  de la teoria de las probabilidades en  el siglo XVIII a trav\'es de este punto
-  de    vista   ``frequencista''   y    combinatorial~\cite[en   latin]{Ber1713}
-  o~\cite{Ber1713:2, Dem56} y~\cite[Cap.~13, 15 \&~22]{Hal90}.}.
+  libro sobre  los juegos  de azar en  1564 pero publicado  en 1663~\cite{Car63}
+  (ver  tambi\'en~\cite{Bel05}  o~\cite[Cap.~4]{Hal90}).   Entre  los  numerosos
+  matematicos desarollando  la teoria de  las probabildades, (en  particular los
+  franceses  Pierre  de Fermat  y  Blaise  Pascal~\cite[Cap.~5]{Hal90}) hay  que
+  mencionar   el   suizo  Jacob   Bernoulli   (miembro   de   una  dinastia   de
+  m\'atematicos!)~\cite[en      latin]{Ber1713}      o~\cite{Ber1713:2},      el
+  franco-ingl\'es Abraham  de Moivre~\cite{Dem56}, el franc\'es  Pierre Simon de
+  Laplace~\cite{Lap20} quizas un de  los primeros llevandos un aporte importante
+  al desarollo  de la  teoria de  las probabilidades en  los siglos  XVIII-XIX a
+  trav\'es  de  este  punto  de  vista  ``frequencista''  y  combinatorial  (ver
+  tambi\'en~\cite[Cap.~13, 15 \&~22]{Hal90}).}.
 %lim N->infty n/N indef.
 
 Los axiomas de Kolmogorov~\footnote{Un paso importante es debido a Kolmogorov en
@@ -91,10 +93,22 @@ teor\'ia de  conjuntos (ej.~\cite{Spi76,  Bre88, ManWol95, Sie75,  Sie76, Bor98,
   \emptyset$  \ donde  \  $\emptyset =  \bar{\Omega}$  \ denota  el evento  nulo
   (evento que no  puede ocurrir, es el complemento de  $\Omega$, por ejemplo $A$
   ``cara par'' y $B$ ``cara impar'').
+%
+\item \modif{Denotaremos  tambi\'en $A \backslash B$  \ cuando el  evento $A$ se
+    realiza pero  no $B$;  A veces,  se lo denota  tambi\'en \  $A-B$, \  que es
+    tambi\'en \  $A \cap \bar{B}$, por  ejemplo ``cara par'' y  $B$ ``cara menor
+    que 3''.}
 \end{itemize}
 %
-\noindent Eso es ilustrado  en la figura Fig.~\ref{fig:MP:Ensembles}. La uni\'on
-e intersecci\'on satisfacen a las mismas reglas que en la teoria ensemblista, es
+\noindent Eso es ilustrado en la figura Fig.~\ref{fig:MP:Ensembles} \modif{en lo
+  que es  conocido como diagrama de Venn~\footnote{\modif{Este  tipo de diagaram
+      fue  popularizado por  el ingles  J.  M.   A.  Venn  en 1880,  pero  en su
+      papel~\cite{Ven80} da la partenidad  al matem\'atico suizo Leohnard Euler,
+      un de  los primeros a usar tal  representaci\'on en el siglo  XVIII en sus
+      cartas a una  princesa alemana (ver~\cite[L~102-105, pp.~95-126]{Eul68}) o
+      antes a Christian Weise y Johan Christian Langius~\cite{Lan12}; apareci\'o
+      a\'un  en trabajos  de  Leibniz en  el  siglo anterio.}}}.   La uni\'on  e
+intersecci\'on satisfacen a  las mismas reglas que en  la teoria ensemblista, es
 decir cada una es comutativa \ $A \cup B = B \cup A$, \ $A \cap B = B \cap A$, \
 asociativa \ $(A \cup B)  \cup C = A \cup (B \cup C)$, \ $(A  \cap B) \cap C = A
 \cap (B \cap C)$, \ distributiva con respeto a la otra \ $(A \cup B) \cap C = (A
@@ -106,14 +120,17 @@ asociativa \ $(A \cup B)  \cup C = A \cup (B \cup C)$, \ $(A  \cap B) \cap C = A
 \begin{center} \input{TIKZ_MP/Ensembles} \end{center}
 %
 \leyenda{Ilustraci\'on   de  la  operaciones   de  uni\'on   $A  \cup   B$  (a),
-  intersecci\'on $A \cap B$ (b), complemento $\bar{A}$ (c), enventos excluyentes
-  $A \cap B =  \emptyset$ (d). $A$ es representado en linea  llena, $B$ en linea
-  discontinua; (a)-(c)  el resultado de  la operaci\'on es  la zona en  grise. A
-  veces, esta representaci\'on ensemblista se  denota {\it diagrama de Venn o de
-    Euler}.}
+  intersecci\'on $A \cap B$  (b), complemento $\bar{A}$ (c), eventos excluyentes
+  $A \cap B =  \emptyset$ (d), \ y $A \backslash B$  (e). $A$ es representado en
+  linea  llena, $B$  en linea  discontinua; (a)-(c)  y (e),  el resultado  de la
+  operaci\'on es la zona en grise.}
+% A veces, esta representaci\'on ensemblista se
+%  denota {\it diagrama de Venn o de Euler~\protect\footnotemark}}
 \label{fig:MP:Ensembles}
 \end{figure}
-
+% \footnotetext{\modif{Este tipo de diagaram  fue popularizado por Venn, pero en
+%     su papel~\cite{Ven} da la partenidad al matem\'atico aleman E. Euler un de
+%     los primeros a usar tal representaci\'on, en el siglo XVI~\cite{Eul}.}}
 
 Formalmente, se define  de manera abstracta un espacio  medible $(\Omega,\A)$ de
 la  manera  siguiente~\cite{Hal50,  Fel68,  Fel71,  Bre88,  IbaPar97,  AthLah06,
