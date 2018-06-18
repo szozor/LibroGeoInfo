@@ -419,19 +419,19 @@ anticorrelacionadas) y 1 (variables completamente correlacionadas) como:
     covarianza  igual  al  identidad  $I$  (en el  caso  escalar,}  desviaci\'on
   est\'andar igual a 1\modif{)}.
   %
-\item \modif{en el  caso escalar,} el tercer momento  central permite definir el
-  {\it coeficiente de asimetr\'ia} \modif{(o skewness en ingles)}:
+\item \modif{En el  caso escalar,} el tercer momento  central permite definir el
+  {\it coeficiente de asimetr\'ia} \modif{(o skewness en ingles)}~\cite{Pea05}::
   \[
-  \modif{\gamma_X} \modif{\equiv  \Esp\left[ \left( \frac{X - \mu_X}{\sigma_X}
+  \modif{\Asim[X] \equiv \gamma_X \equiv  \Esp\left[ \left( \frac{X - \mu_X}{\sigma_X}
       \right)^3 \right]} = \frac{\mu_3}{\sigma_X^3},
   \]
   %
   \modif{momento de orden 3 de la variable estandar,} que resulta adimensional y
   puede tener  signo positivo o  negativo, anul\'andose para  distribuciones que
-  son sim\'etricas respecto del valor medio;
+  son sim\'etricas respecto del valor medio.
   %
-\item  \modif{en el  caso escalar,}  el  cuarto momento  central da  lugar a  la
-  \emph{curtosis}:
+\item  \modif{En el  caso escalar,}  el  cuarto momento  central da  lugar a  la
+  {\it curtosis}~\cite{Pea05, Wes14}:
   \[
   \modif{\Curt[X]  \equiv \kappa_X}  \equiv \modif{\Esp\left[  \left(  \frac{X -
           \mu_X}{\sigma_X} \right)^4 \right]} = \frac{\mu_4}{\sigma_X^4},
@@ -442,12 +442,13 @@ anticorrelacionadas) y 1 (variables completamente correlacionadas) como:
     para la densidad Gausiana $p_X(x) = \frac{1}{\sqrt{2 \pi} \sigma} \exp\left(
       - \frac{(x-\mu)^2}{2 \, \sigma^2} \right)$,  \ $\mu_X = \mu, \: \sigma_X =
     \sigma, \: \gamma_X  = 0, \: \kappa_X =  3$. Se dice de que $p_X$  es alta y
-    angosta,  o   sub-gausiana,  o  con   colas  livianas  cuando   o  tambi\'en
-    platic\'urtica,}  $\kappa_X  <  3$,  y  de otras  bajas  y  anchas  \modif{o
-    sobre-gausiana,  o con  colas  pesadas cuando  o tambi\'en  leptoc\'urtica,}
+    angosta,   o  sub-gausiana,  o   {\it  con   colas  livianas}   o  tambi\'en
+    platic\'urtica cuando}  $\kappa_X <  3$, y se  dice bajas y  anchas \modif{o
+    sobre-gausiana, o {\it con colas pesadas} o tambi\'en leptoc\'urtica cuando}
   $\kappa_X > 3$ \modif{(para $\kappa_X =  3$ la distribuci\'on es a veces dicha
-    mesoc\'urtica)}.  A veces,  se define entonces la {\it  curtosis por exceso}
-  $\Curt[X] - 3$.
+    mesoc\'urtica)}.  A veces, se define entonces la {\it curtosis por exceso} \
+  $\Curt[X]  - 3$.   \modif{M\'as que  el  pico de  distribuci\'on, la  curtosis
+    describe las colas de una distribuci\'on (pesadas o livianas)~\cite{Wes14}.}
   \end{enumerate}
   %
   \modif{Fijense  de que,  en  el contexto  escalar  $d =  1$,  se vinculan  los
@@ -459,14 +460,23 @@ anticorrelacionadas) y 1 (variables completamente correlacionadas) como:
   %
   para cualquier \modif{$r \in \Nset$},  siendo $\modif{\mu_0 = } \nu_0=1$.  Por
   ejemplo, \ $\mu_2=\nu_2-\nu_1^2$ \ \modif{que  es nada m\'as que la relaci\'on
-    de K\"onig-Huyggens}, mientras que \ $\mu_3=\nu_3-3\nu_1\nu_2+2\nu_1^3$.
+    de           K\"onig-Huyggens},           mientras           que           \
+  $\mu_3=\nu_3-3\nu_1\nu_2+2\nu_1^3$.  \modif{En  el  contexto multivariado,  la
+    relaci\'on momentos-cumulantes toma la expresi\'on
+  %
+    \[
+    \mu_{r_1,\ldots,r_d}  = \sum_{s_1  =  0}^{r_1} \cdots  \sum_{s_d =  0}^{r_d}
+    \left( \prod_{i=1}^d  \binom{r_i}{s_i} \left( -  \mu_{X_i} \right)^{r_i-s_i}
+    \right) \nu_{s_1,\ldots,s_d}
+    \]
+}
 \end{itemize}
 
 \modif{Tratando de covarianza, m\'as  generalmente, para dos vectores aleatorios
   \ $X$ \ e \ $Y$, se define la matriz de covarianza conjunta como
 %
 \[
-\Sigma{X,Y} \equiv  \Cov[X,Y] =  \Esp\left[ \left( X  - \mu_X\right) \left(  Y -
+\Sigma_{X,Y} \equiv  \Cov[X,Y] =  \Esp\left[ \left( X  - \mu_X\right) \left(  Y -
     \mu_Y \right)^t \right] = \Esp\left[ X Y^t \right] - \mu_X \mu_Y^t
 \]
 %
@@ -510,18 +520,22 @@ y como se comporta la covarianza de estas:}
   %
   dando  el resultado  para  variables  escalonadas. Se  cierra  la prueba  para
   variables positivas  como l\'imite de  crecientes de funciones  escalonadas, y
-  variables  reals tratando  las partes  positivas y  negativas aparte.  El caso
+  variables  reales tratando  las partes  positivas y  negativas aparte.  El caso
   vectorial se deduce trabajando con pares de componentes.
 \end{proof}
 %
-Fijense  de que  la  reciproca es  falsa en  general.   Por ejemplo,  para $X  =
-(X_1,X_2)$  uniforme sobre  el  disco unitario,  i.e.,  $p_X(x) =  \frac{1}{\pi}
-\un_{\Sset^2}(x)$ \ con \ $\Sset^2 =  \{ (x_1,x_2) \in \Rset^2: \: x_1^2 + x_2^2
-\le 1 \}$. Claramente, los \ $X_i$ no pueden ser independientes del hecho de que
-\ $\X_i =  [-1 \, , \, 1]$ \  y \ $\X \ne \X_1 \times  \X_2$ \ (es estrictamente
-incluido  en  el producto  cartesiano).  Por  simetr\'ia  central de  $p_X$,  es
-sencillo ver de  que $\Esp[X_1 X_2] = 0$  \ y similarmente \ $\Esp[X_i]  = 0$: a
-pesar de que los \ $X_i$ \ no sean independientes, $\Cov[X_1,X_2] = 0$.
+Fijense  de que  la  reciproca es  falsa en  general:
+%
+\begin{ejemplo}[Uniforme sobre el disco unitario]
+  Sea \  $X =  (X_1,X_2)$ \ uniforme  sobre el  disco unitario, i.e.,  $p_X(x) =
+  \frac{1}{\pi} \un_{\Sset^2}(x)$ \  con \ $\Sset^2 = \{  (x_1,x_2) \in \Rset^2:
+  \:  x_1^2  +  x_2^2  \le  1  \}$.  Claramente,  los  \  $X_i$  no  pueden  ser
+  independientes del hecho de que  \ $\X_i = [-1 \, , \, 1]$ \  y \ $\X \ne \X_1
+  \times \X_2$  \ (es  estrictamente incluido en  el producto  cartesiano).  Por
+  simetr\'ia central de  $p_X$, es sencillo ver  de que $\Esp[X_1 X_2] =  0$ \ y
+  similarmente  \ $\Esp[X_i]  =  0$:  a pesar  de  que los  \  $X_i$  \ no  sean
+  independientes, $\Cov[X_1,X_2] = 0$.
+\end{ejemplo}
 
 Esta implicaci\'on facilita frecuentemente  los calculos de media.  Volviendo al
 ejemplo~\ref{Ej:MP:Mixta}  de la  pagina~\pageref{Ej:MP:Mixta}:
