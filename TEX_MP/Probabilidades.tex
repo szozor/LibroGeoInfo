@@ -152,7 +152,7 @@ la  manera  siguiente~\cite{Hal50,  Fel68,  Fel71,  Bre88,  IbaPar97,  AthLah06,
   %
   \end{enumerate}
   %
-  Con esta propiedades, $\A$  es llamado {\it $\sigma$-\'algebra}. Los elementos
+  Con estas propiedades, $\A$ es llamado {\it $\sigma$-\'algebra}. Los elementos
   de $\A$ son dichos {\it medibles}.
 \end{definicion}
 %
@@ -162,10 +162,11 @@ $\sigma$-\'algebra sobre \ $\Omega = \{ 1 \, , \,  2 \, , \, 3 \, , \, 4 \, , \,
 5 \, , \, 6 \}$ \ puede ser \ $\big\{ \emptyset \, , \, \Omega \, , \, \{ 1 \, ,
 \, 2 \, , \, 3 \} \, , \, \{ 4 \, , \, 5 \, , \, 6 \} \big\}$.
 
-Las propiedades de la probabilidad $P$ de un dado evento quedan determinadas por
-los siguientes (ej.~\cite{Spi76, Kol56, ShaVov06, Pla05}):
-
-\noindent {\it Axiomas de Kolmogorov}
+\modif{Saliendo de \ $(\Omega,\A)$, \  se asocia una noci\'on de probabilidad} \
+$P$ \ de un dado evento quedan determinadas por los siguientes \modif{requisitos
+  llamados  {\it  Axiomas  de  Kolmogorov}} (ej.~\cite{Spi76,  Kol56,  ShaVov06,
+  Pla05}):
+%\noindent {\it Axiomas de Kolmogorov}
 %
 \begin{enumerate}
 \item $P(A_i) \geq 0 \ \ \forall \ A_i \A$
@@ -176,9 +177,9 @@ los siguientes (ej.~\cite{Spi76, Kol56, ShaVov06, Pla05}):
 \item $P(\Omega) = 1$
 \end{enumerate}
 %
-Formalmente,  se  define  un  {\it  espacio  de  probabilidad}  o  {\it  espacio
-  probabil\'istico}  de la  manera siguiente~\cite{Hal50,  Fel68,  Fel71, Bre88,
-  IbaPar97, AthLah06, Bog07:v1, JacPro03, Coh13}:
+\modif{M\'as f}ormalmente,  se define  un {\it espacio  de probabilidad}  o {\it
+  espacio  probabil\'istico} de la  manera siguiente~\cite{Hal50,  Fel68, Fel71,
+  Bre88, IbaPar97, AthLah06, Bog07:v1, JacPro03, Coh13}:
 %
 \begin{definicion}[Espacio de medida y espacio probabil\'istico]
   Sea $(\Omega,\A)$ un espacio medible.  Una funci\'on $\mu: \A \mapsto \Rset_+$
@@ -186,7 +187,7 @@ Formalmente,  se  define  un  {\it  espacio  de  probabilidad}  o  {\it  espacio
   %
   \begin{enumerate}
   \item $\mu(\emptyset) = 0$, y
-  \item para cualquier  conjunto numerable $\{ A_i \}$  de elementos mutualmente
+  \item para  cualquier conjunto numerable  $\{ A_i \}$ de  elementos mutuamente
     excluyentes  de $\A$  se tiene  $\mu\left(  \bigcup_i A_i  \right) =  \sum_i
     \mu(A_i)$
   \end{enumerate}
@@ -201,7 +202,9 @@ Formalmente,  se  define  un  {\it  espacio  de  probabilidad}  o  {\it  espacio
   llamado {\it espacio probabil\'istico}.
 \end{definicion}
 %
-\noindent (ver tambi\'en~\cite[Cap.~5 \& 6]{KolFom61}).
+\noindent  (ver tambi\'en~\cite[Cap.~5  \&  6]{KolFom61}). \modif{Es  importante
+  notar de  que una  combinaci\'on lineal positiva  de medida queda  una medida,
+  pero el producto de dos medidas no es una medida mas.}
 
 A  partir de  los axiomas  de Kolmogorov  se pueden  probar varios  corolarios y
 propiedades:
@@ -210,7 +213,7 @@ propiedades:
 \item la probabilidad de un evento seguro o cierto es 1;
 %
 \item  la   probabilidad  de   un  evento   que  no  puede   ocurrir  es   0:  \
-  $P(\emptyset) = 0$;
+  \modif{entre otros,} \ $P(\emptyset) = 0$;
 %
 \item el rango  de las probabilidades est\'a  acotado: \ $0 \leq P(A)  \leq 1\ \
   \forall \ A \in \A$;
@@ -223,7 +226,7 @@ propiedades:
 %
 \item si $A$ es subconjunto de $B$,  lo que escribiremos $A \subset B$, es decir
   si  $B$  se realiza,  $A$  se realiza  tambi\'en  (pero  no necesariamente  al
-  rev\'es),     entonces     \     $P(A)     \leq    P(B)$;     Es     ilustrado
+  rev\'es),     entonces     \     $P(A)     \leq    P(B)$;     es     ilustrado
   figure~\ref{fig:MP:CompletoSub};
 \end{itemize}
 
@@ -246,14 +249,14 @@ Se demuestra que
 %
 \begin{itemize}
 \item $P(A  \cap B)$ est\'a acotada:  \ $0 \leq P(A  \cap B) \leq  \min\{ P(A) ,
-  P(B)\}$; (viene de \ $A \cap B \subset A$ \ y \ $A \cap B \subset B$).
+  P(B)\}$; (viene de \ $A \cap B \subset A$ \ y \ $A \cap B \subset B$);
 %
-\item Si  $A$ y $B$ son  mutuamente excluyentes, entonces  \ $p(A \cap B)  = 0$;
-  (viene de \ $A \cap B = \emptyset$).
+\item si  $A$ y $B$ son  mutuamente excluyentes, entonces  \ $p(A \cap B)  = 0$;
+  (viene de \ $A \cap B = \emptyset$);
 %
 \item  si  $\{ B_j  \}_{j=1}^m$  es un  conjunto  completo  de eventos  posibles
   excluyentes entre s\'i, entonces \ $\sum_{j=1}^m P(A \cap B_j) = P(A)$; (viene
-  de  $\{ A  \cap B_j  \}$ mutualmente  excluyentes y  $\bigcup_j \left(  A \cap
+  de $\{  A \cap B_j \}_j$ mutuamente  excluyentes y \ $\bigcup_j  \left( A \cap
     B_j\right) = A \cap \left( \bigcup_j B_j \right) = A \cap \Omega = A$).
 \end{itemize}
 
@@ -291,13 +294,15 @@ P\left( \bigcap_{i=1}^{+\infty} A_i \right) = \lim_{i \to +\infty} P(A_i)
 Se puede preguntarse de cual es la probabilidad de un evento $A$, si sabemos que
 tenemos un evento $B$, dado.  Por  ejemplo, por un dado de 6 caras equilibriado,
 cual es la probabilidad de tener  un n\'umero par sabiendo que tenemos un numero
-menor  a igual  a  3.   La respuesta  es  en la  noci\'on  de {\it  probabilidad
-  condicional}~\cite{Hau01, Jef48, Jef73, Bre88, ManWol95, JacPro03, ShaVov06}:
+menor \modif{o} a  igual a 3.  La respuesta \modif{se  encuentra} en la noci\'on
+de  {\it probabilidad condicional}~\cite{Hau01,  Jef48, Jef73,  Bre88, ManWol95,
+  JacPro03, ShaVov06}:
 %
 \begin{definicion}[Probabilidad condicional]\label{def:MP:ProbaCondicional}
   \underline{Por definici\'on},  la {\it  probabilidad condicional} de  $A$ dado
   $B$ es la raz\'on entre la  probabilidad del evento conjunto y la probabilidad
-  de que se d\'e $B$ (cuando \'este es un evento no nulo):
+  de  que se  d\'e $B$  (cuando \'este  es un  evento \modif{de  probabilidad no
+    nula}):
   %
   \[
   P(A|B) = \frac{P(A \cap B)}{P(B)}.
@@ -312,7 +317,7 @@ En  el  ejemplo precediente,  la  probabilidad  va a  ser  $P(A|B)  = \frac13  =
   $P(A \cap B) \le P(B)$, es decir  \ $P(A|B) \le 1$. Adem\'as, \ $P(\Omega \cap
   B) = P(B)$ \ dando $$P(\Omega|B) = 1$$ Para cualquier conjunto \ $\{ A_i \}$ \
   de eventos  mutuamente excluyentes, los  \ $\left( A_i  \cap B \right)$  \ son
-  tambi\'en mutualmente  excluyentes, as\'i que \  $\displaystyle P\left( \left(
+  tambi\'en mutuamente  excluyentes, as\'i que \  $\displaystyle P\left( \left(
       \bigcup_i A_i  \right) \bigcap  B \right) =  P\left( \bigcup_i  \left( A_i
       \bigcap  B \right)  \right)  = \sum_i  P\left(  A_i \bigcap  B \right)$  \
   dando  $$P\left( \left.  \bigcup_i  A_i  \right| B  \right)  = \sum_i  P\left(
@@ -346,13 +351,13 @@ Algunas propiedades interesantes son las siguientes:
 %
 \begin{itemize}
   \modif{\item $P(A \cap B  | B) = P(A|B)$. \ Viene de $P(A \cap  B \cap B) = P(A
-    \cap B)$.
+    \cap B)$;
 %
-\item Si $A$ \ y \ $B$ \ son excluyentes, obviamente \ $P(A|B) = 0$.
+\item si $A$ \ y \ $B$ \ son excluyentes, obviamente \ $P(A|B) = 0$;
 %
-\item Si $B  \subseteq C$, entonces \ $P(A |  B \cap C) = P(A|B)$.  \ Viene de \
+\item si $B  \subseteq C$, entonces \ $P(A |  B \cap C) = P(A|B)$.  \ Viene de \
   $P(A |  B \cap C) =  \frac{P(A \cap B \cap  C)}{P(B \cap C)}  = \frac{P(A \cap
-    B)}{P(B)}$ \ porque \ $B \cap C = B$.}
+    B)}{P(B)}$ \ porque \ $B \cap C = B$;}
 %
 \item condici\'on  de normalizaci\'on: \  $\sum_{i=1}^n P(A_i|B) = 1$,  siendo \
   $\{ A_i \}_{i=1}^n$  \ un conjunto completo de  resultados posibles mutuamente
@@ -366,28 +371,28 @@ Algunas propiedades interesantes son las siguientes:
   completo de eventos no nulos mutuamente excluyentes, entonces
   %
   \[
-  P(A) = \sum_j P(A|B_j) P(B_j)
+  P(A) = \sum_j P(A|B_j) P(B_j);
   \]
   %
-  Viene de \ $A = A \cap  \left( \bigcup_j B_j \right) = \bigcup_j \left( A \cap
+  viene de \ $A = A \cap  \left( \bigcup_j B_j \right) = \bigcup_j \left( A \cap
     B_j \right)$  \ donde  los \ $A  \cap B_j$  \ son mutuamente  excluyentes, y
-  $P\left( A \cap B_j \right) = P(A|B_j) P(B_j)$.
+  $P\left( A \cap B_j \right) = P(A|B_j) P(B_j)$;
 %
 \item {\it  f\'ormula de Bayes}:  \ si  $\{ B_j \}$  es un conjunto  completo de
   eventos no nulos mutuamente excluyentes, entonces
   %
   \[
   P(B_i|A) = \frac{P(A \cap B_i)}{P(A)} = \frac{P(A|B_i) P(B_i)}{\sum_j P(A|B_j)
-    P(B_j)} .
+    P(B_j)};
   \]
   %
   (ver~\cite{Bre88, JacPro03, Bay63, Bar58}).
 \end{itemize}
 
 Terminamos  esta   secci\'on  por  la   noci\'on  de  independencia   entre  dos
-eventos. Por ejemplo, si dos dados son tirado sobre dos mesas diferentes, no hay
-ninguna raz\'on de que la muestra de  uno ``influye'' la del otro. Dicho de otra
-manera,  dos  eventos son  independientes  si  conciendo  uno no  lleva  ninguna
+eventos. Por  ejemplo, si dos dados  son tirados sobre dos  mesas diferentes, no
+hay ninguna raz\'on de  que la muestra de uno ``influye'' la  del otro. Dicho de
+otra manera,  dos eventos son independientes  si conciendo uno  no lleva ninguna
 ``informaci\'on'' sobre el otro~\cite{Bre88, ManWol95, Hau01, JacPro03, Bor09}:
 %
 \begin{definicion}[Independencia estad\'istica]
@@ -418,12 +423,16 @@ Se  deduce que  los  eventos mutuamente  excluyentes  no son  estad\'isticamente
 independientes.
 
 Es importante notar  que la independencia mutua \underline{no  es equivalente} a
-la  independencia  por   pares  de  eventos.   Por  ejemplo,   tiramos  2  dados
-independientemente y  consideramos los  eventos \  $A_i$: el dado  $i$ es  par y
-$A_3$ la  suma es  impar. Es  claro de que  $A_1$ y  $A_2$ son  independientes y
-ademas  $P(A_1 \cap A_3)  = \frac14  = P(A_1)  P(A_3)$ (es  tener par  y impar),
-mientras  que $P(A_1  \cap  A_2 \cap  A_3) =  0  \ne \frac18$:  los eventos  son
-independientes pares, pero no son mutuamente independientes~\cite{HogMck13}.
+la  independencia  por   pares  de  eventos, \modif{como lo ilustra el ejemplo siguiente}.
+%
+\begin{ejemplo}[Independencia   mutua   vs    por   pares]   Tiramos   2   dados
+  independientemente y consideramos  los eventos: \ $A_i, i = 1,  2$ \ ``el dado
+  $i$ es par'' y $A_3$ ``la suma es impar''. Es claro de que \ $A_1$ \ y \ $A_2$
+  \ son independientes y ademas \ $P(A_1  \cap A_3) = \frac14 = P(A_1) P(A_3)$ \
+  (es tener  par y  impar), mientras que  \ $P(A_1  \cap A_2 \cap  A_3) =  0 \ne
+  \frac18$: los  eventos son  independientes por pares,  pero no  son mutuamente
+  independientes~\cite{HogMck13}.
+\end{ejemplo}
 
 \modif{
 \begin{definicion}[Independencia condicional]
@@ -441,33 +450,40 @@ independientes pares, pero no son mutuamente independientes~\cite{HogMck13}.
 \end{definicion}
 %
 Es importante  notar de que dos  eventos puede ser indepedientes,  pero no serlo
-condicionalmente a un terercero. Por  ejemplo, teniendo dos monedas bien equilibriadas y tirandolas
-de manera independientes, con  $A =$ ``la primera faz es una  cruz'', $B =$ ``la
-secunda faz es una cara'', $C = $ ``las faces son identicas''. Claramente \ $P(A
-\cap B) = \frac14 = P(A) P(B)$ \ mientras  que \ $P(A \cap B | C) = 0 \ne P(A|C)
-P(B|C) = \frac1{16}$.
+condicionalmente a un tercero, como lo ilustra el ejemplo siguiente.
+%
+\begin{ejemplo}[Independencia  incondicional pero  no condicional]  Teniendo dos
+  monedas bien equilibriadas y tirandolas de manera independientes, consideramos
+  los eventos \ $A$ ``la primera faz  es una cruz'', $B$ ``la secunda faz es una
+  cara'', $C$ ``las faces son identicas''. Claramente \ $P(A \cap B) = \frac14 =
+  P(A)  P(B)$ \  mientras  que \  $P(A \cap  B  | C)  =  0 \ne  P(A|C) P(B|C)  =
+  \frac1{16}$.
+\end{ejemplo}
 
 Al rev\'es, dos eventos pueden ser condicionalmente independientes a un tercero,
-pero  ser  dependientes.   Por  ejempo,   sea  Alice  tirando  una  moneda  bien
-equilibriada  y denotamos $A$  el evento  ``era una  cruz''. Claramente  $P(A) =
-\frac12$.   Suponemos que  Alice transmite  el resultado  a Bob  a traves  de un
-intermediaro Charlie  con una probabilidad  $\varepsilon$ de mentir a  Charlie y
-llamamos $C$ el evento de que ``Alice dijo a Charlie que era una cruz''. Tenemos
-de que $P(C)  = P(C|A) P(A) + P(C|\widebar{A})  P(\widebar{A}) = (1-\varepsilon)
-\frac12  + \varepsilon  \frac12  =  \frac12$.  Suponemos  ahora  de que  Charlie
-transmite lo que le dijo Alice a Bob, con una probabilidad $\vartheta$ de mentir
-(independientemente de Alice)  y llamamos $B$ el evento de  que ``Charlie dijo a
-Bob que era una cruz''. Es de nuevo sencillo ver de que $P(B) = \frac12$. Ahora,
-$P(A \cap B |C) = \frac{P(A \cap B \cap C)}{P(C)} = 2 \, P(A \cap B \cap C)$. El
-evento \  $A \cap  B \cap  C$ \ es  era una  cruz y Alice  no mint\'o  y Charlie
-tampoco,   es   decir,    por   la   independencia:   $P(A   \cap    B   |C)   =
-(1-\varepsilon)(1-\vartheta)$.   Inmediatamente  $P(B|C) =  1-\vartheta$  \ y  \
-$P(A|C) = 2 \, P(A  \cap C)$ \ el evento \ $A \cap C$  \ siendo ``era una cruz y
-Alice no mint\'o'', i.e. $P(A|C)  = 1-\varepsilon$. En conclusi\'on, \ $P(A \cap
-B  |C)  =  P(A|C) P(B|C)$:  $A$  y  $B$  son independientes  condicionalmente  a
-$C$. Ahora, es $P(A \cap B) = P(A  \cap B \cap C) + P(A \cap B \cap \widebar{C})
-=  \frac12  (1-\varepsilon)(1-\vartheta)  +  \frac12 \varepsilon  \vartheta  \ne
-\frac14   =  P(A)   P(B)$  en   general:   en  general,   $A$  y   $B$  no   son
-independientes. Este ejemplo  es una instancia de lo que se  llama un proceso de
-Markov,     que     vamos     a      ver     un     poco     m\'as     en     el
-c\'apitulo~\ref{cap:SZ:Informacion}.}
+pero  ser  dependientes.
+%
+\begin{ejemplo}[Independencia  condicional  pero  no  incondicional]
+  Sea Alice tirando una moneda bien equilibriada y denotamos $A$ el evento ``era
+  una cruz''.   Claramente $P(A) =  \frac12$.  Suponemos que Alice  transmite el
+  resultado  a Bob  a traves  de un  intermediaro Charlie  con  una probabilidad
+  $\varepsilon$ de mentir a Charlie y llamamos $C$ el evento de que ``Alice dijo
+  a  Charlie  que  era una  cruz''.   Tenemos  de  que  $P(C)  = P(C|A)  P(A)  +
+  P(C|\widebar{A})  P(\widebar{A})  =   (1-\varepsilon)  \frac12  +  \varepsilon
+  \frac12 = \frac12$.  Suponemos ahora de  que Charlie transmite a Bob lo que le
+  dijo Alice, con una  probabilidad $\vartheta$ de mentir (independientemente de
+  Alice)  y llamamos  $B$ el  evento de  que ``Charlie  dijo a  Bob que  era una
+  cruz''. Es de nuevo sencillo ver de  que $P(B) = \frac12$.  Ahora, $P(A \cap B
+  |C) = \frac{P(A \cap B \cap C)}{P(C)} =  2 \, P(A \cap B \cap C)$. El evento \
+  $A \cap B \cap  C$ \ es era una cruz y Alice no  mint\'o y Charlie tampoco, es
+  decir, por la independencia:  $P(A \cap B |C) = (1-\varepsilon)(1-\vartheta)$.
+  Inmediatamente $P(B|C) = 1-\vartheta$  \ y \ $P(A|C) = 2 \,  P(A \cap C)$ \ el
+  evento \ $A \cap C$ \ siendo ``era una cruz y Alice no mint\'o'', i.e. $P(A|C)
+  = 1-\varepsilon$. En  conclusi\'on, \ $P(A \cap B |C) =  P(A|C) P(B|C)$: $A$ y
+  $B$ son independientes condicionalmente a $C$.  Ahora, $P(A \cap B) = P(A \cap
+  B    \cap    C)   +    P(A    \cap    B    \cap   \widebar{C})    =    \frac12
+  (1-\varepsilon)(1-\vartheta)  + \frac12  \varepsilon \vartheta  \ne  \frac14 =
+  P(A)  P(B)$ en  general: en  general, $A$  y $B$  no son  independientes. Este
+  ejemplo es una instancia de lo que  se llama un proceso de Markov, que vamos a
+  ver un poco m\'as en el c\'apitulo~\ref{cap:SZ:Informacion}.
+\end{ejemplo}}

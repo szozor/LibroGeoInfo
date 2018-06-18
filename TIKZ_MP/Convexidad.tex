@@ -1,0 +1,41 @@
+\begin{tikzpicture}[xscale=6,yscale=3.5]
+\shorthandoff{>}
+%
+\pgfmathsetmacro{\u}{.25};
+\pgfmathsetmacro{\v}{1};
+\pgfmathsetmacro{\al}{.4};% alpha barycentro
+%\pgfmathsetmacro{\dc}{.02};% debut tracé de corde & tangente
+%\pgfmathsetmacro{\fc}{1.25};% fin tracé de corde
+%\pgfmathsetmacro{\ft}{1.1};% fin tracé de corde
+%
+\pgfmathdeclarefunction{sha}{1}{\pgfmathparse{#1*ln(#1)}}
+%\pgfmathdeclarefunction{shap}{1}{\pgfmathparse{1+ln(#1)}}
+%
+% Convexidad (t ln t aca)
+\draw[>=stealth,->] (-.1,-.5)--(1.6,-.5) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.6)--(0,.5) node[above]{\small $\phi(x)$};
+\draw[thick,domain=.005:1.2,samples=200] (0,0)-- plot (\x,{sha(\x)});
+\draw[dotted] (\u,-.5) node[below]{\small $x_1$} -- (\u,{sha(\u)});
+\draw[dotted] (\v,-.5) node[below]{\small $x_2$} -- (\v,{sha(\v)});
+%
+% Corde entre u et v
+\draw (\u,{sha(\u)}) -- (\v,{sha(\v)});
+%
+% barycentro
+\draw ({\al*\u+(1-\al)*\v},-.52) node[below,scale=.7]{\small $\alpha x_1 + (1-\alpha) x_2$}
+ -- ({\al*\u+(1-\al)*\v},-.5);
+%
+\draw[dotted] ({\al*\u+(1-\al)*\v},-.5) --
+({\al*\u+(1-\al)*\v},{\al*sha(\u)+(1-\al)*sha(\v)}) --
+(0,{\al*sha(\u)+(1-\al)*sha(\v)}) node[left,scale=.7]{\small $\alpha \phi(x_1) + (1-\alpha) \phi(x_2)$};
+%
+\draw[dotted] ({\al*\u+(1-\al)*\v},{sha(\al*\u+(1-\al)*\v)}) --
+(0,{sha(\al*\u+(1-\al)*\v)}) node[left,scale=.7]{\small $\phi(\alpha x_1  + (1-\alpha) x_2)$};
+%node[right,scale=.7]
+%{$\displaystyle \quad \frac{\phi(v)-\phi(u)}{v-u} \, (t-u) + \phi(u)$};;
+%
+% tangente
+%\draw (\dc,{shap(\u)*(\dc-\u)+sha(\u)})--(\ft,{shap(\u)*(\ft-\u)+sha(\u)})
+%node[right,scale=.7]{$\quad \phi'(u) \, (t-u) + \phi(u)$};
+%
+\end{tikzpicture}

@@ -327,6 +327,7 @@
 \newtheorem{corolario}{Corolario}
 \newtheorem{lema}{Lema}
 \newtheorem{propuesta}{Propuesta}
+\newtheorem{ejemplo}{Ejemplo}
 
 % numerotacion con el numero de capitulo
 \renewcommand\thedefinicion{\arabic{capitulo}-\arabic{definicion}}
@@ -334,3 +335,4 @@
 \renewcommand\thecorolario{\arabic{capitulo}-\arabic{corolario}}
 \renewcommand\thelema{\arabic{capitulo}-\arabic{lema}}
 \renewcommand\thepropuesta{\arabic{capitulo}-\arabic{propuesta}}
+\renewcommand\theejemplo{\arabic{capitulo}-\arabic{ejemplo}}
