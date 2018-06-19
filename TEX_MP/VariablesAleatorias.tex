@@ -30,7 +30,7 @@ aleatoria es la de funci\'on medible:
   %
   \[
   \forall \,  B \in  \B, \quad  A \equiv f^{-1}(B)  = \left\{  \omega \in  A: \,
-    f(\omega) \in B \right\} \: \in \: \A
+    f(\omega) \in B \right\} \: \in \: \A.
   \]
   %
   Dicho de  otra manera,  la pre-imagen  de un elemento  dada de  $\B$ (elemento
@@ -49,7 +49,7 @@ definir una medida imagen  sobre el espacio de llegada~\cite{AthLah06, Bog07:v1,
   medible. Sea $\mu_f$ tal que
   %
   \[
-  \forall \,  B \in  \B, \quad  \mu_f(B) = \mu\left( f^{-1}(B) \right)
+  \forall \,  B \in  \B, \quad  \mu_f(B) = \mu\left( f^{-1}(B) \right).
   \]
   %
   Entonces, $\mu_f$ es una medida sobre el espacio medible $(\Upsilon,\B)$ \ \ie
@@ -108,7 +108,7 @@ con respeto a una medida:
   %
   \[
   \forall \, A \in \A,  \quad \int_A d\mu(\omega) = \int_\Omega \un_A(\omega) \,
-  d\mu(\omega) = \mu(A)
+  d\mu(\omega) = \mu(A),
   \]
   %
   donde
@@ -130,14 +130,14 @@ con respeto a una medida:
   perdida  de  generalidad~\footnote{Si  $A_i,  A_j$ no  son  disjuntos,  sufice
     considerar $A_i\backslash A_j, \: A_j\backslash  A_j, A_i \cap A_j$ \ con $A
     \backslash B = \{ \omega: \omega \in  A \: \mbox{y} \: \omega \not\in B\}$ \
-    y respectivamente los coefficientes \  $\alpha_i, \: \alpha_j, \: \alpha_i +
-    \alpha_j$.}   para  un  conjunto  $\{  A_j  \}$  numerable,  con  los  $A_j$
-  disjuntos, y $\{ \alpha_j \}$ reales no negativos, la integral de la funci\'on
-  escalonada \ $\displaystyle \sum_j \alpha_j \un_{A_j}$ \ es dada por
+    y respectivamente los coefficientes \  $a_i, \: a_j, \: a_i +
+    a_j$.}   para  un  conjunto  $\{  A_j  \}$  numerable,  con  los  $A_j$
+  disjuntos, y $\{ a_j \}$ reales no negativos, la integral de la funci\'on
+  escalonada \ $\displaystyle \sum_j a_j \un_{A_j}$ \ es dada por
   %
   \[
-  \int_\Omega \left( \sum_j \alpha_j \un_{A_j}(\omega) \right) \, d\mu(\omega) =
-  \sum_j \alpha_j \int_\Omega \un_{A_j}(\omega) \, d\mu(\omega)
+  \int_\Omega \left( \sum_j a_j \un_{A_j}(\omega) \right) \, d\mu(\omega) =
+  \sum_j a_j \int_\Omega \un_{A_j}(\omega) \, d\mu(\omega).
   \]
   %
 \end{definicion}
@@ -170,7 +170,7 @@ funci\'on real:
   %
   \[
   \int_{\Omega}  g(\omega) \,  d\mu(\omega)  = \lim_{n  \to \infty}  \int_\Omega
-  g_n(\omega) \, d\mu(\omega)
+  g_n(\omega) \, d\mu(\omega).
   \]
   %
   Fijense de que el limite puede ser infinita.\newline Sea ahora $g: (\Omega,\A)
@@ -180,7 +180,7 @@ funci\'on real:
   %
   \[
   g   \:  \mbox{es}   \:  \mu\mbox{-integrable}   \quad   \Leftrightarrow  \quad
-  \int_\Omega |g(\omega)| \, d\mu(\omega) < +\infty
+  \int_\Omega |g(\omega)| \, d\mu(\omega) < +\infty.
   \]
   %
   Por  fin,  se escribe  $g  =  g_+  + g_-$  con  $g_+  =  \max(g,0)$ y  $g_-  =
@@ -190,7 +190,7 @@ funci\'on real:
   %
   \[
   \int_\Omega   g(\omega)   \,  d\mu(\omega)   =   \int_\Omega  g_+(\omega)   \,
-  d\mu(\omega) - \int_\Omega \left( - g_-(\omega) \right) \, d\mu(\omega)
+  d\mu(\omega) - \int_\Omega \left( - g_-(\omega) \right) \, d\mu(\omega).
   \]
 \end{definicion}
 
@@ -208,7 +208,7 @@ detallar las  pruebas. Por eso,  se puede referirse  a~\cite{AthLah06, Bog07:v1,
   %
   \[
   \lim_{n  \to  +\infty}  \int_\Omega  f_n(\omega)  d\mu(\omega)  =  \int_\Omega
-  f(\omega) d\mu(\omega)
+  f(\omega) d\mu(\omega).
   \]
 \end{teorema}
 %
@@ -223,7 +223,7 @@ integraci\'on y limite.
   %
   \[
   \int_\Omega  \sum_{n   \in  \Nset}  f_n(\omega)   d\mu(\omega)  =  \int_\Omega
-  f(\omega) d\mu(\omega)
+  f(\omega) d\mu(\omega).
   \]
 \end{corolario}
 %
@@ -239,7 +239,7 @@ sucesi\'on creciente $\{ \sum_{k=0}^n f_n \}_{n \in \Nset}$.
   %
   \[
   \lim_{n  \to  +\infty}  \int_\Omega  f_n(\omega)  d\mu(\omega)  =  \int_\Omega
-  f(\omega) d\mu(\omega)
+  f(\omega) d\mu(\omega).
   \]
 \end{teorema}
 %
@@ -267,7 +267,7 @@ producto y medida producto.
   %
   \[
   g(\omega_1)   =  \int_{\Omega_2}   \left|   f(\omega_1,\omega_2)  \right|   \,
-  d\mu_2(\omega_2) \quad \mu_1\mbox{-integrable}
+  d\mu_2(\omega_2) \quad \mu_1\mbox{-integrable}.
   \]
   %
   Entonces, $f$ \ es $\mu$-integrable y
@@ -314,7 +314,7 @@ producto y medida producto.
   %
   \[
   \nabla_t  \int_\Omega  f(\omega,t)  \,  d\mu(\omega)  =  \int_\Omega  \nabla_t
-  f(\omega,t) \, d\mu(\omega)
+  f(\omega,t) \, d\mu(\omega).
   \]
 \end{teorema}
 %
@@ -332,7 +332,7 @@ una otra, dando una definici\'on muy general de una densidad:
   \Rset_+$ medible tal que
   %
   \[
-  \forall \, A \in \A, \quad \nu(A) = \int_A p(\omega) d\mu(\omega)
+  \forall \, A \in \A, \quad \nu(A) = \int_A p(\omega) d\mu(\omega),
   \]
   %
   $p$ \ es llamada densidad de \ $\nu$ \ con respeto a \ $\mu$, denotada
@@ -359,7 +359,7 @@ una otra, dando una definici\'on muy general de una densidad:
   si y solamente son iguales excepto sobre un conjunto de medida nula,
   %
   \[
-  \mu\left( \left\{ \omega: \: p_1(\omega) \ne p_2(\omega) \right\} \right) = 0
+  \mu\left( \left\{ \omega: \: p_1(\omega) \ne p_2(\omega) \right\} \right) = 0.
   \]
 \end{definicion}
 %
@@ -376,8 +376,9 @@ Es sencillo ver  de que si $\mu(A)  = 0$, necesariamente $\nu(B) =  0$:
 %
 \begin{definicion}[Absoluta continuidad]
   Sea \ $\mu$ \ y \ $\nu$ \ dos medidas sobre un espacio medible \ $(\Omega,\A)$
-  dicha {\it  absolutamente continua}  con respeto a  $\mu$, denotado  $$\nu \ll
-  \mu$$ si $\forall \: A \in \A, \quad \mu(A) = 0 \: \Rightarrow \: \nu(A) = 0$
+  dicha {\it  absolutamente continua}  con respeto a  $\mu$, denotado  \[\nu \ll
+  \mu,\] si $\forall  \: A \in \A, \quad  \mu(A) = 0 \: \Rightarrow  \: \nu(A) =
+  0$.
 \end{definicion}
 %
 De    hecho,     se    muestra     la    reciproca    del     la    definici\'on
@@ -389,7 +390,7 @@ teorema de Radon-Nikod\'ym~\cite{Nik30, AthLah06, Bog07:v1, Coh13}:
   %
   \[
   \nu \ll \mu \quad \Longleftrightarrow  \quad \nu \: \mbox{ admite una densidad
-    con respeto a } \: \mu
+    con respeto a } \: \mu.
   \]
   %
   Adem\'as, esta densidad $\frac{d\nu}{d\mu}$ es \'unica en el sentido de que si
@@ -411,7 +412,7 @@ necesita  explicitamente  tener  en  cuenta esta  sutileza.
   %
   \[
   \mu_L\left(  \optimes_{i=1}^d  (a_i  \,  ;  \, b_i)  \right)  =  \prod_{i=1}^d
-  (b_i-a_i)
+  (b_i-a_i).
   \]
   %
 \end{definicion}
@@ -450,7 +451,7 @@ medida  de  Lebesgue. \modif{De  la  misma  manera,  hablando de  densidad,  sin
   %
   0 & \mbox{si no}
   %
-  \end{array}\right.
+  \end{array}\right..
   \]
   %
   Dado un conjunto \ $\X \{  x_i \}_i$ \ discreto (finito o infinito numerable),
@@ -466,7 +467,7 @@ medida  de  Lebesgue. \modif{De  la  misma  manera,  hablando de  densidad,  sin
 Fijense de que, para $f$ medible, tenemos
 %
 \[
-\int_B f(x) \, d\delta_{x_k}(x) = f(x_k)
+\int_B f(x) \, d\delta_{x_k}(x) = f(x_k).
 \]
 %
 Se  proba  saliendo  de   \  $f$  \  de  la  forma  \  $f   =  \un_C$  \  y  del
@@ -499,7 +500,7 @@ resultado de un experimento o de un evento dado~\cite{AthLah06, Coh13, Bre88}:
   la variable aleatoria $X$. En lo que sigue, escribiremos los eventos
   %
   \[
-  (X \in B) \equiv X^{-1}(B) = \{ \omega \in \Omega: \: X(\omega) \in B \}
+  (X \in B) \equiv X^{-1}(B) = \{ \omega \in \Omega: \: X(\omega) \in B \},
   \]
   %
   as\'i que, por definici\'on,
@@ -524,7 +525,7 @@ definici\'on  de  la funci\'on  de  repartici\'on~\cite{AthLah06, Coh13,  Bre88,
   aleatoria es definida por
   %
   \[
-  F_X(x) = P_X((-\infty \, ; \, x]) = P(X \le x)
+  F_X(x) = P_X((-\infty \, ; \, x]) = P(X \le x).
   \]
   %
   A veces, por abuso de terminologia,  se denomina $F_X$ como ley de la variable
@@ -561,7 +562,7 @@ manera siguiente~\cite{AthLah06, Coh13, Bre88}:
   Un vector aleatorio real es una funci\'on medible
   %
   \[
-  X: (\Omega,\A,P) \mapsto (\Rset^d,\B(\Rset^d),P_X)
+  X: (\Omega,\A,P) \mapsto (\Rset^d,\B(\Rset^d),P_X).
   \]
   %
   donde  $\B(\Rset^d)$  son  los  borelianos  de  $\Rset^d$,  $\sigma$-\'algebra
@@ -572,7 +573,7 @@ manera siguiente~\cite{AthLah06, Coh13, Bre88}:
   %
  \[
  (X \in B) \equiv X^{-1}(B) = \{ \omega \in \Omega: \: X(\omega) \in B \} \qquad
- \mbox{y} \qquad P_X(B) = P(X \in B)
+ \mbox{y} \qquad P_X(B) = P(X \in B).
  \]
 \end{definicion}
 %
@@ -597,12 +598,12 @@ elementos de  la forma $\displaystyle  \optimes_{i=1}^d (-\infty \, ;  \, b_i]$,
   %
   \[
   F_X(x) =  P_X\left( \optimes_{i=1}^d (-\infty \,  ; \, x_i]  \right) = P\left(
-    \bigcap_{i=1}^d (X_i \le x_i) \right)
+    \bigcap_{i=1}^d (X_i \le x_i) \right).
   \]
   %
 \modif{Por abuso de escritura, escribiremos en lo que sigue
   \[
-  F_x(x) = P(X \le x)
+  F_x(x) = P(X \le x),
   \]
   %
   subentiendo de que $X \le  x$ es el evento $\displaystyle \bigcap_{i=1}^d (X_i
@@ -626,8 +627,8 @@ elementos de  $\{ 1  , \ldots ,  d \}^k$,  $X_{I_k} = \begin{bmatrix}  X_{i_1} &
 $k$-dimensional. Es entonces sencillo ver de que
 %
 \[
-F_{X_{I_k}}(x_{I_k}) = \lim_{\forall i \not\in I_k, x_i \to +\infty} F_X(x)
-\label{pagina:MP:MarginalesF}
+F_{X_{I_k}}(x_{I_k}) = \lim_{\forall i \not\in I_k, x_i \to +\infty} F_X(x).
+%\label{pagina:MP:MarginalesF}
 \]
 %
 (viene de  que $\bigcap_{j=1}^k (X_{i_j}  \le x_{i_j}) =  \left( \bigcap_{j=1}^k
@@ -644,13 +645,13 @@ Cerramos estas generalidades con el caso de variables independientes:
   \in \B_i)$ son mutuamente independientes, \ie
   %
   \[
-  P_X\left( \optimes_{i=1}^d B_i \right) = \prod_{i=1}^d P_{X_i}(B_i)
+  P_X\left( \optimes_{i=1}^d B_i \right) = \prod_{i=1}^d P_{X_i}(B_i).
   \]
   %
   Es equivalente a
   %
   \[
-  F_X(x) = \prod_{i=1}^d F_{X_i}(x_i)
+  F_X(x) = \prod_{i=1}^d F_{X_i}(x_i).
   \]
   %
   La  ley  del  vector  aleatorio  se factoriza.  \modif{Necesariamente,  $\X  =
@@ -696,7 +697,7 @@ como en el espacio preimagen.
   \{ x_j \}$ \ y se puede escribir \ $X$ \ como una {\it variable escalonadas},
   %
   \[
-  X = \sum_j x_j \un_{A_j} \quad \mbox{con} \quad A_j = X^{-1}(\{ x_j \})
+  X = \sum_j x_j \un_{A_j} \quad \mbox{con} \quad A_j = X^{-1}(\{ x_j \}).
   \]
 \end{definicion}
 %
@@ -715,7 +716,7 @@ aleatoria~\cite{AthLah06, HogMck13}:
   aleatoria discreta tomando sus valores sobre $\X$ es dada por
   %
   \[
-  p_X(x) \equiv P(X = x) = P_X( \{ x\} ) \quad x \in \X
+  p_X(x) \equiv P(X = x) = P_X( \{ x\} ) \quad x \in \X.
   \]
   %
   Por   abuso  de   denominaci\'on,  llamaremos   en  este   libro   $p_X$  {\it
@@ -732,7 +733,7 @@ Fijense de  que, $P_X$ siendo  una medida  de probabilidad, $p_X  \ge 0$ \  y es
 obviamente normalizada en el sentido de que
 %
 \[
-\sum_{x_j \in \X} p_X(x_j) = 1
+\sum_{x_j \in \X} p_X(x_j) = 1.
 \]
 %
 En  la  Fig.~\ref{fig:MP:ProbaDiscreta}-(a)   se  muestra  una  representaci\'on
@@ -742,13 +743,13 @@ En particular,
 %
 \[
 \forall \,  B \in  \B(\Rset), \quad  P_X(B) = \sum_{x  \in \X  \cap B}  p_X(x) =
-\int_B dP_X(x)
+\int_B dP_X(x),
 \]
 %
 lo que da, tratando de la funci\'on de repartici\'on,
 %
 \[
-F_X(x) = \sum_{x_j \le x} p_X(x_j)
+F_X(x) = \sum_{x_j \le x} p_X(x_j).
 \]
 %
 De  esta forma,  se justifica  la  denominaci\'on {\it  cumulativa} para  $F_X$.
@@ -888,7 +889,7 @@ $P_X$:
   negativa \ $p_X$ \ medible sobre $\Rset$ tal que
   %
   \[
-  \forall \, B \in \B(\Rset), \quad P_X(B) = \int_B p_X(x) \, dx
+  \forall \, B \in \B(\Rset), \quad P_X(B) = \int_B p_X(x) \, dx,
   \]
   %
   entonces $X$  es dicha {\it  admitiendo una densidad}  y \ $p_X$ \  es llamada
@@ -898,7 +899,7 @@ $P_X$:
   \ne 0$), y
   %
   \[
-  \forall \, B \in \B(\Rset), \quad P_X(B) = \int_{B \cap \X} p_X(x) \, dx
+  \forall \, B \in \B(\Rset), \quad P_X(B) = \int_{B \cap \X} p_X(x) \, dx.
   \]
   %
   Tratando de la funci\'on de repartici\'on \ $F_X$, tenemos entonces
@@ -915,7 +916,7 @@ $P_X$:
     la igualdad debe ser entendido ``casi siempre''.}
   %
   \[
-  p_X(x) = \frac{d F_X(x)}{dx}
+  p_X(x) = \frac{d F_X(x)}{dx}.
   \]
   %
   Por abuso  de terminologia,  en lo que  sigue llamaremos $p_X$  tambi\'en {\it
@@ -930,11 +931,11 @@ $\displaystyle P(a < X \le b) = \int_a^b p_X(x) \, dx = F_X(b) - F_X(a)$ \ y que
 claramente
 %
 \[
-\forall x \in \Rset, \quad P_X(\{x\}) = P(X = x) = 0
+\forall x \in \Rset, \quad P_X(\{x\}) = P(X = x) = 0.
 \]
 %
-$\{ x \}$ es dicho de medida $P_X$ nula (es el caso de todos conjuntos numerable
-de $\Rset$).
+$\{ x \}$  es de medida $P_X$ nula  (es el caso de todos  conjuntos numerable de
+$\Rset$).
 
 Fijense de  que si  $0 \le  F_X \le  1$, \ $p_X$  puede ser  mayor que  uno. Por
 ejemplo, para \ $F_X(x) = 2 \, x  \, \un_{\left[ 0 \, ; \, \frac12 \right)}(x) +
@@ -976,7 +977,7 @@ discreta\modif{, como ilustrado en el ejemplo siguiente}
   probabilidad \ $p_U  = p_V = \un_{[0 \,  ; \, 1)}$ \ ($U$  \ y \ $V$  \ son dichas
   uniformes sobre $[0 \, ;  \, 1)$) \ y sea \ $X = V  \un_{U < \frac12} + \un_{U
     \ge \frac12}$,  \ es  decir \ $X(\omega)  = V(\omega)$  \ si \  $U(\omega) <
-  \frac12$ \ y \ $1$ \ si no.  Entonces de la formula de probabilidades totales,
+  \frac12$ \ y \ $1$ \ si no.  Entonces de la f\'ormula de probabilidades totales,
   \ $F_X(x) = P(X  \le x) = P\left( (X \le x) \left|  \left( U < \frac12 \right)
     \right.  \right) \,  P\left( U < \frac12  \right) \, + \, P\left(  (X \le x)
     \left|  \left( U  \ge  \frac12 \right)  \right.   \right) \,  P\left( U  \ge
@@ -987,7 +988,7 @@ discreta\modif{, como ilustrado en el ejemplo siguiente}
     +\infty)}(x)$ \ es decir
   %
   \[
-  F_X(x) = \frac{x}{2} \un_{[0 \, ; \, 1)}(x) + \un_{[1 \, ; \, +\infty)}(x)
+  F_X(x) = \frac{x}{2} \un_{[0 \, ; \, 1)}(x) + \un_{[1 \, ; \, +\infty)}(x).
   \]
   %
   Esta     funci\'on     de     repartici\'on     es     representada     figura
@@ -1051,7 +1052,7 @@ las propiedades, para cualquier function \ $f$ \ y real \ $x_0$,
 %
 \[
 f(x) \delta(x-x_0) = f(x_0) \delta(x-x_0) \qquad \mbox{y} \qquad \int_\Rset f(x)
-\delta(x-x_0) \, dx = f(x_0)
+\delta(x-x_0) \, dx = f(x_0),
 \]
 %
 pero hay que entender la integraci\'on a trav\'es de la medida Dirac (insistamos
@@ -1095,7 +1096,7 @@ vector aleatorio:
   %
   \[
   p_X(x) \equiv  P(X =  x) =  P\left( \bigcap_{i=1}^d \left(  X_i =  x_i \right)
-  \right) \quad \forall \, x_i \in \X_i, \: 1 \le i \le d
+  \right) \quad \forall \, x_i \in \X_i, \: 1 \le i \le d.
   \]
   %
   Se la llama  tambi\'en {\it funci\'on de masa de  probabilidad conjunta de los
@@ -1129,7 +1130,7 @@ masa se factoriza, \ie
 %
 \[
 X_i  \:  \mbox{mutuamente independientes}  \quad  \Leftrightarrow  \quad p_X  =
-p_{X_1} \ldots  p_{X_d}
+p_{X_1} \ldots  p_{X_d}.
 \]
 %
 En notaciones tensoriales, $p_X =  p_{X_1} \otimes \cdots \otimes p_{X_d}$ donde
@@ -1145,14 +1146,14 @@ Kronecker~\footnote{Para   \    $p   =   \begin{bmatrix}   p_1    &   \cdots   &
   $p_j  q_k, \quad 1  \le j  \le n,  \: 1  \le k  \le m$.   Fijense de  que este
   producto es asociativo pero no es comutativo.\label{foot:MP:Kronecker}}.
 
-Al  final, de la  formula de  calculo de  funci\'on de  repartici\'on marginales
+Al  final, de la  f\'ormula de  calculo de  funci\'on de  repartici\'on marginales
 visto  pagina~\pageref{pagina:MP:MarginalesF},   para  un  subconjunto   $I_k  =
 (i_1,\ldots,i_k)$ de  $1 \le k  \le d$ elementos  de $\{ 1  , \ldots ,  d \}^k$,
 $X_{I_k}  =  \begin{bmatrix}  X_{i_1}  &  \cdots  &  X_{i_k}\end{bmatrix}^t$  la
 probabilidad marginal o distribuci\'on marginale de $X_{I_k}$ es dada por
 %
 \[
-p_{X_{I_k}}(x_{I_k}) = \sum_{\forall i \not\in I_k, x_i \in \X_i} p_X(x)
+p_{X_{I_k}}(x_{I_k}) = \sum_{\forall i \not\in I_k, x_i \in \X_i} p_X(x).
 \]
 
 
@@ -1196,7 +1197,7 @@ Lebesgue.
   respeto a la medida de Lebesgue), por lo menos por partes,
   %
   \[
-  p_X(x) = \frac{\partial^d F_X(x)}{\partial x_1 \cdots \partial x_d}
+  p_X(x) = \frac{\partial^d F_X(x)}{\partial x_1 \cdots \partial x_d}.
   \]
   %
   Usaremos  todav\'ia la terminolog\'ia  (por abuso)  de {\it  distribuci\'on de
@@ -1208,7 +1209,7 @@ Como en el caso  escalar, $p_X \ge 0$ \ no es necesario  menor que 1 y satisface
 la condici\'on de normalizaci\'on
 %
 \[
-\int_\X p_X(x) \, dx = \int_{\Rset^d} p_X(x) \ dx  = 1
+\int_\X p_X(x) \, dx = \int_{\Rset^d} p_X(x) \ dx  = 1.
 \]
 
 Mencionamos de que las $d$  variables aleatorias $X_1, \ldots, X_d$, componentes
@@ -1217,11 +1218,11 @@ funci\'on de repartici\'on, lo que da derivando esta,
 %
 \[
 X_i \:  \mbox{ mutuamente independientes} \quad \Leftrightarrow  \quad p_X(x) =
-p_{X_1}(x_1) \ldots p_{X_d}(x_d)
+p_{X_1}(x_1) \ldots p_{X_d}(x_d).
 \]
 
 
-Terminamos esta secci\'on mencionando que, de la formula de calculo de funci\'on
+Terminamos esta secci\'on mencionando que, de la f\'ormula de calculo de funci\'on
 de  repartici\'on marginales vista  pagina~\pageref{pagina:MP:MarginalesF}, para
 un subconjunto $I_k = (i_1,\ldots,i_k)$ de $1  \le k \le d$ elementos de $\{ 1 ,
 \ldots   ,  d   \}^k$,   $X_{I_k}   =  \begin{bmatrix}   X_{i_1}   &  \cdots   &
@@ -1231,7 +1232,7 @@ $X_{I_k}$ es dada por
 \[
 p_{X_{I_k}}(x_{I_k})  = \int_{\times_{i  \not\in  I_k} \X_i}  p_X(x) \,  \prod_{i
     \not\in I_k}  dx_i =  \int_{\Rset^{d-k}} p_X(x) \,  \prod_{i \not\in
-      I_k} dx_i
+      I_k} dx_i.
 \]
 %
 En particular, la funci\'on densidad  de probabilidad marginal que caracteriza a
@@ -1263,7 +1264,7 @@ juego de la oca.
   Adem\'as, la medida imagen \ $P_Y$ \ es vinculada \ a \ $P_X$ \ por
   %
   \[
-  \forall \, B \in \B(\Rset^{d'}), \quad P_Y(B) = P_X(g^{-1}(B))
+  \forall \, B \in \B(\Rset^{d'}), \quad P_Y(B) = P_X(g^{-1}(B)).
   \]
 \end{teorema}
 %
@@ -1298,7 +1299,7 @@ Y(\Omega)$ ser\'a discreto tambi\'en, y:
   distribuci\'on de $Y$ es relacionada a la de $X$ por la relaci\'on
   %
   \[
-  \forall \, y \in \Y, \quad p_Y(y) = \sum_{x \in g^{-1}(y)} p_X(x)
+  \forall \, y \in \Y, \quad p_Y(y) = \sum_{x \in g^{-1}(y)} p_X(x).
   \]
 \end{teorema}
 %
@@ -1368,7 +1369,7 @@ dada por el teorema siguiente~\cite{Bre88, JacPro03, AthLah06, Coh13, HogMck13}:
   %
   \[
   \forall \,  y \in  \Y, \quad p_Y(y)  = p_X(g^{-1}(y))  \left| \Jac_{g^{-1}}(y)
-  \right|
+  \right|.
   \]
 \end{teorema}
 %
@@ -1377,7 +1378,7 @@ Por definici\'on, $X$ admitiendo una densidad y $g$ siendo medible,
 %
 \[
 \forall \, B  \in \B(\Rset^d), \quad P_Y(B) =  P_X(g^{-1}(B)) = \int_{g^{-1}(B) \cap \X}
-p_X(x) \, dx
+p_X(x) \, dx.
 \]
 %
 Por cambio de variable $x =  g^{-1}(y)$ ($g$ siendo inyectiva, el antecedante es
@@ -1411,7 +1412,7 @@ El caso escalar puede ser visto como caso particular, dando:
   %
   \[
   \forall  \,   y  \in  \Y,   \quad  p_Y(y)  =  p_X(g^{-1}(y))   \left|  \frac{d
-      g^{-1}(y)}{dy} \right|
+      g^{-1}(y)}{dy} \right|.
   \]
 \end{corolario}
 %
@@ -1433,7 +1434,7 @@ F_Y(y) = P(Y \le y) = P(g(X) \le y) =
 P(X \le g^{-1}(y)) = F_X(g^{-1}(y)) & \mbox{si} & g \quad \mbox{es creciente}\\[2.5mm]
 %
 P(X \ge g^{-1}(y)) = 1 - F_X(g^{-1}(y)) & \mbox{si} & g \quad \mbox{es decreciente}
-\end{array}\right.
+\end{array}\right..
 \]
 %
 El  resultado  se  obtiene  calculando  las  derivadas  del  primer  y  \'ultimo
@@ -1460,14 +1461,14 @@ $g$ es inyectiva, dando
   %
   \[
   \forall  \, y  \in \Y,  \quad p_Y(y)  = \sum_{k  \in  I(y)} p_X(g_k^{-1}(y))
-  \left| \Jac_{g_k^{-1}}(y) \right|
+  \left| \Jac_{g_k^{-1}}(y) \right|.
   \]
   %
   En el caso escalar $d = 1$ eso se formula
   %
   \[
   \forall \, y \in \Y, \quad  p_Y(y) = \sum_{k \in I(y)} p_X(g_k^{-1}(y)) \left|
-    \frac{d g_k^{-1}(y)}{dy} \right|
+    \frac{d g_k^{-1}(y)}{dy} \right|.
   \]
 \end{teorema}
 %
@@ -1522,7 +1523,7 @@ P\left(   X   \in  \X_k   \cap   g_k^{-1}(-\infty  \,   ;   \,   y]  \right)   =
 F_X(g_k^{-1}(y)) - F_X(\inf \Y_{[k]}) & \mbox{si} & g_k \quad \mbox{es creciente}\\[2.5mm]
 %
 F_X(\sup \Y_{[k]}) - F_X(g_k^{-1}(y))  & \mbox{si} & g_k \quad \mbox{es decreciente}
-\end{array}\right.
+\end{array}\right..
 \]
 %
 El  resultado  sigue  diferenciando  este  resultado. Eso  es  ilustrado  figura
@@ -1581,12 +1582,12 @@ importante. El el caso contrario,  $Y$ no queda continua \modif{como se lo puede
 %
 \begin{ejemplo}[Distribuci\'on de la suma de vectores aleatorios]\label{Ej:MP:Suma}
   Sean \  $X$ \ e  \ $Y$ \  dos vectores aleatorios conjuntamente  continuos, de
-  densidad de  probabilidad conjunta $p_{X,Y}$,  y sea el  vector $$V = X  + Y$$
+  densidad de  probabilidad conjunta $p_{X,Y}$,  y sea el  vector \[V = X  + Y.\]
   Queremos calcular la a partir de la densidad de probabilidad de $V$.  Por eso,
   se puede considerar la transformaci\'on biyectiva
   %
   \[
-  g: (x,y) \mapsto (u,v) = (x,x+y)
+  g: (x,y) \mapsto (u,v) = (x,x+y).
   \]
   %
   Entonces
@@ -1611,18 +1612,18 @@ importante. El el caso contrario,  $Y$ no queda continua \modif{como se lo puede
   como lo pudimos intuir. Adem\'as, por marginalizaci\'on, inmediatamente
   %
   \[
-  p_V(v) = \int_{\Rset^d} p_{X,Y}(u,v-u) \, du
+  p_V(v) = \int_{\Rset^d} p_{X,Y}(u,v-u) \, du.
   \]
   %
   Si \ $X$ \ e \ $Y$  \ son independientes, \ $p_{U,V}(u,v) = p_X(u) p_V(v-u)$ \
-  y la formula integral se escribe
+  y la f\'ormula integral se escribe
   %
   \[
   p_V(v) = \int_{\Rset^d} p_X(u) p_Y(v-u) \, du = \int_{\Rset^d} p_Y(u) p_X(v-u)
   \, du
   \]
   %
-  (por cambio de  variable en la secunda expresi\'on).  Esta formula es conocida
+  (por cambio de  variable en la secunda expresi\'on).  Esta f\'ormula es conocida
   como {\it producto de convoluci\'on} entre las funciones~\footnote{\modif{Este
       producto no impone  de que las funciones sean  densidades de probabilidad.
       Una condici\'on suficiente para que existe es que las funciones sean $L^1$
@@ -1679,7 +1680,7 @@ $P(Y \in A | X = x) = \frac{P(Y \in A \cap X = x)}{P(X=x)}$ define una medida de
 probabilidad que llamamos medida de probabilidad condicional y que notaremos
 %
 \[
-P_{Y|X=x}(A) = P(Y \in A | X = x)
+P_{Y|X=x}(A) = P(Y \in A | X = x).
 \]
 %
 Siendo una medida de probabilidad, se puede referirse a la subsecci\'on anterior
@@ -1693,7 +1694,7 @@ probabilidad:
   \[
   \forall \:  x \in  \X, \: y  \in \Y, \quad  F_{Y|X=x}(y) =  P( \left. Y  \le y
   \right|  X =  x  ) =  \frac{P\left(Y  \le y  \cap X  =  x \right)}{P\left(X  =
-      x\right)}
+      x\right)}.
   \]
 \end{definicion}
 
@@ -1709,7 +1710,7 @@ probabilidad, se puede definir una densidad de probabilidad condicional:
   \[
   \forall \:  x \in  \X, \: y  \in \Y, \quad  p_{Y|X=x}(y) =  P( \left. Y  = y
   \right|  X =  x  ) =  \frac{P\left(Y  = y  \cap X  =  x \right)}{P\left(X  =
-      x\right)}
+      x\right)}.
   \]
   %
   Si $Y$ es continua, es sencillo  ver de que $P_{Y|X=x} \ll P_Y$, i.e., $P_Y(B)
@@ -1720,14 +1721,14 @@ probabilidad, se puede definir una densidad de probabilidad condicional:
   (con respeto a la medida de Lebesgue) que denotaremos $p_{Y|X=x}$,
   %
   \[
-  \forall \: B, \quad P_{Y|X=x}(B) = \int_B p_{Y|X=x}(y) \, dy
+  \forall \: B, \quad P_{Y|X=x}(B) = \int_B p_{Y|X=x}(y) \, dy.
   \]
   %
   Saliendo de la funci\'on de repartici\'on, obtenemos
   %
   \[
   p_{Y|X=x}(y) = \frac{\partial^{d_Y} F_{Y|X=x}(y)}{\partial y_1 \ldots \partial
-    y_{d_Y}}
+    y_{d_Y}}.
   \]
 \end{definicion}
 
@@ -1750,7 +1751,7 @@ $\nu_B$ admite una densidad $g_B$ con respeto a $P_X$,
 %
 \[
 \forall \: A, \quad P\left( (X \in A)  \cap (Y \in B) \right) = \int_A g_B(x) \,
-dP_X(x)
+dP_X(x).
 \]
 %
 Claramente \ $g_B \ge 0$,  \ y de \ $P(X \in A) = P\left(  (X \in A) \cap (Y \in
@@ -1767,7 +1768,7 @@ de repartici\'on condicional:
   %
   \[
   \forall \: A \in \X, B \in \Y,  \quad P\left( (X \in A) \cap (Y \in B) \right)
-  = \int_A P_{Y|X=x}(B) \, dP_X(x)
+  = \int_A P_{Y|X=x}(B) \, dP_X(x).
   \]
   %
   Tomando $B  = \optimes_i  (-\infty \, ;  \, y_i]$  se obtiene la  funci\'on de
@@ -1775,7 +1776,7 @@ de repartici\'on condicional:
   %
   \[
   \forall \: A \in \X, y \in \Y, \quad P\left (X \in A) \cap (Y \le y) \right) =
-  \int_A F_{Y|X=x}(y) \, dP_X(x)
+  \int_A F_{Y|X=x}(y) \, dP_X(x).
   \]
   %
   Ad\'emas, si $X$ admite una densidad  de probabilidad $p_X$, $dP_X = p_X dx$ y
@@ -1790,13 +1791,13 @@ de repartici\'on condicional:
   %
   \[
   F_{Y|X=x}(y)   =  \frac{\frac{\partial^{d_X}}{\partial  x_1   \ldots  \partial
-      x_{d_X}} F_{X,Y}(x,y)}{p_X(x)}
+      x_{d_X}} F_{X,Y}(x,y)}{p_X(x)}.
   \]
 \end{definicion}
 %
-\noindent Nota: Tomando $A = \X$,  de la primera formula definiendo la medida de
+\noindent Nota: Tomando $A = \X$,  de la primera f\'ormula definiendo la medida de
 probabilidad condicional  se recupera el \underline{equivalente  continuo} de la
-\underline{formula de probabilidad total}, que  se escribe con la densidad $dP_X
+\underline{f\'ormula de probabilidad total}, que  se escribe con la densidad $dP_X
 = p_X d\mu_L$ si $X$ admite una densidad.
 
 Al final, si $(X,Y)$ admite una  densidad, en sencillo ver de que $P_{Y|X=x} \ll
@@ -1812,7 +1813,7 @@ P\left( (X \in A) \cap (Y \in B) \right) & = & \int_{A \times B} p_{X,Y}(x,y) \,
 Entonces, desde de que $p_X(x) \ne 0$, tenemos
 %
 \[
-P_{Y|X=x}(A) = \int_A \frac{p_{X,Y}(x,y)}{p_X(x)} \, dy
+P_{Y|X=x}(A) = \int_A \frac{p_{X,Y}(x,y)}{p_X(x)} \, dy.
 \]
 %
 \begin{teorema}[Densidad de probabilidad condicional]
@@ -1828,7 +1829,7 @@ P_{Y|X=x}(A) = \int_A \frac{p_{X,Y}(x,y)}{p_X(x)} \, dy
   condicional, aparece de que
   %
   \[
-  p_{Y|X=x} = \frac{\partial^{d_Y}}{\partial y_1 \ldots \partial y_{d_Y}} F_{Y|X=x}
+  p_{Y|X=x} = \frac{\partial^{d_Y}}{\partial y_1 \ldots \partial y_{d_Y}} F_{Y|X=x}.
   \]
 \end{teorema}
 
@@ -1837,13 +1838,13 @@ tener en este  caso continuo. Por ejemplo, podemos  pensar a $F_{Y|X=x}(y)$ como
 caso limite de  $P(\left. Y \le y \right|  x \le X \le x+\delta x)  = \frac{P( Y
   \le  y \:  \cap \:  x \le  X \le  x+\delta x)}{P(x  \le X  \le x+\delta  x)} =
 \frac{F_{X,Y}(x+\delta  x ,  y) -  F_{X,Y}(x  , y)}{F_X(x+\delta  x) -  F_X(x)}$
-cuando \  $\| \delta  x\|$ \ tiende  a 0.   En el caso  escalar, se  calcula por
-ejemplo haciendo un desarollo de Taylor del numerador y del denominador al orden
-1, o  usando la  regla de l'H\^opital~\footnote{\modif{De  hecho, esta  regla es
-    debido  al  suizo  J.  Bernoulli  que  tuvo  un  acuerdo financiero  con  el
-    Guillaume Fran\c{c}ois  Antoine, marqu\'es de  l'H\^opital, permitiendolo de
-    publicar unos resultados de Bernoulli  bajo su nombre.}}  para re-obtener la
-funci\'on     de     repartici\'on     condicional    de     la     definici\'on
+cuando \ $\delta  x$ \ tiende a 0.   En el caso escalar, se  calcula por ejemplo
+haciendo un  desarollo de Taylor del numerador  y del denominador al  orden 1, o
+usando la  regla de l'H\^opital~\footnote{\modif{De hecho, esta  regla es debido
+    al  suizo J.   Bernoulli que  tuvo un  acuerdo financiero  con  el Guillaume
+    Fran\c{c}ois  Antoine, marqu\'es de  l'H\^opital, permitiendolo  de publicar
+    unos resultados de Bernoulli bajo su nombre.}}  para re-obtener la funci\'on
+de        repartici\'on       condicional        de        la       definici\'on
 Def.~\ref{Def:MP:FRCondicional}. En  el caso multivariado, hace  falta hacer los
 desarollos hasta el orden $d_X$ para concluir.
 
@@ -1871,7 +1872,7 @@ Fijense de  que:
     \, p_Y(y)}{\displaystyle \int_{\Rset^{d_Y}} p_{X|Y=y}(x) \, p_Y(y) \, dy},
   \]
   %
-  equivalente continuo, con densidades, de la formula de Bayes;
+  equivalente continuo, con densidades, de la f\'ormula de Bayes;
 %
 \item  por la  expresi\'on  \ $p_{X,Y}(x,y)  =  p_{Y|X=x}(y) \,  p_X(x)$, \  por
   integraci\'on con respeto a $x$ obtenemos
@@ -1880,7 +1881,7 @@ Fijense de  que:
   p_Y(y) = \int_{\Rset^{d_X}} p_{Y|X=x}(y) \, p_X(x) \, dx,
   \]
   %
-  generalizaci\'on de la formula de  probabilidades totales al caso continuo con
+  generalizaci\'on de la f\'ormula de  probabilidades totales al caso continuo con
   densidad de probabilidad.
 \end{itemize}
 
@@ -1893,7 +1894,7 @@ Volvemos al ejemplo~\ref{Ej:MP:Suma}, pagina~\pageref{Ej:MP:Suma}:
   %
   \[
   p_{V|X=x}(v)            =            \frac{p_{X,Y}(x,v-x)}{p_X(x)}           =
-  \frac{p_{X,Y}(x,v-x)}{\displaystyle \int_{\Rset^d} p_{X,Y}(x,v-x) \, dv}
+  \frac{p_{X,Y}(x,v-x)}{\displaystyle \int_{\Rset^d} p_{X,Y}(x,v-x) \, dv},
   \]
   %
   dando en el caso \ $X$ \ e \ $Y$ \ \underline{independientes}

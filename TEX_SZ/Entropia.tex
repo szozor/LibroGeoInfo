@@ -20,7 +20,7 @@ tomando  un logaritmo  de  base 2,  esta  informaci\'on es  nada  m\'as que  los
 n\'umeros de bits (0-1) necesarios  para codificar todas las cadenas de longitud
 $n$  de s\'imbolos de  un alfabeto  de cardinal  $\alpha$.  La  informaci\'on de
 Hartley  es  el equivalente  de  la entrop\'ia  de  Boltzmann  de la  mec\'anica
-estad\'istica la  famosa f\'ormula $S  = k_B \log W$~\cite{Bol96,  Bol98, Jay65,
+estad\'istica, la famosa  f\'ormula $S = k_B \log  W$~\cite{Bol96, Bol98, Jay65,
   Mer10, Mer18}.
 
 Una debilidad del enfoque de Hartley es que considera impl\'icitamente que en un
@@ -46,14 +46,14 @@ todos  los  estados posibles  $x$~\cite{Sha48,  ShaWea64}~\footnote{En la  misma
     Lun02, RioMag14, FlaRio16, RioFla17, Che17}).}.
 %
 \begin{definicion}[Entrop\'ia de Shannon]\label{def:SZ:Shannon}
-  Sea $X$ una variable aleatoria  definida sobre una alfabeto o espacio muestral
-  discreto $\X = \{  x_1 , \ldots , x_\alpha \}$ de cardinal  $\alpha = |\X| < +
-  \infty$  finito. Sea $p_X$  la distribuci\'on  de probabilidad  de $X$,  \ie $
-  \forall \, x \in \X, \quad p_X(x)  = \Pr[X = x]$.  La entrop\'ia de Shannon de
-  la variable $X$ est\'a definida por
+  Sea  $X$  una  variable  aleatoria  definida  sobre  un  alfabeto  discreto  \
+  $X(\Omega) = \X = \{ x_1 , \ldots  , x_\alpha \}$ \ de cardinal $\alpha = |\X|
+  < + \infty$ finito. Sea $p_X$  la distribuci\'on de probabilidad de $X$, \ie $
+  \forall \, x \in \X, \quad p_X(x) = P(X = x)$.  La entrop\'ia de Shannon de la
+  variable $X$ est\'a definida por
   %
   \[
-    H(p_X) = H(X) = - \sum_{x \in \X} p_X(x) \, \log p_X(x)
+    H(p_X) = H(X) = - \sum_{x \in \X} p_X(x) \, \log p_X(x),
   \]
   %
   con la convenci\'on $0 \log 0 =  0$ \ ($\displaystyle \lim_{t \to 0} \, t \log
@@ -71,7 +71,7 @@ o dits (se encuentra tamb\'ien la denominaci\'on bans o Hartleys).  {\it En este
 Notar que $\log_a x = \frac{\log x}{\log a}$, dando
 %
 \[
-H_a(X)  =  H_b(X)  \log_a b
+H_a(X)  =  H_b(X)  \log_a b.
 \]
 %
 En  lo  que  sigue, a\'un  que,  rigurosamente,  $H$  sea  una funci\'on  de  la
@@ -79,31 +79,30 @@ distribuci\'on  de  probabilidad $p_X$  y  no de  la  variable  $X$, se  usar\'a
 indistintamente  tanto  la notaci\'on  $H(p_X)$  como  $H(X)$  seg\'un lo  m\'as
 conveniente.  Adem\'as, $p_X$  podr\'a denotar indistintamente la distribuci\'on
 de  probabilidad,  o  el  vector  de probabilidad  $p_X  \equiv  \begin{bmatrix}
-  p_X(x_1) &  \cdots & p_X(x_\alpha) \end{bmatrix}^t$ donde  $\cdot^t$ denota la
-transpuesta. En  lo que sigue, de  vez a cuando, usaremos  $p_i \equiv p_X(x_i)$
-por simplificaci\'on de escritura.
+  p_X(x_1) & \cdots & p_X(x_\alpha) \end{bmatrix}^t$.  En lo que sigue, de vez a
+cuando, usaremos $p_i \equiv p_X(x_i)$ por simplificaci\'on de escritura.
 
 $H$ es el equivalente de la entrop\'ia de Gibbs en mec\'anica estad\'istica.  La
 letra  $H$  viene del  teorema-H  debido  a\ldots Ludwig  Boltzmann~\cite{Jay65,
   Mer10, Mer18}.
 
 $H$ tiene propiedades notables que corresponden  a las que se puede exigir a una
-medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
+medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}.
 %
 \begin{propiedades}
-\item\label{prop:SZ:continuidad} {\it Continuidad:}  Vista como una funci\'on de
+\item\label{prop:SZ:continuidad} {\it Continuidad:}  vista como una funci\'on de
   \ $\alpha$ \ variables  \ $p_i = p_X(x_i)$, \ $H$ \  es continua con respeto a
   los $p_i$.
 %
 \setcounter{PropPermutacion}{\value{enumi}}
 \item\label{prop:SZ:permutacion}   {\it  Invariance  bajo   una  permutaci\'on:}
-  Obviamente,  la  entrop\'ia  es  invariante  bajo  una  permutaci\'on  de  las
-  probabilidades, \ie,
+  obviamente,  la  entrop\'ia  es  invariante  bajo  una  permutaci\'on  de  las
+  probabilidades, \ie
   %
   \[
   \mbox{para   cualquiera   permutaci\'on   }   \sigma:   \X   \to   \X,   \quad
   H(p_{\sigma(X)})   =  H(p_X)   \quad  \mbox{con}   \quad   p_{\sigma(X)}(x)  =
-  p_X(\sigma(x))
+  p_X(\sigma(x)),
   \]
   %
   lo que se  escribe tambi\'en $H(\sigma(X)) = H(X)$.   En particular, denotando
@@ -113,17 +112,17 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   la $i$-esima componente de $p_X^\downarrow$,
   %
   \[
-  H(p_X^\downarrow) = H(p_X)
+  H(p_X^\downarrow) = H(p_X).
   \]
 %
 \setcounter{PropBiyeccion}{\value{enumi}}
 \item\label{prop:SZ:biyeccion}   {\it  Invariance   bajo   una  transformaci\'on
-    biyectiva:}  La entrop\'ia  es invariante  bajo  cualquiera transformaci\'on
+    biyectiva:}  la entrop\'ia  es invariante  bajo  cualquiera transformaci\'on
   biyectiva, \ie
   %
   \[
   \mbox{para cualquiera  funci\'on biyectiva } g:  \X \to g(\X),  \quad H(g(X)) =
-  H(X)
+  H(X).
   \]
   %
   A  trav\'es  tal transformaci\'on  los  estados  cambian,  pero no  cambia  la
@@ -131,19 +130,18 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   ejemplo de  un dado, la  incerteza vinculada al  dado no debe depender  de los
   s\'imbolos escritos sobre las caras, sean enteras o cualesquiera letras.
 %
-\item\label{prop:SZ:positividad} {\it Positividad:} La entrop\'ia es acotada por
+\item\label{prop:SZ:positividad} {\it Positividad:} la entrop\'ia es acotada por
   debajo,
   %
   \[
-  H(X) \ge 0 
+  H(X) \ge 0,
   \]
   %
-  con igualdad si y solamente si existe un  $x_j \in \X$ ($j \in \{ 1 , \ldots ,
-  \alpha \}$) tal  que $p_X(x_j) = 1$  \ y \ $p_X(x) =  0$ \ para \  $x \ne x_j$
-  ($p_X = \un_j$),
+  con igualdad si y solamente si existe un $x_j \in \X$ tal que $p_X(x_j) = 1$ \
+  y \ $p_X(x) = 0$ \ para \ $x \ne x_j$, \ie $p_X = \un_j$,
   %
   \[
-  H(X)  =  0 \quad  \mbox{ssi}  \quad X  \mbox{  es  determinista}
+  H(X)  =  0 \quad  \mbox{ssi}  \quad X  \mbox{  es  determinista.}
   \]
   %
   En  otras  palabras, cuando  $X$  no  es aleatoria,  \ie  $X  =  x_j$, no  hay
@@ -155,18 +153,18 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   de probabilidad, sumando a 1.
 %
 \setcounter{PropCotamaxima}{\value{enumi}}
-\item\label{prop:SZ:cotamaxima} {\it Maximalidad:}  La entrop\'ia es acotada por
+\item\label{prop:SZ:cotamaxima} {\it Maximalidad:}  la entrop\'ia es acotada por
   arriba,
   %
   \[
-  H(X) \le \log \alpha
+  H(X) \le \log \alpha,
   \]
   %
   con igualdad si y solamente si existe $X$ es uniforme sobre $\X$, \ie
   %
   \[
   H(X) =  \log \alpha \quad \mbox{ssi}  \quad \forall \,  x \in \X, \:  p_X(x) =
-  \frac{1}{\alpha}
+  \frac{1}{\alpha}.
   \]
   %
   En otras palabras, la incerteza  es m\'axima cuando cualquier estado $x$ puede
@@ -174,9 +172,9 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   importante sobre el  sistema que genera $X$.  La cota  m\'axima resuelta de la
   maximizaci\'on de $H$ sujeto a $\sum_x p_X(x) = 1$, es decir, con la t\'ecnica
   del  Lagrangiano para  tomar  en cuenta  el v\'inculo~\cite{Mil00,  CamMar09},
-  notando $p_i  = p_X(x_i)$,  hay que minimizar  $\sum_i (-  p_i \log p_i  + \mu
-  p_i)$ donde  el factor de Lagrange  $\mu$ se determinar\'a  para satisfacer el
-  v\'inculo.   Se  obtiene  sencillamente  que  $\log  p_i  =  -\mu$,  dando  la
+  notando $p_i = p_X(x_i)$, hay que minimizar $\sum_i (- p_i \log p_i + \zeta \,
+  p_i)$ donde el factor de Lagrange \ $\zeta$ \ se determinar\'a para satisfacer
+  el  v\'inculo.  Se  obtiene  sencillamente que  $\log  p_i =  -\zeta$, dando  la
   distribuci\'on  uniforma.\newline La  figura Fig.~\ref{fig:SZ:EntropiaBinaria}
   representa la entrop\'ia de un sistema a dos estados, de probabilidades \ $p_X
   = \begin{bmatrix}  r & 1-r \end{bmatrix}^t$  \ (ley de  Bernoulli de parametro
@@ -202,7 +200,7 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   \widetilde{\X}  =  \X  \cup  \{  \widetilde{x}_0  \}  \quad  \mbox{con}  \quad
   p_{\widetilde{X}}(x)  =   p_X(x)  \quad  \mbox{si}  \quad  x   \in  \X,  \quad
   p_{\widetilde{X}}(\widetilde{x}_0)   =   0,   \qquad   \mbox{entonces}   \quad
-  H(p_{\widetilde{X}}) = H(p_X)
+  H(p_{\widetilde{X}}) = H(p_X).
   \]
   %
   Esta propiedad  es obvia, consecuencia de  $\displaystyle \lim_{t \to  0} \, t
@@ -229,9 +227,11 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
         del estado interno}\end{array}\right.
   \]
   %
+  entonces,
+  %
   \[
   H(p_X)  =   H(p_{\widebar{X}})  +  p_{\widebar{X}}(\widebar{x}_{\alpha-1})  \,
-  H(\widebar{q})
+  H(\widebar{q}),
   \]
   %
   lo que se escribe tambi\'en
@@ -240,7 +240,7 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   H(p_1,\ldots,p_\alpha)  =  H(p_1,\ldots,p_{\alpha-2},p_{\alpha-1}+p_\alpha)  +
   \left(             p_{\alpha-1}+p_\alpha            \right)            H\left(
     \frac{p_{\alpha-1}}{p_{\alpha-1}+p_\alpha}                                  ,
-    \frac{p_\alpha}{p_{\alpha-1}+p_\alpha}\right)
+    \frac{p_\alpha}{p_{\alpha-1}+p_\alpha}\right).
   \]
   %
   Esta relaci\'on  viene de $a \log  a + b  \log b = (a+b)  \left( \frac{a}{a+b}
@@ -274,7 +274,7 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   \]
   %
   \[
-  H\left( \sum_{i=1}^n \pi_i p_{(i)} \right) \ge \sum_{i=1}^n \pi_i H(p_{(i)})
+  H\left( \sum_{i=1}^n \pi_i p_{(i)} \right) \ge \sum_{i=1}^n \pi_i H(p_{(i)}).
   \]
   %
   Esta relaci\'on es conocida tambi\'en como desigualdad de Jensen~\cite{Jen06}.
@@ -329,7 +329,7 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   La  Schur-concavidad  se  traduce  por  la  relaci\'on
   %
   \[
-  p \prec  q \quad \Rightarrow  \quad H(p) \ge  H(q)
+  p \prec  q \quad \Rightarrow  \quad H(p) \ge  H(q).
   \]
   %
   Fijense de  que las cotas  sobre $H$ pueden  ser vistas como  consecuencias de
@@ -339,7 +339,7 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
   %
   \[
   H\left( \begin{bmatrix}  \frac1\alpha & \cdots  & \frac1\alpha \end{bmatrix}^t
-  \right) \quad \mbox{es una funci\'on creciente de } \alpha
+  \right) \quad \mbox{es una funci\'on creciente de } \alpha.
   \]
   %
   La prueba  de la  Schur-concavidad se  apoya sobre la  desigualdad de  Schur o
@@ -367,13 +367,13 @@ tal entrop\'ia es llamada {\it entrop\'ia conjunta} de $X$ y $Y$:
   o espacios  muestrales discretos \ $\X$  \ y \  $\Y$, de cardinal \  $\alpha =
   |\X| <  +\infty$ \  y \  $\beta = |\Y|  < +\infty$  \ respectivamente.   Sea \
   $p_{X,Y}$ \ la distribuci\'on  de probabilidad conjunta de \ $X$ \  e \ $Y$, \
-  \ie $ \forall \, (x,y) \in \X \times  \Y, \quad p_{X,Y}(x,y) = \Pr[X = x , Y =
-  y]$.  La entrop\'ia conjunta de Shannon de las  variables \ $X$ \ e \ $Y$ \ es
-  definida por
+  \ie $ \forall \, (x,y) \in \X \times  \Y, \quad p_{X,Y}(x,y) = P( (X = x) \cap
+  (Y = y)  )$.  La entrop\'ia conjunta de  Shannon de las variables \ $X$  \ e \
+  $Y$ \ es definida por
   %
   \[
   H(p_{X,Y}) =  H(X,Y) = -  \sum_{(x,y) \in \X  \times \Y} p_{X,Y}(x,y)  \, \log
-  p_{X,Y}(x,y)
+  p_{X,Y}(x,y),
   \]
   %
   con la convenci\'on $0 \log 0 = 0$.
@@ -389,7 +389,7 @@ fundamentales, de la entrop\'ia de Shannon.
   %
   \[
   X \: \mbox{e} \: Y \: \mbox{independientes} \quad \Leftrightarrow \quad H(X,Y)
-  =  H(X) +  H(Y)
+  =  H(X) +  H(Y).
   \]
   %
   Dicho de otra manera, para dos variables aleatorias, la incerteza global es la
@@ -399,7 +399,7 @@ fundamentales, de la entrop\'ia de Shannon.
   escribe tambi\'en
   %
   \[
-  H\left( p_X \otimes p_Y \right) = H\left( p_X \right) + H\left( p_Y \right)
+  H\left( p_X \otimes p_Y \right) = H\left( p_X \right) + H\left( p_Y \right),
   \]
   %
   donde  $\otimes$ es el  producto de  Kronecker~\footnote{Recuerdense de  que \
@@ -420,7 +420,7 @@ fundamentales, de la entrop\'ia de Shannon.
   \[
   H(X_1,\ldots,X_n)  \,  \le \,  \sum_{i=1}^n  H(X_i)  \qquad \mbox{\ie}  \qquad
   H\left(  p_{X_1,, \ldots  , X_n}  \right) \,  \le \,  H\left(  p_{X_1} \otimes
-    \cdots \otimes p_{X_n} \right) = \sum_{i=1}^n H\left( p_{X_i} \right)
+    \cdots \otimes p_{X_n} \right) = \sum_{i=1}^n H\left( p_{X_i} \right).
   \]
   %
   Dicho de otra manera, las variables aleatorias pueden compartir informaci\'on,
@@ -433,7 +433,7 @@ fundamentales, de la entrop\'ia de Shannon.
   cualesquiera de las entrop\'ias individuales
   %
   \[
-  H(X_1,\ldots,X_n) \, \ge \, \max_{1 \le i \le n} H(X_i)
+  H(X_1,\ldots,X_n) \, \ge \, \max_{1 \le i \le n} H(X_i).
   \]
 \end{propiedades}
 
@@ -456,7 +456,7 @@ as\'i que una tasa de entrop\'ia cuando $n$ va al infinito.
   proceso estoc\'astico.  La tasa de entrop\'ia del proceso es definida por
   %
   \[
-  \H(X) = \lim_{n \to \infty} \frac{H(X_1,\ldots,X_n)}{n}
+  \H(X) = \lim_{n \to \infty} \frac{H(X_1,\ldots,X_n)}{n}.
   \]
   %
 \end{definicion}
@@ -522,7 +522,7 @@ y sea el alfabeto  $\X^\delta = \{ x_k \}_{k \in \Zset}$ \  donde los \ $x_k$ se
 definen tal que $\displaystyle  p_X(x_k) \delta = \int_{k \delta}^{(k+1) \delta}
 p_X(x) \,  dx$, como  ilustrado en la  figura Fig.~\ref{fig:SZ:CuantificacionX}.
 Se define  la variable aleatoria discreta  \ $X^\delta$ \ sobre  \ $\X^\delta$ \
-tal que  \ $\Pr[X^\delta =  x_k] = p_{X^\delta}(x_k)  = p_X(x_k) \delta$.   \ Se
+tal que  \ $P(X^\delta =  x_k) = p_{X^\delta}(x_k)  = p_X(x_k) \delta$.   \ Se
 puede  ver \  $X^\delta$ \  como la  versi\'on cuantificada  de \  $X$, \  con \
 $X^\delta = x_k$ \  cuando \ $X \in [k \delta , (k+1)  \delta )$.  \ Al rev\'es,
 a\'un que sea delicado,  se puede interpretar \ $X$ \ como  el ``l\'imite'' de \
@@ -538,13 +538,13 @@ lo que se escribe tambi\'en
 %
 \[
 H(X^\delta)  + \log  \delta =  - \sum_k  \Big( p_X(x_k)  \log p_X(x_k)  \Big) \,
-\delta
+\delta.
 \]
 %
 Entonces, de la integraci\'on de Riemann sale que
 %
 \[
-\lim_{\delta \to 0} \left( H(X^\delta) + \log \delta \right) = H(X)
+\lim_{\delta \to 0} \left( H(X^\delta) + \log \delta \right) = H(X).
 \]
 %
 Dicho de otra manera,  la entrop\'ia diferencial de $X$ no es  el l\'imite de la
@@ -594,20 +594,20 @@ Recordando que $p_X(x) = p_Y(g(x)) |\Jac_g(x)|$, se obtiene
 Para  cualquiera biyecci\'on $g:  \Rset^d \mapsto  \Rset^d$
   %
   \[
-  H(g(X)) = H(X) + \int_{\Rset^d} p_X(x) \log |\Jac_g(x)| \, dx
+  H(g(X)) = H(X) + \int_{\Rset^d} p_X(x) \log |\Jac_g(x)| \, dx,
   \]
   %
   donde el \'ultimo t\'ermino, $\Esp\left[  \log |\Jac_g(X)| \right]$ no vale cero
   en general.  En particular, si $H$ es invariante bajo una translaci\'on,
   %
   \[
-  H(X+\mu) = H(X) \quad \forall \: \mu \in \Rset^d
+  H(X+b) = H(X) \quad \forall \: b \in \Rset^d,
   \]
   %
   no  es invariante  por cambio  de escala,
   %
   \[
-  H(a X) = H(X) + \log |a| \quad \forall \: a \in \Rset^*
+  H(a X) = H(X) + \log |a| \quad \forall \: a \in \Rset^*.
   \]
 \end{propiedadesC}
 %
@@ -626,7 +626,7 @@ A veces, se usa lo que es llamado potencia entr\'opica:
   es definida por
   %
   \[
-  N(X) = \frac{1}{2 \pi \e} \exp\left( \frac2d H(X) \right)
+  N(X) = \frac{1}{2 \pi \e} \exp\left( \frac2d H(X) \right).
   \]
 \end{definicion}
 %
@@ -647,7 +647,7 @@ se conserva la entrop\'ia bajo el equivalente continuo del rearreglo.
   %
   \[
   \P^\downarrow  = \left\{  x  \in  \Rset^d \,  :  \: \frac{2  \pi^{\frac{d}{2}}
-      |x|^d}{\Gamma\left(\frac{d}{2}\right)} \le |\P| \right\}
+      |x|^d}{\Gamma\left(\frac{d}{2}\right)} \le |\P| \right\},
   \]
   %
   donde  $|\cdot|$  denota  la   norma  euclideana.   Eso  es  ilustrado  figura
@@ -659,11 +659,11 @@ se conserva la entrop\'ia bajo el equivalente continuo del rearreglo.
   rearreglada sim\'etrico $p^\downarrow_X$ de $p_X$ es definida por
   %
   \[
-  p^\downarrow_X(x)  =  \int_0^{+\infty}  \un_{\P_u^\downarrow}(x) \,  du
+  p^\downarrow_X(x)  =  \int_0^{+\infty}  \un_{\P_u^\downarrow}(x) \,  du.
   \]
   %
-  con $\un_A$ el indicator  del conjunto $A$, \ie $\un_A(x) = 1$  si $x \in A$ y
-  cero sino.
+  %con $\un_A$ el indicator  del conjunto $A$, \ie $\un_A(x) = 1$  si $x \in A$ y
+  %cero sino.
 \end{definicion}
 %
 Del hecho  de que $\forall \, t  < \tau \: \Leftrightarrow  \: \P_\tau \subseteq
@@ -701,7 +701,7 @@ ilustrado en la figura Fig.~\ref{fig:SZ:ensemblerearreglado}-b
   densidad de probabilidad sobre un abierto de $\Rset^d$,
   %
   \[
-  H\left( p_X^\downarrow \right) = H(p_X)
+  H\left( p_X^\downarrow \right) = H(p_X).
   \]
 \end{propiedadesC}
 %
@@ -724,7 +724,7 @@ la noci\'on de mayorizaci\'on en este contexto:
   p \prec  q \qquad \mbox{ssi}  \qquad \int_{\B(0,r)} p^\downarrow(x) \,  dx \le
   \int_{\B(0,r)} q^\downarrow(x) \, dx \quad \forall  \, r > 0, \quad \mbox{ y }
   \quad \int_{\Rset^d} p^\downarrow(x) \, dx = \int_{\Rset^d} q^\downarrow(x) \,
-  dx
+  dx,
   \]
   %
   donde \ $\B(0,r) = \{ x \in \Rset^d:  \: \|x\| \ge r \}$ \ es la bola centrada
@@ -736,7 +736,7 @@ la noci\'on de mayorizaci\'on en este contexto:
 caso  continuo, \ie
 %
 \[
-p \prec  q  \quad \Rightarrow  \quad H(p)  \ge H(q)
+p \prec  q  \quad \Rightarrow  \quad H(p)  \ge H(q).
 \]
 %
 La desigualdad inversa es probada  para cualquier funci\'on $\phi$ convexa de la
@@ -755,7 +755,7 @@ consecuencia de la propiedad~\ref{prop:SZ:biyeccionC}.  Tambi\'en, \underline{la
     \infty$, la entrop\'ia es acotada por arriba,
     %
     \[
-    H(X) \le \log |\X|
+    H(X) \le \log |\X|,
     \]
     %
     con igualdad si y solamente si $X$ es \underline{uniforme}.
@@ -765,7 +765,7 @@ consecuencia de la propiedad~\ref{prop:SZ:biyeccionC}.  Tambi\'en, \underline{la
     entrop\'ia es tambi\'en acotada por arriba,
     %
     \[
-    H(X) \le \frac{d}{2} \log(2 \pi \e) + \frac12 \log |\Sigma_X|
+    H(X) \le \frac{d}{2} \log(2 \pi \e) + \frac12 \log |\Sigma_X|,
     \]
     %
     con igualdad si y solamente si $X$ es \underline{gaussiana}.  En particular,

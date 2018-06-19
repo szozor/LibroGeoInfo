@@ -261,7 +261,7 @@ Se demuestra que
 \end{itemize}
 
 En el caso de eventos no necesariamente mutuamente excluyentes, se prueba que la
-{\it ley de composici\'on} o {\it formula de inclusi\'on-exclusi\'on} es
+{\it ley de composici\'on} o {\it f\'ormula de inclusi\'on-exclusi\'on} es
 %
 \[
 P(A \cup B) = P(A) + P(B) - P(A \cap B) \leq P(A) + P(B), 
@@ -281,14 +281,14 @@ creciente  de eventos,  \ie $\forall  \, i  \ge 1,  \quad A_i  \subset A_{i+1}$,
 entonces
 %
 \[
-P\left( \bigcup_{i=1}^{+\infty} A_i \right) = \lim_{i \to +\infty} P(A_i)
+P\left( \bigcup_{i=1}^{+\infty} A_i \right) = \lim_{i \to +\infty} P(A_i).
 \]
 %
 Similarmente,  si $\{ A_i  \}_{i=1}^{+\infty}$ es  una secuencia  decreciente de
 eventos, \ie $\forall \, i \ge 1, \quad A_{i+1} \subset A_i$, entonces
 %
 \[
-P\left( \bigcap_{i=1}^{+\infty} A_i \right) = \lim_{i \to +\infty} P(A_i)
+P\left( \bigcap_{i=1}^{+\infty} A_i \right) = \lim_{i \to +\infty} P(A_i).
 \]
 
 Se puede preguntarse de cual es la probabilidad de un evento $A$, si sabemos que
@@ -313,15 +313,15 @@ En  el  ejemplo precediente,  la  probabilidad  va a  ser  $P(A|B)  = \frac13  =
 \frac{\frac16}{\frac12}  = \frac{P(A  \cup B)}{P(B)}$. 
 
 \modif{Claramente   del   hecho   de   que   \   $P$  \   es   una   medida   de
-  probabilidad, $$P(A|B) \ge  0$$ Luego, de \  $A \cap B \subseteq B$  \ viene \
+  probabilidad, \[P(A|B) \ge  0.\] Luego, de \  $A \cap B \subseteq B$  \ viene \
   $P(A \cap B) \le P(B)$, es decir  \ $P(A|B) \le 1$. Adem\'as, \ $P(\Omega \cap
-  B) = P(B)$ \ dando $$P(\Omega|B) = 1$$ Para cualquier conjunto \ $\{ A_i \}$ \
+  B) = P(B)$ \ dando \[P(\Omega|B) = 1.\] Para cualquier conjunto \ $\{ A_i \}$ \
   de eventos  mutuamente excluyentes, los  \ $\left( A_i  \cap B \right)$  \ son
   tambi\'en mutuamente  excluyentes, as\'i que \  $\displaystyle P\left( \left(
       \bigcup_i A_i  \right) \bigcap  B \right) =  P\left( \bigcup_i  \left( A_i
       \bigcap  B \right)  \right)  = \sum_i  P\left(  A_i \bigcap  B \right)$  \
-  dando  $$P\left( \left.  \bigcup_i  A_i  \right| B  \right)  = \sum_i  P\left(
-    \left. A_i \right| B \right)$$ Dicho de otra manera,}
+  dando  \[P\left( \left.  \bigcup_i  A_i  \right| B  \right)  = \sum_i  P\left(
+    \left. A_i \right| B \right).\] Dicho de otra manera,}
 % y  que es
 %aditiva  para  una  uni\'on  de  eventos  mutuamente  excluyentes  referidos  al
 %cumplimiento de $B$.  Luego, 
