@@ -62,13 +62,18 @@
 %
 %
 \newcommand{\widebar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\def\sumint{\mathrel{\ooalign{\hss$\displaystyle\int$\hss\cr$\displaystyle\sum$}}}
+%    \setbox0{\int}%
+%    \rlap{\hbox to \wd0{\hss?\hss}}\box0}
+%{\rlap{#1}{\hss #2 \hss}}
 %
 % Entropia y divergencias
 % -----------------------
 %
 % Kullback-Leibler
 \newcommand{\Dkl}[2][]{
-D_{\mathrm{kl}}\ifthenelse{\isempty{#1}}{}{\left( \left. #1 \right\| #2 \right)}
+%D_{\mathrm{kl}}\ifthenelse{\isempty{#1}}{}{\left( \left. #1 \right\| #2 \right)}
+D_{\mathrm{kl}}\ifthenelse{\isempty{#1}}{}{\left( #1 \left\| #2 \right. \right)}
 }
 %
 % H_\phi

@@ -11,18 +11,19 @@
 \RequirePackage[left=2cm,right=2cm,top=3cm,bottom=3cm]{geometry}
 \RequirePackage[latin1]{inputenc} % encoding
 \RequirePackage[T1]{fontenc} % font encoding
-\RequirePackage{amsmath,amssymb,amsthm,bbm} % mathematical packages
+\RequirePackage{amsmath,amssymb,amsthm,bbm,mathtools} % mathematical packages
 %\RequirePackage{stix} % hebrew letters
 \RequirePackage{xspace} % spacing package
 \RequirePackage{epsfig,graphics,graphicx,color,tikz,pgfplots,etoolbox} % figures packages
 \RequirePackage{enumitem} % to manage the labels... en enumerate
 %\RequirePackage[labelsep=endash]{caption}
 %\RequirePackage{setspace} % space package
-\RequirePackage{ccaption} % 
+\RequirePackage{ccaption} % ease the management of captions
 \RequirePackage{etoolbox,ifthen,xifthen} % conditioning packages
 \RequirePackage{titletoc,tocloft} % table of content managment package
 \RequirePackage{footmisc} % to manage the numeration and reference to footnote
 %\RequirePackage{xargs}
+%\RequirePackage{accents}
 %\providecommand{\BIBand}{e}
 \RequirePackage{apacite}
 %\providecommand{\BIBand}{e}

@@ -1,5 +1,5 @@
 \seccion{Entrop\'ias y divergencias generalizadas}
-\label{sec:SZ:Generalizadas}
+\label{Sec:SZ:Generalizadas}
 
 \SZ{Partout, voir convexite stricte, en 1,  idem pour h monotone, etc. vis a vis
   des cas d'egalite avec les divergences.}
@@ -18,7 +18,7 @@ entrop\'ias condicionales y relativas.
 % ================================= Salicru
 
 \subseccion{Entrop\'ias y propiedades}
-\label{sec:SZ:Salicru}
+\label{Ssec:SZ:Salicru}
 
 % ----- Entropias generalizadas particulares
 %\paragraph{Unas  primeras  generalizaciones particulares}  
@@ -82,10 +82,10 @@ la  entrop\'ia de  Shannon.   En su  papel,  R\'enyi introdujo  una ganancia  de
 informaci\'on,  parecida  a una  entrop\'ia  relativa,  probando  que las  solas
 entrop\'ias admisibles son  la de Shannon y la que  introdujo.  Volveremos en la
 secci\'on siguiente  sobre esta entrop\'ia  relativa, o divergencia  de R\'enyi.
-Por          axiomas,          las         propiedades~\ref{prop:SZ:continuidad}
-(continuidad),~\ref{prop:SZ:permutacion}    (invarianza    por    permutaci\'on)
-y~\ref{prop:SZ:aditividad}  (additividad)   de  la  entrop\'ia   de  Shannon  se
-conservan entonces en el marco de R\'enyi y se pierde~\ref{prop:SZ:recursividad}
+Por          axiomas,          las         propiedades~\ref{Prop:SZ:continuidad}
+(continuidad),~\ref{Prop:SZ:permutacion}    (invarianza    por    permutaci\'on)
+y~\ref{Prop:SZ:aditividad}  (additividad)   de  la  entrop\'ia   de  Shannon  se
+conservan entonces en el marco de R\'enyi y se pierde~\ref{Prop:SZ:recursividad}
 (recursividad), todav\'ia por axiomas. Veremos luego la otras que se conservan o
 modifican en un marco m\'as general.
 
@@ -119,13 +119,13 @@ H_1^\hc(p)  \equiv   \lim_{\lambda  \to   1}  H_\lambda^\hc(p)   =   H(p)  \quad
 \mbox{entrop\'ia de Shannon}
 \]
 %
-Por axioma, se conservan las propiedades~\ref{prop:SZ:continuidad} (continuidad)
-y~\ref{prop:SZ:expansabilidad}  (expansabilidad) de  Shannon en  este  marco. Se
+Por axioma, se conservan las propiedades~\ref{Prop:SZ:continuidad} (continuidad)
+y~\ref{Prop:SZ:expansabilidad}  (expansabilidad) de  Shannon en  este  marco. Se
 prob\'o tambi\'en que se conserva la  propiedad de concavidad con respecto a los
-$p_i$~\ref{prop:SZ:concavidad},   la   de   maximalidad~\ref{prop:SZ:cotamaxima}
+$p_i$~\ref{Prop:SZ:concavidad},   la   de   maximalidad~\ref{Prop:SZ:cotamaxima}
 alcanzada para una distribuci\'on uniforma (teorema~2). Aun que no aparece as\'i
 en        el        papel,        satisface        la        propiedad        de
-Schur-concavidad~\ref{prop:SZ:Schurconcavidad}  (teorema~3).   A  pesar  de  que
+Schur-concavidad~\ref{Prop:SZ:Schurconcavidad}  (teorema~3).   A  pesar  de  que
 mencionan que $H_\lambda^\hc$ sea diferente de $H_\lambda^\ren$, es sencillo ver
 que hay un mapa uno-uno entre las dos entrop\'ias.  Se mencionar\'an en un marco
 m\'as general otras propiedades de esta entrop\'ia.
@@ -155,21 +155,21 @@ H_\lambda^\dar(p) = \frac{1}{1-2^{1-\lambda}} \left( 1 - \sum_i p_i^\lambda \rig
 Charv\'at. En lo  que sigue, se la denotar\'a  $H_\lambda^\hcd$. Sin embargo, el
 estudio  de  Dar\'oczy  fue m\'as  intensivo  que  el  de Havdra  \&  Charv\'at.
 Primero, not\'o  el mapa entre su  entrop\'ia y la de  R\'enyi. Adicionalmente a
-Havdra-Charv\'at prob\'o que  se conserva la propiedad~\ref{prop:SZ:permutacion}
+Havdra-Charv\'at prob\'o que  se conserva la propiedad~\ref{Prop:SZ:permutacion}
 (invarianza  por   permutaci\'on,  que  no   era  un  axioma  en   su  enfoque),
 $H_\lambda^\hcd\left( \frac12 , \frac12 \right) = 1$ (lo llama normalizaci\'on),
-la  expansividad~\ref{prop:SZ:expansabilidad},  una  aditividad  extendida,  una
+la  expansividad~\ref{Prop:SZ:expansabilidad},  una  aditividad  extendida,  una
 recursividad extendida precisamente  del modelo de Havrda-Charv\'at (teorema~4).
-Prob\'o  tambi\'en~\ref{prop:SZ:positividad}, positividad  alcanzado en  el caso
-determinista  y  la  maximalidad~\ref{prop:SZ:cotamaxima}  en el  caso  uniforme
+Prob\'o  tambi\'en~\ref{Prop:SZ:positividad}, positividad  alcanzado en  el caso
+determinista  y  la  maximalidad~\ref{Prop:SZ:cotamaxima}  en el  caso  uniforme
 (teorema~6), que  incidentalmente $H_\lambda^\hcd\left( \frac1\alpha  , \ldots ,
   \frac1\alpha \right)$ crece con el  cardinal $|\X| = \alpha$.  Muy interesante
 tambi\'en es se puede definir una  entrop\'ia condicional en el mismo modelo que
 en  el  caso  de  Shannon  $H_\lambda^\hcd(X|Y)  =  \sum_y  \left[  p_{X|Y}(x,y)
 \right]^\lambda  H_\lambda^\hcd( p_{X|Y}(\cdot,y)  )$, que  existe una  regla de
-cadena~\ref{prop:SZ:cadena},   $H_\lambda^\hcd(X,Y)    =   H_\lambda^\hcd(Y)   +
+cadena~\ref{Prop:SZ:cadena},   $H_\lambda^\hcd(X,Y)    =   H_\lambda^\hcd(Y)   +
 H_\lambda^\hcd(X|Y)$ y que condicionar reduce la entrop\'ia $H_\lambda^\hcd(X|Y)
-\le    H_\lambda^\hcd(X)$    (teorema~8)~\ref{prop:SZ:condicionar}.     Mostr\'o
+\le    H_\lambda^\hcd(X)$    (teorema~8)~\ref{Prop:SZ:condicionar}.     Mostr\'o
 tambi\'en que  si se  pierde la aditividad,  se obiene para  \ $X$  \ e \  $Y$ \
 independientes \ $H_\lambda^\hcd(X,Y)  = H_\lambda^\hcd(X) + H_\lambda^\hcd(Y) +
 \left(  2^{1-\lambda}  -  1  \right) H_\lambda^\hcd(X)  H_\lambda^\hcd(Y)$.   La
@@ -210,7 +210,7 @@ la    $\phi$-entrop\'ia   (y    las   divergencias    que    se   introducir\'an
 luego)~\footnote{En  la literatura,  no hay  el signo  $-$, y  hay  que invertir
   c\'oncava y convexa.}
 %
-\begin{definicion}[$(h,\phi)$-entrop\'ia]\label{def:SZ:HPhiEntropia}
+\begin{definicion}[$(h,\phi)$-entrop\'ia]\label{Def:SZ:HPhiEntropia}
   La $(h,\phi)$-entrop\'ia de una  distribuci\'on de probabilidad $p_X$ definida
   sobre $\X$ de cardinal finito $|\X| = \alpha$ es definida por
   %
@@ -242,9 +242,9 @@ Como   en   el   caso   de    Shannon,   para   $X   =   (X_1,\ldots,X_d)$,   la
 $(h,\phi)$-entrop\'ia de $X$ es una $(h,\phi)$-entrop\'ia conjunta de los $X_i$.
 
 Obviamente, de  las propiedades  de la entrop\'ia  de Shannon, se  conservan las
-propiedades~\ref{prop:SZ:continuidad}    (continuidad),~\ref{prop:SZ:permutacion}
-(invariaza    por   permutaci\'on),~\ref{prop:SZ:biyeccion}    (invarianza   por
-transformaci\'on       biyectiva      de      $X$),~\ref{prop:SZ:expansabilidad}
+propiedades~\ref{Prop:SZ:continuidad}    (continuidad),~\ref{Prop:SZ:permutacion}
+(invariaza    por   permutaci\'on),~\ref{Prop:SZ:biyeccion}    (invarianza   por
+transformaci\'on       biyectiva      de      $X$),~\ref{Prop:SZ:expansabilidad}
 (expansabilidad, debido a $\phi(0) = 0$).
 
 Adem\'as  se conserva  la  Schur-concavidad \ con una reciproca:
@@ -277,9 +277,9 @@ Adem\'as  se conserva  la  Schur-concavidad \ con una reciproca:
 % Ver Schur-Ostrowski f  sym, Schur-convexe ssi (xi - xj)  (df/dx_i - df/dxj) \ge
 % 0, 1 \le i \ne j \le alpha
 %
-Como consecuencia, se  conservan la positividad~\ref{prop:SZ:positividad} gracia
+Como consecuencia, se  conservan la positividad~\ref{Prop:SZ:positividad} gracia
 a \ $\phi(0) = 0$ \ y \ $h(-\phi(1)) = 0$ \ (alcanzado en el caso determinista),
-la maximalidad~\ref{prop:SZ:cotamaxima} (caso uniforme),
+la maximalidad~\ref{Prop:SZ:cotamaxima} (caso uniforme),
 %
 \[
 0 \le \hhphi[p_X] \le h\left( - \alpha \, \phi\left( \frac1\alpha \right) \right)
@@ -292,10 +292,10 @@ as\'i que
 \quad \mbox{funci\'on creciente de } \alpha
 \]
 
-Con respecto a la concavidad~\ref{prop:SZ:concavidad}, no se conserva en general:
+Con respecto a la concavidad~\ref{Prop:SZ:concavidad}, no se conserva en general:
 %
 \begin{propiedadesPhi}\setcounter{enumi}{\value{PropConcavidad}}
-\item\label{prop:SZ:concavidadHPhi} Si $h$ es c\'oncava, entonces $\hhphi[p]$ es
+\item\label{Prop:SZ:concavidadHPhi} Si $h$ es c\'oncava, entonces $\hhphi[p]$ es
   c\'oncava con  respecto a $p$.   Eso es una  consecuencia de la  concavidad de
   $\phi$ y  decrecencia de $h$ (resp.  convexidad/crecencia)  conjuntamente a la
   concavidad de $h$.  La reciproca no  es verdad.  Por ejemplo, se puede ver que
@@ -305,7 +305,7 @@ Con respecto a la concavidad~\ref{prop:SZ:concavidad}, no se conserva en general
   necesariamente c\'oncava~\cite[p.~57]{BenZyc06}.
 \end{propiedadesPhi}
 
-Se pierde la propiedad de recursividad~\ref{prop:SZ:recursividad}, pero se puede
+Se pierde la propiedad de recursividad~\ref{Prop:SZ:recursividad}, pero se puede
 vincular  la  entrop\'ia  total con  la  obtenida  juntando  dos estados  por  una
 desigualdad:
 %
@@ -337,7 +337,7 @@ desigualdad:
   $\hhphi[p_X]$ \ y \ $\hhphi[p_{\widebar{X}}]$.
 \end{propiedadesPhi}
 
-Se  conserva  la  super-aditividad~\ref{prop:SZ:superaditividad}. De  hecho,  si
+Se  conserva  la  super-aditividad~\ref{Prop:SZ:superaditividad}. De  hecho,  si
 $\phi$ es convexa (resp.  c\'oncava) con \  $\phi(0) = 0$, \ $\forall \: 0 \le a
 \le 1,  \: \phi(a u) =  \phi(a u + (1-a)  0) \le a  \phi(u)$ (resp.  desigualdad
 reversa).   Entonces,  \   $\phi\left(  p_{X,Y}(x_i,y_j)  \right)  =  \phi\left(
@@ -348,8 +348,8 @@ p_{X|Y}(x_i,y_j) \phi\left(p_Y(y_j) \right) = \sum_i \phi\left(p_Y(y_j) \right)$
 (resp. decrecencia) de $h$.
 
 
-Sin  embargo, en  general, se  pierden  las propiedades~\ref{prop:SZ:aditividad}
-(aditividad), y~\ref{prop:SZ:subaditividad}  (sub-aditividad). En particular, se
+Sin  embargo, en  general, se  pierden  las propiedades~\ref{Prop:SZ:aditividad}
+(aditividad), y~\ref{Prop:SZ:subaditividad}  (sub-aditividad). En particular, se
 conserva solamente en el caso Shannon:
 %
 \begin{teorema}
@@ -366,7 +366,7 @@ conserva solamente en el caso Shannon:
 %
 \begin{proof}
   La    reciproca     de    este    teorema    es    nada     m\'as    que    la
-  propidad~\ref{prop:SZ:subaditividad} con  el hecho de que $h$  es creciente en
+  propidad~\ref{Prop:SZ:subaditividad} con  el hecho de que $h$  es creciente en
   este caso.
 
   A continuaci\'on, la parte directa se demuestra en dos etapas:
@@ -411,7 +411,7 @@ conserva solamente en el caso Shannon:
   \]
   %
   \ie la  variaci\'on (cuerda) es mayor  que la derivada en  $s$, como ilustrado
-  figura  Fig.~\ref{fig:SZ:ConvexidadDerivada} (desigualdad reversa  para $\phi$
+  figura  Fig.~\ref{Fig:SZ:ConvexidadDerivada} (desigualdad reversa  para $\phi$
   c\'oncava).
   %
   \begin{figure}[h!]
@@ -424,7 +424,7 @@ conserva solamente en el caso Shannon:
     q_i$  y  sumando, se  obtiene  $\hphi[q]  -  \hphi[p] \ge  \sum_i  (p_i-q_i)
     \phi'(p_i)$ con $\hphi \equiv H_{(\id,\phi)}, \: \id$ siendo la identidad.}
   %
-  \label{fig:SZ:ConvexidadDerivada}
+  \label{Fig:SZ:ConvexidadDerivada}
   \end{figure}
   
   Aplicamos esta desigualdad a \ $u =  p_{X,Y}(x,y)$ \ y \ $v = p_X(x) p_Y(y)$ \
@@ -506,7 +506,7 @@ conserva solamente en el caso Shannon:
 
   En  conclusi\'on, $g  = 0$  sobre  $\mathring{D}_{a,\tilde{a},b,\tilde{b}}$ se
   reduce  a necesitar  tener $\hphi  = H$.   Esta entrop\'ia  siendo sub-aditiva
-  (propidad~\ref{prop:SZ:subaditividad}), cualquiera  funci\'on creciente de $H$
+  (propidad~\ref{Prop:SZ:subaditividad}), cualquiera  funci\'on creciente de $H$
   va obviamente quedar sub-aditiva, lo que cierra la prueba.
   %
 \end{proof}
@@ -527,7 +527,7 @@ p_Y]$ \ (consecuencia de la  Schur-concavidad) y \ $\hhphi[p_{XY}] > \hhphi[p_X]
 La definici\'on  de entrop\'ias generalizadas condicionales  aparece mucho m\'as
 problem\'atico. Por  ejemplo, si se define  a la Shannon, es  decir definiendo \
 $\hhphi[X|Y]$ \ tomando \ $\sum_{y \in \Y} p_Y(y) \hhphi[p_{X|Y}(\cdot,y)]$ \ se
-pierde la regla de cadena~\ref{prop:SZ:cadena}. Como se lo ha visto, en el marco
+pierde la regla de cadena~\ref{Prop:SZ:cadena}. Como se lo ha visto, en el marco
 de la entrop\'ia de Havdra-Charv\'at-Dar\'oczy se conserva la regla de cadena si
 se reemplaza $p_Y$ por su potencia $p_Y^\lambda$.  Sin embargo, generalizar este
 esquema en el caso general  falla (la gracia en Havdra-Charv\'at-Dar\'oczy viene
@@ -536,12 +536,12 @@ consecuencia, generalizar  la noci\'on se vuelve  problem\'atico tambi\'en.  Por
 ejemple  se  pierde el  diagrama  de  Venn aparte  si  se  define la  entrop\'ia
 condicional  a  partir  de  la  regla  de  cadena. Pero  en  este  caso,  si  la
 super-aditividad  garantiza  la positividad  de  la  entrop\'ia condicional,  se
-pierde  la propiedad~\ref{prop:SZ:independenciacondicional}  por  perdida de  la
+pierde  la propiedad~\ref{Prop:SZ:independenciacondicional}  por  perdida de  la
 aditividad,       y      por       consecuencia       la      propiedad       de
-positividad/independencia~\ref{prop:SZ:Ipositive}  de  una  informaci\'on  mutua
+positividad/independencia~\ref{Prop:SZ:Ipositive}  de  una  informaci\'on  mutua
 construida sobre un  modelo diagrama de Venn. Veremos  en la secci\'on siguiente
 que un tercero camino puede ser usar divergencia.
-% \SZ{ver con detalles \ref{prop:SZ:condicionar} (condiconar)} \SZ{VajVas85 pour
+% \SZ{ver con detalles \ref{Prop:SZ:condicionar} (condiconar)} \SZ{VajVas85 pour
 %   la Schur-concavite}
 
 \
@@ -553,7 +553,7 @@ tambi\'en  extenderla   a  vectores   aleatorios  admitiendo  una   densidad  de
 probabilidad, reemplazando la suma por una integraci\'on.
 
 \begin{definicion}[$(h,\phi)$-entrop\'ia diferencial]
-  \label{def:SZ:HPhiEntropiaDiferencial}
+  \label{Def:SZ:HPhiEntropiaDiferencial}
   %
   Sea  $X$ una variable  aleatoria continua  sobre $\Rset^d$  y sea  $p_X(x)$ la
   densidad  (distribuci\'on)  de  probabilidad  de  $X$  de  soporte  $\X$.   La
@@ -565,7 +565,7 @@ probabilidad, reemplazando la suma por una integraci\'on.
   \]
   %
   con  $h$  \   y  \  $\phi$  cumpliendo  los   requisitos  de  la  definici\'on
-  discreta~\ref{def:SZ:HPhiEntropia}  (de   $\phi(0)$,  se  puede   escribir  la
+  discreta~\ref{Def:SZ:HPhiEntropia}  (de   $\phi(0)$,  se  puede   escribir  la
   integraci\'on sobre $\Rset^d$).
 \end{definicion}
 
@@ -574,16 +574,16 @@ $X$ es una $(h,\phi)$-entrop\'ia diferencial conjunta de los $X_i$.
 
 La  versi\'on diferencial  de la  $(h,\phi)$-entrop\'ia comparte  obviamente las
 mismas debilidades  del caso particular de  Shannon: se pierden  la propiedad de
-invarianza    por   transformaci\'on    biyectiva~\ref{prop:SZ:biyeccion},   \ie
+invarianza    por   transformaci\'on    biyectiva~\ref{Prop:SZ:biyeccion},   \ie
 independencia       con       respecto       a       los       estados,       la
-positividad~\ref{prop:SZ:positividad},            la           de           cota
-superior~\ref{prop:SZ:cotamaxima}  (salvo  si  se  pone  v\'inculos,  ver  m\'as
+positividad~\ref{Prop:SZ:positividad},            la           de           cota
+superior~\ref{Prop:SZ:cotamaxima}  (salvo  si  se  pone  v\'inculos,  ver  m\'as
 adelante), en adici\'on de las que ya la versi\'on discreta perdi\'o.
 
 Sin embargo, se conservan unas propidedades,  y entre otros si $h$ es c\'oncava,
-la  $(h,\phi)$-entrop\'ia diferencia  es c\'oncava~\ref{prop:SZ:concavidadHPhi}.
+la  $(h,\phi)$-entrop\'ia diferencia  es c\'oncava~\ref{Prop:SZ:concavidadHPhi}.
 M\'as  sorprendentemente a  primer vista,  se conserva  la $(h,\phi)$-entrop\'ia
-diferencial bajo un rearreglo~\ref{prop:SZ:permutacionC},
+diferencial bajo un rearreglo~\ref{Prop:SZ:permutacionC},
 %
 \[
 \hhphi[p_X^\downarrow] = \hhphi[p_X]
@@ -595,7 +595,7 @@ otros  en~\cite{LieLos01} o  \cite[Lema~7.2]{WanMad04}~\footnote{Recuerdense que
   funciones mon\'otonas, siendo una funci\'on convexa un caso particular.}.
 
 Se  prob\'o  en~~\cite{Cho74} o~\cite[Prop.~7.3]{WanMad04}  que  se conserva  la
-Schur-concavidad~\ref{prop:SZ:Schurconcavidad}              para             las
+Schur-concavidad~\ref{Prop:SZ:Schurconcavidad}              para             las
 $\phi$-entrop\'ias.   Entonces,  de   $h$  creciente   (para   $\phi$  c\'oncava
 desigualdad reversa para la integral,  pero $h$ es decreciente), se generaliza a
 las $(h,\phi)$-entrop\'ias,\ie
@@ -610,7 +610,7 @@ p  \prec q  \quad \Rightarrow  \quad \hhphi[p]  \ge \hhphi[q]  \quad  \forall \:
 % ================================= Csiszar & Bregman
 
 \subseccion{Divergencias y propiedades}
-\label{sec:SZ:JensenBregmanCzizar}
+\label{Ssec:SZ:JensenBregmanCzizar}
 
 En esta sub-secci\'on  vamos a ver que la  literatura trat\'o casi conjuntamente
 de  tres  enfoques   dando  lugar  a  generalizaciones  de   la  divergencia  de
@@ -623,7 +623,7 @@ termino de aplicaciones.
 % ----- Clase de Jensen
 
 \subsubseccion{Clase de Jensen}
-\label{sec:SZ:Jensen}
+\label{Sssec:SZ:Jensen}
 
 % ----- Jensen-Shannon
 %\paragraph{Primer  generalizaciones, saliendo  de Shannon  y  Kullback-Leibler -
@@ -715,7 +715,7 @@ informacionales a la Shannon viene todav\'ia del campo de la clasificaci\'on. Si
 unos datos pueden provenir de una  distribuci\'on $p_{(i)}$, $i = 1, 2$, con una
 probabilidad  $\pi_i$, la variable  aleatoria $X$  dada por  los datos  tiene la
 distribuci\'on  de mezcla  $p  =  \sum_i \pi_i  p_{(i)}$  como ilustrado  figura
-Fig.~\ref{fig:SZ:Concavidad}-(b).  Sea  $Z$ la variable  aleatoria binaria sobre
+Fig.~\ref{Fig:SZ:Concavidad}-(b).  Sea  $Z$ la variable  aleatoria binaria sobre
 $\{ 1 ,  2 \}$ tal que $P(Z  = i) = \pi_i$, variable de  selecci\'on entre las
 distribuciones $p_{(i)}$ (ej.   la moneda de la figura).  Por definici\'on de la
 entrop\'ia  condicional,  $H(X|Z) =  \sum_i  \pi_i H(X|Z  =  i)  = \sum_i  \pi_i
@@ -787,7 +787,7 @@ de Jensen de la manera siguiente:
   \]
   %
   Se ilustra  a que corresponde  esta cantidad con  respecto a $f$ en  la figura
-  Fig.~\ref{fig:SZ:BregmanFJensen} m\'as adelante.
+  Fig.~\ref{Fig:SZ:BregmanFJensen} m\'as adelante.
 \end{definicion}
 %
 \noindent Esta  definici\'on se generalizada  a densidad de  probabilidad, donde
@@ -840,7 +840,7 @@ Las divergencias de Jensen tiene las propiedades siguientes
   \]
   %
   Esta propiedad  es la consecuencia directa  de la convexidad  estricta de $f$,
-  como ilustrado figura Fig.~\ref{fig:SZ:BregmanFJensen}.
+  como ilustrado figura Fig.~\ref{Fig:SZ:BregmanFJensen}.
 %
   % \item  \SZ{$J_f(p,q)$  es convexa  con  respecto  al  par $(p,q)$,  pero  no
   %     necesariamente  con  respecto a  $p$  solamente  y/o  $q$. Es  tambi\'en
@@ -884,7 +884,7 @@ $L^2$ con un nucleo.
 % ----- Clase de Bregman
 
 \subsubseccion{Clase de Bregman}
-\label{sec:SZ:Bregman}
+\label{Sssec:SZ:Bregman}
 
 Estas divergencias  fueron intoducidos en  el campo de la  programaci\'on lineal
 convexa, para  resolver problemas de  minimizaci\'on convexa~\footnote{A\'un que
@@ -905,7 +905,7 @@ campos~\cite[y ref.]{Bas89, Bas13}:
   %
   Dicho de otra  manera, $B_f$ corresponde al desarollo de Taylor  al orden 1 de
   $f$ en  la referencia  $u$.  Se  ilustra a que  corresponde esta  cantidad con
-  respecto a $f$ en la figura Fig.~\ref{fig:SZ:BregmanFJensen} m\'as adelante.
+  respecto a $f$ en la figura Fig.~\ref{Fig:SZ:BregmanFJensen} m\'as adelante.
 \end{definicion}
 %
 Esta  definici\'on fue generalizada  a funciones  actuando sobre  espacios m\'as
@@ -991,7 +991,7 @@ B_f(p_{(2)}   \|  p_{(1)})   =  \lim_{\pi_2   \to  0}   \frac{J_f^\pi(p_{(1)}  ,
 %
 \noindent~\cite{Zha04, NieBol11, NieNoc17}.
 
-La figura Fig.~\ref{fig:SZ:BregmanFJensen} ilustra  a que corresponden \ $D_f$ \
+La figura Fig.~\ref{Fig:SZ:BregmanFJensen} ilustra  a que corresponden \ $D_f$ \
 y \ $J_f$ con respecto a la funci\'on convexa $f$.
 %
 \begin{figure}[h!]
@@ -1007,7 +1007,7 @@ y \ $J_f$ con respecto a la funci\'on convexa $f$.
   referencia $\pi_1 u_1 + \pi_2 u_2$, se calcula $D_f$ en los $u_i$ y se toma la
   combinaci\'on convexa.}
   %
-\label{fig:SZ:BregmanFJensen}
+\label{Fig:SZ:BregmanFJensen}
 \end{figure}
 
 La divergencia de Bregman tiene las propiedades siguientes
@@ -1020,7 +1020,7 @@ La divergencia de Bregman tiene las propiedades siguientes
   \]
   %
   Esta propiedad  es la consecuencia directa  de la convexidad  estricta de $f$,
-  como ilustrado figura Fig.~\ref{fig:SZ:BregmanFJensen}.
+  como ilustrado figura Fig.~\ref{Fig:SZ:BregmanFJensen}.
 %
 \item  $B_f(q\|p)$ es convexa  con respecto  a $q$,  pero no  necesariamente con
   respecto a $p$. Es tambi\'en consecuencia directa de la convexidad de $f$.
@@ -1064,7 +1064,7 @@ secci\'on, para dar unas.
 % ----- Clase de Csiszar o Ali-Silvey
 
 \subsubseccion{Clase de Csisz\'ar o Ali-Silvey}
-\label{sec:SZ:Csiszar}
+\label{Sssec:SZ:Csiszar}
 
 Un primer paso  generalizando la noci\'on de entrop\'ia  relativa o divergencia,
 siguiendo el enfoque de Kullback  y Leibler y sus versiones tipo $J$-divergencia
@@ -1105,7 +1105,7 @@ Como para el caso de las $\phi$-entrop\'ias, esta clase se enmarca dentro de una
 clase    un     poco    m\'as    general~\cite[Secs.~4.5~\&~5]{AliSil66}    (ver
 tambi\'en~\cite[Sec.~I]{OrsPar95}):
 %
-\begin{definicion}[$(h,\phi)$-divergencia]\label{def:SZ:HPhiDivergencia}
+\begin{definicion}[$(h,\phi)$-divergencia]\label{Def:SZ:HPhiDivergencia}
   La  $(h,\phi)$-divergencia  de  una  distribuci\'on de  probabilidad  $q$  con
   respeto a una distribuci\'on $p$ de  soporte $\X$ incluyendo el soporte de $q$
   es definida por
@@ -1254,7 +1254,7 @@ desigualdad triangular:
   Sea \ $\phi$ \ una funci\'on convexa tal que \ $\phi^* = \phi$, \ $\phi(0) \ne
   0$   \  y   \  $\cphi{}$   su  divergencia   de  Csisz\'ar   asociada   ($h  =
   \id$).  Adicionalmente  de supone  de  que  $\phi(1)  = 0$  (ver  definici\'on
-  Def.~\ref{def:SZ:HPhiDivergencia}) y de que $\phi$ es estrictamente convexa en
+  Def.~\ref{Def:SZ:HPhiDivergencia}) y de que $\phi$ es estrictamente convexa en
   $1$.  Si existe $\kappa \in \Rset_+^*$ tal que
   %
   \[
@@ -1307,6 +1307,7 @@ cf Bha 43 egalement
 % ================================= Identidades
 
 \subseccion{?`Como se generalizan las identidades y desigualdades?}
+\label{Ssec:SZ:IdentidadesGeneralizadas}
 
 \paragraph{Principio  de entrop\'ia m\'axima}  Si este  principio naci\'o  en el
 marco de la  termodynamica o f\'isica, con la  entrop\'ia de Shannon (Boltzman),

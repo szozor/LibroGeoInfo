@@ -1,5 +1,5 @@
 \seccion{Variables aleatorias y distribuciones de probabilidad}
-\label{s:variablealeatoria}
+\label{Sec:MP:variablealeatoria}
 
 {\it  En  un  experimento  o  un  dado  proceso,  los  posibles  resultados  son
   t\'ipicamente  n\'umeros reales, siendo  cada n\'umero  un evento.   Luego los
@@ -19,7 +19,7 @@ ejemplo~\cite{Leb04, Leb18, KolFom61, AthLah06, Bog07:v1, Coh13}.
 
 \subseccion{Consideraciones preliminarias \modif{-- teoria  de la medida y de la
     integraci\'on.}}
-\label{sec:MP:VAPreliminaria}
+\label{Ssec:MP:VAPreliminaria}
 
 La  primera noci\'on  que subtiende  a la  definici\'on formal  de  una variable
 aleatoria es la de funci\'on medible:
@@ -77,7 +77,7 @@ definir una medida imagen  sobre el espacio de llegada~\cite{AthLah06, Bog07:v1,
     preimagen  del  complemento es  el  complemento  de  la preimagen.   Eso  es
     conocido como {\it leyes de de Morgan}~\cite{AthLah06, Coh13, HogMck13} (ver
     tambi\'en~\cite[Cap.~1]{KolFom57}
-    y~\cite[Caps.~5~\&~6]{KolFom61}).\label{foot:MP:Jacobiana}}
+    y~\cite[Caps.~5~\&~6]{KolFom61}).\label{Foot:MP:Jacobiana}}
 \end{proof}
 
 \
@@ -128,8 +128,8 @@ con respeto a una medida:
     \un_{A_i} + \un_{A_j} \right) d\mu(\omega) = \mu(A_i \cup A_j) = \int_\Omega
   \un_{A_i} d\mu(\omega)  + \int_\Omega \un_{A_j} d\mu(\omega)$  y entonces, sin
   perdida  de  generalidad~\footnote{Si  $A_i,  A_j$ no  son  disjuntos,  sufice
-    considerar $A_i\backslash A_j, \: A_j\backslash  A_j, A_i \cap A_j$ \ con $A
-    \backslash B = \{ \omega: \omega \in  A \: \mbox{y} \: \omega \not\in B\}$ \
+    considerar $A_i\setminus A_j, \: A_j\setminus  A_j, A_i \cap A_j$ \ con $A
+    \setminus B = \{ \omega: \omega \in  A \: \mbox{y} \: \omega \not\in B\}$ \
     y respectivamente los coefficientes \  $a_i, \: a_j, \: a_i +
     a_j$.}   para  un  conjunto  $\{  A_j  \}$  numerable,  con  los  $A_j$
   disjuntos, y $\{ a_j \}$ reales no negativos, la integral de la funci\'on
@@ -282,7 +282,7 @@ producto y medida producto.
   (obviamente, se puede intercambiar los roles de los $\Omega_i$ en este teorema).
 \end{teorema}
 %
-\begin{teorema}[Integral a par\'ametro: continuidad y diferenciabilidad]
+\begin{teorema}[Integral a par\'ametro: continuidad y diferenciabilidad]\label{Th:MP:IntegralParametro}
   Sea $I$ un compacto de $\Rset^d$ y $\{ f(\cdot,t) \}_{t \in I}$ una familia de
   funciones  medibles  sobre $(\Omega,\A,\mu)$,  tal  que $f(\omega,\cdot)$  sea
   continua sobre $I$. Si existe una funci\'on \ $g$ \ $\mu$-integrable tal que
@@ -326,7 +326,7 @@ Basicamente, este teorema es  consecuencia del teorema de convergencia dominada.
 Seguimos esta secci\'on con la noci\'on  de derivada de una medida con respeto a
 una otra, dando una definici\'on muy general de una densidad:
 %
-\begin{definicion}[Densidad de una medida]\label{def:MP:DensidadMedida}
+\begin{definicion}[Densidad de una medida]\label{Def:MP:DensidadMedida}
   Sean  $\mu$  y  $\nu$  dos  medidas  cualquieras  sobre  une  espacio  medible
   $(\Omega,\A)$.  Si  existe una funci\'on  real no negativa $p:  \Omega \mapsto
   \Rset_+$ medible tal que
@@ -364,9 +364,9 @@ una otra, dando una definici\'on muy general de una densidad:
 \end{definicion}
 %
 \noindent Ahora, si  dos funciones \ $p_1  = p_2 \quad (\mu-c.s.)$, y  $C$ es el
-conjunto donde no son iguales, notando \ $A \backslash C = \{ \omega: \omega \in
+conjunto donde no son iguales, notando \ $A \setminus C = \{ \omega: \omega \in
 A \:  \mbox{y} \:  \omega \not\in B\}$,  de \ $\displaystyle  \int_A p_1(\omega)
-d\mu(\omega) = \int_{A\backslash C} p_1(\omega) d\mu(\omega) = \int_{A\backslash
+d\mu(\omega) = \int_{A\setminus C} p_1(\omega) d\mu(\omega) = \int_{A\setminus
   C} p_2(\omega) d\mu(\omega) = \int_A p_2(\omega) d\mu(\omega)$ \ se ve que dos
 funciones iguales casi  siempre pueden ser densidad de una  medida con respeto a
 una otra.
@@ -382,7 +382,7 @@ Es sencillo ver  de que si $\mu(A)  = 0$, necesariamente $\nu(B) =  0$:
 \end{definicion}
 %
 De    hecho,     se    muestra     la    reciproca    del     la    definici\'on
-Def.~\ref{def:MP:DensidadMedida} resultado a trav\'es de lo que es conocido como
+Def.~\ref{Def:MP:DensidadMedida} resultado a trav\'es de lo que es conocido como
 teorema de Radon-Nikod\'ym~\cite{Nik30, AthLah06, Bog07:v1, Coh13}:
 %
 \begin{teorema}[Radon-Nikod\'ym]\label{Th:MP:RadonNikodym}
@@ -400,6 +400,62 @@ teorema de Radon-Nikod\'ym~\cite{Nik30, AthLah06, Bog07:v1, Coh13}:
 
 En todo lo que  sigue, hablaremos de ``la'' densidad de una  medida, salvo si se
 necesita  explicitamente  tener  en  cuenta esta  sutileza.
+
+\modif{A  continuaci\'on, dos lemas  van a  ser muy  \'util especialmente  en el
+  cap\'itulo~\ref{Cap:SZ:Informacion},  tratando  de  dos  (o m\'as)  medidas  y
+  densidades.
+%
+\begin{lema}\label{Lem:RelacionIntegracionDerivadasRadon}
+  Sean \ $\nu$  \ y \ $\mu$ \  dos medidas sobre \ $(\Omega,\A)$ \ tales que \ $\nu  \ll \mu$. Entonces,
+  para cualquier funci\'on medible $f$,
+  %
+  \[
+  \int_\Omega   f(\omega)  \,   \frac{d\nu}{d\mu}(\omega)   \,  d\mu(\omega)   =
+  \int_\Omega f(\omega) \, d\nu(\omega)
+  \]
+\end{lema}
+%
+\begin{proof}
+  Tomando     \    $f     =     \un_A$    \     da     de    la     definici\'on
+  Def.~\ref{Def:MP:DensidadMedida}, pagina~\pageref{Def:MP:DensidadMedida} de la
+  densidad se obtiene
+  %
+  \[
+  \int_A   \frac{d\nu}{d\mu}(\omega)   \,  d\mu(\omega)   =   \nu(A)  =   \int_A
+  d\nu(\omega)
+  \]
+  %
+  Se    cierra    la    prueba   por    el    teorema~\ref{Th:MP:MedibleLimite},
+  pagina~\pageref{Th:MP:MedibleLimite} y  tratando $f$  con su parte  positiva y
+  negativa separamentemente.
+\end{proof}
+%
+\begin{lema}\label{Lem:RelacionesDerivadasRadon}
+  Sean \ $\nu$, \ $\mu$ \ y \ $\lambda$ \ tres medidas sobre \ $(\Omega,\A)$ \ y
+  suponemos \ $\nu \ll \lambda$ \ y \ $\lambda \ll \mu$. Entonces
+  %
+  \begin{itemize}
+  \item $\quad \nu \ll \mu$;
+  %
+  \item  equivalentemente, el  soporte (ensemble  de  puntos que  no cancela  la
+    funci\'on)  de   \  $\displaystyle   \frac{d\nu}{d\mu}$  \  es   \  incluido
+    ($\mu$-casi siempre) en el de \ $\displaystyle \frac{d\lambda}{d\mu}$;
+  %
+  \item  $\quad   \displaystyle  \frac{d\nu}{d\lambda}  \frac{d\lambda}{d\mu}  =
+    \frac{d\nu}{d\mu} \quad (\mu$-c.s.).
+\end{itemize}
+\end{lema}
+%
+\begin{proof}
+  El resultado viene  de la definici\'on de la absoluta  continuidad $\mu(A) = 0
+  \quad \Rightarrow \quad \lambda(A) = 0 \quad \Rightarrow \quad \nu(A) = 0$ (el
+  secundo item viniendo  escribiendo la medida en su  forma integral). Ad\'emas,
+  aplicando el lema anterior dos veces  se obtiene \ $\displaystyle \forall \: A
+  \in  \A, \quad  \nu(A) =  \int_A \frac{d\nu}{d\mu}(\omega)  \,  d\mu(\omega) =
+  \int_A   \frac{d\nu}{d\lambda}(\omega)  \,   \frac{d\lambda}{d\mu}(\omega)  \,
+  d\mu(\omega)$.
+\end{proof}
+}
 
 \
 
@@ -467,7 +523,7 @@ medida  de  Lebesgue. \modif{De  la  misma  manera,  hablando de  densidad,  sin
 Fijense de que, para $f$ medible, tenemos
 %
 \[
-\int_B f(x) \, d\delta_{x_k}(x) = f(x_k).
+\int_{\Rset^d} f(x) \, d\delta_{x_k}(x) = f(x_k).
 \]
 %
 Se  proba  saliendo  de   \  $f$  \  de  la  forma  \  $f   =  \un_C$  \  y  del
@@ -483,7 +539,7 @@ definici\'on de variables/vectores aleatoria(o)s reales y sus caracterizaciones.
 % ================================= VA y distribuci\'on de probabilidad
 
 \subseccion{Variables aleatorias, vectores aleatorios y distribuci\'on de probabilidad}
-\label{sec:MP:VAGeneral}
+\label{Ssec:MP:VAGeneral}
 
 Empezamos con la  noci\'on de variable aleatoria real, que  queremos ver como el
 resultado de un experimento o de un evento dado~\cite{AthLah06, Coh13, Bre88}:
@@ -628,7 +684,7 @@ $k$-dimensional. Es entonces sencillo ver de que
 %
 \[
 F_{X_{I_k}}(x_{I_k}) = \lim_{\forall i \not\in I_k, x_i \to +\infty} F_X(x).
-%\label{pagina:MP:MarginalesF}
+\label{Pagina:MP:MarginalesF}
 \]
 %
 (viene de  que $\bigcap_{j=1}^k (X_{i_j}  \le x_{i_j}) =  \left( \bigcap_{j=1}^k
@@ -686,7 +742,7 @@ como en el espacio preimagen.
 % ================================= Discreta
 
 \subseccion{Variable aleatoria discreta}
-\label{sec:MP:VADiscreta}
+\label{Ssec:MP:VADiscreta}
 
 \begin{definicion}[Variable aleatoria discreta]
   Una  variable aleatoria es  dicha {\it  discreta} cuando  $\X =  X(\Omega)$ es
@@ -736,7 +792,7 @@ obviamente normalizada en el sentido de que
 \sum_{x_j \in \X} p_X(x_j) = 1.
 \]
 %
-En  la  Fig.~\ref{fig:MP:ProbaDiscreta}-(a)   se  muestra  una  representaci\'on
+En  la  Fig.~\ref{Fig:MP:ProbaDiscreta}-(a)   se  muestra  una  representaci\'on
 gr\'afica de una distribuci\'on de probabilidad discreta.
 %
 En particular,
@@ -755,7 +811,7 @@ F_X(x) = \sum_{x_j \le x} p_X(x_j).
 De  esta forma,  se justifica  la  denominaci\'on {\it  cumulativa} para  $F_X$.
 Tambi\'en, se puede ver inmediato de que $F_X$ es una funci\'on discontinua, con
 saltos finitos (en  $x_j$, salto de altura $p_X(x_j)$).  Eso es ilustrado figura
-Fig.~\ref{fig:MP:ProbaDiscreta}-(b).
+Fig.~\ref{Fig:MP:ProbaDiscreta}-(b).
 
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/DistribucionReparticionDiscreta} \end{center}
@@ -765,7 +821,7 @@ Fig.~\ref{fig:MP:ProbaDiscreta}-(b).
   \, ,  \, \sqrt5  \, , \,  \sqrt7 \,  , \, \sqrt{11}  \, \big\}$ \  y \  $p_X =
   \protect\begin{bmatrix}  \frac18  & \frac14  &  \frac16  &  \frac18 &  \frac13
     \protect\end{bmatrix}^t$.}
-\label{fig:MP:ProbaDiscreta}
+\label{Fig:MP:ProbaDiscreta}
 \end{figure}
 
 Un caso especial se tiene cuando un  valor $x_k$ es cierto o seguro, y no ocurre
@@ -853,15 +909,12 @@ conocimiento completo.
 \label{fig:majorizationplot}
 \end{figure}
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 
 % ================================= Continua
 
 \subseccion{Variable aleatoria continua}
-\label{sec:MP:VAContinua}
+\label{Ssec:MP:VAContinua}
 
 En  varios contextos,  puede  tomar valores  en  un conjunto  no numerable,  por
 ejemplo cualesquiera de los n\'umeros en un dado intervalo de la recta real.  No
@@ -876,7 +929,7 @@ particular de inter\'es es el de variables continuas~\cite{AthLah06, HogMck13}:
 Cuando  se  puede,  es  conveniente  asociar  una  {\it  funci\'on  densidad  de
   probabilidad} (com\'unmente  anotada por  su sigla en  ingl\'es: pdf  por {\it
   probability   density   function}).   Por   eso,   nos   apoyamos   sobre   la
-definici\'on~\ref{def:MP:DensidadMedida}  aplicada a  la medida  de probabilidad
+definici\'on~\ref{Def:MP:DensidadMedida}  aplicada a  la medida  de probabilidad
 $P_X$:
 %
 \begin{definicion}[Variable aleatoria admitiendo una densidad de probabilidad]
@@ -951,9 +1004,9 @@ $x+dx$''.  Al final, la condici\'on de normalizaci\'on se escribe
 \] 
 %
 
-En la figura Fig.~\ref{fig:MP:ProbaContinua}-(a) se muestra una representaci\'on
+En la figura Fig.~\ref{Fig:MP:ProbaContinua}-(a) se muestra una representaci\'on
 gr\'afica de una  funci\'on densidad de probabilidad para  una variable continua
-admitiendo una  densidad, y en  Fig.~\ref{fig:MP:ProbaContinua}-(b) la funci\'on
+admitiendo una  densidad, y en  Fig.~\ref{Fig:MP:ProbaContinua}-(b) la funci\'on
 cumulativa correspondiente.
 %
 \begin{figure}[h!]
@@ -966,7 +1019,7 @@ cumulativa correspondiente.
   \un_{[0   \,   ;  \,   1)}(x)   +   \frac12  \un_{[1   \,   ;   \,  2)}(x)   +
   \frac{(x-2)^{\frac32}}{2}  \un_{[2  \,   ;  \,  3)}(x)  +  \un_{[3   \,  ;  \,
     +\infty)}(x)$.  }
-\label{fig:MP:ProbaContinua}
+\label{Fig:MP:ProbaContinua}
 \end{figure}
 
 Fijense   de  que   una   variable   aleatoria  puede   ser   ni  continua,   ni
@@ -992,7 +1045,7 @@ discreta\modif{, como ilustrado en el ejemplo siguiente}
   \]
   %
   Esta     funci\'on     de     repartici\'on     es     representada     figura
-  Fig.~\ref{fig:MP:ProbaMixta}: es ni discreta,  ni continua.  Entonces, a pesar
+  Fig.~\ref{Fig:MP:ProbaMixta}: es ni discreta,  ni continua.  Entonces, a pesar
   de que $\X = [0 \, ; \, 1]$  \ sea un intervalo, $X$ no es continua (y tampoco
   no puede ser discreta).
   %
@@ -1006,26 +1059,26 @@ discreta\modif{, como ilustrado en el ejemplo siguiente}
     que $X$  no es  discreta. A  pesar de  que $\X =  [0 \,  ; \,  1]$ \  sea un
     intervalo,  de  la presencia  del  salto  en $x  =  1$,  tampoco  $X$ no  es
     continua.}
-  \label{fig:MP:ProbaMixta}
+  \label{Fig:MP:ProbaMixta}
   \end{figure}
   %
 \end{ejemplo}
 %\item Sea  $U$ \ variable  continua uniforme sobre $[0  \, ; \,  1)$ \ y \  $X =
 %  \un_{U \not\in \Qset}$. Claramente  $X$ no es continua, pero $\X =  [0 \, ; \,
-%  1)   \backslash    \Qset$   \   siendo   no   numerable,    $X$   tampoco   es
+%  1)   \setminus    \Qset$   \   siendo   no   numerable,    $X$   tampoco   es
 %  discreta~\footnote{\SZ{$X = 1$ casi siempre\ldots quizas m\'as adelante}}.
 %\end{itemize}
 
 
 \modif{Volvemos a las variables  discretas \ $X$ \ sobre $\X =  \{ x_j \}_j$, de
-  medida   de    probabilidad   de    la   forma   \    $P_X   =    \sum_j   p_j
-  \delta_{x_j}$.   Considerando  la   medida   discreta  \   $\mu_\X  =   \sum_j
-  \delta_{x_j}$,  es claro  de que  \ $P_X  \ll \mu_\X$.  Entonces, formalmente,
-  $P_X$ admite  una densidad con  respeto a la  medida discreta $\mu_\X$  y esta
-  densidad, definida sobre $\X$  es $p_X(x) = P(X = x)$. A  pesar de que sea una
-  tautolog\'ia, este justifica  de que usamos la escritura  $p_X$ (minuscula) en
-  el caso  discreto como en  el caso  continuo, y de  que hablamos (por  abus de
-  terminolog\'ia) de distribuci\'on de probabilidad en ambos caso.}
+  medida  de  probabilidad  de la  forma  \  $P_X  = \sum_j  p_j  \delta_{x_j}$.
+  Considerando la medida discreta \  $\mu_\X = \sum_j \delta_{x_j}$, es claro de
+  que \ $P_X \ll \mu_\X$.   Entonces, formalmente, $P_X$ admite una densidad con
+  respeto a la medida discreta $\mu_\X$  y esta densidad, definida sobre $\X$ es
+  $p_X(x) = P(X  = x)$. A pesar  de que sea una tautolog\'ia,  este justifica de
+  que usamos la escritura $p_X$ (minuscula)  en el caso discreto como en el caso
+  continuo, y de que hablamos  (por abus de terminolog\'ia) de distribuci\'on de
+  probabilidad en ambos caso.\label{Pagina:MP:DensidadDiscreta}}
 
 Recordamonos de  que cualquier  medida de probabilidad  (caso continuo o  no) se
 escribe tambi\'en con una integral \ $\displaystyle P_X(B) = \int_B dP_X(x)$ \ y
@@ -1071,7 +1124,7 @@ $p_X(x) =  \sum_j p_j  \, \delta(x-x_j)$. \modif{Insistamos  en el hecho  de que
 % ================================= Vector discreto
 
 \subseccion{Vector aleatorio discreto}
-\label{sec:MP:VecDiscreto}
+\label{Ssec:MP:VecDiscreto}
 
 Un ejemplo de vector aleatorio discreto puede verse a trav\'es de un conjunto de
 dados (que podr\'ian  ser dependientes si son ligados por  un hilo por ejemplo).
@@ -1144,10 +1197,10 @@ Kronecker~\footnote{Para   \    $p   =   \begin{bmatrix}   p_1    &   \cdots   &
     q_m \end{bmatrix}^t$ \ el producto de  Kronecker es dado por \ $p \otimes q$
   \ vector de tama\~no $n m$ de componente \ $(j-1) m + k$-esima \ el producto \
   $p_j  q_k, \quad 1  \le j  \le n,  \: 1  \le k  \le m$.   Fijense de  que este
-  producto es asociativo pero no es comutativo.\label{foot:MP:Kronecker}}.
+  producto es asociativo pero no es comutativo.\label{Foot:MP:Kronecker}}.
 
 Al  final, de la  f\'ormula de  calculo de  funci\'on de  repartici\'on marginales
-visto  pagina~\pageref{pagina:MP:MarginalesF},   para  un  subconjunto   $I_k  =
+visto  pagina~\pageref{Pagina:MP:MarginalesF},   para  un  subconjunto   $I_k  =
 (i_1,\ldots,i_k)$ de  $1 \le k  \le d$ elementos  de $\{ 1  , \ldots ,  d \}^k$,
 $X_{I_k}  =  \begin{bmatrix}  X_{i_1}  &  \cdots  &  X_{i_k}\end{bmatrix}^t$  la
 probabilidad marginal o distribuci\'on marginale de $X_{I_k}$ es dada por
@@ -1161,7 +1214,7 @@ p_{X_{I_k}}(x_{I_k}) = \sum_{\forall i \not\in I_k, x_i \in \X_i} p_X(x).
 % ================================= Vector continuo
 
 \subseccion{Vector aleatorio continuo}
-\label{sec:MP:VecContinuo}
+\label{Ssec:MP:VecContinuo}
 
 Como para  el caso  de una  variable, se puede  considerar cualquiera  medida de
 referencia  $\mu$  sobre  $\Rset^d$   para  definir  una  noci\'on  de  densidad
@@ -1171,7 +1224,7 @@ Lebesgue.
 \begin{definicion}[Vector aleatorio continuo y densidad de probabilidad multivariada]
   Un  vector aleatorio  \  $X$ \  es dicho  {\it  continuo} si  su funci\'on  de
   repartici\'on  $F_X$ es  continua sobre  $\Rset^d$.  Como  en el  caso escalar
-  tambi\'en,   por  definici\'on~\ref{def:MP:DensidadMedida}  (y   la  reciproca
+  tambi\'en,   por  definici\'on~\ref{Def:MP:DensidadMedida}  (y   la  reciproca
   evocaca al  seguir), se dice que  $X$ admite una densidad  de probabilidad con
   respeto a  una medida $\mu$ sobre $\Rset^d$  si $P_X \ll \mu$.   De nuevo, nos
   enfocamos  sobre la medida  (dicha de  referencia) $\mu  = \mu_L$  de Lebesgue
@@ -1223,7 +1276,7 @@ p_{X_1}(x_1) \ldots p_{X_d}(x_d).
 
 
 Terminamos esta secci\'on mencionando que, de la f\'ormula de calculo de funci\'on
-de  repartici\'on marginales vista  pagina~\pageref{pagina:MP:MarginalesF}, para
+de  repartici\'on marginales vista  pagina~\pageref{Pagina:MP:MarginalesF}, para
 un subconjunto $I_k = (i_1,\ldots,i_k)$ de $1  \le k \le d$ elementos de $\{ 1 ,
 \ldots   ,  d   \}^k$,   $X_{I_k}   =  \begin{bmatrix}   X_{i_1}   &  \cdots   &
   X_{i_k}\end{bmatrix}^t$  la   {\it  densidad  de   probabilidad  marginal}  de
@@ -1249,7 +1302,7 @@ probabilidad conjunta sobre todas las variables excepto la $i$-\'esima.
 % ================================= Transformacion
 
 \subseccion{Transformaci\'on de variables y vectores aleatorios}
-\label{sec:MP:Transformacion}
+\label{Ssec:MP:Transformacion}
 
 En  esta  secci\'on nos  interesamos  al  effect de  una  variable  o un  vector
 aleatorio. Por  ejemplo, en un juego con  dos dados, nos podemos  interesar a la
@@ -1456,7 +1509,7 @@ $g$ es inyectiva, dando
   funci\'on multivaluada $g^{-1}$), \  $\Jac_{g_k^{-1}}$ \ su matriz Jacobiana y
   \ $I(y) = \{ k, \: y \in g(\X_{[k]}) \}$ \ los indices tales que \ $y$ \ tiene
   un      inverso     por      $g_k$.      Eso      es      ilustrado     figura
-  Fig.~\ref{fig:MP:TransformacionVA}  para $d  = 1$.   Entonces $Y$  es continua
+  Fig.~\ref{Fig:MP:TransformacionVA}  para $d  = 1$.   Entonces $Y$  es continua
   admitiendo una densidad de probabilidad $p_Y$ tal que
   %
   \[
@@ -1527,7 +1580,7 @@ F_X(\sup \Y_{[k]}) - F_X(g_k^{-1}(y))  & \mbox{si} & g_k \quad \mbox{es decrecie
 \]
 %
 El  resultado  sigue  diferenciando  este  resultado. Eso  es  ilustrado  figura
-Fig.~\ref{fig:MP:TransformacionVA}.
+Fig.~\ref{Fig:MP:TransformacionVA}.
 
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/TransformacionVA} \end{center}
@@ -1539,7 +1592,7 @@ Fig.~\ref{fig:MP:TransformacionVA}.
   el eje $x$ representan $g_k^{-1}(y), \: k \in I(y)$; en el ejemplo, $I(y) = \{
   1  \,  ;  \,  2 \}$  \  y,  suponiendo  de  que  $\X  = \Rset$,  \  $F_Y(y)  =
   F_X(g_1^{-1}(y)) + 1-F_X(g_2^{-1}(y))$.}
-\label{fig:MP:TransformacionVA}
+\label{Fig:MP:TransformacionVA}
 \end{figure}
 
 Una  tercera alternativa,  a pesar  que sea  delicado, es  de apoyarse  sobre la
@@ -1550,18 +1603,19 @@ delta  en  t\'erminos de  sus  ceros:  \  $\delta(y-g(x)\,)= \sum_{k  \in  I(y)}
 \delta(x-g_k^{-1}(y))$~\cite{ManWol95}.
 
 Es  importante  notar  de  que  la  condici\'on $\X_{[0]}$  de  medida  nula  es
-importante. El el caso contrario,  $Y$ no queda continua \modif{como se lo puede ver en el ejemplo siguiente}.
+importante. El el caso contrario, $Y$  no queda continua \modif{como se lo puede
+  ver en el ejemplo siguiente}.
 %
 \begin{ejemplo}[Transformaci\'on con $\mu_L\left( \X_{[0]} \right) \ne 0$]
   Sea \ $X$ \  uniforme sobre \ $\X = ( 3 \,  ; \, 3)$ \ y \ $Y  = g(X)$ \ con \
   $g(x) = \left( 1 + \cos\left( (|x|-1) \frac{\pi}{2} \right) \right) \un_{(1 \,
     ; \,  3)}(|x|) + 2 \un_{[0  \, ; 1]}(|x|)$.  Esta  funci\'on es representado
-  figura Fig.~\ref{fig:MP:TransformacionVANoContinua}-(a).   Claramente, \ $g$ \
+  figura Fig.~\ref{Fig:MP:TransformacionVANoContinua}-(a).   Claramente, \ $g$ \
   es continua y  diferenciable sobre $\X$, pero con  \ $\X_{[0]} = [ -1  \, ; \,
   1]$ que no es de medida nula.  Saliendo de $F_Y(y) = P(g(X) \le y)$ se calcula
   sencillamente  $F_Y(y) =  \frac23 \left(  1 -  \frac1\pi  \arccos(y-1) \right)
   \un_{[0  \, ;  \,  2)} +  \un_{[ 2  \,  ; \,  +\infty)}(y)$, ilustrada  figura
-  Fig.~\ref{fig:MP:TransformacionVANoContinua}-(b).   Claramente  \  $F_Y$ \  es
+  Fig.~\ref{Fig:MP:TransformacionVANoContinua}-(b).   Claramente  \  $F_Y$ \  es
   discontinua en \ $y = 2$: \ $Y$ \ no es continua.
   %
   \begin{figure}[h!]
@@ -1573,7 +1627,7 @@ importante. El el caso contrario,  $Y$ no queda continua \modif{como se lo puede
     [ -1 \, ; \, 1]$ no es de medida nula, dando para $X$ uniforme sobre $\X$ la
     variable $Y = g(X)$ no  continua de funci\'on de repartici\'on representenda
     en (b).  }
-  \label{fig:MP:TransformacionVANoContinua}
+  \label{Fig:MP:TransformacionVANoContinua}
   \end{figure}
 \end{ejemplo}
 
@@ -1659,7 +1713,7 @@ donde $d^2 z=dx\,dy$.
 
 \modif{
 \subseccion{Leyes condicionales}
-\label{sec:MP:LeyesCondicionales}
+\label{Ssec:MP:LeyesCondicionales}
 
 Tratando de un par de vectores aleatorios  \ $X$ \ e \ $Y$, una pregunta natural
 puede ser de caracterizar el vector  $Y$ si ``observamos $X = x$''. En palabras,
@@ -1675,7 +1729,7 @@ casos escalares).
 \paragraph{Caso $\boldsymbol{X}$ discreto:}
 Un caso  sencillo a estudiar  es cuando $\X  = X(\Omega)$ es discreto.   En este
 caso, para  cualquier $x  \in \X$, tenemos  $P_X(x) = P(X  = x)  \ne 0$ y  de la
-definici\'on de  la probabilidad condicional Def.~\ref{def:MP:ProbaCondicional},
+definici\'on de  la probabilidad condicional Def.~\ref{Def:MP:ProbaCondicional},
 $P(Y \in A | X = x) = \frac{P(Y \in A \cap X = x)}{P(X=x)}$ define una medida de
 probabilidad que llamamos medida de probabilidad condicional y que notaremos
 %

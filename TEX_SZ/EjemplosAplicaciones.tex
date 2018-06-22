@@ -1,11 +1,11 @@
 \seccion{Unos ejemplos y aplicaciones}
-\label{s:SZ:Ejemplos}
+\label{Sec:SZ:Ejemplos}
 
 
 % ================================= canal
 
 \subseccion{Canal de transmisi\'on y su capacidad}
-\label{sec:SZ:CanalCapacidad}
+\label{Ssec:SZ:CanalCapacidad}
 
 Siguiendo el  esquema de comunicaci\'on de  Shannon, un mensaje  que se modeliza
 como  un vector  aleatorio~\footnote{De  punto  de vista  de  un receptor,  este
@@ -25,7 +25,7 @@ otros):
 %
 \begin{definicion}[Capacidad de canal]
   Sea un canal de transmisi\'on, $X$  su entrada e $Y$ su salida, como ilustrado
-  figura  Fig.~\ref{fig:SZ:CanalComunicacion}.  Sea  $p_X$ la  distribuci\'on de
+  figura  Fig.~\ref{Fig:SZ:CanalComunicacion}.  Sea  $p_X$ la  distribuci\'on de
   probabilidad de $X$. La capacidad $C$ del canal es definida por
   %
   \[
@@ -47,13 +47,14 @@ otros):
   importante es el v\'inculo entre la entrada  $X$ y la salida $Y$ del canal, es
   decir la  cantidad de informaci\'on que  tienen en com\'un.   La capacidad del
   canal es la informaci\'on $I(X;Y)$ m\'axima con respeto a su entrada.}
-\label{fig:SZ:CanalComunicacion}
+\label{Fig:SZ:CanalComunicacion}
 \end{figure}
 
 
 % ================================= canal binario
 
 \subsubseccion{Canal binario}
+\label{Sssec:SZ:CanalBinario}
 
 Suponiendo  que el  mensaje mandado  en un  canal es  una cadena  de s\'imbolos,
 variables   aleatorias  independientes,   se  puede   concentrarse   sobre  cada
@@ -72,8 +73,8 @@ probabilidades que un 0 (resp. un 1) se transmite correctamente o cambia en un 1
 \]
 %
 $\varepsilon$ y $\vartheta$ representan errores de comunicaci\'on.  Tal canal es
-descrito      figura     Fig.~\ref{fig:SZ:CanalBinario}-(a).       La     figura
-Fig.~\ref{fig:SZ:CanalBinario}-(b) da un esquema ``pr\'actico'' que podr\'ia ser
+descrito      figura     Fig.~\ref{Fig:SZ:CanalBinario}-(a).       La     figura
+Fig.~\ref{Fig:SZ:CanalBinario}-(b) da un esquema ``pr\'actico'' que podr\'ia ser
 al origen  de un  tal canal.  Cuando  \ $\varepsilon  = \vartheta$, el  canal es
 conocido como {\it canal binario sim\'etrico}.  Cuando \ $\varepsilon = 0$ \ y \
 $\vartheta \in (0 \,  ; \, 1)$, el canal es conocido  como {\it canal binario en
@@ -94,7 +95,7 @@ $\vartheta \in (0 \,  ; \, 1)$, el canal es conocido  como {\it canal binario en
   $\vartheta$ \ van a ser caracterizados completamente por la distribuci\'on del
   ruido  (y  de  los  dos  niveles  posibles  de la  entrada),  pero  no  de  la
   distribuci\'on $p_X$.}
-\label{fig:SZ:CanalBinario}
+\label{Fig:SZ:CanalBinario}
 \end{figure}
 
 En este caso, trabajando con bits, aparece leg\'itimo usar el logaritmo de base
@@ -217,10 +218,10 @@ $\varepsilon =  \vartheta =  1$ el  canal es llamado  {\it canal  volteando}; en
 ambos casos, se recupera la entrada (o directamente, o tomando el opuesto) ``sin
 perdida''.
 
-La  figura  Fig.~\ref{fig:SZ:ICanalBinario}  representa la  informaci\'on  mutua
+La  figura  Fig.~\ref{Fig:SZ:ICanalBinario}  representa la  informaci\'on  mutua
 $I(X;Y)$ para unos  canales ($\varepsilon$ y $\vartheta$ dados)  en funci\'on de
 $r$.   Se nota que  la curva  es c\'oncava  y tiene  un m\'aximo,  capacidad del
-canal.   La figura Fig.~\ref{fig:SZ:CCanalBinario}  representa la  capacidad del
+canal.   La figura Fig.~\ref{Fig:SZ:CCanalBinario}  representa la  capacidad del
 canal en  funci\'on de \  $\varepsilon$ \ y  \ $\vartheta$ as\'i que  unos casos
 particulares/cortes.
 
@@ -238,7 +239,7 @@ cuando $H_2$ est m\'aximo, es decir  para \ $\varepsilon = \vartheta = \frac12$,
 \ y  \ $C_2 = 0$  \ (instancia particular  de \ $\vartheta =  1-\varepsilon$). \
 $h_2(\varepsilon)$  \  es la  perdida  en bit  para  cada  bit transmitido.   La
 capacidad  \  $C_2$   \  en  funci\'on  de  \   $\varepsilon$\  es  dada  figura
-Fig.~\ref{fig:SZ:CCanalBinario}-(b).
+Fig.~\ref{Fig:SZ:CCanalBinario}-(b).
 
 En el  caso particular  $\varepsilon = 0$,  conocido como  {\it canal en  Z}, la
 capacidad es
@@ -251,7 +252,7 @@ Se nota  en este caso tambi\'en  que la capacidad  alcanza 1, su m\'aximo,  si y
 solamente  si \  $\vartheta  = 0$  \  (canal perfecto).   Al  rev\'es, cuando  \
 $\vartheta  \to 1$,  \  $C \to  0$, \  instancia  particular de  \ $\vartheta  =
 1-\varepsilon$.   La capacidad \  $C_2$ \  en funci\'on  de $\vartheta$  es dada
-figura Fig.~\ref{fig:SZ:CCanalBinario}-(c).
+figura Fig.~\ref{Fig:SZ:CCanalBinario}-(c).
 
 %{\bf\color{red} C parecido a la de Shannon caso continuo. Interpretacion?}
 
@@ -265,7 +266,7 @@ figura Fig.~\ref{fig:SZ:CCanalBinario}-(c).
   sim\'etico); \ (c): \  $\varepsilon = 0$ \ y \ $\vartheta  = 0.05$ \ (canal en
   Z).}
 %
-\label{fig:SZ:ICanalBinario}
+\label{Fig:SZ:ICanalBinario}
 \end{figure}
 
 \
@@ -279,12 +280,12 @@ figura Fig.~\ref{fig:SZ:CCanalBinario}-(c).
   para el canal sim\'etico ($\varepsilon = \vartheta$); \ (c): \ en funci\'on de
   \ $\vartheta$ \ para \ $\varepsilon = 0$ \ (canal en Z).}
 %
-\label{fig:SZ:CCanalBinario}
+\label{Fig:SZ:CCanalBinario}
 \end{figure}
 
 En~\cite{CovTho06,  Rio07}  entre  otros,  se estudian  diversos  otros  canales
 discretos, binarios  o con m\'as estados.   Unos son representados  en la figura
-Fig.~\ref{fig:SZ:CanalesDiscretos}     (ver     tambi\'en~\cite{Sha48,    Eli57}
+Fig.~\ref{Fig:SZ:CanalesDiscretos}     (ver     tambi\'en~\cite{Sha48,    Eli57}
 o~\cite{Ari72} para el c\'alculo num\'erico de la capacidad en el caso general).
 
 
@@ -303,14 +304,14 @@ o~\cite{Ari72} para el c\'alculo num\'erico de la capacidad en el caso general).
   una probabilidad $\varepsilon$.   De $I_n(X;Y) = H_n(Y) -  H_n(Y|X) = H_n(Y) -
   h_n(\varepsilon)$ se deduce  que $I_n$ es m\'axima si $Y$  es uniforme, lo que
   es posible si $X$ es uniforma, dando $C_n = 1 - h_n(\varepsilon)$.}
-\label{fig:SZ:CanalesDiscretos}
+\label{Fig:SZ:CanalesDiscretos}
 \end{figure}
 
 
 % ================================= canal gaussiano
 
 \subseccion{Canal de transmisi\'on continuo gaussiano y su capacidad}
-\label{sec:SZ:Canalgaussiano}
+\label{Ssec:SZ:Canalgaussiano}
 
 Un canal de  comunicaci\'on continuo relativamente simple es  conocido como {\it
   canal  gaussiano}~\cite[Sec.~25]{Sha48},~\cite{CovTho06,  Rio07}:  $X$ es  una
@@ -319,7 +320,7 @@ versi\'on ruidosa de $X$, \ie $Y =  X + \xi$ con el ruido $\xi$ independiente de
 $X$. En  el canal gaussiano, $\xi  \equiv \Gauss$ es un  vector gaussiano.  Este
 canal es tambi\'en definido por  su densidad de probabilidad ``de transici\'on''
 $p_{Y|X}$, \ie  por la distribuci\'on del  ruido.  Tal canal  es descrito figura
-Fig.~\ref{fig:SZ:CanalGaussiano}.   Se supone conocida  la matriz  de covarianza
+Fig.~\ref{Fig:SZ:CanalGaussiano}.   Se supone conocida  la matriz  de covarianza
 $\Sigma_\Gauss$ del ruido, y se nota $\Sigma_X$ la de la entrada. En pr\'actica,
 no se puede mandar  un mensaje a una potencia tan alta que  se quiere, lo que se
 traduce por una limitaci\'on
@@ -340,14 +341,14 @@ potencia l\'imite permitida por componente (sampleo).
   $p_{Y|X}(x,y)   =   p_{\Gauss}(y-x)$  \   (obviamente   independiente  de   la
   distribuci\'on de la entrada).}
 %
-\label{fig:SZ:CanalGaussiano}
+\label{Fig:SZ:CanalGaussiano}
 \end{figure}
 
 
 Por  definici\'on, la informaci\'on  mutua $I(X;Y)$  entrada-salida es  dada por
 $I(X;Y) = H(Y) - H(Y|X) = H(Y) - H(\Gauss)$. Maximizar $I(X;Y)$ es equivalente a
 maximizar  $H(Y) =  H(X  + \Gauss)$  sujeto  a $\Tr\left(  \Sigma_X \right)  \le
-P$. Fijando  un $\Sigma_X$, la  propiedad~\ref{prop:SZ:cotamaximagaussiana} \ de
+P$. Fijando  un $\Sigma_X$, la  propiedad~\ref{Prop:SZ:cotamaximagaussiana} \ de
 la entrop\'ia diferencial implica que $H(Y)$  sea m\'axima si y solamente si $Y$
 es gaussiana,  es decir  si y solamente  si $X$  est gaussiana, dando  $I(X;Y) =
 \frac12  \log \left|  \Sigma_X +  \Sigma_\Gauss  \right| -  \frac12 \log  \left|
@@ -392,7 +393,7 @@ desigualdad  se  resuelva  con  el  enfoque  de  Karush-Kuhn-Tucker~\footnote{Se
   factor  de Lagrande  despu\'es de  una  reescritura. Queda  que maximizar  los
   $\lambda^X_i$ para  maximizar $\left| R_X + \Lambda_\Gauss  \right|$, es decir
   tomar  $\lambda$ lo  m\'as grande  que  se puede,  pero satisfaciendo  $\sum_i
-  \lambda^X_i   \le   P$,   \ie  alcanzando   la   igualdad.\label{foot:SZ:KKT}}
+  \lambda^X_i   \le   P$,   \ie  alcanzando   la   igualdad.\label{Foot:SZ:KKT}}
 (KKT)~\cite{Mil00,  CamMar09},   dando  \   $\lambda^X_i  =  \left(   \lambda  -
   \lambda^\Gauss_i  \right)_+$  \  con  \  $(\cdot)_+ =  \max(\cdot,0)$  \  y  \
 $\lambda$ \ tal que \ $\sum_i  \left( \lambda - \lambda^\Gauss_i \right)_+ = P$.
@@ -412,7 +413,7 @@ alcanzada por $X$ gausiano de matriz de covarianza $\Sigma_X$ as\'i construida.
 
 La  \'ultima condici\'on  se resuelva  a  trav\'es de  lo que  es conocido  como
 ``llenado   de   agua''   (water-filling   en   ingl\'es),   illustrado   figura
-Fig.~\ref{fig:SZ:WaterFilling}.   El  principio  es  parecido  a  tener  niveles
+Fig.~\ref{Fig:SZ:WaterFilling}.   El  principio  es  parecido  a  tener  niveles
 $\lambda^\Gauss_i$  representando  las  potencias  del  ruido (en  la  base  que
 diagonaliza la  matriz de covarianza), y  de ``llenar con agua''  hasta un nivel
 $\lambda$ tal que el ``volumen''  a\~nadido vale $P$; en cada $\lambda^\Gauss_i$
@@ -428,7 +429,7 @@ se ha a\~nadido el $\lambda^X_i$~\cite[Sec.~9.4]{CovTho06}.
   diagonaliza  la  covarianza  $\Sigma_\Gauss$  del  ruido.  La  zona  en  grise
   representa esquem\'aticamente $P$.}
 %
-\label{fig:SZ:WaterFilling}
+\label{Fig:SZ:WaterFilling}
 \end{figure}
 
 En   el   caso   escalar,   se   obtiene
@@ -459,7 +460,7 @@ se\~nal/proceso, canal filtrando, canal con feedback, etc.).
 % ================================= codificacion
 
 \subseccion{Codificaci\'on entr\'opica sin perdida}
-\label{sec:SZ:Codificacion}
+\label{Ssec:SZ:Codificacion}
 
 El  problema  de  codificaci\'on  de  fuente  puede  presentarse  de  la  manera
 siguiente~\cite[cap.~5]{CovTho06}  o   \cite[cap.~13]{Rio07}.   Sea  un  proceso
@@ -565,7 +566,7 @@ de decodificar. Obviamente,  un c\'odigo instantaneo es tal  que ninguna palabra
 c\'odigo es  prefijo de una otra, \ie  si $c_m(x)$ es una  palabra c\'odigo, las
 otras palabras c\'odigo no pueden empezar con $c_m(x)$; el c\'odigo es tambi\'en
 dicho {\it libre de prefijo}.   Estas distinciones estan ilustradas en la figura
-Fig.~\ref{fig:SZ:ClasesCodigos} (ver~\cite[cap.~5]{CovTho06}).
+Fig.~\ref{Fig:SZ:ClasesCodigos} (ver~\cite[cap.~5]{CovTho06}).
 
 \begin{figure}[h!]
 %
@@ -576,7 +577,7 @@ Fig.~\ref{fig:SZ:ClasesCodigos} (ver~\cite[cap.~5]{CovTho06}).
   contiene los  c\'odigos instantaneos.  En  grise se representan las  clases de
   c\'odigos sin perdida a lo cuales se dedica esta secci\'on.}
 %
-\label{fig:SZ:ClasesCodigos}
+\label{Fig:SZ:ClasesCodigos}
 \end{figure}
 
 Adem\'as  de   la  decodificaci\'on  sin   ambig\"uedad,  una  caracterizaci\'on
@@ -669,14 +670,14 @@ Kraft-McMillan~~\cite{Kra49,   McM56,   Kar61}~\footnote{Esta  desigualdad   fue
   otras  ramas, y  los nudos  de ``padre''  \ $\zeta_i$  \ se  va a  asociar las
   palabras c\'odigos \ $\zeta_i \zeta_1 , \ldots , \zeta_i \zeta_\alpha$, \ etc.
   Este  arbol,  conocido  como  arbol  de  Kraft,  es  ilustrado  en  la  figura
-  Fig.~\ref{fig:SZ:ArbolKraft}  para \  $d =  2$  \ y  \ $\C  =  \{0 \,  , \,  1
+  Fig.~\ref{Fig:SZ:ArbolKraft}  para \  $d =  2$  \ y  \ $\C  =  \{0 \,  , \,  1
   \}$. Claramente, \ $n_1 \le d$ \ si no \ $n_1 \, d^{-1} > 1$ \ y los largos no
   podr\'ian  satisfacer  la  desigualdad  de Kraft-McMillan.   El  principio  es
   entonce de asociar a los \ $n_1$ \ (posiblemente igual a 0) largos iguales a \
   $1$ \ unos nudos con las palabras c\'odigo asociadas de largo \ $1$ \ (primera
   profundez  de  ramas)  y de  prohibir  todos  las  ramas  de padre  los  nudos
   seleccionados        (lineas        punteadas        en       la        figura
-  Fig.~\ref{fig:SZ:ArbolKraft}). Estos  nudos son  llamados {\em hojas}  (no hay
+  Fig.~\ref{Fig:SZ:ArbolKraft}). Estos  nudos son  llamados {\em hojas}  (no hay
   ramas).  En  la capa de ``hijos'' de  profundez/largos \ $2$, quedan  \ $d^2 -
   n_1 \, d$ \ nudos (accessibles)  que se puede dividir en ramas.  Nuevamente, \
   $n_2 \le d^2 - n_1 \, d$ \  sino tendr\'iamos \ $n_1 \, d^{-1} + n_2 \, d^{-2}
@@ -729,7 +730,7 @@ A este punto, se menciona los hechos siguientes
   c\'odigo:  se boran  las ramas  saliendo  de un  nudo-palabra c\'odigo  (ramas
   punteadas).}
 %
-\label{fig:SZ:ArbolKraft}
+\label{Fig:SZ:ArbolKraft}
 \end{figure}
 
 El formalismo dado,  se va a ver ahora reaparecer la  entrop\'ia de Shannon como
@@ -805,7 +806,7 @@ La entrop\'ia aparece tambi\'en el la cota superior del c\'odigo \'optimo:
   Olvidando que los  \ $l_i \equiv l(x_i)$ \ son enteros,  $L(c)$ es convexa con
   respecto  a los $l_i$  as\'i que  el v\'inculo,  garantizando que  el m\'inimo
   existe y es \'unico.  El problema se resuelva con el enfoque KKT~\footnote{Ver
-    nota de pie~\ref{foot:SZ:KKT} pagina~\pageref{foot:SZ:KKT}.}, optimizaci\'on
+    nota de pie~\ref{Foot:SZ:KKT} pagina~\pageref{Foot:SZ:KKT}.}, optimizaci\'on
   con  v\'inculos tipo desigualdades~\cite{Mil00,  CamMar09}, conduciendo  a los
   ``largos''
   %
@@ -924,7 +925,7 @@ de  asignar $\zeta_i$  al conjunto  $i$.   Luego, se  repite el  proceso a  cada
 sub-conjunto (para  tener sub-conjuntos  de probabilidades a  lo m\'as  cerca de
 $d^{-2}$) y  al subconjunto  $j$ del conjunto  $i$ se  va a asignar  le c\'odigo
 $\zeta_i    \zeta_j$,     etc.     Eso    es    ilustrado     en    la    figura
-Fig.~\ref{fig:SZ:FanoHuffmanCodes}-(a).   \SZ{Probar/mencionar que  tambi\'en $$
+Fig.~\ref{Fig:SZ:FanoHuffmanCodes}-(a).   \SZ{Probar/mencionar que  tambi\'en $$
   H(X) \le L\left( c^\fa \right) < H(X)+1$$}
 %  \qquad \mbox{con}  \qquad L^\fa  =  L_{c^\fa}$$}
 
@@ -977,7 +978,7 @@ Una soluci\'on para construir un  c\'odigo \'optima fue propuesta por Huffman en
   Como descrito tratando del c\'odigo  usando el arbol de Kraft, \ $c^\huf(x_i)$
   \ se construye saliendo de la ra\'iz del arbol as\'i construido, agregando las
   letras del camino que  llega hasta la hoja \ $x_i$.  \  Eso es ilustrado en la
-  figura Fig.~\ref{fig:SZ:FanoHuffmanCodes}-(b) en el caso binario.
+  figura Fig.~\ref{Fig:SZ:FanoHuffmanCodes}-(b) en el caso binario.
 \end{definicion}
 %
 Se mencionara  que a  cada etapa, el  nuevo conjunto de  super-s\'imbolos fuente
@@ -1131,7 +1132,7 @@ la fuente.
   \ $c^\huf(x_1) = 1, \: c^\huf(x_2) = 011, \: c^\huf(x_3) = 010, \: c^\huf(x_4)
   = 001, \: c^\huf(x_5) = 000$ \ de largo promedio \ $L^\opt = 2.2$.}
 %
-\label{fig:SZ:FanoHuffmanCodes}
+\label{Fig:SZ:FanoHuffmanCodes}
 \end{figure}
 
 
@@ -1153,7 +1154,7 @@ H_d(X)  \:  \le \:  \frac{L^{\opt,n}}{n}  \: <  \:  H_d(X)  + \frac{1}{n}  \quad
 (ver  tambi\'en~\cite[cap. 13,  teorema de  Shannon]{Rio07}). Fijense  que  si \
 $\displaystyle   \lim_{n   \to  \infty}   \frac{L^{\opt,n}}{n}   \to  H(X)$,   \
 $\frac{L^{\opt,n}}{n}$ \ no  es necesariamente decreciente con respeto  a \ $n$.
-Eso  es descrito  figura Fig.~\ref{fig:SZ:CodigosExtensiones}.   Lo  mismo puede
+Eso  es descrito  figura Fig.~\ref{Fig:SZ:CodigosExtensiones}.   Lo  mismo puede
 ocurir con el  c\'odigo de Shannon \SZ{y lo de Fano}.  Adem\'as, el cardinal del
 alfabeto  extendido $\X^n$  crece exponencialmente  con $n$,  lo que  no permite
 elegir un $n$ muy grande.
@@ -1168,7 +1169,7 @@ elegir un $n$ muy grande.
   sirve como gu\'ia. En esta ilustraci\'on se usa el ejemplo lo m\'as simple con
   \ $d = 2$ \ y \ $p = [0.33 \quad 0.67]^t$.}
 %
-\label{fig:SZ:CodigosExtensiones}
+\label{Fig:SZ:CodigosExtensiones}
 \end{figure}
 
 \
@@ -1237,7 +1238,7 @@ para tener m\'as detalles sobre varios esquemas de codificaci\'on/compresi\'on.
 % ================================= Gaz perfecto
 
 \subseccion{Gas perfecto}
-\label{sec:SZ:GasPerfecto}
+\label{Ssec:SZ:GasPerfecto}
 
 En el marco del gas perfecto
 

@@ -1,5 +1,5 @@
 \seccion{Probabilidades}
-\label{s:MP:Probabilidad}
+\label{Sec:MP:Probabilidad}
 
 El  concepto  de  {\it  probabilidad}  es importante  en  situaciones  donde  el
 resultado (o {\it outcome}) de un  dado proceso o medici\'on es incierto, cuando
@@ -85,7 +85,7 @@ teor\'ia de  conjuntos (ej.~\cite{Spi76,  Bre88, ManWol95, Sie75,  Sie76, Bor98,
   veces \ $(A,B)$ \ o \ $A \vee B$.
 %
 \item Complemento de un evento: \ $\bar{A}$ e indica que no se da $A$; Se denota
-  a veces \ $-A$  \ o \ $A^c$ (con el ejemplo precediente, $\bar{A}  = \{ 1 \, ,
+  a veces \ $-A$  \ o \ $A^\complement$ (con el ejemplo precediente, $\bar{A}  = \{ 1 \, ,
   \, 3 \, , \, 5 \}$).
 %
 \item  Eventos  {\it  disjuntos}  o   {\it  mutuamente  excluyentes}  o  {\it  o
@@ -94,39 +94,39 @@ teor\'ia de  conjuntos (ej.~\cite{Spi76,  Bre88, ManWol95, Sie75,  Sie76, Bor98,
   (evento que no  puede ocurrir, es el complemento de  $\Omega$, por ejemplo $A$
   ``cara par'' y $B$ ``cara impar'').
 %
-\item \modif{Denotaremos  tambi\'en $A \backslash B$  \ cuando el  evento $A$ se
+\item \modif{Denotaremos  tambi\'en $A \setminus B$  \ cuando el  evento $A$ se
     realiza pero  no $B$;  A veces,  se lo denota  tambi\'en \  $A-B$, \  que es
     tambi\'en \  $A \cap \bar{B}$, por  ejemplo ``cara par'' y  $B$ ``cara menor
     que 3''.}
 \end{itemize}
 %
-\noindent Eso es ilustrado en la figura Fig.~\ref{fig:MP:Ensembles} \modif{en lo
+\noindent Eso es ilustrado en la figura Fig.~\ref{Fig:MP:Ensembles} \modif{en lo
   que es  conocido como diagrama de Venn~\footnote{\modif{Este  tipo de diagaram
       fue  popularizado por  el ingles  J.  M.   A.  Venn  en 1880,  pero  en su
       papel~\cite{Ven80} da la partenidad  al matem\'atico suizo Leohnard Euler,
       un de  los primeros a usar tal  representaci\'on en el siglo  XVIII en sus
       cartas a una  princesa alemana (ver~\cite[L~102-105, pp.~95-126]{Eul68}) o
       antes a Christian Weise y Johan Christian Langius~\cite{Lan12}; apareci\'o
-      a\'un  en trabajos  de  Leibniz en  el  siglo anterio.}}}.   La uni\'on  e
-intersecci\'on satisfacen a  las mismas reglas que en  la teoria ensemblista, es
-decir cada una es comutativa \ $A \cup B = B \cup A$, \ $A \cap B = B \cap A$, \
-asociativa \ $(A \cup B)  \cup C = A \cup (B \cup C)$, \ $(A  \cap B) \cap C = A
-\cap (B \cap C)$, \ distributiva con respeto a la otra \ $(A \cup B) \cap C = (A
-\cap C) \cup (B \cap C)$ \ y \ $(A  \cap B) \cup C = (A \cup C) \cap (B \cup C)$
-\  (ver  ej.~\cite{Jef48,  Jef73,   Hal50,  Fel71,  Bre88,  ManWol95,  IbaPar97,
-  LehCas98, AthLah06, Coh13, HogMck13}).
+      a\'un en trabajos de Leibniz en el siglo anterio.}}\label{Foot:MP:Euler}}.
+La uni\'on  e intersecci\'on  satisfacen a  las mismas reglas  que en  la teoria
+ensemblista, es decir cada una es comutativa \  $A \cup B = B \cup A$, \ $A \cap
+B = B  \cap A$, \ asociativa \  $(A \cup B) \cup C  = A \cup (B \cup  C)$, \ $(A
+\cap B) \cap C = A \cap (B \cap  C)$, \ distributiva con respeto a la otra \ $(A
+\cup B) \cap C = (A \cap C) \cup (B \cap  C)$ \ y \ $(A \cap B) \cup C = (A \cup
+C)  \cap  (B  \cup C)$  \  (ver  ej.~\cite{Jef48,  Jef73, Hal50,  Fel71,  Bre88,
+  ManWol95, IbaPar97, LehCas98, AthLah06, Coh13, HogMck13}).
 
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/Ensembles} \end{center}
 %
 \leyenda{Ilustraci\'on   de  la  operaciones   de  uni\'on   $A  \cup   B$  (a),
   intersecci\'on $A \cap B$  (b), complemento $\bar{A}$ (c), eventos excluyentes
-  $A \cap B =  \emptyset$ (d), \ y $A \backslash B$  (e). $A$ es representado en
+  $A \cap B =  \emptyset$ (d), \ y $A \setminus B$  (e). $A$ es representado en
   linea  llena, $B$  en linea  discontinua; (a)-(c)  y (e),  el resultado  de la
   operaci\'on es la zona en grise.}
 % A veces, esta representaci\'on ensemblista se
 %  denota {\it diagrama de Venn o de Euler~\protect\footnotemark}}
-\label{fig:MP:Ensembles}
+\label{Fig:MP:Ensembles}
 \end{figure}
 % \footnotetext{\modif{Este tipo de diagaram  fue popularizado por Venn, pero en
 %     su papel~\cite{Ven} da la partenidad al matem\'atico aleman E. Euler un de
@@ -222,12 +222,12 @@ propiedades:
   $A_i$  mutuamente  excluyentes,  entonces  \  $\sum_{i=1}^n P(A_i)  =  1$;  el
   conjunto  $\{ A_i  \}_{i=1}^n$  es  dicho {\it  conjunto  completo de  eventos
     posibles      excluyentes      entre      s\'i}     y      es      ilustrado
-  figure~\ref{fig:MP:CompletoSub};
+  figure~\ref{Fig:MP:CompletoSub};
 %
 \item si $A$ es subconjunto de $B$,  lo que escribiremos $A \subset B$, es decir
   si  $B$  se realiza,  $A$  se realiza  tambi\'en  (pero  no necesariamente  al
   rev\'es),     entonces     \     $P(A)     \leq    P(B)$;     es     ilustrado
-  figure~\ref{fig:MP:CompletoSub};
+  figure~\ref{Fig:MP:CompletoSub};
 \end{itemize}
 
 \begin{figure}[h!]
@@ -236,7 +236,7 @@ propiedades:
 \leyenda{Ilustraci\'on  de  conjunto completo  de  eventos posibles  excluyentes
   entre s\'i  (a), y de  la inclusi\'on  (b) donde $A$  es en grise  (claro como
   oscuro) mientras de que $B$ es en grise oscuro.}
-\label{fig:MP:CompletoSub}
+\label{Fig:MP:CompletoSub}
 \end{figure}
 
 Nota:  la probabilidad  \ $P(A  \cap B)$  \ del  evento $A  \cap B$  \  se llama
@@ -298,7 +298,7 @@ menor \modif{o} a  igual a 3.  La respuesta \modif{se  encuentra} en la noci\'on
 de  {\it probabilidad condicional}~\cite{Hau01,  Jef48, Jef73,  Bre88, ManWol95,
   JacPro03, ShaVov06}:
 %
-\begin{definicion}[Probabilidad condicional]\label{def:MP:ProbaCondicional}
+\begin{definicion}[Probabilidad condicional]\label{Def:MP:ProbaCondicional}
   \underline{Por definici\'on},  la {\it  probabilidad condicional} de  $A$ dado
   $B$ es la raz\'on entre la  probabilidad del evento conjunto y la probabilidad
   de  que se  d\'e $B$  (cuando \'este  es un  evento \modif{de  probabilidad no
@@ -331,7 +331,7 @@ eso, a  veces en la literatura  se la denota  $P_B(A)$ \ \modif{pero no  vamos a
   usar esta notaci\'on para no confundirla  con la medida de probabilidad de una
   variable  aleatoria  que definiremos  en  la  secci\'on siguiente}.   Diversas
 situaciones  de  probabilidades  condicionales   son  ilustradas  en  la  figura
-siguiente, Fig.~\ref{fig:MP:Condicional}.
+siguiente, Fig.~\ref{Fig:MP:Condicional}.
 
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/Condicional} \end{center}
@@ -344,7 +344,7 @@ siguiente, Fig.~\ref{fig:MP:Condicional}.
   \cap B_2)  \ne 0$ \ y  \ $P(A \cap  B_2) \ne 0$ \  tenemos $0 < P(A|B_2)  < 1$
   (ej.  con   probabilidades  iguales  a   las  superficias  relativas   de  los
   conjuntos).}
-\label{fig:MP:Condicional}
+\label{Fig:MP:Condicional}
 \end{figure}
 
 Algunas propiedades interesantes son las siguientes:

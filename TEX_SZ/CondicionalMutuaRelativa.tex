@@ -1,5 +1,5 @@
 \seccion{Entrop\'ia condicional, informaci\'on mutua, entrop\'ia relativa}
-\label{s:SZ:Mutua}
+\label{Sec:SZ:Mutua}
 
 Tratando de un par de variables aleatorias $X$ e $Y$, una cuesti\'on natural que
 ocurre  es de  cuantificar la  incerteza que  queda sobre  una de  las variables
@@ -7,113 +7,126 @@ cuando se  observa la otra.   Dicho de otra  manera, si se  mide $Y =  y$, ?`que
 informaci\'on lleva sobre  $X$? La respuesta a esta  interogaci\'on se encuentra
 en la noci\'on de entrop\'ia condicional.  Si uno mide $Y = y$, la descripci\'on
 estad\'istica  de $X$  conociendo este  $Y =  y$ se  resuma a  la distribuci\'on
-condicional   de  probabilidad  $p_{X|Y}   =  \frac{p_{X,Y}}{p_Y}$.    Con  esta
-restricci\'on, se puede evaluar una incerteza sobre $X$, sabiendo que $Y=y$,
+condicional         de          probabilidad         \modif{$p_{X|Y=y}         =
+  \frac{p_{X,Y}(\cdot,y)}{p_Y(y)}$.}  Con  esta restricci\'on, se  puede evaluar
+una incerteza sobre $X$, sabiendo que $Y=y$,
 %
 \[
-H(X|Y=y) = H\left( p_{X|Y}(\cdot,y) \right)
+H(X|Y=y) = H\left( \modif{p_{X|Y=y}} \right).
 \]
 %
 Entonces, condicionalmente a la variable aleatoria $Y$, la incerteza va a ser el
-promedio estad\'istico  sobre todos  los estados $Y$  es decir $H(X|Y)  = \sum_y
-p_Y(y) H(X|Y=y)$:
+promedio    estad\'istico   sobre    todos    los   estados    $Y$   es    decir
+\modif{$\displaystyle H(X|Y) = \int_{\Rset^d} p_Y(y) H(X|Y=y) \, d\mu(y)$ \ (con
+  la medida $\mu$ adecuada).}
 %
-\begin{definicion}[Entrop\'ia condicional]\label{def:SZ:entropiacondicional}
-  Sean $X$ e  $Y$ dos variables aleatorias discretas,  la entrop\'ia condicional
-  de $X$ sabiendo $Y$ es definida por
+\begin{definicion}[Entrop\'ia condicional]\label{Def:SZ:entropiacondicional}
+  Sean \ $X$ \ e \ $Y$ \ dos variables aleatorias, respectivamente \ $d_X$ \ y \
+  $d_Y$-dimensionales. La entrop\'ia condicional de \ $X$, \modif{con respeto a}
+  \ $Y$, es definida por\modif{
   %
   \[
-  H(X|Y) = - \sum_{x,y} p_{X,Y}(x,y) \log p_{X|Y}(x,y)
+  H(X|Y)   =   -  \int_{\Rset^{d_X}   \times   \Rset^{d_Y}}  p_{X,Y}(x,y)   \log
+  p_{X|Y=y}(x) \, d\mu(x,y),
   \]
-\end{definicion}
-%
-Esta definici\'on se transpone naturalmente a la entrop\'ia diferencial:
-%
-\begin{definicion}[Entrop\'ia diferencial condicional]\label{def:SZ:entropiadiferencialcondicional}
-  Sean $X$ e  $Y$ dos variables aleatorias continuas,  la entrop\'ia condicional
-  de $X$ sabiendo $Y$ es definida por
   %
-  \[
-  H(X|Y) = - \int_{\Rset^d} p_{X,Y}(x,y) \log p_{X|Y}(x,y) \, dx \, dy
-  \]
+  con \ $\mu$ \  medida adecuada (discreta en el caso discreto  o de Lebesgue en
+  el caso diferencial).}
 \end{definicion}
+%
+%Esta definici\'on se transpone naturalmente a la entrop\'ia diferencial:
+%%
+%\begin{definicion}[Entrop\'ia diferencial condicional]\label{Def:SZ:entropiadiferencialcondicional}
+%  Sean $X$ e  $Y$ dos variables aleatorias continuas,  la entrop\'ia condicional
+%  de $X$ sabiendo $Y$ es definida por
+%  %
+%  \[
+%  H(X|Y) = - \int_{\Rset^d} p_{X,Y}(x,y) \log p_{X|Y}(x,y) \, dx \, dy
+%  \]
+%\end{definicion}
 
-Si $X$ e $Y$ son indepedientes, $p_{X|Y}$ se reduce a $p_X$, as\'i que vale cero
-la entrop\'ia condicional:
+Si $X$ e $Y$ son indepedientes, $p_{X|Y=y}$ se reduce a $p_X$, as\'i que vale cero
+la entrop\'ia condicional: \modif{obviamente,}
 %
 \begin{propiedades}
-\item\label{prop:SZ:independenciacondicional}
+\item\label{Prop:SZ:independenciacondicional}
   %
   \[
   X \: \mbox{e} \: Y \: \mbox{independientes} \quad \Leftrightarrow \quad H(X|Y)
-  = H(X)
+  = H(X).
   \]
 \end{propiedades}
 %
-Esta  propiedad  vale  en ambos  casos,  discreto  como  continuo.  En  el  caso
-discreto, se interpreta como el hecho  de que $Y$ no lleva ninguna informaci\'on
+Esta  propiedad
+%  vale  en ambos  casos,  discreto  como  continuo.  En  el  casodiscreto, 
+se interpreta como el hecho  de que $Y$ no lleva ninguna informaci\'on
 sobre $X$, y entonces ninguna medici\'on  de $Y$ va a cambiar la incerteza sobre
 $X$.
 
 Siendo $H(X|Y=y)$  una entrop\'ia, va a  heredar de todas las  propiedades de la
-entrop\'ia (diferencial).   Adem\'as, de  $p_{X,Y} = p_{X|Y}  p_Y$ se  deduce la
-propiedad  siguiente  (v\'alida para  la  entrop\'ia  como  para su  extensi\'on
-diferencial)
+entrop\'ia  (o  entrop\'ia   diferencial).   Adem\'as,  de  $p_{X,Y}(\cdot,y)  =
+p_{X|Y=y} p_Y(y)$ se deduce la propiedad siguiente
+%  (v\'alida para  la  entrop\'ia  como  para su  extensi\'ondiferencial)
 %
 \begin{propiedades}
-\item\label{prop:SZ:cadena}  {\it Regla de  cadena}
+\item\label{Prop:SZ:cadena}  {\it Regla de  cadena}
   %
   \[
-  H(X,Y) =  H(X|Y) +  H(Y)
+  H(X,Y) =  H(X|Y) +  H(Y).
   \]
   %
-  Esta regla,  v\'alida en  ambos casos, discreto  como continuo,  se generaliza
-  sencillamente a
+  Esta regla
+  % , v\'alida en ambos casos, discreto como continuo,
+  se generaliza sencillamente a
   %
   \[
-  H(X_1 , \ldots , X_n) = H(X_1) + \sum_{i=2}^n H(X_i|X_{i-1} , \ldots , X_1)
+  H(X_1 , \ldots , X_n) = H(X_1) + \sum_{i=2}^n H(X_i|X_{i-1} , \ldots , X_1).
   \]
   %
   De       esta       regla      de       cadena       se      recupera       la
-  propiedad~\ref{prop:SZ:independenciacondicional}     a     partir    de     la
-  propiedad~\ref{prop:SZ:aditividad}.
+  propiedad~\ref{Prop:SZ:independenciacondicional}     a     partir    de     la
+  propiedad~\ref{Prop:SZ:aditividad}.
 \end{propiedades}
 %
 Siendo  $H(X|Y=y)$  una  entrop\'ia,  en  el  caso  discreto  esta  cantidad  es
 positiva. Entonces, en el caso discreto,  $H(X|Y)$ es positiva, lo que prueba la
-super-aditividad~\ref{prop:SZ:superaditividad}.
+super-aditividad~\ref{Prop:SZ:superaditividad}.
 
 De la regla de  cadena $H(X,Y) = H(X|Y) + H(Y) = H(Y|X)  + H(X)$ aparece que las
 cantidades \ $H(X|Y)-H(X)$, \  $H(Y|X)-H(Y)$ \ y \ $H(X,Y) - H(X)  - H(Y)$ \ son
 todas iguales. Estas  cantidades definen lo que se  llama la informaci\'on mutua
 entre \ $X$ \ e \ $Y$:
 
-\begin{definicion}[Informaci\'on mutua]\label{def:SZ:mutua}
+\begin{definicion}[Informaci\'on mutua]\label{Def:SZ:mutua}
   Sean $X$ e $Y$ dos variables  aleatorias, la informaci\'on mutua entre \ $X$ \
   e  \ $Y$ \  es la  cantidad sim\'etrica
   %
   \[
-  I(X;Y) = H(X|Y)-H(X) = H(Y|X)-H(Y) = H(X,Y) - H(X) - H(Y)
+  I(X;Y) = H(X|Y)-H(X) = H(Y|X)-H(Y) = H(X,Y) - H(X) - H(Y);
   \]
   %
-  En el caso discreto se  expresa
+  %En el caso discreto s
+  Se expresa\modif{
   %
   \[
-  I(X;Y)  =  \sum_{x,y}   p_{X,Y}(x,y)  \log  \left(  \frac{p_{X,Y}(x,y)}{p_X(x)
-      p_Y(y)} \right)
+  I(X;Y)  =  \int_{\Rset^{d_X} \times \Rset^{d_X}}   p_{X,Y}(x,y)  \log  \left(  \frac{p_{X,Y}(x,y)}{p_X(x)
+      p_Y(y)} \right) \, d\mu(x,y)
   \]
   %
-  y su forma diferencial se escribe
-  %
-  \[
-  I(X;Y)  = \int_{\Rset^d}  p_{X,Y}(x,y) \log  \left( \frac{p_{X,Y}(x,y)}{p_X(x)
-      p_Y(y)} \right) \, dx \, dy
-  \]
+  con \ $\mu$ \  medida adecuada (discreta en el caso discreto  o de Lebesgue en
+  el caso diferencial).}
+  %y su forma diferencial se escribe
+  %%
+  %\[
+  %I(X;Y)  = \int_{\Rset^d}  p_{X,Y}(x,y) \log  \left( \frac{p_{X,Y}(x,y)}{p_X(x)
+  %    p_Y(y)} \right) \, dx \, dy
+  %\]
 \end{definicion}
 
 Las  diferentes  cantidades  pueden  ser  vistas  a  trav\'es  de  una  visi\'on
-ensemblista, como  descrita en la figura  Fig.~\ref{fig:SZ:Venn}.  Este diagrama
-es conocido como diagrama de Venn.
+ensemblista, como descrita  en la figura Fig.~\ref{Fig:SZ:Venn}\modif{, diagrama
+  de    Venn    o    de    Euler   (ver    nota    de    pie~\ref{Foot:MP:Euler}
+  pagina~\pageref{Foot:MP:Euler}.}.
 
 \begin{figure}[h!]
 %
@@ -128,7 +141,7 @@ es conocido como diagrama de Venn.
   ``conjunto $H(Y)$''  quitando la  parte que partenece  a $H(X)$.  La  parte en
   grise oscuro es entonces lo que $X$ e $Y$ comparten, es decir $I(X;Y)$.}
 %
-\label{fig:SZ:Venn}
+\label{Fig:SZ:Venn}
 \end{figure}
 
 Como se lo va a probar, $I$ es positiva; representa realmente una informaci\'on,
@@ -138,61 +151,79 @@ significaci\'on de  la informaci\'on que  estas variables tienen en  com\'un. En
 particular, de $I(X;X) = H(X)$ se denoma a veces $H(X)$ {\it auto informaci\'on}
 de $X$.
 
- Para
-probar la positividad  de $I$, se introduce de manera  m\'as general la noci\'on
-de    entrop\'ia   relativa,    conocida   tambi\'en    como    divergencia   de
+Para  probar la  positividad de  $I$, se  introduce de  manera m\'as  general la
+noci\'on  de  entrop\'ia  relativa,   conocida  tambi\'en  como  divergencia  de
 Kullback-Leibler~\cite{KulLei51, Kul68, CovTho06, Rio07}:
 %
-\begin{definicion}[Entrop\'ia relativa]\label{def:SZ:entropiarelativa}
-  La entrop\'ia  relativa, o divergencia  de una distribuci\'on  de probabilidad
-  $q$, con respeco  a una distribuci\'on de referencia  $p$, donde \underline{el
-    soporte de  $p$ incluye lo  de $q$}  ($p(x) = 0  \Rightarrow q(x) =  0$), es
-  definida como
+\begin{definicion}[Entrop\'ia relativa]\label{Def:SZ:entropiarelativa}
+  La  entrop\'ia relativa, o  divergencia de  una \modif{medida  de probabilidad
+    $Q$}, con  respeto a  una \modif{medida de  probabilidad} de  referencia $P$
+  \modif{tal que \underline{$Q \ll P$}, ambas definidas sobre $\Rset^d$,}
+  % donde \underline{el soporte de $p$ incluye lo de $q$} ($p(x) = 0 \Rightarrow
+  % q(x) = 0$),
+  es definida como\modif{
   %
   \[
-  \Dkl[q]{p} = \sum_x q(x) \log \left( \frac{q(x)}{p(x)} \right)
+  \Dkl[Q]{P}  =  \int_{\Rset^d}  \frac{dQ}{dP}(x) \log  \left(  \frac{dQ}{dP}(x)
+  \right)  \, dP(x)  = \int_{\Rset^d}  \log \left(  \frac{dQ}{dP}(x)  \right) \,
+  dQ(x).
   \]
   %
-  o, en su forma diferencial
+  Si \  $P$ \  y \ $Q$  \ admiten una  densidad con  respeto a una  medida $\mu$
+  (basicamente nos interesamos  a $\mu_L$ y $\mu_\X$), se  escribe a trav\'es de
+  las  densidades  como~\footnote{En el  caso  discreto,  esta cantidad  depende
+    solamente de $p$ y $q$ y no  de los estados. La condici\'on necesaria es que
+    $p$ y $q$ tienen los mismos  n\'umeros de componentes (se completa el vector
+    lo m\'as corto)  y si la $i$-esima componente de $q$  vale cero, entonces la
+    de $p$ vale  cero tambi\'en.  Adem\'as, con $p$ y $q$  de mismo tama\~no, se
+    puede poner en biyecci\'on los alfabetos  asociados a $p$ y $q$, sin perdida
+    de generalidad.  En el caso  continuo, esta razonamiento no vale m\'as, esta
+    cantidad dependiendo de los estados\ldots}
+  %
+  %o, en su forma diferencial
   %
  \[
- \Dkl[q]{p} = \int_{\Rset^d} q(x) \log \left( \frac{q(x)}{p(x)} \right) \, dx
+ \Dkl[q]{p}  \equiv \Dkl[Q]{P}  = \int_{\Rset^d}  \log  \left( \frac{q(x)}{p(x)}
+ \right) \, q(x) \, d\mu(x).
  \]
+}
   %
- (en este \'ultimo caso, la condici\'on de inclusi\'on del soporte de $q$ dentro
- del de $p$ se  formula como de que $q$ es absolutamente  continua con respeto a
- $p$)~\footnote{M\'as rigorosamente, en el  caso discreto, esta cantidad depende
-   solamente de $p$ y  $q$ y no de los estados. La  condici\'on necesaria es que
-   $p$ y $q$  tienen los mismos n\'umeros de componentes  (se completa el vector
-   lo m\'as corto) y si la $i$-esima componente de $q$ vale cero, entonces la de
-   $p$ vale cero tambi\'en.  Adem\'as, con $p$ y $q$ de mismo tama\~no, se puede
-   poner en  biyecci\'on los  alfabetos asociados  a $p$ y  $q$, sin  perdida de
-   generalidad.   En el  caso continuo,  esta razonamiento  no vale  m\'as, esta
-   cantidad dependiendo de los estados\ldots}.
+ %(en este \'ultimo caso, la condici\'on de inclusi\'on del soporte de $q$ dentro
+ %del de $p$ se  formula como de que $q$ es absolutamente  continua con respeto a
+ %$p$)
 \end{definicion}
 %
 Inicialmente, esta  medida fue  introducida por Kullback  y Leibler en  la misma
-linea que  Shannon, interpretando \  $\log\left(\frac{q(x)}{p(x)}\right)$ \ como
-una informaci\'on de discriminaci\'on  entre dos hip\'otesis de distribuciones \
-$q$ \ y \  $p$ \ a partir de la observaci\'on \ $x$,  \ la divergencia siendo la
-informaci\'on   de  discriminaci\'on   promedia.   Introdujeron   tambi\'en  una
-versi\'on sim\'etrica, que veremos m\'as adelante.
-
-Esta medida puede  ser vista tambi\'en como una  entrop\'ia de la distribuci\'on
-$q$, relativamente  a una distribuci\'on de  referencia $p$. Por  ejemplo, en el
-caso discreto finito, si $p$ es  la distribuci\'on uniforme sobre un alfabeto de
-cardinal  $\alpha$, $\Dkl[q]{p} =  \log \alpha  - H(q)$,  lo que  representa una
-desviaci\'on de  la entrop\'ia de  su valor m\'aximo. La  misma interpretaci\'on
-queda en  el caso continuo  con la  ley uniforme ($p$  y $q$ definidas  sobre el
-mismo espacio de volumen finito) o con la gaussiana ($p$ y $q$ teniendo la misma
-matriz de covarianza).  {\it Como  para la entrop\'ia, cuando se necesitar\'a un
-  logaritmo   especificamente  de   base   $a$,  se   notar\'a  la   divergencia
-  $D_{\mathrm{kl},a}$.}
+linea que Shannon, interpretando \ \modif{$\log\left(\frac{dQ}{dP}(x)\right)$} \
+como   una  informaci\'on   de   discriminaci\'on  entre   dos  hip\'otesis   de
+distribuciones \  $Q$ \  y \  $P$ \  a partir de  la observaci\'on  \ $x$,  \ la
+divergencia siendo la  informaci\'on de discriminaci\'on promedia.  Introdujeron
+tambi\'en  una versi\'on  sim\'etrica,  que veremos  m\'as adelante.   \modif{Se
+  notara de que, $\Dkl[Q]{P} = -  \int_{\Rset^d} q(x) \, \log(q(x)) \, d\mu(x) +
+  \int_{\Rset^d} p(x) \,  \log(q(x)) \, d\mu(x)$. El primer  termino es nada mas
+  que   la  entrop\'ia   de  $q$,   que   se  puede   ver  como   distribuci\'on
+  ``presupuesta''. Menos el secundo termino se interpreta como el promedio de la
+  incerteza elemental  $\log(q)$ con respeto  a la distribuci\'on  de referencia
+  (``verdadera''),  a veces  llamado {\it  entrop\'ia cruzada}.   Por  eso, esta
+  divergencia es  una entrop\'ia  relativamente a la  distribuci\'on $p$.  En la
+  misma  linea,   se  puede  inmediatamente  ver  de   la  definici\'on  general
+  Def.~\ref{Def:SZ:ShanonMu},  pagina~\pageref{Def:SZ:ShanonMu}, que $\Dkl[Q]{P}
+  \equiv -H\left( \frac{dQ}{dP} \right)$ \ con respeto a la medida $\mu = P$.}
+%Esta medida puede  ser vista tambi\'en como una  entrop\'ia de la distribuci\'on
+%$q$, relativamente  a una distribuci\'on de  referencia $p$.
+Por ejemplo,  en el caso discreto  finito, si $p$ es  la distribuci\'on uniforme
+sobre un  alfabeto de cardinal $\alpha$,  $\Dkl[q]{p} = \log \alpha  - H(q)$, lo
+que representa una desviaci\'on de la  entrop\'ia de su valor m\'aximo. La misma
+interpretaci\'on  queda en  el caso  continuo  con la  ley uniforme  ($p$ y  $q$
+definidas sobre  el mismo espacio de volumen  finito) o con la  gaussiana ($p$ y
+$q$  teniendo la misma  matriz de  covarianza).  {\it  Como para  la entrop\'ia,
+  cuando se necesitar\'a  un logaritmo especificamente de base  $a$, se notar\'a
+  la divergencia $D_{\mathrm{kl},a}$.}
 
 \begin{lema}[Positividad de la entrop\'ia relativa]
   %
   \[
-  \Dkl[q]{p} \ge 0 \quad \mbox{con igualdad ssi} \quad p = q \quad (c.s.)
+  \modif{\Dkl[Q]{P} \ge 0 \quad \mbox{con igualdad ssi} \quad P = Q}. %\quad (c.s.)
   \]
   %
   %donde $(c.s.)$ significa ``casi siempre''.
@@ -205,84 +236,100 @@ matriz de covarianza).  {\it Como  para la entrop\'ia, cuando se necesitar\'a un
     la desigualdad conocida como  desigualdad log-sum, o conocida tambi\'en como
     desigualdad de  Gibbs (debido a J.  W.   Gibbs mismo)~\cite{Gib02, CovTho06,
       Rio07,         Mer10,         Mer18}.},        teorema~\ref{Th:MP:Jensen},
-  pagina~\pageref{Th:MP:Jensen}: para $\phi$ convexa  e \ $Y$ variable aleatoria
-  escalar,   $\Esp[\phi(Y)]  \ge   \phi(\Esp[Y])$  con   igualdad  ssi   $Y$  es
-  determinista (casi  siempre) si $\phi$  es estrictamente convexa.  Sea  $X$ de
-  distribuci\'on  o densidad  de probabilidad  $p$.   En el  caso discreto  como
-  diferencial,  se  escribe  la  entrop\'ia relativa  $\Dkl[q]{p}  =  \Esp\left[
-    \frac{q(X)}{p(X)} \log \left( \frac{q(X)}{p(X)}  \right) \right]$.  Sea $Y =
-  \frac{q(X)}{p(X)}$ y  $\phi(u) = u  \log u$, funci\'on  estrictamente convexa.
-  Entonces $\Dkl[q]{p} = \Esp[\phi(Y)] \ge  \phi(\Esp[Y])$.  \ Pero \ $\Esp[Y] =
-  \Esp\left[ \frac{q(X)}{p(X)} \right] = \sum_x q(x)  = 1$ \ (y con una integral
-  en el caso diferencial) y \ $\phi(1) = 0$, lo que cierra la prueba. El caso de
-  igualdad  apareciendo  si  y  solamente  si  $Y$  es  determinista,  es  decir
-  $\frac{p(X)}{q(X)}$ determinista, es equivalente  a \ $p(x) \propto q(x) \quad
-  (c.s.)$, \ \ie \ $p = q \quad (c.s.)$ \ porque ambas suman a uno.
+  pagina~\pageref{Th:MP:Jensen}:  para  $\phi$  convexa   e  \  $Y$  \  variable
+  aleatoria escalar, $\Esp[\phi(Y)] \ge \phi(\Esp[Y])$  \ con igualdad ssi \ $Y$
+  \ es determinista (casi siempre) si  \ $\phi$ es estrictamente convexa.  Sea \
+  $X$ \ de \modif{medida de probabilidad $P$.  Se escribe la entrop\'ia relativa
+    \  $\Dkl[Q]{P} =  \Esp\left[ \frac{dQ}{dP}(X)  \log  \left( \frac{dQ}{dP}(X)
+      \right) \right]$.  Sea  \ $Y = \frac{dQ}{dP}(X)$} y $\phi(u)  = u \log u$,
+  funci\'on   estrictamente   convexa.    Entonces   \   $\modif{\Dkl[Q]{P}}   =
+  \Esp[\phi(Y)] \ge  \phi(\Esp[Y])$.  \  Pero \ \modif{$\displaystyle  \Esp[Y] =
+    \Esp\left[  \frac{dQ}{dP}(X) \right]  =  \int_{\Rset^d} \frac{dQ}{dP}(x)  \,
+    dP(x)  =  1$  seg\'un  el  lema~\ref{Lem:RelacionIntegracionDerivadasRadon},
+    pagina~\pageref{Lem:RelacionIntegracionDerivadasRadon}.   \  Se   cierra  la
+    prueba con el hecho de que} \  $\phi(1) = 0$ El caso de igualdad apareciendo
+  si y solamente si \  $Y$ \ es determinista, es decir \modif{$\frac{dP}{dQ}(X)$
+    \  determinista,  es equivalente  a  \ $\frac{dP}{dQ}  =  1  \quad (P$-c.s.)  \
+    (constante,      la     constante     siendo      igual     a      1     del
+    lema~\ref{Lem:RelacionIntegracionDerivadasRadon} y \ $P$  \ y \ $Q$ \ siendo
+    medidas de probabilidad).}
+%, \ \ie \ $p = q \quad (c.s.)$ \ porque ambas suman a uno.
 \end{proof}
 
-Esta propiedad, v\'alida en el  caso discreto como continuo, tiene consecuencias
-fijandose de que
+Esta propiedad
+%, v\'alida en el  caso discreto como continuo, 
+tiene consecuencias fijandose de que
 %
 \[
-I(X;Y) = \Dkl[p_{X,Y}]{p_X p_Y}
+I(X;Y) = \Dkl[P_{X,Y}]{P_X P_Y},
 \]
 %
 \ie  la  informaci\'on  mutua  es  la  divergencia  de  Kullback-Leibler  de  la
-distribuci\'on conjunta relativa al producto de las marginales.
+distribuci\'on    conjunta   relativa    al   producto    de    las   marginales
+\modif{(obviamente $P_{X,Y} \ll  P_X P_Y$). Con este enfoque,  no se necesita de
+  que \ $(X,Y)$ \ sea discreta o continua admitiendo una densidad}.
 %
 \begin{propiedades}
-\item\label{prop:SZ:Ipositive}   {\it   $I$   es   positiva,  como   medida   de
+\item\label{Prop:SZ:Ipositive}   {\it   $I$   es   positiva,  como   medida   de
     independencia:}
   %
   \[
-  I(X;Y) \ge 0 \quad \mbox{con igualdad ssi $X$ e $Y$ son independientes}
+  I(X;Y) \ge 0 \quad \mbox{con igualdad ssi $X$ e $Y$ son independientes.}
   \]
 %
-\item\label{prop:SZ:condicionar} {\it  Condicionar reduce la  entrop\'ia}
+\item\label{Prop:SZ:condicionar} {\it  Condicionar reduce la  entrop\'ia}
   %
   \[
-  H(X|Y) \le H(X) \quad \mbox{con igualdad ssi $X$ e $Y$ son independientes}
+  H(X|Y) \le H(X) \quad \mbox{con igualdad ssi $X$ e $Y$ son independientes.}
   \]
   %
   Esta    desigualdad,     con    la     regla    de    cadena,     prueba    la
-  sub-aditividad~\ref{prop:SZ:subaditividad}.   Esta  reducci\'on  de  incerteza
+  sub-aditividad~\ref{Prop:SZ:subaditividad}.   Esta  reducci\'on  de  incerteza
   vale en  promedio, pero el conocimiento  de un valor particular  puede ser tal
-  que $H(X|Y =  y) > H(X)$, \ie !` un conocimiento  particular puede aumentar la
+  que $H(X|Y =  y) > H(X)$, \ie \ !`un conocimiento  particular puede aumentar la
   entrop\'ia!  (ver ejemplos en~\cite[p.~59]{Rio07}).
 \end{propiedades}
 
 Fijense  que   si  $\Dkl{}$  es   positiva,  \underline{no  es   sim\'etrica}  y
 \underline{tampoco  satisface la  desigualdad triangular}.  Por eso,  no  es una
 distancia  y  tiene  el  nombre  de {\it  divergencia}.   La  distribuci\'on  de
-referencia $p$ juega un rol fundamental.
+referencia $P$ juega un rol fundamental.
 
 Al  final, se mencionar\'a las propiedades adicionales siguientes:
 %
 \begin{enumerate}
-\item A  pesar de que la forma  diferencial de $\Dkl{}$ depende  de los estados,
-  queda invariante bajo  una misma transformaci\'on biyectiva sobre  ambos $p$ y
-  $q$. Se prueba sencillamente por un cambio de variables en la integral.
+\item \modif{
+%A  pesar de que la forma  diferencial de 
+$\Dkl[q]{p}$}
+% depende  de los estados,
+queda invariante  bajo una  misma transformaci\'on biyectiva  sobre ambos  $p$ y
+$q$. \modif{Es trivial en el caso  discreto y si no s}e prueba sencillamente por
+un cambio de variables en la \modif{forma} integral.
 %
-\item $\Dkl{}$ es convexa con respecto al par $(p,q)$ en el sentido de que, para
-  $\mu_i \ge 0, \: \sum_i \mu_i = 1$,
+\item $\Dkl{}$ es convexa con respecto al par $(P,Q)$ en el sentido de que, para
+  $\pi_i \ge 0, \: \sum_i \pi_i = 1$, , \modif{y dos conjuntos $\{ P_{(i)} \}_i,
+    \:  \{ Q_{(i)} \}_i$  de medidas  de probabilidades  tales que  $Q_{(i)} \ll
+    P_{(i)}$,}
   %
   \[
-  \Dkl[\sum_i   \mu_i   q_{(i)}]{\sum_i   \mu_i   p_{(i)}}  \ge   \sum_i   \mu_i
-  \Dkl[q_{(i)}]{p_{(i)}}
+  \Dkl[\sum_i   \pi_i  \ Q_{(i)}]{\sum_i   \pi_i \   P_{(i)}}  \ge   \sum_i   \pi_i
+  \Dkl[Q_{(i)}]{P_{(i)}}.
   \]
   %
-  La  prueba de  esta desigualdad  es dada  secci\'on Sec.~\ref{sec:SZ:Csiszar},
-  pagina~\pageref{sec:SZ:Csiszar} en un contexto m\'as general.
+  La  prueba de  esta desigualdad  es dada  subsecci\'on Sec.~\ref{Ssec:SZ:Csiszar},
+  pagina~\pageref{Ssec:SZ:Csiszar} en un contexto m\'as general.
 %
-\item Para $q$ fijo, $\Dkl[q]{p}$ es convexa con respecto a $p$ en el sentido de que, para
-  $\mu_i \ge 0, \: \sum_i \mu_i = 1$,
+\item Para $Q$ fijo, $\Dkl[Q]{P}$ es convexa con respecto a $P$ en el sentido de
+  que, para $\pi_i \ge 0, \: \sum_i \pi_i = 1$, \modif{y un conjunto $\{ P_{(i)}
+    \}_i$ de medidas de probabilidades tales que $Q \ll P_{(i)}$,}
   %
   \[
-  \Dkl[q]{\sum_i   \mu_i   p_{(i)}}  \ge   \sum_i   \mu_i
-  \Dkl[q]{p_{(i)}}
+  \Dkl[Q]{\sum_i   \pi_i \,   P_{(i)}}  \ge   \sum_i   \pi_i
+  \, \Dkl[Q]{P_{(i)}}.
   \]
   %
-  Eso  es la  consecuencia obvia  de la  concavidad de  $u \mapsto  \log  u$. Es
-  sencillo ver de que si $\Dkl{}$ siendo convexa con respecto a $p$ ($q$ dada) y
-  al par $(p,q)$, no puede ser convexa con respecto a $q$ (con $p$ dada).
+  Eso  es  la  consecuencia  obvia  de  la concavidad  de  $u  \mapsto  \log  u$
+  (escribiendo la divergencia  como densidad con respeto a  una medida dada). Es
+  sencillo ver de que si $\Dkl{}$ siendo convexa con respecto a $P$ ($Q$ dada) y
+  al par $(P,Q)$, no puede ser convexa con respecto a $Q$ (con $P$ dada).
 \end{enumerate}
