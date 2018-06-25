@@ -29,7 +29,7 @@ otros):
   probabilidad de $X$. La capacidad $C$ del canal es definida por
   %
   \[
-  C = \max_{p_X} \, I(X;Y)
+  C = \max_{p_X} \, I(X;Y).
   \]
 \end{definicion}
 
@@ -41,7 +41,7 @@ otros):
   $M$ a  transmitir es  c\'odificado (ej.  c\'odigo  binario) o puesto  en forma
   (ej.  s\'imbolos  modulando una  funci\'on para que  sea anal\'ogica y  en una
   banda frecuencial dada).   Sea $X$ este mensaje codificado  o puesto en forma.
-  A la recepci\'on,  se mide $Y$ (ej.  versio\'on ruidosa de  $X$), antes de ser
+  A la  recepci\'on, se mide $Y$ (ej.   versi\'on ruidosa de $X$),  antes de ser
   decodificado  o  usado para  tomar  una  decisi\'on,  $\widehat{M}$ siendo  la
   estimaci\'on de  $M$ (ej.  s\'imbolos estimados  a partir de  $Y$).  Una etapa
   importante es el v\'inculo entre la entrada  $X$ y la salida $Y$ del canal, es
@@ -63,13 +63,13 @@ como  {\it canal  binario}~\cite[Sec.~15]{Sha48}: $X$  es una  variable definida
 sobre  $\X =  \{ 0  , 1  \}$;  tal tipo  de entrada  es natural,  pensando a  la
 codificaci\'on  binaria.  La  salida $Y$  es tambi\'en  definida sobre  $\X$; se
 puede imaginar medir y tomar una decisi\'on binaria usando la medida.  Tal canal
-es  definido   por  sus  probabilidaded  de  transici\'on   $p_{Y|X}$,  \ie  las
+es  definido por  sus  probabilidaded de  transici\'on  $p_{Y|X=x}(y)$, \ie  las
 probabilidades que un 0 (resp. un 1) se transmite correctamente o cambia en un 1
 (resp. 0), \ie
 %
 \[
-\varepsilon = \Pr[Y = 1 | X = 0] = 1 - \Pr[Y = 0 | X = 0] \qquad \mbox{y} \qquad
-\vartheta = \Pr[Y = 0 | X = 1] = 1 - \Pr[Y = 1 | X = 1]
+\varepsilon = PY = 1 | X = 0) = 1 - P(Y = 0 | X = 0) \qquad \mbox{y} \qquad
+\vartheta = P(Y = 0 | X = 1) = 1 - P(Y = 1 | X = 1).
 \]
 %
 $\varepsilon$ y $\vartheta$ representan errores de comunicaci\'on.  Tal canal es
@@ -85,16 +85,16 @@ $\vartheta \in (0 \,  ; \, 1)$, el canal es conocido  como {\it canal binario en
 %
 \leyenda{(a): Canal  binario. La entrada  $X$ definida sobre  $\X = \{ 0  , 1\}$
   pasa por este canal e $Y$ definida  sobre $\Y = \X$ es recibido. Este canal es
-  caracterizado por las probabilidades  de transici\'on $p_{Y|X}$.  (b): Esquema
-  que puede conducir  al canal binario; una variable puede ser  la salida de una
-  puerta l\'ogica, con niveles $v_0$  (nivel bajo, codificando 0) y $v_1$ (nivel
-  alto, codificando 1).   Se puede imaginar que este  voltaje es transmitido por
-  un  canal  a\~nandiendo  un ruido  $\xi$.   En  la  recepci\'on, se  toma  una
-  decisi\'on, por ejemplo 0 (resp.  1)  si la medida es mayor (resp.  menor) que
-  $\eta = \frac{v_0 + v_1}{2}+\Esp[\xi]$.   En este ejemplo, $\varepsilon$ \ y \
-  $\vartheta$ \ van a ser caracterizados completamente por la distribuci\'on del
-  ruido  (y  de  los  dos  niveles  posibles  de la  entrada),  pero  no  de  la
-  distribuci\'on $p_X$.}
+  caracterizado  por las  probabilidades de  transici\'on  $p_{Y|X=x}(y)$.  (b):
+  Esquema que puede conducir al canal  binario; una variable puede ser la salida
+  de una puerta l\'ogica, con niveles  $v_0$ (nivel bajo, codificando 0) y $v_1$
+  (nivel  alto,  codificando  1).   Se   puede  imaginar  que  este  voltaje  es
+  transmitido por un  canal a\~nandiendo un ruido $\xi$.   En la recepci\'on, se
+  toma una  decisi\'on, por ejemplo  0 (resp.  1)  si la medida es  mayor (resp.
+  menor)  que  $\eta  =   \frac{v_0  +  v_1}{2}+\Esp[\xi]$.   En  este  ejemplo,
+  $\varepsilon$ \ y  \ $\vartheta$ \ van a  ser caracterizados completamente por
+  la distribuci\'on  del ruido (y  de los dos  niveles posibles de  la entrada),
+  pero no de la distribuci\'on $p_X$.}
 \label{Fig:SZ:CanalBinario}
 \end{figure}
 
@@ -102,40 +102,40 @@ En este caso, trabajando con bits, aparece leg\'itimo usar el logaritmo de base
 2. Luego, sean
 %
 \[
-r = \Pr[X = 0]
+r = P(X = 0),
 \]
 %
 dando la distribuci\'on  de la entrada. La distribuci\'on de la  salida va a ser
-dada a partir de $s = \Pr[Y = 0] = \Pr[Y = 0 | X = 0] \Pr[X = 0] + \Pr[Y = 0 | X
-= 1] \Pr[X = 1]$ es decir
+dada a partir de $s = P(Y = 0) = P(Y = 0 | X = 0) P(X = 0) + P(Y = 0 | X
+= 1) P(X = 1)$ es decir
 %
 \[
-s = \Pr[Y  = 0] = \vartheta +  r (1-\varepsilon-\vartheta)
+s = P(Y  = 0) = \vartheta +  r (1-\varepsilon-\vartheta).
 \]
 %
 La informaci\'on  mutua se escribe  \ $I_2(X;Y) =  H_2(Y) - H_2(Y|X) =  H_2(Y) -
-H_2(Y|X=0) \Pr[X = 0] + H_2(Y|X=1) \Pr[X = 1]$, lo que toma la expresi\'on
+H_2(Y|X=0) P(X = 0) + H_2(Y|X=1) P(X = 1)$, lo que toma la expresi\'on
 %
 \[
-I_2(X;Y) = h_2(s) - r h_2(\varepsilon) - (1-r) h_2(\vartheta)
+I_2(X;Y) = h_2(s) - r h_2(\varepsilon) - (1-r) h_2(\vartheta),
 \]
 %
-donde $h_2(\lambda) = - \lambda \log_2 \lambda - (1-\lambda) \log_2 (1-\lambda)$
-es la  entrop\'ia binaria en  bits.  Para calcular  la capacidad $C_2$  en bits,
-hace falta maximizar  $I_2$ con respeto a $r$.  Diferenciando  $I_2$ en $r$, \ie
-$\frac{\partial  I_2(X;Y)}{\partial  r}  =  \frac{\partial  h_2(s)}{\partial  s}
-\frac{\partial s}{\partial r} - h_2(\varepsilon) + h_2(\vartheta)$, es decir
+donde $h_2(u) = -  u \log_2 u - (1-u) \log_2 (1-u)$  es la entrop\'ia binaria en
+bits.  Para calcular la capacidad $C_2$  en bits, hace falta maximizar $I_2$ con
+respeto   a   $r$.    Diferenciando    $I_2$   en   $r$,   \ie   $\frac{\partial
+  I_2(X;Y)}{\partial  r}  =  \frac{\partial h_2(s)}{\partial  s}  \frac{\partial
+  s}{\partial r} - h_2(\varepsilon) + h_2(\vartheta)$, es decir
 %
 \[
 \frac{\partial I_2(X;Y)}{\partial  r} = (1-\varepsilon-\vartheta)  \log_2 \left(
-  \frac{1-s}{s} \right) - h_2(\varepsilon) + h_2(\vartheta)
+  \frac{1-s}{s} \right) - h_2(\varepsilon) + h_2(\vartheta).
 \]
 %
 \begin{itemize}
 \item Claramente,
   %
   \[
-  \vartheta = 1-\varepsilon \quad \Rightarrow \quad C_2 = 0
+  \vartheta = 1-\varepsilon \quad \Rightarrow \quad C_2 = 0.
   \]
   %
   Viene del hecho de que  para $\vartheta = 1-\varepsilon$, de $h_2(\varepsilon)
@@ -143,7 +143,7 @@ $\frac{\partial  I_2(X;Y)}{\partial  r}  =  \frac{\partial  h_2(s)}{\partial  s}
   este  caso, un 0  en la  salida puede  venir de  un 0  o 1  con probabilidades
   iguales, y  lo mismo para un  1 en la  salida; en otros t\'erminos,  la salida
   aparece ser independiente de la entrada.  Eso se verifica formalmente con $s =
-  \vartheta$,  dando $p_{Y|X}  = p_Y$,  dando  una informaci\'on  mutua nula,  y
+  \vartheta$, dando  $p_{Y|X=x} =  p_Y$, dando una  informaci\'on mutua  nula, y
   entonces una capacidad nula.
 %
 \item Si $\vartheta  \ne 1-\varepsilon$, la derivada de $I_2$  con respeto a $r$
@@ -152,20 +152,20 @@ $\frac{\partial  I_2(X;Y)}{\partial  r}  =  \frac{\partial  h_2(s)}{\partial  s}
   \[
   s^\opt = \frac{1}{1 +  2^{\frac{h(\varepsilon) - h(\vartheta)}{1 - \varepsilon
         -  \vartheta}}}  \qquad \mbox{siendo}  \qquad  r^\opt  = \frac{s^\opt  -
-    \vartheta}{1 - \varepsilon - \vartheta}
+    \vartheta}{1 - \varepsilon - \vartheta},
   \]
   %
   y  dando   un  extremo   para  $I_2$.   A   continuaci\'on,  $\frac{\partial^2
     I_2}{\partial  r^2} = \frac{(1-\varepsilon-\vartheta)^2}{s  (1-s)} >  0$ (en
   particular  para  el $s$  ``\'optimo''),  probando de  que  el  extremo es  un
-  m\'aximo.  Poniendo el  $r^\opt$ en la formula de  $I_2(X;Y)$, luego de muchos
-  c\'alculos (b\'asicos), se obtiene
+  m\'aximo.   Poniendo  \modif{la expresi\'on  de}  $r^\opt$  en  la formula  de
+  $I_2(X;Y)$, luego de muchos c\'alculos (b\'asicos), se obtiene
   %
   \[
   C_2  =  \log_2\left(  1  +  2^{\frac{h_2(\varepsilon)  -  h_2(\vartheta)}{1  -
         \varepsilon   -  \vartheta}}   \right)  -   \frac{(1  -   \vartheta)  \,
     h_2(\varepsilon)  -   \varepsilon  \,  h_2(\vartheta)}{1   -  \varepsilon  -
-    \vartheta}
+    \vartheta}.
   \]
   %
   Cuando  $\vartheta   \to  1-\varepsilon$,  notando   que  $h_2(\varepsilon)  =
@@ -188,29 +188,29 @@ $\frac{\partial  I_2(X;Y)}{\partial  r}  =  \frac{\partial  h_2(s)}{\partial  s}
 binario, de entrop\'ia m\'axima en el caso uniforme), aparece sin c\'alculos que
 %
 \[
-C_2 \le 1 \: \mbox{bit}
+C_2 \le 1 \: \mbox{bit},
 \]
 %
 \ie la capacidad es menor que 1 bit~\footnote{De manera general, de la escritura
   de $I$ con entrop\'ias condicionales, para $X$ definido sobre $\X$ e $Y$ sobre
   $\Y$, da  \ $0 \le C \le  \min( \log |\X| \,  , \, \log |\Y|  )$.  \ Adem\'as,
-  $p_{Y|X}$ depende solo del  canal y no de la entrada, as\'i  que para \ $p_X =
+  $p_{Y|X=x}$ depende solo del canal y no de la entrada, as\'i que para \ $p_X =
   \pi_1 p_{(1)} + \pi_2 p_{(2)}$ \ ($\pi_2 = 1-\pi_1$) se obtiene \ $p_Y = \pi_1
   q_{(1)}  + \pi_2  q_{(2)}$ \  con \  $q_{(i)}$ \  distribuci\'on de  la salida
   corespondiente a una entrada de distribuci\'on \ $p_{(i)}$.  Ahora, de $I(X;Y)
   = H(Y)-H(Y|X)$,  el segundo t\'ermino siendo dependiente  solamente del canal,
   de la  concavidad de  $H$ se  obtiene de que  $I$ es  c\'oncava con  respeto a
-  $p_X$.   $p_X$  parteneciendo a  un  convexo, $I$  tiene  un  m\'aximo que  es
-  \'unico.}: para transmitir informaci\'on  en este canal, hace falta introducir
-redundancia en  el mensaje.   Se alcanza \  $C_2 =  1$ bit si,  (i) por  un lado
-$H_2(Y|X) = 0$, es  decir \ $r h_2(\varepsilon) + (1-r) h_2(\vartheta)  = 0$ \ y
-adem\'as (ii) \  $h_2(s) = 1$.  Estudiando cada caso  (ej.  con \ $r =  0$ \ y \
-$\vartheta = 0$  \ se satisface (i) pero  no (ii) porque \ $s =  0$), se obtiene
-que
+  $p_X$. \modif{A  continuaci\'on,} $p_X$ parteneciendo a un  convexo, $I$ tiene
+  un m\'aximo  que es  \'unico.}: para transmitir  informaci\'on en  este canal,
+hace falta introducir redundancia en el mensaje.  Se alcanza \ $C_2 = 1$ bit si,
+(i)  por  un lado  $H_2(Y|X)  =  0$, es  decir  \  $r  h_2(\varepsilon) +  (1-r)
+h_2(\vartheta) = 0$ \ y adem\'as (ii) \ $h_2(s) = 1$.  Estudiando cada caso (ej.
+con \ $r = 0$ \ y \ $\vartheta =  0$ \ se satisface (i) pero no (ii) porque \ $s
+= 0$), se obtiene que
 %
 \[
 C_2  =  1  \qquad  \Leftrightarrow  \qquad  r =  \frac12  \quad  \mbox{y}  \quad
-\varepsilon = \vartheta = \frac{1 \pm 1}{2}
+\varepsilon = \vartheta = \frac{1 \pm 1}{2}.
 \]
 %
 Para  $\varepsilon =  \vartheta =  0$ el  canal es  perfecto, mientras  que para
@@ -245,7 +245,7 @@ En el  caso particular  $\varepsilon = 0$,  conocido como  {\it canal en  Z}, la
 capacidad es
 %
 \[
-C_2 = \log_2\left( 1 +  2^{- \frac{h_2(\vartheta)}{1-\vartheta}} \right)
+C_2 = \log_2\left( 1 +  2^{- \frac{h_2(\vartheta)}{1-\vartheta}} \right).
 \]
 %
 Se nota  en este caso tambi\'en  que la capacidad  alcanza 1, su m\'aximo,  si y
@@ -261,7 +261,7 @@ figura Fig.~\ref{Fig:SZ:CCanalBinario}-(c).
 \begin{center} \input{TIKZ_SZ/ICanalBinario} \end{center}
 %
 \leyenda{Informaci\'on mutua  (en bits) entrada-salida \ $I_2(X;Y)$  \ del canal
-  binario en funci\'on de \ $r = \Pr[X  = 0]$.  \ (a): \ $\varepsilon = 0.4$ \ y
+  binario en funci\'on de \ $r = P(X  = 0)$.  \ (a): \ $\varepsilon = 0.4$ \ y
   \  $\vartheta = 0.01$;  \ (b):  \ $\varepsilon  = \vartheta  = 0.05$  \ (canal
   sim\'etico); \ (c): \  $\varepsilon = 0$ \ y \ $\vartheta  = 0.05$ \ (canal en
   Z).}
@@ -298,14 +298,20 @@ o~\cite{Ari72} para el c\'alculo num\'erico de la capacidad en el caso general).
   puede  transmitirse correctamente or  ser borado/perdido  (estado $\emptyset$)
   con una  probabilidad $\varepsilon$.   Se calcula $I_2(X;Y)  = (1-\varepsilon)
   h_2(r)$, dando la capacidad $C_2  = 1-\varepsilon$, alcanzada para una entrada
-  uniforme.   (b):  canal tipo  machina  de escribir,  donde  cada  letra de  un
-  ensemble de $n$ letras (ac\'a con $n = 26$) se transmite correctamente con una
-  probabilidad $1-\varepsilon$ o a la  letra siguiente (de manera c\'iclica) con
-  una probabilidad $\varepsilon$.   De $I_n(X;Y) = H_n(Y) -  H_n(Y|X) = H_n(Y) -
-  h_n(\varepsilon)$ se deduce  que $I_n$ es m\'axima si $Y$  es uniforme, lo que
-  es posible si $X$ es uniforma, dando $C_n = 1 - h_n(\varepsilon)$.}
+  uniforme.   (b): canal tipo  machina de  escribir~\protect\footnotemark, donde
+  cada letra  de un ensemble  de $n$  letras (ac\'a con  $n = 26$)  se transmite
+  correctamente con una probabilidad $1-\varepsilon$  o a la letra siguiente (de
+  manera c\'iclica) con una probabilidad $\varepsilon$.  De $I_n(X;Y) = H_n(Y) -
+  H_n(Y|X) = H_n(Y)  - h_n(\varepsilon)$ se deduce que $I_n$  es m\'axima si $Y$
+  es  uniforme,  lo que  es  posible  si  $X$ es  uniforma,  dando  $C_n =  1  -
+  h_n(\varepsilon)$.}
 \label{Fig:SZ:CanalesDiscretos}
 \end{figure}
+%
+\footnotetext{\modif{Se  mencionar\'a de que  en toda  esta subsecci\'on,  no se
+    necesita de  que $X$  y/o $Y$ sean  variables aleatorias reales,  \ie pueden
+    tomar  sus  valores  sobre   cualquier  espacio  discreto  (por  ejemplo  de
+    letras).}}
 
 
 % ================================= canal gaussiano
@@ -319,14 +325,14 @@ variable continua definida  sobre $\X \subseteq \Rset^d$ y la  salida $Y$ es una
 versi\'on ruidosa de $X$, \ie $Y =  X + \xi$ con el ruido $\xi$ independiente de
 $X$. En  el canal gaussiano, $\xi  \equiv \Gauss$ es un  vector gaussiano.  Este
 canal es tambi\'en definido por  su densidad de probabilidad ``de transici\'on''
-$p_{Y|X}$, \ie  por la distribuci\'on del  ruido.  Tal canal  es descrito figura
-Fig.~\ref{Fig:SZ:CanalGaussiano}.   Se supone conocida  la matriz  de covarianza
-$\Sigma_\Gauss$ del ruido, y se nota $\Sigma_X$ la de la entrada. En pr\'actica,
-no se puede mandar  un mensaje a una potencia tan alta que  se quiere, lo que se
-traduce por una limitaci\'on
+$p_{Y|X=x}(y)$,  \ie por  la distribuci\'on  del ruido.   Tal canal  es descrito
+figura  Fig.~\ref{Fig:SZ:CanalGaussiano}.   Se  supone  conocida  la  matriz  de
+covarianza $\Sigma_\Gauss$ del ruido, y se  nota $\Sigma_X$ la de la entrada. En
+pr\'actica, no se puede mandar un mensaje a una potencia tan alta que se quiere,
+lo que se traduce por una limitaci\'on
 %
 \[
-\Tr\left(  \Sigma_X  \right) \le  P
+\Tr\left(  \Sigma_X  \right) \le  \P,
 \]
 %
 potencia l\'imite permitida por componente (sampleo).
@@ -335,10 +341,10 @@ potencia l\'imite permitida por componente (sampleo).
 %
 \begin{center} \input{TIKZ_SZ/CanalGaussiano} \end{center}
 %
-\leyenda{Canal gaussiano. La entrada $X$,  modelizada por un vector aleatorio es
+\leyenda{Canal gaussiano. La entrada $X$, modelizada por un vector aleatorio, es
   corrupta aditivamente por un ruido gaussiano $\Gauss$ independiente de $X$. La
   salida es entonces $Y = X + \Gauss$ y el canal es completamente descrito por \
-  $p_{Y|X}(x,y)   =   p_{\Gauss}(y-x)$  \   (obviamente   independiente  de   la
+  $p_{Y|X=x}(y)   =   p_{\Gauss}(y-x)$  \   (obviamente   independiente  de   la
   distribuci\'on de la entrada).}
 %
 \label{Fig:SZ:CanalGaussiano}
@@ -348,13 +354,13 @@ potencia l\'imite permitida por componente (sampleo).
 Por  definici\'on, la informaci\'on  mutua $I(X;Y)$  entrada-salida es  dada por
 $I(X;Y) = H(Y) - H(Y|X) = H(Y) - H(\Gauss)$. Maximizar $I(X;Y)$ es equivalente a
 maximizar  $H(Y) =  H(X  + \Gauss)$  sujeto  a $\Tr\left(  \Sigma_X \right)  \le
-P$. Fijando  un $\Sigma_X$, la  propiedad~\ref{Prop:SZ:cotamaximagaussiana} \ de
+\P$. Fijando  un $\Sigma_X$, la  propiedad~\ref{Prop:SZ:cotamaximagaussiana} \ de
 la entrop\'ia diferencial implica que $H(Y)$  sea m\'axima si y solamente si $Y$
 es gaussiana,  es decir  si y solamente  si $X$  est gaussiana, dando  $I(X;Y) =
 \frac12  \log \left|  \Sigma_X +  \Sigma_\Gauss  \right| -  \frac12 \log  \left|
   \Sigma_\Gauss \right|$. Tomando en cuenta  el l\'imite de potencia, hace falta
 maximizar $\left| \Sigma_X  + \Sigma_\Gauss \right|$ sujeto a  $\Tr \Sigma_X \le
-P$ \  y \ $\Sigma_X  \ge 0$ sim\'etica  lo que no  es trivial.  Se  encuentra el
+\P$ \  y \ $\Sigma_X  \ge 0$ sim\'etica  lo que no  es trivial.  Se  encuentra el
 enfoque  permitiendo solucionar  el problema  en~\cite[Sec.~9.4]{CovTho06}.  Sea
 $U$, matriz  ortogonal ($U U^t =  U^t U = I$)  de los autovectores  de la matriz
 $\Sigma_\Gauss  \ge 0$  sim\'etica~\footnote{Se  recordar\'a de  que  $A \ge  0$
@@ -365,7 +371,7 @@ que los autovalores corespondientes  $\lambda^\Gauss_i$ sean en orden creciente,
 \[
 \Sigma_\Gauss  =  U \diag\left(  \lambda^\Gauss_1  ,  \ldots ,  \lambda^\Gauss_d
 \right)  U^t \qquad  \mbox{con} \qquad  0  \le \lambda^\Gauss_1  \le \cdots  \le
-\lambda^\Gauss_d
+\lambda^\Gauss_d,
 \]
 %
 donde $\diag$ es la matriz diagonal teniendo los $\lambda_i$ en su diagonal. Sea
@@ -373,30 +379,31 @@ donde $\diag$ es la matriz diagonal teniendo los $\lambda_i$ en su diagonal. Sea
   \Sigma_\Gauss \right|  = \left| R_X +  \Lambda_\Gauss \right|$ \ (de  $|A B| =
 |A| \,  |B|$) \ y  que \ $\Tr \Sigma_X  = \Tr R_X$  (de $\Tr(A B) =  \Tr(B A)$).
 Entonces,  el problema  se reduce  a maximizar  \ $\left|  R_X  + \Lambda_\Gauss
-\right|$  \ sujeto  a \  $\Tr R_X  \le  P$ \  y \  $R_X \ge  0$ sim\'etica.   La
+\right|$  \ sujeto  a \  $\Tr R_X  \le \P$  \ y  \ $R_X  \ge 0$  sim\'etica.  La
 desigualdad de Hadamard ya evocada da \ $\left| R_X + \Lambda_\Gauss \right| \le
 \prod_i \left(  R_X + \Lambda_\Gauss  \right)_{i,i} = \prod_i \left(  \left( R_X
-  \right)_{i,i} + \lambda^\Gauss_i  \right)$ \ con igualdad si  y solamente si \
+  \right)_{i,i}  +  \lambda^\Gauss_i  \right)$  \  \modif{donde  $(\cdot)_{i,i}$
+  denota la  componente $i,i$ de  la matriz}, con  igualdad si y solamente  si \
 $R_X$ \ es  diagonal: para maximizar \ $\left| R_X  + \Lambda_\Gauss \right|$, \
 $R_X$ \  debe ser  diagonal (dada una  diagonal, se  alcanza el m\'aximo  si los
 otros  t\'erminos  son  nulos).   Es   decir  que  la  base  que  diagonaliza  \
 $\Sigma_\Gauss$ \ debe diagonalizar  tambi\'en $\Sigma_X$.  Sean \ $\lambda^X_i$
 \  los t\'erminos diagonales  de $R_X$:  queda que  maximizar \  $\prod_i \left(
-  \lambda^X_i + \lambda^\Gauss_i \right)$ \  sujeto a $\sum_i \lambda^X_i \le P$
+  \lambda^X_i + \lambda^\Gauss_i \right)$ \ sujeto a $\sum_i \lambda^X_i \le \P$
 \  y \  $\lambda^X_i  \ge 0$.   Este  problema de  optimizaci\'on  sujeto a  una
 desigualdad  se  resuelva  con  el  enfoque  de  Karush-Kuhn-Tucker~\footnote{Se
   introduce el factor de Lagrange y  se maximiza \ $\prod_i \left( \lambda^X_i +
-    \lambda^\Gauss_i \right) + \mu \sum_i \lambda^X_i$.  Eso da \ $\lambda^X_i +
-  \lambda^\Gauss_i = \lambda$  \ constante si $\lambda$ es  tal que se satisfaga
+    \lambda^\Gauss_i \right) + \eta  \sum_i \lambda^X_i$.  Eso da \ $\lambda^X_i
+  + \lambda^\Gauss_i = \lambda$ \ constante si $\lambda$ es tal que se satisfaga
   la positividad de $\lambda^X_i$, y  $\lambda^X_i = 0$ sino. En otras palabras,
   \ $\lambda^X_i = \left( \lambda - \lambda^\Gauss_i \right)_+$ con $\lambda$ el
   factor  de Lagrande  despu\'es de  una  reescritura. Queda  que maximizar  los
   $\lambda^X_i$ para  maximizar $\left| R_X + \Lambda_\Gauss  \right|$, es decir
   tomar  $\lambda$ lo  m\'as grande  que  se puede,  pero satisfaciendo  $\sum_i
-  \lambda^X_i   \le   P$,   \ie  alcanzando   la   igualdad.\label{Foot:SZ:KKT}}
+  \lambda^X_i   \le  \P$,   \ie   alcanzando  la   igualdad.\label{Foot:SZ:KKT}}
 (KKT)~\cite{Mil00,  CamMar09},   dando  \   $\lambda^X_i  =  \left(   \lambda  -
   \lambda^\Gauss_i  \right)_+$  \  con  \  $(\cdot)_+ =  \max(\cdot,0)$  \  y  \
-$\lambda$ \ tal que \ $\sum_i  \left( \lambda - \lambda^\Gauss_i \right)_+ = P$.
+$\lambda$ \ tal que \ $\sum_i \left( \lambda - \lambda^\Gauss_i \right)_+ = \P$.
 En conclusi\'on, la capacidad es dada por
 %
 \begin{eqnarray*}
@@ -406,17 +413,17 @@ C =  \frac12 \log \left(  \frac{\left| \Sigma_\Gauss +  \Sigma_X \right|}{\left|
     \lambda^\Gauss_d \right)_+ \right) U^t,\\[2.5mm]
 %
 & &  \lambda \ \mbox{ tal que } \:
-\sum_i \left(\lambda - \lambda^\Gauss_i \right)_+ = P
+\sum_i \left(\lambda - \lambda^\Gauss_i \right)_+ = \P
 \end{eqnarray*}
 %
-alcanzada por $X$ gausiano de matriz de covarianza $\Sigma_X$ as\'i construida.
+alcanzada por $X$ gaussiano de matriz de covarianza $\Sigma_X$ as\'i construida.
 
 La  \'ultima condici\'on  se resuelva  a  trav\'es de  lo que  es conocido  como
 ``llenado   de   agua''   (water-filling   en   ingl\'es),   illustrado   figura
 Fig.~\ref{Fig:SZ:WaterFilling}.   El  principio  es  parecido  a  tener  niveles
 $\lambda^\Gauss_i$  representando  las  potencias  del  ruido (en  la  base  que
 diagonaliza la  matriz de covarianza), y  de ``llenar con agua''  hasta un nivel
-$\lambda$ tal que el ``volumen''  a\~nadido vale $P$; en cada $\lambda^\Gauss_i$
+$\lambda$ tal que el ``volumen''  a\~nadido vale $\P$; en cada $\lambda^\Gauss_i$
 se ha a\~nadido el $\lambda^X_i$~\cite[Sec.~9.4]{CovTho06}.
 
 \begin{figure}[h!]
@@ -427,7 +434,7 @@ se ha a\~nadido el $\lambda^X_i$~\cite[Sec.~9.4]{CovTho06}.
   satisfaciendo  el v\'inculo de  potencia l\'imite  y permitiendo  de construir
   $\Sigma_X$ a partir  de la matriz diagonal de los $\lambda^X_i$  y la base que
   diagonaliza  la  covarianza  $\Sigma_\Gauss$  del  ruido.  La  zona  en  grise
-  representa esquem\'aticamente $P$.}
+  representa esquem\'aticamente $\P$.}
 %
 \label{Fig:SZ:WaterFilling}
 \end{figure}
@@ -435,10 +442,10 @@ se ha a\~nadido el $\lambda^X_i$~\cite[Sec.~9.4]{CovTho06}.
 En   el   caso   escalar,   se   obtiene
 %
 \[
-C = \frac12 \log\left( 1 + \frac{P}{\sigma_\Gauss^2} \right)
+C = \frac12 \log\left( 1 + \frac{\P}{\sigma_\Gauss^2} \right),
 \]
 %
-donde     $\frac{P}{\sigma_\Gauss^2}$     es     conocido    como     relaci\'on
+donde     $\frac{\P}{\sigma_\Gauss^2}$     es     conocido    como     relaci\'on
 se\~nale-ruido~\footnote{Esta formula es muy  parecida a la de Shannon, Laplume,
   o Clavier~\cite{Sha48,  Lap48, Cla48} (ver tambi\'en~\cite[Sec.~9.3]{CovTho06}
   o~\cite[Sec.~11.2]{Rio07}).   De hecho,  si se  considera  s\'imbolos mandados
@@ -446,16 +453,17 @@ se\~nale-ruido~\footnote{Esta formula es muy  parecida a la de Shannon, Laplume,
   se\~nal anal\'ogica) usando una banda  de transmisi\'on $B$, por el teorema de
   Nyquist $B = \frac{1}{2 T}$ (caso l\'imite). Si el ruido es blanco en la banda
   $B$, de densidad espectral de potencia por unidad de frecuencia igual a $N_0$,
-  para  un  s\'imbolo  la  relaci\'on  se\~nal-ruido  se  escribe  $\frac{P}{N_0
+  para  un  s\'imbolo  la  relaci\'on  se\~nal-ruido  se  escribe  $\frac{\P}{N_0
     B}$. Adem\'as,  se calcula en general  la capacidad por unidad  de tiempo es
   decir la capacidad  por s\'imbolo divido por  $T = \frac{1}{2 B}$, \ie  $C = B
-  \log\left( 1 +  \frac{P}{N_0 B} \right)$ por segundos,  lo que es precisamente
+  \log\left( 1 +  \frac{\P}{N_0 B} \right)$ por segundos,  lo que es precisamente
   la capacidad calculdada por Shannon.  Esta es a veces conocida como formula de
   Shannon-Hartley.}
 
 En~\cite{CovTho06,  Rio07}  por ejemplo,  se  dan  otros  ejemplos de  canal  de
 comunicaci\'on   en   el   contexto   continuo   (entrada   $X_t$   siendo   una
-se\~nal/proceso, canal filtrando, canal con feedback, etc.).
+se\~nal/proceso, canal filtrando,  canal con \modif{retroacci\'on (o feedback)},
+etc.).
 
 % ================================= codificacion
 
@@ -466,10 +474,10 @@ El  problema  de  codificaci\'on  de  fuente  puede  presentarse  de  la  manera
 siguiente~\cite[cap.~5]{CovTho06}  o   \cite[cap.~13]{Rio07}.   Sea  un  proceso
 aleatorio $\left\{  X_t \right\}_{t \in \Zset}$,  supuesto estacionario, llamado
 {\it  fuente}, donde  los $X_t$  toman sus  valores sobre  un  alfabeto discreto
-finito
+finito \modif{no necesariamente real ($X$ puede tomar cualquier etiqueta)}
 %
 \[
-\X = \{ x_1 , \ldots , x_\alpha \} \qquad \mbox{alfabeto fuente}
+\X = \{ x_1 , \ldots , x_\alpha \} \qquad \mbox{alfabeto fuente},
 \]
 %
 de  distribuci\'on  $p_X$.   A  cada posible  secuencia~\footnote{Por  abuso  de
@@ -478,11 +486,11 @@ $s_1  \cdots s_n \in  \X^n$ de  letras de  $\X$, se  quiere asignar  un c\'odigo
 $c(s_1 \cdots s_n)$ de letras de un alfabeto discreto finito,
 %
 \[
-\C = \{ \zeta_1 , \ldots , \zeta_d \} \qquad \mbox{ alfabeto c\'odigo}
+\C = \{ \cod_1 , \ldots , \cod_d \} \qquad \mbox{ alfabeto c\'odigo}.
 \]
 %
 El c\'odigo es dicho {\it $d$-ario}.   Por ejemplo, se puede asignar un c\'odigo
-$c(x_i)  = \zeta_{i,1}  \cdots  \zeta_{i,l_i} \in  \C^{l_i}$  a cada  s\'imbolo,
+$c(x_i)  = \cod_{i,1}  \cdots  \cod_{i,l_i} \in  \C^{l_i}$  a cada  s\'imbolo $x_i$,
 c\'odigo llamado  {\it palabras c\'odigos}, y  a secuencias $s_1  \cdots s_n$ la
 concatenaci\'on de las palabras  c\'odigos correspondiente a cada s\'imbolo, \ie
 el  c\'odigo $c(s_1) \cdots  c(s_n)$.  En  el sistema  Moorse por  ejemplo, $\C$
@@ -492,7 +500,7 @@ palabras.  En una computadora en general todo  se codifica en bits $\C = \{ 0 \,
 %
 \[
 F_\X   =   \bigcup_{k=0}^{\infty}   \X^k   \qquad   \mbox{y}   \qquad   F_\C   =
-\bigcup_{k=0}^{\infty} \C^k
+\bigcup_{k=0}^{\infty} \C^k,
 \]
 %
 uni\'on  de  secuencias de  $k$  letras de  $\X$  y  $\C$ respectivamente.   Una
@@ -506,7 +514,7 @@ c_m: & \X^m & \rightarrow & F_\C\\[.5mm]
 %
 & x & \mapsto & c_m(x) \in \C^{l_{c_m}(x)}
 % &
-\end{array}
+\end{array},
 \]
 %
 donde $l_{c_m}(x) \in \Nset^*$ es el  {\it largo} de la palabra c\'odigo $c_m(x)$,
@@ -514,26 +522,27 @@ y
 %
 \[
 \forall \, n \ge 1, \quad \forall  \, s_1 \cdots s_n \in \X^{n m}, \quad c_m(s_1
-\cdots s_n) \equiv c_m(s_1) \cdots c_m(s_n)
+\cdots s_n) \equiv c_m(s_1) \cdots c_m(s_n),
 \]
 %
 lo  que  es  llamado {\it  extensi\'on  del  c\'odigo}.   En  lo que  sigue,  se
 escribir\'a $c \equiv c_1$.
 
 Una manera ingenua de codificar consiste a apoyarse sobre la descomposici\'on de
-base \ $d$  \ de un entero, \ie para  $1 \le i \le \alpha, \:\:  i-1 = (i_0-1) +
-(i_1-1)  d +  \cdots  + (i_K-1)  d^K$  \ donde  \ $K  =  \Big\lceil \log_d  |\X|
-\Big\rceil$ \  y \ $1 \le  i_k \le \alpha$, y  de asignar la  palabra c\'odigo \
-$\zeta_{i_0}  \cdots \zeta_{i_k}$  \  al s\'imbolo  $x_i$.   Haciendo eso,  cada
-palabra c\'odigo  tieno el  mismo largo.  Pero,  es m\'as econ\'omico  hacer una
-codificaci\'on dicha de largos  variables, teniendo en cuenta las probabilidades
-de aparici\'on de cada $x_i$. Implicitamente, es la idea del c\'odigo de Moorse,
-que asigna  un punto o series  de puntos o  c\'odigo peque\~no a las  letras muy
-frecuentes (ej. un punto para el `e',  dos puntos para el `i', etc.), y barras o
-combinaciones largas a  las letras que son raras  (ej. bara-bara-punto-bara para
-el `q' o  cinco baras para el  `0').  Dicho de otra manera,  el c\'odigo ingenuo
-ser\'ia     ``eficaz''    para    $x_i$     apareciendo    con     las    mismas
-frecuencias/probabilidades.
+base  \ $d$  \ de  un entero,  \ie para  $1 \le  i \le  \alpha$  \modif{se puede
+  escribir de manera  \'unica} \ $i-1 =  (i_0-1) + (i_1-1) d +  \cdots + (i_K-1)
+d^K$ \  donde \ $K  = \Big\lceil \log_d  |\X| \Big\rceil$ \ y  \ $1 \le  i_k \le
+\alpha$\modif{.   Entonces,   se   puede}   asignar  la   palabra   c\'odigo   \
+$\modif{c(x_i) = }\cod_{i_0} \cdots \cod_{i_k}$ \ al s\'imbolo $x_i$.  Haciendo
+eso, cada  palabra c\'odigo  tieno el mismo  largo.  Pero, es  m\'as econ\'omico
+hacer  una codificaci\'on  dicha de  largos  variables, teniendo  en cuenta  las
+probabilidades  de aparici\'on  de cada  $x_i$. Implicitamente,  es la  idea del
+c\'odigo de Moorse, que asigna un  punto o series de puntos o c\'odigo peque\~no
+a las letras muy  frecuentes (ej. un punto para el `e',  dos puntos para el `i',
+etc.),  y   barras  o   combinaciones  largas  a   las  letras  que   son  raras
+(ej. bara-bara-punto-bara para el `q' o cinco baras para el `0').  Dicho de otra
+manera, el  c\'odigo ingenuo ser\'ia  ``eficaz'' para $x_i$ apareciendo  con las
+mismas frecuencias/probabilidades.
 
 En los c\'odigos de largos variables (incluyendo el c\'odigo ingenuo), volviendo
 a  $c_m$, existen  varios tipos  de  c\'odigos.  Un  c\'odigo es  dicho {\it  no
@@ -543,29 +552,41 @@ c\'odigo.  Pero  no es suficiente  para poder decodificar un  mensaje, compuesta
 por una  secuencia de palabras  c\'odigo.  Lo importante  en este caso  es poder
 decodificar  la   secuencia  sin  ambig\"uedad:  un  c\'odigo   est  dicho  {\it
   descifrable} o {\it  a decodificaci\'on \'unica} (o sin  perdida) si todas las
-extensiones son no singulares. Por ejemplo, sean \ $\X = \{ \aleph \, , \, \beth
-\, , \, \gimel \, , \daleth \}$, \ $\C = \{0 \, , \, 1 \}$ \ y \ $c(\aleph) = 0,
-\: c(\beth) = 00, \: c(\gimel) = 1,  \: c(\daleth) = 01$ ($m = 1$).  El c\'odigo
-es  no singular, pero  no descifrable.   La secuencia  $0010$ puede  provenir de
-$\aleph\aleph\gimel\aleph$,   \   de   \   $\aleph\daleth\aleph$  \   o   de   \
-$\beth\gimel\aleph$.  Obviamente, se requiere en  general de un c\'odigo que sea
-descifrable.  Frecuentemente,  se requiere tambi\'en poder  decodificar sobre la
-marcha, sin  esperar de medir toda la  secuencia codificada: es lo  que se llama
-{\it  c\'odigo instantaneo}.   Por  ejemplo,  el c\'odigo  $c(\aleph)  = 00,  \:
-c(\beth) = 10, \:  c(\gimel) = 11, \: c(\daleth) = 110$  es descifrable, pero no
-instantaneo.  Considera la  secuencia $0011011$ y marcha sobre  ella.  $0$ no es
-una palabra c\'odigo; $00$ es y sin ambig\"uedad proviene de un $\aleph$ (no hay
-otras palabras empezando por  $00$); luego $1$ no es una palabra,  y $11$ es una
-palabra c\'odigo, pero se necesita adelantar  para saber si viene de un $\gimel$
-o  de un $\daleth$;  la letra  siguiente siendo  un $0$,  todav\'ia no  se puede
-concluir si $110$  vino de $\gimel$ y alg\'o o $\daleth$.  Al final, con $1101$,
-se sabe que se tuvimos un  $\daleth$ porque ninguna palabra c\'odigo empieza por
-$01$.  Al  final, sin  ambig\"uedad el antecedente  de la secuencia  binaria era
-$\aleph\daleth\gimel$.  Pero se necesit\'o marchar sobre toda la secuencia antes
-de decodificar. Obviamente,  un c\'odigo instantaneo es tal  que ninguna palabra
-c\'odigo es  prefijo de una otra, \ie  si $c_m(x)$ es una  palabra c\'odigo, las
-otras palabras c\'odigo no pueden empezar con $c_m(x)$; el c\'odigo es tambi\'en
-dicho {\it libre de prefijo}.   Estas distinciones estan ilustradas en la figura
+extensiones son no singulares.
+%
+\begin{ejemplo}[C\'odigo non singular, pero no decifrable]
+  Sean, sean \ $\X = \{ \aleph \, ,  \, \beth \, , \, \gimel \, , \daleth \}$, \
+  $\C = \{0 \, , \, 1 \}$ \ y \ $c(\aleph) = 0, \: c(\beth) = 00, \: c(\gimel) =
+  1,  \: c(\daleth)  = 01$  ($m =  1$).   El c\'odigo  es no  singular, pero  no
+  descifrable.       La     secuencia      $0010$     puede      provenir     de
+  $\aleph\aleph\gimel\aleph$,   \  de   \   $\aleph\daleth\aleph$  \   o  de   \
+  $\beth\gimel\aleph$.
+\end{ejemplo}
+%
+Obviamente,  se  requiere  en  general  de  un  c\'odigo  que  sea  descifrable.
+Frecuentemente,  se requiere tambi\'en  poder decodificar  sobre la  marcha, sin
+esperar de medir toda la secuencia  codificada: es lo que se llama {\it c\'odigo
+  instantaneo}.
+%
+\begin{ejemplo}[C\'odigo decifrable, pero no instantaneo]
+  Sea el  c\'odigo $c(\aleph)  = 00,  \: c(\beth) =  10, \:  c(\gimel) =  11, \:
+  c(\daleth)  =  110$.  Este  c\'odigo  es  descifrable,  pero  no  instantaneo.
+  Considera la secuencia  $0011011$ y marcha sobre ella.  $0$  no es una palabra
+  c\'odigo; $00$  es y sin  ambig\"uedad proviene de  un $\aleph$ (no  hay otras
+  palabras  empezando por $00$);  luego $1$  no es  una palabra,  y $11$  es una
+  palabra  c\'odigo,  pero se  necesita  adelantar para  saber  si  viene de  un
+  $\gimel$ o de un $\daleth$; la  letra siguiente siendo un $0$, todav\'ia no se
+  puede concluir si $110$ vino de  $\gimel$ y alg\'o o $\daleth$.  Al final, con
+  $1101$, se  sabe que se tuvimos  un $\daleth$ porque  ninguna palabra c\'odigo
+  empieza por $01$.   Al final, sin ambig\"uedad el  antecedente de la secuencia
+  binaria era  $\aleph\daleth\gimel$.  Pero se necesit\'o marchar  sobre toda la
+  secuencia antes de decodificar.
+\end{ejemplo}
+%
+Obviamente,  un c\'odigo  instantaneo es  tal  que ninguna  palabra c\'odigo  es
+prefijo de una otra, \ie si $c_m(x)$ es una palabra c\'odigo, las otras palabras
+c\'odigo no  pueden empezar  con $c_m(x)$; el  c\'odigo es tambi\'en  dicho {\it
+  libre  de  prefijo}.   Estas   distinciones  estan  ilustradas  en  la  figura
 Fig.~\ref{Fig:SZ:ClasesCodigos} (ver~\cite[cap.~5]{CovTho06}).
 
 \begin{figure}[h!]
@@ -573,7 +594,7 @@ Fig.~\ref{Fig:SZ:ClasesCodigos} (ver~\cite[cap.~5]{CovTho06}).
 \begin{center} \input{TIKZ_SZ/ClasesCodigos} \end{center}
 %
 \leyenda{Clases  de c\'odigos.   Los  c\'odigos  contienen la  clase  de los  no
-  singular.   La misma  contiene la  clase de  los c\'odigos  descifrable.  Ella
+  singulares.  La misma  contiene la clase de los  c\'odigos descifrables.  Ella
   contiene los  c\'odigos instantaneos.  En  grise se representan las  clases de
   c\'odigos sin perdida a lo cuales se dedica esta secci\'on.}
 %
@@ -583,11 +604,11 @@ Fig.~\ref{Fig:SZ:ClasesCodigos} (ver~\cite[cap.~5]{CovTho06}).
 Adem\'as  de   la  decodificaci\'on  sin   ambig\"uedad,  una  caracterizaci\'on
 importante del  c\'odigo es la  taza de codificaci\'on~\footnote{En~\cite{Rio07}
   por  ejemplo, se  define esta  taza suponiendo  que cada  secuencia  fuente es
-  codificado por el  mismo n\'umero de bits. La taza es  entonces el n\'umero de
+  codificada por el  mismo n\'umero de bits. La taza es  entonces el n\'umero de
   bits por s\'imbolo.}
 %
 \[
-R_{c_m} = \frac{\log_d \left( \sum_{x \in \X^m} l(x) \Pr[X = x] \right)}{m}
+R_{c_m} = \frac{\log_d \left( \sum_{x \in \X^m} l(x) P(X = x) \right)}{m},
 \]
 %
 donde $X$  representa una  secuencia de $m$  variables $X_t$.  El  argumento del
@@ -607,14 +628,14 @@ La meta de  la compresi\'on es entonces construir  un c\'odigo $c$, descifrable,
 que minimizar el largo promedio
 %
 \[
-L(c) = \sum_{x \in \X} p_X(x) \, l(x)
+L(c) = \sum_{x \in \X} p_X(x) \, l(x).
 \]
 %
 Antes de  ir m\'as adelante, hace  falta traducir en ecuaci\'on  el v\'inculo de
 que   $c$   sea   descifrable.    Eso    es   dado   por   la   desigualdad   de
 Kraft-McMillan~~\cite{Kra49,   McM56,   Kar61}~\footnote{Esta  desigualdad   fue
-  probabada  por  L.  G.  Kraft  para  c\'odigos instantaneos  en  su  tesis  de
-  maestria~\cite{Kra49}.  Luego,  fue extendiad a los  c\'odigos descifrable por
+  probabada  por  L.  G.   Kraft  para c\'odigos  instantaneos  en  su tesis  de
+  maestria~\cite{Kra49}.  Luego, fue extendida  a los c\'odigos descifrables por
   B.  McMillan~\cite{McM56} (en  una nota de pie de pagina  de su papel, atribua
   esta  observaci\'on a J.   L.  Doob  hecha oralemente  durante una  escuela de
   verano en Ann Arbor, MI en agosto 1955).}
@@ -624,7 +645,7 @@ Kraft-McMillan~~\cite{Kra49,   McM56,   Kar61}~\footnote{Esta  desigualdad   fue
   deben satisfacer la desigualdad
   %
   \[
-  \sum_{x \in \X} d^{-l_c(x)} \le 1
+  \sum_{x \in \X} d^{-l_c(x)} \le 1.
   \]
   %
   Rec\'iprocamente,  para cada  conjunto de  enteros $\{  \ell_x \}_{x  \in \X}$
@@ -635,11 +656,11 @@ Kraft-McMillan~~\cite{Kra49,   McM56,   Kar61}~\footnote{Esta  desigualdad   fue
 \begin{proof}
   Para cualquier $k \ge 1$ y cualquiera  cadena $s = s_1 \cdots s_k \in \X^k$, la
   extensi\'on  del  c\'odigo,  $c_k(s_1  \cdots  s_k) =  c(s_1)  \cdots  c(s_k)$
-  satisface $l_{c_k}(s) = \sum_i l_c(s_i)$. Entonces
+  satisface $l_{c_k}(s) = \sum_{i=1}^k l_c(s_i)$. Entonces
   %
   \[
   \left(  \sum_{x  \in \X}  d^{-l_c(x)}  \right)^k \:  =  \:  \sum_{\bar{x} \in  \X^k}
-  d^{-l_{c_k}(\bar{x})} \: = \: \sum_{m=1}^{k \, l_c^{\max}} \#(m) \, d^{-m}
+  d^{-l_{c_k}(\bar{x})} \: = \: \sum_{m=1}^{k \, l_c^{\max}} \#(m) \, d^{-m},
   \]
   %
   re-escribiendo  la segunda  suma, agrupando  los t\'erminos  de  mismo largos,
@@ -652,7 +673,7 @@ Kraft-McMillan~~\cite{Kra49,   McM56,   Kar61}~\footnote{Esta  desigualdad   fue
   \[
   \forall \,  k \in \Nset^*, \quad \sum_{x  \in \X} d^{-l_c(x)} \le  \left( k \,
     l_c^{\max}  \right)^{\frac1k} \quad  \Leftrightarrow \quad  \sum_{x  \in \X}
-  d^{-l_c(x)} \le \min_{k \in \Nset^*} \left( k \, l_c^{\max} \right)^{\frac1k}
+  d^{-l_c(x)} \le \min_{k \in \Nset^*} \left( k \, l_c^{\max} \right)^{\frac1k}.
   \]
   %
   Un estudio r\'apido de \  $u \mapsto \left( u \, l_c^{\max} \right)^{\frac1u}$
@@ -666,9 +687,9 @@ Kraft-McMillan~~\cite{Kra49,   McM56,   Kar61}~\footnote{Esta  desigualdad   fue
   $\ell =  1 , \ldots  , \ell^{\max} \le  \alpha$.  Consideramos ahora  un arbol
   empezando con una ra\'iz, correspondiente a un largo $0$, que se divide en $d$
   ramas, correspondiente a los largos iguales  a $1$; a cada nudo se asocian las
-  letras \  $\zeta_1, \ldots , \zeta_d$. Esto  nudos se dividen cada  uno en $d$
-  otras  ramas, y  los nudos  de ``padre''  \ $\zeta_i$  \ se  va a  asociar las
-  palabras c\'odigos \ $\zeta_i \zeta_1 , \ldots , \zeta_i \zeta_\alpha$, \ etc.
+  letras \  $\cod_1, \ldots , \cod_d$. Esto  nudos se dividen cada  uno en $d$
+  otras  ramas, y  los nudos  de ``padre''  \ $\cod_i$  \ se  va a  asociar las
+  palabras c\'odigos \ $\cod_i \cod_1 , \ldots , \cod_i \cod_\alpha$, \ etc.
   Este  arbol,  conocido  como  arbol  de  Kraft,  es  ilustrado  en  la  figura
   Fig.~\ref{Fig:SZ:ArbolKraft}  para \  $d =  2$  \ y  \ $\C  =  \{0 \,  , \,  1
   \}$. Claramente, \ $n_1 \le d$ \ si no \ $n_1 \, d^{-1} > 1$ \ y los largos no
@@ -679,7 +700,7 @@ Kraft-McMillan~~\cite{Kra49,   McM56,   Kar61}~\footnote{Esta  desigualdad   fue
   seleccionados        (lineas        punteadas        en       la        figura
   Fig.~\ref{Fig:SZ:ArbolKraft}). Estos  nudos son  llamados {\em hojas}  (no hay
   ramas).  En  la capa de ``hijos'' de  profundez/largos \ $2$, quedan  \ $d^2 -
-  n_1 \, d$ \ nudos (accessibles)  que se puede dividir en ramas.  Nuevamente, \
+  n_1 \, d$ \ nudos (accessibles)  que se pueden dividir en ramas.  Nuevamente, \
   $n_2 \le d^2 - n_1 \, d$ \  sino tendr\'iamos \ $n_1 \, d^{-1} + n_2 \, d^{-2}
   > 1$, \ incompatible con la  desigualdad de Kraft-McMillan. Se puede asociar a
   los \ $n_2$  \ largos iguales a \  $2$ \ unos nudos con  las palabras c\'odigo
@@ -700,7 +721,7 @@ A este punto, se menciona los hechos siguientes
   de optimalidad (buscar en la clase  m\'as amplia de los descifrable no permite
   bajar el largo promedio).
 %
-\item En  los c\'odigos  libres de prefijo,  si se  fija los n\'umeros  de hojas
+\item En  los c\'odigos  libres de prefijo,  si se  fija el n\'umero  de hojas
   (\'ultima   profundez)  borradas   contruyendo  un   c\'odigo,  este   vale  \
   $\sum_{i=1}^{\ell^{\max}}  n_i  \,  d^{\ell^{\max}  -  i} =  \sum_{x  \in  \X}
   d^{\ell^{\max} -  l_c(x)}$.  \ Es  necesariamente menor que el  n\'umero total
@@ -736,13 +757,13 @@ A este punto, se menciona los hechos siguientes
 El formalismo dado,  se va a ver ahora reaparecer la  entrop\'ia de Shannon como
 cota de la codificaci\'on de fuente sin perdida:
 
-\begin{teorema}[Cota inferior de c\'odigos descifrable]
+\begin{teorema}[Cota inferior de c\'odigos descifrables]
   Para  cualquier c\'odigo  \  $c$ \  descifrable  de la  fuente  $X$, su  largo
   promedio es  acotado por debajo  por la entrop\'ia  de Shannon de base  $d$ de
   $X$,
   %
   \[
-  L(c) = \sum_{x \in \X} p_X(x) \, l_c(x) \: \ge \: H_d(X)
+  L(c) = \sum_{x \in \X} p_X(x) \, l_c(x) \: \ge \: H_d(X).
   \]
 \end{teorema}
 %
@@ -753,7 +774,7 @@ cota de la codificaci\'on de fuente sin perdida:
   %
   \[
   L(c) =  - \sum_{x  \in \X}  p_X(x) \, \log_d  d^{-l_c(x)} =  - \sum_{x  \in \X}
-  p_X(x) \, \log_d q(x) - \log_d \sum_a d^{-l_c(x)}
+  p_X(x) \, \log_d q(x) - \log_d \sum_{x \in \X} d^{-l_c(x)}.
   \]
   %
   Notando que \ $- \log_d q  = \log_d \left( \frac{p_X}{q} \right) - \log_d p_X$
@@ -761,7 +782,7 @@ cota de la codificaci\'on de fuente sin perdida:
   %
   \[
   L(c)  = H_d(X)  + D_{\mathrm{kl},d}\left(  \left.   p_X \right\|  q \right)  -
-  \log_d \sum_{x \in \X} d^{-l_c(x)}
+  \log_d \sum_{x \in \X} d^{-l_c(x)}.
   \]
   %
   El resultado proviene de la  positividad de la divergencia de Kullback-Leibler
@@ -773,7 +794,7 @@ cota de la codificaci\'on de fuente sin perdida:
 puede  ser m\'as  bajo que  el  contenido informacional  de la  fuente. En  este
 sentido, $H$ tiene realmente un sabor de informaci\'on sobre la fuente $X$.
 
-La entrop\'ia aparece tambi\'en el la cota superior del c\'odigo \'optimo:
+La entrop\'ia aparece tambi\'en en la cota superior del c\'odigo \'optimo:
 %
 \begin{teorema}[Cota superior del c\'odigo descifrable \'optimo]
   El largo promedio \ $L^\opt$ \ del c\'odigo \ $c^\opt$ \ descifrable, de largo
@@ -781,7 +802,7 @@ La entrop\'ia aparece tambi\'en el la cota superior del c\'odigo \'optimo:
   $d$ de $X$ m\'as un {\it dit} (1 s\'imbolo de $\C$),
   %
   \[
-  L^\opt \: < \: H_d(X) + 1
+  L^\opt \: < \: H_d(X) + 1.
   \]
 \end{teorema}
 %
@@ -791,19 +812,20 @@ La entrop\'ia aparece tambi\'en el la cota superior del c\'odigo \'optimo:
   %
   \[
   \min \sum_{x \in \X} p_X(x) \,  l(x) \qquad \mbox{sujeto a} \qquad \sum_{x \in
-    \X} d^{-l(x)} \, \l \, 1
+    \X} d^{-l(x)} \, \le \, 1.
   \]
   %
-  Sea \ $q(x)  = \frac{d^{-l_c(x)}}{\sum_{x \in \X} d^{-l_c(x)}}$,  \ siendo una
-  distribuci\'on de  probabilidad por  construcci\'on.  Escribiendo \  $l_c(a) =
-  \log_d d^{-l_c(a)}$, \ se puede expresar el largo promedio de la forma
+  %Sea \ $q(x)  = \frac{d^{-l_c(x)}}{\sum_{x \in \X} d^{-l_c(x)}}$,  \ siendo una
+  %distribuci\'on de  probabilidad por  construcci\'on.  
+  Escribiendo  \ $l_c(x) =  \log_d d^{-l_c(x)}$,  \ se  puede expresar  el largo
+  promedio de la forma
   %
   \[
   L(c) =  - \sum_{x  \in \X}  p_X(x) \, \log_d  d^{-l_c(x)} =  - \sum_{x  \in \X}
-  p_X(x) \, \log_d q(x) - \log_d \sum_{x \in \X} d^{-l_c(x)}
+  p_X(x) \, \log_d q(x) - \log_d \sum_{x \in \X} d^{-l_c(x)}.
   \]
   %
-  Olvidando que los  \ $l_i \equiv l(x_i)$ \ son enteros,  $L(c)$ es convexa con
+  Olvidando que los  \ $l_i \equiv l_c(x_i)$ \ son enteros,  $L(c)$ es convexa con
   respecto  a los $l_i$  as\'i que  el v\'inculo,  garantizando que  el m\'inimo
   existe y es \'unico.  El problema se resuelva con el enfoque KKT~\footnote{Ver
     nota de pie~\ref{Foot:SZ:KKT} pagina~\pageref{Foot:SZ:KKT}.}, optimizaci\'on
@@ -811,13 +833,15 @@ La entrop\'ia aparece tambi\'en el la cota superior del c\'odigo \'optimo:
   ``largos''
   %
   \[
-  \widetilde{l}(x) = - \log_d p_X(x)
+  \widetilde{l}(x) = - \log_d p_X(x).
   \]
   %
-  Una posibilidad puede ser de tomar la parte entera superior,
+  \modif{$\widetilde{l}(x)$  no   es  necesariamente  entero,   as\'i  que  u}na
+  posibilidad \modif{para volver  a largos enteros} puede ser  de tomar la parte
+  entera superior \modif{de $\widetilde{l}(x)$},
   %
   \[
-  l(x) = \Big\lceil\! - \log_d p_X(x) \Big\rceil
+  l(x) = \Big\lceil\! - \log_d p_X(x) \Big\rceil.
   \]
   %
   Obviamente el  conjunto de largos satisface la  desigualdad de Kraft-McMillan,
@@ -825,18 +849,19 @@ La entrop\'ia aparece tambi\'en el la cota superior del c\'odigo \'optimo:
   largos. De \ $l(x) < - \log_d p_X(x) + 1$ se obtiene
   %
   \[
-   L^\opt \le L\left( c^\sh \right) < H_d(X) + 1
+   L^\opt \le L\left( c^\sh \right) < H_d(X) + 1.
   \]
   %
 \end{proof}
 %
-De  $$H_d(X) \le  L^\opt <  H_d(X) +  1$$  se revela  el rol  fundamental de  la
+De \[  H_d(X) \le  L^\opt < H_d(X)  + 1 \]  se revela  el rol fundamental  de la
 entrop\'ia en la  codificaci\'on de fuente sin perdida.   La codificaci\'on es a
 veces  dicha {\it  codificaci\'on  entr\'opica} y  da  un rol  operacional a  la
-entrop\'ia  de Shannon.   Se notar\'a  de la  demostraci\'on precediente  de que
-aparece un c\'odigo particular:
+entrop\'ia de  Shannon.  Se notar\'a \modif{tambi\'en que}  de la demostraci\'on
+precediente  de que  aparece un  c\'odigo  particular \modif{a  trav\'es de  los
+  $\Big\lceil\!  - \log_d p_X(x) \Big\rceil$}:
 %
-\begin{definicion}[C\'odigo de Shannon]
+\begin{definicion}[C\'odigo de Shannon]\label{Def:SZ:ShannonCode}
   Un  c\'odigo  \  $c^\sh$  \  de  una  fuente $X$,  de  largos  \  $l^\sh(x)  =
   \Big\lceil\!   - \log_d  p_X(x) \Big\rceil$,  \ libre  de  prefijo (construido
   sobre el arbol de Kraft) es llamado {\it c\'odigo de Shannon}.
@@ -845,68 +870,89 @@ aparece un c\'odigo particular:
 Obviamente, tambi\'en
 %
 \[
-H_d(X) \le L\left( c^\sh  \right) < H_d(X) +  1
+H_d(X) \le L\left( c^\sh  \right) < H_d(X) +  1.
 \]
 %
-Al lo  contrario de  primer vista, un  c\'odigo de  Shannon no es  \'optimo.  Un
-ejemplo sencillo para verlo consiste a tomar $\X = \C = \{ 0 \, , \, 1 \}$ \ y \
-$p_x(0) = 0.999 = 1 - p_X(1)$.  Los largos de Shannon van a ser \ $l^\sh(0) = 1$
-\ y  \ $l^\sh(1)  = 10$, y  el largo  promedio vale \  $L\left( c^\sh  \right) =
-1.009$.  Obviamente, un c\'odigo \'optimo es \  $c(x) = x$ \ de largos \ $l(x) =
-1$ \  dando \  $L^\opt =  1$ bit.  De  hecho, volviendo  al problema  con largos
-virtualmente  no enteros,  el m\'inimo  se  alcanza para  $\widetilde{l}(x) =  -
-\log_d p_X(x)$,  es decir  que, los  largos siendo enteros,  se alcanza  la cota
-m\'inima  del  c\'odigo \'optimo  si  y solamente  si  $-  \log_d p_X(x)$.   Una
-distribuci\'on satifaciendo esta condici\'on es dicha $d$-\'adica.  Sin embargo,
-el c\'odigo de Shannon es ``competitivo'' en el sentido de que:
+Al lo contrario  de primer vista, un c\'odigo de  Shannon no es \'optimo\modif{,
+  como se lo puede ver con el ejemplo siguiente.}
+%
+\begin{ejemplo}\label{Ej:SZ:CodigoShannonNoOpt}
+  Sea \  $\X = \C  = \{ 0 \,  , \, 1  \}$ \ y  \modif{una fuente $X$ tal  que} \
+  $p_X(0) = 0.999 = 1 - p_X(1)$.  Los  largos de Shannon van a ser \ $l^\sh(0) =
+  1$ \ y \ $l^\sh(1) = 10$, y  el largo promedio vale \ $L\left( c^\sh \right) =
+  1.009$.   Obviamente, un  c\'odigo \'optimo  es \  $c(x) =  x$ \  de  largos \
+  $l_c(x) = 1$ \ dando \ $L^\opt = 1$ bit.
+\end{ejemplo}
+%
+De hecho, volviendo al problema  con largos virtualmente no enteros, el m\'inimo
+se alcanza para  $\widetilde{l}(x) = - \log_d p_X(x)$, es  decir que, los largos
+siendo enteros, se alcanza la cota m\'inima del c\'odigo \'optimo si y solamente
+si $- \log_d p_X(x)$.  Una distribuci\'on satifaciendo esta condici\'on es dicha
+$d$-\'adica.   Sin embargo,  el c\'odigo  de  Shannon es  ``competitivo'' en  el
+sentido de que:
 %
 \begin{teorema}[Competitividad del c\'odigo de Shannon]
   Sea $X$  \ fuente sobre  \ $\X$, de  distribuci\'on \ $p_X$  \ y \  $c^\sh$ el
-  c\'odigo de Shannnon asociado sobre el  alfabeto c\'odigo \ $\C = \{ \zeta_1 ,
-  \ldots  , \zeta_d \}$,  de largos  $l^\sh(x) =  \Big\lceil\!  -  \log_d p_X(x)
+  c\'odigo de Shannon asociado sobre el  alfabeto c\'odigo \ $\C = \{ \cod_1 ,
+  \ldots  , \cod_d \}$,  de largos  $l^\sh(x) =  \Big\lceil\!  -  \log_d p_X(x)
   \Big\rceil$.  Para cualquier  c\'odigo \ $c$ \ descifrable  y cualquier $k \ge
   1$,
   %
   \[
-  \Pr\Big[ l^\sh(X) \ge l_c(X) + k \Big] \le \frac{1}{d^{k-1}}
+  P\Big( l^\sh(X) \ge l_c(X) + k \Big) \le \frac{1}{d^{k-1}}.
   \]
 \end{teorema}
 %
 \begin{proof}
-  Por definici\'on de un c\'odigo de Shannon, de  $a + 1 > \lceil a \rceil \ge b
-  \: \Rightarrow \: a \ge b-1$, se obtiene
+  \modif{Por  definici\'on de  la  parte entera  superior,  $a +  1  > \lceil  a
+    \rceil$, as\'i  que $\lceil a  \rceil \ge  b \: \Rightarrow  \: a >  b-1$. A
+    continuaci\'on, de  la implicaci\'on  de eventos $(Y  \ge a) \subset  (Y \ge
+    b-1)$ \  dando $P(A \ge a)  \le P(Y \ge b-1)$  \ y de la  definici\'on de un
+    c\'odigo de Shannon} se obtiene
   %
   \begin{eqnarray*}
-  \Pr\Big[ l^\sh(X)  \ge l_c(X) + k  \Big] & \le & \Pr\Big[  - \log_d p_X(X)
-  \ge  l_c(X) + k  - 1  \Big]\\[2.5mm]
+  P\Big( l^\sh(X)  \ge l_c(X) + k  \Big) & \le & P\Big(  - \log_d p_X(X)
+  \ge  l_c(X) + k  - 1  \Big)\\[2.5mm]
   %
-  & = &  \Pr\Big[ p_X(X)  \le d^{-l_c(X)  - k  + 1} \Big]\\[2.5mm]
+  & = &  P\Big( p_X(X)  \le d^{-l_c(X)  - k  + 1} \Big)\\[2.5mm]
   %
-  & = &  \sum_{x \in \X : p_X(x) \le d^{-l_c(X)  - k  + 1}} p_X(x)
+  & = &  \sum_{x \in \X : p_X(x) \le d^{-l_c(\modif{x})  - k  + 1}} p_X(x)
   \end{eqnarray*}
   %
-  Pero,  sumando sobre  lo $x$  tal que  $p_X(x) \le  d^{-l_c(X) -  k +  1}$, se
-  obtiene
+  Pero, sumando sobre  lo $x$ tal que $p_X(x) \le d^{-l_c(\modif{x})  - k + 1}$,
+  se obtiene
   %
-  \begin{eqnarray*}
-  \Pr\Big[ l^\sh(X) \ge l_c(X) + k \Big] & \le & d^{1-k} \sum_{x \in \X :
-  p_X(x) \le d^{-l_c(X) - k + 1}} d^{-l_c(X)}\\[2.5mm]
+  \[
+  %  \begin{eqnarray*}
+  P\Big( l^\sh(X)  \ge l_c(X) + k  \Big) \le \frac{1}{d^{k-1}} \sum_{x  \in \X :
+    p_X(x) \le d^{-l_c(\modif{x}) - k + 1}} d^{-l_c(\modif{x})}
+  %\\[2.5mm]
   %
-  \Pr\Big[ l^\sh(X) \ge l_c(X) + k \Big] & \le & d^{1-k} \sum_{x \in \X}
-  d^{-l_c(X)}
-  \end{eqnarray*}
+  %P\Big( l^\sh(X) \ge l_c(X) + k \Big) & \le & 
+  \le \frac{1}{d^{k-1}} \sum_{x \in \X} d^{-l_c(\modif{x})}
+  \]
+  %\end{eqnarray*}
   %
   (a\~nadiendo t\'erminos positivos en la suma). La prueba se cierra notando que
   $c$ siendo descifrable, $l_c$ satisface la desigualdad de Kraft-McMillan.
 \end{proof}
 %
-Este  teorema  traduce el  hecho  de  que si  $c^\sh$  no  es \'optimo,  tomando
-cualquier otro c\'odigo (incluyendo el \'optimo), la probabilidad que $c^\sh(X)$
-tenga un largo m\'as grande que $c(X)+k$ decrece exponencialmente con $k$. En el
-ejemplo anterior,  si se compara  $c^\sh$ y el  c\'odigo \'optimo, para $k  = 9$
-(caso del  c\'odigo de $1$), $\Pr\Big[ l^\sh(X)  \ge l_c(X) + 9  \Big] \le 0.391
-\%$.  De hecho, una palabra c\'odigo  de largo $10$ aparece con una probabilidad
-$0.1\%$\ldots
+Este  teorema  traduce  el hecho  de  que  \modif{a  pesar  de que}  $c^\sh$  no
+\modif{sea} \'optimo,  tomando cualquier otro c\'odigo,  incluyendo el \'optimo,
+la probabilidad que $c^\sh(X)$ tenga  un largo m\'as grande que $c(X)+k$ decrece
+exponencialmente con $k$.
+%
+\modif{
+\begin{ejemplo}
+  De manera general, con $d = 2$ y para $k = 9$, $P\Big( l^\sh(X) \ge l_c(X) + 9
+  \Big)      \le       0.391      \%$.      En       particular,      en      el
+  ejemplo~\ref{Ej:SZ:CodigoShannonNoOpt},    notando    que    s\'olo   en    la
+  codificaci\'on de $x=1$ se puede tener $l^\sh(x) \ge l_c(x) + 9$, si no se usa
+  1 bit, este resultado significa que la probabilidad de usar m\'as de 1 bit con
+  el c\'odigo de Shannon es menor que $0.391 \%$. De hecho, una palabra c\'odigo
+  de largo $10$ aparece con una probabilidad $0.1\%$\ldots
+\end{ejemplo}
+}
 
 En el problema  de minimizaci\'on, el hecho de que los  largos deben ser enteros
 no  permite  solucionar explicitamente  el  problema  de  busqueda del  c\'odigo
@@ -917,20 +963,25 @@ y~\cite[\&  ref.]{CovTho06}).   El  c\'odigo  conocido  como  {\it  c\'odigo  de
   fueron  hechos  independientemente,  a  veces  es conocido  como  c\'odigo  de
   Fano-Shannon, o aun Shannon-Fano-Elias~\cite{CovTho06, KraLiu15}.} \ $c^\fa$ \
 se  basa  sobre  el  hecho  de   que  se  alcanza  la  cota  m\'inima  para  una
-distribuci\'on $d$-\'adica.  El  principio es de clasificar los  estados de $\X$
-para   obtener   las   probabilidades   clasificadas   en   orden   decreciences
-($p_X^\downarrow$).  Luego,  se  divide  $\X$   en  $d$  ensembles  a  lo  m\'as
-equiprobables que se puede (\ie de  probabilidad a lo m\'as cerca de $d^{-1}$) y
-de  asignar $\zeta_i$  al conjunto  $i$.   Luego, se  repite el  proceso a  cada
-sub-conjunto (para  tener sub-conjuntos  de probabilidades a  lo m\'as  cerca de
-$d^{-2}$) y  al subconjunto  $j$ del conjunto  $i$ se  va a asignar  le c\'odigo
-$\zeta_i    \zeta_j$,     etc.     Eso    es    ilustrado     en    la    figura
-Fig.~\ref{Fig:SZ:FanoHuffmanCodes}-(a).   \SZ{Probar/mencionar que  tambi\'en $$
-  H(X) \le L\left( c^\fa \right) < H(X)+1$$}
+distribuci\'on $d$-\'adica.
+%
+\begin{definicion}[C\'odigo de Fano]\label{Def:SZ:FanoCode}
+  El  principio  es  de  clasificar   los  estados  de  $\X$  para  obtener  las
+  probabilidades clasificadas en  orden decreciences ($p_X^\downarrow$).  Luego,
+  se divide $\X$ en $d$ ensembles a  lo m\'as equiprobables que se puede (\ie de
+  probabilidad a lo  m\'as cerca de $d^{-1}$) y de  asignar $\cod_i$ al conjunto
+  $i$.   Luego,   se  repite  el   proceso  a  cada  sub-conjunto   (para  tener
+  sub-conjuntos de probabilidades a lo m\'as cerca de $d^{-2}$) y al subconjunto
+  $j$ del conjunto $i$ se va a asignar le c\'odigo $\cod_i \cod_j$, etc.  Eso es
+  ilustrado en la figura Fig.~\ref{Fig:SZ:FanoHuffmanCodes}-(a).
+\end{definicion}
+%
+\SZ{Probar/mencionar  que  tambi\'en  \[   H(X)  \le  L\left(  c^\fa  \right)  <
+  H(X)+1. \]}
 %  \qquad \mbox{con}  \qquad L^\fa  =  L_{c^\fa}$$}
 
 Fijense de que no hay un \'unico c\'odigo  de Fano o de Shannon (tal como no hay
-un \'optimo  \'unico).  Por exemple, hacer  una permutacion de  los $\zeta_i$ da
+un \'optimo  \'unico).  Por exemple, hacer  una permutacion de  los $\cod_i$ da
 los mismos  largos y  el mismo largo  promedio sin  cambiar el aspecto  libre de
 prefijo. De la  misma manera, en el  arbol de Kraft, en cada  profundez se puede
 permutar los s\'imbolos  asociados a las hojas de esta  profundez sin cambiar el
@@ -943,32 +994,33 @@ Una soluci\'on para construir un  c\'odigo \'optima fue propuesta por Huffman en
   c\'odigo de Fano  era \'optimo: Huffman propus\'o su  propio c\'odigo, andando
   al rev\'es del enfoque de Fano, y demostr\'o que era \'optimo~\cite{Sti91}.}
 %
-\begin{definicion}[C\'odigo de Huffman]
-  Suponemos que existe un $q \in \Nset$ tal que~\footnote{Si no, se puede elegir
-    $q = \left\lceil \frac{n-d}{d-1} \right\rceil$,  y completar $\X$ con $d + q
-    (d-1) - \alpha$  s\'imbolos fuente fictivos de probabilidades  ceros, lo que
-    no  va  a cambiar  ni  la  entrop\'ia, ni  el  largo  promedio del  c\'odico
-    aferente.}  $\alpha = |\X| = d  + q (d-1)$. El algoritmo de Huffman consiste
-  a construir un  arbol donde cada nudo es asociado a  un conjunto de s\'imbolos
-  fuente y una letra de $\C$ de la manera siguiente:
+\begin{definicion}[C\'odigo de Huffman]\label{Def:SZ:HuffmanCode}
+  Suponemos que  existe un $\beta \in  \Nset$ tal que~\footnote{Si  no, se puede
+    elegir $\beta =  \left\lceil \frac{\alpha-d}{d-1} \right\rceil$, y completar
+    $\X$  con  $d  +  \beta  (d-1)  -  \alpha$  s\'imbolos  fuente  fictivos  de
+    probabilidades ceros, lo  que no va a cambiar ni la  entrop\'ia, ni el largo
+    promedio del  c\'odico aferente.}   $\alpha =  |\X| = d  + \beta  (d-1)$. El
+  algoritmo de Huffman consiste a construir un arbol donde cada nudo es asociado
+  a un conjunto de s\'imbolos fuente y una letra de $\C$ de la manera siguiente:
   %
   \begin{enumerate}
   \item\label{Huffman:clasificar}   Clasificar  las   probabilidades   en  orden
-    decrecientes: llamamos  $p_i$ las probabilidades rearregladas  y, por cambio
-    de escritura, \ $x_i$ \ el s\'imbolo fuente correspondiente.
+    decrecientes: por cambio de escritura, llamamos \ $p_i$ \ las probabilidades
+    rearregladas y \ $x_i$ \ los s\'imbolo fuente correspondientes.
   %
-  \item\label{Huffman:codigolocal}  A cada  \ $x_i,  \: n-d+1  \le i  \le  n$, \
-    associar un nudo y la letra ``hijo'' \ $\zeta_i$.
+  \item\label{Huffman:codigolocal}  A  cada \  $x_i,  \:  \alpha-d+1  \le i  \le
+    \alpha$, \ associar un nudo y la letra ``hijo'' \ $\cod_i$.
   %
   \item\label{Huffman:padre} Crear \ $d$ \ ramas saliendo de un nudo padre hasta
-    los $d$ nudos $x_i, \: n-d+1 \le i \le n$.
+    los $d$ nudos $x_i, \: \alpha-d+1 \le i \le \alpha$.
   %
   \item\label{Huffman:reconfiguracion}  Crear un  nuevo  conjunto de  s\'imbolos
-    fuente \  $\widetilde{x}_i = x_i,  \: 1 \le  i \le n-d$ \  de probabilidades
-    respectivas \ $\widetilde{p}_i = p_i$ \ y \ $\widetilde{x}_{n-d+1} = \{ x_j,
-    \: n-d+1 \le j \le n$ \ de probabilidad \ $\widetilde{p}_{n-d+1} = p_{n-d+1}
-    + \ldots + p_n$.  El  \'utimo ``super-s\'imbolo'' fuente es asociado al nudo
-    padre de la etapa~\ref{Huffman:padre}.
+    fuente  \  $\widetilde{x}_i   =  x_i,  \:  1  \le  i   \le  \alpha-d$  \  de
+    probabilidades   respectivas    \   $\widetilde{p}_i   =   p_i$    \   y   \
+    $\widetilde{x}_{\alpha-d+1} = \{  x_j, \: \alpha-d+1 \le j  \le \alpha$ \ de
+    probabilidad  \  $\widetilde{p}_{\alpha-d+1}  =  p_{\alpha-d+1} +  \ldots  +
+    p_\alpha$.  El \'utimo ``super-s\'imbolo''  fuente es asociado al nudo padre
+    de la etapa~\ref{Huffman:padre}.
   %
   \item  Si   quedan  m\'as  de   un  (super-)s\'imbolo  fuente,  volver   a  la
     etapa~\ref{Huffman:clasificar}  con \  $p  \equiv \widetilde{p}$  \  y \  $x
@@ -981,22 +1033,23 @@ Una soluci\'on para construir un  c\'odigo \'optima fue propuesta por Huffman en
   figura Fig.~\ref{Fig:SZ:FanoHuffmanCodes}-(b) en el caso binario.
 \end{definicion}
 %
-Se mencionara  que a  cada etapa, el  nuevo conjunto de  super-s\'imbolos fuente
+Se mencionar\'a que  a cada etapa, el nuevo  conjunto de super-s\'imbolos fuente
 contiene   exactamente   \  $d-1$   \   s\'imbolos   menos   que  a   la   etapa
-precediente. As\'i, con \  $n = d + q (d-1)$ \  el algoritmo tiene exactamente \
-$q+1$ \ bucles y en cada profundez  no hay ning\'un nudo vacio en el sentido que
-o es  una hoja, o es un  nudo padre/prefijo (quedar\'an exactamente  $d$ nudos a
-agregar a  la ra\'iz en  la \'ultima etapa).   Por exemplo, con \  $d = 3$  \ si
-tuvieramos \ $n = 4$, en la segunda etapa tendriamos $2$ estados a juntar, dando
-un  c\'odigo  de largos  $2,  2,  2, 1$.   Empezando  la  primera  etapa con  la
-asociaciaci\'on  de $2$  estados,  es decir  $3$  teniendo en  cuenta un  estado
-fictivo ($n = 5$, $q = 1$) van  a quedar 3 estados en la segunda etapa, dando un
-c\'odigo de largos $2, 2, 1, 1$, es decir de largo promedio m\'as peque\~no.
+precediente.  As\'i, con  \ $\alpha  = d  + \beta  (d-1)$ \  el  algoritmo tiene
+exactamente \ $\beta+1$ \ bucles y  en cada profundez no hay ning\'un nudo vacio
+en  el sentido  que  o  es una  hoja,  o es  un  nudo padre/prefijo  (quedar\'an
+exactamente $d$ nudos a agregar a la ra\'iz en la \'ultima etapa).  Por exemplo,
+con \ $d = 3$ \ si tuvieramos \ $\alpha = 4$, en la segunda etapa tendriamos $2$
+estados  a juntar,  dando un  c\'odigo de  largos $2,  2, 2,  1$.   Empezando la
+primera etapa  con la asociaciaci\'on de  $2$ estados, es decir  $3$ teniendo en
+cuenta un estado fictivo  ($\alpha = 5$, $\beta = 1$) van  a quedar 3 estados en
+la segunda etapa,  dando un c\'odigo de largos  $2, 2, 1, 1$, es  decir de largo
+promedio m\'as peque\~no.
 
 \begin{teorema}[\'Optimalidad del c\'odigo de Huffman]
   El algoritmo de Huffman da un c\'odigo \ $c^\huf$ \ de largo promedio m\'inimo
-  en  la  clase  de los  c\'odigos  descrifrable  y  los  libre de  prefijo  (se
-  recordar\'a  que con  los largos  de c\'odigos  descifrable, siempre  se puede
+  en  la  clase de  los  c\'odigos  descrifrables y  los  libre  de prefijo  (se
+  recordar\'a que  con los  largos de c\'odigos  descifrables, siempre  se puede
   construir un c\'odigo  libre de prefijo), es decir \  $L^\opt = L\left( c^\huf
   \right)$.
 \end{teorema}
@@ -1005,7 +1058,7 @@ c\'odigo de largos $2, 2, 1, 1$, es decir de largo promedio m\'as peque\~no.
   Una  prueba  es  dada  por  ejemplo en~\cite[Sec.~5.8]{CovTho06}  en  el  caso
   binario, pero la  extensi\'on para $d >  2$ es un poco m\'as  sutil. La prueba
   m\'as general  es dada  por Huffman~\cite{Huf52} y  se consigue  tambi\'en por
-  parte  en~\cite{Pig03}.  Suponemos  que  $q  \ge 1$  (sino,  el  resultado  es
+  parte en~\cite{Pig03}.   Suponemos que  $\beta \ge 1$  (sino, el  resultado es
   obvio). Las etapas son
   %
   \begin{itemize}
@@ -1016,69 +1069,73 @@ c\'odigo de largos $2, 2, 1, 1$, es decir de largo promedio m\'as peque\~no.
       l^\opt_k  - l^\opt_j  \right)$.   \  Entonces $p_j  >  p_k \:  \Rightarrow
     l^\opt_j \le l^\opt_k$.
   %
-  \item Sea $m$ el n\'umero de s\'imbolos fuente con un c\'odigo de largo m\'aximo
-    \ $l_{\max}$ \  y \ $m' = \min(m,d)$.  Del punto  anterior, los $m$ s\'imbolos
-    con  palabra  c\'odigo de  largo  m\'aximo  son  los de  probabilidades  m\'as
-    peque\~nas.
+  \item Sea  $\eta$ el n\'umero  de s\'imbolos fuente  con un c\'odigo  de largo
+    m\'aximo \ $l_{\max}$ \ y \ $\eta' = \min(\eta,d)$.  Del punto anterior, los
+    $\eta$  s\'imbolos  con  palabra  c\'odigo  de largo  m\'aximo  son  los  de
+    probabilidades m\'as peque\~nas.
   %
   \item  Como descrito  antes, se  puede permutar  las letras  c\'odigos  de una
     profundez del arbol de Kraft sin  cambiar ni el aspecto libre de prefijo, ni
     el largo promedio. Se puede entonces considerar el c\'odigo \'optimo tal que
-    los $m'$ s\'imbolos  de probabilidades las m\'as peque\~nas  tienen el mismo
-    nudo padre, \ie solamente la \'ultima letra c\'odigo cambia entre ellos.
+    los  $\eta'$ s\'imbolos  de probabilidades  las m\'as  peque\~nas  tienen el
+    mismo  nudo padre,  \ie solamente  la \'ultima  letra c\'odigo  cambia entre
+    ellos.
   %
-  \item Suponemos que \ $m' = m  < d$.  \ Sea una ``super-fuente'' \ $\X^{(2)} =
-    \left\{ x^{(2)}_i \right\}_{i=1}^{n-m'+1}$ \ con \ $x^{(2)}_i = x_i, \quad 1
-    \le  i  \le  n-m'$  \  de  probabilidades  respectivas  \  $p(x_i)$  \  y  \
-    $x^{(2)}_{n-m'+1}  \equiv  \{  x_i  \}_{i=n-m'+1}^n$  \  de  probabilidad  \
-    $p_{n-m'+1}  +  \cdots  +  p_n$  \  (se ``plegan''  las  $m'$  hojas  en  un
+  \item  Suponemos que  \ $\eta'  = \eta  < d$.   \ Sea  una  ``super-fuente'' \
+    $\X^{(2)}  =  \left\{  x^{(2)}_i  \right\}_{i=1}^{\alpha-\eta'+1}$ \  con  \
+    $x^{(2)}_i  = x_i,  \quad  1 \le  i  \le \alpha-\eta'$  \ de  probabilidades
+    respectivas  \  $p(x_i)$  \  y  \ $x^{(2)}_{\alpha-\eta'+1}  \equiv  \{  x_i
+    \}_{i=\alpha-\eta'+1}^\alpha$  \  de  probabilidad \  $p_{\alpha-\eta'+1}  +
+    \cdots   +  p_\alpha$   \   (se   ``plegan''  las   $\eta'$   hojas  en   un
     super-s\'imbolo).    La   c\'odificaci\'on    \'optima   es   entonces   una
     codificaci\'on libre de prefijo de $\X^{(2)}$, ``arbol ra\'iz'' del c\'odigo
-    \'optimo, a la cual se a\~nade una letra c\'odigo $\zeta_k$ diferente a cada
-    s\'imbolo del super-s\'imbolo $x^{(2)}_{n-m'+1}$.  La profundez m\'axima del
-    c\'odigo arbol es \ $l_{\max}-1$ \ y debe ser llena, en el sentido de que no
-    debe  tener un  nudo  que  sea ni  una  hoja, ni  un  prefijo.   En el  caso
-    contrario, se podr\'ia desplazar  un s\'imbolo de $x^{(2)}_{n-m'+1}$ al nudo
-    ``vacio''  de la  profundez $l_{\max}-1$,  sin cambiar  el aspecto  libre de
-    prefijo, pero  ganando una letra c\'odigo  sobre un s\'imbolo,  \ie hacer un
-    c\'odigo   libre  de  prefijo   con  un   largo  promedio   menor.   Ser\'ia
-    contradictorio con la optimalidad del c\'odigo inicial.
+    \'optimo, a la cual se a\~nade  una letra c\'odigo $\cod_j$ diferente a cada
+    s\'imbolo  del  super-s\'imbolo  $x^{(2)}_{\alpha-\eta'+1}$.   La  profundez
+    m\'axima del  c\'odigo arbol  es \ $l_{\max}-1$  \ y  debe ser llena,  en el
+    sentido de que no debe tener un nudo que sea ni una hoja, ni un prefijo.  En
+    el    caso   contrario,    se   podr\'ia    desplazar   un    s\'imbolo   de
+    $x^{(2)}_{\alpha-\eta'+1}$ al  nudo ``vacio'' de  la profundez $l_{\max}-1$,
+    sin cambiar  el aspecto  libre de prefijo,  pero ganando una  letra c\'odigo
+    sobre un  s\'imbolo, \ie  hacer un  c\'odigo libre de  prefijo con  un largo
+    promedio  menor.  Ser\'ia  contradictorio  con la  optimalidad del  c\'odigo
+    inicial.
   % 
   \item  Para   c\'odificar  $\X^{(2)}$,  se  necesita  por   lo  menos  $\lceil
-    \log_d(n-m'+1)  \rceil$ profundez  en el  arbol ra\'iz.   En  esta profundez
-    (m\'axima en el caso optimista), hay \ $d^{\lceil \log_d(n-m'+1) \rceil} \ge
-    n-m'+1$ \  nudos. En la  \'ultima profundez pueden  ser todos ocupados  si y
-    solamente  si  \ $d^{\lceil  \log_d(n-m'+1)  \rceil}  =  n-m'+1$.  En  otras
-    palabras, es posible si y solamente  si existe un entero $k$ tal que $n-m'+1
-    = d^k$, es  decir, con \ $n = d  + q(d-1)$, \ que teniamos el  entero \ $q =
-    \frac{d^k-d}{d-1}   +  \frac{m'-1}{d-1}$.    \  La   primera   fracci\'on  \
-    $\frac{d^k-d}{d-1} = d^{k-1} + \cdots + 1$ \ siendo entera, $q$ no puede ser
-    entero con \ $m' < d$.  \  En otros t\'erminos, necesariamente $m' = d$, \ie
-    los  $d$  s\'imbolos  de  probabilidad  m\'as debiles  son  el  la  \'ultima
-    profundez y se puede elegir que compartent el mismo nudo padre.
+    \log_d(\alpha-\eta'+1)  \rceil$  profundez  en  el arbol  ra\'iz.   En  esta
+    profundez   (m\'axima   en   el    caso   optimista),   hay   \   $d^{\lceil
+      \log_d(\alpha-\eta'+1) \rceil} \ge \alpha-\eta'+1$ \ nudos. En la \'ultima
+    profundez  pueden  ser  todos  ocupados  si  y  solamente  si  \  $d^{\lceil
+      \log_d(\alpha-\eta'+1) \rceil}  = \alpha-\eta'+1$.  En  otras palabras, es
+    posible si  y solamente si  existe un entero  $k$ tal que  $\alpha-\eta'+1 =
+    d^k$, es decir, con \ $\alpha = d + \beta (d-1)$, \ que teniamos el entero \
+    $\beta = \frac{d^k-d}{d-1} +  \frac{\eta'-1}{d-1}$.  \ La primera fracci\'on
+    \ $\frac{d^k-d}{d-1}  = d^{k-1} +  \cdots + 1$  \ siendo entera,  $\beta$ no
+    puede ser entero  con \ $\eta' < d$.  \  En otros t\'erminos, necesariamente
+    $\eta' = d$, \ie los $d$  s\'imbolos de probabilidad m\'as debiles son el la
+    \'ultima profundez y se puede elegir que compartent el mismo nudo padre.
   %
   \item Sea \ $c^{\opt,(1)}$ \ el c\'odigo \'optimo correspondiente a \ $\X$ \ y
     \ $c^{(2)}$  \ el  c\'odigo ``padre'' sobre  \ $\X^{(2)}$  \ ($c^{\opt,(1)}$
     quitando la \'ultimo  letra c\'odigo de los s\'imbolos  juntados, \ie con la
     ra\'iz  com\'un de  estos).  De  la misma  manera, sea  \  $c^{\opt,(2)}$ un
     c\'odigo  \'optimo sobre  $\X^{(2)}$ \  y \  $c^{(1)}$ \  el que  se obtiene
-    deplegando  el super-s\'imbolo  \ $x^{(2)}_{n-d+1}$  \ en  $d$ hojas.   De \
-    $L^{\opt,(1)} = L\left( c^{(2)} \right) + p_{n-d+1} + \cdots + p_n$ \ (pasar
-    de $\X^{(2)}$ a $\X$ se a\~nade  solo una letra palabra a los s\'imbolos del
-    super-s\'imbolo) \ y \ $L\left( c^{(1)} \right) = L^{\opt,(2)} + p_{n-d+1} +
-    \cdots +  p_n$ \ se obiene  \ $\Big( L^{\opt,(1)} -  L\left( c^{(1)} \right)
-    \Big) +  \Big( L^{\opt,(2)} - L\left( c^{(2)}  \right) \Big) \: =  \: 0$.  \
-    Cada t\'ermino  entre parentesis siendo positivo,  valen necesariamente cero
-    (la  suma de  t\'erminos positivos  vale cero  si y  solamente si  todos son
-    nulos).  En  conclusi\'on, \ $c^{(2)}$ \  padre de \  $c^{\opt,(1)}$ \ queda
-    \'optimo,  \   $c^{(2)}  \equiv  c^{\opt,(2)}$   \  (y  \   $c^{(1)}  \equiv
-    c^{\opt,(1)}$).
+    deplegando el super-s\'imbolo \ $x^{(2)}_{\alpha-d+1}$ \ en $d$ hojas.  De \
+    $L^{\opt,(1)}  =  L\left(  c^{(2)}  \right)  +  p_{\alpha-d+1}  +  \cdots  +
+    p_\alpha$ \ (pasar de $\X^{(2)}$ a  $\X$ se a\~nade solo una letra palabra a
+    los  s\'imbolos  del super-s\'imbolo)  \  y  \  $L\left( c^{(1)}  \right)  =
+    L^{\opt,(2)}  + p_{\alpha-d+1} +  \cdots +  p_\alpha$ \  se obiene  \ $\Big(
+    L^{\opt,(1)} - L\left( c^{(1)} \right)  \Big) + \Big( L^{\opt,(2)} - L\left(
+      c^{(2)}  \right) \Big)  \: =  \: 0$.   \ Cada  t\'ermino  entre parentesis
+    siendo positivo, valen necesariamente  cero (la suma de t\'erminos positivos
+    vale cero si y solamente si  todos son nulos).  En conclusi\'on, \ $c^{(2)}$
+    \  padre   de  \  $c^{\opt,(1)}$   \  queda  \'optimo,  \   $c^{(2)}  \equiv
+    c^{\opt,(2)}$ \ (y \ $c^{(1)} \equiv c^{\opt,(1)}$).
   %
-  \item Notando que \ $|\X^{(2)}| = n-(q-1) (d-1)$, \ el razonamiento se propaga
-    por  inducci\'on, pasando  de  \  $c^{\opt,(k)}$ \  a  \ $c^{\opt,(k+1)}$  \
-    juntando  los $d$  super-s\'imbolos de  probabilidades m\'as  debiles, hasta
-    tener un  super-s\'imbolo tendiendo  todos los s\'imbolos,  $\left| \X^{(K)}
-    \right| = 1$, ra\'iz del arbol.
+  \item Notando que \ $|\X^{(2)}| = \alpha - (\beta-1) (d-1)$, \ el razonamiento
+    se   propaga  por   inducci\'on,  pasando   de  \   $c^{\opt,(k)}$  \   a  \
+    $c^{\opt,(k+1)}$ \ juntando los $d$ super-s\'imbolos de probabilidades m\'as
+    debiles,  hasta tener  un  super-s\'imbolo tendiendo  todos los  s\'imbolos,
+    $\left| \X^{(K)} \right| = 1$, ra\'iz del arbol.
 \end{itemize}
 \end{proof}
 %
@@ -1087,28 +1144,31 @@ De esta  prueba, se puede ver que
 \begin{itemize}
 \item  Cada  profundez siendo  llena,  los largos  obtenidos  van  a saturar  la
   desigualdad de Kraft-McMillan.
-\item Si \  $\frac{n - d}{d-1}$ \ no  es entero, en lugar de  completar $\X$ con
-  s\'imbolos fictivos se puede empezar el algoritmo de Huffman juntando los \ $n
-  - d  - \left\lfloor \frac{n  - d}{d-1} \right\rfloor  (d-1) + 1$  \ s\'imbolos
-  fuentes de probabilidades  m\'as debiles en un super-s\'imbolo,  y luego hacer
-  el bucle  descrito (juntando  por super-s\'imbolos de  $d$ s\'imbolos  en cada
-  bucle); en este caso, no se satura m\'as la desigualdad de Kraft-McMillan.
+%
+\item Si \ $\frac{\alpha  - d}{d-1}$ \ no es entero, en  lugar de completar $\X$
+  con s\'imbolos fictivos se puede  empezar el algoritmo de Huffman juntando los
+  \ $\alpha - d - \left\lfloor \frac{\alpha - d}{d-1} \right\rfloor (d-1) + 1$ \
+  s\'imbolos fuentes  de probabilidades m\'as  debiles en un  super-s\'imbolo, y
+  luego hacer el bucle descrito (juntando por super-s\'imbolos de $d$ s\'imbolos
+  en  cada  bucle);  en  este  caso,  no  se  satura  m\'as  la  desigualdad  de
+  Kraft-McMillan\modif{,  pero no es  contradictorio con  el punto  anterior que
+    contaba los largos de estados fictivos(que no codificamos en realidad).}
 %
 \item Obviamente, en el caso binario $d = 2$, no es necesario completar $\X$ por
-  estados  fuentes, o  empezar  con menos  de  $d$ s\'imbolos  juntados ($n$  es
-  necesariamente de la forma $n = d + q (d-1) = 2 + q$).
+  estados fuentes, o  empezar con menos de $d$  s\'imbolos juntados ($\alpha$ es
+  necesariamente de la forma $\alpha = d + \beta (d-1) = 2 + \beta$).
 %
 \item  El algoritmo  no  permite conocer  los  largos de  manera anal\'itica  en
   funci\'on  de $p_i$,  y  tampoco el  largo  promedio.  Se  los pueden  deducir
-  solamente implementando el algoritmo (una  vez que es construido). Era el caso
-  tambi\'en con el enfoque de Fano.
+  solamente  implementando el  algoritmo (una  vez que  es  construido \modif{el
+    c\'odigo}). Era el caso tambi\'en con el enfoque de Fano.
 \end{itemize}
 
 Volviendo al c\'odigo  ingenuo, ser\'ia \'optimo (y equivalente a  los de Fano y
 de Shannon) para una distribuci\'on uniforme. En este contexto, la entrop\'ia es
-$H_d(X)  = \log_d |X|$,  precisamente la  incerteza del  enfoque de  Hartley que
-corresponde a  los n\'umeros de dits necesarios  para codificar (ingenuosamente)
-la fuente.
+$H_d(X) = \log_d |\modif{\X}|$, precisamente la incerteza del enfoque de Hartley
+que   corresponde  a   los   n\'umeros  de   dits   necesarios  para   codificar
+(ingenuosamente) la fuente.
 
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_SZ/FanoHuffman} \end{center}
@@ -1124,7 +1184,7 @@ la fuente.
   c^\fa(x_2) = 01, \: c^\fa(x_3) = 10, \: c^\fa(x_4) = 110, \: c^\fa(x_5) = 111$
   \ de  largo promedio \ $L\left(  c^\fa \right) =  2.25$.  \ \ (b):  Enfoque de
   Huffman, saliendo de las hojas.   En cada nudo, se menciona el correspondiente
-  (i) conjunto de s\'imbolos, (ii) $\zeta_i$ de esta profundez/posici\'on, (iii)
+  (i) conjunto de s\'imbolos, (ii) $\cod_i$ de esta profundez/posici\'on, (iii)
   la probabilidad  asociada al  conjunto.  Se  pasa de una  profundez a  la otra
   juntando  los conjuntos  menos  probables en  sobre-conjuntos.   En negro  son
   indicados los s\'imbolos simples: van a tener el c\'odigo agregando los de los
@@ -1174,17 +1234,18 @@ elegir un $n$ muy grande.
 
 \
 
-Para codificar una  fuente, que se haga el c\'odigo \'optimo  o de Shannon, hace
-falta usar la distribuci\'on de  probabilidad de la fuente $X$. Pr\'acticamente,
-es usual que no  se la tiene. Frecuentemente, es estimada a  partir de datos, o,
-dicho  de  otra manera,  se  c\'odifica  con una  distribuci\'on  que  no es  la
-distribuci\'on verdadera de  la fuenta. Una pregunta que surge  es de conocer lo
-que se pierde usando una  distribuci\'on no adaptada (o ``falsa''). La respuesta
-general no es obvia, pero tratando del c/'odigo de Shannon se puede contestar:
+Para codificar una fuente, que se haga el c\'odigo \'optimo\modif{de Fano,} o de
+Shannon,  hace  falta  usar  la  distribuci\'on de  probabilidad  de  la  fuente
+$X$. Pr\'acticamente, es usual que no se la tiene. Frecuentemente, es estimada a
+partir de datos,  o, dicho de otra manera, se  c\'odifica con una distribuci\'on
+que no es la distribuci\'on verdadera de la fuenta. Una pregunta que surge es de
+conocer lo que se pierde usando una distribuci\'on no adaptada (o ``falsa''). La
+respuesta general  no es obvia, pero  tratando del c\'odigo de  Shannon se puede
+contestar:
 
 \begin{teorema}[C\'odigo falso de Shannon]
   Sea $c^\sh(p)$  el c\'odigo de Shannon sobre  el alfabeto c\'odigo \  $\C = \{
-  \zeta_1 ,  \ldots , \zeta_d \}$ asociado  a la distribuci\'on $p$.   Sea $X$ \
+  \cod_1 ,  \ldots , \cod_d \}$ asociado  a la distribuci\'on $p$.   Sea $X$ \
   fuente sobre  \ $\X$, de distribuci\'on \  $p_X$ \ y \  $q$ una distribuci\'on
   cualquiera  (ej.  estimada  de  $p_X$ presupuesta\ldots).   Entonces el  largo
   promedio \ $L_{c^\sh(q)}$ \ del c\'odigo \ $c^\sh(q)$ \ aplicado a la fuente \
@@ -1193,14 +1254,14 @@ general no es obvia, pero tratando del c/'odigo de Shannon se puede contestar:
   \[
   H_d(p_X) +  D_{\mathrm{kl},d}\left( \left.  p_X \right\| q  \right) \:  \le \:
   L_{c^\sh(q)} \: < \: H_d(p_X)  + D_{\mathrm{kl},d}\left( \left. p_X \right\| q
-  \right) + 1
+  \right) + 1.
   \]
 \end{teorema}
 %
 \begin{proof}
   Por definici\'on,
   \[
-  L_{c^\sh}(q) = \sum_{x \in X} p_X(x) \, \Big\lceil\! -\log_d q(x) \Big\rceil
+  L_{c^\sh}(q) = \sum_{x \in X} p_X(x) \, \Big\lceil\! -\log_d q(x) \Big\rceil.
   \]
   %
   La desigualdad viene de  \ $a \le \lceil a \rceil < a +  1$ \ y escribiendo $-

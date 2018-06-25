@@ -49,16 +49,16 @@ encontr\'o  un  echo en  varios  campos:  en  inferencia bayesiana  para  elegir
 distribuciones   del   a  priori~\footnote{A   partir   de  una   distribuci\'on
   parametrizada por  un par\'ametro $\theta$.   El enfoque bayesiano  consiste a
   modelizar $\theta$  aleatorio, digamos $\Theta$, tal que  la distribuci\'on de
-  observaciones se  escribe entonces $p_{X|\Theta}$.  Inferir  $\theta$ a partir
-  de  observaciones $x$  consiste a  determinar la  distribuci\'on dicha  {\it a
-    posteriori} $p_{\Theta|X}$.   Por eso,  hace falta darse  una distribuci\'on
-  dicha {\it a priori} $p_\Theta$.  Si se conocen momentos por una raz\'on o una
-  otra,  se  puede elegir  esta  distribuci\'on  como  la ``menos  informativa''
-  posible, \ie de  entrop\'ia m\'axima dados los momentos.\label{Foot:SZ:Prior}}
-conociendo  unos momentos  de la  ley~\cite{Rob07, Jay68,  Jay82,  Csi91}, hacer
-estimaci\'on  espectral o  de procesos  estocasticos autoregresivos~\cite{Bur67,
-  Bur75,  Jay82} o~\cite[cap.~12]{CovTho06},  entre  otros~\cite[\& ref.]{Arn01,
-  Kap89, KapKes92}.
+  observaciones se escribe  entonces $p_{X|\Theta=\theta}(x)$.  Inferir $\theta$
+  a partir  de observaciones $x$  consiste a determinar la  distribuci\'on dicha
+  {\it a  posteriori} $p_{\Theta|X=x}(\theta)$.  Por  eso, hace falta  darse una
+  distribuci\'on  dicha  {\it  a  priori}  $p_\Theta(\theta)$.   Si  se  conocen
+  momentos por una raz\'on o una  otra, se puede elegir esta distribuci\'on como
+  la  ``menos  informativa''  posible,  \ie  de entrop\'ia  m\'axima  dados  los
+  momentos.\label{Foot:SZ:Prior}}    conociendo     unos    momentos    de    la
+ley~\cite{Rob07,  Jay68,  Jay82,  Csi91},  hacer  estimaci\'on  espectral  o  de
+procesos     estocasticos      autoregresivos~\cite{Bur67,     Bur75,     Jay82}
+o~\cite[cap.~12]{CovTho06}, entre otros~\cite[\& ref.]{Arn01, Kap89, KapKes92}.
 
 Sea \ $X$ \ variable aleatoria viviendo sobre (de distribuci\'on de probabilidad
 de soporte) \ $X(\Omega) = \X \subseteq \Rset^d$  \ con \ $K \ge 0$ \ momentos \
@@ -535,8 +535,9 @@ $J_\theta(X)$, \ a pesar de que no sea  funci\'on de \ $X$ \ pero de la densidad
 de  probabilidad.  Se  la  notar\'a  tambi\'en \  $J_\theta(p_X)$  \ seg\'un  la
 escritura la m\'as conveniente.
 
-\modif{En el caso continuo,  $\mu : \mu_L$, }Tomando el gradiente en  \ $x$ \ en
-lugar de \ $\theta$ \ da la matriz de informaci\'on de Fisher no param\'etrica,
+\modif{En  el caso  continuo, $\mu  =  \mu_L$, con  una densidad  diferenciable,
+  t}omando el  gradiente en \  $x$ \ en  lugar de \ $\theta$  \ da la  matriz de
+informaci\'on de Fisher no param\'etrica,
 %
 \begin{definicion}[Matriz informaci\'on de Fisher no param\'etrica]
   Sea \ $X$ \ una  variable aleatoria continua \modif{admitiendo una densidad de
@@ -1085,11 +1086,11 @@ identidad entre \ $I(X;Y)$ \ y \ $\E(X|Y)$:
   \nabla_S \, I(X;Y) = \Sigma_\Gauss^{-1} S \, \E(X|Y).
   \]
   %
-  Si \ $S = S(\mathfrak{s})$ \ depende de un par\'ametro escalar $\mathfrak{s}$,
+  Si \ $S = S(\snr)$ \ depende de un par\'ametro escalar $\snr$,
   %
   \[
-  \frac{\partial}{\partial \mathfrak{s}} I(X;Y) = \Tr\left( \Sigma_\Gauss^{-1} \, S \,
-    \E(X|Y) \, \frac{\partial S^t}{\partial \mathfrak{s}} \right).
+  \frac{\partial}{\partial \snr} I(X;Y) = \Tr\left( \Sigma_\Gauss^{-1} \, S \,
+    \E(X|Y) \, \frac{\partial S^t}{\partial \snr} \right).
   \]
 \end{teorema}
 %
@@ -1178,13 +1179,13 @@ identidad entre \ $I(X;Y)$ \ y \ $\E(X|Y)$:
   cap\'itulo~\ref{cap:MP:TeoriaProbabilidades},
   subsecci\'on~\ref{Ssec:MP:Momentos}, pagina~\pageref{Ssec:MP:Momentos}).
 
-  La  segunda identidad  viene de  \ $\frac{\partial  \cdot}{\partial  \mathfrak{s}} =
-  \Tr\left(  \nabla_S \,  \frac{\partial S^t}{\partial  \mathfrak{s}} \right)$  \ (ver
+  La  segunda identidad  viene de  \ $\frac{\partial  \cdot}{\partial  \snr} =
+  \Tr\left(  \nabla_S \,  \frac{\partial S^t}{\partial  \snr} \right)$  \ (ver
   prueba de la identidad de de Bruijn).
 \end{proof}
 %
 \noindent  La  primera versi\'on  de  esta  identidad se  recupera  con  \ $S  =
-\sqrt{s}$, \ $\Sigma_\Gauss =  I$ \ y \ $X$ \ de  covarianza la identidad; $s$ \
+\sqrt{\snr}$, \ $\Sigma_\Gauss =  I$ \ y \ $X$ \ de  covarianza la identidad; $s$ \
 es conocido como relaci\'on se\~nale/ruido en este caso.
 
 Existen versiones a\'un m\'as completas  (con gradientes con respeto a la matriz

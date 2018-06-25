@@ -175,8 +175,8 @@ funci\'on real:
   %
   Fijense de que el limite puede ser infinita.\newline Sea ahora $g: (\Omega,\A)
   \mapsto (\Rset,\B(\Rset))$  medible cualquiera.  Se  verifica sencillamente de
-  que  tambi\'en   $|g|$  es   medible  y,  por   definici\'on,  $g$   es  dicha
-  $\mu$-integrable si la integral de $|g|$ es finita,
+  que tambi\'en  $|g|$ \modif{(valor absoluto)} es medible  y, por definici\'on,
+  $g$ es dicha $\mu$-integrable si la integral de $|g|$ es finita,
   %
   \[
   g   \:  \mbox{es}   \:  \mu\mbox{-integrable}   \quad   \Leftrightarrow  \quad
@@ -198,8 +198,8 @@ funci\'on real:
 \SZ{Poner eso en un apendice?}
 
 A continuaci\'on, damos unos teoremas que ser\'an muy \'util m\'as adelante, sin
-detallar las  pruebas. Por eso,  se puede referirse  a~\cite{AthLah06, Bog07:v1,
-  Coh13}.
+detallar las  pruebas. Por eso,  se puede referirse  a~\cite{LieLos01, AthLah06,
+  Bog07:v1, Coh13}.
 %
 \begin{teorema}[Teorema de convergencia monotona]
   Sea  \ $\{  f_n \}_{n  \in  \Nset}$ \  una sucesi\'on  creciente de  funciones
@@ -473,11 +473,16 @@ necesita  explicitamente  tener  en  cuenta esta  sutileza.
   %
 \end{definicion}
 %
-\modif{Ac\'a, notamos dos hechos interesantes
+\modif{Ac\'a, notamos dos hechos interesantes:
 %
 \begin{itemize}
+%
+\item $\mu_L$ es $\sigma$-finita. Viene de $\Rset^d = \cup_{i=1}^d \cup_{j_i \in
+    \Zset}   \optimes_{i=1}^d   (   j_i   \,   ;   \,   j_i+1]$   \   conjuntament   a
+  $\mu_L(\optimes_{i=1}^d ( j_i \, ; \, j_i+1]) = 1 < +\infty$.
+%
 \item $\forall \:  A \in \A, \quad  \mu_L(A) = |A|$ \ donde  $|\cdot|$ denota el
-  volumen de unconjunto (puede ser infinito).
+  volumen de un conjunto (puede ser infinito).
 %
 \item Para una funci\'on \ $g$ \ suficientemente ``suave'', la integraci\'on con
   respeto a la medida de  Lebesgue coincide naturalmente con la integraci\'on de
@@ -510,25 +515,39 @@ medida  de  Lebesgue. \modif{De  la  misma  manera,  hablando de  densidad,  sin
   \end{array}\right..
   \]
   %
-  Dado un conjunto \ $\X \{  x_i \}_i$ \ discreto (finito o infinito numerable),
+  Dado un conjunto \ $\X = \{  x_i \}_i$ \ discreto (finito o infinito numerable),
   llamaremos {\it medida discreta} la medida definida por
   %
   \[
   \mu_\X = \sum_i \delta_{x_i}
   \]
   %
-  (en general, son definidas como combinaci\'on lineales positivas, este siendo un caso particular).
+  (en general, son definidas  como combinaci\'on lineales positivas, este siendo
+  un caso particular).
 \end{definicion}
 %
-Fijense de que, para $f$ medible, tenemos
+Fijense de que,
+% para $f$ medible, tenemos
 %
-\[
-\int_{\Rset^d} f(x) \, d\delta_{x_k}(x) = f(x_k).
-\]
+\begin{itemize}
 %
-Se  proba  saliendo  de   \  $f$  \  de  la  forma  \  $f   =  \un_C$  \  y  del
-teorema~\ref{Th:MP:MedibleLimite}     conjuntamente     a    la     definici\'on
-Def.~\ref{Def:MP:IntegracionReal}.  }
+\item $\mu_\X$ es  $\sigma$-finita (se muestra con el mismo  enfoque que para la
+  medida de Lebesgue).
+%
+\item $\forall  \: A \in \A,  \quad \mu_\X(A) =  |\X \cap A|$ \  donde $|\cdot|$
+  denota el cardenal de un conjunto, equivalente discreto del volumen (puede ser
+  infinito tambi\'en).
+%
+\item Para una funci\'on \ $g$ \ medible,
+  \[
+  \int_{\Rset^d} g(x) \, d\delta_{x_k}(x) = g(x_k) \qquad \mbox{y} \qquad
+  \int_{\Rset^d} g(x) \, d\mu_\X(x) = \sum_{x \in \X} g(x)
+  \]
+  %
+  la integraci\'on se vuelve  ser una suma.  Se proba saliendo de  \ $g$ \ de la
+  forma \ $g = \un_C$  \ y del teorema~\ref{Th:MP:MedibleLimite} conjuntamente a
+  la definici\'on Def.~\ref{Def:MP:IntegracionReal}.
+\end{itemize}  }
 
 \
 
@@ -662,8 +681,8 @@ elementos de  la forma $\displaystyle  \optimes_{i=1}^d (-\infty \, ;  \, b_i]$,
   F_x(x) = P(X \le x),
   \]
   %
-  subentiendo de que $X \le  x$ es el evento $\displaystyle \bigcap_{i=1}^d (X_i
-  \le x_i)$.}
+  subentiendo  de  que   \  $(X  \le  x)$  \  es   el  evento  \  $\displaystyle
+  \bigcap_{i=1}^d (X_i \le x_i)$.}
 \end{definicion}
 %
 De nuevo, de las propiedades de una medida de probabilidad,
@@ -1118,7 +1137,38 @@ x_j)$ \  respectivamente, entonces formalmente  se puede describir  mediante una
 variable aleatoria continua \ $X$ \ con ``funci\'on densidad de probabilidad'' \
 $p_X(x) =  \sum_j p_j  \, \delta(x-x_j)$. \modif{Insistamos  en el hecho  de que
   rigurosamente  debemos trabajar  con  medidas, como  lo  hemos formalizado  al
-  principio de este cap\'itulo.}
+  principio de este cap\'itulo.
+
+  Terminamos      mencionando      el      resultado     siguiente,      probado
+  en~\cite[Ec.~(2.5)~p.~47 \& teorema~4.1.1]{AthLah} por ejemplo:
+%
+\begin{teorema}[Descomposition de una medida de probabilidad]\label{Th:MP:DescompositionMixta}
+  Cualquier  funci\'on  de  repartici\'on   \  $F_X(x)$  \  se  descompone  como
+  combinaci\'on convexa de  una funci\'on de repartici\'on \  $F_d$ \ discreta y
+  de una funci\'on de repartici\'on \ $F_c$ \ continua:
+  %
+  \[
+  \exists \: a  \in [0 \, ; \, 1]  \quad \mbox{tal que} \quad F(x)  = a F_d(x) +
+  (1-a) F_c(x)
+  \]
+  %
+  En  termino  de  medida,  o como  corrolario  de~\cite[teorema~4.1.1]{AthLah},
+  cualquier  medida de probabilidad  $P_X$ se  descompone como  la combinaci\'on
+  convexa de una medida discreta $P_d$ y de una continua $P_c$,
+  %
+  \[
+  \exists \:  a \in [0  \, ; \,  1], \: \widetilde{\X} \:  \mbox{discreto} \quad
+  \mbox{tal que} \quad  P = a P_d  + (1-a) P_c \qquad \mbox{con}  \qquad P_d \ll
+  \mu_{\widetilde{\X}} \quad \mbox{y} \quad P_c \ll \mu_L
+  \]
+  %
+  Entonces, \ $P_X \ll \mu_{\widetilde{\X}}  + \mu_L$, \ \ie admite una densidad
+  con respeto a la medida $\sigma$-finita $\mu_{\widetilde{\X}} + \mu_L$.
+\end{teorema}
+%
+Dicho  de  otra manera,  cualquier  variable aleatoria  es  mixta,  como en  el
+ejemplo~\ref{Ej:MP:Mixta} pagina~\pageref{Ej:MP:Mixta}. Es  discreta cuando $a =
+1$, y continua cuando $a = 0$.  }
 
 
 % ================================= Vector discreto
@@ -1264,6 +1314,14 @@ la condici\'on de normalizaci\'on
 \[
 \int_\X p_X(x) \, dx = \int_{\Rset^d} p_X(x) \ dx  = 1.
 \]
+
+\modif{El                                teorema~\ref{Th:MP:DescompositionMixta},
+  pagina~\pageref{Th:MP:DescompositionMixta}    se   conserva    en    el   caso
+  $d$-dimensional: cualquier medida de  probabilidad \ $P_X$ (resp. funci\'on de
+  rpartici\'on \ $F_X$) \ se descompone como combinaci\'on convexa de una medida
+  de probabilidad (resp. funci\'on de repartici\'on) discreta y una continua. En
+  otro  termino, existe  un \  $\widetilde{X}$  \ discreto  tal que  \ $P_X  \ll
+  \mu_{\widetilde{\X}} + \mu_L \: (\sigma$-finita).}
 
 Mencionamos de que las $d$  variables aleatorias $X_1, \ldots, X_d$, componentes
 de un vector aleatorio $X$ son  independientes si y solamente si se factoriza la

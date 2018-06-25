@@ -518,49 +518,49 @@ probabilidad, sino que  de los estados tambi\'en.  M\'as all\'a,  no se la puede
 ver como l\'imite  continua de un caso discreto: a trav\'es  de tal l\'imite, se
 va  a ver  que se  llama diferencial,  a causa  del efecto  de  la ``diferencial
 $dx$''.  Para ilustrar este hecho, consideramos una variable aleatoria escalar \
-$X$ \ y \ $p_X$ \ su densidad de probabilidad de soporte $\Rset$.  Sea \ $\delta
-> 0$  \ y sea el alfabeto  $\X^\delta = \{ x_k  \}_{k \in \Zset}$ \  donde los \
-$x_k$ se definen tal que $\displaystyle p_X(x_k) \delta = \int_{k \delta}^{(k+1)
-  \delta}     p_X(x)    \,     dx$,    como     ilustrado    en     la    figura
+$X$ \ y \ $p_X$ \ su densidad de probabilidad de soporte $\Rset$.  Sea \ $\Delta
+> 0$  \ y sea el alfabeto  $\X^\Delta = \{ x_k  \}_{k \in \Zset}$ \  donde los \
+$x_k$ se definen tal que $\displaystyle p_X(x_k) \Delta = \int_{k \Delta}^{(k+1)
+  \Delta}     p_X(x)    \,     dx$,    como     ilustrado    en     la    figura
 Fig.~\ref{Fig:SZ:CuantificacionX}.  Se  define la variable  aleatoria discreta \
-$X^\delta =  \sum_k x_k  \un_{(X \in  [k \delta ,  (k+1) \delta  ))}$ \  sobre \
-$\X^\delta$  \ tal  que  \ $P(X^\delta  =  x_k) =  p_{X^\delta}(x_k) =  p_X(x_k)
-\delta$.  \ Se puede ver \ $X^\delta$ \ como la versi\'on cuantificada de \ $X$,
-\ con \  $X^\delta = x_k$ \ cuando \  $X \in [k \delta , (k+1)  \delta )$.  \ Al
+$X^\Delta =  \sum_k x_k  \un_{(X \in  [k \Delta ,  (k+1) \Delta  ))}$ \  sobre \
+$\X^\Delta$  \ tal  que  \ $P(X^\Delta  =  x_k) =  p_{X^\Delta}(x_k) =  p_X(x_k)
+\Delta$.  \ Se puede ver \ $X^\Delta$ \ como la versi\'on cuantificada de \ $X$,
+\ con \  $X^\Delta = x_k$ \ cuando \  $X \in [k \Delta , (k+1)  \Delta )$.  \ Al
 rev\'es,  a\'un  que  sea  delicado,  se  puede interpretar  \  $X$  \  como  el
-``l\'imite'' de \ $X^\delta$  \ cuando \ $\delta$ \ tiende a  0. Ahora, es claro
+``l\'imite'' de \ $X^\Delta$  \ cuando \ $\Delta$ \ tiende a  0. Ahora, es claro
 de que
 %
 \begin{eqnarray*}
-H(X^\delta) & = & - \sum_k p_{X^\delta}(x_k) \log p_{X^\delta}(x_k)\\[2.5mm]
+H(X^\Delta) & = & - \sum_k p_{X^\Delta}(x_k) \log p_{X^\Delta}(x_k)\\[2.5mm]
 %
-& = & - \log \delta - \sum_k \Big( p_X(x_k) \log p_X(x_k) \Big) \, \delta
+& = & - \log \Delta - \sum_k \Big( p_X(x_k) \log p_X(x_k) \Big) \, \Delta
 \end{eqnarray*}
 %
 lo que se escribe tambi\'en
 %
 \[
-H(X^\delta)  + \log  \delta =  - \sum_k  \Big( p_X(x_k)  \log p_X(x_k)  \Big) \,
-\delta.
+H(X^\Delta)  + \log  \Delta =  - \sum_k  \Big( p_X(x_k)  \log p_X(x_k)  \Big) \,
+\Delta.
 \]
 %
 Entonces, de la integraci\'on de Riemann sale que
 %
 \[
-\lim_{\delta \to 0} \left( H(X^\delta) + \log \delta \right) = H(X).
+\lim_{\Delta \to 0} \left( H(X^\Delta) + \log \Delta \right) = H(X).
 \]
 %
 Dicho de otra manera,  la entrop\'ia diferencial de $X$ no es  el l\'imite de la
 entrop\'ia de su versi\'on cuantificada:  aparece con la entrop\'ia el t\'ermino
-``diferencial'' $\log \delta$.
+``diferencial'' $\log \Delta$.
 %
 \begin{figure}[h!]
 %
 \begin{center} \input{TIKZ_SZ/CuantificacionX} \end{center}
 %
 \leyenda{Densidad  de probabilidad  $p_X$  de $X$,  construcci\'on del  alfabeto
-  $\X^\delta$ donde se define la versi\'on cuantificada $X^\delta$ de $X$ con su
-  distribuci\'on discreta de probabilidad  $p_{X^\delta}$. La superficie en gris
+  $\X^\Delta$ donde se define la versi\'on cuantificada $X^\Delta$ de $X$ con su
+  distribuci\'on discreta de probabilidad  $p_{X^\Delta}$. La superficie en gris
   oscuro es igual a la superficie definida por el rect\'angulo en gris claro.}
 %
 \label{Fig:SZ:CuantificacionX}
@@ -813,16 +813,18 @@ covarianza $R$ y tomando una exponencial de la desigualdad).
   discreta.  De estas  observacione,  se puede  escribir  de la  misma forma  la
   entrop\'ia discreta y diferencial:
 %
-\begin{definicion}[Escritura \'unica de la entrop\'ia discreta como diferencial]\label{Def:SZ:ShanonMu}
-  Sea \  $X$ \ variable  aleatoria definida sobre  $\X$ discreto o  continuo. La
-  entrop\'ia (diferencial) de \ $X$ \  de densidad de probabilidad \ $p_X$ \ con
-  respeto a $\mu  = \mu_\X$ \ o \  $\mu = \mu_L$ seg\'un el caso,  se escribe de
-  manera \'unica como
+\begin{definicion}[Escritura \'unica de la entrop\'ia]\label{Def:SZ:ShanonMu}
+  Sea  \  $X$  \  variable  aleatoria definida  sobre  $\X  \subseteq  \Rset^d$,
+  admitiendo una densidad  de probabilidad \ $p_X$ \ con respeto  a una medida \
+  $\mu$ \  (ej. $\mu_\X$  \ en el  caso discreto \  $\mu =  \mu_L$ \ en  el caso
+  diferencial). La entrop\'ia de $X$  \underline{con respeto a $\mu$} se escribe
+  como
   %
   \[
-  H(X) \equiv H(p_X) = - \int_{\Rset^d} p_X(x) \, \log(p_X) \, d\mu(x)
+  H(X) \equiv H(p_X) = - \int_\X p_X(x) \, \log(p_X) \, d\mu(x)
   \]
   %
-  Se  puede entender  esta  definici\'on  para cualquier  $\mu$  y densidad  con
-  respeto a $\mu$, que sea discreta, de Lebesgue, o cualquiera.
+  Insistamos  en  el hecho  de  que se  puede  entender  esta definici\'on  para
+  cualquier $\mu$ y densidad con respeto a $\mu$, que sea discreta, de Lebesgue,
+  o cualquiera.
 \end{definicion}}

@@ -27,12 +27,12 @@
 \fill[domain=\xk-\dx/2:\xk+\dx/2,samples=20,opacity=.3]
 ({\xk-\dx/2},0)-- plot (\x,{bimod(\x)})--({\xk+\dx/2},0);
 %
-% xk y delta
+% xk y Delta
 \draw (\xk,0)--(\xk,-.05) node[below]{\small $x_k$};
 \draw[>=stealth,<->] ({\xk-\dx/2},.15)--({\xk+\dx/2},.15);
-\draw (\xk,.15) node[above]{\small $\delta$};
+\draw (\xk,.15) node[above]{\small $\Delta$};
 %
-% recta sobre delta a altura de p(xk)
+% recta sobre Delta a altura de p(xk)
 \draw ({\xk+\dx/2},{bimod(\xk)})-- ({\xk-\dx/2},{bimod(\xk)});
 \draw[dotted] ({\xk-\dx/2},{bimod(\xk)})--(0,{bimod(\xk)})
  node[left]{\small $p_X(x_k)$};
