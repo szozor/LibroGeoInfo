@@ -13,6 +13,12 @@ Ali, S.~M. \& Silvey, S.~D. (1966).
 \newblock {\em Journal of the Royal Statistical Society B}, {\em 28\/}(1),
   131--142.
 
+\bibitem[\protect\citeauthoryear{Amari \& Nagaoka}{Amari \&
+  Nagaoka}{2000}]{AmaNag00}
+Amari, S.-I. \& Nagaoka, H. (2000).
+\newblock {\em Methods of Information Geometry}.
+\newblock Providence, Rhode Island, USA: Oxford University Press.
+
 \bibitem[\protect\citeauthoryear{Andersen}{Andersen}{1970}]{And70}
 Andersen, E.~B. (1970).
 \newblock Sufficiency and exponential families for discrete sample spaces.
@@ -87,6 +93,11 @@ Bayes, T. (1763).
 Beck, C. (2009).
 \newblock Generalised information and entropy measures in physics.
 \newblock {\em Contemporary Physics}, {\em 50\/}(4), 495--510.
+
+\bibitem[\protect\citeauthoryear{Bellhouse}{Bellhouse}{2005}]{Bel05}
+Bellhouse, D. (2005).
+\newblock Decoding cardano's liber de ludo aleae.
+\newblock {\em Historia Mathematica}, {\em 32\/}(2), 180--202.
 
 \bibitem[\protect\citeauthoryear{{Ben-Tal}, Bornwein \& Teboulle}{{Ben-Tal}
   et~al.}{1992}]{BenBor92}
@@ -226,6 +237,12 @@ Br{\'e}maud, P. (1988).
 \newblock {\em An Introduction to Probabilitic Modeling}.
 \newblock New-York: Springer.
 
+\bibitem[\protect\citeauthoryear{Bullet, Fearn \& Smith}{Bullet
+  et~al.}{2017}]{BulFea17}
+Bullet, S., Fearn, T., \& Smith, F. (2017).
+\newblock {\em Analysis and Mathematical Physics}.
+\newblock London: World Scientific.
+
 \bibitem[\protect\citeauthoryear{Burbea \& Rao}{Burbea \& Rao}{1982}]{BurRao82}
 Burbea, J. \& Rao, C.~R. (1982).
 \newblock On the convexity of some divergence measures based on entropy
@@ -269,6 +286,11 @@ Cauchy, A.-L. (1821).
 \newblock {\em Cours d'analyse de l'{\'e}cole royale polytechnique}, volume 1:
   analyse alg{\'e}brique.
 \newblock Paris: Imprimerie royale (digital version, Cambrige, 2009).
+
+\bibitem[\protect\citeauthoryear{Cencov}{Cencov}{1982}]{Cen82}
+Cencov, N.~N. (1982).
+\newblock {\em Statistical Decision Rules and Optimal Inference}.
+\newblock Providence, Rhode Island, USA: American Mathematical Society.
 
 \bibitem[\protect\citeauthoryear{Chenciner}{Chenciner}{2017}]{Che17}
 Chenciner, A. (2017).
@@ -399,11 +421,6 @@ Dar{\'o}czy, Z. \& J{\'a}rai, A. (1979).
   information theory.
 \newblock {\em Acta Mathematica Academiae Scientiarum Hungaricae}, {\em
   34\/}(1-2), 105--116.
-
-\bibitem[\protect\citeauthoryear{D.Bellhouse}{D.Bellhouse}{2005}]{Bel05}
-D.Bellhouse (2005).
-\newblock Decoding cardano's liber de ludo aleae.
-\newblock {\em Historia Mathematica}, {\em 32\/}(2), 180--202.
 
 \bibitem[\protect\citeauthoryear{{de Laplace}}{{de Laplace}}{1820}]{Lap20}
 {de Laplace}, P.~S. (1820).
@@ -1060,6 +1077,14 @@ Lutwak, E., Yang, D., \& Zhang, G. (2005).
   entropy and generalized {F}isher information.
 \newblock {\em IEEE Transactions on Information Theory}, {\em 51\/}(2),
   473--478.
+
+\bibitem[\protect\citeauthoryear{Madiman \& Barron}{Madiman \&
+  Barron}{2007}]{MadBar07}
+Madiman, M. \& Barron, A. (2007).
+\newblock Generalized entropy power inequalities and monotonicity properties of
+  information.
+\newblock {\em IEEE Transactions on Information Theory}, {\em 53\/}(7),
+  2317--2329.
 
 \bibitem[\protect\citeauthoryear{Magnus \& Neudecker}{Magnus \&
   Neudecker}{1999}]{MagNeu99}

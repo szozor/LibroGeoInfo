@@ -1140,26 +1140,35 @@ $p_X(x) =  \sum_j p_j  \, \delta(x-x_j)$. \modif{Insistamos  en el hecho  de que
   principio de este cap\'itulo.
 
   Terminamos      mencionando      el      resultado     siguiente,      probado
-  en~\cite[Ec.~(2.5)~p.~47 \& teorema~4.1.1]{AthLah} por ejemplo:
+  en~\cite[Ec.~(2.5)~p.~47         \&         teorema~4.1.1]{AthLah}         por
+  ejemplo~\footnote{\modif{Basicamente,  se  muestra  de  que  \  $\displaystyle
+      \widetilde{X} = \{ x \in \X, \quad  p(x) = F_X(x) - \liminf_{u \to x} F(u)
+      >  0  \}$ \  es  numerable.  A  continuaci\'on,  \  $\displaystyle F(x)  -
+      \sum_{\widetilde{x} \in  \widetilde{\X}} p(\widetilde{x}) \un_{(-\infty \,
+        ;   \,   \widetilde{x}]}(x)$  \   es   continua,   y   se  recupera   la
+      descomposici\'on   con   $\displaystyle   a  =   \sum_{\widetilde{x}   \in
+        \widetilde{\X}} p(\widetilde{x})$.}}:
 %
 \begin{teorema}[Descomposition de una medida de probabilidad]\label{Th:MP:DescompositionMixta}
   Cualquier  funci\'on  de  repartici\'on   \  $F_X(x)$  \  se  descompone  como
-  combinaci\'on convexa de  una funci\'on de repartici\'on \  $F_d$ \ discreta y
-  de una funci\'on de repartici\'on \ $F_c$ \ continua:
+  combinaci\'on convexa  de una funci\'on de repartici\'on  \ $F_{\mathrm{d}}$ \
+  discreta y de una funci\'on de repartici\'on \ $F_{\mathrm{c}}$ \ continua:
   %
   \[
-  \exists \: a  \in [0 \, ; \, 1]  \quad \mbox{tal que} \quad F(x)  = a F_d(x) +
-  (1-a) F_c(x)
+  \exists  \:  a \in  [0  \,  ;  \, 1]  \quad  \mbox{tal  que}  \quad F(x)  =  a
+  F_{\mathrm{d}}(x) + (1-a) F_{\mathrm{c}}(x)
   \]
   %
   En  termino  de  medida,  o como  corrolario  de~\cite[teorema~4.1.1]{AthLah},
   cualquier  medida de probabilidad  $P_X$ se  descompone como  la combinaci\'on
-  convexa de una medida discreta $P_d$ y de una continua $P_c$,
+  convexa   de  una  medida   discreta  $P_{\mathrm{d}}$   y  de   una  continua
+  $P_{\mathrm{c}}$,
   %
   \[
   \exists \:  a \in [0  \, ; \,  1], \: \widetilde{\X} \:  \mbox{discreto} \quad
-  \mbox{tal que} \quad  P = a P_d  + (1-a) P_c \qquad \mbox{con}  \qquad P_d \ll
-  \mu_{\widetilde{\X}} \quad \mbox{y} \quad P_c \ll \mu_L
+  \mbox{tal  que} \quad  P  =  a P_{\mathrm{d}}  +  (1-a) P_{\mathrm{c}}  \qquad
+  \mbox{con} \qquad P_{\mathrm{d}} \ll \mu_{\widetilde{\X}} \quad \mbox{y} \quad
+  P_{\mathrm{c}} \ll \mu_L
   \]
   %
   Entonces, \ $P_X \ll \mu_{\widetilde{\X}}  + \mu_L$, \ \ie admite una densidad
