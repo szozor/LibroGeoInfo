@@ -7,23 +7,23 @@ cuando se  observa la otra.   Dicho de otra  manera, si se  mide $Y =  y$, ?`que
 informaci\'on lleva sobre  $X$? La respuesta a esta  interogaci\'on se encuentra
 en la noci\'on de entrop\'ia condicional.  Si uno mide $Y = y$, la descripci\'on
 estad\'istica  de $X$  conociendo este  $Y =  y$ se  resuma a  la distribuci\'on
-condicional         de          probabilidad         \modif{$p_{X|Y=y}         =
-  \frac{p_{X,Y}(\cdot,y)}{p_Y(y)}$.}  Con  esta restricci\'on, se  puede evaluar
-una incerteza sobre $X$, sabiendo que $Y=y$,
+condicional de probabilidad  $p_{X|Y=y} = \frac{p_{X,Y}(\cdot,y)}{p_Y(y)}$.  Con
+esta  restricci\'on, se  puede evaluar  una  incerteza sobre  $X$, sabiendo  que
+$Y=y$,
 %
 \[
-H(X|Y=y) = H\left( \modif{p_{X|Y=y}} \right).
+H(X|Y=y) = H\left( p_{X|Y=y} \right).
 \]
 %
 Entonces, condicionalmente a la variable aleatoria $Y$, la incerteza va a ser el
-promedio    estad\'istico   sobre    todos    los   estados    $Y$   es    decir
-\modif{$\displaystyle H(X|Y) = \int_{\Rset^d} p_Y(y) H(X|Y=y) \, d\mu(y)$ \ (con
-  la medida $\mu$ adecuada).}
+promedio  estad\'istico sobre  todos  los estados  $Y$  es decir  $\displaystyle
+H(X|Y)  = \int_{\Rset^d}  p_Y(y) H(X|Y=y)  \, d\mu(y)$  \ (con  la  medida $\mu$
+adecuada).
 %
 \begin{definicion}[Entrop\'ia condicional]\label{Def:SZ:entropiacondicional}
   Sean \ $X$ \ e \ $Y$ \ dos variables aleatorias, respectivamente \ $d_X$ \ y \
-  $d_Y$-dimensionales. La entrop\'ia condicional de \ $X$, \modif{con respeto a}
-  \ $Y$, es definida por\modif{
+  $d_Y$-dimensionales. La entrop\'ia condicional de  \ $X$, con respeto a \ $Y$,
+  es definida por
   %
   \[
   H(X|Y)   =   -  \int_{\Rset^{d_X}   \times   \Rset^{d_Y}}  p_{X,Y}(x,y)   \log
@@ -31,7 +31,7 @@ promedio    estad\'istico   sobre    todos    los   estados    $Y$   es    decir
   \]
   %
   con \ $\mu$ \  medida adecuada (discreta en el caso discreto  o de Lebesgue en
-  el caso diferencial).}
+  el caso diferencial).
 \end{definicion}
 %
 %Esta definici\'on se transpone naturalmente a la entrop\'ia diferencial:
@@ -45,8 +45,8 @@ promedio    estad\'istico   sobre    todos    los   estados    $Y$   es    decir
 %  \]
 %\end{definicion}
 
-Si $X$ e $Y$ son indepedientes, $p_{X|Y=y}$ se reduce a $p_X$, as\'i que vale cero
-la entrop\'ia condicional: \modif{obviamente,}
+Si $X$  e $Y$ son indepedientes, $p_{X|Y=y}$  se reduce a $p_X$,  as\'i que vale
+cero la entrop\'ia condicional: obviamente,
 %
 \begin{propiedades}
 \item\label{Prop:SZ:independenciacondicional}
@@ -106,15 +106,15 @@ entre \ $X$ \ e \ $Y$:
   \]
   %
   %En el caso discreto s
-  Se expresa\modif{
+  Se expresa
   %
   \[
-  I(X;Y)  =  \int_{\Rset^{d_X} \times \Rset^{d_X}}   p_{X,Y}(x,y)  \log  \left(  \frac{p_{X,Y}(x,y)}{p_X(x)
-      p_Y(y)} \right) \, d\mu(x,y)
+  I(X;Y)  =  \int_{\Rset^{d_X}  \times  \Rset^{d_X}}  p_{X,Y}(x,y)  \log  \left(
+    \frac{p_{X,Y}(x,y)}{p_X(x) p_Y(y)} \right) \, d\mu(x,y)
   \]
   %
   con \ $\mu$ \  medida adecuada (discreta en el caso discreto  o de Lebesgue en
-  el caso diferencial).}
+  el caso diferencial).
   %y su forma diferencial se escribe
   %%
   %\[
@@ -124,9 +124,8 @@ entre \ $X$ \ e \ $Y$:
 \end{definicion}
 
 Las  diferentes  cantidades  pueden  ser  vistas  a  trav\'es  de  una  visi\'on
-ensemblista, como descrita  en la figura Fig.~\ref{Fig:SZ:Venn}\modif{, diagrama
-  de    Venn    o    de    Euler   (ver    nota    de    pie~\ref{Foot:MP:Euler}
-  pagina~\pageref{Foot:MP:Euler}.}.
+ensemblista, como descrita en la figura Fig.~\ref{Fig:SZ:Venn}, diagrama de Venn
+o de Euler (ver nota de pie~\ref{Foot:MP:Euler} pagina~\pageref{Foot:MP:Euler}.
 
 \begin{figure}[h!]
 %
@@ -156,12 +155,12 @@ noci\'on  de  entrop\'ia  relativa,   conocida  tambi\'en  como  divergencia  de
 Kullback-Leibler~\cite{KulLei51, Kul68, CovTho06, Rio07}:
 %
 \begin{definicion}[Entrop\'ia relativa]\label{Def:SZ:entropiarelativa}
-  La  entrop\'ia relativa, o  divergencia de  una \modif{medida  de probabilidad
-    $Q$}, con  respeto a  una \modif{medida de  probabilidad} de  referencia $P$
-  \modif{tal que \underline{$Q \ll P$}, ambas definidas sobre $\Rset^d$,}
+  La entrop\'ia relativa,  o divergencia de una medida  de probabilidad $Q$, con
+  respeto a una  medida de probabilidad de referencia  $P$ tal que \underline{$Q
+    \ll P$}, ambas definidas sobre $\Rset^d$,
   % donde \underline{el soporte de $p$ incluye lo de $q$} ($p(x) = 0 \Rightarrow
   % q(x) = 0$),
-  es definida como\modif{
+  es definida como
   %
   \[
   \Dkl[Q]{P}  =  \int_{\Rset^d}  \frac{dQ}{dP}(x) \, \log  \left(  \frac{dQ}{dP}(x)
@@ -186,29 +185,29 @@ Kullback-Leibler~\cite{KulLei51, Kul68, CovTho06, Rio07}:
  \Dkl[q]{p}  \equiv \Dkl[Q]{P}  = \int_{\Rset^d}  \log  \left( \frac{q(x)}{p(x)}
  \right) \, q(x) \, d\mu(x).
  \]
-}
   %
- %(en este \'ultimo caso, la condici\'on de inclusi\'on del soporte de $q$ dentro
- %del de $p$ se  formula como de que $q$ es absolutamente  continua con respeto a
- %$p$)
+ % (en  este \'ultimo  caso, la  condici\'on de inclusi\'on  del soporte  de $q$
+ % dentro
+ % del de $p$ se formula como de que $q$ es absolutamente continua con respeto a
+ % $p$)
 \end{definicion}
 %
 Inicialmente, esta  medida fue  introducida por Kullback  y Leibler en  la misma
-linea que Shannon, interpretando \ \modif{$\log\left(\frac{dQ}{dP}(x)\right)$} \
-como   una  informaci\'on   de   discriminaci\'on  entre   dos  hip\'otesis   de
-distribuciones \  $Q$ \  y \  $P$ \  a partir de  la observaci\'on  \ $x$,  \ la
-divergencia siendo la  informaci\'on de discriminaci\'on promedia.  Introdujeron
-tambi\'en  una versi\'on  sim\'etrica,  que veremos  m\'as adelante.   \modif{Se
-  notara de que, $\Dkl[Q]{P} = -  \int_{\Rset^d} q(x) \, \log(q(x)) \, d\mu(x) +
-  \int_{\Rset^d} p(x) \,  \log(q(x)) \, d\mu(x)$. El primer  termino es nada mas
-  que   la  entrop\'ia   de  $q$,   que   se  puede   ver  como   distribuci\'on
-  ``presupuesta''. Menos el secundo termino se interpreta como el promedio de la
-  incerteza elemental  $\log(q)$ con respeto  a la distribuci\'on  de referencia
-  (``verdadera''),  a veces  llamado {\it  entrop\'ia cruzada}.   Por  eso, esta
-  divergencia es  una entrop\'ia  relativamente a la  distribuci\'on $p$.  En la
-  misma  linea,   se  puede  inmediatamente  ver  de   la  definici\'on  general
-  Def.~\ref{Def:SZ:ShanonMu},  pagina~\pageref{Def:SZ:ShanonMu}, que $\Dkl[Q]{P}
-  \equiv -H\left( \frac{dQ}{dP} \right)$ \ con respeto a la medida $\mu = P$.}
+linea  que Shannon, interpretando  \ $\log\left(\frac{dQ}{dP}(x)\right)$  \ como
+una informaci\'on de discriminaci\'on  entre dos hip\'otesis de distribuciones \
+$Q$ \ y \  $P$ \ a partir de la observaci\'on \ $x$,  \ la divergencia siendo la
+informaci\'on   de  discriminaci\'on   promedia.   Introdujeron   tambi\'en  una
+versi\'on  sim\'etrica,   que  veremos  m\'as  adelante.   Se   notara  de  que,
+$\Dkl[Q]{P} =  - \int_{\Rset^d} q(x)  \, \log(q(x)) \, d\mu(x)  + \int_{\Rset^d}
+p(x) \, \log(q(x)) \, d\mu(x)$.  El primer termino es nada mas que la entrop\'ia
+de $q$, que  se puede ver como distribuci\'on  ``presupuesta''. Menos el secundo
+termino se interpreta  como el promedio de la  incerteza elemental $\log(q)$ con
+respeto a la distribuci\'on de  referencia (``verdadera''), a veces llamado {\it
+  entrop\'ia   cruzada}.   Por   eso,   esta  divergencia   es  una   entrop\'ia
+relativamente  a   la  distribuci\'on  $p$.    En  la  misma  linea,   se  puede
+inmediatamente  ver  de   la  definici\'on  general  Def.~\ref{Def:SZ:ShanonMu},
+pagina~\pageref{Def:SZ:ShanonMu}, que  $\Dkl[Q]{P} \equiv -H\left( \frac{dQ}{dP}
+\right)$ \ con respeto a la medida $\mu = P$.
 %Esta medida puede  ser vista tambi\'en como una  entrop\'ia de la distribuci\'on
 %$q$, relativamente  a una distribuci\'on de  referencia $p$.
 Por ejemplo,  en el caso discreto  finito, si $p$ es  la distribuci\'on uniforme
@@ -223,7 +222,7 @@ $q$  teniendo la misma  matriz de  covarianza).  {\it  Como para  la entrop\'ia,
 \begin{lema}[Positividad de la entrop\'ia relativa]
   %
   \[
-  \modif{\Dkl[Q]{P} \ge 0 \quad \mbox{con igualdad ssi} \quad P = Q}. %\quad (c.s.)
+  \Dkl[Q]{P} \ge 0 \quad \mbox{con igualdad ssi} \quad P = Q. %\quad (c.s.)
   \]
   %
   %donde $(c.s.)$ significa ``casi siempre''.
@@ -239,20 +238,20 @@ $q$  teniendo la misma  matriz de  covarianza).  {\it  Como para  la entrop\'ia,
   pagina~\pageref{Th:MP:Jensen}:  para  $\phi$  convexa   e  \  $Y$  \  variable
   aleatoria escalar, $\Esp[\phi(Y)] \ge \phi(\Esp[Y])$  \ con igualdad ssi \ $Y$
   \ es determinista (casi siempre) si  \ $\phi$ es estrictamente convexa.  Sea \
-  $X$ \ de \modif{medida de probabilidad $P$.  Se escribe la entrop\'ia relativa
-    \  $\Dkl[Q]{P} =  \Esp\left[ \frac{dQ}{dP}(X)  \log  \left( \frac{dQ}{dP}(X)
-      \right) \right]$.  Sea  \ $Y = \frac{dQ}{dP}(X)$} y $\phi(u)  = u \log u$,
-  funci\'on   estrictamente   convexa.    Entonces   \   $\modif{\Dkl[Q]{P}}   =
-  \Esp[\phi(Y)] \ge  \phi(\Esp[Y])$.  \  Pero \ \modif{$\displaystyle  \Esp[Y] =
-    \Esp\left[  \frac{dQ}{dP}(X) \right]  =  \int_{\Rset^d} \frac{dQ}{dP}(x)  \,
-    dP(x)  =  1$  seg\'un  el  lema~\ref{Lem:RelacionIntegracionDerivadasRadon},
-    pagina~\pageref{Lem:RelacionIntegracionDerivadasRadon}.   \  Se   cierra  la
-    prueba con el hecho de que} \  $\phi(1) = 0$ El caso de igualdad apareciendo
-  si y solamente si \  $Y$ \ es determinista, es decir \modif{$\frac{dP}{dQ}(X)$
-    \  determinista,  es equivalente  a  \ $\frac{dP}{dQ}  =  1  \quad (P$-c.s.)  \
-    (constante,      la     constante     siendo      igual     a      1     del
-    lema~\ref{Lem:RelacionIntegracionDerivadasRadon} y \ $P$  \ y \ $Q$ \ siendo
-    medidas de probabilidad).}
+  $X$ \  de medida  de probabilidad  $P$.  Se escribe  la entrop\'ia  relativa \
+  $\Dkl[Q]{P} = \Esp\left[ \frac{dQ}{dP}(X) \log \left( \frac{dQ}{dP}(X) \right)
+  \right]$.  Sea  \ $Y  = \frac{dQ}{dP}(X)$  y $\phi(u) =  u \log  u$, funci\'on
+  estrictamente   convexa.    Entonces  \   $\Dkl[Q]{P}   =  \Esp[\phi(Y)]   \ge
+  \phi(\Esp[Y])$.  \ Pero \ $\displaystyle \Esp[Y] = \Esp\left[ \frac{dQ}{dP}(X)
+  \right]  =   \int_{\Rset^d}  \frac{dQ}{dP}(x)  \,   dP(x)  =  1$   seg\'un  el
+  lema~\ref{Lem:RelacionIntegracionDerivadasRadon},
+  pagina~\pageref{Lem:RelacionIntegracionDerivadasRadon}.  \ Se cierra la prueba
+  con el  hecho de  que \ $\phi(1)  = 0$  El caso de  igualdad apareciendo  si y
+  solamente  si  \  $Y$  \   es  determinista,  es  decir  $\frac{dP}{dQ}(X)$  \
+  determinista,  es  equivalente a  \  $\frac{dP}{dQ}  =  1 \quad  (P$-c.s.)   \
+  (constante,      la      constante     siendo      igual      a     1      del
+  lema~\ref{Lem:RelacionIntegracionDerivadasRadon} y  \ $P$ \  y \ $Q$  \ siendo
+  medidas de probabilidad).
 %, \ \ie \ $p = q \quad (c.s.)$ \ porque ambas suman a uno.
 \end{proof}
 
@@ -265,9 +264,9 @@ I(X;Y) = \Dkl[P_{X,Y}]{P_X P_Y},
 \]
 %
 \ie  la  informaci\'on  mutua  es  la  divergencia  de  Kullback-Leibler  de  la
-distribuci\'on    conjunta   relativa    al   producto    de    las   marginales
-\modif{(obviamente $P_{X,Y} \ll  P_X P_Y$). Con este enfoque,  no se necesita de
-  que \ $(X,Y)$ \ sea discreta o continua admitiendo una densidad}.
+distribuci\'on  conjunta  relativa al  producto  de  las marginales  (obviamente
+$P_{X,Y} \ll P_X P_Y$). Con este enfoque,  no se necesita de que \ $(X,Y)$ \ sea
+discreta o continua admitiendo una densidad.
 %
 \begin{propiedades}
 \item\label{Prop:SZ:Ipositive}   {\it   $I$   es   positiva,  como   medida   de
@@ -298,18 +297,17 @@ referencia $P$ juega un rol fundamental.
 Al  final, se mencionar\'a las propiedades adicionales siguientes:
 %
 \begin{enumerate}
-\item \modif{
+\item 
 %A  pesar de que la forma  diferencial de 
-$\Dkl[q]{p}$}
+$\Dkl[q]{p}$
 % depende  de los estados,
 queda invariante  bajo una  misma transformaci\'on biyectiva  sobre ambos  $p$ y
-$q$. \modif{Es trivial en el caso  discreto y si no s}e prueba sencillamente por
-un cambio de variables en la \modif{forma} integral.
+$q$. Es  trivial en  el caso  discreto y si  no se  prueba sencillamente  por un
+cambio de variables en la forma integral.
 %
 \item $\Dkl{}$ es convexa con respecto al par $(P,Q)$ en el sentido de que, para
-  $\pi_i \ge 0, \: \sum_i \pi_i = 1$, , \modif{y dos conjuntos $\{ P_{(i)} \}_i,
-    \:  \{ Q_{(i)} \}_i$  de medidas  de probabilidades  tales que  $Q_{(i)} \ll
-    P_{(i)}$,}
+  $\pi_i \ge 0,  \: \sum_i \pi_i = 1$,  y dos conjuntos $\{ P_{(i)}  \}_i, \: \{
+  Q_{(i)} \}_i$ de medidas de probabilidades tales que $Q_{(i)} \ll P_{(i)}$,
   %
   \[
   \Dkl[\sum_i   \pi_i  \ Q_{(i)}]{\sum_i   \pi_i \   P_{(i)}}  \ge   \sum_i   \pi_i
@@ -320,8 +318,8 @@ un cambio de variables en la \modif{forma} integral.
   pagina~\pageref{Ssec:SZ:Csiszar} en un contexto m\'as general.
 %
 \item Para $Q$ fijo, $\Dkl[Q]{P}$ es convexa con respecto a $P$ en el sentido de
-  que, para $\pi_i \ge 0, \: \sum_i \pi_i = 1$, \modif{y un conjunto $\{ P_{(i)}
-    \}_i$ de medidas de probabilidades tales que $Q \ll P_{(i)}$,}
+  que, para $\pi_i \ge 0, \: \sum_i  \pi_i = 1$, y un conjunto $\{ P_{(i)} \}_i$
+  de medidas de probabilidades tales que $Q \ll P_{(i)}$,
   %
   \[
   \Dkl[Q]{\sum_i   \pi_i \,   P_{(i)}}  \ge   \sum_i   \pi_i

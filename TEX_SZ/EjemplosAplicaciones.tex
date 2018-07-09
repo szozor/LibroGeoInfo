@@ -158,8 +158,8 @@ respeto   a   $r$.    Diferenciando    $I_2$   en   $r$,   \ie   $\frac{\partial
   y  dando   un  extremo   para  $I_2$.   A   continuaci\'on,  $\frac{\partial^2
     I_2}{\partial  r^2} = \frac{(1-\varepsilon-\vartheta)^2}{s  (1-s)} >  0$ (en
   particular  para  el $s$  ``\'optimo''),  probando de  que  el  extremo es  un
-  m\'aximo.   Poniendo  \modif{la expresi\'on  de}  $r^\opt$  en  la formula  de
-  $I_2(X;Y)$, luego de muchos c\'alculos (b\'asicos), se obtiene
+  m\'aximo.  Poniendo  la expresi\'on de  $r^\opt$ en la formula  de $I_2(X;Y)$,
+  luego de muchos c\'alculos (b\'asicos), se obtiene
   %
   \[
   C_2  =  \log_2\left(  1  +  2^{\frac{h_2(\varepsilon)  -  h_2(\vartheta)}{1  -
@@ -200,10 +200,10 @@ C_2 \le 1 \: \mbox{bit},
   corespondiente a una entrada de distribuci\'on \ $p_{(i)}$.  Ahora, de $I(X;Y)
   = H(Y)-H(Y|X)$,  el segundo t\'ermino siendo dependiente  solamente del canal,
   de la  concavidad de  $H$ se  obtiene de que  $I$ es  c\'oncava con  respeto a
-  $p_X$. \modif{A  continuaci\'on,} $p_X$ parteneciendo a un  convexo, $I$ tiene
-  un m\'aximo  que es  \'unico.}: para transmitir  informaci\'on en  este canal,
-hace falta introducir redundancia en el mensaje.  Se alcanza \ $C_2 = 1$ bit si,
-(i)  por  un lado  $H_2(Y|X)  =  0$, es  decir  \  $r  h_2(\varepsilon) +  (1-r)
+  $p_X$.  A continuaci\'on,  $p_X$  parteneciendo  a un  convexo,  $I$ tiene  un
+  m\'aximo que es  \'unico.}: para transmitir informaci\'on en  este canal, hace
+falta introducir redundancia en el mensaje.  Se  alcanza \ $C_2 = 1$ bit si, (i)
+por  un  lado   $H_2(Y|X)  =  0$,  es  decir  \   $r  h_2(\varepsilon)  +  (1-r)
 h_2(\vartheta) = 0$ \ y adem\'as (ii) \ $h_2(s) = 1$.  Estudiando cada caso (ej.
 con \ $r = 0$ \ y \ $\vartheta =  0$ \ se satisface (i) pero no (ii) porque \ $s
 = 0$), se obtiene que
@@ -308,10 +308,9 @@ o~\cite{Ari72} para el c\'alculo num\'erico de la capacidad en el caso general).
 \label{Fig:SZ:CanalesDiscretos}
 \end{figure}
 %
-\footnotetext{\modif{Se  mencionar\'a de que  en toda  esta subsecci\'on,  no se
-    necesita de  que $X$  y/o $Y$ sean  variables aleatorias reales,  \ie pueden
-    tomar  sus  valores  sobre   cualquier  espacio  discreto  (por  ejemplo  de
-    letras).}}
+\footnotetext{Se mencionar\'a de  que en toda esta subsecci\'on,  no se necesita
+  de que  $X$ y/o  $Y$ sean  variables aleatorias reales,  \ie pueden  tomar sus
+  valores sobre cualquier espacio discreto (por ejemplo de letras).}
 
 
 % ================================= canal gaussiano
@@ -382,17 +381,17 @@ Entonces,  el problema  se reduce  a maximizar  \ $\left|  R_X  + \Lambda_\Gauss
 \right|$  \ sujeto  a \  $\Tr R_X  \le \P$  \ y  \ $R_X  \ge 0$  sim\'etica.  La
 desigualdad de Hadamard ya evocada da \ $\left| R_X + \Lambda_\Gauss \right| \le
 \prod_i \left(  R_X + \Lambda_\Gauss  \right)_{i,i} = \prod_i \left(  \left( R_X
-  \right)_{i,i}  +  \lambda^\Gauss_i  \right)$  \  \modif{donde  $(\cdot)_{i,i}$
-  denota la  componente $i,i$ de  la matriz}, con  igualdad si y solamente  si \
-$R_X$ \ es  diagonal: para maximizar \ $\left| R_X  + \Lambda_\Gauss \right|$, \
-$R_X$ \  debe ser  diagonal (dada una  diagonal, se  alcanza el m\'aximo  si los
-otros  t\'erminos  son  nulos).   Es   decir  que  la  base  que  diagonaliza  \
-$\Sigma_\Gauss$ \ debe diagonalizar  tambi\'en $\Sigma_X$.  Sean \ $\lambda^X_i$
-\  los t\'erminos diagonales  de $R_X$:  queda que  maximizar \  $\prod_i \left(
-  \lambda^X_i + \lambda^\Gauss_i \right)$ \ sujeto a $\sum_i \lambda^X_i \le \P$
-\  y \  $\lambda^X_i  \ge 0$.   Este  problema de  optimizaci\'on  sujeto a  una
-desigualdad  se  resuelva  con  el  enfoque  de  Karush-Kuhn-Tucker~\footnote{Se
-  introduce el factor de Lagrange y  se maximiza \ $\prod_i \left( \lambda^X_i +
+  \right)_{i,i} +  \lambda^\Gauss_i \right)$  \ donde $(\cdot)_{i,i}$  denota la
+componente $i,i$  de la  matriz, con  igualdad si y  solamente si  \ $R_X$  \ es
+diagonal: para maximizar \ $\left| R_X + \Lambda_\Gauss \right|$, \ $R_X$ \ debe
+ser diagonal (dada una diagonal, se  alcanza el m\'aximo si los otros t\'erminos
+son  nulos).  Es  decir que  la base  que diagonaliza  \ $\Sigma_\Gauss$  \ debe
+diagonalizar  tambi\'en  $\Sigma_X$.   Sean  \ $\lambda^X_i$  \  los  t\'erminos
+diagonales  de  $R_X$: queda  que  maximizar  \  $\prod_i \left(  \lambda^X_i  +
+  \lambda^\Gauss_i  \right)$  \ sujeto  a  $\sum_i \lambda^X_i  \le  \P$  \ y  \
+$\lambda^X_i \ge 0$.   Este problema de optimizaci\'on sujeto  a una desigualdad
+se  resuelva  con el  enfoque  de  Karush-Kuhn-Tucker~\footnote{Se introduce  el
+  factor  de   Lagrange  y   se  maximiza  \   $\prod_i  \left(   \lambda^X_i  +
     \lambda^\Gauss_i \right) + \eta  \sum_i \lambda^X_i$.  Eso da \ $\lambda^X_i
   + \lambda^\Gauss_i = \lambda$ \ constante si $\lambda$ es tal que se satisfaga
   la positividad de $\lambda^X_i$, y  $\lambda^X_i = 0$ sino. En otras palabras,
@@ -462,8 +461,7 @@ se\~nale-ruido~\footnote{Esta formula es muy  parecida a la de Shannon, Laplume,
 
 En~\cite{CovTho06,  Rio07}  por ejemplo,  se  dan  otros  ejemplos de  canal  de
 comunicaci\'on   en   el   contexto   continuo   (entrada   $X_t$   siendo   una
-se\~nal/proceso, canal filtrando,  canal con \modif{retroacci\'on (o feedback)},
-etc.).
+se\~nal/proceso, canal filtrando, canal con retroacci\'on (o feedback), etc.).
 
 % ================================= codificacion
 
@@ -474,7 +472,7 @@ El  problema  de  codificaci\'on  de  fuente  puede  presentarse  de  la  manera
 siguiente~\cite[cap.~5]{CovTho06}  o   \cite[cap.~13]{Rio07}.   Sea  un  proceso
 aleatorio $\left\{  X_t \right\}_{t \in \Zset}$,  supuesto estacionario, llamado
 {\it  fuente}, donde  los $X_t$  toman sus  valores sobre  un  alfabeto discreto
-finito \modif{no necesariamente real ($X$ puede tomar cualquier etiqueta)}
+finito no necesariamente real ($X$ puede tomar cualquier etiqueta)
 %
 \[
 \X = \{ x_1 , \ldots , x_\alpha \} \qquad \mbox{alfabeto fuente},
@@ -529,20 +527,19 @@ lo  que  es  llamado {\it  extensi\'on  del  c\'odigo}.   En  lo que  sigue,  se
 escribir\'a $c \equiv c_1$.
 
 Una manera ingenua de codificar consiste a apoyarse sobre la descomposici\'on de
-base  \ $d$  \ de  un entero,  \ie para  $1 \le  i \le  \alpha$  \modif{se puede
-  escribir de manera  \'unica} \ $i-1 =  (i_0-1) + (i_1-1) d +  \cdots + (i_K-1)
-d^K$ \  donde \ $K  = \Big\lceil \log_d  |\X| \Big\rceil$ \ y  \ $1 \le  i_k \le
-\alpha$\modif{.   Entonces,   se   puede}   asignar  la   palabra   c\'odigo   \
-$\modif{c(x_i) = }\cod_{i_0} \cdots \cod_{i_k}$ \ al s\'imbolo $x_i$.  Haciendo
-eso, cada  palabra c\'odigo  tieno el mismo  largo.  Pero, es  m\'as econ\'omico
-hacer  una codificaci\'on  dicha de  largos  variables, teniendo  en cuenta  las
-probabilidades  de aparici\'on  de cada  $x_i$. Implicitamente,  es la  idea del
-c\'odigo de Moorse, que asigna un  punto o series de puntos o c\'odigo peque\~no
-a las letras muy  frecuentes (ej. un punto para el `e',  dos puntos para el `i',
-etc.),  y   barras  o   combinaciones  largas  a   las  letras  que   son  raras
-(ej. bara-bara-punto-bara para el `q' o cinco baras para el `0').  Dicho de otra
-manera, el  c\'odigo ingenuo ser\'ia  ``eficaz'' para $x_i$ apareciendo  con las
-mismas frecuencias/probabilidades.
+base \ $d$  \ de un entero, \ie para  $1 \le i \le \alpha$  se puede escribir de
+manera \'unica \ $i-1 = (i_0-1) + (i_1-1) d + \cdots + (i_K-1) d^K$ \ donde \ $K
+= \Big\lceil \log_d |\X| \Big\rceil$ \ y \ $1 \le i_k \le \alpha$.  Entonces, se
+puede asignar la palabra c\'odigo \ $c(x_i) = \cod_{i_0} \cdots \cod_{i_k}$ \ al
+s\'imbolo  $x_i$.  Haciendo  eso, cada  palabra c\'odigo  tieno el  mismo largo.
+Pero, es m\'as  econ\'omico hacer una codificaci\'on dicha  de largos variables,
+teniendo   en  cuenta  las   probabilidades  de   aparici\'on  de   cada  $x_i$.
+Implicitamente, es la idea del c\'odigo  de Moorse, que asigna un punto o series
+de puntos o  c\'odigo peque\~no a las letras muy frecuentes  (ej.  un punto para
+el `e',  dos puntos para el  `i', etc.), y  barras o combinaciones largas  a las
+letras que son raras (ej. bara-bara-punto-bara para el `q' o cinco baras para el
+`0').  Dicho de  otra manera, el c\'odigo ingenuo  ser\'ia ``eficaz'' para $x_i$
+apareciendo con las mismas frecuencias/probabilidades.
 
 En los c\'odigos de largos variables (incluyendo el c\'odigo ingenuo), volviendo
 a  $c_m$, existen  varios tipos  de  c\'odigos.  Un  c\'odigo es  dicho {\it  no
@@ -836,9 +833,9 @@ La entrop\'ia aparece tambi\'en en la cota superior del c\'odigo \'optimo:
   \widetilde{l}(x) = - \log_d p_X(x).
   \]
   %
-  \modif{$\widetilde{l}(x)$  no   es  necesariamente  entero,   as\'i  que  u}na
-  posibilidad \modif{para volver  a largos enteros} puede ser  de tomar la parte
-  entera superior \modif{de $\widetilde{l}(x)$},
+  $\widetilde{l}(x)$ no es necesariamente entero, as\'i que una posibilidad para
+  volver  a largos  enteros  puede ser  de  tomar la  parte  entera superior  de
+  $\widetilde{l}(x)$,
   %
   \[
   l(x) = \Big\lceil\! - \log_d p_X(x) \Big\rceil.
@@ -857,9 +854,9 @@ La entrop\'ia aparece tambi\'en en la cota superior del c\'odigo \'optimo:
 De \[  H_d(X) \le  L^\opt < H_d(X)  + 1 \]  se revela  el rol fundamental  de la
 entrop\'ia en la  codificaci\'on de fuente sin perdida.   La codificaci\'on es a
 veces  dicha {\it  codificaci\'on  entr\'opica} y  da  un rol  operacional a  la
-entrop\'ia de  Shannon.  Se notar\'a \modif{tambi\'en que}  de la demostraci\'on
-precediente  de que  aparece un  c\'odigo  particular \modif{a  trav\'es de  los
-  $\Big\lceil\!  - \log_d p_X(x) \Big\rceil$}:
+entrop\'ia  de  Shannon.   Se   notar\'a  tambi\'en  que  de  la  demostraci\'on
+precediente  de   que  aparece  un   c\'odigo  particular  a  trav\'es   de  los
+$\Big\lceil\!  - \log_d p_X(x) \Big\rceil$:
 %
 \begin{definicion}[C\'odigo de Shannon]\label{Def:SZ:ShannonCode}
   Un  c\'odigo  \  $c^\sh$  \  de  una  fuente $X$,  de  largos  \  $l^\sh(x)  =
@@ -873,15 +870,15 @@ Obviamente, tambi\'en
 H_d(X) \le L\left( c^\sh  \right) < H_d(X) +  1.
 \]
 %
-Al lo contrario  de primer vista, un c\'odigo de  Shannon no es \'optimo\modif{,
-  como se lo puede ver con el ejemplo siguiente.}
+Al lo contrario de primer vista, un  c\'odigo de Shannon no es \'optimo, como se
+lo puede ver con el ejemplo siguiente.
 %
 \begin{ejemplo}\label{Ej:SZ:CodigoShannonNoOpt}
-  Sea \  $\X = \C  = \{ 0 \,  , \, 1  \}$ \ y  \modif{una fuente $X$ tal  que} \
-  $p_X(0) = 0.999 = 1 - p_X(1)$.  Los  largos de Shannon van a ser \ $l^\sh(0) =
-  1$ \ y \ $l^\sh(1) = 10$, y  el largo promedio vale \ $L\left( c^\sh \right) =
-  1.009$.   Obviamente, un  c\'odigo \'optimo  es \  $c(x) =  x$ \  de  largos \
-  $l_c(x) = 1$ \ dando \ $L^\opt = 1$ bit.
+  Sea \ $\X  = \C = \{ 0 \,  , \, 1 \}$ \  y una fuente $X$ tal que  \ $p_X(0) =
+  0.999 = 1 - p_X(1)$.   Los largos de Shannon van a ser \ $l^\sh(0)  = 1$ \ y \
+  $l^\sh(1) = 10$,  y el largo promedio vale \ $L\left(  c^\sh \right) = 1.009$.
+  Obviamente, un c\'odigo \'optimo es \ $c(x) =  x$ \ de largos \ $l_c(x) = 1$ \
+  dando \ $L^\opt = 1$ bit.
 \end{ejemplo}
 %
 De hecho, volviendo al problema  con largos virtualmente no enteros, el m\'inimo
@@ -904,11 +901,10 @@ sentido de que:
 \end{teorema}
 %
 \begin{proof}
-  \modif{Por  definici\'on de  la  parte entera  superior,  $a +  1  > \lceil  a
-    \rceil$, as\'i  que $\lceil a  \rceil \ge  b \: \Rightarrow  \: a >  b-1$. A
-    continuaci\'on, de  la implicaci\'on  de eventos $(Y  \ge a) \subset  (Y \ge
-    b-1)$ \  dando $P(A \ge a)  \le P(Y \ge b-1)$  \ y de la  definici\'on de un
-    c\'odigo de Shannon} se obtiene
+  Por definici\'on de la parte entera superior, $a + 1 > \lceil a \rceil$, as\'i
+  que $\lceil a \rceil \ge b \: \Rightarrow \: a > b-1$. A continuaci\'on, de la
+  implicaci\'on de eventos $(Y  \ge a) \subset (Y \ge b-1)$ \  dando $P(A \ge a)
+  \le P(Y \ge b-1)$ \ y de la definici\'on de un c\'odigo de Shannon se obtiene
   %
   \begin{eqnarray*}
   P\Big( l^\sh(X)  \ge l_c(X) + k  \Big) & \le & P\Big(  - \log_d p_X(X)
@@ -916,20 +912,20 @@ sentido de que:
   %
   & = &  P\Big( p_X(X)  \le d^{-l_c(X)  - k  + 1} \Big)\\[2.5mm]
   %
-  & = &  \sum_{x \in \X : p_X(x) \le d^{-l_c(\modif{x})  - k  + 1}} p_X(x)
+  & = &  \sum_{x \in \X : p_X(x) \le d^{-l_c(x)  - k  + 1}} p_X(x)
   \end{eqnarray*}
   %
-  Pero, sumando sobre  lo $x$ tal que $p_X(x) \le d^{-l_c(\modif{x})  - k + 1}$,
+  Pero, sumando sobre  lo $x$ tal que $p_X(x) \le d^{-l_c(x)  - k + 1}$,
   se obtiene
   %
   \[
   %  \begin{eqnarray*}
   P\Big( l^\sh(X)  \ge l_c(X) + k  \Big) \le \frac{1}{d^{k-1}} \sum_{x  \in \X :
-    p_X(x) \le d^{-l_c(\modif{x}) - k + 1}} d^{-l_c(\modif{x})}
+    p_X(x) \le d^{-l_c(x) - k + 1}} d^{-l_c(x)}
   %\\[2.5mm]
   %
   %P\Big( l^\sh(X) \ge l_c(X) + k \Big) & \le & 
-  \le \frac{1}{d^{k-1}} \sum_{x \in \X} d^{-l_c(\modif{x})}
+  \le \frac{1}{d^{k-1}} \sum_{x \in \X} d^{-l_c(x)}
   \]
   %\end{eqnarray*}
   %
@@ -937,12 +933,11 @@ sentido de que:
   $c$ siendo descifrable, $l_c$ satisface la desigualdad de Kraft-McMillan.
 \end{proof}
 %
-Este  teorema  traduce  el hecho  de  que  \modif{a  pesar  de que}  $c^\sh$  no
-\modif{sea} \'optimo,  tomando cualquier otro c\'odigo,  incluyendo el \'optimo,
-la probabilidad que $c^\sh(X)$ tenga  un largo m\'as grande que $c(X)+k$ decrece
-exponencialmente con $k$.
+Este teorema  traduce el hecho de  que a pesar  de que $c^\sh$ no  sea \'optimo,
+tomando  cualquier otro c\'odigo,  incluyendo el  \'optimo, la  probabilidad que
+$c^\sh(X)$ tenga un largo m\'as grande que $c(X)+k$ decrece exponencialmente con
+$k$.
 %
-\modif{
 \begin{ejemplo}
   De manera general, con $d = 2$ y para $k = 9$, $P\Big( l^\sh(X) \ge l_c(X) + 9
   \Big)      \le       0.391      \%$.      En       particular,      en      el
@@ -952,7 +947,6 @@ exponencialmente con $k$.
   el c\'odigo de Shannon es menor que $0.391 \%$. De hecho, una palabra c\'odigo
   de largo $10$ aparece con una probabilidad $0.1\%$\ldots
 \end{ejemplo}
-}
 
 En el problema  de minimizaci\'on, el hecho de que los  largos deben ser enteros
 no  permite  solucionar explicitamente  el  problema  de  busqueda del  c\'odigo
@@ -1151,8 +1145,8 @@ De esta  prueba, se puede ver que
   s\'imbolos fuentes  de probabilidades m\'as  debiles en un  super-s\'imbolo, y
   luego hacer el bucle descrito (juntando por super-s\'imbolos de $d$ s\'imbolos
   en  cada  bucle);  en  este  caso,  no  se  satura  m\'as  la  desigualdad  de
-  Kraft-McMillan\modif{,  pero no es  contradictorio con  el punto  anterior que
-    contaba los largos de estados fictivos(que no codificamos en realidad).}
+  Kraft-McMillan, pero  no es contradictorio  con el punto anterior  que contaba
+  los largos de estados fictivos(que no codificamos en realidad).
 %
 \item Obviamente, en el caso binario $d = 2$, no es necesario completar $\X$ por
   estados fuentes, o  empezar con menos de $d$  s\'imbolos juntados ($\alpha$ es
@@ -1160,13 +1154,13 @@ De esta  prueba, se puede ver que
 %
 \item  El algoritmo  no  permite conocer  los  largos de  manera anal\'itica  en
   funci\'on  de $p_i$,  y  tampoco el  largo  promedio.  Se  los pueden  deducir
-  solamente  implementando el  algoritmo (una  vez que  es  construido \modif{el
-    c\'odigo}). Era el caso tambi\'en con el enfoque de Fano.
+  solamente  implementando   el  algoritmo  (una   vez  que  es   construido  el
+  c\'odigo). Era el caso tambi\'en con el enfoque de Fano.
 \end{itemize}
 
 Volviendo al c\'odigo  ingenuo, ser\'ia \'optimo (y equivalente a  los de Fano y
 de Shannon) para una distribuci\'on uniforme. En este contexto, la entrop\'ia es
-$H_d(X) = \log_d |\modif{\X}|$, precisamente la incerteza del enfoque de Hartley
+$H_d(X) = \log_d |\X|$, precisamente la incerteza del enfoque de Hartley
 que   corresponde  a   los   n\'umeros  de   dits   necesarios  para   codificar
 (ingenuosamente) la fuente.
 
@@ -1234,7 +1228,7 @@ elegir un $n$ muy grande.
 
 \
 
-Para codificar una fuente, que se haga el c\'odigo \'optimo\modif{de Fano,} o de
+Para  codificar una  fuente, que  se haga  el c\'odigo  \'optimo de  Fano,  o de
 Shannon,  hace  falta  usar  la  distribuci\'on de  probabilidad  de  la  fuente
 $X$. Pr\'acticamente, es usual que no se la tiene. Frecuentemente, es estimada a
 partir de datos,  o, dicho de otra manera, se  c\'odifica con una distribuci\'on

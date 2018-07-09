@@ -62,17 +62,17 @@ o~\cite[cap.~12]{CovTho06}, entre otros~\cite[\& ref.]{Arn01, Kap89, KapKes92}.
 
 Sea \ $X$ \ variable aleatoria viviendo sobre (de distribuci\'on de probabilidad
 de soporte) \ $X(\Omega) = \X \subseteq \Rset^d$  \ con \ $K \ge 0$ \ momentos \
-$\Esp\left[   M_k(X)   \right]   =   m_k$    \   fijos,   con   $M_x:   \X   \to
-\Rset$. \modif{Suponemos de que $X$ tiene una densidad \ $p$ \ con respeto a una
-  medida $\mu$, basicamente \ $\mu_L$ \ en el contexto continuo y $\mu_\X$ en el
-  caso       discreto. E}l problema de  entrop\'ia m\'axima se formula de
-la  manera siguiente:  sean \  $M(x) =  \begin{bmatrix} 1  & M_1(x)  &  \cdots &
-  M_K(x)  \end{bmatrix}^t$ \  y  \  $m =  \begin{bmatrix}  1 &  m_1  & \cdots  &
-  m_K \end{bmatrix}^t$ (si $K = 0, \: M = m = 1$), \ se busca,
+$\Esp\left[ M_k(X) \right] = m_k$ \ fijos, con $M_x: \X \to \Rset$. Suponemos de
+que $X$ tiene una densidad \ $p$ \ con respeto a una medida $\mu$, basicamente \
+$\mu_L$ \ en el contexto continuo y $\mu_\X$ en el caso discreto. El problema de
+entrop\'ia  m\'axima   se  formula  de   la  manera  siguiente:  sean   \  $M(x)
+=  \begin{bmatrix} 1  &  M_1(x) &  \cdots &  M_K(x)  \end{bmatrix}^t$ \  y \  $m
+= \begin{bmatrix} 1 & m_1 & \cdots & m_K \end{bmatrix}^t$ (si $K = 0, \: M = m =
+1$), \ se busca,
 %
 \[
 p^* = \argmax_p H(p) \qquad \mbox{sujeto a} \qquad p \ge 0, \quad \int_\X M(x)
-\, p(x) \, \modif{d\mu(x)} = m,
+\, p(x) \, d\mu(x) = m,
 \]
 %
 donde los dos primeros v\'inculos (positividad, normalizaci\'on) aseguran de que
@@ -85,24 +85,23 @@ variacional   consiste  a   resolver~\cite{GelFom63,  Bru04,   Mil00,  CamMar09,
 %
 \[
 p^* = \argmax_p  \int_\X \left( - p(x)  \log p(x) + \eta^t M(x)  \, p(x) \right)
-\modif{d\mu(x)},
+d\mu(x),
 \]
 %
-donde $\eta$ ser\'a determinado para  satisfacer a los v\'inculos.  \modif{En el
-  caso    continuo    $\mu    =    \mu_L$    se   usa}    la    ecuaci\'on    de
-Euler-Lagrange~\cite{GelFom63, Bru04}, esquematicamente anulando la ``derivada''
-del  integrande  con  respeto a  $p$\modif{;  en  el  caso discreto,  se  anula}
-realmente un  gradiente con respeto  a los componentes de  $p$. Reparametrizando
-los factores de Lagrange, se obtiene \modif{as\'i}
+donde $\eta$  ser\'a determinado para satisfacer  a los v\'inculos.   En el caso
+continuo $\mu  = \mu_L$ se  usa la ecuaci\'on  de Euler-Lagrange~\cite{GelFom63,
+  Bru04}, esquematicamente anulando la ``derivada'' del integrande con respeto a
+$p$; en  el caso  discreto, se anula  realmente un  gradiente con respeto  a los
+componentes de $p$. Reparametrizando los factores de Lagrange, se obtiene as\'i
 %
 \[
 p^*(x) = \e^{\eta^t M(x)},
 \]
 %
 con $\eta$ tal  que se satisfacen los v\'inculos  de normalizaci\'on y momentos.
-Esta  distribuci\'on  cae  en  la  \modif{familia exponencial  que  hemos  visto
-  secci\'on~\ref{Sec:MP:},}  donde  los   $M_k$  son  \modif{las  estad\'isticas
-  suficientes}  y los  $\eta_k$ \modif{los  par\'ametros naturales}
+Esta  distribuci\'on   cae  en  la  familia  exponencial   que  \SZ{hemos  visto
+  secci\'on~\ref{Sec:MP:}}, donde los $M_k$ son las estad\'isticas suficientes y
+los $\eta_k$ los par\'ametros naturales.
 
 Un problema que  puede aparecer es que  no se puede determinar $\eta$  tal que se
 satisfacen  todos los  v\'inculos,  en particular  la  de normalizaci\'on.   Por
@@ -121,14 +120,14 @@ Existe   una  prueba   informacional   de  este   resultado,   saliendo  de   la
 soluci\'on.
 %
 \begin{lema}\label{Lem:SZ:MaxEntPruebaInfo}
-  Sea \ $\displaystyle  \P_m = \left\{ p \ge 0: \:  \int_\X M(x) \, \modif{p(x)}
-    \, \modif{d\mu(x)} = m \right\}$ \ \modif{conjunto de densidades con respeto
-    a $\mu$, con los  mismos momentos $M$,} y sea \ $p^* \in  \P_m$ \ que sea de
-  la forma \ $p^*(x) = \e^{\eta^t M(x)}$. Entonces
+  Sea  \ $\displaystyle  \P_m =  \left\{ p  \ge 0:  \: \int_\X  M(x) \,  p(x) \,
+    d\mu(x) = m \right\}$ \ conjunto  de densidades con respeto a $\mu$, con los
+  mismos momentos $M$, y sea \ $p^* \in  \P_m$ \ que sea de la forma \ $p^*(x) =
+  \e^{\eta^t M(x)}$. Entonces
   %
   \[
   \forall \,  p \in \P_m, \quad  H(p) \le H(p^*) \qquad  \mbox{con igualdad ssi}
-  \quad p = p^* \quad \modif{\mu\mbox{-(c. s.)}},
+  \quad p = p^* \quad \mu\mbox{-(c. s.)},
   \]
   %
   donde   $H$  es   de  la   definici\'on   general  Def.~\ref{Def:SZ:ShanonMu},
@@ -136,28 +135,28 @@ soluci\'on.
 \end{lema}
 \begin{proof}
   \begin{eqnarray*}
-  H(p) & = & - \int_\X p(x) \, \log p(x) \, \modif{d\mu(x)}\\[2.5mm]
+  H(p) & = & - \int_\X p(x) \, \log p(x) \, d\mu(x)\\[2.5mm]
   %
-  & = & - \int_\X p(x) \, \log\left( \frac{p(x)}{p^*(x)} \right) \, \modif{d\mu(x)} - \int_\X
-  p(x) \, \log p^*(x) \, \modif{d\mu(x)}
+  & = & - \int_\X p(x) \, \log\left( \frac{p(x)}{p^*(x)} \right) \, d\mu(x) - \int_\X
+  p(x) \, \log p^*(x) \, d\mu(x)
   \end{eqnarray*}
   %
   De $\log p^* = \eta^t M$ se obtiene
   %
   \begin{eqnarray*}
   H(p) & = & - \Dkl[p]{p^*} - \int_\X \eta^t M(x) p(x)
-  \, \modif{d\mu(x)}\\[2.5mm]
+  \, d\mu(x)\\[2.5mm]
   %
-  & = & - \Dkl[p]{p^*} - \int_\X \eta^t M(x) \, p^*(x) \, \modif{d\mu(x)}\\[2.5mm]
+  & = & - \Dkl[p]{p^*} - \int_\X \eta^t M(x) \, p^*(x) \, d\mu(x)\\[2.5mm]
   %
-  & = & - \Dkl[p]{p^*} - \int_\X p^*(x) \log p^*(x) \, \modif{d\mu(x)}\\[2.5mm]
+  & = & - \Dkl[p]{p^*} - \int_\X p^*(x) \log p^*(x) \, d\mu(x)\\[2.5mm]
   %
   & = & - \Dkl[p]{p^*} + H(p^*)
   \end{eqnarray*}
   %
   porque $p, p^* \in \P_m$ \ (segunda  linea) y \ $\eta^t M = \log p^*$ (tercera
   linea). La prueba se cierra notando que $\Dkl[p]{p^*} \ge 0$ con igualdad si y
-  solamente si \modif{$p = p^* \quad (\mu$-c.s.).}
+  solamente si $p = p^* \quad (\mu$-c.s.).
 \end{proof}
 %
 Este lema prueba que, dados  v\'inculos ``razonables'', la entrop\'ia es acotada
@@ -178,17 +177,20 @@ exponencial. Por ejemplo,
   Sec.~\ref{Ssec:SZ:Diferencial}.
 \end{itemize}
 %
-\modif{Con  el  enfoque   del  lema~\ref{Lem:SZ:MaxEntPruebaInfo},  se  necesita
-  solamente  que $p$  sea una  densidad  con respeto  a una  medida $\mu$  fija,
-  cualquiera. En  particular, si es  una medida de probabilidad  (de referencia)
-  $\widetilde{P}$, el problema de entrop\'ia  m\'axima vuelve ser un problema de
-  minimizaci\'on de la divergencia de  Kullback-Leibler entre $P$ y la medida de
-  referencia, siendo $p$ la densidad con respeto a esta medida (ver definici\'on
-  Def.~\ref{Def:SZ:entropiarelativa}). Es decir, tomando \ $\mu = \widetilde{P}$
-  \  medida   de  probabilidad  aparece   inmediatamente  \[  P^*   =  \argmax_P
-  \Dkl[P]{\widetilde{P}} \quad \mbox{sujeto a} \quad  \int_\X M(x) \, dP(x) = m
-  \qquad  \Leftrightarrow  \qquad  \frac{dP^*}{d\widetilde{P}}(x)  =  \e^{\eta^t
-    x}. \] }
+Con el enfoque del lema~\ref{Lem:SZ:MaxEntPruebaInfo}, se necesita solamente que
+$p$  sea una  densidad  con respeto  a  una medida  $\mu$  fija, cualquiera.  En
+particular, si es una medida de probabilidad (de referencia) $\widetilde{P}$, el
+problema de entrop\'ia  m\'axima vuelve ser un problema  de minimizaci\'on de la
+divergencia de Kullback-Leibler entre $P$  y la medida de referencia, siendo $p$
+la    densidad    con    respeto     a    esta    medida    (ver    definici\'on
+Def.~\ref{Def:SZ:entropiarelativa}). Es decir, tomando \ $\mu = \widetilde{P}$ \
+medida   de   probabilidad   aparece   inmediatamente
+%
+\[
+P^* = \argmax_P \Dkl[P]{\widetilde{P}}  \quad \mbox{sujeto a} \quad \int_\X M(x)
+\,  dP(x) =  m  \qquad \Leftrightarrow  \qquad \frac{dP^*}{d\widetilde{P}}(x)  =
+\e^{\eta^t x}.
+\]
 
 % ================================= EPI
 
@@ -248,13 +250,13 @@ desiguladad~\cite{Sha48, Lie78, CovTho06, DemCov91, Rio07}:
   \]
   %
   con igualdad si y solmente si \ $X$ \ e \ $Y$ \ son gaussianas con matrices de
-  covarianza proporcionales.   \modif{Claramente, se  cumple la igualdad  para \
-    $\widetilde{X}$ \  e \  $\widetilde{X}$, entonces $H\left(  \sqrt{a} \,  X +
-      \sqrt{1-a}  \,  Y   \right)  \ge  a  \,  H(X)  +   (1-a)  \,  H(Y)  \qquad
-    \Leftrightarrow \qquad H\left(  \sqrt{a} \, X + \sqrt{1-a}  \, Y \right) \ge
-    H\left( \sqrt{a} \, \widetilde{X} +  \sqrt{1-a} \, \widetilde{Y} \right) $ \
-    lo que es nada m\'as que la desigualdad anterior} reemplazando \ $X$ \ por \
-  $\sqrt{a} \, X$ \ e \ $Y$ por \ $\sqrt{1-a} \, Y$ (y vice-versa).
+  covarianza  proporcionales.    Claramente,  se  cumple  la   igualdad  para  \
+  $\widetilde{X}$  \ e  \ $\widetilde{X}$,  entonces  $H\left( \sqrt{a}  \, X  +
+    \sqrt{1-a} \, Y \right) \ge a \, H(X) + (1-a) \, H(Y) \qquad \Leftrightarrow
+  \qquad H\left( \sqrt{a} \, X + \sqrt{1-a} \, Y \right) \ge H\left( \sqrt{a} \,
+    \widetilde{X} + \sqrt{1-a} \, \widetilde{Y} \right) $ \ lo que es nada m\'as
+  que la desigualdad anterior  reemplazando \ $X$ \ por \ $\sqrt{a}  \, X$ \ e \
+  $Y$ por \ $\sqrt{1-a} \, Y$ (y vice-versa).
 \end{enumerate}
 %
 
@@ -409,12 +411,12 @@ desorganizado (ver ej.~\cite[y ref.]{CovTho06, Mer10, Mer18}).
 
 \begin{lema}[Versi\'on informacional de la segunda ley de la termodin\'amica]
   Sea $X_1 \mapsto X_2 \mapsto \cdots  \mapsto X_n \mapsto \cdots$ un proceso de
-  Markov, con probabilidades  de transici\'on \modif{$r_{X_{n+1}|X_n=x_n}$ dadas
-    (independientemente de la  condici\'on inicial)}.  Estas \'ultimas modelizan
-  el   sistema,  independiente   de   las  condiciones   iniciales.   Sean   dos
-  distribuciones  (condiciones)  iniciales  diferentes  $p_{X_1}$  y  $q_{X_1}$,
-  conduciendo  a las  distribuciones $p_{X_n}$  y $q_{X_n}$  (con respeto  a una
-  medida $\mu$ dada) para $X_n$. Entonces:
+  Markov,  con   probabilidades  de  transici\'on   $r_{X_{n+1}|X_n=x_n}$  dadas
+  (independientemente de la condici\'on  inicial).  Estas \'ultimas modelizan el
+  sistema, independiente de las  condiciones iniciales.  Sean dos distribuciones
+  (condiciones) iniciales  diferentes $p_{X_1}$  y $q_{X_1}$, conduciendo  a las
+  distribuciones $p_{X_n}$  y $q_{X_n}$  (con respeto a  una medida  $\mu$ dada)
+  para $X_n$. Entonces:
 %
 \begin{itemize}
 \item  Para cualquier  $n \ge  1$,
@@ -459,19 +461,18 @@ desorganizado (ver ej.~\cite[y ref.]{CovTho06, Mer10, Mer18}).
   \int_{\X_{n+1}}    \Dkl[p_{X_n|X_{n+1}=x_{n+1}}]{q_{X_n|X_{n+1}=x_{n+1}}}   \,
   d\mu(x_{n+1})        =       \Dkl[p_{X_n}]{q_{X_n}}        +       \int_{\X_n}
   \Dkl[p_{X_{n+1}|X_n=x_n}]{q_{X_{n+1}|X_n=x_n}}   \,   d\mu(x_n)$.    Adem\'as,
-  \modif{$p_{X_{n+1}|X_n=x_n}  = r_{X_{n+1}|X_n=x_n}  =  q_{X_{n+1}|X_n =  x_n}$
-    (transici\'on  independiente  de  la  condici\'on inicial)},  conduciendo  a
+  $p_{X_{n+1}|X_n=x_n}   =   r_{X_{n+1}|X_n=x_n}   =  q_{X_{n+1}|X_n   =   x_n}$
+  (transici\'on  independiente   de  la  condici\'on   inicial),  conduciendo  a
   $\Dkl[p_{X_{n+1}|X_n=x_n}]{q_{X_{n+1}|X_n =  x_n}} = 0$ \  con consecuencia de
   que \ $\displaystyle \Dkl[p_{X_n}]{q_{X_n}} = \Dkl[p_{X_{n+1}}]{q_{X_{n+1}}} +
-  \int_{\X_{n+1}}  \Dkl[p_{X_n|X_{n+1}   =  x_{n+1}}]{q_{X_n|X_{n+1}  =
-      x_{n+1}}}  \,  d\mu(x_{n+1})$.   \   $p_{X_n|X_{n+1}  =  x_{n+1}}$  no  es
-  necesariamente  igual a  \ $q_{X_n|X_{n+1}  = x_{n+1}}$,  pero  la divergencia
-  siendo no negativa, se obtiene la primera desigualdad.  La segunda desigualdad
-  se obtiene tomando \ $q_{X_n} = p^*$.  Adem\'as, si \ $p^*$ \ es le entrop\'ia
-  m\'axima de mismos  momentos $m = \Esp[M(X_n)]$ que los  $X_n$, hemos visto de
-  que \  $p^*(x) = \e^{\eta^t  M(x)}$ \ ley  de la familia exponencial,  dando \
-  $\Dkl[p_{X_n}]{p^*}  =  -H(X_n)  -   \eta^t  m$,  conduciendo  a  la  \'ultima
-  desigualdad.
+  \int_{\X_{n+1}} \Dkl[p_{X_n|X_{n+1} =  x_{n+1}}]{q_{X_n|X_{n+1} = x_{n+1}}} \,
+  d\mu(x_{n+1})$.  \ $p_{X_n|X_{n+1} = x_{n+1}}$  no es necesariamente igual a \
+  $q_{X_n|X_{n+1}  =  x_{n+1}}$, pero  la  divergencia  siendo  no negativa,  se
+  obtiene la primera  desigualdad.  La segunda desigualdad se  obtiene tomando \
+  $q_{X_n} = p^*$.   Adem\'as, si \ $p^*$ \ es le  entrop\'ia m\'axima de mismos
+  momentos $m  = \Esp[M(X_n)]$  que los $X_n$,  hemos visto  de que \  $p^*(x) =
+  \e^{\eta^t M(x)}$ \ ley de la familia exponencial, dando \ $\Dkl[p_{X_n}]{p^*}
+  = -H(X_n) - \eta^t m$, conduciendo a la \'ultima desigualdad.
 \end{proof}
 
 
@@ -500,10 +501,10 @@ par\'ametro~\cite{Fis22, Fis25:07, Kay93, Bos07, CovTho06, Fri04}.
 \begin{definicion}[Matriz informaci\'on de Fisher par\'ametrica]
   Sea   $X$   una   variable   aleatoria  parametrizada   por   un   par\'ametro
   $m$-dimensional, $\theta  \in \Theta \subseteq \Rset^m$,  de distribuci\'on de
-  probabilidad $p_X(\cdot;\theta)$ \modif{(con respeto a una medida $\mu$ dada)}
-  sobre $\X \subseteq  \Rset^d$ su soporte. Suponga que  $p_X$ sea diferenciable
-  \modif{con  respeto a}  $\theta$  sobre  $\Theta$.  La  matriz  de Fisher,  de
-  tama\~no $m \times m$, es definida por
+  probabilidad $p_X(\cdot;\theta)$  (con respeto a una medida  $\mu$ dada) sobre
+  $\X \subseteq  \Rset^d$ su  soporte. Suponga que  $p_X$ sea  diferenciable con
+  respeto a $\theta$ sobre $\Theta$.  La matriz de Fisher, de tama\~no $m \times
+  m$, es definida por
   %
   \[
   J_\theta(X)  =  \Esp\left[  \Big(  \nabla_\theta \log  p_X(X;\theta)  \Big)
@@ -511,23 +512,21 @@ par\'ametro~\cite{Fis22, Fis25:07, Kay93, Bos07, CovTho06, Fri04}.
   \]
   %
   donde \  $\nabla_\theta = \left[ \cdots  \: \frac{\partial}{\partial \theta_i}
-    \: \cdots \right]^t$ \  es el gradiente en \ $\theta$ \modif{\  y \ $\log$ \
-    el  \underline{logaritmo natural}}.   Es la  matriz de  covarianza  del {\it
-    score param\'etrico}  \ $S(X) = \nabla_\theta \log  p_X(X;\theta)$ \ notando
-  que  su  media es  igual  a cero  (escribiando  el  promedio y  intercambiando
-  integral y gradiente), siendo \ $\log p_X$ \ la {\it log-verosimilitud}.  Bajo
+    \: \cdots  \right]^t$ \  es el gradiente  en \  $\theta$ \ y  \ $\log$  \ el
+  \underline{logaritmo  natural}.  Es  la matriz  de covarianza  del  {\it score
+    param\'etrico} \ $S(X) = \nabla_\theta  \log p_X(X;\theta)$ \ notando que su
+  media es  igual a  cero (escribiando el  promedio y intercambiando  integral y
+  gradiente),  siendo   \  $\log  p_X$  \  la   {\it  log-verosimilitud}.   Bajo
   condiciones de regularidad, se puede mostrar~\footnote{Es una consecuencia del
     teorema de la divergencia, suponiendo que los bordes del soporte \ $\X$ \ no
     dependen  de \  $\theta$ \  y que  la funci\'on  score se  cancela  en estos
-    bordes.}    que   \   \modif{$J_\theta(X)   =   -   \Esp[\Hess_\theta   \log
-    p_X(X;\theta)]$}
-% \  vale tambi\'en  menos el  promedio  de la
-    con  $\Hess_\theta$ la  Hessiana~\footnote{Recordamos  de que,  para \  $f:
-      \Rset^m \mapsto \Rset, \quad \Hess_\theta f$ \ es la matriz de componentes
-      \    $\frac{\partial^2   f}{\partial   \theta_i    \partial   \theta_j}$.}
-    $\Hess_\theta$  \ de \  $\log p_X(X;\theta)$.   Nota: a  veces se  define la
-    informaci\'on de Fisher  como $\Tr(J)$, traza de la  matriz informaci\'on de
-    Fisher.
+    bordes.}  que \ $J_\theta(X) = - \Esp[\Hess_\theta \log p_X(X;\theta)]$
+  % \ vale tambi\'en menos el promedio de la
+  con $\Hess_\theta$ la Hessiana~\footnote{Recordamos de que, para \ $f: \Rset^m
+    \mapsto  \Rset,  \quad \Hess_\theta  f$  \ es  la  matriz  de componentes  \
+    $\frac{\partial^2 f}{\partial \theta_i \partial \theta_j}$.}  $\Hess_\theta$
+  \ de  \ $\log  p_X(X;\theta)$.  Nota:  a veces se  define la  informaci\'on de
+  Fisher como $\Tr(J)$, traza de la matriz informaci\'on de Fisher.
 \end{definicion}
 %
 Como  para  la  entrop\'ia,  la  matriz  de Fisher  se  escribe  generalmente  \
@@ -535,15 +534,15 @@ $J_\theta(X)$, \ a pesar de que no sea  funci\'on de \ $X$ \ pero de la densidad
 de  probabilidad.  Se  la  notar\'a  tambi\'en \  $J_\theta(p_X)$  \ seg\'un  la
 escritura la m\'as conveniente.
 
-\modif{En  el caso  continuo, $\mu  =  \mu_L$, con  una densidad  diferenciable,
-  t}omando el  gradiente en \  $x$ \ en  lugar de \ $\theta$  \ da la  matriz de
-informaci\'on de Fisher no param\'etrica,
+En el caso  continuo, $\mu = \mu_L$, con una  densidad diferenciable, tomando el
+gradiente en \ $x$  \ en lugar de \ $\theta$ \ da  la matriz de informaci\'on de
+Fisher no param\'etrica,
 %
 \begin{definicion}[Matriz informaci\'on de Fisher no param\'etrica]
-  Sea \ $X$ \ una  variable aleatoria continua \modif{admitiendo una densidad de
-    probabilidad}  \  $p_X$ \  definida  sobre \  $\X  \subseteq  \Rset^d$ \  su
-  soporte.  Suponga que \ $p_X$ \ sea diferenciable \modif{con respeto a \ $x$}.
-  La matriz de Fisher no param\'etrica, $d \times d$, es definida por
+  Sea  \  $X$ \  una  variable aleatoria  continua  admitiendo  una densidad  de
+  probabilidad \ $p_X$  \ definida sobre \ $\X \subseteq  \Rset^d$ \ su soporte.
+  Suponga que  \ $p_X$ \ sea  diferenciable con respeto  a \ $x$.  La  matriz de
+  Fisher no param\'etrica, $d \times d$, es definida por
   %
   \[
   J(X) =  \Esp\left[ \Big(  \nabla_x \log p_X(X)  \Big) \Big(  \nabla_x \log
@@ -553,8 +552,7 @@ informaci\'on de Fisher no param\'etrica,
   Es  la matriz  de covarianza  de  la {\it  funci\'on score}  \ $\nabla_x  \log
   p_X(X)$ \ (escribiendo la media y $p_X$  siendo cero el los bordes de $\X$, se
   ve que  el promedio  de $\nabla_x  \log p_X(X)$ tambi\'en  vale cero)  o, bajo
-  condiciones   de    regularidad,   \modif{$J(X)   =    -   \Esp[\Hess_x   \log
-    p_X(X;\theta)]$}.
+  condiciones de regularidad, $J(X) = - \Esp[\Hess_x \log p_X(X;\theta)]$.
   % menos el promedio de la Hessiana en \ $x$ \ de la log-verosimilitud.
 \end{definicion}
 %
@@ -581,11 +579,11 @@ Es interesante notar que:
   \forall \ A \ \mbox{matrix no singular}, \quad J(AX) = A^{-t} J(X) A^{-1},
   \]
   %
-  \modif{con  $A^{-t}  =  \left(  A^{-1}  \right)^t =  \left(  A^t  \right)^{-1}
-    $}~\cite{CovTho06,  DemCov91, Bar86}.  Esta relaci\'on  da a  \ $J(X)$  \ un
-  sabor de informaci\'on en  el sentido de que, cuando \ $A$  \ es real y tiende
-  al infinito,  \ $J(AX)$ \ tiende  a 0; \ $A  X$ \ tiende a  ser muy dispersada
-  as\'i que no hay informaci\'on sobre su posici\'on.
+  con   $A^{-t}  =   \left(   A^{-1}  \right)^t   =   \left(  A^t   \right)^{-1}
+  $~\cite{CovTho06, DemCov91, Bar86}.  Esta relaci\'on  da a \ $J(X)$ \ un sabor
+  de informaci\'on  en el sentido  de que, cuando  \ $A$ \  es real y  tiende al
+  infinito, \ $J(AX)$ \ tiende a 0; \  $A X$ \ tiende a ser muy dispersada as\'i
+  que no hay informaci\'on sobre su posici\'on.
 %
 \item $J_\theta$ \  y \ $J$ \ son  convexas en el sentido de  que para cualquier
   conjunto de \ $\pi_k \ge 0, \, \sum_{k=1}^K \pi_k = 1$ \ y \ cualquier
@@ -695,8 +693,8 @@ informaci\'on de Fisher, \ie \  $J_\theta(X)$ \ caracteriza la informaci\'on que
   funci\'on de \ $\theta$,  y que el soporte \ $\X$ \  no depende de \ $\theta$,
   se obtiene~\footnote{Se supone que  los integrandes sean \ $\theta$-localmente
     integrables,  tal  que  se  puede  invertir  derivada  en  \  $\theta$  \  e
-    integraci\'on;  \modif{ver  tambi\'en teorema~\ref{Th:MP:IntegralParametro},
-      pagina~\pageref{Th:MP:IntegralParametro}.}}
+    integraci\'on;    ver    tambi\'en    teorema~\ref{Th:MP:IntegralParametro},
+    pagina~\pageref{Th:MP:IntegralParametro}.}
   %
   \begin{eqnarray*}
   \Esp\left[ S(X) \left( \widehat{\theta}(X) - \theta_0 \right)^t \right] & = &
@@ -731,7 +729,7 @@ informaci\'on de Fisher, \ie \  $J_\theta(X)$ \ caracteriza la informaci\'on que
   %
   La prueba se termina tomando \ $u = J_\theta(X)^{-1} \left( I + \Jac_b(\theta)
   \right)^t \,  v$ \ (recordandose  que \ $J_\theta$ \  es sim\'etrica).\newline
-  \modif{Para $\theta$ parametro de  posici\'on, $\widehat{\Theta} = X$, c}on la
+  Para  $\theta$  parametro  de  posici\'on,  $\widehat{\Theta}  =  X$,  con  la
   elecci\'on  de \  $u$,  en la  desigualdad  de Cauchy-Bunyakovsky-Schwarz,  se
   obtiene la igualdad  cuando \ $v^t J(X)^{-1} S(x) \propto v^t  (x - \theta)$ \
   para cualquier \ $v$  \ y \ $x$ (c.s.), est decir  \ $\nabla_x p_X (x) \propto
@@ -766,8 +764,8 @@ Obviamente, en la segunda,  se alcanza la igualdad si y solamente  si \ $X$ \ es
 gaussiano.   Adem\'as, para  una  matriz \  $A  \ge 0$,  existe la  ``relaci\'on
 determinente-traza''  \ $|A|^{\frac1d} \le  \frac1d \Tr(A)$,  con igualdad  si y
 solamente si  \ $A = I$~\cite[cap.~11, sec.~4]{MagNeu99},  dando otras versiones
-escalares de la desigualdad de Cram\'er-Rao, por ejemplo\modif{, de la versi\'on
-  no param\'etrica,}
+escalares de  la desigualdad  de Cram\'er-Rao, por  ejemplo, de la  versi\'on no
+param\'etrica,
 % \Tr\left(\Sigma_{\widehat{\theta}}  \right)  \,  \ge  \, \frac{d^2  \,  \left(
 %     \Tr\left(I   +  \Jac_b(\theta)  \right)   \right)^2}{\Trleft|  J_\theta(X)
 % \right|} \qquad \mbox{y} \qquad
@@ -964,8 +962,8 @@ informaci\'on de Fisher.
   \right)^{-1}  =  I$ \  viene  \  $\frac{\partial  \left( T  \Sigma_\Gauss  T^t
     \right)^{-1}}{\partial T_{i,j}} = -  \left( T \Sigma_\Gauss T^t \right)^{-1}
   \frac{\partial \left( T \Sigma_\Gauss  T^t \right)}{\partial T_{i,j}} \left( T
-    \Sigma_\Gauss T^t \right)^{-1}$.  \modif{Usando le vector \ $\un_i$  \ con 1
-    en su \ $i$-\'esima} componente, y cero si no, se obtiene
+    \Sigma_\Gauss T^t \right)^{-1}$.  Usando le vector \ $\un_i$ \ con 1 en su \
+  $i$-\'esima componente, y cero si no, se obtiene
   %
   \begin{eqnarray*}
   \frac{\partial \left( x^t \left( T \Sigma_\Gauss T^t \right)^{-1} x
@@ -977,10 +975,10 @@ informaci\'on de Fisher.
   \Sigma_\Gauss T^t \right)^{-1} T \Sigma_\Gauss \un_j
   \end{eqnarray*}
   %
-  usando \modif{la relaci\'on}  \ $x^t A \un_k \un_l^t  B x = \un_l^t B  x x^t A
-  \un_k =  \un_k^t A^t x  x^t B^t  \un_l$ \ (escalares  comutan y un  escalar es
-  igual a  su transpuesta) y  usando la simetr\'ia  de \ $T  \Sigma_\Gauss T^t$.
-  Eso significa que
+  usando la relaci\'on  \ $x^t A \un_k \un_l^t B  x = \un_l^t B x  x^t A \un_k =
+  \un_k^t A^t x x^t  B^t \un_l$ \ (escalares comutan y un  escalar es igual a su
+  transpuesta) y usando la simetr\'ia de \ $T \Sigma_\Gauss T^t$.  Eso significa
+  que
   %
   \[
   \nabla_T \left( x^t \left( T \Sigma_\Gauss T^t \right)^{-1} x \right) = - 2 \,
@@ -1004,11 +1002,11 @@ informaci\'on de Fisher.
   \]
   %
   Suponiende que  se puede intervertir derivadas  y integrales (ver~\cite{Bar84,
-    Bar86}    donde    se     dan    condiciones    \modif{rigurosas,    y    el
-    teorema~\ref{Th:MP:IntegralParametro},
-    pagina~\pageref{Th:MP:IntegralParametro}}),    $\displaystyle    p_Y(y)    =
-  \int_{\Rset^d} p_X(x) \, p(y-x) \, dx$ \ \modif{(ver ejemplo~\ref{Ej:MP:Suma},
-    pagina~\pageref{Ej:MP:Suma})}   \   satisface   tambi\'en  esta   ecuaci\'on
+    Bar86}     donde     se      dan     condiciones     rigurosas,     y     el
+  teorema~\ref{Th:MP:IntegralParametro},
+  pagina~\pageref{Th:MP:IntegralParametro}),     $\displaystyle     p_Y(y)     =
+  \int_{\Rset^d}  p_X(x)  \,  p(y-x)  \, dx$  \  (ver  ejemplo~\ref{Ej:MP:Suma},
+  pagina~\pageref{Ej:MP:Suma})    \   satisface   tambi\'en    esta   ecuaci\'on
   diferencial, y adem\'as
   %
   \begin{eqnarray*}
@@ -1037,7 +1035,7 @@ informaci\'on de Fisher.
   general.  Adem\'as,  si \ $T =  T(\theta)$, la segunda desigualdad  sigue de \
   $\frac{\partial   \cdot}{\partial    \theta}   =   \sum_{i,j}   \frac{\partial
     \cdot}{\partial   T_{i,j}}   \frac{\partial   T_{i,j}}{\partial  \theta}   =
-  \Tr\left( \nabla_T \, \frac{\partial T^t}{\partial \theta} \right)$.
+  \Tr\left( \nabla_T \cdot \, \frac{\partial T^t}{\partial \theta} \right)$.
 \end{proof}
 
 La versi\'on  inicial de la identidad de  de Bruijn, con \  $\Sigma_\Gauss = I$,
@@ -1109,9 +1107,8 @@ identidad entre \ $I(X;Y)$ \ y \ $\E(X|Y)$:
   %
   (multiplicando ambos lados por $p_X$). Ahora, \ $I(X;Y) = H(Y) - H(Y|X) = H(Y)
   - H(\Gauss)$ \ (de la independencia, cuando \ $X  = x$, \ $Y = S x + \Gauss$ \
-  gaussiana  de misma  convarianza  que  \ $\Gauss$  \  y de  promedio  \ $S  x$
-  \modif{(ver  ejemplo~\ref{Ej:MP:SumaCond},  pagina~\pageref{Ej:MP:SumaCond})},
-  as\'i que
+  gaussiana de  misma convarianza que \  $\Gauss$ \ y  de promedio \ $S  x$ (ver
+  ejemplo~\ref{Ej:MP:SumaCond}, pagina~\pageref{Ej:MP:SumaCond}), as\'i que
   %
   \begin{eqnarray*}
   \nabla_S I(X;Y) & = & \nabla_S H(Y)\\[2.5mm]
@@ -1287,8 +1284,8 @@ definici\'on Def.~\ref{Def:SZ:entropiacondicional},
     \Big( \nabla_\theta \log p_{X|Y}(X;\theta) \Big)^t \right].
   \]
   %
-  \modif{donde  $p_{X|Y}(\cdot;\theta) = \frac{p_{X,Y}(\cdot,Y;\theta)}{p_Y(Y)}$
-    es ac\'a una variable aleatoria.}
+  donde  $p_{X|Y}(\cdot;\theta)   =  \frac{p_{X,Y}(\cdot,Y;\theta)}{p_Y(Y)}$  es
+  ac\'a una variable aleatoria.
 \end{definicion}
 
 De  esta  definici\'on,   es  sencillo  probar  de  que   la  matriz  de  Fisher
@@ -1378,9 +1375,9 @@ entr\'opica,  teorema~\ref{Th:SZ:EPI}, dada en  el caso  escalar en~\cite{Joh04,
 \begin{proof}
   $X$  \  e  \  $Y$  \  siendo  independientes,  tenemos  para  $W  =  X  +  Y$,
   $\displaystyle p_W(w)  = \int_\X p_X(x)  p_Y(w-x) \, dx$ convoluci\'on  de las
-  distribuciones de  \ $X$  \ y de  \ $Y$  \modif{(ver ejemplo~\ref{Ej:MP:Suma},
-    pagina~\pageref{Ej:MP:Suma})}.  Escribiendo $S_X  = \nabla_x \log p_X$ el
-  score de $X$ y lo mismo para $Y$ y $W$,
+  distribuciones  de  \  $X$  \   y  de  \  $Y$  (ver  ejemplo~\ref{Ej:MP:Suma},
+  pagina~\pageref{Ej:MP:Suma}).  Escribiendo $S_X =  \nabla_x \log p_X$ el score
+  de $X$ y lo mismo para $Y$ y $W$,
   %
   \begin{eqnarray*}
   S_W(w) & = & \int_\X \frac{p_X(x)}{p_W(w)} \, \nabla_w p_Y(w-x) \, dx\\[2.5mm]
