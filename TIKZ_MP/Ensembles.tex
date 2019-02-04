@@ -1,4 +1,4 @@
-\begin{tikzpicture}[scale=.85]
+\begin{tikzpicture}[scale=.725]
 \shorthandoff{>}
 %
 % Union y interseccion:
@@ -18,7 +18,7 @@
 %Union
 \begin{scope}
 %
-\fill[opacity=.3]
+\fill[opacity=.1]
 plot[domain=\s:\t+360,samples=200] ({cos(\x)},{.5*sin(\x)})
 -- plot[domain=\u:\v+360,samples=200] ({cos(\x)+1},{.5*sin(\x)+.25})
 -- cycle;
@@ -29,8 +29,8 @@ plot[domain=\s:\t+360,samples=200] ({cos(\x)},{.5*sin(\x)})
 \draw[domain=0:360,samples=200] plot ({2*cos(\x)+.5},{1.5*sin(\x)});
 %
 % A, B, Omega
-\draw (-.75,0) node[scale=.9]{\small $A$};
-\draw(1.75,.25) node[scale=.9]{\small $B$};
+\draw (-.75,0) node[scale=.85]{\small $A$};
+\draw(1.75,.25) node[scale=.85]{\small $B$};
 \draw(-.5,1.375) node[left,scale=.9]{\small $\Omega$};
 %
 \draw (.5,-2.5) node{(a)};
@@ -38,9 +38,9 @@ plot[domain=\s:\t+360,samples=200] ({cos(\x)},{.5*sin(\x)})
 %
 %
 % Interseccion
-\begin{scope}[xshift=5cm]
+\begin{scope}[xshift=4.8cm]
 %
-\fill[opacity=.3]
+\fill[opacity=.1]
 plot[domain=\s:\t,samples=200] ({cos(\x)},{.5*sin(\x)})
 -- plot[domain=\u:\v,samples=200] ({cos(\x)+1},{.5*sin(\x)+.25})
 -- cycle;
@@ -51,8 +51,8 @@ plot[domain=\s:\t,samples=200] ({cos(\x)},{.5*sin(\x)})
 \draw[domain=0:360,samples=200] plot ({2*cos(\x)+.5},{1.5*sin(\x)});
 %
 % A, B, Omega
-\draw (-.75,0) node[scale=.9]{\small $A$};
-\draw(1.75,.25) node[scale=.9]{\small $B$};
+\draw (-.75,0) node[scale=.85]{\small $A$};
+\draw(1.75,.25) node[scale=.85]{\small $B$};
 \draw(-.5,1.375) node[left,scale=.9]{\small $\Omega$};
 %
 \draw (.5,-2.5) node{(b)};
@@ -60,9 +60,9 @@ plot[domain=\s:\t,samples=200] ({cos(\x)},{.5*sin(\x)})
 %
 %
 % Complemento
-\begin{scope}[xshift=10cm]
+\begin{scope}[xshift=9.6cm]
 %
-\fill[opacity=.3]
+\fill[opacity=.1]
 plot[domain=0:360,samples=200] ({2*cos(\x)+.5},{1.5*sin(\x)})
 -- plot[domain=0:360,samples=200] ({cos(\x)},{-.5*sin(\x)})
 -- cycle;
@@ -72,7 +72,7 @@ plot[domain=0:360,samples=200] ({2*cos(\x)+.5},{1.5*sin(\x)})
 \draw[domain=0:360,samples=200] plot ({2*cos(\x)+.5},{1.5*sin(\x)});
 %
 % A, Omega
-\draw (-.75,0) node[scale=.9]{\small $A$};
+\draw (-.75,0) node[scale=.85]{\small $A$};
 \draw(-.5,1.375) node[left,scale=.9]{\small $\Omega$};
 %
 \draw (.5,-2.5) node{(c)};
@@ -80,7 +80,7 @@ plot[domain=0:360,samples=200] ({2*cos(\x)+.5},{1.5*sin(\x)})
 %
 %
 % Excluyentes
-\begin{scope}[xshift=15cm]
+\begin{scope}[xshift=14.6cm]
 %
 % borders A, B (con un shift...) y Omega
 \draw[domain=0:360,samples=200,thick] plot ({cos(\x)},{.5*sin(\x)-.5});
@@ -88,10 +88,33 @@ plot[domain=0:360,samples=200] ({2*cos(\x)+.5},{1.5*sin(\x)})
 \draw[domain=0:360,samples=200] plot ({2*cos(\x)+.5},{1.5*sin(\x)});
 %
 % A, B, Omega
-\draw (-.75,-.5) node[scale=.9]{\small $A$};
-\draw (1.75,.5) node[scale=.9]{\small $B$};
+\draw (-.75,-.5) node[scale=.85]{\small $A$};
+\draw (1.75,.5) node[scale=.85]{\small $B$};
 \draw(-.5,1.375) node[left,scale=.9]{\small $\Omega$};
 %
 \draw (.5,-2.5) node{(d)};
 \end{scope}
+%
+%
+% privado
+\begin{scope}[xshift=19.4cm]
+%
+\fill[opacity=.1]
+plot[domain=\s:\t+360,samples=200] ({cos(\x)},{.5*sin(\x)})
+-- plot[domain=\u:\v,samples=200] ({cos(\x)+1},{.5*sin(\x)+.25})
+-- cycle;
+%
+% borders A, B y Omega
+\draw[domain=0:360,samples=200,thick] plot ({cos(\x)},{.5*sin(\x)});
+\draw[dashed,domain=0:360,samples=200,thick] plot ({cos(\x)+1},{.5*sin(\x)+.25});
+\draw[domain=0:360,samples=200] plot ({2*cos(\x)+.5},{1.5*sin(\x)});
+%
+% A, B, Omega
+\draw (-.75,0) node[scale=.85]{\small $A$};
+\draw(1.75,.25) node[scale=.85]{\small $B$};
+\draw(-.5,1.375) node[left,scale=.9]{\small $\Omega$};
+%
+\draw (.5,-2.5) node{(e)};
+\end{scope}
+%
 \end{tikzpicture}

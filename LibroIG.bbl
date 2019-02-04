@@ -724,9 +724,9 @@ Holevo, A.~S. (1973).
 \newblock {\em Problems of Information Transmission}, {\em 9\/}(3), 177--183.
 
 \bibitem[\protect\citeauthoryear{Horn \& Johnson}{Horn \&
-  Johnson}{1985}]{HorJoh85}
-Horn, R.~A. \& Johnson, C.~R. (1985).
-\newblock {\em Matrix Analysis}.
+  Johnson}{2013}]{HorJoh13}
+Horn, R.~A. \& Johnson, C.~R. (2013).
+\newblock {\em Matrix Analysis\/} (2nd ed.).
 \newblock Cambridge University Press.
 
 \bibitem[\protect\citeauthoryear{Huffman}{Huffman}{1952}]{Huf52}
@@ -1437,6 +1437,12 @@ Schwarz, H.~A. (1888).
 \newblock Ueber ein die fl{\"a}chen kleinsten fl{\"a}cheninhalts betreffendes
   problem der variationsrechnung.
 \newblock {\em Acta societatis scientiarum Fennic{\ae}}, {\em 15}, 315--362.
+
+\bibitem[\protect\citeauthoryear{{Serrano Marug\'an}}{{Serrano
+  Marug\'an}}{2000}]{Ser00}
+{Serrano Marug\'an}, E. (2000).
+\newblock Etimolog{\'i}a de algunos t{\'e}rminos matem{\'a}ticos.
+\newblock {\em Suma}, {\em 35}, 87--96.
 
 \bibitem[\protect\citeauthoryear{Shafer \& Vovk}{Shafer \&
   Vovk}{2006}]{ShaVov06}
