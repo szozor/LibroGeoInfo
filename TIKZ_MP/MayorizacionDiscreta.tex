@@ -1,0 +1,48 @@
+\begin{tikzpicture}%[scale=.9]
+\shorthandoff{>}
+%
+% mayorizacion posible
+\begin{scope}
+%
+\draw[>=stealth,->] (-.25,0)--(4.25,0) node[right]{\small $k$};
+\draw[>=stealth,->] (0,-.25)--(0,2.25) node[above]{\small $\sum_{i=1}^k p^\downarrow_i \ , \ \sum_{i=1}^k q^\downarrow_i$};
+%
+\draw[dashed] (0,0)--(1,.8) node[scale=.8]{$\bullet$}
+ -- (2,1.4) node[scale=.8]{$\bullet$}
+ -- (3,1.8) node[scale=.8]{$\bullet$}
+ -- (4,2) node[scale=.8]{$\bullet$};
+%
+\draw (0,0)--(1,1) node[scale=.8]{$\bullet$}
+ -- (2,1.6) node[scale=.8]{$\bullet$}
+ -- (3,1.9) node[scale=.8]{$\bullet$}
+ -- (4,2) node[scale=.8]{$\bullet$};
+%
+\foreach \k in {1,...,4} {\draw (\k,0)--(\k,-.1) node[below,scale=.7]{\k};}
+\draw (0,2)--(-.1,2) node[left,scale=.7]{1};
+
+\draw (2,-1) node{\small (a)};
+\end{scope}
+%
+% mayorizacion imposible
+\begin{scope}[xshift=8.5cm]
+%
+\draw[>=stealth,->] (-.25,0)--(4.25,0) node[right]{\small $k$};
+\draw[>=stealth,->] (0,-.25)--(0,2.25) node[above]{\small $\sum_{i=1}^k p^\downarrow_i \ , \ \sum_{i=1}^k q^\downarrow_i$};
+%
+\draw[dashed] (0,0)--(1,1) node[scale=.8]{$\bullet$}
+ -- (2,1.7) node[scale=.8]{$\bullet$}
+ -- (3,1.9) node[scale=.8]{$\bullet$}
+ -- (4,2) node[scale=.8]{$\bullet$};
+%
+\draw (0,0)--(1,1.2) node[scale=.8]{$\bullet$}
+ -- (2,1.6) node[scale=.8]{$\bullet$}
+ -- (3,1.94) node[scale=.8]{$\bullet$}
+ -- (4,2) node[scale=.8]{$\bullet$};
+%
+\foreach \k in {1,...,4} {\draw (\k,0)--(\k,-.1) node[below,scale=.7]{\k};}
+\draw (0,2)--(-.1,2) node[left,scale=.7]{1};
+
+\draw (2,-1) node{\small (b)};
+\end{scope}
+%
+\end{tikzpicture}

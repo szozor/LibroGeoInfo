@@ -306,26 +306,30 @@ medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}.
 \setcounter{PropSchurConcavidad}{\value{enumi}}
 \item\label{Prop:SZ:Schurconcavidad}  {\it Schur-concavidad:}  como se  lo puede
   querrer, lo  m\'as ``concentrado'' es  una distribuci\'on de  probabilidad, lo
-  menos   hay  incerteza,   y  entonces   lo   m\'as  peque\~no   debe  ser   la
-  entrop\'ia.  Esta propiedad intuitiva  se resuma  a partir  de la  noci\'on de
-  mayorizaci\'on.
+  menos hay  incerteza, y  entonces lo m\'as  peque\~no debe ser  la entrop\'ia.
+  Esta propiedad intuitiva  se resuma a partir de  la noci\'on de mayorizaci\'on
+  vista       en      la       definici\'on      Def.~\ref{Def:MP:Mayorizacion},
+  pagina~\pageref{Def:MP:Mayorizacion}  (recuerdense  que  si  los  vectores  no
+  tienen  el mismo  tama\~no, el  m\'as peque\~no  es completado  por  ceros; es
+  equivalente a a\~nadir estados fictivos de probabilidad nula, lo que no cambia
+  la entrop\'ia).
   %
-  \begin{definicion}[Mayorizaci\'on]\label{Def:SZ:Mayorizacion}
-    Un vector de  probabilidad (distribuci\'on) $p$ mayorizado por  un vector de
-    probabilidad (distribuci\'on) $q$, notado $p \prec q$, se define como:
-    %
-    \[
-    p  \prec   q  \qquad  \mbox{ssi}  \qquad   \sum_{i=1}^k  p_i^\downarrow  \le
-    \sum_{i=1}^k q_i^\downarrow, \quad  1 \le k < \alpha  \qquad \mbox{y} \qquad
-    \sum_{i=1}^\alpha p_i^\downarrow = \sum_{i=1}^\alpha q_i^\downarrow
-    \]
-    %
-    (las \'ultimas sumas siendo igual a 1).  Si los alfabetos de definici\'on de
-    \ $p$ \ y  \ $q$ \ son de tama\~nos diferentes, \  $\alpha$ \ es el tama\~no
-    lo m\'as  grande y  la distribuci\'on  sobre el alfabeto  lo m\'as  corto es
-    completada por  estados de probabilidad 0  (recordar que no va  a cambiar la
-    entrop\'ia).
-  \end{definicion}
+%  \begin{definicion}[Mayorizaci\'on]\label{Def:SZ:Mayorizacion}
+%    Un vector de  probabilidad (distribuci\'on) $p$ mayorizado por  un vector de
+%    probabilidad (distribuci\'on) $q$, notado $p \prec q$, se define como:
+%    %
+%    \[
+%    p  \prec   q  \qquad  \mbox{ssi}  \qquad   \sum_{i=1}^k  p_i^\downarrow  \le
+%    \sum_{i=1}^k q_i^\downarrow, \quad  1 \le k < \alpha  \qquad \mbox{y} \qquad
+%    \sum_{i=1}^\alpha p_i^\downarrow = \sum_{i=1}^\alpha q_i^\downarrow
+%    \]
+%    %
+%    (las \'ultimas sumas siendo igual a 1).  Si los alfabetos de definici\'on de
+%    \ $p$ \ y  \ $q$ \ son de tama\~nos diferentes, \  $\alpha$ \ es el tama\~no
+%    lo m\'as  grande y  la distribuci\'on  sobre el alfabeto  lo m\'as  corto es
+%    completada por  estados de probabilidad 0  (recordar que no va  a cambiar la
+%    entrop\'ia).
+%  \end{definicion}
   %
   La  Schur-concavidad  se  traduce  por  la  relaci\'on
   %
@@ -645,59 +649,59 @@ variable determinista).
 Si se pierde la propiedad de invarianza bajo una biyecci\'on, sorprendentemente,
 se conserva la entrop\'ia bajo el equivalente continuo del rearreglo.
 %
-\begin{definicion}[Rearreglo sim\'etrico]\label{Def:SZ:rearreglo}
-  Sea $\P \subset \Rset^d$ abierto de  volumen finito $|\P| < +\infty$.  El {\it
-    rearreglo sim\'etrico} $\P^\downarrow$  de $\P$ es la bola  centrada en 0 de
-  mismo volumen que $\P$, \ie
-  %
-  \[
-  \P^\downarrow  = \left\{  x  \in  \Rset^d \,  :  \: \frac{2  \pi^{\frac{d}{2}}
-      |x|^d}{\Gamma\left(\frac{d}{2}\right)} \le |\P| \right\},
-  \]
-  %
-  donde  $|\cdot|$  denota  la   norma  euclideana.   Eso  es  ilustrado  figura
-  Fig.~\ref{Fig:SZ:ensemblerearreglado}-a.\newline  Sea  $p_X$  una densidad  de
-  probabilidad y sea $\P_t = \{ y \, : \: p_X(y) > t \}$ para cualquier $t > 0$,
-  sus conjuntos  de niveles.  La densidad de  probabilidad~\footnote{Se proba de
-    que  esta funci\'on,  positiva por  definici\'on, suma  a 1.   Adem\'as, por
-    construcci\'on,  depende  \'unicamente  de   $|x|$  y  decrece  con  $|x|$.}
-  rearreglada sim\'etrico $p^\downarrow_X$ de $p_X$ es definida por
-  %
-  \[
-  p^\downarrow_X(x)  =  \int_0^{+\infty}  \un_{\P_u^\downarrow}(x) \,  du.
-  \]
-  %
-  (recuerdense de que $\un_A$ es el indicator  del conjunto $A$)
-  % , \ie $\un_A(x) = 1$ si $x \in A$ y cero sino.
-\end{definicion}
+%\begin{definicion}[Rearreglo sim\'etrico]\label{Def:SZ:rearreglo}
+%  Sea $\P \subset \Rset^d$ abierto de  volumen finito $|\P| < +\infty$.  El {\it
+%    rearreglo sim\'etrico} $\P^\downarrow$  de $\P$ es la bola  centrada en 0 de
+%  mismo volumen que $\P$, \ie
+%  %
+%  \[
+%  \P^\downarrow  = \left\{  x  \in  \Rset^d \,  :  \: \frac{2  \pi^{\frac{d}{2}}
+%      |x|^d}{\Gamma\left(\frac{d}{2}\right)} \le |\P| \right\},
+%  \]
+%  %
+%  donde  $|\cdot|$  denota  la   norma  euclideana.   Eso  es  ilustrado  figura
+%  Fig.~\ref{Fig:SZ:ensemblerearreglado}-a.\newline  Sea  $p_X$  una densidad  de
+%  probabilidad y sea $\P_t = \{ y \, : \: p_X(y) > t \}$ para cualquier $t > 0$,
+%  sus conjuntos  de niveles.  La densidad de  probabilidad~\footnote{Se proba de
+%    que  esta funci\'on,  positiva por  definici\'on, suma  a 1.   Adem\'as, por
+%    construcci\'on,  depende  \'unicamente  de   $|x|$  y  decrece  con  $|x|$.}
+%  rearreglada sim\'etrico $p^\downarrow_X$ de $p_X$ es definida por
+%  %
+%  \[
+%  p^\downarrow_X(x)  =  \int_0^{+\infty}  \un_{\P_u^\downarrow}(x) \,  du.
+%  \]
+%  %
+%  (recuerdense de que $\un_A$ es el indicator  del conjunto $A$)
+%  % , \ie $\un_A(x) = 1$ si $x \in A$ y cero sino.
+%\end{definicion}
 %
-Del hecho  de que $\forall \, t  < \tau \: \Leftrightarrow  \: \P_\tau \subseteq
-\P_t  \:  \Leftrightarrow \:  \P_\tau^\downarrow  \subseteq \P_t^\downarrow$  es
-sencillo   ver   que   si   $x   \in  \P_\tau^\downarrow$,   entonces   $x   \in
-\P_t^\downarrow$,  lo que  conduce a  $p_X^\downarrow(x) >  \tau$  y vice-versa.
-M\'as  all\'a, sobre  $\P_{\tau+d\tau}  \backslash \P_\tau$  la funci\'on  $p_X$
-``vale''   $\tau$   \   y   \   sobre   $\P_{\tau+d\tau}^\downarrow   \backslash
-\P_\tau^\downarrow$  la funci\'on $p_X^\downarrow$  ``vale'' tambien  $\tau$, lo
-que  da \  $\displaystyle  \int_{\P_\tau^\downarrow} p_X^\downarrow(x)  \, dx  =
-\int_{\P_\tau} p_X(x)  \, dx$ \  (ver~\cite{LieLos01, WanMad04} para  une prueba
-m\'as  rigurosa).   La representaci\'on  de  la  definici\'on  es conocida  como
-representaci\'on  en  capas  de  pastel  (``layer cake''  en  ingles).   Eso  es
-ilustrado en la figura Fig.~\ref{Fig:SZ:ensemblerearreglado}-b
-  %
-  \begin{figure}[h!]
-  %
-  \begin{center} \input{TIKZ_SZ/Rearreglo} \end{center}
-  %
-  \leyenda{(a):  Ilustraci\'on del rearreglo  sim\'etrico $\P^\downarrow$  de un
-    conjunto  $\P$,  siendo  la  bola  centrada  en 0  de  mismo  volumen.   (b)
-    Construcci\'on  del rearreglo  $p_X^\downarrow$:  dado un  $\tau$, se  busca
-    $\P_\tau$ y  se deduce $P_\tau^\downarrow$; dado  un $x$, se  busca el mayor
-    $t$  tal que  $x  \in  P_t^\downarrow$, este  $t$  m\'aximo siendo  entonces
-    $p_X^\downarrow(x)$; adem\'as,  por construcci\'on, las  superficies en gris
-    son iguales.}
-  %
-  \label{Fig:SZ:ensemblerearreglado}
-  \end{figure}
+%Del hecho  de que $\forall \, t  < \tau \: \Leftrightarrow  \: \P_\tau \subseteq
+%\P_t  \:  \Leftrightarrow \:  \P_\tau^\downarrow  \subseteq \P_t^\downarrow$  es
+%sencillo   ver   que   si   $x   \in  \P_\tau^\downarrow$,   entonces   $x   \in
+%\P_t^\downarrow$,  lo que  conduce a  $p_X^\downarrow(x) >  \tau$  y vice-versa.
+%M\'as  all\'a, sobre  $\P_{\tau+d\tau}  \backslash \P_\tau$  la funci\'on  $p_X$
+%``vale''   $\tau$   \   y   \   sobre   $\P_{\tau+d\tau}^\downarrow   \backslash
+%\P_\tau^\downarrow$  la funci\'on $p_X^\downarrow$  ``vale'' tambien  $\tau$, lo
+%que  da \  $\displaystyle  \int_{\P_\tau^\downarrow} p_X^\downarrow(x)  \, dx  =
+%\int_{\P_\tau} p_X(x)  \, dx$ \  (ver~\cite{LieLos01, WanMad04} para  une prueba
+%m\'as  rigurosa).   La representaci\'on  de  la  definici\'on  es conocida  como
+%representaci\'on  en  capas  de  pastel  (``layer cake''  en  ingles).   Eso  es
+%ilustrado en la figura Fig.~\ref{Fig:SZ:ensemblerearreglado}-b
+%  %
+%  \begin{figure}[h!]
+%  %
+%  \begin{center} \input{TIKZ_SZ/Rearreglo} \end{center}
+%  %
+%  \leyenda{(a):  Ilustraci\'on del rearreglo  sim\'etrico $\P^\downarrow$  de un
+%    conjunto  $\P$,  siendo  la  bola  centrada  en 0  de  mismo  volumen.   (b)
+%    Construcci\'on  del rearreglo  $p_X^\downarrow$:  dado un  $\tau$, se  busca
+%    $\P_\tau$ y  se deduce $P_\tau^\downarrow$; dado  un $x$, se  busca el mayor
+%    $t$  tal que  $x  \in  P_t^\downarrow$, este  $t$  m\'aximo siendo  entonces
+%    $p_X^\downarrow(x)$; adem\'as,  por construcci\'on, las  superficies en gris
+%    son iguales.}
+%  %
+%  \label{Fig:SZ:ensemblerearreglado}
+%  \end{figure}
 % =  \B  \left( 0  , r_\P  \right)$ con  $\frac{2
 %    \pi^{d/2} r_\P^d}{\Gamma(d/2)} = |\P|$.
 
@@ -708,6 +712,8 @@ ilustrado en la figura Fig.~\ref{Fig:SZ:ensemblerearreglado}-b
   \[
   H\left( p_X^\downarrow \right) = H(p_X).
   \]
+  donde  $p_X^\downarrow$   es  el  rearreglo  s\'imetrico   de  $p_X$  definido
+  Def.~\ref{Def:MP:rearreglo} pagina~\pageref{Def:MP:rearreglo}.
 \end{propiedadesC}
 %
 \noindent Esta  propiedad es probada para  funciones convexas de  la densidad de
@@ -718,33 +724,37 @@ o~\cite[Lema~7.2]{WanMad04}~\footnote{En~\cite[Sec.~3.3]{LieLos01}  lo  muestran
 particular $\phi(t) = t \log t$.
 
 Una pregunta natural  es de saber lo que pasa en  t\'ermino de mayorizaci\'on en
-el contexto continuo $d$-dimensional. Por  eso, se necesita primero de redefinir
-la noci\'on de mayorizaci\'on en este contexto:
+el contexto continuo $d$-dimensional.
+% Por  eso, se necesita primero de redefinir
+%la noci\'on de mayorizaci\'on en este contexto:
 %
-\begin{definicion}[Mayorizaci\'on en el contexto continuo]\label{Def:SZ:MayorizacionC}
-  Una densidad  de probabilidad $p$  es dicha mayorizada por  una distribuci\'on
-  $q$ si:
-  %
-  \[
-  p \prec  q \qquad \mbox{ssi}  \qquad \int_{\B(0,r)} p^\downarrow(x) \,  dx \le
-  \int_{\B(0,r)} q^\downarrow(x) \, dx \quad \forall  \, r > 0, \quad \mbox{ y }
-  \quad \int_{\Rset^d} p^\downarrow(x) \, dx = \int_{\Rset^d} q^\downarrow(x) \,
-  dx,
-  \]
-  %
-  donde \ $\B(0,r) = \{ x \in \Rset^d:  \: \|x\| \ge r \}$ \ es la bola centrada
-  en \ $0$ \ y de rayo  \ $r$ \ (las \'ultimas integrales son obviamente iguales
-  a 1).
-\end{definicion}
+%\begin{definicion}[Mayorizaci\'on en el contexto continuo]\label{Def:SZ:MayorizacionC}
+%  Una densidad  de probabilidad $p$  es dicha mayorizada por  una distribuci\'on
+%  $q$ si:
+%  %
+%  \[
+%  p \prec  q \qquad \mbox{ssi}  \qquad \int_{\B(0,r)} p^\downarrow(x) \,  dx \le
+%  \int_{\B(0,r)} q^\downarrow(x) \, dx \quad \forall  \, r > 0, \quad \mbox{ y }
+%  \quad \int_{\Rset^d} p^\downarrow(x) \, dx = \int_{\Rset^d} q^\downarrow(x) \,
+%  dx,
+%  \]
+%  %
+%  donde \ $\B(0,r) = \{ x \in \Rset^d:  \: \|x\| \ge r \}$ \ es la bola centrada
+%  en \ $0$ \ y de rayo  \ $r$ \ (las \'ultimas integrales son obviamente iguales
+%  a 1).
+%\end{definicion}
 %
-\noindent  La Schur-concavidad~\ref{Prop:SZ:Schurconcavidad}  se conserva  en el
+%\noindent  L
+Aparece que la Schur-concavidad~\ref{Prop:SZ:Schurconcavidad}  se conserva  en el
 caso  continuo, \ie
 %
 \[
 p \prec  q  \quad \Rightarrow  \quad H(p)  \ge H(q).
 \]
 %
-La desigualdad inversa es probada  para cualquier funci\'on $\phi$ convexa de la
+con      la      relaci\'on      de      mayorizaci\'on      continua      vista
+Def.~\ref{Def:MP:MayorizacionC}      pagina~\pageref{Def:MP:MayorizacionC}.       La
+desigualdad inversa  es probada  para cualquier funci\'on  $\phi$ convexa  de la
 densidad~\cite{Cho74} o~\cite[Prop.~7.3]{WanMad04},  en particular para $\phi(t)
 = t \log t$.
 

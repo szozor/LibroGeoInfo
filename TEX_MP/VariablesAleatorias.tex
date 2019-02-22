@@ -907,59 +907,82 @@ P_X = \sum_j p_j \delta_{x_j}, \qquad p_j = P(X=x_j) \ge 0, \quad \sum_j p_j = 1
 
 \
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\SZ{Reordenamiento y relaci\'on de mayorizaci\'on  : a ver como trasladar lo que
-  ya estaba en en cap.  2 mas los ejemplos, pagina~\pageref{def:SZ:Mayorizacion}
-  (cf  pagina~\pageref{prop:SZ:permutacion}).  Todo  tal  cual por  ahora,  pero
-  ser\'ia la parte azul a cambiar.}
-
-\aver{
 Para comparar dos  distribuciones es \'util reordenar el  vector de probabilidad
 permutando  sus  elementos  hasta  listarlos  de forma  descendente.   Se  anota
-$p^\downarrow$, de  modo que \  $p^\downarrow_1 \geq p^\downarrow_2  \geq \ldots
-\geq  p^\downarrow_N$.   En  el  ejemplo   del  caso  con  certeza  se  tiene  \
-$p^\downarrow =  \begin{pmatrix} 1 & 0  & \cdots &  0 \end{pmatrix}^t$, mientras
-que la distribuci\'on uniforme no var\'ia.
+$p^\downarrow$, de modo que \  $p^\downarrow_1 \ge p^\downarrow_2 \ge \ldots \ge
+p^\downarrow_\alpha$.  En  el ejemplo del caso  con certeza se  tiene \ $p^\downarrow
+=  \begin{pmatrix}  1  & 0  &  \cdots  &  0  \end{pmatrix}^t$, mientras  que  la
+distribuci\'on  uniforme  no  var\'ia.  La  comparaci\'on  de  dos  vectores  de
+probabilidad se puede apoyar sobre la noci\'on de mayorizaci\'on:
+%
+\begin{definicion}[Mayorizaci\'on]\label{Def:MP:Mayorizacion}
+  Un vector  de probabilidad  (distribuci\'on) $p$ mayorizado  por un  vector de
+  probabilidad (distribuci\'on) $q$, notado $p \prec q$, se define como:
+  %
+  \[
+  p   \prec  q   \qquad  \mbox{ssi}   \qquad  \sum_{i=1}^k   p_i^\downarrow  \le
+  \sum_{i=1}^k q_i^\downarrow,  \quad 1  \le k <  \alpha \qquad  \mbox{y} \qquad
+  \sum_{i=1}^\alpha p_i^\downarrow = \sum_{i=1}^\alpha q_i^\downarrow
+  \]
+  %
+  (las \'ultimas sumas siendo igual a 1).  Si los alfabetos de definici\'on de \
+  $p$ \ y  \ $q$ \ son de  tama\~nos diferentes, \ $\alpha$ \ es  el tama\~no lo
+  m\'as  grande  y  la  distribuci\'on  sobre  el alfabeto  lo  m\'as  corto  es
+  completada  por estados  de  probabilidad 0  (ser\'ia  equivalente a  a\~nadir
+  estados fictivos de probabilidad nula).
+\end{definicion}
+%
+\noindent   Por    ejemplo,   $\begin{bmatrix}   0.40   &   0.30    &   0.20   &
+  0.10   \end{bmatrix}^t  \prec   \begin{bmatrix}   0.50  &   0.30   &  0.15   &
+  0.05 \end{bmatrix}^t$ \ (ver figura Fig.~\ref{fig:MP:mayorizacionplot}-(a)).
+%  $\begin{bmatrix}  \frac12  &  \frac14   &  \frac18  &
+%  \frac18 \end{bmatrix}^t  \prec \begin{bmatrix} \frac12  & \frac14 &  \frac14 &
+%  0 \end{bmatrix}^t$.
 
-Se  define  \emph{mayorizaci\'on} del  siguiente  modo,  para distribuciones  de
-dimensi\'on  $N$ (con  sus elementos  acomodados  en forma  decreciente): \  una
-distribuci\'on $p$  es mayorizada por otra $q$,  y se denota $p\prec  q$, si las
-primeras $N-1$  sumas parciales de $p^\downarrow$ y  $q^\downarrow$ satisfacen \
-$\sum_{i=1}^n  p^\downarrow_i   \leq  \sum_{i=1}^n  q^\downarrow_i$   para  todo
-$n=1,\ldots,N-1$, con \ $\sum_{i=1}^N p_i = 1 = \sum_{i=1}^N q_i$.
-
-Por    ejemplo,   $\begin{pmatrix}    \frac12    &   \frac14    &   \frac18    &
-  \frac18 \end{pmatrix}^t  \prec \begin{pmatrix} \frac12  & \frac14 &  \frac14 &
-  0 \end{pmatrix}^t$.  Es posible  comparar por mayorizaci\'on distribuciones de
-distinta  dimensionalidad, completando con  ceros el  vector de  probabilidad de
-menor  dimensi\'on.  Es  importante  resaltar que  la  mayorizaci\'on provee  un
-\emph{orden  parcial}  (no  total)  entre distribuciones,  existiendo  pares  de
-distribuciones   tales  que   ninguna  mayoriza   a  la   otra.    Por  ejemplo,
-$\begin{pmatrix} 0.50 &  0.40 & 0.10 \end{pmatrix}^t$ y  $\begin{pmatrix} 0.70 &
-  0.15 & 0.15 \end{pmatrix}^t$ no se comparan por mayorizaci\'on.
+Es importante resaltar  que la mayorizaci\'on provee un  {\em orden parcial} (no
+total)  entre  distribuciones,  existiendo  pares de  distribuciones  tales  que
+ninguna mayoriza a la otra.  Por  ejemplo, $\begin{bmatrix} 0.50 & 0.40 & 0.07 &
+  0.03  \end{bmatrix}^t$  \   y  \  $\begin{bmatrix}  0.60  &   0.20  &  0.17  &
+  .03  \end{bmatrix}^t$  \ no  se  comparan  por  mayorizaci\'on \  (ver  figura
+Fig.~\ref{fig:MP:mayorizacionplot}-(b)).
 
 Es  interesante  notar  que  la   siguiente  propiedad  es  v\'alida  para  toda
-distribuci\'on $p$ de tama\~no~$N$:
+distribuci\'on $p$ de tama\~no~$\alpha$~\cite[p.~9,
+  (6)-(8)]{MarOlk11}:
 %
-$$
-\begin{pmatrix} \frac1N & \frac1N & \cdots & \frac1N \end{pmatrix}^t \ \prec \ p
-\ \prec \ \begin{pmatrix} 1 & 0 & \cdots & 0 \end{pmatrix}^t.
-$$
+\[
+\begin{bmatrix}     \frac1\alpha      &     \frac1\alpha     &      \cdots     &
+  \frac1\alpha \end{bmatrix}^t  \ \prec \  p \ \prec  \ \begin{bmatrix} 1 &  0 &
+  \cdots & 0 \end{bmatrix}^t.
+\]
 %
 En este  sentido, los  casos particulares de  equiprobabilidad y de  certeza, se
 dice  que  son  distribuciones  extremas.  Notamos que  uno  implica  ignorancia
 m\'axima  en el  resultado de  la variable  mientras que  el otro  corresponde a
 conocimiento completo.
-%% graficamente 
+
+La    relaci\'on    de    mayorizaci\'on    es   ilustrada    en    la    figura
+Fig.~\ref{fig:MP:mayorizacionplot}, donde  se representa las  sumas parciales en
+funci\'on   de  $k$,   llamadas  {\em   curvas  de   Lorentz~\footnote{Se  proba
+    sencillamente      que      estas      curvas     son      crecientes      y
+    c\'oncavas.}}~\cite{MarOlk11,   Lor05}.  Graficamente,   $p   \prec  q$   es
+equivalente a tener  la curva de Lorenz  asociada a $p$ debajo de  la asociada a
+$q$.
 %
-\begin{figure}[h!] %%ojo numeracion de figs !
-%\centerline{\includegraphics[width=3cm]{majorizationplot.pdf}} %%rehacer
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/MayorizacionDiscreta} \end{center}
 %
-\leyenda{Orden parcial por mayorizaci\'on}
-\label{fig:majorizationplot}
+\leyenda{Orden parcial  por mayorizaci\'on:  sumas parciales para  $1 \le  k \le
+  \alpha = 4$ (a)  para los vectores de probabilidades \ $p  = \left[ 0.40 \quad
+    0.30 \quad  0.20 \quad 0.10  \right]^t$ \ (linea  punteada) y \ $q  = \left[
+    0.50 \quad 0.30 \quad  0.15 \quad 0.05 \right]^t$ \ (linea llena)  y \ (b) \
+  para los  vectores de probabilidades  $p = \left[  0.50 \quad 0.40  \quad 0.06
+    \quad 0.04  \right]^t$ \ (linea  punteada) y \  $q = \left[ 0.70  \quad 0.15
+    \quad 0.13 \quad 0.02 \right]^t$ \ (linea llena). En el caso (a), \ $p \prec
+  q$ \ mientras  que en el caso (b), \  $p \not\prec q$ \ y \  $q \not\prec p$ \
+  (no hay relaciones de mayorizaci\'on).  }
+\label{fig:MP:mayorizacionplot}
 \end{figure}
-}
 
 
 % ================================= Continua
@@ -1172,13 +1195,13 @@ debemos trabajar  con medidas,  como lo hemos  formalizado al principio  de este
 cap\'itulo.
 
 Terminamos mencionando el  resultado siguiente, probado en~\cite[Ec.~(2.5)~p.~47
-\&  teorema~4.1.1]{AthLah} por ejemplo~\footnote{\modif{Basicamente,  se muestra
-    de que \ $\displaystyle  \widetilde{X} = \{ x \in \X, \quad  p(x) = F_X(x) -
-    \liminf_{u  \to  x} F(u)  >  0  \}$ \  es  numerable.   A continuaci\'on,  \
-    $\displaystyle    F(x)    -    \sum_{\widetilde{x}    \in    \widetilde{\X}}
-    p(\widetilde{x}) \un_{(-\infty \, ;  \, \widetilde{x}]}(x)$ \ es continua, y
-    se recupera  la descomposici\'on con $\displaystyle  a = \sum_{\widetilde{x}
-      \in \widetilde{\X}} p(\widetilde{x})$.}}:
+\& teorema~4.1.1]{AthLah} por ejemplo~\footnote{Basicamente, se muestra de que \
+  $\displaystyle \widetilde{X} =  \{ x \in \X, \quad p(x)  = F_X(x) - \liminf_{u
+    \to x} F(u) > 0 \}$ \ es numerable.  A continuaci\'on, \ $\displaystyle F(x)
+  - \sum_{\widetilde{x} \in  \widetilde{\X}} p(\widetilde{x}) \un_{(-\infty \, ;
+    \, \widetilde{x}]}(x)$ \ es continua,  y se recupera la descomposici\'on con
+  $\displaystyle     a     =     \sum_{\widetilde{x}     \in     \widetilde{\X}}
+  p(\widetilde{x})$.}:
 %
 \begin{teorema}[Descomposition de una medida de probabilidad]\label{Th:MP:DescompositionMixta}
   Cualquier  funci\'on  de  repartici\'on   \  $F_X(x)$  \  se  descompone  como
@@ -1373,7 +1396,7 @@ p_{X_1}(x_1) \ldots p_{X_d}(x_d).
 \]
 
 
-Terminamos esta secci\'on mencionando que, de la f\'ormula de calculo de funci\'on
+Seguimos esta secci\'on mencionando que, de la f\'ormula de calculo de funci\'on
 de  repartici\'on marginales vista  pagina~\pageref{Pagina:MP:MarginalesF}, para
 un subconjunto $I_k = (i_1,\ldots,i_k)$ de $1  \le k \le d$ elementos de $\{ 1 ,
 \ldots   ,  d   \}^k$,   $X_{I_k}   =  \begin{bmatrix}   X_{i_1}   &  \cdots   &
@@ -1392,9 +1415,88 @@ probabilidad conjunta sobre todas las variables excepto la $i$-\'esima.
 
 \
 
-\SZ{Reordenamiento y relaci\'on de mayorizaci\'on  : a ver como trasladar lo que
-  ya estaba  en en cap.  2 mas los  ejemplos, paginas~\pageref{def:SZ:rearreglo}
-  y~\pageref{def:SZ:MayorizacionC}.}
+Como  en el  caso  discreto, se  puede  querrer comparar  dos distribuciones  de
+probabilidad, y  por eso  reordenar o rearreglar  una densidad  de probabilidad.
+Como  en el  caso  discreto,  se anota  $p_X^\downarrow$  la densidad  rearreglo
+sim\'etrico.  Primero,  se  necesita  definir  el rearreglo  sim\'etrico  de  un
+ensemble, y luego de una densidad de probabilidad:
+%
+\begin{definicion}[Rearreglo sim\'etrico]\label{Def:MP:rearreglo}
+  Sea $\P \subset \Rset^d$ abierto de  volumen finito $|\P| < +\infty$.  El {\it
+    rearreglo sim\'etrico} $\P^\downarrow$  de $\P$ es la bola  centrada en 0 de
+  mismo volumen que $\P$, \ie
+  %
+  \[
+  \P^\downarrow  = \left\{  x  \in  \Rset^d \,  :  \: \frac{2  \pi^{\frac{d}{2}}
+      |x|^d}{\Gamma\left(\frac{d}{2}\right)} \le |\P| \right\},
+  \]
+  %
+  donde  $|\cdot|$  denota  la   norma  euclideana.   Eso  es  ilustrado  figura
+  Fig.~\ref{Fig:MP:ensemblerearreglado}-a.\newline  Sea  $p_X$  una densidad  de
+  probabilidad y sea $\P_t = \{ y \, : \: p_X(y) > t \}$ para cualquier $t > 0$,
+  sus conjuntos  de niveles.  La densidad de  probabilidad~\footnote{Se proba de
+    que  esta funci\'on,  positiva por  definici\'on, suma  a 1.   Adem\'as, por
+    construcci\'on,  depende  \'unicamente  de   $|x|$  y  decrece  con  $|x|$.}
+  rearreglada sim\'etrico $p^\downarrow_X$ de $p_X$ es definida por
+  %
+  \[
+  p^\downarrow_X(x)  =  \int_0^{+\infty}  \un_{\P_u^\downarrow}(x) \,  du.
+  \]
+  %
+  (recuerdense de que $\un_A$ es el indicator  del conjunto $A$)
+  % , \ie $\un_A(x) = 1$ si $x \in A$ y cero sino.
+\end{definicion}
+%
+Del hecho  de que $\forall \, t  < \tau \: \Leftrightarrow  \: \P_\tau \subseteq
+\P_t  \:  \Leftrightarrow \:  \P_\tau^\downarrow  \subseteq \P_t^\downarrow$  es
+sencillo   ver   que   si   $x   \in  \P_\tau^\downarrow$,   entonces   $x   \in
+\P_t^\downarrow$,  lo que  conduce a  $p_X^\downarrow(x) >  \tau$  y vice-versa.
+M\'as  all\'a, sobre  $\P_{\tau+d\tau}  \backslash \P_\tau$  la funci\'on  $p_X$
+``vale''   $\tau$   \   y   \   sobre   $\P_{\tau+d\tau}^\downarrow   \backslash
+\P_\tau^\downarrow$  la funci\'on $p_X^\downarrow$  ``vale'' tambien  $\tau$, lo
+que  da \  $\displaystyle  \int_{\P_\tau^\downarrow} p_X^\downarrow(x)  \, dx  =
+\int_{\P_\tau} p_X(x)  \, dx$ \  (ver~\cite{LieLos01, WanMad04} para  une prueba
+m\'as  rigurosa).   La representaci\'on  de  la  definici\'on  es conocida  como
+representaci\'on  en  capas  de  pastel  (``layer cake''  en  ingles).   Eso  es
+ilustrado en la figura Fig.~\ref{Fig:MP:ensemblerearreglado}-b
+%
+\begin{figure}[h!]
+%
+\begin{center} \input{TIKZ_MP/Rearreglo} \end{center}
+%
+\leyenda{(a):  Ilustraci\'on  del rearreglo  sim\'etrico  $\P^\downarrow$ de  un
+  conjunto  $\P$,  siendo  la  bola   centrada  en  0  de  mismo  volumen.   (b)
+  Construcci\'on  del  rearreglo  $p_X^\downarrow$:  dado un  $\tau$,  se  busca
+  $\P_\tau$ y se deduce $P_\tau^\downarrow$; dado  un $x$, se busca el mayor $t$
+  tal   que  $x  \in   P_t^\downarrow$,  este   $t$  m\'aximo   siendo  entonces
+  $p_X^\downarrow(x)$; adem\'as, por construcci\'on, las superficies en gris son
+  iguales.}
+  %
+\label{Fig:MP:ensemblerearreglado}
+\end{figure}
+% =  \B  \left( 0  , r_\P  \right)$ con  $\frac{2
+%    \pi^{d/2} r_\P^d}{\Gamma(d/2)} = |\P|$.
+
+A partir de esta definici\'on del rearreglo, se puede ahora extender la noci\'on
+de mayorizaci\'on del caso discreto al caso continupo de la manera siguiente:
+%
+\begin{definicion}[Mayorizaci\'on en el contexto continuo]\label{Def:MP:MayorizacionC}
+  Una densidad  de probabilidad $p$  es dicha mayorizada por  una distribuci\'on
+  $q$ si:
+  %
+  \[
+  p \prec  q \qquad \mbox{ssi}  \qquad \int_{\B(0,r)} p^\downarrow(x) \,  dx \le
+  \int_{\B(0,r)} q^\downarrow(x) \, dx \quad \forall  \, r > 0, \quad \mbox{ y }
+  \quad \int_{\Rset^d} p^\downarrow(x) \, dx = \int_{\Rset^d} q^\downarrow(x) \,
+  dx,
+  \]
+  %
+  donde \ $\B(0,r) = \{ x \in \Rset^d:  \: \|x\| \ge r \}$ \ es la bola centrada
+  en \ $0$ \ y de rayo  \ $r$ \ (las \'ultimas integrales son obviamente iguales
+  a 1).
+\end{definicion}
+%
+\SZ{Equivalente de la curva de Lorentz???}
 
 
 % ================================= Transformacion
@@ -1986,18 +2088,18 @@ P_{Y|X=x}(A) = \int_A \frac{p_{X,Y}(x,y)}{p_X(x)} \, dy.
 
 De hecho, esta  construcci\'on rigurosa coincide con la  intuici\'on que podemos
 tener en este  caso continuo. Por ejemplo, podemos  pensar a $F_{Y|X=x}(y)$ como
-caso l\'imite de  $P(\left. Y \le y \right|  x \le X \le x+\delta x)  = \frac{P( Y
+caso l\'imite de $P(\left. Y \le y \right|  x \le X \le x+\delta x) = \frac{P( Y
   \le  y \:  \cap \:  x \le  X \le  x+\delta x)}{P(x  \le X  \le x+\delta  x)} =
 \frac{F_{X,Y}(x+\delta  x ,  y) -  F_{X,Y}(x  , y)}{F_X(x+\delta  x) -  F_X(x)}$
 cuando \ $\delta  x$ \ tiende a 0.   En el caso escalar, se  calcula por ejemplo
 haciendo un  desarollo de Taylor del numerador  y del denominador al  orden 1, o
-usando la  regla de l'H\^opital~\footnote{\modif{De hecho, esta  regla es debido
-    al  suizo J.   Bernoulli que  tuvo un  acuerdo financiero  con  el Guillaume
-    Fran\c{c}ois  Antoine, marqu\'es de  l'H\^opital, permitiendolo  de publicar
-    unos resultados de Bernoulli bajo su nombre.}}  para re-obtener la funci\'on
-de        repartici\'on       condicional        de        la       definici\'on
-Def.~\ref{Def:MP:FRCondicional}. En  el caso multivariado, hace  falta hacer los
-desarollos hasta el orden $d_X$ para concluir.
+usando la regla de l'H\^opital~\footnote{De hecho, esta regla es debido al suizo
+  J.  Bernoulli  que tuvo  un acuerdo financiero  con el  Guillaume Fran\c{c}ois
+  Antoine, marqu\'es  de l'H\^opital, permitiendolo de  publicar unos resultados
+  de Bernoulli bajo  su nombre.}  para re-obtener la  funci\'on de repartici\'on
+condicional  de  la  definici\'on  Def.~\ref{Def:MP:FRCondicional}. En  el  caso
+multivariado,  hace  falta  hacer  los  desarollos hasta  el  orden  $d_X$  para
+concluir.
 
 Fijense de  que:
 %
