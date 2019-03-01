@@ -427,18 +427,23 @@ Dar{\'o}czy, Z. \& J{\'a}rai, A. (1979).
 \newblock {\em Th{\'e}orie analytique des Probabilit{\'e}s\/} (3{\`eme} ed.).
 \newblock Paris: Gauthier-Villars.
 
+\bibitem[\protect\citeauthoryear{{de M}oivre}{{de M}oivre}{1730}]{Dem30}
+{de M}oivre, A. (1730).
+\newblock {\em Miscellanea analytica de seriebus et quadraturis}.
+\newblock London: Londini: J. Tonson \& J. Watts.
+
+\bibitem[\protect\citeauthoryear{{de M}oivre}{{de M}oivre}{1756}]{Dem56}
+{de M}oivre, A. (1756).
+\newblock {\em The Doctrine of Chances : or, a method for calculating the
+  probabilities of events in play\/} (3rd ed.).
+\newblock London: AMS Chelsea Publishing.
+
 \bibitem[\protect\citeauthoryear{Dembo, Cover \& Thomas}{Dembo
   et~al.}{1991}]{DemCov91}
 Dembo, A., Cover, T.~M., \& Thomas, J.~A. (1991).
 \newblock Information theoretic inequalities.
 \newblock {\em IEEE Transactions on Information Theory}, {\em 37\/}(6),
   1501--1518.
-
-\bibitem[\protect\citeauthoryear{{DeM}oivre}{{DeM}oivre}{1756}]{Dem56}
-{DeM}oivre, A. (1756).
-\newblock {\em The Doctrine of Chances : or, a method for calculating the
-  probabilities of events in play\/} (3rd ed.).
-\newblock London: AMS Chelsea Publishing.
 
 \bibitem[\protect\citeauthoryear{Doob}{Doob}{1936}]{Doo36}
 Doob, J.~L. (1936).
@@ -484,6 +489,18 @@ Endres, D. \& Schindelin, J. (2003).
 Esteban, M.~D. (1997).
 \newblock A general class of entropy statistics.
 \newblock {\em Applications of Mathematics}, {\em 42\/}(3), 161--169.
+
+\bibitem[\protect\citeauthoryear{Euler}{Euler}{1741}]{Eul41}
+Euler, L. (1741).
+\newblock Observationes analyticae varias de combinationibus.
+\newblock {\em Commentarii academiae scientiarum Petropolitanae}, {\em 13},
+  64--93.
+
+\bibitem[\protect\citeauthoryear{Euler}{Euler}{1750}]{Eul50}
+Euler, L. (1750).
+\newblock De partitione numerorum.
+\newblock {\em Novi Commentarii academiae scientiarum Petropolitanae}, {\em 3},
+  125--169.
 
 \bibitem[\protect\citeauthoryear{Euler}{Euler}{1768}]{Eul68}
 Euler, L. (1768).
@@ -549,11 +566,6 @@ Fisher, R.~A. (1925).
   Rioul}{2016}]{FlaRio16}
 Flandrin, P. \& Rioul, O. (2016).
 \newblock Laplume, sous le masque.
-
-\bibitem[\protect\citeauthoryear{Fran{\c{c}}ois}{Fran{\c{c}}ois}{2009}]{Fra09}
-Fran{\c{c}}ois, O. (2009).
-\newblock Notes de cours de probabilit{\'e}s appliqu{\'e}es.
-\newblock Ensimag.
 
 \bibitem[\protect\citeauthoryear{Fr{\'e}chet}{Fr{\'e}chet}{1943}]{Fre43}
 Fr{\'e}chet, M. (1943).
@@ -806,6 +818,12 @@ Jessen, B. (1931b).
   middel{\ae}rdier. {II}.
 \newblock {\em Matematisk Tidsskrift. B}, 84--95.
 
+\bibitem[\protect\citeauthoryear{Johnson, Kotz \& Balakrishnan}{Johnson
+  et~al.}{1997}]{JohKot97}
+Johnson, N.~L., Kotz, S., \& Balakrishnan, N. (1997).
+\newblock {\em Discrete Multivariate Distributions}.
+\newblock New-York: John Wiley \& Sons.
+
 \bibitem[\protect\citeauthoryear{Johnson}{Johnson}{2004}]{Joh04}
 Johnson, O. (2004).
 \newblock {\em Information Theory and The Central Limit Theorem}.
@@ -900,6 +918,12 @@ Kendall, D.~G. (1964).
 Khinchin, A.~I. (1957).
 \newblock {\em Mathematical foundations of information theory}.
 \newblock New-York: Dover Publications.
+
+\bibitem[\protect\citeauthoryear{Knuth}{Knuth}{1997}]{Knu97_v1}
+Knuth, D.~E. (1997).
+\newblock {\em The Art of Computer Programming\/} (3rd ed.)., volume 1 /
+  fundamental algorithms.
+\newblock Reading: Addison Wesley Longman.
 
 \bibitem[\protect\citeauthoryear{Kolmogorov}{Kolmogorov}{1930}]{Kol30}
 Kolmogorov, A.~N. (1930).
@@ -1051,6 +1075,12 @@ Lindhard, J. \& Nielsen, V. (1971).
 \newblock {\em Det Kongelige Danske Videnskabernes Selskab Matematisk-fysiske
   Meddelelser}, {\em 38\/}(9), 1--42.
 
+\bibitem[\protect\citeauthoryear{Lorenz}{Lorenz}{1905}]{Lor05}
+Lorenz, M.~O. (1905).
+\newblock Methods of measuring the concentration of wealth.
+\newblock {\em Publications of the American Statistical Association}, {\em
+  9\/}(70), 209--219.
+
 \bibitem[\protect\citeauthoryear{Lukacs}{Lukacs}{1961}]{Luk61}
 Lukacs, E. (1961).
 \newblock Recent developments in the theory of characteristic functions.
@@ -1173,6 +1203,12 @@ Morimoto, T. (1963).
 \newblock Markov processes and the {H-}theorem.
 \newblock {\em Journal of the Physical Society of Japan}, {\em 18\/}(3),
   328--331.
+
+\bibitem[\protect\citeauthoryear{Mukhopadhyay}{Mukhopadhyay}{2000}]{Muk00}
+Mukhopadhyay, N. (2000).
+\newblock {\em Probability and Statistical Inference\/} (5th ed.)., volume 162
+  of {\em ``Statistics: textbooks and monographs''}.
+\newblock New-York: Marcel Dekker.
 
 \bibitem[\protect\citeauthoryear{Nagumo}{Nagumo}{1930}]{Nag30}
 Nagumo, M. (1930).
@@ -1313,6 +1349,11 @@ Pigeon, S. (2003).
 \newblock Huffman coding.
 \newblock In K.~Sayood (Ed.), {\em Lossless Compression Handbook}  chapter~4,
   (pp.\ 79--99). San Diego, CA: Academic Press.
+
+\bibitem[\protect\citeauthoryear{Pinsky}{Pinsky}{2009}]{Pin09}
+Pinsky, M.~A. (2009).
+\newblock {\em Introduction to {F}ourier Analysis and Wavelets}, volume 102.
+\newblock Providence, Rhode Island, USA: American Mathematical Society.
 
 \bibitem[\protect\citeauthoryear{Planck}{Planck}{2015}]{Pla15}
 Planck, M. (2015).
@@ -1530,6 +1571,12 @@ Steele, J.~M. (2004).
 Stellato, B., {Van Parys}, B. P.~G., \& Goulart, P.~J. (2017).
 \newblock Multivariate {C}hebyshev inequality with estimated mean and variance.
 \newblock {\em The American Statistician}, {\em 71\/}(2), 123--127.
+
+\bibitem[\protect\citeauthoryear{Stirling}{Stirling}{1730}]{Sti30}
+Stirling, J. (1730).
+\newblock {\em Methodus Differentialissme Tractus de Summatione et
+  Interpolatione Serierum Infinitarum}.
+\newblock London: Londini: Typis Gul. Bowyer; impensis G. Strahan.
 
 \bibitem[\protect\citeauthoryear{Stix}{Stix}{1991}]{Sti91}
 Stix, G. (1991).

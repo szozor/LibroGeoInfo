@@ -1,0 +1,3496 @@
+% MACROS
+%
+% Provisoire...
+\newcommand{\SZ}[1]{{\color{red}\bf #1}}
+%
+\def\A{\mathcal{A}}
+\def\B{\mathcal{B}}
+\def\C{\mathcal{C}}
+\def\D{\mathcal{D}}
+\def\E{\mathcal{E}}
+\def\H{\mathcal{H}}
+\def\P{\mathcal{P}}
+\def\X{\mathcal{X}}
+\def\Y{\mathcal{Y}}
+%
+\def\Cset{\mathbb{C}}
+\def\Nset{\mathbb{N}}
+\def\Rset{\mathbb{R}}
+\def\Zset{\mathbb{Z}}
+%
+\def\Esp{\operatorname{E}}
+\def\e{\operatorname{e}}
+\def\Jac{\operatorname{J}}
+\def\Hess{\mathcal{H}}
+\def\Tr{\operatorname{Tr}}
+\def\diag{\operatorname{diag}}
+\def\Gauss{\mathcal{N}}
+\def\argmax{\operatorname*{argm\acute{a}x}}
+%
+\def\un{\mathbbm{1}}
+\def\opt{\mathrm{opt}}
+\def\sh{\mathrm{sh}}
+\def\fa{\mathrm{fa}}
+\def\huf{\mathrm{huf}}
+%
+\def\ie{{\it i. e.,}\xspace}
+%\def\;{\, , \,}
+%
+\newcounter{propiedad}
+\newcounter{PropPermutacion}
+\newcounter{PropBiyeccion}
+\newcounter{PropCotamaxima}
+%
+% propiedades generales
+\newenvironment{propiedades}
+{\begin{enumerate}[label={[P\arabic*]}]\setcounter{enumi}{\value{propiedad}}}
+{\setcounter{propiedad}{\value{enumi}}\end{enumerate}}
+%
+% propiedades cambiadas en el caso continuo
+\newenvironment{propiedadesC}
+{\begin{enumerate}[label={[P'\arabic*]}]}
+{\end{enumerate}}
+
+
+% Ber74 => ensemble de papiers clés sur la theorie du codage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\capitulo{Nociones de teor\'ia de la informaci\'on}{Steeve Zozor}
+
+% Epigrafe de capitulo
+\begin{epigrafe}
+  ``Deber\'ias llamarla `entrop\'ia', por dos motivos.\\
+  En  primer  lugar  su funci\'on  de  incerteza\\
+  ha  sido  usada en  la  mec\'anica  estad\'istica\\
+  bajo ese nombre, y por ello, ya tiene un nombre.\\
+  En segundo lugar,  y lo que  es m\'as importante,\\
+  nadie sabe  lo que es realmenta la entrop\'ia,\\
+  por ello, en un debate, siempre llevar\'a la ventaja.
+%  ``You should call it entropy, for two reasons.\\
+%  In the first place your  uncertainty function\\
+%  has been used  in statistical mechanics\\
+%  under that  name, so it already  has a name.\\
+%  In the  second place, and more  important,\\
+%  no one knows what entropy really is,\\
+%  so in a  debate you will always have  the advantage''
+  %
+  \autortituloepigrafe{von Neumann to Shannon~\cite{TriMcI71}}
+\end{epigrafe}
+
+
+% =============================== Introduccion =============================== %
+
+\seccion{Introducci\'on}
+\label{s:SZ:Introduccion}
+
+La  noci\'on  de  informaci\'on encuentra  su  origen  con  el desarollo  de  la
+comunicaci\'on  moderna,  por ejemplo  a  trav\'es  del  telegrafo siguiendo  el
+patente de Moorse  en 1840. La idea  de asignar un c\'odigo (punto  o barra, mas
+espacio entre letras  y entre palabras) a las letras del  alfabeto es la semilla
+de  la  codificaci\'on   entropica,  la  que  se  basa   precisamente  sobre  la
+asignaci\'on de un c\'odigo a  simbolos de una fuente (codificaci\'on de fuente)
+seg\'un las frequencias  (o probabilidad de aparici\'on) de  cada simbolo en una
+cadena.  De  hecho, el principio de  codificar un mensage y  mandar la versi\'on
+codificada por un canal de transmisi\'on es mucho mas antiguo, a pesar de que no
+habia ninguna formalizaci\'on matematica ni siquiera explicitamente una noci\'on
+de informaci\'on.  Entre otros, se puede mencionar el telegrafo optico de Claude
+Chappe (1794), experimentos con luces por Guillaume Amontons (en los a\~nos 1690
+en Paris), o a\'un mas antiguamente la transmisi\'on de mensaje con antorchas en
+la   Grecia   antigua,   con  humo   por   los   indios   o  chiflando   en   la
+prehistoria~\cite{Mon08}.  Cada  forma es una instancia practica  del esquema de
+comunicaci\'on de Shannon~\cite{Sha48, ShaWea64},  es decir la codificaci\'on de
+la informaci\'on,  potencialmente de  manera la mas  economica que se  puede, su
+transmisi\'on   a   un   ``receptor''    (por   un   canal   ruidoso)   que   la
+interpreta/lee/decodifica.   Implicitamente, la noci\'on  de informaci\'on  a lo
+menos tan antigua que la humanidad.
+
+A  pesar  de  que  la  idea  de codificar  y  transmitir  ``informaci\'on''  sea
+tremendamente antigua, la formalizaci\'on matematica de la noci\'on de incerteza
+o falta de informaci\'on, intimamente  vinculado a la noci\'on de informaci\'on,
+naci\'o bajo el  impulso de C.  Shannon y la publicaci\'on  de su papel seminal,
+``A  mathematical theory  of communication''  en 1948~\cite{Sha48},  o  un a\~no
+depues  en su  libre re-titulado  ``The mathematical  theory  of communication''
+reamplanzando el ``A'' por un ``The''. Desde esto a\~nos, las herramientas de la
+dicha teoria de  la informaci\'on dio lugar a  muchas aplicaciones especialmente
+en communicaci\'on (ver por  ejemplo~\cite[y ref.]{CovTho06, Ver98, Gal01}, pero
+tambi\'en en otros campos muy diversos tal como \SZ{Completar con ref, Boltzman,
+  von Neumann, Gibbs, Maxwell, Planck\ldots}.
+
+{\color{red} La  meta de este cap\'itulo es  de describir las ideas  y los pasos
+  dando lugar a la definicion de  la entropia, como medida de incerteza o (falta
+  de)  informaci\'on.   En este  cap\'itulo,  se  empieza  con la  descripci\'on
+  intuitiva que subtiende a la noci\'on de informaci\'on contenida en una cadena
+  de simobolo, lo que condujo a  la definici\'on de la entropia. Esta defici\'on
+  puede  ser deducida  tambi\'en  de  una seria  de  propiedades razonables  que
+  deber\'ia cumplir  una medida de incerteza (enfoque  axiomatico).  Se continua
+  con la descripci\'on  de tal noci\'on de entropia,  pasando del mundo discreto
+  (simbolos,  alfabeta) al  mundo continuo,  lo que  no es  trivial  ni siquiera
+  intuitivo.  Se  adelanto presentando  el concepto de  informaci\'on compartida
+  entre dos sistemas o variables aleatorias, concepto fundamental en el marco de
+  la transmisi\'on de informaci\'on o de mensajes. \bf Seguir. }
+
+% ================================= Entropia ================================= %
+
+\seccion{Entrop\'ia como medida de incerteza}
+\label{s:SZ:Entropia}
+
+% ================================= Axiomas
+
+\subseccion{Entrop\'ia de Shannon, propiedades}
+\label{sec:SZ:DefinicionShannon}
+
+Un de los primeros trabajos  tratando de formalizar la noci\'on de informaci\'on
+de una cadena  de simbolos es debido a Raph  Hartley~\cite{Har28}.  En su papel,
+Hartley defin\'o la informaci\'on de una secuencia como siendo proporcional a su
+longitud. Mas precisamente,  para simbolos de un alfabeto  de cardinal $\alpha$,
+exiten  $\alpha^n$   cadenas  diferentes  de   longitud  $n$;  Se   defin\'o  la
+informaci\'on de tales cadenas como  siendo $K n$ ($K$ dependiente de $\alpha$).
+Para  ser  consistente,  dos   conjuntos  de  mismo  tamanio  $\alpha_1^{n_1}  =
+\alpha_2^{n_2}$   deben  llegar  a   la  misma   informaci\'on,  as\'i   que  la
+informaci\'on de Hartley es definida como $H = \log\left( \alpha^n \right)$ donde
+la base del logaritmo es arbitraria.  Dicho de otra manera, tomando un logaritmo
+de  base 2,  esta  informaci\'on  es nada  mas  que los  numeros  de bits  (0-1)
+necesarios para  codificar todas las cadenas  de longitud $n$ de  simbolos de un
+alfabeto de cardinal $\alpha$.
+
+\SZ{Hartley, equiv de Gibbs de la termostat}.
+
+Una debilidad del  enfoque de Hartley es que considera  implicitamente que en un
+mensage, cada cadena de longitud dada  puede aparecer con la misma frecuencia, o
+probabilidad $1/\alpha^n$,  siendo la informaci\'on menos el  logaritmo de estas
+probabilidades.  A contrario, parece  mas l\'ogico considerar que secuencias muy
+frecuentes no  llevan mucha informaci\'on  (se sabe que aparecen),  mientras que
+las  que aparencen  raramente llevan  mas informaci\'on  (hay mas  sorpresa, mas
+incerteza  en observarlas).  Volviendo  a los  simbolos elementales  $x$, vistos
+como aleatorios (o valores o estados que puede tomar una variable aleatoria), la
+(falta  de)  informaci\'on o  incerteza  va a  ser  intimamente  vinculada a  la
+probabilidad de aparici\'on de estos simbolos $x$. Siguiendo la idea de Hartley,
+la informaci\'on elemental  asociado al estado $x$ va a ser  $- \log p(x)$ donde
+$p(x)$  es la  probabilidad de  apararici\'on de  $x$.  Se  define  la incerteza
+asociada a  la variable aleatoria como  el promedio estadistico  sobre todos los
+estados  posibles $x$~\cite{Sha48, ShaWea64}~\footnote{En  la misma  \'epoca que
+  Shannon,  independientemente,   la  noci\'on  de   informaci\'on  o  medidades
+  equivalentes apareciendo por ejemplo en calculo de capacidad de canal aparecen
+  en  varios  trabajo  como  el de  Calvier~\cite{Cla48},  Laplume~\cite{Lap48},
+  Wiener~\cite[Cap.~III]{Wie48}  entre  varios  otros  (ver~\cite{Ver98,  Lun02,
+    RioMag14, FlaRio16, RioFla17, Che17}).}.
+%
+% \cite{Sha48, ShaWea64}
+\begin{definicion}[Entropia de Shannon]\label{def:SZ:Shannon}
+  Sea $X$ una variable aleatoria definida  sobre una alpfabeto discreto $\X = \{
+  x_1 , \ldots , x_\alpha \}$ de cardinal $\alpha = |\X| < + \infty$ finito. Sea
+  $p_X$ la  distribuci\'on de probabilidad  de $X$, \ie  $ \forall \, x  \in \X,
+  \quad p_X(x)  = \Pr[X  = x]$.  La entropia de  Shannon de  la variable  $X$ es
+  definida por
+  %
+  \[
+    H(p_X) = H(X) = - \sum_{x \in \X} p_X(x) \, \log p_X(x)
+  \]
+  %
+  con la convenci\'on $0 \log 0 = 0$.
+\end{definicion}
+
+La base del logaritmo es arbitrario; si  es $\log_2$ el logaritmo de base 2, $H$
+es en bits y si se usa el logaritmo natural $\ln$, $H$ es en nats.  {\it En este
+  cap\'itulo, se usara  $H$ con el logaritmo correspondiente  sin especificar la
+  base.  Si  es necesario  que tenga  una base $a  (\ne 1)$  dada, se  notara la
+  entropia  corespondiente  $H_a$  y   se  especifiera  la  base  del  logaritmo
+  $\log_a$}.  Fijense de que $\log_a x = \frac{\log x}{\log a}$, dando
+%
+\[
+H_a(X)  =  H_b(X)  \log_a b
+\]
+%
+En  lo  que  sigue, a\'un  que,  rigorosamente,  $H$  sea  una funci\'on  de  la
+distribuci\'on  de  probabilidad  $p_X$  y  no  de la  variable  $X$,  se  usara
+indistamente la notaci\'on $H(p_X)$ tal  como $H(X)$ seg\'un lo mas conveniente.
+Ademas, $p_X$ podr\'a denotar  indistamente la distribuci\'on de probabilidad, o
+el  vector  de probabilidad  $p_X  \equiv  \begin{bmatrix}  p_X(x_1) &  \cdots  &
+  p_X(x_\alpha) \end{bmatrix}^t$.
+
+$H$ tiene propiedades notables, que coresponden a las que se puede exigir de una
+medida de incerteza~\cite{Sha48, ShaWea64, CovTho06, Rio07, DemCov91, Joh04}:
+%
+\begin{propiedades}
+\item\label{prop:SZ:continuidad} {\it Continuidad:}  Vista como una funci\'on de
+  \ $\alpha$ \ variables  \ $p_i = p_X(x_i)$, \ $H$ \  es continua con respeto a
+  los $p_i$.
+%
+\setcounter{PropPermutacion}{\value{enumi}}
+\item\label{prop:SZ:permutacion}   {\it  Invariance  bajo   una  permutaci\'on:}
+  Obviosamente,  la  entropia  es  invariante  bajo  una  permutaci\'on  de  las
+  probabilidades, \ie,
+  %
+  \[
+  \mbox{para cualquier  permutaci\'on } \sigma:  \X \to \X, \quad  H(p_{\sigma(X)}) =
+  H(p_X) \quad \mbox{con} \quad p_{\sigma(X)}(x) = p_X(\sigma(x))
+  \]
+  %
+  lo que se  escribe tambi\'en $H(\sigma(X)) = H(X)$.   En particular, denotando
+  $p_X^\downarrow$ la  distribuci\'on de probabilidades obtenida a  partir de $p_X$,
+  clasificando las  probabilidades en orden  decreciente, $p_X^\downarrow(x_1) \ge
+  p_X^\downarrow(x_2) \ge \cdots  \ge p_X^\downarrow(x_\alpha)$,
+  %
+  \[
+  H(p_X^\downarrow) = H(p_X)
+  \]
+%
+\setcounter{PropBiyeccion}{\value{enumi}}
+\item\label{prop:SZ:biyeccion}   {\it  Invariance   bajo   una  transformaci\'on
+    biyectiva:}  La  entropia  es  invariante  bajo  cualquier  transformaci\'on
+  biyectiva, \ie
+  %
+  \[
+  \mbox{para cualquier  funci\'on biyectiva } g:  \X \to g(\X),  \quad H(g(X)) =
+  H(X)
+  \]
+  %
+  A  trav\'es  tal transformaci\'on  los  estados  cambian,  pero no  cambia  la
+  distribuci\'on de probabilidad vinculada al alfabeto transformado.  Tomando el
+  ejemplo de  un dado, la  incerteza vinculada al  dado no debe depender  de los
+  simbolos escritos sobre las caras, sean enteras o cualquier letras.
+%
+\item\label{prop:SZ:positividad} {\it  Positividad:} La entropia  es acotada por
+  debajo,
+  %
+  \[
+  H(X) \ge 0 
+  \]
+  %
+  con iguladad si y solamente si existe un $x_0 \in \X$ tal que $p_X(x_0) = 1$ \
+  y \  $p_X(x) = 0$ \ para  \ $x \ne x_0$,
+  %
+  \[
+  H(X)  =  0 \quad  \mbox{ssi}  \quad X  \mbox{  es  deterministico}
+  \]
+  %
+  En  otras  palabras, cuando  $X$  no  es aleatoria,  \ie  $X  =  x_0$, no  hay
+  incerteza, o  la observaci\'on  no lleva  informaci\'on (se sabe  lo que  va a
+  salir, sin duda): $H = 0$.   La positividad es consecuencia de $p_X(x) \le 1$,
+  dando $- p_X(x)  \log p_X(x) \ge 0$.  Ademas, la suma  de terminos positive es
+  cero si y solo si  cada termino es cero, dando \ $p_X(x) = 0$  \ o \ $p_X(x) =
+  1$.
+%
+\setcounter{PropCotamaxima}{\value{enumi}}
+\item\label{prop:SZ:cotamaxima}  {\it Maximalidad:} La  entropia es  acotada por
+  arriba,
+  %
+  \[
+  H(X) \le \log \alpha
+  \]
+  %
+  con iguladad si y solamente si existe $X$ es uniforme sobre $\X$, \ie
+  %
+  \[
+  H(X) =  \log \alpha \quad \mbox{ssi}  \quad \forall \,  x \in \X, \:  p_X(x) =
+  \frac{1}{\alpha}
+  \]
+  %
+  En otras  palabras, la incerteza es  maxima cuando cualquier  estado $x$ puede
+  aparecer con la misma probabilidad; cada observaci\'on lleva una informaci\'on
+  importante sobre el  sistema que genera $X$.  La cota  m\'axima resuelta de la
+  maximisaci\'on de $H$  sujeto a $\sum_x p_X(x) = 1$, es  decir, con la tecnica
+  del Lagrangiano, notando $p_i =  p_X(x_i)$, de la minimizaci\'on de $\sum_i (-
+  p_i  \log p_i  + \lambda  p_i)$.   Se obtiene  sencillamente que  $\log p_i  =
+  -\lambda$,      dando     la      distribuci\'on      uniforma.\newline     La
+  figura~\ref{fig:SZ:EntropiaBinaria} representa la entropia de un sistema a dos
+  estados, de probabilidades  \ $\lambda$ \ y \ $1-\lambda$  \ (lei de Bernoulli
+  de parametro  $\lambda$), entropia  a veces dicha  {\it entropia  binaria}, en
+  funci\'on de $\lambda$.   Esta figura ilustra ambas cotas ($\lambda  = 1$ o 1,
+  $\lambda  =  \frac12$)  as\'i   que  la  invariancia  bajo  una  permutaci\'on
+  ($h(\lambda) = H(\lambda,1-\lambda) = H(1-\lambda,\lambda) = h(1-\lambda)$).
+  %
+  \begin{figure}[h!]
+  %
+  \begin{center}\input{TIKZ_SZ/EntropiaBinaria}\end{center}
+  %
+  \leyenda{Entropia  binaria  (de  una  variable  de  Bernoulli)  $h(\lambda)  =
+    H(\lambda,1-\lambda)$ en funci\'on de $\lambda \in [0 , 1]$.}
+  %
+  \label{fig:SZ:EntropiaBinaria}
+  \end{figure}
+%
+\item\label{prop:SZ:expansabilidad} {\it Expansibilidad:}  A\~nadir un estado de
+  probabilidad 0 no cambia la entropia, \ie sean \ $X$ \ definido sobre \ $\X$ \
+  y \ $\widetilde{X}$ \ sobre \ $\widetilde{X}$,
+  %
+  \[
+  \widetilde{\X}  =  \X  \cup  \{  \widetilde{x}_0  \}  \quad  \mbox{con}  \quad
+  p_{\widetilde{X}}(x)   =   p_X(x)   \quad   \mbox{si}   \quad  x   \in   \X,   \quad
+  p_{\widetilde{X}}(\widetilde{x}_0)    =    0,    \qquad   \mbox{entonces}    \quad
+  H(p_{\widetilde{X}}) = H(p_X)
+  \]
+  %
+  Esta propiedad es obvia, consecuencia de $\lim_{p \to 0} p \log p = 0$.
+%
+\item\label{prop:SZ:recursividad} {\it Recursividad:} Juntar dos estados baja la
+  entropia de una cantidad igual a la entropia interna de los dos estados por la
+  probabilidad de ocurencia de este  conjunto de estados, y vice-versa, \ie sean
+  \ $X$ \ definido sobre \ $\X$ \ y \ $\overline{X}$ \ sobre \ $\overline{X}$,
+  %
+  \[
+  \left\{  \begin{array}{l}\overline{\X} =  \{  x_1 ,  \ldots  , x_{\alpha-2}  ,
+      \overline{x}_{\alpha-1}\}  \quad   \mbox{con  el  estado   interno}  \quad
+      \overline{x}_{\alpha-1}   =  \{   x_{\alpha-1}  ,   x_\alpha  \},\\[2.5mm]
+      p_{\overline{X}}(x_i)  = p_X(x_i),  \quad 1  \le i  \le \alpha-1  \quad \mbox{y}
+      \quad p_{\overline{X}}(\overline{x}_{\alpha-1}) = p_X(x_{\alpha-1}) +
+      p(x_\alpha)  \quad  \mbox{distribuci\'on  sobre  }  \overline{\X}\\[2.5mm]
+      \displaystyle   \overline{q}(x_j)    =   \frac{p_X(x_j)}{p_X(x_{\alpha-1})   +
+        p_X(x_\alpha)}, \quad j =  \alpha-1, \alpha \quad \mbox{distribuci\'on del
+        estado   interno}\end{array}\right.
+  \]
+  %
+  \[
+  H(p_X)  = H(p_{\overline{X}})  +  p_{\overline{X}}(\overline{x}_{\alpha-1}) \,
+  H(\overline{q})
+  \]
+  %
+  Esta relaci\'on  viene de $a \log  a + b  \log b = (a+b)  \left( \frac{a}{a+b}
+    \log\left(  \frac{a}{a+b} \right)  + \frac{b}{a+b}  \log\left( \frac{a}{a+b}
+    \right)   -    \log(   a    +   b   )\right)$    esta   ilustrada    en   la
+  figura~\ref{fig:SZ:Recursividad} siguiente.\newline
+  %
+  \begin{figure}[h!]
+  %
+  \begin{center} \input{TIKZ_SZ/Recursividad} \end{center}
+  %
+  \leyenda{Ilustraci\'on de  la propiedad  de recursividad, que  cuantifica como
+    decrece la entropia en un  conjunto cuando se juntan dos estados, vincluando
+    la entropia  total, la  entropia despues del  la agrupaci\'on y  la entropia
+    interna a los dos estados juntados.}
+  %
+  \label{fig:SZ:Recursividad}
+  \end{figure}
+%
+\item\label{prop:SZ:concavidad} {\it Concavidad:} La  entropia es concava, en el
+  sentido  de que  la entropia  de una  combinaci\'on convexa  de distribuciones
+  (mezcla) de probabilidades es siempre major o igual a la combinaci\'on convexa
+  de entropias:
+  %
+  \[
+  \forall \: \{ \lambda_i \}_{i=1}^n, \quad  0 \le \lambda_i \le 1, \quad \sum_i
+  \lambda_i = 1  \quad \mbox{and cualquier conjunto de  distribuciones} \quad \{
+  p_i \}_{i=1}^n,
+  \]
+  %
+  \[
+  H\left(  \sum_i  \lambda_i p_i  \right)  \ge  \sum_i  \lambda_i H(p_i)
+  \]
+  %
+  Esta desigualdad es conocida como  desigualdad de Jensen.  Es una consequencia
+  directa de  la convexidad  de la funci\'on  $\phi: u  \mapsto u \log  u$, como
+  ilustrado       en       la      figura~\ref{fig:SZ:Concavidad}-(a).        La
+  figura~\ref{fig:SZ:Concavidad}-(b) ilustra como se puede obtener una mezcla de
+  distribuciones  de  dos probabilidad  $p_1$  (dado  izquierda)  y $p_2$  (dado
+  derecho)  haciendo una elecci\'on  aleatoria a  partir de  una moneda  en este
+  ejemplo (probabilidad $\lambda$ de elegir el dado izquierda).\newline
+  %
+  \begin{figure}[h!]
+  %
+  \begin{center} \input{TIKZ_SZ/Concavidad} \end{center}
+  %
+  \leyenda{(a) $\phi(u)  = u \log u$ es  concava: la curva es  siempre debajo de
+    sus cuerdas; entonces, cada promedio de $\phi(u_1)$ y $\phi(u_2)$ estando en
+    la cuerda  juntando estos punto, queda  arriba de la funci\'on  tomada en el
+    promedio de $u_1$  y $u_2$.  Escribiendo eso para (mas  de dos puntos) sobre
+    los $\sum_i \lambda_i  p_i(x)$ y sumando sobre los $x$  da la desigualdad de
+    Jensen.  (b) Ilustraci\'on de  una distribuci\'on de mezcla, ac\'a mezclando
+    $p_1$  y  $p_2$  a  partir  de  una tercera  variable  aleatoria  (ac\'a  de
+    Bernoulli).}
+  %
+  \label{fig:SZ:Concavidad}
+  \end{figure}
+%
+\item\label{prop:SZ:Schurconcavidad}  {\it Schur-concavidad:}  Como se  lo puede
+  querrer,  lo mas  ``concentrado'' es  una distribuci\'on  de  probabilidad, lo
+  menos hay  incerteza, y entonces lo  mas peque\~no debe ser  la entropia. Esta
+  propiedad intuitiva se resuma a partir de la noci\'on de mayorizaci\'on:
+  %
+  \begin{definicion}[Mayorizaci\'on]\label{def:SZ:Mayorizacion}
+    Una distribuci\'on  discreta finita de probabilidad $p$  es dicha mayorizada
+    por una distribuci\'on $q$,
+    %
+    \[
+    p  \prec  q  \quad   \mbox{ssi}  \quad  \sum_{i=1}^k  p^\downarrow(x_i)  \le
+    \sum_{i=1}^k q^\downarrow(x_i), \quad 1 \le  k < \alpha \quad \mbox{y} \quad
+    \sum_{i=1}^\alpha p^\downarrow(x_i)  = \sum_{i=1}^\alpha q^\downarrow(x_i)
+    \]
+    %
+    (las \'ultimas sumas siendo igual a 1).  Si los alfabetos de definici\'on de
+    \ $p$ \ y  \ $q$ \ son de tama\~nos diferentes, \  $\alpha$ \ es el tama\~no
+    lo  mas  grande y  la  distribuci\'on  sobre el  alfabeto  lo  mas corto  es
+    completada por estados de probabilidad 0 (recuerdense de que no va a cambiar
+    la entropia).
+  \end{definicion}
+  %
+  La  Schur-concavidad  se  traduce  por  la  relaci\'on
+  %
+  \[
+  p \prec  q \quad \Rightarrow  \quad H(p) \ge  H(q)
+  \]
+  %
+  Fijense de que las cotas sobre $H$ pueden ser vistas como consecuencia de esta
+  desiguldad:  la  distribuci\'on  cierta  mayoriza cualquier  distribuci\'on  y
+  cualquier  distribuci\'on mayoriza  la distribuci\'on  uniforme.  \SZ{prueba a
+    partir del teorema de Karamata?}
+\end{propiedades}
+
+En muchos  casos, uno tiene que  trabajar con varias  variables aleatorias. Para
+simplificar les  notaciones, considera una par  de variables \  $X$ \ y \  $Y$ \
+definidas respectivamente sobre los alfabetos \ $\X$  \ y \ $\Y$ \ de cardinal \
+$\alpha = |\X|$ \ y \ $\beta =  |\Y|$.  Tal par de variable puede ser vista como
+una  variable $(X,Y)$  definida sobre  el alfabeto  $\X \times  \Y$  de cardinal
+$\alpha \beta$ tal  que se definie naturalmente la  entropia para esta variable;
+tal entropia es llamada {\it entropia conjunta} de $X$ y $Y$:
+%
+%~\cite{Sha48, ShaWea64}
+\begin{definicion}[Entropia conjunta]\label{def:SZ:EntropiaConjunta}
+  Sean \ $X$ \ e \ $Y$  \ dos variable aleatorias definidas sobre los alpfabetos
+  discretos \  $\X$ \ y \ $\Y$,  de cardinal \ $\alpha  = |\X| < +\infty$  \ y \
+  $\beta  =   |\Y|  <  +\infty$  \   respectivamente.  Sea  \   $p_{X,Y}$  \  la
+  distribuci\'on de probabilidad conjunta de \ $X$ \ e \ $Y$, \ \ie $ \forall \,
+  (x,y) \in \X \times \Y, \quad p_{X,Y}(x,y) =  \Pr[X = x , Y = y]$. La entropia
+  conjunta de Shannon de las variables \ $X$ \ e \ $Y$ \ es definida por
+  %
+  \[
+  H(p_{X,Y}) =  H(X,Y) = -  \sum_{(x,y) \in \X  \times \Y} p_{X,Y}(x,y)  \, \log
+  p_{X,Y}(x,y)
+  \]
+  %
+  con la convenci\'on $0 \log 0 = 0$.
+\end{definicion}
+
+A partir de esta definici\'on,  aparecen otras propiedades importantes, sino que
+fundamentales, de la entropia de Shannon.
+%
+\begin{propiedades}
+\item\label{prop:SZ:aditividad}  {\it Aditividad:} La  entropia conjunta  de dos
+  variables aleatorias  \ $X$  \ e \  $Y$ \underline{independientes} se  suma, y
+  reciprocamente:
+  %
+  \[
+  X \: \mbox{e} \: Y \: \mbox{independientes} \quad \Leftrightarrow \quad H(X,Y)
+  =  H(X) +  H(Y)
+  \]
+  %
+  Dicho de otra manera, para dos variables aleatorias, la incerteza global es la
+  suma   de  las  incertezas   de  cada   variable  individual.    La  propiedad
+  ``$\Rightarrow$'' es consecuencia directa de \ $p_{X,Y}(x,y) = p_X(x) p_Y(y)$.
+  Se  va  a  probar  en  la  secci\'on siguiente  la  reciproca.  Se  generaliza
+  sencillamente a un conjunto de variables aleatorias $\{ X_i \}$.
+%
+\item\label{prop:SZ:subaditividad} {\it Sub-aditividad:} La entropia conjunta de
+  dos variables aleatorias  $\{ X_i \}_{i=1}^n$ es siempre menor  que la suma de
+  cada entropia individual:
+  %
+  \[
+  H(X_1,\ldots,X_n)  \,  \le \,  \sum_{i=1}^n  H(X_i)
+  \]
+  %
+  Dicho de otra manera, variables  pueden compartir informaci\'on, de tal manera
+  de que le entropia global sea menor que la suma.  De la propiedad anterior, se
+  obtiene la igualdad ssi los $X_i$ son indepedientes.
+%
+\item\label{prop:SZ:superaditividad}   {\it   Super-aditividad:}   La   entropia
+  conjunta de dos variables aleatorias  $\{ X_i \}_{i=1}^n$ es siempre major que
+  cualquiera  de  las entropias  individuales
+  %
+  \[
+  H(X_1,\ldots,X_n) \, \ge \, \max_{1 \le i \le n} H(X_i)
+  \]
+\end{propiedades}
+
+Es importante notar  de que existen varios enfoques basados  sobre una series de
+axiomas, dando lugar  a la definici\'on de la entropia  tal como definido. Estos
+axiomas  son conocidos  como axiomas  de Shannon-Khinchin  y son  la continuidad
+(propiedad~\ref{prop:SZ:continuidad}),               la              maximalidad
+(propiedad~\ref{prop:SZ:cotamaxima}),              la             expansabilidad
+(propiedad~\ref{prop:SZ:expansabilidad})         y         la         aditividad
+(propiedad~\ref{prop:SZ:aditividad}).  Existen varios otros conjunto de axiomas,
+conduciendo tambi\'en a la entropia de Shannon (ver Shannon~\cite[Sec.~6]{Sha48}
+or    \cite{ShaWea64},    R\'enyi~\cite{Ren61},   Fadeev~\cite{Fad56,    Fad58},
+Khintchin~\cite{Khi57} entre otros).
+
+Para  una  serie de  variables  aleatorias,  $X_1,  X_2, \ldots$,  representando
+simbolos, se puede  definir una entropia por simbolo  como una entropia conjunta
+divido por numero de simbolos, $\frac{H(X_1,\ldots,x_n)}{n}$, as\'a que una taza
+de entropia cuando $n$ va al inifinito.
+%
+\begin{definicion}[Taza de entropia]\label{def:SZ:TazaDeEntropia}
+  Sea $\X = \{  X_i \}_{i \in \Nset^*}$ una  serie de variable aleatoria.  La taza de
+  entropia de esta serie es definida por
+  %
+  \[
+  \H(\X) = \lim_{n \to \infty} \frac{H(X_1,\ldots,X_n)}{n}
+  \]
+  %
+\end{definicion}
+%
+\noindent Esta cantidad siempre existe, porque $H(X_1 , \ldots , X_n) \le \sum_i
+H(X_i) \le \sum_i \log \alpha_i \le  n \max_i \alpha_i$ donde los $\alpha_i$ son
+los cardinales de los alfabetos de definici\'on de los $X_i$.
+
+\
+
+Se termina esta sub-secci\'on con el caso de variables discretas definidas sobre
+un  alfabeto $\X$ de  cardinal infinito  $|\X| =  + \infty$,  por ejemplo  $\X :
+\Nset$.   Por  analogia,  se  puede  siempre  definir la  entropia  como  en  la
+definici\'on Def.~\ref{def:SZ:Shannon}. Esta extensi\'on resuelta delicada dando
+de que unas  propiedades se perdien.  Por ejemplo, la  entropia no queda acotada
+por arriba  como se  lo puede  probar para la  distribuci\'on de  probabilidad \
+$\displaystyle p(x)  \propto \frac{1}{(x+2) \left(  \log (x+2) \right)^2},  \: x
+\in \Nset$, corectamente normalizada ($\propto$ significa ``proporcional a''): \
+$\displaystyle \frac{\log \log(x+2)}{(x+2) \left( \log (x+2) \right)^2} \ge 0$ \
+y  \  la  serie  \  $\displaystyle  \sum_x  \frac{1}{(x+2)  \log  (x+2)}$  \  es
+divergente,  as\'i que  la serie  \ $\displaystyle  - \sum_x  p(x) \log  p(x)$ \
+diverge.
+
+% ================================= Axiomas
+
+\subseccion{Entrop\'ia diferencial}
+\label{sec:SZ:Diferencial}
+
+Volviendo a la definici\'on Def.~\ref{def:SZ:Shannon} de la entropia de Shannon,
+usando el operador $\Esp$ promedio  estadistica o esperanza matematica, se puede
+rescribir la entropia de Shannon como $H(X) = \Esp\left[ - \log p_X(X) \right]$.
+Con este punto  de vista, es facil extender la definici\'on  de la entropia para
+variables aleatorias continuas admitiendo  una densidad de probabilidad.  Eso da
+lugar a lo que es conocido como la {\it entropia diferencial}:
+
+\begin{definicion}[Entropia diferencial]\label{def:SZ:EntropiaDiferencial}
+  Sea $X$ una  variable aleatoria definida sobre un  espacio $d$-dimensional $\X
+  \subseteq \Rset^d$ y sea $p_X(x)$ la densidad (distribuci\'on) de probabilidad
+  de $X$, La entropia diferencial de la variable $X$ es definida por
+  %
+  \[
+  H(p_X) = H(X) = - \int_\X p_X(x) \, \log p_X(x) \, dx
+  \]
+  %
+  (con la  convenci\'on $0 \log  0 = 0$,  se puede escribir la  integraci\'on en
+  $\Rset^d$).
+\end{definicion}
+%
+Como en el  caso discreto, para $X = (X_1,\ldots,X_d)$, esta  entropia de $X$ es
+dicha entropia conjunta de los componentes $X_i$.
+
+Como se lo  va a ver, la entropia diferencial no  tiene la misma significaci\'on
+de  incerteza,  siendo de  que  depende no  solamente  de  la distribuci\'on  de
+probabilidad, sino que  de los estados tambi\'en.  Mas alla, no  se la puede ver
+como l\'imite continua de un caso discreto:  a trav\'es de tal l\'imite, se va a
+ver que se  llama diferencial, a causa del efecto de  la diferencial $dx$.  Para
+ilustrar eso, considera una variable aleatoria  escalar \ $X$ \ viviendo sobre \
+$\Rset$ \ y \  $p_X$ \ su densidad de probabilidad.  Sea \ $\delta  > 0$ \ y sea
+el alfabeto $\X^\delta = \{ x_k \}_{k \in \Zset}$ \ donde los \ $x_k$ se definen
+tal que  $\displaystyle p_X(x_k) \delta = \int_{k  \delta}^{(k+1) \delta} p_X(x)
+\, dx$, como ilustrado  en la figure~\ref{fig:SZ:CuantificacionX}.  Se define la
+variable  aleatoria discreta  \ $X^\delta$  \ sobre  \ $\X^\delta$  \ tal  que \
+$\Pr[X^\delta =  x_k] = p_{X^\delta}(x_k) =  p_X(x_k) \delta$. \ Se  puede ver \
+$X^\delta$ \ como la versi\'on cuantificada de \ $X$, \ con \ $X^\delta = x_k$ \
+cuando  \ $X \in  [k \delta  , (k+1)  \delta )$.   \ Al  rev\'es, a\'un  que sea
+delicado, se  puede interpretar \ $X$ \  como el ``l\'imite'' de  \ $X^\delta$ \
+cuando \ $\delta$ \ tiende a 0. Ahora, es claro de que
+%
+\begin{eqnarray*}
+H(X^\delta) & = & - \sum_k p_{X^\delta}(x_k) \log p_{X^\delta}(x_k)\\[2.5mm]
+%
+& = & - \log \delta - \sum_k \Big( p_X(x_k) \log p_X(x_k) \Big) \, \delta
+\end{eqnarray*}
+%
+lo que se escribe tambien
+%
+\[
+H(X^\delta)  + \log  \delta =  - \sum_k  \Big( p_X(x_k)  \log p_X(x_k)  \Big) \,
+\delta
+\]
+%
+Entonces, de la intergraci\'on de Rieman sale que
+%
+\[
+\lim_{\delta \to 0} \left( H(X^\delta) + \log \delta \right) = H(X)
+\]
+%
+Dicho de  otra manera,  la entropia  diferencial de $X$  no es  el limite  de la
+entropia  de su  versi\'on  cuantificada:  aparece con  la  entropia el  termino
+``diferencial'' $\log \delta$.
+%
+\begin{figure}[h!]
+%
+\begin{center} \input{TIKZ_SZ/CuantificacionX} \end{center}
+%
+\leyenda{Densidad de probabilidad $p_X$ de $X$, construcci\'on del alfabeto $\X$
+  donde  se  define   la  versi\'on  cuantificada  $X^\delta$  de   $X$  con  su
+  distribuci\'on discreta de probabilidad $p_{X^\delta}$. La superficia en grise
+  oscuro es igual a la superficia definida por el rectangulo en grise claro.}
+%
+\label{fig:SZ:CuantificacionX}
+\end{figure}
+%
+
+Mas  all\'a  de  esta  notable  diferencia  entre  la  entropia  y  la  entropia
+diferencial, la \'ultima depende de los estados,  es decir que si $Y = g(X)$ con
+$g$  biyectiva,  no  se  conserva  la  entropia,  \ie  \underline{se  pierde  la
+  propiedad~\ref{prop:SZ:biyeccion}}  del  caso discreto:
+%
+\begin{eqnarray*}
+H(Y) & = & - \int_{\Rset^d} p_Y(y) \log p_Y(y) \, dy\\[2.5mm]
+%
+& = &  - \int_{\Rset^d} p_Y(g(x)) \log p_Y(g(x)) \, |\Jac_g(x)| \, dx\\[2.5mm]
+%
+& = & - \int_{\Rset^d} p_Y(g(x)) \Big( \log \big( p_Y(g(x)) \, |\Jac_g(x)| \big) -
+\log |\nabla^t g(x)| \Big) \, |\Jac_g(x)| \, dx
+\end{eqnarray*}
+%
+donde $\Jac_g$ es la  matriz de componentes $\frac{\partial g_i}{\partial x_j}$,
+Jacobiano  de  la  transformaci\'on  \   $g:  \Rset^d  \mapsto  \Rset^d$  \  ($g
+\equiv  \begin{bmatrix} g_1(x_1  ,  \ldots  , x_d)  &  \cdots &  g_d(x_1  , \ldots  ,
+  x_d)  \end{bmatrix}^t$) \  y  \  $|\cdot|$ representa  el  valor absoluto  del
+determinente   de  la  matriz.    Recordandose  de   que  $p_X(x)   =  p_Y(g(x))
+|\Jac_g(x)|$, se obtiene
+%
+\begin{propiedadesC}\setcounter{enumi}{\value{PropBiyeccion}}
+%
+\item\label{prop:SZ:biyeccionC}
+Para  cualquier biyecci\'on $g:  \Rset^d \mapsto  \Rset^d$
+  %
+  \[
+  H(g(X)) = H(X) + \int_{\Rset^d} p_X(x) \log |\Jac_g(x)| \, dx
+  \]
+  %
+  donde el \'ultimo termino, $\Esp\left[  \log |\Jac_g(X)| \right]$ no vale cero
+  en    general.   En    particular,   si    $H$   es    invariante    bajo   un
+  deplazamiento,
+  %
+  \[
+  H(X+\mu) = H(X) \quad \forall \: \mu \in \Rset^d
+  \]
+  %
+  no  es invariante  por cambio  de escala,
+  %
+  \[
+  H(a X) = H(X) + \log |a| \quad \forall \: a \in \Rset^*
+  \]
+\end{propiedadesC}
+%
+Esta  \'ultima relaci\'on  queda valid  para  $a$ matriz  invertible.  Por  esta
+\'ultima  relaci\'on, se puede  ver que,  dado $X$,  cuando $a$  tiende a  0, la
+entropia de  $a X$ tiende a  $-\infty$.  Es decir que,  para $a$ suficientemente
+peque\~no,  se  puede  tener $H(a  X)  <  0$,  as\'i que  \underline{se  pierde}
+tambi\'en \underline{la positividad, propiedad~\ref{prop:SZ:positividad}}.  Esta
+perdida definitivamente quita la interpretaci\'on de incerteza/informaci\'on que
+hubiera podido tener la entropia diferencial.  A veces, se usa lo que es llamado
+potencia entropica:
+%
+\begin{definicion}[Potencia entropica]
+  Sea $X$ una  variable aleatoria $d$-dimensional. La potencia  entropica de $X$
+  es definida por
+  %
+  \[
+  N(X) = \frac{1}{2 \pi \e} \exp\left( \frac2d H(X) \right)
+  \]
+\end{definicion}
+%
+\noindent Por construcci\'on,  $N(X) \ge 0$.  Ademas, en  el caso continuo, $N(a
+X+b) = |a|^2 N(X)$ (queda valida para una matriz $a$ invertible): esta propiedad
+puede justificar la idea de  ``potencia''; ademas $N(a X+b)$ tiende naturalmente
+a cero cuando $a$ tiende a  cero.  Se recupera as\'i la noci\'on informacional a
+trav\'es  de  $N$ en  este  contexto  ($a X  +  b$  ``tiende''  a $b$,  variable
+deterministica).
+
+Si se pierde  la propiedad de invarianza bajo  una biyecci\'on, sopredentemente,
+se conserva la entropia bajo el equivalente continuo del rearreglo.
+%
+\begin{definicion}[Rearreglo simetrico]
+  Sea $\P \subset \Rset^d$ abierto de  volumen finito $|\P| < +\infty$.  El {\it
+    rearreglo simetrico}  $\P^\downarrow$ de  $\P$ es la  bola centrada en  0 de
+  mismo volumen  que $\P$, \ie
+  %
+  \[
+  \P^\downarrow  = \left\{  x  \in  \Rset^d \,  :  \: \frac{2  \pi^{\frac{d}{2}}
+      |x|^d}{\Gamma\left(\frac{d}{2}\right)} \le |\P| \right\}
+  \]
+  %
+  donde   $|\cdot|$   denota   la    norma   euclideana.    Eso   es   ilustrado
+  figure~\ref{fig:SZ:ensemblerearreglado}-a.\newline  Sea $p_X$ una  densidad de
+  probabilidad y sea $\P_t = \{ y \, : \: p_X(y) > t \}$ para cualquier $t > 0$,
+  sus conjuntos  de niveles.  La densidad de  probabilidad~\footnote{Se proba de
+    que  esta funci\'on,  positiva  por  definici\'on, suma  a  1.  Ademas,  por
+    construcci\'on,  depende   unicamente  de   $|x|$  y  decrece   con  $|x|$.}
+  rearreglada simetrica $p^\downarrow_X$ de $p_X$ es definida por
+  %
+  \[
+  p^\downarrow_X(x)  =  \int_0^{+\infty}  \un_{\P_u^\downarrow}(x) \,  du
+  \]
+  %
+  con $\un_A$ el indicator  del conjunto $A$, \ie $\un_A(x) = 1$  si $x \in A$ y
+  cero sino.
+\end{definicion}
+%
+Del hecho  de que $\forall \, t  < \tau \: \Leftrightarrow  \: \P_\tau \subseteq
+\P_t  \:  \Leftrightarrow \:  \P_\tau^\downarrow  \subseteq \P_t^\downarrow$  es
+sencillo   ver   que   si   $x   \in  \P_\tau^\downarrow$,   entonces   $x   \in
+\P_t^\downarrow$, lo que conduce a  $p_X^\downarrow(x) > \tau$ y vice-versa. Mas
+alla,  sobre $\P_{\tau+d\tau}  \backslash \P_\tau$  la funci\'on  $p_X$ ``vale''
+$\tau$ \ y \ sobre $\P_{\tau+d\tau}^\downarrow \backslash \P_\tau^\downarrow$ la
+funci\'on $p_X^\downarrow$  ``vale'' tambien $\tau$, lo que  da \ $\displaystyle
+\int_{\P_\tau^\downarrow} p_X^\downarrow(x) \, dx = \int_{\P_\tau} p_X(x) \, dx$
+(ver~\cite{LieLos01, WanMad04} para une prueba mas rigorosa).  La representaci\'on de la
+definici\'on es conocida como representaci\'on en capas de pastel (layer cake en
+ingles). Eso es ilustrado en la figura~\ref{fig:SZ:ensemblerearreglado}-b
+  %
+  \begin{figure}[h!]
+  %
+  \begin{center} \input{TIKZ_SZ/Rearreglo} \end{center}
+  %
+  \leyenda{(a):  Ilustraci\'on  del rearreglo  simetrico  $\P^\downarrow$ de  un
+    conjunto  $\P$,  siendo  la  bola  centrada  en 0  de  mismo  volumen.   (b)
+    Construcci\'on  del rearreglo  $p_X^\downarrow$:  dado un  $\tau$, se  busca
+    $\P_\tau$ y  se deduce $P_\tau^\downarrow$; dado  un $x$, se  busca el mayor
+    $t$  tal  que  $x  \in  P_t^\downarrow$, este  $t$  maximo  siendo  entonces
+    $p_X^\downarrow(x)$;  ademas, por construcci\'on,  las superficias  en grise
+    son iguales.}
+  %
+  \label{fig:SZ:ensemblerearreglado}
+  \end{figure}
+% =  \B  \left( 0  , r_\P  \right)$ con  $\frac{2
+%    \pi^{d/2} r_\P^d}{\Gamma(d/2)} = |\P|$.
+
+\begin{propiedadesC}\setcounter{enumi}{\value{PropPermutacion}}
+\item\label{prop:SZ:permutacionC} {\it invarianza  bajo un rearreglo:} Sea $p_X$
+  densidad   de  probabilidad   sobre   un  abierto   de  $\Rset^d$,
+  %
+  \[
+  H\left( p_X^\downarrow \right) = H(p_X)
+  \]
+\end{propiedadesC}
+%
+\noindent Esta propiedad es probada por ejemplo en~\cite{LieLos01, WanMad04}.
+
+\SZ{A ver que pasa en termino de mayorizacion~\ref{prop:SZ:mayorizacion}?}
+
+Como  se lo  ha visto,  la  entropia diferencial  no es  siempre positiva,  como
+consecuencia  de~\ref{prop:SZ:biyeccionC}.   Tambi\'en,  la  propiedad  de  cota
+superior,  \underline{propiedad~\ref{prop:SZ:cotamaxima} se pierde}  en general,
+\underline{salvo si se pone vinculos}:
+%
+\begin{propiedadesC}\setcounter{enumi}{\value{PropCotamaxima}}
+\item
+  \begin{enumerate}
+  \item\label{prop:SZ:cotamaximauniforme} Si $\X$ es de volumen finito $|\X| < +
+    \infty$, la entropia es acotada por arriba,
+    %
+    \[
+    H(X) \le \log |\X|
+    \]
+    %
+    con igualdad ssi $X$ es \underline{uniforme}.
+    %
+  \item\label{prop:SZ:cotamaximagaussiana}  Si  $\X =\Rset^d$  y  $X$ tiene  una
+    matriz  de covarianza  dada  $\Sigma_X  = \Esp\left[  X  X^t \right]$  donde
+    $\cdot^t$  denota  la transpuesta,  la  entropia  es  tambi\'en acotada  por
+    arriba,
+    %
+    \[
+    H(X) \le \frac{d}{2} \log(2 \pi \e) + \frac12 \log |\Sigma_X|
+    \]
+    %
+    con igualdad  ssi $X$ es \underline{gaussiana}.  En  particular, la potencia
+    entropica de  la gaussiana vale $N(X) =  \left| \Sigma_X \right|^{\frac1d}$,
+    dando de nuevo un  ``sabor'' de potencia a $N$.  Como se o  va a ver en este
+    cap\'itulo,  la  gaussiana  juega  un   rol  central  en  la  teoria  de  la
+    informaci\'on.
+  \end{enumerate}
+  En  ambos casos,  estas  desigualdades con  la  distribuci\'on maximizante  se
+  obtienen resolviendo  el problema de  maximizaci\'on de la entropia  subjeto a
+  vinculos.      Se     trata    del     caso     m\'as     general    en     la
+  secci\'on~\ref{sec:SZ:MaxEnt}.
+\end{propiedadesC}
+
+Al      final,     \underline{se      conservan      las     propiedades      de
+  concavidad~\ref{prop:SZ:concavidad},  de aditividad~\ref{prop:SZ:aditividad} y
+  de sub-aditividad~\ref{prop:SZ:subaditividad}}.   Es interesante de  notar que
+de  la desigualdad~\ref{prop:SZ:subaditividad},  puramente  entropica, se  puede
+deducir la  desigualdad de Hadamard,  desigualdad puramente matricial:  $|R| \le
+\prod_i  R_{i,i}$  para  cualquier  matriz simetrica  definida  positiva  (viene
+de~\ref{prop:SZ:subaditividad} escrita  para una  gaussiana de covarianza  $R$ y
+tomando una exponencial de la desigualdad).
+
+
+% ================================== Mutua =================================== %
+
+\seccion{Entropia condicional, informaci\'on mutua, entropia relativa}
+\label{s:SZ:Mutua}
+
+Tratando de un par de variable  aleatorias $X$ e $Y$, una cuesti\'on natural que
+occure es de cuantificar la incerteza que queda sobre una de las variable cuando
+se  observa  la  otra.  Dicho  de  otra  manera, si  se  mide  $Y  =  y$,  ?`que
+informaci\'on lleva sobre  $X$? La respuesta a esta  interogaci\'on se encuentra
+en la  noci\'on de entropia condicional. Si  uno mide $Y =  y$, la descripci\'on
+estadistica de $X$ conociendo este $Y$ se resuma a la distribuci\'on condicional
+de  probabilidad $p_{X|Y}  = \frac{p_{X,Y}}{p_Y}$.   Con esta  restricci\'on, se
+puede  evaluar una  incerteza sobre  $X$, sabiendo  de que  $Y=y$,
+%
+\[
+H(X|Y=y) = H\left( p_{X|Y}(\cdot,y) \right)
+\]
+%
+Entonces, condicionalmente a la variable aleatoria $Y$, la incerteza va a ser el
+promedio  estadistico sobre  todos los  estados $Y$  es decir  $H(X|Y)  = \sum_y
+p_Y(y) H(X|Y=y)$:
+%
+\begin{definicion}[Entropia condicional]\label{def:SZ:entropiacondicional}
+  Sean $X$ e $Y$ dos  variables aleatorias discretas, la entropia condicional de
+  $X$ sabiendo  $Y$ es  definida por
+  %
+  \[
+  H(X|Y) = - \sum_{x,y} p_{X,Y}(x,y) \log p_{X|Y}(x,y)
+  \]
+\end{definicion}
+%
+Esta definici\'on se transpone naturalmente a la entropia diferencial:
+%
+\begin{definicion}[Entropia diferencial condicional]\label{def:SZ:entropiadiferencialcondicional}
+  Sean $X$ e $Y$ dos  variables aleatorias continuas, la entropia condicional de
+  $X$ sabiendo $Y$ es definida por
+  %
+  \[
+  H(X|Y) = - \int_{\Rset^d} p_{X,Y}(x,y) \log p_{X|Y}(x,y) \, dx \, dy
+  \]
+\end{definicion}
+
+Si $X$ e $Y$ son indepedientes, $p_{X|Y}$ se reduce a $p_X$, as\'i que vale cero
+la entropia condicional:
+%
+\begin{propiedades}
+\item\label{prop:SZ:independenciacondicional}
+  %
+  \[
+  X \: \mbox{e} \: Y \: \mbox{independientes} \quad \Leftrightarrow \quad H(X|Y)
+  = H(X)
+  \]
+\end{propiedades}
+%
+Esta  propiedad  vale  en ambos  casos,  discreto  como  continuo.  En  el  caso
+discreto, se interpreta como el hecho  de que $Y$ no lleva ninguna informaci\'on
+sobre $X$, y intonces ninguna medici\'on  de $Y$ va a cambiar la incerteza sobre
+$X$.
+
+Siendo $H(X|Y=y)$  una entropia,  va a  heredir de todas  las propiedades  de la
+entropia  (diferencial).  Ademas,  de  $p_{X,Y}  = p_{X|Y}  p_Y$  de  deduce  la
+propiedad siguiente (valida para la entropia como su extensi\'on diferencial)
+%
+\begin{propiedades}
+\item\label{prop:SZ:cadena}  {\it Regla de  cadena}
+  %
+  \[
+  H(X,Y) =  H(X|Y) +  H(Y)
+  \]
+  %
+  Esta  regla, valida  en ambos  casos,  discreto como  continuo, se  generaliza
+  sencillamente a
+  %
+  \[
+  H(X_1 , \ldots , X_n) = H(X_1) + \sum_{i=2}^n H(X_i|X_{i-1} , \ldots , X_1)
+  \]
+  %
+  De       esta       regla      de       cadena       se      recupera       la
+  propiedad~\ref{prop:SZ:independenciacondicional}     a     partir    de     la
+  propiedad~\ref{prop:SZ:aditividad}.
+\end{propiedades}
+%
+Siendo  $H(X|Y=y)$  una   entropia,  en  el  caso  discreto   esta  cantidad  es
+positiva. Entonces, en  el caso discreto, $H(X|Y)$ es positiva,  lo que proba la
+la super-aditividad~\ref{prop:SZ:superaditividad}.
+
+De la regla de  cadena $H(X,Y) = H(X|Y) + H(Y) = H(Y|X)  + H(X)$ aparece que las
+cantidades  $H(X|Y)-H(X)$, $H(Y|X)-H(Y)$  y $H(X,Y)  -  H(X) -  H(Y)$ son  todas
+iguales. Estas canditades definen lo que se llama la informaci\'on mutua entre \
+$X$ \ e \ $Y$:
+
+%
+\begin{definicion}[Informaci\'on mutua]\label{def:SZ:mutua}
+  Sean $X$ e $Y$ dos variables  aleatorias, la informaci\'on mutua entre \ $X$ \
+  e  \ $Y$ \  es la  cantida simetrica
+  %
+  \[
+  I(X;Y) = H(X|Y)-H(X) = H(Y|X)-H(Y) = H(X,Y) - H(X) - H(Y)
+  \]
+  %
+  En el caso discreto se  expresa
+  %
+  \[
+  I(X;Y)  =  \sum_{x,y}   p_{X,Y}(x,y)  \log  \left(  \frac{p_{X,Y}(x,y)}{p_X(x)
+      p_Y(y)} \right)
+  \]
+  %
+  y su forma diferencial, se escribe
+  %
+  \[
+  I(X;Y)  = \int_{\Rset^d}  p_{X,Y}(x,y) \log  \left( \frac{p_{X,Y}(x,y)}{p_X(x)
+      p_Y(y)} \right) \, dx \, dy
+  \]
+\end{definicion}
+
+Las diferentes cantitades  peden ser vista a trav\'es  una visi\'on ensemblista,
+como  descrita el la  figura~\ref{fig:SZ:Venn}. Este  diagrama es  conocido como
+diagrama de Venn.
+%
+\begin{figure}[h!]
+%
+\begin{center} \input{TIKZ_SZ/Venn} \end{center}
+%
+\leyenda{Diagrama  de Venn:  Ilustraci\'on  de la  definici\'on  de la  entropia
+  condicional,  informaci\'on  mutua, y  los  vinculos  entre  cada medida.   La
+  superficia  del elipse en  linea llena  (parte grise)  representa $H(X)$  y el
+  interior  de la en  linea punteada  representa $H(Y)$.   La parte  grise clara
+  representa $H(X|Y)$  superficia del ``conjunto $H(X)$'' quitando  la parte que
+  partenece  a  $H(Y)$.  La  parte  blanca  representa  $H(Y|X)$ superficia  del
+  ``conjunto $H(Y)$''  quitando la  parte que partenece  a $H(X)$.  La  parte en
+  grise oscuro es entonces lo que $X$ e $Y$ comparten, es decir $I(X;Y)$.}
+%
+\label{fig:SZ:Venn}
+\end{figure}
+
+Como se lo va a probar, $I$ es positiva; representa realmente una informaci\'on,
+la compartida  entre \ $X$  \ e  \ $Y$. Si  de la incerteza  de $X$ se  quita la
+incerteza  de  $X$   una  vez  que  $Y$  es  medida,  lo   que  queda  tiene  la
+significaci\'on de la informaci\'on que  estas variables tienen en com\'un. Para
+probar la positividad de $I$, se  introduce de manera mas general la noci\'on de
+entropia     relativa,     conocida     tambi\'en    como     divergencia     de
+Kullback-Leibler~\cite{CovTho06, Rio07, Kul}:
+%
+\SZ{Buscar ref de Kullback and so on}
+%
+\begin{definicion}[Entropia relativa]\label{def:SZ:entropiarelativa}
+  La entropia relativa, o divergencia de una distribuci\'on de probabilidad $q$,
+  con  respeco a  una distribuci\'on  de referencia  $p$, donde  el  alfabeto de
+  definici\'on de $p$ inluye lo de $q$, es definida como
+  %
+  \[
+  D(q\|p) = \sum_x q(x) \log \left( \frac{q(x)}{p(x)} \right)
+  \]
+  %
+ o, en su forma diferencial
+  %
+ \[
+ D(q\|p) = \int_{\Rset^d} q(x) \log \left( \frac{q(x)}{p(x)} \right) \, dx
+ \]
+\end{definicion}
+%
+Esta  medida se  puede ser  vista como  una entropia  de la  distribuci\'on $q$,
+relativamente a  una distribuci\'on de referencia  $p$. Por ejemplo,  en el caso
+discreto  finito, si  $p$ es  la distribuci\'on  uniforme sobre  un  alfabeto de
+cardinal  $\alpha$,  $D(q\|p) =  \log  \alpha -  H(q)$,  lo  que representa  una
+desviaci\'on  de la  entropia con  su valor  maximal. La  misma interpretaci\'on
+queda en  el caso continuo  con la  lei uniforme ($p$  y $q$ definidas  sobre el
+mismo espacio de  volumen finito) o con  la gaussiana ($p$ y $q$  dando la misma
+matriz de  covarianza). {\it  Como para la  entropia, cuando se  necesitar\'a un
+  logaritmo especificamente de base $a$, se notar\'a la divergencia $D_a$.}
+
+\begin{lema}[Positividad de la entropia relativa]
+  %
+  \[
+  D(q\|p) \ge 0 \quad \mbox{con igualdad ssi} \quad p = q \: (c.s.)
+  \]
+  %
+  donde $(c.s.)$ significa ``casi siempre''.
+\end{lema}
+%
+\begin{proof}
+  Existen varias pruebas,  pero la mas linda puede ser  la usando la desigualdad
+  de   Jensen:   para   $\phi$   estrictamente   convexa,   $\Esp[\phi(X)]   \ge
+  \phi(\Esp[X])$ con igualdad ssi $X$  es deterministica (casi siempre). Sea $X$
+  de distribuci\'on  o densidad  de probabilidad $p$.  En el caso  discreto como
+  diferencial,   se  escribe   la  entropia   relativa  $D(q\|p)   =  \Esp\left[
+    \frac{q(X)}{p(X)} \log  \left( \frac{q(X)}{p(X)} \right) \right]$.  Sea $Y =
+  \frac{q(X)}{p(X)}$   y  $\phi(u)   =  u   \log  u$,   funci\'on  estrictamente
+  convexa. Entonces $D(q\|p) =  \Esp[\phi(Y)] \ge \phi(\Esp[Y])$. Con $\Esp[Y] =
+  \Esp\left[ \frac{q(X)}{p(X)} \right] = \sum_x q(x) = 1$ (y con una integral en
+  el caso diferencial) y $\phi(1) = 0$ sz termina la prueba. El caso de igualdad
+  apareciendo   ssi  $Y$   es  deterministica,   es   decir  $\frac{p(X)}{q(X)}$
+  deterministica, es equivalente a $p(x) \propto  q(x) \: (c.s.)$, \ie $p = q \:
+  (c.s.)$ porque ambas suman a uno.
+\end{proof}
+
+
+\SZ{Eso es la desigualdad de Gibbs}
+
+Esta propiedad, valide  en el caso discreto como  continuo, tiene consecuencias,
+cuando  se fije  de que
+%
+\[
+I(X;Y) = D \left( \left. p_{X,Y} \right\| p_X p_Y \right)
+\]
+%
+\ie  la  informaci\'on  mutua  es  la  divergencia  de  Kullback-Leibler  de  la
+distribuci\'on conjunta relativa al producto de las marginales.
+%
+\begin{propiedades}
+\item\label{prop:SZ:Ipositive}   {\it   $I$   es   positiva,  como   medida   de
+    independencia:}
+  %
+  \[
+  I(X;Y) \ge 0 \quad \mbox{con igualdad ssi $X$ e $Y$ son independientes}
+  \]
+%
+\item\label{prop:SZ:condicionar} {\it  Condicionar reduce la  entropia}
+  %
+  \[
+  H(X|Y) \le H(X) \quad \mbox{con igualdad ssi $X$ e $Y$ son independientes}
+  \]
+  %
+  Esta    desigualdad,     con    la     regla    de    cadena,     prueba    la
+  sub-aditividad~\ref{prop:SZ:subaditividad}.    Esta    reducci\'on   vale   en
+  promedio, pero el conocimiento de un valor particular puede ser tal que $H(X|Y
+  = y) > H(X)$, \ie aumentar la entropia!  (ver ejemplos en~\cite[p.~59]{Rio07})
+\end{propiedades}
+
+Fijense  que  si  $D$ es  positiva,  no  es  simetrica  y tampoco  satisface  la
+desigualdad triangular. Por  eso, no es una distancia y tiene  el nombre de {\it
+  divergencia}. La distribuci\'on de referencia $p$ juega un rol fundamental.
+
+
+% ================================== Mutua =================================== %
+
+\seccion{Unas identidades y desigualdades}
+\label{s:SZ:Desigualdades}
+
+% Libro Loss Ruskai [Lieb]
+
+\SZ{Desigualdades de Fano? Rioul p. 78, Cover P.~663}
+
+% ================================= MaxEnt
+
+\subseccion{El principio de entropia m\'axima}
+\label{sec:SZ:MaxEnt}
+
+En la termodynamica, el estudio de las caracteristicas macroscopias (dynamica de
+las  moleculas) es prohibitivo  tan el  numero de  moleculas es  importante. Por
+ejemplo,  un  litro  del  gas  que  respiramos  contiene  $2.7  \times  10^{22}$
+moleculas. De  esta constataci\'on se desaroll\'o la  f\'isica estadisticas bajo
+el    impulso    de    Boltzmann~\cite{Bol96,   Bol98},    Maxwell~\cite{Max67},
+Gibbs~\cite{Gib02},  Planck~\cite{Pla15}  entre  otros (see  also~\cite{Jay65}),
+considerando el  sistema macroscopico  a trav\'es de  lo que  llamaron ensembles
+esdadisticos:  el  sistema  global  (macroscopio)  es  al  equilibrio  pero  las
+configuraciones (micro-estados)  son flucuantes. Se una forma,  se puede asociar
+una  configuraci\'on  por su  frecuencia  de  ocurrencia  (imaginando tener  une
+infinidad de  copias del sistema  en el mismo  estado macroscopio), es  decir su
+probabilidad de occurencia.   En este marco, la entropia,  describiendo la falta
+de informaci\'on, juega un rol  fundamental.  Un sistema sujeto a vinculos, como
+por  ejemplo  teniendo  una energia  dada,  debe  estar  en  sus estado  lo  mas
+desorganizado dandos  los vinculos.   En su marco,  se introdujo la  noci\'on de
+entropia termodynamica, pero  la misma es tremendamente vinculada  a la entropia
+de  Shannon  (claramente,  identificando  las frecuencias  a  probabilidades  de
+ocurrencia)~\footnote{Ver ep\'igrafe  del cap\'itulo\ldots}.  En  otro terminos,
+la distribuci\'on describiendo los  micro-estados debe ser de entropia m\'axima,
+dando los  vinculos. Por ejemplo,  en un gas  perfecto, donde las  particulas no
+interactuan (aparte chocandose), la energia es dada por las velocidades (suma de
+las energias cineticas individuales).  Dando una energia fija, la distribuci\'on
+de las  velocidad debe ser de entropia  m\'axima sujeto a la  energia dada (nada
+mas  que   la  energia  va   a  ``organizar''  las   configuraciones  posibles).
+Intuitivamente, en un sistema aislado de $N$ particulas, las configuraciones van
+a ser equiprobables, precisamente la distribuci\'on maximizando la entropia.  En
+la  secci\'on~\ref{sec:SZ:GasPerfecto}  se va  a  desarollar  un  poco mas  este
+ejemplo.
+
+De  manera general,  el problema  se formaliza  como la  buscada de  la entropia
+m\'axima sujeto  a vinculos. Si  este principio naci\'o en  mecanica estadistica
+(ver  tambi\'en~\cite{Jay57,  Jay57:2, Jay65}),  encontr\'o  un  echo en  varios
+dominio:   en   inferencia   bayesiana   para  elegir   distribuciones   del   a
+priori~\footnote{A partir  de una distribuci\'on parametrizada  por un parametro
+  $\theta$.  El  enfoque de bayesiano  consiste a modelizar  $\theta$ aleatorio,
+  digamos  $\Theta$,  tal que  la  distribuci\'on  de  observaciones se  escribe
+  entonces  $p_{X|\Theta}$.   Inferir $\theta$  a  partir  de observaciones  $x$
+  consiste   a   determinar  la   distribuci\'on   dicha   {\it  a   posteriori}
+  $p_{\Theta|X}$.  Por  eso, hace  falta darse una  distribuci\'on dicha  {\it a
+    priori} $p_\Theta$.   Si se conocen  momentos por una  razon o una  otra, se
+  puede  elegir esta  distribuci\'on la  ``menos informativa''  posible,  \ie de
+  entropia  m\'axima dados  los momentos.\label{foot:SZ:Prior}}  conociendo unos
+momentos de la lei~\cite{Rob07, Jay68, Jay82}, hacer estimaci\'on espectral o de
+procesos      estocasticos     autoregesivos~\cite{Bur67,      Bur75,     Jay82}
+o~\cite[cap.~12]{CovTho06}, entre otros~\cite[\& ref.]{KapKes92}.
+
+Sea $X$ variable aleatoria viviendo  sobre $\X \subset \Rset^d$ con $K$ momentos
+\  $\Esp\left[ M_k(X)  \right]  = m_k$  \ fijos,  con  $M_x: \X  \to \Rset$,  el
+problema  de entropia  m\'axima se  formula de  la manera  siguiente en  el caso
+continuo (es el caso discreto, hay que re-emplazar integrales por sumas): sean \
+$M(x) = \begin{bmatrix} 1  & M_1(x) & \cdots & M_K(x) \end{bmatrix}^t$  \ y \ $m
+= \begin{bmatrix} 1 & m_1 & \cdots & m_K \end{bmatrix}^t$, \ se busca,
+%
+\[
+p^* = \argmax_p H(p) \qquad \mbox{sujeto a} \qquad p \ge 0, \quad \int_\X M(x)
+\, p(x) \, dx = m
+%1, \quad \int_X M_k(x) \, p(x) \, dx = m_k, \: k = 1, \ldots , K
+\]
+%
+donde   los  dos  primeros   vinculos  aseguran   de  que   $p^*$  (positividad,
+normalizaci\'on) sea una distribuci\'on de  probabilidad. En el ejemplo del gas,
+$K =  1, M_1(x) = \sum_i  x_i^2$ (los $x_i$ son  las velocidades). Introduciendo
+factores de Lagrange $\lambda = \begin{bmatrix} \lambda_0 & \lambda_1 & \cdots &
+  \lambda_K  \end{bmatrix}^t$ para  tener en  cuenta los  vinculos,  el problema
+variacional   consiste  a   resolver~\cite{Gelfom63,  Bru04,   Mil00,  CamMar09,
+  CovTho06}
+%
+\[
+p^* = \argmax_p \int_\X \left( - p(x) \log p(x) + \lambda^t M(x) \, p(x) \right)
+dx
+\]
+%
+donde  $\lambda$  ser\'a  determinado  para  satisfacer  los  vinculos.   De  la
+ecuaci\'on  de Euler-Lagrange~\cite{GelFom63, Bru04},  esquematicamente anulando
+la ``derivada''  del integrande con respeto  a $p$ (sera  realmente un gradiente
+los componentes  de $p$ en el  caso discreto), reparametrizando  los factores de
+Lagrange, se obtiene
+%
+\[
+p^*(x) = \e^{\lambda^t M(x)}
+\]
+%
+con $\lambda$ tal que se  satisfacen los vinculos de normalizaci\'on y momentos.
+Esta distribuci\'on  cae el la  familia conocida como {\it  familia exponencial}
+donde  los  $M_k$  son  conocidos  como {\it  esdadisticas  suficientes}  y  los
+$\lambda_k$  {\it   parametros  naturales}~\cite{Dar35,  Koo36,   And70,  Kay93,
+  LehCas98, Rob07}.
+
+Un problema que  puede aparecer es que no se puede  determinar $\lambda$ tal que
+se  satisfacen todos  los vinculos,  en particular  la de  normalizaci\'on.  Por
+ejemplo, si $\X = \Rset$ y $K = 0$, \ $p$ \ deberia ser constante (lei uniforme)
+sobre\ldots $\Rset$, lo que no es normalizable~\footnote{En el enfoque aayesiano
+  se   puede    que   no   sea    problematico,   si   el   a    posteriori   es
+  normalizable~\cite{Rob07}, pero va  mas all\'a de la meta  de esta secci\'on.}.
+En otros terminos,  en este caso, el problema  no tiene soluci\'on~\footnote{Mas
+  precisamente,  existen casos en  los cuales  se puede  acotar la  entropia por
+  arriba por un $H^{\sup}$, tal que  $\sup_p H(p) \le H^{\sup}$ pero no se puede
+  alcanzar     esta     cota,     \ie      es     un     supremum,     no     un
+  m\'aximo~\cite[sec.~12.3]{CovTho06}.}.
+
+Existe una prueba informacional de este resultado, saliendo de la soluci\'on:
+%
+\begin{lema}
+  Sea \ $\displaystyle \P_m = \left\{ p \ge 0: \: \int_\X M_k(x) \, p^*(x) \, dx
+    =  m \right\}$  \  y \  $p^*  \in \P_m$  \  que sea  de la  forma  \ $p^*  =
+  \e^{\lambda^t M(x)}$. Entonces
+%
+\[
+\forall \,  p \in  \P_m, \quad  H(p) \le H(p^*)  \qquad \mbox{con  igualdad ssi}
+\quad p = p^*
+\]
+%
+\end{lema}
+\begin{proof}
+\begin{eqnarray*}
+H(p) & = & - \int_\X p(x) \, \log p(x) \, dx\\[2.5mm]
+%
+& = & - \int_\X p(x) \, \log\left( \frac{p(x)}{p^*(x)} \right) \, dx - int_\X
+p(x) \, \log p^*(x) \, dx
+\end{eqnarray*}
+%
+De $\log p^* = \lambda^t M$ se obtiene
+%
+\begin{eqnarray*}
+H(p) & = & - D\left( p \left\| p^* \right. \right) - \int_\X \lambda^t M(x) p(x)
+\, dx\\[2.5mm]
+%
+& = & - D\left( p \left\| p^* \right. \right) - \int_\X \lambda^t M(x) \, p^*(x)
+\, dx\\[2.5mm]
+%
+& = & - D\left( p \left\| p^* \right. \right) - \int_\X p^*(x) \log p^*(x) \,
+dx\\[2.5mm]
+%
+& = & - D\left( p \left\| p^* \right. \right) + H(p^*)
+\end{eqnarray*}
+%
+porque $p,  p^* \in \P_m$ \  y \ $\lambda^t M  = \log p^*$. La  prueba se cierra
+notando que $D \ge 0$ con igualdad si y solamente si $p = p^*$.
+\end{proof}
+%
+Este lema prueba que, dando  vinculos ``razonables'', la entropia es acotada por
+arriba,  y  que  se alcanza  la  cota  para  una  distribuci\'on de  la  familia
+exponencial. Por ejemplo,
+%
+\begin{itemize}
+\item Con  $K =  0$ \  y \  $\X$ \ de  volumen finito  \ $|\X|  < +  \infty$, la
+  distribuci\'on  de  entropia m\'axima  es  la  distribuci\'on  uniforme de  la
+  propiedad~\ref{prop:SZ:cotamaximauniforme}   secci\'on~\ref{sec:SZ:Diferencial}
+  en     el      caso     continuo,     o     propiedad~\ref{prop:SZ:cotamaxima}
+  secci\'on~\ref{sec:SZ:DefinicionShannon} en el caso discreto.
+%
+\item Con  $K =  1$, \ $\X  = \Rset^d$  \ y \  $M(x) = x  x^t$ (visto  con $d^2$
+  vinculos),  la  distribuci\'on  de  entropia  m\'axima  es  la  distribuci\'on
+  gausiana        de        la       propiedad~\ref{prop:SZ:cotamaximagaussiana}
+  secci\'on~\ref{sec:SZ:Diferencial}.
+\end{itemize}
+
+
+% ================================= EPI
+
+\subseccion{Desigualdad de la potencia entropica}
+
+Sean $X$  e $Y$ dos variables indepedientes.  Si se sabe las  relaciones entre \
+$H(X,Y)$, \ $H(X)$,  \ $H(Y)$, una pregunta natural  concierna la relaci\'on que
+podrian tener $X+Y$ con cada variable en termino de entropia. La respuesta no es
+trivial, y el  resultado general concierna el caso  de variables continuas sobre
+$\Rset^d$.   Es conocido  como desigualdad  de la  potencia entropica  (EPI para
+entropy power  inequality en ingl\'es). No  vincula las entropias,  sino que las
+potencias entropicas.
+%
+\begin{teorema}[Desigualdad de la potencia entropica]
+  Sean  $X$  e  $Y$  dos variables  $d$-dimensionales  continuas  indepedientes,
+  entonces
+  %
+  \[
+  N(X + Y) \ge N(X) + N(Y)
+  \]
+%
+  con  igualdad  sii  $X$  e  $Y$  son gaussianas  con  matrices  de  covarianza
+  proporcionales,  $\Sigma_Y \propto  \Sigma_X$ (siempre  verdad en  el contexto
+  escalar).
+\end{teorema}
+%
+\noindent     Existen    varias     formulaciones     alternativas    a     esta
+desiguladad~\cite{Sha48, Lie78, CovTho06, DemCov91, Rio07}:
+%
+\begin{enumerate}
+\item\label{EPI:SZ:EquivGauss} Sean $\widetilde{X}$ y $\widetilde{Y}$ gaussianas
+  independientes   de   matriz   de   covarianza  proporcionales   y   tal   que
+  $H(\widetilde{X}) =  H(X)$ y $H(\widetilde{Y}) = H(Y)$.  Entonces
+  %
+  \[
+  N(X+Y) \ge N\left( \widetilde{X} + \widetilde{Y} \right)
+  \]
+  %
+  con igualdad sii $X$ y $Y$ son gaussianas.
+%
+\item\label{EPI:SZ:PresCov}    {\it    Desigualdad    de    preservaci\'on    de
+    covarianza:}
+  %
+  \[
+  \forall  \,   0  \le  \lambda  \le   1,  \quad  H\left(   \sqrt{\lambda}  X  +
+    \sqrt{1-\lambda} Y \right) \ge \lambda H(X) + (1-\lambda) H(Y)
+  \]
+  %
+  con igualdad el el caso gaussiano con matrices de covarianza proporcionales.
+\end{enumerate}
+%
+%\noindent La  forma del teorema implica la  forma~\ref{EPI:SZ:PresCov} tomando \
+%$\sqrt{\lambda} X$ \ y  \ $\sqrt{1-\lambda} Y$ \ en lugar de \ $X$  \ e \ $Y$, y
+%recordandose que \ $N(a X) =  a^2 N(X)$. Reciprocamente, la forma del teorema se
+%recupera de la forma~\ref{EPI:SZ:PresCov} tomando \ $\lambda = \frac12$.
+
+La prueba  de esta(s) desigualdad(es) no es  trivial.  Numeras versiones
+existen,  dadas por  ejemplo  en las  referencias~\cite{Bla65, Sta59,  ShaWea64,
+  Rio07,  Rio11,  Rio17,  CovTho06,  DemCov91,  Lie78,  VerGuo06}  (ver  tambien
+teorema~6  de~\cite{Lie75}) entre  otros.  Como  se lo  puede ver,  la gaussiana
+juega un rol particular en esta desigualdad, saturandola.
+
+
+\SZ{Ver si  es corto probar  la equivalencia entre  las tres formas.  Existe una
+  forma, de Madiman, a traver rearreglo}
+
+Esta desigualdad se usa para  probar otras desigualdades, como por ejemplo la
+desigualdad de  Minkowsky $|R_1 +  R_2|^{\frac1d} \ge $ para  cualquier matrices
+$R_1,  R_2$ simetricas  definidas positivas  (viene de  $X$ e  $Y$  gaussianas de
+covarianza $R_1$  y $R_2$).  Aparece  tambi\'en para acotar  informaci\'on mutua
+entre variables y  calcular la capacidad de un canal  de communicaci\'on como se
+le va a ver~\cite{CovTho06, DemCov91, Rio07, Joh04}.
+
+\SZ{En el caso discreto, no hay un resultado general.  Existent solamento
+  resultados para variables particulares~\cite{toto, titi}.}
+
+
+% ================================= Data Processing Theorem
+
+\subseccion{Desigualdad de procesamiento de datos}
+
+Esta  desigualdad  traduce  que  procesando  datos,  no  se  puede  aumentar  la
+informaci\'on disponible sobre  una variable. Se basa sobre  una desigualdad que
+satisface la informaci\'on mutua aplicada a un proceso de Markov.
+
+\begin{definicion}[Proceso de Markov]
+  Una secuencia  $X_1 \mapsto X_2 \mapsto  \ldots \mapsto X_n$ es  dicha {\it de
+    Markov}   si   para  cualquier   $i   >   1$,
+  %
+  \[
+  p_{X_{i-1},X_{i+1}|X_i} = p_{X_{i-1}|X_i} p_{x_{i+1}|X_i}
+  \]
+  %
+  Dicho  de otra  manera, condicionalmente  a $X_i$,  las variables  $X_{i-1}$ y
+  $X_{i+1}$       son       independientes.        Eso      es       equivalente
+  a
+  %
+  \[
+  p_{X_{i+1}|X_i,X_{i-1},\ldots} = p_{X_{i+1}|X_i}
+  \]
+  %
+  Si  $i$  representa un  tiempo,  significa  que  la esdadistica  de  $X_{i+1}$
+  conociendo todo el pasado se reduce  a esa conociendo el pasado inmediato (las
+  probabilidades   dichas   de   transici\'on   $p_{X_{i+1}|X_i}$   caracterisan
+  completamente  el proceso).   Es sencillo  fijar de  que $X_n  \mapsto X_{n-1}
+  \mapsto \ldots \mapsto X_1$ es tambien un proceso de Markov.
+\end{definicion}
+
+\begin{teorema}[Desigualdad de procesamiento de datos]
+  Sea  $X \mapsto  Y \mapsto  Z$ un  proceso de  Markov. Entonces,
+  %
+  \[
+  I(X;Y) \ge I(X;Z)
+  \]
+  %
+  con igualdad sii $X \mapsto Z \mapsto Y$ es tambi\'en un proceso de Markov. En
+  particular, es  sencillo ver  que para cualquier  funci\'on $g$, $X  \mapsto Y
+  \mapsto g(Y)$ es un proceso de Markov,  lo que da
+  %
+  \[
+  \forall \, g, \quad I(X;Y) \ge I(X;g(Y))
+  \]
+  %
+  La  \'ultima  desigualdad  se  escribe  tambi\'en  $H(X|g(Y))  \ge  H(X|Y)$  y
+  significa que  procesar $Y$ no aumenta  la informaci\'on que $Y$  da sobre $X$
+  (la incerteza condicional es mas importante).
+\end{teorema}
+%
+\begin{proof}
+  Por definici\'on  de la  informaci\'on mutua, considerando  $X$ y  la variable
+  conjunta $(Y,Z)$,
+%
+\begin{eqnarray*}
+I(X ; Y,Z) & = & H(X) - H(X|Y,Z)\\[2.5mm]
+%
+& = & H(X) - H(X|Y) + H(X|Y) - H(X|Y,Z)
+\end{eqnarray*}
+%
+\noindent Por la propiedad que $Z  \mapsto Y \mapsto X$ sea tambi\'en un proceso
+de Markov, es sencillo probar que $H(X|Y,Z) = H(X|Y)$ (conciendo $Y$ sufice para
+caracterisar completamente $X$), lo que da
+%
+\[
+I(X;Y,Z) = I(X;Y)
+\]
+%
+Tambi\'en,
+%
+\begin{eqnarray*}
+I(X ; Y,Z) & = & H(X) - H(X|Z) + H(X|Z) - H(X|Y,Z)\\[2.5mm]
+%
+& = & I(X;Y) + H(X|Z) - H(X|Y,Z)
+\end{eqnarray*}
+%
+\noindent  Ademas,   escribiendo  $\frac{p_{X|Y,Z}}{p_{X|Z}}  =  \frac{p_{X|Y,Z}
+  p_{Y|Z}}{p_{X|Z} p_{Y|Z}} = \frac{p_{X,Y|Z}}{p_{X|Z} p_{Y|Z}}$
+% $H(X|Z) -  H(X|Y,Z) \Esp\left[ \log \left(
+% \frac{p_{X|Y,Z}(X,Y,Z)}{p_{X|Z}(X,Z)}\right)\right] = $
+%& = & \int p_{X,Y,Z} \log \left(
+%  \frac{p_{X|Y,Z}}{p_{X|Z}} \right)\\[2.5mm]
+%%
+%& = & \int p_{X,Y,Z} \log \left( \frac{p_{X|Y,Z}
+%    p_{Y|Z}}{p_{X|Z}   p_{Y|Z}}   \right)\\[2.5mm]
+%%
+%& = &   \int   p_{X,Y,Z}   \log   \left(
+%  \frac{p_{X,Y|Z}}{p_{X|Z}  p_{Y|Z}}  \right)
+%\end{eqnarray*}
+%
+%\noindent  (y  similaramente  en  el   caso  discreto)  
+%Calculos sencillos,
+se muestra  que $H(X|Z)  - H(X|Y,Z)$ es  una divergencia de  Kullback-Leibler de
+$p_{X,Y|Z}$ relativamente a $p_{X|Z}  p_{Y|Z}$, o informaci\'on mutua $I(X;Y|Z)$
+entre \ $X$ \ e \ $Y$,  condicionalmente a \ $Z$).  Entonces
+%
+\[
+I(X;Y) = I(X;Z) + I(X;Y|Z)
+\]
+%
+lo  que  proba  la  desigualdad  del   hecho  de  que  una  divergencia  sea  no
+negativa. Ademas, se obtiene la igualdad sii  $I(X;Y|Z) = 0$, es decir $X$ e $Y$
+independientes  condicionalmente a  $Z$, lo  que es  la definici\'on  de  que $X
+\mapsto Z \mapsto Y$ sea un proceso de Markov.
+\end{proof}
+
+% ================================= Data Processing Theorem
+
+\subseccion{Secunda lei de la termodinamica}
+
+Tratando de procesos  de Markov, aparece el equivalente de la  secunda lei de la
+termodinamica:  un  sistema  aislado  evolua  hasta  llegar  su  estado  lo  mas
+desorganizado.
+
+\begin{lema}[ver~\cite{CovTho06}]
+  Sea $X_1 \mapsto X_2 \mapsto \cdots  \mapsto X_n \mapsto \cdots$ un proceso de
+  Markov,  con probabilidades  de transici\'on  $p_{X_{n+1}|X_n}$  dadas.  Estas
+  modelan  el sistema,  independiente de  las condiciones  iniciales.   Sean dos
+  distribuciones (condiciones) iniciales diferentes $p_1$ y $q_1$, conduciendo a
+  las distribuciones $p_n$ y $q_n$ para $X_n$. Entonces:
+%
+\begin{itemize}
+\item  Para cualquier  $n \ge  1$,
+  %
+  \[
+  D(p_{n+1}\|q_{n+1}) \le D(q_n\|p_n)
+  \]
+  %
+  las distribuciones $p_n$ y $q_n$ no se ``alejan'' (tiende a acercarse);
+%
+\item  Si  $p^*$  es  una  distribuci\'on  estacionaria,
+  %
+  \[
+  D(p_{n+1}\|p^*) \le D(p_n\|p^*)
+  \]
+  %
+  la distribuci\'on no se aleja de la distribuci\'on estacionaria.
+%
+\item Ademas, si  los $X_n$ viven sobre  $\X$ de cardinal o volumen  finito y si
+  $p^*$ es  uniforme sobre $\X$,
+  %
+  \[
+  H(X_{n+1}) \ge H(X_n)
+  \]
+  %
+  el  sistema tiende  a desorganizarse  (y recuerdese  de que  la distribuci\'on
+  uniforme es la de entropia m\'axima).
+\end{itemize}
+\end{lema}
+%
+\begin{proof}
+  Escribiendo   $p_{n+1,n}$  y  $q_{n+1,n}$   las  distribuciones   conjunta  de
+  $(X_{n+1},X_n)$  para   las  dos   condiciones  iniciales,  ,   $p_{n+1|n}$  y
+  $q_{n+1|n}$  las  distribuciones  condicionales  de $X_{n+1}|X_n$  as\'i  que,
+  $p_{n|n+1}$ y  $q_{n|n+1}$ las distribuciones  condicionales de $X_n|X_{n+1}$,
+  se muestra sencillamente  que $D(p_{n+1,n}\|q_{n+1,n}) = D(p_{n+1}\|q_{n+1}) +
+  D(p_{n+1|n}\|q_{n+1|n})  =  D(p_n\|q_n)  +  D(p_{n|n+1}\|q_{n|n+1})$.  Ademas,
+  $p_{n+1|n}     =    p_{X_{n+1}|X_n}     =     q_{n+1|n}$,    conduciendo     a
+  $D(p_{n+1|n}\|q_{n+1|n}) = 0$ y  entonces $D(p_{n+1}\|q_{n+1}) = D(p_n\|q_n) +
+  D(p_{n|n+1}\|q_{n|n+1})$.   $p_{n|n+1}$   no   es   necesariamente   igual   a
+  $q_{n|n+1}$,  pero la divergencia  siendo nonnegativa,  se obtiene  la primera
+  desigualdad.  La secunda desigualdad se  obtiene tomando $q_n = p^*$.  Ademas,
+  si $p^*$  es uniforme  $p^*(x) = \frac{1}{|\X|}$  da $D(p_n\|p^*) =  -H(X_n) +
+  \log |\X|$, dando la \'ultima desigualdad.
+\end{proof}
+
+
+% ================================= Principop de incerteza
+
+\subseccion{\SZ{Principio de incerteza entropico}}
+
+
+% ================================= Fisher
+
+\subseccion{Un foco sobre la informaci\'on de Fisher}
+
+Si  la entropia  y las  heramientas relacionadas  son naturales  como  medida de
+informaci\'on, no se  puede resumir una distribuci\'on a  una medida escalar. En
+el marco  de la teoria de la  estimaci\'on, R. Fisher introdujo  una noci\'on de
+informaci\'on intimamente relacionada al  error cuadratico en la estimaci\'on de
+un   parametro    a   partir   de   una   variable    parametrizado   por   este
+parametro~\cite{Fis22,  Fis25:07,   Kay93,  Bos07,  CovTho06, Fri04}.
+
+{\it Mencionamos que en esta secci\'on, se usar\'a el logaritmo natural.}
+% , a pesar de que sea  necesarion solamente para la desigualdad de Cram\'er-Rao
+% que se va a ver en unos parafos.}
+%
+\begin{definicion}[Matriz informaci\'on de Fisher parametrica]
+  Sea $X$ una variable aleatoria parametrizada por un parametro $m$-dimensional,
+  $\theta  \in  \Theta \subseteq  \Rset^m$,  de  distribuci\'on de  probabilidad
+  $p_X(\cdot;\theta)$ continua  sobre $\X  \subseteq \Rset^d$ su  soporte. Asume
+  que $p_X$ sea diferenciable en  $\theta$ sobre $\Theta$.  La matriz de Fisher,
+  de  tamanio $m \times  m$ es  definida por
+  %
+  \[
+  J_\theta(X)  =  \Esp\left[  \Big(  \nabla_\theta \log  p_X(X;\theta)  \Big)
+    \Big( \nabla_\theta \log p_X(X;\theta) \Big)^t \right]
+  \]
+  %
+  donde $\nabla_\theta = \left[  \cdots \: \frac{\partial}{\partial \theta_i} \:
+    \cdots \right]^t$ es  el gradiente en $\theta$.  Es  la matriz de covarianza
+  del  {\it score  parametrico} $S(X)  = \nabla_\theta  \log  p_X(X;\theta)$ (se
+  proba que su promedio es  cero), siendo $\log p_X$ la {\it log-verosimilitud}.
+  Bajo   condiciones   de  regularidad,   se   puede  mostrar~\footnote{Es   una
+    consecuencia del  teorema de la  divergencia, suponiendo que los  bordes del
+    dominio de $X$ no depende de $\theta$ y que la funci\'on score se cancela en
+    estos  bordes.}  que  $J_\theta(X)$ es  tambi\'en  menos el  promedio de  la
+  Hessiana~\footnote{Para $f:  \Rset^m \mapsto \Rset, \quad  \Hess_\theta f$ es
+    la  matriz de  componentes $\frac{\partial^2  f}{\partial  \theta_i \partial
+      \theta_j}$.}  $\Hess_\theta$ de  $\log  p_X(X;\theta)$.  Nota:  a veces  se
+  define  la  informaci\'on  de  Fisher   como  $\Tr(J)$,  traza  de  la  matriz
+  informaci\'on de Fisher.
+\end{definicion}
+%
+Como  para   la  entropia,   la  matriz  de   Fisher  se   escribe  generalmente
+$J_\theta(X)$, a  pesar de que no  sea funci\'on de  $X$ pero de la  densidad de
+probabilidad. Se  la notara tambi\'en  $J_\theta(p_X)$ seg\'un la  escritura la
+mas conveniente.
+
+Tomando el gradiente  en $x$ en lugar de $\theta$ da  la matriz de informaci\'on
+de Fisher no parametrica,
+%
+\begin{definicion}[Matriz informaci\'on de Fisher no parametrica]
+  Sea  $X$  una  variable  aleatoria  de distribuci\'on  de  probabilidad  $p_X$
+  definida  sobre  $\X \subseteq  \Rset^d$  su  soporte.   Asuma que  $p_X$  sea
+  diferenciable (en $x$).   La matriz de Fisher no parametrica,  $d \times d$ es
+  definida por
+  %
+  \[
+  J(X) =  \Esp\left[ \Big(  \nabla_x \log p_X(X)  \Big) \Big(  \nabla_x \log
+      p_X(X) \Big)^t \right]
+  \]
+  %
+  Es la matriz de covarianza de  la {\it funci\'on score} $\nabla_x \log p_X(X)$
+  (se  proba  que  su  promedio  tambi\'en  es  cero)  o,  bajo  condiciones  de
+  regularidad, menos el promedio de la Hessiana en $x$ de la log-verosimilitud.
+\end{definicion}
+%
+Es interesante notar que:
+%
+\begin{itemize}
+\item Cuando $\theta$ es un  parametro de posici\'on, $p_X(x;\theta) = p(x -
+\theta)$,  $\nabla_\theta \log p_X  = -  \nabla_x \log  p_X$ y  la informaci\'on
+parametrica se reduce a la informaci\'on no parametrica.
+%
+\item  Si $X$  es  gaussiano de  matriz  de covarianza  $\Sigma_X$, entonces  se
+  muestra sencillamente de que $J(X)  = \Sigma_X^{-1}$ (o, de una forma, inversa
+  de la dispersi\'on o incerteza en termino de estadisticas de orden 2).
+%
+\item Es sencillo ver  que, por definici\'on \ $J_\theta(X)$ \ y  \ $J(X)$ \ son
+  simetricas  y  que \  $J_\theta(X)  > 0$  \  y  \ $J(X)  >  0$  \ donde  estas
+  desiguladades  significan  que  las  matrices  son  definidas  positivas  (los
+  autovalores son positivos).  Ademas,
+  %
+  \[
+  \forall \ a \ne 0, \quad J(aX) = \frac{1}{|a|^2} J(X)
+  \]
+  %
+  (queda valide  para $a$  matriz invertible).  Esta  relaci\'on da a  $J(X)$ un
+  sabor de  informaci\'on en el sentido  de que, cuando $a$  tiende al infinito,
+  $J(aX)$  tiende a  0;  $a X$  tiende  a ser  muy diepersas  as\'i  que no  hay
+  informaci\'on sobre su posici\'on.
+%
+\item $J_\theta$ \ y \ $J$ \ son  convexas en el sentido de que \ para cualquier
+  conjunto de  $\lambda_k \ge  0, \sum_{k=1}^K  \lambda_k = 1$  \ y  \ cualquier
+  conjunto    de   distribuciones    \   $p_k,    \    k   =    1,   \ldots    ,
+  K$~\cite{Coh68, Fri04},
+  %
+  \[
+  J_\theta\left(  \sum_{k=1}^K  \lambda_k  p_k  \right)  \:  <  \:  \sum_{k=1}^K
+  \lambda_k  \,  J_\theta\left(  p_k  \right)  \qquad  \mbox{y}  \qquad  J\left(
+    \sum_{k=1}^K \lambda_k  p_k \right) \:  < \: \sum_{k=1}^K  \lambda_k J\left(
+    p_k \right)
+  \]
+%
+  donde $A < B$ significa que $B-A$ es definida positiva.  La prueba es dada por
+  Cohen en  el caso  escalar, pero se  extiende sin  costo adicional en  el caso
+  multivariado. Hace falta  probarlo para $K=2$ y, por  recurrencia, se extiende
+  por cualquier  $K$. En este  caso, observando que  $\big( \nabla \log  p \big)
+  \big( \nabla \log p  \big)^t \, p = \frac{\big( \nabla p  \big) \big( \nabla p
+    \big)^t}{p}$, considerando  el gradiente con respeto a  $\theta$ (resp. $x$)
+  tratando de  $J_\theta$ (resp. $J$), se obtiene  $\sum_k \lambda_k \frac{\big(
+    \nabla p_k \big) \big( \nabla p_k \big)^t}{p_k} - \frac{\left( \nabla \sum_k
+      \lambda_k p_k \right) \left( \nabla \sum_k \lambda_k p_k \right)^t}{\sum_k
+    \lambda_k  p_k} =  \frac{1}{\sum_k  \lambda_k p_k}  \, \sum_{k,l}  \lambda_k
+  \lambda_l  \Big(  \frac{p_l}{p_k} \big(  \nabla  p_k  \big)  \big( \nabla  p_k
+  \big)^t - \big( \nabla p_k \big)  \big( \nabla p_l \big)^t \Big)$, lo que vale
+  (tratamos del caso  $K = 2$), $ \frac{\lambda_1  \lambda_2}{p_2 p_2 (\lambda_1
+    p_1 + \lambda_2 p_2)} \big( p_2 \nabla  p_1 - p_1 \nabla p_2 \big) \big( p_2
+  \nabla p_1  - p_1 \nabla p_2 \big)^t  \ge 0$. No puede  ser identicamente cero
+  (salvo si $\lambda_1 \lambda_2 = 0$  o $p_1 = p_2$\ldots) as\'i que se obtiene
+  la desigualdad sobre la matriz de Fisher integrando esta desigualdad.
+\end{itemize}
+
+
+Una otra interpretaci\'on  de $J$ como informaci\'on es  debido a la desigualdad
+de  Cram\'er-Rao que  la vincula  a la  covarianza  de estimaci\'on~\footnote{De
+  hecho,  pareci\'o esta  formula tambi\'en  en los  papeles de  Fr\'echet  y de
+  Darmois~\cite{Fre43, Dar45}. Como citado por Fr\'echet, aparece que la primera
+  versi\'on  de esta  formula  es mucho  mas vieja  y  debido a  K.  Pearson  \&
+  Filon~\cite{PeaFil98} en 1898; luego fue extendido por Edgeworth~\cite{Edg08},
+  Fisher~\cite{Fis25:07}  o  Doob~\cite{Doo36}.}~\cite{Rao45,  Rao92,  RaoWis47,
+  Cra46,  Rio07, CovTho06,  Fri04,  Kay93, Bos07}.   Sea  $X$ parametrizada  por
+$\theta$.  La meta es estimar $\theta$ a  partir de $X$.  Tal estimador va a ser
+una  funci\'on unicamente  de $X$,  lo que  se  escribe usualmente~\footnote{Por
+  ejemplo,  si $\theta$  es un  promedio com\'un  a los  componentes de  $X$, un
+  estimador   podr\'ia   ser   $\widehat{\theta}   =   \frac1d   \sum_i   X_i$.}
+$\widehat{\theta}(X)$ (la funci\'on no depende explicitamente de $\theta$).  Las
+caractericas de la calidad de un  estimator es naturalmente su bias $b(\theta) =
+\Esp\left[  \widehat{\theta}(X)  \right]  -   \theta$  y  su  matriz  covarianza
+$\Sigma_{\widehat{\theta}}$  (la varianza  da  la dispersi\'on  alrededor de  su
+promedio). La desigualdad de Cram\'er-Rao acota por debajo esta covarianza.
+%
+\begin{teorema}[Desigualdad de Cram\'er-Rao]
+  Sea  $X$ parametrizada  por $\theta$,  de  densidad de  soporte $\X  \subseteq
+  \Rset^d$  indendiente  de $\theta$  y  $\widehat{\theta}(X)$  un estimador  de
+  $\theta$.  Sea $b(\theta)$ su  bias y $\Sigma_{\widehat{\theta}}$ su matriz de
+  covarianza.   Sea   $\Jac_b(\theta)$  la   matriz  Jacobiana  del   bias  $b$.
+  Entonces,
+  %
+  \[
+  \Sigma_{\widehat{\theta}} - \left( I + \Jac_b(\theta) \right) J_\theta(X)^{-1}
+  \left( I + \Jac_b(\theta) \right)^t \ge 0
+  \]
+  %
+  En particular, en el  caso $\theta$ escalar,
+  %
+  \[
+  \sigma_{\widehat{\theta}}^2 \ge \frac{(1+b'(\theta))^2}{J_\theta(X)}
+  \]
+  %
+  donde  $b'$ es  la  derivada  de $b$.\newline  Tomando  $\theta$ parametro  de
+  posici\'on y $\widehat{\theta}  = X$, estimador sin bias ($b =  0$), eso da lo
+  que es conocido  como la desigualdad no parametrica de  Cram\'er-Rao y toma la
+  expresi\'on
+  %
+  \[
+  \Sigma_X - J(X)^{-1} \ge 0
+  \]
+  %
+  o, en el caso escalar,
+  %
+  \[
+  \sigma_X^2 \ge \frac{1}{J(X)}
+  \]
+  %
+  Ademas, en el caso no parametrico, se alcanza la cota si y solamente si $X$ es
+  un vector gaussiano.
+\end{teorema}
+%
+\noindent Esta  desigualdad acota la variaza  de cualquier estimador,  \ie da la
+varianza o error  m\'inima que se puede  esperar. Esta cota es el  inverso de la
+informaci\'on de Fisher, \ie  $J_\theta(X)$ caracteriza la informaci\'on que $X$
+tiene sobre $\theta$.
+%
+\begin{proof}
+  Sea $S = \nabla_\theta \log  p_X$ y $\theta_0 = \Esp\left[ \widehat{\theta}(X)
+  \right] = \theta + b(\theta)$. Fijandose  que $\nabla_\theta \log p_X \, p_X =
+  \nabla_\theta p_X$, que $\widehat{\theta}$ no  es funci\'on de $\theta$, y que
+  el soporte $\X$ no depende de $\theta$, se obtiene~\footnote{Se supone que los
+    integrandes sean $\theta$-localmente integrables,  tal que se puede invertir
+    derivada en $\theta$ e integraci\'on.}
+  %
+  \begin{eqnarray*}
+  \Esp\left[ S(X) \left( \widehat{\theta}(X) - \theta_0 \right)^t \right] & = &
+  \int_\X \nabla_\theta p_X(x;\theta) \widehat{\theta}(x)^t \, dx - \left(
+  \int_\X \nabla_\theta p_X(x;\theta) \, dx \right) \theta_0^t\\[2.5mm]
+  %
+  & = & \nabla_\theta \int_{\Rset^d} p_X(x;\theta) \widehat{\theta}(x)^t \, dx -
+  \left( \nabla_\theta \int_{\Rset^d} p_X(x;\theta) \, dx \right)
+  \theta_0^t\\[2.5mm]
+  %
+  & = & \nabla_\theta \left( \theta + b(\theta) \right)  - 
+  \left( \nabla_\theta 1 \right) \theta_0^t\\[2.5mm]
+  %
+  & = & \left( I + \Jac_b(\theta) \right)^t
+  \end{eqnarray*}
+  %
+  Ademas,  fijandose  que  $\Esp\left[  S(X)  S(X)^t \right]  =  J_\theta(X)$  y
+  $\Esp\left[   \left(    \widehat{\theta}(X)   -   \theta_0    \right)   \left(
+      \widehat{\theta}(X)      -      \theta_0      \right)^t     \right]      =
+  \Sigma_{\widehat{\theta}}$,            la            desigualdad            de
+  Cauchy-Bunyakovsky-Schwarz~\footnote{De  hecho, fue  probada  por Cauchy  para
+    sumas en 1821, para integrales por  Bunyakovsky en 1859 y mas elegamente por
+    Schwarz  en  1888~\cite{Ste04}.}   conduce  a
+  %
+  \[
+  \left( u^t \left( I + \Jac_b(\theta)  \right)^t v \right)^2 \: = \: \Esp\left[
+    u^t S(X) \left( \widehat{\theta}(X) -  \theta_0 \right)^t v \right]^2 \: \le
+  \: u^t J_\theta(X) u \: v^t \Sigma_{\widehat{\theta}} \, v
+  \]
+  %
+  La prueba se termina tomando \ $u = J_\theta(X)^{-1} \left( I + \Jac_b(\theta)
+  \right)^t \, v$ (recordandose que $J$ es simetrica).\newline Con la elecci\'on
+  de  $u$,  en  la  desigualdad  de Cauchy-Bunyakovsky-Schwarz,  se  obtiene  la
+  igualdad  cuando, \  $v^t J(X)^{-1}  S(x)  \propto v^t  (x -  \theta)$ \  para
+  cualquier \  $v$ \ y \  $x$, est decir \  $\nabla_x p_X (x) \propto  J(X) (x -
+  \theta) p_X(x)$, lo que es la ecuaci\'on diferencial que satisface (solamente)
+  la  gaussiana:   en  este  caso,  se   verifica  a  posteriori   que  $J(X)  =
+  \Sigma_X^{-1}$,  y entonces  que  se alcanza  la  cota de  la Cram\'er-Rao  no
+  parametrica.
+\end{proof}
+%
+\noindent En el  caso parametrico, no se puede estudiar el  caso de igualdad del
+hecho  de  que  $\widehat{\theta}$ no  es  algo  dado.   Ademas, a\'un  dado  un
+estimador  (independiente explicitamente de  $\theta$), no  hay garantia  de que
+existe  una  densidad parametrizado  por  $\theta$ que  alcanza  la  cota, o  al
+rev\'es, dado una  familia de densidades, tampoco no hay  garantia que existe un
+estimador que permite alcanzar la cota~\cite{CovTho06,  Kay93}.
+
+Fijense de que, de nuevo, la gaussiana juega un rol particular en la desigualdad
+de Cram\'er-Rao no parametrica , permitiendo alcanzar la cota.
+
+Nota: para dos  matrices $A \ge 0$  \ y \ $B \ge  0$, si $A - B  \ge 0$ entonces
+$|A|  \ge  |B|$,   con  igualdad  si  y  solamente   si  $A  =  B$~\cite[cap.~1,
+teorema~25]{MagNeu99}.   Entonces,  de  las  desigualdades  de  Carm\'er-Rao  se
+deducen     desigualdades     de     Cram\'er-Rao    escalares
+%
+\[
+\left|   \Sigma_{\widehat{\theta}}  \right|   \,   \ge  \,   \frac{\left|  I   +
+    \Jac_b(\theta) \right|^2}{\left| J_\theta(X) \right|} \qquad \mbox{y} \qquad
+\left| \Sigma_X \right| \, \ge \, \frac{1}{\left| J(X) \right|}
+\]
+%
+Obviamente,  en la secunda,  se alcanza  la igualdad  si y  solamente si  $X$ es
+gaussiano.  Ademas,  para   una  matriz  $A  \ge  0$,   existe  la  ``relaci\'on
+determinente-traza''  \ $|A|^{\frac1d} \le  \frac1d \Tr(A)$,  con igualdad  si y
+solamente  si $A  = I$~\cite[cap.~11,  sec.~4]{MagNeu99}, dando  otras versiones
+escalares de la desigualdad de Cram\'er-Rao, por ejemplo
+% \Tr\left(\Sigma_{\widehat{\theta}}  \right)  \,  \ge  \, \frac{d^2  \,  \left(
+%     \Tr\left(I   +  \Jac_b(\theta)  \right)   \right)^2}{\Trleft|  J_\theta(X)
+% \right|} \qquad \mbox{y} \qquad
+%
+\[
+\left| \Sigma_X  \right|^{\frac1d} \,  \ge \, \frac{d}{\Tr\left(  J(X) \right)},
+\qquad   \Tr\left(   \Sigma_X   \right)   \,   \ge   \,   \frac{d}{\left|   J(X)
+  \right|^{\frac1d}} \qquad \mbox{o} \qquad \Tr\left( \Sigma_X \right) \, \ge \,
+\frac{d^2}{\Tr\left( J(X) \right)}
+\]
+%
+En  estos casos,  se obtiene  la igualdad  si y  solamente si  $X$  es gaussiana
+(igualdad de la Cram\'er-Rao no parametrica) y ademas de covarianza proporcional
+a la identidad (igualdad en la relaci\'on determinente-traza).
+
+Se notar\'a que,  al imagen de las leyes de  entropia m\'axima, la informaci\'on
+de  Fisher  juega tambi\'en  un  rol particular  en  la  inferencia bayesiana  a
+trav\'es del  prior de Jeffrey~\cite{Jef46,  LehCas98, Rob07}~\footnote{Ver nota
+  de pie~\ref{foot:SZ:Prior}.  A veces, se toma como distribuci\'on a priori
+  $p_\Theta(\theta)  \propto   |J_\theta(X)|^\frac12$  por  su   invarianza  por
+  reparametrizaci\'on $\eta =  \eta(\theta)$, \ie el prior de  Jeffrey en $\eta$
+  es uniquevocamente obtenido con la Fisher  en $\eta$ o por cambio de variables
+  saliendo de $p_\Theta$.}.
+
+\
+
+Si  la  desigualdad de  Cram\'er-Rao  da  a la  matriz  de  Fisher  un sabor  de
+informaci\'on,  aparece   que  $J$  es  tambi\'en  relacionado   a  la  entropia
+relativa~\cite{CovTho06, Fri04}:
+%
+\begin{teorema}[Fisher como curvatura de la entropia relativa]
+  Sea $X$  parametrizado por $\theta_0  \in \Theta$ con $\Theta$  conteniendo un
+  vecinaje  de   $\theta_0$.   Siendo   $D\left(  p_X(\cdot;\theta)  \,   \|  \,
+    p_X(\cdot;\theta_0)  \right)$  funci\'on  de  $\theta \in  \Theta$,  aparece
+  que
+  %
+  \[
+  D  \left( p_X(\cdot;\theta)  \, \|  \, p_X(\cdot;\theta_0)  \right)  = \frac12
+  \left( \theta  - \theta_0 \right)^t  J_{\theta_0}(X) \left( \theta  - \theta_0
+  \right) + o\left( \| \theta - \theta_0 \|\right)
+  \]
+  %
+  donde $o(\cdot)$ es un resto peque\~no  con respecto a su argumento.  En otros
+  terminos,  $J_{\theta_0}(X)$  es  la  curvatura  de la  entropia  relativa  en
+  $\theta_0$.
+\end{teorema}
+%
+\begin{proof}
+  La relaci\'on  es consecuencia  de un desarrollo  de Taylor  al orden 2  de la
+  funci\'on $D\left( p_X(\cdot;\theta) \,  \| \, p_X(\cdot;\theta_0) \right)$ de
+  $\theta$, tomada en $\theta =  \theta_0$. Por propiedad de $D$, la divergencia
+  es  positiva y  se cancela  cuando $\theta  = \theta_0$.  Entonces,  el primer
+  termino del desarrollo  vale cero y el secundo  tambi\'en, $D$ siendo m\'inima
+  en $\theta = \theta_0$. Ademas,
+  %
+  \begin{eqnarray*}
+  \nabla_\theta D\left( p_X(\cdot;\theta) \, \| \, p_X(\cdot;\theta_0) \right) & =
+  & \nabla_\theta \int_\X p_X(x;\theta) \log \left(
+  \frac{p_X(x;\theta)}{p_X(x;\theta_0)} \right) dx\\[2.5mm]
+  %
+  & = & \int_\X \nabla_\theta p_X(x;\theta) \log \left(
+  \frac{p_X(x;\theta)}{p_X(x;\theta_0)} \right) dx + \int_\X \nabla_\theta
+  p_X(x;\theta) \, dx\\[2.5mm]
+  %
+  & = & \int_\X \nabla_\theta p_X(x;\theta) \log \left(
+  \frac{p_X(x;\theta)}{p_X(x;\theta_0)} \right) dx + \nabla_\theta \int_\X
+  p_X(x;\theta) \, dx\\[2.5mm]
+  %
+  & = & \int_\X \nabla_\theta p_X(x;\theta) \log \left(
+  \frac{p_X(x;\theta)}{p_X(x;\theta_0)} \right) dx
+  \end{eqnarray*}
+  %
+  la \'ultimo ecuaci\'on como consecuencia de que $p_X$ suma a 1.  Entonces,
+  %
+  \[
+  \Hess_\theta D\left( p_X(\cdot;\theta) \,  \| \, p_X(\cdot;\theta_0) \right) =
+  \int_\X         \Hess_\theta         p_X(x;\theta)         \log         \left(
+    \frac{p_X(x;\theta)}{p_X(x;\theta_0)}      \right)     dx      +     \int_\X
+  \frac{\nabla_\theta          p_X(x;\theta)          \,         \nabla^t_\theta
+    p_X(x;\theta)}{p_X(x;\theta)} \, dx
+  \]
+  %
+  Tomado en $\theta = \theta_0$ el  primer vale cero.  En el secundo se reconoce
+  $J_\theta(X)$, lo que termina la prueba.
+\end{proof}
+%
+Este teorema, ilsutrado en la figura~\ref{fig:SZ:JCurvatura}, vincula claramente
+dos  objectos viniendo  de  la  teoria de  la  estimaci\'on y  la  teoria de  la
+informaci\'on, mundos  a priori diferentes.  Como  se lo puede ver  en la figura
+cuando $J_\theta(X)$  tiene peque\~nas  autovalores (figura (a)),  $p_\theta$ se
+``aleja'' lentamente de  $\theta_0$ cuando $\theta$ se aleja  de $\theta_0$: hay
+una  alta incerteza  o  peque\~a informaci\'on  sobre  $\theta_0$. Y  vice-versa
+(figura (b)).
+%
+\begin{figure}[h!]
+%
+\begin{center} \input{TIKZ_SZ/JCurvatura} \end{center}
+%
+\leyenda{Caso escalar $\Theta \subseteq \Rset$ (para la representaci\'on) de $D$
+  en funci\'on de $\theta$.  (a)  Caso con $J_{\theta_0}(X)$ ``peque\~no'' y (b)
+  caso con  $J_{\theta_0}(X)$ ``grande''. En  el caso (b) la  determinaci\'on de
+  $\theta$  usando $D$  va a  ser  mas ``sencillo''  porque el  m\'inimo es  mas
+  ``picado''.}
+%
+\label{fig:SZ:JCurvatura}
+\end{figure}
+
+\
+
+Un otro vinculo  entre el mundo de la informaci\'on y  la estimaci\'on aparece a
+trav\'es  de la  identidad de  de Bruijn~\footnote{A  pesar de  que  tom\'o este
+  nombre, esta identidad  en su primera versi\'on fue publicada  por Stam. En su
+  papel~\cite{Sta59}, menciona que esta identidad fue comunicada al Profesor van
+  Soest por el Profesor  de Bruijn.}~\cite{Sta59, CovTho06, Joh04, Bar84, Bar86,
+  PalVer06}. Esta identidad caracterisa lo  que es conocido como canal gaussiano
+figura~\ref{fig:SZ:deBruijnVerdu}-(a),  \ie  la  salida  $Y$  es  una  versi\'on
+ruidosa  de la  entrada. La  identidad vincula  las variaciones  de  entropia de
+salida con respeto al nivel de ruido, y la informaci\'on de Fisher.
+
+\begin{teorema}[Identidad de de Bruijn]
+  Sea $X$ un  vector aleatorio continuo sobre un  abierto $\Rset^d$ y admitiendo
+  una  matriz  de  covarianza,  y  sea  $Y   =  X  +  T  \Gauss$  donde  $T$  es
+  deterministica, $d \times  d'$ con $ d \le d'$, de  rango m\'aximo, y $\Gauss$
+  un vector gaussiano centrado y de covarianza $\Sigma_\Gauss$, independiente de
+  $X$  (ver  figura~\ref{fig:SZ:deBruijnVerdu}-(a)).  Entonces, la  entropia  de
+  Shannon y la informaci\'on de Fisher  de $Y$ satisfacen
+  %
+  \[
+  \nabla_T H(Y) = J(Y) \, T \, \Sigma_\Gauss
+  \]
+  %
+  donde  $\nabla_T \,  \cdot$ es  la  matriz de  componentes $\frac{\partial  \,
+    \cdot}{\partial  T_{i,j}}$.  Si  $T  = T(\theta)$  depende  de un  parametro
+  escalar~\footnote{Si  el parametro  es  multivariado, hace  falta entender  la
+    desigualdad a trav\'es de deriva  parciales con respeto a los componentes de
+    $\theta$.}   $\theta$,
+  %
+  \[
+  \frac{\partial}{\partial \theta}  H(Y) = \Tr\left( J(Y) \,  T \, \Sigma_\Gauss
+    \, \frac{\partial T^t}{\partial \theta} \right)
+  \]
+\end{teorema}
+%
+\begin{proof}
+  La  clave de  este resultado  viene del  hecho de  que la  densidad $p$  de $T
+  \Gauss$ satisface una ecuaci\'on diferencial particular.
+  %  $$\nabla_T p_{T \Gauss}(x) =  \Hess_x p_{T
+  %    \Gauss}(x) \, T \, \Sigma_\Gauss$$ Esta ecuaci\'on viene de
+  La  distribuci\'on de  $T \Gauss$  se escribe  $p(x) =  (2 \pi)^{-\frac{d}{2}}
+  \left| T \Sigma_\Gauss T^t  \right|^{-\frac12} \exp\left( - \frac12 x^t \left(
+      T  \Sigma_\Gauss T^t  \right)^{-1} x  \right)$ (el  rango m\'aximo  de $T$
+  asegura que $T \Sigma_\Gauss T^t$ sea invertible).  Para una matriz invertible
+  $R$,  desarollando  $|R|$  con  respecto  a  su  linea  $i$,  se  obtiene  que
+  $\frac{\partial  |R|}{\partial R_{i,j}}  = R_{i,j}^*$  cofactor  de $R_{i,j}$,
+  dando por la regla de Cram\'er $\nabla_R |R| = |R| \, \left( R^{-1} \right)^t$
+  (ver     tambi\'en~\cite[cap.~1~\&~9]{MagNeu99}),    es     decir    $\nabla_R
+  |R|^{-\frac12}  =  -\frac12   |R|^{-\frac12}  \left(  R^{-1}  \right)^t$.   De
+  $\frac{\partial |R|^{-\frac12}}{\partial  T_{i,j}} = \sum_{k,l} \frac{\partial
+    |R|^{-\frac12}}{\partial R_{k,l}}  \frac{\partial R_{k,l}}{\partial T_{i,j}}
+  =   -\frac12    |R|^{-\frac12}   \sum_{k,l}   \left(    R^{-1}   \right)_{l,k}
+  \frac{\partial  R_{k,l}}{\partial  T_{i,j}}$ con  $R  =  T \Sigma_\Gauss  T^t$
+  (simetrica)  y calculos  basicos  se obtiene  finalmente
+  %
+  \[
+  \nabla_T  \left|   T  \Sigma_\Gauss  T^t  \right|^{-\frac12}  =   -  \left|  T
+    \Sigma_\Gauss T^t \right|^{-\frac12} \left( T \Sigma_\Gauss T^t \right)^{-1}
+  T \Sigma_\Gauss
+  \]
+  %
+  Ademas,  de $\left(  T \Sigma_\Gauss  T^t \right)  \left( T  \Sigma_\Gauss T^t
+  \right)^{-1}   =  I$   viene  $\frac{\partial   \left(  T   \Sigma_\Gauss  T^t
+    \right)^{-1}}{\partial T_{i,j}} = -  \left( T \Sigma_\Gauss T^t \right)^{-1}
+  \frac{\partial \left( T \Sigma_\Gauss  T^t \right)}{\partial T_{i,j}} \left( T
+    \Sigma_\Gauss  T^t  \right)^{-1}$ donde  $e_i$  es el  vector  con  1 en  su
+  componente $i$ y cero si no, dando
+  %
+  \begin{eqnarray*}
+  \frac{\partial \left( x^t \left( T \Sigma_\Gauss T^t \right)^{-1} x
+  \right)}{\partial T_{i,j}} & = & - x^t \left( T \Sigma_\Gauss T^t \right)^{-1}
+  \left( e_i e_j^t \Sigma_\Gauss T^t + T \Sigma_\Gauss e_j e_i^t \right) \left( T
+  \Sigma_\Gauss T^t \right)^{-1} x\\[2.5mm]
+  %
+  & = & - 2 \, e_i^t \left( T \Sigma_\Gauss T^t \right)^{-1} x x^t \left( T
+  \Sigma_\Gauss T^t \right)^{-1} T \Sigma_\Gauss e_j
+  \end{eqnarray*}
+  %
+  usando $x^t A e_k e_l^t  B x = e_l^t B x x^t A e_k =  e_k^t A^t x x^t B^t e_l$
+  (escalares  comutan y  un  escalar es  igual  a su  transpuesta)  y usando  la
+  simetria de  $T \Sigma_\Gauss T^t$.   Eso significa que
+  %
+  \[
+  \nabla_T \left( x^t \left( T \Sigma_\Gauss T^t \right)^{-1} x \right) = - 2 \,
+  \left(  T \Sigma_\Gauss  T^t \right)^{-1}  x  x^t \left(  T \Sigma_\Gauss  T^t
+  \right)^{-1} T \Sigma_\Gauss,
+  \]
+  %
+  dando
+  %
+  \[
+  \nabla_T p(x)  = \left( - \left(  T \Sigma_\Gauss T^t \right)^{-1}  + \left( T
+      \Sigma_\Gauss  T^t   \right)^{-1}  x   x^t  \left(  T   \Sigma_\Gauss  T^t
+    \right)^{-1} \right) T \Sigma_\Gauss \, p(x)
+  \]
+  %
+  Tomando la Hessiana de $p$ con  respeto a $x$ se obtiene sencillamente que $p$
+  satisface  la  ecuaci\'on  diferencial
+  %
+  \[
+  \nabla_T p = \Hess_x p \, T \, \Sigma_\Gauss
+  \]
+  %
+  Suponiende que  se puede intervertir derivadas  y integrales (ver~\cite{Bar84,
+    Bar86}  donde  se  dan   condiciones  rigorosas),  $\displaystyle  p_Y(y)  =
+  \int_{\Rset^d}  p_X(x)  p(y-x)  \,   dx$  satisface  tambi\'en  la  ecuaci\'on
+  diferencial, y ademas
+  %
+  \begin{eqnarray*}
+  \nabla_T H(Y) & = & - \int_{\Rset^d} \nabla_T \, p_Y(y) \log p_Y(y)
+  \, dy - \int_{\Rset^d} \nabla_T \, p_Y(y) \, dy\\[2.5mm]
+  %
+  & = & - \left( \int_{\Rset^d} \Hess_y \, p_Y(y) \log p_Y(y) \, dy \right) T \,
+  \Sigma_\Gauss - \nabla_T \int_{\Rset^d} p_Y(y) \, dy\\[2.5mm]
+  %
+  & = & - \left( \int_{\Rset^d} \left( \Hess_y \Big( p_Y(y) \log p_Y(y) \Big) -
+  \Hess_y \, p_Y(y) - \frac{\nabla_y \, p_Y(y) \, \nabla_y \, p_Y(y)^t}{p_Y(y)}
+  \right) \, dy \right) T \, \Sigma_\Gauss\\[2.5mm]
+  %
+  & = & - \left( \int_{\Rset^d} \Hess_y \Big( p_Y(y) \log p_Y(y) \Big) \, dy -
+  \int_{\Rset^d} \Hess_y p_Y(y) \, dy \right) T \, \Sigma_\Gauss \: + \: J(Y) \, T
+  \, \Sigma_\Gauss
+  \end{eqnarray*}
+  %
+  usando la  ecuaci\'on diferencial en la  secunda linea, el hecho  de que $p_Y$
+  suma  a  1  en  la  tercera  linea  (su gradiente  es  cero  entonces),  y  la
+  definici\'on de la matriz de Fisher en la \'ultima linea. Usando el teorema de
+  la  divergencia (intergraci\'on  por  partes) aplicada  respectivamente a  los
+  componentes de $\nabla_y p_Y \log  p_Y$ y $\nabla_y p_Y$, suponiendo que estos
+  gradientes  se cancelan  en el  borde del  dominio de  integraci\'on,  los dos
+  terminos  integrales valen cero,  lo que  cierra la  prueba de  la desigualdad
+  general.   Ademas,  si  $T  =  T(\theta)$, la  secunda  desigualdad  sigue  de
+  $\frac{\partial   \cdot}{\partial    \theta}   =   \sum_{i,j}   \frac{\partial
+    \cdot}{\partial   T_{i,j}}   \frac{\partial   T_{i,j}}{\partial  \theta}   =
+  \Tr\left( \nabla_T \, \frac{\partial T^t}{\partial \theta} \right)$.
+\end{proof}
+
+La  versi\'on  inicial  de la  identidad  de  de  Bruijn, con  $\Sigma_\Gauss  =
+I$,
+%
+\[
+\frac{d}{d\theta}     H(X+\sqrt{\theta}    \Gauss)    =     \frac12    \Tr\left(
+  J(X+\sqrt{\theta} \Gauss) \right)
+\]
+%
+se  recupera en el  caso particular  $T =  \sqrt{\theta} I$.   En este  caso, la
+ecuac\'ion diferencial satisfada por la  densidad de probabilidad $p$ es la {\it
+  ecuaci\'on  del  calor}.   Esta  desigualdad  cuantifica  las  variaciones  de
+entropias   bajo   varaciones   de   ``niveles''   del  ruido   del   canal   de
+comunicaci\'on. De una  forma, caracteriza la robustez del  canal con respeto al
+nivel de ruido gaussiano (la gaussiana juega de nuevo un rol central ac\'a).
+
+\
+
+Existe una  otra forma  muy similar  de esta desigualdad  debido a  Guo, Shamai,
+Verd\'u, Palomar~\cite{GuoSha05, PalVer06}. Esta versi\'on vincula a\'un mas los
+mundo  de  la   informaci\'on  y  el  de  la  estimaci\'on.    Del  lado  de  la
+comunicaci\'on, consiste a caracterisar  la informaci\'on mutua entre la entrada
+$X$ de un canal  ruidoso y su salida, $Y = S X +  \Gauss$ donde $S$ coresponde a
+un  pre-tratamiento antes  de la  salida, figura~\ref{fig:SZ:deBruijnVerdu}-(b).
+Del lado de  la estimaci\'on, uno puede querer  estimar $X$ observando solamente
+$Y$.  Es  conocido que el estimador  que minimiza el  error cuandratico promedio
+$\Esp\left[  \left\| \widehat{X}(Y)  -  X \right\|^2  \right]$  es la  esperanza
+condicional  $\widehat{X}(Y) =  \Esp[X|Y]$. Una  caracteristica de  un estimador
+siendo su  matriz de covarianza,  se notar\'a $\E(X|Y)  = \Esp\left[ \left(  X -
+    \Esp[X|Y]  \right) \left(  X  - \Esp[X|Y]  \right)^2  \right]$ esta  matriz.
+Sorpredentemente,  existe  tambi\'en  una  identidad  entre \  $I(X;Y)$  \  y  \
+$\E(X|Y)$:
+%
+\begin{teorema}[Identidad de Guo--Shamai--Verd\'u]
+  Sea  $X$  un  vector  aleatorio  continuo  sobre  un  abierto  $\Rset^{d'}$  y
+  admitiendo una  matriz de covarianza, y  sea $Y = S  X + \Gauss$  donde $S$ es
+  deterministica, $d  \times d'$, y $\Gauss$  un vector gaussiano  centrado y de
+  covarianza      $\Sigma_\Gauss$,      independiente      de      $X$      (ver
+  figura~\ref{fig:SZ:deBruijnVerdu}-(b)). Entonces, la informaci\'on mutua entre
+  \ $X$ \  e \ $Y$ y la  matriz de covarianza del estimador  de error cuadratico
+  m\'inimo satisfacen
+  %
+  \[
+  \nabla_S I(X;Y) = \Sigma_\Gauss^{-1} S \, \E(X|Y)
+  \]
+  %
+  Si     $S    =     S(\\sigma)$    depende     de    un     parametro    escalar
+  $\sigma$,
+  %
+  \[
+  \frac{\partial}{\partial \sigma} I(X;Y) = \Tr\left( \Sigma_\Gauss^{-1} \, S \,
+    \E(X|Y) \, \frac{\partial S^t}{\partial \sigma} \right)
+  \]
+\end{teorema}
+%
+\begin{proof}
+  Notando  que  $p_{Y|X} (y,x)  =  (2  \pi)^{-\frac{d}{2}} \left|  \Sigma_\Gauss
+  \right|^{-\frac12}  \exp\left( -\frac12  (y-S  x)^t \Sigma_\Gauss^{-1}  (y-Sx)
+  \right)$ viene $\nabla_S p_{Y|X}(x,y)  = p_{Y|X}(x,y) \, \Sigma_\Gauss^{-1} (y
+  - S x) x^t$  (ver unos pasos de la prueba de la  identidad de de Bruijn) as\'i
+  que $\nabla_y  p_{Y|X}(y,x) = p_{Y|X}(y,x)  \, \Sigma_\Gauss^{-1} (y -  S x)$,
+  dando
+  %
+  \[
+  \nabla_S  p_{Y|X}(y,x)  = \nabla_y  p_{Y|X}(y,x)  x^t  \qquad \mbox{y}  \qquad
+  \nabla_S p_{X,Y}(x,y) = \nabla_y p_{X,Y}(x,y) x^t
+  \]
+  %
+  (multiplicando ambos lados por $p_X$. Ahora,  $I(X;Y) = H(Y) - H(Y|X) = H(Y) -
+  H(\Gauss)$ (de la independencia, cuando $X =  x$, $Y = S x + \Gauss$ gaussiana
+  de misma convarianza que $\Gauss$ y de promedio $S x$), as\'i que
+  %
+  \begin{eqnarray*}
+  \nabla_S I(X;Y) & = & \nabla_S H(Y)\\[2.5mm]
+  %
+  & = & - \int_{\Rset^d \times \Rset^{d'}} \nabla_S \Big( p_{X,Y}(x,y) \, \log
+  p_Y(y) \Big) \, dx \, dy\\[2.5mm]
+  %
+  & = & - \int_{\Rset^d \times \Rset^{d'}} \nabla_S \, p_{X,Y}(x,y) \, \log p_Y(y) \,
+  dx \, dy - \int_{\Rset \times \Rset} p_{X|Y}(x,y) \, \nabla_S \, p_Y(y) \, dx \,
+  dy\\[2.5mm]
+  %
+  & = & \int_{\Rset^d \times \Rset^{d'}} \nabla_y p_{X,Y}(x,y) \, x^t \log p_Y(y)
+  \, dx \, dy - \int_{\Rset^d} \nabla_S p_Y(y) \, dy\\[2.5mm]
+  %
+  & = & - \int_{\Rset^d \times \Rset^{d'}} \nabla_y p_Y(y) x^t p_{X|Y}(x,y) \, dx
+  \, dy\\[2.5mm]
+  %
+  & = & - \int_{\Rset^d} \nabla_y p_Y(y) \, \Esp\left[X^t | Y = y \right] \, dy
+  \end{eqnarray*}
+  %
+  La secunda linea  viene de la escritura de $H(Y)$  usando $p_Y$ como marginale
+  de $p_{X,Y}$  en $x$ y  intercambiando gradiente e  integral (ver pasos  de la
+  prueba de la desigualdad de de Bruijn); la tercera de $p_{X,Y}/p_Y = p_{X|Y}$;
+  en la cuarta  se usa la ecuaci\'on diferencial satisfecha  por $p_{X,Y}$ en la
+  primera integral y  integrando en $x$ en la secunda  integral; la quinta linea
+  se obtiene usando el teorema  de la divergencia (intergraci\'on por partes) en
+  la integraci\'on en  $y$ de la primera integral,  e intercambiando gradiente e
+  integral el la secunda ($p_Y$ sumando a 1, el termino se cancela). Ademas,
+  %
+  \begin{eqnarray*}
+  \nabla_y p_Y(y) & = & \int_{\Rset^{d'}} \nabla_Y p_{Y|X}(y,x) \, p_X(x) \,
+  dx\\[2.5mm]
+  %
+  & = & - \Sigma_\Gauss^{-1} \int_{\Rset^{d'}} (y - S x) \, p_{Y|X}(y,x) \, p_X(x) \,
+  dx\\[2.5mm]
+  %
+  & = & - \Sigma_\Gauss^{-1} \left( y - S \int_{\Rset^{d'}} x \, p_{X|Y}(x,y) \,dx
+  \right) p_Y(y)\\[2.5mm]
+  %
+  & = & - \Sigma_\Gauss^{-1} \Big( y - S \Esp\left[X | Y=y \right] \Big) \, p_Y(y)
+  \end{eqnarray*}
+  %
+  escribiendo $p_{Y|X}(y,x)  \, p_X(x) =  p_{X|Y}(x,y) \, p_Y(y)$ en  la tercera
+  linea. Esta ecuaci\'on permite escribir
+  %
+  \begin{eqnarray*}
+  \nabla_S I(X;Y) & = & \Sigma_\Gauss^{-1} \int_{\Rset^d} \Big( y - S \Esp\left[X |
+  Y=y \right] \Big) \Esp\left[X^t | Y=y \right] \, p_Y(y) \, dy\\[2.5mm]
+  %
+  & = & \Sigma_\Gauss^{-1} \left( \Esp\left[ Y \Esp\left[ X^t|Y \right] \right] - S
+  \Esp\left[ \Esp\left[X | Y \right] \Esp\left[X | Y \right]^t \right]
+  \right)\\[2.5mm]
+  %
+  & = & \Sigma_\Gauss^{-1} \left( \Esp\left[ Y X^t \right] - S \Esp\left[ \Esp\left[X
+  | Y \right] \Esp\left[X | Y \right]^t \right] \right)\\[2.5mm]
+  %
+  & = & \Sigma_\Gauss^{-1} S \left( \Esp\left[ X X^t \right] - \Esp\left[
+  \Esp\left[X | Y \right] \Esp\left[X | Y \right]^t \right] \right)
+  \end{eqnarray*}
+  %
+  la \'ultima linea viniendo de $Y = S X + \Gauss$ con $\Gauss$ independiente de
+  $X$ y  de promedio 0.  La  prueba se cierra notando  que $\Esp\left[ \Esp[X|Y]
+  \right] = \Esp[X]$ y por  la formula de K\"onig-Huyggens. La secunda identidad
+  viene  de  $\frac{\partial \cdot}{\partial  \sigma}  =  \Tr\left( \nabla_S  \,
+    \frac{\partial S^t}{\partial \sigma} \right)$ (ver prueba de la identidad de
+  de Bruijn).
+\end{proof}
+%
+\noindent La primera versi\'on de esta identidad se recupera con $S = \sqrt{s}$,
+$\Sigma_\Gauss  =  I$  y $X$  de  covarianza  identidad;  $s$ es  conocido  como
+relaci\'on se\~nale/ruido es este caso.
+
+Existen versiones  a\'un mas completas (con  gradientes con respeto  a la matriz
+$\Sigma_\Gauss$ por  ejemplo) que se pueden  consultar en~\cite{Joh04, PalVer06,
+  PayPal09}.
+
+\begin{figure}[h!]
+%
+\begin{center} \input{TIKZ_SZ/CanalDeBruijnVerdu} \end{center}
+%
+\leyenda{Canal de comunicaci\'on gaussiano  de entrada $X$.  (a) Canal gaussiano
+  usual,  donde $T$  maneja  los parametros  (nivel)  del ruido.  (b) canal  con
+  gaussiano con un preprocesamiento $S$ de la entrada.}
+%
+\label{fig:SZ:deBruijnVerdu}
+\end{figure}
+\
+
+De la desigualdad de la potencia entropica  y de la identidad de de Bruijn surge
+una otra desigualdad implicando la  potencia entropica $N$ y la informaci\'on de
+Fisher $J$. Esta desigualdad es conocida como desigualdad de Stam~\footnote{Como
+  por  la identidad  de  de Bruijn,  stam  mencion\'o que  esta desigualdad  fue
+  comunicada al Profesor van Soest por el Profesor de Bruijn quien da una prueba
+  variacional  de  la desigualdad.}~\cite{CovTho06,  Rio07,  Sta59},  o a  veces
+``desigualdad isoperimetrica para la entropia''~\cite{WanMad04}.
+%
+\begin{teorema}[Desigualdad de Stam]
+  Sea   $X$    una   variable    aleatoria   continua   sobre    $\X   \subseteq
+  \Rset^d$. Entonces,
+  %
+  \[
+  N(X) \Tr\left( J(X) \right) \, \ge \, d
+  \]
+  %
+  con igualdad si  y solamente si $X$ es gaussiano  de covarianza proporcional a
+  la identidad.
+\end{teorema}
+%
+\begin{proof}
+  De la  desigualdad de  la potencia entropica  se obtiene $N(X  + \sqrt{\theta}
+  \Gauss)  \ge N(X)  + \theta  \left| \Sigma_\Gauss  \right|^{\frac1d}$. Tomando
+  $\Sigma_\Gauss  = I$,  se obtiene  $\forall  \, \theta  > 0,$  \ $\frac{N(X  +
+    \sqrt{\theta} \Gauss)  - N(X)}{\theta} \ge  $.  Entonces, tomando  el limite
+  $\theta  \to 0$,  aparece que  $\left. \frac{d}{d\theta}  N(X  + \sqrt{\theta}
+    \Gauss)   \right|_{\theta  =   0}  \ge   1$.   La   prueba  se   cierra  con
+  $\frac{d}{d\theta}  N(X   +  \sqrt{\theta}   \Gauss)  =  \frac{1}{2   \pi  \e}
+  \frac{d}{d\theta}  \exp\left( \frac2d  H(X +  \sqrt{\theta} \Gauss)  \right) =
+  \frac2d  N(X +  \sqrt{\theta}  \Gauss) \frac{d}{d\theta}  H(X +  \sqrt{\theta}
+  \Gauss) = d N(X +  \sqrt{\theta} \Gauss) \Tr\left( J(X + \sqrt{\theta} \Gauss)
+  \right)$  (por la identitad  de de  Bruijn).  Ademas,  la igualdad  se obtiene
+  cuando se obtiene  la igualdad en la desigualdad de  la potencia entropica, es
+  decir cuando $X$ es gaussiano de  varianza proporcional a la del ruido, que es
+  la identidad en este caso.
+\end{proof}
+%
+Se  puede  ver  de  nuevo  el  rol  central  que  juega  la  gaussiana  en  esta
+desigualdad. Ademas,  de la desigualdad de  Stam se puede  deducir tamb\'ien las
+versiones escalares de la desigualdad Cram\'er-Rao. Viene del hecho de que, dado
+una matriz de covarianza, le entropia  $H(X)$ es maxima cuando $X$ es gaussiano.
+Entonces, para cualquier $X$ de covarianza $\Sigma_X$, $N(X) \le \left| \Sigma_X
+\right|^{\frac1d}$,   dando  de   la  desiguldad   de  Stam,   $\left|  \Sigma_X
+\right|^{\frac1d} \Tr\left( J(X) \right) \ge d$ (y las otras versiones escalares
+de la relaci\'on  determinente-traza).  Como se lo puede  esperar, se obtiene la
+igualdad si y solamente $X$  es gaussiana (potencia entropica alcanzando su cota
+superior) y de matriz la identidad (desiguladad de Stam se saturando).
+
+Varias otras pruebas de la desigualdad de Stam pueden venir de generalizaciones,
+por ejemplo debido  a Lutwak o Bercher~\cite{Lut, Ber}.  \SZ{La secci\'on ZZZ lo
+  va a rapidamente evocar.}
+
+\
+
+\SZ{(1) Existe un data  proc ineq con Fisher, cf Rioul 07  ou Stam 59 ou Frieden
+  04; cf  aussi si $I_\theta(g(X)) \le  I_\theta(X)$ used in  Kagan-Smith 1999 ;
+  (2) ver MinFisher Frieden p. 235, Berchet Vignat 2009, Ernst 2017; cf. travaux
+  rederivant MQ de Frieden-Plastino-Soffer  (1999, 2002), Reginato 98, Bickel 81
+}
+
+
+
+% ================================== Mutua =================================== %
+
+\seccion{Unos ejemplos y aplicaciones}
+\label{s:SZ:Ejemplos}
+
+
+% ================================= canal
+
+\subseccion{Canal de transmisi\'on y su capacidad}
+\label{sec:SZ:CanalCapacidad}
+
+Siguiendo el  esquema de comunicaci\'on de  Shannon, un mensaje  que se modelisa
+como  un vector  aleatorio~\footnote{De  punto  de vista  de  un receptor,  este
+  mensaje es  desconocido. Ademas,  se lo  puede ver como  una instancia  de una
+  clase  importante   de  posibles  mensajes,   justificando  la  modelisaci\'on
+  aleatoria.} $X$  pasa por un  canal de comunicaci\'on  y se recibe  un mensaje
+$Y$, vector  aleatorio. En el trabajo de  Shannon, el canal es  supuesto a ruido
+additiva,  es decir que  se a\~nade  un ruido  a $X$.   De manera  general, para
+conocer la informaci\'on de $X$ que se recibe, se calcula la informaci\'on mutua
+$I(X;Y)$, es decir  la cuantidad de informaci\'on que comparten  la entrada y la
+salida del canal.   Lo mas $I$ es grande, lo mas  de informaci\'on se transmite.
+Dado el canal,  se puede arreglar $X$ (su distribuci\'on)  de manera a maximizar
+$I(X;Y)$, es decir la cantidad maxima  que se puede transmitir en este canal. Es
+lo que  es conocido como capacidad  del canal~\cite[part.~II~\&~III]{Sha48} (ver
+tambi\'en~\cite{CovTho06, Rio07} entre otros):
+%
+\begin{definicion}[Capacidad de canal]
+  Sea un canal de transmici\'on, $X$  su entrada e $Y$ su salida, como ilustrado
+  figura~\ref{fig:SZ:CanalComunicacion}.   Sea   $p_X$   la  distribuci\'on   de
+  probabilidad  de  $X$. La  capacidad  $C$  del canal  es  definida  por
+  %
+  \[
+  C = \max_{p_X} \, I(X;Y)
+  \]
+\end{definicion}
+
+\begin{figure}[h!]
+%
+\begin{center} \input{TIKZ_SZ/ComunicacionShannon} \end{center}
+%
+\leyenda{Esquema de comunicaci\'on de Shannon.  En una primera etapa, un mensaje
+  $M$ a  transmitir es  c\'odificado (ej.  c\'odigo  binario) o puesto  en forma
+  (ej.  simbolos modulando una funci\'on para que sea anal\'ogica y en una banda
+  frecuencial dada).  Sea $X$ este  mensaje codificado o  puesto en forma.  A la
+  recepci\'on,  se  mide $Y$  (ej.  versio\'on ruidosa  de  $X$),  antes de  ser
+  decodificado  o  usado para  tomar  una  decisi\'on,  $\widehat{M}$ siendo  la
+  estimaci\'on  de $M$  (ej.  simbolos estimados  a  partir de  $Y$). Una  etapa
+  importante es el  vinculo entre la entrada  $X$ y la salida $Y$  del canal, es
+  decir la  cantidad de informaci\'on que  tienen en com\'un.   La capacidad del
+  canal es la informaci\'on $I(X;Y)$ m\'axima con respeto a su entrada.}
+%~\cite{Sha48}.}
+\label{fig:SZ:CanalComunicacion}
+\end{figure}
+
+
+% ================================= canal binario
+
+\subsubseccion{Canal binario}
+
+Suponiendo  que el  mensaje  mandado en  un  canal es  una  cadena de  simbolos,
+variables   aleatorias  independientes,   se  puede   concentrarse   sobre  cada
+simbolo. En  este marco, un  canal de comunicaci\'on  lo mas simple  es conocido
+como  {\it canal  binario}~\cite[Sec.~15]{Sha48}: $X$  es una  variable definida
+sobre  $\X =  \{ 0  , 1  \}$;  tal tipo  de entrada  es natural,  pensando a  la
+c\'odificaci\'on binaria.   La salida $Y$  es tambi\'en definida sobre  $\X$; se
+puede imaginar medir y tomar una decisi\'on binaria usando la medida.  Tal canal
+es   definido  por  sus   probabilidad  de   transici\'on  $p_{Y|X}$,   \ie  las
+probabilidades que un 0 (resp. un 1)  se transmite corectamente o cambia en un 1
+(resp. 0),  \ie
+%
+\[
+p = \Pr[Y = 1 | X = 0] = 1 - \Pr[Y = 0 | X = 0] \qquad \mbox{y} \qquad q = \Pr[Y
+= 0 | X = 1] = 1 - \Pr[Y = 1 | X = 1]
+\]
+%
+$p$  y  $q$  representan  errores  de comunicaci\'on.   Tal  canal  es  descrito
+figura~\ref{fig:SZ:CanalBinario}-(a).   La  figura~\ref{fig:SZ:CanalBinario}-(b)
+da un esquema ``f\'isico'' que puede se  al origen de tal canal. Cuando $p = q$,
+el canal es conocido como {\it canal binario simetrico}. Cuando $p = 0$ y $q \in
+(0 \, ; \, 1)$, el canal es conocido como {\it canal binario en Z}.
+
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_SZ/CanalBinario} \end{center}
+%
+\leyenda{(a): canal  binario. La entrada  $X$ definida sobre  $\X = \{ 0  , 1\}$
+  pasa  por este canal  e $Y$  definida sobre  $\X$ es  recibido. Este  canal es
+  caracterisado por  las probabilidades  de transition $p_{Y|X}$.   (b): Esquema
+  que puede conducir  al canal binario; una variable puede ser  la salida de una
+  puerta  l\'ogica, con  niveles $v_0$  (nivel  bajo, c\'odificando  0) y  $v_1$
+  (nivel  alto,  c\'odificando  1).   Se  puede imaginar  que  este  voltaje  es
+  transmitido por  un canal  a\~nandido un ruido  $\xi$.  En la  recepci\'on, se
+  toma una  decisi\'on, por ejemplo  0 (resp.  1)  si la medida es  mayor (resp.
+  menor) que $\eta = \frac{v_0 + v_1}{2}+\Esp[\xi]$.  En este ejemplo, $p$ y $q$
+  van a  ser caracterisada completamente por  la distribuci\'on del  ruido (y de
+  los deos niveles posibles de la entrada), pero no de la distribuci\'on $p_X$.}
+%~\cite{Sha48}.}
+\label{fig:SZ:CanalBinario}
+\end{figure}
+
+En este caso, trabajando con bits, el logaritmo lo mas l\'ogico es el de base 2.
+Sea
+%
+\[
+\alpha = \Pr[X = 0]
+\]
+%
+dando la distribuci\'on  de la entrada. La distribuci\'on de la  salida va a ser
+dada a partir de $\beta = \Pr[Y = 0] = \Pr[Y = 0 | X = 0] \Pr[X = 0] + \Pr[Y = 0
+| X =  1] \Pr[X = 1]$  es decir
+%
+\[
+\beta = \Pr[Y  = 0] = q +  \alpha (1-p-q)
+\]
+%
+La  informaci\'on mutua  se escribe  $I_2(X;Y) =  H_2(Y) -  H_2(Y|X) =  H_2(Y) -
+H_2(Y|X=0) \Pr[X = 0] + H_2(Y|X=1) \Pr[X = 1]$, lo que toma la expresi\'on
+%
+\[
+I_2(X;Y) = h_2(\beta) - \alpha h_2(p) - (1-\alpha) h_2(q)
+\]
+%
+donde $h_2(\lambda) = - \lambda \log_2 \lambda - (1-\lambda) \log_2 (1-\lambda)$
+es la entropia binaria en bits.   Para calcular la capacidad $C_2$ en bits, hace
+falta  m\'aximizar  $I_2$  con  respeto  a  $\alpha$.   Diferenciando  $I_2$  en
+$\alpha$,  \ie  $\frac{\partial   I_2(X;Y)}{\partial  \alpha}  =  \frac{\partial
+  h_2(\beta)}{\partial \beta} \frac{\partial  \beta}{\partial \alpha} - h_2(p) +
+h_2(q)$, es decir
+%
+\[
+\frac{\partial    I_2(X;Y)}{\partial   \alpha}    =   (1-p-q)    \log_2   \left(
+  \frac{1-\beta}{\beta} \right) - h_2(p) + h_2(q)
+\]
+%
+\begin{itemize}
+\item Claramente,
+  %
+  \[
+  q = 1-p \quad \Rightarrow \quad C_2 = 0
+  \]
+  %
+  Viene del hecho  de que para $q =  1-p$, de $h_2(p) = h_2(1-p)$  se deduce que
+  $I_2(X;Y) =  0$ constante. De  hecho, en  este caso, un  0 en la  salida puede
+  venir de un 0 o 1 con probabilida igual, y lo mismo para un 1 en la salida; en
+  otros  terminos,  la salida  aparece  independiente  de  la entrada.   Eso  se
+  verifica  formalmente  con $\beta  =  q$, dando  $p_{Y|X}  =  p_Y$, dando  una
+  informaci\'on mutua cero, y entonces una capacidad cero.
+%
+\item Si $q \ne 1-p$, la derivada  de $I_2$ con respeto a $\alpha$ se anula para
+  $\beta = \beta^\opt$ ($\alpha = \alpha^\opt$),
+  %
+  \[
+  \beta^\opt  =   \frac{1}{1+2^{\frac{h(p)-h(q)}{1-p-q}}}  \qquad  \mbox{siendo}
+  \qquad \alpha^\opt = \frac{\beta^\opt - q}{1-p-q}
+  \]
+  %
+  y  dando   un  extremo   para  $I_2$.   A   continuaci\'on,  $\frac{\partial^2
+    I_2}{\partial  \alpha^2}  =   \frac{(1-p-q)^2}{\beta  (1-\beta)}  >  0$  (en
+  particular para  el $\beta$  ``\'optimo''), probando de  que el extremo  es un
+  m\'aximo.  Poniendo  el $\alpha^\opt$  en la formula  de $I_2(X;Y)$,  luego de
+  muchos calculos (b\'asicos), se obtiene
+  %
+  \[
+  C_2 =  \log_2\left( 1 + 2^{\frac{h_2(p)-h_2(q)}{1-p-q}}  \right) - \frac{(1-q)
+    \, h_2(p) - p \, h_2(q)}{1-p-q}
+  \]
+  %
+  Cuando $q  \to 1-p$, notando  que $h_2(p) =  h_2(1-p)$ y tomando el  limite de
+  esta formula, se recupera que $C_2 \to 0$.
+  %
+  % ---
+  %
+  %  \newline{\color{red}\bf   ¿Interpretacion?   no  hay   combinacion  convexa
+  %   $\frac{p}{1-p-q}$ siendo del mismo signo que $\frac{1-q}{1-p-q}$; nota: $C
+  %   = \log_2\left( 1 +  2^{- \frac{h(1-q)-h(p)}{(1-q)-p}} \right) + \frac{1}{p
+  %     (1-q)} \frac{(1-q) h(1-q) - p h(p)}{q - (1-p)}$}
+\end{itemize}
+%
+\noindent De  \ $I_2(X;Y) = H_2(Y)  - H_2(Y|X) \le H_2(Y)  \le 1$ bit  \ ($Y$ es
+binario, de entropia maxima en el caso uniforme), aparece sin calculos que
+%
+\[
+C_2 \le 1 \: \mbox{bit}
+\]
+%
+\ie la capacidad es menor que 1 bit~\footnote{De manera general, de la escritura
+  de $I$ con  entropias condicionales, para $X$ definido sobre  $\X$ e $Y$ sobre
+  $\B$, da $0 \le C \le \min( \log  |\X| \, , \, \log |\B| )$. Ademas, $p_{Y|X}$
+  depende solo  del canal  y no  de la entrada,  as\'i que  para $p_X  = \lambda
+  p_X^{(1)}  + (1-\lambda)  p_X^{(2)}$ se  obtiene  $p_Y =  \lambda p_Y^{(1)}  +
+  (1-\lambda) p_Y^{(2)}$ con $p_Y^{(i)}$  salida corespondiente a $p_X^{(i)}$ de
+  $I(X;Y) = H(Y)-H(Y|X)$,  el secundo termino dependiente solo  del canal, de la
+  concavidad de  $H$ se obtiene  que $I$ es  concava con respeto a  $p_X$. $p_X$
+  parteciendo a  un convexo, $I$  tiene un m\'aximo, \'unico.}:  para transmitir
+informaci\'on en  este canal, hace  falta introducir redundancia en  el mensaje.
+Se alcanza  \ $C_2  = 1$  bit si, (i)  por un  lado $H_2(Y|X) =  0$, es  decir \
+$\alpha h_2(p)  + (1-\alpha) h_2(q)  = 0$  \ y ademas  (ii) \ $h_2(\beta)  = 1$.
+Estudiando cada caso (ej.  con  \ $\alpha = 0$ \ y \ $q =  0$ \ se satisface (i)
+pero no (ii) porque \ $\beta = 0$), se obtiene que
+%
+\[
+C_2 = 1 \qquad \Leftrightarrow \qquad \alpha  = \frac12 \quad \mbox{y} \quad p = q
+= \frac{1 \pm 1}{2}
+\]
+%
+Para $p = q = 0$ el canal es perfecto, mientras que para $p = q = 1$ el canal es
+llamado  {\it  canal volteando};  en  ambos casos,  se  recupera  la entrada  (o
+directamente, o tomando el opuesto) ``sin perdida''.
+
+La figura~\ref{fig:SZ:ICanalBinario} representa  la informaci\'on mutua $I(X;Y)$
+para unos canales  ($p$ y $q$ dados)  en funci\'on de $\alpha$.  Se  nota que la
+curva   es   concava  y   tiene   un   m\'aximo,   capacidad  del   canal.    La
+figura~\ref{fig:SZ:CCanalBinario} representa la capacidad del canal en funci\'on
+de \ $p$ \ y \ $q$ as\'i que unos casos particulares/cortes.
+
+En el caso particular $p = q$, conocido como {\it canal simetrico}, la capacidad
+es
+%
+\[
+C_2 = 1 - h_2(p)
+\]
+%
+(alcanzada  con  una entrada  uniforme).   Como visto  en  el  caso general,  la
+capacidad vale 1 bit si y solamente si \ $h_2(p)  = 0$, \ es decir \ $p = 0$ \ o
+\ $p = 1$.   Al rev\'es, la capacidad es m\'inima cuando  $H_2$ est m\'aximo, es
+decir para \ $p = q = \frac12$, \  y \ $C_2 = 0$ \ (instancia particular de \ $q
+=  1-p$). \  $h_2(p)$ \  es la  perdida  en bit  para cada  bit transmitido.  La
+capacidad    \    $C_2$    \    en    funci\'on    de    \    $p$\    es    dada
+figura~\ref{fig:SZ:CCanalBinario}-(b).
+
+En el  caso particular $p  = 0$,  conocido como {\it  canal en Z},  la capacidad
+es
+%
+\[
+C_2 = \log_2\left( 1 +  2^{- \frac{h_2(q)}{1-q}} \right)
+\]
+%
+Se nota  en este caso tambi\'en  que la capacidad  alcanza 1, su m\'aximo,  si y
+solamente si \ $q = 0$ \ (canal perfecto).  Al rev\'es, cuando \ $q \to 1$, \ $C
+\to  0$, \ instancia  particular de  \ $q  = 1-p$.   La capacidad  \ $C_2$  \ en
+funci\'on de $q$ es dada figura~\ref{fig:SZ:CCanalBinario}-(c).
+
+%{\bf\color{red} C parecido a la de Shannon caso continuo. Interpretacion?}
+
+\begin{figure}[h!]
+%
+\begin{center} \input{TIKZ_SZ/ICanalBinario} \end{center}
+%
+\leyenda{Informaci\'on mutua  (en bits) entrada-salida \ $I_2(X;Y)$  \ del canal
+  binario en funci\'on de \ $\alpha = \Pr[X = 0]$. \ (a): \ $p = 0.4$ \ y \ $q =
+  0.01$; \ (b): \ $p = q = 0.05$ \  (canal simetrico); \ (c): \ $p = 0$ \ y \ $q
+  = 0.05$ \ (canal en Z).}
+%
+\label{fig:SZ:ICanalBinario}
+\end{figure}
+
+\
+
+\begin{figure}[h!]
+%
+\begin{center} \input{TIKZ_SZ/CCanalBinario} \end{center}
+%
+\leyenda{Capacidad \ $C_2$ \ del canal binario. \ (a): \ en funci\'on de \ $p$ \
+  y \ $q$. \ (b): \ en funci\'on de \ $p$ \ para el canal simetrico ($p = q$); \
+  (c): \ en funci\'on de \ $q$ \ para \ $p = 0$ \ (canal en Z).}
+%
+\label{fig:SZ:CCanalBinario}
+\end{figure}
+
+En~\cite{CovTho06,  Rio07}   entre  otros,  se  estudia   diversos  otros  canal
+discretos,  binario  o   con  mas  estados.   Unos  sont   representados  en  la
+figure~\ref{fig:SZ:CanalesDiscretos}   (ver   tambi\'en~\cite{Sha48,
+  Eli57} o ej.~\cite{Ari72} para el calculo  numerico de la capacidad en el caso
+general).
+
+
+\begin{figure}[h!]
+%
+\begin{center} \input{TIKZ_SZ/CanalesDiscretos} \end{center}
+%
+\leyenda{Ejemplos de canales discretos usuales.  (a): canal borrador, donde un 0
+  (de probabilidad  de ocurrencia $\alpha$)  o 1 (de probabilidad  de occurencia
+  $1-\alpha$)  puede transmitirse  correctamente or  ser  borado/perdido (estado
+  $\emptyset$)  con  una probabilidad  $\varepsilon$.   Se  calcula $I_2(X;Y)  =
+  (1-\varepsilon)  h_2(\alpha)$,  dando  la  capacidad  $C_2  =  1-\varepsilon$,
+  alcanzada para  una entrada  uniforme.  (b): canal  tipo machina  de escribir,
+  donde  cada letra  de  un ensemble  de  $n$ letras  (ac\'a con  $n  = 26$)  se
+  transmite  correctamente con  una probabilidad  $1-\varepsilon$ o  a  la letra
+  siguiente  (de  manera  c\'iclica)  con una  probabilidad  $\varepsilon$.   De
+  $I_n(X;Y) = H_n(Y)  - H_n(Y|X) = H_(Y) - h_(\varepsilon)$  se deduce que $I_n$
+  es m\'axima si  $Y$ es uniforme, lo  que es posible si $X$  es uniforma, dando
+  $C_n = 1 - h_n(\varepsilon)$.}
+%~\cite{Sha48}.}
+\label{fig:SZ:CanalesDiscretos}
+\end{figure}
+
+
+% ================================= canal gaussiano
+
+\subseccion{Canal de transmisi\'on continuo gaussiano y su capacidad}
+\label{sec:SZ:Canalgaussiano}
+
+Un canal de  comunicaci\'on continuo relativamente simple es  conocido como {\it
+  canal  gaussiano}~\cite[Sec.~25]{Sha48},~\cite{CovTho06,  Rio07}:  $X$ es  una
+variable continua  definida sobre $\X \subseteq  \Rset^d$ y la salda  $Y$ es una
+versi\'on ruidosa de $X$, \ie $Y =  X + \xi$ con el ruido $\xi$ independiente de
+$X$; En  el canal gaussiano, $\xi  \equiv \Gauss$ es un  vector gaussiano.  Este
+canal es tambi\'en definido por  su densidad de probabilidad ``de transici\'on''
+$p_{Y|X}$,  \ie  por  la  distribuci\'on  del  ruido.   Tal  canal  es  descrito
+figura~\ref{fig:SZ:CanalGaussiano}.  Se supone  conicida la matriz de covarianza
+$\Sigma_\Gauss$ del ruide,  y se nota $\Sigma_X$ la de  la entrada. En practica,
+no se puede mandar un mensaje a una  potencia tan alta que se quierre, lo que se
+traduce  por  una limitaci\'on
+%
+\[
+\Tr\left(  \Sigma_X  \right) \le  P
+\]
+%
+potencia limite permitida por componente (sampleo).
+
+\begin{figure}[h!]
+%
+\begin{center} \input{TIKZ_SZ/CanalGaussiano} \end{center}
+%
+\leyenda{Canal gaussiano. La entrada $X$,  modelisada por un vector aleatorio es
+  corrupto aditivamente por un ruido gaussiano $\Gauss$ independiente de $X$. La
+  salida es entonces $Y  = X + \Gauss$ y el canal  es completamente descrito por
+  $p_{Y|X}(x,y)   =    p_{\Gauss}(y-x)$   (obviamente   independiente    de   la
+  distribuci\'on de la entrada).}
+%
+\label{fig:SZ:CanalGaussiano}
+\end{figure}
+
+
+Por  definici\'on, la informaci\'on  mutua $I(X;Y)$  entrada-salida es  dada por
+$I(X;Y) = H(Y) - H(Y|X) = H(Y) - H(\Gauss)$. Maximizar $I(X;Y)$ es equivalente a
+maximizar  $H(Y) =  H(X  + \Gauss)$  sujeto  a $\Tr\left(  \Sigma_X \right)  \le
+P$. Fijando un  $\Sigma_X$, la propiedad~\ref{prop:SZ:cotamaximagaussiana} de le
+entropia diferencial  implica que $H(Y)$  sea maximal si  y solamente si  $Y$ es
+gaussiana, es decir si y solamente si $X$ est gaussiana, dando $I(X;Y) = \frac12
+\log \left| \Sigma_X + \Sigma_\Gauss \right| - \frac12 \log \left| \Sigma_\Gauss
+\right|$. Tomando en cuenta el  limite de potencia, hace falta maximizar $\left|
+  \Sigma_X +  \Sigma_\Gauss \right|$ sujeto a  $\Tr \Sigma_X \le  P$ y $\Sigma_X
+\ge   0$  simetrica   lo  que   no  es   trivial.   Se   encuentra   el  enfoque
+en~\cite[Sec.~9.4]{CovTho06}.  Sea $U$,  matriz ortogonal ($U U^t =  U^t U = I$)
+de los  autovectores de la  matriz $\Sigma_\Gauss \ge  0$ simetrica~\footnote{Se
+  recuerda que $A \ge 0$ significa que $A$ es definida no negativa.}, de columnas
+$u_i$ ordenadas tal que  las autovalores corespondientes $\lambda^\Gauss_i$ sean
+en orden crecientes,\ie
+%
+\[
+\Sigma_\Gauss  =  U \diag\left(  \lambda^\Gauss_1  ,  \ldots ,  \lambda^\Gauss_d
+\right)  U^t \qquad  \mbox{con} \qquad  0  \le \lambda^\Gauss_1  \le \cdots  \le
+\lambda^\Gauss_d
+\]
+%
+donde $\diag$ es  la matriz diagonal teniendo los $\lambda_i$  en su diagonal, y
+sea  \ $R_X  =  U^t \Sigma_X  U$.   En sencillo  ver que  \  $\left| \Sigma_X  +
+  \Sigma_\Gauss \right|  = \left| R_X +  \Lambda_\Gauss \right|$ \ (de  $|A B| =
+|A| \,  |B|$) \ y  que \ $\Tr \Sigma_X  = \Tr R_X$  (de $\Tr(A B) =  \Tr(B A)$).
+Entonces,  el problema  se reduce  a maximizar  \ $\left|  R_X  + \Lambda_\Gauss
+\right|$  \ sujeto  a  \ $\Tr  R_X \le  P$  \ y  \  $R_X \ge  0$ simetrica.   La
+desigualdad de Hadamard ya evocada da \ $\left| R_X + \Lambda_\Gauss \right| \le
+\prod_i \left(  R_X + \Lambda_\Gauss  \right)_{i,i} = \prod_i \left(  \left( R_X
+  \right)_{i,i} + \lambda^\Gauss_i  \right)$ \ con igualdad si  y solamente si \
+$R_X$ \ es  diagonal: para maximizar \ $\left| R_X  + \Lambda_\Gauss \right|$, \
+$R_X$ \ debe ser diagonal (dada una  diagonal, se alcanza el maximo si los otros
+terminos son nulos).   Es decir que la base que  diagonaliza \ $\Sigma_\Gauss$ \
+debe  diagonalizar tambi\'en $\Sigma_X$.   Sean \  $\lambda^X_i$ \  los terminos
+diagonales  de  $R_X$: queda  que  maximizar  \  $\prod_i \left(  \lambda^X_i  +
+  \lambda^\Gauss_i  \right)$  \  sujeto a  $\sum_i  \lambda^X_i  \le  P$ \  y  \
+$\lambda^X_i \ge 0$.   Este problema de optimizaci\'on sujeto  a una desigualdad
+se resolva con el enfoque de Karush-Kuhn-Tucker~\footnote{Se introduce el factor
+  de Lagrange  y se  maximiza \ $\prod_i  \left( \lambda^X_i  + \lambda^\Gauss_i
+  \right) + \mu \sum_i \lambda^X_i$.  Eso da \ $\lambda^X_i + \lambda^\Gauss_i =
+  \lambda$ \  constante si  esta cantidad es  positiva, y  cero si no,  es decir
+  $\lambda^X_i = \left( \lambda - \lambda^\Gauss_i \right)_+$. Deben ser los mas
+  grande,  es decir $\lambda$  lo mas  grande que  se puede,  pero satisfaciendo
+  $\sum_i  \lambda^X_i \le P$,  \ie alcanzando  la igualdad.\label{foot:SZ:KKT}}
+(KKT)~\cite{Mil00,  CamMar09},   dando  \   $\lambda^X_i  =  \left(   \lambda  -
+  \lambda^\Gauss_i  \right)_+$  \  con  \  $(\cdot)_+ =  \max(\cdot,0)$  \  y  \
+$\lambda$ \ tal que \ $\sum_i  \left( \lambda - \lambda^\Gauss_i \right)_+ = P$.
+En conclusi\'on, la capacidad es dada por
+%
+\begin{eqnarray*}
+C =  \frac12 \log \left(  \frac{\left| \Sigma_\Gauss +  \Sigma_X \right|}{\left|
+      \Sigma_\Gauss  \right|}  \right)  & \quad \mbox{con} \quad &  \Sigma_X  =  U
+\diag\left( \left(\lambda - \lambda^\Gauss_1\right)_+ , \ldots , \left(\lambda -
+    \lambda^\Gauss_d \right)_+ \right) U^t,\\[2.5mm]
+%
+& &  \lambda \ \mbox{ tal que } \:
+\sum_i \left(\lambda - \lambda^\Gauss_i \right)_+ = P
+\end{eqnarray*}
+%
+alcanzada por $X$ gausiano de matriz de covarianza $\Sigma_X$ así construida.
+% En conclusi\'on, tomando en cuenta  el limite de potencia, $$C = \max_{\frac1d
+%   \Tr  \Sigma_X   \le  P}  \:  \frac12  \log\left(   \frac{\left|  \Sigma_X  +
+%       \Sigma_\Gauss \right|}{\left| \Sigma_X \right|} \right)$$
+
+La \'ultima condici\'on se resolva trav\'es de lo que es conocido como ``llenado
+de       agua''        (water-filling       en       ingl\'es),       illustrado
+figure~\ref{fig:SZ:WaterFilling}. El principio es parecido a tener baras niveles
+$\lambda^\Gauss_i$  representando las  potencias del  ruido (en  la base  que la
+diagonaliza),  y de  ``llenar con  agua'' hasta  un nivel  $\lambda$ tal  que el
+``volumen'' a\~nadido  vale $P$; en  cada $\lambda^\Gauss_i$ se ha  a\~nadido el
+$\lambda^X_i$~\cite[Sec.~9.4]{CovTho06}.
+
+\begin{figure}[h!]
+%
+\begin{center} \input{TIKZ_SZ/WaterFilling} \end{center}
+%
+\leyenda{Principio   del  ``water-filling''   para  obtener   los  $\lambda^X_i$
+  satisfaciendo  el  vinculo  de  potencia  limite y  permitiendo  de  construir
+  $\Sigma_X$ a partir  de la matriz diagonal de los $\lambda^X_i$  y la base que
+  diagonaliza  la  covariance  $\Sigma_\Gauss$  del  ruido.  La  zone  en  grise
+  representa esquematicamente $P$.}
+%
+\label{fig:SZ:WaterFilling}
+\end{figure}
+
+En   el   caso   escalar,   se   obtiene
+%
+\[
+C = \frac12 \log\left( 1 + \frac{P}{\sigma_\Gauss^2} \right)
+\]
+%
+donde     $\frac{P}{\sigma_\Gauss^2}$     es     conocido    como     relaci\'on
+se\~nale-ruido~\footnote{Esta formula es muy  parecida a la de Shannon, Laplume,
+  Clavier~\cite{Sha48,  Lap48,  Cla48} (ver  tambi\'en~\cite[Sec.~9.3]{CovTho06}
+  o~\cite[Sec.~11.2]{Rio07}).   De  hecho, si  se  considera simbolos  mandandos
+  durante $T$ secundos (simbolos puesto en forma para dar una se\~nal analogica)
+  usando  una  banda de  transmisi\'on  $B$,  por el  teorema  de  Nyquist $B  =
+  \frac{1}{2  T}$ (caso  limite). Si  el ruido  es blanco  en la  banda  $B$, de
+  densidad espectral de potencia por unidad de frecuencia igual a $N_0$, para un
+  simbolo la  relaci\'on se\~nal-ruido se escribe $\frac{P}{N_0  B}$. Ademas, se
+  calcula en general la capacidad por unidad de tiempo es decir la capacidad por
+  simbolo divido por $T$, \ie $C = B \log\left( 1 + \frac{P}{N_0 B} \right)$ por
+  secundos, lo que es precisamente  la capacidad calculdada por Shannon.  Esa es
+  a veces conocida como formula de Shannon-Hartley.}
+
+En~\cite{CovTho06,  Rio07}  por ejemplo,  se  dan  otros  ejemplos de  canal  de
+comunicaci\'on   en   el   contexto   continuo   (entrada   $X_t$   siendo   una
+se\~nal/proceso, canal filtrando, canal con feedback, etc.).
+
+% ================================= codificacion
+
+\subseccion{Codificaci\'on entropica sin perdida}
+\label{sec:SZ:Codificacion}
+
+El  problema  de  codificaci\'on  de  fuente  puede  presentarse  de  la  manera
+siguiente~\cite[cap.~5]{CovTho06}   o  \cite[cap.~13]{Rio07}.  Sea   un  proceso
+aleatorio $\left\{  X_t \right\}_{t \in \Zset}$,  supuesto estacionario, llamado
+{\it  fuente}, donde  los $X_t$  toman sus  valores sobre  un  alfabeto discreto
+finito
+%
+\[
+\X = \{ x_1 , \ldots , x_\alpha \} \qquad \mbox{alfabeto fuente}
+\]
+%
+de  distribuci\'on  $p_X$.   A  cada posible  secuencia~\footnote{Por  abuso  de
+  escritura una cadena  de $n$ simbolos puede ser vista  como un $n$-uplet.} $s_1
+\cdots s_n  \in \X^n$ de  letras de $\X$,  se quiere asignar un  c\'odigo $c(s_1
+\cdots s_n)$ un alfabeto discreto finito,
+%
+\[
+\C = \{ \zeta_1 , \ldots , \zeta_d \} \qquad \mbox{ alfabeto c\'odigo}
+\]
+%
+El c\'odigo es dicho {\it $d$-ario}.   Por ejemplo, se puede asignar un c\'odigo
+$c(x_i)  =  \zeta_{i,1}  \cdots  \zeta_{i,l_i}  \in \C^{l_i}$  a  cada  simbolo,
+c\'odigo llamado  {\it palabras c\'odigos}, y  a secuencias $s_1  \cdots s_n$ la
+concatenaci\'on de las palabras c\'odigos correspondiente a cada simbolo, \ie el
+c\'odigo $c(s_1) \cdots c(s_n)$. En el sistema Moorse por ejemplo, $\C$ consiste
+en un  punto, barra,  espacio letras, espacio  palabras.  En una  computadora en
+general todo se codifica en bits $\C = \{ 0 \, , \, 1\}$.  Mas formalmente, sean
+%
+\[
+F_\X   =   \bigcup_{k=0}^{\infty}   \X^k   \qquad   \mbox{y}   \qquad   F_\C   =
+\bigcup_{k=0}^{\infty} \C^k
+\]
+%
+uni\'on  de  secuencias de  $k$  letras de  $\X$  y  $\C$ respectivamente.   Una
+codificaci\'on  de fuente  consiste en  una funci\'on  de \  $F_\X$ \  dentro de
+$F_\C$. En lo que sigue, nos  concentramos en c\'odigos definidos para blocks de
+simbolos de tama\~no $m \ge 1$:
+%
+\[
+\begin{array}{lccl}
+c_m: & \X^m & \rightarrow & F_\C\\[.5mm]
+% & \forall \, n \ge 1, \quad s_1 \cdots s_n
+%\in \X^{n m}, \: c_m(s_1 \cdots s_n) \equiv c_m(s_1) \cdots c_m(s_n)\\[1.5mm]
+%
+& x & \mapsto & c_m(x) \in \C^{l_{c_m}(x)}
+% &
+\end{array}
+\]
+%
+donde $l_{c_m}(x) \in \Nset^*$ es el  {\it largo} de la palabra c\'odigo $c_m(x)$,
+y
+%
+\[
+\forall \, n \ge 1, \quad \forall  \, s_1 \cdots s_n \in \X^{n m}, \quad c_m(s_1
+\cdots s_n) \equiv c_m(s_1) \cdots c_m(s_n)
+\]
+%
+lo que es llamado {\it extensi\'on} del codigo.  En lo que sigue, se escribir\'a
+$c \equiv c_1$.
+
+Una manera ingenua de codificar consiste a apoyarse sobre la descompocisi\'on de
+base \  $d$ \ de un  intero, \ie para  $1 \le i \le  \alpha, \, i-1 =  (i_0-1) +
+(i_1-1)  d +  \cdots  + (i_K-1)  d^K$  \ donde  \ $K  =  \Big\lceil \log_d  |\X|
+\Big\rceil$ \  y \ $1 \le  i_k \le \alpha$, y  de asignar la  palabra c\'odigo \
+$\zeta_{i_0} \cdots \zeta_{i_k}$ \ al  simbolo $x_i$. Haciendo eso, cada palabra
+c\'odigo  tieno  el   mismo  largo.   Pero,  parece  mas   economico  hacer  una
+codificaci\'on dicha de largos  variables, teniendo en cuenta las probabilidades
+de aparici\'on de cada $x_i$. Implicitamente, es la idea del c\'odigo de Moorse,
+que asigna  un punto (o  series de  puntos) a las  letras muy frecuentes,  y una
+barra (o combinaciones) a las que  son raras.  Dicho de otra manera, el c\'odigo
+ingenuo   ser\'ia   ``bueno''   para    $x_i$   apareciendo   con   las   mismas
+frecuencias/probabilidades.
+
+En los c\'odigos de largos  variables (incluendo el c\'odigo ingenuo), volviendo
+a  $c_m$, existen  varios tipos  de  c\'odigos.  Un  c\'odigo es  dicho {\it  no
+  singular} si $c_m$  es inyectiva: a cada $x \in  \X^m$ corresponde una palabra
+c\'odigo \'unica. Esta propiedad es un requisito que parece obvio querer para un
+c\'odigo.  Pero  no es suficiente  para poder decodificar un  mensaje, compuesta
+por una  secuencia de  palabras c\'odigo.  Lo importante en  este caso  es poder
+decodificar la secuencia  sin ambiguedad: un c\'odigo est  dicho {\it unicamente
+  decodificable} (o sin perdida) si todas las extensiones son no singulares. Por
+ejemplo, sean \ $\X = \{ \alpha \, ,  \, \beta \, , \, \gamma \, , \delta \}$, \
+$\C = \{0 \, , \, 1 \}$ \ y \ $c(\alpha) = 0, \: c(\beta) = 0, \: c(\gamma) = 1,
+\: c(\delta) =  01$ ($m = 1$).   El c\'odigo es no singular,  pero no unicamente
+decodable.  La secuencia $0010$  puede provenir de $\alpha\alpha\gamma\alpha$, \
+de \ $\alpha\delta\alpha$ \ o de \ $\beta\gamma\alpha$. En general, se requierre
+de un  c\'odigo que  sea unicamente decodificable.   A veces, se  requiere poder
+decodificar sobre la marcha, sin  esperar de medir toda la secuencia codificada:
+es  lo  que se  llama  {\it c\'odigo  instantaneo}.   Por  ejemplo, el  c\'odigo
+$c(\alpha) =  00, \: c(\beta) =  10, \: c(\gamma) =  11, \: c(\delta)  = 110$ es
+unicamente decodable,  pero no instantaneo.  Considera la  secuencia $0011011$ y
+marcha sobre  ella.  $0$ no  es una palabra  c\'odigo; $00$ es y  sin ambiguedad
+proviene de un $\alpha$ (no hay otras palabras empezando por $00$); luego $1$ no
+es una palabra, y $11$ es  una palabra c\'odigo, pero se necesita adelantar para
+saber si viene de  un $\gamma$ (o de un $\delta$); la  letra siguiente siendo un
+$0$,  todav\'ia no  se  puede concluir  si $110$  vino  de $\gamma$  y alg\'o  o
+$\delta$. Al final,  con $1101$, se sabe que se tuvo  un $\delta$ porque ninguna
+palabra c\'odigo empieza  por $01$.  Al final, sin  ambiguedad el antecedante de
+la secuencia binaria era $\alpha\delta\gamma$.  Pero se necesit\'o marchar sobre
+toda la secuencia  antes de decodificar. Obviamente, un  c\'odigo instantaneo es
+tal que ninguna palabra c\'odigo es prefijo  de una otra, \ie si $c_m(x)$ es una
+palabra c\'odigo, las otras palabras c\'odigo no pueden empezar con $c_m(x)$; el
+c\'odigo es  tambi\'en dicho {\it  libre de prefijo}.  Estas  distinciones estan
+ilustradas           en           la           figura~\ref{fig:SZ:ClasesCodigos}
+(ver~\cite[cap.~5]{CovTho06}).
+
+\begin{figure}[h!]
+%
+\begin{center} \input{TIKZ_SZ/ClasesCodigos} \end{center}
+%
+\leyenda{Clases  de c\'odigos.   Los  c\'odigos  contienen la  clase  de los  no
+  singular.    La  misma  contiene   la  clase   de  los   c\'odigos  unicamente
+  decodificables.  Ella  contiene  los   c\'odigos  instantaneos.  En  grise  se
+  representan las  clases de c\'odigos  sin perdida a  lo cuales se  dedica esta
+  secci\'on.}
+%
+\label{fig:SZ:ClasesCodigos}
+\end{figure}
+
+Ademas de  la decodificaci\'on sin ambiguedad,  una caracterizaci\'on importante
+del c\'odigo es la taza de codificaci\'on~\footnote{En~\cite{Rio07} por ejemplo,
+  se define esta taza suponiendo que  cada secuencia fuente es codificado por el
+  mismo numero de bits. La taza es entonces el numero de bits por simbolo.}
+%
+\[
+R_{c_m} = \frac{\log_d \left( \sum_{x \in \X^m} l(x) \Pr[X = x] \right)}{m}
+\]
+%
+donde $X$  representa una  secuencia de $m$  variables $X_t$.  El  argumento del
+logaritmo (de base adecuada al cardinal  de $\C$) es el {\it largo promedio} del
+c\'odigo. Por ejemplo, para $d = 2$, $R_{c_m}$ es el numero de bits promedio del
+c\'odigo por simbolo.
+
+En general,  se quiere minimizar $R_{c_m}$  (compresar el mensaje  a mandar), lo
+que puede  ser contradictorio con la  necesidad de a\~nadir  redundancia para no
+perder informaci\'on durante una transmsi\'on. En lo que sigue, nos concentramos
+el el problema de compresi\'on, sin  tener en cuenta el paso de transmisi\'on de
+mensajes codificados en  un canal. Minimizar la taza  es equivalente a minimizar
+el  largo  promedio.   Se  puede  focalisarse  en $m  =  1$;  todo  se  extiende
+sencillamente a $m > 1$.
+
+La  meta de  la compresi\'on  es entonces  construir un  codigo  $c$, unicamente
+decodificable, que minimizar el largo promedio
+%
+\[
+L(c) = \sum_{x \in \X} p_X(x) \, l(x)
+\]
+%
+Antes de ir mas adelante, falta traducir en ecuaci\'on el vinculo de que $c$ sea
+unicamente    decodificale.    Eso    es    dado   por    la   desigualdad    de
+Kraft-McMillan~~\cite{Kra49,   McM56,   Kar61}~\footnote{Esta  desigualdad   fue
+  probabada   por   Kraft  para   c\'odigos   instantaneos   en   su  tesis   de
+  maestria~\cite{Kra49}.  Luego,  fue   extendiad  a  los  c\'odigos  unicamente
+  decodificables por B.  McMillan~\cite{McM56} (en una nota de  pie de pagina de
+  su papel,  atribua esta observaci\'on a  J.  L. Doob  hecho oralemente durante
+  una escuela de verano en Ann Arbor, MI en agosto 1955).}
+%
+\begin{teorema}[Desigualdad de Kraft-McMillan]
+  Los  largos $l_c(x)$ de  la palabras  c\'odigo de  un c\'odigo  $c$ unicamente
+  decodable deben satisfacer la desigualdad
+  %
+  \[
+  \sum_{x \in \X} d^{-l_c(x)} \le 1
+  \]
+  %
+  Reciprocamente,  para cada  conjunto  de  enteros $\{  \ell_x  \}_{x \in  \X}$
+  satisfaciendo esta desigualdad, es posible de construir un c\'odigo unicamente
+  decodable con $l_c(x) = \ell_x$.
+\end{teorema}
+%
+\begin{proof}
+  Para cualquier $k \ge 1$ y cualquier  cadena $s = s_1 \cdots s_k \in \X^k$, la
+  extensi\'on  del  c\'odigo,  $c_k(s_1  \cdots  s_k) =  c(s_1)  \cdots  c(s_k)$
+  satisface $l_{c_k}(s) = \sum_i l_c(s_i)$. Entonces
+  %
+  \[
+  \left(  \sum_{x  \in \X}  d^{-l_c(x)}  \right)^k \:  =  \:  \sum_{\bar{x} \in  \X^k}
+  d^{-l_{c_k}(\bar{x})} \: = \: \sum_{m=1}^{k \, l_c^{\max}} \#(m) \, d^{-m}
+  \]
+  %
+  re-escribiendo la secunda suma, agrupando  los terminos de mismo largos, donde
+  $\#(m)$ es el numero de c\'odicos  de $\X^k$ tiendo el largo $m$ y $l_c^{\max}
+  = \max_{x \in  \X} l_c(x)$ largo mayor.  $c$  siendo unicamente decodificable,
+  $c_k$ debe ser  inyectiva, imponiendo $\#(m) \le d^m$ (no  hay mas palabras de
+  largo $m$ que el cardinal de $\C^m$), dando inmediatemente que necesariamente
+  %
+  \[
+  \forall \,  k \in \Nset^*, \quad \sum_{x  \in \X} d^{-l_c(x)} \le  \left( k \,
+    l_c^{\max}  \right)^{\frac1k} \quad  \Leftrightarrow \quad  \sum_{x  \in \X}
+  d^{-l_c(x)} \le \min_{k \in \Nset^*} \left( k \, l_c^{\max} \right)^{\frac1k}
+  \]
+  %
+  Un estudio rapido de \ $u  \mapsto \left( u \, l_c^{\max} \right)^{\frac1u}$ \
+  para \  $u \ge 1$ \  y tendiendo en cuenta  de que $l_c^{\max}  \le 1$ permite
+  concluir  que el  m\'inimo  es igual  a  1, terminando  la  parte directa  del
+  teorema.
+
+  Reciprocamente,  sea \  $\{ \ell_x  \}_{x \in  \X}$ \  un conjunto  de enteros
+  satisfaciendo la  desigualdad de Kraft-McMillan.  Se puede  agrupar los largos
+  iguales y  clasificarlos. Sea  \ $n_\ell$ \  los numeros  de largos igual  a \
+  $\ell =  1 , \ldots  , \ell^{\max} \le  \alpha$.  Consideramos ahora  un arbol
+  empezando con una  raiz, correspondiente a un largo $0$, que  se divide en $d$
+  ramas, correspondiente a los largos iguales  a $1$; a cada nudo se asocian las
+  letras \  $\zeta_1, \ldots , \zeta_d$. Esto  nudos se dividen cada  uno en $d$
+  otras  ramas, y  los nudos  de ``padre''  \ $\zeta_i$  \ se  va a  asociar las
+  palabras c\'odigos \ $\zeta_i \zeta_1 , \ldots , \zeta_i \zeta_\alpha$, \ etc.
+  Este   arbol,   conocido  como   arbol   de   Kraft,   es  ilustrado   en   la
+  figura~\ref{fig:SZ:ArbolKraft}  para \ $d  = 2$  \ y  \ $\C  = \{0  \, ,  \, 1
+  \}$. Claramente, \ $n_1 \le d$ \ si no \ $n_1 \, d^{-1} > 1$ \ y los largos no
+  podr\'ian  satisfacer  la  desigualdad  de Kraft-McMillan.   El  principio  es
+  entonce de asociar a los \ $n_1$ \ (posiblemente igual a 0) largos iguales a \
+  $1$ \ unos nudos con las palabras c\'odigo asociadas de largo \ $1$ \ (primera
+  profundez  de  ramas)  y de  prohibir  todos  las  ramas  de padre  los  nudos
+  seleccionados  (lineas punteadas  en la  figura\ref{fig:SZ:ArbolKraft}). Estos
+  nudos son  llamados {\em hojas}  (no hay ramas).   En la capa de  ``hijos'' de
+  profundez/largos \ $2$, quedan \ $d^2 - n_1 \, d$ \ nudos (accessibles) que se
+  puede dividir  en ramas.  Nuevamente,  \ $n_2 \le  d^2 - n_1  \, d$ \  sino se
+  tendr\'ia  \ $n_1  \, d^{-1}  + n_2  \,  d^{-2} >  1$, \  incompatible con  la
+  desigualdad de Kraft-McMillan. Se puede asociar a los \ $n_2$ \ largos iguales
+  a \  $2$ \ unos  nudos con las  palabras c\'odigo asociadas  de largo \  $2$ \
+  (secunda profundez), y de prohibir que  salen de estos nudos nuevas ramas (son
+  entonces hojas  de la  secunda profundez), etc.  Haciendo as\'i, se  asocia un
+  c\'odigo \ $c$ \ de largos \ $l_c(x) = \ell_x$ \ que aparece libre de prefijo,
+  es  decir  instantaneo.   Entonces,  este  c\'odigo  es  tambi\'en  unicamente
+  decodable.
+\end{proof}
+
+A este punto, se menciona los hechos siguientes
+%
+\begin{itemize}
+\item Los largos  de un c\'odigo unicamente decodable  satisfacen la desigualdad
+  de Kraft-McMillan,  pero con el  conjunto de largos correspondientes  se puede
+  siempre  construir un c\'odigo  instantaneo.  Claramente,  se puede  buscar un
+  c\'odigo de largo promedio m\'inimo  en los c\'odigos instantaneo, sin perdida
+  de optimalidad (buscar  el la clase mas amplia de  los unicamente decodable no
+  permite bajar el largo promedio).
+%
+\item  En los  c\'odigos  libre de  prefijo, si  se  fija los  numeros de  hojas
+  (\'ultima   profundez)  borradas   contruiando  un   c\'odigo,  este   vale  \
+  $\sum_{i=1}^{\ell^{\max}}  n_i  \,  d^{\ell^{\max}  -  i} =  \sum_{x  \in  \X}
+  d^{\ell^{\max} -  l_c(x)}$.  \ Es  necesariamente menor que los  numeros total
+  $d^{\ell^{\max}}$  de hojas,  lo  que  prueba el  teorema  para los  c\'odigos
+  instantaneos~\cite{Kra49, Kar61}.
+%
+\item El  teorema se  generaliza obviamente para  codificar una  fuente discreta
+  pero  con un n\'umero  infinito de  estados, tomando  el l\'imite  $\alpha \to
+  \infty$.
+%
+\item Si se conocen los largos  \'optimos, es suficiente para poder construir un
+  c\'odigo libre de prefijo.
+\end{itemize}
+
+\begin{figure}[h!]
+%
+\begin{center} \input{TIKZ_SZ/ArbolKraft} \end{center}
+%
+\leyenda{Arbol de Kraft  en el caso binario  ($d = 2$). De la  raiz, de c\'odigo
+  $\emptyset$ de largo 0, se divide en dos ramas, de c\'odigos respectivamente \
+  $0$ \ y  \ $1$ \ (profundez \  $1$). Cada nudo de esta profundez  se divide de
+  nuevo  en  dos ramas  (profundez  dos), dando  cuatros  nuevos  nudos con  los
+  c\'odigos \  $00$ \  y $01$  de padre  \ $0$, y  \ $10$  \ y  $11$ de  padre \
+  $1$.  Etc.  En cada  nudo,  en  el c\'odigo,  se  marca  en  negrita la  letra
+  correspondiente al  bit a\~nadido al  c\'odigo padre.  Para hacer  un c\'odigo
+  libre de  prefijo, una vez  que un nudo  es seleccionado para ser  una palabra
+  c\'odigo (encuadrado  en la figura), no  se puede tener  nudo ``hijos'' siendo
+  tambi\'en una palabra c\'odigo: se boran las ramas saliendo de un nudo-palabra
+  c\'odigo (ramas punteadas).}
+%
+\label{fig:SZ:ArbolKraft}
+\end{figure}
+
+El formalismo dado, se va a ver  ahora reapacer la entropia de Shannon como cota
+de la codificaci\'on de fuente sin perdida:
+
+\begin{teorema}[Cota inferior de c\'odigos unicamente decodable]
+  Para cualquier  c\'odigo \  $c$ \  unicamente decodable de  la fuente  $X$, su
+  largo promedio esta acotado por debajo  por la entropia de Shannon de base $d$
+  de $X$,
+  %
+  \[
+  L(c) = \sum_{x \in \X} p_X(x) \, l_c(x) \: \ge \: H_d(X)
+  \]
+\end{teorema}
+%
+\begin{proof}
+  Sea \ $q(x)  = \frac{d^{-l_c(x)}}{\sum_{x \in \X} d^{-l_c(x)}}$,  \ siendo una
+  distribuci\'on de  probabilidad por  construcci\'on.  Escribiendo \  $l_c(x) =
+  \log_d d^{-l_c(x)}$, \ se puede expresar el largo promedio de la forma
+  %
+  \[
+  L(c) =  - \sum_{x  \in \X}  p_X(x) \, \log_d  d^{-l_c(x)} =  - \sum_{x  \in \X}
+  p_X(x) \, \log_d q(x) - \log_d \sum_a d^{-l_c(x)}
+  \]
+  %
+  Notando que \ $- \log_d q  = \log_d \left( \frac{p_X}{q} \right) - \log_d p_X$
+  \ se obtiene
+  %
+  \[
+  L(c) = H_d(X)  + D_d\left( \left.  p_X \right\| q \right)  - \log_d \sum_{x \in
+    \X} d^{-l_c(x)}
+  \]
+  %
+  El resultado proviene de la  positividad de la divergencia de Kullback-Leibler
+  y de  la desigualdad  de Kraft  (el argumento del  logaritmo siende  menor que
+  $1$).
+\end{proof}
+%
+\noindent Este  resultado significa que la  taza de compresi\'on  sin perdida no
+puede ser mas bajo que el contenido informacional de la fuente. En este sentido,
+$H$ tiene realmente un sabor de informaci\'on sobre la fuente $X$.
+
+La entropia aparece tambi\'en el la cota superior del c\'odigo \'optimo:
+%
+\begin{teorema}[Cota superior del c\'odigo unicamente decodable \'optimo]
+  El largo promedio \ $L^\opt$ \ del c\'odigo \ $c^\opt$ \ unicamente decodable,
+  de largo promedio m\'inimo esta acotado  por arriba por la entropia de Shannon
+  de base $d$ de $X$ mas un {\it dit} (1 simbolo de $\C$), 
+  %
+  \[
+  L^\opt \: < \: H_d(X) + 1
+  \]
+\end{teorema}
+%
+\begin{proof}
+  Por  eso,  empezamos  por  buscar  los  largos  \'optimos,  soluci\'on  de  la
+  optimizaci\'on
+  %
+  \[
+  \min \sum_{x \in \X} p_X(x) \,  l(x) \qquad \mbox{sujeto a} \qquad \sum_{x \in
+    \X} d^{-l(x)} \, \l \, 1
+  \]
+  %
+  Sea \ $q(x)  = \frac{d^{-l_c(x)}}{\sum_{x \in \X} d^{-l_c(x)}}$,  \ siendo una
+  distribuci\'on de  probabilidad por  construcci\'on.  Escribiendo \  $l_c(a) =
+  \log_d d^{-l_c(a)}$, \ se puede expresar el largo promedio de la forma
+  %
+  \[
+  L(c) =  - \sum_{x  \in \X}  p_X(x) \, \log_d  d^{-l_c(x)} =  - \sum_{x  \in \X}
+  p_X(x) \, \log_d q(x) - \log_d \sum_{x \in \X} d^{-l_c(x)}
+  \]
+  %
+  Olvidando que  los \ $l_i \equiv l(x_i)$  \ son enteros, $L(c)$  es convexa con
+  respecto a los $l_i$ as\'i que el vinculo, garantizando que el m\'inimo existe
+  y    es    \'unico.    El    problema    se    resuelva    con   el    enfoque
+  KKT~\footref{foot:SZ:KKT},      optimizaci\'on      con     vinculos      tipo
+  desigualdades~\cite{Mil00, CamMar09}, conduciendo a los ``largos''
+  %
+  \[
+  \widetilde{l}(x) = - \log_d p_X(x)
+  \]
+  %
+  Una posibilidad puede ser de tomar la parte entera superior,
+  %
+  \[
+  l(x) = \Big\lceil\! - \log_d p_X(x) \Big\rceil
+  \]
+  %
+  Obviamente el  conjunto de largos satisface la  desigualdad de Kraft-McMillan,
+  as\'i que se puede construir un  c\'odigo \ $c^\sh$ \ unicamente decodable con
+  estos largos. De \ $l(x) < - \log_d p_X(x) + 1$ se obtiene
+  %
+  \[
+   L^\opt \le L\left( c^\sh \right) < H_d(X) + 1
+% \qquad \mbox{con} \qquad L^\sh = L(c^\sh)
+  \]
+  %
+\end{proof}
+%
+De  $$H_d(X) \le  L^\opt <  H_d(X) +  1$$  se revela  el rol  fundamental de  la
+entropia en  la codificaci\'on  de fuente sin  perdida.  La codificaci\'on  es a
+veces dicha {\it codificaci\'on entropica} y da un rol operacional a la entropia
+de  Shannon. Se  notara  de la  demostraci\'on  precediente de  que aparece  un
+c\'odigo particular:
+%
+\begin{definicion}[C\'odigo de Shannon]
+  Un c\'odigo \ $c^\sh$ \ de una  fuente $X$, de largos \ $l^\sh(x) = \Big\lceil\!
+  - \log_d p_X(x) \Big\rceil$, \ libre  de prefijo (construido sobre el arbol de
+  Kraft) es llamado {\it c\'odigo de Shannon}.
+\end{definicion}
+%
+Obviamente, tambi\'en
+%
+\[
+H_d(X) \le L\left( c^\sh  \right) < H_d(X) +  1
+\]
+%
+Al lo  contrario de  primer vista, un  c\'odigo de  Shannon no es  \'optimo.  Un
+ejemplo sencillo para verlo consiste a tomar $\X = \C = \{ 0 \, , \, 1 \}$ \ y \
+$p_x(0) = 0.999 = 1 - p_X(1)$.  Los largos de Shannon van a ser \ $l^\sh(0) = 1$
+\ y  \ $l^\sh(1) =  10$, de  largo promedio \  $L\left( c^\sh \right)  = 1.009$.
+Obviamente, un  c\'odigo \'optimo es  \ $c(x) =  x$ \ de largos  \ $l(x) =  1$ \
+dando  \  $L^\opt  =  1$  bit.   De hecho,  volviendo  al  problema  con  largos
+virtualmente  no enteros,  el m\'inimo  se  alcanza para  $\widetilde{l}(x) =  -
+\log_d p_X(x)$,  es decir  que, los  largos siendo enteros,  se alcanza  la cota
+m\'inima  del  c\'odigo \'optimo  si  y solamente  si  $-  \log_d p_X(x)$.   Una
+distribuci\'on satifaciendo  esta condici\'on es dicha  $d$-adica.  Sin embargo,
+el c\'odigo de Shannon es ``competitivo'' en el sentido de que:
+%
+\begin{teorema}[Competitividad del c\'odigo de Shannon]
+  Sea $X$  \ fuente sobre  \ $\X$, de  distribuci\'on \ $p_X$  \ y \  $c^\sh$ el
+  c\'odigo de Shannnon asociado sobre el  alfabeto c\'odigo \ $\C = \{ \zeta_1 ,
+  \ldots  , \zeta_d \}$,  de largos  $l^\sh(x) =  \Big\lceil\!  -  \log_d p_X(x)
+  \Big\rceil$.  Para cualquier c\'odigo \ $c$ \ unicamente decodable y cualquier
+  $k \ge 1$,
+  %
+  \[
+  \Pr\Big[ l^\sh(X) \ge l_c(X) + k \Big] \le \frac{1}{d^{k-1}}
+  \]
+\end{teorema}
+%
+\begin{proof}
+  Por definici\'on de un c\'odigo de Shannon, de  $a + 1 > \lceil a \rceil \ge b
+  \: \Rightarrow \: a \ge b-1$, se obtiene
+  %
+  \begin{eqnarray*}
+    \Pr\Big[ l^\sh(X)  \ge l_c(X) + k  \Big] & \le & \Pr\Big[  - \log_d p_X(X)
+    \ge  l_c(X) + k  - 1  \Big]\\[2.5mm]
+  %
+    & = &  \Pr\Big[ p_X(X)  \le d^{-l_c(X)  - k  + 1} \Big]\\[2.5mm]
+  %
+    & = &  \sum_{x \in \X : p_X(x) \le d^{-l_c(X)  - k  + 1}} p_X(x)
+  \end{eqnarray*}
+  %
+  Pero,  sumando sobre  lo $x$  tal que  $p_X(x) \le  d^{-l_c(X) -  k +  1}$, se
+  obtiene
+  %
+  \begin{eqnarray*}
+  \Pr\Big[ l^\sh(X) \ge l_c(X) + k \Big] & \le & d^{1-k} \sum_{x \in \X :
+  p_X(x) \le d^{-l_c(X) - k + 1}} d^{-l_c(X)}\\[2.5mm]
+  %
+  \Pr\Big[ l^\sh(X) \ge l_c(X) + k \Big] & \le & d^{1-k} \sum_{x \in \X}
+  d^{-l_c(X)}
+  \end{eqnarray*}
+  %
+  (a\~nadiendo terminos positivos  en la suma). La prueba  se cierra notando que
+  $c$   siendo  unicamente   decodable,  $l_c$   satisface  la   desigualdad  de
+  Kraft-McMillan.
+\end{proof}
+%
+Este  teorema  traduce el  hecho  de  que si  $c^\sh$  no  es \'optimo,  tomando
+cualquier otro c\'odigo (incluyendo el \'optimo), la probabilidad que $c^\sh(X)$
+tiene un largo mas importante  que $c(X)+k$ decrece exponencialmente con $k$. El
+el ejemplo anterior, si se compara $c^\sh$  y el c\'odigo \'optimo, para $k = 9$
+(caso del  c\'odigo de  $1$), $\Pr\Big[  l^\sh(X) \ge l_c(X)  + 9  \Big] \le
+0.391  \%$.  De hecho,  una  palabra  c\'odigo de  largo  $10$  aparece con  una
+probabilidad $0.1\%$\ldots
+
+En el problema  de minimizaci\'on, el hecho de que los  largos deben ser enteros
+no  permite  solucionar  explicitamente  el  problema de  buscada  del  c\'odigo
+\'optimo.  Numeros  investigadores contruyeron c\'odigos,  intentando probar que
+son  \'optimos   (ver  ej.~\cite{Sha48,  ShaWea64,  Fan49}   por  los  primeros,
+y~\cite[\& ref.]{CovTho06}).  El c\'odigo conocido como {\it  c\'odigo de Fano}n
+\footnote{A pesar  de que  sea diferente del  de Shannon  y que cada  uno fueron
+  hechos independientemente, a veces  es conocido como c\'odigo de Fano-Shannon,
+  o aun Shannon-Fano-Elias~\cite{CovTho06, KraLiu15}.} \ $c^\fa$ \ se basa sobre
+el hecho de  que se alcanza la cota m\'inima  para una distribuci\'on $d$-adica.
+El principio es de clasificar  $\X$ para obtener las probabilidades clasificadas
+en orden decreciences ($p_X^\downarrow$). Luego, se divide $\X$ en $d$ ensembles
+a lo  mas equiprobables  que se  puede (\ie de  probabilidad a  lo mas  cerca de
+$d^{-1}$) y de asignar $\zeta_i$ al conjunto $i$.  Luego, se repite el proceso a
+cada sub-conjunto (para tener sub-conjuntos  de probabilidades a lo mas cerca de
+$d^{-2}$) y  al subconjunto  $j$ del conjunto  $i$ se  va a asignar  le c\'odigo
+$\zeta_i      \zeta_j$,      etc.      Eso      es      ilustrado     en      la
+figura~\ref{fig:SZ:FanoHuffmanCodes}-(a).  \SZ{Probar/mencionar que tambi\'en $$
+  H(X) \le L\left( c^\fa \right) < H(X)+1$$}
+%  \qquad \mbox{con}  \qquad L^\fa  =  L_{c^\fa}$$}
+
+Fijense de que no hay un \'unico c\'odigo  de Fano o de Shannon (tal como no hay
+un \'optimo  \'unico).  Por exemple, hacer  una permutacion de  los $\zeta_i$ da
+los mismos  largos y  el mismo largo  promedio sin  cambiar el aspecto  libre de
+prefijo. De la  misma manera, en el  arbol de Kraft, en cada  profundez se puede
+permutar los  simbolos asociados a  las hojas de  esta profundez sin  cambiar el
+aspecto libre de prefijo y sin que cambie los largos $l(x_i)$ (y entonces con el
+mismo largo promedio).
+
+
+Una soluci\'on para construir un  c\'odigo \'optima fue propuesta por Huffman en
+1951-1952~\cite{Huf52,  Pig03}~\footnote{De hecho,  Huffman  fue estudiantes  de
+  maestria  de Fano,  trabajando  en el  MIT.  Su  tesis  era de  probar que  el
+  c\'odigo de Fano  era \'optimo: Huffman propus\'o su  propio c\'odigo, andando
+  al rev\'es del enfoque de Fano, y demostr\'o que era \'optimo~\cite{Sti91}.}
+%
+\begin{definicion}[C\'odigo de Huffman]
+  Suponemos que existe un $q \in \Nset$ tal que~\footnote{Si no, se puede elegir
+    $q = \left\lceil \frac{n-d}{d-1} \right\rceil$,  y completar $\X$ con $d + q
+    (d-1) - \alpha$ simbolos fuente  fictivos de probabilidades ceros, le que no
+    va a cambiar ni la entropia,  ni el largo promededio del c\'odico aferente.}
+  $\alpha = |\X| = d + q (d-1)$. El algoritmo de Huffman consiste a construir un
+  arbol donde cana nudo es asociado a un conjunto de simbolos fuente y una letra
+  de $\C$ de la manera siguiente:
+  %
+  \begin{enumerate}
+  \item\label{Huffman:clasificar}   Clasificar  las   probabilidades   en  orden
+    decrecientes: llamamos  $p_i$ las probabilidades rearregladas  y, por cambio
+    de escritura, \ $x_i$ \ el simbolo fuente correspondiente.
+  %
+  \item\label{Huffman:codigolocal}  A cada  \ $x_i,  \: n-d+1  \le i  \le  n$, \
+    associar un nudo y la letra ``hijo'' \ $\zeta_i$.
+  %
+  \item\label{Huffman:padre} Crear \ $d$ \ ramas saliendo de un nudo padre hasta los
+    $d$ nudos $x_i, \: n-d+1 \le i \le n$.
+  %
+  \item\label{Huffman:reconfiguracion}  Crear  un  nuevo  conjunto  de  simbolos
+    fuente \  $\widetilde{x}_i = x_i,  \: 1 \le  i \le n-d$ \  de probabilidades
+    respectivas \ $\widetilde{p}_i = p_i$ \ y \ $\widetilde{x}_{n-d+1} = \{ x_j,
+    \: n-d+1 \le j \le n$ \ de probabilidad \ $\widetilde{p}_{n-d+1} = p_{n-d+1}
+    + \ldots  + p_n$.  El \'utimo ``super-simbolo''  fuente es asociado  al nudo
+    padre de la etapa~\ref{Huffman:padre}.
+  %
+  \item   Si  quedan   mas   de   un  (super-)simbolo   fuente,   volver  a   la
+    etapa~\ref{Huffman:clasificar}  con \  $p  \equiv \widetilde{p}$  \  y \  $x
+    \equiv \widetilde{x}$.
+  \end{enumerate}
+  %
+  Como descrito tratando del c\'odigo  usando el arbol de Kraft, \ $c^\huf(x_i)$
+  \ se construye  saliendo de la raiz del arbol  as\'i construido, agregando las
+  letras  del camino que  llega a  la hoja  \ $x_i$.  \ Eso  es ilustrado  en la
+  figura~\ref{fig:SZ:FanoHuffmanCodes}-(b) en el caso binario.
+\end{definicion}
+%
+Se  mencionara que  a cada  etapa, el  nuevo conjunto  de  super-simbolos fuente
+contiene exactamente \ $d-1$ \ simbolos menos que a la etapa precediente. As\'i,
+con \ $n = d  + q (d-1)$ \ el algoritmo tiene exactamebte \  $q+1$ \ buclas y en
+cada profundes no hay  nudo vacio en el sentido que o es una  hoja, o es un nudo
+padre/prefijo (quedaran exactamente $d$ nudos a agregar a la raiz en la \'ultima
+etapa).  Por  exemplo, con \ $d =  3$ \ si tuvieramos  \ $n = 4$,  en la secunda
+etapa tendriamos $2$ estados a juntar, dando un c\'odigo de largos $2, 2, 2, 1$.
+Empezando la primera etapa con la  asociaciaci\'on de $2$ estados, est decir $3$
+teniendo en cuenta un  estado fictivo ($n = 5$, $q = 1$)  van a quedar 3 estados
+en la secunda etapa, dando un c\'odigo de largos $2, 2, 1, 1$, es decir de largo
+promedio mas peque\~no.
+
+\begin{teorema}[\'Optimalidad del c\'odigo de Huffman]
+  El algoritmo de Huffman da un c\'odigo \ $c^\huf$ \ de largo promedio m\'inimo
+  en la clase de los c\'odigos  unicamente decodables y los libre de prefijo (se
+  recordar\'a que con  los largos de c\'odigos unicamente  decodable, siempre se
+  puede construir  un c\'odigo libre de  prefijo), es decir \  $L^\opt = L\left(
+    c^\huf \right)$.
+\end{teorema}
+%
+\begin{proof}
+  Una  prueba  es  dada  por  ejemplo en~\cite[Sec.~5.8]{CovTho06}  en  el  caso
+  binario, pero la  extensi\'on para $d >  2$ es un poco mas  subtile. La prueba
+  mas general es dada por Huffman~\cite{Huf52} y se consigue tambi\'en por parte
+  en~\cite{Pig03}. Suponnemos que  $q \ge 1$ (sino, el  resultado es obvio). Las
+  etapas son
+  %
+  \begin{itemize}
+  \item Sean $j, k$ dos indices. Si \  $c^\opt$ \ es un c\'odigo optimo, y \ $c$
+    \ un c\'odigo tal  que \ $l(x_i) = l^\opt_i, \quad i \ne j  , k, \quad l_j =
+    l^\opt_k \quad \& \quad l_k = l^\opt_j$, \ se obtiene \ $0 \le L(c) - L^\opt
+    = \sum_i p_i \left(  l_i - l^\opt_i \right) = (p_j -  p_k) \left( l^\opt_k -
+      l^\opt_j  \right)$.  \  Entonces $p_j  > p_k  \: \Rightarrow  l^\opt_j \le
+    l^\opt_k$.
+  %
+  \item Sea $m$ el n\'umero de simbolos fuente con un c\'odigo de largo m\'aximo
+    \ $l_{\max}$ \  y \ $m' = \min(m,d)$.  Del punto  anterior, los $m$ simbolos
+    con  palabra  c\'odigo de  largo  m\'aximo  son  los de  probabilidades  mas
+    peque\~nas.
+  %
+  \item  Como descrito  antes, se  puede permutar  las letras  c\'odigos  de una
+    profundez del arbol de Kraft sin  cambiar ni el aspecto libre de prefijo, ni
+    el largo promedio. Se puede  entonces considera el c\'odigo \'optimo tal que
+    los $m'$ simbolos de probabilidades  las mas peque\~nas tienen el mismo nudo
+    padre, \ie solamente la \'ultima letra c\'odigo cambia entre ellos.
+  %
+  \item Suponemos que \ $m' = m  < d$.  \ Sea una ``super-fuente'' \ $\X^{(2)} =
+    \left\{ x^{(2)}_i \right\}_{i=1}^{n-m'+1}$ \ con \ $x^{(2)}_i = x_i, \quad 1
+    \le  i  \le  n-m'$  \  de  probabilidades  respectivas  \  $p(x_i)$  \  y  \
+    $x^{(2)}_{n-m'+1}  \equiv  \{  x_i  \}_{i=n-m'+1}^n$  \  de  probabilidad  \
+    $p_{n-m'+1}  +  \cdots  +  p_n$  \  (se ``plegan''  las  $m'$  hojas  en  un
+    super-simbolo).  La c\'odificaci\'on \'optima es entonces una codificaci\'on
+    libre de prefijo  de $\X^{(2)}$, ``arbol raiz'' del  c\'odigo \'optimo, a la
+    cual se  a\~nade una letra c\'odigo  $\zeta_k$ diferente a  cada simbolo del
+    super-simbolo $x^{(2)}_{n-m'+1}$.  La  profundez m\'axima del c\'odigo arbol
+    es \ $l_{\max}-1$ \ y debe ser llena,  en el sentido de que no debe tener un
+    nudo que sea ni una hoja, ni  un prefijo.  En el caso contrario, se podr\'ia
+    desplazar un simbolo de $x^{(2)}_{n-m'+1}$ al nudo ``vacio'' de la profundes
+    $l_{\max}-1$,  sin cambiar  el aspecto  libre de  prefijo, pero  ganando una
+    letra c\'odigo sobre un simbolo, \ie  hacer un c\'odigo libre de prefijo con
+    un  largo promedio  menor.  Ser\'ia contradictorio  con  la optimalidad  del
+    c\'odigo inicial.
+  % 
+  \item  Para   c\'odificar  $\X^{(2)}$,  se  necesita  por   lo  menos  $\lceil
+    \log_d(n-m'+1)  \rceil$  profundez en  el  arbol  raiz.   En esta  profundez
+    (m\'axima en  el caso optimistico), hay \  $d^{\lceil \log_d(n-m'+1) \rceil}
+    \ge n-m'+1$ \ nudos. En la \'ultima profundez pueden ser todos ocupados si y
+    solamente  si  \  $d^{\lceil  \log_d(n-m'+1)  \rceil} =  n-m'+1$.  En  otras
+    palabras, es posible si y solamente  si existe un entero $k$ tal que $n-m'+1
+    = d^k$, es  decir, con \ $n = d  + q(d-1)$, \ que teniamos el  entero \ $q =
+    \frac{d^k-d}{d-1}   +   \frac{m'-1}{d-1}$.  \   La   primera  fracci\'on   \
+    $\frac{d^k-d}{d-1} = d^{k-1} + \cdots + 1$ \ siendo entera, $q$ no puede ser
+    entero con \  $m' < d$.  \  En otros terminos, necesariamente $m'  = d$, \ie
+    los $d$ simbolos de probabilidad mas  debiles son el la \'ultima profundez y
+    se puede elegir que compartent el mismo nudo padre.
+  %
+  \item Sea \ $c^{\opt,(1)}$ \ el c\'odigo \'optimo correspondiente a \ $\X$ \ y
+    \ $c^{(2)}$  \ el  c\'odigo ``padre'' sobre  \ $\X^{(2)}$  \ ($c^{\opt,(1)}$
+    quitando la  \'ultimo letra  c\'odigo de los  simbolos juntados, \ie  con la
+    raiz  com\'un  de estos).   De  la misma  manera,  sea  \ $c^{\opt,(2)}$  un
+    c\'odigo  \'optimo sobre  $\X^{(2)}$ \  y \  $c^{(1)}$ \  el que  se obtiene
+    deplegando  el super-simbolo  \  $x^{(2)}_{n-d+1}$  \ en  $d$  hojas.  De  \
+    $L^{\opt,(1)} = L\left( c^{(2)} \right) + p_{n-d+1} + \cdots + p_n$ \ (pasar
+    de $\X^{(2)}$  a $\X$ se a\~nade solo  una letra palabra a  los simbolos del
+    super-simbolo) \ y  \ $L\left( c^{(1)} \right) =  L^{\opt,(2)} + p_{n-d+1} +
+    \cdots +  p_n$ \ se obiene  \ $\Big( L^{\opt,(1)} -  L\left( c^{(1)} \right)
+    \Big) +  \Big( L^{\opt,(2)} - L\left( c^{(2)}  \right) \Big) \: =  \: 0$.  \
+    Cada termino  entre parentesis  siendo positivos, valen  necesariamente cero
+    (la suma de terminos positivos vale cero  si y solo si todos son nulos).  En
+    conclusi\'on, \  $c^{(2)}$ \ padre de  \ $c^{\opt,(1)}$ \  queda \'optimo, \
+    $c^{(2)} \equiv c^{\opt,(2)}$ \ (y \ $c^{(1)} \equiv c^{\opt,(1)}$).
+  %
+  \item Notando que \ $|\X^{(2)}| = n-(q-1) (d-1)$, \ el razonamiento se progaga
+    por  inducci\'on, pasando  de  \  $c^{\opt,(k)}$ \  a  \ $c^{\opt,(k+1)}$  \
+    juntando los  $d$ super-simbolos de probabilidades mas  debiles, hasta tener
+    un super-simobolo  tendiendo todos los simbolos, $\left|  \X^{(K)} \right| =
+    1$, raiz del arbol.
+\end{itemize}
+\end{proof}
+%
+De esta  prueba, se puede ver que
+%
+\begin{itemize}
+\item  Cada  profundez siendo  llena,  los largos  obtenidos  van  a saturar  la
+  desigualdad de Kraft-McMillan.
+\item Si si \ $\frac{n - d}{d-1}$ \ no es entero, en lugar de completar $\X$ con
+  simbolos fictivos se puede empezar el algoritmo de Huffman juntando los \ $n -
+  d - \left\lfloor \frac{n - d}{d-1} \right\rfloor (d-1) + 1$ \ simbolos fuentes
+  de  probabilidades mas debiles  en un  super-simbolo, y  luego hacer  la bucla
+  descrita (juntando por super-simbolos de  $d$ simbolos en cada bucla); en este
+  caso, no se satura mas la desigualdad de Kraft-McMillan.
+%
+\item Obviamente, en el caso binario $d = 2$, no es necesario completar $\X$ por
+  estados  fuentes,  o  empezar con  menos  de  $d$  simbolos juntados  ($n$  es
+  necesariamente de la forma $n = d + q (d-1) = 2 + q$).
+%
+\item  El  algoritmo  no permite  conocer  los  largos  de manera  analitica  en
+  funci\'on  de $p_i$,  y  tampoco el  largo  promedio.  Se  los pueden  deducir
+  solamente implementando el algoritmo (una  vez que es construido). Era el caso
+  tambi\'en en el enfoque de Fano.
+\end{itemize}
+
+Volviendo al c\'odigo  ingenuo, ser\'ia \'optimo (y equivalente a  los de Fano y
+de Shannon) para  una distribuci\'on uniforme. En este  contexto, la entropia es
+$H_d(X)  = \log_d |X|$,  precisamente la  incerteza del  enfoque de  Hartley que
+corresponde a los numeros de  dit necesarios para condificar (ingenuosamente) la
+fuente.
+
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_SZ/FanoHuffman} \end{center}
+%
+\leyenda{Construcci\'on de  un c\'odigo binario  sobre $\C =  \{0 \, , \,  1 \}$
+  asociado al  vector de  probabilidad $p_X  = \big[ 0.4  \quad 0.18  \quad 0.17
+  \quad 0.15 \quad 0.1 \big]^t$ sobre  el arbol de Kraft.  En este caso, $H_2(X)
+  \approx 2.1514$\ (a): enfoque de Fano,  saliendo de la raiz.  En cada nudo, se
+  menciona el conjunto  de simbolos que van a  tener el c\'odigo correspondiente
+  (en negro  cuando es un  solo simbolo).   Se pasa de  una profundez a  la otra
+  dividiendo  los conjunto  en sub-conjuntos  a  lo mas  equiprobables. En  esta
+  construcci\'on  da el  c\'odigo \  $c^\fa(x_1) =  00, \:  c^\fa(x_2) =  01, \:
+  c^\fa(x_3) = 10, \: c^\fa(x_4) = 110, \: c^\fa(x_5) = 111$ \ de largo promedio
+  \ $L\left(  c^\fa \right) = 2.25$.  \  \ (b): enfoque de  Huffman, saliendo de
+  las  hojas.  En  cada nudo,  se menciona  el correspondiente  (i)  conjunto de
+  simbolos, (ii)  $\zeta_i$ de esta profundez/posici\'on,  (iii) la probabilidad
+  asociada  al conjunto.   Se  pasa de  una  profundez a  la  otra juntando  los
+  conjuntos menos probables en sobre-conjuntos.  En negro son indicados los solo
+  simbolos simples: van a tener el  c\'odigo agregando los de los nudos yendo de
+  la raiz hasta las hojas.  En esta construcci\'on da el c\'odigo \ $c^\huf(x_1)
+  = 1,  \: c^\huf(x_2) =  011, \:  c^\huf(x_3) = 010,  \: c^\huf(x_4) =  001, \:
+  c^\huf(x_5) = 000$ \ de largo promedio \ $L^\opt = 2.2$.}
+%
+\label{fig:SZ:FanoHuffmanCodes}
+\end{figure}
+
+
+Se notara que, tratando de una fuente \ $\{ X_t \}_{t \in \Zset}$ \ de variables
+independientes,   se  puede   codificar  la   fuente  con   un   largo  promedio
+arbitrariamente  cerca de  $H(X)$.  El  principio es  de  considerar vectores  \
+$\begin{bmatrix} X_1 & \cdots &  X_n \end{bmatrix}^t$ \ viviendo sobre \ $\X^n$,
+llamado  extensi\'on de  orden  $n$ de  la  fuente, con  un c\'odigo  unicamente
+decodable  (o   libre  de  prefijo)   de  esta  extensi\'on  (es   llamado  {\it
+  codificaci\'on  de la  extensi\'on}  (no es  necesariamente  una extension  de
+$c$). As\'i, \ $H_d(X_1  , \ldots , X_n) \le L^{\opt,n} < H_d(X_1  , \ldots , X_n) +
+1$, es decir, de la independencia,
+%
+\[
+H_d(X) \: \le  \: \frac{L^{\opt,n}}{n} \: < \: H_d(X)  + \frac{1}{n} \quad \mbox{por
+  simbolo}
+\]
+%
+(ver  tambi\'en~\cite[cap. 13,  teorema de  Shannon]{Rio07}). Fijense  que  si \
+$\displaystyle   \lim_{n   \to  \infty}   \frac{L^{\opt,n}}{n}   \to  H(X)$,   \
+$\frac{L^{\opt,n}}{n}$ \ no  es necesariamente decreciente con respeto  a \ $n$.
+Eso es  descrito figura~\ref{fig:SZ:CodigosExtensiones}.  Lo  mismo puede ocurir
+con el c\'odigo  de Shannon \SZ{y lo de Fano}. Ademas,  el cardinal del alfabeto
+extendido $\X^n$ crece exponencialmente con $n$, lo que no permite elegir un $n$
+muy grande.
+
+\begin{figure}[h!]
+%
+\begin{center} \input{TIKZ_SZ/LoptExtensiones} \end{center}
+%
+\leyenda{$\frac{L^{\opt,n}}{n}-H_d(X)$  (puntos),   diferencia  entre  el  largo
+  promedio \'optimo por simbolo de las extensiones \ $\X^n$ \ de orden $n$ de la
+  fuente $\X$ y  la cota inferior en  funci\'on de $n$. La linea  llena en grise
+  sirve como guia. En  esta ilustraci\'on se usa el ejemplo lo  mas simple con \
+  $d = 2$ \ y \ $p = [0.33 \quad 0.67]^t$.}
+%
+\label{fig:SZ:CodigosExtensiones}
+\end{figure}
+
+\
+
+Para codificar una  fuente, que se haga el c\'odigo \'optimo  o de Shannon, hace
+falta usar la distribuci\'on de probabilidad de la fuente $X$. Practicamente, es
+usual que  no se  la tiene. Frecuentemente,  es estimada  a partir de  datos, o,
+dicho  de  otra manera,  se  c\'odifica  con una  distribuci\'on  que  no es  la
+distribuci\'on de  la fuenta. Una pregunta que  surge es de saber  que se pierde
+usando una distribuci\'on no adaptaba  (o ``falsa''). La respuesta general no es
+obvia, pero tratando del c/'odigo de Shannon se puede contestar:
+
+
+\begin{teorema}[C\'odigo falso de Shannon]
+  Sea $c^\sh(p)$ el  c\'odigo de Shannnon sobre el alfabeto c\'odigo  \ $\C = \{
+  \zeta_1 ,  \ldots , \zeta_d \}$ asociado  a la distribuci\'on $p$.   Sea $X$ \
+  fuente sobre  \ $\X$, de distribuci\'on \  $p_X$ \ y \  $q$ una distribuci\'on
+  cualquiera  (ej.  estimada  de  $p_X$ presupuesta\ldots).   Entonces el  largo
+  promedio \ $L_{c^\sh(q)}$ \ del c\'odigo \ $c^\sh(q)$ \ aplicado a la fuente \
+  $X$ \ satisface las desigualdades siguientes
+  %
+  \[
+  H_d(p_X) + D_d\left( \left. p_X \right\| q  \right) \: \le \: L_{c^\sh(q)} \: < \:
+  H_d(p_X) + D_d\left( \left. p_X \right\| q \right) + 1
+  \]
+\end{teorema}
+%
+\begin{proof}
+  Por definici\'on,
+  \[
+  L_{c^\sh}(q) = \sum_{x \in X} p_X(x) \, \Big\lceil\! -\log_d q(x) \Big\rceil
+  \]
+  %
+  La desigualdad viene de  \ $a \le \lceil a \rceil < a +  1$ \ y escribiendo $-
+  p_X \log_d q = - p_X \log_d p_X + p_X \log \left( \frac{p_X}{q} \right)$.
+\end{proof}
+%
+Olvidando el posible extra dit  (penser a la c\'odification block), este teorema
+da una  interpretaci\'on operacional  a la entropia  relativa, o  divergencia de
+Kullback-Leibler.   Esta cuantifica  la  perdida en  termino  de largo  promedio
+codificando con  una distribuci\'on falsa. Dicho  de otra manera,  usando $q$ en
+lugar de $p_X$, se usa la  informaci\'on de $p_X$ porque se c\'odifica la fuente
+$X$,  pero suponiendo  la distribuc\'ion  $q$, se  piedre lo  que  representa la
+informaci\'on relativa  o de $p_X$  con respeto a la  referencia (distribuci\'on
+supuesta) $q$.
+
+\
+
+Existent varios otros modos de codificar simbolos. En particular, con la meta de
+transmitir los simbolos codificados en un canal de comunicaci\'on, a veces no es
+oportuno  de compresar  drasticamente.  Existen  por ejemplo  codificaciones que
+permiten una correcci\'on de error en la recepci\'on. Pueden tomar en cuenta las
+caracteristicas  del  canal  de  transmisi\'on.    Estos  van  mas  alla  de  la
+ilustraci\'on  de  esta  secci\'on.   Ver~\cite{Ber74, Gal78,  Say03,  CovTho06,
+  Rio07}  entre  otros  para  tener   mas  detalles  sobre  varios  esquemas  de
+codificaci\'on/compresi\'on.
+
+% R.  M.  Fano.  Class  notes  for Transmission  of  Information,  course  6.574
+% (Technical Report). MIT, Cambridge, MA, 1952
+
+%\SZ{Dire  un mot  sur  le codage  canal.   Cf avec  la  distribucion optimale  /
+%  capacite cf. Elias 1954 - error free coding, Elias 1955 - error noisy channel,
+%  Elias 57  - list  for decoding noisy  channels, Berlekamp (serie  papiers cles
+%  dans les premiers).}
+
+% ================================= Gaz perfecto
+
+\subseccion{Gas perfecto}
+\label{sec:SZ:GasPerfecto}
+
+En el marco del gas perfecto
+
+\SZ{Va donner un lien avec Boltzmann}
+
+
+% ============================== Generalizadas================================ %
+
+\seccion{Entropias y divergencias generalizadas}
+\label{sec:SZ:Generalizadas}
+
+A pesar de que la entropia de Shannon y sus cantidades asociadas demostraron sus
+potencias tan de un punto de vista descriptivo que en termino de aplicaciones en
+la  transmisi\'on  de  la  informaci\'on  y  la  compresi\'on,  varios  nociones
+informacionales, de  tipo entropias o  divergencias, aparecieron luego.  En esta
+secci\'on no se  desarollar\'a todos los enfoques ni  todas las aplicaciones tan
+la  literatura es  importante. La  meta  es dar  los caminos  conduciendo a  las
+generalizaciones de la  entropia de Shannon por un lado, y  de la divergencia de
+Kullback-Leibler por el otro lado. No son siempre vinculados, a pesar de que sea
+desirable que a cada entropia sean asociados nociones de entropias condicionales
+y relativas.
+
+% ================================= Salicru
+
+\subseccion{Entropias y propiedades}
+\label{sec:SZ:Salicru}
+
+Si  la entropia  de  Shannon  fue el  punto  de salida  fundamental  en todo  el
+desarollo de la teoria de la informaci\'on, un poco mas de una decada despues de
+su    papel   clave    y   muy    completo,   R\'enyi    propuso    una   medida
+generalizada~\cite{Ren61}. Su  punto de  vista fue mas  matematico que  fisico o
+ingeniero.  Retom\'o  los axiomas de  Fadeev~\cite{Fad56, Fad58, Khi57},  (i) la
+invarianza por permutaci\'on, (ii) la continuidad con respeto a los $p_i$, (iii)
+$h_2\left(  \frac12 \right)  =  $, (iv)  la  aditividad $H(X,Y)  = H(X)+H(Y)$  y
+consider\'o  en lugar  de la  recursividad un  axioma dicho  de  valor promedio,
+axioma muy  parecido. Para $p = (p_1,\ldots,p_n),  \quad p_i \ge 0,  \quad W_p =
+\sum_i  p_i  \le  1$ \  y  \  $q  =  (q_1,\ldots,q_m)$  con la  misma  propiedad
+(probabilidades incompletas),  $p \cup q  = (p_1,\ldots,p_n,q_1,\ldots,q_m)$ con
+$W_p +  W_q \le 1$, este  axioma (v) es que  $H(p\cup q) = \frac{W_p  H(p) + W_q
+  H(q)}{W_p +  W_q}$. Demostr\'o  que con  (v) en lugar  de la  recursividad, el
+conjunto  de   axiomas  conduce  de  nuevo   a  la  entropia   de  Shannon.   La
+generalizaci\'on  propuesta  por  R\'enyi  era  de  generalizar  el  axioma  (v)
+remplazando el promedio  aritmetico por un promedio generalizado  (v') $H(p \cup
+q) =  g^{-1} \left( \frac{W_p g\big( H(p)  \big) + W_q g\big(  H(q) \big)}{W_p +
+    W_q}\right)$  con $g$  estrictamente monotona  y continua,  llamado promedio
+tipo  {\it  quasi-aritmetica,  o  quasi-lineal, o  Kolmogorov-Nagumo}.   De  las
+propiedades  del   promedio  de  Kolmogorov-Nagumo~\cite{Nag30,   Kol30,  Kol91,
+  HarLit52},  eso es  equivalente a  buscar  una entropia  elemental $H(p_i)$  y
+remplazar  el   promedio  usual   $\sum_i  p_i  H(p_i)$   por  un   promedio  de
+Kolmogorov-Nagumo, $g^{-1)} \left( \sum_i p_i g\big( H(p_i) \big) \right)$.
+% Feinstein, cf ref de Rényi
+
+{\bf  Salicru, Buerbea-Rao,  poner  ac\'a la  codificaci\'on  a la  Renyi, y  la
+  cuantificacion fina; EPI generalizada  por Madiman, etc. Lutwak, Bercher etc.,
+  Kagan}
+
+% ================================= Salicru
+
+\subseccion{Divergencias y propiedades}
+\label{sec:SZ:Czizar}
+
+{\bf Czizar, Bregmann, Burbea Rao}
+
+
+% =============================== Cuanticas ================================== %
+
+\seccion{Entropias cuanticas discretas}
+\label{sec:SZ:Cuanticas}
+
+{\bf Mas alla caso de informaciones a partir de medida; caso infinito, continuo queda en discusiones}
+
+
+% ================================= Entropia ================================= %
+
+
+
+

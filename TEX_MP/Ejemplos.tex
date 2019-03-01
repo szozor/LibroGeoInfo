@@ -4,28 +4,311 @@
 
 \emph{introducci\'on...}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ================================= Variables discretas
+
 \subseccion{Distribuciones de variable discreta}
 \label{Ssec:MP:EjemplosDistribucionesDiscretas}
 
 
-Variable con certeza
+% --------------------------------- Certeza
+
+\subsubseccion{Variable con certeza}
 
 ...
 
-Ley de Bernoulli
+% --------------------------------- Bernoulli
+
+\subsubseccion{Ley de Bernoulli}
+
+Se denota $X \sim \B(p)$ con $p \in [0 \, , \, 1]$ y sus caracter\'isticas son las
+siguientes:
+
+\begin{center}
+\begin{tabular}
+{
+|>{\vspace{-2mm}}p{.3\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+}
+%
+\hline
+%
+Dominio de definici\'on & $\X = \{ 0 \, , \, 1 \}$\\
+\hline
+%
+Distribuci\'on de probabilidad & $p_X(1) = 1 - p_X (0) = p$\\
+\hline
+%
+%Momentos & $ \Esp\left[ X^k \right] = p^k$\\
+%\hline
+%
+Promedio & $ \Esp[X] = p$\\
+\hline
+%
+Varianza & $\sigma_X^2 = p (1-p)$\\
+\hline
+%
+Asimetr\'ia & $\gamma_X = 0$\\
+\hline
+%
+Curtosis & $\kappa_X = 0$\\
+\hline
+%
+Generadora de probabilidad & $G_X(z) = 1 -p + p z$ \ sobre \ $\Cset$\\
+\hline
+%
+Generadora de momentos & $M_X(u) = 1 -p + p e^u$ \ sobre \ $\Cset$\\
+\hline
+%
+Funci\'on caracter\'istica & $\Phi_X(\omega) = 1 - p + p e^{\imath \omega}$\\
+\hline
+\end{tabular}
+\end{center}
+
+Su masa de probabilidad y funci\'on de repartici\'on son representadas en la figura Fig.~\ref{Fig:MP:Bernoulli}.
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/Bernoulli} \end{center}
+%
+\leyenda{Ilustraci\'on de una distribuci\'on  de probabilidad de Bernoulli (a), y la
+  funci\'on de repartici\'on asociada (b), con $p = \frac13$.}
+\label{Fig:MP:Bernoulli}
+\end{figure}
+
+Cuando $p = 0$ (resp. $p = 1$) la variable es cierta $X = 0$ (resp. $X = 1$).
+
+
+
+% --------------------------------- Binomial
+
+\subsubseccion{Ley Binomial}
+
+Se denota $X \sim  \B(n,p)$ con $n \in \Nset \backslash \{0 ,  1 \}, \quad p \in
+[0 \, , \, 1]$ y sus caracter\'isticas son las siguientes:
+
+\begin{center}
+\begin{tabular}
+{
+|>{\vspace{-2mm}}p{.3\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+}
+%
+\hline
+%
+Dominio de definici\'on & $\X = \{ 0 \, , \, \ldots \, , \, n \}$\\
+\hline
+%
+Distribuci\'on de probabilidad & $p_X(k) = \bino{n}{k} p^k (1-p)^{n-k}$\\
+\hline
+%
+%Momentos & $ \Esp\left[ X^k \right] = p^k$\\
+%\hline
+%
+Promedio & $ \Esp[X] = n p$\\
+\hline
+%
+Varianza & $\sigma_X^2 = n p (1-p)$\\
+\hline
+%
+Asimetr\'ia & $\gamma_X = \frac{1-2 p}{\sqrt{n p (1-p)}}$\\
+\hline
+%
+Curtosis & $\kappa_X = \frac{1-6 p}{n p (1-p)}$\\
+\hline
+%
+Generadora de probabilidad & $G_X(z) = \left( 1 - p + p z \right)^n$ \ sobre \ $\Cset$\\
+\hline
+%
+Generadora de momentos & $M_X(u) = \left(1 - p + p e^u \right)^n$ \ sobre \ $\Cset$\\
+\hline
+%
+Funci\'on caracter\'istica & $\Phi_X(\omega) = \left( 1 - p + p e^{\imath \omega} \right)^n$\\
+\hline
+\end{tabular}
+\end{center}
+%
+\noindent con $\bino{n}{k} = \frac{n!}{k! (n-k)!}$ coefficiente binomial.
+% Modo $\left\lfloor (n+1) p \right\rfloor$
+% Mediana $\left\lfloor n p \right\rfloor$ o $\left\lceil n p \right\rceil
+% CDF	$I_{1-p}(n-k,k+1)$ regularized incomplete beta function
+
+Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
+figura Fig.~\ref{Fig:MP:Binomial}.
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/Binomial} \end{center}
+%
+\leyenda{Ilustraci\'on de una distribuci\'on  de probabilidad Binomial (a), y la
+  funci\'on de repartici\'on asociada (b), con $n = 6, \quad p = \frac13$.}
+\label{Fig:MP:Binomial}
+\end{figure}
+
+Cuando $n = 2$, se recupera la  lei de Bernoulli $\B(p) \equiv \B(2,p)$ y cuando
+$p  = 0$  (resp. $p  = 1$)  la variable  es cierta  $X =  0$ (resp.   $X  = n$).
+Ad\'emas, se muestra  sencillamente usando la generadora de  probabilidad que si
+$X_i \sim \B(p),  \quad i = 1,  \ldots , n$ \ independientes,  $X = \sum_{i=1}^n
+X_i  \sim  \B(n,p)$:  esta  distribuci\'on  aparece  en  el  conteo  de  eventos
+independientes de misma probabilidad entre $n$.
+
+
+\aver{
+%%%%%%%
 
 ...
 
-Ley geom\'etrica
+Ley uniforme
 
 ...
+}
 
-Distribuci\'n binomial
 
-...
+% --------------------------------- Geometrica
 
-Distribuci\'on de Poisson
+\subsubseccion{Ley Geometrica}
+
+Se denota $X  \sim \G(p)$ con $ p \in  (0 \, , \, 1)$  y sus caracter\'isticas son
+las siguientes:
+
+\begin{center}
+\begin{tabular}
+{
+|>{\vspace{-2mm}}p{.3\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+}
+%
+\hline
+%
+Dominio de definici\'on & $\X = \Nset^*$\\
+\hline
+%
+Distribuci\'on de probabilidad & $p_X(k) = (1-p)^{k-1} p$\\
+\hline
+%
+%Momentos & $ \Esp\left[ X^k \right] = p^k$\\
+%\hline
+%
+Promedio & $ \Esp[X] = \frac1p$\\
+\hline
+%
+Varianza & $\sigma_X^2 = \frac{1-p}{p^2}$\\
+\hline
+%
+Asimetr\'ia & $\gamma_X = \frac{2-p}{\sqrt{1-p}}$\\
+\hline
+%
+Curtosis & $\kappa_X = 6 + \frac{p^2}{1-p}$\\
+\hline
+%
+Generadora de probabilidad & $G_X(z) = \frac{p z}{1-(1-p) z}$ \ para \ $|z| < \frac1{1-p}$\\
+\hline
+%
+Generadora de momentos & $M_X(u) = \frac{p e^u}{1-(1-p) e^u}$ \ para \ $\real{u} < - \ln(1-p)$\\
+\hline
+%
+Funci\'on caracter\'istica & $\Phi_X(\omega) = \frac{p e^{\imath \omega}}{1-(1-p) e^{\imath u}}$\\
+\hline
+\end{tabular}
+\end{center}
+%
+%\noindent con $\bino{n}{k} = \frac{n!}{k! (n-k)!}$ coefficiente binomial.
+% Modo 1
+% Mediana $\left\lceil \frac{-1}{\log_2(1-p)} \right\rceil$ 
+% CDF	$1-(1-p)^k$
+
+Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
+figura Fig.~\ref{Fig:MP:Binomial}.
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/Geometrica} \end{center}
+%
+\leyenda{Ilustraci\'on de una distribuci\'on  de probabilidad Geometrica (a), y la
+  funci\'on de repartici\'on asociada (b), con $p = \frac13$.}
+\label{Fig:MP:Geometrica}
+\end{figure}
+
+Cuando $p =  0$ (resp. $p =  1$) la variable es cierta  $X = 0$ (resp.   $X = 1$
+usando la convenci\'on $0^0 = 1$).   Esta distribuci\'on aparece en el conteo de
+conteo de une repetici\'on de  una experiencia de maneja independiente hasta que
+occure un evento de probabilidad $p$; por ejemplo el n\'umero de tiro de un dado
+equilibriado hasta que occurre un ``6'' sigue una ley geometrica de parametro $p
+= \frac16$.
+
+
+% --------------------------------- Poisson
+
+\subsubseccion{Ley de Poisson}
+
+Se  denota  $X  \sim  \P(\lambda)$  con   $  \lambda  \in  \Rset_+^*$  \  y  sus
+caracter\'isticas son las siguientes:
+
+\begin{center}
+\begin{tabular}
+{
+|>{\vspace{-2mm}}p{.3\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+}
+%
+\hline
+%
+Dominio de definici\'on & $\X = \Nset$\\
+\hline
+%
+Distribuci\'on de probabilidad & $p_X(k) = \frac{\lambda^k e^{-\lambda}}{k!}$\\
+\hline
+%
+%Momentos & $ \Esp\left[ X^k \right] = p^k$\\
+%\hline
+%
+Promedio & $ \Esp[X] = \lambda$\\
+\hline
+%
+Varianza & $\sigma_X^2 = \lambda$\\
+\hline
+%
+Asimetr\'ia & $\gamma_X = \lambda^{-\frac12}$\\
+\hline
+%
+Curtosis & $\kappa_X = \lambda^{-1}$\\
+\hline
+%
+Generadora de probabilidad & $G_X(z) = e^{\lambda (z-1)}$ \ para \ $z \in \Cset$\\
+\hline
+%
+Generadora de momentos & $M_X(u) = e^{\lambda \left( e^u - 1 \right)}$ \ para \ $u \in \Cset$\\
+\hline
+%
+Funci\'on caracter\'istica & $\Phi_X(\omega) = e^{\lambda \left( e^{\imath \omega} - 1 \right)}$\\
+\hline
+\end{tabular}
+\end{center}
+%
+% modo \lfloor \lambda \rfloor 
+% Mediana \approx \lfloor \lambda +1/3-0.02/\lambda \rfloor 
+% CDF {\frac {\Gamma
+% (\lfloor k+1\rfloor  ,\lambda )}{\lfloor k\rfloor !}} where  $\Gamma (x,y)$ is
+% the upper incomplete gamma function,
+
+Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
+figura Fig.~\ref{Fig:MP:Poisson}.
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/Poisson} \end{center}
+%
+\leyenda{Ilustraci\'on de una distribuci\'on  de probabilidad de Poisson (a), y la
+  funci\'on de repartici\'on asociada (b), con $\lambda = 3$.}
+\label{Fig:MP:Poisson}
+\end{figure}
+
+Cuando $\lambda =  0$ la variable es cierta  $X = 0$ (usando la convenci\'on $0^0 = 1$).
+\SZ{   Esta distribuci\'on aparece...}
+% en el conteo de
+%conteo de une repetici\'on de  una experiencia de maneja independiente hasta que
+%occure un evento de probabilidad $p$; por ejemplo el n\'umero de tiro de un dado
+%equilibriado hasta que occurre un ``6'' sigue una ley geometrica de parametro $p
+%= \frac16$.
+
+
+\aver{
+%%%%%%%
 
 ...
 
@@ -37,26 +320,250 @@ distribuciones de Maxwell--Boltzmann, de Fermi--Dirac, y de Bose--Einstein
 
 Leyes de los grandes n\'umeros
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+...
+
+Ley multinomial
+}
+
+
+% ================================= Variables continuas
+
 \subseccion{Distribuciones de variable continua}
 \label{Ssec:MP:EjemplosDistribucionescontinuas}
 
-
+\aver{
 Distribuci\'on uniforme sobre un intervalo
 
 ...
+}
 
-Distribuci\'on exponencial
 
-...
 
-Distribuci\'on normal o Gaussiana
+% --------------------------------- Exponencial
 
-...
+\subsubseccion{Distribuci\'on exponencial}
 
-Distribuci\'on Gamma
+Se  denota  $X  \sim  \E(\lambda)$  con   $  \lambda  \in  \Rset_+^*$  \  y  sus
+caracter\'isticas son las siguientes:
 
-...
+\begin{center}
+\begin{tabular}
+{
+|>{\vspace{-2mm}}p{.3\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+}
+%
+\hline
+%
+Dominio de definici\'on & $\X = \Rset_+$\\
+\hline
+%
+Densidad de probabilidad & $p_X(x) = \lambda e^{-\lambda x}$\\
+\hline
+%
+%Momentos & $ \Esp\left[ X^k \right] = p^k$\\
+%\hline
+%
+Promedio & $ \Esp[X] = \frac1\lambda$\\
+\hline
+%
+Varianza & $\sigma_X^2 = \frac1{\lambda^2}$\\
+\hline
+%
+Asimetr\'ia & $\gamma_X = 2$\\
+\hline
+%
+Curtosis & $\kappa_X = 6$\\
+\hline
+%
+%Generadora de probabilidad & $G_X(z) = e^{\lambda (z-1)}$ \ para \ $z \in \Cset$\\
+%\hline
+%
+Generadora de momentos & $M_X(u) = \frac{\lambda}{\lambda-u}$ \ para \ $\real{u} < \lambda$\\
+\hline
+%
+Funci\'on caracter\'istica & $\Phi_X(\omega) = \frac{\lambda}{\lambda-\imath \omega}$\\
+\hline
+\end{tabular}
+\end{center}
+%
+% modo 0
+% Mediana \ln(2)/\lambda
+% CDF 1-e^{-\lambda x}
+
+Su densidad  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
+figura Fig.~\ref{Fig:MP:Exponencial}.
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/Exponencial} \end{center}
+% 
+\leyenda{Ilustraci\'on  de una densidad  de probabilidad  exponencial (a),  y la
+funci\'on de repartici\'on asociada (b), con $\lambda = 1.5$.}
+\label{Fig:MP:Exponencial}
+\end{figure}
+
+Cuando $\lambda \to +\infty$ la variable tiende a una variable cierta $X = 0$.
+\SZ{Esta distribuci\'on aparece...}
+% en el conteo de
+%conteo de une repetici\'on de  una experiencia de maneja independiente hasta que
+%occure un evento de probabilidad $p$; por ejemplo el n\'umero de tiro de un dado
+%equilibriado hasta que occurre un ``6'' sigue una ley geometrica de parametro $p
+%= \frac16$.
+
+
+
+% --------------------------------- Gausiana
+
+\subsubseccion{Distribuci\'on normal o Gaussiana multivariada}
+
+Se denota $X \sim \N(m,\Sigma)$ \ con \  $m \in \Rset^d$ \ y \ $\sigma$ \ matriz
+$d  \times  d$  s\'imetrica  definida  positiva. Se  puede  escribir  $X  \egald
+\Sigma^{\frac12} N + m$ \ con \ $N \sim \N(0,I)$ \ donde \ $I$ \ es la identidad
+y \ $N$ \ es dicha Gausiana estandar o centrada-normalizada. Las caracteristicas
+de \ $N \sim \N(0,I)$ \  son las siguientes (se deducen para cualquier Gaussiana
+por transformaci\'on lineal; ver secciones anteriores):
+
+\begin{center}
+\begin{tabular}
+{
+|>{\vspace{-2mm}}p{.3\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+}
+%
+\hline
+%
+Dominio de definici\'on & $\X = \Rset^d$\\
+\hline
+%
+Densidad de probabilidad & $p_X(x) = \frac{1}{(2 \pi)^{\frac{d}{2}}} e^{-\frac12 x^t x}$\\
+\hline
+%
+%Momentos & $ \Esp\left[ X^k \right] = p^k$\\
+%\hline
+%
+Promedio & $ \Esp[X] = 0$\\
+\hline
+%
+Covarianza & $\Sigma = I$\\
+\hline
+%
+Asimetr\'ia (caso escalar) & $\gamma_X = 0$\\
+\hline
+%
+Curtosis (caso escalar) & $\kappa_X = 0$\\
+\hline
+%
+%Generadora de probabilidad & $G_X(z) = e^{\lambda (z-1)}$ \ para \ $z \in \Cset$\\
+%\hline
+%
+Generadora de momentos & $M_X(u) = e^{u^t u}$ \ para \ $u \in \Cset^d$\\
+\hline
+%
+Funci\'on caracter\'istica & $\Phi_X(\omega) = e^{-\frac12 \omega^t \omega}$\\
+\hline
+\end{tabular}
+\end{center}
+%
+% modo 0
+% Mediana 0
+
+Su densidad de probabilidad y funci\'on  de repartici\'on en el caso escalar son
+representadas en la figura Fig.~\ref{Fig:MP:Gaussiana}.
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/Gaussiana} \end{center}
+% 
+\leyenda{Ilustraci\'on  de una densidad  de probabilidad  gaussiana escalar estandar (a),  y la
+funci\'on de repartici\'on asociada (b).}
+\label{Fig:MP:Gaussiana}
+\end{figure}
+
+%Cuando $\lambda \to +\infty$ la variable tiende a una variable cierta $X = 0$.
+\SZ{Esta distribuci\'on aparece...}
+% en el conteo de
+%conteo de une repetici\'on de  una experiencia de maneja independiente hasta que
+%occure un evento de probabilidad $p$; por ejemplo el n\'umero de tiro de un dado
+%equilibriado hasta que occurre un ``6'' sigue una ley geometrica de parametro $p
+%= \frac16$.
+
+
+% --------------------------------- Gamma
+
+\subsubseccion{Distribuci\'on Gamma}
+
+Se denota $X \sim \G(\alpha,\beta)$ \ con \ $\alpha \in \Rset_+^*$, parametro de
+forma \ y \ $\beta \in \Rset_+^*$ taza o inversa de escala. Se puede escribir $X
+\egald \frac{1}{\beta} G$ \ con  \ $G \sim \G(\alpha,1)$. Las caracteristicas de
+\ $X  \sim \G(\alpha,1)$ \ son  las siguientes (se deducen  para cualquier Gamma
+$\G(\alpha,\beta)$ por transformaci\'on lineal; ver secciones anteriores):
+
+\begin{center}
+\begin{tabular}
+{
+|>{\vspace{-2mm}}p{.3\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+}
+%
+\hline
+%
+Dominio de definici\'on & $\X = \Rset_+$\\
+\hline
+%
+Densidad de probabilidad & $p_X(x) = \frac{x^{\alpha-1} e^{-x}}{\Gamma(\alpha)}$\\
+\hline
+%
+%Momentos & $ \Esp\left[ X^k \right] = p^k$\\
+%\hline
+%
+Promedio & $ \Esp[X] = \alpha$\\
+\hline
+%
+Varianza & $\sigma_X^2 = \alpha$\\
+\hline
+%
+Asimetr\'ia & $\gamma_X = \frac2{\sqrt{\alpha}}$\\
+\hline
+%
+Curtosis & $\kappa_X = \frac6\alpha$\\
+\hline
+%
+%Generadora de probabilidad & $G_X(z) = e^{\lambda (z-1)}$ \ para \ $z \in \Cset$\\
+%\hline
+%
+Generadora de momentos & $M_X(u) = \frac1{(1-u)^\alpha}$ \ para \ $\real{u} < 1$\\
+\hline
+%
+Funci\'on caracter\'istica & $\Phi_X(\omega) = \frac1{(1-\imath\omega)^\alpha}$\\
+\hline
+\end{tabular}
+\end{center}
+%
+% modo max(\alpha-1,0)
+% Mediana no close ver inverse gamma
+
+Su densidad de probabilidad y funci\'on  de repartici\'on son
+representadas en la figura Fig.~\ref{Fig:MP:Gamma} para varios $\alpha$.
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/Gamma} \end{center}
+\leyenda{Ilustraci\'on de una densidad de probabilidad gamma (a), y la funci\'on
+de repartici\'on  asociada (b). $\alpha  = .5$ (linea punteada),  $1$ (guiones),
+$2$ (linea mixta) y $3$ (linea llena).}
+\label{Fig:MP:Gamma}
+\end{figure}
+
+%Cuando $\lambda \to +\infty$ la variable tiende a una variable cierta $X = 0$.
+\SZ{Esta distribuci\'on aparece...}
+% en el conteo de
+%conteo de une repetici\'on de  una experiencia de maneja independiente hasta que
+%occure un evento de probabilidad $p$; por ejemplo el n\'umero de tiro de un dado
+%equilibriado hasta que occurre un ``6'' sigue una ley geometrica de parametro $p
+%= \frac16$.
+
+
+\aver{
+
 
 Teorema del l\'imite central \SZ{Ref relaxando la independencia, y versiones con leyes diferentes pero uniformamente acotadas.}
 
@@ -65,13 +572,18 @@ Teorema del l\'imite central \SZ{Ref relaxando la independencia, y versiones con
 \SZ{Familia  exponencial~\cite{Dar35, Koo36,  And70,  Kay93, LehCas98,  Rob07}.;
 Wishart como ejemplo de 'matrix variate'}
 
+\SZ{Familia  invariante por rotacion}
+
 %%%%%%%%%%%%%
 
-\
-
-\
+}
 
 \
 
 \SZ{hablar de  simulaci\'on? Metoto inverso,  mezcla, rejeccion, a traves  de la
   condicional para el caso vectorial?}
+
+
+\
+
+\SZ{hablar del CLT y prueba}

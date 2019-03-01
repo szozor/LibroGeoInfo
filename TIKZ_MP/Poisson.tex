@@ -1,0 +1,72 @@
+\begin{tikzpicture}%[scale=.9]
+\shorthandoff{>}
+%
+\pgfmathsetmacro{\sx}{.75};% x-scaling
+\pgfmathsetmacro{\r}{.05};% radius arc non continuity F_X
+\pgfmathsetmacro{\l}{3};% lambda
+\pgfmathsetmacro{\n}{7};% k mas grande del plot (k in Nset)
+\pgfmathsetmacro{\q}{floor(\l)};% modo
+\pgfmathsetmacro{\m}{(\l^\q)*exp(-\l)/factorial(\q)};% maximo
+%
+% masa
+\begin{scope}
+%
+\pgfmathsetmacro{\sy}{2.75/\m};% y-scaling 
+\draw[>=stealth,->] (-.25,0)--({\sx*\n+.75},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.1)--(0,{\sy*\m+.25}) node[above]{\small $p_X$};
+%
+\pgfmathsetmacro{\pr}{exp(-\l)};% probabilidad
+%
+\foreach \k in {0,...,\n} {
+\draw ({\k*\sx},0)--({\k*\sx},-.1) node[below,scale=.7]{\k};
+\draw[dotted] ({\k*\sx},0)--({\k*\sx},{\sy*\pr}) node[scale=.7]{$\bullet$};
+%
+\pgfmathsetmacro{\prl}{\pr*\l/(\k+1)};\global\let\pr\prl;% proba actualizado
+}
+\draw ({(\n+.5)*\sx},-.2) node[below,scale=.7]{$\ldots$};
+\draw ({(\n+.5)*\sx},{(\pr/\l*\n/2*\sy}) node[scale=.7]{$\cdots$};
+\draw (0,{exp(-\l)*\sy})--(-.1,{exp(-\l)*\sy}) node[left,scale=.7]{$e^{-\lambda}$};
+\draw (0,{\l*exp(-\l)*\sy})--(-.1,{\l*exp(-\l)*\sy}) node[left,scale=.7]{$\lambda e^{-\lambda}$};
+\draw (0,{\l*\l*exp(-\l)/2*\sy})--(-.1,{\l*\l*exp(-\l)/2*\sy}) node[left,scale=.7]{$\frac{\lambda^2 e^{-\lambda}}{2}$};
+%\draw (-.5,{\l*exp(-\l)/2*\sy}) node[left,scale=.7]{$\vdots$};
+%
+\end{scope}
+%
+%
+% reparticion
+\begin{scope}[xshift=8.5cm]
+%
+\pgfmathsetmacro{\sy}{2.75};% y-scaling 
+%
+\draw[>=stealth,->] (-.6,0)--({\sx*\n+.75},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.1)--(0,{\sy+.25}) node[above]{\small $F_X$};
+%
+\pgfmathsetmacro{\pr}{exp(-\l)};% probabilidad
+\pgfmathsetmacro{\c}{exp(-\l)};% cumulativa
+%
+% cumulativa x < 0
+\draw (0,0)--(0,-.1) node[below,scale=.7]{0};
+\draw[thick] (-.5,0)--(0,0);
+\draw (\r,\r) arc (90:270:\r);
+%
+% cumulativa x de 0 a n
+\foreach \k in {1,...,\n} {
+\draw ({\k*\sx},0)--({\k*\sx},-.1) node[below,scale=.7]{\k};
+\draw[thick]({(\k-1)*\sx},{\sy*\c}) node[scale=.7]{$\bullet$}--({\k*\sx},{\sy*\c});
+\draw ({\k*\sx+\r},{\sy*\c+\r}) arc (90:270:\r);
+\draw[dotted] ({(\k-1)*\sx},{(\c-\pr)*\sy})--({(\k-1)*\sx},{\c*\sy});
+%
+\pgfmathsetmacro{\prl}{\pr*\l/\k};\global\let\pr\prl;% proba actualizado
+\pgfmathsetmacro{\cl}{\c+\pr};\global\let\c\cl;% cumulativa actualizada
+}
+%
+% cumulativa x > n
+\draw ({(\n+.5)*\sx},-.2) node[below,scale=.7]{$\ldots$};
+\draw ({(\n+.5)*\sx},{((\c+1)/2*\sy}) node[scale=.7]{$\cdots$};
+\draw (0,{exp(-\l)*\sy})--(-.1,{exp(-\l)*\sy}) node[left,scale=.7]{$e^{-\lambda}$};
+\draw (0,{(1+\l)*exp(-\l)*\sy})--(-.1,{(1+\l)*exp(-\l)*\sy}) node[left,scale=.7]{$(1+\lambda) e^{-\lambda}$};
+\draw (-.3,{(1+(1+\l+\l*\l/2)*exp(-\l))/2*\sy}) node[left,scale=.7]{$\vdots$};
+\draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{\small $1$};
+\end{scope}
+%
+\end{tikzpicture}

@@ -1,16 +1,32 @@
-\seccion{Funciones generatrices}
-\label{s:MP:generatrices}
+\SZ{Cambio de variable multivariado: citar Mukhopadhyay}
 
-Como lo  hemos visto,  una variable aleatoria  es completamente definida  por su
-medida de  probabilidad $P$,  o equivalemente  por la medida  imagen $P_X$,  o a
-traves  de la funci\'on  de repartici\'on  $F_X$. Sin  embargo, bajo  el impulso
-entre  otros  de  Laplace  en  el siglo  XVII,  se  introdujo  caracterisaciones
-alternativas  a  traves  de  transformaciones  de  la  medida  de  probabilidad,
-conocidas    como    {\em    funciones    generadoras}    o    {\em    funciones
-  generatrices}~\footnote{De  hecho, de  manera general,  se  introdujeron tales
-  funciones en un  marco m\'as general, asociado a series  de n\'umeros, bajo el
-  impulso de A. de Moivre~\cite{Dem30}; ver tambi\'en~\cite{Sti30, Eul41, Eul50,
-    Dem56}
+\SZ{Momento factorial: introducir el simbolo de Pockhammer $\left( x \right)_r =
+  \prod_{k=0}^{r-1},  \quad r  \ge 0$  con la  convenci\'on  $\prod_{k=0}^{-1} =
+  1$. Sencillamente, para $n \in \Nset$, si $n  < r$ tenemos $(n)_r = 0$ y si $n
+  \ge r$ tenemos $(n)_r = \frac{n!}{(n-r)!}$.}
+
+\SZ{Momentos factoriales en el caso multivariado}
+
+\SZ{poner el label ``Th:MP:IndependenciaMomentos'' al teorema de independencia con momentos}
+
+
+\SZ{Hablar de esperanza condicional}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\seccion{Funciones generadoras}
+\label{Sec:MP:generatrices}
+
+Como lo hemos visto, un vector aleatorio es completamente definida por su medida
+de probabilidad $P$, o equivalemente por la medida imagen $P_X$, o a trav\'es de
+la funci\'on de repartici\'on $F_X$. Sin  embargo, bajo el impulso de Laplace en
+el  siglo XVII  (entre  otros), se  introdujo  caracterizaciones alternativas  a
+trav\'es de transformaciones  de la medida de probabilidad,  conocidas como {\em
+  funciones generadoras}  o {\em funciones  generatrices}~\footnote{De hecho, de
+  manera general,  se introdujeron  tales funciones en  un marco  m\'as general,
+  asociado   a   sucesiones  de   n\'umeros,   bajo   el   impulso  de   A.   de
+  Moivre~\cite{Dem30};   ver   tambi\'en~\cite{Sti30,   Eul41,   Eul50,   Dem56}
   o~\cite[Sec.~1.2.9]{Knu97_v1}.        \label{Foot:MP:Generadora}}~\cite{Lap20}.
 Existen varias funciones, cuyas tienes  propiedades particulares que vamos a ver
 en las subsecciones siguientes. Entre  otros, estas funciones dadas como valores
@@ -18,89 +34,477 @@ de expectaci\'on  de funciones de  la variable aleatoria (discreta  o continua),
 con un par\'ametro  real o complejo, permiten hallar  f\'acilmente los distintos
 momentos de una distribuci\'on de probabilidad.
 
-% ================================= Axiomas
 
-\subseccion{Funcion generadora de probabilidad}
+% ================================= Funcion generadora de probabilidad
 
-De manera general, sigueindo el enfoque de A. de Moivre (ver nota de pie~\ref{foot:MP:generadora}) dada una serie $a_n, \quad n \in \Nset$, se define la funci\'on gener
+\subseccion{Funci\'on generadora de probabilidad}
+\label{Ssec:MP:GeneradoraProbabilidad}
+
+De  manera  general,  siguiendo  el  enfoque  de A.   de  Moivre  (ver  nota  de
+pie~\ref{Foot:MP:Generadora}) dada una sucesi\'on \ $a_n, \quad n \in \Nset$, se
+define la  funci\'on generadora  dicha {\em ordinaria}  de la sucesi\'on  como \
+$G(\{ a_n  \}_{n \in \Nset} \,  , \, z) =  \sum_{n \in \Nset} \,  z^n$. A veces,
+esta serie es conocida como transformada en $z$ de la sucesi\'on \ $\{ a_n \}_{n
+  \in \Nset}$. Tratando de variables aleatorias discretas sobre \ $\Nset$, con \
+$p_n  = P_X(n)  = P(X  = n)$,  se puede  definir as\'i  la  funci\'on generadora
+asociada a  la sucesi\'on \  $p_n$ y se  puede ver que no  es nada m\'as  que el
+momento $\Esp\left[ z^X \right]$.  De manera general, la funci\'on generadora de
+probabilidad  se define  de  la manera  siguiente~\cite{Fel68, JohKot97,  Muk00,
+  AthLah06}:
+%
+\begin{definicion}[funci\'on   generadora   de   probabilidad  o   de   momentos
+  factoriales]\label{Def:MP:GeneradoraProbabilidadFactorial}
+  Sea $X = \begin{bmatrix} X_1  & \cdots & X_d \end{bmatrix}^t$ vector aleatorio
+  $d$ dimensional  definido sobre $\X  \subset \Rset^d$.  La  funci\'on definida
+  por
+  %
+  \[
+  G_X(z) =  \Esp\left[ \prod_{i=1}^d  z_i^{X_i} \right]\quad \mbox{con}  \quad z
+  = \begin{bmatrix} z_1 & \cdots & z_d \end{bmatrix}^t \in \Cset^d
+  \]
+  %
+  es conocida como  {\em funci\'on generadora de probabilidad}  o {\em funci\'on
+    generadora de momentos factoriales} de $X$.
+\end{definicion}
+%
+\noindent Cuando  los \ $X_i$ \  son todas variables  aleatorias positivas, esta
+integral         converge        uniformamente        en         una        bola
+$d$-dimensional~\footnote{Claramente,  en  $\Bset_d  \equiv \Bset_d(1)$  tenemos
+  $\displaystyle  \left|  \int_{\Rset_+^d}  \prod_{i=1}^d z_i^{x_i}  \,  dP_X(x)
+  \right| \le \int_{\Rset_+^d} \left| \prod_{i=1}^d z_i^{x_i} \right| \, dP_X(x)
+  \le  \int_{\Rset_+^d}  dP_X(x)  =   1$.  Adem\'as,  si  la  integral  converge
+  uniformamente para un  $z$ tal que $|z|  = r$, por el mismo  enfoque se prueba
+  que converge en  $\Bset_d(r)$.} de rayo $r \ge 1$ $\Bset_d(r)  = \left\{ z \in
+  \Cset^d: \: \| z \| \le r \right\}$  donde $\| z \|^2 = \sum_i |z_i|^2$. En el
+caso  contrario,  puede resultar  delicado  en  termino  de existencia  de  esta
+funci\'on  (convergencia de la  integral); se  puede por  ejemplo que,  para una
+variables, no existe ninguno dominio de existencia de esta funci\'on.
+
+\
+
+La denominaci\'on  {\em generadora de  probabilidad} (pgf para  {\em probability
+  generating function} en ingles) se entiende sencillamente del hecho siguiente:
+%
+\begin{lema}
+  Cuando \ $\X = \Nset^d$ \ para cualquier \ $k = \begin{bmatrix} k_1 & \ldots &
+    k_d \end{bmatrix}^t \in \Nset^d$, con $K = \sum_{i=1}^d k_i$
+  %
+  \[
+  \frac1{\prod_{i=1}^d  k_i!} \, \left.\frac{\partial^K  G_X}{\partial z_1^{k_1}
+      \ldots \partial z_d^{k_d}}\right|_{z=0} = P_X(k) = P(X = k)
+  \]
+\end{lema}
+%
+\begin{proof}
+  Se puede escribir la funci\'on \ $G_X$ \ bajo su forma de generadora ordinaria
+  \ $\displaystyle G_X(z) =  \sum_{n \in \Nset^d} \left( \prod_{i=1}^d z_i^{n_i}
+  \right)  P(X   =  n)$  \   con  \  $n   =  \begin{bmatrix}  n_1  &   \cdots  &
+    n_d  \end{bmatrix}^t$.  A  continuaci\'on,  se nota  que  la serie  converge
+  uniformamente por  lo menos en  la bola $\Bset_d \equiv  \Bset_d(1)$, probando
+  que $G_X$  es diferenciable en $\Bset_d$,  as\'i que se puede  ver esta series
+  como el desarollo de Taylor de $G_X$ (o, equivalentemente, diferenciar bajo la
+  suma y tomar la derivada en $z = 0$), lo que cierra la prueba.
+\end{proof}
+
+De este resultado,  se puede notar que, en el caso  discreto, hay una relaci\'on
+uno-a-uno entre  la medida  de probabilidad $P_X$  y la funci\'on  generadora de
+probabilidad $G_X$.  En el caso continuo  \SZ{(y m\'as general)},  veremos en la
+subsecci\'on~\ref{Ssec:MP:FuncionCaracterisica} que para  $z_j$ de la forma $z_j
+= e^{\imath u_j}$ \  con \ $u_j \in \Rset$ \ la  transformaci\'on se inversa, de
+manera que se  puede recuperar la densidad de  probabilidad $p_X$ \SZ{(medida de
+  probabilidad $P_X$)} a partir de $G_X$. Dicho de otra manera, como la medida \
+$P_X$, \ la funci\'on \ $G_X$  \ caracteriza completamente el vector aleatorio \
+$X$.
+
+\
+
+Aparece  que la  funci\'on generadora  \ $G_X$  \ se  vincula tambi\'en  con los
+momentos factoriales, justificando su secunda denominaci\'on, {\em generadora de
+  momentos factoriales}  (fmgf para {\em factorial  moments generating function}
+en ingles):
+%
+\begin{lema}
+  Para cualquier \  $k = \begin{bmatrix} k_1 & \cdots  & k_d \end{bmatrix}^t \in
+  \Nset^d$ \ con \ $K =  \sum_{i=1}^d k_i$, derivando $G_X$ se proba que, cuando
+  existen~\footnote{En el  caso extremo,  el rayo de  convergencia de  la serie
+    dando $G_X$ es igual a 1, as\'i  que no hay garantia que las derivadas en $z
+    = 1$ existen.}
+  %
+  \[
+  \left.\frac{\partial^K     G_X}{\partial     z_1^{k_1}     \cdots     \partial
+      z_d^{k_d}}\right|_{z=1}  =  \Esp\left[  \left(  X_1  \right)_{k_1}  \ldots
+    \left( X_d \right)_{k_d} \right]
+  \]
+  %
+  momento factorial~\footnote{Recuerdense que  $(x)_r = \prod_{k=0}^{r-1} (x-k),
+    \quad     r     \ge     0$     \    s\'imbolo     de     Pockhammer;     ver
+    pagina~\pageref{MP:Pockhammer}}  de   $X$.
+\end{lema}
+
+De  este resultado,  se ve  por ejemplo  que, cuando  existen, se  recuperan los
+momentos de $X$ a trav\'es de las derivadas de $G_X$:
+%
+\begin{itemize}
+\item $G_X(1) = 1$, condici\'on de normalizaci\'on.
+%
+\item $\nabla_z G_X(1) = \Esp[X]$ \ donde $\nabla_z$ indica el gradiente, \ie el
+  vector de componente $i$-esima \ $\frac{\partial}{\partial z_i}$.
+%
+\item $\Hess_z G_X(1)  + \diag\left( \nabla_z G_X(1) \right)  = \Esp\left[ X X^t
+  \right]$  \ donde  \ $\Hess_z$  \ es  la matrice  Hessiana, \ie  la  matriz de
+  componente $(i,j)$-esima \ $\frac{\partial^2}{\partial z_i \partial z_j}$, y \
+  $\diag(a)$ es  une matriz  diagonal de componentes  \ $(i,i)$-esima \  $a_i$ \
+  (vector $a$ sobre la diagonal).  Entonces  la matriz de covarianza es dada por
+  \ $\Cov[X] =  \Hess_z G_X(1) + \diag\left( \nabla_z  G_X(1) \right) - \nabla_z
+  G_X(1) \nabla_z^t G_X(1)$.
+\end{itemize}
+
+\
+
+La funci\'on \ $G_X$ \ tiene unas propiedades permitiendo por ejemplo de manejar
+sencillamente  distribuciones  de probabilidades  de  combinaciones lineales  de
+vectores aleatorios independientes,  como lo vamos a ver  a trav\'es del teorema
+siguiente.
+
+\begin{teorema}%[Funci\'on generadora de probabilidad de una ]
+\label{Th:MP:PropiedadesGeneradoraProbabilidad}
+Sean \ $X$ \ e \ $Y$ \ dos vectores aleatorios $d$-dimensionales independientes,
+$a = \begin{bmatrix}  a_1 & \cdots &  a_d \end{bmatrix}^t \in \Rset^d$ \  y \ $b
+= \begin{bmatrix} b_1 & \cdots & b_d \end{bmatrix}^t \in \Rset^d$. Entonces para
+cualquier $z  = \begin{bmatrix} z_1 &  \cdots & z_d  \end{bmatrix}\in \Cset^d$ \
+(donde existen las funciones):
+  %
+  \[
+  G_{\diag(a) X + b}(z) =  \prod_{i=1}^d z_i^{b_i} G_X\left( z_1^{a_1} , \ldots ,
+    z_d^{a_d} \right),
+  \]
+  %
+  \[
+  G_{X+Y}(z) = G_X(z) G_Y(z)
+  \]
+  %
+  y para $z \in \Cset$
+  %
+  \[
+  G_X\left( z^{a_1} , \ldots , z^{a_d} \right) = G_{a^t X}(z)
+  \]
+\end{teorema}
+%
+\begin{proof}
+  El  primer  resultado es  inmediato,  escribiendo \  $z_i^{a_i  X_i  + b_i}  =
+  z_i^{b_i}   \left(  z_i^{a_i}   \right)^{X_i}$.    El  secundo   viene  de   \
+  $z_i^{X_i+Y_i}    =    z_i^{X_i}    z^{Y_i}$    \   conjuntamente    con    el
+  teorema~\ref{Th:MP:IndependenciaMomentos}   con   \   $f(X)  =   \prod_{i=1}^d
+  z_i^{X_i}$  \ y \  $g(Y) =  \prod_{i=1}^d z_i^{Y_i}$.  El tercer  resultado es
+  consecuencia de $\prod_{i=1}^d  \left( z^{a_i} \right)^{X_i} = z^{\sum_{i=1}^d
+    a_i X_i}$.
+\end{proof}
+%
+Estos  resultados permiten manejar  sencillamente la  medida de  probabilidad de
+combinaciones lineales  de vectores aleatorios independientes y  de marginales a
+trav\'es esta funci\'on generadora.
+
+\
+
+De  la  tercera identidad,  se  puede  hacer un  paso  m\'as  tratando de  sumas
+aleatorias de vectores aleatorios:
+%
+\begin{teorema}\label{Th:MP:SumaAleatoriaGeneradoraProbabilidad}
+  Sea  \ $X_n,  \quad n  \in  \Nset$ \,  una sucesi\'on  de vectores  aleatorios
+  indepedientes de  misma distribuci\'on  (resp.  generadora de  probabilidad) \
+  $P_X$ \  (resp. $G_X$)  \ y  \ $N$ \  una variable  definida sobre  \ $\Nset$,
+  independiente de los  \ $X_n$. Sea el vector aleatorio \  $ S_N = \sum_{n=0}^N
+  X_n$. Entonces
+  %
+  \[
+  G_{S_N}(z) =  G_N \big( G_X(z) \big),
+  \]
+  %
+\end{teorema}
+%
+\begin{proof}
+  \SZ{Usando la formula de esperanza total ec.~\ref{Th:MP:EsperanzaTotal}, se escribe}
+  %
+  \begin{eqnarray*}
+  G_{S_N}(z) & = & \Esp\left[ \sum_{n=0}^N X_n \right]\\[2.5mm]
+  %
+  & = & \Esp\left[ \Esp\left[ \left. \sum_{n=0}^N X_n \right| N  \right] \right]\\[2.5mm]
+  %
+  & = & \Esp\left[ G_X(z)^N \right]
+  \end{eqnarray*}
+\end{proof}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ================================= Funcion generadora de momentos
+
+\subseccion{Funci\'on generadora de momentos}
+\label{Ssec:MP:GeneradoraMomentos}
+
+
+Como lo hemos visto, la  funci\'on generadora de probabilidad permite recucperar
+los  momentos  de  un  vector  aleatorio  a trav\'es  de  combinaciones  de  sus
+derivadas.   Con una pequa\~na  modificaci\'on, se  puede definir  una funci\'on
+generada  permitiendo  recuperar  m\'as  directamente los  momentos,  de  manera
+siguiente~\cite{Fel68, JohKot97, Muk00, AthLah06}:
+%
+\begin{definicion}[funci\'on   generadora   de     momentos]\label{Def:MP:GeneradoraMomentos}
+  % 
+  La {\em  funci\'on generadora  de momentos} (mgf  para {\em  moment generating
+    function} en ingles) de un vector aleatorio $d$-dimensional se define como
+ %
+  \[
+  M_X(u) = \Esp\left[ e^{z^t X} \right]
+  \]
+  %
+  para $u \in \Cset^d$.
+\end{definicion}
+%
+De esta definici\'on se nota inmediatamente que
+%
+\[
+M_X(u) = G_X\left( e^u \right)  \qquad \mbox{donde} \qquad e^u = \begin{bmatrix}
+  e^{u_1} & \cdots & e^{u_d} \end{bmatrix}^t
+\]
+%
+Entonces, como \ $G_X$, la  generadora de los momentos caracteriza completamente
+el vector aleatorio \ $X$. Adem\'as,  resuelta de esta relaci\'on que cuando los
+\ $X_i$  \ son  todas variables  aleatorias positivas, $M_X$  es definida  en un
+dominio de \ $\Cset^d$ tal que \ $\real{u_i} \le v_i$ \ donde \ $\real{\cdot}$ \
+denota la  parte real  de un  n\'umero complejo y  los \  $v_i$ \  son positivos
+llamados indices de convergencia.  En  el caso de variables escalares admitiendo
+una  densidad de  probabildad \  $p_X$, denotando  $s =  -u$, esta  funci\'on se
+interpreta como la transformada (bilateral) de Laplace de \ $p_X$.
+
+La  generadora de  los momentos  permite recuperar  directamente los  momentos a
+trav\'es de derivadas, sin hacer combinaciones:
+%
+\begin{lema}
+  Para cualquier \  $k = \begin{bmatrix} k_1 & \cdots  & k_d \end{bmatrix}^t \in
+  \Nset^d$ \ con \ $K =  \sum_{i=1}^d k_i$, derivando $M_X$ se proba que, cuando
+  existen
+  %
+  \[
+  \left.\frac{\partial^K     M_X}{\partial     u_1^{k_1}     \cdots     \partial
+      u_d^{k_d}}\right|_{u=0}  = \Esp\left[  \prod_{i=1}^d  X_i^{k_i} \right]  =
+  m_{k_1,\ldots,k_d}
+  \]
+  %
+  momento de orden \ $k$ \ de \ $X$.
+\end{lema}
+%
+En particular, se recuperan
+%
+\begin{itemize}
+\item $M_X(0) = 1$, condici\'on de normalizaci\'on.
+%
+\item $\nabla_u M_X(0) = \Esp[X]$ \ promedio,
+%
+\item $\Hess_u M_X(0) = \Esp\left[ X X^t \right]$, \ie $\Cov[X] = \Hess_u M_X(0)
+  - \nabla_u M_X(0) \nabla_u^t M_X(0)$ \ matriz de covarianza.
+\end{itemize}
+
+Como la funci\'on \ $G_X$, la  generadora de los momentos tiene unas propiedades
+similares a las del teorema~\ref{Th:MP:PropiedadesGeneradoraProbabilidad}:
+%
+\begin{teorema}%[Funci\'on generadora de probabilidad de una ]
+\label{Th:MP:PropiedadesGeneradoraMomentos}
+Sean \ $X$ \ e \ $Y$ \ dos vectores aleatorios $d$-dimensionales independientes,
+\ $A$ \ una  matriz de \ $\Rset^{d' \times d}$ \ y \  $b = \begin{bmatrix} b_1 &
+  \cdots &  b_{d'} \end{bmatrix}^t \in  \Rset^{d'}$. Entonces para  cualquier $u
+= \begin{bmatrix} u_1 & \cdots & u_{d'} \end{bmatrix}^t \in \Cset^{d'}$ \ (donde
+la funci\'on existe):
+  %
+  \[
+  M_{A X + b}(u) =  e^{u^t b} M_X\left( A^t u \right),
+  \]
+  %
+  y para cualquier  $u = \begin{bmatrix} u_1 & \cdots  & u_d \end{bmatrix}^t \in
+  \Cset^d$ \ (donde la funci\'on existe):
+  %
+  \[
+  M_{X+Y}(u) = M_X(u) M_Y(u)
+  \]
+  %
+\end{teorema}
+%
+\begin{proof}
+  Las   pruebas  siguen   punto  a   punto  los   mismos  pasos   que   las  del
+  teorema~\ref{Th:MP:PropiedadesGeneradoraProbabilidad}.
+\end{proof}
+
+\
+
+De nuevo, se puede hacer un  paso m\'as tratando de sumas aleatorias de vectores
+aleatorios como en el teorema~\ref{Th:MP:SumaAleatoriaGeneradoraProbabilidad}:
+%
+\begin{teorema}\label{Th:MP:SumaAleatoriaGeneradoraMomentos}
+  Sea  \ $X_n,  \quad n  \in  \Nset$ \,  una sucesi\'on  de vectores  aleatorios
+  indepedientes de  misma distribuci\'on  (resp.  generadora de  probabilidad) \
+  $P_X$ \  (resp. $M_X$) \  e \  $N$ \ una  variable aleatoria definida  sobre \
+  $\Nset$,  independiente de los  \ $X_n$.  Sea el  vector aleatorio  \ $  S_N =
+  \sum_{n=0}^N X_n$. Entonces
+  %
+  \[
+  M_{S_N}(u) =  G_N \big( M_X(u) \big),
+  \]
+  %
+\end{teorema}
+%
+\begin{proof}
+  El         resultado        es         consecuencia         directa        del
+  teorema~\ref{Th:MP:SumaAleatoriaGeneradoraProbabilidad}.
+\end{proof}
+%\cite{Fra09}%%p.73
+
+
+% ================================= Funcion caracteristica
+
+\subseccion{Funci\'on caracter\'istica}
+\label{Ssec:MP:FuncionCaracteristica}
+
+Si  la funci\'on generadora  de momentos  permite recuperar  los momentos  de un
+vector  aleatorio, no  es definida  sobre todo  $\Cset^d$.  Sin  embargo, cuando
+$\real{u_i} = 0$,  esta funci\'on es siempre definida  ($e^u \in \Sset_d \subset
+\Bset_d$   \   donde   \    $\Sset_d$   es   la   hiperespfera   $d$-dimensional
+unitaria).   Entonces,  una  funci\'on   generadora  muy   \'util  que   se  usa
+frecuentemente  es la  de  momentos para  este  tipo de  argumentos,  lo que  es
+conocida  como funci\'on  caracter\'istica  y  que es  al  final definida  sobre
+$\Rset^d$  de  manera  siguiente~\cite{Luk61,  Gol61,  Fel68,  JohKot97,  Muk00,
+  AthLah06}:
+
+\begin{definicion}[funci\'on   caracter\'istica]\label{Def:MP:FuncionCaracteristica}
+  % 
+  La {\em funci\'on caracter\'istica}  (cf para {\em characteristic function} en
+  ingles) de un vector aleatorio $d$-dimensional se define como
+ %
+  \[
+  \Phi_X(\omega) = \Esp\left[ e^{\imath \omega^t X} \right]
+  \]
+  %
+  para $\omega \in \Rset^d$.
+\end{definicion}
+%
+De esta definici\'on se nota inmediatamente que
+%
+\[
+\Phi_X(\omega) = M_X(\imath \omega) = G_X\left( e^{\imath \omega} \right) \qquad
+\mbox{donde} \qquad e^{\imath \omega}  = \begin{bmatrix} e^{\imath u_1} & \cdots
+  & e^{\imath u_d} \end{bmatrix}^t
+\]
+%
+De hecho,  se puede definir esta  funci\'on para un argumento  complejo, pero es
+equivalente a volver a la definici\'on de la generadora de momentos.
+
+En su forma general, la funci\'on caracter\'istica se escribe
+%
+\[
+\Phi_X(\omega) = \int_{\Rset^d} e^{\imath \omega^t x} \, dP_X(x)
+\]
+%
+y  es  relacionada   a  la  transformada  de  Fourier-Stieltjes   de  la  medida
+$P_X$~\cite[Chap.~5]{Pin09}. Cuando  \ $P_X$ \  admite una densidad \  $p_X$, la
+funci\'on  es  una  transformada  de  Fourier  usual de  la  densidad  \  $p_X$,
+introducida bajo el  impulso de Fourier en 1822 para  estudiar la difusi\'on del
+calor~\cite{Fou22}.
+
+Insistamos sobre  el hecho que  la importancia de  esta funci\'on reside  en que
+siempre existe y est\'a bien  definida, dado que \ $\displaystyle \int_{\Rset^d}
+\left| e^{\imath \omega^t x} \right| \, dP_X(x) = \int_{\Rset^d} dP_X(x) = 1$.
+% \cite{Gol61}
+
+Como para las generadoras ya introducidas, la funci\'on caracter\'istica permite
+recuperar directamente los momentos a trav\'es de derivadas:
+%
+\begin{lema}
+  Para cualquier \  $k = \begin{bmatrix} k_1 & \cdots  & k_d \end{bmatrix}^t \in
+  \Nset^d$ \  con \  $K =  \sum_{i=1}^d k_i$, derivando  $\Phi_X$ se  proba que,
+  cuando existen
+  %
+  \[
+  (-   \imath)^K  \,   \left.\frac{\partial^K   \Phi_X}{\partial  \omega_1^{k_1}
+      \cdots    \partial    \omega_d^{k_d}}\right|_{\omega=0}    =    \Esp\left[
+    \prod_{i=1}^d X_i^{k_i} \right] = m_{k_1,\ldots,k_d}
+  \]
+  %
+  momento de orden \ $k$ \ de \ $X$.
+\end{lema}
+%
+En particular, se recuperan
+%
+\begin{itemize}
+\item $\Phi_X(0) = 1$, condici\'on de normalizaci\'on.
+%
+\item $- \imath \nabla_\omega M_X(0) = \Esp[X]$ \ promedio,
+%
+\item  $- \Hess_\omega  M_X(0) =  \Esp\left[ X  X^t \right]$,  \ie $\Cov[X]  = -
+  \Hess_\omega M_X(0) + \nabla_\omega M_X(0) \nabla_\omega^t M_X(0)$ \ matriz de
+  covarianza.
+\end{itemize}
+
+Fijense de  que \  $\Phi_X$ \  no es siempre  diferencial en  $\omega =  0$; Por
+ejemplo,    en   el    caso    de   la    distribuci\'on   de    Cauchy--Lorentz
+univariada~\footnote{Lo      mismo       occure      en      la      extensi\'on
+  multivariada~\cite{SamTaq91}.}\ $p_X(x) =  \frac{\gamma}{\pi \left( \gamma^2 +
+    (x-x_0)^2  \right)}$ \  con  \ $\gamma  >  0$, resulta  \ $\Phi_X(\omega)  =
+e^{-\imath x_0  \omega -\gamma |\omega}  $. Esta funci\'on est\'a  definida para
+todo $\omega$,  pero no es  derivable en  $\omega = 0$,  lo que coincide  con el
+hecho  de  que  no  est\'an   definidos  los  momentos  para  esta  densidad  de
+probabilidad.
+
+Como las  funci\'ones \ $G_X$ \  y \ $M_X$, la  funci\'on caracter\'istica tiene
+entre       otros       propiedades        similares       a       las       del
+teorema~\ref{Th:MP:PropiedadesGeneradoraMomentos}:
+%
+\begin{teorema}%[Funci\'on generadora de probabilidad de una ]
+\label{Th:MP:PropiedadesGeneradoraMomentos}
+Sean \ $X$ \ e \ $Y$ \ dos vectores aleatorios $d$-dimensionales independientes,
+\ $A$ \ una  matriz de \ $\Rset^{d' \times d}$ \ y \  $b = \begin{bmatrix} b_1 &
+  \cdots  &  b_{d'} \end{bmatrix}^t  \in  \Rset^{d'}$.  Entonces para  cualquier
+$\omega =  \begin{bmatrix} \omega_1 &  \cdots & \omega_{d'}  \end{bmatrix}^t \in
+\Rset^{d'}$:
+  %
+  \[
+  \Phi_{A X + b}(\omega) =  e^{\imath \omega^t b} \Phi_X\left( A^t \omega \right),
+  \]
+  %
+  y  para cualquier $\omega  = \begin{bmatrix}  \omega_1 &  \cdots &  \omega_d \end{bmatrix}^t \in
+  \Rset^d$:
+  %
+  \[
+  \Phi_{X+Y}(\omega) = \Phi_X(\omega) \Phi_Y(\omega)
+  \]
+  %
+\end{teorema}
+
+Resumimos algunas otras propiedades importantes de la funci\'on caracter\'istica:
+%
+\begin{enumerate}
+\item\label{Prop:MP:ContinuidadPhiX}  $\Phi_X$  es  una  funci\'on  continua  en
+  $\Rset^d$~\cite[Prop.~5.2.1]{Pin09}.  Eso es una  consecuencia del  teorema de
+  convergencia     dominada     (ver    teorema~\ref{Th:MP:ConvergenciaDominada}
+  pagina~\pageref{Th:MP:ConvergenciaDominada}).
+%
+\item\label{Prop:MP:MaximoPhiX} $\left| \Phi_X(\omega) \right| \le 1 \Phi_X(0)$:
+  \  $\left| \Phi_X(\omega)  \right|$ es  m\'axima en  $\omega =  0$.  Eso viene
+  directamente de $\left| e^{\imath \omega^t x} \right| = 1$.
+%
+\item\label{Prop:MP:HermiticaPhiX}   $\Phi_X(-\omega)  =   \Phi_X^*(\omega)$:  \
+  $Phi_X$ tiene una s\'imetria hermitica.
+%
+\item  $\Phi_X$ es  una funci\'on  no negativa  definida, \ie  para  un conjunto
+  arbitrario de \ $k  \ge 1$ \ n\'umeros complejos \ $a_1 , \ldots  , a_k$ \ y \
+  $k$ \ vectores de \ $\Rset^d$ \ $w_1 , \ldots , w_k$, se cumple
+  \[
+  \sum_{i,j=1}^k a_i^* a_j \Phi_X(w_j-w_i) \ge 0
+  \]
+  %
+  Dicho   de   otra   manera,   la   matriz  de   componente   \   $(i,j)$-esima
+  $\Phi_X(w_j-w_i)$ es a hermitica (s\'imetria herm\'itica dada por la propiedad
+  anterior, y no negativa definida).
+%
+\end{enumerate}
 
 \aver{
-
-La  \emph{funci\'on  generadora   de  momentos}  (MGF,  \emph{moment  generating
-  function}) se define como
-$$
-M(\xi) \equiv \langle e^{\xi X} \rangle =  \int e^{\xi x} p(x) \, dx , \quad \xi
-\in \Rset
-$$
-en el  caso de una variable  aleatoria continua $X$  con pdf $p(x)$. Se  tiene \
-$M(0)=\int p(x)\,dx=1$ (que corresponde a la condici\'on de normalizaci\'on). Si
-la  variable $X$ es  positiva y  se toma  $\xi=-s$ con  $s>0$, se  interpreta en
-t\'erminos de la transformada de Laplace de la funci\'on $p$.  %%
-\\
-Si existe, la  MGF posibilita obtener f\'acilmente los  momentos (ordinarios) de
-$X$ a  distintos \'ordenes, mediante los  coeficientes del desarrollo  de $M$ en
-serie de potencias de $\xi$:
-$$
-M(\xi)  =  \sum_{r=0}^{\infty}  \frac{\xi^r}{r!}  \int  x^r  p(x)  \,  dx  =  1+
-\sum_{r=1}^{\infty} \frac{\nu_r}{r!} \xi^r
-$$
-o, alternativamente, mediante  las sucesivas derivadas de $M$  respecto de $\xi$
-en 0:
-$$
-\nu_r=\left.  \frac{d^r  M(\xi)}{d\xi^r}\right|_{\xi=0}  ,  \quad  r=1,2,\ldots;
-\quad \nu_0\equiv 1 .
-$$ 
-
-En  el  caso de  una  variable aleatoria  discreta,  suponiendo  que el  espacio
-muestral es $\Nset$, se definen  dos funciones: la \emph{funci\'on generadora de
-  momentos (ordinarios)} (MGF) dada por
-$$
-M(\xi) \equiv \langle e^{\xi N} \rangle = \sum_{n\geq 0} e^{\xi n} p_n ,
-%% = \sum_{r\equiv 0} \frac{\langle n^r\rangle}{r!} \xi^r , 
-$$
-y la \emph{funci\'on generadora  de momentos factoriales} (FMGF, \emph{factorial
-  moment generating function}) como
-$$
-F(\xi) \equiv \langle (1+\xi)^N \rangle = \sum_{n\geq 0} (1+\xi)^n p_n
-$$
-para    $\xi     \in    \Rset$    en     ambos    casos.    Se     verifica    \
-$M(0)=F(0)=\sum_{n=0}^{\infty} p_n=1$. Se muestra simplemente que
-$$
-M(\xi) = \sum_{r=0}^{\infty} \frac{\langle n^r\rangle}{r!} \xi^r , 
-$$
-lo que  permite obtener los momentos  de la distribuci\'on  para cualquier orden
-$r\geq 1$. Por otro lado, el desarrollo de la FMGF da
-$$
-F(\xi)  =   \sum_{n=  0}^{\infty}  \sum_{r=   0}^n  \binom{n}{r}  \xi^r   p_n  =
-\sum_{r=0}^\infty \sum_{n=r}^{\infty} \frac{n(n-1)\cdots (n-r+1)}{r!}  \xi^r p_n
-= \sum_{r=0}^{\infty} \frac{\langle n^{(r)}\rangle}{r!} \xi^r
-$$
-teniendo  en cuenta  en las  dobles sumas  que $0\leq  r\leq n$,  con  $n$ hasta
-$n_{\max}$ \'o  $\infty$. Se  ve entonces que  $F$ permite obtener  los momentos
-factoriales de orden $r$ arbitrario.
-
-Dada   una   variable   aleatoria   a   valores  naturales,   la   funci\'on   \
-$G(\xi)=\sum_{n=0}^{\infty} p_n \xi^n$, con $-1\leq \xi\leq 1$, %% \leq o < ?
-es  tambi\'en una  funci\'on generatriz.  Por ejemplo,  si $G$  admite derivadas
-primera  y segunda en  $\xi=1$ se  obtienen: $\langle  N\rangle=G'(1)$, $\langle
-N(N-1)\rangle=G''(1)$, $\Var(N)=G''(1)+G'(1)-[G'(1)]^2$; adem\'as, se obtiene la
-ley   de   distribuci\'on   evaluando   derivadas   de   $G$   en   $\xi=0$:   \
-$p_n=\frac{G^{(n)}(0)}{n!}$.  %% Ej: probar
-\cite{Fra09}%%p.73
-
-\hfill
-
-La \emph{funci\'on caracter\'istica}  (CF, \emph{characteristic function}) tiene
-argumento complejo: \cite{Luk61}
-$$
-C_X(\xi) \equiv \langle e^{i \xi X} \rangle = \int e^{i \xi x} p(x) \, dx .
-$$
-La importancia  de esta  funci\'on reside  en que siempre  existe y  est\'a bien
-definida, dado que es la  transformada de Fourier de una funci\'on absolutamente
-integrable (i.e. $\int |f(x)| \, dx < \infty$) \cite{Gol61}
 
 Si la pdf \ $p(x)$ es de cuadrado integrable, entonces 
 $$
@@ -111,55 +515,14 @@ El requisito  para esta importante relaci\'on es  que \ $\int_{-\infty}^{\infty}
 una contribuci\'on  tipo $\delta$.  Por otro  lado los momentos,  si existen, se
 obtienen derivando la funci\'on $C$ tal como expresa la siguiente proposici\'on:
 
-\textbf{Proposici\'on:} \ %%
-La  variable aleatoria  $X$  admite  momento de  orden  $r$ si  y  s\'olo si  la
-funci\'on caracter\'istica $C$ es $r$ veces derivable en $\xi=0$, siendo
-$$
-\langle X^r\rangle = (-i)^r C_X^{(r)}(0) . 
-$$
-
-Por ejemplo, en el caso de la distribuci\'on de Cauchy--Lorentz resulta
-$$
-C(\xi)     =     \frac{\gamma}{\pi}    \int_{-\infty}^{\infty}     \frac{e^{i\xi
-    x}}{\gamma^2+(x-x_0)^2} dx = e^{-\gamma |\xi| e^{i x_0\xi}}
-$$
-tomando $\gamma >0$. Esta funci\'on est\'a  definida para todo $\xi$, pero no es
-derivable en $\xi=0$,  lo que coincide con el hecho de  que no est\'an definidos
-los momentos para esta pdf.
-
 Para  una   variable  aleatoria  compleja   $Z=X+iY$,  usando  la   noci\'on  de
 transformada de Fourier bidimensional, se define:
 $$
 C_Z(\mu) \equiv \int e^{\mu^* z-\mu z^*} p(z) \, d^2z .
 $$
 
-Resumimos algunas propiedades importantes de la funci\'on caracter\'istica:
-\begin{enumerate}
-\item $C(0) =1$
-%
-\item $|C(\xi)|\leq C(0)$ %%dem.
-%
-\item $C(\xi)$  es una  funci\'on continua  en $\Rset$ (a\'un  si la  pdf $p(x)$
-  tiene discontinuidades) %dem.
-%
-\item $C(-\xi) = C(\xi)*$
-%
-\item  $C(\xi)$ es  definida no  negativa,  de tal  forma que  para un  conjunto
-  arbitrario  de  $N$  n\'umeros  reales $\xi_1,\ldots,\xi_N$  y  $N$  n\'umeros
-  complejos $a_1,\ldots,a_N$, se cumple
-  $$
-  \sum_{i,j=1}^N a_i^* a_j C(\xi_j-\xi_i) \geq 0 .
-  $$
-%
-\item  $C(\xi) =  M(i\xi) =  F(e^{i\xi}-1)$, si  $M$ y  $F$ existen;  \ $F(\xi)=
-  M(\ln(1+\xi))$
-\end{enumerate}
-
 {\teorema (Bochner, Goldberg).... } %%
 
-\textbf{Proposici\'on:} \ %%
-Sean $X$ e  $Y$ dos variables aleatorias reales  independientes, cuyas funciones
-caracter\'isticas son $C_X$ y $C_Y$. Entonces \ $C_{X+Y}=C_X C_Y$.
 
 \hfill
 
@@ -167,12 +530,10 @@ Cumulant generating function .... %%
 
 \hfill
 
-Extendemos  la  definici\'on  de   funci\'on  caracter\'istica  para  un  vector
-aleatorio. ... %%
-
-
-....
 }
 
 
-\SZ{Hablar de esperanza condicional}
+
+\SZ{hablar de la cota de Chernoff con la pgf?}
+
+\SZ{hablar del CLT y prueba}

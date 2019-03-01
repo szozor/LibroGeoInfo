@@ -1,0 +1,159 @@
+\capitulo{Nociones de theor\'ia de la informaci\'on}{Steeve Zozor}
+
+% Epigrafe de capitulo
+\begin{epigrafe}
+  \textcolor{red}{Esto es  un ep\'igrafe con  texto simulado.\\ Esto es  un ep\'grafe
+    con  texto simulado.
+\autortituloepigrafe{Autor del ep\'igrafe, T\'itulo de la obra}
+}
+\end{epigrafe}
+
+
+% =============================== Introduccion =============================== %
+
+\seccion{Introducci\'on}
+\label{s:SZ:Introduccion}
+
+La noci\'on de informaci\'on encuentra su origen, de una forma, con el desarollo
+de la comunicaci\'on  moderna, por ejemplo a trav\'es  del telegrafo (patente de
+Moorse, en 1840, aun que los principios  datan de los a\~nos 1690). De hecho, la
+idea de  asignar un codig\'o  (punto o  barra) a las  letras del alfabeto  es la
+semilla  de la  codificaci\'on  entropica,  que se  basa  precisamente sobre  la
+asignaci\'on de  un codigo a simbolos  de una fuente  (codificaci\'on de fuente)
+basados a las frequencias (o probabilidad de aparici\'on) de cada simbolo en una
+cadena. La formalizaci\'on de la  noci\'on de incerteza, intimamente vinculado a
+la de informaci\'on, naci\'o bajo el impulso de C. Shannon y la publicaci\'on de
+su   papel   seminal,   ``A    mathematical   theory   of   communication''   en
+1948~\cite{Sha48}. Desde esto a\~nos, los  herramientas de la dicha teoria de la
+informaci\'on dio lugar  a muchas aplicaciones, en campos  muy diversos tal como
+{\bf completar con ref}.
+
+La meta de este capitulo es de describir  las ideas y los pasos dando lugar a la
+definicion de la entropia, como medida de incerteza o informaci\'on. {\bf Intuition, axiomas, propiedades. }
+
+% ================================= Entropia ================================= %
+
+\seccion{Entrop\'ia como medida de incerteza}
+\label{s:SZ:Entropia}
+
+% ================================= Axiomas
+
+\subseccion{Axiomas, entrop\'ia de Shannon, propiedades}
+\label{ss:SZ:Axiomas}
+
+Un de los primeros trabajos  tratando de formalizar la noci\'on de informaci\'on
+de una  cadena de simbolos es dado  a Raph Hartley~\cite{Har28}. En  su papel de
+1928,  Hartley   defin\'o  la  informaci\'on   de  una  secuencia   como  siendo
+proporcional a  su longitud. Mas precisamente,  para simbolos de  un alfabeto de
+cardinal  $s$, exiten  $s^n$ cadenas  diferences  de longitud  $n$, defin\'o  la
+informaci\'on de  tales cadenas  como siendo $K  n$.  Para ser  consistente, dos
+ensembles  de mismo  tamanio $s_1^{n_1}  = s_2^{n_2}$  deben llegar  a  la misma
+informaci\'on,  así  que  la informaci\'on  de  Hatley  es  definida como  $H  =
+\log\left( s^n \right)$ donde la base del logaritmo es arbitraria. Dicho de otra
+manera, tomando un  logaritmo de base 2, esta informaci\'on es  nada mas que los
+numeros de bits  (0-1) necesarios para codificar todas  las cadenas de longitude
+$n$ de simbolos de un alpfabeto de cardinal $s$.
+
+Una  debilidad  del  enfoque  de   Hartley  es  que,  de  una  forma,  considera
+implicitamente que en un mensage, cada  cadena de longitud puede aparecer con la
+misma  frecuencia, o  probabilidad  $1/s^n$, siendo  la  informaci\'on menos  el
+logaritmo de estas probabilidades. A contrario, parece mas logico considerar que
+secuencias muy frecuentes no llevan  mucha informaci\'on (se sabe que aparecen),
+mientras  que las  que aparencen  raramente  llevan mas  informaci\'on (hay  mas
+sorpresa, mas  incerteza en observarla). Volviendo los  simbolos elemental, $x$,
+vistos  como aleatorios,  la  informaci\'on  o incerteza  va  a ser  intimamente
+vinculada a la probabilidad de aparici\'on de estos simbolos $x$.
+
+\begin{definition}[Entropia de Shannon~\cite{Sha48}]
+\end{definition}
+
+% ================================= Axiomas
+
+\subseccion{Entrop\'ia diferencial}
+\label{ss:SZ:Diferencial}
+
+
+
+
+
+% ================================= Entropia ================================= %
+
+Este es un  p\'arrafo Normal con texto simulado, (Arial  10, interlineado de 1,5
+l\'ineas, sangr\'ia en primera l\'inea de 0,5cm. Este es un p\'arrafo Normal con
+texto simulado,  (Arial 10, interlineado  de 1,5 l\'ineas, sangr\'ia  en primera
+l\'inea de 0,5cm). Este es un  p\'arrafo Normal con texto simula- do, (Arial 10,
+interlineado de 1,5 l\'ineas, sangr\'ia en primera l\'inea de 0,5cm). Este es un
+p\'arrafo Normal  con texto simulado,  (Arial 10, interlineado de  1,5 l\'ineas,
+sangr\'ia en primera  l\'inea de 0,5cm).  Este es un  p\'arrafo Normal con texto
+simulado, (Arial 10, interlineado de  1,5 l\'ineas, sangr\'ia en primera l\'inea
+de 0,5cm)\notaalpie{Eso es una footnote sobre varias lineas. Eso es una footnote
+  sobre varias  lineas.  Eso  es una  footnote sobre varias  lineas. Eso  es una
+  footnote sobre varias lineas. Eso es  una footnote sobre varias lineas. Eso es
+  una footnote sobre varias lineas. Eso es una footnote sobre varias lineas.}.
+
+% citas (de mas de 40 palabras)) ==============================================
+\begin{citas}
+  {\color{red} Esto  es un ejemplo  de cita  de mas de  40 palabras. Esto  es un
+    ejemplo de cita de mas de 40 palabras.  Esto es un ejemplo de cita de mas de
+    40 palabras. Esto  es un ejemplo de cita  de mas de 40 palabras.  Esto es un
+    ejemplo de cita de mas de 40 palabras.}
+\end{citas}
+
+Este es un  p\'arrafo Normal con texto simulado, (Arial  10, interlineado de 1,5
+l\'ineas, sangr\'ia en primera l\'inea de 0,5cm. Este es un p\'arrafo Normal con
+texto simulado,  (Arial 10, interlineado  de 1,5 l\'ineas, sangr\'ia  en primera
+l\'inea de 0,5cm). Este es un  p\'arrafo Normal con texto simula- do, (Arial 10,
+interlineado de 1,5 l\'ineas, sangr\'ia en primera l\'inea de 0,5cm). Este es un
+p\'arrafo Normal  con texto simulado,  (Arial 10, interlineado de  1,5 l\'ineas,
+sangr\'ia en  primera l\'inea de 0,5cm).  Este es un p\'arrafo  Normal con texto
+simulado, (Arial 10, interlineado de  1,5 l\'ineas, sangr\'ia en primera l\'inea
+de 0,5cm).
+
+
+\begin{figure}[h!]
+\centerline{\includegraphics[width=2cm]{logo_large}}
+%
+\leyenda{Eso es  una figura, con  su leyenda sobre  varias lineas para  ver como
+  queda en el texto. Eso es una  figura, con su leyenda sobre varias lineas para
+  ver como queda en el texto.}
+\end{figure}
+
+Este es un  p\'arrafo Normal con texto simulado, (Arial  10, interlineado de 1,5
+l\'ineas, sangr\'ia en primera l\'inea de 0,5cm. Este es un p\'arrafo Normal con
+texto simulado,  (Arial 10, interlineado  de 1,5 l\'ineas, sangr\'ia  en primera
+l\'inea de 0,5cm). Este es un  p\'arrafo Normal con texto simula- do, (Arial 10,
+interlineado de 1,5 l\'ineas, sangr\'ia en primera l\'inea de 0,5cm). Este es un
+p\'arrafo Normal  con texto simulado,  (Arial 10, interlineado de  1,5 l\'ineas,
+sangr\'ia en  primera l\'inea de 0,5cm).  Este es un p\'arrafo  Normal con texto
+simulado, (Arial 10, interlineado de  1,5 l\'ineas, sangr\'ia en primera l\'inea
+de 0,5cm).
+
+\begin{table}
+\leyenda{Eso es un ejemplo de tabla}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+{\bf T\'itulo (negrita)} & {\bf T\'itulo (negrita)} & {\bf T\'itulo (negrita)}\\
+\hline
+A & Texto simulado (normal) & Texto simulado (normal)\\
+\hline
+B & Texto simulado (normal) & Texto simulado (normal)\\
+\hline
+\end{tabular}
+\fuente{Eso ser\'ia el fuente de la tabla}
+\end{center}\end{table}
+
+
+\
+
+Ejemplo con respeto al capitulo~\ref{cap:teoriaprobabilidades}
+
+Para ver que las referencias de capitulos andan:~\ref{cap:teoriaprobabilidades};
+que      las       de      secciones      tambi\'en~\ref{sec:var_aleat},      de
+subsecciones~\ref{subsec:var_aleat_sub},                                       de
+subsubsecciones~\ref{subsubsec:var_aleat_subsub}, de figuras~\ref{fig:figura}, y
+de tablas~\ref{tab:tabla}.
+
+Eso es una cita, para ver como queda~\cite{CovTho06, AmaNag00}.
+
+

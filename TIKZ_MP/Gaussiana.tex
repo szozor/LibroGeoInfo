@@ -1,0 +1,39 @@
+\begin{tikzpicture}%[scale=.9]
+\shorthandoff{>}
+%
+\pgfmathsetmacro{\sx}{.75};% x-scaling
+\pgfmathsetmacro{\mx}{3.5};% x maximo del plot
+%
+% Approximation de la cdf gaussienne
+\tikzset{declare function={
+normcdf(\x)=1/(1 + exp(-0.07056*(\x)^3 - 1.5976*(\x)));
+}}
+% densidad
+\begin{scope}
+%
+\pgfmathsetmacro{\sy}{2.5*sqrt(2*pi)};% y-scaling 
+\draw[>=stealth,->] ({-\sx*\mx-.25},0)--({\sx*\mx+.25},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.1)--(0,2.75) node[above]{\small $p_X$};
+%
+\draw[thick,domain=-\mx:\mx,samples=100] plot ({\x*\sx},{\sy*exp(-.5*\x*\x)/sqrt(2*pi)});
+%
+\draw (0,{\sy/sqrt(2*pi)})--(-.1,{\sy/sqrt(2*pi)}) node[left,scale=.7]{$\frac1{\sqrt{2 \pi}}$};
+%
+\end{scope}
+%
+%
+% reparticion
+\begin{scope}[xshift=8.5cm]
+%
+\pgfmathsetmacro{\sy}{2.5};% y-scaling 
+%
+\draw[>=stealth,->] ({-\sx*\mx-.25},0)--({\sx*\mx+.25},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.1)--(0,{\sy+.25}) node[above]{\small $F_X$};
+%
+% cumulativa
+\draw[thick,domain=-\mx:\mx,samples=100] plot({\x*\sx},{\sy*normcdf(\x)});
+%
+\draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{\small $1$};
+\end{scope}
+%
+\end{tikzpicture}

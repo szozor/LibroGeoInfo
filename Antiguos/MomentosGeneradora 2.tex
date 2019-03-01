@@ -1,0 +1,674 @@
+\seccion{Esperanza, momentos y funciones generadoras}
+\label{s:MP:esperanzamomento}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\aver{\emph{introducci\'on...}} %%
+
+
+% ================================= Media
+
+\subseccion{\modif{Media de un vector aleatorio}}
+\label{sec:MP:VectorMedio}
+
+
+Una  variable aleatoria  $X$  tiene asociado  un  {\it promedio}  o {\it  media}
+(tambi\'en  llamado   {\it  valor  esperado  o  de   expectaci\'on  o  esperanza
+  matem\'atica})  que  se obtiene  pesando  cada  valor  de \modif{$X$}  con  la
+\modif{medida de} probabilidad asociada a ese valor,
+%
+\modif{
+\begin{definicion}[Media o valor/vector medio]
+  Formalmente, la media de  una variable aleatoria $X$ \underline{integrable} es
+  definida por
+  %
+  \[
+  \Esp[X] = \int_\Omega X(\omega) dP(\omega)
+  \]
+  %
+  Claramente,  por  el  teorema de  la  medida  imagen,  esta media  se  escribe
+  tambi\'en a partir de la medida de probabilidad $P_X$ como
+  %
+  \[
+  \Esp[X] = \int_\Rset x \, dP_X(x)
+  \]
+  %
+  En  el caso vectorial  $d$-dimensional, hay  que entender  la media,  o vector
+  medio, como  un vector de componentes  $i$-\'esima la media  $\Esp[X_i]$ de la
+  componente $i$-\'esima $X_i$ de $X$, dando
+  %
+  \[
+  \Esp[X] = \int_{\Rset^d} x \, dP_X(x)
+  \]
+  %
+  A veces,  se encuentra  tambi\'en la notaci\'on  \ $\langle  x \rangle$ \  o \
+  $\langle  x  \rangle_{p_X}$  \  para  el  valor  medio,  especialmente  en  la
+  literatura de f\'isica.
+\end{definicion}
+%
+La secunda formulaci\'on  del valor medio se proba  sencillamente, empezando por
+$X = \un_A$ para unos $A$.   Entonces $P_X = (1-P(A)) \delta_0 + P(A) \delta_1$.
+Luego  $\displaystyle \int_\Omega  \un_A(\omega)  dP(\omega) =  P(A) =  (1-P(A))
+\times 0 +  P(A) \times 1 = \int_\Rset  x dP_X(x)$.  Se cierra la  prueba con el
+teorema~\ref{Th:MP:MedibleLimite} dando cualquier  funci\'on medible como limite
+de funciones escalonadas,  y por la definici\'on~\ref{Def:MP:IntegracionReal} de
+la integral de cualquier funci\'on medible.
+
+Luego,   de    la   distribuci\'on   marginal    $\displaystyle   P_{X_i}(B)   =
+\int_{\Rset^{i-1}   \times   B   \times   \Rset^{d-i}}  dP_X(x)$,   se   obtiene
+$\displaystyle  \Esp[X_i] = \int_{\Rset^d}  x_i \,  dP_X(x)$, dando  la \'ultima
+formulaci\'on en el caso vectorial.
+
+
+Fijense de que }
+%$p(x)\,dx$, e integrando sobre el rango permitido de $x$:
+%$$
+%E[X] = \langle x\rangle = \int_{\Omega} x \ p(x)\,dx \equiv \mu
+%$$
+%si  la  integral  existe.  La  \emph{esperanza} de  la  variable  aleatoria  $X$
+%representa  el valor  medio  que puede  tomar  entre todos  los  eventos de  una
+%prueba. U
+una   variable   aleatoria   $X$   se   dice   integrable   cuando   $E[|X|]   <
+\infty$. \modif{De  la misma manera, un  vector aleatorio admite una  media si y
+  solamente si cada componente es integrable. Veremos m\'as adelante que existen
+  variables aleatorias que no admiten una media.
+
+  M\'as  all\'a de  la  formulaci\'on matem\'atica  de  la media  \ $\Esp[X]$  \
+  representa   la  posici\'on  alrededor   de  la   cual  se   ``distribuye  las
+  probabilidades de  occurencia''. Es el equivalente  probabil\'istico de centro
+  de gravedad o barycentro en meca\'anica.
+
+  En el  caso de variables  aleatorias discretas, de  soporte $\X = \{  x_i \}$,
+  inmediatamente
+%
+\[
+\Esp[X] = \sum_i x_i P_X(\{x_i\}) = \sum_i x_i P(X = x_i)
+\]
+%
+\noindent  Fijense de  que $\Esp[X]$  no partenece  necesariamente a  $\X$.  Por
+ejemplo para $X$ uniforme sobre $\X = \{ 1 \, , \, 3 \, , \, 7 \}$, \ie $\forall
+\, i \in \X, \quad P(X = i) = \frac13$. Se calcula $\Esp[X] = 1 \times \frac13 +
+3 \times  \frac13 + 7 \times \frac13  = \frac{11}{3} \not\in \X$.  Tampoco es el
+promedio de los valores extremos.
+
+Un  ejemplo de  variable aleatoria  discreta  no integrable  es dada  por $\X  =
+\Nset^*$   con   $P(X   =    n)   =   \frac{6}{\pi^2   \,   n^2}$.   Claramente,
+$\sum_n\frac{6}{\pi^2 \, n}$ diverge, as\'i que $X$ no tiene una media.
+
+En el caso de vectores  aleatorios continuos, obtenemos la expresi\'on siguiente
+de la media (o vector medio):
+%
+\[
+\Esp[X] = \int_{\Rset^d} x \, p_X(x) \, dx
+\]
+%
+\noindent  Un ejemplo  de  no  teniende de  media  es dado  en  el  caso de  una
+distribuci\'on de Cauchy-Lorentz (ver  m\'as adelante) \ $\displaystyle p_X(x) =
+\frac{\alpha}{\left( 1 + x^t x  \right)^{\frac{d+1}{2}}}$ \ donde $\alpha$ es un
+factor de normalizaci\'on.
+
+En el caso general, para calcular  la media, hay que pasar por la distribuci\'on
+$P_X$.   Por ejemplo\label{Ej:MP:EspMixta},  volvemos al  la variable  mixta del
+ejemplo pagina~\pageref{Ej:MP:Mixta}, $X  = V \, \un_{U <  \frac12} + \un_{U \ge
+  \frac12}$  \ con  \  $U$ \  y  \ $V$  variables  aleatorias independientes  de
+distribuci\'on uniformas sobre  $[0 \, ; \,  1)$, \ie $p_U(x) = \un_{[0  \, ; \,
+  1)}(x)$.   De \  $X \in  B \:  \Leftrightarrow \:  \left( \left(  U  < \frac12
+  \right) \cap  \left( V \in B  \right) \right) \,  \cup \, \left( \left(  U \ge
+    \frac12 \right) \cap \left( 1 \in B \right) \right)$, \ del hecho de que los
+eventos de la  uni\'on son incompatibles y  de la independencia de $U$  y $V$ (o
+saliendo de la funci\'on de  repartici\'on), se obtiene $P_X(B) = \frac12 P_V(B)
++ \frac12  \delta_1(x)$.  A continuaci\'on,  \ $\displaystyle \Esp[X]  = \frac12
+\int_\Rset dP_V(x) + \frac12 \int_\Rset d\delta_1(x) = \frac12 \int_\Rset p_V(x)
+\, dx + \frac12 \times 1 = \frac12 \int_0^1 dx + \frac12 = \frac34$.
+
+\
+
+Una nota intersante es  de que, en el caso escalar, si \  $X \ge 0$ \ admitiendo
+una media, se obtiene
+%
+\[
+\Esp[X]  = \int_{\Rset_+} P(X  > t)  \, dt  = \int_{\Rset_+}  \left( 1  - F_X(t)
+\right) \, dt
+\]
+%
+Se proba saliendo  de \ $\displaystyle x = \int_0^x  dt = \int_{\Rset_+} \un_{(t
+  \, ;  \, +\infty)}(x)  \, dt$  \ dando \  $\displaystyle \Esp[X]  = \int_\Rset
+\left( \int_{\Rset_+}  \un_{(t \, ; \,  +\infty)}(x) \, dt \right)  \, dP_X(x) =
+\int_{\Rset_+} \left( \int_\Rset \un_{(t \, ; \, +\infty)}(x) \, dP_X(x) \right)
+\,    dt$    \    por    el    teorema    de    Fubini    Th.~\ref{Th:MP:Fubini}
+pagina~\pageref{Th:MP:Fubini}. Se  cierra la  prueba observando que  la integral
+interior es nada  m\'as que $P(X > t)$.   En el caso discreto con  $\X = \Nset$,
+viene  inmediatamente \ $\displaystyle  \sum_{n \in  \Nset} P(X>n)$  que podemos
+probar directamente  saliendo de $P(X  = n) =  P(X>n)- P(X>n-1)$. En el  caso de
+variable   admitiendo  una   densidad,   se  obtiene   tambi\'en  haciendo   una
+integraci\'on  por   partes~\footnote{El  el   casi  discreto,  hay   que  tener
+  precauciones separando la series de una diferencia de terminos. En el caso $X$
+  continuo admitiendo una densidad, hay  que estudiar bien el coomportamiento de
+  $t \mapsto t (1-F_X(t))$ al infinito.}.
+
+\
+
+Terminamos  esta  secci\'on con  la  propiedad  de  linealidad de  la  esperanza
+matem\'atica  $\Esp$, como consecuencia  de la  linealidad de  la integraci\'on:
+para cualquieras matrices  $C$ \ y \ $D$ \ dadas  de dimensiones compatibles con
+las de \  $X$ \ e \  $Y$ \ (incluyendo el caso  escalar), $$\Esp[C X + D  Y] = C
+\Esp[X] + D \Esp[Y]$$
+%
+
+
+}
+
+
+% ================================= Momentos
+\modif{
+\subseccion{Momentos de un vector aleatorio}
+\label{sec:MP:Momentos}
+}
+
+Si $X$ es una variable aleatoria, para cualquier funci\'on medible $f$, \ $f(X)$
+tambi\'en  lo  es.  \modif{se  puede   entonces  definir  su  valor  medio},  si
+existe. \modif{A pesar de necesitar evaluar la distribuci\'on de probabilidad de
+  $Y = f(X)$, el valor medio se calcula a partir de la de $X$,
+%
+\begin{teorema}[Teorema de transferencia]
+  Sea  \ $X$  \ un  vector  aleatorio $d$-dimensional  y \  $f: \Rset^d  \mapsto
+  \Rset^{d'}$ \ una funci\'on medible tal que $f(X)$ sea integrable. Entonces
+  %
+  \[
+  \Esp\left[   f(X)  \right]   =  \int_\Omega   f(X(\omega))  \,   dP(\omega)  =
+  \int_{\Rset^{d'}} f(x) \, dP_X(x)
+  \]
+  %
+  En particular, en el caso $\X = X(\Omega)$ discreto se obtiene
+  %
+  \[
+  \Esp\left[ f(X) \right] = \sum_i f(x_i) P(X = x_i)
+  \]
+  %
+  y para $X$ continuo admitiendo una densidad de probabilidad
+  %
+  \[
+  \Esp\left[ f(X) \right] = \int_{\Rset^d} f(x) \, p_X(x) \, dx
+  \]
+\end{teorema}
+%
+\begin{proof}
+  Sea $B \in \B(\Rset^d)$ \ y consideramos \ $\phi(x) = \un_B(x)$. Entonces, $\Y
+  = \{  0 \, , \,  1 \}$ y inmediatamente  $$P_Y = P_X(B) \, \delta_1 + (1-P_X(B))
+  \, \delta_0$$ Entonces
+  %
+  \[
+  \Esp[f(X)]  =  \int_\Rset  P_X(B)  \,  d\delta_1 +  \int_\Rset  (1-P_X(B))  \,
+  d\delta_0 = P_X(B) = \int_{\Rset^d} \un_B(x) \, dP_X(x)
+  \]
+  %
+  En el caso  $d' = 1$, para $f  \ge 0$, se cierra entonces la  prueba usando el
+  teorema~\ref{Th:MP:MedibleLimite}   pagina~\pageref{Th:MP:MedibleLimite}  para
+  ver $f$ como l\'imite creciente  de una sucesi\'on de funciones escalonadas, y
+  la definici\'on Def.~\ref{Def:MP:IntegracionReal} de la integraci\'on real. El
+  caso $d' > 1$ es nada mas que $d' = 1$, componente a componente.
+\end{proof}
+%
+Hablamos de {\it momentos} de la variable aleatoria $X$. Los momentos relevantes
+en general son los siguientes:
+%
+\begin{itemize}
+\item 
+\end{itemize}
+}
+
+\aver{
+En  general,  si $X$  es  una  variable  aleatoria, cualquier  funci\'on  $f(X)$
+tambi\'en lo es, y su valor de expectaci\'on, si existe, est\'a dado por
+$$
+E[f(X)] = \langle f(x)\rangle = \int_{\Omega} f(x) \ p(x)\,dx
+$$
+En  particular, para  el monomio  $f(x)=x^r$ siendo  $r\in\Nset$, se  obtiene el
+$r$\emph{-\'esimo momento (ordinario)} de $X$:
+$$
+\nu_r \equiv E[X^r] = \langle x^r\rangle = \int_{\Omega} x^r \ p(x)\,dx
+$$
+que tiene unidades  de $X^r$. Se puede incluir el caso  $r=0$, que corresponde a
+la condici\'on de normalizaci\'on:  \ $\nu_0=\int_{\Omega}p(x) \,dx=1$. La media
+es  el primer  momento: $\nu_1=\langle  x\rangle=\mu$. Es  f\'acil probar  que \
+$\langle x^2 \rangle \geq \langle x \rangle^2$.
+%%ejerc
+T\'ipicamente, los primeros  momentos son m\'as relevantes que  los de \'ordenes
+mayores, para la caracterizaci\'on de una distribuci\'on.
+%% Analog\'ia con Mec\'anica ...
+
+Por  ejemplo,  para  la   distribuci\'on  uniforme  $p(x)=\frac{1}{b-a}$  en  el
+intervalo  $[a,b]$,  resulta:  \  $\nu_1=\langle  x\rangle=\frac  12  (b+a)$,  \
+$\nu_2=\langle       x^2\rangle=\frac       13      (b^2+ab+b^2)$,       \ldots,
+$\nu_r=\frac{b^{r+1}-a[{r+1}}{(r+1)(b-a)}$.
+%%Simplificar. Ejercicio para otra distrib ?
+
+Cuando una pdf $p(x)$  tiene soporte (semi)infinito, necesariamente la funci\'on
+$p$ debe tender a 0  cuando $|x|\rightarrow\infty$.  Si $p(x)$ es \emph{de largo
+  alcance}, en  el sentido de  que no cae  a 0 suficientemente r\'apido  con $x$
+para  $x$  grandes,  algunos  momentos   pueden  no  existir.  Por  ejemplo,  la
+distribuci\'on   de   probabilidad    de   Cauchy--Lorentz   (o   funci\'on   de
+Breit--Wigner), dada  por $p(x)=\frac{\gamma}{\pi} \frac{1}{\gamma^2+(x-x_0)^2}$
+para  $x\in(-\infty,\infty)$, con $\gamma>0$  y $x_0$  fijos, no  tiene momentos
+finitos de orden $r\geq 1$.
+%%...
+
+%%Figura: Lorentzianas  centradas en x_0=0, con gamma=1  (forma est\'andar), .5,
+%% 2, ...
+
+\hfill
+
+En  el  caso  de  una  variable  aleatoria discreta  $X$  que  toma  valores  en
+$\Omega=\{x_1,  \ldots, x_N\}$, la  esperanza de  la variable  viene dada  por \
+$E[X] = \sum_{n=1}^N x_n \,  p(x_n)$.  Consideraremos que el espacio muestral es
+$\Nset$,
+ %%incluyendo n=0
+luego resulta
+$$
+E[X] = \langle n \rangle =  \sum_{n\geq 1} n \, p_n  , 
+$$
+que se puede obtener tambi\'en como \ $E[X]=\sum_{j=0}^{\infty}
+\Pr(X>j)$.
+%%ejercicio. Prueba de convergencia: ver O.François, Notes de cours, p.55
+Para una funci\'on $f$ definida sobre el conjunto $\{0,1,2,\ldots\}$ se tiene
+$$
+E[f(X)] =  \langle f(n) \rangle = \sum_{n\geq 0} f(n) \, p_n  , 
+$$
+y se define el $r$-\'esimo momento (ordinario) de $n$ como 
+$$
+\nu_r \equiv E[X^r] = \langle n^r\rangle = \sum_{n=1}^\infty n^r \, p_n  .
+$$
+En el  caso de variables discretas  sobre $\Nset$, resulta  \'util introducir el
+$r$-\'esimo \emph{momento factorial} de $n$ mediante
+$$
+\langle n^{(r)} \rangle \equiv \langle n (n-1) \cdots [n-(r-1)] \rangle =
+ \sum_{n=r}^\infty n (n-1) \cdots (n-r+1) \, p_n  .
+$$
+
+\hfill
+
+Los \emph{momentos centrales} se definen alrededor de $x=\langle x\rangle$, como
+el valor de expectaci\'on de potencias de la \emph{desviaci\'on} $\Delta x\equiv
+x-\langle x\rangle$:
+$$
+\mu_r  \equiv \langle (x-\langle  x\rangle)^r\rangle =  \int_{\Omega} (x-\langle
+x\rangle)^r \ p(x)\,dx .
+$$
+Se deduce que si la densidad de probabilidad $p(x)$ es una funci\'on sim\'etrica
+respecto  a  la  media,  entonces  todos  los  momentos  centrales  impares  son
+nulos.   Los   momentos   centrales   brindan  medidas   que   caracterizan   la
+distribuci\'on:
+\begin{enumerate}
+\item el primer momento central es id\'enticamente nulo para toda pdf:
+$$
+\mu_1 = \langle x-\langle x\rangle \rangle = 0 ; 
+$$
+%
+\item   el   segundo   momento   central   se   conoce   como   \emph{varianza},
+  \emph{dispersi\'on} o tambi\'en \emph{desviaci\'on cuadr\'atica media}:
+\begin{equation}
+\label{mu2}
+\mu_2 = \langle (x-\langle x\rangle)^2 \rangle = \langle x^2\rangle - \langle
+x\rangle^2 = \Var(X) \equiv \sigma^2 ,
+\end{equation}
+y es una medida del cuadrado del ancho  efectivo de una pdf, es no negativo y se
+anula s\'olo cuando $p(x)=\delta(x)$, esto  es, cuando no hay incerteza sobre el
+resultado.  La varianza est\'a bien definida si $X$ es una variable aleatoria de
+cuadrado integrable, esto es, cuando  $E[X^2] < \infty$.  El \emph{ancho} de una
+distribuci\'on  est\'a dado por  la \emph{desviaci\'on  est\'andar} \  $\sigma =
+\sqrt{\mu_2}$, tiene  las mismas unidades de  $X$, y se usa  para normalizar los
+momentos centrales  de orden superior.  El \emph{ancho relativo} es  otra medida
+que caracteriza  la distribuci\'on, dado por  $\frac{\sigma}{\langle x\rangle} =
+\sqrt{\frac{\langle x^2\rangle}{\langle x\rangle^2}-1}$ cuando $\langle x\rangle
+\neq 0$;
+%
+\item  el  tercer  momento  central  permite  definir  el  \emph{coeficiente  de
+    asimetr\'ia}:
+  $$
+  \alpha_3 \equiv \frac{\mu_3}{\sigma^3} , 
+  $$ 
+  que resulta adimensional y puede tener signo positivo o negativo, anul\'andose
+  para distribuciones que son sim\'etricas respecto del valor medio;
+%
+\item el cuarto momento central da lugar a la \emph{curtosis}:
+  $$
+  \alpha_4 \equiv \frac{\mu_4}{\sigma^4} , 
+  $$ 
+  que  posibilita  diferenciar  entre   distribuciones  altas  y  angostas  (con
+  $\alpha_4<3$), de otras bajas y anchas (con $\alpha_4>3$)
+\end{enumerate}
+
+\hfill
+
+La relaci\'on entre los momentos  centrales y los momentos ordinarios se obtiene
+directamente de las definiciones:
+$$
+\mu_r = \int (x-\langle x \rangle)^r \, p(x) \, dx = \sum_{s=0}^r
+\binom{r}{s}
+%% {r \choose s}
+(-\langle x  \rangle)^{r-s} \int x^s \,  p(x) \, dx  = \sum_{s=0}^r \binom{r}{s}
+\nu_s (-\nu_1)^{r-s}
+$$
+para    cualquier   $r=1,2,\ldots$,   siendo    $\nu_0=1$.   Por    ejemplo,   \
+$\mu_2=\nu_2-\nu_1^2$   como    en   la   Ec.~\eqref{mu2},    mientras   que   \
+$\mu_3=\nu_3-3\nu_1\nu_2+2\nu_1^3$.
+%% ejerc
+
+\hfill
+
+Dada una variable  aleatoria $X$ con una distribuci\'on  de probabilidad $p(x)$,
+teniendo en cuenta que los dos primeros momentos dan las caracter\'isticas m\'as
+importantes de la pdf, puede  resultar conveniente hacer una transformaci\'on de
+variable   aleatoria   a    la   llamada   \emph{forma   est\'andar}:   $Y\equiv
+\frac{X-\langle  X\rangle}{\sigma}$,  que  entonces  tiene  media igual  a  0  y
+desviaci\'on est\'andar igual a 1.
+
+\hfill
+
+Mencionamos algunas propiedades de $E[X]$ y de $E[X^2]$.  %%\cite{Fra09}
+
+Proposici\'on: \  Sean $X$  e $Y$ dos  variables aleatorias integrables,  y sean
+$a,b\in\Rset$   arbitrarios.  Entonces  la   variable  aleatoria   $Z=aX+bY$  es
+integrable, siendo \ $E[Z]=a E[X]+b E[Y]$.
+%% Demostracion:   por   linealidad   de   la   integral,   y   la   desigualdad
+%% triangular. (ejerc)
+%
+
+Proposici\'on: \ Sean  $X$ e $Y$ dos variables aleatorias  integrables. Si $X$ e
+$Y$ son independientes, entonces \ $E[X Y]=E[X] E[Y]$.
+%% Demostracion: por independencia de los eventos  A y B asociados a las var.X e
+%% Y. (ejerc) Indep es cond.sufic para factorizacion
+%
+
+Teorema: \  Sean $X$ e $Y$ dos  variables aleatorias reales Las  variables $X$ e
+$Y$ son independientes  si y s\'olo si $E[f(X)  g(Y)]=E[f(X)] E[g(Y)]$ para todo
+par de funciones $f$ y $g$ en $\Rset$, continuas y acotadas.
+%
+
+\modif{Volviendo al  ejemplo de la pagina~\pageref{Ej:MP:Mixta},  tratando de la
+  media de \ $X = V \, \un_{U <  \frac12} + \un_{U \ge \frac12}$ \ con \ $U$ \ y
+  \ $V$ \ variables independientes de distribuci\'on uniformas sobre $(0 \, ; \,
+  1)$, se calcula gracia a la linealidad y a la indepencia, \ $\Esp[X] = \Esp[V]
+  \Esp[\un_{U < \frac12}] + \Esp[\un_{U \ge \frac12}] = \frac12 \times \frac12 +
+  \frac12   =  \frac34$  \   como  lo   hemos  obtenido   usando  $P_X$   en  la
+  pagina~\pageref{Ej:MP:MediaMixta}.}
+ 
+Proposici\'on: \  Sea $X$ una variable  aleatoria de cuadrado  integrable, y sea
+$\Var(X)=E[(X-\langle X\rangle)^2]\equiv \sigma^2$ su varianza. Luego:
+\begin{enumerate}
+\item $\Var(X)=E[X^2]-(E[X])^2$ 
+%
+\item $\forall \ a\in\Rset : \ \Var(X+a)=\Var(X) , \ \Var(aX) = a^2 \Var(X)$
+%
+\item Si $Y$ es otra  variable aleatoria de cuadrado integrable, e independiente
+  de $X$, entonces: \ $\Var(X+Y)=\Var(X)+\Var(Y)$
+  %% Dem:   Var(X+Y)=Var(X)+Var(Y)+2(E[XY]-E[X]E[Y]),    donde   la   covarianza
+  %% Cov(X,Y)=E[XY]-E[X]E[Y] se anula si X e Y son indep.
+\end{enumerate}
+
+\hfill
+
+\emph{Desigualdades de Chebyshev y de Bienaym\'e--Chebyshev}
+%% referencias
+
+\hfill
+
+Estas desigualdades dan una cota superior  a la probabilidad de que una cantidad
+que  fluct\'ua aleatoriamente  exceda  cierto valor  umbral,  a\'un sin  conocer
+detalladamente la forma de la distribuci\'on de probabilidad.
+
+\underline{Desigualdad de Chebyshev}: \\
+Sea  $X$ una  variable aleatoria  real  con funci\'on  densidad de  probabilidad
+$p(x)$. Sea  $g(x)\geq 0 \ \forall \,  x\in\Rset$, con $g(x)\geq K  \ \forall \,
+x\in D\subset\Rset$, para alg\'un $K>0$. Entonces por un lado
+$$
+\Pr[g(X)\geq K] = \Pr[X\in D] = \int_D p(x)\,dx
+$$
+y por otro lado
+$$
+\langle g(X)\rangle=  \int_{\Rset} g(x)p(x)\,dx \geq \int_D  g(x)p(x)\,dx \geq K
+\int_D p(x)\,dx ,
+$$
+luego se tiene la desigualdad: 
+\begin{equation}
+\label{eq:desigChebyshev}
+\Pr[g(X)\geq K] \leq \frac{\langle g(X)\rangle}{K} .
+\end{equation}
+
+\underline{Desigualdad de Bienaym\'e--Chebyshev}: \\
+Sea $X$  una variable  aleatoria real de  esperanza $\mu$ y  varianza $\sigma^2$
+finita. Entonces, $\forall \, \epsilon >0$ se tiene la desigualdad:
+$$
+\Pr[|X-\mu| > \epsilon] \leq \frac{\sigma^2}{\epsilon^2} .
+$$
+En forma equivalente, se puede plantear  la probabilidad de que $X$ se aparte de
+su valor medio en m\'as de  cierto n\'umero $\eta$ de desviaciones est\'andar: \
+tomando  $g(x)=(\Delta   x)^2=(x-\mu)^2$  en  la  Ec.~\eqref{eq:desigChebyshev},
+resulta la desigualdad :
+\begin{equation}
+\label{eq:desigChebyshevBienayme}
+\Pr[|\Delta X| \geq \eta \sigma ] = \Pr[(\Delta X)^2 \geq \eta^2 \sigma^2 ] \leq
+\frac{1}{\eta^2}
+\end{equation}
+
+Estas  relaciones  afirman que  cuanto  m\'as chica  es  la  varianza, m\'as  se
+concentra la variable en torno a su media. Ambas cotas son en general d\'ebiles;
+por  ejemplo,  la  desigualdad~\eqref{eq:desigChebyshevBienayme} indica  que  la
+probabilidad  de encontrar  una fluctuaci\'on  superior a  $\eta=3$ desviaciones
+est\'andar alrededor de la media, est\'a  por debajo de $1/9$; el c\'alculo para
+una  distribuci\'on t\'ipica  como la  Gaussiana ajusta  dicha  probabilidad por
+debajo de 0.003.
+
+\hfill
+
+\emph{Momentos para varias variables aleatorias}
+
+\hfill
+
+En  el caso  de  varias  variables aleatorias  $X,Y,Z,\ldots$  con pdf  conjunta
+$p(x,y,z,\ldots)$ se  define el  \emph{momento central de  orden} $r,s,t,\ldots$
+como~\cite{ManWol95,CovTho06}
+$$
+\mu_{r,s,t,\ldots} \equiv \langle (\Delta  x)^r (\Delta y)^s (\Delta z)^t \ldots
+\rangle  =   \int  (x-\langle  x\rangle)^r   (y-\langle  y\rangle)^s  (z-\langle
+z\rangle)^t \cdots \ p(x,y,z,\ldots)\,dx\,dy\,dz\cdots .
+$$
+Por  ejemplo,  para $\begin{pmatrix}  X  \\  Y  \end{pmatrix} \sim  p(x,y)$  los
+momentos centrales  de orden lineal  resultan: \ $\mu_{1,0}=\mu_{0,1}=0$,  y los
+momentos centrales de orden cuadr\'atico est\'an dados por las varianzas de cada
+variable   y   por    la   llamada   covarianza:   \   $\mu_{2,0}={\sigma_X}^2$,
+$\mu_{0,2}={\sigma_Y}^2$, y $\mu_{1,1}=\langle  \Delta X \Delta Y\rangle$. Estos
+\'ultimos se  pueden acomodar en  una matriz, con propiedades  interesantes como
+veremos a continuaci\'on.
+
+Sea   $X^1,\ldots,X^d$   un   conjunto   de   $d$   variables   aleatorias.   La
+\emph{covarianza} entre $X^i$ y $X^j$ se define como
+$$
+\mu^{ij} \equiv \langle \Delta x^i \Delta x^j \rangle = \mu^{ji}
+$$
+para $i,j=1,\ldots,d$.  Las $d(d+1)/2$ cantidades de este tipo se disponen en un
+arreglo (sim\'etrico)  de $d\times d$, la  \emph{matriz de covarianza}~$\Sigma$,
+cuya diagonal son las varianzas $(\sigma^i)^2$. Por ejemplo, si $d=2$ se tiene
+$$
+\begin{pmatrix}  X^1 \\  X^2 \end{pmatrix}  \sim  p(x^1,x^2) \  : \qquad  \Sigma
+=     \begin{pmatrix}    (\sigma^1)^2     &    \mu^{12}     \\     \mu^{21}    &
+  (\sigma^2)^2 \end{pmatrix} .
+$$
+
+Proposici\'on: 
+$$
+|\mu^{ij}|^2 \leq \mu^{ii} \mu^{jj}
+$$
+La   demostraci\'on  de   esta  proposici\'on   involucra  la   desigualadad  de
+Cauchy--Schwarz ........... %%
+
+Se  define el  \emph{coeficiente de  correlaci\'on} que  es adimensional  y toma
+valores entre $-1$ (variables  completamente anticorrelacionadas) y 1 (variables
+completamente correlacionadas) como: \ $\rho^{ij}=\rho^{ji}\equiv
+\frac{\mu^{ij}}{\sigma^i \sigma^j}$.\\
+Como ejemplo,  dadas $X^1$ y  $X^2=aX^1+b$ que fluct\'uan  en fase ($a>0$)  o al
+rev\'es    ($a<0$),    se   tiene    $\Delta    x^2=a    \Delta   x^1$,    luego
+$\rho^{12}=\frac{a}{|a|}=\pm 1$.
+
+....
+
+
+\vspace{1.5pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subseccion{Funciones generatrices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Se  definen  un conjunto  de  funciones  que  permiten hallar  f\'acilmente  los
+distintos   momentos  de   una   distribuci\'on  de   probabilidad.  Se   llaman
+\emph{funciones  generadoras} o \emph{funciones  generatrices}, y  est\'an dadas
+como valores de expectaci\'on de  funciones de la variable aleatoria (discreta o
+continua), con un par\'ametro real o complejo.
+
+La  \emph{funci\'on  generadora   de  momentos}  (MGF,  \emph{moment  generating
+  function}) se define como
+$$
+M(\xi) \equiv \langle e^{\xi X} \rangle =  \int e^{\xi x} p(x) \, dx , \quad \xi
+\in \Rset
+$$
+en el  caso de una variable  aleatoria continua $X$  con pdf $p(x)$. Se  tiene \
+$M(0)=\int p(x)\,dx=1$ (que corresponde a la condici\'on de normalizaci\'on). Si
+la  variable $X$ es  positiva y  se toma  $\xi=-s$ con  $s>0$, se  interpreta en
+t\'erminos de la transformada de Laplace de la funci\'on $p$.  %%
+\\
+Si existe, la  MGF posibilita obtener f\'acilmente los  momentos (ordinarios) de
+$X$ a  distintos \'ordenes, mediante los  coeficientes del desarrollo  de $M$ en
+serie de potencias de $\xi$:
+$$
+M(\xi)  =  \sum_{r=0}^{\infty}  \frac{\xi^r}{r!}  \int  x^r  p(x)  \,  dx  =  1+
+\sum_{r=1}^{\infty} \frac{\nu_r}{r!} \xi^r
+$$
+o, alternativamente, mediante  las sucesivas derivadas de $M$  respecto de $\xi$
+en 0:
+$$
+\nu_r=\left.  \frac{d^r  M(\xi)}{d\xi^r}\right|_{\xi=0}  ,  \quad  r=1,2,\ldots;
+\quad \nu_0\equiv 1 .
+$$ 
+
+En  el  caso de  una  variable aleatoria  discreta,  suponiendo  que el  espacio
+muestral es $\Nset$, se definen  dos funciones: la \emph{funci\'on generadora de
+  momentos (ordinarios)} (MGF) dada por
+$$
+M(\xi) \equiv \langle e^{\xi N} \rangle = \sum_{n\geq 0} e^{\xi n} p_n ,
+%% = \sum_{r\equiv 0} \frac{\langle n^r\rangle}{r!} \xi^r , 
+$$
+y la \emph{funci\'on generadora  de momentos factoriales} (FMGF, \emph{factorial
+  moment generating function}) como
+$$
+F(\xi) \equiv \langle (1+\xi)^N \rangle = \sum_{n\geq 0} (1+\xi)^n p_n
+$$
+para    $\xi     \in    \Rset$    en     ambos    casos.    Se     verifica    \
+$M(0)=F(0)=\sum_{n=0}^{\infty} p_n=1$. Se muestra simplemente que
+$$
+M(\xi) = \sum_{r=0}^{\infty} \frac{\langle n^r\rangle}{r!} \xi^r , 
+$$
+lo que  permite obtener los momentos  de la distribuci\'on  para cualquier orden
+$r\geq 1$. Por otro lado, el desarrollo de la FMGF da
+$$
+F(\xi)  =   \sum_{n=  0}^{\infty}  \sum_{r=   0}^n  \binom{n}{r}  \xi^r   p_n  =
+\sum_{r=0}^\infty \sum_{n=r}^{\infty} \frac{n(n-1)\cdots (n-r+1)}{r!}  \xi^r p_n
+= \sum_{r=0}^{\infty} \frac{\langle n^{(r)}\rangle}{r!} \xi^r
+$$
+teniendo  en cuenta  en las  dobles sumas  que $0\leq  r\leq n$,  con  $n$ hasta
+$n_{\max}$ \'o  $\infty$. Se  ve entonces que  $F$ permite obtener  los momentos
+factoriales de orden $r$ arbitrario.
+
+Dada   una   variable   aleatoria   a   valores  naturales,   la   funci\'on   \
+$G(\xi)=\sum_{n=0}^{\infty} p_n \xi^n$, con $-1\leq \xi\leq 1$, %% \leq o < ?
+es  tambi\'en una  funci\'on generatriz.  Por ejemplo,  si $G$  admite derivadas
+primera  y segunda en  $\xi=1$ se  obtienen: $\langle  N\rangle=G'(1)$, $\langle
+N(N-1)\rangle=G''(1)$, $\Var(N)=G''(1)+G'(1)-[G'(1)]^2$; adem\'as, se obtiene la
+ley   de   distribuci\'on   evaluando   derivadas   de   $G$   en   $\xi=0$:   \
+$p_n=\frac{G^{(n)}(0)}{n!}$.  %% Ej: probar
+\cite{Fra09}%%p.73
+
+\hfill
+
+La \emph{funci\'on caracter\'istica}  (CF, \emph{characteristic function}) tiene
+argumento complejo: \cite{Luk61}
+$$
+C_X(\xi) \equiv \langle e^{i \xi X} \rangle = \int e^{i \xi x} p(x) \, dx .
+$$
+La importancia  de esta  funci\'on reside  en que siempre  existe y  est\'a bien
+definida, dado que es la  transformada de Fourier de una funci\'on absolutamente
+integrable (i.e. $\int |f(x)| \, dx < \infty$) \cite{Gol61}
+
+Si la pdf \ $p(x)$ es de cuadrado integrable, entonces 
+$$
+p(x) = \frac{1}{2	pi} \int e^{-i \xi x} C_X(\xi) \, d\xi .
+$$
+El requisito  para esta importante relaci\'on es  que \ $\int_{-\infty}^{\infty}
+|p(x)|^2 \, dx<\infty$;  sin embargo, a\'un es v\'alida  para distribuciones con
+una contribuci\'on  tipo $\delta$.  Por otro  lado los momentos,  si existen, se
+obtienen derivando la funci\'on $C$ tal como expresa la siguiente proposici\'on:
+
+\textbf{Proposici\'on:} \ %%
+La  variable aleatoria  $X$  admite  momento de  orden  $r$ si  y  s\'olo si  la
+funci\'on caracter\'istica $C$ es $r$ veces derivable en $\xi=0$, siendo
+$$
+\langle X^r\rangle = (-i)^r C_X^{(r)}(0) . 
+$$
+
+Por ejemplo, en el caso de la distribuci\'on de Cauchy--Lorentz resulta
+$$
+C(\xi)     =     \frac{\gamma}{\pi}    \int_{-\infty}^{\infty}     \frac{e^{i\xi
+    x}}{\gamma^2+(x-x_0)^2} dx = e^{-\gamma |\xi| e^{i x_0\xi}}
+$$
+tomando $\gamma >0$. Esta funci\'on est\'a  definida para todo $\xi$, pero no es
+derivable en $\xi=0$,  lo que coincide con el hecho de  que no est\'an definidos
+los momentos para esta pdf.
+
+Para  una   variable  aleatoria  compleja   $Z=X+iY$,  usando  la   noci\'on  de
+transformada de Fourier bidimensional, se define:
+$$
+C_Z(\mu) \equiv \int e^{\mu^* z-\mu z^*} p(z) \, d^2z .
+$$
+
+Resumimos algunas propiedades importantes de la funci\'on caracter\'istica:
+\begin{enumerate}
+\item $C(0) =1$
+%
+\item $|C(\xi)|\leq C(0)$ %%dem.
+%
+\item $C(\xi)$  es una  funci\'on continua  en $\Rset$ (a\'un  si la  pdf $p(x)$
+  tiene discontinuidades) %dem.
+%
+\item $C(-\xi) = C(\xi)*$
+%
+\item  $C(\xi)$ es  definida no  negativa,  de tal  forma que  para un  conjunto
+  arbitrario  de  $N$  n\'umeros  reales $\xi_1,\ldots,\xi_N$  y  $N$  n\'umeros
+  complejos $a_1,\ldots,a_N$, se cumple
+  $$
+  \sum_{i,j=1}^N a_i^* a_j C(\xi_j-\xi_i) \geq 0 .
+  $$
+%
+\item  $C(\xi) =  M(i\xi) =  F(e^{i\xi}-1)$, si  $M$ y  $F$ existen;  \ $F(\xi)=
+  M(\ln(1+\xi))$
+\end{enumerate}
+
+{\teorema (Bochner, Goldberg).... } %%
+
+\textbf{Proposici\'on:} \ %%
+Sean $X$ e  $Y$ dos variables aleatorias reales  independientes, cuyas funciones
+caracter\'isticas son $C_X$ y $C_Y$. Entonces \ $C_{X+Y}=C_X C_Y$.
+
+\hfill
+
+Cumulant generating function .... %%
+
+\hfill
+
+Extendemos  la  definici\'on  de   funci\'on  caracter\'istica  para  un  vector
+aleatorio. ... %%
+
+
+....
+}
+
+
+

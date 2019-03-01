@@ -1,0 +1,88 @@
+% MACROS
+%
+% Provisoire...
+\newcommand{\SZ}[1]{{\color{red}\bf #1}}
+
+% counters de propiedades, 
+\newcounter{propiedad}
+%
+\newcounter{PropPermutacion}
+\newcounter{PropBiyeccion}
+\newcounter{PropCotamaxima}
+\newcounter{PropConcavidad}
+\newcounter{PropSchurConcavidad}
+\newcounter{PropRecursividad}
+\newcounter{PropCadena}
+\newcounter{PropIndependenciaCondicional}
+%
+%
+% propiedades generales
+\newenvironment{propiedades}
+{\begin{enumerate}[label={[P\arabic*]}]\setcounter{enumi}{\value{propiedad}}}
+{\setcounter{propiedad}{\value{enumi}}\end{enumerate}}
+%
+% propiedades cambiadas en el caso continuo
+\newenvironment{propiedadesC}
+{\begin{enumerate}[label={[P'\arabic*]}]}
+{\end{enumerate}}
+%
+% propiedades cambiadas en el caso de (h,phi)-entropias
+\newenvironment{propiedadesPhi}
+{\begin{enumerate}[label={[P$_\phi$\arabic*]}]}
+{\end{enumerate}}
+
+
+% Ber74 => ensemble de papiers clés sur la theorie du codage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\capitulo{Nociones de teor\'ia de la informaci\'on}{Steeve Zozor}
+
+% Epigrafe de capitulo
+\begin{epigrafe}
+  ``Deber\'ias llamarla `entrop\'ia', por dos motivos.\\
+  En  primer  lugar  su funci\'on  de  incerteza\\
+  ha  sido  usada en  la  mec\'anica  estad\'istica\\
+  bajo ese nombre, y por ello, ya tiene un nombre.\\
+  En segundo lugar,  y lo que  es m\'as importante,\\
+  nadie sabe  lo que es realmenta la entrop\'ia,\\
+  por ello, en un debate, siempre llevar\'a la ventaja.
+%  ``You should call it entropy, for two reasons.\\
+%  In the first place your  uncertainty function\\
+%  has been used  in statistical mechanics\\
+%  under that  name, so it already  has a name.\\
+%  In the  second place, and more  important,\\
+%  no one knows what entropy really is,\\
+%  so in a  debate you will always have  the advantage''
+  %
+  \autortituloepigrafe{von Neumann to Shannon~\cite{TriMcI71}}
+\end{epigrafe}
+
+
+% =============================== Introduccion =============================== %
+
+\input{TEX_SZ/Introduccion}
+
+% ================================= Entropia ================================= %
+
+\input{TEX_SZ/Entropia}
+
+% ================================== Mutua =================================== %
+
+\input{TEX_SZ/CondicionalMutuaRelativa}
+
+% ============================== Desigualdades =============================== %
+
+\input{TEX_SZ/IdentidadesDesigualdades}
+
+% ========================= Ejemplos & Aplicaciones ========================== %
+
+\input{TEX_SZ/EjemplosAplicaciones}
+
+% ============================== Generalizadas================================ %
+
+\input{TEX_SZ/Generalizadas}
+
+% =============================== Cuanticas ================================== %
+
+\input{TEX_SZ/Cuanticas}

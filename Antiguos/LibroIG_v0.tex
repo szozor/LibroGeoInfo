@@ -1,0 +1,284 @@
+%% EDULP: Arial 10
+\documentclass[10pt]{article}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+%%
+
+\usepackage{amsmath,amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage{epsfig,graphics}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{color}
+
+%% EDULP: margenes superior e inferior 2 cm, margenes izquierdo y derecho 3 cm
+\setlength{\textwidth}{150mm}
+\setlength{\textheight}{255mm}
+\setlength{\oddsidemargin}{6mm}
+\setlength{\evensidemargin}{6mm}
+\setlength{\topmargin}{-5mm}
+\setlength{\headheight}{0mm}
+\setlength{\headsep}{0mm}
+%%
+
+%% EDULP: interlineado 1.5, sangria 0.5 cm
+\renewcommand{\baselinestretch}{1.5}
+\setlength{\parindent}{0.5cm}
+%%
+
+%\setlength{\parskip}{0.3cm}
+%\pagestyle{empty} %% No numera paginas
+%\renewcommand\thesection{2.\arabic{section}} %
+%\renewcommand\thesubsection{\Roman{subsection}.-}
+%\renewcommand\thesubsubsection{\Roman{subsection}.\arabic{subsubsection}.-}
+%\renewcommand\thefootnote{\Roman{footnote}}
+\renewcommand\thepage{1-\arabic{page}} %
+\renewcommand\listtablename{\\'Indice de Tablas}       % Cambia Indice de Cuadros a índice de Tablas
+\renewcommand\listfigurename{\\'Indice de Figuras}     % Cambia List of Figures a Lista de Figuras
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+
+\newcommand{\ii}{\'{\i}}
+\newcommand{\nh}{\~n}
+\newcommand{\sen}{\,\mathrm{sen}\,}
+\newcommand{\senh}{\,\mathrm{senh}\,}
+\newcommand{\vi}{\breve{\imath}}
+\newcommand{\vj}{\breve{\jmath}}
+\newcommand{\vk}{\breve{k}}
+
+\hyphenation{desi-gual-dad pro-ble-mas lo-ga-rit-mo si-guien-tes per-pen-di-cu-la-ri-dad}
+
+\begin{document}
+
+\mbox{ }\vspace{6cm}
+
+%% EDULP: 
+%TÍTULO DEL LIBRO (ARIAL 20??, NEGRITA, VERSALITA) MÁXIMO 4 PALABRAS 
+%SUBTÍTULO (OPTATIVO) (ARIAL 17??, NORMAL, VERSALITA) MÁXIMO 80 CARACTERES CON ESPACIOS
+%Autores: Nombre y Apellido (Arial 14??, normal, interlineado sencillo)
+\begin{center}
+{\Huge
+\textbf{GEOMETR\'IA E INFORMACI\'ON}
+}
+
+{\LARGE
+\textcolor{red}{Subtitulo es optativo - versalita ??}
+}
+
+\vspace{4cm}
+
+{\Large Mariela Portesi} \\
+{\Large Pedro Walter Lamberti} \\
+{\Large Steeve Zozor}
+
+\vfill
+
+%%EDULP: (Arial 11, normal)
+{\large 
+Facultad de Ciencias Exactas
+}
+
+\end{center}
+
+\newpage
+
+\mbox{ }\vspace{6cm}
+
+%%EDULP: dedicatoria (Arial 9, normal, interlineado de 1,5 líneas, alineación derecha)
+\begin{flushright}
+\textcolor{red}{Esto es una dedicatoria \\
+del libro.}
+\end{flushright}
+
+\newpage
+
+%%EDULP: Agradecimientos (Arial 18, negrita)
+%Texto de agradecimientos (Arial 10, interlineado de 1,5 líneas, alineación justificada, sangría 0,5 cm.). Máximo una carilla.
+{\LARGE \textbf{Agradecimientos}}
+
+\vspace{4cm}
+
+\textcolor{red}{Este es el texto de agradecimiento, max una carilla}
+
+\newpage
+
+
+
+
+
+
+\'INDICE DE CAP\'ITULOS \textcolor{red}{(provisorio)} 
+%%%
+
+\begin{itemize}
+
+\item{CAP\'ITULO~1: ELEMENTOS DE TEOR\'IA DE PROBABILIDADES \textcolor{red}{(Mariela)}} 
+
+\item{CAP\'ITULO~2: NOCIONES DE TEOR\'IA DE LA INFORMACI\'ON \textcolor{red}{(Steeve)}}
+
+\item{CAP\'ITULO~3: INTRODUCCI\'ON A LA GEOMETR\'IA DIFERENCIAL \textcolor{red}{(Walter)}}
+
+\item{CAP\'ITULO~4: GEOMETR\'IA DE LA INFORMACI\'ON}
+
+\item{CAP\'ITULO~5: APLICACIONES} 
+
+\end{itemize}
+
+\vskip1cm
+
+BIBLIOGRAF\'{\i}A SUGERIDA \textcolor{red}{(provisorio)} %%%
+
+\begin{itemize}
+\item Autor/es, \textit{Titulo} 
+\item etc.
+\end{itemize}
+
+\thispagestyle{empty}
+
+\newpage
+
+\thispagestyle{empty}
+
+COMENTARIOS INTRODUCTORIOS \textcolor{red}{(provisorio)} %%%
+
+\begin{itemize}
+\item[]
+Este libro surge de la experiencia de los autores en el dictado del curso semestral ''M\'etodos de geometr\'{\i}a diferencial en teor\'{\i}a de la informaci\'on", que se imparte en la Facultad de Ciencias Exactas de la Universidad Nacional de La Plata y en la Facultad de Matem\'atica, Astronom\'{\i}a y F\'{\i}sica de la Universidad Nacional de C\'ordoba. 
+...
+
+\end{itemize}
+
+\hspace{8cm} Los Autores
+
+\newpage
+
+\setcounter{page}{1}
+
+%% EDULP: titulo de capitulo 18 negrita
+{\LARGE
+\noindent \textbf{CAP\'ITULO~1}
+
+\noindent \textbf{ELEMENTOS DE TEOR\'IA DE PROBABILIDADES}
+} 
+
+
+%% EDULP: titulo de seccion 14pt ?? negrita, sin numerar: NO!, 2 espacios antes y 1 despues
+\vspace{1.5pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Variables aleatorias}
+\label{s:var_aleat}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\emph{introducci\'on...}
+
+%% EDULP: titulo de subseccion 12pt ?? negrita, sin numerar: NO!, 2 espacios antes y 1 despues
+\vspace{1.5pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Una subsecci\'on}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+......
+
+
+\vspace{1.5pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Distribuciones de probablidad discretas}
+\label{s:distprobdisc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\emph{introducci\'on...}
+
+\vspace{1.5pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Otra subsecci\'on}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+....
+
+\newpage
+
+{\LARGE
+\noindent \textbf{CAP\'ITULO~2}
+
+\noindent \textbf{NOCIONES DE TEOR\'IA DE LA INFORMACI\'ON}
+} 
+
+
+\vspace{1.5pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{La Secci\'on 2.1}
+\label{s:2.1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+.........
+
+
+\newpage
+
+
+{\LARGE
+\noindent \textbf{CAP\'ITULO~3}
+
+\noindent \textbf{INTRODUCCI\'ON A LA GEOMETR\'IA DIFERENCIAL}
+} 
+
+
+\vspace{1.5pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{La Secci\'on 3.1}
+\label{s:3.1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+.........
+
+
+\newpage
+
+
+{\LARGE
+\noindent \textbf{CAP\'ITULO~4}
+
+\noindent \textbf{GEOMETR\'IA DE LA INFORMACI\'ON}
+} 
+
+
+\vspace{1.5pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{La Secci\'on 4.1}
+\label{s:4.1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+.........
+
+
+\newpage
+
+{\LARGE
+\noindent \textbf{CAP\'ITULO~5}
+
+\noindent \textbf{APLICACIONES}
+} 
+
+
+\vspace{1.5pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{La Secci\'on 5.1}
+\label{s:5.1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+.........
+
+
+\end{document}

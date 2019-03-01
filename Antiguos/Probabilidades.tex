@@ -1,0 +1,173 @@
+\seccion{Probabilidades}
+\label{s:probabilidad}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\emph{introducci\'on...}
+
+\vspace{1.5pt}
+
+El  concepto  de  \emph{probabilidad}  es  importante en  situaciones  donde  el
+resultado (o \emph{outcome})  de un dado proceso o  medici\'on es incierto, cuando
+la salida de una experiencia no  es totalmente previsible. La probabilidad de un
+evento es una medida que se asocia con cu\'an probable es el evento o resultado.
+
+Una  definici\'on  de  probabilidad  puede  obtenerse en  base  a  la  enumeraci\'on
+exhaustiva de los resultados posibles de un experimento o proceso,
+%lo que no siempre es factible
+suponiendo que el conjunto de posibilidades es completo en el sentido de que una
+de  ellas debe ser  verdad. Si  el proceso  tiene $N$  resultados distinguibles,
+mutuamente  excluyentes e  igualmente probables  (esto  es, no  se prefiere  una
+posibilidad frente a  otras), y si $n$  de esos $N$ tienen un  dado atributo, la
+probabilidad asociada  a dicho atributo en  un dado procesos es  $\frac nN$. Por
+ejemplo, sorteando un n\'umero entre los naturales del 1 al 10, la probabilidad de
+``obtener un n\'umero par'' es $\frac5{10} = \frac12$.
+
+Otra definici\'on de probabilidad se  basa en la frecuencia relativa de ocurrencia
+de  un evento.  Si en  una cantidad  $N$ muy  grande de  procesos independientes
+cierto atributo aparece $n$ veces, se identifica a la probabilidad asociada a un
+proceso  o  ensayo con  la  frecuencia relativa  de  ocurrencia  $\frac nN$  del
+atributo.
+%lim N->infty n/N indef. 
+
+Los  axiomas  de  Kolmogorov  proveen  requisitos  suficientes  para  determinar
+completamente
+%
+las propiedades  de la medida de probabilidad  $p(A)$ que se puede  asociar a un
+evento $A$ entre un conjunto de resultados o eventos de un proceso.
+
+Llamemos $\Omega$  al \emph{espacio muestral}  o espacio fundamental, que  es el
+espacio total  de eventos.  Por ejemplo, si  $A$ es  el evento ``es  un n\'umero
+natural par'' y $B$ indica ``es un n\'umero natural impar'', el espacio muestral
+$\Omega=\{A,B\}$ indica  ``es un n\'umero natural'';  en el caso  de analizar el
+tiempo de vida de un aparato, $\Omega  = \Rset$; en el lanzamiento de un dado de
+6 caras es $\Omega$ es el conjunto de  las etiquetas que se asigne a cada una de
+las caras (los n\'umeros naturales del 1 al 6, o las letras \emph{a, b, c, d, e,
+  f}, u otro etiquetado). El conjunto de resultados posibles se supone conocido,
+a\'un cuando se desconozca de antemano el resultado de una prueba.
+
+Entre los eventos  se pueden considerar operaciones an\'alogas a  las de la teor\'ia
+de conjuntos:
+%% <-- Ej: representar mediante conjuntos las operaciones entre eventos
+\begin{itemize}
+\item combinaci\'on  o uni\'on  de eventos:  \ $A+B$ se  corresponde con  $A\cup B$,
+  implicando que se da $A$, \'o $B$, o ambos;
+%
+\item intersecci\'on de eventos: \  $A,B$ se corresponde con $A\cap B$, implicando
+  que se dan ambos $A$~y~$B$;
+%
+\item complemento  de un evento: \ $-A$  se corresponde con $\tilde  A$ e indica
+  que no se da $A$.
+%
+\item  eventos disjuntos  o mutuamente  excluyentes: \  son aquellos  que  no se
+  superponen,  se anota $A,B  = \emptyset$  donde $\emptyset=-\Omega$  denota el
+  evento nulo (evento que no puede ocurrir, es el complemento de $\Omega$).
+\end{itemize}
+
+Las propiedades de la probabilidad de un dado evento quedan determinadas por los
+siguientes
+
+\begin{enumerate}
+\item[]\emph{Axiomas de Kolmogorov}
+%
+  \begin{enumerate}
+  \item $p(A_i) \geq 0 \ \ \forall \ A_i$
+  \item $p(\Omega) = 1$
+  \item Si $A_1, A_2, A_3,  \ldots$ son eventos mutuamente excluyentes, entonces
+    $p(A_1+A_2+A_3+\cdots)=p(A_1)+p(A_2)+p(A_3)+\cdots$
+  \end{enumerate}
+\end{enumerate}
+
+A partir de estos axiomas se pueden probar varios corolarios y propiedades:
+%
+\begin{itemize}
+\item la probabilidad de un evento seguro o cierto es 1;
+%
+\item  la   probabilidad  de   un  evento   que  no  puede   ocurrir  es   0:  \
+  $p(\emptyset)=0$;
+%
+\item el  rango de  las probabilidades  est\'a acotado: \  $0\leq p(A)\leq  1\ \
+  \forall \ A$;
+%
+\item condici\'on  de normalizaci\'on:  \ si $\Omega=A_1+\cdots+A_N$,  con $A_i$
+  mutuamente excluyentes, entonces \ $\sum_{i=1}^N p(A_i)=1$;
+%
+\item si $A$ es subconjunto de $B$, entonces \ $p(A)\leq p(B)$.
+\end{itemize}
+
+La \emph{probabilidad conjunta} \  $p(A,B)=p(B,A)$ es la probabilidad del evento
+conjunto dado por la composici\'on de los eventos $A$ y $B$. Se demuestra que
+%
+\begin{itemize}
+\item $p(A,B)$ est\'a acotada: \ $0\leq p(A,B)=p(B,A)\leq \min\{p(A),p(B)\}$;
+%
+\item si $A$ y $B$ son mutuamente excluyentes, entonces \ $p(A,B)=0$;
+%
+\item  si  $B_1,  \ldots, B_M$  es  un  conjunto  completo de  eventos  posibles
+  excluyentes entre s\'i, %%
+  entonces \ $\sum_{j=1}^M p(A,B_j)=p(A)$.
+\end{itemize}
+
+En el caso de eventos no necesariamente mutuamente excluyentes, se prueba que la
+\emph{ley de composici\'on} es
+%
+$$
+p(A+B)=p(A)+p(B)-p(A,B)\leq p(A)+p(B) , 
+$$ 
+%
+y que para $N$ eventos resulta 
+%
+$$
+p(A_1+\cdots+A_N)\leq p(A_1)+\cdots+p(A_N) . 
+$$ 
+%
+La  igualdad  vale  en  el  caso  especial  de  eventos  mutuamente  excluyentes
+(recuperando el tercer axioma de Kolmogorov).
+
+La  \emph{probabilidad condicional}  de  $A$ dado  $B$  es la  raz\'on entre  la
+probabilidad del  evento conjunto y la  probabilidad de que se  d\'e $B$ (cuando
+\'este es un evento no nulo):
+%
+$$
+p(A|B)=\frac{p(A,B)}{p(B)} .
+$$ 
+%
+Es f\'acil demostrar %% <-- ejercicio
+que  esta cantidad  toma valores  entre 0  y 1,  con $p(\Omega|B)=1$,  y  que es
+aditiva  para  una  uni\'on  de  eventos  mutuamente  excluyentes  referidos  al
+cumplimiento de  $B$. Luego, $p(A|B)$  es una probabilidad.  Algunas propiedades
+interesantes son las siguientes:
+%
+\begin{itemize}
+\item  condici\'on  de  normalizaci\'on:  \  $\sum_{i=1}^N  p(A_i|B)=1$,  siendo
+  $A_1,\ldots,A_N$  un  conjunto  completo  de  resultados  posibles  mutuamente
+  excluyentes;
+%
+\item    relaci\'on    entre    probabilidades   condicionales    inversas:    \
+  $p(B|A)=\frac{p(B)}{p(A)}  p(A|B)$,  de donde  $p(A|B)$  y $p(B|A)$  coinciden
+  s\'olo cuando $A$ y $B$ tienen la misma probabilidad;
+%
+\item \emph{f\'ormula de Bayes}: \ si $B_1, B_2, \ldots$ es un conjunto completo
+  de eventos no nulos mutuamente excluyentes, entonces
+  %
+  $$
+  p(B_i|A)=\frac{p(A,B_i)}{p(A)}   =   \frac{p(A|B_i)  p(B_i)}{\sum_j   p(A|B_j)
+    p(B_j)} .
+  $$ 
+\end{itemize}
+
+Dos eventos  $A$ y $B$  se dicen \emph{estad\'isticamente independientes}  si la
+probabilidad  condicional   de  $A$  dado   $B$  es  igual  a   la  probabilidad
+incondicional  de  $A$:  \   $p(A,B)=p(A)  p(B)$.  La  condici\'on  necesaria  y
+suficiente  para  que   $N$  eventos  $A_1,\ldots,A_N$  sean  estad\'isticamente
+independientes es que la probabilidad conjunta se factorice como
+%
+$$
+p(A_1,\ldots,A_N)=p(A_1) \cdots p(A_N) .
+$$
+%
+Se  deduce que  los  eventos mutuamente  excluyentes  no son  estad\'isticamente
+independientes.
+
+\cite{ManWol95}

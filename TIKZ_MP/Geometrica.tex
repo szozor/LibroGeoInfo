@@ -1,0 +1,69 @@
+\begin{tikzpicture}%[scale=.9]
+\shorthandoff{>}
+%
+\pgfmathsetmacro{\sx}{.75};% x-scaling
+\pgfmathsetmacro{\r}{.05};% radius arc non continuity F_X
+\pgfmathsetmacro{\p}{1/3};% probabilidad p
+\pgfmathsetmacro{\n}{7};% k mas grande del plot (k in Nset^*)
+%
+% masa
+\begin{scope}
+%
+\pgfmathsetmacro{\sy}{2.5/\p};% y-scaling 
+\draw[>=stealth,->] (-.25,0)--({\sx*\n+.75},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.1)--(0,{\sy*\p+.25}) node[above]{\small $p_X$};
+%
+\pgfmathsetmacro{\pr}{\p};% probabilidad
+%
+\foreach \k in {1,...,\n} {
+\draw ({\k*\sx},0)--({\k*\sx},-.1) node[below,scale=.7]{\k};
+\draw[dotted] ({\k*\sx},0)--({\k*\sx},{\sy*\pr}) node[scale=.7]{$\bullet$};
+%
+\pgfmathsetmacro{\prl}{\pr*(1-\p)};\global\let\pr\prl;% proba actualizado
+}
+\draw ({(\n+.5)*\sx},-.2) node[below,scale=.7]{$\ldots$};
+\draw ({(\n+.5)*\sx},{(\pr/(1-\p)/2*\sy}) node[scale=.7]{$\cdots$};
+\draw (0,{\p*\sy})--(-.1,{\p*\sy}) node[left,scale=.7]{$p$};
+\draw (0,{\p*(1-\p)*\sy})--(-.1,{\p*(1-\p)*\sy}) node[left,scale=.7]{$p (1-p)$};
+\draw (-.5,{\p*(1-\p)/2*\sy}) node[left,scale=.7]{$\vdots$};
+%
+\end{scope}
+%
+%
+% reparticion
+\begin{scope}[xshift=8.5cm]
+%
+\pgfmathsetmacro{\sy}{2.5};% y-scaling 
+%
+\draw[>=stealth,->] (-.6,0)--({\sx*\n+.75},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.1)--(0,{\sy+.25}) node[above]{\small $F_X$};
+%
+\pgfmathsetmacro{\pr}{\p};% probabilidad
+\pgfmathsetmacro{\c}{\p};% cumulativa
+%
+% cumulativa x < 1
+\draw (1,0)--(1,-.1) node[below,scale=.7]{0};
+\draw[thick] (-.5,0)--(\sx,0);
+\draw ({\sx+\r},\r) arc (90:270:\r);
+%
+% cumulativa x de 1 a n
+\foreach \k in {2,...,\n} {
+\draw ({\k*\sx},0)--({\k*\sx},-.1) node[below,scale=.7]{\k};
+\draw[thick]({(\k-1)*\sx},{\sy*\c}) node[scale=.7]{$\bullet$}--({\k*\sx},{\sy*\c});
+\draw ({\k*\sx+\r},{\sy*\c+\r}) arc (90:270:\r);
+\draw[dotted] ({(\k-1)*\sx},{(\c-\pr)*\sy})--({(\k-1)*\sx},{\c*\sy});
+%
+\pgfmathsetmacro{\prl}{\pr*(1-\p)};\global\let\pr\prl;% proba actualizado
+\pgfmathsetmacro{\cl}{\c+\pr};\global\let\c\cl;% cumulativa actualizada
+}
+%
+% cumulativa x > n
+\draw ({(\n+.5)*\sx},-.2) node[below,scale=.7]{$\ldots$};
+\draw ({(\n+.5)*\sx},{((\c+1)/2*\sy}) node[scale=.7]{$\cdots$};
+\draw (0,{\p*\sy})--(-.1,{\p*\sy}) node[left,scale=.7]{$p$};
+\draw (0,{\p*(2-\p)*\sy})--(-.1,{\p*(2-\p)*\sy}) node[left,scale=.7]{$p (2-p)$};
+\draw (-.3,{(1+\p*(2-\p))/2*\sy}) node[left,scale=.7]{$\vdots$};
+\draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{\small $1$};
+\end{scope}
+%
+\end{tikzpicture}

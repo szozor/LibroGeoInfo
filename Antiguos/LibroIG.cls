@@ -11,20 +11,13 @@
 \RequirePackage[left=2cm,right=2cm,top=3cm,bottom=3cm]{geometry}
 \RequirePackage[latin1]{inputenc} % encoding
 \RequirePackage[T1]{fontenc} % font encoding
-\RequirePackage{amsmath,amssymb,amsthm,bbm,mathtools} % mathematical packages
-%\RequirePackage{stix} % hebrew letters
-\RequirePackage{xspace} % spacing package
-\RequirePackage{epsfig,graphics,graphicx,color,tikz,pgfplots,etoolbox} % figures packages
-\RequirePackage{enumitem} % to manage the labels... en enumerate
+\RequirePackage{amsmath,amssymb} % mathematical packages
+\RequirePackage{epsfig,graphics,graphicx,color} % figures packages
 %\RequirePackage[labelsep=endash]{caption}
 %\RequirePackage{setspace} % space package
-\RequirePackage{ccaption} % ease the management of captions
-\RequirePackage{etoolbox,ifthen,xifthen} % conditioning packages
+\RequirePackage{etoolbox,ifthen} % conditioning packages
 \RequirePackage{titletoc,tocloft} % table of content managment package
-\RequirePackage{tabularx} % para manejar las tablas
-\RequirePackage{footmisc} % to manage the numeration and reference to footnote
 %\RequirePackage{xargs}
-%\RequirePackage{accents}
 %\providecommand{\BIBand}{e}
 \RequirePackage{apacite}
 %\providecommand{\BIBand}{e}
@@ -61,7 +54,7 @@
 \fontsize{10}{10}\selectfont
 %%
 
-%\pagestyle{empty}
+\pagestyle{empty}
 
 
 
@@ -98,7 +91,6 @@
 %\vfill
 %\begin{center}
 %\includegraphics[width=4cm]{logo_large}
-%\end{center}
 
 %\AtEndEnvironment{\newpage}
 }{\cleardoublepage}
@@ -170,9 +162,8 @@
 \newcounter{seccion}[capitulo]
 \newcounter{subseccion}[seccion]
 \newcounter{subsubseccion}[subseccion]
-\renewcommand{\theseccion}{\arabic{capitulo}.\arabic{seccion}}
-\renewcommand{\thesubseccion}{\arabic{capitulo}.\arabic{seccion}.\arabic{subseccion}}
-\renewcommand{\thesubsubseccion}{\arabic{capitulo}.\arabic{seccion}.\arabic{subseccion}.\arabic{subsubseccion}}
+
+
 
 %% Definition de los capitulos ========================================================
 %% EDULP: titulo de capitulo 18 negrita
@@ -256,7 +247,6 @@
 \renewcommand{\baselinestretch}{1.5}
 \caption{\fontsize{10}{10}\selectfont\normalfont  #1}
 }
-%[footnoteless]
 
 
 % Definition de fuentes de figuras, tablas... =========================================
@@ -296,7 +286,7 @@
 \newcommand{\bibliografia}[1]{
 \cleardoublepage
 \thispagestyle{empty}
-\renewcommand{\refname}{\fontsize{18}{18}\selectfont\bf Referencias\vspace{4cm}}
+\renewcommand{\refname}{\fontsize{18}{18}\selectfont\bf Referenc\'ias\vspace{4cm}}
 % Bibliograf\'ia sugerida\vspace{4cm}}
  \bibliography{#1}
 \cleardoublepage
@@ -321,20 +311,3 @@
   {\fontsize{12}{12}\selectfont\bf\noindent ##1}\newline
   {\fontsize{10}{10}\selectfont\normalfont\noindent ##2}}
 }{}
-
-% definicion de las definiciones, teoremas...
-
-\newtheorem{definicion}{Definici\'on}
-\newtheorem{teorema}{Teorema}
-\newtheorem{corolario}{Corolario}
-\newtheorem{lema}{Lema}
-\newtheorem{propuesta}{Propuesta}
-\newtheorem{ejemplo}{Ejemplo}
-
-% numerotacion con el numero de capitulo
-\renewcommand\thedefinicion{\arabic{capitulo}-\arabic{definicion}}
-\renewcommand\theteorema{\arabic{capitulo}-\arabic{teorema}}
-\renewcommand\thecorolario{\arabic{capitulo}-\arabic{corolario}}
-\renewcommand\thelema{\arabic{capitulo}-\arabic{lema}}
-\renewcommand\thepropuesta{\arabic{capitulo}-\arabic{propuesta}}
-\renewcommand\theejemplo{\arabic{capitulo}-\arabic{ejemplo}}
