@@ -41,7 +41,7 @@ Distribuci\'on de probabilidad & $p_X(1) = 1 - p_X (0) = p$\\
 %Momentos & $ \Esp\left[ X^k \right] = p^k$\\
 %\hline
 %
-Promedio & $ \Esp[X] = p$\\
+Promedio & $ m_X = p$\\
 \hline
 %
 Varianza & $\sigma_X^2 = p (1-p)$\\
@@ -103,7 +103,7 @@ Distribuci\'on de probabilidad & $p_X(k) = \bino{n}{k} p^k (1-p)^{n-k}$\\
 %Momentos & $ \Esp\left[ X^k \right] = p^k$\\
 %\hline
 %
-Promedio & $ \Esp[X] = n p$\\
+Promedio & $ m_X = n p$\\
 \hline
 %
 Varianza & $\sigma_X^2 = n p (1-p)$\\
@@ -186,7 +186,7 @@ Distribuci\'on de probabilidad & $p_X(k) = (1-p)^{k-1} p$\\
 %Momentos & $ \Esp\left[ X^k \right] = p^k$\\
 %\hline
 %
-Promedio & $ \Esp[X] = \frac1p$\\
+Promedio & $ m_X = \frac1p$\\
 \hline
 %
 Varianza & $\sigma_X^2 = \frac{1-p}{p^2}$\\
@@ -215,7 +215,7 @@ Funci\'on caracter\'istica & $\Phi_X(\omega) = \frac{p e^{\imath \omega}}{1-(1-p
 % CDF	$1-(1-p)^k$
 
 Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
-figura Fig.~\ref{Fig:MP:Binomial}.
+figura Fig.~\ref{Fig:MP:Geometrica}.
 %
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/Geometrica} \end{center}
@@ -258,7 +258,7 @@ Distribuci\'on de probabilidad & $p_X(k) = \frac{\lambda^k e^{-\lambda}}{k!}$\\
 %Momentos & $ \Esp\left[ X^k \right] = p^k$\\
 %\hline
 %
-Promedio & $ \Esp[X] = \lambda$\\
+Promedio & $ m_X = \lambda$\\
 \hline
 %
 Varianza & $\sigma_X^2 = \lambda$\\
@@ -332,11 +332,86 @@ Ley multinomial
 \subseccion{Distribuciones de variable continua}
 \label{Ssec:MP:EjemplosDistribucionescontinuas}
 
-\aver{
-Distribuci\'on uniforme sobre un intervalo
+\SZ{$\sigma \to 0$ caso cierto}
 
-...
+% --------------------------------- uniforme
+
+\subsubseccion{Distribuci\'on uniforme sobre un producto cartesiano de intervalos}
+
+Se denota $X \sim \U(\D)$ \ con,  en este caso, \ $\D = \optimes_{i=1}^d [a_i \,
+; \, b_i] \subset \Rset^d$. Se puede escribir  $X \egald a + \diag(b-a) U$ \ con
+\  $a  =   \begin{bmatrix}  a_1  &  \cdots  &  a_d   \end{bmatrix}^d$,  \  $b  =
+\begin{bmatrix} b_1 & \cdots & b_d \end{bmatrix}^d$  \ y \ $U \sim \U \left( [ 0
+\, ; \, 1 ]^d \right)$. Las caracteristicas de \ $X \sim \U \left( [ 0 \, ; \, 1
+]^d \right)$ \ son las siguientes (se deducen para cualquier uniforme sobre $\D$
+por transformaci\'on lineal; ver secciones anteriores):
+
+\begin{center}
+\begin{tabular}
+{
+|>{\vspace{-2mm}}p{.3\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
 }
+%
+\hline
+%
+Dominio de definici\'on & $\D = [0 \, ; \, 1 ]^d$\\
+\hline
+%
+Densidad de probabilidad & $p_X(x) = 1$\\
+\hline
+%
+%Momentos & $ \Esp\left[ X^k \right] = p^k$\\
+%\hline
+%
+Promedio & $ m_X = \frac12 \begin{bmatrix} 1 & \cdots & 1 \end{bmatrix}^t$\\
+\hline
+%
+Covarianza & $\Sigma_X = \frac1{12} I$\\
+\hline
+%
+Asimetr\'ia (caso escalar) & $\gamma_X = 0$\\
+\hline
+%
+Curtosis (caso escalar) & $\kappa_X = -\frac65$\\
+\hline
+%
+%Generadora de probabilidad & $G_X(z) = e^{\lambda (z-1)}$ \ para \ $z \in \Cset$\\
+%\hline
+%
+Generadora de momentos  & $M_X(u) = \prod_{k=1}^d \frac{  e^{u_k} - 1}{u_k}$ \
+para~\footnote{Con el l\'imite $\lim_{u_k \to 0} \frac{ e^{u_k} - 1}{u_k} = 1$.}
+\ $u \in \Cset^d$\\ \hline
+%
+Funci\'on caracter\'istica & $\Phi_X(\omega) = (-\imath)^d \prod_{k=1}^d \frac{ e^{\imath \omega_k} - 1}{\omega_k}$\\
+\hline
+\end{tabular}
+\end{center}
+%
+% modo 0
+% Mediana \ln(2)/\lambda
+% CDF 1-e^{-\lambda x}
+
+Su densidad  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
+figura Fig.~\ref{Fig:MP:Uniforme} en el caso escalar.
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/Uniforme} \end{center}
+% 
+\leyenda{Ilustraci\'on  de una densidad  de probabilidad  uniforme (a),  y la
+funci\'on de repartici\'on asociada (b).}
+\label{Fig:MP:Uniforme}
+\end{figure}
+
+\SZ{Hacer el caso $d = 2$}
+
+%Cuando $\lambda \to +\infty$ la variable tiende a una variable cierta $X = 0$.
+\SZ{Esta distribuci\'on aparece...}
+% en el conteo de
+%conteo de une repetici\'on de  una experiencia de maneja independiente hasta que
+%occure un evento de probabilidad $p$; por ejemplo el n\'umero de tiro de un dado
+%equilibriado hasta que occurre un ``6'' sigue una ley geometrica de parametro $p
+%= \frac16$.
 
 
 
@@ -365,7 +440,7 @@ Densidad de probabilidad & $p_X(x) = \lambda e^{-\lambda x}$\\
 %Momentos & $ \Esp\left[ X^k \right] = p^k$\\
 %\hline
 %
-Promedio & $ \Esp[X] = \frac1\lambda$\\
+Promedio & $ m_X = \frac1\lambda$\\
 \hline
 %
 Varianza & $\sigma_X^2 = \frac1{\lambda^2}$\\
@@ -413,7 +488,7 @@ Cuando $\lambda \to +\infty$ la variable tiende a una variable cierta $X = 0$.
 
 
 
-% --------------------------------- Gausiana
+% --------------------------------- Gaussiana
 
 \subsubseccion{Distribuci\'on normal o Gaussiana multivariada}
 
@@ -421,7 +496,7 @@ Se denota $X \sim \N(m,\Sigma)$ \ con \  $m \in \Rset^d$ \ y \ $\sigma$ \ matriz
 $d  \times  d$  s\'imetrica  definida  positiva. Se  puede  escribir  $X  \egald
 \Sigma^{\frac12} N + m$ \ con \ $N \sim \N(0,I)$ \ donde \ $I$ \ es la identidad
 y \ $N$ \ es dicha Gausiana estandar o centrada-normalizada. Las caracteristicas
-de \ $N \sim \N(0,I)$ \  son las siguientes (se deducen para cualquier Gaussiana
+de \ $X \sim \N(0,I)$ \  son las siguientes (se deducen para cualquier Gaussiana
 por transformaci\'on lineal; ver secciones anteriores):
 
 \begin{center}
@@ -442,10 +517,10 @@ Densidad de probabilidad & $p_X(x) = \frac{1}{(2 \pi)^{\frac{d}{2}}} e^{-\frac12
 %Momentos & $ \Esp\left[ X^k \right] = p^k$\\
 %\hline
 %
-Promedio & $ \Esp[X] = 0$\\
+Promedio & $ m_X = 0$\\
 \hline
 %
-Covarianza & $\Sigma = I$\\
+Covarianza & $\Sigma_X = I$\\
 \hline
 %
 Asimetr\'ia (caso escalar) & $\gamma_X = 0$\\
@@ -516,7 +591,7 @@ Densidad de probabilidad & $p_X(x) = \frac{x^{\alpha-1} e^{-x}}{\Gamma(\alpha)}$
 %Momentos & $ \Esp\left[ X^k \right] = p^k$\\
 %\hline
 %
-Promedio & $ \Esp[X] = \alpha$\\
+Promedio & $ m_X = \alpha$\\
 \hline
 %
 Varianza & $\sigma_X^2 = \alpha$\\
@@ -547,8 +622,9 @@ representadas en la figura Fig.~\ref{Fig:MP:Gamma} para varios $\alpha$.
 %
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/Gamma} \end{center}
+%
 \leyenda{Ilustraci\'on de una densidad de probabilidad gamma (a), y la funci\'on
-de repartici\'on  asociada (b). $\alpha  = .5$ (linea punteada),  $1$ (guiones),
+de repartici\'on asociada  (b). $\alpha = 0.5$ (linea  punteada), $1$ (guiones),
 $2$ (linea mixta) y $3$ (linea llena).}
 \label{Fig:MP:Gamma}
 \end{figure}

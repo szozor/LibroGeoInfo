@@ -18,8 +18,7 @@
 \draw[dotted] (0,0)--(0,{\sy*\l}) node[scale=.4]{$\bullet$};
 \draw[thick,domain=0:\mx,samples=100] plot ({\x*\sx},{\sy*\l*exp(-\l*\x)});
 %
-%\draw (0,{((1-\p)^\n)*\sy})--(-.1,{((1-\p)^\n)*\sy}) node[left,scale=.7]{$(1-p)^n$};
-%\draw (0,{\n*\p*((1-\p)^(\n-1))*\sy})--(-.1,{\n*\p*((1-\p)^(\n-1))*\sy}) node[left,scale=.7]{$n p (1-p)^{n-1}$};
+\draw (0,{\l*\sy})--(-.1,{\l*\sy}) node[left,scale=.7]{$\lambda$};
 %
 \end{scope}
 %
@@ -35,10 +34,7 @@
 % cumulativa
 \draw[thick,domain=0:\mx,samples=100] (-.5,0)--(0,0) plot({\x*\sx},{(1-exp(-\l*\x))*\sy});
 %
-%\draw (0,{((1-\p)^\n)*\sy})--(-.1,{((1-\p)^\n)*\sy}) node[left,scale=.7]{$(1-p)^n$};
-%%\draw (0,{(\n*\p+1-\p)*((1-\p)^(\n-1))*\sy})--(-.1,{(\n*\p+1-\p)*((1-\p)^(\n-1))*\sy}) node[left,scale=.7]{$(1-p+np) (1-p)^{n-1}$};
-%\draw (-.2,{((\n*\p+1-\p)*((1-\p)^(\n-1))+1)/2*\sy}) node[scale=.7]{$\vdots$};
-%\draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{\small $1$};
+\draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
 \end{scope}
 %
 \end{tikzpicture}

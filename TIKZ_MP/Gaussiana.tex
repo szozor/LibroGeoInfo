@@ -33,7 +33,7 @@ normcdf(\x)=1/(1 + exp(-0.07056*(\x)^3 - 1.5976*(\x)));
 % cumulativa
 \draw[thick,domain=-\mx:\mx,samples=100] plot({\x*\sx},{\sy*normcdf(\x)});
 %
-\draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{\small $1$};
+\draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
 \end{scope}
 %
 \end{tikzpicture}
