@@ -19,6 +19,8 @@ Una  variable aleatoria  $X$  tiene asociado  un  {\it promedio}  o {\it  media}
 probabilidad asociada a ese valor,
 %
 \begin{definicion}[Media o valor/vector medio]
+\label{Def:MP:ValorMedio}
+%
   Formalmente, la media de  una variable aleatoria $X$ \underline{integrable} es
   definida por
   %
@@ -26,8 +28,8 @@ probabilidad asociada a ese valor,
   \Esp[X] = \int_\Omega X(\omega) \, dP(\omega).
   \]
   %
-  Por    el    teorema    de    la    medida    imagen~\ref{Th:MP:MedidaImagen},
-  pagina~\pageref{Th:MP:MedidaImagen}, esta media  se escribe tambi\'en a partir
+  Por    el    teorema    de    la    medida    imagen~\ref{Teo:MP:MedidaImagen},
+  pagina~\pageref{Teo:MP:MedidaImagen}, esta media  se escribe tambi\'en a partir
   de la medida de probabilidad $P_X$ como
   %
   \[
@@ -51,7 +53,7 @@ La secunda formulaci\'on  del valor medio se proba  sencillamente, empezando por
 $X = \un_A$ para unos $A$.   Entonces $P_X = (1-P(A)) \delta_0 + P(A) \delta_1$.
 Luego  $\displaystyle \int_\Omega  \un_A(\omega)  dP(\omega) =  P(A) =  (1-P(A))
 \times 0 +  P(A) \times 1 = \int_\Rset  x dP_X(x)$.  Se cierra la  prueba con el
-teorema~\ref{Th:MP:MedibleLimite} dando cualquier  funci\'on medible como limite
+teorema~\ref{Teo:MP:MedibleLimite} dando cualquier  funci\'on medible como limite
 de funciones escalonadas,  y por la definici\'on~\ref{Def:MP:IntegracionReal} de
 la integral de cualquier funci\'on medible.
 
@@ -87,6 +89,8 @@ inmediatamente
 \noindent  Fijense de  que $\Esp[X]$  no partenece  necesariamente a  $\X$:
 %
 \begin{ejemplo}
+\label{Ej:MP:Uniforme3Estados}
+%
   Sea \  $X$ \  uniforme sobre \  $\X = \{  1 \,  , \, 3  \, ,  \, 7 \}$,  \ie \
   $\forall \,  i \in \X, \quad  P(X = i) =  \frac13$. \ Se calcula  $\Esp[X] = 1
   \times \frac13  + 3 \times \frac13  + 7 \times \frac13  = \frac{11}{3} \not\in
@@ -96,6 +100,8 @@ inmediatamente
 \noindent Cuando \ $|\X| = +\infty$, \ $X$ \ no es necesariamente integrable:
 %
 \begin{ejemplo}
+\label{Ej:MP:DiscretaSinMedia}
+%
   Sea \ $\X = \Nset^*$ \ con  $P(X = n) = \frac{6}{\pi^2 \, n^2}$. \ Claramente,
   $\sum_n\frac{6}{\pi^2 \, n}$ diverge, as\'i que $X$ no tiene una media.
 \end{ejemplo}
@@ -111,6 +117,8 @@ de la media (o vector medio):
 en el caso continuo:
 %
 \begin{ejemplo}
+\label{Ej:MP:MediaNoEnX}
+%
   Sea \ $X$  \ de densidad de probabilidad  \ $p_X(x) = \frac12 \un_{[0  \, ; \,
     1)}(x) +  \frac{3 \sqrt{x-2}}{4}  \un_{[2 \, ;  \, 3)}(x)$ \  como ilustrado
   figura                                         Fig.~\ref{Fig:MP:ProbaContinua},
@@ -119,6 +127,8 @@ en el caso continuo:
 \end{ejemplo}
 %
 \begin{ejemplo}
+\label{Ej:MP:VariableCauchySinMedia}
+%
   Un ejemplo  de vector aleatorio no  teniendo media es  dado en el caso  de una
   distribuci\'on de Cauchy-Lorentz (ver  m\'as adelante) \ $\displaystyle p_X(x)
   = \frac{\alpha}{\left( 1 + x^t x \right)^{\frac{d+1}{2}}}$ \ donde $\alpha$ es
@@ -128,7 +138,9 @@ en el caso continuo:
 En el caso general, para calcular  la media, hay que pasar por la distribuci\'on
 $P_X$, como en el ejemplo~\ref{Ej:MP:Mixta}  pagina~\pageref{Ej:MP:Mixta}:
 %
-\begin{ejemplo}[Continuaci\'on del ejemplo~\ref{Ej:MP:Mixta}]\label{Ej:MP:EspMixta}
+\begin{ejemplo}[Continuaci\'on del ejemplo~\ref{Ej:MP:Mixta}]
+\label{Ej:MP:EspMixta}
+%
   Sea $X = V \,  \un_{U < \frac12} + \un_{U \ge \frac12}$ \ con  \ $U$ \ y \ $V$
   variables aleatorias independientes de distribuci\'on uniformas sobre \ $[0 \,
   ;  \, 1)$,  \ie  $p_U(x) =  \un_{[0  \, ;  \,  1)}(x)$. \  De \  $X  \in B  \:
@@ -156,8 +168,8 @@ Se proba saliendo  de \ $\displaystyle x = \int_0^x  dt = \int_{\Rset_+} \un_{(t
   \, ;  \, +\infty)}(x)  \, dt$  \ dando \  $\displaystyle \Esp[X]  = \int_\Rset
 \left( \int_{\Rset_+}  \un_{(t \, ; \,  +\infty)}(x) \, dt \right)  \, dP_X(x) =
 \int_{\Rset_+} \left( \int_\Rset \un_{(t \, ; \, +\infty)}(x) \, dP_X(x) \right)
-\,    dt$    \    por    el    teorema    de    Fubini    Th.~\ref{Th:MP:Fubini}
-pagina~\pageref{Th:MP:Fubini}. Se  cierra la  prueba observando que  la integral
+\,    dt$    \    por    el    teorema    de    Fubini    Th.~\ref{Teo:MP:Fubini}
+pagina~\pageref{Teo:MP:Fubini}. Se  cierra la  prueba observando que  la integral
 interior es nada  m\'as que $P(X > t)$.   En el caso discreto con  $\X = \Nset$,
 viene  inmediatamente \ $\displaystyle  \sum_{n \in  \Nset} P(X>n)$  que podemos
 probar directamente  saliendo de $P(X  = n) =  P(X>n)- P(X>n-1)$. En el  caso de
@@ -169,7 +181,9 @@ integraci\'on  por   partes~\footnote{El  el   casi  discreto,  hay   que  tener
 
 Esta f\'ormula se aplica al ejemplo~\ref{Ej:MP:Mixta} que tratamos:
 %
-\begin{ejemplo}[Continuaci\'on del ejemplo~\ref{Ej:MP:Mixta}]\label{Ej:MP:EspMixtaPositiva}
+\begin{ejemplo}[Continuaci\'on del ejemplo~\ref{Ej:MP:Mixta}]
+\label{Ej:MP:EspMixtaPositiva}
+%
   Sea $X = V \,  \un_{U < \frac12} + \un_{U \ge \frac12}$ \ con  \ $U$ \ y \ $V$
   variables aleatorias independientes de distribuci\'on uniformas sobre \ $[0 \,
   ;  \,  1)$. Obtuvimos  pagina~\pageref{Ej:MP:Mixta}  \  $F_X(x) =  \frac{x}{2}
@@ -206,6 +220,8 @@ de necesitar evaluar  la distribuci\'on de probabilidad de $Y  = f(X)$, el valor
 medio se calcula a partir del de $X$:
 %
 \begin{teorema}[Teorema de transferencia]
+\label{Teo:MP:Transferencia}
+%
   Sea  \ $X$  \ un  vector  aleatorio $d$-dimensional  y \  $f: \Rset^d  \mapsto
   \Rset^{d'}$ \ una funci\'on medible tal que $f(X)$ sea integrable. Entonces
   %
@@ -238,7 +254,7 @@ medio se calcula a partir del de $X$:
   \]
   %
   En el caso  $d' = 1$, para $f  \ge 0$, se cierra entonces la  prueba usando el
-  teorema~\ref{Th:MP:MedibleLimite}         pagina~\pageref{Th:MP:MedibleLimite},
+  teorema~\ref{Teo:MP:MedibleLimite}         pagina~\pageref{Teo:MP:MedibleLimite},
   escribiendo \  $f$ \  como l\'imite creciente  de una sucesi\'on  de funciones
   escalonadas,  y   la  definici\'on  Def.~\ref{Def:MP:IntegracionReal}   de  la
   integraci\'on real. El  caso $d' > 1$ es  nada mas que $d' =  1$, componente a
@@ -251,72 +267,86 @@ aleatoria $X$. Los momentos relevantes usuales
  son los siguientes:
 %
 \begin{itemize}
-\item para  el ``monomio'' $f(x) =  x^{\otimes r}$ producto tensiorial  de $x$ \
-  $r$ veces~\footnote{Recuerdense  de que $x  \otimes x$ es una  matriz teniendo
-    como  componentes   $x_i  x_j$;  entonces  $x^{\otimes  r}$   en  un  tensor
-    $r$-dimensionale teniendo como componentes $ \displaystyle \left[ x^{\otimes
-        r}  \right]_{i_1,\ldots,i_r} =  \prod_j x_{i_j}$.}   \ siendo  \  $r \in
-  \Nset^*$, se  obtiene el tensor de los  $r${\it-\'esimo momentos (ordinarios)}
+\item para  el ``monomio'' $f(x) =  x^{\otimes K}$ producto tensiorial  de $x$ \
+  $K$ veces~\footnote{Recuerdense  de que $x  \otimes x$ es una  matriz teniendo
+    como  componentes   $x_i  x_j$;  entonces  $x^{\otimes  K}$   en  un  tensor
+    $K$-dimensional teniendo como componentes $ \displaystyle \left[ x^{\otimes
+        K}  \right]_{i_1,\ldots,i_K} =  \prod_j x_{i_j}$.}   \ siendo  \  $K \in
+  \Nset^*$, se  obtiene el tensor de los  $K${\it-\'esimo momentos (ordinarios)}
   de $X$:
   %
   \[
-  m_r \equiv \Esp\left[  X^{\otimes r} \right] = \int_{\Rset^d}  x^{\otimes r} \
+  m_K \equiv \Esp\left[  X^{\otimes K} \right] = \int_{\Rset^d}  x^{\otimes K} \
   dP_X(x)
   \]
   %
-  que tiene unidades de $\prod_j X_{i_j}$  (de $X_i^r$ si los componentes de $X$
-  tienen la misma ``unidad'').  Se escribe tambi\'en
+  que tiene unidades de $\prod_j X_{i_j}$  (de $X_i^K$ si los componentes de $X$
+  tienen la misma ``unidad'').  Se escribe tambi\'en los momentos de orden \ $K$
+  \ como
   %
   \[
-  m_{r_1,\ldots,r_d}  =  \Esp\left[   \prod_{i=1}^d  X_i^{r_i}  \right]  \quad
-  \mbox{con} \quad \sum_i r_i = r.
+  m_{k_1,\ldots,k_d}  =  \Esp\left[   \prod_{i=1}^d  X_i^{k_i}  \right]  \quad
+  \mbox{con} \quad \sum_i k_i = K.
   \]
   %
-  Se puede  incluir el caso $r=0$ con  la convenci\'on $x^{\otimes 0}  = 1$, que
+  Se puede  incluir el caso $K=0$ con  la convenci\'on $x^{\otimes 0}  = 1$, que
   corresponde  a  la condici\'on  de  normalizaci\'on:  \  $\displaystyle m_0  =
   \int_\Rset dP_X(x)  = 1$.   La media es  el primer  momento: $m_1 =  \Esp[X] =
   m_X$.  T\'ipicamente,  los primeros momentos  son m\'as relevantes que  los de
-  \'ordenes mayores, para la caracterizaci\'on de una distribuci\'on.  Para $r =
+  \'ordenes mayores, para la caracterizaci\'on de una distribuci\'on.  Para $K =
   2$, en el caso  escalar, el momento de orden 2 es  el an\'alogo del momento de
   inercia de la mec\'anica.\newline Por ejemplo, para la distribuci\'on uniforme
-  $p_X(x)    =    \frac{1}{b-a}$    en    el    intervalo    $[a,b]$,    resulta
-  $m_r=\frac{b^{r+1}-a^{r+1}}{(r+1)(b-a)}$.      En    particular,     $m_1    =
-  \frac{a+b}{2}$, valor medio del  intervalo.\newline Fijense de que $X^{\otimes
-    r}$  no es  siempre integrable,  por ejemplo,  el el  caso con  densidad, si
-  $p_X(x)$ tiene soporte (semi)infinito,  necesariamente la funci\'on $p_X$ debe
-  tender  a 0  cuando $|x|\rightarrow\infty$,  donde $|\cdot|$  denota  la norma
-  euclideana.  Si  $p_X(x)$ es {\it de largo  alcance}, en el sentido  de que no
-  cae a  0 suficientemente r\'apido con  $x$ para $x$  grandes, algunos momentos
-  pueden  no  existir.   Por  ejemplo,  la  distribuci\'on  de  probabilidad  de
-  Cauchy--Lorentz   (o  funci\'on   de  Breit--Wigner),   dada  por   $p_X(x)  =
-  \frac{\alpha}{\left(  1 +  (x-x_0)^t R^{-1}  (x-x_0) \right)^{\frac{d+1}{2}}}$
-  sobre $\Rset^d$, con  la matriz cuadrada \ $R  > 0, \: x_0 \in \Rset^d$  \ y \
-  $\alpha >  0$ \ coeficiente de  normalizaci\'on, no tiene  momentos finitos de
-  orden $r \geq 1$.
+  $p_X(x) =  \frac{1}{b-a}$ en el  intervalo $[  a \, ,  \, b]$, resulta  $m_K =
+  \frac{b^{K+1}-a^{K+1}}{(K+1)(b-a)}$.   En particular,  $m_1  = \frac{a+b}{2}$,
+  valor  medio del  intervalo.\newline  Fijense  de que  $X^{\otimes  K}$ no  es
+  siempre integrable,  por ejemplo, en el  caso con densidad,  si $p_X(x)$ tiene
+  soporte  (semi)infinito, necesariamente  la funci\'on  $p_X$ debe  tender  a 0
+  cuando $|x|\rightarrow\infty$, donde $|\cdot|$ denota la norma euclideana.  Si
+  $p_X(x)$  es  {\it de  largo  alcance},  en  el sentido  de  que  no cae  a  0
+  suficientemente r\'apido con $x$ para  $x$ grandes, algunos momentos pueden no
+  existir.  Por ejemplo, la distribuci\'on de probabilidad de Cauchy--Lorentz (o
+  funci\'on  de Breit--Wigner),  dada  por \  $p_X(x)  = \alpha  \,  \left( 1  +
+    (x-x_0)^t R^{-1}  (x-x_0) \right)^{-  \, \frac{d+1}{2}}$ \  sobre $\Rset^d$,
+  con la  matriz cuadrada \ $R  > 0, \:  x_0 \in \Rset^d$ \  y \ $\alpha >  0$ \
+  coeficiente de normalizaci\'on, no tiene momentos finitos de orden $K \geq 1$.
 %
-\item En el  caso de variables discretas $X$ sobre $\X  = \Nset$, resulta \'util
-  introducir el $r$-\'esimo {\it momento factorial} de $X$ ($r \in \Nset$) mediante
+\item Frecuentemente (especialmente en el  caso de variables discretas $X$ sobre
+  $\X  =  \Nset$),  resulta   \'util  introducir  los  $K$-\'esimo  {\it  momento
+    factorial}   de   $X,  \quad   k   =   \begin{bmatrix}   k_1  &   \cdots   &
+    k_d \end{bmatrix}^t \in \Nset^d, \quad K = \sum_{i=1}^d k_i$ \ mediante
   %
   \[
-  \Esp\left[ X^{(r)} \right] \equiv  \Esp\left[ \prod_{k=0}^{r-1} (X-k) \right]
-  = \sum_{n = r}^\infty \frac{n!}{(n-r)!} \, P(X = n).
+  f_{k_1,\ldots,k_d} = \Esp\left[ \prod_{i=1}^d \left( X_i \right)_{k_i} \right]
+  %  \equiv \Esp\left[  \prod_{k=0}^{r-1} (X-k)  \right] =  \sum_{n  = r}^\infty
+  % \frac{n!}{(n-r)!} \, P(X = n).
  \]
  %
- (usamos la convenci\'on usual \ $\prod_0^{-1} = 1$).
+ con    \     $\left(    x    \right)_n    =     \prod_{i=0}^{n-1}    (x-i)    =
+ \frac{\Gamma(x+1)}{\Gamma(x-n+1)}$, con \ $\Gamma$ \ la funci\'on
+Gamma~\cite{AbrSte70, AndAsk99, GraRyz15}   \   (usamos   la  convenci\'on   usual   \
+ $\prod_0^{-1} = 1$ \ y \ el hecho que  \ $\Gamma(z) = + \infty$ \ para $- z \in
+ \Nset$)   s\'imbolo  de   Pochhammer~\footnote{De  hecho,   en   las  funciones
+   especiales, se define como  la factorial creciente $(x)_n = \prod_{i=0}^{n-1}
+   (x+i)  \frac{\Gamma(x+n)}{\Gamma(x)}$  \  mientras  que esta  definici\'on  a
+   trav\'es   de   la   factorial   decreciente   se   encuentra   en   analysis
+   combinatorial~\cite{Poc70,  Knu92}.\label{Foot:MP:Pochhammer}}. Se  puede ver
+ que cuando \ $\X = \{ 0 \, , \, \ldots  \, , \, n \}, \: n \in \Nset$, \ $f_K =
+ 0$ \ cuando \ $K > n$.
 %
-\item Los {\it momentos centrales} o {\it cumulantes} se definen alrededor de la
-  media $\Esp[X]$,  \ie, como el tensor  de los $r$-\'esimo momentos  de la {\it
-    desviaci\'on} \ $\Delta X \equiv X-\Esp[X]$:
+%  o {\it cumulantes}
+\item Los {\it  momentos centrales} se definen alrededor  de la media $\Esp[X]$,
+  \ie, como  el tensor de  los $K$-\'esimo momentos  de la {\it  desviaci\'on} \
+  $\Delta X \equiv X-\Esp[X]$:
   %
   \[
-  \zeta_r \equiv \Esp\left[  \left( X - \Esp[X] \right)^{\otimes r} \right].
+  \zeta_K \equiv \Esp\left[  \left( X - \Esp[X] \right)^{\otimes K} \right].
   \]
   %
   Se escribe tambi\'en
   %
   \[
-  \zeta_{r_1,\ldots,r_d}   =   \Esp\left[   \prod_{i=1}^d   \left(   X_i-\Esp[X_i]
-    \right)^{r_i} \right] \quad \mbox{con} \quad \sum_i r_i = r.
+  \zeta_{k_1,\ldots,k_d}   =   \Esp\left[   \prod_{i=1}^d   \left(   X_i-\Esp[X_i]
+    \right)^{k_i} \right] \quad \mbox{con} \quad \sum_i k_i = K.
   \]
   %
   Se deduce que si la  distribuci\'on de probabilidad satisface a una simetr\'ia
@@ -412,7 +442,7 @@ aleatoria $X$. Los momentos relevantes usuales
   caracteriza    la   distribuci\'on,    dado   por    $\frac{\sigma_X}{m_X}   =
   \sqrt{\frac{\Esp\left[  X^2 \right]}{m_X^2}-1}$ cuando  $m_X \ne  0$. \newline
   Dado un vector aleatorio $X$, teniendo en cuenta que los dos primeros momentos
-  dan  las   caracter\'isticas  m\'as   importantes  de  la   distrubuci\'on  de
+  dan  las   caracter\'isticas  m\'as   importantes  de  la   distribuci\'on  de
   probabilidad,  puede  resultar   conveniente  hacer  una  transformaci\'on  de
   variable  aleatoria  a  la   llamada  {\it  variable  est\'andar}:  $Y  \equiv
   \Sigma_X^{-\frac12} \left(  X - m_X \right)$, donde  $\Sigma^{-\frac12}$ es la
@@ -448,27 +478,34 @@ aleatoria $X$. Los momentos relevantes usuales
   $\kappa_X < 3$,  y se dice bajas  y anchas o sobre-gausiana, o  {\it con colas
     pesadas} o tambi\'en leptoc\'urtica cuando  $\kappa_X > 3$ (para $\kappa_X =
   3$  la distribuci\'on es  a veces  dicha mesoc\'urtica).   A veces,  se define
-  entonces la {\it curtosis por exceso} \  $\Curt[X] - 3$.  M\'as que el pico de
-  distribuci\'on, la curtosis describe  las colas de una distribuci\'on (pesadas
-  o livianas)~\cite{Wes14}.
+  entonces la {\it curtosis por exceso}
+  \[
+  \Excurt[X]  \equiv \widebar{\kappa}_X  = \Curt[X]  - 3  =  \Esp\left[ \left(
+      \frac{X     -     m_X}{\sigma_X}    \right)^4     \right]     -    3     =
+  \frac{\zeta_4}{\sigma_X^4} - 3.
+  \]
+  M\'as que  el pico de distribuci\'on,  la curtosis (por  excesso) describe las
+  colas de una distribuci\'on (pesadas para el curtosis por exceso o livianas en
+  el caso contrario)~\cite{Wes14}.
   \end{enumerate}
   %
   Fijense de que, en  el contexto escalar $d = 1$, se  vinculan los cumulantes y
   los momentos ordinarios directamente de las definiciones:
   %
   \[
-  \zeta_r = \sum_{s=0}^r \binom{r}{s} \left( - m_X \right)^{r-s} m_s
+  \zeta_k = \sum_{l=0}^k \binom{k}{l} \left( - m_X \right)^{k-l} m_l
   \]
   %
-  para cualquier  $r \in  \Nset$, siendo $m_0  = \zeta_0  = 1$.  Por  ejemplo, \
+  para cualquier  $k \in  \Nset$, siendo $m_0  = \zeta_0  = 1$.  Por  ejemplo, \
   $\zeta_2  =  m_2  -  m_1^2$  \   que  es  nada  m\'as  que  la  relaci\'on  de
   K\"onig-Huyggens, mientras que \ $\zeta_3 = m_3 - 3 m_1 m_2 + 2 m_1^3$.  En el
-  contexto multivariado, la relaci\'on momentos-cumulantes toma la expresi\'on
+  contexto  multivariado,  la relaci\'on  momentos--momentos  centrales toma  la
+  expresi\'on
   %
   \[
-  \zeta_{r_1,\ldots,r_d}  = \sum_{s_1  =  0}^{r_1} \cdots  \sum_{s_d =  0}^{r_d}
-  \left(  \prod_{i=1}^d  \binom{r_i}{s_i}  \left(  -  m_{X_i}  \right)^{r_i-s_i}
-  \right) \, m_{s_1,\ldots,s_d}.
+  \zeta_{k_1,\ldots,k_d}  = \sum_{l_1  =  0}^{k_1} \cdots  \sum_{l_d =  0}^{k_d}
+  \left(  \prod_{i=1}^d  \binom{k_i}{l_i}  \left(  -  m_{X_i}  \right)^{k_i-l_i}
+  \right) \, m_{l_1,\ldots,l_d}.
   \]
 \end{itemize}
 
@@ -483,6 +520,19 @@ e \ $Y$, se define la matriz de covarianza conjunta como
 Esta matriz contiene las covarianzas $\Cov[X_i,Y_j]$.
 
 
+\SZ{Caso  complejos a  hacer  (SZ: me  encargo  de eso):  usando la  biyecci\'on
+  $\Cset^d$ y $\Rset^{2 d}$; Pero, en terminos complejos, habria que definir los
+  momentos  de  orden   superior  con  los  $Z_i$  y   $Z_i^*$  para  no  perder
+  ``informaciones''.  Al  orden 1,  no hay perdida  por biyecci\'on  $\Cset^d$ y
+  $\Rset^{2 d}$.   Al orden 2 por ejemplo,  si miramos los que  es definido como
+  matriz  de covarianza  en el  caso complejo  $\Esp[(Z-m_Z)  (Z-m_Z)^+]$ matriz
+  hermitica; si  comparamos a la  covarianza de $\widetilde{Z}$\ldots  Se pierde
+  momentos,  lo  que es  obvio  (en  la  definicion complejas  tenemos  $\frac{d
+    (d+1}{2}$ momentos diferentes (los otros se obtienen por simetria), mientras
+  que en realidad al orden 2 hay $d (2d+1)$ momentos.  Se define as\'i... pseudo
+  covarianza. Se complica a\'un m\'as  al orden superior.  Ver caso circular: la
+  pseudo covarianza vale 0.}
+
 % ================================= Independencia, identidades y desigualdades
 
 \subseccion{Independencia, identidades y desigualdades}
@@ -491,7 +541,9 @@ Esta matriz contiene las covarianzas $\Cov[X_i,Y_j]$.
 Una primera relaci\'on interesante concierna el caso de variables independientes
 y como se comporta la covarianza de estas:
 %
-\begin{propuesta}
+\begin{lema}[Independencia y covarianza]
+\label{Lem:MP:IndependenciaCov}
+%
   Sean  \  $X$  \ e  \  $Y$  \  dos  vectores  aleatorios integrables.   Si  son
   independientes, entonces
   %
@@ -501,7 +553,7 @@ y como se comporta la covarianza de estas:
   %
   En  particular, para  $X$  con componentes  independientes,  $\Cov[X]$ es  una
   matriz diagonal.
-\end{propuesta}
+\end{lema}
 %
 \begin{proof}
   Sean \ $X = \sum_j x_j \un_{A_j}$  \ e \ $Y = \sum_k y_k \un_{B_k}$ \
@@ -527,6 +579,8 @@ y como se comporta la covarianza de estas:
 Fijense  de que  la  reciproca es  falsa en  general:
 %
 \begin{ejemplo}[Uniforme sobre el disco unitario]
+\label{Ej:MP:UniformeDiscoUnitario}
+%
   Sea \  $X =  (X_1,X_2)$ \ uniforme  sobre el  disco unitario, i.e.,  $p_X(x) =
   \frac{1}{\pi} \un_{\Sset^2}(x)$ \  con \ $\Sset^2 = \{  (x_1,x_2) \in \Rset^2:
   \:  x_1^2  +  x_2^2  \le  1  \}$.  Claramente,  los  \  $X_i$  no  pueden  ser
@@ -540,7 +594,9 @@ Fijense  de que  la  reciproca es  falsa en  general:
 Esta implicaci\'on facilita frecuentemente  los calculos de media.  Volviendo al
 ejemplo~\ref{Ej:MP:Mixta}  de la  pagina~\pageref{Ej:MP:Mixta}:
 %
-\begin{ejemplo}[Continuaci\'on del ejemplo~\ref{Ej:MP:Mixta}]\label{Ej:EspMixtaInd}
+\begin{ejemplo}[Continuaci\'on del ejemplo~\ref{Ej:MP:Mixta}]
+\label{Ej:EspMixtaInd}
+%
   Tratando de la media de \ $X = V \, \un_{U < \frac12} + \un_{U \ge \frac12}$ \
   con \  $U$ \ y  \ $V$ \  variables independientes de  distribuci\'on uniformas
   sobre $(0 \, ; \, 1)$, se calcula gracia a la linealidad y a la independencia,
@@ -576,7 +632,9 @@ covarianzas conjuntas son nulas as\'i que, respectivamente,
 Si el  teorema da  una implocaci\'on  de la independencia,  de hecho  existe una
 reciproca que toma la forma siguiente:
 %
-\begin{teorema}
+\begin{teorema}[Independencia y momentos]
+\label{Teo:MP:IndependenciaMomentos}
+%
   Sean \ $X$ \ e \ $Y$ \ dos vectores aleatorios. Son independientes si y s\'olo
   si $E[f(X) g(Y)]=E[f(X)] E[g(Y)]$ para todo par  de funciones \ $f$ \ y \ $g$,
   medibles y acotadas de dimensiones adecuadas.
@@ -603,6 +661,8 @@ que  fluct\'ua aleatoriamente  exceda  cierto valor  umbral,  a\'un sin  conocer
 detalladamente la forma de la distribuci\'on de probabilidad.
 %
 \begin{teorema}[Desigualdades de Chebyshev]
+\label{Teo:MP:Chebyshev}
+%
   Sea un vector aleatorio $d$-dimensional \  $X$ \ y una funci\'on \ $g: \Rset^d
   \mapsto \Rset_+$ \ medible tal que \ $g(X)$ \ sea integrable. Entonces,
   %
@@ -613,7 +673,8 @@ detalladamente la forma de la distribuci\'on de probabilidad.
 \end{teorema}
 %
 \begin{proof}
-  Sea \ $\D_a = \{ x \in \X: \: g(x) \ge a \} \subset \X$. Entonces, $g$ siendo non negativa,
+  Sea \ $\D_a = \{ x \in \X:  \: g(x) \ge a \} \subset \X$. Entonces, $g$ siendo
+  non negativa,
   %
   \[
   \Esp[g(X)]  = \int_\X  g(x) \,  dP_X(x) \ge  \int_{\D_a} g(x)  \,  dP_X(x) \ge
@@ -627,6 +688,8 @@ Existen varias  formas similares, que son  de hecho casos  particulares de estas
 desigualdades.
 %
 \begin{corolario}[Bienaym\'e--Chebyshev]
+\label{Cor:MP:BienaymeChebyshev}
+%
   Sea \  $X$ \  un vector aleatorio  $d$-dimensional admitiendo una  esperanza \
   $m_X$ \ y una covarianza \ $\Sigma_X$. Entonces,
   %
@@ -643,6 +706,8 @@ Viene del teorema incial aplicado a \ $\Sigma_X^{-\frac12} (X - m_X)$, \ $g(x)
 %
 %
 \begin{corolario}[Markov]
+\label{Cor:MP:Markov}
+%
   Sea \ $X$ \ un vector aleatorio y $\varphi \ge 0$ una funci\'on no decreciente
   tal que $\varphi(|X|)$ sea integrable. Entonces,
   %
@@ -665,6 +730,8 @@ concentra la variable en torno a su media. Ambas cotas son en general d\'ebiles,
 como se lo puede ver en el ejemplo siguiente
 %
 \begin{ejemplo}
+\label{Ej:MP:BienaymeChebyshev}
+%
   La  desigualdad  de  Bienaym\'e--Chebyshev   indica  que  la  probabilidad  de
   encontrar  una  fluctuaci\'on superior  a  $\varepsilon  =  3 \sigma_X$,  tres
   desviaciones est\'andar alrededor  de la media, est\'a por  debajo de \ $1/9$;
@@ -678,7 +745,9 @@ Una  desigualdad muy  importante que  usaremos frecuentemente  en  el c\'apitulo
 siguiente, trata de funciones convexa, y del efecto sobre la media de una vector
 aleatorio.
 %
-\begin{definicion}[Funci\'on convexa]\label{Def:MP:convexa}
+\begin{definicion}[Funci\'on convexa]
+\label{Def:MP:convexa}
+%
   Por definici\'on, una  funci\'on \ $\phi: \X \subset  \Rset^d \mapsto \Rset$ \
   con \ $\X$ un convexo, es convexa si  para cualquier $\pi_1 \in [0 \, , \, 1],
   \pi_2 = 1-\pi_1$ \ y \ $x_1, x_2 \in \Rset^d$,
@@ -723,7 +792,9 @@ precisamente el  teorema de Jensen~\footnote{En~\cite{Jen06} se trata  del en el
     Rud91}  para versiones  m\'as generales.\label{Foot:SZ:Jensen}}~\cite{Jen06,
  Fel71, Bre88, AthLah06, Coh13}:
 %
-\begin{teorema}[Desigualdad de Jensen]\label{Th:MP:Jensen}
+\begin{teorema}[Desigualdad de Jensen]
+\label{Teo:MP:Jensen}
+%
   Sea \ $X$ \ integrable y definida  sobre $\X \subset \Rset^d$, convexo y \ $f:
   \X \mapsto \Rset$. Entonces
   %
@@ -746,9 +817,9 @@ precisamente el  teorema de Jensen~\footnote{En~\cite{Jen06} se trata  del en el
   %
   con igualdad  (cuando la convexidad es  estricta) si y solamente  si todos los
   $x_i$  son iguales.  Se  cierra la  prueba tomando  $X \ge  0$ como  limite de
-  sucesi\'on   de   funciones  escalonadas   (teorema~\ref{Th:MP:MedibleLimite},
-  pagina~\pageref{Th:MP:MedibleLimite}),  y cualquier $X$  tratando de  la parte
-  positiva  y  negativa  (ver  pagina~\pageref{Th:MP:MedibleLimite}).   El  caso
+  sucesi\'on   de   funciones  escalonadas   (teorema~\ref{Teo:MP:MedibleLimite},
+  pagina~\pageref{Teo:MP:MedibleLimite}),  y cualquier $X$  tratando de  la parte
+  positiva  y  negativa  (ver  pagina~\pageref{Teo:MP:MedibleLimite}).   El  caso
   vectorial  se   trata  componente  a   componente  para  $X$  en   termino  de
   limite. Tomando  el limite, la  condici\'on $x_i$ todos iguales  vuelve ``casi
   todos'' los $x_i$ deben ser iguales, \ie $X$ debe ser constante casi siempre.
@@ -759,9 +830,11 @@ en   los   espacios   de    Hilbert,   conocida   como   {\it   desigualdad   de
   H\"older}~\cite{Hol98}:
 %
 \begin{teorema}[Desigualdad de H\"older]
-  Sean \  $X$ \ e \  $Y$ \ dos vectores  aleatorios $d$-dimensionales y  $r > 1$
-  real. $r^* >  1$ tal que $\frac1r + \frac1{r^*}$ es  llamado {\it conjugado de
-    H\"older} de $r$, y
+\label{Teo:MP:Holder}
+%
+Sean \ $X$ \  e \ $Y$ \ dos vectores aleatorios $d$-dimensionales y  \ $r > 1$ \
+real. $r^* > 1$ \ tal que  \ $\frac1r + \frac1{r^*}$ \ es llamado {\it conjugado
+  de H\"older} de \ $r$, y
   %
   \[
   \left|  \Esp\left[  X^t Y  \right]  \right| \:  \le  \:  \Esp\left[ \left\|  X
@@ -769,22 +842,22 @@ en   los   espacios   de    Hilbert,   conocida   como   {\it   desigualdad   de
     \right\|_{r^*}^{r^*} \right]^{\frac1{r^*}}
   \]
   %
-  donde \ $\| x \|_r =  \left( \sum_i x_i^r \right)^{\frac1r}$ \ denota la norma
-  $r$ de un  vector ($\|\cdot\|_2 \equiv |\cdot|$).  Se obtiene  la igualda si y
-  solamente si existe un \ $\lambda$ \ tal que \ $X = \lambda Y$ \ casi siempre.
+  donde \ $\|  x \|_r = \left( \sum_i \left|  x_i \right|^r \right)^{\frac1r}$ \
+  denota la norma  $r$ de un vector ($\|\cdot\|_2  \equiv |\cdot|$).  Se obtiene
+  la igualda si y solamente si existe un \ $\lambda$ \ tal que \ $X = \lambda Y$
+  \ casi siempre.
 \end{teorema}
 %
 \begin{proof}
   Obviamente, $\left| \Esp\left[ X^t Y \right] \right| \le \Esp\left[ \left| X^t
       Y \right| \right]$. \ Luego, de  la convexidad de la funci\'on \ $-\log$ \
-  se  obtiene  la  desigualdad  \  $\log(|a  b|) =  \frac1r  \log  |a|^r  +
-  \frac1{r^*} \log  |b|^{r^*} \le \log\left( \frac{|a|^r}{r}
-    + \frac{|b|^{r^*}}{r^*} \right)$ \  con igualdad si y solamente si
-  \ $a es proporcional a b$. \  Aplicado a las componentes de dos vectores \ $a$
-  \ y  \ $b$ \ se  obtiene la desigualdad de  Young \ $\left| a^t  b \right| \le
-  \frac{\|a\|_r^r}{r}                                            +
-  \frac{\|b\|_{r^*}^{r^*}}{r^*}$ \ con igualdad si y solamente si
-  los vectores son proporcional. A continuaci\'on, denotando
+  se obtiene  la desigualdad \ $\log(|a  b|) = \frac1r \log  |a|^r + \frac1{r^*}
+  \log |b|^{r^*} \le \log\left( \frac{|a|^r}{r} + \frac{|b|^{r^*}}{r^*} \right)$
+  \ con igualdad si y solamente si \ $a$ \ es proporcional a \ $b$. \ Aplicado a
+  las componentes de dos vectores \ $a$ \ y \ $b$ \ se obtiene la desigualdad de
+  Young    \    $\left|    a^t    b   \right|    \le    \frac{\|a\|_r^r}{r}    +
+  \frac{\|b\|_{r^*}^{r^*}}{r^*}$ \  con igualdad si y solamente  si los vectores
+  son proporcional. A continuaci\'on, denotando
   %
   \[
   \widetilde{X}         =         \frac{X}{\Esp\left[        \|X\|_r^r
@@ -820,6 +893,8 @@ Cauchy-Bunyakovsky-Schwarz~\footnote{Esta  desigualdad, fue  probada  por Cauchy
   enfoque m\'as general. Ver tambi\'en~\cite{Ste04}.} para $p = \frac12$:
 %
 \begin{corolario}[Desiguladad de Cauchy-Bunyakovsky-Schwarz]
+\label{Cor:MP:DesigualdadCauchySchwarz}
+%
   Sean \  $X$ \ e \  $Y$ \ dos vectores  aleatorios $d$-dimensionales. Entonces
   %
   \[
@@ -842,3 +917,20 @@ De hecho,  se puede ver $\Esp[X^t  Y]$ como un producto  escalar entre variables
 aleatorias. La sola  subtileza es que $\Esp[|X|^2]  = 0$ conduce a $X  = 0$ casi
 siempre, \ie se  puede tener $X \ne  0$ pero con medida de  probabilidad igual a
 cero (ej. puntos $\omega$ ``aislados'' en el contexto continuo).
+
+
+\hspace{1cm} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\SZ{Desigualdades  con   momentos:  Holder  va   a  dar  $\Esp[|X|^s]^{\frac1s}$
+  creciente con  $s$...  Ver  Shohat 1929  y editorial note  debido a  Pearson \
+  $\kappa \ge \gamma^2+1$.}
+
+\
+
+\SZ{Hablar de esperanza condicional y esperanza total
+
+$\Esp[Y|X=x] = \int y dP_{Y|X=x}(y)$ \ y por definici\'on...
+
+$\Esp[Y] = \Esp\left[ \Esp[Y|X=x] \right]$ esperanza total. Similar a la formula de probabilidades totales pagina~\pageref{:MP}.
+
+}

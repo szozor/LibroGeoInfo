@@ -24,6 +24,8 @@ canal~\cite[part.~II~\&~III]{Sha48} (ver  tambi\'en~\cite{CovTho06, Rio07} entre
 otros):
 %
 \begin{definicion}[Capacidad de canal]
+\label{Def:SZ:CapacidadCanal}
+%
   Sea un canal de transmisi\'on, $X$  su entrada e $Y$ su salida, como ilustrado
   figura  Fig.~\ref{Fig:SZ:CanalComunicacion}.  Sea  $p_X$ la  distribuci\'on de
   probabilidad de $X$. La capacidad $C$ del canal es definida por
@@ -551,7 +553,9 @@ decodificar  la   secuencia  sin  ambig\"uedad:  un  c\'odigo   est  dicho  {\it
   descifrable} o {\it  a decodificaci\'on \'unica} (o sin  perdida) si todas las
 extensiones son no singulares.
 %
-\begin{ejemplo}[C\'odigo non singular, pero no decifrable]
+\begin{ejemplo}[C\'odigo no singular, pero no decifrable]
+\label{Ej:SZ:CodigoNoSingularDecifrable}
+%
   Sean, sean \ $\X = \{ \aleph \, ,  \, \beth \, , \, \gimel \, , \daleth \}$, \
   $\C = \{0 \, , \, 1 \}$ \ y \ $c(\aleph) = 0, \: c(\beth) = 00, \: c(\gimel) =
   1,  \: c(\daleth)  = 01$  ($m =  1$).   El c\'odigo  es no  singular, pero  no
@@ -566,6 +570,8 @@ esperar de medir toda la secuencia  codificada: es lo que se llama {\it c\'odigo
   instantaneo}.
 %
 \begin{ejemplo}[C\'odigo decifrable, pero no instantaneo]
+\label{Ej:SZ:CodigoDcifrableNoInstantaneo}
+%
   Sea el  c\'odigo $c(\aleph)  = 00,  \: c(\beth) =  10, \:  c(\gimel) =  11, \:
   c(\daleth)  =  110$.  Este  c\'odigo  es  descifrable,  pero  no  instantaneo.
   Considera la secuencia  $0011011$ y marcha sobre ella.  $0$  no es una palabra
@@ -638,6 +644,8 @@ Kraft-McMillan~~\cite{Kra49,   McM56,   Kar61}~\footnote{Esta  desigualdad   fue
   verano en Ann Arbor, MI en agosto 1955).}
 %
 \begin{teorema}[Desigualdad de Kraft-McMillan]
+\label{Teo:SZ:KraftMcMillan}
+%
   Los largos  $l_c(x)$ de las palabras  c\'odigo de un  c\'odigo $c$ descifrable
   deben satisfacer la desigualdad
   %
@@ -755,6 +763,8 @@ El formalismo dado,  se va a ver ahora reaparecer la  entrop\'ia de Shannon como
 cota de la codificaci\'on de fuente sin perdida:
 
 \begin{teorema}[Cota inferior de c\'odigos descifrables]
+\label{Teo:SZ:CotaInferiorCodigosDescifrables}
+%
   Para  cualquier c\'odigo  \  $c$ \  descifrable  de la  fuente  $X$, su  largo
   promedio es  acotado por debajo  por la entrop\'ia  de Shannon de base  $d$ de
   $X$,
@@ -794,6 +804,8 @@ sentido, $H$ tiene realmente un sabor de informaci\'on sobre la fuente $X$.
 La entrop\'ia aparece tambi\'en en la cota superior del c\'odigo \'optimo:
 %
 \begin{teorema}[Cota superior del c\'odigo descifrable \'optimo]
+\label{Teo:SZ:CotaSuperiorCodigoDescifrableOptimo}
+%
   El largo promedio \ $L^\opt$ \ del c\'odigo \ $c^\opt$ \ descifrable, de largo
   promedio m\'inimo es  acotado por arriba por la entrop\'ia  de Shannon de base
   $d$ de $X$ m\'as un {\it dit} (1 s\'imbolo de $\C$),
@@ -858,7 +870,9 @@ entrop\'ia  de  Shannon.   Se   notar\'a  tambi\'en  que  de  la  demostraci\'on
 precediente  de   que  aparece  un   c\'odigo  particular  a  trav\'es   de  los
 $\Big\lceil\!  - \log_d p_X(x) \Big\rceil$:
 %
-\begin{definicion}[C\'odigo de Shannon]\label{Def:SZ:ShannonCode}
+\begin{definicion}[C\'odigo de Shannon]
+\label{Def:SZ:ShannonCode}
+%
   Un  c\'odigo  \  $c^\sh$  \  de  una  fuente $X$,  de  largos  \  $l^\sh(x)  =
   \Big\lceil\!   - \log_d  p_X(x) \Big\rceil$,  \ libre  de  prefijo (construido
   sobre el arbol de Kraft) es llamado {\it c\'odigo de Shannon}.
@@ -873,7 +887,9 @@ H_d(X) \le L\left( c^\sh  \right) < H_d(X) +  1.
 Al lo contrario de primer vista, un  c\'odigo de Shannon no es \'optimo, como se
 lo puede ver con el ejemplo siguiente.
 %
-\begin{ejemplo}\label{Ej:SZ:CodigoShannonNoOpt}
+\begin{ejemplo}
+\label{Ej:SZ:CodigoShannonNoOpt}
+%
   Sea \ $\X  = \C = \{ 0 \,  , \, 1 \}$ \  y una fuente $X$ tal que  \ $p_X(0) =
   0.999 = 1 - p_X(1)$.   Los largos de Shannon van a ser \ $l^\sh(0)  = 1$ \ y \
   $l^\sh(1) = 10$,  y el largo promedio vale \ $L\left(  c^\sh \right) = 1.009$.
@@ -889,6 +905,8 @@ $d$-\'adica.   Sin embargo,  el c\'odigo  de  Shannon es  ``competitivo'' en  el
 sentido de que:
 %
 \begin{teorema}[Competitividad del c\'odigo de Shannon]
+\label{Teo:SZ:CompetitividadCodigoShannon}
+%
   Sea $X$  \ fuente sobre  \ $\X$, de  distribuci\'on \ $p_X$  \ y \  $c^\sh$ el
   c\'odigo de Shannon asociado sobre el  alfabeto c\'odigo \ $\C = \{ \cod_1 ,
   \ldots  , \cod_d \}$,  de largos  $l^\sh(x) =  \Big\lceil\!  -  \log_d p_X(x)
@@ -939,6 +957,8 @@ $c^\sh(X)$ tenga un largo m\'as grande que $c(X)+k$ decrece exponencialmente con
 $k$.
 %
 \begin{ejemplo}
+\label{Ej:SZ:CompetitividadCodigoShannon}
+%
   De manera general, con $d = 2$ y para $k = 9$, $P\Big( l^\sh(X) \ge l_c(X) + 9
   \Big)      \le       0.391      \%$.      En       particular,      en      el
   ejemplo~\ref{Ej:SZ:CodigoShannonNoOpt},    notando    que    s\'olo   en    la
@@ -959,7 +979,9 @@ y~\cite[\&  ref.]{CovTho06}).   El  c\'odigo  conocido  como  {\it  c\'odigo  de
 se  basa  sobre  el  hecho  de   que  se  alcanza  la  cota  m\'inima  para  una
 distribuci\'on $d$-\'adica.
 %
-\begin{definicion}[C\'odigo de Fano]\label{Def:SZ:FanoCode}
+\begin{definicion}[C\'odigo de Fano]
+\label{Def:SZ:FanoCode}
+%
   El  principio  es  de  clasificar   los  estados  de  $\X$  para  obtener  las
   probabilidades clasificadas en  orden decreciences ($p_X^\downarrow$).  Luego,
   se divide $\X$ en $d$ ensembles a  lo m\'as equiprobables que se puede (\ie de
@@ -988,7 +1010,9 @@ Una soluci\'on para construir un  c\'odigo \'optima fue propuesta por Huffman en
   c\'odigo de Fano  era \'optimo: Huffman propus\'o su  propio c\'odigo, andando
   al rev\'es del enfoque de Fano, y demostr\'o que era \'optimo~\cite{Sti91}.}
 %
-\begin{definicion}[C\'odigo de Huffman]\label{Def:SZ:HuffmanCode}
+\begin{definicion}[C\'odigo de Huffman]
+\label{Def:SZ:HuffmanCode}
+%
   Suponemos que  existe un $\beta \in  \Nset$ tal que~\footnote{Si  no, se puede
     elegir $\beta =  \left\lceil \frac{\alpha-d}{d-1} \right\rceil$, y completar
     $\X$  con  $d  +  \beta  (d-1)  -  \alpha$  s\'imbolos  fuente  fictivos  de
@@ -1041,6 +1065,8 @@ la segunda etapa,  dando un c\'odigo de largos  $2, 2, 1, 1$, es  decir de largo
 promedio m\'as peque\~no.
 
 \begin{teorema}[\'Optimalidad del c\'odigo de Huffman]
+\label{Teo:SZ:OptimalidadHuffman}
+%
   El algoritmo de Huffman da un c\'odigo \ $c^\huf$ \ de largo promedio m\'inimo
   en  la  clase de  los  c\'odigos  descrifrables y  los  libre  de prefijo  (se
   recordar\'a que  con los  largos de c\'odigos  descifrables, siempre  se puede
@@ -1238,6 +1264,8 @@ respuesta general  no es obvia, pero  tratando del c\'odigo de  Shannon se puede
 contestar:
 
 \begin{teorema}[C\'odigo falso de Shannon]
+\label{Teo:SZ:CodigoFalsoShannon}
+%
   Sea $c^\sh(p)$  el c\'odigo de Shannon sobre  el alfabeto c\'odigo \  $\C = \{
   \cod_1 ,  \ldots , \cod_d \}$ asociado  a la distribuci\'on $p$.   Sea $X$ \
   fuente sobre  \ $\X$, de distribuci\'on \  $p_X$ \ y \  $q$ una distribuci\'on

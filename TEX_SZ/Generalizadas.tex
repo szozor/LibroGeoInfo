@@ -210,7 +210,9 @@ la    $\phi$-entrop\'ia   (y    las   divergencias    que    se   introducir\'an
 luego)~\footnote{En  la literatura,  no hay  el signo  $-$, y  hay  que invertir
   c\'oncava y convexa.}
 %
-\begin{definicion}[$(h,\phi)$-entrop\'ia]\label{Def:SZ:HPhiEntropia}
+\begin{definicion}[$(h,\phi)$-entrop\'ia]
+\label{Def:SZ:HPhiEntropia}
+%
   La $(h,\phi)$-entrop\'ia de una  distribuci\'on de probabilidad $p_X$ definida
   sobre $\X$ de cardinal finito $|\X| = \alpha$ es definida por
   %
@@ -353,15 +355,17 @@ Sin  embargo, en  general, se  pierden  las propiedades~\ref{Prop:SZ:aditividad}
 conserva solamente en el caso Shannon:
 %
 \begin{teorema}
+\label{Teo:SZ:SoloShannonSubaditiva}
+%
   Sea $p_{X,Y}$ distribuci\'on conjunta  de variables aleatorias discretas \ $X$
   \ y \ $Y$ \ y \ $p_X$ \ y \ $p_Y$ \ las de \ $X$ \ y de \ $Y$ (marginales).
-%
-\[
-\hhphi[p_{X,Y}]  \: \le  \: \hhphi[p_X  \otimes  p_Y] \quad  \forall \:  p_{X,Y}
-\qquad \Longleftrightarrow \qquad \phi(x) = x \log x,
-\]
-%
-\ie $\hhphi$ es una funci\'on creciente de la entrop\'ia de Shannon.
+  %
+  \[
+  \hhphi[p_{X,Y}] \:  \le \:  \hhphi[p_X \otimes p_Y]  \quad \forall  \: p_{X,Y}
+  \qquad \Longleftrightarrow \qquad \phi(x) = x \log x,
+  \]
+  %
+  \ie $\hhphi$ es una funci\'on creciente de la entrop\'ia de Shannon.
 \end{teorema}
 %
 \begin{proof}
@@ -557,8 +561,8 @@ tambi\'en  extenderla   a  vectores   aleatorios  admitiendo  una   densidad  de
 probabilidad, reemplazando la suma por una integraci\'on.
 
 \begin{definicion}[$(h,\phi)$-entrop\'ia diferencial]
-  \label{Def:SZ:HPhiEntropiaDiferencial}
-  %
+\label{Def:SZ:HPhiEntropiaDiferencial}
+%
   Sea  $X$ una variable  aleatoria continua  sobre $\Rset^d$  y sea  $p_X(x)$ la
   densidad  (distribuci\'on)  de  probabilidad  de  $X$  de  soporte  $\X$.   La
   $(h,\phi)$-entrop\'ia diferencial de la variable $X$ es definida por
@@ -616,8 +620,9 @@ el  enfoque discreto  y diferencial  son contenido  en la  forma  general usando
 densidades con respeto  a una medida (respectivamente discreta  y de Lebesgue en
 estos casos).
 %
-\begin{definicion}[Escritura \'unica de las $(h,\phi)$-entrop\'ias]\label{Def:SZ:HPhiEntropiaMu}
-  %
+\begin{definicion}[Escritura \'unica de las $(h,\phi)$-entrop\'ias]
+\label{Def:SZ:HPhiEntropiaMu}
+%
   Sea  \  $X$  \  variable  aleatoria definida  sobre  $\X  \subseteq  \Rset^d$,
   admitiendo una densidad  de probabilidad \ $p_X$ \ con respeto  a una medida \
   $\mu$ \  (ej.  $\mu_\X$ \  en el caso  discreto \ $\mu =  \mu_L$ \ en  el caso
@@ -716,8 +721,8 @@ pesar de  que la  divergencia no cumpla  la desigualdad triangular,  aparece que
 $\Big( J_{\mathrm{js}}^{\pi_{\mathrm{u}}}(P_{(1)},P_{(2)}) \Big)^s,  \quad 0 < s
 \le \frac12$  es una metrica~\footnote{Se  necesita sol\'o de que  los $P_{(i)}$
   admiten una densidad con respeto a una medida $\sigma$-finita; nos referiremos
-  al                                   resultado~\ref{Th:MP:DescompositionMixta},
-  pagina~\pageref{Th:MP:DescompositionMixta}.}~\cite[Teorema~1                 \&
+  al                                   resultado~\ref{Teo:MP:DescompositionMixta},
+  pagina~\pageref{Teo:MP:DescompositionMixta}.}~\cite[Teorema~1                 \&
 Nota~2]{OstVaj03} o~\cite{EndSch03, KafOst91, OsaBus18}.  Si puede parecer m\'as
 l\'ogico definir  tal divergencia con a priori/proporciones  $\pi_i$ iguales, de
 hecho la  versi\'on no sim\'etrica,  con pesos $\pi_i$  se vuelve natural  en el
@@ -818,7 +823,9 @@ papel de  Burbea \& Rao,  Nielsen llam\'o tal generalizaci\'on  ``divergencia de
 Burbea-Rao asimetrizada''.  M\'as formalemente, se puede definir una divergencia
 de Jensen de la manera siguiente:
 %
-\begin{definicion}[Divergencias  de Jensen]\label{Def:SZ:DivJensen}
+\begin{definicion}[Divergencias  de Jensen]
+\label{Def:SZ:DivJensen}
+%
   Sea \ $f: \U \subset \Rset^m \mapsto \Rset$ \ convexa y de clase $C^1$ \ sobre
   \ $\U$, \ un cerrado convexo de $\Rset^m$ \ y \ $\pi = \begin{bmatrix} \pi_1 &
     \pi_2  \end{bmatrix}^t$  \  con  $0   \le  \pi_1  =  1-\pi_2  \le  1$.   Las
@@ -839,6 +846,8 @@ probabilidades   (o  tomando   densidades   en  un   $x$   e  integrando   sobre
 $\X$)~\cite{NieBol11, NieNoc17}.
 
 \begin{definicion}[Divergencia $(h,\phi)$-Jensen entr\'opica]
+\label{Def:SZ:DivJensen}
+%
   Para $(h,\phi)$-entrop\'ias  \underline{c\'oncavas} (ej.  con  $h$ c\'oncava),
   siendo $-\hhphi$ convexa, se puede entonces asociar una divergencia de Jensen
   %
@@ -941,7 +950,9 @@ convexa, para  resolver problemas de  minimizaci\'on convexa~\footnote{A\'un que
   Shannon sujeto a momentos\ldots}~\cite{Bre67}, pero con aplicaciones en varios
 campos~\cite[y ref.]{Bas89, Bas13}:
 %
-\begin{definicion}[Divergencias de Bregman]\label{Def:SZ:DivBregman}
+\begin{definicion}[Divergencias de Bregman]
+\label{Def:SZ:DivBregman}
+%
   Sea \ $f: \U  \subset \Rset^m \mapsto \Rset$ \ convexa y  de clase $C^1$ \
   sobre  \ $\U$, \  un cerrado  convexo de  $\Rset^m$.  Las  divergencias de
   Bregman de  un punto  \ $v \in  \U$ \  relativamente a un  punto \  $u \in
@@ -962,7 +973,9 @@ dimensi\'on infinita)~\cite{Pet07}.   En lo que nos concierna  en este capitulo,
 tratando posiblemente de densidad de probabilidades, nos interesamos a funciones
 de funciones~\cite{FriSri08, NieNoc17}:
 %
-\begin{definicion}[Divergencias de Bregman funcional]\label{Def:SZ:DivBregmanFun}
+\begin{definicion}[Divergencias de Bregman funcional]
+\label{Def:SZ:DivBregmanFun}
+%
   Sea \ $f: \U \mapsto \Rset$ \ convexa y de clase $C^1$ \ sobre \ $\U$,
   \ un cerrado convexo de un  espacio de Banach.  Las divergencias de Bregman de
   un ``punto'' (una funci\'on) \ $v \in \U$ \ relativamente a un ``punto'' \
@@ -986,36 +999,40 @@ En  el  caso  de que  $\U  \subset  \Rset^m$  se recupera  sencillamente  la
 definici\'on original.
 
 \begin{definicion}[Divergencia $(h,\phi)$-Bregman entr\'opica]
-Para  $(h,\phi)$-entrop\'ias  \underline{c\'oncavas}  (ej.   con  $h$
-c\'oncava), se puede entonces asociar una divergencia de Bregman
+\label{Def:SZ:DivBregmanEntropicas}
 %
-\[
-\bhphi[q]{p} =  \hhphi[p] - \hhphi[q] -  h'\big(\hphi[p] \big) \int_\X  ( q(x) -
-p(x) ) \phi'(p(x)) \, d\mu(x).
-\]
-%
-Cuando $h  \equiv \id$,  se notar\'a $\bphi{}$  y es  equivalente a salir  de la
-definici\'on inicial  $u = p(x)$, \ $v  = q(x)$ y sumar  la divergencia obtenida
-sobre \ $\X$ \  con respeto a la medida \ $\mu$.  En el caso particular discreto
-toma la expresi\'on
-
-\begin{eqnarray*}
-\bhphi[q]{p} \equiv B_{-\hhphi}(q\|p)
-& = & \hhphi[p] - \hhphi[q] - (p-q)^t \nabla \hhphi[p]\\[2.5mm]
-%
-& = & \hhphi[p] - \hhphi[q] - h'\big(\hphi[p] \big) (q-p)^t \phi'(p)
-\end{eqnarray*}
-%
-%\noindent Cuando $h \equiv \id$, se  notar\'a $\bphi{}$ y es equivalente a salir
-%de la  definici\'on inicial  con \ $\U  = [0  \, ; \,  1]$, $u$ \  y \  $v =
-%q(y_i)$ \ $i$-esima componente de \ $p$  \ y \ $q$ \ respectivamente, y sumar la
-%divergencia obtenida sobre $i$.
+  Para $(h,\phi)$-entrop\'ias  \underline{c\'oncavas} (ej.  con  $h$ c\'oncava),
+  se puede entonces asociar una divergencia de Bregman
+  %
+  \[
+  \bhphi[q]{p} = \hhphi[p] - \hhphi[q]  - h'\big(\hphi[p] \big) \int_\X ( q(x) -
+  p(x) ) \phi'(p(x)) \, d\mu(x).
+  \]
+  %
+  Cuando $h  \equiv \id$, se notar\'a $\bphi{}$  y es equivalente a  salir de la
+  definici\'on inicial $u = p(x)$, \  $v = q(x)$ y sumar la divergencia obtenida
+  sobre  \ $\X$  \ con  respeto a  la  medida \  $\mu$.  En  el caso  particular
+  discreto toma la expresi\'on
+  %
+  \begin{eqnarray*}
+    \bhphi[q]{p} \equiv B_{-\hhphi}(q\|p)
+    & = & \hhphi[p] - \hhphi[q] - (p-q)^t \nabla \hhphi[p]\\[2.5mm]
+    %
+    & = & \hhphi[p] - \hhphi[q] - h'\big(\hphi[p] \big) (q-p)^t \phi'(p)
+  \end{eqnarray*}
+  %
+  % \noindent Cuando  $h \equiv \id$, se  notar\'a $\bphi{}$ y  es equivalente a
+  % salir de la definici\'on inicial con \ $\U =  [0 \, ; \, 1]$, $u$ \ y \ $v =
+  % q(y_i)$ \ $i$-esima componente de \ $p$ \ y \ $q$ \ respectivamente, y sumar
+  % la divergencia obtenida sobre $i$.
 \end{definicion}
 
 Aparece de que  las divergencias de Jensen se escriben  a partir de divergencias
 de Bregman, y vice-versa:
 %
 \begin{lema}
+\label{Lem:SZ:VinculoJensenBregman}
+%
   De    la   definiciones~\ref{Def:SZ:DivJensen},    \ref{Def:SZ:DivBregman}   y
   \ref{Def:SZ:DivBregmanFun}, se  muestra sencillamente de  que las divergencias
   de Jensen se escriben como combinaciones convexas de divergencias de Bregman,
@@ -1155,7 +1172,9 @@ Como para el caso de las $\phi$-entrop\'ias, esta clase se enmarca dentro de una
 clase    un     poco    m\'as    general~\cite[Secs.~4.5~\&~5]{AliSil66}    (ver
 tambi\'en~\cite[Sec.~I]{OrsPar95}):
 %
-\begin{definicion}[$(h,\phi)$-divergencia]\label{Def:SZ:HPhiDivergencia}
+\begin{definicion}[$(h,\phi)$-divergencia]
+\label{Def:SZ:HPhiDivergencia}
+%
   La  $(h,\phi)$-divergencia  de  una  distribuci\'on de  probabilidad  $Q$  con
   respeto a una distribuci\'on de referencia $P$ tal que $Q \ll P$
   % de soporte $\X$ incluyendo el soporte de $q$ es definida por
@@ -1303,6 +1322,8 @@ condici\'on suficiente  para que una potencia  de la divergencia  satisfaga a la
 desigualdad triangular:
 %
 \begin{lema}
+\label{Lem:SZ:PotenciaCziszarDesigualdadTriangular}
+%
   Sea \ $\phi$ \ una funci\'on convexa tal que \ $\phi^* = \phi$, \ $\phi(0) \ne
   0$   \  y   \  $\cphi{}$   su  divergencia   de  Csisz\'ar   asociada   ($h  =
   \id$).  Adicionalmente  de supone  de  que  $\phi(1)  = 0$  (ver  definici\'on
@@ -1421,6 +1442,8 @@ la de normalizaci\'on).
 Tal como en el caso Shannon, existe una prueba informacional:
 %
 \begin{lema}
+\label{Lem:SZ:MaxPhiEntInformacional}
+%
   Sea \  $\displaystyle \P_m =  \left\{ p  \ge 0: \:  \int_\X M_k(x) \,  p(x) \,
     d\mu(x) = m \right\}$ \ y \  $p^* \in \P_m$ \ que satisfaga \ $\phi'(p^*(x))
   = \eta^t M(x)$. Entonces

@@ -128,6 +128,8 @@ la  manera siguiente  (~\cite{Hal50,  Fel68, Fel71,  Bre88, IbaPar97,  AthLah06,
   Sie76} para notas hist\'oricas):
 %
 \begin{definicion}[Espacio medible]
+\label{Def:MP:EspacioMedible}
+%
   $(\Omega,  \A)$,  \  formado por  un  espacio  muestral  \  $\Omega$ \  y  una
   colecci\'on \  $\A$ \ de  conjuntos de \  $\Omega$, \ es llamado  {\it espacio
     medible} si satisface los requisitos
@@ -171,6 +173,8 @@ M\'as formalmente,  se define  un {\it espacio  de probabilidad} o  {\it espacio
   IbaPar97, AthLah06, Bog07:v1, JacPro03, Coh13}:
 %
 \begin{definicion}[Espacio de medida y espacio probabil\'istico]
+\label{Def:MP:EspacioProbabilistico}
+%
   Sea $(\Omega,\A)$ un espacio medible.  Una funci\'on $\mu: \A \mapsto \Rset_+$
   tal que
   %
@@ -291,7 +295,9 @@ n\'umero menor o  igual a 3.  La  respuesta se encuentra en la  noci\'on de {\it
   probabilidad   condicional}~\cite{Hau01,   Jef48,   Jef73,  Bre88,   ManWol95,
   JacPro03, ShaVov06}:
 %
-\begin{definicion}[Probabilidad condicional]\label{Def:MP:ProbaCondicional}
+\begin{definicion}[Probabilidad condicional]
+\label{Def:MP:ProbaCondicional}
+%
   La  {\it probabilidad  condicional} de  $A$  dado $B$,  denotado $P(A|B)$,  se
   define  como  la  raz\'on entre  la  probabilidad  del  evento conjunto  y  la
   probabilidad de que se d\'e $B$ (cuando \'este es un evento de probabilidad no
@@ -388,6 +394,8 @@ independientes  si el  conocimiento de  uno no  lleva  ninguna ``informaci\'on''
 sobre el otro~\cite{Bre88, ManWol95, Hau01, JacPro03, Bor09}:
 %
 \begin{definicion}[Independencia estad\'istica]
+\label{Def:MP:IndependenciaEtadistica}
+%
   Dos eventos \ $A$ \ y \ $B$ \ se dicen {\it estad\'isticamente independientes}
   si la  probabilidad condicional  de $A$  dado $B$ es  igual a  la probabilidad
   incondicional de $A$:
@@ -417,16 +425,20 @@ independientes.
 Es  importante  notar  que  la  independencia  mutua  no  es  equivalente  a  la
 independencia por pares de eventos, como lo ilustra el ejemplo siguiente.
 %
-\begin{ejemplo}[Independencia   mutua   vs    por   pares]   Tiramos   2   dados
-  independientemente y consideramos  los eventos: \ $A_i, i = 1,  2$ \ ``el dado
-  $i$ es par'' y $A_3$ ``la suma de ambos dados es impar''. Es claro que \ $A_1$
-  \ y \  $A_2$ \ son independientes y adem\'as  para $i = 1$ o  2, \ $P(A_i \cap
-  A_3) = \frac14 = P(A_i) P(A_3)$, \  mientras que \ $P(A_1 \cap A_2 \cap A_3) =
-  0  \ne  \frac18$:  los eventos  son  independientes  por  pares, pero  no  son
-  mutuamente independientes~\cite{HogMck13}.
+\begin{ejemplo}[Independencia   mutua   vs    por   pares]
+\label{Ej:MP:IndependenciaMutuaVsPares}
+%
+  Tiramos 2 dados independientemente y consideramos  los eventos: \ $A_i, i = 1,
+  2$ \ ``el  dado $i$ es par'' y  $A_3$ ``la suma de ambos dados  es impar''. Es
+  claro que \ $A_1$  \ y \ $A_2$ \ son independientes y adem\'as  para $i = 1$ o
+  2, \ $P(A_i \cap A_3) = \frac14 = P(A_i) P(A_3)$, \ mientras que \ $P(A_1 \cap
+  A_2 \cap A_3) = 0 \ne \frac18$: los eventos son independientes por pares, pero
+  no son mutuamente independientes~\cite{HogMck13}.
 \end{ejemplo}
 
 \begin{definicion}[Independencia condicional]
+\label{Def:MP:IndependenciaCondicional}
+%
   Dos eventos \ $A$ \ y  \ $B$ \ se dicen {\it estad\'isticamente independientes
     condicionalmente} a un tercer evento  $C$, si la probabilidad conjunta de \
   $A$  \ y  \ $B$  \ condicionalmente  a  \ $C$  \ es  igual al  producto de  la
@@ -443,18 +455,22 @@ independencia por pares de eventos, como lo ilustra el ejemplo siguiente.
 Es importante  notar  que dos  eventos pueden ser independientes,  pero no serlo
 condicionalmente a un tercero, como lo ilustra el ejemplo siguiente.
 %
-\begin{ejemplo}[Independencia  incondicional pero  no condicional]  Teniendo dos
-  monedas bien equilibradas y tir\'andolas de manera independiente, consideramos
-  los eventos \ $A$ ``la primera faz  es una cruz'', $B$ ``la segunda faz es una
-  cara'', $C$ ``las faces son id\'enticas''. Claramente \ $P(A \cap B) = \frac14
-  = P(A)  P(B)$, \  mientras que  \ $P(A \cap  B |  C) = 0  \ne P(A|C)  P(B|C) =
-  \frac1{16}$.
+\begin{ejemplo}[Independencia  incondicional pero  no condicional]
+\label{Ej:MP:IndependenciaIncondicional}
+%
+  Teniendo dos monedas bien equilibradas y tir\'andolas de manera independiente,
+  consideramos  los eventos  \ $A$  ``la  primera faz  es una  cruz'', $B$  ``la
+  segunda faz  es una  cara'', $C$ ``las  faces son id\'enticas''.  Claramente \
+  $P(A \cap B) = \frac14 = P(A) P(B)$, \ mientras que \ $P(A \cap B | C) = 0 \ne
+  P(A|C) P(B|C) = \frac1{16}$.
 \end{ejemplo}
 
 Al rev\'es, dos eventos pueden ser condicionalmente independientes a un tercero,
 pero  ser  dependientes.
 %
 \begin{ejemplo}[Independencia  condicional  pero  no  incondicional]
+\label{Ej:MP:IndependenciaCondicional}
+%
   Sea Alice tirando una moneda bien  equilibrada y denotamos $A$ el evento ``era
   una cruz''.   Claramente $P(A) =  \frac12$.  Suponemos que Alice  transmite el
   resultado a  Bob a trav\'es de  un intermediario Charlie  con una probabilidad

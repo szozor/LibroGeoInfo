@@ -19,8 +19,8 @@ normcdf(\x)=1/(1 + exp(-0.07056*(\x)^3 - 1.5976*(\x)));
 %\foreach \a in {1,...,3} {
 \draw[thick] (-.5,0)--(0,0);
 \draw[thick,dotted,domain=.175:\mx,samples=100] plot ({\x*\sx},{\sy*(\x^(-.5))*exp(-\x)/sqrt(pi)});
-\draw[thick,dashed,domain=0:\mx,samples=100] plot ({\x*\sx},{\sy*exp(-\x)});
-\draw[thick,dash dot,domain=0:\mx,samples=100] plot ({\x*\sx},{\sy*\x*exp(-\x)});
+\draw[thick,dash dot,domain=0:\mx,samples=100] plot ({\x*\sx},{\sy*exp(-\x)});
+\draw[thick,dashed,domain=0:\mx,samples=100] plot ({\x*\sx},{\sy*\x*exp(-\x)});
 %\draw[thick,domain=0:\mx,samples=100] plot ({\x*\sx},{\sy*4*\x*sqrt(\x)*exp(-\x)/3/sqrt(pi)});
 \draw[thick,domain=0:\mx,samples=100] plot ({\x*\sx},{\sy*\x*\x*exp(-\x)/2});
 %}
@@ -45,8 +45,8 @@ normcdf(\x)=1/(1 + exp(-0.07056*(\x)^3 - 1.5976*(\x)));
 % cumulativa
 \draw[thick] (-.5,0)--(0,0);
 \draw[thick,dotted,domain=0:\mx,samples=100] plot ({\x*\sx},{(2*normcdf(sqrt(2*\x))-1)*\sy});
-\draw[thick,dashed,domain=0:\mx,samples=100] plot ({\x*\sx},{\sy*(1-exp(-\x))});
-\draw[thick,dash dot,domain=0:\mx,samples=100] plot ({\x*\sx},{\sy*(1-(1+\x)*exp(-\x))});
+\draw[thick,dash dot,domain=0:\mx,samples=100] plot ({\x*\sx},{\sy*(1-exp(-\x))});
+\draw[thick,dashed,domain=0:\mx,samples=100] plot ({\x*\sx},{\sy*(1-(1+\x)*exp(-\x))});
 \draw[thick,domain=0:\mx,samples=100] plot ({\x*\sx},{\sy*(1-(1+\x+\x*\x/2)*exp(-\x))});
 % plot({\x*\sx},{\sy*normcdf(\x)});
 %

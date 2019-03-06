@@ -119,7 +119,9 @@ tiene soluci\'on~\footnote{M\'as  precisamente, existen  casos en los  cuales se
 Existe   una  prueba   informacional   de  este   resultado,   saliendo  de   la
 soluci\'on.
 %
-\begin{lema}\label{Lem:SZ:MaxEntPruebaInfo}
+\begin{lema}
+\label{Lem:SZ:MaxEntPruebaInfo}
+%
   Sea  \ $\displaystyle  \P_m =  \left\{ p  \ge 0:  \: \int_\X  M(x) \,  p(x) \,
     d\mu(x) = m \right\}$ \ conjunto  de densidades con respeto a $\mu$, con los
   mismos momentos $M$, y sea \ $p^* \in  \P_m$ \ que sea de la forma \ $p^*(x) =
@@ -133,6 +135,7 @@ soluci\'on.
   donde   $H$  es   de  la   definici\'on   general  Def.~\ref{Def:SZ:ShanonMu},
   pagina~\pageref{Def:SZ:ShanonMu}, de la entrop\'ia con respeto a $\mu$.
 \end{lema}
+%
 \begin{proof}
   \begin{eqnarray*}
   H(p) & = & - \int_\X p(x) \, \log p(x) \, d\mu(x)\\[2.5mm]
@@ -205,7 +208,9 @@ de  variables continuas  sobre $\Rset^d$.   Es conocido  como desigualdad  de la
 potencia entr\'opica (EPI para entropy power inequality en ingl\'es). No vincula
 las entrop\'ias, sino que las potencias entr\'opicas.
 %
-\begin{teorema}[Desigualdad de la potencia entr\'opica]\label{Th:SZ:EPI}
+\begin{teorema}[Desigualdad de la potencia entr\'opica]
+\label{Teo:SZ:EPI}
+%
   Sean  $X$  e $Y$  dos  variables  $d$-dimensionales continuas  independientes.
   Entonces
   %
@@ -280,6 +285,8 @@ Se  mencionar\'a que  existe  una versi\'on  de  la desigualdad  de la  potencia
 entr\'opica con rearreglo~\cite{WanMad04}:
 %
 \begin{teorema}[Desigualdad de la potencia entr\'opica con rearreglo]
+\label{Teo:SZ:EPIRearreglo}
+%
   Sean  $X$ e $Y$  dos variables  $d$-dimensionales continuas  independientes de
   densidades   de   probabilidades   $p_X$   y   $p_Y$   respectivamente.   Sean
   $p^\downarrow_X$  y   $p^\downarrow_Y$  los   rearreglos  de  $p_X$   y  $p_Y$
@@ -314,6 +321,8 @@ informaci\'on disponible sobre  una variable. Se basa sobre  una desigualdad que
 satisface la informaci\'on mutua aplicada a un proceso de Markov.
 
 \begin{definicion}[Proceso de Markov]
+\label{Def:SZ:ProcesoMarkov}
+%
   Una secuencia  $X_1 \mapsto X_2 \mapsto  \ldots \mapsto X_n$ es  dicha {\it de
     Markov}   si   para  cualquier \   $i   >   1$,
   %
@@ -337,6 +346,8 @@ satisface la informaci\'on mutua aplicada a un proceso de Markov.
 \end{definicion}
 
 \begin{teorema}[Desigualdad de procesamiento de datos]
+\label{Teo:SZ:DesigualdadPreocesamientoDatos}
+%
   Sea  $X \mapsto  Y \mapsto  Z$ un  proceso de  Markov. Entonces,
   %
   \[
@@ -410,6 +421,8 @@ termodin\'amica:  un sistema  aislado evolua  hasta  llegar su  estado lo  m\'as
 desorganizado (ver ej.~\cite[y ref.]{CovTho06, Mer10, Mer18}).
 
 \begin{lema}[Versi\'on informacional de la segunda ley de la termodin\'amica]
+\label{Lem:SZ:2ndLeyTermodinamica}
+%
   Sea $X_1 \mapsto X_2 \mapsto \cdots  \mapsto X_n \mapsto \cdots$ un proceso de
   Markov,  con   probabilidades  de  transici\'on   $r_{X_{n+1}|X_n=x_n}$  dadas
   (independientemente de la condici\'on  inicial).  Estas \'ultimas modelizan el
@@ -499,6 +512,8 @@ par\'ametro~\cite{Fis22, Fis25:07, Kay93, Bos07, CovTho06, Fri04}.
 %  el logaritmo natural.}
 %
 \begin{definicion}[Matriz informaci\'on de Fisher par\'ametrica]
+\label{Def:SZ:MatrizFisherParametrica}
+%
   Sea   $X$   una   variable   aleatoria  parametrizada   por   un   par\'ametro
   $m$-dimensional, $\theta  \in \Theta \subseteq \Rset^m$,  de distribuci\'on de
   probabilidad $p_X(\cdot;\theta)$  (con respeto a una medida  $\mu$ dada) sobre
@@ -539,6 +554,8 @@ gradiente en \ $x$  \ en lugar de \ $\theta$ \ da  la matriz de informaci\'on de
 Fisher no param\'etrica,
 %
 \begin{definicion}[Matriz informaci\'on de Fisher no param\'etrica]
+\label{Def:SZ:MatrizFisherNoParametrica}
+%
   Sea  \  $X$ \  una  variable aleatoria  continua  admitiendo  una densidad  de
   probabilidad \ $p_X$  \ definida sobre \ $\X \subseteq  \Rset^d$ \ su soporte.
   Suponga que  \ $p_X$ \ sea  diferenciable con respeto  a \ $x$.  La  matriz de
@@ -644,6 +661,8 @@ alrededor de su promedio).  La desigualdad de Cram\'er-Rao acota por debajo esta
 covarianza.
 %
 \begin{teorema}[Desigualdad de Cram\'er-Rao]
+\label{Teo:SZ:CramerRao}
+%
   Sea  \ $X$  \  parametrizada por  \ $\theta$,  de  densidad de  soporte \  $\X
   \subseteq \Rset^d$ \ independiente de  \ $\theta$, \ y \ $\widehat{\theta}(X)$
   \  un  estimador   de  \  $\theta$.   Sea  \  $b(\theta)$  \   su  sesgo  y  \
@@ -693,8 +712,8 @@ informaci\'on de Fisher, \ie \  $J_\theta(X)$ \ caracteriza la informaci\'on que
   funci\'on de \ $\theta$,  y que el soporte \ $\X$ \  no depende de \ $\theta$,
   se obtiene~\footnote{Se supone que  los integrandes sean \ $\theta$-localmente
     integrables,  tal  que  se  puede  invertir  derivada  en  \  $\theta$  \  e
-    integraci\'on;    ver    tambi\'en    teorema~\ref{Th:MP:IntegralParametro},
-    pagina~\pageref{Th:MP:IntegralParametro}.}
+    integraci\'on;    ver    tambi\'en    teorema~\ref{Teo:MP:IntegralParametro},
+    pagina~\pageref{Teo:MP:IntegralParametro}.}
   %
   \begin{eqnarray*}
   \Esp\left[ S(X) \left( \widehat{\theta}(X) - \theta_0 \right)^t \right] & = &
@@ -803,6 +822,8 @@ informaci\'on,  aparece  que  \  $J_\theta$  \ es  tambi\'en  relacionada  a  la
 entrop\'ia relativa~\cite{CovTho06, Fri04}:
 %
 \begin{teorema}[Fisher como curvatura de la entrop\'ia relativa]
+\label{Teo:SZ:FisherCurvatura}
+%
   Sea \ $X$ \ parametrizado por \ $\theta_0 \in \mathring{\Theta}$ \ interior de
   $\Theta$  ($\Theta$  \  contiene  un  vecinaje de  \  $\theta_0$).   Siendo  \
   $\Dkl[p_X(\cdot;\theta)]{p_X(\cdot;\theta_0)}$  \ funci\'on  de \  $\theta \in
@@ -910,6 +931,8 @@ informaci\'on de Fisher.
 \end{figure}
 
 \begin{teorema}[Identidad de de Bruijn]
+\label{Teo:SZ:DeBruijn}
+%
   Sea \ $X$ \  un vector aleatorio continuo sobre un abierto  de \ $\Rset^d$ \ y
   admitiendo una matriz de covarianza, y sea \  $Y = X + T \Gauss$ \ donde \ $T$
   \ es determinista, $d  \times d'$ \ con \ $ d \le d'$,  de rango m\'aximo, y \
@@ -1003,8 +1026,8 @@ informaci\'on de Fisher.
   %
   Suponiende que  se puede intervertir derivadas  y integrales (ver~\cite{Bar84,
     Bar86}     donde     se      dan     condiciones     rigurosas,     y     el
-  teorema~\ref{Th:MP:IntegralParametro},
-  pagina~\pageref{Th:MP:IntegralParametro}),     $\displaystyle     p_Y(y)     =
+  teorema~\ref{Teo:MP:IntegralParametro},
+  pagina~\pageref{Teo:MP:IntegralParametro}),     $\displaystyle     p_Y(y)     =
   \int_{\Rset^d}  p_X(x)  \,  p(y-x)  \, dx$  \  (ver  ejemplo~\ref{Ej:MP:Suma},
   pagina~\pageref{Ej:MP:Suma})    \   satisface   tambi\'en    esta   ecuaci\'on
   diferencial, y adem\'as
@@ -1072,6 +1095,8 @@ $\E(X|Y)  =  \Esp\left[  \left( X  -  \Esp[X|Y]  \right)  \left( X  -  \Esp[X|Y]
 identidad entre \ $I(X;Y)$ \ y \ $\E(X|Y)$:
 %
 \begin{teorema}[Identidad de Guo--Shamai--Verd\'u]
+\label{Teo:SZ:GuoShamaiVerdu}
+%
   Sea \ $X$ \ un vector aleatorio  continuo sobre un abierto de \ $\Rset^{d'}$ \
   y admitiendo una  matriz de covarianza, y sea \  $Y = S X +  \Gauss$ \ donde \
   $S$  es determinista,  $d  \times d'$,  y  \ $\Gauss$  \  un vector  gaussiano
@@ -1207,6 +1232,8 @@ Stam~\footnote{Como para  la identidad  de de Bruijn,  Stam mencion\'o  que esta
 entrop\'ia''~\cite{WanMad04}.
 %
 \begin{teorema}[Desigualdad de Stam]
+\label{Teo:SZ:Stam}
+%
   Sea  \  $X$   \  una  variable  aleatoria  continua   sobre  \  $\X  \subseteq
   \Rset^d$. Entonces,
   %
@@ -1269,6 +1296,8 @@ informaci\'on         condicional         al         imagen        de         la
 definici\'on Def.~\ref{Def:SZ:entropiacondicional},
 %
 \begin{definicion}[Matriz informaci\'on de Fisher par\'ametrica condicional]
+\label{Def:SZ:MatrizFisherParametricaCondicional}
+%
   Sean  $X$ \  e \  $Y$ \  dos variables  aleatoria parametrizada  por  el mismo
   par\'ametro  $m$-dimensional,  $\theta   \in  \Theta  \subseteq  \Rset^m$,  de
   distribuci\'on de probabilidad conjunta $p_{X,Y}(\cdot,\cdot;\theta)$ continua
@@ -1324,6 +1353,8 @@ y  una   desigualdad  de  procesamiento   de  datos  via  la   informaci\'on  de
 Fisher~\cite{Zam98, Rio07, CovTho06, Fri04, KagSmi99}:
 %
 \begin{teorema}[Desigualdad de procesamiento de datos tipo Fisher]
+\label{Teo:SZ:DesigualdadProcesamientoDatosFisher}
+%
   Sea  $\theta  \mapsto  X  \mapsto   Y$  un  proceso  de  Markov  con  $\theta$
   determinista y $p_{X,Y}$ parametrizado por $\theta$, es decir en este contexto
   que, $p_{Y|X=x}$ no es parametrizado por $\theta$. Entonces
@@ -1356,10 +1387,12 @@ Fisher~\cite{Zam98, Rio07, CovTho06, Fri04, KagSmi99}:
 \end{proof}
 
 Mencionamos de que existe tambi\'en una desigualdad parecida a la de la potencia
-entr\'opica,  teorema~\ref{Th:SZ:EPI}, dada en  el caso  escalar en~\cite{Joh04,
+entr\'opica,  teorema~\ref{Teo:SZ:EPI}, dada en  el caso  escalar en~\cite{Joh04,
   Bla65, Zam98, DemCov91, KagYu08}:
 %
 \begin{teorema}[Desigualdad convolucional de Fisher]
+\label{Teo:SZ:DesigualdadConvolucionalFisher}
+%
   Sean  $X$  e  $Y$  dos variables  $d$-dimensionales  continuas  independientes
   parametrizadas.  Entonces
   %

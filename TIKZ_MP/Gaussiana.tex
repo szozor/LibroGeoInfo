@@ -17,7 +17,7 @@ normcdf(\x)=1/(1 + exp(-0.07056*(\x)^3 - 1.5976*(\x)));
 %
 \draw[thick,domain=-\mx:\mx,samples=100] plot ({\x*\sx},{\sy*exp(-.5*\x*\x)/sqrt(2*pi)});
 %
-\draw (0,{\sy/sqrt(2*pi)})--(-.1,{\sy/sqrt(2*pi)}) node[left,scale=.7]{$\frac1{\sqrt{2 \pi}}$};
+\draw (0,{\sy/sqrt(2*pi)})--(-.2,{\sy/sqrt(2*pi)}) node[left,scale=.7]{$\frac1{\sqrt{2 \pi}}$};
 %
 \end{scope}
 %

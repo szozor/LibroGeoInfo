@@ -1,20 +1,3 @@
-\SZ{Cambio de variable multivariado: citar Mukhopadhyay}
-
-\SZ{Momento factorial: introducir el simbolo de Pockhammer $\left( x \right)_r =
-  \prod_{k=0}^{r-1},  \quad r  \ge 0$  con la  convenci\'on  $\prod_{k=0}^{-1} =
-  1$. Sencillamente, para $n \in \Nset$, si $n  < r$ tenemos $(n)_r = 0$ y si $n
-  \ge r$ tenemos $(n)_r = \frac{n!}{(n-r)!}$.}
-
-\SZ{Momentos factoriales en el caso multivariado}
-
-\SZ{poner el label ``Th:MP:IndependenciaMomentos'' al teorema de independencia con momentos}
-
-
-\SZ{Hablar de esperanza condicional}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \seccion{Funciones generadoras}
 \label{Sec:MP:generatrices}
 
@@ -53,7 +36,9 @@ probabilidad  se define  de  la manera  siguiente~\cite{Fel68, JohKot97,  Muk00,
   AthLah06}:
 %
 \begin{definicion}[funci\'on   generadora   de   probabilidad  o   de   momentos
-  factoriales]\label{Def:MP:GeneradoraProbabilidadFactorial}
+  factoriales]
+\label{Def:MP:GeneradoraProbabilidadFactorial}
+%
   Sea $X = \begin{bmatrix} X_1  & \cdots & X_d \end{bmatrix}^t$ vector aleatorio
   $d$ dimensional  definido sobre $\X  \subset \Rset^d$.  La  funci\'on definida
   por
@@ -67,7 +52,8 @@ probabilidad  se define  de  la manera  siguiente~\cite{Fel68, JohKot97,  Muk00,
     generadora de momentos factoriales} de $X$.
 \end{definicion}
 %
-\noindent Cuando  los \ $X_i$ \  son todas variables  aleatorias positivas, esta
+\SZ{hyperanulus ie entre deux spheres: (SZ estoy retomando lo que sigue);
+ Cuando  los \ $X_i$ \  son todas variables  aleatorias positivas, esta
 integral         converge        uniformamente        en         una        bola
 $d$-dimensional~\footnote{Claramente,  en  $\Bset_d  \equiv \Bset_d(1)$  tenemos
   $\displaystyle  \left|  \int_{\Rset_+^d}  \prod_{i=1}^d z_i^{x_i}  \,  dP_X(x)
@@ -75,10 +61,12 @@ $d$-dimensional~\footnote{Claramente,  en  $\Bset_d  \equiv \Bset_d(1)$  tenemos
   \le  \int_{\Rset_+^d}  dP_X(x)  =   1$.  Adem\'as,  si  la  integral  converge
   uniformamente para un  $z$ tal que $|z|  = r$, por el mismo  enfoque se prueba
   que converge en  $\Bset_d(r)$.} de rayo $r \ge 1$ $\Bset_d(r)  = \left\{ z \in
-  \Cset^d: \: \| z \| \le r \right\}$  donde $\| z \|^2 = \sum_i |z_i|^2$. En el
-caso  contrario,  puede resultar  delicado  en  termino  de existencia  de  esta
-funci\'on  (convergencia de la  integral); se  puede por  ejemplo que,  para una
-variables, no existe ninguno dominio de existencia de esta funci\'on.
+  \Cset^d: \: \| z \| \le r \right\}$  donde $\| z \|^2 = \sum_i |z_i|^2$.
+% En el
+%caso  contrario,  puede resultar  delicado  en  termino  de existencia  de  esta
+%funci\'on  (convergencia de la  integral); se  puede por  ejemplo que,  para una
+%variables, no existe ninguno dominio de existencia de esta funci\'on.
+}
 
 \
 
@@ -86,6 +74,8 @@ La denominaci\'on  {\em generadora de  probabilidad} (pgf para  {\em probability
   generating function} en ingles) se entiende sencillamente del hecho siguiente:
 %
 \begin{lema}
+\label{Lem:MP:GeneracionProbabilidades}
+%
   Cuando \ $\X = \Nset^d$ \ para cualquier \ $k = \begin{bmatrix} k_1 & \ldots &
     k_d \end{bmatrix}^t \in \Nset^d$, con $K = \sum_{i=1}^d k_i$
   %
@@ -124,6 +114,8 @@ momentos factoriales, justificando su secunda denominaci\'on, {\em generadora de
 en ingles):
 %
 \begin{lema}
+\label{Lem:MP:GeneracionMomentosFactoriales}
+%
   Para cualquier \  $k = \begin{bmatrix} k_1 & \cdots  & k_d \end{bmatrix}^t \in
   \Nset^d$ \ con \ $K =  \sum_{i=1}^d k_i$, derivando $G_X$ se proba que, cuando
   existen~\footnote{En el  caso extremo,  el rayo de  convergencia de  la serie
@@ -132,13 +124,13 @@ en ingles):
   %
   \[
   \left.\frac{\partial^K     G_X}{\partial     z_1^{k_1}     \cdots     \partial
-      z_d^{k_d}}\right|_{z=1}  =  \Esp\left[  \left(  X_1  \right)_{k_1}  \ldots
-    \left( X_d \right)_{k_d} \right]
+      z_d^{k_d}}\right|_{z=1}    =   \Esp\left[    \prod_{i=1}^d    \left(   X_i
+    \right)_{k_i} \right]
   \]
   %
-  momento factorial~\footnote{Recuerdense que  $(x)_r = \prod_{k=0}^{r-1} (x-k),
-    \quad     r     \ge     0$     \    s\'imbolo     de     Pockhammer;     ver
-    pagina~\pageref{MP:Pockhammer}}  de   $X$.
+  momento factorial~\footnote{Recuerdense que  $(x)_n = \prod_{i=0}^{n-1} (x-i),
+    \quad n > 0$ \ s\'imbolo de Pochhammer, con la convenci\'on $(x)_0 = 1$; ver
+    pagina~\pageref{Foot:MP:Pochhammer}} de $X$.
 \end{lema}
 
 De  este resultado,  se ve  por ejemplo  que, cuando  existen, se  recuperan los
@@ -167,12 +159,13 @@ vectores aleatorios independientes,  como lo vamos a ver  a trav\'es del teorema
 siguiente.
 
 \begin{teorema}%[Funci\'on generadora de probabilidad de una ]
-\label{Th:MP:PropiedadesGeneradoraProbabilidad}
-Sean \ $X$ \ e \ $Y$ \ dos vectores aleatorios $d$-dimensionales independientes,
-$a = \begin{bmatrix}  a_1 & \cdots &  a_d \end{bmatrix}^t \in \Rset^d$ \  y \ $b
-= \begin{bmatrix} b_1 & \cdots & b_d \end{bmatrix}^t \in \Rset^d$. Entonces para
-cualquier $z  = \begin{bmatrix} z_1 &  \cdots & z_d  \end{bmatrix}\in \Cset^d$ \
-(donde existen las funciones):
+\label{Teo:MP:PropiedadesGeneradoraProbabilidad}
+%
+  Sean  \   $X$  \  e  \   $Y$  \  dos   vectores  aleatorios  $d$-dimensionales
+  independientes, $a  = \begin{bmatrix} a_1  & \cdots & a_d  \end{bmatrix}^t \in
+  \Rset^d$ \  y \ $b  = \begin{bmatrix} b_1  & \cdots & b_d  \end{bmatrix}^t \in
+  \Rset^d$.  Entonces  para  cualquier  $z  = \begin{bmatrix}  z_1  &  \cdots  &
+    z_d \end{bmatrix}\in \Cset^d$ \ (donde existen las funciones):
   %
   \[
   G_{\diag(a) X + b}(z) =  \prod_{i=1}^d z_i^{b_i} G_X\left( z_1^{a_1} , \ldots ,
@@ -180,7 +173,7 @@ cualquier $z  = \begin{bmatrix} z_1 &  \cdots & z_d  \end{bmatrix}\in \Cset^d$ \
   \]
   %
   \[
-  G_{X+Y}(z) = G_X(z) G_Y(z)
+  G_{X+Y}(z) = G_X(z) \, G_Y(z)
   \]
   %
   y para $z \in \Cset$
@@ -194,7 +187,7 @@ cualquier $z  = \begin{bmatrix} z_1 &  \cdots & z_d  \end{bmatrix}\in \Cset^d$ \
   El  primer  resultado es  inmediato,  escribiendo \  $z_i^{a_i  X_i  + b_i}  =
   z_i^{b_i}   \left(  z_i^{a_i}   \right)^{X_i}$.    El  secundo   viene  de   \
   $z_i^{X_i+Y_i}    =    z_i^{X_i}    z^{Y_i}$    \   conjuntamente    con    el
-  teorema~\ref{Th:MP:IndependenciaMomentos}   con   \   $f(X)  =   \prod_{i=1}^d
+  teorema~\ref{Teo:MP:IndependenciaMomentos}   con   \   $f(X)  =   \prod_{i=1}^d
   z_i^{X_i}$  \ y \  $g(Y) =  \prod_{i=1}^d z_i^{Y_i}$.  El tercer  resultado es
   consecuencia de $\prod_{i=1}^d  \left( z^{a_i} \right)^{X_i} = z^{\sum_{i=1}^d
     a_i X_i}$.
@@ -209,7 +202,9 @@ trav\'es esta funci\'on generadora.
 De  la  tercera identidad,  se  puede  hacer un  paso  m\'as  tratando de  sumas
 aleatorias de vectores aleatorios:
 %
-\begin{teorema}\label{Th:MP:SumaAleatoriaGeneradoraProbabilidad}
+\begin{teorema}
+\label{Teo:MP:SumaAleatoriaGeneradoraProbabilidad}
+%
   Sea  \ $X_n,  \quad n  \in  \Nset$ \,  una sucesi\'on  de vectores  aleatorios
   indepedientes de  misma distribuci\'on  (resp.  generadora de  probabilidad) \
   $P_X$ \  (resp. $G_X$)  \ y  \ $N$ \  una variable  definida sobre  \ $\Nset$,
@@ -223,12 +218,12 @@ aleatorias de vectores aleatorios:
 \end{teorema}
 %
 \begin{proof}
-  \SZ{Usando la formula de esperanza total ec.~\ref{Th:MP:EsperanzaTotal}, se escribe}
+  \SZ{Usando la formula de esperanza total ec.~\ref{Teo:MP:EsperanzaTotal}, se escribe}
   %
   \begin{eqnarray*}
-  G_{S_N}(z) & = & \Esp\left[ \sum_{n=0}^N X_n \right]\\[2.5mm]
+  G_{S_N}(z) & = & \Esp\left[ z^{\sum_{n=0}^N X_n} \right]\\[2.5mm]
   %
-  & = & \Esp\left[ \Esp\left[ \left. \sum_{n=0}^N X_n \right| N  \right] \right]\\[2.5mm]
+  & = & \Esp\left[ \Esp\left[ \left. z^{\sum_{n=0}^N X_n} \right| N  \right] \right]\\[2.5mm]
   %
   & = & \Esp\left[ G_X(z)^N \right]
   \end{eqnarray*}
@@ -247,11 +242,12 @@ derivadas.   Con una pequa\~na  modificaci\'on, se  puede definir  una funci\'on
 generada  permitiendo  recuperar  m\'as  directamente los  momentos,  de  manera
 siguiente~\cite{Fel68, JohKot97, Muk00, AthLah06}:
 %
-\begin{definicion}[funci\'on   generadora   de     momentos]\label{Def:MP:GeneradoraMomentos}
-  % 
+\begin{definicion}[funci\'on generadora de momentos]
+\label{Def:MP:GeneradoraMomentos}
+%
   La {\em  funci\'on generadora  de momentos} (mgf  para {\em  moment generating
     function} en ingles) de un vector aleatorio $d$-dimensional se define como
- %
+  %
   \[
   M_X(u) = \Esp\left[ e^{z^t X} \right]
   \]
@@ -267,18 +263,23 @@ M_X(u) = G_X\left( e^u \right)  \qquad \mbox{donde} \qquad e^u = \begin{bmatrix}
 \]
 %
 Entonces, como \ $G_X$, la  generadora de los momentos caracteriza completamente
-el vector aleatorio \ $X$. Adem\'as,  resuelta de esta relaci\'on que cuando los
-\ $X_i$  \ son  todas variables  aleatorias positivas, $M_X$  es definida  en un
-dominio de \ $\Cset^d$ tal que \ $\real{u_i} \le v_i$ \ donde \ $\real{\cdot}$ \
-denota la  parte real  de un  n\'umero complejo y  los \  $v_i$ \  son positivos
-llamados indices de convergencia.  En  el caso de variables escalares admitiendo
-una  densidad de  probabildad \  $p_X$, denotando  $s =  -u$, esta  funci\'on se
-interpreta como la transformada (bilateral) de Laplace de \ $p_X$.
+el  vector  aleatorio \  $X$.   \SZ{Producto cartesiano  de  strip  en el  plano
+  complejos:  (SZ estoy  retomando lo  que  sigue); Adem\'as,  resuelta de  esta
+  relaci\'on que cuando los \  $X_i$ \ son todas variables aleatorias positivas,
+  $M_X$ es definida en un dominio de  \ $\Cset^d$ tal que \ $\real{u_i} \le v_i$
+  \ donde \ $\real{\cdot}$ \ denota la  parte real de un n\'umero complejo y los
+  \ $v_i$  \ son  positivos llamados  indices de convergencia.}   En el  caso de
+variables escalares admitiendo una densidad de probabildad \ $p_X$, denotando $s
+= -u$, esta funci\'on se  interpreta como la transformada (bilateral) de Laplace
+de \ $p_X$.
+
 
 La  generadora de  los momentos  permite recuperar  directamente los  momentos a
 trav\'es de derivadas, sin hacer combinaciones:
 %
 \begin{lema}
+\label{Lem:MP:GenracionMomentos}
+%
   Para cualquier \  $k = \begin{bmatrix} k_1 & \cdots  & k_d \end{bmatrix}^t \in
   \Nset^d$ \ con \ $K =  \sum_{i=1}^d k_i$, derivando $M_X$ se proba que, cuando
   existen
@@ -304,15 +305,17 @@ En particular, se recuperan
 \end{itemize}
 
 Como la funci\'on \ $G_X$, la  generadora de los momentos tiene unas propiedades
-similares a las del teorema~\ref{Th:MP:PropiedadesGeneradoraProbabilidad}:
+similares  a las  de  los teoremas~\ref{Teo:MP:PropiedadesGeneradoraProbabilidad}
+y~\ref{Teo:MP:SumaAleatoriaGeneradoraProbabilidad}:
 %
 \begin{teorema}%[Funci\'on generadora de probabilidad de una ]
-\label{Th:MP:PropiedadesGeneradoraMomentos}
-Sean \ $X$ \ e \ $Y$ \ dos vectores aleatorios $d$-dimensionales independientes,
-\ $A$ \ una  matriz de \ $\Rset^{d' \times d}$ \ y \  $b = \begin{bmatrix} b_1 &
-  \cdots &  b_{d'} \end{bmatrix}^t \in  \Rset^{d'}$. Entonces para  cualquier $u
-= \begin{bmatrix} u_1 & \cdots & u_{d'} \end{bmatrix}^t \in \Cset^{d'}$ \ (donde
-la funci\'on existe):
+\label{Teo:MP:PropiedadesGeneradoraMomentos}
+%
+  Sean  \   $X$  \  e  \   $Y$  \  dos   vectores  aleatorios  $d$-dimensionales
+  independientes,  \ $A$  \ una  matriz de  \  $\Rset^{d' \times  d}$ \  y \  $b
+  =   \begin{bmatrix}    b_1   &    \cdots   &   b_{d'}    \end{bmatrix}^t   \in
+  \Rset^{d'}$.  Entonces para  cualquier $u  =  \begin{bmatrix} u_1  & \cdots  &
+    u_{d'} \end{bmatrix}^t \in \Cset^{d'}$ \ (donde la funci\'on existe):
   %
   \[
   M_{A X + b}(u) =  e^{u^t b} M_X\left( A^t u \right),
@@ -322,22 +325,33 @@ la funci\'on existe):
   \Cset^d$ \ (donde la funci\'on existe):
   %
   \[
-  M_{X+Y}(u) = M_X(u) M_Y(u)
+  M_{X+Y}(u) = M_X(u) \, M_Y(u)
   \]
   %
+  Adem\'as,  para \  $X_n, \quad  n  \in \Nset$  \, una  sucesi\'on de  vectores
+  aleatorios  indepedientes  de   misma  distribuci\'on  (resp.   generadora  de
+  momentos) \ $P_X$ \ (resp. $M_X$) \  e \ $N$ \ una variable aleatoria definida
+  sobre \ $\Nset$, independiente de los \ $X_n$, y \ $ S_N = \sum_{n=0}^N X_n$,
+  %
+  \[
+  M_{S_N}(u) =  G_N \big( M_X(u) \big),
+  \]
 \end{teorema}
 %
 \begin{proof}
-  Las   pruebas  siguen   punto  a   punto  los   mismos  pasos   que   las  del
-  teorema~\ref{Th:MP:PropiedadesGeneradoraProbabilidad}.
+  Las  pruebas  siguen   punto  a  punto  los  mismos  pasos   que  las  de  los
+  teoremas~\ref{Teo:MP:PropiedadesGeneradoraProbabilidad}
+  y~\ref{Teo:MP:SumaAleatoriaGeneradoraProbabilidad}.
 \end{proof}
 
 \
 
 De nuevo, se puede hacer un  paso m\'as tratando de sumas aleatorias de vectores
-aleatorios como en el teorema~\ref{Th:MP:SumaAleatoriaGeneradoraProbabilidad}:
+aleatorios como en el teorema~\ref{Teo:MP:SumaAleatoriaGeneradoraProbabilidad}:
 %
-\begin{teorema}\label{Th:MP:SumaAleatoriaGeneradoraMomentos}
+\begin{teorema}
+\label{Teo:MP:SumaAleatoriaGeneradoraMomentos}
+%
   Sea  \ $X_n,  \quad n  \in  \Nset$ \,  una sucesi\'on  de vectores  aleatorios
   indepedientes de  misma distribuci\'on  (resp.  generadora de  probabilidad) \
   $P_X$ \  (resp. $M_X$) \  e \  $N$ \ una  variable aleatoria definida  sobre \
@@ -352,7 +366,7 @@ aleatorios como en el teorema~\ref{Th:MP:SumaAleatoriaGeneradoraProbabilidad}:
 %
 \begin{proof}
   El         resultado        es         consecuencia         directa        del
-  teorema~\ref{Th:MP:SumaAleatoriaGeneradoraProbabilidad}.
+  teorema~\ref{Teo:MP:SumaAleatoriaGeneradoraProbabilidad}.
 \end{proof}
 %\cite{Fra09}%%p.73
 
@@ -372,8 +386,9 @@ conocida  como funci\'on  caracter\'istica  y  que es  al  final definida  sobre
 $\Rset^d$  de  manera  siguiente~\cite{Luk61,  Gol61,  Fel68,  JohKot97,  Muk00,
   AthLah06}:
 
-\begin{definicion}[funci\'on   caracter\'istica]\label{Def:MP:FuncionCaracteristica}
-  % 
+\begin{definicion}[funci\'on   caracter\'istica]
+\label{Def:MP:FuncionCaracteristica}
+% 
   La {\em funci\'on caracter\'istica}  (cf para {\em characteristic function} en
   ingles) de un vector aleatorio $d$-dimensional se define como
  %
@@ -416,6 +431,8 @@ Como para las generadoras ya introducidas, la funci\'on caracter\'istica permite
 recuperar directamente los momentos a trav\'es de derivadas:
 %
 \begin{lema}
+\label{Lem:MP:GeneracionMomentoViaCaracteristica}
+%
   Para cualquier \  $k = \begin{bmatrix} k_1 & \cdots  & k_d \end{bmatrix}^t \in
   \Nset^d$ \  con \  $K =  \sum_{i=1}^d k_i$, derivando  $\Phi_X$ se  proba que,
   cuando existen
@@ -452,28 +469,38 @@ hecho  de  que  no  est\'an   definidos  los  momentos  para  esta  densidad  de
 probabilidad.
 
 Como las  funci\'ones \ $G_X$ \  y \ $M_X$, la  funci\'on caracter\'istica tiene
-entre       otros       propiedades        similares       a       las       del
-teorema~\ref{Th:MP:PropiedadesGeneradoraMomentos}:
+entre    otros    propiedades    similares     a    las    a    las    de    los
+teoremas~\ref{Teo:MP:PropiedadesGeneradoraMomentos}
+y~\ref{Teo:MP:SumaAleatoriaGeneradoraMomentos}:
 %
 \begin{teorema}%[Funci\'on generadora de probabilidad de una ]
-\label{Th:MP:PropiedadesGeneradoraMomentos}
-Sean \ $X$ \ e \ $Y$ \ dos vectores aleatorios $d$-dimensionales independientes,
-\ $A$ \ una  matriz de \ $\Rset^{d' \times d}$ \ y \  $b = \begin{bmatrix} b_1 &
-  \cdots  &  b_{d'} \end{bmatrix}^t  \in  \Rset^{d'}$.  Entonces para  cualquier
-$\omega =  \begin{bmatrix} \omega_1 &  \cdots & \omega_{d'}  \end{bmatrix}^t \in
-\Rset^{d'}$:
+\label{Teo:MP:PropiedadesFuncionCaracteristica}
+%
+  Sean  \   $X$  \  e  \   $Y$  \  dos   vectores  aleatorios  $d$-dimensionales
+  independientes,  \ $A$  \ una  matriz de  \  $\Rset^{d' \times  d}$ \  y \  $b
+  =  \begin{bmatrix} b_1  &  \cdots &  b_{d'}  \end{bmatrix}^t \in  \Rset^{d'}$.
+  Entonces  para  cualquier  $\omega  =  \begin{bmatrix}  \omega_1  &  \cdots  &
+    \omega_{d'} \end{bmatrix}^t \in \Rset^{d'}$:
   %
   \[
   \Phi_{A X + b}(\omega) =  e^{\imath \omega^t b} \Phi_X\left( A^t \omega \right),
   \]
   %
-  y  para cualquier $\omega  = \begin{bmatrix}  \omega_1 &  \cdots &  \omega_d \end{bmatrix}^t \in
-  \Rset^d$:
+  y   para   cualquier  $\omega   =   \begin{bmatrix}   \omega_1   &  \cdots   &
+    \omega_d \end{bmatrix}^t \in \Rset^d$:
   %
   \[
-  \Phi_{X+Y}(\omega) = \Phi_X(\omega) \Phi_Y(\omega)
+  \Phi_{X+Y}(\omega) = \Phi_X(\omega) \, \Phi_Y(\omega)
   \]
   %
+  Adem\'as,  para \  $X_n, \quad  n  \in \Nset$  \, una  sucesi\'on de  vectores
+  aleatorios  indepedientes  de   misma  distribuci\'on  (resp.   generadora  de
+  momentos) \ $P_X$ \ (resp. $M_X$) \  e \ $N$ \ una variable aleatoria definida
+  sobre \ $\Nset$, independiente de los \ $X_n$, y \ $ S_N = \sum_{n=0}^N X_n$,
+  %
+  \[
+  \Phi_{S_N}(\omega) =  G_N \big( \Phi_X(\omega) \big),
+  \]
 \end{teorema}
 
 Resumimos algunas otras propiedades importantes de la funci\'on caracter\'istica:
@@ -481,8 +508,8 @@ Resumimos algunas otras propiedades importantes de la funci\'on caracter\'istica
 \begin{enumerate}
 \item\label{Prop:MP:ContinuidadPhiX}  $\Phi_X$  es  una  funci\'on  continua  en
   $\Rset^d$~\cite[Prop.~5.2.1]{Pin09}.  Eso es una  consecuencia del  teorema de
-  convergencia     dominada     (ver    teorema~\ref{Th:MP:ConvergenciaDominada}
-  pagina~\pageref{Th:MP:ConvergenciaDominada}).
+  convergencia     dominada     (ver    teorema~\ref{Teo:MP:ConvergenciaDominada}
+  pagina~\pageref{Teo:MP:ConvergenciaDominada}).
 %
 \item\label{Prop:MP:MaximoPhiX} $\left| \Phi_X(\omega) \right| \le 1 \Phi_X(0)$:
   \  $\left| \Phi_X(\omega)  \right|$ es  m\'axima en  $\omega =  0$.  Eso viene
@@ -503,6 +530,8 @@ Resumimos algunas otras propiedades importantes de la funci\'on caracter\'istica
   anterior, y no negativa definida).
 %
 \end{enumerate}
+
+\SZ{Formulacion de inversion general; caso con densidad y se cuadrado integrable; uno-uno casi siempre}
 
 \aver{
 
@@ -528,12 +557,14 @@ $$
 
 Cumulant generating function .... %%
 
+\SZ{Se define los cumulantes. coinciden con los momentos centrados solo para $k = 1, 2, 3$.}
+
 \hfill
 
 }
 
 
 
-\SZ{hablar de la cota de Chernoff con la pgf?}
+\SZ{hablar de la cota de Chernoff con la mgf o pgf?}
 
 \SZ{hablar del CLT y prueba}
