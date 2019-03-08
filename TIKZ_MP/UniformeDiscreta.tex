@@ -1,0 +1,52 @@
+\begin{tikzpicture}%[scale=.9]
+\shorthandoff{>}
+%
+\pgfmathsetmacro{\sx}{.75};% x-scaling
+\pgfmathsetmacro{\r}{.05};% radius arc non continuity F_X
+\pgfmathsetmacro{\n}{6};% n de la uniforme
+\pgfmathsetmacro{\m}{\n-1};
+%
+% masa
+\begin{scope}
+%
+%
+\pgfmathsetmacro{\sy}{2.5};% y-scaling 
+\draw[>=stealth,->] (-.25,0)--({\sx*(\n+.5)+.25},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.1)--(0,{\sy+.25}) node[above]{\small $p_X$};
+%
+\foreach \k in {1,...,\n} {
+\draw[dotted] ({\k*\sx},0)--({\k*\sx},\sy) node[scale=.4]{$\bullet$};
+\draw ({\k*\sx},0)--({\k*\sx},-.1) node[below,scale=.7]{$\k$};
+}
+\draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$\frac1\n$};
+%%
+\end{scope}
+%
+%
+% reparticion
+\begin{scope}[xshift=8.5cm]
+%
+\pgfmathsetmacro{\sy}{2.5};% y-scaling 
+%
+\draw[>=stealth,->] ({-\sx/2-.25},0)--({\sx*(\n+1.5)+.25},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.1)--(0,{\sy+.25}) node[above]{\small $F_X$};
+%
+% cumulativa
+\draw[thick] ({-\sx/2},0)--(\sx,0);
+\draw ({\sx+\r},\r) arc (90:270:\r);
+\draw (0,0)--(0,-.1) node[below,scale=.7]{$0$};
+%
+\foreach \k in {1,...,\m} {
+\draw ({\k*\sx},0)--({\k*\sx},-.1) node[below,scale=.7]{$\k$};
+\draw[thick] ({\k*\sx},{\k*\sy/\n}) node[scale=.4]{$\bullet$}--({(\k+1)*\sx},{\k*\sy/\n});
+\draw ({(\k+1)*\sx+\r},{\k*\sy/\n+\r}) arc (90:270:\r);
+\draw[dotted] ({\k*\sx},{(\k-1)*\sy/\n})--({\k*\sx},{\k*\sy/\n});
+}
+\draw ({\n*\sx},0)--({\n*\sx},-.1) node[below,scale=.7]{$\n$};
+\draw[thick] ({\n*\sx},\sy) node[scale=.4]{$\bullet$}--({(\n+1.5)*\sx},\sy);
+\draw[dotted] ({\n*\sx},{(\n-1)*\sy/\n})--({\n*\sx},\sy);
+%%
+\draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
+\end{scope}
+%
+\end{tikzpicture}

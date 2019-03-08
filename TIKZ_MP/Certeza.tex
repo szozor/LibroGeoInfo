@@ -1,0 +1,38 @@
+\begin{tikzpicture}%[scale=.9]
+\shorthandoff{>}
+%
+\pgfmathsetmacro{\a}{2};% a
+\pgfmathsetmacro{\sy}{2.5};% y-scaling
+\pgfmathsetmacro{\r}{.05};% radius arc non continuity F_X
+%
+% masa
+\begin{scope}
+%
+%
+\draw[>=stealth,->] (-.25,0)--({\a+1.75},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.1)--(0,{\sy+.25}) node[above]{\small $p_X$};
+%
+\draw[dotted] (\a,0)--(\a,\sy) node[scale=.4]{$\bullet$};
+\draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
+\draw (\a,0)--(\a,-.1) node[below,scale=.7]{$a$};
+%%
+\end{scope}
+%
+%
+% reparticion
+\begin{scope}[xshift=8.5cm]
+%
+\draw[>=stealth,->] (-.75,0)--({\a+1.75},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.1)--(0,{\sy+.25}) node[above]{\small $F_X$};
+%
+% cumulativa
+\draw[thick] (-.5,0)--(\a,0);
+\draw ({\a+\r},\r) arc (90:270:\r);
+\draw[dotted] (\a,0)--(\a,\sy);
+\draw[thick] (\a,\sy) node[scale=.4]{$\bullet$}--({\a+1.5},\sy);
+%
+\draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
+\draw (\a,0)--(\a,-.1) node[below,scale=.7]{$a$};
+\end{scope}
+%
+\end{tikzpicture}

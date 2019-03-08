@@ -16,7 +16,7 @@
 \pgfmathsetmacro{\pr}{\p};% probabilidad
 %
 \foreach \k in {1,...,\n} {
-\draw ({\k*\sx},0)--({\k*\sx},-.1) node[below,scale=.7]{\k};
+\draw ({\k*\sx},0)--({\k*\sx},-.1) node[below,scale=.7]{$\k$};
 \draw[dotted] ({\k*\sx},0)--({\k*\sx},{\sy*\pr}) node[scale=.7]{$\bullet$};
 %
 \pgfmathsetmacro{\prl}{\pr*(1-\p)};\global\let\pr\prl;% proba actualizado
@@ -42,13 +42,13 @@
 \pgfmathsetmacro{\c}{\p};% cumulativa
 %
 % cumulativa x < 1
-\draw (1,0)--(1,-.1) node[below,scale=.7]{0};
+\draw (1,0)--(1,-.1) node[below,scale=.7]{$0$};
 \draw[thick] (-.5,0)--(\sx,0);
 \draw ({\sx+\r},\r) arc (90:270:\r);
 %
 % cumulativa x de 1 a n
 \foreach \k in {2,...,\n} {
-\draw ({\k*\sx},0)--({\k*\sx},-.1) node[below,scale=.7]{\k};
+\draw ({\k*\sx},0)--({\k*\sx},-.1) node[below,scale=.7]{$\k$};
 \draw[thick]({(\k-1)*\sx},{\sy*\c}) node[scale=.7]{$\bullet$}--({\k*\sx},{\sy*\c});
 \draw ({\k*\sx+\r},{\sy*\c+\r}) arc (90:270:\r);
 \draw[dotted] ({(\k-1)*\sx},{(\c-\pr)*\sy})--({(\k-1)*\sx},{\c*\sy});

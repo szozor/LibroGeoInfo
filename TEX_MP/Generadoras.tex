@@ -52,21 +52,21 @@ probabilidad  se define  de  la manera  siguiente~\cite{Fel68, JohKot97,  Muk00,
     generadora de momentos factoriales} de $X$.
 \end{definicion}
 %
-\SZ{hyperanulus ie entre deux spheres: (SZ estoy retomando lo que sigue);
- Cuando  los \ $X_i$ \  son todas variables  aleatorias positivas, esta
-integral         converge        uniformamente        en         una        bola
-$d$-dimensional~\footnote{Claramente,  en  $\Bset_d  \equiv \Bset_d(1)$  tenemos
-  $\displaystyle  \left|  \int_{\Rset_+^d}  \prod_{i=1}^d z_i^{x_i}  \,  dP_X(x)
-  \right| \le \int_{\Rset_+^d} \left| \prod_{i=1}^d z_i^{x_i} \right| \, dP_X(x)
-  \le  \int_{\Rset_+^d}  dP_X(x)  =   1$.  Adem\'as,  si  la  integral  converge
-  uniformamente para un  $z$ tal que $|z|  = r$, por el mismo  enfoque se prueba
-  que converge en  $\Bset_d(r)$.} de rayo $r \ge 1$ $\Bset_d(r)  = \left\{ z \in
-  \Cset^d: \: \| z \| \le r \right\}$  donde $\| z \|^2 = \sum_i |z_i|^2$.
-% En el
-%caso  contrario,  puede resultar  delicado  en  termino  de existencia  de  esta
-%funci\'on  (convergencia de la  integral); se  puede por  ejemplo que,  para una
-%variables, no existe ninguno dominio de existencia de esta funci\'on.
-}
+Esta funci\'on est definida sobre un producto cartesiano de anillos~\footnote{Si
+  para \ $\left| z_i \right| \,  = \, R_i$ \ la integral converge uniformamente,
+  para cualquier  \ $z \in  \Cset^d, \:  r_i \le \left|  z_i \right| \le  R_i$ \
+  tenemos  por ejemplo  \ $\displaystyle  \left|  \int_{\Rset_+^d} \prod_{i=1}^d
+    z_i^{x_i}  \,  dP_X(x)  \right|  \le \int_{\Rset_+^d}  \left|  \prod_{i=1}^d
+    z_i^{x_i}  \right|  \,  dP_X(x)  \le \int_{\Rset_+^d}  \left|  \prod_{i=1}^d
+    R_i^{x_i} \right| \, dP_X(x) < +\infty$.  El mismo enfoque se usa para todos
+  los hipercuadrantes  \ $\otimes_i  \Rset_{\pm}$. Adem\'as, claramente,  para \
+  $\left| z_i \right| \, =  \, 1$ \ tenemos $\displaystyle \left| \int_{\Rset^d}
+    \prod_{i=1}^d  z_i^{x_i}  \,   dP_X(x)  \right|  \le  \int_{\Rset^d}  \left|
+    \prod_{i=1}^d z_i^{x_i} \right| \,  dP_X(x) \le \int_{\Rset^d} dP_X(x) = 1$,
+  lo       que      prueba       que      \       $r_i      \le       1      \le
+  R_i$.\label{Foot:MP:GeneradoraProbabilidadExistencia}} en  el plano complejos,
+$r_i \, \le \, \left|  z_i \right| \, \le \, R_i$ \ con \ $r_i  |e 1$ \ y \ $R_i
+\ge 1$.
 
 \
 
@@ -263,15 +263,13 @@ M_X(u) = G_X\left( e^u \right)  \qquad \mbox{donde} \qquad e^u = \begin{bmatrix}
 \]
 %
 Entonces, como \ $G_X$, la  generadora de los momentos caracteriza completamente
-el  vector  aleatorio \  $X$.   \SZ{Producto cartesiano  de  strip  en el  plano
-  complejos:  (SZ estoy  retomando lo  que  sigue); Adem\'as,  resuelta de  esta
-  relaci\'on que cuando los \  $X_i$ \ son todas variables aleatorias positivas,
-  $M_X$ es definida en un dominio de  \ $\Cset^d$ tal que \ $\real{u_i} \le v_i$
-  \ donde \ $\real{\cdot}$ \ denota la  parte real de un n\'umero complejo y los
-  \ $v_i$  \ son  positivos llamados  indices de convergencia.}   En el  caso de
-variables escalares admitiendo una densidad de probabildad \ $p_X$, denotando $s
-= -u$, esta funci\'on se  interpreta como la transformada (bilateral) de Laplace
-de \ $p_X$.
+el vector  aleatorio \ $X$.   Adem\'as, de  este v\'inculo entre  \ $G_X$ \  y \
+$M_X$, y del  dominio de definici\'on de \  $G_X$, queda claro que \  $M_X$ \ es
+definida sobre un  producto cartesiano de franjas del plano  complejo, $ v_i \le
+\real{u_i} \le  V_i$ \ donde \  $v_i \le 0 \le  V_i$ \ llamamos  {\em indices de
+  convergencia}.  En el  caso de variables escalares admitiendo  una densidad de
+probabildad \  $p_X$, denotando $s =  -u$, esta funci\'on se  interpreta como la
+transformada (bilateral) de Laplace de \ $p_X$.
 
 
 La  generadora de  los momentos  permite recuperar  directamente los  momentos a
@@ -330,7 +328,7 @@ y~\ref{Teo:MP:SumaAleatoriaGeneradoraProbabilidad}:
   %
   Adem\'as,  para \  $X_n, \quad  n  \in \Nset$  \, una  sucesi\'on de  vectores
   aleatorios  indepedientes  de   misma  distribuci\'on  (resp.   generadora  de
-  momentos) \ $P_X$ \ (resp. $M_X$) \  e \ $N$ \ una variable aleatoria definida
+  momentos) \ $P_X$ \ (resp. $M_X$) \  y \ $N$ \ una variable aleatoria definida
   sobre \ $\Nset$, independiente de los \ $X_n$, y \ $ S_N = \sum_{n=0}^N X_n$,
   %
   \[
@@ -511,23 +509,25 @@ Resumimos algunas otras propiedades importantes de la funci\'on caracter\'istica
   convergencia     dominada     (ver    teorema~\ref{Teo:MP:ConvergenciaDominada}
   pagina~\pageref{Teo:MP:ConvergenciaDominada}).
 %
-\item\label{Prop:MP:MaximoPhiX} $\left| \Phi_X(\omega) \right| \le 1 \Phi_X(0)$:
-  \  $\left| \Phi_X(\omega)  \right|$ es  m\'axima en  $\omega =  0$.  Eso viene
-  directamente de $\left| e^{\imath \omega^t x} \right| = 1$.
+\item\label{Prop:MP:MaximoPhiX}   $\left|  \Phi_X(\omega)   \right|   \le  1   =
+  \Phi_X(0)$: \  $\left| \Phi_X(\omega)  \right|$ es m\'axima  en $\omega  = 0$.
+  Eso viene directamente de $\left| e^{\imath \omega^t x} \right| = 1$.
 %
 \item\label{Prop:MP:HermiticaPhiX}   $\Phi_X(-\omega)  =   \Phi_X^*(\omega)$:  \
   $\Phi_X$ tiene una s\'imetria hermitica.
 %
 \item  $\Phi_X$ es  una funci\'on  no negativa  definida, \ie  para  un conjunto
-  arbitrario de \ $k  \ge 1$ \ n\'umeros complejos \ $a_1 , \ldots  , a_k$ \ y \
-  $k$ \ vectores de \ $\Rset^d$ \ $w_1 , \ldots , w_k$, se cumple
+  arbitrario de \ $n  \ge 1$ \ n\'umeros complejos \ $a_1 , \ldots  , a_n$ \ y \
+  $n$ \ vectores \ $w_1 , \ldots , w_n$ \ de \ $\Rset^d$, se cumple
   \[
-  \sum_{i,j=1}^k a_i^* a_j \Phi_X(w_j-w_i) \ge 0
+  \sum_{k,l=1}^n a_k^* a_l \Phi_X(w_l-w_k) \ge 0
   \]
   %
-  Dicho   de   otra   manera,   la   matriz  de   componente   \   $(i,j)$-esima
-  $\Phi_X(w_j-w_i)$ es a hermitica (s\'imetria herm\'itica dada por la propiedad
-  anterior, y no negativa definida).
+  Dicho   de   otra   manera,   la   matriz  de   componente   \   $(k,l)$-esima
+  $\Phi_X(w_l-w_k)$ es a hermitica (s\'imetria herm\'itica dada por la propiedad
+  anterior, y  no negativa  definida). Esta positividad  viene de  \ $\sum_{k,l}
+  a_k^*  a_l e^{\imath (w_l-w_k)^t  x} =  \left| \sum_l  a_l e^{\imath  w_l^t x}
+  \right|^2 \ge 0$.
 %
 \end{enumerate}
 

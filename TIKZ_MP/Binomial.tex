@@ -17,7 +17,7 @@
 \pgfmathsetmacro{\b}{(1-\p)^\n};% coeficiente binomial por la probabilidad
 %
 \foreach \k in {0,...,\n} {
-\draw ({\k*\sx},0)--({\k*\sx},-.1) node[below,scale=.7]{\k};
+\draw ({\k*\sx},0)--({\k*\sx},-.1) node[below,scale=.7]{$\k$};
 \draw[dotted] ({\k*\sx},0)--({\k*\sx},{\sy*\b}) node[scale=.7]{$\bullet$};
 %
 \pgfmathsetmacro{\bl}{\b*\p*(\n-\k)/((\k+1)*(1-\p))};\global\let\b\bl;% proba actualizado
@@ -46,7 +46,7 @@
 %
 % cumulativa x de 0 a n-1
 \foreach \k in {1,...,\n} {
-\draw ({\k*\sx},0)--({\k*\sx},-.1) node[below,scale=.7]{\k};
+\draw ({\k*\sx},0)--({\k*\sx},-.1) node[below,scale=.7]{$\k$};
 \draw[thick]({(\k-1)*\sx},{\sy*\c}) node[scale=.7]{$\bullet$}--({\k*\sx},{\sy*\c});
 \draw ({\k*\sx+\r},{\sy*\c+\r}) arc (90:270:\r);
 \draw[dotted] ({(\k-1)*\sx},{(\c-\b)*\sy})--({(\k-1)*\sx},{\c*\sy});
