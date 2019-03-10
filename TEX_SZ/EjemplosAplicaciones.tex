@@ -62,7 +62,7 @@ Suponiendo  que el  mensaje mandado  en un  canal es  una cadena  de s\'imbolos,
 variables   aleatorias  independientes,   se  puede   concentrarse   sobre  cada
 s\'imbolo. En este marco, un canal de comunicaci\'on lo m\'as simple es conocido
 como  {\it canal  binario}~\cite[Sec.~15]{Sha48}: $X$  es una  variable definida
-sobre  $\X =  \{ 0  , 1  \}$;  tal tipo  de entrada  es natural,  pensando a  la
+sobre $\X =  \{ 0 \, , \, 1  \}$; tal tipo de entrada es  natural, pensando a la
 codificaci\'on  binaria.  La  salida $Y$  es tambi\'en  definida sobre  $\X$; se
 puede imaginar medir y tomar una decisi\'on binaria usando la medida.  Tal canal
 es  definido por  sus  probabilidaded de  transici\'on  $p_{Y|X=x}(y)$, \ie  las
@@ -79,18 +79,17 @@ descrito      figura     Fig.~\ref{Fig:SZ:CanalBinario}-(a).       La     figura
 Fig.~\ref{Fig:SZ:CanalBinario}-(b) da un esquema ``pr\'actico'' que podr\'ia ser
 al origen  de un  tal canal.  Cuando  \ $\varepsilon  = \vartheta$, el  canal es
 conocido como {\it canal binario sim\'etrico}.  Cuando \ $\varepsilon = 0$ \ y \
-$\vartheta \in (0 \,  ; \, 1)$, el canal es conocido  como {\it canal binario en
-  Z}.
+$\vartheta \in (0 \; 1)$, el canal es conocido como {\it canal binario en Z}.
 
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_SZ/CanalBinario} \end{center}
 %
-\leyenda{(a): Canal  binario. La entrada  $X$ definida sobre  $\X = \{ 0  , 1\}$
-  pasa por este canal e $Y$ definida  sobre $\Y = \X$ es recibido. Este canal es
-  caracterizado  por las  probabilidades de  transici\'on  $p_{Y|X=x}(y)$.  (b):
-  Esquema que puede conducir al canal  binario; una variable puede ser la salida
-  de una puerta l\'ogica, con niveles  $v_0$ (nivel bajo, codificando 0) y $v_1$
-  (nivel  alto,  codificando  1).   Se   puede  imaginar  que  este  voltaje  es
+\leyenda{(a): Canal binario.  La entrada $X$ definida  sobre $\X = \{ 0  \, , \,
+  1\}$ pasa  por este canal  e $Y$  definida sobre $\Y  = \X$ es  recibido. Este
+  canal es caracterizado por  las probabilidades de transici\'on $p_{Y|X=x}(y)$.
+  (b): Esquema  que puede conducir al  canal binario; una variable  puede ser la
+  salida de una puerta l\'ogica, con niveles $v_0$ (nivel bajo, codificando 0) y
+  $v_1$  (nivel alto, codificando  1).  Se  puede imaginar  que este  voltaje es
   transmitido por un  canal a\~nandiendo un ruido $\xi$.   En la recepci\'on, se
   toma una  decisi\'on, por ejemplo  0 (resp.  1)  si la medida es  mayor (resp.
   menor)  que  $\eta  =   \frac{v_0  +  v_1}{2}+\Esp[\xi]$.   En  este  ejemplo,
@@ -477,7 +476,7 @@ aleatorio $\left\{  X_t \right\}_{t \in \Zset}$,  supuesto estacionario, llamado
 finito no necesariamente real ($X$ puede tomar cualquier etiqueta)
 %
 \[
-\X = \{ x_1 , \ldots , x_\alpha \} \qquad \mbox{alfabeto fuente},
+\X = \{ x_1 \, , \, \ldots \, , \, x_\alpha \} \qquad \mbox{alfabeto fuente},
 \]
 %
 de  distribuci\'on  $p_X$.   A  cada posible  secuencia~\footnote{Por  abuso  de
@@ -486,7 +485,7 @@ $s_1  \cdots s_n \in  \X^n$ de  letras de  $\X$, se  quiere asignar  un c\'odigo
 $c(s_1 \cdots s_n)$ de letras de un alfabeto discreto finito,
 %
 \[
-\C = \{ \cod_1 , \ldots , \cod_d \} \qquad \mbox{ alfabeto c\'odigo}.
+\C = \{ \cod_1 \, , \, \ldots \, , \, \cod_d \} \qquad \mbox{ alfabeto c\'odigo}.
 \]
 %
 El c\'odigo es dicho {\it $d$-ario}.   Por ejemplo, se puede asignar un c\'odigo
@@ -556,12 +555,11 @@ extensiones son no singulares.
 \begin{ejemplo}[C\'odigo no singular, pero no decifrable]
 \label{Ej:SZ:CodigoNoSingularDecifrable}
 %
-  Sean, sean \ $\X = \{ \aleph \, ,  \, \beth \, , \, \gimel \, , \daleth \}$, \
-  $\C = \{0 \, , \, 1 \}$ \ y \ $c(\aleph) = 0, \: c(\beth) = 00, \: c(\gimel) =
-  1,  \: c(\daleth)  = 01$  ($m =  1$).   El c\'odigo  es no  singular, pero  no
-  descifrable.       La     secuencia      $0010$     puede      provenir     de
-  $\aleph\aleph\gimel\aleph$,   \  de   \   $\aleph\daleth\aleph$  \   o  de   \
-  $\beth\gimel\aleph$.
+Sean, sean \ $\X = \{ \aleph \, , \, \beth \, , \, \gimel \, , \, \daleth \}$, \
+$\C = \{0 \, ,  \, 1 \}$ \ y \ $c(\aleph) = 0, \:  c(\beth) = 00, \: c(\gimel) =
+1,  \: c(\daleth)  =  01$  ($m =  1$).   El c\'odigo  es  no  singular, pero  no
+descifrable.  La secuencia  $0010$ puede provenir de $\aleph\aleph\gimel\aleph$,
+\ de \ $\aleph\daleth\aleph$ \ o de \ $\beth\gimel\aleph$.
 \end{ejemplo}
 %
 Obviamente,  se  requiere  en  general  de  un  c\'odigo  que  sea  descifrable.
@@ -907,11 +905,11 @@ sentido de que:
 \begin{teorema}[Competitividad del c\'odigo de Shannon]
 \label{Teo:SZ:CompetitividadCodigoShannon}
 %
-  Sea $X$  \ fuente sobre  \ $\X$, de  distribuci\'on \ $p_X$  \ y \  $c^\sh$ el
-  c\'odigo de Shannon asociado sobre el  alfabeto c\'odigo \ $\C = \{ \cod_1 ,
-  \ldots  , \cod_d \}$,  de largos  $l^\sh(x) =  \Big\lceil\!  -  \log_d p_X(x)
-  \Big\rceil$.  Para cualquier  c\'odigo \ $c$ \ descifrable  y cualquier $k \ge
-  1$,
+Sea  $X$ \ fuente  sobre \  $\X$, de  distribuci\'on \  $p_X$ \  y \  $c^\sh$ el
+c\'odigo de Shannon asociado  sobre el alfabeto c\'odigo \ $\C =  \{ \cod_1 \, ,
+\,  \ldots \, ,  \, \cod_d  \}$, de  largos $l^\sh(x)  = \Big\lceil\!   - \log_d
+p_X(x) \Big\rceil$.  Para cualquier c\'odigo  \ $c$ \ descifrable y cualquier $k
+\ge 1$,
   %
   \[
   P\Big( l^\sh(X) \ge l_c(X) + k \Big) \le \frac{1}{d^{k-1}}.
@@ -1194,17 +1192,17 @@ que   corresponde  a   los   n\'umeros  de   dits   necesarios  para   codificar
 \begin{center} \input{TIKZ_SZ/FanoHuffman} \end{center}
 %
 \leyenda{Construcci\'on de  un c\'odigo binario  sobre $\C =  \{0 \, , \,  1 \}$
-  asociado al  vector de  probabilidad $p_X  = \big[ 0.4  \quad 0.18  \quad 0.17
-  \quad 0.15 \quad 0.1 \big]^t$ sobre  el arbol de Kraft.  En este caso, $H_2(X)
-  \approx 2.1514$\ (a):  Enfoque de Fano, saliendo de la  ra\'iz.  En cada nudo,
-  se  menciona   el  conjunto  de  s\'imbolos   que  va  a   tener  el  c\'odigo
+  asociado al vector de probabilidad $p_X = \protect\begin{bmatrix} 0.4 & 0.18 &
+    0.17 & 0.15 & 0.1 \protect\end{bmatrix}^t$ sobre el arbol de Kraft.  En este
+  caso, $H_2(X)  \approx 2.1514$\ (a): Enfoque  de Fano, saliendo  de la ra\'iz.
+  En cada nudo, se menciona el conjunto de s\'imbolos que va a tener el c\'odigo
   correspondiente  (en negro  cuando  es un  solo  s\'imbolo).  Se  pasa de  una
   profundez  a la  otra  dividiendo los  conjunto  en sub-conjuntos  a lo  m\'as
-  equiprobables.  Esta construcci\'on  da el  c\'odigo  \ $c^\fa(x_1)  = 00,  \:
+  equiprobables.   Esta construcci\'on  da el  c\'odigo \  $c^\fa(x_1) =  00, \:
   c^\fa(x_2) = 01, \: c^\fa(x_3) = 10, \: c^\fa(x_4) = 110, \: c^\fa(x_5) = 111$
   \ de  largo promedio \ $L\left(  c^\fa \right) =  2.25$.  \ \ (b):  Enfoque de
   Huffman, saliendo de las hojas.   En cada nudo, se menciona el correspondiente
-  (i) conjunto de s\'imbolos, (ii) $\cod_i$ de esta profundez/posici\'on, (iii)
+  (i) conjunto de s\'imbolos,  (ii) $\cod_i$ de esta profundez/posici\'on, (iii)
   la probabilidad  asociada al  conjunto.  Se  pasa de una  profundez a  la otra
   juntando  los conjuntos  menos  probables en  sobre-conjuntos.   En negro  son
   indicados los s\'imbolos simples: van a tener el c\'odigo agregando los de los
@@ -1247,7 +1245,8 @@ elegir un $n$ muy grande.
   promedio \'optimo por s\'imbolo de las  extensiones \ $\X^n$ \ de orden $n$ de
   la fuente $\X$ y la cota inferior en funci\'on de $n$. La linea llena en grise
   sirve como gu\'ia. En esta ilustraci\'on se usa el ejemplo lo m\'as simple con
-  \ $d = 2$ \ y \ $p = [0.33 \quad 0.67]^t$.}
+  \   $d   =   2$  \   y   \   $p   =   \protect\begin{bmatrix}  0.33   &   0.67
+    \protect\end{bmatrix}^t$.}
 %
 \label{Fig:SZ:CodigosExtensiones}
 \end{figure}
@@ -1266,12 +1265,12 @@ contestar:
 \begin{teorema}[C\'odigo falso de Shannon]
 \label{Teo:SZ:CodigoFalsoShannon}
 %
-  Sea $c^\sh(p)$  el c\'odigo de Shannon sobre  el alfabeto c\'odigo \  $\C = \{
-  \cod_1 ,  \ldots , \cod_d \}$ asociado  a la distribuci\'on $p$.   Sea $X$ \
-  fuente sobre  \ $\X$, de distribuci\'on \  $p_X$ \ y \  $q$ una distribuci\'on
-  cualquiera  (ej.  estimada  de  $p_X$ presupuesta\ldots).   Entonces el  largo
-  promedio \ $L_{c^\sh(q)}$ \ del c\'odigo \ $c^\sh(q)$ \ aplicado a la fuente \
-  $X$ \ satisface las desigualdades siguientes
+Sea $c^\sh(p)$  el c\'odigo  de Shannon sobre  el alfabeto  c\'odigo \ $\C  = \{
+\cod_1 \, , \, \ldots \, ,  \, \cod_d \}$ asociado a la distribuci\'on $p$.  Sea
+$X$  \  fuente  sobre  \  $\X$,  de  distribuci\'on  \  $p_X$  \  y  \  $q$  una
+distribuci\'on cualquiera (ej.   estimada de $p_X$ presupuesta\ldots).  Entonces
+el largo promedio  \ $L_{c^\sh(q)}$ \ del c\'odigo \ $c^\sh(q)$  \ aplicado a la
+fuente \ $X$ \ satisface las desigualdades siguientes
   %
   \[
   H_d(p_X) +  D_{\mathrm{kl},d}\left( \left.  p_X \right\| q  \right) \:  \le \:

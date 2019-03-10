@@ -119,11 +119,10 @@ en el caso continuo:
 \begin{ejemplo}
 \label{Ej:MP:MediaNoEnX}
 %
-  Sea \ $X$  \ de densidad de probabilidad  \ $p_X(x) = \frac12 \un_{[0  \, ; \,
-    1)}(x) +  \frac{3 \sqrt{x-2}}{4}  \un_{[2 \, ;  \, 3)}(x)$ \  como ilustrado
-  figura                                         Fig.~\ref{Fig:MP:ProbaContinua},
-  pagina~\pageref{Fig:MP:ProbaContinua}. Se  calcula \ $\Esp[X]  = \frac{31}{20}
-  \not\in \X = [0 \, ; \, 1] \cup [2 \, ; \, 3]$.
+Sea \ $X$ \ de densidad de  probabilidad \ $p_X(x) = \frac12 \un_{[0 \; 1)}(x) +
+\frac{3   \sqrt{x-2}}{4}   \un_{[2   \;   3)}(x)$  \   como   ilustrado   figura
+Fig.~\ref{Fig:MP:ProbaContinua},    pagina~\pageref{Fig:MP:ProbaContinua}.    Se
+calcula \ $\Esp[X] = \frac{31}{20} \not\in \X = [0 \; 1] \cup [2 \; 3]$.
 \end{ejemplo}
 %
 \begin{ejemplo}
@@ -141,17 +140,17 @@ $P_X$, como en el ejemplo~\ref{Ej:MP:Mixta}  pagina~\pageref{Ej:MP:Mixta}:
 \begin{ejemplo}[Continuaci\'on del ejemplo~\ref{Ej:MP:Mixta}]
 \label{Ej:MP:EspMixta}
 %
-  Sea $X = V \,  \un_{U < \frac12} + \un_{U \ge \frac12}$ \ con  \ $U$ \ y \ $V$
-  variables aleatorias independientes de distribuci\'on uniformas sobre \ $[0 \,
-  ;  \, 1)$,  \ie  $p_U(x) =  \un_{[0  \, ;  \,  1)}(x)$. \  De \  $X  \in B  \:
-  \Leftrightarrow  \: \left(  \left( U  < \frac12  \right) \cap  \left( V  \in B
-    \right) \right) \, \cup \, \left( \left( U \ge \frac12 \right) \cap \left( 1
-      \in B \right) \right)$,  \ del hecho de que los eventos  de la uni\'on son
-  incompatibles y de  la independencia de $U$ y $V$ (o  saliendo de la funci\'on
-  de repartici\'on), se obtiene $P_X(B) = \frac12 P_V(B) + \frac12 \delta_1(x)$.
-  A  continuaci\'on, \  $\displaystyle \Esp[X]  = \frac12  \int_\Rset  dP_V(x) +
-  \frac12 \int_\Rset  d\delta_1(x) = \frac12  \int_\Rset p_V(x) \, dx  + \frac12
-  \times 1 = \frac12 \int_0^1 dx + \frac12 = \frac34$.
+Sea $X =  V \, \un_{U <  \frac12} + \un_{U \ge \frac12}$  \ con \ $U$ \  y \ $V$
+variables aleatorias  independientes de distribuci\'on uniformas sobre  \ $[0 \;
+1)$, \ie  $p_U(x) = \un_{[0 \;  1)}(x)$. \ De \  $X \in B  \: \Leftrightarrow \:
+\left( \left( U < \frac12 \right) \cap \left( V \in B \right) \right) \, \cup \,
+\left( \left( U \ge \frac12 \right) \cap  \left( 1 \in B \right) \right)$, \ del
+hecho de que  los eventos de la uni\'on son incompatibles  y de la independencia
+de $U$ y $V$ (o saliendo de la funci\'on de repartici\'on), se obtiene $P_X(B) =
+\frac12  P_V(B)  + \frac12  \delta_1(x)$.   A  continuaci\'on, \  $\displaystyle
+\Esp[X] = \frac12 \int_\Rset dP_V(x) + \frac12 \int_\Rset d\delta_1(x) = \frac12
+\int_\Rset p_V(x)  \, dx + \frac12  \times 1 =  \frac12 \int_0^1 dx +  \frac12 =
+\frac34$.
 \end{ejemplo}
 
 \
@@ -165,11 +164,11 @@ una media, se obtiene
 \]
 %
 Se proba saliendo  de \ $\displaystyle x = \int_0^x  dt = \int_{\Rset_+} \un_{(t
-  \, ;  \, +\infty)}(x)  \, dt$  \ dando \  $\displaystyle \Esp[X]  = \int_\Rset
-\left( \int_{\Rset_+}  \un_{(t \, ; \,  +\infty)}(x) \, dt \right)  \, dP_X(x) =
-\int_{\Rset_+} \left( \int_\Rset \un_{(t \, ; \, +\infty)}(x) \, dP_X(x) \right)
-\,    dt$    \    por    el    teorema    de    Fubini    Th.~\ref{Teo:MP:Fubini}
-pagina~\pageref{Teo:MP:Fubini}. Se  cierra la  prueba observando que  la integral
+  \; +\infty)}(x)  \, dt$ \ dando  \ $\displaystyle \Esp[X]  = \int_\Rset \left(
+  \int_{\Rset_+}   \un_{(t  \;  +\infty)}(x)   \,  dt   \right)  \,   dP_X(x)  =
+\int_{\Rset_+} \left(  \int_\Rset \un_{(t \; +\infty)}(x) \,  dP_X(x) \right) \,
+dt$     \     por    el     teorema     de    Fubini     Th.~\ref{Teo:MP:Fubini}
+pagina~\pageref{Teo:MP:Fubini}. Se  cierra la prueba observando  que la integral
 interior es nada  m\'as que $P(X > t)$.   En el caso discreto con  $\X = \Nset$,
 viene  inmediatamente \ $\displaystyle  \sum_{n \in  \Nset} P(X>n)$  que podemos
 probar directamente  saliendo de $P(X  = n) =  P(X>n)- P(X>n-1)$. En el  caso de
@@ -184,12 +183,12 @@ Esta f\'ormula se aplica al ejemplo~\ref{Ej:MP:Mixta} que tratamos:
 \begin{ejemplo}[Continuaci\'on del ejemplo~\ref{Ej:MP:Mixta}]
 \label{Ej:MP:EspMixtaPositiva}
 %
-  Sea $X = V \,  \un_{U < \frac12} + \un_{U \ge \frac12}$ \ con  \ $U$ \ y \ $V$
-  variables aleatorias independientes de distribuci\'on uniformas sobre \ $[0 \,
-  ;  \,  1)$. Obtuvimos  pagina~\pageref{Ej:MP:Mixta}  \  $F_X(x) =  \frac{x}{2}
-  \un_{[0 \,  ; \, 1)}(x)  + \un_{[1 \,  ; \, +\infty)}(x)$.   A continuaci\'on,
-  reobtenemos \ $\displaystyle \Esp[X] = \int_0^1 \left( 1 - \frac{x}{2} \right)
-  \, dx = \frac34$.
+Sea $X =  V \, \un_{U <  \frac12} + \un_{U \ge \frac12}$  \ con \ $U$ \  y \ $V$
+variables aleatorias  independientes de distribuci\'on uniformas sobre  \ $[0 \;
+1)$.  Obtuvimos pagina~\pageref{Ej:MP:Mixta} \  $F_X(x) = \frac{x}{2} \un_{[0 \;
+  1)}(x)  +   \un_{[1  \;   +\infty)}(x)$.   A  continuaci\'on,   reobtenemos  \
+$\displaystyle  \Esp[X]  = \int_0^1  \left(  1 -  \frac{x}{2}  \right)  \, dx  =
+\frac34$.
 \end{ejemplo}.
 
 \
@@ -296,7 +295,7 @@ aleatoria $X$. Los momentos relevantes usuales
   \'ordenes mayores, para la caracterizaci\'on de una distribuci\'on.  Para $K =
   2$, en el caso  escalar, el momento de orden 2 es  el an\'alogo del momento de
   inercia de la mec\'anica.\newline Por ejemplo, para la distribuci\'on uniforme
-  $p_X(x) =  \frac{1}{b-a}$ en el  intervalo $[  a \, ,  \, b]$, resulta  $m_K =
+  $p_X(x) =  \frac{1}{b-a}$ en el  intervalo $[  a \; b]$, resulta  $m_K =
   \frac{b^{K+1}-a^{K+1}}{(K+1)(b-a)}$.   En particular,  $m_1  = \frac{a+b}{2}$,
   valor  medio del  intervalo.\newline  Fijense  de que  $X^{\otimes  K}$ no  es
   siempre integrable,  por ejemplo, en el  caso con densidad,  si $p_X(x)$ tiene
@@ -584,7 +583,7 @@ Fijense  de que  la  reciproca es  falsa en  general:
   Sea \  $X =  (X_1,X_2)$ \ uniforme  sobre el  disco unitario, i.e.,  $p_X(x) =
   \frac{1}{\pi} \un_{\Sset^2}(x)$ \  con \ $\Sset^2 = \{  (x_1,x_2) \in \Rset^2:
   \:  x_1^2  +  x_2^2  \le  1  \}$.  Claramente,  los  \  $X_i$  no  pueden  ser
-  independientes del hecho de que  \ $\X_i = [-1 \, , \, 1]$ \  y \ $\X \ne \X_1
+  independientes del hecho de que  \ $\X_i = [-1 \; 1]$ \  y \ $\X \ne \X_1
   \times \X_2$  \ (es  estrictamente incluido en  el producto  cartesiano).  Por
   simetr\'ia central de  $p_X$, es sencillo ver  de que $\Esp[X_1 X_2] =  0$ \ y
   similarmente  \ $\Esp[X_i]  =  0$:  a pesar  de  que los  \  $X_i$  \ no  sean
@@ -597,13 +596,13 @@ ejemplo~\ref{Ej:MP:Mixta}  de la  pagina~\pageref{Ej:MP:Mixta}:
 \begin{ejemplo}[Continuaci\'on del ejemplo~\ref{Ej:MP:Mixta}]
 \label{Ej:EspMixtaInd}
 %
-  Tratando de la media de \ $X = V \, \un_{U < \frac12} + \un_{U \ge \frac12}$ \
-  con \  $U$ \ y  \ $V$ \  variables independientes de  distribuci\'on uniformas
-  sobre $(0 \, ; \, 1)$, se calcula gracia a la linealidad y a la independencia,
-  \ $\Esp[X]  = \Esp[V]  \Esp[\un_{U < \frac12}]  + \Esp[\un_{U \ge  \frac12}] =
-  \frac12 \times  \frac12 + \frac12 =  \frac34$ \ como lo  hemos obtenido usando
-  $P_X$   en  la   pagina~\pageref{Ej:MP:EspMixta}  o   la  positividad   en  la
-  pagina~\pageref{Ej:MP:EspMixtaPositiva}.
+Tratando de la media  de \ $X = V \, \un_{U < \frac12}  + \un_{U \ge \frac12}$ \
+con \ $U$ \ y \ $V$ \ variables independientes de distribuci\'on uniformas sobre
+$(0 \; 1)$, se calcula gracia a la linealidad y a la independencia, \ $\Esp[X] =
+\Esp[V] \Esp[\un_{U  < \frac12}]  + \Esp[\un_{U \ge  \frac12}] =  \frac12 \times
+\frac12  + \frac12  =  \frac34$ \  como lo  hemos  obtenido usando  $P_X$ en  la
+pagina~\pageref{Ej:MP:EspMixta}      o       la      positividad      en      la
+pagina~\pageref{Ej:MP:EspMixtaPositiva}.
 \end{ejemplo}
 
 Una otra  consecuencia de  esta proposici\'on trata  de un conjunto  de vectores
@@ -749,7 +748,7 @@ aleatorio.
 \label{Def:MP:convexa}
 %
   Por definici\'on, una  funci\'on \ $\phi: \X \subset  \Rset^d \mapsto \Rset$ \
-  con \ $\X$ un convexo, es convexa si  para cualquier $\pi_1 \in [0 \, , \, 1],
+  con \ $\X$ un convexo, es convexa si  para cualquier $\pi_1 \in [0 \; 1],
   \pi_2 = 1-\pi_1$ \ y \ $x_1, x_2 \in \Rset^d$,
   %
   \[
@@ -778,8 +777,8 @@ aleatorio.
 \begin{center} \input{TIKZ_MP/Convexidad} \end{center}
 %
 \leyenda{Ejemplo  de  funci\'on  $\phi$  convexa:  la  cuerda,  conteniendo  los
-  barycentros de  $\{ \phi(x_1), \phi(x_2) \}$,  es siempre arriba  de la curba,
-  \ie funci\'on de los barycentros de $\{ x_1 , x_2 \}$.}
+  barycentros de  $\{ \phi(x_1) \, , \, \phi(x_2) \}$,  es siempre arriba  de la curba,
+  \ie funci\'on de los barycentros de $\{ x_1 \, , \, x_2 \}$.}
 %
 \label{Fig:MP:Convexa}
 \end{figure}

@@ -1,0 +1,71 @@
+\begin{tikzpicture}%[scale=.9]
+\shorthandoff{>}
+%
+\pgfmathsetmacro{\sx}{.75};% x-scaling
+%\pgfmathsetmacro{\mx}{3.5};% x maximo del plot
+\pgfmathsetmacro{\a}{.5};% x-scaling
+\pgfmathsetmacro{\t}{30};% angulo de rotacion
+\pgfmathsetmacro{\c}{cos(\t)};% coseno
+\pgfmathsetmacro{\s}{sin(\t)};% seno
+\pgfmathsetmacro{\su}{sqrt(\c^2+(\a*\s)^2)};% ecart-type 1
+\pgfmathsetmacro{\sd}{sqrt(\s^2+(\a*\c)^2)};% ecart-type 2
+\pgfmathsetmacro{\d}{3.5};% dominio del plot -d:d
+%
+% Approximation de la cdf gaussienne
+\tikzset{declare function={
+normcdf(\x)=1/(1 + exp(-0.07056*(\x)^3 - 1.5976*(\x)));
+}}
+% densidad
+\begin{scope}
+%
+%\pgfmathsetmacro{\sy}{5*pi};% y-scaling 
+%\draw[>=stealth,->] ({-\sx*\mx-.25},0)--({\sx*\mx+.25},0) node[right]{\small $x$};
+%\draw[>=stealth,->] (0,-.1)--(0,2.75) node[above]{\small $p_X$};
+%
+\begin{axis}[
+    colormap = {whiteblack}{color(0cm)  = (white);color(1cm) = (black)},
+    width=.75\textwidth,
+    view={45}{65},
+    enlargelimits=false,
+    grid=major,
+    domain=-\d:\d,
+    %y domain=-3:3,
+    samples=50,
+    xlabel=$x_1$,
+    ylabel=$x_2$,
+    zlabel={$p_X$},
+    %colorbar,
+    %colorbar style={
+    %    at={(1,0)},
+    %    anchor=south west,
+    %    height=0.25*\pgfkeysvalueof{/pgfplots/parent axis height}%,
+    %    %title={$p_X(x_1,x_2)$}
+    %}
+]
+\addplot3 [surf] {exp(-.5*((\c*x+\s*y)^2+((-\s*x+\c*y)/\a)^2))/(2*pi*\a)};
+\addplot3 [domain=-\d:\d,samples=51, samples y=0, thick, smooth] (x,\d,{exp(-.5*(x/\su)^2)/sqrt(2*pi)/\su});
+\addplot3 [domain=-\d:\d,samples=51, samples y=0, thick, smooth] (-\d,x,{exp(-.5*(x/\sd)^2)/sqrt(2*pi)/\sd});
+%\draw [black!50] (axis cs:-1,0,0) -- (axis cs:4,0,0);
+%\draw [black!50] (axis cs:0,-1,0) -- (axis cs:0,4,0);
+\node at (axis cs:-\d,1,0.18) [pin=165:$p_{X_1}$] {};
+\node at (axis cs:1.5,\d,0.32) [pin=-15:$p_{X_2}$] {};
+\end{axis}
+%
+\end{scope}
+%
+%
+% reparticion
+\begin{scope}[xshift=8.5cm]
+%
+%\pgfmathsetmacro{\sy}{2.5};% y-scaling 
+%
+%\draw[>=stealth,->] ({-\sx*\mx-.25},0)--({\sx*\mx+.25},0) node[right]{\small $x$};
+%\draw[>=stealth,->] (0,-.1)--(0,{\sy+.25}) node[above]{\small $F_X$};
+%
+% cumulativa
+%\draw[thick,domain=-\mx:\mx,samples=100] plot({\x*\sx},{\sy*normcdf(\x)});
+%
+%\draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
+\end{scope}
+%
+\end{tikzpicture}

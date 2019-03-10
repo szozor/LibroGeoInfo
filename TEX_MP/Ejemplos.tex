@@ -177,7 +177,7 @@ equilibriado con $a = 1, b = 6$.
 \subsubseccion{Ley de Bernoulli}
 \label{Sssec:MP:Bernoulli}
 
-Se  denota \  $X \,  \sim \,  \B(p)$ \  con \  $p \in  [0 \,  ; \,  1]$ \  y sus
+Se  denota \  $X \,  \sim \,  \B(p)$ \  con \  $p \in  [0 \;  1]$ \  y sus
 caracter\'isticas son las siguientes:
 
 \begin{center}
@@ -192,7 +192,7 @@ caracter\'isticas son las siguientes:
 Dominio de definici\'on & $\X = \{ 0 \, , \, 1 \}$\\[2mm]
 \hline
 %
-Parametro & $p \in [ 0 \, ; \, 1 ]$\\[2mm]
+Parametro & $p \in [ 0 \; 1 ]$\\[2mm]
 \hline
 %
 Distribuci\'on de probabilidad & $p_X(1) = 1 - p_X (0) = p$\\[2mm]
@@ -248,8 +248,8 @@ Nota que cuando $p = 0$ (resp. $p =  1$) la variable es cierta $X = 0$ (resp. $X
 \subsubseccion{Ley Binomial}
 \label{Sssec:MP:Binomial}
 
-Se denota \ $X \, \sim \, \B(n,p)$ \ con \ $n \in \Nset \setminus \{ 0 \, ; \, 1
-\}, \quad p \in [0 \, ; \, 1]$ \ y sus caracter\'isticas son las siguientes:
+Se denota \ $X \, \sim \, \B(n,p)$ \ con \ $n \in \Nset \setminus \{ 0 \, , \, 1
+\}, \quad p \in [0 \; 1]$ \ y sus caracter\'isticas son las siguientes:
 
 \begin{center}
 \begin{tabular}
@@ -263,7 +263,7 @@ Se denota \ $X \, \sim \, \B(n,p)$ \ con \ $n \in \Nset \setminus \{ 0 \, ; \, 1
 Dominio de definici\'on & $\X = \{ 0 \, , \, \ldots \, , \, n \}$\\[2mm]
 \hline
 %
-Parametros & $n  \in \Nset \setminus \{0  \, , \, 1 \},  \quad p \in [0  \, ; \,
+Parametros & $n  \in \Nset \setminus \{0  \, , \, 1 \},  \quad p \in [0  \;
 1]$\\[2mm]
 \hline
 %
@@ -360,8 +360,7 @@ Nota que cuando $p = 0$ (resp. $p = 1$) la variable es cierta $X = 0$ (resp.  $X
 \subsubseccion{Ley Binomial negativa}
 \label{Sssec:MP:BinomialNegativa}
 
-Se denota \ $X \, \sim \, N\B(r,p)$ \  con \ $r \in \Nset^*, \quad p \in [0 \, ;
-\, 1)$ \ y sus caracter\'isticas son las siguientes:
+Se denota \ $X \, \sim \, N\B(r,p)$ \  con \ $r \in \Nset^*, \quad p \in [0 \; 1)$ \ y sus caracter\'isticas son las siguientes:
 
 \begin{center}
 \begin{tabular}
@@ -375,7 +374,7 @@ Se denota \ $X \, \sim \, N\B(r,p)$ \  con \ $r \in \Nset^*, \quad p \in [0 \, ;
 Dominio de definici\'on & $\X = \Nset$\\[2mm]
 \hline
 %
-Parametros & $r  \in \Nset^*,  \quad p \in [0  \, ; \,
+Parametros & $r  \in \Nset^*,  \quad p \in [0  \;
 1)$\\[2mm]
 \hline
 %
@@ -421,17 +420,18 @@ p}{1 - p \, e^{i \omega} } \right)^r$\\[2mm]
 % % CDF	$I_{1-p}(n-k,k+1)$ regularized incomplete beta function
 
 Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
-figura Fig.~\ref{Fig:MP:Binomial}.
+figura Fig.~\ref{Fig:MP:BinomialNegativa}.
 %
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/BinomialNegativa} \end{center}
 %
-\leyenda{Ilustraci\'on de una distribuci\'on  de probabilidad Binomial negativa (a), y la
-  funci\'on de repartici\'on asociada (b), con $r = 3, \quad p = \frac35$.}
-\label{Fig:MP:Binomial}
+\leyenda{Ilustraci\'on de  una distribuci\'on de  probabilidad binomial negativa
+  (a), y  la funci\'on  de repartici\'on  asociada (b), con  $r =  3, \quad  p =
+  \frac35$.}
+\label{Fig:MP:BinomialNegativa}
 \end{figure}
 
-Esta ley aparece cuando se repite una experencia binaria \ $X_i \in \{ 0 \, ; \,
+Esta ley aparece cuando se repite una experencia binaria \ $X_i \in \{ 0 \, , \,
 1 \},  i = 1, \ldots$  \ con \ $P(X_i=1)  = p$ \ de  manera independiente ($X_i$
 independientes) hasta  que \  $r$ \  variables valen 0,  con \  $r$ \  fijo. Los
 n\'umeros de  excitos \ $X_i =  1$ \ sigue una  ley \ $N\B(r,p)$  (el calculo es
@@ -450,18 +450,105 @@ interpretaci\'on que v\'imos en el p\'arafo anterior.
 
 Nota: cuando \ $p = 0$ \ la variable es cierta \ $X = r$.
 
-\SZ{
+
+
 % --------------------------------- Multinomial
 \subsubseccion{Ley Multinomial}
 \label{Sssec:MP:Multinomial}
+
+Esta ley es una generalizaci\'on de la ley binomial y aparece por ejemplo cuando
+se  repite  una  experiencia  a  \  $k$  \ estados  \  $n$  \  veces  de  manera
+independiente y nos  interesamos a la probabilidad que  el primer evento aparece
+$n_1$ veces, el secundo $n_2$ veces, \ldots.  Se denota \ $X \ \sim \ \M(n,p)$ \
+con \ $n \in  \Nset^*$ \ y \ $p = \begin{bmatrix}  \end{bmatrix}^t \in S_{k-1} =
+\left\{  p \in  [  0 \; 1  ]^k,  \: \sum_i  p_i  = 1  \right\}$  \ the  \
+$(k-1)$-simplex estadar. Entonces,  a pesar de que se escribe \  $X$ \ de manera
+$k$-dimensional, el  vector partenece a  una variedad claramente  \ $d =  k-1$ \
+dimensional  y en  el  caso \  $k  = 2$  \  se recupera  la  ley binomial.   Las
+caracter\'isticas de \ $X \ \sim \ \M(n,p)$ \ son las siguientes:
+
+\begin{center}
+\begin{tabular}
+{
+|>{\vspace{-2mm}}p{.4\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
 }
+%
+\hline
+%
+Dominio de definici\'on & $\X = \left\{ m \in \{ 0 \, , \, \ldots \, , \, n\}^k, \:
+\sum_{i=1}^k m_i = 1 \right\}$\\[2mm]
+\hline
+%
+Parametros & $n \in \Nset^*, \quad p \in  S_{k-1} = \left\{ p \in [ 0 \; 1
+]^k, \: \sum_i p_i = 1 \right\}$\\[2mm]
+\hline
+%
+Distribuci\'on de probabilidad & $\displaystyle p_X(m) = \frac{n!}{\prod_{i=1}^k
+m_i!}  \prod_{i=1}^k p_i^{m_i}$\\[2mm]
+\hline
+%
+%Momentos & $ \Esp\left[ X^k \right] = ??\\[2mm]
+%\hline
+%
+%Momento factorial & $\Esp\left[ (X)_k \right] = \frac{(r+k-1)!}{(r-1)!} \left( \frac{p}{1-p} \right)^k$\\[2mm]
+%\hline
+% %
+Promedio & $\displaystyle m_X = n \, p$\\[2mm]
+\hline
+%%
+Covarianza & $\displaystyle \Sigma_X = n \left( \diag p - p p^t \right)$\\[2mm]
+\hline
+%%
+%Asimetr\'ia & $\displaystyle \gamma_X = \frac{1 + p}{\sqrt{r \, p}}$\\[2mm]
+%\hline
+%%
+%Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = \frac{1 + 4 \, p +
+%p^2}{r \, p} $\\[2mm]
+%\hline
+%%
+Generadora de probabilidad & $\displaystyle G_X(z) = \left( \sum_{j=1}^k p_j z_j
+\right)^n$ \ para \ $z \in \Cset^k$\\[2mm]
+\hline
+%%
+Generadora de momentos & $\displaystyle M_X(u) = \left( \sum_{j=1}^k p_j e^{u_j}
+\right)^n$  \ para \ $u \in \Cset^k$\\[2mm]
+\hline
+%
+Funci\'on caracter\'istica & $\displaystyle \Phi_X(\omega) = \left( \sum_{j=1}^k
+p_j e^{\imath \omega_j} \right)^n$\\[2mm]
+\hline
+\end{tabular}
+\end{center}
+%
+% % Modo $\left\lfloor (n+1) p \right\rfloor$
+% % Mediana $\left\lfloor n p \right\rfloor$ o $\left\lceil n p \right\rceil
+% % CDF	$I_{1-p}(n-k,k+1)$ regularized incomplete beta function
+
+Es sencillo  ver que  cada componente  \ $X_j$ \  es binomial,  $X_j \,  \sim \,
+\B(n,p_j)$.
+
+\SZ{Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
+figura Fig.~\ref{Fig:MP:Multinomial}.
+%
+\begin{figure}[h!]
+%\begin{center} \input{TIKZ_MP/BinomialNegativa} \end{center}
+%
+  \leyenda{Ilustraci\'on de una  distribuci\'on de probabilidad Multinomial (a),
+    y la funci\'on de repartici\'on asociada (b), con $n = 5, \quad k = 3, \quad
+    p    =    \protect\begin{bmatrix}    \frac25    &    \frac15    &    \frac15
+      \protect\end{bmatrix}^t$.}
+\label{Fig:MP:Multinomial}
+\end{figure}
+}
+
 
 % --------------------------------- Geometrica
 
 \subsubseccion{Ley Geom\'etrica}
 \label{Sssec:MP:Geometrica}
 
-Se  denota \  $X \,  \sim \,  \G(p)$ \  con \  $p \in  (0 \,  ; \,  1]$ \  y sus
+Se  denota  \  $X \,  \sim  \,  \G(p)$  \  con \  $p  \in  (0  \;  1]$ \  y  sus
 caracter\'isticas son las siguientes:
 
 \begin{center}
@@ -476,7 +563,7 @@ caracter\'isticas son las siguientes:
 Dominio de definici\'on & $\X = \Nset^*$\\[2mm]
 \hline
 %
-Parametro & $p \in (0 \, ; \, 1]$\\[2mm]
+Parametro & $p \in (0 \; 1]$\\[2mm]
 \hline
 %
 
@@ -670,7 +757,7 @@ Leyes de los grandes n\'umeros
 \subsubseccion{Distribuci\'on uniforme sobre un intervalo}
 \label{Sssec:MP:UniformeContinua}
 
-Se denota $X \, \sim \, \U([a \, ; b])$. Las caracteristicas de \ $X$ \ son las
+Se denota $X \, \sim \, \U([a \; b])$. Las caracteristicas de \ $X$ \ son las
 siguientes:
 
 \begin{center}
@@ -682,7 +769,7 @@ siguientes:
 %
 \hline
 %
-Dominio de definici\'on & $\X = [a \, ; \, b]$\\[2mm]
+Dominio de definici\'on & $\X = [a \; b]$\\[2mm]
 \hline
 %
 Densidad de probabilidad & $p_X(x) = \frac{1}{b-a}$\\[2mm]
@@ -727,7 +814,7 @@ Funci\'on caracter\'istica & $\displaystyle  \Phi_X(\omega) = \frac{ e^{\imath a
 
 Obviamente, se puede escribir \ $X \, \egald  \, a + (b-a) U$ \ donde \ $\egald$
 \ significa que la equalidad es en distribuci\'on (las variables tienen la misma
-distribuci\'on de probabilidad), con \ \ $U \, \sim \, \U \left( [ 0 \, ; \, 1 ]
+distribuci\'on de probabilidad), con \ \ $U \, \sim \, \U \left( [ 0 \; 1 ]
 \right)$ \ llamada {\em uniforme estandar}.
 
 La densidad de probabilidad y funci\'on de repartici\'on de la variable estandar
@@ -992,7 +1079,24 @@ estandar (a), y la funci\'on de repartici\'on asociada (b).}
 \label{Fig:MP:Gaussiana}
 \end{figure}
 
-La gaussiana tiene un par de propiedades particulares
+\SZ{
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/Gaussiana2D} \end{center}
+% 
+\leyenda {Ilustraci\'on de una densidad de probabilidad gaussiana bi-dimensional
+  centrada  y  de  matriz  de   covarianza  \  $\Sigma_X  =  R(\theta)  \Delta^2
+  R(\theta)^t$  \ con  \  $R(\theta) =  \protect\begin{bmatrix}  \cos\theta &  -
+    \sin\theta\\[2mm] \sin\theta & \cos\theta \protect\end{bmatrix}$ \ matriz de
+  rotaci\'on   y   \    $\Delta   =   \diag\left(\protect\begin{bmatrix}   1   &
+      a\protect\end{bmatrix}  \right)$ \  matriz de  cambio  de escala  \ y  sus
+  marginales ($X_1 \, \sim \, \N\left(0,\cos^2\theta + a^2 \sin^2\theta \right)$
+  \ y \ $X_2 \, \sim  \, \N\left(0,\sin^2\theta + a^2 \cos^2\theta \right)$; ver
+  m\'as adelante).}
+\label{Fig:MP:Gaussiana2D}
+\end{figure}
+}
+
+La gaussiana tiene un par de propiedades particulares:
 %
 \begin{teorema}[Stabilidad]
 \label{Teo:MP:StabilidadGaussiana}
@@ -1173,7 +1277,7 @@ Se denota $X  \sim \beta(a,b)$ \ con  \ $(a,b) \in \Rset_+^{* \,  2}$ \ llamados
 %
 \hline
 %
-Dominio de definici\'on & $\X = [0 \, ; \, 1]$\\[2mm]
+Dominio de definici\'on & $\X = [0 \; 1]$\\[2mm]
 \hline
 %
 Parametros & $(a,b) \in \Rset_+^{* \, 2}$ (forma)\\[2mm]
@@ -1238,7 +1342,7 @@ guionada), $(3 \, , \, 7)$ (linea llena).}
 \label{Fig:MP:Beta}
 \end{figure}
 
-Nota que se recupera la  ley uniforme sobre \ $[0 \, ; \, 1]$ \  para \ $a = b =
+Nota que se recupera la  ley uniforme sobre \ $[0 \; 1]$ \  para \ $a = b =
 1$. Se conoce la ley de $ 2 \, \beta\left( \frac12 , \frac12 \right) - 1$ \ como
 {\em ley arcseno}.
 
@@ -1280,7 +1384,7 @@ de variables, se demuestra el lema siguiente:
   %
   \[
   \begin{array}{lccl}
-    g\ : & \Rset_+^2 & \mapsto & [0 \, ; \, 1] \times \Rset_+\\[1.5mm]
+    g\ : & \Rset_+^2 & \mapsto & [0 \; 1] \times \Rset_+\\[1.5mm]
     %
     & (x,y) & \to & (u,v) = \left( \frac{x}{x+y} \, , \, x+y \right)
   \end{array}
@@ -1340,7 +1444,7 @@ de variables, se demuestra el lema siguiente:
   %
   \[
   \begin{array}{lccl}
-    g\ : & \Rset_+^3 & \mapsto & [0 \, ; \, 1]^2 \times \Rset_+\\[1.5mm]
+    g\ : & \Rset_+^3 & \mapsto & [0 \; 1]^2 \times \Rset_+\\[1.5mm]
     %
     & (u,v,w) & \to & (x,y,z) = \left( \frac{u}{u+v} \, , \, \frac{u+v}{u+v+w} \, , \, u+v+w \right)
   \end{array}
