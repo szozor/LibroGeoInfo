@@ -26,7 +26,7 @@ anteriores son resimudas en la tabla siguiente:
 \begin{tabular}
 {
 |>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
 }
 %
 \hline
@@ -70,7 +70,8 @@ Funci\'on caracter\'istica & $\displaystyle \Phi_X(\omega) = e^{\imath a
 \end{center}
 %
 
-La funci\'on de masa y funci\'on de repartici\'on son representadas en la figura Fig.~\ref{Fig:MP:Certeza}.
+La funci\'on de masa y funci\'on de repartici\'on son representadas en la figura
+Fig.~\ref{Fig:MP:Certeza}.
 %
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/Certeza} \end{center}
@@ -93,7 +94,7 @@ a$.  Las caracteristicas de \ $X$ \ son las siguientes:
 \begin{tabular}
 {
 |>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
 }
 %
 \hline
@@ -124,22 +125,23 @@ Asimetr\'ia & $\gamma_X = 0$\\[2mm]
 %
 Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = -\frac65 \frac{(b-a)
 (b-a+2)+2}{(b-a) (b-a+2)}$\\[2mm]
-%\hline
+\hline
 %%
 Generadora de probabilidad & $\displaystyle G_X(z) = \frac{z^a-z^{b+1}}{1-z}$ \
 para~\footnotemark \ $z \in \Cset$ \ si $a \ge 0$ \ y \ $\Cset^*$ \ si no\\[2mm]
 \hline
 %%
 Generadora de momentos & $\displaystyle M_X(u) = \frac{ e^{a u} - e^{(b+1) u}}{1-e^u}$ \
-para~\footnotemark  \ $u \in \Cset$\\[2mm]
+para  \ $u \in \Cset$\\[2mm]
 \hline
 %
 Funci\'on caracter\'istica & $\displaystyle  \Phi_X(\omega) = \frac{ e^{\imath a
 \omega} - e^{\imath (b+1) \omega}}{1-e^{\imath \omega}}$\\[2mm]
 \hline
 \end{tabular}
-\footnotetext{En el caso l\'imite \ $z \to  1$, \ $\lim_{z \to 1} \frac{ z^a
-- z^{b+1}}{1-z} = b+1-a$.}
+\footnotetext{En el caso  l\'imite \ $z \to  1$, \ $\lim_{z \to 1}  \frac{ z^a -
+    z^{b+1}}{1-z} =  b+1-a$ \  y similarmente para  la generadora de  momentos y
+  funci\'on caracter\'istica (resp. \ $u \to 0$ \ y \ $\omega \to 0$).}
 %\footnotetext{En el caso l\'imite \ $u \to  0$, \ $\lim_{u \to 0} \frac{ e^{a u}
 %- e^{(b+1) u}}{1-e^u} = b+1-a$.}
 \end{center}
@@ -161,10 +163,10 @@ Fig.~\ref{Fig:MP:UniformeDiscreta}.
 \label{Fig:MP:UniformeDiscreta}
 \end{figure}
 
-Cuando $b = a$ la variable tiende a una variable cierta $X = a$.
+Cuando \ $b = a$, la variable tiende a una variable cierta \ $X = a$.
 
 La  distribuci\'on  uniforme  aparece  por   ejemplo  en  el  tiro  de  un  dado
-equilibriado con $a = 1, b = 6$.
+equilibriado con \ $a = 1, \: b = 6$.
 %% en el conteo de
 %%conteo de une repetici\'on de  una experiencia de maneja independiente hasta que
 %%occure un evento de probabilidad $p$; por ejemplo el n\'umero de tiro de un dado
@@ -184,7 +186,7 @@ caracter\'isticas son las siguientes:
 \begin{tabular}
 {
 |>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
 }
 %
 \hline
@@ -207,13 +209,14 @@ Distribuci\'on de probabilidad & $p_X(1) = 1 - p_X (0) = p$\\[2mm]
 Promedio & $ m_X = p$\\[2mm]
 \hline
 %
-Varianza & $\sigma_X^2 = p (1-p)$\\[2mm]
+Varianza & $\sigma_X^2 = p \, (1-p)$\\[2mm]
 \hline
 %
 Asimetr\'ia & $\displaystyle \gamma_X =  \frac{1 - 2 \, p}{\sqrt{p \, (1-p)}}$\\[2mm]
 \hline
 %
-Curtosis por exceso & $\displaystyle  \widebar{\kappa}_X = \frac{1 - 6 \, p + 6 \, p^2}{p  \, (1-p)}$\\[2mm]
+Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = \frac{1 - 6 \, p + 6
+\, p^2}{p \, (1-p)}$\\[2mm]
 \hline
 %
 Generadora de probabilidad & $G_X(z) = 1 - p + p z$ \ sobre \ $\Cset$\\[2mm]
@@ -241,6 +244,19 @@ figura Fig.~\ref{Fig:MP:Bernoulli}.
 Nota que cuando $p = 0$ (resp. $p =  1$) la variable es cierta $X = 0$ (resp. $X
 = 1$).
 
+La  ley de Bernoulli tiene una propiedad de reflexividad trivial:
+%
+\begin{lema}[Reflexividad]
+\label{Lem:MP:ReflexividadBernoulli}
+%
+  Sea \ $X \, \sim \, \B(p)$. Entonces
+  %
+  \[
+  1-X \, \sim \, \B(1-p)
+  \]
+  %
+\end{lema}
+
 
 
 % --------------------------------- Binomial
@@ -255,7 +271,7 @@ Se denota \ $X \, \sim \, \B(n,p)$ \ con \ $n \in \Nset \setminus \{ 0 \, , \, 1
 \begin{tabular}
 {
 |>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
 }
 %
 \hline
@@ -338,7 +354,8 @@ Ad\'emas, se muestra  sencillamente usando la generadora de  probabilidad que
 De este resultado,  se puede notar que, por  ejemplo, le distribuci\'on binomial
 aparece en el conteo de eventos independientes de misma probabilidad entre $n$.
 
-Tambi\'en, la ley binomial tiene una propiedad de reflexividad:
+Tambi\'en,  la ley binomial  tiene una  propiedad de  reflexividad, consecuencia
+directa de la de Bernoulli:
 %
 \begin{lema}[Reflexividad]
 \label{Lem:MP:ReflexividadBinomial}
@@ -366,7 +383,7 @@ Se denota \ $X \, \sim \, N\B(r,p)$ \  con \ $r \in \Nset^*, \quad p \in [0 \; 1
 \begin{tabular}
 {
 |>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
 }
 %
 \hline
@@ -460,27 +477,32 @@ Esta ley es una generalizaci\'on de la ley binomial y aparece por ejemplo cuando
 se  repite  una  experiencia  a  \  $k$  \ estados  \  $n$  \  veces  de  manera
 independiente y nos  interesamos a la probabilidad que  el primer evento aparece
 $n_1$ veces, el secundo $n_2$ veces, \ldots.  Se denota \ $X \ \sim \ \M(n,p)$ \
-con \ $n \in  \Nset^*$ \ y \ $p = \begin{bmatrix}  \end{bmatrix}^t \in S_{k-1} =
-\left\{  p \in  [  0 \; 1  ]^k,  \: \sum_i  p_i  = 1  \right\}$  \ the  \
-$(k-1)$-simplex estadar. Entonces,  a pesar de que se escribe \  $X$ \ de manera
-$k$-dimensional, el  vector partenece a  una variedad claramente  \ $d =  k-1$ \
-dimensional  y en  el  caso \  $k  = 2$  \  se recupera  la  ley binomial.   Las
-caracter\'isticas de \ $X \ \sim \ \M(n,p)$ \ son las siguientes:
+con  \  $n  \in  \Nset^*$  \  y  \  $p  =  \begin{bmatrix}  \end{bmatrix}^t  \in
+\Simp_{k-1}$ \ the \ $(k-1)$-simplex estandar,
+%
+\[
+\Simp_{k-1} = \left\{ u \in [ 0 \; 1 ]^k,  \: \sum_i u_i = 1 \right\}
+\]
+%
+Entonces, a pesar de que se escribe \ $X$ \ de manera $k$-dimensional, el vector
+partenece a una variedad claramente \ $d =  k-1$ \ dimensional y en el caso \ $k
+= 2$  \ se recupera  la ley binomial.   Las caracter\'isticas de  \ $X \  \sim \
+\M(n,p)$ \ son las siguientes:
 
 \begin{center}
 \begin{tabular}
 {
 |>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
 }
 %
 \hline
 %
-Dominio de definici\'on & $\X = \left\{ m \in \{ 0 \, , \, \ldots \, , \, n\}^k, \:
-\sum_{i=1}^k m_i = 1 \right\}$\\[2mm]
+Dominio de definici\'on~\footnotemark & $\X = \left\{ m \in \{ 0 \, , \, \ldots \, , \, n\}^k, \:
+\sum_{i=1}^k m_i = n \right\}$\\[2mm]
 \hline
 %
-Parametros & $n \in \Nset^*, \quad p \in  S_{k-1} = \left\{ p \in [ 0 \; 1
+Parametros & $n \in \Nset^*, \quad p \in  \Simp_{k-1} = \left\{ p \in [ 0 \; 1
 ]^k, \: \sum_i p_i = 1 \right\}$\\[2mm]
 \hline
 %
@@ -519,6 +541,14 @@ Funci\'on caracter\'istica & $\displaystyle \Phi_X(\omega) = \left( \sum_{j=1}^k
 p_j e^{\imath \omega_j} \right)^n$\\[2mm]
 \hline
 \end{tabular}
+\footnotetext{De  hecho,  se puede  considerar  que  el  vector aleatorio  es  \
+  $(k-1)$-dimensional  \  $\widetilde{X}  =  \begin{bmatrix}  \widetilde{X}_1  &
+    \cdots & \widetilde{X}_{k-1} \end{bmatrix}^t$  \ definido sobre el dominio \
+  $\widetilde{\X} =  \left\{ m \in  \{ 0 \,  , \, \ldots  \, , \,  n\}^{k-1}, \:
+    \sum_{i=1}^k m_i  \le n \right\}$.   Su masa de  probabilidad es dada  por \
+  $p_{\widetilde{X}}(m)   =  \frac{n!}{\prod_{i=1}^k   m_i!}   \prod_{i=1}^{k-1}
+  p_i^{m_i}  \,  \left(  1  - \sum_{i=1}^{k-1}  p_i  \right)^{n-\sum_{i=1}^{k-1}
+    m_i}$.}
 \end{center}
 %
 % % Modo $\left\lfloor (n+1) p \right\rfloor$
@@ -555,7 +585,7 @@ caracter\'isticas son las siguientes:
 \begin{tabular}
 {
 |>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
 }
 %
 \hline
@@ -641,7 +671,7 @@ Se denota $X \,  \sim \, \P(\lambda)$ \ con \ $\lambda  \in \Rset_+^*$ \ llamada
 \begin{tabular}
 {
 |>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
 }
 %
 \hline
@@ -764,7 +794,7 @@ siguientes:
 \begin{tabular}
 {
 |>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
 }
 %
 \hline
@@ -866,7 +896,7 @@ La media va a ser el centro de gravedad de $\D$.
 % \begin{tabular}
 % {
 % |>{\vspace{-2mm}}p{.4\textwidth}|
-% >{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+% >{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
 % }
 % %
 % \hline
@@ -930,7 +960,7 @@ siguientes:
 \begin{tabular}
 {
 |>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
 }
 %
 \hline
@@ -1022,7 +1052,7 @@ para cualquier Gaussiana por transformaci\'on lineal; ver secciones anteriores):
 \begin{tabular}
 {
 |>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
 }
 %
 \hline
@@ -1079,7 +1109,7 @@ estandar (a), y la funci\'on de repartici\'on asociada (b).}
 \label{Fig:MP:Gaussiana}
 \end{figure}
 
-\SZ{
+%\SZ{Poner los ticks de axis detras}
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/Gaussiana2D} \end{center}
 % 
@@ -1088,13 +1118,13 @@ estandar (a), y la funci\'on de repartici\'on asociada (b).}
   R(\theta)^t$  \ con  \  $R(\theta) =  \protect\begin{bmatrix}  \cos\theta &  -
     \sin\theta\\[2mm] \sin\theta & \cos\theta \protect\end{bmatrix}$ \ matriz de
   rotaci\'on   y   \    $\Delta   =   \diag\left(\protect\begin{bmatrix}   1   &
-      a\protect\end{bmatrix}  \right)$ \  matriz de  cambio  de escala  \ y  sus
-  marginales ($X_1 \, \sim \, \N\left(0,\cos^2\theta + a^2 \sin^2\theta \right)$
-  \ y \ $X_2 \, \sim  \, \N\left(0,\sin^2\theta + a^2 \cos^2\theta \right)$; ver
-  m\'as adelante).}
+      a\protect\end{bmatrix}  \right)$  \ matriz  de  cambio  de  escala, y  sus
+  marginales  \  $X_1  \,  \sim  \, \N\left(0,\cos^2\theta  +  a^2  \sin^2\theta
+  \right)$  \ y  \ $X_2  \, \sim  \, \N\left(0,\sin^2\theta  +  a^2 \cos^2\theta
+  \right)$ \ (ver m\'as  adelante). En la figura, $a = \frac14$  \ y \ $\theta =
+  \frac{\pi}{6}$.}
 \label{Fig:MP:Gaussiana2D}
 \end{figure}
-}
 
 La gaussiana tiene un par de propiedades particulares:
 %
@@ -1110,8 +1140,8 @@ La gaussiana tiene un par de propiedades particulares:
     \left( m_i + b_i \right) \, , \, \sum_{i=1}^n A_i \Sigma_i A_i^t \right)
   \]
   % 
-  En particular, cualquier combinaci\'on linear  de los componentes de un vector
-  Gaussiano da una gaussiana.  Reciprocamente, si cualquier combinaci\'on linear
+  En particular, cualquier combinaci\'on lineal  de los componentes de un vector
+  Gaussiano da una gaussiana.  Reciprocamente, si cualquier combinaci\'on lineal
   de los componentes de un vector aleatorio sigue una ley gaussiana, entonces el
   vector es gaussiano.
 \end{teorema}
@@ -1151,7 +1181,7 @@ parametro de  forma} \ y \  $b \in \Rset_+^*$  \ llamada {\em taza}  (inversa de
 \begin{tabular}
 {
 |>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
 }
 %
 \hline
@@ -1234,7 +1264,7 @@ Adem\'as,  se muestra  sencillamente  por  cambio de  variables  y la  funci\'on
 caracter\'istica un v\'inculo con variables gausianas:
 %
 \begin{lema}[V\'inculo con la gaussiana]
-\label{Lem:MP:VinvuloGammaGaussiana}
+\label{Lem:MP:VinculoGammaGaussiana}
 %
   Sean $X_i \, \sim \,  \N\left( 0 , \sigma^2 \right), \: i = 1  , \ldots , n$ \
   independientes. Entonces
@@ -1272,7 +1302,7 @@ Se denota $X  \sim \beta(a,b)$ \ con  \ $(a,b) \in \Rset_+^{* \,  2}$ \ llamados
 \begin{tabular}
 {
 |>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.5\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
 }
 %
 \hline
@@ -1509,10 +1539,221 @@ de variables, se demuestra el lema siguiente:
 %= \frac16$.
 
 
-\SZ{
+
 % --------------------------------- Dirichlet
 \subsubseccion{Distribuci\'on de Dirichlet}
 \label{Sssec:MP:Dirichlet}
+
+Esta distribuci\'on  es una extensi\'on  multivariada de las variables  beta. Se
+nota \ $X \, \sim \, \Dir(a)$ \ con \  $a \in \Rset_+^{* \, k}$ \ y \ $X$ \ vive
+sobre el $(k-1)$-simplex  estandar \ $\Simp_{k-1}$. $a$ es  llamado parametro de
+forma. Como en el caso de vectores de distribuci\'on multinomial, a pesar de que
+se escribe \ $X$ \ de manera $k$-dimensional, el vector partenece a una variedad
+\ $d = k-1$ \ dimensional y en el caso  \ $k = 2$ \ se recupera la ley beta. Las
+caracteristicas de un vector de Dirichlet son:
+%
+\begin{center}
+\begin{tabular}
+{
+|>{\vspace{-2mm}}p{.4\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
+}
+%
+\hline
+%
+Dominio de definici\'on~\footnotemark & $\X = \Simp_{k-1}, \: k \in \Nset \setminus \{ 0 \, , \, 1 \}$\\[2mm]
+\hline
+%
+Parametros & $a \in \Rset_+^{* \, k}$ (forma)\\[2mm]
+\hline
+%
+Densidad   de    probabilidad   &   $\displaystyle    p_X(x)   =   \frac{\prod_{i=1}^k x_i^{a_i-1}}{B(a)}$\\[2mm]
+\hline
+%%
+%%Momentos & $ \Esp\left[ X^k \right] = p^k$\\[2mm]
+%%\hline
+%%
+%%Momento factorial & $\Esp\left[ (X)_k \right] = ?$\\[2mm]
+%%\hline
+%%
+Promedio & $\displaystyle m_X = \frac{a}{\sum_{i=1}^k a_i} \equiv \tilde{a}$\\[2.5mm]
+\hline
+%
+Covarianza & $\displaystyle \Sigma_X = \frac{\diag\left( \widetilde{a} \right) -
+\tilde{a} \tilde{a}^t}{1 + \sum_{i=1}^k a_k}$\\[2.5mm]
+\hline
+%%
+%Asimetr\'ia & $\displaystyle \gamma_X = \frac{2 \, (b - a) \sqrt{a + b + 1}}{( a
+%+ b + 2) \sqrt{a b}}$\\[2mm]
+%\hline
+%%
+%Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = \frac{6 \, \left( (a - b)^2 (a + b + 1) - a
+%b (a  + b  + 2)  \right)}{a \, b  \left( a  + b  + 2 \right)  \left( a  + b  + 3
+%\right)}$\\[2mm]
+%\hline
+%%
+%%Generadora de probabilidad & $G_X(z) = e^{\lambda (z-1)}$ \ para \ $z \in \Cset$\\[2mm]
+%%\hline
+%%
+%Generadora de momentos & $\displaystyle M_X(u)  = \hypgeom{1}{1}\left( a , a + b
+%\, ; \, u \right)$ \ para \ $u \in \Cset$\\[2mm]
+%\hline
+%%
+%Funci\'on     caracter\'istica     &     $\displaystyle     \Phi_X(\omega)     =
+%\hypgeom{1}{1}\left( a , a + b \, ; \, \imath \omega \right)$\\[2mm]
+%\hline
+\end{tabular}
+\footnotetext{De  hecho,  se puede  considerar  que  el  vector aleatorio  es  \
+  $(k-1)$-dimensional  \  $\widetilde{X}  =  \begin{bmatrix}  \widetilde{X}_1  &
+    \cdots   &  \widetilde{X}_{k-1}   \end{bmatrix}^t$  \   definido   sobre  el
+  hipertriangulo \  $\widetilde{\X} = \left\{ \widetilde{x} \in  [0 \; 1]^{k-1},
+    \:  \sum_{i=1}^{k-1}  \widetilde{x}_i  \le  1  \right\}$.   Su  densidad  de
+  probabilidad,  con   respeto  a  la  medida   de  Lebesgue,  es   dada  por  \
+  $p_{\widetilde{X}}\left(   \widetilde{x}   \right)  =   \frac{\prod_{i=1}^{k-1}
+    \widetilde{x}_i^{\,  a_i-1} \, \left(  1 -  \sum_{i=1}^{k-1} \widetilde{x}_i
+    \right)^{a_k-1}}{B(a)}$.   El v\'inculo entre  las funciones  generadoras de
+  momento  es trivialmente  \ $M_{\widetilde{X}}\left(  \widetilde{u}  \right) =
+  M_X\left(  \begin{bmatrix} \widetilde{u} &  0 \end{bmatrix}^t  \right)$ \  o \
+  $M_X(u) =  e^{\imath u_k} M_{\widetilde{X}}\left( \begin{bmatrix} u_1  - u_k &
+      \cdots &  u_{k-1} - u_k  \end{bmatrix}^t \right)$, y similarmente  para la
+  funci\'on c\'aracteristica.\label{Foot:MP:Dirichlet}}
+\end{center}
+%
+$\displaystyle B(a) = \frac{\prod_{i=1}^k \Gamma\left( a_i \right)}{\Gamma\left(
+    \sum_{i=1}^k     a_i     \right)}$    \     es     la    funci\'on     beta
+multivariada~\cite[Teo.~1.8.6]{AndAsk99}.
+%y \ $\displaystyle
+%\hypgeom{1}{1}$  \ es  la funci\'on  confluent hipergeom\'etrica~\cite{AbrSte70,
+%AndAsk99, GraRyz15}.
+
+La figura Fig.~\ref{Fig:MP:Dirichlet} representa  el dominio de definici\'on del
+vector (a) y su densidad de  probabildad con las marginales (ver m\'as adelante)
+para $k = 3$.
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/Dirichlet} \end{center}
+%
+\leyenda{Ilustraci\'on del dominio  $\X$ de definici\'on de la  ley de Dirichlet
+  para  $k   =  3$  (a),  y   densidad  de  probabilidad   de  $\widetilde{X}  =
+  \protect\begin{bmatrix}   X_1  &  X_2   \protect\end{bmatrix}^t$  \   ($X_3  =
+  1-X_1-X_2$)  \ sobre  \ $\widetilde{\X}$  \ con  las marginales  (ver  nota de
+  pie~\ref{Foot:MP:Dirichlet}). Los parametros son \ $a = \protect\begin{bmatrix} 3 & 2 &
+    2 \protect\end{bmatrix}^t$  (b) y \ $a  = \protect\begin{bmatrix} 3 &  1 & 2
+    \protect\end{bmatrix}^t$ (c).}
+\label{Fig:MP:Dirichlet}
+\end{figure}
+
+
+Vectores  de  distribuci\'on  de  Dirichlet tienen  tambi\'en  unas  propiedades
+notables, parecidas a las de la beta:
+%
+\begin{lema}[Reflexividad]
+\label{Lem:MP:ReflexividadDir}
+%
+Sea \ $X \, \sim  \, \Dir(a), \: a \in \Rset_+^{* \, k}$ \  y \ $\Pi$ \ matriz \
+$k \times k$ \ de permutaci\'on. Entonces
+  %
+  \[
+  \Pi X \, \sim \, \Dir\left( \Pi a \right)
+  \]
+  %
+\end{lema}
+%
+Adem\'as, se muestra una stabilidad remplazando dos componentes por su suma:
+%
+\begin{lema}[Stabilidad por agregaci\'on]
+\label{Lem:MP:StabSumaDir}
+%
+Sea  \ $X  =  \begin{bmatrix} X_1  & \cdots  &  X_k \end{bmatrix}^t  \, \sim  \,
+\Dir(a),  \:  a  =  \begin{bmatrix}  a_1  & \cdots  &  a_k  \end{bmatrix}^t  \in
+\Rset_+^{* \, k}$ \ y \ $J^{(i,j)} = \begin{bmatrix} I_{j-1} & \un_i & 0 \\[1mm]
+  0 & 0 & I_{k-j}\end{bmatrix}$ \ matriz \ $(k-1) \times k$ \ donde \ $I_l$ \ es
+la identidad $l \times l$, $\un_i$ el vector con component $i$-\'esima igual a 1
+(0 si no) y $0$ matrices de 0 (todas de tama\~no adcuado).  En \ $J^{(i,j)} X$ \
+se saca la  componente $j$-\'esima, se re-emplaza la  componente $i$-\'esima por
+la suma $X_i + X_j$ \ y se conservan las otras componentes. Entonces,
+  % , \ie $J^{(i,j}_{l,l} = 1, \: 1 \le l < j, \: J^{(i,j}_{l,l+1} = 1, \: j \le
+  % l  < k,  \: $.  Entonces, para  cualquier $1  \le i  < j  \le k$,  notando \
+  % $\widetilde{X}$ \ el vector de  componentes $\widetilde{X}_l = X_l, \: 1 \le
+  % l < j,  \, l \ne i$, \  $\widetilde{X}_i = X_i + X_j$,  \ $\widetilde{X}_l =
+  % X_{l+1}, \: j+1 \le k-1$,
+  %
+  \[
+  J^{(i,j)} X \, \sim \, \Dir\left( J^{(i,j)} a \right)  
+  \]
+  %
+\end{lema}
+%
+\begin{proof}
+  Del lema precediente, notando que existe una matriz de permutaci\'on \ $\Pi$ \
+  tal que  \ $J^{(i,j)}  = J^{(1,2)} \Pi$,  se puede  concentrarse en el  caso \
+  $(i,j) = (1,2)$. Sea el cambio de variables $g: x = (x_1,\ldots,x_k) \mapsto u
+  =  (u_1,\ldots,u_k) = (x_1,x_1+x_2,x_3,\ldots,x_k)$.  Entonces \  $g^{-1}(u) =
+  (u_1,u_2-u_1,u_3,\ldots,u_k)$ \ es de determinente de matriz Jacobiana igual a
+  \ $1$ \ dando para $U = g(X)$ \ la densidad
+  %
+  \[
+  p_U(u)  = \frac{u_1^{a_1-1}  \left(  u_2 -  u_1 \right)^{a_2-1}  \prod_{i=3}^k
+    u_i^{a_i-1}}{B(a)}
+  \]
+  %
+  sobre $g\left(  \Simp_{k-1} \right)$. Para $u_2  \in [0 \; 1]$  \ tenemos $u_1
+  \in [  0 \;  u_2]$ \ as\'i  que, por  marginalizaci\'on en $u_1$  obtenemos la
+  densidad
+  %
+  \begin{eqnarray*}
+  p_{J^{(1,2)} X}(u_2,\ldots,u_k) & = & \frac{\prod_{i=3}^k u_i^{a_i-1}}{B(a)}
+  \int_0^{u_2} u_1^{a_1-1} \left( u_2 - u_1 \right)^{a_2-1} \, du_1\\[2mm]
+  %
+  & = & \frac{\prod_{i=3}^k u_i^{a_i-1}}{B(a)} \, u_2^{a_1+a_2-1} \int_0^1
+  v_1^{a_1-1} \left( 1 - v_1 \right)^{a_2-1} \, dv_1
+  \end{eqnarray*}
+  %
+  con el cambio de variables $u_1 = u_2 v_1$. Se cierra la prueba notando que la
+  integral   vale  \  $B(a_1,a_2)$   \  y   que  \   $\frac{B(a_1,a_2)}{B(a)}  =
+  \frac{1}{B\left( J^{(1,2)} a \right)}$.
+\end{proof}
+
+De este lema, aplicado de manera recueriva, se obtiene en corolario siguiente:
+%
+\begin{corolario}
+\label{Cor:MP:MarginalDirichletBeta}
+%
+  Sea  \ $X  \,  \sim \,  \Dir(a)$, entonces  \  $\displaystyle X_i  \, \sim  \,
+  \beta\left( a_i \, , \, \sum_{j=1, j \ne i}^k a_j \right)$.
+\end{corolario}
+
+Naturalmente,  la ley de  Dirichelt siendo  una extensi\'on  de la  beta, existe
+tambi\'en un v\'inculo entre esta ley y variables de distribuci\'on gamma:
+%
+\begin{lema}[V\'inculo con la ley gamma]
+\label{Lem:MP:VinculoDirichletGamma}
+%
+Sea \ $X$ \ vector $k$-dimensional de componente \ $i$-\'esima \ $X_i \, \sim \,
+\G(a_i,c), \: i = 1, \ldots , k$ \ independientes \ y \ $a$ vector de componente
+$i$-\'esima \ $a_i$. Entonces
+  %
+  \[
+  \frac{X}{\sum_{i=1}^k X_i} \, \sim \, \Dir(a)
+  \]
+  %
+  (independientemente  de $c$).   Adem\'as, $\frac{X}{\sum_{i=1}^k  X_i}$ \  y \
+  $\sum_{i=1}^k X_i$ \ son independientes.
+\end{lema}
+%
+\begin{proof}
+  La    prueba   sigue    exactamente   los    mismos   pasos    que    la   del
+  lema~\ref{Lem:MP:VinculoBetaGamma}.
+\end{proof}
+
+\SZ{
+densidad con respeto a la medida de Haar? sobre el simplex; ver tilde X, 1 dim continuo sobre hipertriangulo
+
+Ref. Dirichlet, Liouville 1839
+
+Conjugate priori of a multinomial (beta es para la binomial; ver Robert por ejemplo)
+
+Ver generadoras
 }
 
 

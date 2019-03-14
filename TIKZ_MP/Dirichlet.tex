@@ -1,0 +1,115 @@
+\begin{tikzpicture}%[scale=.8]
+\shorthandoff{>}
+%
+\tikzset{declare function={
+xplus(\x) = max(\x,0);
+}}
+
+% Simplex
+\tdplotsetmaincoords{45}{65}
+\begin{scope}[tdplot_main_coords,scale=.75]
+%
+% Dirichlet: \X = S_{k-1} y \widetilde{X}
+\pgfmathsetmacro{\dx}{3};% scaling
+\draw[->,>=stealth] (-.25,0,0)--({\dx+.5},0,0) node[below right,scale=.9]{$x_1$}; \node at (\dx,0,0)[left,scale=.8]{$1$};
+\draw[->,>=stealth] (0,-.25,0)--(0,{\dx+.5},0) node[below right,scale=.9]{$x_2$}; \node at (0,\dx,0)[below,scale=.8]{$1$};
+\draw[->,>=stealth] (0,0,-.25)--(0,0,{\dx+.5}) node[above,scale=.9]{$x_3$}; \node at (0,0,\dx)[left,scale=.8]{$1$};
+\node at (0,0,0)[below left,scale=.8]{$0$};
+%
+% tilde X
+\filldraw[fill=black!50,opacity=.5] (0,0,0)--(\dx,0,0)--(0,\dx,0);
+\draw[thick,color=black,dashed] (0,0,0)--(\dx,0,0)--(0,\dx,0)--(0,0,0);
+\node at ({\dx/15},{\dx/20},0)[right,scale=.7]{$\widetilde{\X}$};
+%
+% Simplex S_2
+\filldraw[fill=black!75,opacity=.5] (\dx,0,0)--(0,\dx,0)--(0,0,\dx);
+\draw[thick,color=black] (\dx,0,0)--(0,\dx,0)--(0,0,\dx)--(\dx,0,0);
+\node at ({.05*\dx},{.05*\dx},{.8*\dx})[right,scale=.7]{$\Simp_2$};
+%
+\end{scope}
+%
+%
+% densidad (3,2,2)
+\begin{scope}[xshift=4cm,yshift=-2cm,scale=.75]
+%
+\pgfmathsetmacro{\au}{3};% a1
+\pgfmathsetmacro{\ad}{2};% a2
+\pgfmathsetmacro{\at}{2};% a3
+\pgfmathsetmacro{\B}{factorial(\au-1)*factorial(\ad-1)*factorial(\at-1)/factorial(\au+\ad+\at-1)};% normalizacion
+\pgfmathsetmacro{\Bu}{factorial(\au-1)*factorial(\ad+\at-1)/factorial(\au+\ad+\at-1)};% normalizacion 1
+\pgfmathsetmacro{\Bd}{factorial(\ad-1)*factorial(\au+\at-1)/factorial(\au+\ad+\at-1)};% normalizacion 2
+\pgfmathsetmacro{\ma}{((\au-1)^(\au-1))*((\ad-1)^(\ad-1))*((\at-1)^(\at-1))/((\au+\ad+\at-3)^(\au+\ad+\at-3))/\B};
+%
+\begin{axis}[
+    colormap = {whiteblack}{color(0cm)  = (white);color(1cm) = (black)},
+    width=.5\textwidth,
+    view={45}{65},
+    enlargelimits=false,
+    %grid=major,
+    domain=0:1,
+    y domain=0:1,
+    zmax={.8*\ma},
+    color=black,
+    samples=60,
+    xlabel=$\widetilde{x}_1$,
+    ylabel=$\widetilde{x}_2$,
+    zlabel=$p_{\widetilde{X}}$,
+]
+%
+% Dirichlet
+\addplot3 [surf,opacity=.8] {(x^(\au-1))*(y^(\ad-1))*(xplus(1-x-y)^(\at-1))/\B};
+%
+% Marginales
+\addplot3 [domain=0:1,samples=51, samples y=0, thick, smooth, color=black] (x,1,{(x^(\au-1))*((1-x)^(\ad+\at-1))/\Bu});
+\addplot3 [domain=0:1,samples=51, samples y=0, thick, smooth, color=black] (0,x,{(x^(\ad-1))*((1-x)^(\au+\at-1))/\Bd});
+%
+\node at (axis cs:.5,1,{1/(2^(\au+\ad+\at-2))/\Bu})[right]{$p_{X_1}$};
+\node at (axis cs:0,.5,{1/(2^(\au+\ad+\at-2))/\Bd})[above]{$p_{X_2}$};
+%
+\end{axis}
+\end{scope}
+%
+%
+% densidad (3,2,2)
+\begin{scope}[xshift=11cm,yshift=-2cm,scale=.75]
+%
+\pgfmathsetmacro{\au}{3};% a1
+\pgfmathsetmacro{\ad}{1};% a2
+\pgfmathsetmacro{\at}{2};% a3
+\pgfmathsetmacro{\B}{factorial(\au-1)*factorial(\ad-1)*factorial(\at-1)/factorial(\au+\ad+\at-1)};% normalizacion
+\pgfmathsetmacro{\Bu}{factorial(\au-1)*factorial(\ad+\at-1)/factorial(\au+\ad+\at-1)};% normalizacion 1
+\pgfmathsetmacro{\Bd}{factorial(\ad-1)*factorial(\au+\at-1)/factorial(\au+\ad+\at-1)};% normalizacion 2
+\pgfmathsetmacro{\ma}{((\au-1)^(\au-1))*((\ad-1)^(\ad-1))*((\at-1)^(\at-1))/((\au+\ad+\at-3)^(\au+\ad+\at-3))/\B};
+%
+\begin{axis}[
+    colormap = {whiteblack}{color(0cm)  = (white);color(1cm) = (black)},
+    width=.5\textwidth,
+    view={45}{65},
+    enlargelimits=false,
+    %grid=major,
+    domain=0:1,
+    y domain=0:1,
+    zmax={.65*\ma},
+    color=black,
+    samples=60,
+    xlabel=$\widetilde{x}_1$,
+    ylabel=$\widetilde{x}_2$,
+    zlabel=$p_{\widetilde{X}}$,
+]
+%
+% Dirichlet
+\addplot3 [surf,opacity=.8] {(x^(\au-1))*(y^(\ad-1))*(xplus(1-x-y)^(\at-1))/\B};
+%
+% Marginales
+\addplot3 [domain=0:1,samples=51, samples y=0, thick, smooth, color=black] (x,1,{(x^(\au-1))*((1-x)^(\ad+\at-1))/\Bu});
+\addplot3 [domain=0:1,samples=51, samples y=0, thick, smooth, color=black] (0,x,{(x^(\ad-1))*((1-x)^(\au+\at-1))/\Bd});%
+%
+\node at (axis cs:.5,1,{1/(2^(\au+\ad+\at-2))/\Bu})[right]{$p_{X_1}$};
+\node at (axis cs:0,.5,{1/(2^(\au+\ad+\at-2))/\Bd})[above]{$p_{X_2}$};
+\end{axis}
+\end{scope}
+%
+\node at (1.2,-3){(a)};
+\node at (6.6,-3){(b)};
+\node at (13.6,-3){(c)};
+\end{tikzpicture}

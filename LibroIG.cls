@@ -14,7 +14,7 @@
 \RequirePackage{amsmath,amssymb,amsthm,bbm,mathtools} % mathematical packages
 %\RequirePackage{stix} % hebrew letters
 \RequirePackage{xspace} % spacing package
-\RequirePackage{epsfig,graphics,graphicx,color,tikz,pgfplots,etoolbox} % figures packages
+\RequirePackage{epsfig,graphics,graphicx,color,tikz,tikz-3dplot,pgfplots,etoolbox} % figures packages
 \RequirePackage{enumitem} % to manage the labels... en enumerate
 %\RequirePackage[labelsep=endash]{caption}
 %\RequirePackage{setspace} % space package
