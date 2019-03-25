@@ -1,5 +1,12 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\citeauthoryear{Abramowitz \& Stegun}{Abramowitz \&
+  Stegun}{1970}]{AbrSte70}
+Abramowitz, M. \& Stegun, I.~A. (1970).
+\newblock {\em Handbook of Mathematical Functions with Formulas, Graphs, and
+  Mathematical Tables}.
+\newblock 9th printing. New-York: Dover.
+
 \bibitem[\protect\citeauthoryear{Acz{\'e}l \& Dar{\'o}czy}{Acz{\'e}l \&
   Dar{\'o}czy}{1975}]{AczDar75}
 Acz{\'e}l, J. \& Dar{\'o}czy, Z. (1975).
@@ -24,6 +31,25 @@ Andersen, E.~B. (1970).
 \newblock Sufficiency and exponential families for discrete sample spaces.
 \newblock {\em Journal of the American Statistical Association}, {\em
   65\/}(331), 1248--1255.
+
+\bibitem[\protect\citeauthoryear{Andrew \& Berndt}{Andrew \&
+  Berndt}{2013}]{AndBer13}
+Andrew, G.~E. \& Berndt, B.~C. (2013).
+\newblock {\em Ramanujan's Lost Notebook-Part {IV}}.
+\newblock New-York: Springer.
+
+\bibitem[\protect\citeauthoryear{Andrews, Askey \& Roy}{Andrews
+  et~al.}{1999}]{AndAsk99}
+Andrews, G.~E., Askey, R., \& Roy, R. (1999).
+\newblock {\em Special Functions}.
+\newblock Cambridge, UK: Cambridge University Press.
+
+\bibitem[\protect\citeauthoryear{Appell}{Appell}{1925}]{App25}
+Appell, P. (1925).
+\newblock {\em Sur les fonctions hyperg{\'e}om{\'e}triques de plusieurs
+  variables, les p{\^o}lynomes d'{H}ermite et autres fonctions
+  hypersph{\'e}riques dans l'hyperespace}, volume fascicule 3.
+\newblock Paris: Mémorial des Sciences Mathématiques; Gauthier-Villars.
 
 \bibitem[\protect\citeauthoryear{Arimoto}{Arimoto}{1971}]{Ari71}
 Arimoto, S. (1971).
@@ -451,6 +477,11 @@ Doob, J.~L. (1936).
 \newblock {\em Transactions of the American Mathematical Society}, {\em
   39\/}(3), 410--421.
 
+\bibitem[\protect\citeauthoryear{Dutka}{Dutka}{1991}]{Dut91}
+Dutka, J. (1991).
+\newblock The early history of the factorial function.
+\newblock {\em Archive for History of Exact Sciences}, {\em 43\/}(3), 225--249.
+
 \bibitem[\protect\citeauthoryear{{(E. D. Sylla, Translator)}}{{(E. D. Sylla,
   Translator)}}{1713}]{Ber1713:2}
 {(E. D. Sylla, Translator)}, J.~B. (1713).
@@ -484,6 +515,13 @@ Endres, D. \& Schindelin, J. (2003).
 \newblock A new metric for probability distributions.
 \newblock {\em IEEE Transactions on Information Theory}, {\em 49\/}(7),
   1858--1860.
+
+\bibitem[\protect\citeauthoryear{Erd{\'e}lyi}{Erd{\'e}lyi}{1940}]{Erd40}
+Erd{\'e}lyi, A. (1940).
+\newblock Integration of a certain system of linear partial differential
+  equations of hypergeometric type.
+\newblock {\em Proceedings of the Royal Society of Edinburgh}, {\em 59},
+  224--241.
 
 \bibitem[\protect\citeauthoryear{Esteban}{Esteban}{1997}]{Est97}
 Esteban, M.~D. (1997).
@@ -556,8 +594,13 @@ Fisher, R.~A. (1922).
 \newblock {\em Philosophical Transactions of the Royal Society of London A},
   {\em 222\/}(594-604), 309--368.
 
-\bibitem[\protect\citeauthoryear{Fisher}{Fisher}{1925}]{Fis25:07}
-Fisher, R.~A. (1925).
+\bibitem[\protect\citeauthoryear{Fisher}{Fisher}{1925a}]{Fis25}
+Fisher, R.~A. (1925a).
+\newblock Applications of ``{S}tudent's'' distributions.
+\newblock {\em Metron}, {\em 5\/}(3), 90--104.
+
+\bibitem[\protect\citeauthoryear{Fisher}{Fisher}{1925b}]{Fis25:07}
+Fisher, R.~A. (1925b).
 \newblock Theory of statistical estimation.
 \newblock {\em Mathematical Proceedings of the Cambridge Philosophical
   Society}, {\em 22\/}(5), 700--725.
@@ -566,6 +609,11 @@ Fisher, R.~A. (1925).
   Rioul}{2016}]{FlaRio16}
 Flandrin, P. \& Rioul, O. (2016).
 \newblock Laplume, sous le masque.
+
+\bibitem[\protect\citeauthoryear{Fourier}{Fourier}{1822}]{Fou22}
+Fourier, J. (1822).
+\newblock {\em Th{\'e}orie Analitique de la Chaleur}.
+\newblock Paris: Firmin Didot, père et fils.
 
 \bibitem[\protect\citeauthoryear{Fr{\'e}chet}{Fr{\'e}chet}{1943}]{Fre43}
 Fr{\'e}chet, M. (1943).
@@ -628,6 +676,19 @@ Golberg, R.~R. (1961).
 \newblock {\em Fourier Transforms}.
 \newblock Cambridge University Press.
 
+\bibitem[\protect\citeauthoryear{Gradshteyn \& Ryzhik}{Gradshteyn \&
+  Ryzhik}{2015}]{GraRyz15}
+Gradshteyn, I.~S. \& Ryzhik, I.~M. (2015).
+\newblock {\em Table of Integrals, Series, and Products\/} (8th ed.).
+\newblock San Diego: Academic Press.
+
+\bibitem[\protect\citeauthoryear{Gray \& Mathew}{Gray \&
+  Mathew}{1895}]{GraMat95}
+Gray, A. \& Mathew, G.~B. (1895).
+\newblock {\em A treatise on Bessel functions and their application to
+  physics}.
+\newblock Macmillan and co.
+
 \bibitem[\protect\citeauthoryear{Guo, Shamai \& Verd{\'u}}{Guo
   et~al.}{2005}]{GuoSha05}
 Guo, D., Shamai, S., \& Verd{\'u}, S. (2005).
@@ -641,6 +702,12 @@ Guo, D., Shamai, S., \& Verd{\'u}, S. (2005).
 Gupta, H.~C. \& Sharma, B.~D. (1976).
 \newblock On non-additive measures of inaccuracy.
 \newblock {\em Czechoslovak Mathematical Journal}, {\em 26\/}(4), 584--595.
+
+\bibitem[\protect\citeauthoryear{Gupta \& Richards}{Gupta \&
+  Richards}{2001}]{GupRic01}
+Gupta, R.~D. \& Richards, D. S.~P. (2001).
+\newblock The history of the {D}irichlet and {L}iouville distributions.
+\newblock {\em International Statistical Review}, {\em 69\/}(3), 433--446.
 
 \bibitem[\protect\citeauthoryear{Hadamard}{Hadamard}{1893}]{Had93}
 Hadamard, J. (1893).
@@ -711,6 +778,19 @@ Hellinger, E. (1909).
   unendlichvielen ver{\"a}nderlichen.
 \newblock {\em Journal f{\"u}r die riene und angewandte Mathematik}, 210--271.
 
+\bibitem[\protect\citeauthoryear{Helmert}{Helmert}{1875}]{Hel75}
+Helmert, F.~R. (1875).
+\newblock {\"U}ber die bestimmung des wahrscheinlichen fehlers aus einer
+  endlichen anzahl wahrer beobachtungsfehler.
+\newblock {\em Zeitschrift f{\"u}r Mathematik und Physik}, (8), 300--303.
+
+\bibitem[\protect\citeauthoryear{Helmert}{Helmert}{1876}]{Hel76}
+Helmert, F.~R. (1876).
+\newblock Die genauigkeit der formel von peters zur berechnung des
+  wahrscheinlichen beobachtungsfehlers directer beobachtungen gleicher
+  genauigkeit.
+\newblock {\em Astronomische Nachrichten}, {\em 88\/}(8-9), 113--131.
+
 \bibitem[\protect\citeauthoryear{Hogg, {McK}ean \& Craig}{Hogg
   et~al.}{2013}]{HogMck13}
 Hogg, R.~V., {McK}ean, J.~W., \& Craig, A. (2013).
@@ -745,6 +825,20 @@ Horn, R.~A. \& Johnson, C.~R. (2013).
 Huffman, D.~A. (1952).
 \newblock A method for the construction of minimum-redundancy codes.
 \newblock {\em Proceedings of the IRE}, {\em 40\/}(9), 1098--1101.
+
+\bibitem[\protect\citeauthoryear{Humbert}{Humbert}{1922}]{Hum22}
+Humbert, P. (1922).
+\newblock The confluent hypergeometric functions of two variables.
+\newblock {\em Proceedings of the Royal Society of Edinburgh}, {\em 41},
+  73--96.
+
+\bibitem[\protect\citeauthoryear{Hurst}{Hurst}{1995}]{Hur95}
+Hurst, S. (1995).
+\newblock The characteristic function of the student-t distribution.
+\newblock Technical Report Financial Mathematics Research Report No.
+  FMRR006-95, Statistics Research Report No. SRR044-95, Center for Financial
+  Mathematics, School of Mathematical Sciences, Australian National University,
+  Canberra, Australia.
 
 \bibitem[\protect\citeauthoryear{Ibarrola, Pardo \& Quesada}{Ibarrola
   et~al.}{1997}]{IbaPar97}
@@ -919,6 +1013,17 @@ Khinchin, A.~I. (1957).
 \newblock {\em Mathematical foundations of information theory}.
 \newblock New-York: Dover Publications.
 
+\bibitem[\protect\citeauthoryear{Kibria \& Joarder}{Kibria \&
+  Joarder}{2006}]{KibJoa06}
+Kibria, B. M.~G. \& Joarder, A.~H. (2006).
+\newblock A short review of multivariate {$t$}-distribution.
+\newblock {\em Journal of Statistical Research}, {\em 40\/}(1), 59--72.
+
+\bibitem[\protect\citeauthoryear{Knuth}{Knuth}{1992}]{Knu92}
+Knuth, D.~E. (1992).
+\newblock Two notes on notation.
+\newblock {\em The American Mathematical Monthly}, {\em 99\/}(5), 403--422.
+
 \bibitem[\protect\citeauthoryear{Knuth}{Knuth}{1997}]{Knu97_v1}
 Knuth, D.~E. (1997).
 \newblock {\em The Art of Computer Programming\/} (3rd ed.)., volume 1 /
@@ -1016,6 +1121,11 @@ Laplume, J. (1948).
   1348--1349.
 \newblock S{\'e}ance du 26 avril.
 
+\bibitem[\protect\citeauthoryear{{Le Cam}}{{Le Cam}}{1986}]{Cam86}
+{Le Cam}, L. (1986).
+\newblock The central limit theorem around 1935.
+\newblock {\em Statistical Science}, {\em 1\/}(1), 78--91.
+
 \bibitem[\protect\citeauthoryear{Lebesgue}{Lebesgue}{1904}]{Leb04}
 Lebesgue, H. (1904).
 \newblock {\em Le{\c{c}}ons sur l'Int{\'e}gration et la recherche des Fonctions
@@ -1038,6 +1148,12 @@ Lee, P.~M. (1964).
 Lehmann, E.~L. \& Casella, G. (1998).
 \newblock {\em Theory of Point Estimation\/} (2nd ed.).
 \newblock New-York: Springer-Verlag.
+
+\bibitem[\protect\citeauthoryear{Lejeune-Dirichlet}{Lejeune-Dirichlet}{1839}]{Dir39}
+Lejeune-Dirichlet (1839).
+\newblock Sur une nouvelle m{\'e}thode pour la d{\'e}termination des
+  int{\'e}grales multiples.
+\newblock {\em Journal de Math{\'e}matiques Pures et Appliqu{\'e}es}, 164--168.
 
 \bibitem[\protect\citeauthoryear{Lieb}{Lieb}{1975}]{Lie75}
 Lieb, E.~H. (1975).
@@ -1093,6 +1209,11 @@ Lundheim, L. (2002).
 \newblock On {S}hannon and ``{S}hannon's formula''.
 \newblock {\em Telektronikk}, {\em 98\/}(1), 20--29.
 
+\bibitem[\protect\citeauthoryear{L{\"u}roth}{L{\"u}roth}{1876}]{Lur76}
+L{\"u}roth, J. (1876).
+\newblock Vergleichung von zwei werthen des wahrscheinlichen fehlers.
+\newblock {\em Astronomische Nachrichten}, {\em 87\/}(14), 209--220.
+
 \bibitem[\protect\citeauthoryear{Lutwak, Lv, Yang \& Zhang}{Lutwak
   et~al.}{2012}]{LutLv12}
 Lutwak, E., Lv, S., Yang, D., \& Zhang, G. (2012).
@@ -1107,6 +1228,12 @@ Lutwak, E., Yang, D., \& Zhang, G. (2005).
   entropy and generalized {F}isher information.
 \newblock {\em IEEE Transactions on Information Theory}, {\em 51\/}(2),
   473--478.
+
+\bibitem[\protect\citeauthoryear{Mac{D}onald}{Mac{D}onald}{1898}]{Mac98}
+Mac{D}onald, H.~M. (1898).
+\newblock Zeroes of the {B}essel functions.
+\newblock {\em Proceedings of the London Mathematical Society}, {\em
+  s1-30\/}(1), 165--179.
 
 \bibitem[\protect\citeauthoryear{Madiman \& Barron}{Madiman \&
   Barron}{2007}]{MadBar07}
@@ -1252,6 +1379,13 @@ Olkin, I. \& Pratt, J.~W. (1958).
 \newblock A multivariate t{}chebycheff inequality.
 \newblock {\em The Annals of Mathematical Statistics}, {\em 29\/}(1), 226--234.
 
+\bibitem[\protect\citeauthoryear{Olkin \& Rubin}{Olkin \&
+  Rubin}{1964}]{OlkRub64}
+Olkin, I. \& Rubin, H. (1964).
+\newblock Multivariate {B}eta distributions and independence properties of the
+  {W}ishart distribution.
+\newblock {\em The Annals of Mathematical Statistics}, {\em 35\/}(1), 261--269.
+
 \bibitem[\protect\citeauthoryear{Onicescu}{Onicescu}{1966}]{Oni66}
 Onicescu, O. (1966).
 \newblock Energie informationnelle.
@@ -1312,11 +1446,23 @@ Payar{\'o}, M. \& Palomar, D.~P. (2009).
 \newblock {\em IEEE Transactions on Information Theory}, {\em 55\/}(8),
   3613--3628.
 
+\bibitem[\protect\citeauthoryear{Pearson}{Pearson}{1895}]{Pea95}
+Pearson, K. (1895).
+\newblock Contributions to the mathematical theory of evolution. {II}. skew
+  variation in homogeneous material.
+\newblock {\em Philosophical Transactions of the Royal Society A: Mathematical,
+  Physical and Engineering Sciences}, {\em 186}, 343--414.
+
 \bibitem[\protect\citeauthoryear{Pearson}{Pearson}{1905}]{Pea05}
 Pearson, K. (1905).
 \newblock {``}das fehlergesetz und seine verallgemeinerungen durch fechner und
   pearson.{''. A} rejoinder.
 \newblock {\em Biometrika}, {\em 4\/}(1/2), 169--212.
+
+\bibitem[\protect\citeauthoryear{Pearson}{Pearson}{1924}]{Pea24}
+Pearson, K. (1924).
+\newblock Historical note on the origin of the normal curve of errors.
+\newblock {\em Biometrika}, {\em 16\/}(3/4), 402--404.
 
 \bibitem[\protect\citeauthoryear{Pearson \& Filon}{Pearson \&
   Filon}{1898}]{PeaFil98}
@@ -1338,11 +1484,24 @@ Petz, D. (2007).
 \newblock Bregman divergence as relative operator entropy.
 \newblock {\em Acta Mathematica Hungarica}, {\em 116\/}(1-2), 127--131.
 
+\bibitem[\protect\citeauthoryear{Pfanzagl}{Pfanzagl}{1996}]{Pfa96}
+Pfanzagl, J. (1996).
+\newblock Studies in the history of probability and statistics {XLIV}. a
+  forerunner of the t-distribution.
+\newblock {\em Biometrika}, {\em 83\/}(4), 891--898.
+
 \bibitem[\protect\citeauthoryear{Phillips \& Rousseau}{Phillips \&
   Rousseau}{1992}]{PhiRou92}
 Phillips, F.~Y. \& Rousseau, J.~J. (Eds.). (1992).
 \newblock {\em Systems and Management Science by Extremal Methods}.
 \newblock Springer.
+
+\bibitem[\protect\citeauthoryear{Phillips}{Phillips}{1988}]{Phi88}
+Phillips, P. C.~B. (1988).
+\newblock The characteristic function of the {D}irichlet and multivariate {F}
+  distribution.
+\newblock discussion paper 985, Cowles Foundation for Research in Economics
+  Yale University.
 
 \bibitem[\protect\citeauthoryear{Pigeon}{Pigeon}{2003}]{Pig03}
 Pigeon, S. (2003).
@@ -1359,6 +1518,12 @@ Pinsky, M.~A. (2009).
 Planck, M. (2015).
 \newblock {\em Eight Lectures on Theoretical Physics}.
 \newblock New-York: Columbia University Press.
+
+\bibitem[\protect\citeauthoryear{Pochhammer}{Pochhammer}{1870}]{Poc70}
+Pochhammer, L. (1870).
+\newblock Ueber hypergeometrische functionen {$n^{\mathrm{ter}}$} ordnung.
+\newblock {\em Journal f{\"u}r die reine und angewandte Mathematik (Crelles
+  Journal)}, {\em 1870\/}(71), 316--352.
 
 \bibitem[\protect\citeauthoryear{Poor}{Poor}{1988}]{Poo88}
 Poor, H.~V. (1988).
@@ -1530,6 +1695,11 @@ Sharma, N., Das, S., \& Muthukrishnan, S. (2011).
 \newblock In {\em Proceedings of the IEEE International Symposium on
   Information Theory ({ISIT})}, (pp.\ 1945--1949)., Saint Petersburg, Russia.
 
+\bibitem[\protect\citeauthoryear{Sheynin}{Sheynin}{1995}]{She95}
+Sheynin, O. (1995).
+\newblock Helmert's work in the theory of errors.
+\newblock {\em Archive for History of Exact Sciences}, {\em 49\/}(1), 73--104.
+
 \bibitem[\protect\citeauthoryear{Sierpi{\'n}ski}{Sierpi{\'n}ski}{1918}]{Sie18}
 Sierpi{\'n}ski, W. (1918).
 \newblock Sur les d{\'e}finitions axiomatiques des ensembles mesurables.
@@ -1554,6 +1724,12 @@ Spiegel, M. (1976).
 \newblock {\em Probabilidad y Estad{\'i}stica}.
 \newblock M{\'e}xico: McGrew Hill.
 
+\bibitem[\protect\citeauthoryear{Srivastava \& Karlsson}{Srivastava \&
+  Karlsson}{1985}]{SriKar85}
+Srivastava, H.~M. \& Karlsson, P.~W. (1985).
+\newblock {\em Multiple {G}aussian Hypergeometric Series}.
+\newblock Chichester: John John Wiley \& Sons.
+
 \bibitem[\protect\citeauthoryear{Stam}{Stam}{1959}]{Sta59}
 Stam, A.~J. (1959).
 \newblock Some inequalities satisfied by the quantities of information of
@@ -1574,14 +1750,25 @@ Stellato, B., {Van Parys}, B. P.~G., \& Goulart, P.~J. (2017).
 
 \bibitem[\protect\citeauthoryear{Stirling}{Stirling}{1730}]{Sti30}
 Stirling, J. (1730).
-\newblock {\em Methodus Differentialissme Tractus de Summatione et
+\newblock {\em Methodus Differentialis sive Tractatus de Summatione et
   Interpolatione Serierum Infinitarum}.
-\newblock London: Londini: Typis Gul. Bowyer; impensis G. Strahan.
+\newblock Londini: Typis Gul. Bowyer; impensis G. Strahan.
 
 \bibitem[\protect\citeauthoryear{Stix}{Stix}{1991}]{Sti91}
 Stix, G. (1991).
 \newblock Profile: {D}avis a. {H}uffman.
 \newblock {\em Scientific American}, {\em 265\/}(3), 54--58.
+
+\bibitem[\protect\citeauthoryear{Student}{Student}{1908}]{Stu08}
+Student (1908).
+\newblock The probable error of a mean.
+\newblock {\em Biometrika}, {\em 6\/}(1), 1--25.
+
+\bibitem[\protect\citeauthoryear{Sutradhar}{Sutradhar}{1986}]{Sut86}
+Sutradhar, B.~C. (1986).
+\newblock On the characteristic function of multivariate {S}tudent
+  {$t$}-distribution.
+\newblock {\em Canadian Journal of Statistics}, {\em 14\/}(4), 329--337.
 
 \bibitem[\protect\citeauthoryear{Tch{\'e}bichev}{Tch{\'e}bichev}{1867}]{Tch67}
 Tch{\'e}bichev, P. (1867).
@@ -1694,6 +1881,16 @@ Wang, L. \& Madiman, M. (2004).
 \newblock Beyond the entropy power inequality via rearrangements.
 \newblock {\em IEEE Transactions on Information Theory}, {\em 60\/}(9),
   5116--5137.
+
+\bibitem[\protect\citeauthoryear{Watson}{Watson}{1922}]{Wat22}
+Watson (1922).
+\newblock {\em A Treatise on the Theory of {B}essel Functions}.
+\newblock Cambridge, UK.
+
+\bibitem[\protect\citeauthoryear{Wendl}{Wendl}{2016}]{Wen16}
+Wendl, M.~C. (2016).
+\newblock Pseudonymous fame.
+\newblock {\em Science}, {\em 351\/}(6280), 1406.
 
 \bibitem[\protect\citeauthoryear{Westfall}{Westfall}{2014}]{Wes14}
 Westfall, P.~H. (2014).

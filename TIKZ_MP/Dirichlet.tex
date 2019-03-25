@@ -3,7 +3,9 @@
 %
 \tikzset{declare function={
 xplus(\x) = max(\x,0);
+%ifthenelse(\x > 0 , \x , NaN);
 }}
+%}
 
 % Simplex
 \tdplotsetmaincoords{45}{65}
@@ -11,15 +13,25 @@ xplus(\x) = max(\x,0);
 %
 % Dirichlet: \X = S_{k-1} y \widetilde{X}
 \pgfmathsetmacro{\dx}{3};% scaling
-\draw[->,>=stealth] (-.25,0,0)--({\dx+.5},0,0) node[below right,scale=.9]{$x_1$}; \node at (\dx,0,0)[left,scale=.8]{$1$};
-\draw[->,>=stealth] (0,-.25,0)--(0,{\dx+.5},0) node[below right,scale=.9]{$x_2$}; \node at (0,\dx,0)[below,scale=.8]{$1$};
-\draw[->,>=stealth] (0,0,-.25)--(0,0,{\dx+.5}) node[above,scale=.9]{$x_3$}; \node at (0,0,\dx)[left,scale=.8]{$1$};
+%
+\draw[->,>=stealth] (-.25,0,0)--({\dx+.5},0,0) node[below right,scale=.9]{$x_1$};
+%\node at (\dx,0,0)[left,scale=.8]{$1$};
+\draw (\dx,0,0)--(\dx,-.15,0) node[left,scale=.8]{$1$};
+%
+\draw[->,>=stealth] (0,-.25,0)--(0,{\dx+.5},0) node[right,scale=.9]{$x_2$};
+%\node at (0,\dx,0)[below,scale=.8]{$1$};
+\draw (0,\dx,0)--(.15,\dx,0) node[below,scale=.8]{$1$};
+%
+\draw[->,>=stealth] (0,0,-.25)--(0,0,{\dx+.5}) node[above,scale=.9]{$x_3$};
+%\node at (0,0,\dx)[left,scale=.8]{$1$};
+\draw (0,0,\dx)--(0,-.15,\dx) node[left,scale=.8]{$1$};
+%
 \node at (0,0,0)[below left,scale=.8]{$0$};
 %
 % tilde X
 \filldraw[fill=black!50,opacity=.5] (0,0,0)--(\dx,0,0)--(0,\dx,0);
 \draw[thick,color=black,dashed] (0,0,0)--(\dx,0,0)--(0,\dx,0)--(0,0,0);
-\node at ({\dx/15},{\dx/20},0)[right,scale=.7]{$\widetilde{\X}$};
+\node at ({\dx/15},{\dx/20},0)[right,scale=.7]{$\Tri_2$};
 %
 % Simplex S_2
 \filldraw[fill=black!75,opacity=.5] (\dx,0,0)--(0,\dx,0)--(0,0,\dx);
@@ -40,6 +52,7 @@ xplus(\x) = max(\x,0);
 \pgfmathsetmacro{\Bd}{factorial(\ad-1)*factorial(\au+\at-1)/factorial(\au+\ad+\at-1)};% normalizacion 2
 \pgfmathsetmacro{\ma}{((\au-1)^(\au-1))*((\ad-1)^(\ad-1))*((\at-1)^(\at-1))/((\au+\ad+\at-3)^(\au+\ad+\at-3))/\B};
 %
+% Dirichlet & marginales
 \begin{axis}[
     colormap = {whiteblack}{color(0cm)  = (white);color(1cm) = (black)},
     width=.5\textwidth,
@@ -48,24 +61,31 @@ xplus(\x) = max(\x,0);
     %grid=major,
     domain=0:1,
     y domain=0:1,
+    %unbounded coords=jump, % para tener un dominio no cuadrado
+    %filter point/.code={%
+    %\pgfmathparse
+    %{\pgfkeysvalueof{/data point/x} + \pgfkeysvalueof{/data point/y} > 1.0}%
+    %  \ifpgfmathfloatcomparison
+    %     \pgfkeyssetvalue{/data point/x}{nan}%
+    %  \fi
+    %},
     zmax={.8*\ma},
     color=black,
-    samples=60,
-    xlabel=$\widetilde{x}_1$,
-    ylabel=$\widetilde{x}_2$,
+    samples=70,
+    xlabel=$x_1$,
+    ylabel=$x_2$,
     zlabel=$p_{\widetilde{X}}$,
 ]
 %
 % Dirichlet
-\addplot3 [surf,opacity=.8] {(x^(\au-1))*(y^(\ad-1))*(xplus(1-x-y)^(\at-1))/\B};
+\addplot3 [surf] {(x^(\au-1))*(y^(\ad-1))*(xplus(1-x-y)^(\at-1))/\B};
 %
 % Marginales
-\addplot3 [domain=0:1,samples=51, samples y=0, thick, smooth, color=black] (x,1,{(x^(\au-1))*((1-x)^(\ad+\at-1))/\Bu});
-\addplot3 [domain=0:1,samples=51, samples y=0, thick, smooth, color=black] (0,x,{(x^(\ad-1))*((1-x)^(\au+\at-1))/\Bd});
+\addplot3 [domain=0:1,samples=50, samples y=0, thick, smooth, color=black] (x,1,{(x^(\au-1))*((1-x)^(\ad+\at-1))/\Bu});
+\addplot3 [domain=0:1,samples=50, samples y=0, thick, smooth, color=black] (0,x,{(x^(\ad-1))*((1-x)^(\au+\at-1))/\Bd});
 %
 \node at (axis cs:.5,1,{1/(2^(\au+\ad+\at-2))/\Bu})[right]{$p_{X_1}$};
 \node at (axis cs:0,.5,{1/(2^(\au+\ad+\at-2))/\Bd})[above]{$p_{X_2}$};
-%
 \end{axis}
 \end{scope}
 %
@@ -91,9 +111,9 @@ xplus(\x) = max(\x,0);
     y domain=0:1,
     zmax={.65*\ma},
     color=black,
-    samples=60,
-    xlabel=$\widetilde{x}_1$,
-    ylabel=$\widetilde{x}_2$,
+    samples=70,
+    xlabel=$x_1$,
+    ylabel=$x_2$,
     zlabel=$p_{\widetilde{X}}$,
 ]
 %
@@ -101,8 +121,8 @@ xplus(\x) = max(\x,0);
 \addplot3 [surf,opacity=.8] {(x^(\au-1))*(y^(\ad-1))*(xplus(1-x-y)^(\at-1))/\B};
 %
 % Marginales
-\addplot3 [domain=0:1,samples=51, samples y=0, thick, smooth, color=black] (x,1,{(x^(\au-1))*((1-x)^(\ad+\at-1))/\Bu});
-\addplot3 [domain=0:1,samples=51, samples y=0, thick, smooth, color=black] (0,x,{(x^(\ad-1))*((1-x)^(\au+\at-1))/\Bd});%
+\addplot3 [domain=0:1,samples=50, samples y=0, thick, smooth, color=black] (x,1,{(x^(\au-1))*((1-x)^(\ad+\at-1))/\Bu});
+\addplot3 [domain=0:1,samples=50, samples y=0, thick, smooth, color=black] (0,x,{(x^(\ad-1))*((1-x)^(\au+\at-1))/\Bd});%
 %
 \node at (axis cs:.5,1,{1/(2^(\au+\ad+\at-2))/\Bu})[right]{$p_{X_1}$};
 \node at (axis cs:0,.5,{1/(2^(\au+\ad+\at-2))/\Bd})[above]{$p_{X_2}$};

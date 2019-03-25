@@ -15,6 +15,7 @@
 %\RequirePackage{stix} % hebrew letters
 \RequirePackage{xspace} % spacing package
 \RequirePackage{epsfig,graphics,graphicx,color,tikz,tikz-3dplot,pgfplots,etoolbox} % figures packages
+\usetikzlibrary{math}% paquete de mathematica en tikz
 \RequirePackage{enumitem} % to manage the labels... en enumerate
 %\RequirePackage[labelsep=endash]{caption}
 %\RequirePackage{setspace} % space package
@@ -23,6 +24,9 @@
 \RequirePackage{titletoc,tocloft} % table of content managment package
 \RequirePackage{tabularx} % para manejar las tablas
 \RequirePackage{footmisc} % to manage the numeration and reference to footnote
+\RequirePackage{footnote}
+\makesavenoteenv{tabular} % to manage the footnote in tabular environment
+%\RequirePackage{tablefootnote} % to manage the footnote in tabular environment
 %\RequirePackage{xargs}
 %\RequirePackage{accents}
 %\providecommand{\BIBand}{e}

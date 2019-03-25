@@ -11,15 +11,19 @@
 %
 \pgfmathsetmacro{\sy}{2.5/\l};% y-scaling 
 \draw[>=stealth,->] ({-\sx-.25},0)--({\sx*\mx+.25},0) node[right]{\small $x$};
-\draw[>=stealth,->] (0,-.1)--(0,{\sy*\l+.25}) node[above]{\small $p_X$};
+\draw[>=stealth,->] (0,-.15)--(0,{\sy*\l+.25}) node[above]{\small $p_X$};
 %
 \draw[thick] ({-\sx},0)--(0,0);
 \draw (\r,\r) arc (90:270:\r);
 \draw[dotted] (0,0)--(0,{\sy*\l}) node[scale=.4]{$\bullet$};
-\draw[thick,domain=0:\mx,samples=100] plot ({\x*\sx},{\sy*\l*exp(-\l*\x)});
+\draw[thick,domain=0:\mx,samples=50,smooth] plot ({\x*\sx},{\sy*\l*exp(-\l*\x)});
 %
 \draw (0,{\l*\sy})--(-.1,{\l*\sy}) node[left,scale=.7]{$\lambda$};
+\draw (0,0)--(0,-.1) node[below,scale=.7]{$0$};
+\draw ({1/\l*\sy},0)--({1/\l*\sy},-.1) node[below,scale=.7]{$\displaystyle \frac1\lambda$};
+\draw ({2/\l*\sy},0)--({2/\l*\sy},-.1) node[below,scale=.7]{$\displaystyle \frac2\lambda$};
 %
+\node at ({(\sx*\mx+.25)/2},-1.1) [scale=.9]{(a)};
 \end{scope}
 %
 %
@@ -29,12 +33,17 @@
 \pgfmathsetmacro{\sy}{2.5};% y-scaling 
 %
 \draw[>=stealth,->] (-.6,0)--({\sx*\mx+.25},0) node[right]{\small $x$};
-\draw[>=stealth,->] (0,-.1)--(0,{\sy+.25}) node[above]{\small $F_X$};
+\draw[>=stealth,->] (0,-.15)--(0,{\sy+.25}) node[above]{\small $F_X$};
 %
 % cumulativa
-\draw[thick,domain=0:\mx,samples=100] (-.5,0)--(0,0) plot({\x*\sx},{(1-exp(-\l*\x))*\sy});
+\draw[thick,domain=0:\mx,samples=50,smooth] (-.5,0)--(0,0) plot({\x*\sx},{(1-exp(-\l*\x))*\sy});
 %
 \draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
+\draw (0,0)--(0,-.1) node[below,scale=.7]{$0$};
+\draw ({1/\l*\sy},0)--({1/\l*\sy},-.1) node[below,scale=.7]{$\displaystyle \frac1\lambda$};
+\draw ({2/\l*\sy},0)--({2/\l*\sy},-.1) node[below,scale=.7]{$\displaystyle \frac2\lambda$};
+%
+\node at ({(\sx*\mx+.25)/2},-1.1) [scale=.9]{(b)};
 \end{scope}
 %
 \end{tikzpicture}

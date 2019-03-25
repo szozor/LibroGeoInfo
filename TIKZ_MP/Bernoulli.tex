@@ -10,8 +10,8 @@
 \pgfmathsetmacro{\sy}{2/max(\p,1-\p)};% y-scaling
 %
 \pgfmathsetmacro{\ss}{\sy*(1-\p)};
-\draw[>=stealth,->] (-.25,0)--({\sx+.75},0) node[right]{\small $x$};
-\draw[>=stealth,->] (0,-.1)--(0,2.5) node[above]{\small $p_X$};
+\draw[>=stealth,->] (-.5,0)--({\sx+.75},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.15)--(0,2.5) node[above]{\small $p_X$};
 %
 \draw (0,-.1) node[below,scale=.7]{$0$} --(0,0);
 \draw[dotted] (0,0)--(0,{\sy*(1-\p)}) node[scale=.7]{$\bullet$};
@@ -21,6 +21,7 @@
 \draw[dotted] (\sx,0)--(\sx,{\sy*\p}) node[scale=.7]{$\bullet$};
 \draw (0,{\sy*\p})--(-.1,{\sy*\p}) node[left,scale=.7]{\small $p$};
 %
+\node at ({(\sx+.75)/2},-1) [scale=.9]{(a)};
 \end{scope}
 %
 %
@@ -29,15 +30,15 @@
 %
 \pgfmathsetmacro{\sy}{2};% y-scaling 
 %
-\draw[>=stealth,->] (-.6,0)--({\sx+1.5},0) node[right]{\small $x$};
-\draw[>=stealth,->] (0,-.1)--(0,{\sy+.5}) node[above]{\small $F_X$};
+\draw[>=stealth,->] (-.5,0)--({\sx+1.5},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.15)--(0,{\sy+.5}) node[above]{\small $F_X$};
 %
 \draw (0,0)--(0,-.1) node[below,scale=.7]{$0$};
 \draw (\sx,0)--(\sx,-.1) node[below,scale=.7]{$1$};
 \draw (0,{\sy*(1-\p)})--(-.1,{\sy*(1-\p)}) node[left,scale=.7]{$1-p$};
 \draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
 %
-\draw[thick](-.5,0)--(0,0);
+\draw[thick](-.25,0)--(0,0);
 \draw ({0+\r},\r) arc (90:270:\r);
 %
 \draw[dotted] (0,0)--(0,{\sy*(1-\p)});
@@ -47,6 +48,8 @@
 \draw[dotted] (\sx,{\sy*(1-\p)})--(\sx,\sy);
 \draw[thick](\sx,\sy) node[scale=.7]{$\bullet$}--({\sx+1},\sy);
 %\draw ({\sx+\r},{\r+\sy*(1-\p)}) arc (90:270:\r);
+%
+\node at ({(\sx+1.5)/2},-1) [scale=.9]{(b)};
 \end{scope}
 %
 \end{tikzpicture}

@@ -1,0 +1,49 @@
+\begin{tikzpicture}%[scale=.9]
+\shorthandoff{>}
+%
+\pgfmathsetmacro{\sx}{2.5};% x-scaling
+\pgfmathsetmacro{\r}{.05};% radius arc non continuity F_X
+%
+% densidad
+\begin{scope}
+%
+\pgfmathsetmacro{\sy}{2.5};% y-scaling 
+\draw[>=stealth,->] ({-\sx/2-.25},0)--({\sx*1.5+.25},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.15)--(0,{\sy+.25}) node[above]{\small $p_X$};
+%
+\draw[thick] ({-\sx/2},0)--(0,0);
+\draw (\r,\r) arc (90:270:\r);
+\draw[dotted] (0,0)--(0,\sy) node[scale=.4]{$\bullet$};
+\draw[thick] plot (0,\sy)--(\sx,\sy) node[scale=.4]{$\bullet$};
+\draw[dotted] (\sx,\sy)--(\sx,0);
+\draw ({\sx-\r},{-\r}) arc (-90:90:\r);
+\draw[thick] (\sx,0)--({1.5*\sx},0);
+%
+\draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
+\draw (0,0)--(0,-.1) node[below,scale=.7]{$0$};
+\draw (\sx,0)--(\sx,-.1) node[below,scale=.7]{$1$};
+%
+\node at ({(\sx*1.5+.5)/2},-1) [scale=.9]{(a)};
+
+\end{scope}
+%
+%
+% reparticion
+\begin{scope}[xshift=8.5cm]
+%
+\pgfmathsetmacro{\sy}{2.5};% y-scaling 
+%
+\draw[>=stealth,->] ({-\sx/2-.25},0)--({\sx*1.5+.25},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.1)--(0,{\sy+.25}) node[above]{\small $F_X$};
+%
+% cumulativa
+\draw[thick] ({-\sx/2},0)--(0,0)--(\sx,\sy)--({1.5*\sx},\sy);
+%
+\draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
+\draw (0,0)--(0,-.1) node[below,scale=.7]{$0$};
+\draw (\sx,0)--(\sx,-.1) node[below,scale=.7]{$1$};
+%
+\node at ({(\sx*1.5+.5)/2},-1) [scale=.9]{(b)};
+\end{scope}
+%
+\end{tikzpicture}

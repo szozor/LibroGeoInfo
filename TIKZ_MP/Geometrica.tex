@@ -11,7 +11,7 @@
 %
 \pgfmathsetmacro{\sy}{2.5/\p};% y-scaling 
 \draw[>=stealth,->] (-.25,0)--({\sx*\n+.75},0) node[right]{\small $x$};
-\draw[>=stealth,->] (0,-.1)--(0,{\sy*\p+.25}) node[above]{\small $p_X$};
+\draw[>=stealth,->] (0,-.15)--(0,{\sy*\p+.25}) node[above]{\small $p_X$};
 %
 \pgfmathsetmacro{\pr}{\p};% probabilidad
 %
@@ -21,12 +21,14 @@
 %
 \pgfmathsetmacro{\prl}{\pr*(1-\p)};\global\let\pr\prl;% proba actualizado
 }
+\draw (0,0)--(0,-.1) node[below,scale=.7]{$0$};
 \draw ({(\n+.5)*\sx},-.2) node[below,scale=.7]{$\ldots$};
 \draw ({(\n+.5)*\sx},{(\pr/(1-\p)/2*\sy}) node[scale=.7]{$\cdots$};
 \draw (0,{\p*\sy})--(-.1,{\p*\sy}) node[left,scale=.7]{$p$};
 \draw (0,{\p*(1-\p)*\sy})--(-.1,{\p*(1-\p)*\sy}) node[left,scale=.7]{$p \, (1-p)$};
 \draw (-.5,{\p*(1-\p)/2*\sy}) node[left,scale=.7]{$\vdots$};
 %
+\node at ({(\sx*\n+.75)/2},-1) [scale=.9]{(a)};
 \end{scope}
 %
 %
@@ -36,13 +38,14 @@
 \pgfmathsetmacro{\sy}{2.5};% y-scaling 
 %
 \draw[>=stealth,->] (-.6,0)--({\sx*\n+.75},0) node[right]{\small $x$};
-\draw[>=stealth,->] (0,-.1)--(0,{\sy+.25}) node[above]{\small $F_X$};
+\draw[>=stealth,->] (0,-.15)--(0,{\sy+.25}) node[above]{\small $F_X$};
 %
 \pgfmathsetmacro{\pr}{\p};% probabilidad
 \pgfmathsetmacro{\c}{\p};% cumulativa
 %
 % cumulativa x < 1
-\draw (1,0)--(1,-.1) node[below,scale=.7]{$0$};
+\draw (0,0)--(0,-.1) node[below,scale=.7]{$0$};
+\draw (\sx,0)--(\sx,-.1) node[below,scale=.7]{$1$};
 \draw[thick] (-.5,0)--(\sx,0);
 \draw ({\sx+\r},\r) arc (90:270:\r);
 %
@@ -64,6 +67,8 @@
 \draw (0,{\p*(2-\p)*\sy})--(-.1,{\p*(2-\p)*\sy}) node[left,scale=.7]{$p \, (2-p)$};
 \draw (-.3,{(1+\p*(2-\p))/2*\sy}) node[left,scale=.7]{$\vdots$};
 \draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
+%
+\node at ({(\sx*\n+.75)/2},-1) [scale=.9]{(a)};
 \end{scope}
 %
 \end{tikzpicture}

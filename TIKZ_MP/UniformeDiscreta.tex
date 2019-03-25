@@ -11,15 +11,16 @@
 %
 %
 \pgfmathsetmacro{\sy}{2.5};% y-scaling 
-\draw[>=stealth,->] (-.25,0)--({\sx*(\n+.5)+.25},0) node[right]{\small $x$};
-\draw[>=stealth,->] (0,-.1)--(0,{\sy+.25}) node[above]{\small $p_X$};
+\draw[>=stealth,->] (-.3,0)--({\sx*(\n+.5)+.25},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.15)--(0,{\sy+.25}) node[above]{\small $p_X$};
 %
 \foreach \k in {1,...,\n} {
 \draw[dotted] ({\k*\sx},0)--({\k*\sx},\sy) node[scale=.4]{$\bullet$};
 \draw ({\k*\sx},0)--({\k*\sx},-.1) node[below,scale=.7]{$\k$};
 }
 \draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$\frac1\n$};
-%%
+%
+\node at ({(\sx*(\n+.5)+.25)/2},-1) [scale=.9]{(a)};
 \end{scope}
 %
 %
@@ -28,8 +29,8 @@
 %
 \pgfmathsetmacro{\sy}{2.5};% y-scaling 
 %
-\draw[>=stealth,->] ({-\sx/2-.25},0)--({\sx*(\n+1.5)+.25},0) node[right]{\small $x$};
-\draw[>=stealth,->] (0,-.1)--(0,{\sy+.25}) node[above]{\small $F_X$};
+\draw[>=stealth,->] ({-\sx/2-.3},0)--({\sx*(\n+1.5)+.25},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.15)--(0,{\sy+.25}) node[above]{\small $F_X$};
 %
 % cumulativa
 \draw[thick] ({-\sx/2},0)--(\sx,0);
@@ -47,6 +48,8 @@
 \draw[dotted] ({\n*\sx},{(\n-1)*\sy/\n})--({\n*\sx},\sy);
 %%
 \draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
+%
+\node at ({(\sx*(\n+1.5)+.25)/2},-1) [scale=.9]{(b)};
 \end{scope}
 %
 \end{tikzpicture}

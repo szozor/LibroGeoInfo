@@ -13,7 +13,7 @@
 %
 \pgfmathsetmacro{\sy}{2.75/\m};% y-scaling 
 \draw[>=stealth,->] (-.25,0)--({\sx*\n+.75},0) node[right]{\small $x$};
-\draw[>=stealth,->] (0,-.1)--(0,{\sy*\m+.25}) node[above]{\small $p_X$};
+\draw[>=stealth,->] (0,-.15)--(0,{\sy*\m+.25}) node[above]{\small $p_X$};
 %
 \pgfmathsetmacro{\pr}{exp(-\l)};% probabilidad
 %
@@ -30,6 +30,7 @@
 \draw (0,{\l*\l*exp(-\l)/2*\sy})--(-.1,{\l*\l*exp(-\l)/2*\sy}) node[left,scale=.7]{$\frac{\lambda^2 e^{-\lambda}}{2}$};
 %\draw (-.5,{\l*exp(-\l)/2*\sy}) node[left,scale=.7]{$\vdots$};
 %
+\node at ({(\sx*\n+.75)/2},-1) [scale=.9]{(a)};
 \end{scope}
 %
 %
@@ -39,7 +40,7 @@
 \pgfmathsetmacro{\sy}{2.75};% y-scaling 
 %
 \draw[>=stealth,->] (-.6,0)--({\sx*\n+.75},0) node[right]{\small $x$};
-\draw[>=stealth,->] (0,-.1)--(0,{\sy+.25}) node[above]{\small $F_X$};
+\draw[>=stealth,->] (0,-.15)--(0,{\sy+.25}) node[above]{\small $F_X$};
 %
 \pgfmathsetmacro{\pr}{exp(-\l)};% probabilidad
 \pgfmathsetmacro{\c}{exp(-\l)};% cumulativa
@@ -67,6 +68,8 @@
 \draw (0,{(1+\l)*exp(-\l)*\sy})--(-.1,{(1+\l)*exp(-\l)*\sy}) node[left,scale=.7]{$(1+\lambda) e^{-\lambda}$};
 \draw (-.3,{(1+(1+\l+\l*\l/2)*exp(-\l))/2*\sy}) node[left,scale=.7]{$\vdots$};
 \draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
+%
+\node at ({(\sx*\n+.75)/2},-1) [scale=.9]{(b)};
 \end{scope}
 %
 \end{tikzpicture}

@@ -1,39 +1,101 @@
-\begin{tikzpicture}%[scale=.9]
+\begin{tikzpicture}
 \shorthandoff{>}
 %
-\pgfmathsetmacro{\sx}{.75};% x-scaling
+% Para el caso univariado
+\pgfmathsetmacro{\sx}{.65};% x-scaling
 \pgfmathsetmacro{\mx}{3.5};% x maximo del plot
+\pgfmathsetmacro{\lm}{floor(\mx)};% entero max 
+%
+% para el caso bi-variado
+\pgfmathsetmacro{\a}{.25};% x-scaling
+\pgfmathsetmacro{\t}{30};% angulo de rotacion
+\pgfmathsetmacro{\c}{cos(\t)};% coseno
+\pgfmathsetmacro{\s}{sin(\t)};% seno
+\pgfmathsetmacro{\su}{sqrt(\c^2+(\a*\s)^2)};% ecart-type 1
+\pgfmathsetmacro{\sd}{sqrt(\s^2+(\a*\c)^2)};% ecart-type 2
+\pgfmathsetmacro{\dx}{2.45};% dominio x del plot -dx:dx
+\pgfmathsetmacro{\dy}{2.05};% dominio y del plot -dy:dy
+\pgfmathsetmacro{\ma}{max(1/min(\su,\sd),1/\a/sqrt(2*pi))/sqrt(2*pi)};% z max
 %
 % Approximation de la cdf gaussienne
 \tikzset{declare function={
 normcdf(\x)=1/(1 + exp(-0.07056*(\x)^3 - 1.5976*(\x)));
 }}
+%
+%
 % densidad
-\begin{scope}
+\begin{scope}[scale=.9]
 %
 \pgfmathsetmacro{\sy}{2.5*sqrt(2*pi)};% y-scaling 
 \draw[>=stealth,->] ({-\sx*\mx-.25},0)--({\sx*\mx+.25},0) node[right]{\small $x$};
-\draw[>=stealth,->] (0,-.1)--(0,2.75) node[above]{\small $p_X$};
+\draw[>=stealth,->] (0,-.15)--(0,2.75) node[above]{\small $p_X$};
 %
-\draw[thick,domain=-\mx:\mx,samples=100] plot ({\x*\sx},{\sy*exp(-.5*\x*\x)/sqrt(2*pi)});
+\draw[thick,domain=-\mx:\mx,samples=50,smooth] plot ({\x*\sx},{\sy*exp(-.5*\x*\x)/sqrt(2*pi)});
 %
 \draw (0,{\sy/sqrt(2*pi)})--(-.2,{\sy/sqrt(2*pi)}) node[left,scale=.7]{$\frac1{\sqrt{2 \pi}}$};
+\draw (0,0)--(0,-.1) node[below,scale=.7]{$0$};
+\foreach \m in {1,...,\lm} {
+\draw ({-\m*\sx},0)--({-\m*\sx},-.1) node[below,scale=.7]{$-\m$};
+\draw ({\m*\sx},0)--({\m*\sx},-.1) node[below,scale=.7]{$\m$};
+}
 %
+\node at (0,-1) [scale=.9]{(a)};
 \end{scope}
 %
 %
 % reparticion
-\begin{scope}[xshift=8.5cm]
+\begin{scope}[xshift=5.5cm,scale=.9]
 %
 \pgfmathsetmacro{\sy}{2.5};% y-scaling 
 %
 \draw[>=stealth,->] ({-\sx*\mx-.25},0)--({\sx*\mx+.25},0) node[right]{\small $x$};
-\draw[>=stealth,->] (0,-.1)--(0,{\sy+.25}) node[above]{\small $F_X$};
+\draw[>=stealth,->] (0,-.15)--(0,{\sy+.25}) node[above]{\small $F_X$};
 %
 % cumulativa
-\draw[thick,domain=-\mx:\mx,samples=100] plot({\x*\sx},{\sy*normcdf(\x)});
+\draw[thick,domain=-\mx:\mx,samples=50,smooth] plot({\x*\sx},{\sy*normcdf(\x)});
 %
-\draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
+\draw (0,0)--(0,-.1) node[below,scale=.7]{$0$};
+\foreach \m in {1,...,\lm} {
+\draw ({-\m*\sx},0)--({-\m*\sx},-.1) node[below,scale=.7]{$-\m$};
+\draw ({\m*\sx},0)--({\m*\sx},-.1) node[below,scale=.7]{$\m$};
+}
+%
+\node at (0,-1) [scale=.9]{(b)};
 \end{scope}
 %
+%
+% densidad 2D
+\begin{scope}[xshift=9.5cm,yshift=-2.5mm,scale=.7]
+%
+\begin{axis}[
+    colormap = {whiteblack}{color(0cm)  = (white);color(1cm) = (black)},
+    width=.5\textwidth,
+    view={45}{65},
+    enlargelimits=false,
+    %grid=major,
+    domain=-\dx:\dx,
+    y domain=-\dy:\dy,
+    color=black,
+    samples=80,
+    xlabel=$x_1$,
+    ylabel=$x_2$,
+    zlabel=$p_X$,
+    zmax={1.05*\ma},
+]
+%
+% Gaussiana 2D
+\addplot3 [surf] {exp(-.5*((\c*x+\s*y)^2+((-\s*x+\c*y)/\a)^2))/(2*pi*\a)};
+%
+% Marginales
+\addplot3 [domain=-\dx:\dx,samples=50, samples y=0, thick, smooth, color=black] (x,\dy,{exp(-.5*(x/\su)^2)/sqrt(2*pi)/\su});
+\addplot3 [domain=-\dy:\dy,samples=50, samples y=0, thick, smooth, color=black] (-\dx,x,{exp(-.5*(x/\sd)^2)/sqrt(2*pi)/\sd});
+%
+\node at (axis cs:{\dx/5},\dy,{exp(-.5*(\dx/5/\su)^2)/sqrt(2*pi)/\su})[above right]{$p_{X_1}$};
+\node at (axis cs:-\dx,{\dy/5},{exp(-.5*(\dy/5/\sd)^2)/sqrt(2*pi)/\sd})[above right]{$p_{X_2}$};
+%
+%\node at (axis cs:{\dx},{-\dy},-1) [scale=.9]{(c)};
+\end{axis}
+%
+\node at ({1.5*\dx},-1) [scale=.9]{(c)};
+\end{scope}
 \end{tikzpicture}

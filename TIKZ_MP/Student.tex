@@ -1,0 +1,155 @@
+\begin{tikzpicture}
+\shorthandoff{>}
+%
+% Para el caso univariado
+\pgfmathsetmacro{\sx}{.43};% x-scaling
+\pgfmathsetmacro{\mu}{0};% para tomar los grados de libertad impar; 0 => Cauchy
+\pgfmathsetmacro{\md}{1};
+\pgfmathsetmacro{\mt}{3};
+%\pgfmathsetmacro{\mq}{3};
+%
+%
+% para el caso bi-variado
+\pgfmathsetmacro{\mdd}{0};%
+\pgfmathsetmacro{\nu}{2*\mdd+1};% grados de libertad
+\pgfmathsetmacro{\a}{1/3};% x-scaling
+\pgfmathsetmacro{\t}{30};% angulo de rotacion
+\pgfmathsetmacro{\c}{cos(\t)};% coseno
+\pgfmathsetmacro{\s}{sin(\t)};% seno
+\pgfmathsetmacro{\su}{sqrt(\c^2+(\a*\s)^2)};% ecart-type 1
+\pgfmathsetmacro{\sd}{sqrt(\s^2+(\a*\c)^2)};% ecart-type 2
+\pgfmathsetmacro{\dx}{3};% dominio x del plot -dx:dx
+\pgfmathsetmacro{\dy}{2.5};% dominio y del plot -dy:dy
+%
+%
+% Approximacion de la funcion Gamma
+%\tikzset{declare function={gamma(\z)=
+%(2.506628274631*sqrt(1/\z) + 0.20888568*(1/\z)^(1.5) + 0.00870357*(1/\z)^(2.5) -
+%(174.2106599*(1/\z)^(3.5))/25920 - (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z);}}
+%
+% Approximation de la cdf gaussienne
+\tikzmath{function normcdf(\x) {return 1/(1 + exp(-0.07056*(\x)^3 - 1.5976*(\x)));};};
+%
+% coefficiente binomial, para no tener factoriales muy grandes
+\tikzmath{function binocoef(\m,\k) {if \k == 0 then {return 1;} else {return ((\m-\k+1)/\k)*binocoef(\m,\k-1);};};};
+%
+% coefficient que aparece en la pdf y cdf (ver doubling formula GraRyz 8.335-5 con x = m+1/2)
+% y coefficiente de normalizacion
+%\tikzset{declare function={
+\tikzmath{function coefstud(\m) {return (4^\m)/(pi*sqrt(2*\m+1)*binocoef(2*\m,\m));};}
+%
+%
+% cdf Student que se calcula recursivamente para nu = 2 m + 1, m entero
+\tikzmath{function studcdfS(\x,\k) {
+    if \k == 0 then {return .5+(atan(\x))/180;}
+    else {return studcdfS(\x,\k-1)+((4^\k)*(\x)/(2*pi*\k*binocoef(2*\k,\k)))/((1+((\x)^2))^\k);};
+};};
+% Calculo de
+%  - x maximo del plot para tener pdf a 7% del max
+%  - la pdf Student para nu = 2 m + 1, m entero
+%  - la cdf Student para nu = 2 m + 1, m entero
+%\tikzset{declare function={
+\tikzmath{function maxplotpdf(\m) {return sqrt((2*\m+1)*((.03^(-1/(\m+1)))-1));};};% x maximo del plot para tener pdf a 3% del max
+\tikzmath{function studpdf(\x,\m) {return coefstud(\m)*((1/(1+((\x)^2)/(2*\m+1)))^(\m+1));};};% pdf Student
+\tikzmath{function studcdf(\x,\m) {return studcdfS(\x/(sqrt(2*\m+1)),\m);};};% pdf Student
+%}}
+%
+%
+%
+% mismas escalas x-max para cada ejemplo
+\pgfmathsetmacro{\mx}{max(maxplotpdf(\mu),maxplotpdf(\md),maxplotpdf(\mt))};
+
+% maximo de las marginales del caso 2D
+\pgfmathsetmacro{\ma}{coefstud(\mdd)/min(\su,\sd)};
+%
+% densidad
+\begin{scope}[scale=.9]
+%
+\pgfmathsetmacro{\sy}{2.75*sqrt(2*pi)};% y-scaling 
+\draw[>=stealth,->] ({-\sx*\mx-.1},0)--({\sx*\mx+.25},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.15)--(0,3) node[above]{\small $p_X$};
+%
+\draw[thick,domain=-\mx:\mx,samples=50,smooth] plot ({\x*\sx},{\sy*studpdf(\x,\mu)});
+\draw[thick,dashed,domain=-\mx:\mx,samples=50,smooth] plot ({\x*\sx},{\sy*studpdf(\x,\md)});
+\draw[thick,dotted,domain=-\mx:\mx,samples=50,smooth] plot ({\x*\sx},{\sy*studpdf(\x,\mt)});
+\draw[thin,domain=-\mx:\mx,samples=50,smooth] plot ({\x*\sx},{\sy*exp(-.5*((\x)^2))/sqrt(2*pi)});
+%
+\draw (0,{\sy/sqrt(2*pi)})--(-.2,{\sy/sqrt(2*pi)}) node[left,scale=.7]{$\displaystyle \frac1{\sqrt{2 \pi}}$};
+\draw (0,0)--(0,-.1) node[below,scale=.7]{$0$};
+\pgfmathsetmacro{\lm}{2*floor(\mx/2)};
+\foreach \m in {2,4,...,\lm} {
+\draw ({-\m*\sx},0)--({-\m*\sx},-.1) node[below,scale=.7]{$-\m$};
+\draw ({\m*\sx},0)--({\m*\sx},-.1) node[below,scale=.7]{$\m$};
+}
+%
+\node at (0,-1) [scale=.9]{(a)};
+\end{scope}
+%
+%
+% reparticion
+\begin{scope}[xshift=5.75cm,scale=.9]
+%
+\pgfmathsetmacro{\extx}{1.1};% extnsion del dominio para la cdf (que se vea mejor) 
+\pgfmathsetmacro{\sy}{2.75};% y-scaling 
+%
+\draw[>=stealth,->] ({-\sx*\mx*\extx-.1},0)--({\sx*\mx*\extx+.25},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.15)--(0,{\sy+.25}) node[above]{\small $F_X$};
+%
+% cumulativa
+%
+\draw[thick,domain={-\mx*\extx}:{\mx*\extx},samples=50,smooth] plot ({\x*\sx},{\sy*studcdf(\x,\mu)});
+\draw[thick,dashed,domain={-\mx*\extx}:{\mx*\extx},samples=50,smooth] plot ({\x*\sx},{\sy*studcdf(\x,\md)});
+\draw[thick,dotted,domain={-\mx*\extx}:{\mx*\extx},samples=50,smooth] plot ({\x*\sx},{\sy*studcdf(\x,\mt)});
+\draw[thin,domain={max(-\mx*\extx,-3.5)}:{\mx*\extx},samples=50,smooth]  plot ({\x*\sx},{\sy*normcdf(\x)});
+%
+\draw (0,0)--(0,-.1) node[below,scale=.7]{$0$};
+\draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
+\pgfmathsetmacro{\lm}{2*floor(\mx*\extx/2)};
+\foreach \m in {2,4,...,\lm} {
+\draw ({-\m*\sx},0)--({-\m*\sx},-.1) node[below,scale=.7]{$-\m$};
+\draw ({\m*\sx},0)--({\m*\sx},-.1) node[below,scale=.7]{$\m$};
+}
+%
+\node at (0,-1) [scale=.9]{(b)};
+\end{scope}
+%
+%
+% densidad 2D
+\begin{scope}[xshift=9.5cm,yshift=-2.5mm,scale=.7]
+%
+\begin{axis}[
+    colormap = {whiteblack}{color(0cm)  = (white);color(1cm) = (black)},
+    width=.45\textwidth,
+    view={45}{65},
+    enlargelimits=false,
+    %grid=major,
+    domain=-\dx:\dx,
+    y domain=-\dy:\dy,
+    color=black,
+    samples=80,
+    xlabel=$x_1$,
+    ylabel=$x_2$,
+    zlabel=$p_X$,
+    zmax={1.05*\ma},
+]
+%
+% Student-t 2D
+\addplot3 [surf] {1/(2*pi*\a*((1+((\c*x+\s*y)^2+((-\s*x+\c*y)/\a)^2)/(2*\mdd+1))^(1.5+\mdd)))};
+%
+% Marginales
+\pgfmathsetmacro{\cproj}{coefstud(\mdd)};
+\addplot3 [domain=-\dx:\dx,samples=50, samples y=0, thick, smooth, color=black]
+(x,\dy,{\cproj*((1+((x/\su)^2)/(2*\mdd+1))^(-\mdd-1))/\su});
+\addplot3 [domain=-\dy:\dy,samples=50, samples y=0, thick, smooth, color=black]
+(-\dx,x,{\cproj*((1+((x/\sd)^2)/(2*\mdd+1))^(-\mdd-1))/\sd});
+%\addplot3 [domain=-\dx:\dx,samples=51, thick, smooth, color=black] (x,\dy,{studpdf(x/\su,\mdd)});
+%\addplot3 [domain=-\dy:\dy,samples=51, samples y=0, thick, smooth, color=black] (-\dx,x,{studpdf(x/\sd,\mdd)/\sd});
+%
+\node at (axis cs:{\dx/5},\dy,{\cproj*((1+((\dx/5/\su)^2)/(2*\mdd+1))^(-\mdd-1))/\su})[above right]{$p_{X_1}$};
+\node at (axis cs:-\dx,{\dy/5},{\cproj*((1+((\dy/5/\sd)^2)/(2*\mdd+1))^(-\mdd-1))/\sd})[above right]{$p_{X_2}$};
+%
+\end{axis}
+%
+\node at ({\dx},-1) [scale=.9]{(c)};
+\end{scope}
+\end{tikzpicture}

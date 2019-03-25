@@ -1,11 +1,14 @@
+\SZ{Poner antes la notation $P_d^+(\Rset)$}
+
 \seccion{Algunos ejemplos de distribuciones de probabilidad}
 \label{Sec:MP:EjemplosDistribucionesProb}
 
 
 \emph{introducci\'on...}
 
-% ================================= Variables discretas
+\SZ{Citar los libroz de Kotz entre otros, mi HDR...}
 
+% ================================= Variables discretas
 \subseccion{Distribuciones de variable discreta}
 \label{Ssec:MP:EjemplosDistribucionesDiscretas}
 
@@ -19,14 +22,14 @@
 
 El caso \ $X = a$ \ deterministico ($\forall \, \omega, \: X(\omega) = a$) puede
 ser ver visto  como un caso degenerado de  variable/vector aleatorio. Visto como
-vector  aleatorio,  sus  caracteriticas  principales  vistas  en  las  secciones
+vector  aleatorio,  sus  caracter\'isticas  principales  vistas  en  las  secciones
 anteriores son resimudas en la tabla siguiente:
 %
 \begin{center}
 \begin{tabular}
 {
-|>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
+|>{\vspace{-2mm}}p{.35\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.6\textwidth}|
 }
 %
 \hline
@@ -88,13 +91,13 @@ Fig.~\ref{Fig:MP:Certeza}.
 \label{Sssec:MP:UniformeDiscreta}
 
 Se denota $X \, \sim \, \U\{ a \, ,  \, b \}$ \ con $(a,b) \in \Zset^2, \: b \ge
-a$.  Las caracteristicas de \ $X$ \ son las siguientes:
+a$.  Las caracter\'isticas de \ $X$ \ son las siguientes:
 
 \begin{center}
 \begin{tabular}
 {
-|>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
+|>{\vspace{-2mm}}p{.35\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.6\textwidth}|
 }
 %
 \hline
@@ -128,22 +131,21 @@ Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = -\frac65 \frac{(b-a)
 \hline
 %%
 Generadora de probabilidad & $\displaystyle G_X(z) = \frac{z^a-z^{b+1}}{1-z}$ \
-para~\footnotemark \ $z \in \Cset$ \ si $a \ge 0$ \ y \ $\Cset^*$ \ si no\\[2mm]
+para~\footnote{En el caso l\'imite \ $z \to 1$, \ $\lim_{z \to 1} \frac{ z^a -
+z^{b+1}}{1-z} = b+1-a$} \ $z \in \Cset$ \ si $a \ge 0$ \ y \ $\Cset^*$ \ si
+no\\[2mm]
 \hline
 %%
-Generadora de momentos & $\displaystyle M_X(u) = \frac{ e^{a u} - e^{(b+1) u}}{1-e^u}$ \
-para  \ $u \in \Cset$\\[2mm]
+Generadora de momentos & $\displaystyle M_X(u) = \frac{ e^{a u} - e^{(b+1)
+u}}{1-e^u}$ \ para~\footnote{En el caso l\'imite \ $u \to 0$, \ $\lim_{u \to 0}
+\frac{ e^{a u} - e^{(b+1) u}}{1-e^u} = b+1-a$, y similarmente para la funci\'on
+caracter\'istica.}  \ $u \in \Cset$\\[2mm]
 \hline
 %
 Funci\'on caracter\'istica & $\displaystyle  \Phi_X(\omega) = \frac{ e^{\imath a
 \omega} - e^{\imath (b+1) \omega}}{1-e^{\imath \omega}}$\\[2mm]
 \hline
 \end{tabular}
-\footnotetext{En el caso  l\'imite \ $z \to  1$, \ $\lim_{z \to 1}  \frac{ z^a -
-    z^{b+1}}{1-z} =  b+1-a$ \  y similarmente para  la generadora de  momentos y
-  funci\'on caracter\'istica (resp. \ $u \to 0$ \ y \ $\omega \to 0$).}
-%\footnotetext{En el caso l\'imite \ $u \to  0$, \ $\lim_{u \to 0} \frac{ e^{a u}
-%- e^{(b+1) u}}{1-e^u} = b+1-a$.}
 \end{center}
 %
 %% modo 0
@@ -185,8 +187,8 @@ caracter\'isticas son las siguientes:
 \begin{center}
 \begin{tabular}
 {
-|>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
+|>{\vspace{-2mm}}p{.35\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.6\textwidth}|
 }
 %
 \hline
@@ -257,6 +259,7 @@ La  ley de Bernoulli tiene una propiedad de reflexividad trivial:
   %
 \end{lema}
 
+\SZ{Ref. Bernoulli}
 
 
 % --------------------------------- Binomial
@@ -270,8 +273,8 @@ Se denota \ $X \, \sim \, \B(n,p)$ \ con \ $n \in \Nset \setminus \{ 0 \, , \, 1
 \begin{center}
 \begin{tabular}
 {
-|>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
+|>{\vspace{-2mm}}p{.35\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.6\textwidth}|
 }
 %
 \hline
@@ -336,6 +339,7 @@ figura Fig.~\ref{Fig:MP:Binomial}.
   funci\'on de repartici\'on asociada (b), con $n = 6, \quad p = \frac13$.}
 \label{Fig:MP:Binomial}
 \end{figure}
+\SZ{Otros ilustraciones para otros $p$?}
 
 Cuando  $n  = 1$,  se  recupera  la lei  de  Bernoulli  $\B(p) \equiv  \B(1,p)$.
 Ad\'emas, se muestra  sencillamente usando la generadora de  probabilidad que
@@ -382,8 +386,8 @@ Se denota \ $X \, \sim \, N\B(r,p)$ \  con \ $r \in \Nset^*, \quad p \in [0 \; 1
 \begin{center}
 \begin{tabular}
 {
-|>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
+|>{\vspace{-2mm}}p{.35\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.6\textwidth}|
 }
 %
 \hline
@@ -447,6 +451,7 @@ figura Fig.~\ref{Fig:MP:BinomialNegativa}.
   \frac35$.}
 \label{Fig:MP:BinomialNegativa}
 \end{figure}
+\SZ{Otros ilustraciones para otros $r, p$?}
 
 Esta ley aparece cuando se repite una experencia binaria \ $X_i \in \{ 0 \, , \,
 1 \},  i = 1, \ldots$  \ con \ $P(X_i=1)  = p$ \ de  manera independiente ($X_i$
@@ -477,11 +482,12 @@ Esta ley es una generalizaci\'on de la ley binomial y aparece por ejemplo cuando
 se  repite  una  experiencia  a  \  $k$  \ estados  \  $n$  \  veces  de  manera
 independiente y nos  interesamos a la probabilidad que  el primer evento aparece
 $n_1$ veces, el secundo $n_2$ veces, \ldots.  Se denota \ $X \ \sim \ \M(n,p)$ \
-con  \  $n  \in  \Nset^*$  \  y  \  $p  =  \begin{bmatrix}  \end{bmatrix}^t  \in
-\Simp_{k-1}$ \ the \ $(k-1)$-simplex estandar,
+con  \  $n   \in  \Nset^*$  \  y   \  $p  =  \begin{bmatrix}  p_1   &  \cdots  &
+  p_k  \end{bmatrix}^t \in \Simp_{k-1}$  \ the  \ $(k-1)$-simplex  estandar (ver
+figure~\ref{Fig:MP:Dirichlet}-(a)),
 %
 \[
-\Simp_{k-1} = \left\{ u \in [ 0 \; 1 ]^k,  \: \sum_i u_i = 1 \right\}
+\Simp_{k-1} = \left\{ x \in [ 0 \; 1 ]^k,  \: \sum_{i=1}^k x_i = 1 \right\}
 \]
 %
 Entonces, a pesar de que se escribe \ $X$ \ de manera $k$-dimensional, el vector
@@ -492,22 +498,31 @@ partenece a una variedad claramente \ $d =  k-1$ \ dimensional y en el caso \ $k
 \begin{center}
 \begin{tabular}
 {
-|>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
+|>{\vspace{-2mm}}p{.35\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.6\textwidth}|
 }
 %
 \hline
 %
-Dominio de definici\'on~\footnotemark & $\X = \left\{ m \in \{ 0 \, , \, \ldots \, , \, n\}^k, \:
-\sum_{i=1}^k m_i = n \right\}$\\[2mm]
+Dominio de definici\'on~\footnote{De hecho, se puede considerar que el vector
+aleatorio es \ $(k-1)$-dimensional \ $\widetilde{X} = \begin{bmatrix}
+\widetilde{X}_1 & \cdots & \widetilde{X}_{k-1} \end{bmatrix}^t$ \ definido sobre
+el dominio \ $\widetilde{\X} = \left\{ m \in \{ 0 \, , \, \ldots \, , \,
+n\}^{k-1}, \: \sum_{i=1}^{k-1} m_i \le n
+\right\}$.\label{Foot:MP:MultinomialDominio}} & $\X = \left\{ m \in \{ 0 \, , \,
+\ldots \, , \, n\}^k, \: \sum_{i=1}^k m_i = n \right\}$\\[2mm]
 \hline
 %
 Parametros & $n \in \Nset^*, \quad p \in  \Simp_{k-1} = \left\{ p \in [ 0 \; 1
 ]^k, \: \sum_i p_i = 1 \right\}$\\[2mm]
 \hline
 %
-Distribuci\'on de probabilidad & $\displaystyle p_X(m) = \frac{n!}{\prod_{i=1}^k
-m_i!}  \prod_{i=1}^k p_i^{m_i}$\\[2mm]
+Distribuci\'on de probabilidad~\footnote{Tratando de $\widetilde{X}$, su masa de
+probabilidad es dada por \ $p_{\widetilde{X}}(m) = \frac{n!}{\prod_{i=1}^k m_i!}
+\prod_{i=1}^{k-1} p_i^{m_i} \, \left( 1 - \sum_{i=1}^{k-1} p_i
+\right)^{n-\sum_{i=1}^{k-1} m_i}$.\label{Foot:MP:MultinomialMasa}} &
+$\displaystyle p_X(m) = \frac{n!}{\prod_{i=1}^k m_i!}  \prod_{i=1}^k
+p_i^{m_i}$\\[2mm]
 \hline
 %
 %Momentos & $ \Esp\left[ X^k \right] = ??\\[2mm]
@@ -529,26 +544,29 @@ Covarianza & $\displaystyle \Sigma_X = n \left( \diag p - p p^t \right)$\\[2mm]
 %p^2}{r \, p} $\\[2mm]
 %\hline
 %%
-Generadora de probabilidad & $\displaystyle G_X(z) = \left( \sum_{j=1}^k p_j z_j
+Generadora de probabilidad & $\displaystyle G_X(z) = \left( p^t z
+%\sum_{j=1}^k p_j z_j
 \right)^n$ \ para \ $z \in \Cset^k$\\[2mm]
 \hline
 %%
-Generadora de momentos & $\displaystyle M_X(u) = \left( \sum_{j=1}^k p_j e^{u_j}
-\right)^n$  \ para \ $u \in \Cset^k$\\[2mm]
+Generadora de momentos & $\displaystyle M_X(u) = \left( p^t e^u
+% \sum_{j=1}^k p_j e^{u_j}
+\right)^n, \: e^u = \begin{bmatrix} e^{u_1} & \cdots & e^{u_k} \end{bmatrix}^t$  \ para \ $u \in \Cset^k$\\[2mm]
 \hline
 %
-Funci\'on caracter\'istica & $\displaystyle \Phi_X(\omega) = \left( \sum_{j=1}^k
-p_j e^{\imath \omega_j} \right)^n$\\[2mm]
+Funci\'on caracter\'istica & $\displaystyle \Phi_X(\omega) = \left( p^t e^{\imath \omega}
+%\sum_{j=1}^k p_j e^{\imath \omega_j} 
+\right)^n$\\[2mm]
 \hline
 \end{tabular}
-\footnotetext{De  hecho,  se puede  considerar  que  el  vector aleatorio  es  \
-  $(k-1)$-dimensional  \  $\widetilde{X}  =  \begin{bmatrix}  \widetilde{X}_1  &
-    \cdots & \widetilde{X}_{k-1} \end{bmatrix}^t$  \ definido sobre el dominio \
-  $\widetilde{\X} =  \left\{ m \in  \{ 0 \,  , \, \ldots  \, , \,  n\}^{k-1}, \:
-    \sum_{i=1}^k m_i  \le n \right\}$.   Su masa de  probabilidad es dada  por \
-  $p_{\widetilde{X}}(m)   =  \frac{n!}{\prod_{i=1}^k   m_i!}   \prod_{i=1}^{k-1}
-  p_i^{m_i}  \,  \left(  1  - \sum_{i=1}^{k-1}  p_i  \right)^{n-\sum_{i=1}^{k-1}
-    m_i}$.}
+%\footnotetext{De  hecho,  se puede  considerar  que  el  vector aleatorio  es  \
+%  $(k-1)$-dimensional  \  $\widetilde{X}  =  \begin{bmatrix}  \widetilde{X}_1  &
+%    \cdots & \widetilde{X}_{k-1} \end{bmatrix}^t$  \ definido sobre el dominio \
+%  $\widetilde{\X} =  \left\{ m \in  \{ 0 \,  , \, \ldots  \, , \,  n\}^{k-1}, \:
+%    \sum_{i=1}^k m_i  \le n \right\}$.   Su masa de  probabilidad es dada  por \
+%  $p_{\widetilde{X}}(m)   =  \frac{n!}{\prod_{i=1}^k   m_i!}   \prod_{i=1}^{k-1}
+%  p_i^{m_i}  \,  \left(  1  - \sum_{i=1}^{k-1}  p_i  \right)^{n-\sum_{i=1}^{k-1}
+%    m_i}$.}
 \end{center}
 %
 % % Modo $\left\lfloor (n+1) p \right\rfloor$
@@ -558,19 +576,26 @@ p_j e^{\imath \omega_j} \right)^n$\\[2mm]
 Es sencillo  ver que  cada componente  \ $X_j$ \  es binomial,  $X_j \,  \sim \,
 \B(n,p_j)$.
 
-\SZ{Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
+Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
 figura Fig.~\ref{Fig:MP:Multinomial}.
 %
 \begin{figure}[h!]
-%\begin{center} \input{TIKZ_MP/BinomialNegativa} \end{center}
+\begin{center} \input{TIKZ_MP/Multinomial} \end{center}
 %
-  \leyenda{Ilustraci\'on de una  distribuci\'on de probabilidad Multinomial (a),
-    y la funci\'on de repartici\'on asociada (b), con $n = 5, \quad k = 3, \quad
-    p    =    \protect\begin{bmatrix}    \frac25    &    \frac15    &    \frac15
-      \protect\end{bmatrix}^t$.}
+\leyenda{Ilustraci\'on de una distribuci\'on  de probabilidad multinomial para \
+  $k   =  3$   \   del   vector  \   $(k-1)$-dimensional   \  $\widetilde{X}   =
+  \protect\begin{bmatrix}   X_1  &  X_2   \protect\end{bmatrix}^t$  \   ($X_3  =
+  1-X_1-X_2$)  \ con  las marginales  \ $p_{X_1},  \: p_{X_2}$  \ (ver  notas de
+  pie~\ref{Foot:MP:MultinomialDominio}   y~\ref{Foot:MP:MultinomialMasa}).   Los
+  otros parametros son  \ $n = 5$  \ y \ $p =  \protect\begin{bmatrix} \frac25 &
+    \frac13     &    \frac4{15}     \protect\end{bmatrix}^t$    (a),     $p    =
+  \protect\begin{bmatrix} \frac13  & \frac12 &  \frac16 \protect\end{bmatrix}^t$
+  (b).}
 \label{Fig:MP:Multinomial}
 \end{figure}
-}
+
+
+\SZ{Otros ilustraciones para otros $n, p$?}
 
 
 % --------------------------------- Geometrica
@@ -584,8 +609,8 @@ caracter\'isticas son las siguientes:
 \begin{center}
 \begin{tabular}
 {
-|>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
+|>{\vspace{-2mm}}p{.35\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.6\textwidth}|
 }
 %
 \hline
@@ -648,6 +673,7 @@ figura Fig.~\ref{Fig:MP:Geometrica}.
   la funci\'on de repartici\'on asociada (b), con $p = \frac13$.}
 \label{Fig:MP:Geometrica}
 \end{figure}
+\SZ{Otros ilustraciones para otros $p$?}
 
 Esta distribuci\'on  aparece en el conteo  de conteo de une  repetici\'on de una
 experiencia de maneja  independiente hasta que occure un  evento de probabilidad
@@ -670,8 +696,8 @@ Se denota $X \,  \sim \, \P(\lambda)$ \ con \ $\lambda  \in \Rset_+^*$ \ llamada
 \begin{center}
 \begin{tabular}
 {
-|>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
+|>{\vspace{-2mm}}p{.35\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.6\textwidth}|
 }
 %
 \hline
@@ -734,6 +760,7 @@ figura Fig.~\ref{Fig:MP:Poisson}.
   la funci\'on de repartici\'on asociada (b), con $\lambda = 3$.}
 \label{Fig:MP:Poisson}
 \end{figure}
+\SZ{Otros ilustraciones para otros $\lambda$?}
 
 Ad\'emas, se muestra  sencillamente usando la generadora de  probabilidad que
 %
@@ -749,7 +776,7 @@ Ad\'emas, se muestra  sencillamente usando la generadora de  probabilidad que
 \end{lema}
 
 Cuando $\lambda = 0$ la variable es  cierta $X = 0$ (usando la convenci\'on $0^0
-= 1$).  \SZ{ Esta distribuci\'on aparece... }
+= 1$).  \SZ{ Esta distribuci\'on aparece... eventos despues tiempo exponencial; conteo. Ej en fisica. Ecuacion del telegrafo}
 % en el conteo de
 %conteo de une repetici\'on de  una experiencia de maneja independiente hasta que
 %occure un evento de probabilidad $p$; por ejemplo el n\'umero de tiro de un dado
@@ -787,19 +814,22 @@ Leyes de los grandes n\'umeros
 \subsubseccion{Distribuci\'on uniforme sobre un intervalo}
 \label{Sssec:MP:UniformeContinua}
 
-Se denota $X \, \sim \, \U([a \; b])$. Las caracteristicas de \ $X$ \ son las
+Se denota $X \, \sim \, \U([a \; b])$. Las caracter\'isticas de \ $X$ \ son las
 siguientes:
 
 \begin{center}
 \begin{tabular}
 {
-|>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
+|>{\vspace{-2mm}}p{.35\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.6\textwidth}|
 }
 %
 \hline
 %
 Dominio de definici\'on & $\X = [a \; b]$\\[2mm]
+\hline
+%
+Parametros & $(a,b) \in \Rset, \: b > a$\\[2mm]
 \hline
 %
 Densidad de probabilidad & $p_X(x) = \frac{1}{b-a}$\\[2mm]
@@ -827,15 +857,16 @@ Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = -\frac65$\\[2mm]
 %\hline
 %
 Generadora de momentos & $\displaystyle M_X(u) = \frac{ e^{b u} - e^{a u}}{u}$ \
-para~\footnotemark  \ $u \in \Cset^d$\\[2mm]
+para~\footnote{En el caso l\'imite \ $u \to  0$, \ $\lim_{u \to 0} \frac{ e^{b u}
+- e^{a u}}{u} = b-a$, y similarmente para la funci\'on caracter\'istica}  \ $u \in \Cset^d$\\[2mm]
 \hline
 %
 Funci\'on caracter\'istica & $\displaystyle  \Phi_X(\omega) = \frac{ e^{\imath a
 \omega} - e^{\imath b \omega}}{\omega}$\\[2mm]
 \hline
 \end{tabular}
-\footnotetext{En el caso l\'imite \ $u \to  0$, \ $\lim_{u \to 0} \frac{ e^{b u}
-- e^{a u}}{u} = b-a$.}
+%\footnotetext{En el caso l\'imite \ $u \to  0$, \ $\lim_{u \to 0} \frac{ e^{b u}
+%- e^{a u}}{u} = b-a$.}
 \end{center}
 %
 % modo 0
@@ -895,8 +926,8 @@ La media va a ser el centro de gravedad de $\D$.
 % \begin{center}
 % \begin{tabular}
 % {
-% |>{\vspace{-2mm}}p{.4\textwidth}|
-% >{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
+% |>{\vspace{-2mm}}p{.35\textwidth}|
+% >{\vspace{-2mm}\hspace{2mm}}p{.6\textwidth}|
 % }
 % %
 % \hline
@@ -959,8 +990,8 @@ siguientes:
 \begin{center}
 \begin{tabular}
 {
-|>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
+|>{\vspace{-2mm}}p{.35\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.6\textwidth}|
 }
 %
 \hline
@@ -1019,6 +1050,7 @@ figura Fig.~\ref{Fig:MP:Exponencial}.
 funci\'on de repartici\'on asociada (b), con $\lambda = 1.5$.}
 \label{Fig:MP:Exponencial}
 \end{figure}
+\SZ{Poner escalas; Otros ilustraciones para otros $\lambda$?}
 
 Cuando $\lambda \to +\infty$ la variable tiende a una variable cierta $X = 0$.
 \SZ{Esta distribuci\'on aparece... Propiedades}
@@ -1041,18 +1073,16 @@ Cuando $\lambda \to +\infty$ la variable tiende a una variable cierta $X = 0$.
 \subsubseccion{Distribuci\'on normal o Gaussiana multivariada real}
 \label{Sssec:MP:Gaussiana}
 
-Se denota $X \,  \sim \, \N(m,\Sigma)$ \ con \ $m \in \Rset^d$  \ y \ $\sigma$ \
-matriz  $d \times d$  s\'imetrica definida  positiva.  Se  puede escribir  $X \,
-\egald \, \Sigma^{\frac12} N + m$ \ con \ $N \, \sim \, \N(0,I)$ \ donde \ $I$ \
-es la identidad y \ $N$ \ es dicha Gausiana estandar o centrada-normalizada. Las
-caracteristicas de  \ $X \,  \sim \, \N(0,I)$  \ son las siguientes  (se deducen
-para cualquier Gaussiana por transformaci\'on lineal; ver secciones anteriores):
+Se denota $X \, \sim \, \N(m,\Sigma)$ \  con \ $m \in \Rset^d$ \ y \ $\Sigma \in
+P_d^+(\Rset)$  \  conjunto  de  las   matrices  de  \  $\Rset^{d  \times  d}$  \
+s\'imetricas definidas positivas. Las  caracter\'isticas de la Gaussiana son las
+siguientes:
 
 \begin{center}
 \begin{tabular}
 {
-|>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
+|>{\vspace{-2mm}}p{.35\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.6\textwidth}|
 }
 %
 \hline
@@ -1060,8 +1090,12 @@ para cualquier Gaussiana por transformaci\'on lineal; ver secciones anteriores):
 Dominio de definici\'on & $\X = \Rset^d$\\[2mm]
 \hline
 %
-Densidad    de   probabilidad    &   $\displaystyle    p_X(x)    =   \frac{1}{(2
-\pi)^{\frac{d}{2}}} \, e^{-\frac12 x^t x}$\\[2.5mm]
+Parametros & $m \in \Rset^d, \: \Sigma \in P_d^+(\Rset)$\\[2mm]
+\hline
+%
+Densidad de probabilidad & $\displaystyle p_X(x) = \frac{1}{(2
+\pi)^{\frac{d}{2}} \left| \Sigma \right|^{\frac12}} \, e^{-\frac12 (x-m)^t
+\Sigma^{-1} (x-m)}$\\[2.5mm]
 \hline
 %
 %Momentos & $ \Esp\left[ X^k \right] = p^k$\\[2mm]
@@ -1070,10 +1104,10 @@ Densidad    de   probabilidad    &   $\displaystyle    p_X(x)    =   \frac{1}{(2
 %Momento factorial & $\Esp\left[ (X)_k \right] = ?$\\[2mm]
 %\hline
 %
-Promedio & $ m_X = 0$\\[2mm]
+Promedio & $ m_X = m$\\[2mm]
 \hline
 %
-Covarianza & $\Sigma_X = I$\\[2mm]
+Covarianza & $\Sigma_X = \Sigma$\\[2mm]
 \hline
 %
 Asimetr\'ia (caso escalar) & $\gamma_X = 0$\\[2mm]
@@ -1085,46 +1119,63 @@ Curtosis por exceso (caso escalar) & $\widebar{\kappa}_X = 0$\\[2mm]
 %Generadora de probabilidad & $G_X(z) = e^{\lambda (z-1)}$ \ para \ $z \in \Cset$\\[2mm]
 %\hline
 %
-Generadora de  momentos &  $\displaystyle M_X(u) =  e^{u^t u}$  \ para \  $u \in
+Generadora de  momentos &  $\displaystyle M_X(u) =  e^{u^t \Sigma u + u^t m}$  \ para \  $u \in
 \Cset^d$\\[2mm]
 \hline
 %
 Funci\'on  caracter\'istica   &  $\displaystyle  \Phi_X(\omega)   =  e^{-\frac12
-\omega^t \omega}$\\[2mm]
+\omega^t \Sigma \omega + \imath \omega^t m}$\\[2mm]
 \hline
 \end{tabular}
 \end{center}
 %
 % modo 0
 % Mediana 0
+Nota: trivialmente, se puede escribir $X  \, \egald \, \Sigma^{\frac12} N + m$ \
+con \ $N \, \sim \, \N(0,I)$ \ donde \  $I$ \ es la identidad y \ $N$ \ es dicha
+{\em Gausiana estandar} o {\em centrada-normalizada}. Las caracter\'isticas de \
+$X$ \  son v\'inculadas  a las de  \ $N$  \ (y vice-versa)  por transformaci\'on
+lineal (ver secciones anteriores).
 
-Su densidad de probabilidad y funci\'on  de repartici\'on en el caso escalar son
-representadas en la figura Fig.~\ref{Fig:MP:Gaussiana}.
+
+La densidad de probabilidad gausiana y  la funci\'on de repartici\'on en el caso
+escalar son  representadas en la figura Fig.~\ref{Fig:MP:Gaussiana}-(a)  y (b) y
+una      densidad      en       un      contexto      bi-dimensional      figura
+Fig.~\ref{Fig:MP:Gaussiana}(c).
 %
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/Gaussiana} \end{center}
 % 
 \leyenda{Ilustraci\'on  de  una   densidad  de  probabilidad  gaussiana  escalar
-estandar (a), y la funci\'on de repartici\'on asociada (b).}
+  estandar  (a), y la  funci\'on de  repartici\'on asociada  (b), as\'i  que una
+  densidad  de probabilidad  gaussiana bi-dimensional  centrada y  de  matriz de
+  covarianza \ $\Sigma_X = R(\theta)  \Delta^2 R(\theta)^t$ \ con \ $R(\theta) =
+  \protect\begin{bmatrix}   \cos\theta  &   -  \sin\theta\\[2mm]   \sin\theta  &
+    \cos\theta  \protect\end{bmatrix}$ \  matriz  de rotaci\'on  y  \ $\Delta  =
+  \diag\left(\protect\begin{bmatrix}  1   &  a\protect\end{bmatrix}  \right)$  \
+  matriz  de   cambio  de  escala,   y  sus  marginales   \  $X_1  \,   \sim  \,
+  \N\left(0,\cos^2\theta  + a^2  \sin^2\theta \right)$  \ y  \ $X_2  \,  \sim \,
+  \N\left(0,\sin^2\theta + a^2 \cos^2\theta  \right)$ \ (ver m\'as adelante). En
+  la figura, $a = \frac14$ \ y \ $\theta = \frac{\pi}{6}$.}
 \label{Fig:MP:Gaussiana}
 \end{figure}
 
 %\SZ{Poner los ticks de axis detras}
-\begin{figure}[h!]
-\begin{center} \input{TIKZ_MP/Gaussiana2D} \end{center}
-% 
-\leyenda {Ilustraci\'on de una densidad de probabilidad gaussiana bi-dimensional
-  centrada  y  de  matriz  de   covarianza  \  $\Sigma_X  =  R(\theta)  \Delta^2
-  R(\theta)^t$  \ con  \  $R(\theta) =  \protect\begin{bmatrix}  \cos\theta &  -
-    \sin\theta\\[2mm] \sin\theta & \cos\theta \protect\end{bmatrix}$ \ matriz de
-  rotaci\'on   y   \    $\Delta   =   \diag\left(\protect\begin{bmatrix}   1   &
-      a\protect\end{bmatrix}  \right)$  \ matriz  de  cambio  de  escala, y  sus
-  marginales  \  $X_1  \,  \sim  \, \N\left(0,\cos^2\theta  +  a^2  \sin^2\theta
-  \right)$  \ y  \ $X_2  \, \sim  \, \N\left(0,\sin^2\theta  +  a^2 \cos^2\theta
-  \right)$ \ (ver m\'as  adelante). En la figura, $a = \frac14$  \ y \ $\theta =
-  \frac{\pi}{6}$.}
-\label{Fig:MP:Gaussiana2D}
-\end{figure}
+%\begin{figure}[h!]
+%\begin{center} \input{TIKZ_MP/Gaussiana2D} \end{center}
+%% 
+%\leyenda {Ilustraci\'on de una densidad de probabilidad gaussiana bi-dimensional
+%  centrada  y  de  matriz  de   covarianza  \  $\Sigma_X  =  R(\theta)  \Delta^2
+%  R(\theta)^t$  \ con  \  $R(\theta) =  \protect\begin{bmatrix}  \cos\theta &  -
+%    \sin\theta\\[2mm] \sin\theta & \cos\theta \protect\end{bmatrix}$ \ matriz de
+%  rotaci\'on   y   \    $\Delta   =   \diag\left(\protect\begin{bmatrix}   1   &
+%      a\protect\end{bmatrix}  \right)$  \ matriz  de  cambio  de  escala, y  sus
+%  marginales  \  $X_1  \,  \sim  \, \N\left(0,\cos^2\theta  +  a^2  \sin^2\theta
+%  \right)$  \ y  \ $X_2  \, \sim  \, \N\left(0,\sin^2\theta  +  a^2 \cos^2\theta
+%  \right)$ \ (ver m\'as  adelante). En la figura, $a = \frac14$  \ y \ $\theta =
+%  \frac{\pi}{6}$.}
+%\label{Fig:MP:Gaussiana2D}
+%\end{figure}
 
 La gaussiana tiene un par de propiedades particulares:
 %
@@ -1147,9 +1198,29 @@ La gaussiana tiene un par de propiedades particulares:
 \end{teorema}
 %
 \begin{proof}
-  Este  resultato de proba  usando funci\'on  caracter\'istica de  la gaussiana,
+  Este  resultato se proba  usando funci\'on  caracter\'istica de  la gaussiana,
   conjuntalmente al teorema~\cite{Teo:MP:PropiedadesFuncionCaracteristica}.
 \end{proof}
+
+%
+\begin{teorema}[Independencia]
+\label{Teo:MP:IndependenciaGaussiana}
+%
+  Sea   \   $X  \,   \sim   \,   \N(m,\Delta)$  \   con   \   $\Delta  =   \diag
+  \left(  \begin{bmatrix}  \sigma_1^2  &  \cdots  &  \sigma_d^2  \end{bmatrix}^t
+  \right)$   \  diagonal.   Entonces  las   componentes  \   $X_i  \,   \sim  \,
+  \N(m_i,\sigma_i^2)$ \ son independientes.
+\end{teorema}
+%
+\begin{proof}
+  Este resultato se proba  trivialmente escribiendo la densidad de probabilidad,
+  notando que se factorisa.
+\end{proof}
+%
+Hemos visto que cuando un  vector tiene componentes independientes, la matriz de
+covarianza  es   diagonal  (lema~\ref{Lem:MP:IndependenciaCov}),  pero   que  la
+reciproca es falsa en general. El \'ultimo teorema muestra que la reciproca vale
+en el caso gausiano.
 
 %Cuando $\lambda \to +\infty$ la variable tiende a una variable cierta $X = 0$.
 \SZ{Esta distribuci\'on aparece...}
@@ -1175,13 +1246,13 @@ caso general y caso circular
 
 Se  denota $X \,  \sim \,  \G(a,b)$ \  con \  $a \in  \Rset_+^*$ \  llamado {\em
 parametro de  forma} \ y \  $b \in \Rset_+^*$  \ llamada {\em taza}  (inversa de
-{\em escala}).  Las caracteristicas son:
+{\em escala}).  Las caracter\'isticas son:
 
 \begin{center}
 \begin{tabular}
 {
-|>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
+|>{\vspace{-2mm}}p{.35\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.6\textwidth}|
 }
 %
 \hline
@@ -1232,8 +1303,14 @@ Funci\'on  caracter\'istica  &  $\displaystyle   \Phi_X(\omega)  =  \left(  1  -
 $\displaystyle  \Gamma(a) =  \int_{\Rset_+} x^{a-1}  \, e^{-x}  \, dx$  \  es la
 funci\'on Gamma~\cite{AbrSte70, AndAsk99, GraRyz15}.
 
-Su densidad de probabilidad y funci\'on de repartici\'on son representadas en la
-figura Fig.~\ref{Fig:MP:Gamma} para varios $a$ \ y \ $b = 1$.
+Nota: trivialmente, se puede escribir $X \,  \egald \, \frac{1}{b} G$ \ con \ $G
+\, \sim \, \G(a,1)$  \ donde \ $G$ \ es estandardizada  o normalizada. De nuevo,
+las  caracter\'isticas  de \  $X$  \  son  v\'inculadas a  las  de  \ $G$  \  (y
+vice-versa) por transformaci\'on lineal (ver secciones anteriores).
+
+Una densidad de probabilidad gamma  y la funci\'on de repartici\'on asociada son
+representadas en  la figura Fig.~\ref{Fig:MP:Gamma} para  varios $a$ \ y  \ $b =
+1$.
 %
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/Gamma} \end{center}
@@ -1275,6 +1352,28 @@ caracter\'istica un v\'inculo con variables gausianas:
   \]
 \end{lema}
 
+La distribuci\'on Gamma aparece entre  otros en problema de inferencia Bayesiana
+como distribuci\'on a priori conjugado~\footnote{En la inferencia Bayesiana, nos
+  interesamos al paremetro (posiblemente  multivariado) \ $\theta$ \ subyancente
+  a una  distribuci\'on. Por ejemplo,  sabemos tener observaciones  sorteados de
+  una distribuci\'on de Poisson, pero con el parametro \ $\lambda$ \ desconocido
+  y nos interesamos a \ $\theta \equiv \lambda$. El enfoque Bayesiano consiste a
+  considerar el paremetro  \ $\Theta$ \ aleatorio, tal  que la distribuci\'on de
+  las observaciones  sea vista como distribuci\'on condicional  \ $p_{X|\Theta =
+    \theta}(x)$, llamada distribuci\'on de sampleo. Dados las observaciones $X =
+  x$,  la  meta  es  de  determinar  la  distribuci\'on  dicha  a  posteriori  \
+  $p_{\Theta|X =  x}$ \ a  partir de  la cual se  puede hacer estimaci\'on  de \
+  $\theta$ dados  las observaciones, calcular intervalos de  confianza, etc. Por
+  eso, el metodo se apoya sobre la regla de Byes $p_{\Theta|X=x}(\theta) \propto
+  p_{X|\Theta=\theta}(x) p_\Theta(\theta)$  \ as\'i  que se necesita  elegir una
+  distribuci\'on  \ $p_\Theta$  \  dicha  a priori.  Una  elecci\'on posible  es
+  tomarla en  una familia  parametrizada tal que  la distribuci\'on  a posterior
+  partenece tambi’en a esta familia: es lo que se llama prior conjugado. La idea
+  es que si vienen observaciones, en lugar de re-calcular el posterior, se puede
+  actualizar solamente  los parametros (llamados  hiperparametros). \SZ{Ver nota
+    de pie  en el cap  2 a modificar}.\label{Foot:MP:BayesPrior}}  del parametro
+$\lambda$ de la ley de Poisson~\cite{Rob07}.
+
 \SZ{Esta distribuci\'on aparece...}
 % en el conteo de
 %conteo de une repetici\'on de  una experiencia de maneja independiente hasta que
@@ -1284,11 +1383,87 @@ caracter\'istica un v\'inculo con variables gausianas:
 
 
 
-\SZ{
 % --------------------------------- Wishart
 \subsubseccion{Distribuci\'on matriz-variada de Wishart}
-Wishart como ejemplo de 'matrix variate'. Aparece en sample covariance matrix}
 
+Este ejemplo es una  generalizaci\'on matriz-variada de la distribuci\'on gamma.
+Se puede ver  una matriz como un vector, guardando por  ejemplo sus columnas una
+bajo la  precediente.  Sin embargo, tal  distribuci\'on apareciendo naturalmente
+en un contexto de estimaci\'on de  matriz de covarianza (ver m\'as adelante), es
+m\'as   natural  verla   matriz-variate.    Tal  distrubuci\'on   es  debido   a
+J. Wishart~\cite{Wis28, toto}, y se denota  \ $X \, \sim \, W_d(V,\nu)$ \ donde
+el  dominio de definici\'on  es \  $P_d^+(\Rset)$, conjunto  matrices simetricas
+definida positivas, $V  \in P_d^+(\Rset)$ parametro de escala y \  $\nu > d-1$ \
+grados  de  libertad.   Las  caracter\'isticas  de  la  distribuci\'on  son  las
+siguientes:
+
+
+\begin{center}
+\begin{tabular}
+{
+|>{\vspace{-2mm}}p{.35\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.6\textwidth}|
+}
+%
+\hline
+%
+Dominio de definici\'on~\footnote{De hecho, se puede considerar que la matriz
+aleatoria es \ $(2 d - 1)$-dimensional; diagonalisando une matriz de \
+$P_d^+(\Rset)$, la matriz diagonal tiene $d$ grados de libertad ($d$ reales
+positivso) y la matriz de autovectores, unitaria, es parametrizada por \ $d-1$ \
+angulos \ (en $[0 \; 2 \pi) \times [0 \;
+\pi)^{d-2}$)~cite{HorJoh13}.\label{Foot:MP:WishartXtilde}} & $\X =
+P_d^+(\Rset), \: d \in \Nset^*$\\[2mm]
+\hline
+%
+Parametros & $V \in  P_d^+(\Rset)$ (escala) y \ $\nu > d-1$ \ (grados de libertad)\\[2mm]
+\hline
+%%
+Densidad de probabilidad~\footnote{La densidad de probabilidad es dada con
+respeto a la medida de Lebesgue restricta a \ $P_d^+(\Rset) \subset \Rset^{d
+\times d}$.\label{Foot:MP:WishartDensidad}} & $\displaystyle p_X(x) =
+\frac{|x|^{\frac{\nu-d-1}{2}} \, e^{-\frac12 \Tr\left( V^{-1}
+x\right)}}{2^{\frac{d \nu}{2}} \, |V|^{\frac{\nu}{2}} \, \Gamma_d\left(
+\frac{\nu}{2} \right)}$\\[2mm]
+\hline
+%%
+%%Momentos & $ \Esp\left[ X^k \right] = p^k$\\[2mm]
+%%\hline
+%%
+%%Momento factorial & $\Esp\left[ (X)_k \right] = ?$\\[2mm]
+%%\hline
+%%
+Promedio & $\displaystyle m_X = $\\[2mm]
+%\hline
+%%
+%Varianza &  $\displaystyle \sigma_X^2  = \frac{a b}{(a  + b)^2  (a + b  + 1)}$\\[2mm]
+\hline
+%%
+%%Asimetr\'ia & $\displaystyle \gamma_X = \frac{2 \, (b - a) \sqrt{a + b + 1}}{( a
+%+ b + 2) \sqrt{a b}}$\\[2mm]
+%\hline
+%%
+%Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = \frac{6 \, \left( (a - b)^2 (a + b + 1) - a
+%b (a  + b  + 2)  \right)}{a \, b  \left( a  + b  + 2 \right)  \left( a  + b  + 3
+%\right)}$\\[2mm]
+%\hline
+%%
+%%Generadora de probabilidad & $G_X(z) = e^{\lambda (z-1)}$ \ para \ $z \in \Cset$\\[2mm]
+%%\hline
+%%
+%Generadora de momentos & $\displaystyle M_X(u)  = \hypgeom{1}{1}\left( a , a + b
+%\, ; \, u \right)$ \ para \ $u \in \Cset$\\[2mm]
+%\hline
+%%
+%Funci\'on     caracter\'istica     &     $\displaystyle     \Phi_X(\omega)     =
+%\hypgeom{1}{1}\left( a , a + b \, ; \, \imath \omega \right)$\\[2mm]
+%\hline
+\end{tabular}
+\end{center}
+%
+$\Tr$ \ denota  el operador traza y \ $\Gamma_d(y)  = \pi^{\frac{d \, (d-1)}{4}}
+\prod_{j=1}^d  \Gamma\left(  y -  \frac{j-1}{2}  \right)$,  definida  para $y  >
+\frac{d-1}{2}$, \ es la funci\'on gamma multivariada~\cite{toto}.
 
 % --------------------------------- Beta
 
@@ -1296,13 +1471,13 @@ Wishart como ejemplo de 'matrix variate'. Aparece en sample covariance matrix}
 \label{Sssec:MP:Beta}
 
 Se denota $X  \sim \beta(a,b)$ \ con  \ $(a,b) \in \Rset_+^{* \,  2}$ \ llamados
-{\em parametros de forma}.  Las caracteristicas son:
+{\em parametros de forma}.  Las caracter\'isticas son:
 
 \begin{center}
 \begin{tabular}
 {
-|>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
+|>{\vspace{-2mm}}p{.35\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.6\textwidth}|
 }
 %
 \hline
@@ -1314,7 +1489,7 @@ Parametros & $(a,b) \in \Rset_+^{* \, 2}$ (forma)\\[2mm]
 \hline
 %
 Densidad   de    probabilidad   &   $\displaystyle    p_X(x)   =   \frac{x^{a-1}
-(1-x)^{b-1}}{B(a,b))}$\\[2mm]
+(1-x)^{b-1}}{B(a,b)}$\\[2mm]
 \hline
 %
 %Momentos & $ \Esp\left[ X^k \right] = p^k$\\[2mm]
@@ -1531,6 +1706,10 @@ de variables, se demuestra el lema siguiente:
   cierra la prueba.
 \end{proof}
 
+La distribuci\'on beta  aparece entre otros en problema  de inferencia Bayesiana
+como   distribuci\'on   a   priori  conjugado~\footref{Foot:MP:BayesPrior}   del
+parametro $p$ de la ley Binomial~\cite{Rob07}.
+
 \SZ{Esta distribuci\'on aparece...}
 % en el conteo de
 %conteo de une repetici\'on de  una experiencia de maneja independiente hasta que
@@ -1544,30 +1723,60 @@ de variables, se demuestra el lema siguiente:
 \subsubseccion{Distribuci\'on de Dirichlet}
 \label{Sssec:MP:Dirichlet}
 
-Esta distribuci\'on  es una extensi\'on  multivariada de las variables  beta. Se
-nota \ $X \, \sim \, \Dir(a)$ \ con \  $a \in \Rset_+^{* \, k}$ \ y \ $X$ \ vive
-sobre el $(k-1)$-simplex  estandar \ $\Simp_{k-1}$. $a$ es  llamado parametro de
-forma. Como en el caso de vectores de distribuci\'on multinomial, a pesar de que
-se escribe \ $X$ \ de manera $k$-dimensional, el vector partenece a una variedad
-\ $d = k-1$ \ dimensional y en el caso  \ $k = 2$ \ se recupera la ley beta. Las
-caracteristicas de un vector de Dirichlet son:
+Esta distribuci\'on teniendo su nombre de integrales on a simplex estudiados por
+M. Lejeune-Dirichlet y J. Liouville  en 1839~\cite{GupRic01, Dir39, Lio39} en es
+una extensi\'on  multivariada de las variables  beta a veces  conocida como {\em
+  Beta multivariada}~\cite{OlkRub64}. Se  nota \ $X \, \sim \,  \Dir(a)$ \ con \
+$a \in \Rset_+^{*  \, k}$ \ y \  $X$ \ vive sobre el  $(k-1)$-simplex estandar \
+$\Simp_{k-1}$.  $a$ es  llamado parametro de forma. Como en  el caso de vectores
+de  distribuci\'on multinomial, a  pesar de  que se  escribe \  $X$ \  de manera
+$k$-dimensional, el vector partenece a una  variedad \ $d = k-1$ \ dimensional y
+en el caso  \ $k = 2$ \ se  recupera la ley beta. A veces  se parametriza la ley
+con un  parametro escalar \ $\alpha  > 0$ \ y  un vector del  simplex estandar \
+$\bar{a} \in \Simp_{k-1}$ \ tal que
+%
+\[
+a = \alpha \bar{a}, \quad \mbox{\ie} \quad \alpha = \sum_{i=1}^k \alpha_i, \quad
+\bar{a} = \frac{a}{\alpha}
+\]
+%
+$\alpha$ \  es conocido como  parametro de {\em  concentraci\'on} y el  vector \
+$\bar{a}$ \ como {\em medida de base}.
+
+
+Las caracter\'isticas de un vector de Dirichlet son:
 %
 \begin{center}
 \begin{tabular}
 {
-|>{\vspace{-2mm}}p{.4\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.55\textwidth}|
+|>{\vspace{-2mm}}p{.35\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.6\textwidth}|
 }
 %
 \hline
 %
-Dominio de definici\'on~\footnotemark & $\X = \Simp_{k-1}, \: k \in \Nset \setminus \{ 0 \, , \, 1 \}$\\[2mm]
+Dominio de definici\'on~\footnote{De hecho, se puede considerar que el vector
+aleatorio es \ $(k-1)$-dimensional \ $\widetilde{X} = \begin{bmatrix}
+\widetilde{X}_1 & \cdots & \widetilde{X}_{k-1} \end{bmatrix}^t$ \ definido sobre
+el hipertriangulo \ $\widetilde{\X} = \Tri_{k-1} = \left\{ \widetilde{x} \in [0
+\; 1]^{k-1}, \: \sum_{i=1}^{k-1} \widetilde{x}_i \le 1 \right\}$, proyecci\'on
+del simplex sobre el hiperplano \ $x_k = 0$.\label{Foot:MP:DirichletXtilde}} &
+$\X = \Simp_{k-1}, \: k \in \Nset \setminus \{ 0 \, , \, 1 \}$\\[2mm]
 \hline
 %
-Parametros & $a \in \Rset_+^{* \, k}$ (forma)\\[2mm]
+Parametros & $a = \alpha \, \bar{a} \, \in \, \Rset_+^{* \, k}$ \ (forma) \ con
+\ $\alpha \in \Rset_+^*$ \ (concentraci\'on) y \ $\bar{a} \in \Simp_{k-1}$
+(medida de base)\\[2mm]
 \hline
 %
-Densidad   de    probabilidad   &   $\displaystyle    p_X(x)   =   \frac{\prod_{i=1}^k x_i^{a_i-1}}{B(a)}$\\[2mm]
+Densidad de probabilidad~\footnote{La densidad de probabilidad es dada con
+respeto a la medida de Lebesgue restricta al simplex \ $\Simp_{k-1}$. Tratando
+de \ $\widetilde{X}$, el vector tiene una densidad con respeto a la medida de
+Lebesgue usual, y es dada por \ $p_{\widetilde{X}}\left( \widetilde{x} \right) =
+\frac{\prod_{i=1}^{k-1} \widetilde{x}_i^{\, a_i-1} \, \left( 1 -
+\sum_{i=1}^{k-1} \widetilde{x}_i
+\right)^{a_k-1}}{B(a)}$.\label{Foot:MP:DirichletDensidad}} & $\displaystyle
+p_X(x) = \frac{\prod_{i=1}^k x_i^{a_i-1}}{B(a)}$\\[2mm]
 \hline
 %%
 %%Momentos & $ \Esp\left[ X^k \right] = p^k$\\[2mm]
@@ -1576,11 +1785,13 @@ Densidad   de    probabilidad   &   $\displaystyle    p_X(x)   =   \frac{\prod_{
 %%Momento factorial & $\Esp\left[ (X)_k \right] = ?$\\[2mm]
 %%\hline
 %%
-Promedio & $\displaystyle m_X = \frac{a}{\sum_{i=1}^k a_i} \equiv \tilde{a}$\\[2.5mm]
+Promedio & $\displaystyle m_X = \bar{a}$\\[2.5mm]
+%\frac{a}{\sum_{i=1}^k a_i} \equiv \overline{a}$\\[2.5mm]
 \hline
 %
-Covarianza & $\displaystyle \Sigma_X = \frac{\diag\left( \widetilde{a} \right) -
-\tilde{a} \tilde{a}^t}{1 + \sum_{i=1}^k a_k}$\\[2.5mm]
+Covarianza & $\displaystyle \Sigma_X = \frac{\diag\left( \bar{a} \right) -
+\bar{a} \bar{a}^t}{1 + \alpha}$\\[2.5mm]
+%\sum_{i=1}^k a_k}$\\[2.5mm]
 \hline
 %%
 %Asimetr\'ia & $\displaystyle \gamma_X = \frac{2 \, (b - a) \sqrt{a + b + 1}}{( a
@@ -1592,39 +1803,64 @@ Covarianza & $\displaystyle \Sigma_X = \frac{\diag\left( \widetilde{a} \right) -
 %\right)}$\\[2mm]
 %\hline
 %%
-%%Generadora de probabilidad & $G_X(z) = e^{\lambda (z-1)}$ \ para \ $z \in \Cset$\\[2mm]
-%%\hline
-%%
-%Generadora de momentos & $\displaystyle M_X(u)  = \hypgeom{1}{1}\left( a , a + b
-%\, ; \, u \right)$ \ para \ $u \in \Cset$\\[2mm]
+%Generadora de probabilidad & $G_X(z) = e^{\lambda (z-1)}$ \ para \ $z \in \Cset$\\[2mm]
 %\hline
-%%
-%Funci\'on     caracter\'istica     &     $\displaystyle     \Phi_X(\omega)     =
-%\hypgeom{1}{1}\left( a , a + b \, ; \, \imath \omega \right)$\\[2mm]
-%\hline
-\end{tabular}
-\footnotetext{De  hecho,  se puede  considerar  que  el  vector aleatorio  es  \
-  $(k-1)$-dimensional  \  $\widetilde{X}  =  \begin{bmatrix}  \widetilde{X}_1  &
-    \cdots   &  \widetilde{X}_{k-1}   \end{bmatrix}^t$  \   definido   sobre  el
-  hipertriangulo \  $\widetilde{\X} = \left\{ \widetilde{x} \in  [0 \; 1]^{k-1},
-    \:  \sum_{i=1}^{k-1}  \widetilde{x}_i  \le  1  \right\}$.   Su  densidad  de
-  probabilidad,  con   respeto  a  la  medida   de  Lebesgue,  es   dada  por  \
-  $p_{\widetilde{X}}\left(   \widetilde{x}   \right)  =   \frac{\prod_{i=1}^{k-1}
-    \widetilde{x}_i^{\,  a_i-1} \, \left(  1 -  \sum_{i=1}^{k-1} \widetilde{x}_i
-    \right)^{a_k-1}}{B(a)}$.   El v\'inculo entre  las funciones  generadoras de
-  momento  es trivialmente  \ $M_{\widetilde{X}}\left(  \widetilde{u}  \right) =
+%
+Generadora de momentos~\footnote{El v\'inculo entre  las funciones  generadoras de
+  momento  de \ $X$ \ y \ $\widetilde{X}$ \ es trivialmente  \ $M_{\widetilde{X}}\left(  \widetilde{u}  \right) =
   M_X\left(  \begin{bmatrix} \widetilde{u} &  0 \end{bmatrix}^t  \right)$ \  o \
   $M_X(u) =  e^{\imath u_k} M_{\widetilde{X}}\left( \begin{bmatrix} u_1  - u_k &
       \cdots &  u_{k-1} - u_k  \end{bmatrix}^t \right)$, y similarmente  para la
-  funci\'on c\'aracteristica.\label{Foot:MP:Dirichlet}}
+  funci\'on caracter\'istica.\label{Foot:MP:Dirichlet}} & $\displaystyle M_X(u) = \Phi_2^{(k)}( a , \alpha \, ;
+\, u )$ \ para \ $u \in \Cset$\\[2mm]
+\hline
+%%
+Funci\'on caracter\'istica & $\displaystyle \Phi_X(\omega) = \Phi_2^{(k)}(
+a , \alpha \, ; \, \imath \omega )$\\[2mm]
+\hline
+\end{tabular}
+%\footnotetext{De  hecho,  se puede  considerar  que  el  vector aleatorio  es  \
+%  $(k-1)$-dimensional  \  $\widetilde{X}  =  \begin{bmatrix}  \widetilde{X}_1  &
+%    \cdots   &  \widetilde{X}_{k-1}   \end{bmatrix}^t$  \   definido   sobre  el
+%  hipertriangulo \  $\widetilde{\X} = \Tri_{k-1} = \left\{  \widetilde{x} \in [0
+%    \;   1]^{k-1},  \:   \sum_{i=1}^{k-1}  \widetilde{x}_i   \le   1  \right\}$,
+%  proyecci\'on del  simplex sobre  el hiperplano  \ $x_k =  0$.  Su  densidad de
+%  probabilidad,  con   respeto  a  la  medida   de  Lebesgue,  es   dada  por  \
+%  $p_{\widetilde{X}}\left(   \widetilde{x}  \right)   =  \frac{\prod_{i=1}^{k-1}
+%    \widetilde{x}_i^{\,  a_i-1} \, \left(  1 -  \sum_{i=1}^{k-1} \widetilde{x}_i
+%    \right)^{a_k-1}}{B(a)}$.   El v\'inculo entre  las funciones  generadoras de
+%  momento  es trivialmente  \ $M_{\widetilde{X}}\left(  \widetilde{u}  \right) =
+%  M_X\left(  \begin{bmatrix} \widetilde{u} &  0 \end{bmatrix}^t  \right)$ \  o \
+%  $M_X(u) =  e^{\imath u_k} M_{\widetilde{X}}\left( \begin{bmatrix} u_1  - u_k &
+%      \cdots &  u_{k-1} - u_k  \end{bmatrix}^t \right)$, y similarmente  para la
+%  funci\'on caracter\'istica.}
 \end{center}
 %
 $\displaystyle B(a) = \frac{\prod_{i=1}^k \Gamma\left( a_i \right)}{\Gamma\left(
-    \sum_{i=1}^k     a_i     \right)}$    \     es     la    funci\'on     beta
-multivariada~\cite[Teo.~1.8.6]{AndAsk99}.
-%y \ $\displaystyle
-%\hypgeom{1}{1}$  \ es  la funci\'on  confluent hipergeom\'etrica~\cite{AbrSte70,
-%AndAsk99, GraRyz15}.
+    \sum_{i=1}^k     a_i     \right)}$     \     es    la     funci\'on     beta
+multivariada~\cite[Teo.~1.8.6]{AndAsk99} \ y \ $\displaystyle \Phi_2^{(k)}$ \ es
+la           funci\'on          confluent           hipergeom\'etrica          \
+$k$-variada~\footnote{$\Phi_2^{(k)}(a;b;z)     =     \sum_{m    \in     \Nset^k}
+  \frac{(a_1)_{(m_1)}     \ldots    (a_k)_{(m_k)}     \,     z_1^{m_1}    \ldots
+    z_k^{m_k}}{(b)_{(m_1+\cdots+m_k)} m_1!  \ldots m_k!}$  \ con \ $(x)_{(n)}$ \
+  s\'imbolo  de Pochhammer  usual o  factorial creciente,  $(x)_{(n)} =  x (x+1)
+  \ldots (x+n)$ \,  con la convenci\'ion \ $(x)_{(0)} = 1$.   De hecho, la forma
+  de la  funci\'on generadora de momento  viene directamente de  la escritura de
+  las series de Taylor de $e^{u_i x_i}$ \ o de la forma integral de la funci\'on
+  confluente  hipergeom\'etrica~\cite{Phi88}.},  tambi\'en  conocida como  forma
+confluente    de   series    de    Lauricella~\cite[\S~1.4,   ec.~(8)]{SriKar85}
+o~\cite{Hum22, App25, AppKam26, Erd37, Erd40}.
+%
+\SZ{Erd\'elyi,  A.,  Beitrag  zur  Theorie  der  konfluenten  hypergeometrischen
+  Funktionen von mehreren  Ver\"anderlichen, Wiener Sitzungsberichte 146 (1937),
+  431-467, ec. 7.2
+
+  P. Appell and J. Kamp\'e  de F\'eriet, Fonctions  hyperg\'eom\'etriques et
+  hypersph\'eriques, Gauthier Villars, Paris, 1926, pp. 124-125, 116
+
+H. Exton, Multiple hypergeometric functions and applications, Ellis Horwood, Chichester, U.K., 1976
+P42 
+}
 
 La figura Fig.~\ref{Fig:MP:Dirichlet} representa  el dominio de definici\'on del
 vector (a) y su densidad de  probabildad con las marginales (ver m\'as adelante)
@@ -1633,12 +1869,15 @@ para $k = 3$.
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/Dirichlet} \end{center}
 %
-\leyenda{Ilustraci\'on del dominio  $\X$ de definici\'on de la  ley de Dirichlet
-  para  $k   =  3$  (a),  y   densidad  de  probabilidad   de  $\widetilde{X}  =
+\leyenda{Ilustraci\'on del  dominio $\Simp_{k-1}$ de  definici\'on de la  ley de
+  Dirichlet   para  \   $k  =   3$   \  (grise   oscuro),  con   el  dominio   \
+  $(k-1)$-dimensional   \  $\Tri_{k-1}$   \  del   vector  \   $\widetilde{X}  =
   \protect\begin{bmatrix}   X_1  &  X_2   \protect\end{bmatrix}^t$  \   ($X_3  =
-  1-X_1-X_2$)  \ sobre  \ $\widetilde{\X}$  \ con  las marginales  (ver  nota de
-  pie~\ref{Foot:MP:Dirichlet}). Los parametros son \ $a = \protect\begin{bmatrix} 3 & 2 &
-    2 \protect\end{bmatrix}^t$  (b) y \ $a  = \protect\begin{bmatrix} 3 &  1 & 2
+  1-X_1-X_2$) \ (grise claro) (a), y densidad de probabilidad de $\widetilde{X}$
+  \   con   las   marginales   \   $p_{X_1},   \:   p_{X_2}$   (ver   notas   de
+  pie~\ref{Foot:MP:DirichletDominio}   y~\ref{Foot:MP:DirichletDensidad}).   Los
+  parametros   son    \   $a   =    \protect\begin{bmatrix}   3   &   2    &   2
+    \protect\end{bmatrix}^t$  (b) y \  $a =  \protect\begin{bmatrix} 3  & 1  & 2
     \protect\end{bmatrix}^t$ (c).}
 \label{Fig:MP:Dirichlet}
 \end{figure}
@@ -1664,19 +1903,15 @@ Adem\'as, se muestra una stabilidad remplazando dos componentes por su suma:
 \begin{lema}[Stabilidad por agregaci\'on]
 \label{Lem:MP:StabSumaDir}
 %
-Sea  \ $X  =  \begin{bmatrix} X_1  & \cdots  &  X_k \end{bmatrix}^t  \, \sim  \,
-\Dir(a),  \:  a  =  \begin{bmatrix}  a_1  & \cdots  &  a_k  \end{bmatrix}^t  \in
-\Rset_+^{* \, k}$ \ y \ $J^{(i,j)} = \begin{bmatrix} I_{j-1} & \un_i & 0 \\[1mm]
-  0 & 0 & I_{k-j}\end{bmatrix}$ \ matriz \ $(k-1) \times k$ \ donde \ $I_l$ \ es
-la identidad $l \times l$, $\un_i$ el vector con component $i$-\'esima igual a 1
-(0 si no) y $0$ matrices de 0 (todas de tama\~no adcuado).  En \ $J^{(i,j)} X$ \
-se saca la  componente $j$-\'esima, se re-emplaza la  componente $i$-\'esima por
-la suma $X_i + X_j$ \ y se conservan las otras componentes. Entonces,
-  % , \ie $J^{(i,j}_{l,l} = 1, \: 1 \le l < j, \: J^{(i,j}_{l,l+1} = 1, \: j \le
-  % l  < k,  \: $.  Entonces, para  cualquier $1  \le i  < j  \le k$,  notando \
-  % $\widetilde{X}$ \ el vector de  componentes $\widetilde{X}_l = X_l, \: 1 \le
-  % l < j,  \, l \ne i$, \  $\widetilde{X}_i = X_i + X_j$,  \ $\widetilde{X}_l =
-  % X_{l+1}, \: j+1 \le k-1$,
+  Sea  \ $X =  \begin{bmatrix} X_1  & \cdots  & X_k  \end{bmatrix}^t \,  \sim \,
+  \Dir(a), \: a = \begin{bmatrix} a_1 & \cdots & a_k \end{bmatrix}^t \in
+  \Rset_+^{* \, k}$ \ y \ $J^{(i,j)} = \begin{bmatrix} I_{j-1} & \un_i & 0 \\[1mm]
+    0 & 0 & I_{k-j}\end{bmatrix}$ \ matriz  \ $(k-1) \times k$ \ donde \ $I_l$ \
+  es  la identidad $l  \times l$,  $\un_i$ el  vector con  component $i$-\'esima
+  igual a  1 (0 si no)  y $0$ matrices de  0 (todas de tama\~no  adcuado).  En \
+  $J^{(i,j)} X$ \ se saca la componente $j$-\'esima, se re-emplaza la componente
+  $i$-\'esima  por   la  suma  $X_i   +  X_j$  \   y  se  conservan   las  otras
+  componentes. Entonces,
   %
   \[
   J^{(i,j)} X \, \sim \, \Dir\left( J^{(i,j)} a \right)  
@@ -1720,7 +1955,7 @@ De este lema, aplicado de manera recueriva, se obtiene en corolario siguiente:
 \label{Cor:MP:MarginalDirichletBeta}
 %
   Sea  \ $X  \,  \sim \,  \Dir(a)$, entonces  \  $\displaystyle X_i  \, \sim  \,
-  \beta\left( a_i \, , \, \sum_{j=1, j \ne i}^k a_j \right)$.
+  \beta\left( a_i \, , \, \alpha-a_i \right)$.
 \end{corolario}
 
 Naturalmente,  la ley de  Dirichelt siendo  una extensi\'on  de la  beta, existe
@@ -1743,28 +1978,269 @@ $i$-\'esima \ $a_i$. Entonces
 %
 \begin{proof}
   La    prueba   sigue    exactamente   los    mismos   pasos    que    la   del
-  lema~\ref{Lem:MP:VinculoBetaGamma}.
+  lema~\ref{Lem:MP:VinculoBetaGamma} \ trabajando con \ $\widetilde{X}$.
 \end{proof}
 
+Naturalmente,  la  distribuci\'on de  Dirichlet,  extensi\'on  de  la ley  beta,
+aparece entre  otros en problema  de inferencia Bayesiana como  distribuci\'on a
+priori  conjugado~\footref{Foot:MP:BayesPrior}  del  parametro  $p$  de  la  ley
+multinomial~\cite{Rob07}, extensi\'on de la ley binomial.
+
 \SZ{
-densidad con respeto a la medida de Haar? sobre el simplex; ver tilde X, 1 dim continuo sobre hipertriangulo
-
-Ref. Dirichlet, Liouville 1839
-
-Conjugate priori of a multinomial (beta es para la binomial; ver Robert por ejemplo)
-
-Ver generadoras
+Polya urn schemes, Chinese restaurant
 }
 
 
-\SZ{
+
 % --------------------------------- Student-t
-\subsubseccion{Distribuci\'on Student-t multivariada}
+\subsubseccion{Distribuci\'on Student-$t$ multivariada}
 \label{Sssec:MP:Student}
-Cauchy Breit-Wigner como caso particular; caso de conocido como $\alpha$-estable.
+
+En   el  caso   escalar,  esta   ley   fue  introducida   inicialmente  por   F.
+R. Helmert~\cite{Hel75, Hel76, She95}  y J.  L\"uroth~\cite{Lur76, Pfa96}.  Pero
+es m\'as  conocida por su  intruducci\'on por William  Sealy Gosset~\footnote{De
+  hecho,  Gosset  fue  un  estudiante  trabajando en  la  f\'abrica  de  cerveza
+  irlandesa  Guiness  sobre estad\'istica  relacionada  a  la  qui\'imica de  la
+  cerveza.   A pesar  que hay  varias  explicaciones sobre  el hecho  de que  se
+  public\'o este trabajo bajo el nombre ``Student''. Unas es que fue para que no
+  se  sabe que  la f\'abrica  estaba  trabajando sobre  estas estadisticas  para
+  estudiar la  calidad de la  cerveza~\cite{Wen16}.}  en 1908,  trabajando sobre
+variables    centradas    normalizadas    por    el    promedio    y    varianza
+empiricos~\cite{Stu08}.  Fue estudiada entre  otros intensivamente por el famoso
+matematico R. Fisher~\cite{Fis25}.  En la  literatura, esta ley es conocida bajo
+los nombres {\em Student},  {\em Student-$t$} o simplemente {\em $t$-distribuci\'on}
+o  a\'un  bajo  el  nombre  {\em  Pearson  tipo  IV}  debido  a  la  familia  de
+Pearson~\cite{Pea95}.
+
+Se denota con \ $X \sim t_\nu(m,\Sigma)$  \ con \ $m \in \Rset^d$, \ $\Sigma \in
+P_d^+(\Rset)$  \  conjunto  de  las   matrices  de  \  $\Rset^{d  \times  d}$  \
+s\'imetricas definidas positivas. $m$ \ es llamado {\em parametro de posici\'on}
+(no es  la media  que puede  no existir), \  $\Sigma$ \  es llamada  {\em matriz
+  caracter\'istica} (no es [proporcional a]  la covarianza que puede no existir)
+y \ $\nu > 0$ \ llamado  {\em grados de libertad}.  Las caracter\'isticas de una
+Student-$t$ son las siguientes:
+%
+\begin{center}
+\begin{tabular}
+{
+|>{\vspace{-2mm}}p{.35\textwidth}|
+>{\vspace{-2mm}\hspace{2mm}}p{.6\textwidth}|
+}
+%
+\hline
+%
+Dominio de definici\'on &
+$\X = \Rset^d$\\[2mm]
+\hline
+%
+Parametro & $\nu \in \Rset_+^*$ \ (grados de libertad), \ $m \in \Rset^d$ \
+(posici\'on), \ $\Sigma \in P_d^+(\Rset)$ \ (matriz caracer\'istica)\\[2mm]
+\hline
+%
+Densidad de probabilidad & $\displaystyle p_X(x) = \frac{\Gamma\left(
+\frac{\nu+d}{2} \right)}{\pi^{\frac{d}{2}} \nu^{\frac{d}{2}} \Gamma\left(
+\frac{\nu}{2} \right) \, \left| \Sigma \right|^{\frac12}} \, \left( 1 +
+\frac{(x-m)^t \Sigma^{-1} (x-m)}{\nu} \right)^{- \, \frac{\nu+d}{2}}$\\[2mm]
+\hline
+%
+%Momentos & $ \Esp\left[ X^k \right] = p^k$\\[2mm]
+%\hline
+%
+%Momento factorial & $\Esp\left[ (X)_k \right] = ?$\\[2mm]
+%\hline
+%
+Promedio & $\displaystyle m_X = m$ \ si \ $\nu > 1$; \ no
+existe si no~\footnote{De manera general, esta ley admite momentos de orden \ $k$ \
+si y solamente si \ $\nu > k$.\label{Foot:MP:ExistenciaMomentosStudent}}.\\[2.5mm]
+\hline
+%
+Covarianza~\footnote{Fijense de que $\Sigma$ no es la covarianza, pero es
+proporcional a la covarianza\ldots cuando existe. Se podr\'ia imaginar
+renormalizar la ley tal que \ $\Sigma_X$ \ y \ $\Sigma$ \ coinciden, pero no
+ser\'ia posible en el caso \ $\nu \le 2$.} & $\displaystyle \Sigma_X =
+\frac{\nu}{\nu-2} \, \Sigma$ \ si \ $\nu > 2$; \ no existe si
+no~\footref{Foot:MP:ExistenciaMomentosStudent}.\\[2.5mm]
+\hline
+%%%
+Asimetr\'ia (caso escala) & $\displaystyle \gamma_X = 0$ \ si \ $\nu > 3$; \ no
+existe si no~\footref{Foot:MP:ExistenciaMomentosStudent}.\\[2mm]
+\hline
+%%%
+Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = \frac{6}{\nu-4}$ \ si
+\ $\nu > 4$; \ no existe si no~\footref{Foot:MP:ExistenciaMomentosStudent}.\\[2mm]
+\hline
+%
+Funci\'on caracter\'istica~\footnote{Se muestra sencillamente que la funci\'on
+generatriz de momentos puede existir si y solamente si \ $\real{u} = 0$. La
+funci\'on genetratriz de momentos restricta al producto cartesiano de bandas \
+$\real{u} = 0$ \ es nada m\'as que la funci\'on caracter\'istica. Adem\'as, esta
+funci\'on fue calculdada, especialmente en el caso multivariado, bastante
+recientemente~\cite{Sut86, SonPar84, Hur95, KibJoa06}.} & $\displaystyle \Phi_X(\omega)
+= \frac{\nu^{\frac{\nu}{4}}}{2^{\frac{\nu}{2}-1} \Gamma\left( \frac{\nu}{2}
+\right)} \, e^{\imath \omega^t m} \, \left( \omega^t \Sigma \omega \right)^{\frac{\nu}{4}}
+K_{\frac{\nu}{2}}\left( \sqrt{\nu \, \omega^t \Sigma \omega} \right) $\\[2mm]
+\hline
+\end{tabular}
+\end{center}
+%
+$K_\alpha$ \  es la funci\'on  Bessel modificada de  segunda especie y  de orden
+$\alpha$~\cite{AbrSte70,  GraRyz15, Wat22,  GraMat95},  tambi\'en conocida  como
+funci\'on de MacDonald~\cite{Mac98}.
+
+Nota: nuevamente se puede escribir $X \, \egald \, \Sigma^{\frac12} S + m$ \ con
+\ $S \, \sim \,  t_\nu(0,I)$ \ donde \ $I$ \ es la identidad  y \ $S$ \ es dicha
+{\em Student-$t$ estandar}  y las caracter\'isticas de \ $X$  \ son v\'inculadas a
+las  de  \ $S$  \  (y vice-versa)  por  transformaci\'on  lineal (ver  secciones
+anteriores).
+
+
+La densidad de probabilidad Student-$t$ estandar y la funci\'on de repartici\'on
+en el caso escalar  son representadas en la figura Fig.~\ref{Fig:MP:Student}-(a)
+y    (b)   y    una   densidad    en   un    contexto    bi-dimensional   figura
+Fig.~\ref{Fig:MP:Student}(c).
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/Student} \end{center}
+% 
+\leyenda{Ilustraci\'on  de  una  densidad  de probabilidad  Student-$t$  escalar
+  estandar (a),  y la funci\'on  de repartici\'on asociada  (b) con \ $\nu  = 1$
+  (linea llena), \ $\nu = 3$ (linea  guionada), \ $\nu = 7$ (linea punteada) \ y
+  \ $\nu \to +\infty$ (linea llena fina; ver m\'as adelante) grados de libertad,
+  as\'i que una densidad de probabilidad Student-$t$ bi-dimensional con \ $\nu =
+  1$ \  grado de libertad,  centrada, y de  matriz caracter\'istica \  $\Sigma =
+  R(\theta) \Delta^2  R(\theta)^t$ \ con \  $R(\theta) = \protect\begin{bmatrix}
+    \cos\theta    &     -    \sin\theta\\[2mm]    \sin\theta     &    \cos\theta
+    \protect\end{bmatrix}$   \   matriz   de    rotaci\'on   y   \   $\Delta   =
+  \diag\left(\protect\begin{bmatrix}  1   &  a\protect\end{bmatrix}  \right)$  \
+  matriz  de   cambio  de  escala,   y  sus  marginales   \  $X_1  \,   \sim  \,
+  t_\nu\left(0,\cos^2\theta +  a^2 \sin^2\theta \right)$ \  y \ $X_2  \, \sim \,
+  t_\nu\left(0,\sin^2\theta   +   a^2  \cos^2\theta   \right)$   \  (ver   m\'as
+  adelante). En la figura, $a = \frac13$ \ y \ $\theta = \frac{\pi}{6}$.}
+\label{Fig:MP:Student}
+\end{figure}
+
+Nota: el caso  \ $\nu = 1$ \  es conocido como distribuci\'on de  {\em Cauchy} o
+{\em Cauchy  Breit-Wigner}~\cite{SamTaq91, toto,  titi}.  Es un  caso particular
+tambi\'en de distrubuci\'on $\alpha$-estables~\cite{SamTaq91}.
+
+Contrariamente al caso gaussiano, de la forma de la densidad de probabilidad, es
+claro que si la matriz \ $\Sigma$  \ es diagona, la densidad no factoriza, as\'i
+que  las componentes  del vector  no  son independientes.  Este ejemplo  muestra
+claramente que  la reciproca del lema~\ref{Lem:MP:IndependenciaCov}  es falsa en
+general.
+
+Sin embargo, las distribuciones Student-$t$ tienen varias propiedades notables.
+
+\begin{lema}[Stabilidad por transformaci\'on lineal]
+\label{Lem:MP:StabilidadLineal}
+%
+  Sea \ $X  \, \sim \, t_\nu(m,\Sigma)$,  \ $A$ \ matriz de  \ $\Rset^{d' \times
+    d}$ \ con \ $d' \le d$, y de rango lleno y \ $b \in \Rset^{d'}$. Entonces
+  %
+  \[
+  A X + b\, \sim \, t_\nu( A m + b , A \Sigma A^t)
+  \]
+  %
+  En particular los componentes de \ $X$ \ son student-$t$,
+  %
+  \[
+  X_i \, \sim \, t_\nu(m_i , \Sigma_{i,i} )
+  \]
+\end{lema}
+\begin{proof}
+  La prueba es inmediata usando  la funci\'on caracter\'istica y sus propiedades
+  por  transformaci\'on lineal.  La condici\'on  sobre \  $A$ \  es  necesaria y
+  suficiente para que \ $A \Sigma A^t \in P_{d'}^+(\Rset)$.
+\end{proof}
+
+\begin{lema}[V\'inculo con las distribuciones Gamma y Gausiana (mezcla Gaussiana de escala)]
+\label{Lem:MP:MezclaGaussianaEscalaStudent}
+%
+  Sea \ $V \sim \G\left( \frac{\nu}{2} \, ,  \, \frac{\nu}{2} \right)$ \ y \ $G \, \sim \,
+  \N(0,I)$ \ independientes. Entonces
+  %
+  \[
+  \frac{G}{\sqrt{V}} \, \sim \, t_\nu( 0 , I )
+  \]
+  %
+  Dicho de  otra manera, se  puede escribir \  $X \, \sim \,  t_\nu(m,\Sigma)$ \
+  esticasticamente   bajo   la    forme   \   $X   \egald   \sqrt{\frac{\nu}{V}}
+  \Sigma^{\frac12} G + m $ \ donde  \ $\egald$ \ significa que la igualdad es en
+  distribuci\'on.
+\end{lema}
+\begin{proof}
+  Lo  m\'as  simple es  de  salir  de la  formula  de  probabilidad total  vista
+  pagina~\pageref{:MP:}, notando que condicionalmente a \ $V=v$ \ la variable es
+  gausiana de covarianza $\frac{1}{\sqrt{v}} I$,
+%
+\begin{eqnarray*}
+p_X(x) & = & \int_\Rset p_{X|V=v}(x) \, p_V(v) \, dv\\[2mm]
+%
+& \propto & \int_0^{+\infty} v^{\frac{d}{2}} e^{-\frac{v}{2} x^t x}
+v^{\frac{\nu}{2}-1} e^{-\frac{\nu}{2} v} \, dv\\[2mm]
+%
+& \propto & \left( 1 + \frac{x^t x}{\nu} \right)^{- \frac{d+\nu}{2}}
+\int_0^{+\infty} u^{\frac{d+\nu}{2}-1} e^{-u} \, du\\[2mm]
+%
+& \propto & \left( 1 + \frac{x^t x}{\nu} \right)^{- \frac{d+\nu}{2}}
+\end{eqnarray*}
+%
+con  \ $\propto$  \ significando  ``proporcional a''  (el coeficiente  es  lo de
+normalizaci\'on) y  el cambio de  variables $v  = \frac{2 \,  u}{\nu + x^t  x} =
+\frac{\frac{2}{\nu}}{1 + \frac{x^t x}{\nu}} \, u$.
+\end{proof}
+%
+Nota: este  lema permite tambi\'en  probar el lema~\ref{Lem:MP:StabilidadLineal}
+escribiendo \ $A X + b \egald  \sqrt{\frac{\nu}{V}} A \Sigma^{\frac12} G + A m +
+b$.
+
+\begin{lema}[L\'imite Gausiana]
+\label{Lem:MP:LimiteGaussiana}
+%
+  Sea \ $X_\nu \, \sim \, t_\nu(m,\Sigma)$ \ vector Student-$t$ parametizado por
+  \ $\nu$ \ sus grados de libertad. Entonces
+  %
+  \[
+  X_\nu \, \limitd{\nu \to \infty} \, X \, \sim \, \N(m,\Sigma)
+  \]
+  %
+  donde  \  $\displaystyle  \limitd{}$  \   significa  que  el  l\'imite  es  en
+  distribuci\'on.
+\end{lema}
+\begin{proof}
+  La prueba  es inmediata tomando el  logaritmo de la  densidad de probabilidad,
+  usando   la  formula   de   Stirling~\footnote{De  hecho,   esta  formula   es
+    probablemente debida previamente a  A.  De Moivre~\cite{Dem56, Pea24, Cam86,
+      Dut91}, y fue mejorada por  Stirling m\'as tarde. Fue mejorada a\'un m\'as
+    por         el        famoso        matem\'atico         S.        Ramanujan
+    recientemente~\cite[\S~4.1]{AndBer13}}  para \ $\log\Gamma(z)  = \left(  z -
+    \frac12 \right)  \log z  - z +  \frac12 \log(2 \pi)  + o(1)$  \ en \  $z \to
+  +\infty$~\cite{Sti30, AbrSte70, GraRyz15} \ y \ $-\frac{d+\nu}{2} \log\left( 1
+    +  \frac{(x-m)^t \Sigma^{-1} (x-m)}{\nu}  \right) =  -\frac{d+\nu}{2} \left(
+    \frac{(x-m)^t \Sigma^{-1} (x-m)}{\nu} + o\left( \nu^{-1} \right) \right) = -
+  \frac{(x-m)^t \Sigma^{-1} (x-m)}{2} + o(1)$.
+\end{proof}
+
+
+\SZ{
+%corolario suma dis independientes... via condicionalmente a...
+
+Sampling distribution, Gosset, Fisher 25.
+
+Applications
 }
 
 \SZ{
+
+% --------------------------------- Laplace
+\subsubseccion{Distribuci\'on de Laplace multivariada}
+\label{Sssec:MP:Laplace}
+
+} 
+
+
+\SZ{
+
 % --------------------------------- Familia exponencial
 \subsubseccion{Familia  exponencial}
 \cite{Dar35, Koo36,  And70,  Kay93, LehCas98,  Rob07}.;
@@ -1773,7 +2249,7 @@ Cauchy Breit-Wigner como caso particular; caso de conocido como $\alpha$-estable
 \SZ{
 % --------------------------------- Familia eliptica
 \subsubseccion{Familia eliptica}
-Invariante por rotacion...
+Invariante por rotacion... GSM
 }
 
 

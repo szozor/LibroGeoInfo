@@ -14,7 +14,7 @@
 %
 \pgfmathsetmacro{\sy}{2.5/\m};% y-scaling 
 \draw[>=stealth,->] (-.25,0)--({\sx*(\n+.75)+.25},0) node[right]{\small $x$};
-\draw[>=stealth,->] (0,-.1)--(0,{\sy*\m+.25}) node[above]{\small $p_X$};
+\draw[>=stealth,->] (0,-.15)--(0,{\sy*\m+.25}) node[above]{\small $p_X$};
 %
 \pgfmathsetmacro{\b}{(1-\p)^\rp};% coeficiente binomial por la probabilidad
 %
@@ -29,6 +29,7 @@
 \draw (0,{\rp*\p*((1-\p)^\rp)*\sy})--(-.1,{\rp*\p*((1-\p)^\rp)*\sy}) node[left,scale=.7]{$r \, p \, (1-p)^r$};
 %\draw (0,{(\rp*\p*((1-\p)^\rp)+\m)/2*\sy}) node[scale=.7]{$r \, p \, (1-p)^r$};
 %
+\node at ({(\sx*(\n+.75)+.25)/2},-1) [scale=.9]{(a)};
 \end{scope}
 %
 %
@@ -38,7 +39,7 @@
 \pgfmathsetmacro{\sy}{2.5};% y-scaling 
 %
 \draw[>=stealth,->] (-.6,0)--({\sx*(\n+.75)+.5},0) node[right]{\small $x$};
-\draw[>=stealth,->] (0,-.1)--(0,{\sy+.25}) node[above]{\small $F_X$};
+\draw[>=stealth,->] (0,-.15)--(0,{\sy+.25}) node[above]{\small $F_X$};
 %
 \pgfmathsetmacro{\b}{(1-\p)^\rp};% coeficiente binomial por la probabilidad
 \pgfmathsetmacro{\c}{(1-\p)^\rp};% cumulativa binomial por la probabilidad
@@ -59,11 +60,13 @@
 \pgfmathsetmacro{\cl}{\c+\b};\global\let\c\cl;% cumulativa actualizada
 }
 %
-\draw ({\n*\sx},{\sy*(\c+1)/2}) node[left,scale=.7]{\ldots};
+\draw ({(\n+1)*\sx},{\sy*(\c+1)/2}) node[scale=.7]{\ldots};
 \draw (0,{((1-\p)^\rp)*\sy})--(-.1,{((1-\p)^\rp)*\sy}) node[left,scale=.7]{$(1-p)^r$};
 \draw (0,{(1+\rp*\p)*((1-\p)^\rp)*\sy})--(-.1,{(1+\rp*\p)*((1-\p)^\rp)*\sy}) node[left,scale=.7]{$(1+r \, p) (1-p)^r$};
 \draw (-.75,{((1+\rp*\p)*((1-\p)^\rp)+1)/2*\sy}) node[right,scale=.7]{$\vdots$};
 \draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
+%
+\node at ({(\sx*(\n+.75)+.5)/2},-1) [scale=.9]{(b)};
 \end{scope}
 %
 \end{tikzpicture}
