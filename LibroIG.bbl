@@ -13,6 +13,13 @@ Acz{\'e}l, J. \& Dar{\'o}czy, Z. (1975).
 \newblock {\em On Measures of Information and Their Characterizations}.
 \newblock New-York: Academic Press.
 
+\bibitem[\protect\citeauthoryear{Akritas, Akritas \& Malaschonok}{Akritas
+  et~al.}{1996}]{AkrAkr96}
+Akritas, A.~A., Akritas, E.~K., \& Malaschonok, G.~I. (1996).
+\newblock Various proofs of sylvester's (determinant) identity.
+\newblock {\em Mathematics and Computers in Simulation}, {\em 42\/}(4-6),
+  585--593.
+
 \bibitem[\protect\citeauthoryear{Ali \& Silvey}{Ali \& Silvey}{1966}]{AliSil66}
 Ali, S.~M. \& Silvey, S.~D. (1966).
 \newblock A general class of coefficients of divergence of one distribution
@@ -31,6 +38,11 @@ Andersen, E.~B. (1970).
 \newblock Sufficiency and exponential families for discrete sample spaces.
 \newblock {\em Journal of the American Statistical Association}, {\em
   65\/}(331), 1248--1255.
+
+\bibitem[\protect\citeauthoryear{Anderson}{Anderson}{2003}]{And03}
+Anderson, T.~W. (2003).
+\newblock {\em An Introduction to Multivariate Statistical Analysis}.
+\newblock Hoboken, New-Jersey, USA: John Wiley \& Sons.
 
 \bibitem[\protect\citeauthoryear{Andrew \& Berndt}{Andrew \&
   Berndt}{2013}]{AndBer13}
@@ -1644,6 +1656,11 @@ Schwarz, H.~A. (1888).
   problem der variationsrechnung.
 \newblock {\em Acta societatis scientiarum Fennic{\ae}}, {\em 15}, 315--362.
 
+\bibitem[\protect\citeauthoryear{Seber}{Seber}{2004}]{Seb04}
+Seber, G. (2004).
+\newblock {\em Multivariate Observations}.
+\newblock Hoboken, New-Jersey, USA: John Wiley \& Sons.
+
 \bibitem[\protect\citeauthoryear{{Serrano Marug\'an}}{{Serrano
   Marug\'an}}{2000}]{Ser00}
 {Serrano Marug\'an}, E. (2000).
@@ -1769,6 +1786,13 @@ Sutradhar, B.~C. (1986).
 \newblock On the characteristic function of multivariate {S}tudent
   {$t$}-distribution.
 \newblock {\em Canadian Journal of Statistics}, {\em 14\/}(4), 329--337.
+
+\bibitem[\protect\citeauthoryear{Sylvester}{Sylvester}{1851}]{Syl51}
+Sylvester, J. (1851).
+\newblock On the relation between the minor determinants of linearly equivalent
+  quadratic functions.
+\newblock {\em The London, Edinburgh, and Dublin Philosophical Magazine and
+  Journal of Science}, {\em 1\/}(4), 295--305.
 
 \bibitem[\protect\citeauthoryear{Tch{\'e}bichev}{Tch{\'e}bichev}{1867}]{Tch67}
 Tch{\'e}bichev, P. (1867).
@@ -1902,6 +1926,12 @@ Wiener, N. (1948).
 \newblock {\em Cybernetics: or Control and Communication in the Animal end the
   Machine\/} (2nd ed.).
 \newblock Cambridge, MA: MIT Press.
+
+\bibitem[\protect\citeauthoryear{Wishart}{Wishart}{1928}]{Wis28}
+Wishart, J. (1928).
+\newblock The generalised product moment distribution in samples from a normal
+  multivariate population.
+\newblock {\em Biometrika}, {\em 20A\/}(1/2), 32--52.
 
 \bibitem[\protect\citeauthoryear{Wong \& You}{Wong \& You}{1985}]{WonYou85}
 Wong, A. K.~C. \& You, M. (1985).

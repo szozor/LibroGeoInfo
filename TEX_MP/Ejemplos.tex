@@ -1135,7 +1135,7 @@ Nota: trivialmente, se puede escribir $X  \, \egald \, \Sigma^{\frac12} N + m$ \
 con \ $N \, \sim \, \N(0,I)$ \ donde \  $I$ \ es la identidad y \ $N$ \ es dicha
 {\em Gausiana estandar} o {\em centrada-normalizada}. Las caracter\'isticas de \
 $X$ \  son v\'inculadas  a las de  \ $N$  \ (y vice-versa)  por transformaci\'on
-lineal (ver secciones anteriores).
+afine (ver secciones anteriores).
 
 
 La densidad de probabilidad gausiana y  la funci\'on de repartici\'on en el caso
@@ -1306,7 +1306,7 @@ funci\'on Gamma~\cite{AbrSte70, AndAsk99, GraRyz15}.
 Nota: trivialmente, se puede escribir $X \,  \egald \, \frac{1}{b} G$ \ con \ $G
 \, \sim \, \G(a,1)$  \ donde \ $G$ \ es estandardizada  o normalizada. De nuevo,
 las  caracter\'isticas  de \  $X$  \  son  v\'inculadas a  las  de  \ $G$  \  (y
-vice-versa) por transformaci\'on lineal (ver secciones anteriores).
+vice-versa) por transformaci\'on afine (ver secciones anteriores).
 
 Una densidad de probabilidad gamma  y la funci\'on de repartici\'on asociada son
 representadas en  la figura Fig.~\ref{Fig:MP:Gamma} para  varios $a$ \ y  \ $b =
@@ -1364,15 +1364,16 @@ como distribuci\'on a priori conjugado~\footnote{En la inferencia Bayesiana, nos
   x$,  la  meta  es  de  determinar  la  distribuci\'on  dicha  a  posteriori  \
   $p_{\Theta|X =  x}$ \ a  partir de  la cual se  puede hacer estimaci\'on  de \
   $\theta$ dados  las observaciones, calcular intervalos de  confianza, etc. Por
-  eso, el metodo se apoya sobre la regla de Byes $p_{\Theta|X=x}(\theta) \propto
-  p_{X|\Theta=\theta}(x) p_\Theta(\theta)$  \ as\'i  que se necesita  elegir una
-  distribuci\'on  \ $p_\Theta$  \  dicha  a priori.  Una  elecci\'on posible  es
-  tomarla en  una familia  parametrizada tal que  la distribuci\'on  a posterior
-  partenece tambi’en a esta familia: es lo que se llama prior conjugado. La idea
-  es que si vienen observaciones, en lugar de re-calcular el posterior, se puede
-  actualizar solamente  los parametros (llamados  hiperparametros). \SZ{Ver nota
-    de pie  en el cap  2 a modificar}.\label{Foot:MP:BayesPrior}}  del parametro
-$\lambda$ de la ley de Poisson~\cite{Rob07}.
+  eso,  el metodo  se  apoya  sobre la  regla  de Bayes  $p_{\Theta|X=x}(\theta)
+  \propto  p_{X|\Theta=\theta}(x)  p_\Theta(\theta)$  \  as\'i que  se  necesita
+  elegir  una distribuci\'on  \ $p_\Theta$  \  dicha a  priori.  Una  elecci\'on
+  posible es  tomarla en una familia  parametrizada tal que  la distribuci\'on a
+  posterior  partenece  tambi\'en a  esta  familia: es  lo  que  se llama  prior
+  conjugado. La idea es que si  vienen observaciones, en lugar de re-calcular el
+  posterior,   se   puede   actualizar   solamente  los   parametros   (llamados
+  hiperparametros).    \SZ{Ver    nota    de    pie    en    el    cap    2    a
+    modificar}.\label{Foot:MP:BayesPrior} } del parametro $\lambda$ de la ley de
+Poisson~\cite{Rob07}.
 
 \SZ{Esta distribuci\'on aparece...}
 % en el conteo de
@@ -1390,11 +1391,11 @@ Este ejemplo es una  generalizaci\'on matriz-variada de la distribuci\'on gamma.
 Se puede ver  una matriz como un vector, guardando por  ejemplo sus columnas una
 bajo la  precediente.  Sin embargo, tal  distribuci\'on apareciendo naturalmente
 en un contexto de estimaci\'on de  matriz de covarianza (ver m\'as adelante), es
-m\'as   natural  verla   matriz-variate.    Tal  distrubuci\'on   es  debido   a
-J. Wishart~\cite{Wis28, toto}, y se denota  \ $X \, \sim \, W_d(V,\nu)$ \ donde
-el  dominio de definici\'on  es \  $P_d^+(\Rset)$, conjunto  matrices simetricas
-definida positivas, $V  \in P_d^+(\Rset)$ parametro de escala y \  $\nu > d-1$ \
-grados  de  libertad.   Las  caracter\'isticas  de  la  distribuci\'on  son  las
+m\'as  natural  verla  matriz-variate.    Tal  distrubuci\'on  es  debido  a  J.
+Wishart~\cite{Wis28, GupNag99, And03}, y se denota \ $X \, \sim \, W_d(V,\nu)$ \
+donde  el  dominio  de  definici\'on  es  \  $P_d^+(\Rset)$,  conjunto  matrices
+simetricas definida positivas, $V \in P_d^+(\Rset)$ parametro de escala y \ $\nu
+> d-1$ \ grados de libertad.  Las caracter\'isticas de la distribuci\'on son las
 siguientes:
 
 
@@ -1412,7 +1413,7 @@ aleatoria es \ $(2 d - 1)$-dimensional; diagonalisando une matriz de \
 $P_d^+(\Rset)$, la matriz diagonal tiene $d$ grados de libertad ($d$ reales
 positivso) y la matriz de autovectores, unitaria, es parametrizada por \ $d-1$ \
 angulos \ (en $[0 \; 2 \pi) \times [0 \;
-\pi)^{d-2}$)~cite{HorJoh13}.\label{Foot:MP:WishartXtilde}} & $\X =
+\pi)^{d-2}$)~\cite{HorJoh13}.\label{Foot:MP:WishartXtilde}} & $\X =
 P_d^+(\Rset), \: d \in \Nset^*$\\[2mm]
 \hline
 %
@@ -1420,7 +1421,7 @@ Parametros & $V \in  P_d^+(\Rset)$ (escala) y \ $\nu > d-1$ \ (grados de liberta
 \hline
 %%
 Densidad de probabilidad~\footnote{La densidad de probabilidad es dada con
-respeto a la medida de Lebesgue restricta a \ $P_d^+(\Rset) \subset \Rset^{d
+respeto a la \SZ{medida de Lebesgue restricta} a \ $P_d^+(\Rset) \subset \Rset^{d
 \times d}$.\label{Foot:MP:WishartDensidad}} & $\displaystyle p_X(x) =
 \frac{|x|^{\frac{\nu-d-1}{2}} \, e^{-\frac12 \Tr\left( V^{-1}
 x\right)}}{2^{\frac{d \nu}{2}} \, |V|^{\frac{\nu}{2}} \, \Gamma_d\left(
@@ -1433,10 +1434,12 @@ x\right)}}{2^{\frac{d \nu}{2}} \, |V|^{\frac{\nu}{2}} \, \Gamma_d\left(
 %%Momento factorial & $\Esp\left[ (X)_k \right] = ?$\\[2mm]
 %%\hline
 %%
-Promedio & $\displaystyle m_X = $\\[2mm]
-%\hline
+Promedio & $\displaystyle m_X = \nu \, V$\\[2mm]
+\hline
 %%
-%Varianza &  $\displaystyle \sigma_X^2  = \frac{a b}{(a  + b)^2  (a + b  + 1)}$\\[2mm]
+Coarianza &
+%  $\displaystyle \sigma_X^2  = \frac{a b}{(a  + b)^2  (a + b  + 1)}$
+\SZ{A ver bien}\\[2mm]
 \hline
 %%
 %%Asimetr\'ia & $\displaystyle \gamma_X = \frac{2 \, (b - a) \sqrt{a + b + 1}}{( a
@@ -1455,15 +1458,109 @@ Promedio & $\displaystyle m_X = $\\[2mm]
 %\, ; \, u \right)$ \ para \ $u \in \Cset$\\[2mm]
 %\hline
 %%
-%Funci\'on     caracter\'istica     &     $\displaystyle     \Phi_X(\omega)     =
-%\hypgeom{1}{1}\left( a , a + b \, ; \, \imath \omega \right)$\\[2mm]
-%\hline
+Funci\'on caracter\'istica~\footnote{Se puede salir de la
+vectorizaci\'on~\cite{Har08} de \ $X$, \ie poniendo las columnas de una bajo la
+la otra, y usar la definici\'on usual. Eso es equivalente a definirla como \
+$\Phi_X(\omega) = \Esp \left[ e^{\imath \Tr\left( \omega^t X \right)} \right]$ \
+con \ $\omega \in \Rset^{d \times d}$~\cite{And03}. \SZ{Pasando, se proba que la
+funci\'on generadora de momentos no existe, excepto en el productos de ejes
+imaginarios puros}.\label{Foot:MP:CaracteristicaWishart}} & $\displaystyle
+\Phi_X(\omega) = \Esp \left[ e^{\imath \Tr\left( \omega^t X \right)} \right] =
+\left| I - 2 \imath \omega^t V \right|^{-\frac{\nu}{2}}, \quad \omega \in
+\Rset^{d \times d}$\\[2mm]
+\hline
 \end{tabular}
 \end{center}
 %
 $\Tr$ \ denota  el operador traza y \ $\Gamma_d(y)  = \pi^{\frac{d \, (d-1)}{4}}
 \prod_{j=1}^d  \Gamma\left(  y -  \frac{j-1}{2}  \right)$,  definida  para $y  >
-\frac{d-1}{2}$, \ es la funci\'on gamma multivariada~\cite{toto}.
+\frac{d-1}{2}$, \ es la funci\'on gamma multivariada~\cite{And03, GupNag99}.
+
+Firense que $p_X$ no es la distribuci\'on conjuntos de los componentes de \ $X$:
+el hecho de  que \ $X$ \ sea  uan matriz aleatoria de \  $P_d^+(\Rset)$ \ impone
+v\'inculos sobre sus compnentes; entre otros, $X_{i,j} = X_{j,i}$.
+
+Inmediatamente, si  $d = 1$,  la distribuci\'on de  Whishart \ $W_1(V,nu)$  \ se
+reduce  a  la  distribuci\'on   Gamma  $\G\left(\frac{\nu}{2}  \,  ,  \,  V^{-1}
+\right)$. De este  hecho, se la podr\'ia ver como  extensi\'on matriz-variada de la
+distribuci\'on  gamma.   La  distribuci\'on   de  Wishart  tiene   varias  otras
+propiedades como las siguientes.
+%
+\begin{lema}[Stabilidad por transformaci\'on lineal]
+\label{Lem:MP:StabilidadWishartLineal}
+%
+  Sea $X \,  \sim \, W_d(V,\nu)$ \ y \  $A \in \Rset^{d \times d'}$  \ con \ $d'
+  \le d$ \ y de rango lleno. Entonces
+  \[
+  A^t X A \, \sim \, W_{d'}( A^t V A , \nu)
+  \]
+  %
+  En particular, si $d'  = 1$, \ $A^t X A \, \sim  \, G\left( \frac{\nu}{2} \, ,
+    \, \left( A^t V A \right)^{-1}  \right)$. M\'as all\'a, tomando $A = \un_j$,
+  aparece de  que las componentes  diagonales de \  $X$ \ son  de distribuci\'on
+  gamma, \  $X_{j,j} \, \sim \,  \G\left( \frac{\nu}{2} \,  , \, \frac1{V_{j,j}}
+  \right)$.
+\end{lema}
+%
+\begin{proof}
+  El     resultado     es     inmediato     saliendo     de     la     funci\'on
+  caract\'eristica~\footref{Foot:MP:CaracteristicaWishart} y notando de que
+%
+\begin{eqnarray*}
+\Phi_{A^t X A}(\omega) & = & \Esp\left[ e^{\imath \Tr\left( \omega^t A^t X A \right)}\right]\\[2mm]
+%
+& = & \Phi_X\left( A \omega^t A^t\right)\\[2mm]
+%
+& = &  \left| I - 2 \imath A \omega^t A^t V \right|^{-\frac{\nu}{2}}\\[2mm]
+%
+& = &  \left| I - 2 \imath \omega^t A^t V A \right|^{-\frac{\nu}{2}}
+%
+\end{eqnarray*}
+%
+de   \   $\Tr(AB)   =   \Tr(BA)$~\cite{Har08}   \   y   de   la   identidad   de
+Sylvester~\cite{Syl51,  AkrAkr96}  o~\cite[\S~18.1]{Har08} \  $\left|  I  + A  B
+\right| = \left| I + B A \right|$.  .
+\end{proof}
+%
+De hecho, si los elementos diagonales son de distribuci\'on gamma, no es el caso
+de  los elementos no-diagonales~\cite{Seb04}  o~\cite[Teo.~3.3.4]{GupNag99}.  De
+eso resuelte delicado llamar la distribuci\'on como gamma matriz-variada.
+
+\begin{lema}[Stabilidad por suma]
+\label{Lem:MP:StabilidadWishartSuma}
+%
+  Sea $X_i \,  \sim \, W_d(V,\nu_i), \: i = 1,\ldots,n$ independientes. Entonces
+  \[
+  \sum_{i=1}^n X_i \, \sim \, W_d\left( V \, , \, \sum_{i=1}^n \nu_i \right)
+  \]
+\end{lema}
+%
+\begin{proof}
+  El     resultado     es     inmediato     saliendo     de     la     funci\'on
+  caract\'eristica~\footref{Foot:MP:CaracteristicaWishart} y notando que como el
+  el context vectorial $\Phi_{\sum_i X_i} = \prod_i \Phi_{X_i}$.
+\end{proof}
+
+La distribuci\'on  de Wishart aparece naturalmente en  problemas de estimaci\'on
+de matriz de covarianza en el contexto gausiano:
+%
+\begin{lema}[V\'inculo con vectores gausianos~\cite{Seb04}]
+  Sean \ $X_i \, \sim \, \N(0,V), \: i = 1, \ldots , n > d-1$ \ independientes y
+  la  matriz  \  $S  =  \sum_{i=1}^n   X_i  X_i^t$  \  llamada  {\em  matriz  de
+    dispersi\'on} (scatter matrix en ingl\'es). Entonces, \ $S \in P_d^+(\Rset)$
+  (c.   s.)   \  ($S$ es  sim\'etrica  definida  positiva  casi siempre,  o  con
+  probabilidad uno) y \ $S \,\sim \, W_d(V,n)$.
+\end{lema}
+%
+Este resultado  permite tambi\'en probar  el lema~\ref{Lem:MP:StabilidadWishart}
+para \ $\nu = n$ \ entero  escribiendo \ $X \egald \sum_{i=1}^n X_i X_i^t$ \ tal
+que \ $A^t X A \egald \sum_{i=1}^n A^t X_i X_i^t A = \frac1n \sum_{i=1}^n \left(
+  A^t X_i \right)  \left( A^t X_i \right)^t$ \  y notando que los \  $A^t X_i \,
+\sim \, \N(0, A^t V A)$ \ son independientes~\cite{Seb04}.
+
+La distribuci\'on  Wishart aparece as\'i naturalmente en  problema de inferencia
+Bayesiana  como distribuci\'on  a  priori conjugado~\footref{Foot:MP:BayesPrior}
+del parametro $p$ de la ley gaussiana multivariada~\cite{Rob07}
 
 % --------------------------------- Beta
 
