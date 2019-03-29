@@ -1398,7 +1398,6 @@ simetricas definida positivas, $V \in P_d^+(\Rset)$ parametro de escala y \ $\nu
 > d-1$ \ grados de libertad.  Las caracter\'isticas de la distribuci\'on son las
 siguientes:
 
-
 \begin{center}
 \begin{tabular}
 {
@@ -1409,11 +1408,14 @@ siguientes:
 \hline
 %
 Dominio de definici\'on~\footnote{De hecho, se puede considerar que la matriz
-aleatoria es \ $(2 d - 1)$-dimensional; diagonalisando une matriz de \
-$P_d^+(\Rset)$, la matriz diagonal tiene $d$ grados de libertad ($d$ reales
-positivso) y la matriz de autovectores, unitaria, es parametrizada por \ $d-1$ \
-angulos \ (en $[0 \; 2 \pi) \times [0 \;
-\pi)^{d-2}$)~\cite{HorJoh13}.\label{Foot:MP:WishartXtilde}} & $\X =
+aleatoria es equivalent a tener un vector \ $\frac{d (d+1)}{2}$-dimensional; por
+la simetria, claramente \ $X$ \ tiene solamente \ $\frac{d (d+1)}{2}$ \
+componentes diferentes; adem\'as, se puede probar que cualquier matriz \ $A \in
+P_d^+(\Rset)$ \ se descompone bajo la forma \ $A = L L^t$ \ con \ $L$ \
+triangular inferior con elementos no nulos sobre su diagonal, llamado
+descomposici\'on de Cholesky~\cite{GupNag99, Bha07, Har08, HorJoh13} y
+reciprocamente. Eso muestra que \ $A$ \ se define a partir de \ $\frac{d
+(d+1)}{2}$ \ ``grados de libertad''.\label{Foot:MP:WishartXtilde}} & $\X =
 P_d^+(\Rset), \: d \in \Nset^*$\\[2mm]
 \hline
 %
@@ -1434,12 +1436,19 @@ x\right)}}{2^{\frac{d \nu}{2}} \, |V|^{\frac{\nu}{2}} \, \Gamma_d\left(
 %%Momento factorial & $\Esp\left[ (X)_k \right] = ?$\\[2mm]
 %%\hline
 %%
-Promedio & $\displaystyle m_X = \nu \, V$\\[2mm]
+Promedio\footnote{Para calcularlas, lo m\'as sencillo es salir de la funci\'on
+caracter\'istica y ver que \ $\frac{\partial \Phi_X}{\partial \Omega_{i,j}} =
+\imath \Esp\left[ X_{i,j} \right]$ \ (cuidado con las simetrias) y usar las
+reglas de derivaci\'on matricial de un determinente~\cite[Cap.~8]{MagNeu99}.} &
+$\displaystyle m_X = \nu \, V$\\[2mm]
 \hline
 %%
-Coarianza &
-%  $\displaystyle \sigma_X^2  = \frac{a b}{(a  + b)^2  (a + b  + 1)}$
-\SZ{A ver bien}\\[2mm]
+Covarianza~\footnote{Para calcularlas, lo m\'as sencillo es salir de nuevo de la
+funci\'on caracter\'istica y ver que \ $\frac{\partial^2 \Phi_X}{\partial
+\Omega_{i,j} \partial \Omega_{k,l}} = \imath \Esp[X_{i,j} X_{k,l}]$ \ y usar las
+reglas de derivaci\'on matricial de un determinente~\cite[Cap.~8]{MagNeu99}} &
+$\displaystyle \Cov\left[ X_{i,j} \, , \, X_{k,l} \right] = \nu \left( V_{i,k}
+V_{j,l} + V_{i,l} V_{j,k} \right)$\\[2mm]
 \hline
 %%
 %%Asimetr\'ia & $\displaystyle \gamma_X = \frac{2 \, (b - a) \sqrt{a + b + 1}}{( a
@@ -1459,31 +1468,34 @@ Coarianza &
 %\hline
 %%
 Funci\'on caracter\'istica~\footnote{Se puede salir de la
-vectorizaci\'on~\cite{Har08} de \ $X$, \ie poniendo las columnas de una bajo la
-la otra, y usar la definici\'on usual. Eso es equivalente a definirla como \
-$\Phi_X(\omega) = \Esp \left[ e^{\imath \Tr\left( \omega^t X \right)} \right]$ \
-con \ $\omega \in \Rset^{d \times d}$~\cite{And03}. \SZ{Pasando, se proba que la
-funci\'on generadora de momentos no existe, excepto en el productos de ejes
-imaginarios puros}.\label{Foot:MP:CaracteristicaWishart}} & $\displaystyle
-\Phi_X(\omega) = \Esp \left[ e^{\imath \Tr\left( \omega^t X \right)} \right] =
-\left| I - 2 \imath \omega^t V \right|^{-\frac{\nu}{2}}, \quad \omega \in
-\Rset^{d \times d}$\\[2mm]
+vectorizaci\'on~\cite{Har08} de \ $X$, \ie poniendo las columnas una bajo la
+otra, y usar la definici\'on usual. Tomando en cuenta la s\'imetria de \ $X$,
+eso es equivalente a definirla como \ $\Phi_X(\omega) = \Esp \left[ e^{\imath
+\Tr\left( X \Omega \right)} \right]$ \ con \ $\Omega \in S_d(\Rset)$ conjunto de
+matrices reales s\'imetricas de $\Rset^{d \times d}$~\cite{PedRic91,
+And03}. \SZ{Pasando, se proba que la funci\'on generadora de momentos no existe
+en general}.\label{Foot:MP:CaracteristicaWishart}} & $\displaystyle
+\Phi_X(\Omega) = \Esp \left[ e^{\imath \Tr\left( X \Omega \right)} \right] =
+\left| I - 2 \imath \Omega^ V \right|^{-\frac{\nu}{2}}, \quad \Omega \in
+S_d(\Rset)$\\[2mm]
 \hline
 \end{tabular}
 \end{center}
 %
 $\Tr$ \ denota  el operador traza y \ $\Gamma_d(y)  = \pi^{\frac{d \, (d-1)}{4}}
 \prod_{j=1}^d  \Gamma\left(  y -  \frac{j-1}{2}  \right)$,  definida  para $y  >
-\frac{d-1}{2}$, \ es la funci\'on gamma multivariada~\cite{And03, GupNag99}.
+\frac{d-1}{2}$, \ es la  funci\'on gamma multivariada~\cite{And03, GupNag99} y \
+$S_d(\Rset)$  \ es  el conjunto  de  matrices reales  s\'imetricas de  $\Rset^{d
+  \times d}$.
 
 Firense que $p_X$ no es la distribuci\'on conjuntos de los componentes de \ $X$:
 el hecho de  que \ $X$ \ sea  uan matriz aleatoria de \  $P_d^+(\Rset)$ \ impone
 v\'inculos sobre sus compnentes; entre otros, $X_{i,j} = X_{j,i}$.
 
-Inmediatamente, si  $d = 1$,  la distribuci\'on de  Whishart \ $W_1(V,nu)$  \ se
-reduce  a  la  distribuci\'on   Gamma  $\G\left(\frac{\nu}{2}  \,  ,  \,  V^{-1}
-\right)$. De este  hecho, se la podr\'ia ver como  extensi\'on matriz-variada de la
-distribuci\'on  gamma.   La  distribuci\'on   de  Wishart  tiene   varias  otras
+Inmediatamente, si  $d = 1$, la  distribuci\'on de Whishart \  $W_1(V,\nu)$ \ se
+reduce a la  distribuci\'on Gamma $\G\left(\frac{\nu}{2} \, ,  \, \frac1{2 \, V}
+\right)$. De este  hecho, se la podr\'ia ver  como extensi\'on matriz-variada de
+la  distribuci\'on  gamma.  La  distribuci\'on  de  Wishart  tiene varias  otras
 propiedades como las siguientes.
 %
 \begin{lema}[Stabilidad por transformaci\'on lineal]
@@ -1492,13 +1504,13 @@ propiedades como las siguientes.
   Sea $X \,  \sim \, W_d(V,\nu)$ \ y \  $A \in \Rset^{d \times d'}$  \ con \ $d'
   \le d$ \ y de rango lleno. Entonces
   \[
-  A^t X A \, \sim \, W_{d'}( A^t V A , \nu)
+  A^t X A \, \sim \, W_{d'}\left( A^t V A , \nu \right)
   \]
   %
   En particular, si $d'  = 1$, \ $A^t X A \, \sim  \, G\left( \frac{\nu}{2} \, ,
-    \, \left( A^t V A \right)^{-1}  \right)$. M\'as all\'a, tomando $A = \un_j$,
-  aparece de  que las componentes  diagonales de \  $X$ \ son  de distribuci\'on
-  gamma, \  $X_{j,j} \, \sim \,  \G\left( \frac{\nu}{2} \,  , \, \frac1{V_{j,j}}
+    \, \frac1{2 \, A^t V A} \right)$. M\'as all\'a, tomando $A = \un_j$, aparece
+  de que  las componentes diagonales de \  $X$ \ son de  distribuci\'on gamma, \
+  $X_{j,j}  \, \sim  \,  \G\left( \frac{\nu}{2}  \,  , \,  \frac1{2 \,  V_{j,j}}
   \right)$.
 \end{lema}
 %
@@ -1523,8 +1535,9 @@ Sylvester~\cite{Syl51,  AkrAkr96}  o~\cite[\S~18.1]{Har08} \  $\left|  I  + A  B
 \end{proof}
 %
 De hecho, si los elementos diagonales son de distribuci\'on gamma, no es el caso
-de  los elementos no-diagonales~\cite{Seb04}  o~\cite[Teo.~3.3.4]{GupNag99}.  De
-eso resuelte delicado llamar la distribuci\'on como gamma matriz-variada.
+de         los        elementos         no-diagonales~\cite{Seb04,        And03}
+o~\cite[Teo.~3.3.4]{GupNag99}.    De    eso   resuelte   delicado    llamar   la
+distribuci\'on como gamma matriz-variada.
 
 \begin{lema}[Stabilidad por suma]
 \label{Lem:MP:StabilidadWishartSuma}

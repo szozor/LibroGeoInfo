@@ -188,6 +188,11 @@ Bhatia, R. (1997).
 \newblock {\em Matrix Analysis}.
 \newblock New-York: Springer Verlag.
 
+\bibitem[\protect\citeauthoryear{Bhatia}{Bhatia}{2007}]{Bha07}
+Bhatia, R. (2007).
+\newblock {\em Positive Definite Matrices}.
+\newblock Princeton: Princeton University Press.
+
 \bibitem[\protect\citeauthoryear{Bhattacharyya}{Bhattacharyya}{1943}]{Bha43}
 Bhattacharyya, A. (1943).
 \newblock On a measure of divergence between two statistical populations
@@ -709,6 +714,12 @@ Guo, D., Shamai, S., \& Verd{\'u}, S. (2005).
 \newblock {\em IEEE Transactions on Information Theory}, {\em 51\/}(4),
   1261--1282.
 
+\bibitem[\protect\citeauthoryear{Gupta \& Nagar}{Gupta \&
+  Nagar}{1999}]{GupNag99}
+Gupta, A.~K. \& Nagar, D.~K. (1999).
+\newblock {\em Matrix Variate Distributions}.
+\newblock Chapman and Hall.
+
 \bibitem[\protect\citeauthoryear{Gupta \& Sharma}{Gupta \&
   Sharma}{1976}]{GupSha76}
 Gupta, H.~C. \& Sharma, B.~D. (1976).
@@ -769,6 +780,11 @@ Harremo{\"e}s, P. \& Vignat, C. (2003).
 Hartley, R. V.~L. (1928).
 \newblock Transmission of informations.
 \newblock {\em The Bell System Technical Journal}, {\em 7\/}(3), 535--563.
+
+\bibitem[\protect\citeauthoryear{Harville}{Harville}{2008}]{Har08}
+Harville, D.~A. (2008).
+\newblock {\em Matrix Algebra From a Statistician's Perspective}.
+\newblock Springer-Verlag.
 
 \bibitem[\protect\citeauthoryear{Hausdorff}{Hausdorff}{1901}]{Hau01}
 Hausdorff, F. (1901).
