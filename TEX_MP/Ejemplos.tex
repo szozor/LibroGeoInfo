@@ -1,4 +1,41 @@
-\SZ{Poner antes la notation $P_d^+(\Rset)$}
+\SZ{Poner antes las notationes $P_d^+(\Rset), \quad S_d(\Rset)$
+
+\
+
+
+  En la parte vectores aleatorios,  aparte el caso complejo, poner unas palabras
+  sobre el caso matrix-variate general, y con simetrias
+
+Poner la forma de la covarianza $\Esp[X  \otimes X] - m_X \otimes m_X$ que tiene
+todos  los terminos de  covarianza $\Cov[X_{i,j},X_{k,l}]$  (coefficente $(k,l)$
+del bloc $(i,j)$. Poner la  forma de la funcion caracter\'istica $\Phi_X(\Omega)
+= \Esp \left[ e^{\imath \Tr\left( \Omega  X \right)} \right]$; Se puede salir de
+la vectorizaci\'on~\cite{Har08} de \ $X$,  \ie poniendo las columnas una bajo la
+otra, y  usar la definici\'on usual. Tomando  en cuenta la s\'imetria  de \ $X$,
+eso es  equivalente a definirla como  \ $\Phi_X(\omega) =  \Esp \left[ e^{\imath
+    \Tr\left(  \Omega  X \right)}  \right]$  \  con  \ $\Omega  \in  S_d(\Rset)$
+conjunto de matrices reales s\'imetricas de $\Rset^{d \times d}$~\cite{PedRic91,
+  And03};
+
+Promedio: Para calcularlas, lo m\'as sencillo es salir de la funci\'on
+caracter\'istica y ver que, con las simetrias, \ $\frac{\partial
+\Phi_X}{\partial \Omega_{i,j}} = \imath (2-\un_{\{i\}}(j)) \Esp\left[ X_{i,j}
+\right]$, y usar las reglas de derivaci\'on matricial~\cite[Cap.~8]{MagNeu99}.
+
+Covarianza: Para calcularlas, en el caso e simetrias, lo m\'as sencillo es salir de nuevo de la
+funci\'on caracter\'istica y ver que, con las simetrias, \ $\frac{\partial^2
+\Phi_X}{\partial \Omega_{i,j} \partial \Omega_{k,l}} = - (2-\un_{\{i\}}(j))
+(2-\un_{\{k\}}(l)) \Esp[X_{i,j} X_{k,l}]$ \ y usar las reglas de derivaci\'on
+matricial~\cite[Cap.~8]{MagNeu99}
+
+\
+
+ $\otimes$ es el producto de  Kronecker, $A \otimes B$ \ es matriz bloc
+de bloc \ $(i,j)$-\'esima \ $A_{i,j} B$.
+%, $J$ \ la matriz bloc de
+%bloc  $(i,j)$-\'esima \  $\un_j  \un_i^t$  \ y  $K$  \ la  matriz  bloc de  bloc
+%$(i,j)$-\'esima \ $\un_i \un_j^t$.
+}
 
 \seccion{Algunos ejemplos de distribuciones de probabilidad}
 \label{Sec:MP:EjemplosDistribucionesProb}
@@ -1199,7 +1236,7 @@ La gaussiana tiene un par de propiedades particulares:
 %
 \begin{proof}
   Este  resultato se proba  usando funci\'on  caracter\'istica de  la gaussiana,
-  conjuntalmente al teorema~\cite{Teo:MP:PropiedadesFuncionCaracteristica}.
+  conjuntalmente al teorema~\ref{Teo:MP:PropiedadesFuncionCaracteristica}.
 \end{proof}
 
 %
@@ -1436,48 +1473,19 @@ x\right)}}{2^{\frac{d \nu}{2}} \, |V|^{\frac{\nu}{2}} \, \Gamma_d\left(
 %%Momento factorial & $\Esp\left[ (X)_k \right] = ?$\\[2mm]
 %%\hline
 %%
-Promedio\footnote{Para calcularlas, lo m\'as sencillo es salir de la funci\'on
-caracter\'istica y ver que \ $\frac{\partial \Phi_X}{\partial \Omega_{i,j}} =
-\imath \Esp\left[ X_{i,j} \right]$ \ (cuidado con las simetrias) y usar las
-reglas de derivaci\'on matricial de un determinente~\cite[Cap.~8]{MagNeu99}.} &
-$\displaystyle m_X = \nu \, V$\\[2mm]
+Promedio & $\displaystyle m_X = \nu \, V$\\[2mm]
 \hline
 %%
-Covarianza~\footnote{Para calcularlas, lo m\'as sencillo es salir de nuevo de la
-funci\'on caracter\'istica y ver que \ $\frac{\partial^2 \Phi_X}{\partial
-\Omega_{i,j} \partial \Omega_{k,l}} = \imath \Esp[X_{i,j} X_{k,l}]$ \ y usar las
-reglas de derivaci\'on matricial de un determinente~\cite[Cap.~8]{MagNeu99}} &
-$\displaystyle \Cov\left[ X_{i,j} \, , \, X_{k,l} \right] = \nu \left( V_{i,k}
-V_{j,l} + V_{i,l} V_{j,k} \right)$\\[2mm]
+Covarianza & $\displaystyle \Sigma_X = \nu \big( J (V \otimes V) + (V \otimes I)
+K (V \otimes I) \big)$\\[2mm]
+% $\Cov[X_{i,j},X_{k,l}] = nu \left( V_{i,k} V_{j,l} +V_{i,l} V_{j,k} \right)$}
 \hline
-%%
-%%Asimetr\'ia & $\displaystyle \gamma_X = \frac{2 \, (b - a) \sqrt{a + b + 1}}{( a
-%+ b + 2) \sqrt{a b}}$\\[2mm]
-%\hline
-%%
-%Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = \frac{6 \, \left( (a - b)^2 (a + b + 1) - a
-%b (a  + b  + 2)  \right)}{a \, b  \left( a  + b  + 2 \right)  \left( a  + b  + 3
-%\right)}$\\[2mm]
-%\hline
-%%
-%%Generadora de probabilidad & $G_X(z) = e^{\lambda (z-1)}$ \ para \ $z \in \Cset$\\[2mm]
-%%\hline
-%%
-%Generadora de momentos & $\displaystyle M_X(u)  = \hypgeom{1}{1}\left( a , a + b
-%\, ; \, u \right)$ \ para \ $u \in \Cset$\\[2mm]
-%\hline
-%%
-Funci\'on caracter\'istica~\footnote{Se puede salir de la
-vectorizaci\'on~\cite{Har08} de \ $X$, \ie poniendo las columnas una bajo la
-otra, y usar la definici\'on usual. Tomando en cuenta la s\'imetria de \ $X$,
-eso es equivalente a definirla como \ $\Phi_X(\omega) = \Esp \left[ e^{\imath
-\Tr\left( X \Omega \right)} \right]$ \ con \ $\Omega \in S_d(\Rset)$ conjunto de
-matrices reales s\'imetricas de $\Rset^{d \times d}$~\cite{PedRic91,
-And03}. \SZ{Pasando, se proba que la funci\'on generadora de momentos no existe
-en general}.\label{Foot:MP:CaracteristicaWishart}} & $\displaystyle
-\Phi_X(\Omega) = \Esp \left[ e^{\imath \Tr\left( X \Omega \right)} \right] =
-\left| I - 2 \imath \Omega^ V \right|^{-\frac{\nu}{2}}, \quad \Omega \in
-S_d(\Rset)$\\[2mm]
+%
+Funci\'on caracter\'istica~\footnote{\SZ{Se proba que la funci\'on generadora de
+momentos no existe en
+general}.\label{Foot:MP:CaracteristicaWishart}} &
+$\displaystyle \Phi_X(\Omega) = \left| I - 2 \imath \Omega V
+\right|^{-\frac{\nu}{2}}, \quad \Omega \in S_d(\Rset)$\\[2mm]
 \hline
 \end{tabular}
 \end{center}
@@ -1486,14 +1494,34 @@ $\Tr$ \ denota  el operador traza y \ $\Gamma_d(y)  = \pi^{\frac{d \, (d-1)}{4}}
 \prod_{j=1}^d  \Gamma\left(  y -  \frac{j-1}{2}  \right)$,  definida  para $y  >
 \frac{d-1}{2}$, \ es la  funci\'on gamma multivariada~\cite{And03, GupNag99} y \
 $S_d(\Rset)$  \ es  el conjunto  de  matrices reales  s\'imetricas de  $\Rset^{d
-  \times d}$.
+  \times d}$.   $\otimes$ es el producto de  Kronecker, $J$ \ la  matriz bloc de
+bloc $(i,j)$-\'esima  \ $\un_j \un_i^t$ \ y \ $K$ \
+la matriz bloc de bloc  $(i,j)$-\'esima \ $\un_i \un_j^t$,
+%
+\[
+J = \begin{bmatrix}
+\un_1 \un_1^t & \un_2 \un_1^t & \cdots & \un_d \un_1^t\\
+    \vdots    &    \vdots    & \cdots &     \vdots   \\
+\un_1 \un_d^t & \un_2 \un_d^t & \cdots & \un_d \un_d^t
+\end{bmatrix}
+%
+\qquad\qquad
+%
+K = \begin{bmatrix}
+\un_1 \un_1^t & \un_1 \un_2^t & \cdots & \un_1 \un_d^t\\
+    \vdots    &    \vdots    & \cdots &     \vdots   \\
+\un_d \un_1^t & \un_d \un_2^t & \cdots & \un_d \un_d^t
+\end{bmatrix}
+\]
+%
+(ver~\cite{PedRic91, SulTra96, And03}).
 
 Firense que $p_X$ no es la distribuci\'on conjuntos de los componentes de \ $X$:
 el hecho de  que \ $X$ \ sea  uan matriz aleatoria de \  $P_d^+(\Rset)$ \ impone
 v\'inculos sobre sus compnentes; entre otros, $X_{i,j} = X_{j,i}$.
 
 Inmediatamente, si  $d = 1$, la  distribuci\'on de Whishart \  $W_1(V,\nu)$ \ se
-reduce a la  distribuci\'on Gamma $\G\left(\frac{\nu}{2} \, ,  \, \frac1{2 \, V}
+reduce  a la  distribuci\'on Gamma  $\G\left(\frac{\nu}{2} \,  , \,  \frac1{2 V}
 \right)$. De este  hecho, se la podr\'ia ver  como extensi\'on matriz-variada de
 la  distribuci\'on  gamma.  La  distribuci\'on  de  Wishart  tiene varias  otras
 propiedades como las siguientes.
@@ -1569,7 +1597,15 @@ Este resultado  permite tambi\'en probar  el lema~\ref{Lem:MP:StabilidadWishart}
 para \ $\nu = n$ \ entero  escribiendo \ $X \egald \sum_{i=1}^n X_i X_i^t$ \ tal
 que \ $A^t X A \egald \sum_{i=1}^n A^t X_i X_i^t A = \frac1n \sum_{i=1}^n \left(
   A^t X_i \right)  \left( A^t X_i \right)^t$ \  y notando que los \  $A^t X_i \,
-\sim \, \N(0, A^t V A)$ \ son independientes~\cite{Seb04}.
+\sim \,  \N(0, A^t V  A)$ \ son independientes~\cite{Seb04}.   Adem\'as, permite
+re-obtener las  expreciones del promedio y de  las covarianzas~\footnote{Para la
+  covarianza, su usa la formula \ $\Esp[Y_1 Y_2 Y_3 Y_4] = \Esp[Y_1 Y_2]\Esp[Y_3
+  Y_4]  + \Esp[Y_1 Y_3]\Esp[Y_2  Y_4] +  \Esp[Y_1 Y_4]\Esp[Y_2  Y_3]$ \  para $Y
+  = \begin{bmatrix}  Y_1 & Y_2 &  Y_3 & Y_4 \end{bmatrix}^t$  \ vector gausiano,
+  formula que se  obtiene por ejemplo a partir  de la funci\'on caracter\'istica
+  de un vecor  gausiano.}. Notar que cuando los \ $X_i$  \ tienen un promemedio,
+el  lema conduce  a  lo que  es  conocido como  Wishart no  central~\cite{And03,
+  Seb04}.
 
 La distribuci\'on  Wishart aparece as\'i naturalmente en  problema de inferencia
 Bayesiana  como distribuci\'on  a  priori conjugado~\footref{Foot:MP:BayesPrior}
@@ -2184,11 +2220,12 @@ Funci\'on caracter\'istica~\footnote{Se muestra sencillamente que la funci\'on
 generatriz de momentos puede existir si y solamente si \ $\real{u} = 0$. La
 funci\'on genetratriz de momentos restricta al producto cartesiano de bandas \
 $\real{u} = 0$ \ es nada m\'as que la funci\'on caracter\'istica. Adem\'as, esta
-funci\'on fue calculdada, especialmente en el caso multivariado, bastante
-recientemente~\cite{Sut86, SonPar84, Hur95, KibJoa06}.} & $\displaystyle \Phi_X(\omega)
-= \frac{\nu^{\frac{\nu}{4}}}{2^{\frac{\nu}{2}-1} \Gamma\left( \frac{\nu}{2}
-\right)} \, e^{\imath \omega^t m} \, \left( \omega^t \Sigma \omega \right)^{\frac{\nu}{4}}
-K_{\frac{\nu}{2}}\left( \sqrt{\nu \, \omega^t \Sigma \omega} \right) $\\[2mm]
+funci\'on fue calculdada, especialmente en el caso multivariado, relativamente
+recientemente~\cite{Sut86, Hur95, KibJoa06, SonPar14}.} & $\displaystyle
+\Phi_X(\omega) = \frac{\nu^{\frac{\nu}{4}}}{2^{\frac{\nu}{2}-1} \Gamma\left(
+\frac{\nu}{2} \right)} \, e^{\imath \omega^t m} \, \left( \omega^t \Sigma \omega
+\right)^{\frac{\nu}{4}} K_{\frac{\nu}{2}}\left( \sqrt{\nu \, \omega^t \Sigma
+\omega} \right) $\\[2mm]
 \hline
 \end{tabular}
 \end{center}
@@ -2354,6 +2391,7 @@ Applications
 % --------------------------------- Familia exponencial
 \subsubseccion{Familia  exponencial}
 \cite{Dar35, Koo36,  And70,  Kay93, LehCas98,  Rob07}.;
+Muchas de estas leyes entran en una familia que juega un rol particular en problema de maximizacion de entropie (ver cap 2): es la familia exponencial...
 }
 
 \SZ{
