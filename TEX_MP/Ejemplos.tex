@@ -1,41 +1,3 @@
-\SZ{Poner antes las notationes $P_d^+(\Rset), \quad S_d(\Rset)$
-
-\
-
-
-  En la parte vectores aleatorios,  aparte el caso complejo, poner unas palabras
-  sobre el caso matrix-variate general, y con simetrias
-
-Poner la forma de la covarianza $\Esp[X  \otimes X] - m_X \otimes m_X$ que tiene
-todos  los terminos de  covarianza $\Cov[X_{i,j},X_{k,l}]$  (coefficente $(k,l)$
-del bloc $(i,j)$. Poner la  forma de la funcion caracter\'istica $\Phi_X(\Omega)
-= \Esp \left[ e^{\imath \Tr\left( \Omega  X \right)} \right]$; Se puede salir de
-la vectorizaci\'on~\cite{Har08} de \ $X$,  \ie poniendo las columnas una bajo la
-otra, y  usar la definici\'on usual. Tomando  en cuenta la s\'imetria  de \ $X$,
-eso es  equivalente a definirla como  \ $\Phi_X(\omega) =  \Esp \left[ e^{\imath
-    \Tr\left(  \Omega  X \right)}  \right]$  \  con  \ $\Omega  \in  S_d(\Rset)$
-conjunto de matrices reales s\'imetricas de $\Rset^{d \times d}$~\cite{PedRic91,
-  And03};
-
-Promedio: Para calcularlas, lo m\'as sencillo es salir de la funci\'on
-caracter\'istica y ver que, con las simetrias, \ $\frac{\partial
-\Phi_X}{\partial \Omega_{i,j}} = \imath (2-\un_{\{i\}}(j)) \Esp\left[ X_{i,j}
-\right]$, y usar las reglas de derivaci\'on matricial~\cite[Cap.~8]{MagNeu99}.
-
-Covarianza: Para calcularlas, en el caso e simetrias, lo m\'as sencillo es salir de nuevo de la
-funci\'on caracter\'istica y ver que, con las simetrias, \ $\frac{\partial^2
-\Phi_X}{\partial \Omega_{i,j} \partial \Omega_{k,l}} = - (2-\un_{\{i\}}(j))
-(2-\un_{\{k\}}(l)) \Esp[X_{i,j} X_{k,l}]$ \ y usar las reglas de derivaci\'on
-matricial~\cite[Cap.~8]{MagNeu99}
-
-\
-
- $\otimes$ es el producto de  Kronecker, $A \otimes B$ \ es matriz bloc
-de bloc \ $(i,j)$-\'esima \ $A_{i,j} B$.
-%, $J$ \ la matriz bloc de
-%bloc  $(i,j)$-\'esima \  $\un_j  \un_i^t$  \ y  $K$  \ la  matriz  bloc de  bloc
-%$(i,j)$-\'esima \ $\un_i \un_j^t$.
-}
 
 \seccion{Algunos ejemplos de distribuciones de probabilidad}
 \label{Sec:MP:EjemplosDistribucionesProb}
@@ -571,7 +533,10 @@ p_i^{m_i}$\\[2mm]
 Promedio & $\displaystyle m_X = n \, p$\\[2mm]
 \hline
 %%
-Covarianza & $\displaystyle \Sigma_X = n \left( \diag p - p p^t \right)$\\[2mm]
+Covarianza~\footnote{Fijense que, en este caso, $\Sigma_X \not\in P_k^+(\Rset)$
+porque obviamente $\un^t \Sigma_Z \un = 0$. Es consecuencia directa del hecho de
+que $X$ vive sobre $\Simp_{k-1}$} & $\displaystyle \Sigma_X = n \left( \diag p -
+p p^t \right)$\\[2mm]
 \hline
 %%
 %Asimetr\'ia & $\displaystyle \gamma_X = \frac{1 + p}{\sqrt{r \, p}}$\\[2mm]
@@ -1273,6 +1238,8 @@ en el caso gausiano.
 \subsubseccion{Distribuci\'on normal o Gaussiana multivariada complejas}
 \label{Sssec:MP:GaussianaComplejas}
 caso general y caso circular
+
+Ver \cite[Cap.~24]{Lap17}
 }
 
 
@@ -1484,8 +1451,8 @@ K (V \otimes I) \big)$\\[2mm]
 Funci\'on caracter\'istica~\footnote{\SZ{Se proba que la funci\'on generadora de
 momentos no existe en
 general}.\label{Foot:MP:CaracteristicaWishart}} &
-$\displaystyle \Phi_X(\Omega) = \left| I - 2 \imath \Omega V
-\right|^{-\frac{\nu}{2}}, \quad \Omega \in S_d(\Rset)$\\[2mm]
+$\displaystyle \Phi_X(\omega) = \left| I - 2 \imath \omega V
+\right|^{-\frac{\nu}{2}}, \quad \omega \in S_d(\Rset)$\\[2mm]
 \hline
 \end{tabular}
 \end{center}
@@ -1547,13 +1514,13 @@ propiedades como las siguientes.
   caract\'eristica~\footref{Foot:MP:CaracteristicaWishart} y notando de que
 %
 \begin{eqnarray*}
-\Phi_{A^t X A}(\omega) & = & \Esp\left[ e^{\imath \Tr\left( \omega^t A^t X A \right)}\right]\\[2mm]
+\Phi_{A^t X A}(\omega) & = & \Esp\left[ e^{\imath \Tr\left( \omega A^t X A \right)}\right]\\[2mm]
 %
-& = & \Phi_X\left( A \omega^t A^t\right)\\[2mm]
+& = & \Phi_X\left( A \omega A^t\right)\\[2mm]
 %
-& = &  \left| I - 2 \imath A \omega^t A^t V \right|^{-\frac{\nu}{2}}\\[2mm]
+& = &  \left| I - 2 \imath A \omega A^t V \right|^{-\frac{\nu}{2}}\\[2mm]
 %
-& = &  \left| I - 2 \imath \omega^t A^t V A \right|^{-\frac{\nu}{2}}
+& = &  \left| I - 2 \imath \omega A^t V A \right|^{-\frac{\nu}{2}}
 %
 \end{eqnarray*}
 %

@@ -1,0 +1,298 @@
+\SZ{En todos los lados, escribir (y definir antes, y en las notaciones)
+
+\begin{itemize}
+\item $M_{d,d'}(\Kset)$  el espacio  de matricez $d  \times d'$ de  elementos de
+  $\Kset$ con $\Kset = \Rset$ o $\Cset$.
+%
+\item las notaciones $\cdot^*$ para la conjugaci\'on compleja, $\cdot^t$ para la
+  transpuesta, $\cdot^\dag$ para la transconjugada.
+%
+\item  $S_d(\Kset)$  conjunto  de  matrices  de  $\Kset$  sim\'etricas,  $M  \in
+  S_d(\Kset) \, \Leftrightarrow \, M^t = M$.
+%
+\item  $H_d(\Cset)$ conjunto  de matrices  de $\Cset$  hermiticas  (a simetr\'ia
+  hermitica), $M  \in H_d(\Cset) \, \Leftrightarrow  \, M^\dag =  M$. Fijense de
+  que tendr\'iamos $H_d(\Rset) \equiv S_d(\Rset)$
+%
+\item $P_d(\Kset)$  conjunto de  matrices semidefinida positivas:  $P_d(\Kset) =
+  \left\{ M \in H_d(\Kset), \: \quad  \forall \, \mu \in \Kset^d, \mu^\dag M \mu
+    \ge 0 \right\}$.
+%
+\item $P_d^+(\Kset)$  conjunto de  matrices definida positivas:  $P_d^+(\Kset) =
+  \left\{ M \in H_d(\Kset), \: \forall \,  \mu \ne 0 \in \Kset^d, \mu^\dag M \mu
+    > 0 \right\}$.
+\end{itemize}
+
+
+\
+
+ $\otimes$ es el producto de  Kronecker, $A \otimes B$ \ es matriz bloc
+de bloc \ $(i,j)$-\'esima \ $A_{i,j} B$.
+%, $J$ \ la matriz bloc de
+%bloc  $(i,j)$-\'esima \  $\un_j  \un_i^t$  \ y  $K$  \ la  matriz  bloc de  bloc
+%$(i,j)$-\'esima \ $\un_i \un_j^t$.
+}
+
+\seccion{Vectores aleatorios complejos y matrices aleatorias en algunas palabras.}
+\label{Sec:MP:VectoresComplejosMatricesAleatorias}
+
+\SZ{Introducir en 2 palabres}
+
+% ================================= Caso complejo
+
+\subseccion{Vectores aleatorios complejos}
+\label{Ssec:MP:VAComplejos}
+
+Formalmente, un vector aleatorio complejo se define de la misma manear que en el
+caso real, de la manera siguiente:
+%
+\begin{definicion}[Vector aleatorio complejo]
+\label{Def:MP:VectorAleatorioComplejo}
+%
+  Un vector aleatorio complejo es una funci\'on medible
+  %
+  \[
+  Z: (\Omega,\A,P) \mapsto (\Cset^d,\B(\Cset^d),P_Z).
+  \]
+  %
+  donde  $\B(\Cset^d)$  son  los  borelianos  de  $\Cset^d$,  $\sigma$-\'algebra
+  generada  por los  productos  cartesianos $(-\infty  \,  ; \,  b_1] +  \imath
+  (-\infty \, ;  \, c_1] \times \cdots  \times (-\infty \, ; \,  b_d] + \imath
+  (-\infty \,  ; \,  c_d]$ y donde  la medida  $P_Z$ sobre $\B(\Cset^d)$  es la
+  medida im\'agen de $P$. Como en el caso real,
+  %
+  \[
+  (Z \in  B) \equiv  Z^{-1}(B) =  \{ \omega \in  \Omega: \:  Z(\omega) \in  B \}
+  \qquad \mbox{y} \qquad P_Z(B) = P(Z \in B).
+  \]
+\end{definicion}
+
+Sin embargo, se puede poner en biyecci\'on  \ $\Cset^d$ \ y \ $\Rset^{2 \, d}$ \
+de tal manera de que se  puede definir naturalmente un vector complejo aleatorio
+a   partir   de   un   vector   aleatorio  real   de   la   manera   alternativa
+equivalente~\cite[Cap.~17]{Lap17}:
+%
+\begin{definicion}[Vector aleatorio complejo -- definici\'on equivalente]
+\label{Def:MP:VectorAleatorioComplejoEquivalente}
+%
+  Un vector aleatorio complejo se define como
+  %
+  \[
+  Z = X + \imath Y
+  \]
+  %
+  donde \  $\widetilde{Z} \equiv  \begin{bmatrix} X\\ Y  \end{bmatrix}$ \  es un
+  vector aleatorio de \ $\Rset^{2 \,  d}$. La medida de probabilidad im\'agen es
+  entonces
+  %
+  \[
+  P_Z \equiv P_{\widetilde{Z}} = P_{X,Y}
+  \]
+  %
+\end{definicion}
+
+Resuelte de esta definici\'on equivalente los hechos siguientes:
+%
+\begin{itemize}
+\item La  funci\'on de repartici\'on  de $Z$ se  escribe como \ la  funci\'on de
+  repartici\'on conjunta de \ $X$ \ e \ $Y$,
+  %
+  \[
+  F_Z \equiv F_{\widetilde{Z}} = F_{X,Y}
+  \]
+  %
+  Notando de  que es una  funci\'on de \  $x$ \ e \  $y$, $F_Z$ \  hace aparecer
+  explicitamente ambos \ $z$ \ y \ $z^*$ complejo conjugado.
+%
+\item   Si  la   medida  \   $P_{\widetilde{Z}}$  \   admite  una   derivada  de
+  Radon-Nykod\'ym con respeto a la medida  de Lebesgue sobre \ $\Rset^{2 \, d}$,
+  se  define  la  densidad de  probabilidad  de  \  $Z$  \  como \  $f_Z  \equiv
+  f_{\widetilde{Z}} =  f_{X,Y}$. A partir  de la funci\'on de  repartici\'on, se
+  escribe entonces o a trav\'es de la derivada $2 \, d$-\'esima de $F_{X,Y}$ con
+  respeto a las compontentes \ $x_i$ \ e \ $y_i$ o, de manera equivalente,
+  %
+  \[
+  f_Z(z) = \frac{\partial^{2 \, d}}{\partial z_1 \cdots \partial z_d \, \partial
+    z_1^* \cdots \partial z_d^*}
+  \]
+  %
+%
+\item Los momentos de orden \ $K$ \ siendos definido a partir de las componentes
+  de \ $X$ \ y de \ $Y$, se definen tambi\'en bajo la forma
+  %
+  \[
+  m_{k_1 , \ldots , k_d \, ; \, k'_1 , \ldots , k'_d} = \Esp\left[ \prod_{i=1}^d
+    Z_i^{k_i}  \,  \prod_{i=1}^d   Z_i^{* \: k'_i}  \right]  \quad
+  \mbox{con} \quad \sum_i (k_i + k'_i) = K
+  \]
+  %
+  y similarmente para los momentos centrales  $\zeta_{k_1 , \ldots , k_d \, ; \,
+    k'_1 , \ldots , k'_d}$.  En particular,
+  %
+  \begin{itemize}
+  \item La media de \ $Z = X + \imath Y$ \ es definida por
+    %
+    \[
+    m_Z = \Esp[Z] = \Esp[X] \imath \Esp[Y]
+    \]
+    %
+    La media de $Z^*$ no lleva informaci\'on m\'as de orden 1.
+  %
+  \item La matriz de covarianza es definida por
+    \[
+    \Sigma_Z \equiv \Cov[Z] \equiv \Esp\left[ (Z-m_Z) (Z-m_Z)^\dag \right]
+    \]
+    %
+    donde  \  $Z^\dag  =  (Z^*)^t$  \ dicho  {\em  transconjugado}  (transpuesta
+    conjugada).    Fijense  de   que,  volviendo   al   vector  $\widetilde{Z}^t
+    = \begin{bmatrix} X^t & Y^t \end{bmatrix}$ tenemos por un lado
+    %
+    \[
+    \Sigma_{\widetilde{Z}}  = \begin{bmatrix}
+      \Sigma_X & \Sigma_{X,Y}\\ \Sigma_{X,Y}^t & \Sigma_Y\end{bmatrix}
+    \]
+    %
+    conteniendo todas las convarianzas, y por el otro lado,
+    %
+    \[
+    \Sigma_Z =  \left( \Sigma_X  + \Sigma_Y \right)  - \imath \left(  \Sigma_{X,Y} -
+      \Sigma_{X,Y}^t \right)
+    \]
+    \SZ{Decir  antes,  que $\Sigma_{X,Y}  \equiv  \Cov[X,Y]$  y $\Sigma_{Y,X}  =
+      \Sigma_{X,Y}^t$}.  Se puede ver que la covarianza de $Z$ no contiene todos
+    los  terminos   de  orden   2.  Por  eso,   se  define  tambi\'en   la  {\em
+      pseudo-covarianza}, sin terminos conjugados,
+    \[
+    \check{\Sigma}_Z \equiv \pCov[Z] \equiv \Esp\left[ (Z-m_Z) (Z-m_Z)^t \right]
+    \]
+    %
+    Ahora, se puede ver que
+    %
+    \[
+    \check{\Sigma}_Z =  \left( \Sigma_X  - \Sigma_Y \right)  + \imath \left(  \Sigma_{X,Y} + 
+      \Sigma_{X,Y}^t \right)
+    \]
+    %
+    Entonces,  se  recupera  inmediatamente   $\Sigma_X,  \:  \Sigma_Y$  \  y  \
+    $\Sigma_{X,Y}$  \  a  partir  de  \ $\Sigma_Z$  \  y  \  $\check{\Sigma}_Z$;
+    Claramente,   los   momentos   centrales   de   orden  2   son   dados   por
+    \underline{ambas} \ $\Sigma_Z$ \ y \ $\check{\Sigma}_Z$.
+  \end{itemize}
+  %
+  Los momentos  as\'i definidos heriden  naturalmente de las propiedades  de las
+  del caso real.
+%
+\item Se puede ver que  \ $\Sigma_Z \in P_d(\Cset)$ (semi-definida positiva), es
+  decir que \ $\Sigma_Z = \Sigma_Z^\dag$ \  y \ $\forall \, \mu \in \Cset, \quad
+  \mu^\dag  \Sigma_Z \mu \ge  0$. \SZ{Decirlo  para el  caso real  tambien.}  Al
+  rev\'es,  $\check{\Sigma}_Z  \not\in  P_d(\Cset)$;  esta matriz  es  solamente
+  sim\'etrica \ $\check{\Sigma}_Z = \check{\Sigma}_Z^t \in S_d(\Cset)$.
+%
+\item Las generadoras son respectivamente equivalentes a las de $\widetilde{Z}$,
+  o  usando   a  la  vez   $Z$  y  $Z^*$.    Por  ejemplo,  para   la  funci\'on
+  caracter\'istica, se la puede definir de argumento complejo como
+  %
+  \[
+  \Phi_Z(\omega)  =  \Esp\left[ e^{\imath  \real{\omega^\dag  Z}} \right]  \quad
+  \mbox{con} \quad \omega \in \Cset^d
+  \]
+  %
+  (ver  por  ejemplo~\cite[Cap.~17]{Lap17}).   Las funciones  generadoras  as\'i
+  definidas heriden naturalmente de las propiedades de las del caso real.
+\end{itemize}
+
+En el  marco de vectores  complejos, aparece una subclase  particular invariante
+por rotaci\'on, lo qu es conocido como vectores circulares:
+%
+\begin{definicion}[Vector aleatorio complejo circular]\label{Def:MP:VectorAleatorioComplejoCircular}
+%
+  Un  vector   aleatorio  complejo   \  $Z$  \   es  dicho  {\em   circular}  en
+  torno~\footnote{En la literatura, la noci\'on  de circular es dada para $\mu =
+    0$~\cite[Def.~24.3.2]{Lap17}, pero  se extiende sin costo  adicional al caso
+    de la  definici\'on dada en este libro.}   a un vector $\mu  \in \Cset^d$ si
+  para cualquier $\theta \in [0 \; 2 \pi)$,
+  %
+  \[
+  e^{\imath \theta} \left( Z - \mu \right) \, \egald \, Z - \mu
+  \]
+\end{definicion}
+
+Los vectores circular tienen propiedades particulares importantes
+%
+\begin{itemize}
+\item  Si $Z$  es circular  al torno  de  un vector  $\mu$ y  admite una  media,
+  entonces $$m_Z = \Esp[Z] = \mu$$ Eso viene del hecho de que $e^{\imath \theta}
+  \Esp\left[ e^{\imath \theta} (Z - \mu) \right] = \Esp\left[ (Z - \mu) \right]$
+  lo que vale necesariamente 0.
+%
+\item Si $Z$ es circular al torno  de un vector $\mu$ y admite momentos de orden
+  2, entonces la pseudo-covarianza es  nula, $$\check{\Sigma}_Z = \pCov[Z] = 0$$
+  Recordandose que $m_Z = \mu$, eso  viene del hecho de que $e^{2 \imath \theta}
+  \Esp\left[ (Z - m_Z) (Z - m_Z)^t \right] = \Esp\left[ \left( e^{\imath \theta}
+      (Z - \mu)  \right) \left( e^{\imath \theta} (Z -  \mu) \right)^t \right] =
+  \Esp\left[ (Z  - \mu) (Z  - \mu)^t \right]$  lo que vale necesariamente  0. La
+  consecuencia es que en el contexto circular, 
+  %
+  \[
+  \Sigma_X = \Sigma_Y \quad \mbox{y} \quad \Sigma_{X,Y}^t = - \Sigma_{X,Y}
+  \]
+  %
+\end{itemize}
+
+Fijense de que si la pseudo-covarianza  de un vector aleatorio complejo es nula,
+eso  no  implica  de  que  el  vector  es circular.  Por  ejemplo,  sea  $Z$  de
+distribuci\'on  uniforme sobre  $\Z  = \{  1+\imath \,  ,  \, 1-\imath  \, ,  \,
+-1+\imath  \,  ,  \, -1-\imath  \}$  no  puede  ser circular  porque  $e^{\imath
+  \frac{\pi}{4}} Z$  toma sus  valores en  $\{ \sqrt2 \,  , \,  -\sqrt2 \,  , \,
+\imath \sqrt2 \, , \, -\imath \sqrt2 \} \ne \Z$.
+
+Cuando la pseudo-covarianza es nula se dice a veces que el vector es circular al
+orden  2.  M\'as  precisamente,  en   la  literatura,  se  usa  la  definici\'on
+siguiente~\cite[Def.~17.4.1]{Lap17}:
+%
+\begin{definicion}[Vector aleatorio complejo propio]\label{Def:MP:VectorAleatorioComplejoPropio}
+%
+  Un vector aleatorio complejo \ $Z$  \ es dicho {\em propio} (proper en ingles)
+  si admite momentos hasta el orden 2 y ambos,
+  %
+  \[
+  \Esp[Z] = 0, \qquad \pCov[Z] = 0
+  \]
+\end{definicion}
+%
+Se podr\'ia ampliar  esta definici\'on hablando de vector propio  al torno de un
+vector $\mu$, conservando solamente la nulidad de la pseudo-covarianza.
+
+
+
+% ================================= Caso matricial
+
+\subseccion{Matrices aleatorias}
+\label{Ssec:MP:MA}
+
+
+\SZ{ poner unas palabras
+  sobre el caso matrix-variate general, y con simetrias
+
+Poner la forma de la covarianza $\Esp[X  \otimes X] - m_X \otimes m_X$ que tiene
+todos  los terminos de  covarianza $\Cov[X_{i,j},X_{k,l}]$  (coefficente $(k,l)$
+del bloc $(i,j)$. Poner la  forma de la funcion caracter\'istica $\Phi_X(\Omega)
+= \Esp \left[ e^{\imath \Tr\left( \Omega  X \right)} \right]$; Se puede salir de
+la vectorizaci\'on~\cite{Har08} de \ $X$,  \ie poniendo las columnas una bajo la
+otra, y  usar la definici\'on usual. Tomando  en cuenta la s\'imetria  de \ $X$,
+eso es  equivalente a definirla como  \ $\Phi_X(\omega) =  \Esp \left[ e^{\imath
+    \Tr\left(  \Omega  X \right)}  \right]$  \  con  \ $\Omega  \in  S_d(\Rset)$
+conjunto de matrices reales s\'imetricas de $\Rset^{d \times d}$~\cite{PedRic91,
+  And03};
+
+Promedio: Para calcularlas, lo m\'as sencillo es salir de la funci\'on
+caracter\'istica y ver que, con las simetrias, \ $\frac{\partial
+\Phi_X}{\partial \Omega_{i,j}} = \imath (2-\un_{\{i\}}(j)) \Esp\left[ X_{i,j}
+\right]$, y usar las reglas de derivaci\'on matricial~\cite[Cap.~8]{MagNeu99}.
+
+Covarianza: Para calcularlas, en el caso e simetrias, lo m\'as sencillo es salir de nuevo de la
+funci\'on caracter\'istica y ver que, con las simetrias, \ $\frac{\partial^2
+\Phi_X}{\partial \Omega_{i,j} \partial \Omega_{k,l}} = - (2-\un_{\{i\}}(j))
+(2-\un_{\{k\}}(l)) \Esp[X_{i,j} X_{k,l}]$ \ y usar las reglas de derivaci\'on
+matricial~\cite[Cap.~8]{MagNeu99}
+}
