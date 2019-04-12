@@ -222,16 +222,20 @@ Los vectores circular tienen propiedades particulares importantes
 \begin{itemize}
 \item  Si $Z$  es circular  al torno  de  un vector  $\mu$ y  admite una  media,
   entonces $$m_Z = \Esp[Z] = \mu$$ Eso viene del hecho de que $e^{\imath \theta}
-  \Esp\left[ e^{\imath \theta} (Z - \mu) \right] = \Esp\left[ (Z - \mu) \right]$
-  lo que vale necesariamente 0.
+  \Esp\left[ Z - \mu \right] =  \Esp\left[ e^{\imath \theta} (Z - \mu) \right] =
+  \Esp\left[ Z  - \mu \right]$. Entonces, para  cualquier \ $\theta \in  [0 \; 2
+  \pi), \: \left(1 - e^{\imath \theta}  \right) \Esp\left[ Z - \mu \right] = 0$,
+  lo que proba que \ $\Esp\left[ Z - \mu \right] = 0$.
 %
 \item Si $Z$ es circular al torno  de un vector $\mu$ y admite momentos de orden
   2, entonces la pseudo-covarianza es  nula, $$\check{\Sigma}_Z = \pCov[Z] = 0$$
   Recordandose que $m_Z = \mu$, eso  viene del hecho de que $e^{2 \imath \theta}
   \Esp\left[ (Z - m_Z) (Z - m_Z)^t \right] = \Esp\left[ \left( e^{\imath \theta}
-      (Z - \mu)  \right) \left( e^{\imath \theta} (Z -  \mu) \right)^t \right] =
-  \Esp\left[ (Z  - \mu) (Z  - \mu)^t \right]$  lo que vale necesariamente  0. La
-  consecuencia es que en el contexto circular, 
+      (Z - m_Z)  \right) \left( e^{\imath \theta} (Z -  m_Z) \right)^t \right] =
+  \Esp\left[ (Z - m_Z) (Z - m_Z)^t \right]$.  Entonces, para cualquier \ $\theta
+  \in [0 \; 2 \pi), \: \left(1  - e^{2 \, \imath \theta} \right) \Esp\left[ (Z -
+    m_Z) (Z - m_Z)^t  \right] = 0$, lo que cierra la  prueba. La consecuencia es
+  que en el contexto circular,
   %
   \[
   \Sigma_X = \Sigma_Y \quad \mbox{y} \quad \Sigma_{X,Y}^t = - \Sigma_{X,Y}
@@ -240,11 +244,15 @@ Los vectores circular tienen propiedades particulares importantes
 \end{itemize}
 
 Fijense de que si la pseudo-covarianza  de un vector aleatorio complejo es nula,
-eso  no  implica  de  que  el  vector  es circular.  Por  ejemplo,  sea  $Z$  de
-distribuci\'on  uniforme sobre  $\Z  = \{  1+\imath \,  ,  \, 1-\imath  \, ,  \,
--1+\imath  \,  ,  \, -1-\imath  \}$  no  puede  ser circular  porque  $e^{\imath
-  \frac{\pi}{4}} Z$  toma sus  valores en  $\{ \sqrt2 \,  , \,  -\sqrt2 \,  , \,
-\imath \sqrt2 \, , \, -\imath \sqrt2 \} \ne \Z$.
+eso  no implica de  que el  vector es  circular.  Por  ejemplo, sea  $Z$ tomando
+valores sobre  $\Z =  \{ 1+\imath \,  , \, 1-\imath  \, ,  \, -1+\imath \,  , \,
+-1-\imath  \}$ con  probabilidades  $p  = \begin{bmatrix}  \frac13  & \frac14  &
+  \frac15 &  \frac{13}{60} \end{bmatrix}^t$. No  puede ser circular  porque, por
+ejemplo $e^{\imath  \frac{\pi}{4}} Z$  toma sus  valores en $\{  \sqrt2 \,  , \,
+-\sqrt2 \, , \, \imath \sqrt2 \, ,  \, -\imath \sqrt2 \} \ne \Z$ o, por ejemplo,
+$e^{\imath \frac{\pi}{2}}  Z$ toma  sus valores  en $\Z$ pero  con el  vector de
+probabilidad  $p'  =  \begin{bmatrix}   \frac15  &  \frac13  &  \frac{13}{60}  &
+  \frac14\end{bmatrix}^t \ne p$.
 
 Cuando la pseudo-covarianza es nula se dice a veces que el vector es circular al
 orden  2.  M\'as  precisamente,  en   la  literatura,  se  usa  la  definici\'on
@@ -263,7 +271,39 @@ siguiente~\cite[Def.~17.4.1]{Lap17}:
 Se podr\'ia ampliar  esta definici\'on hablando de vector propio  al torno de un
 vector $\mu$, conservando solamente la nulidad de la pseudo-covarianza.
 
+Los vectores propios tienen  propiedades particulares, entre otros las siguientes.
 
+\begin{teorema}[Conservaci\'on del caracter propio por transformaci\'on lineal]\label{Teo:MP:PropioLineal}
+%
+  Sea  $Z$  vector  aleatorio  complejo  propio  de  $\Cset^d$,  entonces,  para
+  cualquier matriz $A \in M_{d',d}(\Cset)$, el vector aleatorio $A Z$ es propio.
+\end{teorema}
+\begin{proof}
+  La prueba es obiva, notando que $\Esp[A Z]  = A \Esp[Z] = 0$ y que $\pCov[A Z]
+  = A \pCov[Z] A^t = 0$.
+\end{proof}
+
+
+\begin{teorema}[Caracter propio y proyecci\'on]\label{Teo:MP:PropioProy}
+%
+  Un vector  aleatorio $Z$ complejo de  $\Cset^d$ es propio si  y solamente para
+  cualquier $c \in \Cset^d$, la variable $c^t Z$ es propia.
+\end{teorema}
+\begin{proof}
+  De \ $\Esp[c^t Z] = c^t \Esp[Z]$  \ tenemos que $\Esp[Z] = 0 \, \Rightarrow \,
+  \Esp[c^t Z] =  0$. Reciprocamente, si para cualquier $c, \:  \Esp[c^t Z] = 0$,
+  entonces  para  cualquier $c,  \:  c^t  \Esp[Z] =  0$  y  entonces $\Esp[Z]  =
+  0$.\newline  Con  respeto a  la  pseudo-covarianza,  de  $\pCov[c^t Z]  =  c^t
+  \pCov[Z]  c$ tenemos  que  $\pCov[Z] =  0  \, \Rightarrow  \,  \pCov[c^t Z]  =
+  0$. Reciprocamente, si para cualquier $c$ tenemos $\pCov[c^t Z] = 0$, entonces
+  eligiendo vectores $c$ puestas en una matriz, para cualquier matriz invertible
+  de  $M_{d,d}(\Cset)$ tenemos  $\pCov[C^t  Z]  = 0  \,  \Leftrightarrow \,  C^t
+  \pCov[Z] C = 0 \, \Leftrightarrow \, \pCov[Z] = 0$.
+\end{proof}
+
+%\SZ{
+%A real random vector is proper if and only if it is constant. CASI SIEMPRE
+%}
 
 % ================================= Caso matricial
 
