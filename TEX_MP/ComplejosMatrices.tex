@@ -290,15 +290,16 @@ Los vectores propios tienen  propiedades particulares, entre otros las siguiente
   cualquier $c \in \Cset^d$, la variable $c^t Z$ es propia.
 \end{teorema}
 \begin{proof}
-  De \ $\Esp[c^t Z] = c^t \Esp[Z]$  \ tenemos que $\Esp[Z] = 0 \, \Rightarrow \,
-  \Esp[c^t Z] =  0$. Reciprocamente, si para cualquier $c, \:  \Esp[c^t Z] = 0$,
-  entonces  para  cualquier $c,  \:  c^t  \Esp[Z] =  0$  y  entonces $\Esp[Z]  =
-  0$.\newline  Con  respeto a  la  pseudo-covarianza,  de  $\pCov[c^t Z]  =  c^t
-  \pCov[Z]  c$ tenemos  que  $\pCov[Z] =  0  \, \Rightarrow  \,  \pCov[c^t Z]  =
-  0$. Reciprocamente, si para cualquier $c$ tenemos $\pCov[c^t Z] = 0$, entonces
-  eligiendo vectores $c$ puestas en una matriz, para cualquier matriz invertible
-  de  $M_{d,d}(\Cset)$ tenemos  $\pCov[C^t  Z]  = 0  \,  \Leftrightarrow \,  C^t
-  \pCov[Z] C = 0 \, \Leftrightarrow \, \pCov[Z] = 0$.
+  Claramente, de \  $\Esp\left[ c^t Z \right] = c^t \Esp[Z]$  \ y \ $\pCov\left[
+    c^t Z \right] = c^t \pCov[Z] c$ \ tenemos que si $Z$ es propio, \ $\Esp[Z] =
+  0  \: \Rightarrow  \Esp\left[ c^t  Z  \right] =  0$ \  y  \ $\pCov[Z]  = 0  \:
+  \Rightarrow \pCov\left[  c^tZ \right] =  0$. \newline Reciprocamente,  si para
+  cualquier $c$ la variable \ $c^t Z$  \ es propia, se puede elegir $d$ vectores
+  $c_i^t$ puestas  en una matriz  $C$ invertible. Entonces  $\Esp[C Z] =  0$ por
+  hypotesis, lo  que da  $C \Esp[Z] =  0 \:  \Rightarrow \: \Esp[Z]  = 0$  de la
+  invertibilidad. De la misma manera, tenemos por hypothesis $\pCov[C Z] = 0$ lo
+  que significa que  $C \pCov[Z] C^t = 0  \: \Rightarrow \: \pCov[Z] =  0$ de la
+  invertibilidad de $C$.
 \end{proof}
 
 %\SZ{
@@ -310,6 +311,7 @@ Los vectores propios tienen  propiedades particulares, entre otros las siguiente
 \subseccion{Matrices aleatorias}
 \label{Ssec:MP:MA}
 
+\subsubseccion{Caso con }
 
 \SZ{ poner unas palabras
   sobre el caso matrix-variate general, y con simetrias
