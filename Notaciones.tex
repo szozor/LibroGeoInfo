@@ -29,7 +29,28 @@ $\Kset^*$ & Conjunto $\Kset$ sin en $0$,  $\Kset^* = \Kset \setminus \{ 0 \}$ \ 
 $\Kset_+$ & Elementos de $\Kset$ positivos, $\Kset_+ = \{ x \in \Kset, \: x \ge 0 \}$ \ ($\Kset = \Nset, \Zset$ \ o \ $\Rset$).\\[2mm]
 \hline
 %
-$\Kset^d$ & Conjunto de vectores columnas de tama\~no $d$ de elementos de $\Kset$, $x \in \Kset^d \: \Leftrightarrow \: x = \begin{bmatrix} x_1\\ \vdots \\ x_d \end{bmatrix}$ con $x_i \in \Kset$.\\[2mm]
+$\times$ & Producto cartesiano $x \in \Kset \times \Kset' \: \Leftrightarrow \: x = \begin{bmatrix} x\\x'\end{bmatrix}$  con $x \in \Kset$ y $x' \in \Kset'$.\\[2mm]
+\hline
+%
+$\times_i$ & Productos cartesianos $\times_{i=1}^n \Kset_i = \Kset_1 \times \cdots \times \Kset_n$.\\[2mm]
+\hline
+%
+$\Kset^d = \Kset \times \cdots \times \Kset$ & Conjunto de vectores columnas de tama\~no $d$ de elementos de $\Kset$, $x \in \Kset^d \: \Leftrightarrow \: x = \begin{bmatrix} x_1\\ \vdots \\ x_d \end{bmatrix}$ con $x_i \in \Kset$.\\[2mm]
+\hline
+%
+$|\cdot|$ & Valor absoluto o modulus\\[2mm]
+\hline
+%
+$\|\cdot\|_p$ & Norma $p$ sobre $\Rset^d$, \: $\|x\|_p = \left( \sum_{i=1}^d |x|^p \right)^{\frac1p}$\\[2mm]
+\hline
+%
+$\|\cdot\|$ o $|\cdot|$ & Norma $2$ sobre $\Rset^d$\\[2mm]
+\hline
+%
+$\Sset_d$ & Esfera unitaria de $\Rset^d$, \: $\Sset_d = \left\{ x \in \Rset^d, \: \|x\| = 1 \right\}$\\[2mm]
+\hline
+%
+$\Bset_d$ & Bola unitaria de $\Rset^d$, \: $\Bset_d = \left\{ x \in \Rset^d, \: \|x\| \le 1 \right\}$\\[2mm]
 \hline
 %
 $\cdot^*$ & Conjugaci\'on, componente por componente, $v^*$ \ es de componente \ $i$-\'esima \ $v_i^*$\\[2mm]
@@ -99,6 +120,15 @@ $\Tr \cdot$ & Traza de una matriz (cuadrada) de $M_{d,d}(\Kset)$, $\Tr M = \sum_
 \hline
 %
 $\left| \cdot \right|$ & Valor absoluto del determinent de una matriz (cuadrada) de $M_{d,d}(\Kset)$, \SZ{$\left| M \right| = $}.\\[2mm]
+\hline
+%
+$I$ & Matriz identidad, $I = \diag \un$\\[2mm]
+\hline
+%
+$\cdot^{-1}$ & Matriz inversa (cuando existe), $M M^{-1} = M^{-1} M = I$\\[2mm]
+\hline
+%
+$\cdot^{\frac12}$ & Para $M \in \P_d^+(\Kset)$, $M^{\frac12}$ es la \'unica matriz de matriz de $\P_d^+(\Kset)$ tal $M^{\frac12} M^{\frac12} = M$\\[2mm]
 \hline
 %
 $\otimes$ & Producto de  Kronecker, $A \otimes B$ \ es la matriz bloc
