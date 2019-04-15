@@ -1,42 +1,15 @@
-\SZ{En todos los lados, escribir (y definir antes, y en las notaciones)
-
-\begin{itemize}
-\item $M_{d,d'}(\Kset)$  el espacio  de matricez $d  \times d'$ de  elementos de
-  $\Kset$ con $\Kset = \Rset$ o $\Cset$.
-%
-\item las notaciones $\cdot^*$ para la conjugaci\'on compleja, $\cdot^t$ para la
-  transpuesta, $\cdot^\dag$ para la transconjugada.
-%
-\item  $S_d(\Kset)$  conjunto  de  matrices  de  $\Kset$  sim\'etricas,  $M  \in
-  S_d(\Kset) \, \Leftrightarrow \, M^t = M$.
-%
-\item  $H_d(\Cset)$ conjunto  de matrices  de $\Cset$  hermiticas  (a simetr\'ia
-  hermitica), $M  \in H_d(\Cset) \, \Leftrightarrow  \, M^\dag =  M$. Fijense de
-  que tendr\'iamos $H_d(\Rset) \equiv S_d(\Rset)$
-%
-\item $P_d(\Kset)$  conjunto de  matrices semidefinida positivas:  $P_d(\Kset) =
-  \left\{ M \in H_d(\Kset), \: \quad  \forall \, \mu \in \Kset^d, \mu^\dag M \mu
-    \ge 0 \right\}$.
-%
-\item $P_d^+(\Kset)$  conjunto de  matrices definida positivas:  $P_d^+(\Kset) =
-  \left\{ M \in H_d(\Kset), \: \forall \,  \mu \ne 0 \in \Kset^d, \mu^\dag M \mu
-    > 0 \right\}$.
-\end{itemize}
-
-
-\
-
- $\otimes$ es el producto de  Kronecker, $A \otimes B$ \ es matriz bloc
-de bloc \ $(i,j)$-\'esima \ $A_{i,j} B$.
-%, $J$ \ la matriz bloc de
-%bloc  $(i,j)$-\'esima \  $\un_j  \un_i^t$  \ y  $K$  \ la  matriz  bloc de  bloc
-%$(i,j)$-\'esima \ $\un_i \un_j^t$.
-}
-
 \seccion{Vectores aleatorios complejos y matrices aleatorias en algunas palabras.}
 \label{Sec:MP:VectoresComplejosMatricesAleatorias}
 
-\SZ{Introducir en 2 palabres}
+En  varios  campos,  como  en  mecanica cuantica,  procesamiento  de  se\~nales,
+estadistica, estamos frente  a datos complejas o puestas  en matrices. A\'un que
+se  puede poner en  biyecci\'on \  $\Cset$ \  y \  $\Rset^2$ \  o, similarmente,
+$M_{d,d'}(\Rset)$ \  y \  $\Rset^{d d'}$, puede  parecer m\'as  natural trabajar
+coinservando la  estructura de los datos. Adem\'as,  permite frecuentemente usar
+escrituras  m\'as  compctas  que  pasar  por  vectores  reales.  Conservando  la
+estructura implica  ciertas matices en  las escrituras de las  distribuciones de
+probabilidades, momentos  o funciones generadoras.  Los vamos a  ver brevemente,
+dejando el mector a libros especializados para tener m\'as detalles.
 
 % ================================= Caso complejo
 
@@ -198,7 +171,8 @@ Resuelte de esta definici\'on equivalente los hechos siguientes:
   \]
   %
   (ver  por  ejemplo~\cite[Cap.~17]{Lap17}).   Las funciones  generadoras  as\'i
-  definidas heriden naturalmente de las propiedades de las del caso real.
+  definidas   heriden  naturalmente  de   las  propiedades   de  las   del  caso
+  real. \SZ{Ver vinculo con el promedio, la (pseudo)covarianza,\ldots}
 \end{itemize}
 
 En el  marco de vectores  complejos, aparece una subclase  particular invariante
@@ -221,14 +195,25 @@ Los vectores circular tienen propiedades particulares importantes
 %
 \begin{itemize}
 \item  Si $Z$  es circular  al torno  de  un vector  $\mu$ y  admite una  media,
-  entonces $$m_Z = \Esp[Z] = \mu$$ Eso viene del hecho de que $e^{\imath \theta}
-  \Esp\left[ Z - \mu \right] =  \Esp\left[ e^{\imath \theta} (Z - \mu) \right] =
-  \Esp\left[ Z  - \mu \right]$. Entonces, para  cualquier \ $\theta \in  [0 \; 2
-  \pi), \: \left(1 - e^{\imath \theta}  \right) \Esp\left[ Z - \mu \right] = 0$,
-  lo que proba que \ $\Esp\left[ Z - \mu \right] = 0$.
+  entonces
+  %
+  \[
+  m_Z = \Esp[Z] = \mu
+  \]
+  % 
+  Eso viene  del hecho de  que $e^{\imath \theta}  \Esp\left[ Z - \mu  \right] =
+  \Esp\left[  e^{\imath  \theta}  (Z  -  \mu)  \right]  =  \Esp\left[  Z  -  \mu
+  \right]$. Entonces,  para cualquier \ $\theta \in  [0 \; 2 \pi),  \: \left(1 -
+    e^{\imath \theta} \right) \Esp\left[ Z -  \mu \right] = 0$, lo que proba que
+  \ $\Esp\left[ Z - \mu \right] = 0$.
 %
 \item Si $Z$ es circular al torno  de un vector $\mu$ y admite momentos de orden
-  2, entonces la pseudo-covarianza es  nula, $$\check{\Sigma}_Z = \pCov[Z] = 0$$
+  2, entonces la pseudo-covarianza es  nula,
+  %
+  \[
+  \check{\Sigma}_Z = \pCov[Z] = 0
+  \]
+  %
   Recordandose que $m_Z = \mu$, eso  viene del hecho de que $e^{2 \imath \theta}
   \Esp\left[ (Z - m_Z) (Z - m_Z)^t \right] = \Esp\left[ \left( e^{\imath \theta}
       (Z - m_Z)  \right) \left( e^{\imath \theta} (Z -  m_Z) \right)^t \right] =
@@ -311,30 +296,170 @@ Los vectores propios tienen  propiedades particulares, entre otros las siguiente
 \subseccion{Matrices aleatorias}
 \label{Ssec:MP:MA}
 
-\subsubseccion{Caso con }
+De la misma manera que se  puede querer trabajar con vectores complejos, a veces
+los datos son naturalmente puestas en matrices aleatorias. Por ejemplo, se puede
+querer estimar  una matriz de covarianza  a partir de una  secuencia de vectores
+aleatorios \  $X_i, \: i =  1, \ldots ,  n$ \ de media  nula y de misma  ley. Un
+estimador  natural es  de reemplazar  el  promedio estadistico  por un  promedio
+empirico usando las  observaciones/los vectores aleatorios \ $\widehat{\Sigma}_X
+= \frac1n \sum_{i=1}^n X_i X_i^t$ \ (en practica, se reemplaza los \ $X_i$ \ por
+observaciones/sampleos  \  $x_i$   \  y  se  evalua  entonces   un  sampleo  del
+estimador). Claramente \ $\widehat{\Sigma}_X$ \ es aleatoria por construcci\'on,
+y tiene naturalmente la estructura de una matriz.
 
-\SZ{ poner unas palabras
-  sobre el caso matrix-variate general, y con simetrias
+En lo que sigue, nos enfocaremos  en las matrices reales. Para el caso complejo,
+se prodr\'a referirse a la subsecci\'on  anterior. Notando que se puede poner en
+biyecci\'on \  $M_{d,d'}(\Rset)$ \ y \  $\Rset^{d d'}$, une manera  de tratar de
+matrices  aleatorias \  $X$ \  puede ser  de trabajar  con su  vectorizaci\'on \
+$\vec{X} = \begin{bmatrix} X_1^t &  \cdots & X_{d'}^t \end{bmatrix}^t$ \ donde \
+$X_i$  \ es  la  \ $i$-\'esima  columna de  \  $X$, las  vectorizaciones de  las
+operaciones   matriciales~\cite[Cap.~2]{MagNeu}  (ver  tambi\'en~\cite{MAgNeu79,
+  NeuWan83, Har08}), y referirse a la secci\'on tratando de vectores aleatorios.
+Pero resulte a veces m\'as  directo conservar la estructura matricial y trabajar
+con esa.
 
-Poner la forma de la covarianza $\Esp[X  \otimes X] - m_X \otimes m_X$ que tiene
-todos  los terminos de  covarianza $\Cov[X_{i,j},X_{k,l}]$  (coefficente $(k,l)$
-del bloc $(i,j)$. Poner la  forma de la funcion caracter\'istica $\Phi_X(\Omega)
-= \Esp \left[ e^{\imath \Tr\left( \Omega  X \right)} \right]$; Se puede salir de
-la vectorizaci\'on~\cite{Har08} de \ $X$,  \ie poniendo las columnas una bajo la
-otra, y  usar la definici\'on usual. Tomando  en cuenta la s\'imetria  de \ $X$,
-eso es  equivalente a definirla como  \ $\Phi_X(\omega) =  \Esp \left[ e^{\imath
-    \Tr\left(  \Omega  X \right)}  \right]$  \  con  \ $\Omega  \in  S_d(\Rset)$
-conjunto de matrices reales s\'imetricas de $\Rset^{d \times d}$~\cite{PedRic91,
-  And03};
+Formalmente, una  matriz aleatorio real se define  de la misma manear  que en el
+caso de vectores reales, de la manera siguiente:
+%
+\begin{definicion}[Matriz aleatoria real]
+\label{Def:MP:MatrizAleatorioaReal}
+%
+  Una matriz aleatoria real es una funci\'on medible
+  %
+  \[
+  X:  (\Omega,\A,P) \mapsto  \left( M_{d,d'}(\Rset)  ,  \B\left( M_{d,d'}(\Rset)
+    \right) , P_X \right).
+  \]
+  %
+  donde   $\B\left(    M_{d,d'}(\Rset)   \right)$   son    los   borelianos   de
+  $M_{d,d'}(\Rset)$, $\sigma$-\'algebra  generada por los  productos cartesianos
+  $\optimes_{i=1,j=1}^{i=d,j=d'}  \left( -\infty \,  ; \,  b_{i,j} \right]$  \ y
+  donde la  medida \ $P_X$  sobre \ $\B\left(  M_{d,d'}(\Rset) \right)$ \  es la
+  medida im\'agen de $P$. Nuevamente,
+  %
+  \[
+  (X \in  B) \equiv  X^{-1}(B) =  \{ \omega \in  \Omega: \:  X(\omega) \in  B \}
+  \qquad \mbox{y} \qquad P_X(B) = P(X \in B).
+  \]
+\end{definicion}
 
-Promedio: Para calcularlas, lo m\'as sencillo es salir de la funci\'on
-caracter\'istica y ver que, con las simetrias, \ $\frac{\partial
-\Phi_X}{\partial \Omega_{i,j}} = \imath (2-\un_{\{i\}}(j)) \Esp\left[ X_{i,j}
-\right]$, y usar las reglas de derivaci\'on matricial~\cite[Cap.~8]{MagNeu99}.
+En lo que sigue, nos vamos  a concentrar sobre dos situaciones particulares: (i)
+el  caso general de  matrices de  \ $M_{d',d}$  y (ii)  el conjunto  de matrices
+sim\'etricas  $S_d(\Rset)$ (o  un subconjunto)  que tiene  la  particularidad de
+tener componentes  iguales. El el \'ultimo  caso, a veces  resuelte m\'as comodo
+tener en  cuenta esta  simetria, es  de decir que  la matriz  tiene a  los m\'as
+$\frac{d (d+1)}{2}$ componentes linealmente independientes.
 
-Covarianza: Para calcularlas, en el caso e simetrias, lo m\'as sencillo es salir de nuevo de la
-funci\'on caracter\'istica y ver que, con las simetrias, \ $\frac{\partial^2
-\Phi_X}{\partial \Omega_{i,j} \partial \Omega_{k,l}} = - (2-\un_{\{i\}}(j))
-(2-\un_{\{k\}}(l)) \Esp[X_{i,j} X_{k,l}]$ \ y usar las reglas de derivaci\'on
-matricial~\cite[Cap.~8]{MagNeu99}
-}
+
+
+% --------------------------------- Linealmente independiente
+
+
+%\subsubseccion{Caso general}
+%\label{Sssec:MP:MatricesAleatoriasGeneral}
+
+De  manera general,  trabajamos en  el  contexto de  matrices no  necesiaramente
+cuadradas,  y  con componentes  potencialemnte  linealmente independientes  (sin
+simetria particular).  En este marco  general, $X$ viviendo sobre  $\X \subseteq
+M_{d,d'}(\Rset)$:
+%
+\begin{itemize}
+\item La funci\'on  de repartici\'on \ $F_X$ \ es  la distribuci\'on conjunta de
+  las  componentes  $X_{i,j}$.   Si  admite  una  densidad,  se  define  como  \
+  $\displaystyle      p_X       =      \frac{\partial^{d      d'} F_X}{\prod_{i=1}^d
+    \prod_{j=1}^{d'} \partial x_{i,j}}$.
+%
+\item Los  momentos se definen como en  el caso de vectores;  Por ejemplo, todos
+  los momentos de orden $K$ son dados por
+  %
+  \[
+  m_K = \Esp\left[ X^{\otimes K} \right]
+  \]
+  %
+  donde \  $\cdot^{\otimes K}$ \ es  \ $K$ \  veces el producto de  Kronecker, y
+  similarmente para los momentos centrales $\zeta_K$. En particular,
+  %
+  \begin{itemize}
+  \item La media es definida por
+    %
+    \[
+    m_X = \Esp\left[ X \right]
+    \]
+  %
+  \item  La covarianza  es  definida por
+    \[
+    \Sigma_X = \Cov[X] = \Esp\left[ X \otimes X \right] - m_X \otimes m_X
+    \]
+    %
+    Tipicamente,  si  la  vemos en  bloques  de  tama\~no  \  $d \times  d$,  la
+    componente  \ $(k,l)$-\'esima  del bloc  \ $(i,j)$-\'esima  corresponde  a \
+    $\Cov\left[ X_{i,j} ,  X_{k,l} \right]$.
+  \end{itemize}
+%
+\item  Se puede  escribir  tambi\'en  las funciones  generadoras  con una  forma
+  matricial; por  ejemplo, tratando de  la funci\'on caract\'eristica, va  a ser
+  una  funci\'on de  $d d'$  variables que  se puede  poner en  una matriz  de \
+  $M_{d,d'}(\Rset)$ \ de tal manera que
+  %
+  \[
+  \Phi_X(\omega) =  \Esp\left[ e^{\imath  \Tr\left( \omega^t X  \right)} \right]
+  \quad \mbox{con} \quad \omega \in M_{d,d'}(\Rset)
+  \]
+%
+\item Ahora es sencillo ver de que, si existent, se puede recuperar los momentos
+  por  diferenciaci\'on   como  en  el  caso  de   vectores,
+  %
+  \[
+  -\imath \left. \frac{\partial \Phi_X}{\partial \omega_{i,j}} \right|_{\omega =
+    0} = \Esp[X_{i,j}]
+  \]
+  %
+  o
+  %
+  \[
+  - \left. \frac{\partial^2 \Phi_X}{\partial \omega_{i,j} \partial \omega_{k,l}}
+  \right|_{\omega = 0} = \Esp\left[ X_{i,j} X_{k,l} \right]
+  \]
+  %
+  Se  prodr\'ia  referirse a~\cite[Cap.~8]{MagNeu99}  para  usar  las reglas  de
+  derivaci\'on matricial  para hacer los calculos  en la mayor\'ia  de los casos
+  que   se  encuentran  en   la  literatura   (vamos  a   ver  ejemplos   en  la
+  secci\'on~\ref{Sec:MP:EjemplosDistribucionesProb}).
+\end{itemize}
+
+
+
+% --------------------------------- Simetricas
+
+
+%\subsubseccion{Caso simetrico}
+%\label{Sssec:MP:MatricesAleatoriasSimetrico}
+
+En  el  contexto  simetrico, \ie  el  espacio  de  llegada  es \  $\X  \subseteq
+S_d(\Rset)$ (ej.   el cono $P_d^+(\Rset)$), aparece  que por lo  m\'as la matriz
+tiene  $\frac{d (d+1)}{2}$  \  componentes linealmente  independientes. A  veces
+resuelte m\'as  comodo definir  la funci\'on caracter\'istica  en este  caso con
+$\omega \in  \X$ para respectar  las simetrias del  problema y no  tener ninguna
+degenrencia de esa misma (ver  por ejemplo~\cite{PedRic91, And03}).  A veces, es
+a\'un  dificil  o imposible  calcular  en  $\M_{d,d}(\Rset)$  entero. Eso  tiene
+consecuencias:
+%
+\begin{itemize}
+\item Si existen,  se puede recuperar los momentos  por diferenciaci\'on como en
+  el caso de  vectores, pero hay que tener  en cuenta el hecho de que  si $i \ne
+  j$, $\omega_{i,j} = \omega_{j,i}$ aparece dos veces en $\omega$. Entonces, por
+  ejemplo, se puede ver inmediatamente que
+  %
+  \[
+  -\imath \left. \frac{\partial \Phi_X}{\partial \omega_{i,j}} \right|_{\omega =
+    0} = \left( 2 - \un_{\{i\}}(j) \right) \Esp[X_{i,j}]
+  \]
+  %
+  o que
+  %
+  \[
+  - \left. \frac{\partial^2 \Phi_X}{\partial \omega_{i,j} \partial \omega_{k,l}}
+  \right|_{\omega  =  0}  =  \left(  2  -  \un_{\{i\}}(j)  \right)  \left(  2  -
+    \un_{\{l\}}(k) \right) \Esp\left[ X_{i,j} X_{k,l} \right]
+  \]
+\end{itemize}

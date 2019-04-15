@@ -1140,6 +1140,11 @@ Langius, J.~C. (1712).
 \newblock {\em Nvclevs Logicae Weisianae}.
 \newblock Giessen: Henningius M{\"u}llerus.
 
+\bibitem[\protect\citeauthoryear{Lapidoth}{Lapidoth}{2017}]{Lap17}
+Lapidoth, A. (2017).
+\newblock {\em A Foundation in Digital Communication\/} (2nd ed.).
+\newblock Cambridge, UK: Cambridge University Press.
+
 \bibitem[\protect\citeauthoryear{Laplume}{Laplume}{1948}]{Lap48}
 Laplume, J. (1948).
 \newblock Sur le nombre de signaux discernables en pr{\'e}sence de bruit
@@ -1200,6 +1205,12 @@ Lieb, E.~H. \& Loss, M. (2001).
 \newblock Providence, Rhode Island: American Mathematical Society.
 
 \bibitem[\protect\citeauthoryear{Liese \& Vajda}{Liese \&
+  Vajda}{1987}]{LieVaj87}
+Liese, F. \& Vajda, I. (1987).
+\newblock {\em Convex Statistical Distances}.
+\newblock Leipzig, Germany: Teubner.
+
+\bibitem[\protect\citeauthoryear{Liese \& Vajda}{Liese \&
   Vajda}{2006}]{LieVaj06}
 Liese, F. \& Vajda, I. (2006).
 \newblock On divergence and informations in statistics and information theory.
@@ -1218,6 +1229,11 @@ Lindhard, J. \& Nielsen, V. (1971).
 \newblock Studies in statistical mechanics.
 \newblock {\em Det Kongelige Danske Videnskabernes Selskab Matematisk-fysiske
   Meddelelser}, {\em 38\/}(9), 1--42.
+
+\bibitem[\protect\citeauthoryear{Liouville}{Liouville}{1839}]{Lio39}
+Liouville (1839).
+\newblock Note sur quelques int{\'e}grales d{\'e}finies.
+\newblock {\em Journal de Math{\'e}matiques Pures et Appliqu{\'e}es}.
 
 \bibitem[\protect\citeauthoryear{Lorenz}{Lorenz}{1905}]{Lor05}
 Lorenz, M.~O. (1905).
@@ -1270,6 +1286,12 @@ Madiman, M. \& Barron, A. (2007).
   information.
 \newblock {\em IEEE Transactions on Information Theory}, {\em 53\/}(7),
   2317--2329.
+
+\bibitem[\protect\citeauthoryear{Magnus \& Neudecker}{Magnus \&
+  Neudecker}{1979}]{MAgNeu79}
+Magnus, J.~R. \& Neudecker, H. (1979).
+\newblock The commutation matrix: Some properties and applications.
+\newblock {\em The Annals of Statistics}, {\em 7\/}(2), 381--394.
 
 \bibitem[\protect\citeauthoryear{Magnus \& Neudecker}{Magnus \&
   Neudecker}{1999}]{MagNeu99}
@@ -1376,6 +1398,12 @@ Navarro, J. (2013).
 \newblock A very simple proof of the multivariate {C}hebyshev's inequality.
 \newblock {\em Communications in Statistics - Theory and Methods}, {\em
   45\/}(12), 3458--3463.
+
+\bibitem[\protect\citeauthoryear{Neudecker \& Wansbeek}{Neudecker \&
+  Wansbeek}{1983}]{NeuWan83}
+Neudecker, H. \& Wansbeek, T. (1983).
+\newblock Some results on commutation matrices, with statistical applications.
+\newblock {\em Canadian Journal of Statistics}, {\em 11\/}(3), 221--231.
 
 \bibitem[\protect\citeauthoryear{Nielsen \& Boltz}{Nielsen \&
   Boltz}{2011}]{NieBol11}
@@ -1500,6 +1528,13 @@ Pearson, K. \& Filon, L. N.~G. (1898).
   selection on variation and correlation.
 \newblock {\em Philosophical Transactions of the Royal Society of London A},
   {\em 191}, 229--311.
+
+\bibitem[\protect\citeauthoryear{Peddada \& Richards}{Peddada \&
+  Richards}{1991}]{PedRic91}
+Peddada, S.~D. \& Richards, D. S.~P. (1991).
+\newblock Proof of a conjecture of {M. L. E}aton on the characteristic function
+  of the {W}ishart distribution.
+\newblock {\em The Annals of Probability}, {\em 19\/}(2), 868--874.
 
 \bibitem[\protect\citeauthoryear{Perlman}{Perlman}{1974}]{Per74}
 Perlman, M.~D. (1974).
@@ -1752,6 +1787,14 @@ Sierpi{\'n}ski, W. (1976).
   applications}.
 \newblock Warszawa, Poland: {PWM \'E}ditions scientifiques de Pologne.
 
+\bibitem[\protect\citeauthoryear{Song, Park \& Kim}{Song
+  et~al.}{2014}]{SonPar14}
+Song, D.-K., Park, H.-J., \& Kim, H.-M. (2014).
+\newblock A note on the characteristic function of multivariate {$t$}
+  distribution.
+\newblock {\em Communications for Statistical Applications and Methods}, {\em
+  21\/}(1), 81--91.
+
 \bibitem[\protect\citeauthoryear{Spiegel}{Spiegel}{1976}]{Spi76}
 Spiegel, M. (1976).
 \newblock {\em Probabilidad y Estad{\'i}stica}.
@@ -1796,6 +1839,12 @@ Stix, G. (1991).
 Student (1908).
 \newblock The probable error of a mean.
 \newblock {\em Biometrika}, {\em 6\/}(1), 1--25.
+
+\bibitem[\protect\citeauthoryear{Sultan \& Tracy}{Sultan \&
+  Tracy}{1996}]{SulTra96}
+Sultan, S. \& Tracy, D.~S. (1996).
+\newblock Moments of {W}ishart distribution.
+\newblock {\em Stochastic Analysis and Applications}, {\em 14\/}(2), 237--243.
 
 \bibitem[\protect\citeauthoryear{Sutradhar}{Sutradhar}{1986}]{Sut86}
 Sutradhar, B.~C. (1986).
