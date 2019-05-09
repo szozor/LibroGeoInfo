@@ -1,0 +1,143 @@
+\begin{notation}
+%
+$M_{d,d'}(\Kset)$ & Espacio de matrices \ $M$, \ de tama\~no \ $d \times d'$, \
+de componentes \ $M_{i,j} \in \Kset$ \ con \ $\Kset = \Rset$ \ o \ $\Cset$;
+$M_{d,1}(\Kset) \equiv \Kset^d$.\\[2.5mm]
+\hline
+%
+$\cdot^*$ & Conjugaci\'on, componente por componente, $M^*$ \ es de componente \
+$(i,j)$-\'esima \ $M_{i,j}^*$\\[2.5mm]
+\hline
+%
+$\cdot^t$ & Transpuesta, $M^t$ \ es de componente \ $(i,j)$-\'esima \
+$M_{j,i}$\\[2.5mm]
+\hline
+%
+$\cdot^\dag$ & Transconjugada, $M^\dag = \left( M^* \right)^t$ \ es de
+componente \ $(i,j)$-\'esima \ $M_{j,i}^*$\\[2.5mm]
+\hline
+%
+$S_d(\Kset)$ & Conjunto de matrices de \ $\Kset$ \ sim\'etricas, $M \in
+S_d(\Kset) \, \Leftrightarrow \, M^t = M$.\\[2.5mm]
+\hline
+%
+$H_d(\Cset)$ & Conjunto de matrices de \ $\Cset$ \ hermiticas (a simetr\'ia
+hermitica), $M \in H_d(\Cset) \, \Leftrightarrow \, M^\dag =
+M$.\vspace{1mm}\newline Fijense de que tendr\'iamos $H_d(\Rset) \equiv
+S_d(\Rset)$.\\[2.5mm]
+\hline
+%
+$P_d(\Kset)$ & Conjunto de matrices semidefinida positivas:\vspace{1mm}\newline
+$P_d(\Kset) = \left\{ M \in H_d(\Kset), \quad \forall \, \mu \in \Kset^d, \:
+\mu^\dag M \mu \ge 0 \right\}$.\\[2.5mm]
+\hline
+%
+$P_d^+(\Kset)$ & Conjunto de matrices definida positivas:\vspace{1mm}\newline
+$P_d^+(\Kset) = \left\{ M \in H_d(\Kset), \quad \forall \, \mu \ne 0 \in
+\Kset^d, \: \mu^\dag M \mu > 0 \right\}$.\\[2.5mm]
+\hline
+%
+%\SZ{$\Simp{k-1}$} & \SZ{$(k-1)$-simplex estandar}~\footnote{\SZ{Politopio,
+%convex hull $\left\{ \un_i \right\}_{i=1}^k$}} \SZ{de \ $Rset_+^k$, i.e.,}\newline
+%\SZ{$\displaystyle \Simp_{k-1} = \left\{ (M_1 , \ldots , M_k) \in \left(
+%P_d^+(\Rset) \right)^k, \: \sum_{i=1}^k M_i = I \right\}$ donde $I$ es la
+%identidad (ver m\'as abajo)}\newline \SZ{Que suman a la identidad es conocido como {\em resoluci\'on de la identidad} o {\em relaci\'on de completud}}~\footnote{\SZ{De hecho, este nombre viene usualmente de la mecanica cuantica~\cite{toto, titi}.}}\\[2.5mm]
+%\hline
+%
+$0$ & Se notara el vector o una matriz de componentes ceros como el caso
+escalar,\vspace{1mm}\newline $0 \equiv \begin{bmatrix} 0 & \cdots & 0\\ \vdots &
+\vdots & \vdots \\ 0 & \cdots & 0 \end{bmatrix}$.\vspace{1mm}\\[2.5mm]
+\hline
+%
+$\un$ & Vector de componentes iguales a 1, \ $\un = \begin{bmatrix} 1\\ \vdots
+\\ 1 \end{bmatrix}$.\vspace{1mm}\\[2.5mm]
+\hline
+%
+$\un_i$ & Vector de componentes $j$-\'esima iguales a $\un_{\{i\}}(j)$.\\[2.5mm]
+\hline
+%
+$I$ & Matriz cuadrada identidad, \ $I = \diag \un$\\[2.5mm]
+\hline
+%
+$J$ & Matriz de comutaci\'on~\footnote{M\'as generalmente es definida sobre \
+$M_{d d',d d'}(\Kset)$ \ y los bloques son en \
+$M_{d,d'}(\Kset)$~\cite{MagNeu79, NeuWan83}.\label{Foot:MP:ComutacionMatriz}} de
+\ $M_{d^2,d^2}(\Kset)$ \ de bloques \ $J_{i,j} = \un_j \un_i^t \in
+M_{d,d}(\Kset)$ \ poniendo la componente (linea) \ $i$-\'esima de un vector
+(matriz) \ en la componente (linea) \ $j$-\'esima,\vspace{1mm}\newline
+%
+$
+J = \begin{bmatrix}
+\un_1 \un_1^t & \un_2 \un_1^t & \cdots & \un_d \un_1^t\\
+    \vdots    &    \vdots    & \cdots &     \vdots   \\
+\un_1 \un_d^t & \un_2 \un_d^t & \cdots & \un_d \un_d^t
+\end{bmatrix}
+$.\vspace{1mm}\\[2.5mm]
+\hline
+%
+$K$ & Matriz de no-comutaci\'on~\footref{Foot:MP:ComutacionMatriz} de \
+$M_{d^2,d^2}(\Kset)$ \ de bloques \ $K_{i,j} = \un_i \un_j^t \in M_{d,d}(\Kset)$
+\ poniendo la componente (linea) \ $j$-\'esima de un vector (matriz) \ en la
+posici\'on (linea) \ $i$-\'esima,\vspace{1mm}\newline
+%
+$
+K = \begin{bmatrix}
+\un_1 \un_1^t & \un_1 \un_2^t & \cdots & \un_1 \un_d^t\\
+    \vdots    &    \vdots    & \cdots &     \vdots   \\
+\un_d \un_1^t & \un_d \un_2^t & \cdots & \un_d \un_d^t
+\end{bmatrix}
+$.\vspace{1mm}\\[2.5mm]
+\hline
+%
+$\diag$ & Matriz (cuadrada) diagonal de $M_{d,d}(\Kset)$ con el argumento en su
+diagonal,\vspace{1mm}\newline para \ $\displaystyle v \in \Kset^d, \quad \diag v
+= \sum_{i=1}^d v_i \un_i \un_i^t$.\vspace{1mm}\\[2.5mm]
+\hline
+%
+$\Tr$ & Traza de una matriz (cuadrada) de \
+$M_{d,d}(\Kset)$,\vspace{1mm}\newline $\displaystyle \Tr M = \sum_{i=1}^d
+M_{i,i}$.\vspace{1mm}\\[2.5mm]
+\hline
+%
+$\det$ & Determinante~\footnote{$\mathfrak{S}_d$ \ es el conjunto de las
+permutaciones de \ $\{ 1 \, , \, \ldots \, , \, d \}$, y \ $\varepsilon(\sigma)$
+\ es la signatura de la permutaci\'on \ $\sigma$, $\displaystyle
+\varepsilon(\sigma) = \prod_{1 \le i \le j \le d} \sign\left( \sigma(j) -
+\sigma(i) \right)$ \ con \ $\sign$ \ funci\'on ``signo''.} de una matriz
+(cuadrada) de \ $M_{d,d}(\Kset)$,\vspace{1mm}\newline $\displaystyle \det M =
+\sum_{\sigma \in \mathfrak{S}_d} \varepsilon(\sigma) \prod_{i=1}^d
+M_{\sigma(i),i}$.\vspace{1mm}\\[2.5mm]
+\hline
+%
+$\left| \cdot \right|$ & Valor absoluto del determinente de una matriz
+(cuadrada) de $M_{d,d}(\Kset)$.\\[2.5mm]
+\hline
+%
+$\cdot^{-1}$ & Matriz inversa (cuando existe), \ $M M^{-1} = M^{-1} M =
+I$\\[2.5mm]
+\hline
+%
+$\cdot^{\frac12}$ & Para \ $M \in \P_d^+(\Kset)$, \ $M^{\frac12}$ \ es la
+\'unica matriz de \ $\P_d^+(\Kset)$ \ tal que \ $M^{\frac12} M^{\frac12} =
+M$\vspace{1mm}\newline \cite{HorJoh13, MagNeu99}\\[2.5mm]
+\hline
+%
+$\cdot^{-\frac12}$ & Para \ $M \in \P_d^+(\Kset)$, \ $M^{-\frac12} = \left(
+M^{-1} \right)^{\frac12} = \left( M^{\frac12} \right)^{-1}$\vspace{1mm}\newline
+\cite{HorJoh13, MagNeu99}\\[2.5mm]
+\hline
+%
+$\otimes$ & Producto de Kronecker, $A \otimes B$ \ es la matriz bloc de bloc \
+$(i,j)$-\'esima \ $A_{i,j} B$,\vspace{1mm}\newline para \ $A \in
+M_{d,d'}(\Kset), \: B \in M_{n,n'}(\Kset)$, tenemos \ $A \otimes B \in M_{d n,
+d' n'}(\Kset)$ \ tal que,\vspace{1mm}\newline
+%
+$
+A \otimes B = \begin{bmatrix}
+A_{1,1} B  & \cdots  & A_{1,d'} B\\
+ \vdots   &  \vdots & \vdots\\
+A_{d,1} B  & \cdots  & A_{d,d'} B
+\end{bmatrix}
+$\vspace{1mm}
+%
+\end{notation}

@@ -1,0 +1,111 @@
+\begin{notation}
+%
+$\sign$ & Funci\'on signo, \ $\sign(x) = 
+\left\{ \begin{array}{rll} -1 & \mbox{si} & x < 0\\[1mm]
+ 0 & \mbox{si} & x = 0\\[1mm]
+ 1 & \mbox{si} & x > 0 
+\end{array}\right.$.\\[2.5mm]
+\hline
+%
+$\un_A$ & Function indicadora del conjunto \ $A$: \ $\un_A(x) =
+\left\{ \begin{array}{lll} 1 & \mbox{si} & x \in A\\[1mm] 0 & \mbox{si} & x
+\not\in A \end{array}\right.$\\[2.5mm]
+\hline
+%
+$\displaystyle \Gamma$ & Funci\'on Gamma o factorial\vspace{1mm}\newline\cite{AbrSte70, AndAsk99,
+GraRyz15},\vspace{1mm}\newline $\displaystyle \Gamma(a) = \int_{\Rset_+} x^{a-1} \, e^{-x} \, dx,
+\quad a \in \Rset_+^* \qquad \forall \, n \in \Nset, \: \Gamma(n+1) = n! = \prod_{i=1}^n
+i$.\\[2.5mm]
+\hline
+%
+$\Gamma_d$ & Funci\'on gamma multivariada~\cite{And03,
+GupNag99}\vspace{1mm}\newline $\displaystyle \Gamma_d(x) = \pi^{\frac{d \,
+(d-1)}{4}} \prod_{j=1}^d \, \Gamma\left( x - \frac{j-1}{2} \right), \quad x >
+\frac{d-1}{2}$.\\[2.5mm]
+\hline
+%
+$(\cdot)_{(n)}$ & S\'imbolo de Pochhammer usual o factorial
+creciente,\vspace{1mm}\newline $(x)_{(n)} = x (x+1) \ldots (x+n)$ \, con la
+convenci\'on \ $(x)_{(0)} = 1$.\\[2.5mm]
+\hline
+%
+$\displaystyle \bino{n}{k}$ & Coefficiente binomial \ $\displaystyle \bino{n}{k}
+= \frac{n!}{k! \, (n-k)!}$.\\[2.5mm]
+\hline
+%
+$\displaystyle B(\cdot,\cdot) $ & Funci\'on beta \ $\displaystyle B(a,b) =
+\frac{\Gamma(a) \, \Gamma(b)}{\Gamma(a+b)}$.\\[2.5mm]
+\hline
+%
+$\displaystyle B(\cdot)$ & Funci\'on beta
+multivariada~\cite[Teo.~1.8.6]{AndAsk99}\vspace{1mm}\newline $\displaystyle B(a)
+= \frac{\prod_{i=1}^k \Gamma\left( a_i \right)}{\Gamma\left( \sum_{i=1}^k a_i
+\right)}, \quad a \in \Rset_+^{* \, k}$.\\[2.5mm]
+\hline
+%
+$\displaystyle \hypgeom{1}{1}$ & Funci\'on confluent
+hipergeom\'etrica\vspace{1mm}\newline \cite{AbrSte70, AndAsk99,
+GraRyz15}\vspace{1mm}\newline $\hypgeom{1}{1}(a;b;z) = \sum_{m \in \Nset}
+\frac{(a)_{(m)} \, z^m }{(b)_{(m)} m!}$.\\[2.5mm]
+\hline
+%
+$\displaystyle \Phi_2^{(k)}$ & Funci\'on confluent hipergeom\'etrica \
+$k$-variada o forma confluente de series de Lauricella\vspace{1mm}\newline
+\cite[\S~1.4, ec.~(8)]{SriKar85} o~\cite{Hum22, App25, AppKam26, Erd37,
+Erd40}.\vspace{1mm}\newline $\Phi_2^{(k)}(a;b;z) = \sum_{m \in \Nset^k}
+\frac{(a_1)_{(m_1)} \ldots (a_k)_{(m_k)} \, z_1^{m_1} \ldots
+z_k^{m_k}}{(b)_{(m_1+\cdots+m_k)} m_1!  \ldots m_k!}$.\\[2.5mm]
+\hline
+%
+$K_\alpha$ & Funci\'on Bessel modificada de segunda especie y de orden
+$\alpha$\vspace{1mm}\newline \cite{AbrSte70, GraRyz15, Wat22,
+GraMat95}\vspace{1mm}\newline o Funci\'on de MacDonald~\cite{Mac98}.\\[2.5mm]
+\hline
+%
+$\nabla_x$ & Gradiante con respect a la variable $x$, para $f: \Rset^d \mapsto
+\Rset, \quad \nabla_x f = \begin{bmatrix} \frac{\partial f}{\partial x_1}\\
+\vdots\\ \frac{\partial f}{\partial x_d}\end{bmatrix}$.\\[2.5mm]
+\hline
+%
+$\Jac_f$ & Jacobiana, para $f: \Rset^d \mapsto \Rset^{d'}, \quad \Jac_f
+= \begin{bmatrix} \frac{\partial f_1}{\partial x_1} & \cdots & \frac{\partial
+f_1}{\partial x_d}\\ \vdots & \vdots & \vdots\\ \frac{\partial f_{d'}}{\partial
+x_1} & \cdots & \frac{\partial f_{d'}}{\partial x_d}\end{bmatrix}$,\newline
+fijense que si $d' = 1, \: \Jac_f^t \equiv \nabla_x f$.\\[2.5mm]
+\hline
+%
+$\Hess_x$ & Hessiana, para $f: \Rset^d \mapsto \Rset, \quad \Hess_x f
+= \begin{bmatrix} \frac{\partial^2 f}{\partial x_1^2} & \cdots &
+\frac{\partial^2 f}{\partial x_1 \, \partial x_d}\\ \vdots & \vdots & \vdots\\
+\frac{\partial^2 f}{\partial x_d \, \partial x_1} & \cdots & \frac{\partial^2
+f}{\partial x_d^2}\end{bmatrix}$.\\[2.5mm]
+\hline
+%
+$\Hess_{x,y}$ & Hessiana ``compuesta'', para $f: \Rset^d \times \Rset^{d'}
+\mapsto \Rset, \quad \Hess_{x,y} f = \begin{bmatrix} \frac{\partial^2
+f}{\partial x_1 \, \partial y_1} & \cdots & \frac{\partial^2 f}{\partial x_1
+\, \partial y_{d'}}\\ \vdots & \vdots & \vdots\\ \frac{\partial^2 f}{\partial
+x_d \, \partial y_1} & \cdots & \frac{\partial^2 f}{\partial x_d \, \partial
+y_{d'}}\end{bmatrix}$.\\[2.5mm]
+\hline
+%
+$\argmax$ & operador argumento m\'aximo, \ $\argmax_x f$ es el $x$ que maximiza
+$f$.\\[2.5mm]
+\hline
+%
+$\argmin$ & operador argumento m\'inimo, \ $\displaystyle \argmin_x f$ es el $x$
+que minimiza $f$.
+%
+\end{notation}
+
+\SZ{Erd\'elyi,  A.,  Beitrag  zur  Theorie  der  konfluenten  hypergeometrischen
+  Funktionen von mehreren  Ver\"anderlichen, Wiener Sitzungsberichte 146 (1937),
+  431-467, ec. 7.2
+
+  P. Appell and J. Kamp\'e  de F\'eriet, Fonctions  hyperg\'eom\'etriques et
+  hypersph\'eriques, Gauthier Villars, Paris, 1926, pp. 124-125, 116
+
+H. Exton, Multiple hypergeometric functions and applications, Ellis Horwood, Chichester, U.K., 1976
+P42 
+}
+

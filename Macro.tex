@@ -15,7 +15,7 @@
 \def\N{\mathcal{N}}
 \def\P{\mathcal{P}}
 \def\R{\mathcal{R}}
-\def\Simp{\mathcal{S}}
+\newcommand{\Simp}[1]{\Delta_{#1}}
 \def\Tri{\mathcal{T}}
 \def\U{\mathcal{U}}
 \def\X{\mathcal{X}}
@@ -63,13 +63,19 @@
 \def\Hess{\mathcal{H}} % Hessiana
 \def\Tr{\operatorname{Tr}} % Traza
 \def\diag{\operatorname{diag}} % diagonal operador
+\def\det{\operatorname{det}} % determinente operador
 \def\Gauss{\mathcal{N}} % notacion de la gaussiana
 \def\argmax{\operatorname*{argm\acute{a}x}} % operador argmax (se usa como el limite con \argmax_x)
+\DeclareMathSymbol{\upimath}{\mathalpha}{operators}{"10}% para redefinir el \i en modo math 
+\def\argmin{\operatorname*{argm\acute{\upimath}n}} % operador argmin (se usa como el limite con \argmin_x)
+%
 \def\un{\mathbbm{1}} % funcion indicador
+\def\sign{\operatorname{sign}} % funcion indicador
 %\def\un{\mathbbm{0}} % vector 0
 \def\arccos{\operatorname{arccos}} % arcoseno
 \def\egald{\stackrel{\mathrm{d}}{=}} % igualdad en distribucion
-\newcommand{\limitd}[1]{\mathop{\longrightarrow}_{#1}^{\mathrm{d}}}
+%\newcommand{\limitd}[1]{\mathop{\longrightarrow}_{#1}^{\mathrm{d}}}
+\newcommand{\limitd}[1]{\xrightarrow[#1]{\mathrm{d}}}
 \renewcommand{\vec}[1]{\operatorname{vec}\left(#1\right)} % vectorizacion
 %
 %
@@ -154,3 +160,52 @@ D^{\mathrm{b}}_{(h,\phi)}\ifthenelse{\isempty{#1}}{}{\left( \left. #1 \right\| #
 %
 \def\ie{{\it i.~e.,}\xspace}
 \def\;{\, ; \,} % separacion en los intervalos
+%
+%
+% environment para las notaciones
+% -------------------------------
+%
+\newenvironment{notation}
+{
+\tabletail{\hline}
+%\renewcommand{\arraystretch}{2}
+%\begin{longtable}
+\begin{supertabular}
+{
+|>{\vspace{-2mm}}p{.14\textwidth}|
+>{\vspace{-2mm}}p{.86\textwidth}|
+}
+\hline
+}
+%
+{
+\\[2.5mm]
+\hline
+\end{supertabular}
+%\end{longtable}
+}
+
+
+% environment para los ejemplos de VA
+% ------------------------------------
+%
+\newenvironment{caracteristicas}
+{
+\mbox{ }\newline
+%\renewcommand{\arraystretch}{2}
+%\begin{longtable}
+\tabletail{\hline}
+\begin{supertabular}
+{
+|>{\vspace{-2mm}}p{.35\textwidth}|
+>{\vspace{-2mm}}p{.6\textwidth}|
+}
+\hline
+}
+%
+{
+\\[2.5mm]
+\hline
+\end{supertabular}\newline
+%\end{longtable}
+}

@@ -1,9 +1,10 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{LibroIG}[2016/08/22 .cls Personal, V1.0]
+\ProvidesClass{LibroIG}[2019/04/30 .cls Personal, V1.1]
 
 % clase de base
 
 \LoadClass[a4paper, 10pt, twoside, openright]{article}
+
 
 % extensions
 
@@ -12,6 +13,7 @@
 \RequirePackage[latin1]{inputenc} % encoding
 \RequirePackage[T1]{fontenc} % font encoding
 \RequirePackage{amsmath,amssymb,amsthm,bbm,mathtools} % mathematical packages
+%\RequirePackage{dotlessi} %
 %\RequirePackage{stix} % hebrew letters
 \RequirePackage{xspace} % spacing package
 \RequirePackage{epsfig,graphics,graphicx,color,tikz,tikz-3dplot,pgfplots,etoolbox} % figures packages
@@ -19,12 +21,14 @@
 \RequirePackage{enumitem} % to manage the labels... en enumerate
 %\RequirePackage[labelsep=endash]{caption}
 %\RequirePackage{setspace} % space package
+\RequirePackage{comment}
 \RequirePackage{ccaption,caption} % ease the management of captions
 \RequirePackage{etoolbox,ifthen,xifthen} % conditioning packages
 \RequirePackage{titletoc,tocloft} % table of content managment package
-\RequirePackage{tabularx} % para manejar las tablas
-\RequirePackage{footmisc} % to manage the numeration and reference to footnote
-\RequirePackage{footnote}
+\RequirePackage{tabularx,supertabular,fullpage} % para manejar las tablas y tablas largas
+\RequirePackage{ltxtable,longtable} % para manejar las tablas largas
+%\RequirePackage{boites,chngpage} % para poder cortar tablas cambiando de pagina
+\RequirePackage{footnote,footmisc} % to manage the numeration and reference to footnote
 \makesavenoteenv{tabular} % to manage the footnote in tabular environment
 %\RequirePackage{tablefootnote} % to manage the footnote in tabular environment
 %\RequirePackage{xargs}

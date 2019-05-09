@@ -1,144 +1,36 @@
 \begin{preliminar}{Notaciones}
 
-\begin{center}
-\begin{tabular}
-{
-|>{\vspace{-2mm}}p{.15\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.8\textwidth}|
-}
-\hline
-%
-$\Nset$ & Enteros naturales\\[2mm]
-% \ $\{ 0 \, , \, 1 \, , \, \ldots \}$\\[2mm]
-\hline
-%
-$\Zset$ & Enteros relativos\\[2mm]
-%  \ $\{ \ldots \, , \, -1 \, , 0 \, , \, 1 \, , \, \ldots \}$\\[2mm]
-\hline
-%
-%
-$\Rset$ & N\'umeros reales\\[2mm]
-\hline
-%
-$\Cset$ & N\'umeros complejos\\[2mm]
-\hline
-%
-$\Kset^*$ & Conjunto $\Kset$ sin en $0$,  $\Kset^* = \Kset \setminus \{ 0 \}$ \ ($\Kset = \Nset, \Zset, \Rset$ \ o \ $\Cset$).\\[2mm]
-\hline
-%
-$\Kset_+$ & Elementos de $\Kset$ positivos, $\Kset_+ = \{ x \in \Kset, \: x \ge 0 \}$ \ ($\Kset = \Nset, \Zset$ \ o \ $\Rset$).\\[2mm]
-\hline
-%
-$\times$ & Producto cartesiano $x \in \Kset \times \Kset' \: \Leftrightarrow \: x = \begin{bmatrix} x\\x'\end{bmatrix}$  con $x \in \Kset$ y $x' \in \Kset'$.\\[2mm]
-\hline
-%
-$\times_i$ & Productos cartesianos $\times_{i=1}^n \Kset_i = \Kset_1 \times \cdots \times \Kset_n$.\\[2mm]
-\hline
-%
-$\Kset^d = \Kset \times \cdots \times \Kset$ & Conjunto de vectores columnas de tama\~no $d$ de elementos de $\Kset$, $x \in \Kset^d \: \Leftrightarrow \: x = \begin{bmatrix} x_1\\ \vdots \\ x_d \end{bmatrix}$ con $x_i \in \Kset$.\\[2mm]
-\hline
-%
-$|\cdot|$ & Valor absoluto o modulus\\[2mm]
-\hline
-%
-$\|\cdot\|_p$ & Norma $p$ sobre $\Rset^d$, \: $\|x\|_p = \left( \sum_{i=1}^d |x|^p \right)^{\frac1p}$\\[2mm]
-\hline
-%
-$\|\cdot\|$ o $|\cdot|$ & Norma $2$ sobre $\Rset^d$\\[2mm]
-\hline
-%
-$\Sset_d$ & Esfera unitaria de $\Rset^d$, \: $\Sset_d = \left\{ x \in \Rset^d, \: \|x\| = 1 \right\}$\\[2mm]
-\hline
-%
-$\Bset_d$ & Bola unitaria de $\Rset^d$, \: $\Bset_d = \left\{ x \in \Rset^d, \: \|x\| \le 1 \right\}$\\[2mm]
-\hline
-%
-$\cdot^*$ & Conjugaci\'on, componente por componente, $v^*$ \ es de componente \ $i$-\'esima \ $v_i^*$\\[2mm]
-\hline
-%
-$\cdot^t$ & Transpuesta, $v^t = \begin{bmatrix} v_1 & \cdots & v_d\end{bmatrix}$ \ es un vector linea\\[2mm]
-\hline
-%
-$\cdot^\dag$ & Transconjugada, $v^\dag = \left( v^* \right)^t = \begin{bmatrix} v_1^* & \cdots & v_d^*\end{bmatrix}$\\[2mm]
-\hline
-%
-$\un$ & Vector de componentes iguales a 1,  $\un = \begin{bmatrix} 1\\ \vdots \\ 1 \end{bmatrix}$.\\[2mm]
-\hline
-%
-$0$ & Se notara el vector 0 como en el caso escalar $0 = \begin{bmatrix} 0\\ \vdots \\ 0 \end{bmatrix}$.\\[2mm]
-\hline
-%
-$\un_i$ & Vector de componentes $j$-\'esima iguales a $\un_{\{i\}}(j)$.\\[2mm]
-\hline
-\end{tabular}
-\end{center}
+% ---------- Conjuntos
 
-\begin{center}
-\begin{tabular}
-{
-|>{\vspace{-2mm}}p{.15\textwidth}|
->{\vspace{-2mm}\hspace{2mm}}p{.8\textwidth}|
-}
-\hline
-%
-$M_{d,d'}(\Kset)$ & Espacio  de matrices \ $M$\ $d  \times d'$ \ de componentes \ $M_{i,j}$ \ en
-  \ $\Kset$ \ con \ $\Kset = \Rset$ \ o \ $\Cset$; $M_{d,1}(\Kset) \equiv \Kset^d$.\\[2mm]
-\hline
-%
-$\cdot^*$ & Conjugaci\'on, componente por componente, $M^*$ \ es de componente \ $(i,j)$-\'esima \ $M_{i,j}^*$\\[2mm]
-\hline
-%
-$\cdot^t$ & Transpuesta, $M^t$ \ es de componente \ $(i,j)$-\'esima \ $M_{j,i}$\\[2mm]
-\hline
-%
-$\cdot^\dag$ & Transconjugada, $M^\dag = \left( M^* \right)^t$ \ es de componente \ $(i,j)$-\'esima \ $M_{j,i}^*$\\[2mm]
-\hline
-%
-$S_d(\Kset)$ & Conjunto  de  matrices  de  $\Kset$  sim\'etricas,  $M  \in
-  S_d(\Kset) \, \Leftrightarrow \, M^t = M$.\\[2mm]
-\hline
-%
-$H_d(\Cset)$ &  Conjunto  de matrices  de $\Cset$  hermiticas  (a simetr\'ia
-  hermitica), $M  \in H_d(\Cset) \, \Leftrightarrow  \, M^\dag =  M$.\newline Fijense de
-  que tendr\'iamos $H_d(\Rset) \equiv S_d(\Rset)$.\\[2mm]
-\hline
-%
-$P_d(\Kset)$  & Conjunto de  matrices semidefinida positivas:\newline  $P_d(\Kset) =
-  \left\{ M \in H_d(\Kset), \quad  \forall \, \mu \in \Kset^d, \: \mu^\dag M \mu
-    \ge 0 \right\}$.\\[2mm]
-\hline
-%
-$P_d^+(\Kset)$  & Conjunto de  matrices definida positivas:\newline  $P_d^+(\Kset) =
-  \left\{ M \in H_d(\Kset), \quad \forall \,  \mu \ne 0 \in \Kset^d, \: \mu^\dag M \mu
-    > 0 \right\}$.\\[2mm]
-\hline
-%
-$\diag \cdot$ & Matriz (cuadrada) diagonal de $M_{d,d}(\Kset)$ con el argumento en su diagonal, para $v \in \Kset^d, \: \diag v = \sum_{i=1}^d v_i \un_i \un_i^t$.\\[2mm]
-\hline
-%
-$\Tr \cdot$ & Traza de una matriz (cuadrada) de $M_{d,d}(\Kset)$, $\Tr M = \sum_{i=1}^d M_{i,i}$.\\[2mm]
-\hline
-%
-$\left| \cdot \right|$ & Valor absoluto del determinent de una matriz (cuadrada) de $M_{d,d}(\Kset)$, \SZ{$\left| M \right| = $}.\\[2mm]
-\hline
-%
-$I$ & Matriz identidad, $I = \diag \un$\\[2mm]
-\hline
-%
-$\cdot^{-1}$ & Matriz inversa (cuando existe), $M M^{-1} = M^{-1} M = I$\\[2mm]
-\hline
-%
-$\cdot^{\frac12}$ & Para $M \in \P_d^+(\Kset)$, $M^{\frac12}$ es la \'unica matriz de matriz de $\P_d^+(\Kset)$ tal $M^{\frac12} M^{\frac12} = M$\\[2mm]
-\hline
-%
-$\otimes$ & Producto de  Kronecker, $A \otimes B$ \ es la matriz bloc
-de bloc \ $(i,j)$-\'esima \ $A_{i,j} B$.\\[2mm]
-\hline
-\end{tabular}
-\end{center}
+\noindent{\large\bf Conjuntos \& n\'umeros}\vspace{5mm}
 
-%, $J$ \ la matriz bloc de
-%bloc  $(i,j)$-\'esima \  $\un_j  \un_i^t$  \ y  $K$  \ la  matriz  bloc de  bloc
-%$(i,j)$-\'esima \ $\un_i \un_j^t$.
+\input{Notacion/Conjuntos.tex}
+
+\vspace{2cm}
+
+
+% ---------- Matrices
+
+\noindent{\large\bf Matrices \& vectores}\vspace{5mm}
+
+\input{Notacion/Matrices.tex}
+
+\vspace{2cm}
+
+
+% ---------- Funciones
+
+\noindent{\large\bf Funciones}\vspace{5mm}
+
+\input{Notacion/Funciones.tex}
+
+\vspace{2cm}
+
+
+% ---------- Probabilidad
+
+\noindent{\large\bf Probabilidad}\vspace{5mm}
+
+\input{Notacion/Probabilidad.tex}
 
 \end{preliminar}

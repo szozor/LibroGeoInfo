@@ -171,8 +171,22 @@ Resuelte de esta definici\'on equivalente los hechos siguientes:
   \]
   %
   (ver  por  ejemplo~\cite[Cap.~17]{Lap17}).   Las funciones  generadoras  as\'i
-  definidas   heriden  naturalmente  de   las  propiedades   de  las   del  caso
-  real. \SZ{Ver vinculo con el promedio, la (pseudo)covarianza,\ldots}
+  definidas heriden naturalmente de las  propiedades de las del caso real. Entre
+  otros, interpretando  la funci\'on caracter\'istica como funci\'on  de ambos \
+  $\omega$ \ y \ $\omega^*$, y derivando como si ser\'ian variables ``independientes'':
+  %
+  \begin{itemize}
+  \item $\Esp[Z]  = - \imath  \left. \nabla_{\omega^*} \Phi_Z  \right|_{\omega =
+      0}$,
+  %
+  \item $\Cov[Z] = - \left. \Hess_{\omega^*,\omega} \Phi_Z \right|_{\omega = 0} +
+    \left. \nabla_{\omega^*}  \Phi_Z \nabla_{\omega}^t \Phi_Z  \right|_{\omega =
+      0}$,
+  %
+  \item  $\pCov[Z] =  - \left.  \Hess_{\omega^*}  \Phi_Z \right|_{\omega  = 0}  +
+    \left. \nabla_{\omega^*} \Phi_Z \nabla_{\omega^*}^t \Phi_Z \right|_{\omega =
+      0}$
+  \end{itemize}
 \end{itemize}
 
 En el  marco de vectores  complejos, aparece una subclase  particular invariante
@@ -313,7 +327,7 @@ biyecci\'on \  $M_{d,d'}(\Rset)$ \ y \  $\Rset^{d d'}$, une manera  de tratar de
 matrices  aleatorias \  $X$ \  puede ser  de trabajar  con su  vectorizaci\'on \
 $\vec{X} = \begin{bmatrix} X_1^t &  \cdots & X_{d'}^t \end{bmatrix}^t$ \ donde \
 $X_i$  \ es  la  \ $i$-\'esima  columna de  \  $X$, las  vectorizaciones de  las
-operaciones   matriciales~\cite[Cap.~2]{MagNeu}  (ver  tambi\'en~\cite{MAgNeu79,
+operaciones   matriciales~\cite[Cap.~2]{MagNeu}  (ver  tambi\'en~\cite{MagNeu79,
   NeuWan83, Har08}), y referirse a la secci\'on tratando de vectores aleatorios.
 Pero resulte a veces m\'as  directo conservar la estructura matricial y trabajar
 con esa.
@@ -388,12 +402,20 @@ M_{d,d'}(\Rset)$:
   %
   \item  La covarianza  es  definida por
     \[
-    \Sigma_X = \Cov[X] = \Esp\left[ X \otimes X \right] - m_X \otimes m_X
+    \Sigma_X  \equiv \Cov[X]  =  \Esp\left[ (X-m_X)  \otimes  (X-m_X) \right]  =
+    \Esp\left[ X \otimes X \right] - m_X \otimes m_X
     \]
     %
     Tipicamente,  si  la  vemos en  bloques  de  tama\~no  \  $d \times  d$,  la
     componente  \ $(k,l)$-\'esima  del bloc  \ $(i,j)$-\'esima  corresponde  a \
-    $\Cov\left[ X_{i,j} ,  X_{k,l} \right]$.
+    $\Cov\left[ X_{i,j} , X_{k,l} \right]$.\newline M\'as generalmente, tratando
+    de covarianza  etre dos matrices aleatorias  \ $X$ \  e \ $Y$, se  define la
+    matriz de covarianza conjunta como
+   %
+    \[
+    \Sigma_{X,Y} \equiv  \Cov\left[ X ,  Y \right] : \Esp\left[  (X-m_X) \otimes
+      (Y-m_Y) \right] = \Esp\left[ X \otimes Y \right] - m_X \otimes m_Y
+    \]
   \end{itemize}
 %
 \item  Se puede  escribir  tambi\'en  las funciones  generadoras  con una  forma
