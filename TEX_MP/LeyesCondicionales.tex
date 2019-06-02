@@ -1,0 +1,264 @@
+\seccion{Leyes condicionales}
+\label{Sec:MP:LeyesCondicionales}
+
+Tratando de un par de vectores aleatorios  \ $X$ \ e \ $Y$, una pregunta natural
+puede ser de caracterizar el vector  $Y$ si ``observamos $X = x$''. En palabras,
+la pregunta es de describir la ley de $Y$ ``sabiendo de que $X = x$''. En lo que
+sigue, para  fijar las notaciones, consideramos  $(X,Y): ( \Omega  , \A) \mapsto
+(\Rset^{d_X} \! \times \Rset^{d_Y} \, , \, \B(\Rset^{d_X} \! \times \Rset^{d_Y})
+)$ tal que $X$ sea $d_X$-dimensional e $Y$ sea $d_Y$-dimensional (incluyendo los
+casos escalares).
+
+
+% ---------- Caso discreto
+
+\paragraph{Caso $\boldsymbol{X}$ discreto:}
+Un caso  sencillo a estudiar  es cuando $\X  = X(\Omega)$ es discreto.   En este
+caso, para  cualquier $x  \in \X$, tenemos  $P_X(x) = P(X  = x)  \ne 0$ y  de la
+definici\'on de  la probabilidad condicional Def.~\ref{Def:MP:ProbaCondicional},
+$P(Y \in A | X = x) = \frac{P(Y \in A \cap X = x)}{P(X=x)}$ define una medida de
+probabilidad que llamamos medida de probabilidad condicional y que notaremos
+%
+\[
+P_{Y|X=x}(A) = P(Y \in A | X = x).
+\]
+%
+Siendo una medida de probabilidad, se puede referirse a la subsecci\'on anterior
+para  definir  una  funci\'on   de  repartici\'on  tomando  $\displaystyle  A  =
+\prod_{i=1}^d (-\infty \;  y_i]$, caracterisando completamento la medida de
+probabilidad:
+%
+\begin{definicion}[Funci\'on de repartici\'on condicional ($X$ discreto)]
+\label{Def:MP:ReparticionCondicionalDiscreta}
+%
+  Por definici\'on, la funci\'on de repartici\'on condicional es,
+  %
+  \[
+  \forall \:  x \in  \X, \: y  \in \Y, \quad  F_{Y|X=x}(y) =  P( \left. Y  \le y
+  \right|  X =  x  ) =  \frac{P\left(Y  \le y  \cap X  =  x \right)}{P\left(X  =
+      x\right)}.
+  \]
+\end{definicion}
+
+Ahora, cuando $Y$ est discreta tambi\'en,  se puede definir la funci\'on de masa
+discreta  de probabilidad,  y  si $Y$  es  continua admitiendo  una densidad  de
+probabilidad, se puede definir una densidad de probabilidad condicional:
+%
+\begin{definicion}[Funci\'on de masa o densidad de probabilidad condicional ($X$
+  discreto)]
+\label{Def:MP:ReparticionCondicionalDiscreta}
+%
+  Por  definici\'on,  cuando  $\Y$  est   discreto,  la  funci\'on  de  masa  de
+  probabilidad condicional es,
+  %
+  \[
+  \forall \:  x \in  \X, \: y  \in \Y, \quad  p_{Y|X=x}(y) =  P( \left. Y  = y
+  \right|  X =  x  ) =  \frac{P\left(Y  = y  \cap X  =  x \right)}{P\left(X  =
+      x\right)}.
+  \]
+  %
+  Si $Y$ es continua, es sencillo  ver de que $P_{Y|X=x} \ll P_Y$, i.e., $P_Y(B)
+  = 0  \: \Rightarrow  \: P_{Y|X=x}(B) =  0$.  Si  $Y$ adminte una  densidad con
+  respecto a la medida de Lebesgue, $P_Y \ll \mu_L$ medida de Lebesgue, es claro
+  de    que   tambi\'en   $P_{Y|X=x}    \ll   \mu_L$,    y   por    teorema   de
+  Radon-Nikod\'ym~\ref{Teo:MP:RadonNikodym}, admite una densidad de probabilidad
+  (con respecto a la medida de Lebesgue) que denotaremos $p_{Y|X=x}$,
+  %
+  \[
+  \forall \: B, \quad P_{Y|X=x}(B) = \int_B p_{Y|X=x}(y) \, dy.
+  \]
+  %
+  Saliendo de la funci\'on de repartici\'on, obtenemos
+  %
+  \[
+  p_{Y|X=x}(y) = \frac{\partial^{d_Y} F_{Y|X=x}(y)}{\partial y_1 \ldots \partial
+    y_{d_Y}}.
+  \]
+\end{definicion}
+
+
+% ---------- Caso continuo
+
+\paragraph{Caso $\boldsymbol{X}$ continuo admitiendo una densidad:}
+Cuando  $X$ es  continuo, el  problema aparece  m\'as subtile  porque  $P(X=x) =
+0$. Entonces, no  se puede usar la definici\'on  de la probabilidad condicional,
+el evento $(X=x)$ siendo de probabilidad cero.  Sin embargo, se puede seguir los
+pasos  de  R\'enyi~\cite[Cap.~5]{Ren} por  ejemplo  para  resolver el  problema,
+llegando a un resultado tan intuitivo que en el caso discreto.
+
+Por esto, sea $B \in \B(\Rset^{d_Y})$  y definimos la medida $\nu_B(A) = P(X \in
+A \cap Y \in B)$  sobre $(\Rset^{d_Y},\B(\Rset^{d_Y}))$.  Es sencillo ver de que
+$B$ siendo dado, $\nu_B$ define una medida de probabilidad. Adem\'as, $\nu_B \ll
+P_X$, i.e., $P_X(A) = P(X \in A) = 0  \: \Rightarrow \: 0 = P(X \in A \cap Y \in
+B)  =  \nu_B(A)$.   Por  teorema  de  Radon-Nikod\'ym~\ref{Teo:MP:RadonNikodym},
+$\nu_B$ admite una densidad $g_B$ con respecto a $P_X$,
+%
+\[
+\forall \: A, \quad P\left( (X \in A)  \cap (Y \in B) \right) = \int_A g_B(x) \,
+dP_X(x).
+\]
+%
+Claramente \ $g_B \ge 0$,  \ y de \ $P(X \in A) = P\left(  (X \in A) \cap (Y \in
+  B) \right) + P\left(  (X \in A) \cap (Y \in B)  \right)$, \ie $\displaystyle 0
+\le P\left( (X \in A) \cap (Y \in B) \right) = \int_A dP_X(x) - \int_A g_B(x) \,
+dP_X(x)$, se obtiene \ $0 \le g_B \le  1$.  En realidad, tenemos \ $g_B \le 1$ \
+$P_X$-casi  siempre, pero olvidando  esta subtilesa,  llamaremos la  funci\'on \
+$g_B$ \ medida  de probabilidad condicional y, por  continuaci\'on, la funci\'on
+de repartici\'on condicional:
+%
+\begin{definicion}[Medida   de  probabilidad   y   funci\'on  de   repartici\'on
+  condicional ($X$ continuo)]
+\label{Def:MP:MedidaCondicional}
+%
+  La medida de probabilidad condicional de $P_{Y|X=x}$ es definida tal que
+  %
+  \[
+  \forall \: A \in \X, B \in \Y,  \quad P\left( (X \in A) \cap (Y \in B) \right)
+  = \int_A P_{Y|X=x}(B) \, dP_X(x).
+  \]
+  %
+  Tomando $B  = \optimes_i  (-\infty \; y_i]$  se obtiene la  funci\'on de
+  repartici\'on condicional a partir de
+  %
+  \[
+  \forall \: A \in \X, y \in \Y, \quad P\left (X \in A) \cap (Y \le y) \right) =
+  \int_A F_{Y|X=x}(y) \, dP_X(x).
+  \]
+  %
+  Ad\'emas, si $X$ admite una densidad  de probabilidad $p_X$, $dP_X = p_X dx$ y
+  tomando $A = \optimes_i (-\infty \; x_i]$ se obtiene
+  %
+  \[
+  F_{X,Y}(x,y) = \int_{\optimes_i (-\infty \; x_i]} F_{Y|X=x}(y) \, p_X(x)
+  \, dx
+  \]
+  %
+  o, por diferenciaci\'on, para cualquier $y \in \Y$,
+  %
+  \[
+  F_{Y|X=x}(y)   =  \frac{\frac{\partial^{d_X}}{\partial  x_1   \ldots  \partial
+      x_{d_X}} F_{X,Y}(x,y)}{p_X(x)}.
+  \]
+\end{definicion}
+%
+\noindent Nota: Tomando $A = \X$,  de la primera f\'ormula definiendo la medida de
+probabilidad condicional  se recupera el \underline{equivalente  continuo} de la
+\underline{f\'ormula de probabilidad total}, que  se escribe con la densidad $dP_X
+= p_X d\mu_L$ si $X$ admite una densidad.
+
+Al final, si $(X,Y)$ admite una  densidad, en sencillo ver de que $P_{Y|X=x} \ll
+\mu_L$,  y entonces  \ $P_{Y|X=x}$  \ admite  una densidad  que  llamaremos {\it
+  densidad de probabilidad condicional}. Sean $A \in \B(\X)$ y $B$,
+%
+\begin{eqnarray*}
+P\left( (X \in A) \cap (Y \in B) \right) & = & \int_{A \times B} p_{X,Y}(x,y) \, dx \, dy\\[2mm]
+%
+& = & \int_B \left( \int_A \frac{p_{X,Y}(x,y)}{p_X(x)} \, dy \right) p_X(x) \, dx
+\end{eqnarray*}
+%
+Entonces, desde de que $p_X(x) \ne 0$, tenemos
+%
+\[
+P_{Y|X=x}(A) = \int_A \frac{p_{X,Y}(x,y)}{p_X(x)} \, dy.
+\]
+%
+\begin{teorema}[Densidad de probabilidad condicional]
+\label{Def:MP:DensidadCondicional}
+%
+  Si  $(X,Y)$ admite  una densidad  de probabilidad,  la medida  de probabilidad
+  condicional  $P_{Y|X=x}$  admite  una   densidad,  llamada  {\it  densidad  de
+    probabilidad condicional} definida por
+  %
+  \[
+  \forall \: x \in \X, \quad p_{Y|X=x}(y) = \frac{p_{X,Y}(x,y)}{p_X(x)}
+  \]
+  %
+  definida  sobre $\Y$. Claramente,  saliendo de  la funci\'on  de repartici\'on
+  condicional, aparece de que
+  %
+  \[
+  p_{Y|X=x} = \frac{\partial^{d_Y}}{\partial y_1 \ldots \partial y_{d_Y}} F_{Y|X=x}.
+  \]
+\end{teorema}
+
+De hecho, esta  construcci\'on rigurosa coincide con la  intuici\'on que podemos
+tener en este  caso continuo. Por ejemplo, podemos  pensar a $F_{Y|X=x}(y)$ como
+caso l\'imite de $P(\left. Y \le y \right|  x \le X \le x+\delta x) = \frac{P( Y
+  \le  y \:  \cap \:  x \le  X \le  x+\delta x)}{P(x  \le X  \le x+\delta  x)} =
+\frac{F_{X,Y}(x+\delta  x ,  y) -  F_{X,Y}(x  , y)}{F_X(x+\delta  x) -  F_X(x)}$
+cuando \ $\delta  x$ \ tiende a 0.   En el caso escalar, se  calcula por ejemplo
+haciendo un  desarollo de Taylor del numerador  y del denominador al  orden 1, o
+usando la regla de l'H\^opital~\footnote{De hecho, esta regla es debido al suizo
+  J.  Bernoulli  que tuvo  un acuerdo financiero  con el  Guillaume Fran\c{c}ois
+  Antoine, marqu\'es  de l'H\^opital, permitiendolo de  publicar unos resultados
+  de Bernoulli bajo  su nombre.}  para re-obtener la  funci\'on de repartici\'on
+condicional  de  la  definici\'on  Def.~\ref{Def:MP:FRCondicional}. En  el  caso
+multivariado,  hace  falta  hacer  los  desarollos hasta  el  orden  $d_X$  para
+concluir.
+
+Fijense de  que:
+%
+\begin{itemize}
+\item si $X$ e $Y$ son independientes,
+  %
+  \[
+  p_{Y|X=x} = p_Y;
+  \]
+%
+\item por  la expresi\'on \ $p_{Y|X=x}(y) =  \frac{p_{X,Y}(x,y)}{p_X(x)}$, \ por
+  integraci\'on con respecto a $y$ obtenemos la condici\'on de normalizaci\'on
+  %
+  \[
+  \int_{\Rset^{d_Y}} p_{Y|X=x}(y) \, dy = 1;
+  \]
+%
+\item escribiendo  \ $p_{X,Y}(x,y)  = p_{Y|X=x}(y) \,  p_X(x) =  p_{X|Y=y}(x) \,
+  p_Y(y)$, \ se obtiene
+  %
+  \[
+  p_{Y|X=x}(y)   =  \frac{p_{X|Y=y}(x) \,   p_Y(y)}{p_X(x)}   =  \frac{p_{X|Y=y}(x)
+    \, p_Y(y)}{\displaystyle \int_{\Rset^{d_Y}} p_{X|Y=y}(x) \, p_Y(y) \, dy},
+  \]
+  %
+  equivalente continuo, con densidades, de la f\'ormula de Bayes;
+%
+\item  por la  expresi\'on  \ $p_{X,Y}(x,y)  =  p_{Y|X=x}(y) \,  p_X(x)$, \  por
+  integraci\'on con respecto a $x$ obtenemos
+  %
+  \[
+  p_Y(y) = \int_{\Rset^{d_X}} p_{Y|X=x}(y) \, p_X(x) \, dx,
+  \]
+  %
+  generalizaci\'on de la f\'ormula de  probabilidades totales al caso continuo con
+  densidad de probabilidad.
+\end{itemize}
+
+Volvemos al ejemplo~\ref{Ej:MP:Suma}, pagina~\pageref{Ej:MP:Suma}:
+%
+\begin{ejemplo}[Distribuci\'on condicional de la suma de vectores aleatorios]
+\label{Ej:MP:SumaCond}
+%
+  Sea   \   $V  =   X   +   Y$,  \   con   \   $X$  \   e   \   $Y$  \   vecores
+  $d$-dimensionales.  Introduciendo \  $U =  X$  \ obtuvimos  \ $p_{U,V}(u,v)  =
+  p_{X,Y}(u,v-u)$  \ dando  tambi\'en \  $\displaystyle p_V(v)  = \int_{\Rset^d}
+  p_{X,Y}(u,v-u) \, du$. Entonces, recordandose de que $U = X$, se obtiene
+  %
+  \[
+  p_{V|X=x}(v)            =            \frac{p_{X,Y}(x,v-x)}{p_X(x)}           =
+  \frac{p_{X,Y}(x,v-x)}{\displaystyle \int_{\Rset^d} p_{X,Y}(x,v-x) \, dv},
+  \]
+  %
+  dando en el caso \ $X$ \ e \ $Y$ \ \underline{independientes}
+  %
+  \[
+  p_{V|X=x}(v) = p_Y(v-x).
+  \]
+  %
+  Esto corresponde a  la intuci\'on de que, con $V  = X + Y$, fijando  $X = x$ el
+  vector aleatorio $V$  es nada mas que $Y$  desplazado de $x$. \underline{Pero}
+  hay que  tomar \underline{muchas  precauciones} con este  razonamiento, valide
+  \'unicamente  porque  \ $X$  \  e  \ $Y$  \  son  independiente.   En el  caso
+  contrario, fijando  $X$ no coincide  con un desplazamiento por  la dependencia
+  (esquemat\'icamente, fijando  $X$ no s\'olo mueve  \ $Y$ \  pero ``cambia'' su
+  estad\'istica).
+\end{ejemplo}

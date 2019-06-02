@@ -1,0 +1,82 @@
+\subsubseccion{Ley de Poisson}
+\label{Sssec:MP:Poisson}
+
+Se denota $X \,  \sim \, \P(\lambda)$ \ con \ $\lambda  \in \Rset_+^*$ \ llamada
+{\em taza}, y sus caracter\'isticas son las siguientes:
+
+\begin{caracteristicas}
+%
+Dominio de definici\'on & $\X = \Nset$\\[2mm]
+\hline
+%
+Parametro & $\lambda \in \Rset_+^*$\\[2mm]
+\hline
+%
+Distribuci\'on  de  probabilidad   &  $\displaystyle  p_X(k)  =  \frac{\lambda^k
+e^{-\lambda}}{k!}$\\[2mm]
+\hline
+%
+Promedio & $ m_X = \lambda$\\[2mm]
+\hline
+%
+Varianza & $\sigma_X^2 = \lambda$\\[2mm]
+\hline
+%
+Asimetr\'ia & $\displaystyle \gamma_X = \frac1{\sqrt\lambda}$\\[2mm]
+\hline
+%
+Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = \frac1\lambda$\\[2mm]
+\hline
+%
+Generadora de probabilidad & $\displaystyle G_X(z) = e^{\lambda (z-1)}$ \ para \
+$z \in \Cset$\\[2mm]
+\hline
+%
+Generadora  de momentos  & $\displaystyle  M_X(u) =  e^{\lambda \left(  e^u  - 1
+\right)}$ \ para \ $u \in \Cset$\\[2mm]
+\hline
+%
+Funci\'on  caracter\'istica  &  $\displaystyle  \Phi_X(\omega) =  e^{\lambda  \,
+\left( e^{\imath \omega} - 1 \right)}$
+\end{caracteristicas}
+
+% Momentos & $ \Esp\left[ X^k \right] = ?$\\[2mm]
+% Momento factorial & $\Esp\left[ (X)_k \right] = \lambda^k$\\[2mm]
+% modo \lfloor \lambda \rfloor 
+% Mediana \approx \lfloor \lambda +1/3-0.02/\lambda \rfloor 
+% CDF {\frac {\Gamma
+% (\lfloor k+1\rfloor  ,\lambda )}{\lfloor k\rfloor !}} where  $\Gamma (x,y)$ is
+% the upper incomplete gamma function,
+
+Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
+figura Fig.~\ref{Fig:MP:Poisson}.
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/Poisson} \end{center}
+%
+\leyenda{Ilustraci\'on de  una distribuci\'on de probabilidad de  Poisson (a), y
+  la funci\'on de repartici\'on asociada (b), con $\lambda = 3$.}
+\label{Fig:MP:Poisson}
+\end{figure}
+\SZ{Otros ilustraciones para otros $\lambda$?}
+
+Ad\'emas, se muestra  sencillamente usando la generadora de  probabilidad que
+%
+\begin{lema}[Stabilidad]
+\label{Lem:MP:StabilidadPoisson}
+%
+  Sean  \  $X_i  \,  \sim  \,  \P(\lambda_i),  \quad  i  =  1,  \ldots  ,  n$  \
+  independientes, entonces
+  %
+  \[
+  \sum_{i=1}^n X_i \, \sim \, \P\left( \sum_{i=1}^n \lambda_i \right)
+  \]
+\end{lema}
+
+Cuando $\lambda = 0$ la variable es  cierta $X = 0$ (usando la convenci\'on $0^0
+= 1$).  \SZ{ Esta  distribuci\'on aparece... eventos despues tiempo exponencial;
+  conteo. Ej en fisica. Ecuacion del telegrafo}
+% en  el conteo  de conteo  de  une repetici\'on  de una  experiencia de  maneja
+% independiente hasta que  occure un evento de probabilidad  $p$; por ejemplo el
+% n\'umero de tiro de un dado  equilibriado hasta que occurre un ``6'' sigue una
+% ley geometrica de parametro $p = \frac16$.

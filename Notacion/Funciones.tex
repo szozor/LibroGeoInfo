@@ -1,21 +1,53 @@
-\begin{notation}
+\begin{notation}{Funciones}
+%
+$\lfloor \cdot \rfloor$ & Parte entera inferior, \ $\lfloor x \rfloor = \max \{ n
+\in \Zset \tq n \le x \}$, \quad \ie
+\quad $x-1 < \lfloor x \rfloor \le x $.\\[2.5mm]
+\hline
+%
+$\lceil \cdot \rceil$ & Parte entera superior, \ $\lceil x \rceil = \min \{ n \in
+\Zset \tq n \ge x \}$ \quad \ie
+%\newline $\lceil x \rceil \in \Zset$ tal que 
+\quad $ x \le
+\lceil x \rceil < x+1 $.\\[2.5mm]
+\hline
+%
+$\sum$ & Suma de elementos, \ $\displaystyle \sum_{i=n}^m x_i =
+\left\{ \protect\begin{array}{lll} x_n + x_{n+1} + \cdots + x_m & \mbox{si} & m \ge
+m\\[2mm] 0 & \mbox{si} & m < n \quad \mbox{(por
+convenci\'on)}\protect\end{array}\right.$.\\[2.5mm]
+\hline
+%
+$\prod$ & Producto de elementos, \  \ $\displaystyle \prod_{i=n}^m x_i =
+\left\{ \protect\begin{array}{lll} x_n . x_{n+1} \ldots x_m & \mbox{si} & m \ge
+m\\[2mm] 1 & \mbox{si} & m < n \quad \mbox{(por
+convenci\'on)}\protect\end{array}\right.$.\\[2.5mm]
+\hline
 %
 $\sign$ & Funci\'on signo, \ $\sign(x) = 
-\left\{ \begin{array}{rll} -1 & \mbox{si} & x < 0\\[1mm]
+\left\{ \protect\begin{array}{rll} -1 & \mbox{si} & x < 0\\[1mm]
  0 & \mbox{si} & x = 0\\[1mm]
  1 & \mbox{si} & x > 0 
-\end{array}\right.$.\\[2.5mm]
+\protect\end{array}\right.$.\\[2.5mm]
+\hline
+%
+$\log$ & Logaritmo natural (de base $e$).\\[2.5mm]
+\hline
+%
+$\log_b$ & Logaritmo de base $b > 0$, \ $\displaystyle\log_b x = \frac{\log
+x}{\log b}$.\\[2.5mm]
 \hline
 %
 $\un_A$ & Function indicadora del conjunto \ $A$: \ $\un_A(x) =
-\left\{ \begin{array}{lll} 1 & \mbox{si} & x \in A\\[1mm] 0 & \mbox{si} & x
-\not\in A \end{array}\right.$\\[2.5mm]
+\left\{ \protect\begin{array}{lll} 1 & \mbox{si} & x \in A\\[1mm] 0 & \mbox{si} & x
+\not\in A \protect\end{array}\right.$\\[2.5mm]
 \hline
 %
-$\displaystyle \Gamma$ & Funci\'on Gamma o factorial\vspace{1mm}\newline\cite{AbrSte70, AndAsk99,
-GraRyz15},\vspace{1mm}\newline $\displaystyle \Gamma(a) = \int_{\Rset_+} x^{a-1} \, e^{-x} \, dx,
-\quad a \in \Rset_+^* \qquad \forall \, n \in \Nset, \: \Gamma(n+1) = n! = \prod_{i=1}^n
-i$.\\[2.5mm]
+$\displaystyle \Gamma, \quad !$ & Funci\'on Gamma o
+factorial\vspace{1mm}\newline\cite{AbrSte70, AndAsk99,
+GraRyz15},\vspace{1mm}\newline $\displaystyle \Gamma(a) = \int_{\Rset_+} x^{a-1}
+\, e^{-x} \, dx, \quad a \in \Rset_+^* \qquad \forall \, n \in \Nset, \quad
+\Gamma(n+1) = n! = \prod_{i=1}^n i$.\\[2.5mm]
 \hline
 %
 $\Gamma_d$ & Funci\'on gamma multivariada~\cite{And03,
@@ -24,10 +56,17 @@ GupNag99}\vspace{1mm}\newline $\displaystyle \Gamma_d(x) = \pi^{\frac{d \,
 \frac{d-1}{2}$.\\[2.5mm]
 \hline
 %
-$(\cdot)_{(n)}$ & S\'imbolo de Pochhammer usual o factorial
-creciente,\vspace{1mm}\newline $(x)_{(n)} = x (x+1) \ldots (x+n)$ \, con la
-convenci\'on \ $(x)_{(0)} = 1$.\\[2.5mm]
+$\PocC{x}{n}$ & Factorial creciente o s\'imbolo de Pochhammer usual (a
+veces denotado $x^{(n)}$)~\cite{GraKnu94},\vspace{1mm}\newline $\displaystyle \PocC{x}{n}
+= \prod_{i=0}^{n-1} (x+i)$ \, con la convenci\'on \ $\PocC{x}{0} = 1$.\\[2.5mm]
 \hline
+%
+$\PocD{x}{n}$ & Factorial decreciente (a
+veces denotado $(x)_n$)~\cite{GraKnu94},\vspace{1mm}\newline $\displaystyle \PocD{x}{n}
+= \prod_{i=0}^{n-1} (x-i)$ \, con la convenci\'on \ $\PocD{x}{0} = 1$.\\[2.5mm]
+\hline
+%
+% Ver Comtet 1974, p. 6
 %
 $\displaystyle \bino{n}{k}$ & Coefficiente binomial \ $\displaystyle \bino{n}{k}
 = \frac{n!}{k! \, (n-k)!}$.\\[2.5mm]
@@ -37,24 +76,32 @@ $\displaystyle B(\cdot,\cdot) $ & Funci\'on beta \ $\displaystyle B(a,b) =
 \frac{\Gamma(a) \, \Gamma(b)}{\Gamma(a+b)}$.\\[2.5mm]
 \hline
 %
-$\displaystyle B(\cdot)$ & Funci\'on beta
-multivariada~\cite[Teo.~1.8.6]{AndAsk99}\vspace{1mm}\newline $\displaystyle B(a)
-= \frac{\prod_{i=1}^k \Gamma\left( a_i \right)}{\Gamma\left( \sum_{i=1}^k a_i
-\right)}, \quad a \in \Rset_+^{* \, k}$.\\[2.5mm]
+$\displaystyle B(\cdot)$ & Funci\'on de Dirichlet~\footnote{Eso es nada m\'as
+que une beta generalizada a m\'as de dos variables. Por eso, usamos la misma
+notaci\'on.}~\cite[Teo.~1.8.6]{AndAsk99} o~\cite{GupNag99}\vspace{1mm}\newline
+$\displaystyle B(a) = \frac{\prod_{i=1}^k \Gamma\left( a_i \right)}{\Gamma\left(
+\sum_{i=1}^k a_i \right)}, \quad a \in \Rset_+^{* \, k}$.\\[2.5mm]
+\hline
+%
+$\displaystyle B_d(\cdot)$ & Funci\'on de Dirichlet
+multivariada~\cite{GupNag99}\vspace{1mm}\newline $\displaystyle B_d(a) =
+\frac{\prod_{i=1}^k \Gamma_d\left( a_i \right)}{\Gamma_d\left( \sum_{i=1}^k a_i
+\right)}, \quad a \in \left( \frac{d-1}{2} \; +\infty \right)^k$.\\[2.5mm]
 \hline
 %
 $\displaystyle \hypgeom{1}{1}$ & Funci\'on confluent
 hipergeom\'etrica\vspace{1mm}\newline \cite{AbrSte70, AndAsk99,
-GraRyz15}\vspace{1mm}\newline $\hypgeom{1}{1}(a;b;z) = \sum_{m \in \Nset}
-\frac{(a)_{(m)} \, z^m }{(b)_{(m)} m!}$.\\[2.5mm]
+GraRyz15}\vspace{1mm}\newline $\displaystyle \hypgeom{1}{1}(a;b;z) = \sum_{m \in \Nset}
+\frac{\PocC{a}{m} \, z^m }{\PocC{b}{m} \, m!}$.\\[2.5mm]
 \hline
 %
 $\displaystyle \Phi_2^{(k)}$ & Funci\'on confluent hipergeom\'etrica \
 $k$-variada o forma confluente de series de Lauricella\vspace{1mm}\newline
 \cite[\S~1.4, ec.~(8)]{SriKar85} o~\cite{Hum22, App25, AppKam26, Erd37,
-Erd40}.\vspace{1mm}\newline $\Phi_2^{(k)}(a;b;z) = \sum_{m \in \Nset^k}
-\frac{(a_1)_{(m_1)} \ldots (a_k)_{(m_k)} \, z_1^{m_1} \ldots
-z_k^{m_k}}{(b)_{(m_1+\cdots+m_k)} m_1!  \ldots m_k!}$.\\[2.5mm]
+Erd40}.\vspace{1mm}\newline
+%$\Phi_2^{(k)}(a;b;z) = \sum_{m \in \Nset^k} \frac{\PocC{a_1}{m_1} \ldots \PocC{a_k}{m_k} \, z_1^{m_1} \ldots z_k^{m_k}}{\PocC{b}{m_1+\cdots+m_k} \, m_1!  \ldots m_k!}$.\\[2.5mm]
+%
+$\displaystyle \Phi_2^{(k)}(a;b;z) = \sum_{m \in \Nset^k} \frac{\prod_{i=1}^k \, \PocC{a_i}{m_i} \,  z_i^{m_i}}{\PocC{b}{\, m_1+\cdots+m_k} \: \prod_{i=1}^k m_i!}$\\[2.5mm]
 \hline
 %
 $K_\alpha$ & Funci\'on Bessel modificada de segunda especie y de orden
@@ -62,43 +109,90 @@ $\alpha$\vspace{1mm}\newline \cite{AbrSte70, GraRyz15, Wat22,
 GraMat95}\vspace{1mm}\newline o Funci\'on de MacDonald~\cite{Mac98}.\\[2.5mm]
 \hline
 %
-$\nabla_x$ & Gradiante con respect a la variable $x$, para $f: \Rset^d \mapsto
-\Rset, \quad \nabla_x f = \begin{bmatrix} \frac{\partial f}{\partial x_1}\\
-\vdots\\ \frac{\partial f}{\partial x_d}\end{bmatrix}$.\\[2.5mm]
+$\frac{\partial}{\partial x}$ & Derivada parcial con respeto a la variable $x$.\\[2.5mm]
+\hline
+%$\cdot''$ & derivada, para $f: \Rset \mapsto$.\\[2.5mm]\hline
+%$\cdot^{(k)}$ & derivada, para $f: \Rset \mapsto$.\\[2.5mm]\hline
+%
+$\nabla_x \quad , \quad \cdot'$ & Gradiante con respect a la variable $x$, para
+\protect$f: \Rset^d \mapsto \Rset, \quad \nabla_x f = \begin{bmatrix}
+\frac{\partial f}{\partial x_1}\\ \vdots\\ \frac{\partial f}{\partial
+x_d}\end{bmatrix}$\protect\newline Se denotar\'a $f'$ cuando $d = 1$.\\[2.5mm]
 \hline
 %
-$\Jac_f$ & Jacobiana, para $f: \Rset^d \mapsto \Rset^{d'}, \quad \Jac_f
+$\Jac_f$ & Jacobiana, para \protect$f: \Rset^d \mapsto \Rset^{d'}, \quad \Jac_f
 = \begin{bmatrix} \frac{\partial f_1}{\partial x_1} & \cdots & \frac{\partial
 f_1}{\partial x_d}\\ \vdots & \vdots & \vdots\\ \frac{\partial f_{d'}}{\partial
-x_1} & \cdots & \frac{\partial f_{d'}}{\partial x_d}\end{bmatrix}$,\newline
-fijense que si $d' = 1, \: \Jac_f^t \equiv \nabla_x f$.\\[2.5mm]
+x_1} & \cdots & \frac{\partial f_{d'}}{\partial
+x_d}\end{bmatrix}$\protect,\newline fijense que si $d' = 1, \: \Jac_f^t \equiv
+\nabla_x f$.\\[2.5mm]
 \hline
 %
-$\Hess_x$ & Hessiana, para $f: \Rset^d \mapsto \Rset, \quad \Hess_x f
-= \begin{bmatrix} \frac{\partial^2 f}{\partial x_1^2} & \cdots &
-\frac{\partial^2 f}{\partial x_1 \, \partial x_d}\\ \vdots & \vdots & \vdots\\
-\frac{\partial^2 f}{\partial x_d \, \partial x_1} & \cdots & \frac{\partial^2
-f}{\partial x_d^2}\end{bmatrix}$.\\[2.5mm]
+$\Hess_x \quad , \quad \cdot''$ & Hessiana, para \protect$f: \Rset^d \mapsto
+\Rset, \quad \Hess_x f = \begin{bmatrix} \frac{\partial^2 f}{\partial x_1^2} &
+\cdots & \frac{\partial^2 f}{\partial x_1 \, \partial x_d}\\ \vdots & \vdots &
+\vdots\\ \frac{\partial^2 f}{\partial x_d \, \partial x_1} & \cdots &
+\frac{\partial^2 f}{\partial x_d^2}\end{bmatrix}$\protect.\newline Se denotar\'a
+$f''$ cuando $d = 1$.\\[2.5mm]
 \hline
 %
-$\Hess_{x,y}$ & Hessiana ``compuesta'', para $f: \Rset^d \times \Rset^{d'}
-\mapsto \Rset, \quad \Hess_{x,y} f = \begin{bmatrix} \frac{\partial^2
+$\Hess_{x,y}$ & Hessiana ``compuesta'', para \protect$f: \Rset^d \times
+\Rset^{d'} \mapsto \Rset, \quad \Hess_{x,y} f = \begin{bmatrix} \frac{\partial^2
 f}{\partial x_1 \, \partial y_1} & \cdots & \frac{\partial^2 f}{\partial x_1
 \, \partial y_{d'}}\\ \vdots & \vdots & \vdots\\ \frac{\partial^2 f}{\partial
 x_d \, \partial y_1} & \cdots & \frac{\partial^2 f}{\partial x_d \, \partial
-y_{d'}}\end{bmatrix}$.\\[2.5mm]
+y_{d'}}\end{bmatrix}$\protect.\\[2.5mm]
 \hline
 %
-$\argmax$ & operador argumento m\'aximo, \ $\argmax_x f$ es el $x$ que maximiza
-$f$.\\[2.5mm]
+$f^{(k)}$ & Derivada de orden $k \ge $ para funciones $f: \Rset \mapsto
+\Rset$.\\[2.5mm]
 \hline
 %
-$\argmin$ & operador argumento m\'inimo, \ $\displaystyle \argmin_x f$ es el $x$
-que minimiza $f$.
+$\circ$ & Composici\'on de funciones, $f \circ g(x) = f\left( g(x)
+\right)$.\\[2.5mm]
+\hline
+%
+$f^{-1}$ & Inversi\'on de $f$, \ $f^{-1}(y) = \{ x \tq f(x) = y
+\}$\newline o inversa de un conjunto por $f$, $f^{-1}(B) = \{ x \tq f(x) \in B
+\}$.\\[2.5mm]
+\hline
+%
+$\max_\X$ & M\'aximo de una funci\'on real sobre el dominio $\X$:\newline \
+$\exists \, x_0 \in \X \tq \forall \, x \in \X, \: f(x) \le f(x_0) = \max_\X
+f$.\newline No siempre existe un m\'aximo.\\[2.5mm]
+\hline
+%
+$\sup_\X$ & Supremo de una funci\'on sobre el dominio $\X$,\newline \ $\sup_\X
+f$ es el m\'as peque\~no real $F_s$ tal que \ $\forall \, x \in \X, f(x) \le
+F_s$.\newline Siempre existe, pero no siempre se alcanza el supremo; cuando se
+alcanza $\sup_\X f = \max_\X f$.\\[2.5mm]
+\hline
+%
+$\min_\X$ & M\'inimo de una funci\'on sobre el dominio $\X$,\newline \ $\exists
+\, x_0 \in \X \tq \forall \, x \in \X, \: f(x) \ge f(x_0) = \min_\X f$.\newline
+No siempre existe un m\'inimo.\\[2.5mm]
+\hline
+%
+$\inf_\X$ & Infimo de una funci\'on sobre el dominio $\X$,\newline \ $\inf_\X f$
+es el m\'as grande real $F_i$ tal que \ $\forall \, x \in \X, f(x) \ge
+F_i$.\newline Siempre existe, pero no siempre se alcanza el infimo; cuando se
+alcanza $\inf_\X f = \min_\X f$.\\[2.5mm]
+\hline
+%
+$\argmax$ & Operador argumento m\'aximo, \ $\argmax_\X f$ es el(los) $x \in \X$ que maximiza(n)
+$f$,\newline $\argmax_\X f = \{ x_0 \in \X \tq f(x_0) = \max_\X f \}$.\\[2.5mm]
+\hline
+%
+$\argmin$ & Operador argumento m\'inimo, \ $\displaystyle \argmin_\X f$ es el(los) $x \in \X$
+que minimiza(n) $f$,\newline $\argmin_\X f = \{ x_0 \in \X \tq f(x_0) = \min_\X f \}$.
 %
 \end{notation}
 
-\SZ{Erd\'elyi,  A.,  Beitrag  zur  Theorie  der  konfluenten  hypergeometrischen
+\SZ{CAMBIAR EL POCHHAMMER EN LO QUE SIGUE con la macro}
+
+
+\SZ{
+Erd\'elyi,  A.,  Beitrag  zur  Theorie  der  konfluenten  hypergeometrischen
   Funktionen von mehreren  Ver\"anderlichen, Wiener Sitzungsberichte 146 (1937),
   431-467, ec. 7.2
 
@@ -107,5 +201,4 @@ que minimiza $f$.
 
 H. Exton, Multiple hypergeometric functions and applications, Ellis Horwood, Chichester, U.K., 1976
 P42 
-}
-
+\vspace{2cm}}

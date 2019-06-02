@@ -1,0 +1,273 @@
+
+% % --------------------------------- uniforme producto cartesiano
+
+% \subsubseccion{Distribuci\'on uniforme sobre un producto cartesiano de intervalos}
+
+% Se denota $X  \, \sim \, \U(\D)$ \  con, en este caso, \  $\D = \optimes_{i=1}^d
+% [a_i \, ; \, b_i] \subset \Rset^d$.   De nuevo, se puede escribir \ $X \, \egald
+% \,  a +  \diag(b-a)  U$ \  donde  \ $a  =  \begin{bmatrix} a_1  &  \cdots &  a_d
+% \end{bmatrix}^d$, \ $b = \begin{bmatrix} b_1 & \cdots & b_d \end{bmatrix}^d$ \ y
+% \ $U \, \sim \, \U \left( [ 0  \, ; \, 1 ]^d \right)$ \ {\em uniforme estandar}.
+% Las caracteristicas de  \ $X \, \sim \, \U  \left( [ 0 \, ; \,  1 ]^d \right)$ \
+% son  las  siguientes  (se  deducen   para  cualquier  uniforme  sobre  $\D$  por
+% transformaci\'on lineal; ver secciones anteriores):
+
+% \begin{caracteristicas}
+% %
+% Dominio de definici\'on & $\D = [0 \, ; \, 1 ]^d$\\[2mm]
+% \hline
+% %
+% Densidad de probabilidad & $p_X(x) = 1$\\[2mm]
+% \hline
+% %
+% %Momentos & $ \Esp\left[ X^k \right] = p^k$\\[2mm]
+% %\hline
+% %
+% Promedio & $\displaystyle m_X = \frac12 \begin{bmatrix} 1 & \cdots & 1
+% \end{bmatrix}^t$\\[2mm]
+% \hline
+% %
+% Covarianza & $\displaystyle \Sigma_X = \frac1{12} \, I$\\[2mm]
+% \hline
+% %
+% %Generadora de probabilidad & $G_X(z) = e^{\lambda (z-1)}$ \ para \ $z \in \Cset$\\[2mm]
+% %\hline
+% %
+% Generadora de momentos & $\displaystyle  M_X(u) = \prod_{k=1}^d \frac{ e^{u_k} -
+% 1}{u_k}$ \  para~\footnote{Con el  l\'imite $\lim_{u_k \to  0} \frac{  e^{u_k} -
+% 1}{u_k} = 1$.}  \ $u \in \Cset^d$\\[2mm]
+% \hline
+% %
+% Funci\'on  caracter\'istica   &  $\displaystyle  \Phi_X(\omega)   =  (-\imath)^d
+% \prod_{k=1}^d \frac{ e^{\imath \omega_k} - 1}{\omega_k}$
+% \end{caracteristicas}
+% %
+% % modo 0
+% % Mediana \ln(2)/\lambda
+% % CDF 1-e^{-\lambda x}
+
+% \SZ{Hacer el caso $d = 2$}
+
+% %Cuando $\lambda \to +\infty$ la variable tiende a una variable cierta $X = 0$.
+% \SZ{Esta distribuci\'on aparece..., propiedades}
+% % en el conteo de
+% %conteo de une repetici\'on de  una experiencia de maneja independiente hasta que
+% %occure un evento de probabilidad $p$; por ejemplo el n\'umero de tiro de un dado
+% %equilibriado hasta que occurre un ``6'' sigue una ley geometrica de parametro $p
+% %= \frac16$.
+
+
+\SZ{
+% --------------------------------- Laplace
+\subsubseccion{Distribuci\'on de Laplace o doble exponencial}
+\label{Sssec:MP:Laplace}
+}
+
+% --------------------------------- Dirichlet matriz-variada
+\subsubseccion{Distribuci\'on de Dirichlet matriz-variada}
+\label{Sssec:MP:DirichletMatrizVariada}
+
+Este  ejemplo es  una generalizaci\'on  matriz-variada de  la  distribuci\'on de
+Dirichlet, la distribuci\'on beta matriz  variada siendo un caso particular. Tal
+como en el caso de la distribuci\'on de Wishart, se puede ver una matriz como un
+vector,  guardando  por ejemplo  sus  columnas  una  bajo la  precediente.   Sin
+embargo, tal distribuci\'on apareciendo \SZ{ naturalmente
+%en un contexto de estimaci\'on de  matriz de covarianza (ver m\'as adelante), es
+%m\'as  natural  verla  matriz-variate.    
+\SZ{Tal  distrubuci\'on  es  debido  a
+%  J.
+%Wishart~\cite{Wis28, GupNag99, And03
+}, y se denota \ $X \, \sim \, \Dir_d(a)$ \ donde \ $a \in \Rset_+^{* \, k}$ \ y
+el dominio  de definici\'on es  \ $\P_{d,k}^+(\Rset)$, conjunto de  $k$-uplet de
+matrices simetricas definida positivas que satisfacen la relaci\'on de completud
+(ver  notaciones).    Las  caracter\'isticas   de  la  distribuci\'on   son  las
+siguientes~\cite{GupNag99}:
+
+\begin{caracteristicas}
+%
+Dominio de definici\'on
+%~\footnote{De hecho, se puede considerar que el vector
+%aleatorio es \ $(k-1)$-dimensional \ $\widetilde{X} = \begin{bmatrix}
+%\widetilde{X}_1 & \cdots & \widetilde{X}_{k-1} \end{bmatrix}^t$ \ definido sobre
+%el hipertriangulo \ $\widetilde{\X} = \Tri_{k-1} = \left\{ \widetilde{x} \in [0
+%\; 1]^{k-1}, \: \sum_{i=1}^{k-1} \widetilde{x}_i \le 1 \right\}$, proyecci\'on
+%del simplex sobre el hiperplano \ $x_k = 0$.\label{Foot:MP:DirichletXtilde}} 
+& $\X = \P_{d,k}^+(\Rset)$}\\[2mm]
+\hline
+%
+Parametros & $a = \alpha \, \bar{a} \, \in \, \Rset_+^{* \, k}$ \ (forma) \ con
+\ $\alpha \in \Rset_+^*$ \ (concentraci\'on) y \ $\bar{a} \in \Simp{k-1}$
+(medida de base)\\[2mm]
+\hline
+%
+Densidad de probabilidad
+%~\footnote{La densidad de probabilidad es dada con
+%respeto a la medida de Lebesgue restricta al simplex \ $\Simp{k-1}$. Tratando
+%de \ $\widetilde{X}$, el vector tiene una densidad con respeto a la medida de
+%Lebesgue usual, y es dada por \ $p_{\widetilde{X}}\left( \widetilde{x} \right) =
+%\frac{\prod_{i=1}^{k-1} \widetilde{x}_i^{\, a_i-1} \, \left( 1 -
+%\sum_{i=1}^{k-1} \widetilde{x}_i
+%\right)^{a_k-1}}{B(a)}$.\label{Foot:MP:DirichletDensidad}} 
+& $\displaystyle
+p_X(x) = \frac{\prod_{i=1}^k \left| x_i \right|^{a_i-\frac{d+1}{2}}}{B_d(a)}$\\[2mm]
+\hline
+%%
+%%Momentos & $ \Esp\left[ X^k \right] = p^k$\\[2mm]
+%%\hline
+%%
+%%Momento factorial & $\Esp\left[ (X)_k \right] = ?$\\[2mm]
+%%\hline
+%%
+%Promedio & $\displaystyle m_X = \bar{a}$\\[2.5mm]
+%\frac{a}{\sum_{i=1}^k a_i} \equiv \overline{a}$\\[2.5mm]
+%\hline
+%
+%Covarianza & $\displaystyle \Sigma_X = \frac{\diag\left( \bar{a} \right) -
+%\bar{a} \bar{a}^t}{1 + \alpha}$\\[2.5mm]
+%%\sum_{i=1}^k a_k}$\\[2.5mm]
+%\hline
+%%
+%Asimetr\'ia & $\displaystyle \gamma_X = \frac{2 \, (b - a) \sqrt{a + b + 1}}{( a
+%+ b + 2) \sqrt{a b}}$\\[2mm]
+%\hline
+%%
+%Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = \frac{6 \, \left( (a - b)^2 (a + b + 1) - a
+%b (a  + b  + 2)  \right)}{a \, b  \left( a  + b  + 2 \right)  \left( a  + b  + 3
+%\right)}$\\[2mm]
+%\hline
+%%
+%Generadora de probabilidad & $G_X(z) = e^{\lambda (z-1)}$ \ para \ $z \in \Cset$\\[2mm]
+%\hline
+%
+%Generadora de momentos~\footnote{El v\'inculo entre las funciones generadoras de
+%momento de \ $X$ \ y \ $\widetilde{X}$ \ es trivialmente \
+%$M_{\widetilde{X}}\left( \widetilde{u} \right) = M_X\left( \begin{bmatrix}
+%\widetilde{u} & 0 \end{bmatrix}^t \right)$ \ o \ $M_X(u) = e^{\imath u_k}
+%M_{\widetilde{X}}\left( \begin{bmatrix} u_1 - u_k & \cdots & u_{k-1} -
+%u_k \end{bmatrix}^t \right)$, y similarmente para la funci\'on
+%caracter\'istica.\label{Foot:MP:Dirichlet}} & $\displaystyle M_X(u) =
+%\Phi_2^{(k)}( a , \alpha \, ; \, u )$ \ para \ $u \in \Cset$\\[2mm]
+%\hline
+%%%
+%Funci\'on caracter\'istica~\footnote{La forma de la funci\'on generadora de
+%momento viene directamente de la escritura de las series de Taylor de $e^{u_i
+%x_i}$ \ o de la forma integral de la funci\'on confluente
+%hipergeom\'etrica~\cite{Phi88}.} & $\displaystyle \Phi_X(\omega) = \Phi_2^{(k)}(
+%a , \alpha \, ; \, \imath \omega )$
+\end{caracteristicas}
+
+%\footnotetext{De  hecho,  se puede  considerar  que  el  vector aleatorio  es  \
+%  $(k-1)$-dimensional  \  $\widetilde{X}  =  \begin{bmatrix}  \widetilde{X}_1  &
+%    \cdots   &  \widetilde{X}_{k-1}   \end{bmatrix}^t$  \   definido   sobre  el
+%  hipertriangulo \  $\widetilde{\X} = \Tri_{k-1} = \left\{  \widetilde{x} \in [0
+%    \;   1]^{k-1},  \:   \sum_{i=1}^{k-1}  \widetilde{x}_i   \le   1  \right\}$,
+%  proyecci\'on del  simplex sobre  el hiperplano  \ $x_k =  0$.  Su  densidad de
+%  probabilidad,  con   respeto  a  la  medida   de  Lebesgue,  es   dada  por  \
+%  $p_{\widetilde{X}}\left(   \widetilde{x}  \right)   =  \frac{\prod_{i=1}^{k-1}
+%    \widetilde{x}_i^{\,  a_i-1} \, \left(  1 -  \sum_{i=1}^{k-1} \widetilde{x}_i
+%    \right)^{a_k-1}}{B(a)}$.   El v\'inculo entre  las funciones  generadoras de
+%  momento  es trivialmente  \ $M_{\widetilde{X}}\left(  \widetilde{u}  \right) =
+%  M_X\left(  \begin{bmatrix} \widetilde{u} &  0 \end{bmatrix}^t  \right)$ \  o \
+%  $M_X(u) =  e^{\imath u_k} M_{\widetilde{X}}\left( \begin{bmatrix} u_1  - u_k &
+%      \cdots &  u_{k-1} - u_k  \end{bmatrix}^t \right)$, y similarmente  para la
+%  funci\'on caracter\'istica.}
+%%
+%(ver~\cite{PedRic91, SulTra96, And03}).
+
+%Fijense que $p_X$ no es la distribuci\'on conjuntos de los componentes de \ $X$:
+%el hecho de  que \ $X$ \ sea  uan matriz aleatoria de \  $P_d^+(\Rset)$ \ impone
+%v\'inculos sobre sus compnentes; entre otros, $X_{i,j} = X_{j,i}$
+
+%Inmediatamente, si  $d = 1$, la  distribuci\'on de Whishart \  $W_1(V,\nu)$ \ se
+%reduce  a la  distribuci\'on Gamma  $\G\left(\frac{\nu}{2} \,  , \,  \frac1{2 V}
+%\right)$. De este  hecho, se la podr\'ia ver  como extensi\'on matriz-variada de
+%la  distribuci\'on  gamma.  La  distribuci\'on  de  Wishart  tiene varias  otras
+%propiedades como las siguientes.
+%%
+%\begin{lema}[Stabilidad por transformaci\'on lineal]
+%\label{Lem:MP:StabilidadWishartLineal}
+%%%
+%  Sea $X \,  \sim \, W_d(V,\nu)$ \ y \  $A \in \Rset^{d \times d'}$  \ con \ $d'
+%  \le d$ \ y de rango lleno. Entonces
+%  \[
+%  A^t X A \, \sim \, W_{d'}\left( A^t V A , \nu \right)
+%  \]
+%  %
+%  En particular, si $d'  = 1$, \ $A^t X A \, \sim  \, G\left( \frac{\nu}{2} \, ,
+%    \, \frac1{2 \, A^t V A} \right)$. M\'as all\'a, tomando $A = \un_j$, aparece
+%  de que  las componentes diagonales de \  $X$ \ son de  distribuci\'on gamma, \
+%  $X_{j,j}  \, \sim  \,  \G\left( \frac{\nu}{2}  \,  , \,  \frac1{2 \,  V_{j,j}}
+%  \right)$.
+%\end{lema}
+%%%
+%\begin{proof}
+%  El     resultado     es     inmediato     saliendo     de     la     funci\'on
+%  caract\'eristica~\footref{Foot:MP:CaracteristicaWishart} y notando de que
+%
+%%\begin{eqnarray*}
+%\Phi_{A^t X A}(\omega) & = & \Esp\left[ e^{\imath \Tr\left( \omega^t A^t X A
+%\right)}\right]\\[2mm]
+%
+%%& = & \Phi_X\left( A \omega^t A^t\right)\\[2mm]
+%%
+%& = &  \left| I - 2 \imath A \omega A^t V \right|^{-\frac{\nu}{2}}\\[2mm]
+%
+%& = &  \left| I - 2 \imath \omega A^t V A \right|^{-\frac{\nu}{2}}
+%%
+%\end{eqnarray*}
+%%%
+%de   \   $\Tr(AB)   =   \Tr(BA)$~\cite{Har08}   \   y   de   la   identidad   de
+%Sylvester~\cite{Syl51,  AkrAkr96}  o~\cite[\S~18.1]{Har08} \  $\left|  I  + A  B
+%\right| = \left| I + B A \right|$.  .
+%\end{proof}
+%%%
+%De hecho, si los elementos diagonales son de distribuci\'on gamma, no es el caso
+%de         los        elementos         no-diagonales~\cite{Seb04,        And03}
+%o~\cite[Teo.~3.3.4]{GupNag99}.    De    eso   resuelte   delicado    llamar   la
+%distribuci\'on como gamma matriz-variada.
+
+%\begin{lema}[Stabilidad por suma]
+%\label{Lem:MP:StabilidadWishartSuma}
+%%
+%  Sea $X_i \,  \sim \, W_d(V,\nu_i), \: i = 1,\ldots,n$ independientes. Entonces
+%  \[
+%  \sum_{i=1}^n X_i \, \sim \, W_d\left( V \, , \, \sum_{i=1}^n \nu_i \right)
+%  \]
+%\end{lema}
+%%
+%\begin{proof}
+%  El     resultado     es     inmediato     saliendo     de     la     funci\'on
+%  caract\'eristica~\footref{Foot:MP:CaracteristicaWishart} y notando que como el
+%  el context vectorial $\Phi_{\sum_i X_i} = \prod_i \Phi_{X_i}$.
+%\end{proof}
+
+%La distribuci\'on  de Wishart aparece naturalmente en  problemas de estimaci\'on
+%de matriz de covarianza en el contexto gausiano:
+%%
+%\begin{lema}[V\'inculo con vectores gausianos~\cite{Seb04}]
+%  Sean \ $X_i \, \sim \, \N(0,V), \: i = 1, \ldots , n > d-1$ \ independientes y
+%  la  matriz  \  $S  =  \sum_{i=1}^n   X_i  X_i^t$  \  llamada  {\em  matriz  de
+%    dispersi\'on} (scatter matrix en ingl\'es). Entonces, \ $S \in P_d^+(\Rset)$
+%  (c.   s.)   \  ($S$ es  sim\'etrica  definida  positiva  casi siempre,  o  con
+%  probabilidad uno) y \ $S \,\sim \, W_d(V,n)$.
+%\end{lema}
+%%
+%Este resultado  permite tambi\'en probar  el lema~\ref{Lem:MP:StabilidadWishart}
+%para \ $\nu = n$ \ entero  escribiendo \ $X \egald \sum_{i=1}^n X_i X_i^t$ \ tal
+%que \ $A^t X A \egald \sum_{i=1}^n A^t X_i X_i^t A = \frac1n \sum_{i=1}^n \left(
+%%  A^t X_i \right)  \left( A^t X_i \right)^t$ \  y notando que los \  $A^t X_i \,
+%\sim \,  \N(0, A^t V  A)$ \ son independientes~\cite{Seb04}.   Adem\'as, permite
+%re-obtener las  expreciones del promedio y de  las covarianzas~\footnote{Para la
+%  covarianza, su usa la formula \ $\Esp[Y_1 Y_2 Y_3 Y_4] = \Esp[Y_1 Y_2]\Esp[Y_3
+%  Y_4]  + \Esp[Y_1 Y_3]\Esp[Y_2  Y_4] +  \Esp[Y_1 Y_4]\Esp[Y_2  Y_3]$ \  para $Y
+%  = \begin{bmatrix}  Y_1 & Y_2 &  Y_3 & Y_4 \end{bmatrix}^t$  \ vector gausiano,
+%  formula que se  obtiene por ejemplo a partir  de la funci\'on caracter\'istica
+%  de un vecor  gausiano.}. Notar que cuando los \ $X_i$  \ tienen un promemedio,
+%el  lema conduce  a  lo que  es  conocido como  Wishart no  central~\cite{And03,
+%  Seb04}.
+
+La distribuci\'on  de Dirichlet matriz-variada aparece as\'i naturalmente en  problema
+% de inferencia
+%Bayesiana  como distribuci\'on  a  priori conjugado~\footref{Foot:MP:BayesPrior}
+%del parametro $p$ de la ley gaussiana multivariada~\cite{Rob07}
+Que mas?}

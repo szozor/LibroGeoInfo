@@ -1,0 +1,69 @@
+\subsubseccion{Ley Geom\'etrica}
+\label{Sssec:MP:Geometrica}
+
+Se  denota  \  $X \,  \sim  \,  \G(p)$  \  con \  $p  \in  (0  \;  1]$ \  y  sus
+caracter\'isticas son las siguientes:
+
+\begin{caracteristicas}
+%
+Dominio de definici\'on & $\X = \Nset^*$\\[2mm]
+\hline
+%
+Parametro & $p \in (0 \; 1]$\\[2mm]
+\hline
+%
+Distribuci\'on  de  probabilidad &  $\displaystyle  p_X(k)  =  (1-p)^{k-1} p$  \
+(convenci\'on $0^0 = 1$)\\[2mm]
+\hline
+%
+Promedio & $m_X = \frac1p$\\[2mm]
+\hline
+%
+Varianza & $\displaystyle \sigma_X^2 = \frac{1-p}{p^2}$\\[2mm]
+\hline
+%
+Asimetr\'ia & $\displaystyle \gamma_X = \frac{2-p}{\sqrt{1-p}}$\\[2mm]
+\hline
+%
+Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = \frac{6 - 6 \, p + p^2}{1-p}$\\[2mm]
+\hline
+%
+Generadora de  probabilidad & $\displaystyle  G_X(z) = \frac{p z}{1-(1-p)  z}$ \
+para \ $|z| < \frac1{1-p}$\\[2mm]
+\hline
+%
+Generadora de  momentos & $\displaystyle M_X(u)  = \frac{p \, e^u}{1  - (1-p) \,
+e^u}$ \ para \ $\real{u} < - \ln(1-p)$\\[2mm]
+\hline
+%
+Funci\'on caracter\'istica  & $\displaystyle \Phi_X(\omega)  = \frac{p \, e^{\imath
+\omega}}{1 - (1-p) \, e^{\imath \omega}}$
+\end{caracteristicas}
+
+% Momentos & $ \Esp\left[ X^k \right] = ?$\\[2mm]
+% Momento factorial & $\Esp\left[ (X)_k \right] = \frac{p^{k-1} k!}{(1-p)^k}$\\[2mm]
+% Modo 1
+% Mediana $\left\lceil \frac{-1}{\log_2(1-p)} \right\rceil$ 
+% CDF	$1-(1-p)^k$
+
+Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
+figura Fig.~\ref{Fig:MP:Geometrica}.
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/Geometrica} \end{center}
+%
+\leyenda{Ilustraci\'on de una distribuci\'on de probabilidad Geom\'etrica (a), y
+  la funci\'on de repartici\'on asociada (b), con $p = \frac13$.}
+\label{Fig:MP:Geometrica}
+\end{figure}
+\SZ{Otros ilustraciones para otros $p$?}
+
+Esta distribuci\'on  aparece en el conteo  de conteo de une  repetici\'on de una
+experiencia de maneja  independiente hasta que occure un  evento de probabilidad
+$p$; por ejemplo  el n\'umero de tiro de un dado  equilibriado hasta que occurre
+un ``6'' sigue una ley geom\'etrica de parametro $p = \frac16$.
+
+Nota que cuando \  $p =  1$ \ la variable es cierta \  $X = 1$.   
+
+
+\SZ{?`Que propiedad mas?}

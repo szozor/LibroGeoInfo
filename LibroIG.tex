@@ -1,13 +1,13 @@
 \documentclass{LibroIG}
 
 \input Macro.tex
-\newcommand{\ii}{\'{\i}}
-\newcommand{\nh}{\~n}
-\newcommand{\sen}{\,\mathrm{sen}\,}
-\newcommand{\senh}{\,\mathrm{senh}\,}
-\newcommand{\vi}{\breve{\imath}}
-\newcommand{\vj}{\breve{\jmath}}
-\newcommand{\vk}{\breve{k}}
+%\newcommand{\ii}{\'{\i}}
+%\newcommand{\nh}{\~n}
+%\newcommand{\sen}{\,\mathrm{sen}\,}
+%\newcommand{\senh}{\,\mathrm{senh}\,}
+%\newcommand{\vi}{\breve{\imath}}
+%\newcommand{\vj}{\breve{\jmath}}
+%\newcommand{\vk}{\breve{k}}
 
 \hyphenation{desi-gual-dad pro-ble-mas lo-ga-rit-mo si-guien-tes per-pen-di-cu-la-ri-dad}
 
@@ -15,7 +15,8 @@
 %
 % Provisoire...
 \newcommand{\SZ}[1]{{\color{red}\bf #1}}
-\newcommand{\modif}[1]{{\color{red} #1}}
+\definecolor{darkgreen}{rgb}{0,.5,0}
+\newcommand{\modif}[1]{{\color{darkgreen} #1}}
 \newcommand{\aver}[1]{{\color{blue} #1}}
 
 
@@ -79,9 +80,9 @@
 %
 \input{ElementosTeoriaProbabilidades} % Steeve/Mariela
 %
-%\input{NocionesTeoriaInformacion} % Steeve
+\input{NocionesTeoriaInformacion} % Steeve
 %
-%\input{IntroduccionGeometriaDiferencial} % Walter/Mariela
+\input{IntroduccionGeometriaDiferencial} % Walter/Mariela
 {\color{red}\bf CF libro de Bullet et al.~\cite{BulFea17}, Cencov~\cite{Cen82}, Amari~\cite{AmaNag00}.}
 %\input{GeometriaInformacion} % ?
 %\input{Aplicaciones} % ?
@@ -89,7 +90,7 @@
 
 % Conclusión general
 \begin{preliminar}{Ep\'ilologo}
-\input{IntroduccionGeneral}
+\input{ConclusionGeneral}
 \firma{Los autores}
 \end{preliminar}
 

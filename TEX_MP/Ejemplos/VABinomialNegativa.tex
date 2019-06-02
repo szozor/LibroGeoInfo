@@ -1,0 +1,82 @@
+\subsubseccion{Ley Binomial negativa}
+\label{Sssec:MP:BinomialNegativa}
+
+Se denota \  $X \, \sim \, N\B(r,p)$ \  con \ $r \in \Nset^*, \quad  p \in [0 \;
+1)$ \ y sus caracter\'isticas son las siguientes:
+
+\begin{caracteristicas}
+%
+Dominio de definici\'on & $\X = \Nset$\\[2mm]
+\hline
+%
+Parametros & $r  \in \Nset^*,  \quad p \in [0  \;
+1)$\\[2mm]
+\hline
+%
+Distribuci\'on  de  probabilidad  &  \protect$\displaystyle  p_X(k)  =  \bino{k+r-1}{k}  p^k
+(1-p)^r$\protect\\[2mm]
+\hline
+%
+Promedio & $\displaystyle m_X = \frac{r \, p}{1-p}$\\[2mm]
+\hline
+%
+Varianza & $\displaystyle \sigma_X^2 = \frac{r \, p}{(1-p)^2}$\\[2mm]
+\hline
+%
+Asimetr\'ia & $\displaystyle \gamma_X = \frac{1 + p}{\sqrt{r \, p}}$\\[2mm]
+\hline
+%
+Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = \frac{1 + 4 \, p +
+p^2}{r \, p} $\\[2mm]
+\hline
+%
+Generadora  de probabilidad  &  $\displaystyle  G_X(z) =  \left(  \frac{1 -  p}{1  - p \, z}
+\right)^r$ \ para \ $|z| < p^{-1} $\\[2mm]
+\hline
+%
+Generadora de momentos & $\displaystyle M_X(u) = \left( \frac{1 - p}{1 - p \,
+e^u } \right)^r$ \ para \ $\real{u} < - \ln p$\\[2mm]
+\hline
+%
+Funci\'on caracter\'istica & $\displaystyle \Phi_X(\omega) = \left( \frac{1 -
+p}{1 - p \, e^{i \omega} } \right)^r$
+\end{caracteristicas}
+
+% Momentos & $ \Esp\left[ X^k \right] = ??\\[2mm]
+% Momento factorial & $\Esp\left[ (X)_k \right] = 
+% \frac{(r+k-1)!}{(r-1)!} \left( \frac{p}{1-p} \right)^k$\\[2mm]
+% Modo $\left\lfloor (n+1) p \right\rfloor$
+% Mediana $\left\lfloor n p \right\rfloor$ o $\left\lceil n p \right\rceil
+% CDF	$I_{1-p}(n-k,k+1)$ regularized incomplete beta function
+
+Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
+figura Fig.~\ref{Fig:MP:BinomialNegativa}.
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/BinomialNegativa} \end{center}
+%
+\leyenda{Ilustraci\'on de  una distribuci\'on de  probabilidad binomial negativa
+  (a), y  la funci\'on  de repartici\'on  asociada (b), con  $r =  3, \quad  p =
+  \frac35$.}
+\label{Fig:MP:BinomialNegativa}
+\end{figure}
+\SZ{Otros ilustraciones para otros $r, p$?}
+
+Esta ley aparece cuando se repite una experencia binaria \ $X_i \in \{ 0 \, , \,
+1 \},  i = 1, \ldots$  \ con \ $P(X_i=1)  = p$ \ de  manera independiente ($X_i$
+independientes) hasta  que \  $r$ \  variables valen 0,  con \  $r$ \  fijo. Los
+n\'umeros de  excitos \ $X_i =  1$ \ sigue una  ley \ $N\B(r,p)$  (el calculo es
+directo).  Dicho de otra  manera, $X = \sum_{i=1}^N X_i$ \ con  \ $N$ \ variable
+aleatoria tal que $X_N = 0$ \ y \ $r = \sum_{i=1}^N (1-X_i)$: condicionalmente a
+\ $N$, la variable es binomial de parametro $p$.  Se puede ver que \ $P(N = n) =
+\bino{n}{r-1} (1-p)^r  p^{n-r}$ \ y la  ley de la binomial  negativa se recupera
+tambi\'en,          por         ejemplo,         a          trav\'es         del
+teorema~\ref{Teo:MP:SumaAleatoriaGeneradoraProbabilidad}. En el caso \ $r = 1$ \
+aparece que \ $N \sim \G(1-p)$ \ y\ldots tambi\'en \ $X \sim \G(1-p)$.
+%
+% Blaise PAscal - Polya caso r real
+
+Esta distribuci\'on se  generaliza para \ $r \in \Rset_+^*$ \  pero se pierde la
+interpretaci\'on que v\'imos en el p\'arafo anterior.
+
+Nota: cuando \ $p = 0$ \ la variable es cierta \ $X = r$.

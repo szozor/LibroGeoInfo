@@ -1,0 +1,127 @@
+\subsubseccion{Distribuci\'on normal o Gaussiana multivariada real}
+\label{Sssec:MP:Gaussiana}
+
+Se denota $X \, \sim \, \N(m,\Sigma)$ \  con \ $m \in \Rset^d$ \ y \ $\Sigma \in
+P_d^+(\Rset)$  \  conjunto  de  las   matrices  de  \  $\Rset^{d  \times  d}$  \
+s\'imetricas definidas positivas. Las  caracter\'isticas de la Gaussiana son las
+siguientes:
+
+\begin{caracteristicas}
+%
+Dominio de definici\'on & $\X = \Rset^d$\\[2mm]
+\hline
+%
+Parametros & $m \in \Rset^d, \: \Sigma \in P_d^+(\Rset)$\\[2mm]
+\hline
+%
+Densidad de probabilidad & $\displaystyle p_X(x) = \frac{1}{(2
+\pi)^{\frac{d}{2}} \left| \Sigma \right|^{\frac12}} \, e^{-\frac12 (x-m)^t
+\Sigma^{-1} (x-m)}$\\[2.5mm]
+\hline
+%
+Promedio & $ m_X = m$\\[2mm]
+\hline
+%
+Covarianza & $\Sigma_X = \Sigma$\\[2mm]
+\hline
+%
+Asimetr\'ia (caso escalar) & $\gamma_X = 0$\\[2mm]
+\hline
+%
+Curtosis por exceso (caso escalar) & $\widebar{\kappa}_X = 0$\\[2mm]
+\hline
+%
+Generadora de  momentos &  $\displaystyle M_X(u) =  e^{u^t \Sigma u + u^t m}$  \ para \  $u \in
+\Cset^d$\\[2mm]
+\hline
+%
+Funci\'on  caracter\'istica   &  $\displaystyle  \Phi_X(\omega)   =  e^{-\frac12
+\omega^t \Sigma \omega + \imath \omega^t m}$
+\end{caracteristicas}
+
+% Momentos & $ \Esp\left[ X^k \right] = p^k$\\[2mm]
+% Momento factorial & $\Esp\left[ (X)_k \right] = ?$\\[2mm]
+% Generadora de probabilidad & $G_X(z) = e^{\lambda (z-1)}$ \ para \ $z \in \Cset$\\[2mm]
+% modo 0
+% Mediana 0
+
+Nota: trivialmente, se puede escribir $X  \, \egald \, \Sigma^{\frac12} N + m$ \
+con \ $N \, \sim \, \N(0,I)$ \  donde \ $N$ \ es dicha {\em Gausiana estandar} o
+{\em centrada-normalizada}. Las caracter\'isticas de  \ $X$ \ son v\'inculadas a
+las  de  \  $N$ \  (y  vice-versa)  por  transformaci\'on afine  (ver  secciones
+anteriores).
+
+
+La densidad de probabilidad gausiana y  la funci\'on de repartici\'on en el caso
+escalar son  representadas en la figura Fig.~\ref{Fig:MP:Gaussiana}-(a)  y (b) y
+una      densidad      en       un      contexto      bi-dimensional      figura
+Fig.~\ref{Fig:MP:Gaussiana}(c).
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/Gaussiana} \end{center}
+% 
+\leyenda{Ilustraci\'on  de  una   densidad  de  probabilidad  gaussiana  escalar
+  estandar  (a), y la  funci\'on de  repartici\'on asociada  (b), as\'i  que una
+  densidad  de probabilidad  gaussiana bi-dimensional  centrada y  de  matriz de
+  covarianza \ $\Sigma_X = R(\theta)  \Delta^2 R(\theta)^t$ \ con \ $R(\theta) =
+  \protect\begin{bmatrix}   \cos\theta  &   -  \sin\theta\\[2mm]   \sin\theta  &
+    \cos\theta  \protect\end{bmatrix}$ \  matriz  de rotaci\'on  y  \ $\Delta  =
+  \diag\left(\protect\begin{bmatrix}  1   &  a\protect\end{bmatrix}  \right)$  \
+  matriz  de   cambio  de  escala,   y  sus  marginales   \  $X_1  \,   \sim  \,
+  \N\left(0,\cos^2\theta  + a^2  \sin^2\theta \right)$  \ y  \ $X_2  \,  \sim \,
+  \N\left(0,\sin^2\theta + a^2 \cos^2\theta  \right)$ \ (ver m\'as adelante). En
+  la figura, $a = \frac14$ \ y \ $\theta = \frac{\pi}{6}$.}
+\label{Fig:MP:Gaussiana}
+\end{figure}
+
+La gaussiana tiene un par de propiedades particulares:
+%
+\begin{teorema}[Stabilidad]
+\label{Teo:MP:StabilidadGaussiana}
+%
+  Sean \ $A_i , i = 1,\ldots,n$ \  matrices de \ $\Rset^{d' \times d}, d' \le d$
+  \ de rango lleno, $b_i \in \Rset^{d'}$ \ y \ $X_i \, \sim \, \N(m_i,\Sigma_i)$
+  \ independientes, entonces
+  %
+  \[
+  \sum_{i=1}^n \left(  A_i X_i  + b_i \right)  \, \sim \,  \N\left( \sum_{i=1}^n
+    \left( m_i + b_i \right) \, , \, \sum_{i=1}^n A_i \Sigma_i A_i^t \right)
+  \]
+  % 
+  En particular, cualquier combinaci\'on lineal  de los componentes de un vector
+  Gaussiano da una gaussiana.  Reciprocamente, si cualquier combinaci\'on lineal
+  de los componentes de un vector aleatorio sigue una ley gaussiana, entonces el
+  vector es gaussiano.
+\end{teorema}
+%
+\begin{proof}
+  Este  resultato se proba  usando funci\'on  caracter\'istica de  la gaussiana,
+  conjuntalmente al teorema~\ref{Teo:MP:PropiedadesFuncionCaracteristica}.
+\end{proof}
+
+%
+\begin{teorema}[Independencia]
+\label{Teo:MP:IndependenciaGaussiana}
+%
+  Sea   \   $X  \,   \sim   \,   \N(m,\Delta)$  \   con   \   $\Delta  =   \diag
+  \left(  \begin{bmatrix}  \sigma_1^2  &  \cdots  &  \sigma_d^2  \end{bmatrix}^t
+  \right)$   \  diagonal.   Entonces  las   componentes  \   $X_i  \,   \sim  \,
+  \N(m_i,\sigma_i^2)$ \ son independientes.
+\end{teorema}
+%
+\begin{proof}
+  Este resultato se proba  trivialmente escribiendo la densidad de probabilidad,
+  notando que se factorisa.
+\end{proof}
+%
+Hemos visto que cuando un  vector tiene componentes independientes, la matriz de
+covarianza  es   diagonal  (lema~\ref{Lem:MP:IndependenciaCov}),  pero   que  la
+reciproca es falsa en general. El \'ultimo teorema muestra que la reciproca vale
+en el caso gausiano.
+
+%Cuando $\lambda \to +\infty$ la variable tiende a una variable cierta $X = 0$.
+\SZ{Esta distribuci\'on aparece...}
+% en  el conteo  de conteo  de  une repetici\'on  de una  experiencia de  maneja
+% independiente hasta que  occure un evento de probabilidad  $p$; por ejemplo el
+% n\'umero de tiro de un dado  equilibriado hasta que occurre un ``6'' sigue una
+% ley geometrica de parametro $p = \frac16$.

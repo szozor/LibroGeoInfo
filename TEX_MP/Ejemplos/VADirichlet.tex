@@ -1,0 +1,219 @@
+\subsubseccion{Distribuci\'on de Dirichlet}
+\label{Sssec:MP:Dirichlet}
+
+Esta distribuci\'on teniendo su nombre de integrales on a simplex estudiados por
+M. Lejeune-Dirichlet y J. Liouville  en 1839~\cite{GupRic01, Dir39, Lio39} en es
+una extensi\'on  multivariada de las variables  beta a veces  conocida como {\em
+  Beta multivariada}~\cite{OlkRub64}. Se  nota \ $X \, \sim \,  \Dir(a)$ \ con \
+$a \in \Rset_+^{*  \, k}$ \ y \  $X$ \ vive sobre el  $(k-1)$-simplex estandar \
+$\Simp{k-1}$.  $a$ es  llamado parametro de forma. Como en  el caso de vectores
+de  distribuci\'on multinomial, a  pesar de  que se  escribe \  $X$ \  de manera
+$k$-dimensional, el vector partenece a una  variedad \ $d = k-1$ \ dimensional y
+en el caso  \ $k = 2$ \ se  recupera la ley beta. A veces  se parametriza la ley
+con un  parametro escalar \ $\alpha  > 0$ \ y  un vector del  simplex estandar \
+$\bar{a} \in \Simp{k-1}$ \ tal que
+%
+\[
+a = \alpha \bar{a}, \quad \mbox{\ie} \quad \alpha = \sum_{i=1}^k \alpha_i, \quad
+\bar{a} = \frac{a}{\alpha}
+\]
+%
+$\alpha$ \  es conocido como  parametro de {\em  concentraci\'on} y el  vector \
+$\bar{a}$ \ como {\em medida de base}.
+
+Las caracter\'isticas de un vector de Dirichlet son:
+
+\begin{caracteristicas}
+%
+Dominio de definici\'on~\footnote{De hecho, se puede considerar que el vector
+aleatorio es \ $(k-1)$-dimensional \ $\widetilde{X} = \begin{bmatrix}
+\widetilde{X}_1 & \cdots & \widetilde{X}_{k-1} \end{bmatrix}^t$ \ definido sobre
+el hipertriangulo \ $\widetilde{\X} = \Tri_{k-1} = \left\{ \widetilde{x} \in [0
+\; 1]^{k-1}, \: \sum_{i=1}^{k-1} \widetilde{x}_i \le 1 \right\}$, proyecci\'on
+del simplex sobre el hiperplano \ $x_k = 0$.\label{Foot:MP:DirichletXtilde}} &
+$\X = \Simp{k-1}, \: k \in \Nset \setminus \{ 0 \, , \, 1 \}$\\[2mm]
+\hline
+%
+Parametros & $a = \alpha \, \bar{a} \, \in \, \Rset_+^{* \, k}$ \ (forma) \ con
+\ $\alpha \in \Rset_+^*$ \ (concentraci\'on) y \ $\bar{a} \in \Simp{k-1}$
+(medida de base)\\[2mm]
+\hline
+%
+Densidad de probabilidad~\footnote{La densidad de probabilidad es dada con
+respeto a la medida de Lebesgue restricta al simplex \ $\Simp{k-1}$. Tratando
+de \ $\widetilde{X}$, el vector tiene una densidad con respeto a la medida de
+Lebesgue usual, y es dada por \ $p_{\widetilde{X}}\left( \widetilde{x} \right) =
+\frac{\prod_{i=1}^{k-1} \widetilde{x}_i^{\, a_i-1} \, \left( 1 -
+\sum_{i=1}^{k-1} \widetilde{x}_i
+\right)^{a_k-1}}{B(a)}$.\label{Foot:MP:DirichletDensidad}} & $\displaystyle
+p_X(x) = \frac{\prod_{i=1}^k x_i^{a_i-1}}{B(a)}$\\[2mm]
+\hline
+%
+Promedio & $\displaystyle m_X = \bar{a}$\\[2.5mm]
+%\frac{a}{\sum_{i=1}^k a_i} \equiv \overline{a}$\\[2.5mm]
+\hline
+%
+Covarianza & $\displaystyle \Sigma_X = \frac{\diag\left( \bar{a} \right) -
+\bar{a} \bar{a}^t}{1 + \alpha}$\\[2.5mm]
+%\sum_{i=1}^k a_k}$\\[2.5mm]
+\hline
+%
+Generadora de momentos~\footnote{El v\'inculo entre las funciones generadoras de
+momento de \ $X$ \ y \ $\widetilde{X}$ \ es trivialmente \
+$M_{\widetilde{X}}\left( \widetilde{u} \right) = M_X\left( \begin{bmatrix}
+\widetilde{u} & 0 \end{bmatrix}^t \right)$ \ o \ $M_X(u) = e^{\imath u_k}
+M_{\widetilde{X}}\left( \begin{bmatrix} u_1 - u_k & \cdots & u_{k-1} -
+u_k \end{bmatrix}^t \right)$, y similarmente para la funci\'on
+caracter\'istica.\label{Foot:MP:Dirichlet}} & $\displaystyle M_X(u) =
+\Phi_2^{(k)}( a , \alpha \, ; \, u )$ \ para \ $u \in \Cset$\\[2mm]
+\hline
+%
+Funci\'on caracter\'istica~\footnote{La forma de la funci\'on generadora de
+momento viene directamente de la escritura de las series de Taylor de $e^{u_i
+x_i}$ \ o de la forma integral de la funci\'on confluente
+hipergeom\'etrica~\cite{Phi88}.} & $\displaystyle \Phi_X(\omega) = \Phi_2^{(k)}(
+a , \alpha \, ; \, \imath \omega )$
+\end{caracteristicas}
+
+%$k$-variada~\footnote{$\Phi_2^{(k)}(a;b;z)     =     \sum_{m    \in     \Nset^k}
+%  \frac{(a_1)_{(m_1)}     \ldots    (a_k)_{(m_k)}     \,     z_1^{m_1}    \ldots
+%    z_k^{m_k}}{(b)_{(m_1+\cdots+m_k)} m_1!  \ldots m_k!}$  \ con \ $(x)_{(n)}$ \
+%  s\'imbolo  de Pochhammer  usual o  factorial creciente,  $(x)_{(n)} =  x (x+1)
+%  \ldots (x+n)$ \,  con la convenci\'ion \ $(x)_{(0)} = 1$.   De hecho, la forma
+
+La figura Fig.~\ref{Fig:MP:Dirichlet} representa  el dominio de definici\'on del
+vector (a) y su densidad de  probabildad con las marginales (ver m\'as adelante)
+para $k = 3$.
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/Dirichlet} \end{center}
+%
+\leyenda{Ilustraci\'on del  dominio $\Simp{k-1}$ de  definici\'on de la  ley de
+  Dirichlet   para  \   $k  =   3$   \  (grise   oscuro),  con   el  dominio   \
+  $(k-1)$-dimensional   \  $\Tri_{k-1}$   \  del   vector  \   $\widetilde{X}  =
+  \protect\begin{bmatrix}   X_1  &  X_2   \protect\end{bmatrix}^t$  \   ($X_3  =
+  1-X_1-X_2$) \ (grise claro) (a), y densidad de probabilidad de $\widetilde{X}$
+  \   con   las   marginales   \   $p_{X_1},   \:   p_{X_2}$   (ver   notas   de
+  pie~\ref{Foot:MP:DirichletDominio}   y~\ref{Foot:MP:DirichletDensidad}).   Los
+  parametros   son    \   $a   =    \protect\begin{bmatrix}   3   &   2    &   2
+    \protect\end{bmatrix}^t$  (b) y \  $a =  \protect\begin{bmatrix} 3  & 1  & 2
+    \protect\end{bmatrix}^t$ (c).}
+\label{Fig:MP:Dirichlet}
+\end{figure}
+
+
+Vectores  de  distribuci\'on  de  Dirichlet tienen  tambi\'en  unas  propiedades
+notables, parecidas a las de la beta:
+%
+\begin{lema}[Reflexividad]
+\label{Lem:MP:ReflexividadDir}
+%
+Sea \ $X \, \sim  \, \Dir(a), \: a \in \Rset_+^{* \, k}$ \  y \ $\Pi$ \ matriz \
+$k \times k$ \ de permutaci\'on. Entonces
+  %
+  \[
+  \Pi X \, \sim \, \Dir\left( \Pi a \right)
+  \]
+  %
+\end{lema}
+%
+Adem\'as, se muestra una stabilidad remplazando dos componentes por su suma:
+%
+\begin{lema}[Stabilidad por agregaci\'on]
+\label{Lem:MP:StabSumaDir}
+%
+  Sea  \ $X =  \begin{bmatrix} X_1  & \cdots  & X_k  \end{bmatrix}^t \,  \sim \,
+  \Dir(a), \: a = \begin{bmatrix} a_1 & \cdots & a_k \end{bmatrix}^t \in
+  \Rset_+^{* \, k}$ \ y \ $J^{(i,j)} = \begin{bmatrix} I_{j-1} & \un_i & 0 \\[1mm]
+    0 & 0 & I_{k-j}\end{bmatrix}$ \ matriz  \ $(k-1) \times k$ \ donde \ $I_l$ \
+  es  la identidad $l  \times l$,  $\un_i$ el  vector con  component $i$-\'esima
+  igual a  1 (0 si no)  y $0$ matrices de  0 (todas de tama\~no  adcuado).  En \
+  $J^{(i,j)} X$ \ se saca la componente $j$-\'esima, se re-emplaza la componente
+  $i$-\'esima  por   la  suma  $X_i   +  X_j$  \   y  se  conservan   las  otras
+  componentes. Entonces,
+  %
+  \[
+  J^{(i,j)} X \, \sim \, \Dir\left( J^{(i,j)} a \right)  
+  \]
+  %
+\end{lema}
+%
+\begin{proof}
+  Del lema precediente, notando que existe una matriz de permutaci\'on \ $\Pi$ \
+  tal que  \ $J^{(i,j)}  = J^{(1,2)} \Pi$,  se puede  concentrarse en el  caso \
+  $(i,j) = (1,2)$. Sea el cambio de variables $g: x = (x_1,\ldots,x_k) \mapsto u
+  =  (u_1,\ldots,u_k) = (x_1,x_1+x_2,x_3,\ldots,x_k)$.  Entonces \  $g^{-1}(u) =
+  (u_1,u_2-u_1,u_3,\ldots,u_k)$ \ es de determinente de matriz Jacobiana igual a
+  \ $1$ \ dando para $U = g(X)$ \ la densidad
+  %
+  \[
+  p_U(u)  = \frac{u_1^{a_1-1}  \left(  u_2 -  u_1 \right)^{a_2-1}  \prod_{i=3}^k
+    u_i^{a_i-1}}{B(a)}
+  \]
+  %
+  sobre $g\left(  \Simp{k-1} \right)$. Para $u_2  \in [0 \; 1]$  \ tenemos $u_1
+  \in [  0 \;  u_2]$ \ as\'i  que, por  marginalizaci\'on en $u_1$  obtenemos la
+  densidad
+  %
+  \begin{eqnarray*}
+  p_{J^{(1,2)} X}(u_2,\ldots,u_k) & = & \frac{\prod_{i=3}^k u_i^{a_i-1}}{B(a)}
+  \int_0^{u_2} u_1^{a_1-1} \left( u_2 - u_1 \right)^{a_2-1} \, du_1\\[2mm]
+  %
+  & = & \frac{\prod_{i=3}^k u_i^{a_i-1}}{B(a)} \, u_2^{a_1+a_2-1} \int_0^1
+  v_1^{a_1-1} \left( 1 - v_1 \right)^{a_2-1} \, dv_1
+  \end{eqnarray*}
+  %
+  con el cambio de variables $u_1 = u_2 v_1$. Se cierra la prueba notando que la
+  integral   vale  \  $B(a_1,a_2)$   \  y   que  \   $\frac{B(a_1,a_2)}{B(a)}  =
+  \frac{1}{B\left( J^{(1,2)} a \right)}$.
+\end{proof}
+
+De este lema, aplicado de manera recueriva, se obtiene en corolario siguiente:
+%
+\begin{corolario}
+\label{Cor:MP:MarginalDirichletBeta}
+%
+  Sea  \ $X  \,  \sim \,  \Dir(a)$, entonces  \  $\displaystyle X_i  \, \sim  \,
+  \beta\left( a_i \, , \, \alpha-a_i \right)$.
+\end{corolario}
+
+Naturalmente,  la ley de  Dirichelt siendo  una extensi\'on  de la  beta, existe
+tambi\'en un v\'inculo entre esta ley y variables de distribuci\'on gamma:
+%
+\begin{lema}[V\'inculo con la ley gamma]
+\label{Lem:MP:VinculoDirichletGamma}
+%
+Sea \ $X$ \ vector $k$-dimensional de componente \ $i$-\'esima \ $X_i \, \sim \,
+\G(a_i,c), \: i = 1, \ldots , k$ \ independientes \ y \ $a$ vector de componente
+$i$-\'esima \ $a_i$. Entonces
+  %
+  \[
+  \frac{X}{\sum_{i=1}^k X_i} \, \sim \, \Dir(a)
+  \]
+  %
+  (independientemente  de $c$).   Adem\'as, $\frac{X}{\sum_{i=1}^k  X_i}$ \  y \
+  $\sum_{i=1}^k X_i$ \ son independientes.
+\end{lema}
+%
+\begin{proof}
+  La    prueba   sigue    exactamente   los    mismos   pasos    que    la   del
+  lema~\ref{Lem:MP:VinculoBetaGamma} \ trabajando con \ $\widetilde{X}$.
+\end{proof}
+
+Naturalmente,  la  distribuci\'on de  Dirichlet,  extensi\'on  de  la ley  beta,
+aparece entre  otros en problema  de inferencia Bayesiana como  distribuci\'on a
+priori  conjugado~\footref{Foot:MP:BayesPrior}  del  parametro  $p$  de  la  ley
+multinomial~\cite{Rob07}, extensi\'on de la ley binomial.
+
+\SZ{
+Polya urn schemes, Chinese restaurant
+}
+
+
+La distribuci\'on de Dirichlet se generaliza al caso matriz-variada $X$ definido
+sobre $\P_{d,k}(\Rset)$,  conjuntos de  $k$-uplet de matrices  de $P_d^+(\Rset)$
+cumpliando la relaci\'on  de completud (ver notaciones); se denota  \ $X \, \sim
+\, \Dir_d(a)$  \ donde \  $a \in \left(  \frac{d-1}{2} \; +\infty  \right)^k$ la
+densidad  est dada por  $\displaystyle p_X(x)  = \frac{\prod_{i=1}^k  \left| x_i
+  \right|^{a_i-\frac{d+1}{2}}}{B_d(a)}$.   Se  refiera a~\cite[Cap.~6]{GupNag99}
+para tener m\'as informaciones.

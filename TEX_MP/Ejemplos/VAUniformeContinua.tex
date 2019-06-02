@@ -1,0 +1,78 @@
+\subsubseccion{Distribuci\'on uniforme sobre un intervalo}
+\label{Sssec:MP:UniformeContinua}
+
+Se denota $X \, \sim \, \U([a \; b])$. Las caracter\'isticas de \ $X$ \ son las
+siguientes:
+
+\begin{caracteristicas}
+%
+Dominio de definici\'on & $\X = [a \; b]$\\[2mm]
+\hline
+%
+Parametros & $(a,b) \in \Rset, \: b > a$\\[2mm]
+\hline
+%
+Densidad de probabilidad & $p_X(x) = \frac{1}{b-a}$\\[2mm]
+\hline
+%
+Promedio & $\displaystyle m_X = \frac{a+b}{2}$\\[2mm]
+\hline
+%
+Varianza & $\displaystyle \sigma_X^2 = \frac{(b-a)^2}{12}$\\[2mm]
+\hline
+%
+Asimetr\'ia & $\gamma_X = 0$\\[2mm]
+\hline
+%
+Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = -\frac65$\\[2mm]
+\hline
+%
+Generadora de momentos & $\displaystyle M_X(u) = \frac{ e^{b u} - e^{a u}}{u}$ \
+para~\footnote{En el caso l\'imite \ $u \to  0$, \ $\lim_{u \to 0} \frac{ e^{b u}
+- e^{a u}}{u} = b-a$, y similarmente para la funci\'on caracter\'istica}  \ $u \in \Cset^d$\\[2mm]
+\hline
+%
+Funci\'on caracter\'istica & $\displaystyle  \Phi_X(\omega) = \frac{ e^{\imath a
+\omega} - e^{\imath b \omega}}{\omega}$
+\end{caracteristicas}
+
+% Momentos & $ \Esp\left[ X^k \right] = p^k$\\[2mm]
+% Momento factorial & $\Esp\left[ (X)_k \right] = ?$\\[2mm]
+% Generadora de probabilidad & $G_X(z) = e^{\lambda (z-1)}$ \ para \ $z \in \Cset$\\[2mm]
+% modo 0
+% Mediana \ln(2)/\lambda
+% CDF 1-e^{-\lambda x}
+
+Obviamente, se puede escribir \ $X \, \egald  \, a + (b-a) U$ \ donde \ $\egald$
+\ significa que la equalidad es en distribuci\'on (las variables tienen la misma
+distribuci\'on de probabilidad), con \ \ $U \, \sim \, \U \left( [ 0 \; 1 ]
+\right)$ \ llamada {\em uniforme estandar}.
+
+La densidad de probabilidad y funci\'on de repartici\'on de la variable estandar
+son representadas en la figura Fig.~\ref{Fig:MP:Uniformecontinua}.
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/UniformeContinua} \end{center}
+% 
+\leyenda{Ilustraci\'on  de  una densidad  de  probabilidad  uniforme  (a), y  la
+funci\'on de repartici\'on asociada (b).}
+\label{Fig:MP:Uniformecontinua}
+\end{figure}
+
+De manera  general, para  cualquier ensemble $\D  \subset \Rset^d$ de  volumen \
+$|\D|$ \,  la variable uniforma sobre $\D$  tiene la densidad con  respecto a la
+medida  ``natural'' sobre  $\D$  (Lebesque, discreta,\ldots)  constante sobre  \
+$\D$,
+%
+\[
+p_X(x) = \frac{1}{|\D|} \un_{\D}(x)
+\]
+%
+La media va a ser el centro de gravedad de $\D$.
+
+%Cuando $\lambda \to +\infty$ la variable tiende a una variable cierta $X = 0$.
+\SZ{Esta distribuci\'on aparece..., propiedades}
+% en  el conteo  de conteo  de  une repetici\'on  de una  experiencia de  maneja
+% independiente hasta que  occure un evento de probabilidad  $p$; por ejemplo el
+% n\'umero de tiro de un dado  equilibriado hasta que occurre un ``6'' sigue una
+% ley geometrica de parametro $p = \frac16$.

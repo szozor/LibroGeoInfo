@@ -1,0 +1,63 @@
+\subsubseccion{Distribuci\'on exponencial}
+\label{Sssec:MP:Exponencial}
+
+Se denota $X \,  \sim \, \E(\lambda)$ \ con \ $\lambda  \in \Rset_+^*$ \ llamada
+{\em  taza}  (inversa  de  {\em   escala}),  y  sus  caracter\'isticas  son  las
+siguientes:
+
+\begin{caracteristicas}
+%
+Dominio de definici\'on & $\X = \Rset_+$\\[2mm]
+\hline
+%
+Parametro & $\lambda \in \Rset_+^*$\\[2mm]
+\hline
+%
+Densidad  de probabilidad &  $\displaystyle p_X(x)  = \lambda  e^{-\lambda x}$\\[2mm]
+\hline
+%
+Promedio & $\displaystyle m_X = \frac1\lambda$\\[2mm]
+\hline
+%
+Varianza & $\displaystyle \sigma_X^2 = \frac1{\lambda^2}$\\[2mm]
+\hline
+%
+Asimetr\'ia & $\gamma_X = 2$\\[2mm]
+\hline
+%
+Curtosis por exceso & $\widebar{\kappa}_X = 6$\\[2mm]
+\hline
+%
+Generadora de  momentos &  $\displaystyle M_X(u) =  \frac{\lambda}{\lambda-u}$ \
+para \ $\real{u} < \lambda$\\[2mm]
+\hline
+%
+Funci\'on     caracter\'istica     &     $\displaystyle     \Phi_X(\omega)     =
+\frac{\lambda}{\lambda - \imath \omega}$
+\end{caracteristicas}
+
+% Momentos & $ \Esp\left[ X^k \right] = p^k$\\[2mm]
+% Momento factorial & $\Esp\left[ (X)_k \right] = ?$\\[2mm]
+% Generadora de probabilidad & $G_X(z) = e^{\lambda (z-1)}$ \ para \ $z \in \Cset$\\[2mm]
+% modo 0
+% Mediana \ln(2)/\lambda
+% CDF 1-e^{-\lambda x}
+
+Su densidad  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
+figura Fig.~\ref{Fig:MP:Exponencial}.
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/Exponencial} \end{center}
+% 
+\leyenda{Ilustraci\'on  de una densidad  de probabilidad  exponencial (a),  y la
+funci\'on de repartici\'on asociada (b), con $\lambda = 1.5$.}
+\label{Fig:MP:Exponencial}
+\end{figure}
+\SZ{Poner escalas; Otros ilustraciones para otros $\lambda$?}
+
+Cuando $\lambda \to +\infty$ la variable tiende a una variable cierta $X = 0$.
+\SZ{Esta distribuci\'on aparece... Propiedades}
+% en  el conteo  de conteo  de  une repetici\'on  de una  experiencia de  maneja
+% independiente hasta que  occure un evento de probabilidad  $p$; por ejemplo el
+% n\'umero de tiro de un dado  equilibriado hasta que occurre un ``6'' sigue una
+% ley geometrica de parametro $p = \frac16$.

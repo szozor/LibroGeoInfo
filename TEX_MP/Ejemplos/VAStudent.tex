@@ -1,0 +1,226 @@
+\subsubseccion{Distribuci\'on Student-$t$ multivariada}
+\label{Sssec:MP:Student}
+
+En   el  caso   escalar,  esta   ley   fue  introducida   inicialmente  por   F.
+R. Helmert~\cite{Hel75, Hel76, She95}  y J.  L\"uroth~\cite{Lur76, Pfa96}.  Pero
+es m\'as  conocida por su  intruducci\'on por William  Sealy Gosset~\footnote{De
+  hecho,  Gosset  fue  un  estudiante  trabajando en  la  f\'abrica  de  cerveza
+  irlandesa  Guiness  sobre estad\'istica  relacionada  a  la  qui\'imica de  la
+  cerveza.   A pesar  que hay  varias  explicaciones sobre  el hecho  de que  se
+  public\'o este trabajo bajo el nombre ``Student''. Unas es que fue para que no
+  se  sabe que  la f\'abrica  estaba  trabajando sobre  estas estadisticas  para
+  estudiar la  calidad de la  cerveza~\cite{Wen16}.}  en 1908,  trabajando sobre
+variables    centradas    normalizadas    por    el    promedio    y    varianza
+empiricos~\cite{Stu08}.  Fue estudiada entre  otros intensivamente por el famoso
+matematico R. Fisher~\cite{Fis25}.  En la  literatura, esta ley es conocida bajo
+los   nombres   {\em   Student},    {\em   Student-$t$}   o   simplemente   {\em
+  $t$-distribuci\'on} o a\'un  bajo el nombre {\em Pearson tipo  IV} debido a la
+familia de Pearson~\cite{Pea95}.
+
+%Se denota con \ $X \sim t_\nu(m,\Sigma)$  \ con \ $m \in \Rset^d$, \ $\Sigma \in
+%P_d^+(\Rset)$  \  conjunto  de  las   matrices  de  \  $\Rset^{d  \times  d}$  \
+%s\'imetricas definidas positivas. $m$ \ es llamado {\em parametro de posici\'on}
+%(no es  la media  que puede  no existir), \  $\Sigma$ \  es llamada  {\em matriz
+%  caracter\'istica} (no es [proporcional a]  la covarianza que puede no existir)
+%y \ $\nu > 0$ \ llamado  {\em grados de libertad}.  Las caracter\'isticas de una
+%Student-$t$ son las siguientes:
+
+\begin{caracteristicas}
+%
+Dominio de definici\'on & $\X = \Rset^d$\\[2mm]
+\hline
+%
+Parametro & $\nu \in \Rset_+^*$ \ (grados de libertad), \ $m \in \Rset^d$ \
+(posici\'on), \ $\Sigma \in P_d^+(\Rset)$ \ (matriz caracer\'istica)\\[2mm]
+\hline
+%
+Densidad de probabilidad & $\displaystyle p_X(x) = \frac{\Gamma\left(
+\frac{\nu+d}{2} \right)}{\pi^{\frac{d}{2}} \nu^{\frac{d}{2}} \Gamma\left(
+\frac{\nu}{2} \right) \, \left| \Sigma \right|^{\frac12}} \, \left( 1 +
+\frac{(x-m)^t \Sigma^{-1} (x-m)}{\nu} \right)^{- \, \frac{\nu+d}{2}}$\\[2mm]
+\hline
+%
+Promedio & $\displaystyle m_X = m$ \ si \ $\nu > 1$; \ no
+existe si no~\footnote{De manera general, esta ley admite momentos de orden \ $k$ \
+si y solamente si \ $\nu > k$.\label{Foot:MP:ExistenciaMomentosStudent}}.\\[2.5mm]
+\hline
+%
+Covarianza~\footnote{Fijense de que $\Sigma$ no es la covarianza, pero es
+proporcional a la covarianza\ldots cuando existe. Se podr\'ia imaginar
+renormalizar la ley tal que \ $\Sigma_X$ \ y \ $\Sigma$ \ coinciden, pero no
+ser\'ia posible en el caso \ $\nu \le 2$.} & $\displaystyle \Sigma_X =
+\frac{\nu}{\nu-2} \, \Sigma$ \ si \ $\nu > 2$; \ no existe si
+no~\footref{Foot:MP:ExistenciaMomentosStudent}.\\[2.5mm]
+\hline
+%
+Asimetr\'ia (caso escala) & $\displaystyle \gamma_X = 0$ \ si \ $\nu > 3$; \ no
+existe si no~\footref{Foot:MP:ExistenciaMomentosStudent}.\\[2mm]
+\hline
+%
+Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = \frac{6}{\nu-4}$ \ si
+\ $\nu > 4$; \ no existe si no~\footref{Foot:MP:ExistenciaMomentosStudent}.\\[2mm]
+\hline
+%
+Funci\'on caracter\'istica~\footnote{Se muestra sencillamente que la funci\'on
+generatriz de momentos puede existir si y solamente si \ $\real{u} = 0$. La
+funci\'on genetratriz de momentos restricta al producto cartesiano de bandas \
+$\real{u} = 0$ \ es nada m\'as que la funci\'on caracter\'istica. Adem\'as, esta
+funci\'on fue calculdada, especialmente en el caso multivariado, relativamente
+recientemente~\cite{Sut86, Hur95, KibJoa06, SonPar14}.} & $\displaystyle
+\Phi_X(\omega) = \frac{\nu^{\frac{\nu}{4}}}{2^{\frac{\nu}{2}-1} \Gamma\left(
+\frac{\nu}{2} \right)} \, e^{\imath \omega^t m} \, \left( \omega^t \Sigma \omega
+\right)^{\frac{\nu}{4}} K_{\frac{\nu}{2}}\left( \sqrt{\nu \, \omega^t \Sigma
+\omega} \right) $
+\end{caracteristicas}
+
+Nota: nuevamente se puede escribir $X \, \egald \, \Sigma^{\frac12} S + m$ \ con
+\ $S \, \sim \, t_\nu(0,I)$ \  donde \ $S$ \ es dicha {\em Student-$t$ estandar}
+y  las caracter\'isticas  de \  $X$  \ son  v\'inculadas a  las  de \  $S$ \  (y
+vice-versa) por transformaci\'on lineal (ver secciones anteriores).
+
+La densidad de probabilidad Student-$t$ estandar y la funci\'on de repartici\'on
+en el caso escalar  son representadas en la figura Fig.~\ref{Fig:MP:Student}-(a)
+y    (b)   y    una   densidad    en   un    contexto    bi-dimensional   figura
+Fig.~\ref{Fig:MP:Student}(c).
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/Student} \end{center}
+% 
+\leyenda{Ilustraci\'on  de  una  densidad  de probabilidad  Student-$t$  escalar
+  estandar (a),  y la funci\'on  de repartici\'on asociada  (b) con \ $\nu  = 1$
+  (linea llena), \ $\nu = 3$ (linea  guionada), \ $\nu = 7$ (linea punteada) \ y
+  \ $\nu \to +\infty$ (linea llena fina; ver m\'as adelante) grados de libertad,
+  as\'i que una densidad de probabilidad Student-$t$ bi-dimensional con \ $\nu =
+  1$ \  grado de libertad,  centrada, y de  matriz caracter\'istica \  $\Sigma =
+  R(\theta) \Delta^2  R(\theta)^t$ \ con \  $R(\theta) = \protect\begin{bmatrix}
+    \cos\theta    &     -    \sin\theta\\[2mm]    \sin\theta     &    \cos\theta
+    \protect\end{bmatrix}$   \   matriz   de    rotaci\'on   y   \   $\Delta   =
+  \diag\left(\protect\begin{bmatrix}  1   &  a\protect\end{bmatrix}  \right)$  \
+  matriz  de   cambio  de  escala,   y  sus  marginales   \  $X_1  \,   \sim  \,
+  t_\nu\left(0,\cos^2\theta +  a^2 \sin^2\theta \right)$ \  y \ $X_2  \, \sim \,
+  t_\nu\left(0,\sin^2\theta   +   a^2  \cos^2\theta   \right)$   \  (ver   m\'as
+  adelante). En la figura, $a = \frac13$ \ y \ $\theta = \frac{\pi}{6}$.}
+\label{Fig:MP:Student}
+\end{figure}
+
+Nota: el caso  \ $\nu = 1$ \  es conocido como distribuci\'on de  {\em Cauchy} o
+{\em Cauchy  Breit-Wigner}~\cite{SamTaq91, toto,  titi}.  Es un  caso particular
+tambi\'en de distrubuci\'on $\alpha$-estables~\cite{SamTaq91}.
+
+Contrariamente al caso gaussiano, de la forma de la densidad de probabilidad, es
+claro que si la matriz \ $\Sigma$  \ es diagona, la densidad no factoriza, as\'i
+que  las componentes  del vector  no  son independientes.  Este ejemplo  muestra
+claramente que  la reciproca del lema~\ref{Lem:MP:IndependenciaCov}  es falsa en
+general.
+
+Sin embargo, las distribuciones Student-$t$ tienen varias propiedades notables.
+
+\begin{lema}[Stabilidad por transformaci\'on lineal]
+\label{Lem:MP:StabilidadLineal}
+%
+  Sea \ $X  \, \sim \, t_\nu(m,\Sigma)$,  \ $A$ \ matriz de  \ $\Rset^{d' \times
+    d}$ \ con \ $d' \le d$, y de rango lleno y \ $b \in \Rset^{d'}$. Entonces
+  %
+  \[
+  A X + b\, \sim \, t_\nu( A m + b , A \Sigma A^t)
+  \]
+  %
+  En particular los componentes de \ $X$ \ son student-$t$,
+  %
+  \[
+  X_i \, \sim \, t_\nu(m_i , \Sigma_{i,i} )
+  \]
+\end{lema}
+\begin{proof}
+  La prueba es inmediata usando  la funci\'on caracter\'istica y sus propiedades
+  por  transformaci\'on lineal.  La condici\'on  sobre \  $A$ \  es  necesaria y
+  suficiente para que \ $A \Sigma A^t \in P_{d'}^+(\Rset)$.
+\end{proof}
+
+\begin{lema}[V\'inculo con las distribuciones Gamma y Gausiana (mezcla Gaussiana de escala)]
+\label{Lem:MP:MezclaGaussianaEscalaStudent}
+%
+  Sea \ $V \sim \G\left( \frac{\nu}{2} \, ,  \, \frac{\nu}{2} \right)$ \ y \ $G \, \sim \,
+  \N(0,I)$ \ independientes. Entonces
+  %
+  \[
+  \frac{G}{\sqrt{V}} \, \sim \, t_\nu( 0 , I )
+  \]
+  %
+  Dicho de  otra manera, se  puede escribir \  $X \, \sim \,  t_\nu(m,\Sigma)$ \
+  esticasticamente   bajo   la    forme   \   $X   \egald   \sqrt{\frac{\nu}{V}}
+  \Sigma^{\frac12} G + m $ \ donde  \ $\egald$ \ significa que la igualdad es en
+  distribuci\'on.
+\end{lema}
+\begin{proof}
+  Lo  m\'as  simple es  de  salir  de la  formula  de  probabilidad total  vista
+  pagina~\pageref{:MP:}, notando que condicionalmente a \ $V=v$ \ la variable es
+  gausiana de covarianza $\frac{1}{\sqrt{v}} I$,
+%
+\begin{eqnarray*}
+p_X(x) & = & \int_\Rset p_{X|V=v}(x) \, p_V(v) \, dv\\[2mm]
+%
+& \propto & \int_0^{+\infty} v^{\frac{d}{2}} e^{-\frac{v}{2} x^t x}
+v^{\frac{\nu}{2}-1} e^{-\frac{\nu}{2} v} \, dv\\[2mm]
+%
+& \propto & \left( 1 + \frac{x^t x}{\nu} \right)^{- \frac{d+\nu}{2}}
+\int_0^{+\infty} u^{\frac{d+\nu}{2}-1} e^{-u} \, du\\[2mm]
+%
+& \propto & \left( 1 + \frac{x^t x}{\nu} \right)^{- \frac{d+\nu}{2}}
+\end{eqnarray*}
+%
+con  \ $\propto$  \ significando  ``proporcional a''  (el coeficiente  es  lo de
+normalizaci\'on) y  el cambio de  variables $v  = \frac{2 \,  u}{\nu + x^t  x} =
+\frac{\frac{2}{\nu}}{1 + \frac{x^t x}{\nu}} \, u$.
+\end{proof}
+%
+Nota: este  lema permite tambi\'en  probar el lema~\ref{Lem:MP:StabilidadLineal}
+escribiendo \ $A X + b \egald  \sqrt{\frac{\nu}{V}} A \Sigma^{\frac12} G + A m +
+b$.
+
+\begin{lema}[L\'imite Gausiana]
+\label{Lem:MP:LimiteGaussiana}
+%
+  Sea \ $X_\nu \, \sim \, t_\nu(m,\Sigma)$ \ vector Student-$t$ parametizado por
+  \ $\nu$ \ sus grados de libertad. Entonces
+  %
+  \[
+  X_\nu \, \limitd{\nu \to \infty} \, X \, \sim \, \N(m,\Sigma)
+  \]
+  %
+  donde  \  $\displaystyle  \limitd{}$  \   significa  que  el  l\'imite  es  en
+  distribuci\'on.
+\end{lema}
+\begin{proof}
+  La prueba  es inmediata tomando el  logaritmo de la  densidad de probabilidad,
+  usando   la  formula   de   Stirling~\footnote{De  hecho,   esta  formula   es
+    probablemente debida previamente a  A.  De Moivre~\cite{Dem56, Pea24, Cam86,
+      Dut91}, y fue mejorada por  Stirling m\'as tarde. Fue mejorada a\'un m\'as
+    por         el        famoso        matem\'atico         S.        Ramanujan
+    recientemente~\cite[\S~4.1]{AndBer13}}  para \ $\log\Gamma(z)  = \left(  z -
+    \frac12 \right)  \log z  - z +  \frac12 \log(2 \pi)  + o(1)$  \ en \  $z \to
+  +\infty$~\cite{Sti30, AbrSte70, GraRyz15} \ y \ $-\frac{d+\nu}{2} \log\left( 1
+    +  \frac{(x-m)^t \Sigma^{-1} (x-m)}{\nu}  \right) =  -\frac{d+\nu}{2} \left(
+    \frac{(x-m)^t \Sigma^{-1} (x-m)}{\nu} + o\left( \nu^{-1} \right) \right) = -
+  \frac{(x-m)^t \Sigma^{-1} (x-m)}{2} + o(1)$.
+\end{proof}
+
+
+\SZ{
+%corolario suma dis independientes... via condicionalmente a...
+
+Sampling distribution, Gosset, Fisher 25.
+
+Applications
+}
+
+
+La distribuci\'on  Student-t se generaliza  al caso matriz-variada  $X$ definido
+sobre $M_{d,d'}(\Rset)$;  se denota  \ $X \,  \sim \,  t_\nu(M,\Sigma,\Omega)$ \
+donde  \ $M  \in  M_{d,d'}(\Rset), \:  \Sigma  \in P_d^+(\Rset),  \: \Omega  \in
+P_{d'}^+(\Rset)$   y  la  densidad   est  dada   por  $\displaystyle   p_X(x)  =
+\frac{\Gamma_d\left(      \frac{\nu+d+d'-1}{2}\right)}{\pi^{\frac{\nu     d}{2}}
+  \Gamma_d\left(       \frac{\nu+d-1}{2}\right)      \,       \left|      \Sigma
+  \right|^{\frac{d'}{2}}  \left|  \Omega \right|^{\frac{d}{2}}}  \:  \left| I  +
+  \Sigma^{-1}  (x-M) \Omega^{-1}  (x-M)^t \right|^{-  \frac{\nu+d+d'-1}{2}}$. Se
+refiera a~\cite[Cap.~4]{GupNag99} para tener m\'as informaciones.

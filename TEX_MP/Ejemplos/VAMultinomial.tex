@@ -1,0 +1,91 @@
+\subsubseccion{Ley Multinomial}
+\label{Sssec:MP:Multinomial}
+
+Esta ley es una generalizaci\'on de la ley binomial y aparece por ejemplo cuando
+se  repite  una  experiencia  a  \  $k$  \ estados  \  $n$  \  veces  de  manera
+independiente y nos  interesamos a la probabilidad que  el primer evento aparece
+$n_1$ veces, el secundo $n_2$ veces, \ldots.  Se denota \ $X \ \sim \ \M(n,p)$ \
+con  \  $n   \in  \Nset^*$  \  y   \  $p  =  \begin{bmatrix}  p_1   &  \cdots  &
+  p_k  \end{bmatrix}^t \in  \Simp{k-1}$ \  the \  $(k-1)$-simplex  estandar (ver
+figure~\ref{Fig:MP:Dirichlet}-(a)  y notaciones).  Entonces, a  pesar de  que se
+escribe \  $X$ \ de manera  $k$-dimensional, el vector partenece  a una variedad
+claramente \ $d = k-1$ \ dimensional y en el caso \ $k = 2$ \ se recupera la ley
+binomial.  Las caracter\'isticas de \ $X \ \sim \ \M(n,p)$ \ son las siguientes:
+
+\begin{caracteristicas}
+%
+Dominio de definici\'on~\footnote{De hecho, se puede considerar que el vector
+aleatorio es \ $(k-1)$-dimensional \ $\widetilde{X} = \begin{bmatrix}
+\widetilde{X}_1 & \cdots & \widetilde{X}_{k-1} \end{bmatrix}^t$ \ definido sobre
+el dominio \ $\widetilde{\X} = \left\{ m \in \{ 0 \, , \, \ldots \, , \,
+n\}^{k-1}, \: \sum_{i=1}^{k-1} m_i \le n
+\right\}$.\label{Foot:MP:MultinomialDominio}} & $\X = \left\{ m \in \{ 0 \, , \,
+\ldots \, , \, n\}^k, \: \sum_{i=1}^k m_i = n \right\}$\\[2mm]
+\hline
+%
+Parametros & $n \in \Nset^*, \quad p \in  \Simp{k-1} = \left\{ p \in [ 0 \; 1
+]^k, \: \sum_i p_i = 1 \right\}$\\[2mm]
+\hline
+%
+Distribuci\'on de probabilidad~\footnote{Tratando de $\widetilde{X}$, su masa de
+probabilidad es dada por \ $p_{\widetilde{X}}(m) = \frac{n!}{\prod_{i=1}^k m_i!}
+\prod_{i=1}^{k-1} p_i^{m_i} \, \left( 1 - \sum_{i=1}^{k-1} p_i
+\right)^{n-\sum_{i=1}^{k-1} m_i}$.\label{Foot:MP:MultinomialMasa}} &
+$\displaystyle p_X(m) = \frac{n!}{\prod_{i=1}^k m_i!}  \prod_{i=1}^k
+p_i^{m_i}$\\[2mm]
+\hline
+%
+Promedio & $\displaystyle m_X = n \, p$\\[2mm]
+\hline
+%
+Covarianza~\footnote{Fijense que, en este caso, $\Sigma_X \not\in P_k^+(\Rset)$
+porque obviamente $\un^t \Sigma_Z \un = 0$. Es consecuencia directa del hecho de
+que $X$ vive sobre $\Simp{k-1}$} & $\displaystyle \Sigma_X = n \left( \diag p -
+p p^t \right)$\\[2mm]
+\hline
+%
+Generadora de probabilidad & $\displaystyle G_X(z) = \left( p^t z
+%\sum_{j=1}^k p_j z_j
+\right)^n$ \ para \ $z \in \Cset^k$\\[2mm]
+\hline
+%
+Generadora de momentos & \protect$\displaystyle M_X(u) = \left( p^t e^u
+\right)^n, \: e^u = \begin{bmatrix} e^{u_1} & \cdots &
+e^{u_k} \end{bmatrix}^t$\protect \ para \ $u \in \Cset^k$\\[2mm]
+\hline
+%
+Funci\'on caracter\'istica & $\displaystyle \Phi_X(\omega) = \left( p^t e^{\imath \omega}
+%\sum_{j=1}^k p_j e^{\imath \omega_j} 
+\right)^n$
+\end{caracteristicas}
+
+% Momentos & $ \Esp\left[ X^k \right] = ??\\[2mm]
+% Momento factorial & $\Esp\left[ (X)_k \right] = 
+% \frac{(r+k-1)!}{(r-1)!} \left( \frac{p}{1-p} \right)^k$\\[2mm]
+% Modo $\left\lfloor (n+1) p \right\rfloor$
+% Mediana $\left\lfloor n p \right\rfloor$ o $\left\lceil n p \right\rceil
+% CDF	$I_{1-p}(n-k,k+1)$ regularized incomplete beta function
+
+Es sencillo  ver que  cada componente  \ $X_j$ \  es binomial,  $X_j \,  \sim \,
+\B(n,p_j)$.
+
+Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
+figura Fig.~\ref{Fig:MP:Multinomial}.
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/Multinomial} \end{center}
+%
+\leyenda{Ilustraci\'on de una distribuci\'on  de probabilidad multinomial para \
+  $k   =  3$   \   del   vector  \   $(k-1)$-dimensional   \  $\widetilde{X}   =
+  \protect\begin{bmatrix}   X_1  &  X_2   \protect\end{bmatrix}^t$  \   ($X_3  =
+  1-X_1-X_2$)  \ con  las marginales  \ $p_{X_1},  \: p_{X_2}$  \ (ver  notas de
+  pie~\ref{Foot:MP:MultinomialDominio}   y~\ref{Foot:MP:MultinomialMasa}).   Los
+  otros parametros son  \ $n = 5$  \ y \ $p =  \protect\begin{bmatrix} \frac25 &
+    \frac13     &    \frac4{15}     \protect\end{bmatrix}^t$    (a),     $p    =
+  \protect\begin{bmatrix} \frac13  & \frac12 &  \frac16 \protect\end{bmatrix}^t$
+  (b).}
+\label{Fig:MP:Multinomial}
+\end{figure}
+
+
+\SZ{Otros ilustraciones para otros $n, p$?}

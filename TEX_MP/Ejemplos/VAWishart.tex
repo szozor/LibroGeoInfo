@@ -1,0 +1,157 @@
+\subsubseccion{Distribuci\'on matriz-variada de Wishart}
+\label{Sssec:MP:Wishart}
+
+Este ejemplo es una  generalizaci\'on matriz-variada de la distribuci\'on gamma.
+Se puede ver  una matriz como un vector, guardando por  ejemplo sus columnas una
+bajo la  precediente.  Sin embargo, tal  distribuci\'on apareciendo naturalmente
+en un contexto de estimaci\'on de  matriz de covarianza (ver m\'as adelante), es
+m\'as  natural  verla  matriz-variate.    Tal  distrubuci\'on  es  debido  a  J.
+Wishart~\cite{Wis28, GupNag99, And03}, y se denota \ $X \, \sim \, W_d(V,\nu)$ \
+donde  el  dominio  de  definici\'on  es  \  $P_d^+(\Rset)$,  conjunto  matrices
+simetricas definida positivas, $V \in P_d^+(\Rset)$ parametro de escala y \ $\nu
+> d-1$ \ grados de libertad.  Las caracter\'isticas de la distribuci\'on son las
+siguientes:
+
+\begin{caracteristicas}
+%
+Dominio de definici\'on~\footnote{De hecho, se puede considerar que la matriz
+aleatoria es equivalent a tener un vector \ $\frac{d (d+1)}{2}$-dimensional; por
+la simetria, claramente \ $X$ \ tiene solamente \ $\frac{d (d+1)}{2}$ \
+componentes diferentes; adem\'as, se puede probar que cualquier matriz \ $A \in
+P_d^+(\Rset)$ \ se descompone bajo la forma \ $A = L L^t$ \ con \ $L$ \
+triangular inferior con elementos no nulos sobre su diagonal, llamado
+descomposici\'on de Cholesky~\cite{GupNag99, Bha07, Har08, HorJoh13} y
+reciprocamente. Eso muestra que \ $A$ \ se define a partir de \ $\frac{d
+(d+1)}{2}$ \ ``grados de libertad''.\label{Foot:MP:WishartXtilde}} & $\X =
+P_d^+(\Rset), \: d \in \Nset^*$\\[2mm]
+\hline
+%
+Parametros & $V \in P_d^+(\Rset)$ (escala) y \ $\nu > d-1$ \ (grados de
+libertad)\\[2mm]
+\hline
+%
+Densidad de probabilidad~\footnote{La densidad de probabilidad corresponde a la
+densidad conjunta de los \ $\frac{d (d+1)}{2}$ \ elementos \ $X_{i,j}, \: 1 \le
+i \le j \le d$~\cite{Wis28, PedRic91, SulTra96, GupNag99,
+And03}.\label{Foot:MP:WishartDensidad}} & $\displaystyle p_X(x) =
+\frac{|x|^{\frac{\nu-d-1}{2}} \, e^{-\frac12 \Tr\left( V^{-1}
+x\right)}}{2^{\frac{d \nu}{2}} \, |V|^{\frac{\nu}{2}} \, \Gamma_d\left(
+\frac{\nu}{2} \right)}$\\[2mm]
+\hline
+%
+Promedio & $\displaystyle m_X = \nu \, V$\\[2mm]
+\hline
+%
+Covarianza & $\displaystyle \Sigma_X = \nu \big( J (V \otimes V) + (V \otimes I)
+K (V \otimes I) \big)$\\[2mm]
+% $\Cov[X_{i,j},X_{k,l}] = nu \left( V_{i,k} V_{j,l} +V_{i,l} V_{j,k} \right)$}
+\hline
+%
+Funci\'on caracter\'istica~\footnote{\SZ{Se proba que la funci\'on generadora de
+momentos no existe en
+general}.\label{Foot:MP:CaracteristicaWishart}} &
+$\displaystyle \Phi_X(\omega) = \left| I - 2 \imath \omega V
+\right|^{-\frac{\nu}{2}}, \quad \omega \in S_d(\Rset)$
+\end{caracteristicas}
+
+(ver~\cite{PedRic91, SulTra96, And03}).
+
+Fijense que $p_X$ no es la distribuci\'on conjuntos de los componentes de \ $X$:
+el hecho de  que \ $X$ \ sea  uan matriz aleatoria de \  $P_d^+(\Rset)$ \ impone
+v\'inculos sobre sus compnentes; entre otros, $X_{i,j} = X_{j,i}$.
+
+Inmediatamente, si  $d = 1$, la  distribuci\'on de Whishart \  $W_1(V,\nu)$ \ se
+reduce  a la  distribuci\'on Gamma  $\G\left(\frac{\nu}{2} \,  , \,  \frac1{2 V}
+\right)$. De este  hecho, se la podr\'ia ver  como extensi\'on matriz-variada de
+la  distribuci\'on  gamma.  La  distribuci\'on  de  Wishart  tiene varias  otras
+propiedades como las siguientes.
+%
+\begin{lema}[Stabilidad por transformaci\'on lineal]
+\label{Lem:MP:StabilidadWishartLineal}
+%
+  Sea $X \,  \sim \, W_d(V,\nu)$ \ y \  $A \in \Rset^{d \times d'}$  \ con \ $d'
+  \le d$ \ y de rango lleno. Entonces
+  \[
+  A^t X A \, \sim \, W_{d'}\left( A^t V A , \nu \right)
+  \]
+  %
+  En particular, si $d'  = 1$, \ $A^t X A \, \sim  \, G\left( \frac{\nu}{2} \, ,
+    \, \frac1{2 \, A^t V A} \right)$. M\'as all\'a, tomando $A = \un_j$, aparece
+  de que  las componentes diagonales de \  $X$ \ son de  distribuci\'on gamma, \
+  $X_{j,j}  \, \sim  \,  \G\left( \frac{\nu}{2}  \,  , \,  \frac1{2 \,  V_{j,j}}
+  \right)$.
+\end{lema}
+%
+\begin{proof}
+  El     resultado     es     inmediato     saliendo     de     la     funci\'on
+  caract\'eristica~\footref{Foot:MP:CaracteristicaWishart} y notando de que
+%
+\begin{eqnarray*}
+\Phi_{A^t X A}(\omega) & = & \Esp\left[ e^{\imath \Tr\left( \omega^t A^t X A
+\right)}\right]\\[2mm]
+%
+& = & \Phi_X\left( A \omega^t A^t\right)\\[2mm]
+%
+& = &  \left| I - 2 \imath A \omega A^t V \right|^{-\frac{\nu}{2}}\\[2mm]
+%
+& = &  \left| I - 2 \imath \omega A^t V A \right|^{-\frac{\nu}{2}}
+%
+\end{eqnarray*}
+%
+de   \   $\Tr(AB)   =   \Tr(BA)$~\cite{Har08}   \   y   de   la   identidad   de
+Sylvester~\cite{Syl51,  AkrAkr96}  o~\cite[\S~18.1]{Har08} \  $\left|  I  + A  B
+\right| = \left| I + B A \right|$.  .
+\end{proof}
+%
+De hecho, si los elementos diagonales son de distribuci\'on gamma, no es el caso
+de         los        elementos         no-diagonales~\cite{Seb04,        And03}
+o~\cite[Teo.~3.3.4]{GupNag99}.    De    eso   resuelte   delicado    llamar   la
+distribuci\'on como gamma matriz-variada.
+
+\begin{lema}[Stabilidad por suma]
+\label{Lem:MP:StabilidadWishartSuma}
+%
+  Sea $X_i \,  \sim \, W_d(V,\nu_i), \: i = 1,\ldots,n$ independientes. Entonces
+  \[
+  \sum_{i=1}^n X_i \, \sim \, W_d\left( V \, , \, \sum_{i=1}^n \nu_i \right)
+  \]
+\end{lema}
+%
+\begin{proof}
+  El     resultado     es     inmediato     saliendo     de     la     funci\'on
+  caract\'eristica~\footref{Foot:MP:CaracteristicaWishart} y notando que como el
+  el context vectorial $\Phi_{\sum_i X_i} = \prod_i \Phi_{X_i}$.
+\end{proof}
+
+La distribuci\'on  de Wishart aparece naturalmente en  problemas de estimaci\'on
+de matriz de covarianza en el contexto gausiano:
+%
+\begin{lema}[V\'inculo con vectores gausianos~\cite{Seb04}]
+  Sean \ $X_i \, \sim \, \N(0,V), \: i = 1, \ldots , n > d-1$ \ independientes y
+  la  matriz  \  $S  =  \sum_{i=1}^n   X_i  X_i^t$  \  llamada  {\em  matriz  de
+    dispersi\'on} (scatter matrix en ingl\'es). Entonces, \ $S \in P_d^+(\Rset)$
+  (c.   s.)   \  ($S$ es  sim\'etrica  definida  positiva  casi siempre,  o  con
+  probabilidad uno) y \ $S \,\sim \, W_d(V,n)$.
+\end{lema}
+%
+Este resultado  permite tambi\'en probar  el lema~\ref{Lem:MP:StabilidadWishart}
+para \ $\nu = n$ \ entero  escribiendo \ $X \egald \sum_{i=1}^n X_i X_i^t$ \ tal
+que \ $A^t X A \egald \sum_{i=1}^n A^t X_i X_i^t A = \frac1n \sum_{i=1}^n \left(
+  A^t X_i \right)  \left( A^t X_i \right)^t$ \  y notando que los \  $A^t X_i \,
+\sim \,  \N(0, A^t V  A)$ \ son independientes~\cite{Seb04}.   Adem\'as, permite
+re-obtener las  expreciones del promedio y de  las covarianzas~\footnote{Para la
+  covarianza, su usa la formula \ $\Esp[Y_1 Y_2 Y_3 Y_4] = \Esp[Y_1 Y_2]\Esp[Y_3
+  Y_4]  + \Esp[Y_1 Y_3]\Esp[Y_2  Y_4] +  \Esp[Y_1 Y_4]\Esp[Y_2  Y_3]$ \  para $Y
+  = \begin{bmatrix}  Y_1 & Y_2 &  Y_3 & Y_4 \end{bmatrix}^t$  \ vector gausiano,
+  formula que se  obtiene por ejemplo a partir  de la funci\'on caracter\'istica
+  de un vecor  gausiano.}. Notar que cuando los \ $X_i$  \ tienen un promemedio,
+el  lema conduce  a  lo que  es  conocido como  Wishart no  central~\cite{And03,
+  Seb04}.
+
+\SZ{Que propedad mas? Ver Gupta Nagar 1999}
+
+La distribuci\'on  Wishart aparece as\'i naturalmente en  problema de inferencia
+Bayesiana  como distribuci\'on  a  priori conjugado~\footref{Foot:MP:BayesPrior}
+del parametro $p$ de la ley gaussiana multivariada~\cite{Rob07}.
+
+\SZ{Y donde aparece mas?}

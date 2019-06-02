@@ -1,0 +1,74 @@
+\subsubseccion{Ley Uniforme sobre un ``intervalo'' de $\Zset$}
+\label{Sssec:MP:UniformeDiscreta}
+
+Se denota $X \, \sim \, \U\{ a \, ,  \, b \}$ \ con $(a,b) \in \Zset^2, \: b \ge
+a$.  Las caracter\'isticas de \ $X$ \ son las siguientes:
+
+\begin{caracteristicas}
+%
+Parametros & $(a,b) \in \Zset^2, \: b \ge a$\\[2mm]
+\hline
+%
+Dominio de definici\'on & $\X = \{ a  \, , \, a+1 \,  , \, \ldots \, ,  \, b \}$\\[2mm]
+\hline
+%
+Distribuci\'on de probabilidad & $p_X(x) = \frac1{b-a+1}$\\[2mm]
+\hline
+%
+Promedio & $\displaystyle m_X = \frac{a+b}{2}$\\[2mm]
+\hline
+%
+Varianza & $\displaystyle \sigma_X^2 = \frac{(b-a) (b-a+2)}{12}$\\[2mm]
+\hline
+%%
+Asimetr\'ia & $\gamma_X = 0$\\[2mm]
+\hline
+%
+Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = -\frac65 \frac{(b-a)
+(b-a+2)+2}{(b-a) (b-a+2)}$\\[2mm]
+\hline
+%
+Generadora de probabilidad & $\displaystyle G_X(z) = \frac{z^a-z^{b+1}}{1-z}$ \
+para~\footnote{En el caso l\'imite \ $z \to 1$, \ $\lim_{z \to 1} \frac{ z^a -
+z^{b+1}}{1-z} = b+1-a$} \ $z \in \Cset$ \ si $a \ge 0$ \ y \ $\Cset^*$ \ si
+no\\[2mm]
+\hline
+%
+Generadora de momentos & $\displaystyle M_X(u) = \frac{ e^{a u} - e^{(b+1)
+u}}{1-e^u}$ \ para~\footnote{En el caso l\'imite \ $u \to 0$, \ $\lim_{u \to 0}
+\frac{ e^{a u} - e^{(b+1) u}}{1-e^u} = b+1-a$, y similarmente para la funci\'on
+caracter\'istica.}  \ $u \in \Cset$\\[2mm]
+\hline
+%
+Funci\'on caracter\'istica & $\displaystyle  \Phi_X(\omega) = \frac{ e^{\imath a
+\omega} - e^{\imath (b+1) \omega}}{1-e^{\imath \omega}}$
+\end{caracteristicas}
+
+% Momentos & $ \Esp\left[ X^k \right] = p^k$\\[2mm]
+% Momento factorial & $\Esp\left[ (X)_k \right] = ?$\\[2mm]
+% modo 0
+% Mediana \ln(2)/\lambda
+% CDF 1-e^{-\lambda x}
+
+La distribuci\'on  de masa de probabilidad  y funci\'on de  repartici\'on de una
+variable uniforme  \ $\U\{  a \, ,  \, b  \}$ \ son  representadas en  la figura
+Fig.~\ref{Fig:MP:UniformeDiscreta}.
+%
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/UniformeDiscreta} \end{center}
+% 
+\leyenda{Ilustraci\'on  de  una densidad  de  probabilidad  uniforme  (a), y  la
+  funci\'on  de repartici\'on  asociada (b).  $a =  1,  \: b  = 6$  \ (ej.  dado
+  equilibriado).}
+\label{Fig:MP:UniformeDiscreta}
+\end{figure}
+
+Cuando \ $b = a$, la variable tiende a una variable cierta \ $X = a$.
+
+La  distribuci\'on  uniforme  aparece  por   ejemplo  en  el  tiro  de  un  dado
+equilibriado con \ $a = 1, \: b = 6$.
+%% en el conteo de
+%%conteo de une repetici\'on de  una experiencia de maneja independiente hasta que
+%%occure un evento de probabilidad $p$; por ejemplo el n\'umero de tiro de un dado
+%%equilibriado hasta que occurre un ``6'' sigue una ley geometrica de parametro $p
+%%= \frac16$.

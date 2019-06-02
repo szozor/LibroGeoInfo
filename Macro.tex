@@ -50,7 +50,7 @@
 % Operadores
 % ----------
 %
-\def\optimes{\operatorname*{\times}}
+\def\optimes{\operatorname*{\bigtimes}}
 \def\Esp{\operatorname{E}} % esperanza matematica
 \def\Var{\operatorname{Var}} % Varianza
 \def\Cov{\operatorname{Cov}} % Covarianza
@@ -93,8 +93,11 @@
 \def\id{\mathrm{id}} % identidad
 %
 %
+% Pochhammer creciente y decreciente
+\newcommand{\PocC}[2]{#1^{\overline{#2}}}
+\newcommand{\PocD}[2]{#1^{\underline{#2}}}
 % Coefficiente binomial
-\newcommand{\bino}[2]{\left( \hspace{-2mm} \begin{array}{c} #1 \\[-1.5mm] #2 \end{array} \hspace{-2mm} \right)}
+\newcommand{\bino}[2]{\left( \hspace{-2mm} \protect\begin{array}{c} #1 \\[-1.5mm] #2 \protect\end{array} \hspace{-2mm} \right)}
 %\newcommand{\bino}[2]{\begin{pmatrix} \! #1 \\[-1.5mm] #2 \! \end{pmatrix}}
 % funcion hipergeometrica
 \newcommand{\hypgeom}[2]{\mbox{}_{#1}F_{#2}}
@@ -159,29 +162,39 @@ D^{\mathrm{b}}_{(h,\phi)}\ifthenelse{\isempty{#1}}{}{\left( \left. #1 \right\| #
 % ---------------------------------------------------
 %
 \def\ie{{\it i.~e.,}\xspace}
+\def\tq{\:\: \big| \:\:}
+\def\o{\:\: \vee \:\:}
+\def\y{\:\: \wedge \:\:}
+%\def\tq{\mbox{\: tal que \:}}
 \def\;{\, ; \,} % separacion en los intervalos
 %
 %
 % environment para las notaciones
 % -------------------------------
 %
-\newenvironment{notation}
+\newenvironment{notation}[1]
 {
+\tablefirsthead{%
+   %\hline
+   \multicolumn{2}{l}{\large\bf #1 \vspace{5mm}}\\
+}
+%\tablefirsthead{{\small\sl continued from previous page}
+%   \hline}
 \tabletail{\hline}
 %\renewcommand{\arraystretch}{2}
 %\begin{longtable}
 \begin{supertabular}
 {
-|>{\vspace{-2mm}}p{.14\textwidth}|
->{\vspace{-2mm}}p{.86\textwidth}|
+|>{\vspace{-2mm}}p{.12\textwidth}
+|>{\vspace{-2mm}}p{.88\textwidth}
+|
 }
 \hline
 }
 %
 {
 \\[2.5mm]
-\hline
-\end{supertabular}
+\end{supertabular}\vspace{2cm}
 %\end{longtable}
 }
 
@@ -191,7 +204,12 @@ D^{\mathrm{b}}_{(h,\phi)}\ifthenelse{\isempty{#1}}{}{\left( \left. #1 \right\| #
 %
 \newenvironment{caracteristicas}
 {
-\mbox{ }\newline
+\tablefirsthead{%
+   %\hline
+%   \multicolumn{2}{l}{\large\bf #1 \vspace{5mm}}\\
+   \multicolumn{2}{l}{\large\bf \vspace{5mm}}\\
+}
+%\mbox{ }\newline
 %\renewcommand{\arraystretch}{2}
 %\begin{longtable}
 \tabletail{\hline}
@@ -205,7 +223,6 @@ D^{\mathrm{b}}_{(h,\phi)}\ifthenelse{\isempty{#1}}{}{\left( \left. #1 \right\| #
 %
 {
 \\[2.5mm]
-\hline
 \end{supertabular}\newline
 %\end{longtable}
 }
