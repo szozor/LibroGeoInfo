@@ -650,7 +650,8 @@ resultado de un experimento o de un evento dado~\cite{AthLah06, Coh13, Bre88}:
   %
   donde la medida  $P_X$ sobre $\B(\Rset)$ es la medida imagen  de $P$.  \ $P_X$
   es frecuentemente llamada {\it distribuci\'on  de probabilidad} o {\it ley} de
-  la variable aleatoria $X$. En lo que sigue, escribiremos los eventos
+  la variable aleatoria $X$. En lo que sigue, escribiremos \modif{para cualquier
+    $B \in \B(\Rset)$} los eventos
   %
   \[
   (X \in B) \equiv X^{-1}(B) = \{ \omega \in \Omega \tq X(\omega) \in B \},
@@ -730,7 +731,8 @@ univariado, se define este  vector de la siguiente manera~\cite{AthLah06, Coh13,
   generada por los productos cartesianos  $(-\infty \; b_1] \times \cdots \times
   (-\infty  \;  b_d]$ y  donde la  medida $P_X$  sobre $\B(\Rset^d)$  es la
   medida  imagen de  $P$  llamada  {\it distribuci\'on  de  probabilidad} de  la
-  variable aleatoria (o vector aleatorio) \ $X$. Como en el caso escalar,
+  variable aleatoria (o vector aleatorio) \ $X$. Como en el caso escalar,  \modif{para cualquier
+    $B \in \B(\Rset^d)$}
   %
  \[
  (X \in B) \equiv X^{-1}(B) = \{ \omega \in \Omega \tq X(\omega) \in B \} \qquad
@@ -806,8 +808,8 @@ Cerramos estas generalidades con el caso de variables independientes:
 %
   Sean $d$  variables aleatorias  $X_i$ y  $X = \begin{bmatrix}  X_1 &  \cdots &
     X_d  \end{bmatrix}^t$.   Las  $X_i$   son  mutuamente  independientes  si  y
-  solamente si,  para cualquier ensemble  de conjuntos $B_i$, los  eventos $(X_i
-  \in \B_i)$ son mutuamente independientes, \ie
+  solamente   si,  para   cualquier  ensemble   de  conjuntos   $B_i  \modif{\in
+    \B(\Rset)}$, los eventos $(X_i \in \B_i)$ son mutuamente independientes, \ie
   %
   \[
   P_X\left( \optimes_{i=1}^d B_i \right) = \prod_{i=1}^d P_{X_i}(B_i).
@@ -864,7 +866,7 @@ pre-imagen.
   En otras palabras, los posibles valores de una variable aleatoria discreta $X$
   consisten en un  conjunto contable (finito o infinito  numerable) de n\'umeros
   reales, \  $\X = \{  x_j \}$ \  y se puede  escribir a \  $X$ \ como  una {\it
-    variable escalonada} (ver ej.  ~\cite{AthLah06, HogMck13}),
+    variable escalonada} (ver ej.~\cite{AthLah06, HogMck13}),
   %
   \[
   X = \sum_j x_j \un_{A_j} \quad \mbox{con} \quad A_j = X^{-1}(\{ x_j \}).
@@ -1534,8 +1536,8 @@ ensemble y luego de una densidad de probabilidad:
   %
   \[
   \P^\downarrow  =   \left\{  x   \in  \Rset^d  \tq   \frac{2  \pi^{\frac{d}{2}}
-      \|x\|^d}{\Gamma\left(\frac{d}{2}\right)} \le |\P| \right\} = \Bset_d\left(
-    0  \,  , \,  \frac1{\sqrt{pi}}  \left(  \frac{|\P| \Gamma\left(  \frac{d}{2}
+      \|x\|^d}{\Gamma\left(\frac{d}{2}\right)} \modif{<} |\P| \right\} = \Bset_d\left(
+    0  \,  , \,  \frac1{\sqrt{\pi}}  \left(  \frac{|\P| \Gamma\left(  \frac{d}{2}
         \right)}{2} \right)^{\frac1d} \right),
   \]
   %
@@ -1546,12 +1548,12 @@ ensemble y luego de una densidad de probabilidad:
 \begin{definicion}[Rearreglo sim\'etrico de una densidad de probabilidad]
 \label{Def:MP:RearregloDensidad}
 %
-  Sea $p_X$ una densidad de probabilidad y sean  $\P_t = \{ y \tq p_X(y) > t \}$
-  para cualquier $t > 0$, sus conjuntos de niveles.  La densidad de probabilidad
-  con    rearreglo   sim\'etrico   $p^\downarrow_X$    de   $p_X$    se   define
-  como~\footnote{Se prueba que esta funci\'on, positiva por definici\'on, suma a
-    1.  Adem\'as, por construcci\'on,  depende \'unicamente de $\|x\|$ y decrece
-    con $\|x\|$.}
+  Sea $p_X$ una densidad  de probabilidad y sean $\P_t = \{ y  \tq p_X(y) > t \}
+  \modif{\subset \Rset^d}$ para cualquier $t > 0$, sus conjuntos de niveles.  La
+  densidad de  probabilidad con rearreglo sim\'etrico  $p^\downarrow_X$ de $p_X$
+  se  define   como~\footnote{Se  prueba   que  esta  funci\'on,   positiva  por
+    definici\'on, suma a 1.   Adem\'as, por construcci\'on, depende \'unicamente
+    de $\|x\|$ y decrece con $\|x\|$.}
   %
   \[
   p^\downarrow_X(x)  =  \int_0^{+\infty}  \un_{\P_u^\downarrow}(x) \,  du.
@@ -1581,16 +1583,20 @@ figura~\ref{Fig:MP:ensemblerearreglado}-b para el caso escalar $d=1$.
 \leyenda{(a):  Ilustraci\'on  del rearreglo  sim\'etrico  $\P^\downarrow$ de  un
   conjunto $\P$, siendo  $\P^\downarrow$ la bola centrada en  0 de mismo volumen
   que $\P$, en el caso bi-dimensional $d = 2$.  (b) Construcci\'on del rearreglo
-  $p_X^\downarrow$:   dado  un   $\tau$,  se   busca  $\P_\tau$   y   se  deduce
-  $\P_\tau^\downarrow$;  dado un  $x$, se  busca  el mayor  $t$ tal  que $x  \in
-  \P_t^\downarrow$,    siendo    entonces   este    $t$    m\'aximo   igual    a
-  $p_X^\downarrow(x)$;  adem\'as, por construcci\'on,  las superficies  en grise
-  son iguales.}
+  $p_X^\downarrow$       \modif{en      un      contexto       escalar      (ver
+    ejemplo~\ref{Ej:MP:Rearreglo} para $d  = 1, \: \nu = 5, \:  m = 1$)}: dado
+  un  $\tau$, se busca  $\P_\tau$ (izquierda)  y se  deduce $\P_\tau^\downarrow$
+  (derecha); dado un $x$, se busca el mayor $t$ tal que $x \in \P_t^\downarrow$,
+  siendo  entonces  este $t$  m\'aximo  igual  a $p_X^\downarrow(x)$  (derecha);
+  adem\'as, por construcci\'on, las superficies en grise son iguales.}
   %
 \label{Fig:MP:ensemblerearreglado}
 \end{figure}
 % =  \B  \left( 0  , r_\P  \right)$ con  $\frac{2
 %    \pi^{d/2} r_\P^d}{\Gamma(d/2)} = |\P|$.
+\modif{Notar  que, por  construcci\'on, $p_X^\downarrow$  cae el  la  familia de
+  densidades  esfericas (ver  secci\'on~\ref{Sec:MP:EjemplosDistribucionesProb})~\cite{Lor54,  FanKot90,
+    CamHua81, Eat81}.}
 
 A partir de esta definici\'on del rearreglo, se puede ahora extender la noci\'on
 de mayorizaci\'on del caso discreto al caso continuo de la manera siguiente:
@@ -1602,8 +1608,8 @@ Una densidad de  probabilidad $p$ se dice mayorizada  por una distribuci\'on $q$
 sii:
   %
   \[
-  p \prec  q \qquad \mbox{sii}  \qquad \int_{\Bset(0,r)} p^\downarrow(x) \,  dx \le
-  \int_{\Bset(0,r)} q^\downarrow(x) \, dx \quad \forall  \, r > 0, \quad \mbox{ y }
+  p \prec  q \qquad \mbox{sii}  \qquad \int_{\Bset_d(0,r)} p^\downarrow(x) \,  dx \le
+  \int_{\Bset_d(0,r)} q^\downarrow(x) \, dx \quad \forall  \, r > 0, \quad \mbox{ y }
   \quad \int_{\Rset^d} p^\downarrow(x) \, dx = \int_{\Rset^d} q^\downarrow(x) \,
   dx,
   \]
@@ -1613,4 +1619,137 @@ sii:
   (las \'ultimas integrales son obviamente iguales a 1).
 \end{definicion}
 %
-\SZ{Equivalente de la curva de Lorentz???}
+
+\modif{Nota:  la  funci\'on   \
+%
+\[
+\L_p(r)  = \int_{\Bset_d(0,r)}  p^{\downarrow}(x) \,  dx
+%
+\]
+%
+da el equivalente de  la curba de Lorentz en el contexto  continuo, as\'i que la
+relaci\'on de mayorizaci\'on  se interpreta graficamente de la  misma manera que
+en el caso  discreto (excepto que, contrariamente al caso  discreto, la curva no
+es necesariamente concava).
+
+\begin{ejemplo}\label{Ej:MP:Rearreglo}
+  Consideramos la densidad de probabilidad $d$-dimensional \SZ{(mezcla de Student-r;
+  ver secci\'on~\ref{Sec:MP:EjemplosDistribucionesProb})}
+%
+\[
+\displaystyle  p_X(x) =  \alpha \left(  \left( 1  - \left\|  x +  m \right\|^2
+  \right)^{\frac{\nu-d}{2}} \un_{\Bset_d(-m,1)}(x)  + \left(  1 - \left\|  x -
+      m \right\|^2 \right)^{\frac{\nu-d}{2}} \un_{\Bset_d(m,1)}(x)\right)
+\]
+%
+con
+%
+\[
+\nu > d-2, \qquad m \in  \Rset^d \setminus \Bset_d \qquad \mbox{y} \qquad \alpha
+=   \frac{\Gamma\left(  \frac{\nu}{2}  +   1  \right)}{2   \,  \pi^{\frac{d}{2}}
+  \Gamma\left(   \frac{\nu-d}{2}  +  1   \right)}  \quad   \mbox{coeficiente  de
+  normalizaci\'on}
+\]
+%
+Esta         densidad         de         probabilidad        es         dibujada
+figura~\ref{Fig:MP:ensemblerearreglado}-((b) izquierda) para $d = 1, \: \nu = 5,
+m = 1$ y  figura~\ref{Fig:MP:RearregloMayorizacionEjemplo}-(a) para $d = 2, \:
+\nu  = 6,  \: m  = \frac{1}{\sqrt{d}}  \un$.  El  dominio de  definici\'on, el
+m\'aximo,       y       la       matriz       de       covarianza       \SZ{(ver
+  secci\'on~\ref{Sec:MP:EjemplosDistribucionesProb})} son dados por
+%
+\[
+\X = \Bset_d(-m,1) \: \cup  \: \Bset_d(m,1), \qquad \max_\X p_X(x) = \alpha,
+\qquad \Sigma_X = \frac{1}{\nu+2} I + m m^t
+\]
+
+Ahora, para \ $\tau  > \alpha, \: \P_\tau = \emptyset$ \  y para cualquier $\tau
+\in [0 \; \alpha]$  buscando los $x$ tal que $p_X(x) >  \tau$ (notando que las
+bolas en $\X$ son disjuntas) conduce a
+%
+\[
+\P_\tau = \Bset_d(-m , \beta_\tau) \: \cup \: \Bset_d(m , \beta_\tau) \qquad
+\mbox{con} \qquad  \beta_\tau = \sqrt{  1 - \left( \frac{2  \, \pi^{\frac{d}{2}}
+      \Gamma\left(    \frac{\nu-d}{2}   +1    \right)    \,   \tau}{\Gamma\left(
+        \frac{\nu}{2} +1 \right)} \right)^{\frac{2}{\nu-d}}}
+\]
+%
+Notando  que las esferas  de \  $\P_\tau$ \  son disjuntas,  queda claro  que el
+volumen de  \ $\P_\tau$ \ es  dado por \ $\left|  \P_\tau \right| =  2 \, \left|
+  \Bset_d\left(  0 ,  \beta_\tau  \right)  \right| =  \left|  \Bset_d\left( 0  ,
+    2^{\frac{1}{d}}   \beta_\tau  \right)  \right|$,   que  conduce   al  dominio
+  rearreglado,
+%
+\[
+\P^{\downarrow}_\tau  =  \Bset_d\left( 0  ,  2^{\frac{1}{d}}  \beta_\tau \right)
+\]
+%
+Ahora, se muestra sencillamente que $x \in \P^{\downarrow}_u$ es equivalente a
+%
+\[
+\displaystyle  u   <  \frac{\Gamma\left(  \frac{\nu}{2}  +   1  \right)}{2  \,
+  \pi^{\frac{d}{2}}  \Gamma\left( \frac{\nu-d}{2}  + 1  \right)} \,  \left(  1 -
+  \frac{\|x\|^2}{4^{\frac1d}}  \right)^{\frac{\nu-d}{2}}  \un_{\Bset_d\left(0  ,
+    2^{\frac1d} \right)}(x)
+\]
+%
+De la definici\'on~\ref{Def:MP:RearregloDensidad} obtenemos al final
+ %
+ \[
+ p^{\downarrow}_X(x)  =  \frac{\Gamma\left(  \frac{\nu}{2}  +  1  \right)}{2  \,
+   \pi^{\frac{d}{2}}  \Gamma\left( \frac{\nu-d}{2} +  1 \right)}  \, \left(  1 -
+   \frac{\|x\|^2}{4^{\frac1d}}  \right)^{\frac{\nu-d}{2}}  \un_{\Bset_d\left(0 ,
+     2^{\frac1d} \right)}(x)
+ \]
+%
+ dibujada figura~\ref{Fig:MP:ensemblerearreglado}-((b) derecha)  para $d = 1, \:
+ \nu = 5$ y figura~\ref{Fig:MP:RearregloMayorizacionEjemplo} para $d = 2, \: \nu
+ = 6$.
+%
+Finalmente, la curva de Lorentz es dada por
+%
+\begin{eqnarray*}
+\L_{p_X}(r) & = & \frac{\Gamma\left( \frac{\nu}{2} + 1 \right)}{2 \,
+\pi^{\frac{d}{2}} \Gamma\left( \frac{\nu-d}{2} + 1 \right)} \int_{\Bset_d(0,r)}
+\left( 1 - \frac{\|x\|^2}{4^{\frac1d}} \right)^{\frac{\nu-d}{2}}
+\un_{\Bset_d\left(0 , 2^{\frac1d} \right)}(x) \, dx\\
+%
+& = & \frac{\Gamma\left( \frac{\nu}{2} + 1 \right)}{2 \, \pi^{\frac{d}{2}}
+\Gamma\left( \frac{\nu-d}{2} + 1 \right)} \frac{2 \,
+\pi^{\frac{d}{2}}}{\Gamma\left( \frac{d}{2} \right)} \int_0^r \rho^{d-1} \left( 1 -
+\frac{\rho^2}{4^{\frac1d}} \right)^{\frac{\nu-d}{2}} \un_{\left[ 0 \; 2^{\frac1d}
+\right]}(\rho) \, d\rho
+\end{eqnarray*}
+%
+pasando  en coordenadas  hiperesferica (ver~\cite{Lor54,  FanKot90,  CamHua81} y
+secci\'on~\ref{Sec:MP:EjemplosDistribucionesProb}). Por el cambio de variable $u
+= \frac{\rho^2}{4^{\frac1d}}$ obtenemos
+%
+\[
+\L_{p_X}(r)      =      \frac{\displaystyle     \int_0^{\frac{r^2}{4^{\frac1d}}}
+  u^{\frac{d}{2}-1} (1-u)^{\frac{\nu-d}{2}}  \, du}{B\left( \frac{d}{2}  \, , \,
+    \frac{\nu-d}{2} + 1 \right)}
+\]
+%
+conocida  como funci\'on  beta incompleta~\cite[Ec.~8.392]{GraRyz15},  tomada en
+$\frac{r^2}{4^{\frac1d}}$.                                                     La
+figura~\ref{Fig:MP:RearregloMayorizacionEjemplo}-(c)  dibuja  $\L_{p_X}(r)$ para
+$d =  2, \:  \nu =  6$, y  la de la  ley gausiana  esferica $q_X$  de covarianza
+$\frac{\Tr                  \Sigma_X}{d}                 I$                 (ver
+secci\'on~\ref{Sec:MP:EjemplosDistribucionesProb}), lo  que ilustra graficamente
+la relaci\'on de mayorizaci\'on $q_X \prec p_X$.
+% $p(x) = \frac{}{}$$ y la ley arcsin $q_X(x) = $
+
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/RearregloEjemplo} \end{center}
+%
+  \leyenda{(a) Densidad de  probabilidad $p_X$ del ejemplo~\ref{Ej:MP:Rearreglo}
+    en  el  contexto  bi-dimensional  $d  =  2$  y para  $\nu  =  6,  \:  m  =
+    \frac{1}{\sqrt{d}}  \un$. (b)  Densidad rearreglada  $p^{\downarrow}_X$. (c)
+    Equivalenbte continua de  la curva de Lorentz para  la densidad $p_X$ (linea
+    llena) y la  gausiana esferica $q_X$ de covarianza de misma  traza que la de
+    $p_X$, ilustrando una relaci\'on de mayorizaci\'on $q_X \prec p_X$.}
+\label{Fig:MP:RearregloMayorizacionEjemplo}
+\end{figure}
+\end{ejemplo}
+}

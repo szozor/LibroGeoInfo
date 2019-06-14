@@ -1,0 +1,119 @@
+\begin{tikzpicture}%[scale=.8]
+\shorthandoff{>}
+%
+\tikzset{declare function={
+xplus(\x) = max(\x,0);
+%ifthenelse(\x > 0 , \x , NaN);
+}}
+%
+% Approximation de la cdf gaussienne
+\tikzset{declare function={
+normcdf(\x)=1/(1 + exp(-0.07056*(\x)^3 - 1.5976*(\x)));
+}}
+%
+% gamma incompleta para k entero
+\tikzmath{function gammainc(\x,\k) {
+    if \k == 1 then {return (1-exp(-\x));}
+    else {return gammainc(\x,\k-1)*(\k-1)-((\x)^(\k-1))*exp(-\x);};
+};};
+%
+%
+% beta incompleta (k,l) para l entero, k > 0
+\tikzmath{function betainc(\x,\k,\l) {
+    if \x <= 0 then {return 0;}
+    else {if \x > 1 then {return betainc(1,\k,\l);}
+          else {if \l == 1 then {return ((\x)^(\k))/\k;}
+                else {return ((\l-1)/\k)*betainc(\x,\k+1,\l-1)+(((\x)^(\k))*((1-\x)^(\l-1))/\k);};
+               };
+         };
+};};
+%
+\pgfmathsetmacro{\d}{2};% dimension
+\pgfmathsetmacro{\nu}{6};% degres de liberte
+\pgfmathsetmacro{\mux}{1/sqrt(2)};% mu_1
+\pgfmathsetmacro{\muy}{1/sqrt(2)};% mu_2
+\pgfmathsetmacro{\a}{factorial(\nu/2)/(2*(pi^(\d/2))*factorial((\nu-\d)/2))};
+
+\tdplotsetmaincoords{45}{65}
+\begin{scope}[tdplot_main_coords,scale=.65]
+%
+% densidad d=2, nu = 4, mu = [1 1]/sqrt(2)
+% Mezcla de Student-r
+\begin{axis}[
+    colormap = {whiteblack}{color(0cm)  = (white);color(1cm) = (black)},
+    width=.5\textwidth,
+    view={45}{65},
+    enlargelimits=false,
+    %grid=major,
+    domain=-2.5:2.5,
+    y domain=-2.5:2.5,
+    zmax={.85*\a},
+    color=black,
+    samples=70,
+    xlabel=$x_1$,
+    ylabel=$x_2$,
+    zlabel=$p_X$,
+]
+%
+% Mezcla de Student
+\addplot3 [surf] {
+\a*((xplus(1-(x+\mux)^2-(y+\muy)^2))^((\nu-\d)/2)+(xplus(1-(x-\mux)^2-(y-\muy)^2))^((\nu-\d)/2))};
+%%
+\end{axis}
+\end{scope}
+%
+%
+% densidad rearreglada
+\begin{scope}[tdplot_main_coords,xshift=5.5cm,scale=.65]
+%
+\begin{axis}[
+    colormap = {whiteblack}{color(0cm)  = (white);color(1cm) = (black)},
+    width=.5\textwidth,
+    view={45}{65},
+    enlargelimits=false,
+    %grid=major,
+    domain=-2:2,
+    y domain=-2:2,
+    zmax={.8*\a},
+    color=black,
+    samples=70,
+    xlabel=$x_1$,
+    ylabel=$x_2$,
+    zlabel=$p^{\downarrow}_X$,
+]
+%
+% Mezcla rearreglada
+\addplot3 [surf,opacity=.8] {\a*((xplus(1-(x^2+y^2)/(4^(1/\d))))^((\nu-\d)/2))};
+%
+\end{axis}
+\end{scope}
+%
+% curva de Lorentz
+\begin{scope}[xshift=11.25cm,yshift=1cm,scale=.65]
+\pgfmathsetmacro{\sx}{1.5};% x-scaling
+\pgfmathsetmacro{\sy}{2.75};% y-scaling 
+\pgfmathsetmacro{\mx}{3.25};% maximo en x
+\pgfmathsetmacro{\B}{betainc(1,\d/2,(\nu-\d)/2+1)};% B(d/2,(nu-d)/2+1)
+\pgfmathsetmacro{\ss}{(1/(\nu+2))+(((\mux)^2)+((\muy)^2))/\d};
+
+\draw[>=stealth,->] (-.25,0)--({\sx*\mx+.5},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.15)--(0,{\sy+.5}) node[above]{\small $\L_p(r)$};
+%
+
+% Lorentz de la mezcla
+\draw[thick,domain=0:\mx,samples=50,smooth] plot({\x*\sx},{\sy*betainc(((\x)^2)/(4^(1/\d)),\d/2,(\nu-\d)/2+1)/\B});
+%
+% Lorentz de la gausiana
+\draw[thick,dashed,domain=0:\mx,samples=50,smooth] plot({\x*\sx},{\sy*gammainc(((\x)^2)/2/\ss,\d/2)/factorial(\d/2-1)});
+%
+\foreach \m in {0,...,\mx} {
+\draw ({\m*\sx},0)--({\m*\sx},-.1) node[below,scale=.7]{$\m$};
+}
+%
+\draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
+\end{scope}
+%
+%\node at (1.2,-3){(a)};
+%\node at (6.6,-3){(b)};
+%\node at (13.6,-3){(c)};
+\end{tikzpicture}

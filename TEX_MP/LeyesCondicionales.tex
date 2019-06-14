@@ -2,38 +2,50 @@
 \label{Sec:MP:LeyesCondicionales}
 
 Al  considerar un  par de  vectores aleatorios  \ $X$  \ e  \ $Y$,  una pregunta
-natural  puede  ser c\'omo  caracterizar  el vector  $Y$  si  ``observamos $X  =
-x$''.  En otras  palabras, la  pregunta es  describir la  ley de  $Y$ ``sabiendo
-\modif{(o observando)}  que $X = x$''.  En lo que sigue,  para fijar notaci\'on,
+natural puede ser  c\'omo caracterizar el vector $Y$ si  ``observamos $X = x$''.
+En otras palabras,  la pregunta es describir la ley  de $Y$ ``sabiendo \modif{(o
+  observando)}  que  $X  =  x$''.   En  lo que  sigue,  para  fijar  notaci\'on,
 consideramos $(X,Y): (  \Omega , \A) \mapsto (\Rset^{d_X}  \! \times \Rset^{d_Y}
-\,   ,  \,   \B(\Rset^{d_X}  \!   \times  \Rset^{d_Y})   )$  tal   que   $X$  es
-$d_X$-dimensional e $Y$ es $d_Y$-dimensional (incluyendo los casos escalares).
+\,   ,  \,  \B(\Rset^{d_X}   \!   \times   \Rset^{d_Y})  )$   tal  que   $X$  es
+$d_X$-dimensional   e   $Y$   es   $d_Y$-dimensional   (incluyendo   los   casos
+escalares).  \modif{Escrimiremos  de nuevo  \  $\X  = X(\Omega)$  \  e  \ $\Y  =
+  Y(\Omega)$.}
 
 
 % ---------- Caso discreto
 
 \paragraph{Caso $\boldsymbol{X}$ discreta:}
-Un caso  sencillo a estudiar  es cuando $\X  = X(\Omega)$ es discreto.   En este
+Un caso  sencillo a estudiar  es cuando \  \modif{$\X$} \ es discreto.   En este
 caso, para  cualquier $x  \in \X$, tenemos  $P_X(x) = P(X  = x)  \ne 0$ y  de la
 definici\'on de  la probabilidad condicional Def.~\ref{Def:MP:ProbaCondicional},
-$P(Y \in A | X = x) = \frac{P(Y \in A \cap X = x)}{P(X=x)}$ define una medida de
-probabilidad que llamamos medida de probabilidad condicional y que denotaremos
-%
-\[
-P_{Y|X=x}(A) = P(Y \in A | X = x).
-\]
+$\displaystyle P(Y \in A | X = x) = \frac{P\big( (Y \in A) \cap (X = x) \big)}{P(X=x)}$ define
+una medida de probabilidad que llamamos medida de probabilidad condicional.
+% y que
+%denotaremos
+%%
+%\[
+%P_{Y|X=x}(A) = P(Y \in A | X = x).
+%\]
 %
 Siendo una medida de probabilidad, nos referimos a la subsecci\'on anterior para
 definir una funci\'on de  repartici\'on tomando $\displaystyle A = \prod_{i=1}^d
 (-\infty \; y_i]$, caracterizando completamente la medida de probabilidad:
 %
-\begin{definicion}[Funci\'on de repartici\'on condicional ($X$ discreto)]
-\label{Def:MP:ReparticionCondicionalDiscreta}
+\begin{definicion}[Medida de probabilidad y funci\'on de repartici\'on condicional ($X$ discreto)]\label{Def:MP:ReparticionCondicionalDiscreta}
 %
-  Por definici\'on, la funci\'on de repartici\'on condicional es,
+  \modif{Por   cualquier   $x  \in   \X$,   la   medida   condicional  de   $Y$,
+    condicionalmente a $(X = x)$, se define por
+    %
+    \[
+    \forall \: A \in \B\left( \Rset^{d_X} \right), \qquad P_{Y|X=x}(A) = P(Y \in
+    A | X = x),
+    \]
+}
+  %
+  y la funci\'on de repartici\'on condicional \modif{se define por},
   %
   \[
-  \forall \:  x \in  \X, \: y  \in \Y, \quad  F_{Y|X=x}(y) =  P( \left. Y  \le y
+  \forall \:  x \in  \X, \: y  \in \Y, \qquad  F_{Y|X=x}(y) =  P( \left. Y  \le y
   \right| X = x ) = \frac{P\left(  \left(Y \le y \right) \cap \left(X = x\right)
     \right)}{P\left(X = x\right)}.
   \]
@@ -52,7 +64,7 @@ de probabilidad, se puede definir una densidad de probabilidad condicional:
   %
   \[
   \forall \: x \in \X, \: y \in \Y, \quad p_{Y|X=x}(y) = P\left( \left. Y = y \right|
-  X  =  x \right)  =  \frac{P\Big(  (Y  = y)  \cap  (X =  x) \Big)}{P(X = x)}.
+  X  =  x \right)  =  \frac{P\big(  (Y  = y)  \cap  (X =  x) \big)}{P(X = x)}.
   \]
   %
   Si $Y$ es continua, es sencillo ver que $P_{Y|X=x} \ll P_Y$, i.e., $P_Y(B) = 0
@@ -78,51 +90,55 @@ de probabilidad, se puede definir una densidad de probabilidad condicional:
 
 % ---------- Caso continuo
 
-\paragraph{Caso $\boldsymbol{X}$ continua admitiendo una densidad:}
+\paragraph{\modif{Caso general:}}
 Cuando  $X$  es   continua,  el  problema  es  m\'as   sutil  porque  $P(X=x)  =
 0$. Entonces, no  se puede usar la definici\'on  de la probabilidad condicional,
 siendo el  evento $(X=x)$ de probabilidad  nula.  Sin embargo,  se pueden seguir
-los pasos  de R\'enyi~\cite[Cap.~5]{Ren} por ejemplo para  resolver el problema,
-llegando a un resultado intuitivo como en el caso discreto.
+los  pasos de R\'enyi~\cite[Cap.~5]{Ren}  o de  Feller~\cite[Cap.~10]{Fel71} por
+ejemplo para resolver el problema, llegando \modif{en el contexto continuo} a un
+resultado intuitivo como en el caso discreto.
 
-Sea $B  \in \B(\Rset^{d_Y})$ y definimos  la medida $\nu_B(A) =  P\Big( \left( X
-  \in A \right)  \cap \left( Y \in B \right) \Big)$  sobre $\left( \Rset^{d_Y} ,
-  \B(\Rset^{d_Y}) \right)$.  Es sencillo ver que siendo dado $B$, $\nu_B$ define
-una medida de  probabilidad. Adem\'as, $\nu_B \ll P_X$, i.e.,  $P_X(A) = P(X \in
+\modif{Sea $B  \in \B(\Rset^{d_Y})$ y definimos  $\nu_B(A) =  P\big( \left( X
+  \in A \right)  \cap \left( Y \in B \right) \big)$  sobre $\left( \Rset^{d_X} ,
+  \B(\Rset^{d_X}) \right)$.  Es sencillo ver que siendo dado $B$, $\nu_B$ define
+una medida}. Adem\'as, $\nu_B \ll P_X$, i.e.,  $P_X(A) = P(X \in
 A) = 0 \: \Rightarrow \: 0 = P\Big(  (X \in A) \cap (Y \in B) \Big) = \nu_B(A)$.
 Por  teorema de  Radon-Nikod\'ym~\ref{Teo:MP:RadonNikodym},  $\nu_B$ admite  una
 densidad $g_B$ con respecto a $P_X$,
 %
 \[
-\forall \: A, \quad P\Big( (X \in A)  \cap (Y \in B) \Big) = \int_A g_B(x) \,
-dP_X(x).
+\forall \:  A \in \B\left( \Rset^{d_X} \right),  \quad P\big( (X \in  A) \cap (Y
+\in B) \big) = \int_A g_B(x) \, dP_X(x).
 \]
 %
-Claramente \ $g_B \ge 0$, \ y de \ $P(X \in A) = P\Big( (X \in A) \cap (Y \in B)
-\Big) + P\Big( (X \in A) \cap  (Y \in B) \Big)$, \ie $\displaystyle 0 \le P\Big(
-(X \in A) \cap (Y \in B) \Big)  = \int_A dP_X(x) - \int_A g_B(x) \, dP_X(x)$, se
-obtiene \ $0  \le g_B \le 1$.  En  realidad, tenemos \ $g_B \le  1$ \ $P_X$-casi
-siempre, pero olvidando esta subtilesa, llamaremos la funci\'on \ $g_B$ \ medida
-de probabilidad condicional y, por continuaci\'on, la funci\'on de repartici\'on
-condicional:
+Claramente \ $g_B \ge 0$, \ y de \ \modif{$P(X \in A) = P\big( (X \in A) \cap (Y
+  \in  B) \big)  + P\big(  (X \in  A)  \cap (Y  \in \overline{B}  ) \big)$,  \ie
+  $\displaystyle \forall  \: A  \in \B\left( \Rset^{d_X}  \right), \qquad  0 \le
+  P\big( (X  \in A) \cap  (Y \in \overline{B})  \big) = \int_A dP_X(x)  - \int_A
+  g_B(x) \, dP_X(x)$}, se  obtiene \ $0 \le g_B \le 1$.   En realidad, tenemos \
+$g_B \le 1$  \ $P_X$-casi siempre, pero olvidando  esta subtilesa, llamaremos la
+funci\'on  \   $g_B$  \  medida  de  probabilidad   condicional\modif{,  y,  por
+  continuaci\'on se  define la funci\'on de repartici\'on  condicional de manera
+  siguiente:}
 %
 \begin{definicion}[Medida   de  probabilidad   y   funci\'on  de   repartici\'on
-  condicional ($X$ continuo)]
+  condicional]
 \label{Def:MP:MedidaCondicional}
 %
   La medida de probabilidad condicional de $P_{Y|X=x}$ es definida tal que
   %
   \[
-  \forall \: (A,B) \in \X \times \Y,  \quad P\Big( (X \in A) \cap (Y \in B) \Big)
-  = \int_A P_{Y|X=x}(B) \, dP_X(x).
+  \forall \: (A,B) \in  \B\left( \Rset^{d_X} \right) \times \B\left( \Rset^{d_Y}
+  \right), \quad P\big( (X \in A) \cap  (Y \in B) \big) = \int_A P_{Y|X=x}(B) \,
+  dP_X(x).
   \]
   %
-  Tomando $B  = \optimes_i  (-\infty \; y_i]$  se obtiene la  funci\'on de
-  repartici\'on condicional a partir de
+  Tomando $B = \optimes_i \left( -\infty \; y_i \right]$ se obtiene la funci\'on
+  de repartici\'on condicional a partir de
   %
   \[
-  \forall \: (A,B) \in \X \times \Y, \quad P\Big( (X \in A) \cap (Y \le y) \Big) =
-  \int_A F_{Y|X=x}(y) \, dP_X(x).
+  \forall \:  A \in  \B\left( \Rset^{d_X} \right),  \: y \in  \Y, \quad
+  P\big( (X \in A) \cap (Y \le y) \big) = \int_A F_{Y|X=x}(y) \, dP_X(x).
   \]
   %
   Ad\'emas, si $X$ admite una densidad  de probabilidad $p_X$, $dP_X = p_X dx$ y
@@ -136,19 +152,43 @@ condicional:
   o, por diferenciaci\'on, para cualquier $y \in \Y$,
   %
   \[
-  F_{Y|X=x}(y)   =  \frac{\frac{\partial^{d_X}}{\partial  x_1   \ldots  \partial
-      x_{d_X}} F_{X,Y}(x,y)}{p_X(x)}.
+  F_{Y|X=x}(y)         =        \frac{\displaystyle        \frac{\partial^{d_X}
+      F_{X,Y}(x,y)}{\partial x_1 \ldots \partial x_{d_X}}}{p_X(x)}.
   \]
 \end{definicion}
 %
-\noindent Nota: Tomando  $A = \X$, de la primera f\'ormula  que define la medida
+\modif{\noindent Nota: Tomando  $A = \X$, de la primera f\'ormula  que define la medida
 de probabilidad condicional se recupera  el equivalente continuo de la f\'ormula
-de probabilidad total, que se escribe con la densidad $dP_X = p_X d\mu_L$ si $X$
-admite una densidad.
+de probabilidad total:
+%
+\begin{lema}[F\'ormula de probabilidad total (caso general)]
+\label{Lem:MP:ProbaTotalGeneral}
+%
+%  Sean \  $X$ \  e \ $Y$  \ vectores aleatorias  y $\X  = X(\Omega), \quad  \Y =
+%  Y(\Omega)$. Entonces
+  %
+  \[
+  \forall \  B \in  \B\left( \Rset^{d_Y}  \right), \qquad P(Y  \in B)  = \int_\X
+  P_{Y|X=x}(B) \, dP_X(x)
+  \]
+  %
+  lo que da en termino de funci\'on de repartici\'on condicional
+  %
+  \[
+  F_Y(y) = \int_\X F_{Y|X=x}(y) \, dP_X(x)
+  \]
+  %
+  Si $P_X$  admite una densidad, se  escribe todo notando que  $dP_X(x) = p_X(x)
+  d\mu_L(x) \equiv p_X(x) dx$.
+\end{lema}
+% que se escribe con la densidad $dP_X = p_X d\mu_L$ si $X$
+%admite una densidad.
+}
 
-Por \'ultimo, si $(X,Y)$ admite una  densidad, en sencillo ver  que $P_{Y|X=x} \ll
+Por \'ultimo, si $(X,Y)$ admite una densidad, en sencillo ver que $P_{Y|X=x} \ll
 \mu_L$,  y entonces  \ $P_{Y|X=x}$  \ admite  una densidad  que  llamaremos {\it
-  densidad de probabilidad condicional}. Sean $A \in \B(\X)$ y $B$,
+  densidad  de  probabilidad  condicional}.  Sean $A  \in  \B\left(  \Rset^{d_X}
+\right)$ y $B \in \B\left( \Rset^{d_Y} \right)$,
 %
 \begin{eqnarray*}
 P\Big( (X \in A) \cap (Y \in B) \Big) & = & \int_{A \times B} p_{X,Y}(x,y) \, dx \, dy\\[2mm]
@@ -183,8 +223,9 @@ P_{Y|X=x}(A) = \int_A \frac{p_{X,Y}(x,y)}{p_X(x)} \, dy.
 
 De hecho, esta  construcci\'on rigurosa coincide con la  intuici\'on que podemos
 tener en este  caso continuo. Por ejemplo, podemos  pensar a $F_{Y|X=x}(y)$ como
-caso l\'imite de $P(\left. Y \le y \right|  x \le X \le x+\delta x) = \frac{P( Y
-  \le  y \:  \cap \:  x \le  X \le  x+\delta x)}{P(x  \le X  \le x+\delta  x)} =
+caso l\'imite de $\displaystyle P\left( Y \le y \: \Big| \: x \le X \le x+\delta
+  x \right) = \frac{P\big( \left( Y \le y  \right) \: \cap \: \left( x \le X \le
+    x+\delta  x  \right)  \big)}{P\left( x  \le  X  \le  x+\delta x  \right)}  =
 \frac{F_{X,Y}(x+\delta  x ,  y) -  F_{X,Y}(x  , y)}{F_X(x+\delta  x) -  F_X(x)}$
 cuando \ $\delta  x$ \ tiende a 0.   En el caso escalar, se  calcula por ejemplo
 haciendo un  desarrollo de Taylor del numerador  y del denominador a  orden 1, o
@@ -192,7 +233,7 @@ usando la regla de l'H\^opital~\footnote{De hecho, esta regla es debido al suizo
   J.  Bernoulli  que tuvo  un acuerdo financiero  con el  Guillaume Fran\c{c}ois
   Antoine, marqu\'es  de l'H\^opital, permitiendolo de  publicar unos resultados
   de Bernoulli bajo  su nombre.}  para re-obtener la  funci\'on de repartici\'on
-condicional   de   la   definici\'on~\ref{Def:MP:FRCondicional}.  En   el   caso
+condicional   de  la   definici\'on~\ref{Def:MP:FRCondicional}.    En  el   caso
 multivariado,  hace  falta  hacer  los  desarollos hasta  el  orden  $d_X$  para
 concluir.
 
@@ -209,31 +250,66 @@ Notar  que:
   integraci\'on con respecto a $y$ obtenemos la condici\'on de normalizaci\'on
   %
   \[
-  \int_{\Rset^{d_Y}} p_{Y|X=x}(y) \, dy = 1;
+  \int_{\modif{\Y}} p_{Y|X=x}(y) \, dy = 1.
   \]
+  %
+  %\modif{con $\Y = Y(\Omega)$.}
 %
-\item escribiendo  \ $p_{X,Y}(x,y)  = p_{Y|X=x}(y) \,  p_X(x) =  p_{X|Y=y}(x) \,
-  p_Y(y)$, \ se obtiene
-  %
-  \[
-  p_{Y|X=x}(y)   =  \frac{p_{X|Y=y}(x) \,   p_Y(y)}{p_X(x)}   =  \frac{p_{X|Y=y}(x)
-    \, p_Y(y)}{\displaystyle \int_{\Rset^{d_Y}} p_{X|Y=y}(x) \, p_Y(y) \, dy},
-  \]
-  %
-  equivalente continuo, con densidades, de la f\'ormula de Bayes;
+%\item escribiendo  \ $p_{X,Y}(x,y)  = p_{Y|X=x}(y) \,  p_X(x) =  p_{X|Y=y}(x) \,
+%  p_Y(y)$, \ se obtiene
+%  %
+%  \[
+%  p_{Y|X=x}(y)   =  \frac{p_{X|Y=y}(x) \,   p_Y(y)}{p_X(x)}   =  \frac{p_{X|Y=y}(x)
+%    \, p_Y(y)}{\displaystyle \int_{\Rset^{d_Y}} p_{X|Y=y}(x) \, p_Y(y) \, dy},
+%  \]
+%  %
+%  equivalente continuo, con densidades, de la f\'ormula de Bayes;
 %
-\item  por la  expresi\'on  \ $p_{X,Y}(x,y)  =  p_{Y|X=x}(y) \,  p_X(x)$, \  por
-  integraci\'on con respecto a $x$ obtenemos
-  %
-  \[
-  p_Y(y) = \int_{\Rset^{d_X}} p_{Y|X=x}(y) \, p_X(x) \, dx,
-  \]
-  %
-  generalizaci\'on de la f\'ormula de  probabilidades totales al caso continuo con
-  densidad de probabilidad.
+%\item  por la  expresi\'on  \ $p_{X,Y}(x,y)  =  p_{Y|X=x}(y) \,  p_X(x)$, \  por
+%  integraci\'on con respecto a $x$ obtenemos
+%  %
+%  \[
+%  p_Y(y) = \int_{\Rset^{d_X}} p_{Y|X=x}(y) \, p_X(x) \, dx,
+%  \]
+%  %
+%  generalizaci\'on de la f\'ormula de  probabilidades totales al caso continuo con
+%  densidad de probabilidad.
 \end{itemize}
 
-Volvemos al ejemplo~\ref{Ej:MP:Suma}:
+\modif{Tambi\'en, se  escribe la f\'ormula  de probabilidad total a  trav\'es de
+  las densidades por la expresi\'on  \ $p_{X,Y}(x,y) = p_{Y|X=x}(y) \, p_X(x)$ \
+  y luego por integraci\'on con respecto a $x$:
+%
+\begin{lema}[F\'ormula d eprobabilidad total (caso con densidades)]
+\label{Lem:MP:ProbaTotalContinuo}
+%
+  Si  \  $(X,Y)$ \  admite  una  densidad  de probabilidad  conjunta  $p_{X,Y}$,
+  entonces \ $Y$ \ tiene una  densidad de probabilida que se recupera a trav\'es
+  de la f\'ormula
+  %
+  \[
+  p_Y(y) = \int_\X p_{Y|X=x}(y) \, p_X(x) \, dx.
+  \]
+\end{lema}
+
+De  la expresi\'on  la  densidad condicional,  $p_{X,Y}(x,y)  = p_{Y|X=x}(y)  \,
+p_X(x) =  p_{X|Y=y}(x) \, p_Y(y)$,  y de la  f\'ormula de probabilidad  total se
+recupera sencillamente el equivalente continuo de la formula de Bay\'es:
+%
+\begin{lema}[F\'ormula de Bayes (caso continuo)]\label{Lem:MP:BayesContinuo}
+%
+%  Sean  \ $X$  \ e  \ $Y$  \  vectores aleatorias  que admiten  una densidad  de
+%  probabilidad  conjunta   $p_{X,Y}$,  y   \  $\X  =   X(\Omega),  \quad   \Y  =
+%  Y(\Omega)$. Entonces
+  %
+  \[
+  \forall \, y \in \Y, \qquad p_{Y|X=x}(y)    =  \frac{p_{X|Y=y}(x)
+    \, p_Y(y)}{\displaystyle \int_\Y p_{X|Y=y}(x) \, p_Y(y) \, dy}.
+  \]
+\end{lema}
+}
+
+Volvemos \modif{ahora} al ejemplo~\ref{Ej:MP:Suma}:
 %, pagina~\pageref{Ej:MP:Suma}:
 %
 \begin{ejemplo}[Distribuci\'on condicional de la suma de vectores aleatorios]

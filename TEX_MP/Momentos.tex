@@ -50,12 +50,13 @@ probabilidad asociada a ese valor,
 \end{definicion}
 %
 La secunda formulaci\'on  del valor medio se proba  sencillamente, empezando por
-$X = \un_A$ para unos $A$.   Entonces $P_X = (1-P(A)) \delta_0 + P(A) \delta_1$.
-Luego  $\displaystyle \int_\Omega  \un_A(\omega)  dP(\omega) =  P(A) =  (1-P(A))
-\times 0 +  P(A) \times 1 = \int_\Rset  x dP_X(x)$.  Se cierra la  prueba con el
-teorema~\ref{Teo:MP:MedibleLimite} dando cualquier  funci\'on medible como limite
-de funciones escalonadas,  y por la definici\'on~\ref{Def:MP:IntegracionReal} de
-la integral de cualquier funci\'on medible.
+$X =  \un_A$ para unos $A \in  \B(\Rset)$.  Entonces $P_X =  (1-P(A)) \delta_0 +
+P(A)  \delta_1$.  Luego  $\displaystyle \int_\Omega  \un_A(\omega)  dP(\omega) =
+P(A) = (1-P(A)) \times 0 + P(A)  \times 1 = \int_\Rset x dP_X(x)$.  Se cierra la
+prueba  con  el  teorema~\ref{Teo:MP:MedibleLimite}  dando  cualquier  funci\'on
+medible    como     limite    de    funciones    escalonadas,     y    por    la
+definici\'on~\ref{Def:MP:IntegracionReal} de la  integral de cualquier funci\'on
+medible.
 
 Luego,   de    la   distribuci\'on   marginal    $\displaystyle   P_{X_i}(B)   =
 \int_{\Rset^{i-1}   \times   B   \times   \Rset^{d-i}}  dP_X(x)$,   se   obtiene
@@ -142,12 +143,12 @@ $P_X$, como en el ejemplo~\ref{Ej:MP:Mixta}  pagina~\pageref{Ej:MP:Mixta}:
 %
 Sea $X =  V \, \un_{U <  \frac12} + \un_{U \ge \frac12}$  \ con \ $U$ \  y \ $V$
 variables aleatorias  independientes de distribuci\'on uniformas sobre  \ $[0 \;
-1)$, \ie  $p_U(x) = \un_{[0 \;  1)}(x)$. \ De \  $X \in B  \: \Leftrightarrow \:
+1)$, \ie  $p_U(x) = \un_{[0 \;  1)}(x)$. \ De \  $(X \in B)  \: \Leftrightarrow \:
 \left( \left( U < \frac12 \right) \cap \left( V \in B \right) \right) \, \cup \,
 \left( \left( U \ge \frac12 \right) \cap  \left( 1 \in B \right) \right)$, \ del
 hecho de que  los eventos de la uni\'on son incompatibles  y de la independencia
 de $U$ y $V$ (o saliendo de la funci\'on de repartici\'on), se obtiene $P_X(B) =
-\frac12  P_V(B)  + \frac12  \delta_1(x)$.   A  continuaci\'on, \  $\displaystyle
+\frac12  P_V(B)  + \frac12  \delta_1(B)$.   A  continuaci\'on, \  $\displaystyle
 \Esp[X] = \frac12 \int_\Rset dP_V(x) + \frac12 \int_\Rset d\delta_1(x) = \frac12
 \int_\Rset p_V(x)  \, dx + \frac12  \times 1 =  \frac12 \int_0^1 dx +  \frac12 =
 \frac34$.
@@ -372,27 +373,41 @@ Gamma~\cite{AbrSte70, AndAsk99, GraRyz15}   \   (usamos   la  convenci\'on   usu
   En el caso escalar, la varianza se escribe en general
   %
   \[
-  \Var[X] = \Esp\left[ \left( X  - m_X \right)^2 \right]
+  \Var[X] \equiv \sigma_X^2 = \Esp\left[ \left( X  - m_X \right)^2 \right]
   \]
   %
   y  es  una  medida  del  cuadrado  del  ancho  efectivo  de  una  densidad  de
-  probabilidad  (o vector  de  probabilidad).  Para dos  componentes  $i \ne  j$
-  hablamos de {\it covarianza entre variables}, y escribimos
+  probabilidad (o vector de probabilidad). \modif{Para dos vectores aleatorios \
+    $X$ \ e  \ $Y$ \ respectivamente $d_X$ y  $d_Y$-dimensonal, hablamos de {\it
+      covarianza entre $X$ e $Y$}, que se escribe
   %
-  \[
-  \Cov[X_i,X_j]  =  \Esp\left[ \left(  X_i  -  m_{X_i}  \right) \left(  X_j  -
-      m_{X_j} \right) \right].
-  \]
+    \[
+    \Sigma_{X,Y} = \equiv \Cov[X,Y] = \Esp\left[ \left( X - m_X \right) \left( Y
+        - m_Y \right)^t \right].
+    \]
   %
-  La matriz de covarianza tiene las varianzas de los $X_i$ en su diagonal, y las
-  covarianzas entre  componentes en las componentes no  diagonales.  Es sencillo
-  ver de que \ $\Cov[X]$ es sim\'etrica, por construcci\'on, y de que \ $\Cov[X]
-  \ge 0$ \ donde $A \ge 0$  significa que la matriz es, definida no negativa (en
-  el caso escalar la varianza es no negativa), con igualdad s\'olo cuando $P_X =
-  \delta_{x_0}$ para  un $x_0$ dado, esto  es, cuando no hay  incerteza sobre el
-  resultado.    De    la   desigualdad   de    Cauchy-Bunyakovsky-Schwarz   (ver
-  corolario~\ref{Cor:MP:CBS},      pagina~\pageref{Cor:MP:CBS})     se     proba
-  sencillamente  de  que
+    Entonces,  para dos  componentes $i  \ne j$  de $X$,  $\Sigma_X$  tiene como
+    $(i,j)$-\'esima componente la  covarianza $\Cov[X_i,X_j] = \Esp\left[ \left(
+        X_i -  m_{X_i} \right) \left( X_j  - m_{X_j} \right)  \right]$ entre las
+    variables $X_i$ y $X_j$
+    % , y escribimos
+    %  %
+  %  \[
+  %  \Cov[X_i,X_j]  =  \Esp\left[ \left(  X_i  -  m_{X_i}  \right) \left(  X_j  -
+  %      m_{X_j} \right) \right].
+  %  \]
+  %
+ % La matriz de covarianza tiene 
+    y tiene las varianzas de los  $X_i$ en su diagonal. Notar que \[\Sigma_{X,Y}
+    = \Sigma_{Y,X}^t.\] Adem\'as,
+  % , y las covarianzas entre componentes en las componentes no diagonales.
+    es  sencillo ver  que \  $\Sigma_X  \in P_d(\Rset)$,  \ie \  $\Cov[X]$ \  es
+    sim\'etrica, por  construcci\'on, y \ $\Cov[X]  \ge 0$ ($\forall  \, \mu \in
+    \Rset, \quad \mu^t \Sigma_X \mu \ge 0$; en el caso escalar la varianza es no
+    negativa),} con  igualdad s\'olo cuando  $P_X = \delta_{x_0}$ para  un $x_0$
+  dado, esto es, cuando no hay  incerteza sobre el resultado.  De la desigualdad
+  de       Cauchy-Bunyakovsky-Schwarz      (ver      corolario~\ref{Cor:MP:CBS},
+  pagina~\pageref{Cor:MP:CBS}) se proba sencillamente de que
   %
   \[
   \left| \Cov[X_i,X_j] \right|^2 \le \sigma_{X_i}^2 \sigma_{X_j}^2,
@@ -412,22 +427,25 @@ Gamma~\cite{AbrSte70, AndAsk99, GraRyz15}   \   (usamos   la  convenci\'on   usu
   \Tr \Sigma_X,\] $\Tr$  siendo la traza y \ $|\cdot|$ \  la norma euclideana de
   un  vector.  La  covarianza  est\'a bien  definida  si $|X|$  es una  variable
   aleatoria de  cuadrado integrable,  esto es, cuando  $E[|X|^2] <  \infty$.  Se
-  proba sencillamente (desallorando el ``cuadrado'' y usando la linealidad de la
+  proba sencillamente \modif{(desallorando el ``producto'' y usando la linealidad de la
   esperanza) de que
   %
   \[
-  \Cov[X] = \Esp\left[ X X^t \right] - m_X m_X^t
+  \Cov[X,Y] = \Esp\left[ X Y^t \right] - m_X m_Y^t
   \]
   %
-  conocido como  {\it teorema  de K\"onig-Huygens}.  En  el caso escalar,  es el
-  equivalente del teorema de Huygens de la mec\'anica relacionando el momento de
-  inertia de un solido con respeto al origen en funci\'on del momento de inertia
-  con respeto al centro de masa. Adem\'as, inmediatamente,
+} conocido como  {\it teorema de K\"onig-Huygens}.  En  el caso escalar \modif{y
+  $X  =  Y$},  es  el  equivalente  del teorema  de  Huygens  de  la  mec\'anica
+relacionando  el momento  de  inertia de  un  solido con  respeto  al origen  en
+funci\'on  del momento  de  inertia con  respeto  al centro  de masa.  \modif{Adem\'as,
+inmediatamente,
   %
   \[
-  \forall \: A \in \Rset^{d' \times d}, \:  b \in \Rset^d, \quad \Cov[A X + b] =
-  A \Cov[X] A^t.
+  \forall \: A  \in \M_{d'_X,d_X}(\Rset), \: B \in  \M_{d'_Y,d_Y}(\Rset), \: c \in
+  \Rset^{d_X}, \: d \in \Rset^{d_Y}, \quad \Cov[A X + c , B Y + d] = A \Cov[X,Y]
+  B^t.
   \]
+}
   %
   En el caso escalar, $d = 1$,  lo que es conocido tambi\'en como el {\it ancho}
   de una distribuci\'on est\'a dado por la {\it desviaci\'on est\'andar}
@@ -508,29 +526,29 @@ Gamma~\cite{AbrSte70, AndAsk99, GraRyz15}   \   (usamos   la  convenci\'on   usu
   \]
 \end{itemize}
 
-Tratando de covarianza, m\'as generalmente, para dos vectores aleatorios \ $X$ \
-e \ $Y$, se define la matriz de covarianza conjunta como
-%
-\[
-\Sigma_{X,Y} \equiv  \Cov[X,Y] =  \Esp\left[ \left( X  - m_X\right) \left(  Y -
-    m_Y \right)^t \right] = \Esp\left[ X Y^t \right] - m_X m_Y^t.
-\]
-%
-Esta matriz contiene las covarianzas $\Cov[X_i,Y_j]$.
+%Tratando de covarianza, m\'as generalmente, para dos vectores aleatorios \ $X$ \
+%e \ $Y$, se define la matriz de covarianza conjunta como
+%%
+%\[
+%\Sigma_{X,Y} \equiv  \Cov[X,Y] =  \Esp\left[ \left( X  - m_X\right) \left(  Y -
+%    m_Y \right)^t \right] = \Esp\left[ X Y^t \right] - m_X m_Y^t.
+%\]
+%%
+%Esta matriz contiene las covarianzas $\Cov[X_i,Y_j]$.
 
 
-\SZ{Caso  complejos a  hacer  (SZ: me  encargo  de eso):  usando la  biyecci\'on
-  $\Cset^d$ y $\Rset^{2 d}$; Pero, en terminos complejos, habria que definir los
-  momentos  de  orden   superior  con  los  $Z_i$  y   $Z_i^*$  para  no  perder
-  ``informaciones''.  Al  orden 1,  no hay perdida  por biyecci\'on  $\Cset^d$ y
-  $\Rset^{2 d}$.   Al orden 2 por ejemplo,  si miramos los que  es definido como
-  matriz  de covarianza  en el  caso complejo  $\Esp[(Z-m_Z)  (Z-m_Z)^+]$ matriz
-  hermitica; si  comparamos a la  covarianza de $\widetilde{Z}$\ldots  Se pierde
-  momentos,  lo  que es  obvio  (en  la  definicion complejas  tenemos  $\frac{d
-    (d+1}{2}$ momentos diferentes (los otros se obtienen por simetria), mientras
-  que en realidad al orden 2 hay $d (2d+1)$ momentos.  Se define as\'i... pseudo
-  covarianza. Se complica a\'un m\'as  al orden superior.  Ver caso circular: la
-  pseudo covarianza vale 0.}
+%\SZ{Caso  complejos a  hacer  (SZ: me  encargo  de eso):  usando la  biyecci\'on
+%  $\Cset^d$ y $\Rset^{2 d}$; Pero, en terminos complejos, habria que definir los
+%  momentos  de  orden   superior  con  los  $Z_i$  y   $Z_i^*$  para  no  perder
+%  ``informaciones''.  Al  orden 1,  no hay perdida  por biyecci\'on  $\Cset^d$ y
+%  $\Rset^{2 d}$.   Al orden 2 por ejemplo,  si miramos los que  es definido como
+%  matriz  de covarianza  en el  caso complejo  $\Esp[(Z-m_Z)  (Z-m_Z)^+]$ matriz
+%  hermitica; si  comparamos a la  covarianza de $\widetilde{Z}$\ldots  Se pierde
+%  momentos,  lo  que es  obvio  (en  la  definicion complejas  tenemos  $\frac{d
+%    (d+1}{2}$ momentos diferentes (los otros se obtienen por simetria), mientras
+%  que en realidad al orden 2 hay $d (2d+1)$ momentos.  Se define as\'i... pseudo
+%  covarianza. Se complica a\'un m\'as  al orden superior.  Ver caso circular: la
+%  pseudo covarianza vale 0.}
 
 % ================================= Independencia, identidades y desigualdades
 
@@ -560,9 +578,9 @@ y como se comporta la covarianza de estas:
   = y_k)$. Luego
   %
   \begin{eqnarray*}
-  \Esp[X Y] & = & \sum_{j,k} x_j y_k \Esp[\un_{A_j} \un_{B_k}]\\[2.5mm]
+  \Esp[X Y] & = & \sum_{j,k} x_j y_k \Esp\left[ \un_{A_j} \un_{B_k} \right]\\[2.5mm]
   %
-  & = & \sum_{j,k} x_j y_k \Esp[\un_{A_j \cap B_k}]\\[2.5mm]
+  & = & \sum_{j,k} x_j y_k \Esp\left[ \un_{A_j \cap B_k} \right]\\[2.5mm]
   %
   & = & \sum_{j,k} x_j y_k P(A_j \cap B_k)\\[2.5mm]
   %
@@ -580,18 +598,20 @@ Fijense  de que  la  reciproca es  falsa en  general:
 \begin{ejemplo}[Uniforme sobre el disco unitario]
 \label{Ej:MP:UniformeDiscoUnitario}
 %
-  Sea \  $X =  (X_1,X_2)$ \ uniforme  sobre el  disco unitario, i.e.,  $p_X(x) =
-  \frac{1}{\pi} \un_{\Sset^2}(x)$ \  con \ $\Sset^2 = \{  (x_1,x_2) \in \Rset^2:
-  \:  x_1^2  +  x_2^2  \le  1  \}$.  Claramente,  los  \  $X_i$  no  pueden  ser
-  independientes del hecho de que  \ $\X_i = [-1 \; 1]$ \  y \ $\X \ne \X_1
-  \times \X_2$  \ (es  estrictamente incluido en  el producto  cartesiano).  Por
-  simetr\'ia central de  $p_X$, es sencillo ver  de que $\Esp[X_1 X_2] =  0$ \ y
-  similarmente  \ $\Esp[X_i]  =  0$:  a pesar  de  que los  \  $X_i$  \ no  sean
-  independientes, $\Cov[X_1,X_2] = 0$.
+  Sea  \ $X  =  (X_1,X_2)$ \  uniforme  sobre el  disco  unitario \modif{o  bola
+    unitaria  2-dimensional  $\Bset_2$   (ver  notaciones)},  i.e.,  $p_X(x)  =
+    \frac{1}{\pi} \un_{\Sset^2}(x)$.
+    % \ con \ $\Sset^2 = \{ (x_1,x_2) \in \Rset^2: \: x_1^2 + x_2^2 \le 1 \}$.
+    Claramente, los \ $X_i$ no pueden ser independientes del hecho que \ $\X_i =
+    [-1 \; 1]$ \  y \ $\X \ne \X_1 \times \X_2$  \ (es estrictamente incluido en
+    el producto cartesiano).   Por simetr\'ia central de $p_X$,  es sencillo ver
+    que $\Esp[X_1 X_2] =  0$ \ y similarmente \ $\Esp[X_i] =  0$: a pesar de que
+    los \ $X_i$ \ no sean independientes, $\Cov[X_1,X_2] = 0$.
 \end{ejemplo}
 
-Esta implicaci\'on facilita frecuentemente  los calculos de media.  Volviendo al
-ejemplo~\ref{Ej:MP:Mixta}  de la  pagina~\pageref{Ej:MP:Mixta}:
+\modif{La  consecuencia  de  la  independencia  sobre  la  covarianza}  facilita
+frecuentemente los calculos de media.  Volviendo al ejemplo~\ref{Ej:MP:Mixta} de
+la pagina~\pageref{Ej:MP:Mixta}:
 %
 \begin{ejemplo}[Continuaci\'on del ejemplo~\ref{Ej:MP:Mixta}]
 \label{Ej:EspMixtaInd}
@@ -599,9 +619,9 @@ ejemplo~\ref{Ej:MP:Mixta}  de la  pagina~\pageref{Ej:MP:Mixta}:
 Tratando de la media  de \ $X = V \, \un_{U < \frac12}  + \un_{U \ge \frac12}$ \
 con \ $U$ \ y \ $V$ \ variables independientes de distribuci\'on uniformas sobre
 $(0 \; 1)$, se calcula gracia a la linealidad y a la independencia, \ $\Esp[X] =
-\Esp[V] \Esp[\un_{U  < \frac12}]  + \Esp[\un_{U \ge  \frac12}] =  \frac12 \times
-\frac12  + \frac12  =  \frac34$ \  como lo  hemos  obtenido usando  $P_X$ en  la
-pagina~\pageref{Ej:MP:EspMixta}      o       la      positividad      en      la
+\Esp[V] \Esp\left[  \un_{U < \frac12}  \right] + \Esp\left[ \un_{U  \ge \frac12}
+\right] = \frac12  \times \frac12 + \frac12 = \frac34$ \  como lo hemos obtenido
+usando  $P_X$  en la  pagina~\pageref{Ej:MP:EspMixta}  o  la  positividad en  la
 pagina~\pageref{Ej:MP:EspMixtaPositiva}.
 \end{ejemplo}
 
@@ -735,7 +755,7 @@ como se lo puede ver en el ejemplo siguiente
   encontrar  una  fluctuaci\'on superior  a  $\varepsilon  =  3 \sigma_X$,  tres
   desviaciones est\'andar alrededor  de la media, est\'a por  debajo de \ $1/9$;
   el c\'alculo para  una distribuci\'on t\'ipica como la  Gaussiana, \ $p_X(x) =
-  \frac{1}{\sqrt{2  \pi} \sigma_X}  \exp\left( -  \frac{x-m_X)^2}{2}  \right)$ \
+  \frac{1}{\sqrt{2  \pi} \sigma_X}  \exp\left( -  \frac{(x-m_X)^2}{2}  \right)$ \
   ajusta dicha probabilidad por debajo de $0.003$.
 \end{ejemplo}
 
@@ -757,11 +777,14 @@ aleatorio.
   %
   $\phi$ es dicha estrictamente convexa  si la desigualdad es estricta, salvo si
   $x_2  =  x_1$.\newline Se  puede  ver  de  que si  \  $\phi$  \ es  dos  veces
-  diferenciable, su matriz Hessiana, $\Hess \phi \ge 0$ donde las componentes de
-  la Hessiana son las  derivadas partiales secundas de $\phi$, $\frac{\partial^2
-    \phi}{\partial x_i  \partial x_j}$.\newline Por  recurrencia, para cualquier
-  conjunto \ $\{ x_i \}_i$ numerable de elementos de \ $\X$ \ y reales positivos
-  \ $\{ \pi_i \}_i$ \ tales que $\sum_i \pi_i = 1$,
+  diferenciable, su matriz Hessiana \modif{es simetrica no negativa, $\Hess \phi
+    \in P_d(\Rset)$}.\newline
+  % $\Hess \phi  \ge 0$ donde las  componentes de la Hessiana  son las derivadas
+  % partiales secundas de  $\phi$, $\frac{\partial^2 \phi}{\partial x_i \partial
+  %   x_j}$.\newline 
+  \modif{Se muestra por recurrencia au}, para cualquier conjunto \ $\{ x_i \}_i$
+  numerable de  elementos de \  $\X$ \  y reales positivos  \ $\{ \pi_i  \}_i$ \
+  tales que $\sum_i \pi_i = 1$,
   %
   \[
   \phi\left( \sum_i \pi_i x_i \right) \le \sum_i \pi_i \phi(x_i).

@@ -1,11 +1,51 @@
 \seccion{Esperanza condicional}
 \label{Sec:MP:EsperanzaCondicional}
 
+Vimos en  la secci\'on~\ref{Sec:MP:LeyesCondicionales} que  una pregunta natural
+era de, dados  dos vectores aleatorios \  $X$ \ e \ $Y$,  caracterizar el vector
+$Y$ si ``observamos $X$''.  M\'as adelante,  nos podemos interesar a la media de
+$Y$ cuando observamos  $X$. Una manera intuitiva es de  definir tal media cuando
+``sabemos'' que  $X=x$ a partir  de la ley  condicional $P_{Y|X=x}$~\cite{Fel68,
+  Fel71, AthLah06, Spi76, Kol56, JacPro03}:
 
+\begin{definicion}[Esperanza condicional]
+  Sean   $X$   e  $Y$   dos   vectores   aleatorios   respectivamente  $d_X$   y
+  $d_Y$-dimensionales, y sea la funci\'on
+  %
+  \[
+  f(x) \equiv \Esp[Y | X=x ] = \int_{\Rset^{d_Y}} y \, dP_{Y|X=x}(y)
+  \]
+  %
+  Se define la esperanza condicional de $Y$ condicionalment a $X$ como siendo la
+  variable aleatoria
+  %
+  \[
+  \Esp[Y|X] = f(X)
+  \]
+\end{definicion}
 
-\SZ{Hablar de esperanza condicional y esperanza total
+La media condicional se revela muy  \'util y poderoso para evaluar esperanzas de
+variables  aleatorias por ejemplo  gracia a  la formula  de la  esperanza total,
+equivalente      de      las       formulas      de      probabilidad      total
+lema~\ref{Lem:MP:ProbaTotalDiscreto},    lema~\ref{Lem:MP:ProbaTotalGeneral}   y
+lema~\ref{Lem:MP:ProbaTotalContinuo}.
 
-$\Esp[Y|X=x] = \int y dP_{Y|X=x}(y)$ \ y por definici\'on...
+%
+\begin{teorema}[Media total]\label{Teo:MP:EsperanzaTotal}
+%
+La media (total) del vector aleatorio \ $Y$ \ concide con la media de la esperanza condicional, \ie
+%
+\[
+\Esp[Y] = \Esp\left[ \Esp\left[ Y | X\right] \right]
+\]
+\end{teorema}
+%
+\begin{proof}
+%Considera el caso $Y = \un_B$ \ con \ $B \in \Y$
+\end{proof}
+
+\SZ{Hablar esperanza total
+
 
 $\Esp[Y] = \Esp\left[ \Esp[Y|X=x] \right]$ esperanza total. Similar a la formula de probabilidades totales pagina~\pageref{:MP}.
 

@@ -363,29 +363,69 @@ Algunas propiedades interesantes son las siguientes:
   P(B|A)  = \frac{P(B)}{P(A)}  P(A|B)$, de  donde \  $P(A|B)$ \  y \  $P(B|A)$ \
   coinciden s\'olo cuando \ $A$ \ y \ $B$ \ tienen la misma probabilidad;
 %
-\item {\it  f\'ormula de probabilidad  total}: \ si  $\{ B_j \}$ es  un conjunto
-  completo de eventos no nulos mutuamente excluyentes, entonces
-  %
-  \[
-  P(A) = \sum_j P(A|B_j) P(B_j) 
-  \]
-  %
-  \big(viene de \ $A = A \cap  \left( \bigcup_j B_j \right) = \bigcup_j \left( A
-    \cap B_j \right)$ \ donde los \ $A \cap B_j$ \ son mutuamente excluyentes, y
-  $P\left( A \cap B_j \right) = P(A|B_j) P(B_j)$\big) ;
+%\item {\it  f\'ormula de probabilidad  total}: \ si  $\{ B_j \}$ es  un conjunto
+%  completo de eventos no nulos mutuamente excluyentes, entonces
+%  %
+%  \[
+%  P(A) = \sum_j P(A|B_j) P(B_j) 
+%  \]
+%  %
+%  \big(viene de \ $A = A \cap  \left( \bigcup_j B_j \right) = \bigcup_j \left( A
+%    \cap B_j \right)$ \ donde los \ $A \cap B_j$ \ son mutuamente excluyentes, y
+%  $P\left( A \cap B_j \right) = P(A|B_j) P(B_j)$\big) ;
 %
-\item {\it  f\'ormula de Bayes}:  \ si  $\{ B_j \}$  es un conjunto  completo de
-  eventos no nulos mutuamente excluyentes, entonces
+%\item {\it  f\'ormula de Bayes}:  \ si  $\{ B_j \}$  es un conjunto  completo de
+%  eventos no nulos mutuamente excluyentes, entonces
+  %
+%  \[
+%  P(B_i|A) = \frac{P(A \cap B_i)}{P(A)} = \frac{P(A|B_i) P(B_i)}{\sum_j P(A|B_j)
+%    P(B_j)};
+%  \]
+  %
+\end{itemize}
+
+\modif{Las dos propiedades  importantes son la f\'orula de  probabilidad total y
+  la f\'ormula  de Bayes (ver~\cite{Bre88,  JacPro03, Bay63, Bar58}~\footnote{La
+    obra  del  matem\'atico y  religioso  ingl\'es  Thomas  Bayes fue  de  hecho
+    recopilada  y publicada  despu\'es de  su muerte  por Richard  Price.}). Les
+  vamos a ver en forma de lemma:
+
+\begin{lema}[F\'ormula de probabilidad total]
+\label{Lem:MP:ProbaTotalDiscreto}
+%
+  Sea \ $J \subseteq  \Nset$ \ y \ $\{ B_j \}_{j \in  J}$ \ un conjunto completo
+  de eventos  no nulos  mutuamente excluyentes, \ie  tal que  \ $B_i \cap  B_j =
+  \emptyset$  \ si  \ $i  \ne j$  \ y  \ $\displaystyle  \bigcup_{j\in J}  B_j =
+  \Omega$. Entonces
   %
   \[
-  P(B_i|A) = \frac{P(A \cap B_i)}{P(A)} = \frac{P(A|B_i) P(B_i)}{\sum_j P(A|B_j)
+  P(A) = \sum_{j \in J} P(A|B_j) P(B_j) 
+  \]
+\end{lema}
+%
+\begin{proof}
+  Escribimos \  $A = A  \cap \left( \bigcup_j  B_j \right) = \bigcup_j  \left( A
+    \cap  B_j \right)$.  Los \  $A  \cap B_j$  \ son  mutuamente excluyentes,  y
+  $P\left( A \cap B_j \right) = P(A|B_j) P(B_j)$ \ lo que cierra la prueba.
+\end{proof}
+
+
+\begin{lema}[F\'ormula de Bayes]\label{Lem:MP:BayesDiscreto}
+%
+  Sea \ $J \subseteq  \Nset$ \ y \ $\{ B_j \}_{j \in  J}$ \ un conjunto completo
+  de eventos  no nulos  mutuamente excluyentes. Entonces
+  %
+  \[
+  P(B_i|A) = \frac{P(A \cap B_i)}{P(A)} = \frac{P(A|B_i) P(B_i)}{\sum_{j \in J} P(A|B_j)
     P(B_j)};
   \]
-  %
-  (ver~\cite{Bre88, JacPro03, Bay63, Bar58}~\footnote{La obra del matem\'atico y
-    religioso  ingl\'es  Thomas  Bayes  fue  de  hecho  recopilada  y  publicada
-    despu\'es de su muerte por Richard Price.} ).
-\end{itemize}
+\end{lema}
+%
+\begin{proof}
+  Esta f\'ormula resuelta de la definici\'on de la probabilidad condicional y de
+  la f\'ormula de probabilidad total.
+\end{proof}
+}
 
 Veamos ahora la noci\'on de independencia  entre dos eventos. Por ejemplo, si se
 tiran dos dados  sobre sendas mesas, no hay ninguna raz\'on  para que la muestra

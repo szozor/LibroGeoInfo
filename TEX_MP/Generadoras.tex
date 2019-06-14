@@ -65,7 +65,7 @@ Esta funci\'on est definida sobre un producto cartesiano de anillos~\footnote{Si
     \prod_{i=1}^d z_i^{x_i} \right| \,  dP_X(x) \le \int_{\Rset^d} dP_X(x) = 1$,
   lo       que      prueba       que      \       $r_i      \le       1      \le
   R_i$.\label{Foot:MP:GeneradoraProbabilidadExistencia}} en  el plano complejos,
-$r_i \, \le \, \left|  z_i \right| \, \le \, R_i$ \ con \ $r_i  |e 1$ \ y \ $R_i
+$r_i \, \le \, \left|  z_i \right| \, \le \, R_i$ \ con \ $r_i  \le 1$ \ y \ $R_i
 \ge 1$.
 
 \
@@ -139,12 +139,15 @@ momentos de $X$ a trav\'es de las derivadas de $G_X$:
 \begin{itemize}
 \item $G_X(1) = 1$, condici\'on de normalizaci\'on.
 %
-\item $\nabla_z G_X(1) = \Esp[X]$ \ donde $\nabla_z$ indica el gradiente, \ie el
-  vector de componente $i$-esima \ $\frac{\partial}{\partial z_i}$.
+\item $\nabla_z G_X(1) = \Esp[X]$.
+% \ donde $\nabla_z$ indica el gradiente, \ie el
+%  vector de componente $i$-esima \ $\frac{\partial}{\partial z_i}$.
 %
 \item $\Hess_z G_X(1)  + \diag\left( \nabla_z G_X(1) \right)  = \Esp\left[ X X^t
-  \right]$  \ donde  \ $\Hess_z$  \ es  la matrice  Hessiana, \ie  la  matriz de
-  componente $(i,j)$-esima \ $\frac{\partial^2}{\partial z_i \partial z_j}$, y \
+  \right]$  \ donde  \ $\Hess_z$  \ es  la matrice  Hessiana
+%, \ie  la  matriz de
+%  componente $(i,j)$-esima \ $\frac{\partial^2}{\partial z_i \partial z_j}$, 
+y \
   $\diag(a)$ es  une matriz  diagonal de componentes  \ $(i,i)$-esima \  $a_i$ \
   (vector $a$ sobre la diagonal).  Entonces  la matriz de covarianza es dada por
   \ $\Cov[X] =  \Hess_z G_X(1) + \diag\left( \nabla_z  G_X(1) \right) - \nabla_z
@@ -218,7 +221,7 @@ aleatorias de vectores aleatorios:
 \end{teorema}
 %
 \begin{proof}
-  \SZ{Usando la formula de esperanza total ec.~\ref{Teo:MP:EsperanzaTotal}, se escribe}
+  Usando la formula de esperanza total del teorema.~\ref{Teo:MP:EsperanzaTotal}, se escribe
   %
   \begin{eqnarray*}
   G_{S_N}(z) & = & \Esp\left[ z^{\sum_{n=0}^N X_n} \right]\\[2.5mm]

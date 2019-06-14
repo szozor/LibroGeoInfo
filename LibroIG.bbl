@@ -56,13 +56,6 @@ Andrews, G.~E., Askey, R., \& Roy, R. (1999).
 \newblock {\em Special Functions}.
 \newblock Cambridge, UK: Cambridge University Press.
 
-\bibitem[\protect\citeauthoryear{Appell}{Appell}{1925}]{App25}
-Appell, P. (1925).
-\newblock {\em Sur les fonctions hyperg{\'e}om{\'e}triques de plusieurs
-  variables, les p{\^o}lynomes d'{H}ermite et autres fonctions
-  hypersph{\'e}riques dans l'hyperespace}, volume fascicule 3.
-\newblock Paris: Mémorial des Sciences Mathématiques; Gauthier-Villars.
-
 \bibitem[\protect\citeauthoryear{Arimoto}{Arimoto}{1971}]{Ari71}
 Arimoto, S. (1971).
 \newblock Information-theoretical considerations on estimation problems.
@@ -311,6 +304,12 @@ Burg, J.~P. (1975).
 \newblock PhD thesis, Department of Geophysics, Stanford University, Stanford
   University, Stanford, CA.
 
+\bibitem[\protect\citeauthoryear{Cambanis, Huang \& Simons}{Cambanis
+  et~al.}{1981}]{CamHua81}
+Cambanis, S., Huang, S., \& Simons, G. (1981).
+\newblock On the theory of elliptically contoured distributions.
+\newblock {\em Journal of Multivariate Analysis}, {\em 11\/}(3), 368--385.
+
 \bibitem[\protect\citeauthoryear{Cambini \& Martein}{Cambini \&
   Martein}{2009}]{CamMar09}
 Cambini, A. \& Martein, L. (2009).
@@ -506,6 +505,11 @@ Dutka, J. (1991).
   on Set in Court Tennis''}.
 \newblock Johns Hopkins University Press.
 
+\bibitem[\protect\citeauthoryear{Eaton}{Eaton}{1981}]{Eat81}
+Eaton, M.~L. (1981).
+\newblock On the projections of isotropic distributions.
+\newblock {\em Annals of Statistics}, {\em 9\/}(2), 391--400.
+
 \bibitem[\protect\citeauthoryear{Ebeling, Molgedey, Kurths \& Schwarz}{Ebeling
   et~al.}{2000}]{EbeMol00}
 Ebeling, W., Molgedey, L., Kurths, J., \& Schwarz, U. (2000).
@@ -532,13 +536,6 @@ Endres, D. \& Schindelin, J. (2003).
 \newblock A new metric for probability distributions.
 \newblock {\em IEEE Transactions on Information Theory}, {\em 49\/}(7),
   1858--1860.
-
-\bibitem[\protect\citeauthoryear{Erd{\'e}lyi}{Erd{\'e}lyi}{1940}]{Erd40}
-Erd{\'e}lyi, A. (1940).
-\newblock Integration of a certain system of linear partial differential
-  equations of hypergeometric type.
-\newblock {\em Proceedings of the Royal Society of Edinburgh}, {\em 59},
-  224--241.
 
 \bibitem[\protect\citeauthoryear{Esteban}{Esteban}{1997}]{Est97}
 Esteban, M.~D. (1997).
@@ -574,6 +571,12 @@ Fadeev, D.~K. (1958).
 \newblock {\em Fundations in Information Theory}, chapter On the concept of
   entropy of a finite probabilistic scheme (English traduction).
 \newblock New-York: McGraw-Hill.
+
+\bibitem[\protect\citeauthoryear{Fang, Kotz \& Ng}{Fang
+  et~al.}{1990}]{FanKot90}
+Fang, K.~T., Kotz, S., \& Ng, K.~W. (1990).
+\newblock {\em Symmetric multivariate and related distributions}.
+\newblock Monographs on statistics and probability 36. London: Chapman \& Hall.
 
 \bibitem[\protect\citeauthoryear{Fano}{Fano}{1949}]{Fan49}
 Fano, R.~M. (1949).
@@ -698,13 +701,6 @@ Golberg, R.~R. (1961).
 Gradshteyn, I.~S. \& Ryzhik, I.~M. (2015).
 \newblock {\em Table of Integrals, Series, and Products\/} (8th ed.).
 \newblock San Diego: Academic Press.
-
-\bibitem[\protect\citeauthoryear{Gray \& Mathew}{Gray \&
-  Mathew}{1895}]{GraMat95}
-Gray, A. \& Mathew, G.~B. (1895).
-\newblock {\em A treatise on Bessel functions and their application to
-  physics}.
-\newblock Macmillan and co.
 
 \bibitem[\protect\citeauthoryear{Guo, Shamai \& Verd{\'u}}{Guo
   et~al.}{2005}]{GuoSha05}
@@ -854,12 +850,6 @@ Huffman, D.~A. (1952).
 \newblock A method for the construction of minimum-redundancy codes.
 \newblock {\em Proceedings of the IRE}, {\em 40\/}(9), 1098--1101.
 
-\bibitem[\protect\citeauthoryear{Humbert}{Humbert}{1922}]{Hum22}
-Humbert, P. (1922).
-\newblock The confluent hypergeometric functions of two variables.
-\newblock {\em Proceedings of the Royal Society of Edinburgh}, {\em 41},
-  73--96.
-
 \bibitem[\protect\citeauthoryear{Hurst}{Hurst}{1995}]{Hur95}
 Hurst, S. (1995).
 \newblock The characteristic function of the student-t distribution.
@@ -941,9 +931,27 @@ Jessen, B. (1931b).
 \newblock {\em Matematisk Tidsskrift. B}, 84--95.
 
 \bibitem[\protect\citeauthoryear{Johnson, Kotz \& Balakrishnan}{Johnson
+  et~al.}{1995a}]{JohKot95:v1}
+Johnson, N.~L., Kotz, S., \& Balakrishnan, N. (1995a).
+\newblock {\em Continuous Univariate Distributions\/} (2nd ed.)., volume~1.
+\newblock New-York: John Wiley \& Sons.
+
+\bibitem[\protect\citeauthoryear{Johnson, Kotz \& Balakrishnan}{Johnson
+  et~al.}{1995b}]{JohKot95:v2}
+Johnson, N.~L., Kotz, S., \& Balakrishnan, N. (1995b).
+\newblock {\em Continuous Univariate Distributions\/} (2nd ed.)., volume~2.
+\newblock New-York: John Wiley \& Sons.
+
+\bibitem[\protect\citeauthoryear{Johnson, Kotz \& Balakrishnan}{Johnson
   et~al.}{1997}]{JohKot97}
 Johnson, N.~L., Kotz, S., \& Balakrishnan, N. (1997).
 \newblock {\em Discrete Multivariate Distributions}.
+\newblock New-York: John Wiley \& Sons.
+
+\bibitem[\protect\citeauthoryear{Johnson, Kotz \& Kemp}{Johnson
+  et~al.}{1992}]{JohKot92}
+Johnson, N.~L., Kotz, S., \& Kemp, A.~W. (1992).
+\newblock {\em Univariate Discrete Distributions\/} (2nd ed.).
 \newblock New-York: John Wiley \& Sons.
 
 \bibitem[\protect\citeauthoryear{Johnson}{Johnson}{2004}]{Joh04}
@@ -1096,6 +1104,13 @@ Koopman, B.~O. (1936).
 \newblock {\em Transactions of the American Mathematical Society}, {\em
   39\/}(3), 399--399.
 
+\bibitem[\protect\citeauthoryear{Kotz, Balakrishnan \& Johnson}{Kotz
+  et~al.}{2000}]{KotBal00}
+Kotz, S., Balakrishnan, N., \& Johnson, N.~L. (2000).
+\newblock {\em Continuous Multivariate Distributions\/} (2nd ed.)., volume 1:
+  Models and Applications.
+\newblock New-York: John Wiley \& Sons.
+
 \bibitem[\protect\citeauthoryear{{Kraft Jr}}{{Kraft Jr}}{1949}]{Kra49}
 {Kraft Jr}, L.~G. (1949).
 \newblock A device for quantizing, grouping, and coding amplitude-modulated
@@ -1235,6 +1250,12 @@ Liouville (1839).
 \newblock Note sur quelques int{\'e}grales d{\'e}finies.
 \newblock {\em Journal de Math{\'e}matiques Pures et Appliqu{\'e}es}.
 
+\bibitem[\protect\citeauthoryear{Lord}{Lord}{1954}]{Lor54}
+Lord, R. (1954).
+\newblock The use of the {H}ankel transform in statistics {I}. {G}eneral theory
+  and examples.
+\newblock {\em Biometrika}, {\em 41\/}(1/2), 44--55.
+
 \bibitem[\protect\citeauthoryear{Lorenz}{Lorenz}{1905}]{Lor05}
 Lorenz, M.~O. (1905).
 \newblock Methods of measuring the concentration of wealth.
@@ -1273,12 +1294,6 @@ Lutwak, E., Yang, D., \& Zhang, G. (2005).
 \newblock {\em IEEE Transactions on Information Theory}, {\em 51\/}(2),
   473--478.
 
-\bibitem[\protect\citeauthoryear{Mac{D}onald}{Mac{D}onald}{1898}]{Mac98}
-Mac{D}onald, H.~M. (1898).
-\newblock Zeroes of the {B}essel functions.
-\newblock {\em Proceedings of the London Mathematical Society}, {\em
-  s1-30\/}(1), 165--179.
-
 \bibitem[\protect\citeauthoryear{Madiman \& Barron}{Madiman \&
   Barron}{2007}]{MadBar07}
 Madiman, M. \& Barron, A. (2007).
@@ -1288,7 +1303,7 @@ Madiman, M. \& Barron, A. (2007).
   2317--2329.
 
 \bibitem[\protect\citeauthoryear{Magnus \& Neudecker}{Magnus \&
-  Neudecker}{1979}]{MAgNeu79}
+  Neudecker}{1979}]{MagNeu79}
 Magnus, J.~R. \& Neudecker, H. (1979).
 \newblock The commutation matrix: Some properties and applications.
 \newblock {\em The Annals of Statistics}, {\em 7\/}(2), 381--394.
@@ -1684,6 +1699,13 @@ Salicr{\'u}, M., Men{\'e}ndez, M.~L., Morales, D., \& Pardo, L. (1993).
 \newblock {\em Communications in Statistics -- Theory and Methods}, {\em
   22\/}(7), 2015--2031.
 
+\bibitem[\protect\citeauthoryear{Samorodnitsky \& Taqqu}{Samorodnitsky \&
+  Taqqu}{1994}]{SamTaq94}
+Samorodnitsky, G. \& Taqqu, M.~S. (1994).
+\newblock {\em Stable Non-{G}aussian Random Processes. Stochastic Models with
+  infinite Variance}.
+\newblock New-York: Chapman \& Hall.
+
 \bibitem[\protect\citeauthoryear{Sayood}{Sayood}{2003}]{Say03}
 Sayood, K. (Ed.). (2003).
 \newblock {\em Lossless Compression Handbook}.
@@ -1799,12 +1821,6 @@ Song, D.-K., Park, H.-J., \& Kim, H.-M. (2014).
 Spiegel, M. (1976).
 \newblock {\em Probabilidad y Estad{\'i}stica}.
 \newblock M{\'e}xico: McGrew Hill.
-
-\bibitem[\protect\citeauthoryear{Srivastava \& Karlsson}{Srivastava \&
-  Karlsson}{1985}]{SriKar85}
-Srivastava, H.~M. \& Karlsson, P.~W. (1985).
-\newblock {\em Multiple {G}aussian Hypergeometric Series}.
-\newblock Chichester: John John Wiley \& Sons.
 
 \bibitem[\protect\citeauthoryear{Stam}{Stam}{1959}]{Sta59}
 Stam, A.~J. (1959).
@@ -1970,11 +1986,6 @@ Wang, L. \& Madiman, M. (2004).
 \newblock Beyond the entropy power inequality via rearrangements.
 \newblock {\em IEEE Transactions on Information Theory}, {\em 60\/}(9),
   5116--5137.
-
-\bibitem[\protect\citeauthoryear{Watson}{Watson}{1922}]{Wat22}
-Watson (1922).
-\newblock {\em A Treatise on the Theory of {B}essel Functions}.
-\newblock Cambridge, UK.
 
 \bibitem[\protect\citeauthoryear{Wendl}{Wendl}{2016}]{Wen16}
 Wendl, M.~C. (2016).
