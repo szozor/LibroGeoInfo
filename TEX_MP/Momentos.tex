@@ -4,7 +4,25 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\aver{\emph{introducci\'on...}} %%
+\modif{Como lo hemos introducido, la  noci\'on formal de probabilidad naci\'o en
+  el  contexto  de  juego (cartas,  dados),  bajo  entre  otros el  impulso  del
+  matem\'atico  italiano y  jugador de  dados y  cartas Gerolamo  Cardano  en el
+  siglo~{XVI},  y a\'un  m\'as bajo  el trabajo  muy profundo  de  la dinast\'ia
+  Bernoulli,   y  en   particular  Jacob   Bernoulli~\cite[en  lat\'in]{Ber1713}
+  o~\cite{Ber1713:2}.  En  particular, Bernoulli  se interes\'o no  solamente al
+  resultado de un  sorteo, impredictible, pero en lo que pasa  cuando se hace un
+  gran num\'ero de sorteos. As\'i  sali\'o la idea de ``resultado promedio''. En
+  realidad el trabajo de Bernoulli ha ido m\'as adelante: prob\'o la ley de gran
+  n\'umero que vamos a  ver m\'as adelante. Sin ir tan lejos,  en el caso de una
+  variable $X$ aleatoria discreta (ej. un dado, que puede tomar valores en $\{ 1
+  \; \ldots \; 6 \}$), haciendo  varios sorteos, el promedio de estes sorteos va
+  a ser  $\sum_i \widetilde{p}_i x_i$ con  $x_i$ los valores que  puede tomar la
+  variable  y $\widetilde{p}_i$ la  proporci\'on de  $x_i$ que  se obtuvo  en el
+  sorteo.   De   hecho,    intuitivamente   (es   la   visi\'on   frecuencista),
+  $\widetilde{p}_i$ va a tender a $p_i  = P(X=x_i)$ cuando el n\'umero de sorteo
+  tiende  al infinito.  La  definici\'on del  valor  promedio, o  media, de  una
+  variable aleatoria cualquiera se formaliza mas rigorosamente en en marco de la
+  teoria de la medida, pero coincide con la intuici\'on.}
 
 
 % ================================= Media
@@ -301,8 +319,9 @@ aleatoria $X$. Los momentos relevantes usuales
   valor  medio del  intervalo.\newline  Fijense  de que  $X^{\otimes  K}$ no  es
   siempre integrable,  por ejemplo, en el  caso con densidad,  si $p_X(x)$ tiene
   soporte  (semi)infinito, necesariamente  la funci\'on  $p_X$ debe  tender  a 0
-  cuando $|x|\rightarrow\infty$, donde $|\cdot|$ denota la norma euclideana.  Si
-  $p_X(x)$  es  {\it de  largo  alcance},  en  el sentido  de  que  no cae  a  0
+  cuando \modif{$\| x \| \rightarrow \infty$.}
+  % , donde $|\cdot|$ denota la norma euclideana.
+  Si  $p_X(x)$ es  {\it de  largo alcance},  en el  sentido de  que no  cae  a 0
   suficientemente r\'apido con $x$ para  $x$ grandes, algunos momentos pueden no
   existir.  Por ejemplo, la distribuci\'on de probabilidad de Cauchy--Lorentz (o
   funci\'on  de Breit--Wigner),  dada  por \  $p_X(x)  = \alpha  \,  \left( 1  +
@@ -378,18 +397,20 @@ Gamma~\cite{AbrSte70, AndAsk99, GraRyz15}   \   (usamos   la  convenci\'on   usu
   %
   y  es  una  medida  del  cuadrado  del  ancho  efectivo  de  una  densidad  de
   probabilidad (o vector de probabilidad). \modif{Para dos vectores aleatorios \
-    $X$ \ e  \ $Y$ \ respectivamente $d_X$ y  $d_Y$-dimensonal, hablamos de {\it
-      covarianza entre $X$ e $Y$}, que se escribe
+    $X$  \  e  \ $Y$  \  respectivamente  $d$  y  $d'$-dimensonal (con  $d'$  no
+    necesariamente igual a  $d$), hablamos de {\it covarianza  entre $X$ e $Y$},
+    que se escribe
   %
     \[
     \Sigma_{X,Y} = \equiv \Cov[X,Y] = \Esp\left[ \left( X - m_X \right) \left( Y
         - m_Y \right)^t \right].
     \]
   %
-    Entonces,  para dos  componentes $i  \ne j$  de $X$,  $\Sigma_X$  tiene como
-    $(i,j)$-\'esima componente la  covarianza $\Cov[X_i,X_j] = \Esp\left[ \left(
-        X_i -  m_{X_i} \right) \left( X_j  - m_{X_j} \right)  \right]$ entre las
-    variables $X_i$ y $X_j$
+    Esta  matriz   partenece  a  \  $\M_{d,d'}(\Rset)$  \   y  \[\Sigma_{X,Y}  =
+    \Sigma_{Y,X}^t.\].\newline Se  puede notar que, para dos  componentes $i \ne
+    j$ de  $X$, $\Sigma_X$ tiene  como $(i,j)$-\'esima componente  la covarianza
+    $\Cov[X_i,X_j]  = \Esp\left[  \left(  X_i  - m_{X_i}  \right)  \left( X_j  -
+        m_{X_j} \right) \right]$ entre las variables $X_i$ y $X_j$
     % , y escribimos
     %  %
   %  \[
@@ -398,8 +419,7 @@ Gamma~\cite{AbrSte70, AndAsk99, GraRyz15}   \   (usamos   la  convenci\'on   usu
   %  \]
   %
  % La matriz de covarianza tiene 
-    y tiene las varianzas de los  $X_i$ en su diagonal. Notar que \[\Sigma_{X,Y}
-    = \Sigma_{Y,X}^t.\] Adem\'as,
+    y tiene las varianzas de los  $X_i$ en su diagonal. Adem\'as,
   % , y las covarianzas entre componentes en las componentes no diagonales.
     es  sencillo ver  que \  $\Sigma_X  \in P_d(\Rset)$,  \ie \  $\Cov[X]$ \  es
     sim\'etrica, por  construcci\'on, y \ $\Cov[X]  \ge 0$ ($\forall  \, \mu \in
@@ -422,13 +442,15 @@ Gamma~\cite{AbrSte70, AndAsk99, GraRyz15}   \   (usamos   la  convenci\'on   usu
   \]
   %
   Como ejemplo, dadas $X_1$ y $X_2 = a X_1 + b$ que fluct\'uan en fase ($a>0$) o
-  al rev\'es ($a<0$),  se tiene $\Delta X_2 = a \Delta  X_1$, luego $\rho_{12} =
-  \frac{a}{|a|} = \pm  1$.\newline Tambi\'en, se puede ver  de que \[\Var[|X|] =
-  \Tr \Sigma_X,\] $\Tr$  siendo la traza y \ $|\cdot|$ \  la norma euclideana de
-  un  vector.  La  covarianza  est\'a bien  definida  si $|X|$  es una  variable
-  aleatoria de  cuadrado integrable,  esto es, cuando  $E[|X|^2] <  \infty$.  Se
-  proba sencillamente \modif{(desallorando el ``producto'' y usando la linealidad de la
-  esperanza) de que
+  al rev\'es ($a<0$), se tiene \modif{la relaci\'on entre desviaciones \ $\Delta
+    X_2  = a  \Delta X_1$,  conduciendo a}  \ $\rho_{12}  = \frac{a}{|a|}  = \pm
+  1$.\newline Tambi\'en,  \modif{se puede ver que  \[ \Var\left[ \|  \Delta X \|
+    \right] = \Tr \Sigma_X.\]}
+  % $\Tr$ siendo la traza y \ $|\cdot|$ \ la norma euclideana de un vector.
+  La covarianza  est\'a bien definida si \  \modif{$\| X \|$} \  es una variable
+  aleatoria de cuadrado integrable, esto  es, cuando \ \modif{$E\left[ \| X \|^2
+    \right]  <   \infty$}.   Se  proba   sencillamente  \modif{(desallorando  el
+    ``producto'' y usando la linealidad de la esperanza) que
   %
   \[
   \Cov[X,Y] = \Esp\left[ X Y^t \right] - m_X m_Y^t
@@ -441,8 +463,8 @@ funci\'on  del momento  de  inertia con  respeto  al centro  de masa.  \modif{Ad
 inmediatamente,
   %
   \[
-  \forall \: A  \in \M_{d'_X,d_X}(\Rset), \: B \in  \M_{d'_Y,d_Y}(\Rset), \: c \in
-  \Rset^{d_X}, \: d \in \Rset^{d_Y}, \quad \Cov[A X + c , B Y + d] = A \Cov[X,Y]
+  \forall \: A  \in \M_{n,d}(\Rset), \: B \in  \M_{n',d'}(\Rset), \: a \in
+  \Rset^n, \: b \in \Rset^{n'}, \quad \Cov[A X + a , B Y + b] = A \Cov[X,Y]
   B^t.
   \]
 }
@@ -468,8 +490,10 @@ inmediatamente,
   una  matriz  de  covarianza  igual  al  identidad $I$  (en  el  caso  escalar,
   desviaci\'on est\'andar igual a 1).
   %
-\item En  el caso  escalar, el  tercer momento central  permite definir  el {\it
-    coeficiente de asimetr\'ia} (o skewness en ingles)~\cite{Pea05}:
+\item  En  el  caso  escalar,  el  tercer momento  central  permite  definir  el
+  \modif{{\it coeficiente de sesgo} o m\'as sencillamente {\it sesgo}}
+%coeficiente de asimetr\'ia} 
+  (o skewness en ingles)~\cite{Spi76, Pea05}:
   \[
   \Asim[X]  \equiv \gamma_X  \equiv \Esp\left[  \left( \frac{X  - m_X}{\sigma_X}
     \right)^3 \right] = \frac{\zeta_3}{\sigma_X^3},
@@ -713,13 +737,13 @@ desigualdades.
   $m_X$ \ y una covarianza \ $\Sigma_X$. Entonces,
   %
   \[
-  \forall \:  \varepsilon > 0,  \qquad P\left( \left| \Sigma_X^{-\frac12}  (X -
-      m_X) \right| \right) > \varepsilon \: \le \: \frac{d}{\varepsilon^2}.
+  \forall \:  \varepsilon > 0,  \qquad \modif{P\left( \left\| \Sigma_X^{-\frac12}  (X -
+      m_X) \right\| > \varepsilon \right)} \: \le \: \frac{d}{\varepsilon^2}.
  \]
 \end{corolario}
 %
 Viene del teorema incial aplicado a \ $\Sigma_X^{-\frac12} (X - m_X)$, \ $g(x)
-= |x|^2$ \ y \ $a = \varepsilon^2$.
+= \modif{\| x\ |^2}$ \ y \ $a = \varepsilon^2$.
 % , notando de que \  $\left( \left\| \Sigma_X^{-\frac12} (X - m_X) \right\|^2
 %   \ge \varepsilon^2 \right) \, = \, (\|X\| \ge \varepsilon)$.
 %
@@ -728,19 +752,20 @@ Viene del teorema incial aplicado a \ $\Sigma_X^{-\frac12} (X - m_X)$, \ $g(x)
 \label{Cor:MP:Markov}
 %
   Sea \ $X$ \ un vector aleatorio y $\varphi \ge 0$ una funci\'on no decreciente
-  tal que $\varphi(|X|)$ sea integrable. Entonces,
+  tal que \modif{$\varphi(\|X\|)$} sea integrable. Entonces,
   %
   \[
   \forall \: \varepsilon \ge  0, \quad \mbox{tal que} \quad \varphi(\varepsilon)
-  \ne     0,     \qquad     P(|X|     >     \varepsilon)     \:     \le     \:
-  \frac{\Esp[\varphi(|X|)]}{\varphi(\varepsilon)}.
+  \ne     0,     \qquad     P\left( \modif{\| X \|}     >     \varepsilon \right)     \:     \le     \:
+  \frac{\Esp\left[ \varphi\left( \modif{\| X \|} \right) \right]}{\varphi(\varepsilon)}.
  \]
 \end{corolario}
 %
 La versi\'on  inicial des  esta desigualdad trataba  de funciones  $\varphi(u) =
-u^r, \: r > 0$. Viene del teorema  incial aplicado a \ \ $g(x) = \varphi(|x|)$ \
-y  \   $a  =  \varphi(\varepsilon)$,   notando  de  que  \   $(\varphi(|X|)  \ge
-\varphi(\varepsilon)) \,  = \, (|X| \ge  \varepsilon)$ por la  no decrecencia de
+u^r, \: r  > 0$. Viene del teorema  incial aplicado a \ \  $g(x) = \varphi\left(
+  \modif{\| x  \|} \right)$ \ y \  $a = \varphi(\varepsilon)$, notando  de que \
+$\left( \varphi\left( \modif{\|X\|}  \right) \ge \varphi(\varepsilon) \right) \,
+= \,  \left( \modif{\| X \|} \ge  \varepsilon \right)$ por la  no decrecencia de
 $\varphi$. El caso anterior (una vez  la variable centrada) es nada m\'as que un
 caso especial.
 
@@ -861,13 +886,13 @@ real. $r^* > 1$ \ tal que  \ $\frac1r + \frac1{r^*}$ \ es llamado {\it conjugado
   \[
   \left|  \Esp\left[  X^t Y  \right]  \right| \:  \le  \:  \Esp\left[ \left\|  X
     \right\|_r^r   \right]^{\frac1r}  \:  \Esp\left[   \left\|  Y
-    \right\|_{r^*}^{r^*} \right]^{\frac1{r^*}}
+    \right\|_{r^*}^{r^*} \right]^{\frac1{r^*}}.
   \]
   %
-  donde \ $\|  x \|_r = \left( \sum_i \left|  x_i \right|^r \right)^{\frac1r}$ \
-  denota la norma  $r$ de un vector ($\|\cdot\|_2  \equiv |\cdot|$).  Se obtiene
-  la igualda si y solamente si existe un \ $\lambda$ \ tal que \ $X = \lambda Y$
-  \ casi siempre.
+  % donde \ $\| x \|_r = \left( \sum_i \left| x_i \right|^r \right)^{\frac1r}$ \
+  % denota la norma $r$ de un vector ($\|\cdot\|_2 \equiv |\cdot|$).
+  Se obtiene la igualda si y solamente si existe un \ $\lambda$ \ tal que \ $X =
+  \lambda Y$ \ casi siempre.
 \end{teorema}
 %
 \begin{proof}
@@ -920,25 +945,26 @@ Cauchy-Bunyakovsky-Schwarz~\footnote{Esta  desigualdad, fue  probada  por Cauchy
   Sean \  $X$ \ e \  $Y$ \ dos vectores  aleatorios $d$-dimensionales. Entonces
   %
   \[
-  \left|  \Esp\left[  X^t Y  \right]  \right|^2 \:  \le  \:  \Esp\left[ \left|  X
-    \right|^2   \right]  \:  \Esp\left[   \left|  Y
-    \right|^2 \right]
+  \left|  \Esp\left[  X^t Y  \right]  \right|^2 \:  \le  \:  \Esp\left[ \modif{\left\|  X
+    \right\|^2}   \right]  \:  \Esp\left[   \modif{\left\|  Y
+    \right\|^2} \right]\modif{.}
   \]
   %
-  (recuersense de que \ $|\cdot| \equiv  \| \cdot \|_2$).  Se obtiene la igualda
-  si y  solamente si existe un \  $\lambda$ \ tal que  \ $X = \lambda  Y$ \ casi
-  siempre.
+%  (recuersense de que \ $|\cdot| \equiv  \| \cdot \|_2$).  
+  Se obtiene la igualda si y solamente si existe un \ $\lambda$ \ tal que \ $X =
+  \lambda Y$ \ casi siempre.
 \end{corolario}
 %
 Nota:  se puede probar  esta desigualdad  considerando el  polinomio $\Esp\left[
-  \left|  \lambda  X  +  Y  \right|^2  \right] \ge  0$,  del  secundo  orden  en
+  \modif{\left\| \lambda X + Y \right\|^2}  \right] \ge 0$, del secundo orden en
 $\lambda$. Siendo no negativa para cualquier $\lambda$ el discriminente debe ser
 no positivo, conduciendo a la desigualdad.
 
 De hecho,  se puede ver $\Esp[X^t  Y]$ como un producto  escalar entre variables
-aleatorias. La sola  subtileza es que $\Esp[|X|^2]  = 0$ conduce a $X  = 0$ casi
-siempre, \ie se  puede tener $X \ne  0$ pero con medida de  probabilidad igual a
-cero (ej. puntos $\omega$ ``aislados'' en el contexto continuo).
+aleatorias. La sola subtileza es que  \modif{$\Esp\left[ \| X \|^2 \right] = 0$}
+conduce a $X = 0$ casi siempre, \ie  se puede tener $X \ne 0$ pero con medida de
+probabilidad  igual a  cero (ej.  puntos  $\omega$ ``aislados''  en el  contexto
+continuo).
 
 
 \hspace{1cm} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

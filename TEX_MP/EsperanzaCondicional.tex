@@ -24,16 +24,31 @@ $Y$ cuando observamos  $X$. Una manera intuitiva es de  definir tal media cuando
   \]
 \end{definicion}
 
+Como  en  el   caso  de  medida  de  probabilidad,   cuando  dos  variables  son
+independientes, condicionar no cambia la esperanza:
+%
+\begin{lema}
+Cuando \ $X$ \ e \ $Y$ \ son independientes, la esperanza condicional coincide con la de \ $Y$,
+%
+\[
+X \:\: \mbox{e} \:\: Y \:\: \mbox{independientes} \quad \Rightarrow \quad \Esp[Y|X] = \Esp[Y]
+\]
+\end{lema}
+\begin{proof}
+\SZ{Hacerla}
+%Considera el caso $Y = \un_B$ \ con \ $B \in \Y$
+\end{proof}
+
 La media condicional se revela muy  \'util y poderoso para evaluar esperanzas de
 variables  aleatorias por ejemplo  gracia a  la formula  de la  esperanza total,
 equivalente      de      las       formulas      de      probabilidad      total
 lema~\ref{Lem:MP:ProbaTotalDiscreto},    lema~\ref{Lem:MP:ProbaTotalGeneral}   y
 lema~\ref{Lem:MP:ProbaTotalContinuo}.
-
 %
 \begin{teorema}[Media total]\label{Teo:MP:EsperanzaTotal}
 %
-La media (total) del vector aleatorio \ $Y$ \ concide con la media de la esperanza condicional, \ie
+  La media  (total) del  vector aleatorio  \ $Y$ \  concide con  la media  de la
+  esperanza condicional, \ie
 %
 \[
 \Esp[Y] = \Esp\left[ \Esp\left[ Y | X\right] \right]
@@ -41,12 +56,69 @@ La media (total) del vector aleatorio \ $Y$ \ concide con la media de la esperan
 \end{teorema}
 %
 \begin{proof}
+\SZ{Hacerla}
 %Considera el caso $Y = \un_B$ \ con \ $B \in \Y$
 \end{proof}
 
-\SZ{Hablar esperanza total
+Un  otro   resultado  importante,  permitiendo   frecuentemente  simplificar  la
+evaluac\'ion de momentos a partir de esperanza condicional es el siguiente:
+%
+\begin{teorema}\label{Teo:MP:EsperanzaF(X)Y}
+%
+  Para cualquier funci\'on medible $f$, tenemos
+  %
+  \[
+  \Esp\left[ \left. f(X) Y \, \right| \, X \right] = f(X) \Esp\left[ Y | X\right]
+  \]
+\end{teorema}
+%
+\begin{proof}
+\SZ{Hacerla}
+%Considera el caso $Y = \un_B$ \ con \ $B \in \Y$
+\end{proof}
+
+\SZ{
+\begin{teorema}
+La esperanza condicional \ $E[Y|X]$ \ es la \'unica variable $Z$ tal que para cualquier variable $U$ acotada $\Esp[Y U] = \Esp[Z U]$
+\end{teorema}
+\begin{proof}
+%Considera el caso $Y = \un_B$ \ con \ $B \in \Y$
+\end{proof}
+%
+A veces, este resultado sirve como defnici\'on de la esperanza condicional.}
+
+Un  otro resultado  que  sirve a  veces  como definici\'on,  en  el contexto  de
+variable  de  cuadrado integrable,  se  voncula con  la  idea  de aproximar  una
+variable por una funcci\'on de una otra:
+%
+\begin{teorema}
+  Sea \ $Y$  \ de cuadrado integrable, la esperanza condicional  \ $E[Y|X]$ \ es
+  la \'unica  variable \ $Z  = f(X)$, funci\'on  de \ $X$, minimizando  el error
+  promedio cuadratico \ $\Esp[  \| Y - Z \|^2 ]$.  Dicho  de otra manera, con el
+  criterio de error  cuadratico promedio m\'inimo, \ $E[Y|X]$  \ es la ``mejor''
+  funci\'on de $X$ aproximando $Y$.
+\end{teorema}
+\begin{proof}
+Usando la f\'ormula de esperanza total, y el teorema~\ref{}, se escribe
+%
+\begin{eqnarray*}
+\Esp\left[ \| Y - f(X) \|^2 \right] & = & \Esp\left[ \Esp\left[ \left. \| Y -
+f(X) \|^2 \, \right| \, X \right] \right]\\
+%
+& = & \Esp\left[ f(X)^2 - 2 f(X) \Esp[Y|X] +  \Esp\left[ Y^2 | X \right] \right]
+\end{eqnarray*}
+%
+Ahora, buscando $\lambda \equiv f(x)$  minimizando $\| \lambda\|^2 - 2 \lambda^t
+\Esp[Y|X=x] + \Esp\left[ \| Y \|^2 |  X=x \right]$ para cualquier $x \in \X$, se
+minimizar\'a  el  promedio en  $X$.   Inmediatamente,  notando  que buscamos  el
+m\'inimo de  un paraboliodo de concavivad  por arriba, anulando  el gradiente en
+$\lambda$ so obtiene  $\lambda \equiv f(x) = \Esp[Y|X=x]$,  el \'unico m\'inimo,
+lo que cierra la prueba.
+\end{proof}
+%
+Este resultado  es muy conocido en el  mundo de la estimaci\'on  donde se quiere
+aproximar una variable minimizar el error cuadratico promedio~\cite{Kay93, Rob07}.
+%, AthLah06, JacPro03}.  
 
 
-$\Esp[Y] = \Esp\left[ \Esp[Y|X=x] \right]$ esperanza total. Similar a la formula de probabilidades totales pagina~\pageref{:MP}.
-
-}
+\SZ{Cerrar esta secci\'on}
