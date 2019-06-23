@@ -787,7 +787,7 @@ De nuevo, de las propiedades de una medida de probabilidad surge:
 \end{itemize}
 %
 Para un subconjunto $I_k = (i_1 \, , \,  \ldots \, , \, i_k)$ de $1 \le k \le d$
-elementos de  $\{ 1  \; \ldots \;  d \}^k$,  $X_{I_k} = \begin{bmatrix}  X_{i_1} &
+elementos de  $\{ 1 \; \ldots \;  d \}^k$, $X_{I_k} =  \begin{bmatrix} X_{i_1} &
   \cdots   &   X_{i_k}\end{bmatrix}^t$  es   obviamente   un  vector   aleatorio
 $k$-dimensional. Es entonces sencillo ver que
 %
@@ -876,8 +876,8 @@ pre-imagen.
 \noindent Notar  que $\Omega$  no es necesariamente  discreto.  Por  ejemplo, si
 $\omega$ es la posici\'on de un punto sobre una lin\'ea, y se tiene \ $X(\omega)
 =  0$ si  $\omega$ est\'a  a la  izquierda de  un umbral  y $X(\omega)  =  1$ si
-$\omega$ est\'a  a su  derecha, luego  $\X =  \{ 0 \;  1 \}$  mientras que
-$\Omega$ no es discreto.
+$\omega$ est\'a a su derecha, luego $\X = \{ 0 \; 1 \}$ mientras que $\Omega$ no
+es discreto.
 
 En el  caso de una variable  aleatoria discreta $X$,  las probabilidades $P_X(\{
 x_j \})  = P(X = x_j), \:  x_j \in \X$ caracterizan  completamente esta variable
@@ -897,7 +897,7 @@ aleatoria~\cite{AthLah06, HogMck13}:
     distribuci\'on de probabilidad}. Adem\'as, usaremos tambi\'en la notaci\'on
   %
   \[
-  p_X = \begin{bmatrix} \cdots & p_X(x_j) & \cdots \end{bmatrix}^t
+  p_X = \begin{bmatrix} \cdots & p_X(x_i) & \cdots \end{bmatrix}^t
   \]
   %
   que llamaremos {\it vector  de probabilidad}, de tama\~no $|\X|$, posiblemente
@@ -911,12 +911,12 @@ Notar  que siendo  $P_X$ una  medida de  probabilidad, $p_X  \ge 0$  \  y est\'a
 obviamente normalizada en el sentido de que
 %
 \[
-\sum_{x_j \in \X} p_X(x_j) = 1.
+\sum_{x \in \X} p_X(x) = 1.
 \]
 %
-\modif{Dicho de otra manera,  en el caso finito $|\X| = k  < +\infty$, el vector
-  de probabilidad $p_X$ partenece al  simplex estandar o simplex de probabilidad
-  $p_X \in \Simp{k-1}$ (ver notaciones).}
+\modif{Dicho de  otra manera, en  el caso finito  $|\X| = \alpha <  +\infty$, el
+  vector  de probabilidad  $p_X$  partenece  al simplex  estandar  o simplex  de
+  probabilidad $p_X \in \Simp{\alpha-1}$ (ver notaciones).}
 
 \modif{Volviendo a la medida de probabilidad $P_X$ se nota que}
 %
@@ -973,7 +973,7 @@ De manera general, la medida de probabilidad de una variable discreta se escribe
 como combinaci\'on convexa de medidas de Dirac,
 %
 \[
-P_X =  \sum_j p_j  \delta_{x_j}, \quad  \mbox{con} p_j =  P(X=x_j) \ge  0, \quad
+P_X =  \sum_j p_j  \delta_{x_j}, \quad  \mbox{con} \quad p_j =  P(X=x_j) \ge  0, \quad
 \sum_j p_j = 1,
 \]
 %
@@ -1734,21 +1734,25 @@ secci\'on~\ref{Sec:MP:EjemplosDistribucionesProb}). Por el cambio de variable $u
 conocida  como funci\'on  beta incompleta~\cite[Ec.~8.392]{GraRyz15},  tomada en
 $\frac{r^2}{4^{\frac1d}}$.                                                     La
 figura~\ref{Fig:MP:RearregloMayorizacionEjemplo}-(c)  dibuja  $\L_{p_X}(r)$ para
-$d =  2, \:  \nu =  6$, y  la de la  ley gausiana  esferica $q_X$  de covarianza
-$\frac{\Tr                  \Sigma_X}{d}                 I$                 (ver
-secci\'on~\ref{Sec:MP:EjemplosDistribucionesProb}), lo  que ilustra graficamente
-la relaci\'on de mayorizaci\'on $q_X \prec p_X$.
+$d  = 2,  \: \nu  =  6$, la  de la  ley  gausiana esferica  $g_X$ de  covarianza
+$\frac{\Tr \Sigma_X}{d} I$ y la de la ley Student-t esferica $s_X$ de covarianza
+$\frac{\Tr  \Sigma_X}{d} I$  y con  \ $\nu'  = 2.25$  \ grado  de  libertad (ver
+secci\'on~\ref{Sec:MP:EjemplosDistribucionesProb}). Eso  ilustra graficamente la
+relaci\'on de  mayorizaci\'on \ $g_X \prec p_X$  \ y que ambas  \ $s_X \not\prec
+p_X$ \ y \ $p_X \not\prec s_X$.
 % $p(x) = \frac{}{}$$ y la ley arcsin $q_X(x) = $
 
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/RearregloEjemplo} \end{center}
 %
-  \leyenda{(a) Densidad de  probabilidad $p_X$ del ejemplo~\ref{Ej:MP:Rearreglo}
-    en  el  contexto  bi-dimensional  $d  =  2$  y para  $\nu  =  6,  \:  m  =
-    \frac{1}{\sqrt{d}}  \un$. (b)  Densidad rearreglada  $p^{\downarrow}_X$. (c)
-    Equivalenbte continua de  la curva de Lorentz para  la densidad $p_X$ (linea
-    llena) y la  gausiana esferica $q_X$ de covarianza de misma  traza que la de
-    $p_X$, ilustrando una relaci\'on de mayorizaci\'on $q_X \prec p_X$.}
+\leyenda{(a) Densidad de probabilidad $p_X$ del ejemplo~\ref{Ej:MP:Rearreglo} en
+  el contexto bi-dimensional $d = 2$ y  para $\nu = 6, \: m = \frac{1}{\sqrt{d}}
+  \un$. (b) Densidad rearreglada $p^{\downarrow}_X$. (c) Equivalente continua de
+  la curva de Lorentz para la densidad $p_X$ (linea llena), la densidad gausiana
+  esferica \ $g_X$  \ con covarianza de  misma traza que la de  $p_X$ (linea con
+  guiones) y  la densidad Student-t  \ con covarianza  de misma traza que  la de
+  $p_X$ \ y \  $\nu' = 2.25$ \ grado de libertad  (linea punteada): \ $g_X \prec
+  p_X$ \ pero \ $s_X \not\prec p_X$ \ y \ $p_X \not\prec s_X$.}
 \label{Fig:MP:RearregloMayorizacionEjemplo}
 \end{figure}
 \end{ejemplo}

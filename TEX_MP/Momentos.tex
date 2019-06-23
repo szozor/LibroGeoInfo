@@ -98,11 +98,11 @@ representa la posici\'on alrededor de la cual se ``distribuye las probabilidades
 de  occurencia''. Es  el equivalente  probabil\'istico de  centro de  gravedad o
 barycentro en mec\'anica.
 
-En  el caso de  variables aleatorias  discretas, de  soporte $\X  = \{  x_i \}$,
+En  el caso de  variables aleatorias  discretas, de  soporte \modif{$\X$ discreto finito o numerable,}%  = \{  x_i \}$},
 inmediatamente
 %
 \[
-\Esp[X] = \sum_i x_i P(X = x_i) = \sum_i x_i p_X(x_i).
+\Esp[X] = \modif{\sum_{x \in \X} x \, P(X = x) = \sum_{x \in \X} x \, p_X(x).}
 \]
 %
 \noindent  Fijense de  que $\Esp[X]$  no partenece  necesariamente a  $\X$:
@@ -110,7 +110,7 @@ inmediatamente
 \begin{ejemplo}
 \label{Ej:MP:Uniforme3Estados}
 %
-  Sea \  $X$ \  uniforme sobre \  $\X = \{  1 \,  , \, 3  \, ,  \, 7 \}$,  \ie \
+  Sea \  $X$ \  uniforme sobre \  $\X = \{  1 \; 3  \; 7 \}$,  \ie \
   $\forall \,  i \in \X, \quad  P(X = i) =  \frac13$. \ Se calcula  $\Esp[X] = 1
   \times \frac13  + 3 \times \frac13  + 7 \times \frac13  = \frac{11}{3} \not\in
   \X$.  Tampoco es el promedio de los valores extremos.
@@ -121,8 +121,8 @@ inmediatamente
 \begin{ejemplo}
 \label{Ej:MP:DiscretaSinMedia}
 %
-  Sea \ $\X = \Nset^*$ \ con  $P(X = n) = \frac{6}{\pi^2 \, n^2}$. \ Claramente,
-  $\sum_n\frac{6}{\pi^2 \, n}$ diverge, as\'i que $X$ no tiene una media.
+  Sea \ $\X = \Nset^*$ \ con  \modif{$P(X = x) = \frac{6}{\pi^2 \, x^2}$}. \ Claramente,
+  \modif{$\sum_x\frac{6}{\pi^2 \, x}$} diverge, as\'i que $X$ no tiene una media.
 \end{ejemplo}
 
 En el caso de vectores  aleatorios continuos, obtenemos la expresi\'on siguiente
@@ -189,13 +189,13 @@ Se proba saliendo  de \ $\displaystyle x = \int_0^x  dt = \int_{\Rset_+} \un_{(t
 dt$     \     por    el     teorema     de    Fubini     Th.~\ref{Teo:MP:Fubini}
 pagina~\pageref{Teo:MP:Fubini}. Se  cierra la prueba observando  que la integral
 interior es nada  m\'as que $P(X > t)$.   En el caso discreto con  $\X = \Nset$,
-viene  inmediatamente \ $\displaystyle  \sum_{n \in  \Nset} P(X>n)$  que podemos
-probar directamente  saliendo de $P(X  = n) =  P(X>n)- P(X>n-1)$. En el  caso de
-variable   admitiendo  una   densidad,   se  obtiene   tambi\'en  haciendo   una
-integraci\'on  por   partes~\footnote{El  el   casi  discreto,  hay   que  tener
-  precauciones separando la series de una diferencia de terminos. En el caso $X$
-  continuo admitiendo una densidad, hay  que estudiar bien el coomportamiento de
-  $t \mapsto t (1-F_X(t))$ al infinito.}
+viene inmediatamente \  \modif{$\displaystyle \sum_{t \in \Nset} P(X  > t)$} que
+podemos probar  directamente saliendo de  \modif{$P(X =  t) = P(X  > t) -  P(X >
+  t-1)$}. En el  caso de variable admitiendo una  densidad, se \modif{lo} obtiene tambi\'en
+haciendo  una integraci\'on por  partes~\footnote{El el  casi discreto,  hay que
+  tener precauciones  separando la series de  una diferencia de  terminos. En el
+  caso  $X$  continuo  admitiendo  una   densidad,  hay  que  estudiar  bien  el
+  coomportamiento de $t \mapsto t (1-F_X(t))$ al infinito.}
 
 Esta f\'ormula se aplica al ejemplo~\ref{Ej:MP:Mixta} que tratamos:
 %
@@ -251,7 +251,7 @@ medio se calcula a partir del de $X$:
   En particular, en el caso $\X = X(\Omega)$ discreto se obtiene
   %
   \[
-  \Esp\left[ f(X) \right] = \sum_i f(x_i) P(X = x_i)
+  \Esp\left[ f(X) \right] = \modif{\sum_{x \in \X} f(x) \, P(X = x)}
   \]
   %
   y para $X$ continuo admitiendo una densidad de probabilidad
@@ -349,7 +349,7 @@ Gamma~\cite{AbrSte70, AndAsk99, GraRyz15}   \   (usamos   la  convenci\'on   usu
    (x+i)  \frac{\Gamma(x+n)}{\Gamma(x)}$  \  mientras  que esta  definici\'on  a
    trav\'es   de   la   factorial   decreciente   se   encuentra   en   analysis
    combinatorial~\cite{Poc70,  Knu92}.\label{Foot:MP:Pochhammer}}. Se  puede ver
- que cuando \ $\X = \{ 0 \, , \, \ldots  \, , \, n \}, \: n \in \Nset$, \ $f_K =
+ que cuando \ $\X = \{ 0 \; \ldots  \; n \}, \: n \in \Nset$, \ $f_K =
  0$ \ cuando \ $K > n$.
 %
 %  o {\it cumulantes}
@@ -751,8 +751,8 @@ Viene del teorema incial aplicado a \ $\Sigma_X^{-\frac12} (X - m_X)$, \ $g(x)
 \begin{corolario}[Markov]
 \label{Cor:MP:Markov}
 %
-  Sea \ $X$ \ un vector aleatorio y $\varphi \ge 0$ una funci\'on no decreciente
-  tal que \modif{$\varphi(\|X\|)$} sea integrable. Entonces,
+  Sea \ $X$ \ un vector aleatorio y \ $\varphi \ge 0$ \ una funci\'on no decreciente
+  tal que \ \modif{$\varphi(\|X\|)$} \ sea integrable. Entonces,
   %
   \[
   \forall \: \varepsilon \ge  0, \quad \mbox{tal que} \quad \varphi(\varepsilon)
@@ -825,8 +825,8 @@ aleatorio.
 \begin{center} \input{TIKZ_MP/Convexidad} \end{center}
 %
 \leyenda{Ejemplo  de  funci\'on  $\phi$  convexa:  la  cuerda,  conteniendo  los
-  barycentros de  $\{ \phi(x_1) \, , \, \phi(x_2) \}$,  es siempre arriba  de la curba,
-  \ie funci\'on de los barycentros de $\{ x_1 \, , \, x_2 \}$.}
+  barycentros de  $\{ \phi(x_1) \; \phi(x_2) \}$,  es siempre arriba  de la curba,
+  \ie funci\'on de los barycentros de $\{ x_1 \; x_2 \}$.}
 %
 \label{Fig:MP:Convexa}
 \end{figure}
@@ -874,7 +874,7 @@ precisamente el  teorema de Jensen~\footnote{En~\cite{Jen06} se trata  del en el
 
 Terminamos esta secci\'on  con una desigualdad tambi\'en muy  \'util, y conocida
 en   los   espacios   de    Hilbert,   conocida   como   {\it   desigualdad   de
-  H\"older}~\cite{Hol98}:
+  H\"older}~\cite{Hol98, Sho29}:
 %
 \begin{teorema}[Desigualdad de H\"older]
 \label{Teo:MP:Holder}
@@ -966,9 +966,43 @@ conduce a $X = 0$ casi siempre, \ie  se puede tener $X \ne 0$ pero con medida de
 probabilidad  igual a  cero (ej.  puntos  $\omega$ ``aislados''  en el  contexto
 continuo).
 
+\modif{  Un   otro  corolario  de   la  desiguldad  de  H\"older   concierna  el
+  comportamiento   de    \   $s   \mapsto    \Esp\left[   \left\| X  \right\|_s^s
+  \right]^{\frac{1}{s}}$ \ dado \ $X$:
+%
+\begin{corolario}[Crecencia de $s   \mapsto    \Esp\big\lbrack \left\| X  \right\|_s^s \big\rbrack^{\frac{1}{s}}$
+]
+\label{Cor:MP:CrecenciaSToEspS}
+%
+  Sean \  $X$ \ vectores  aleatorios $d$-dimensionales. Entonces
+  %
+  \[
+  %\begin{array}{llcl}
+  %f:& \Rset_+^* & \to & \Rset_+^*\\[2mm]
+  %
+  %& s & \mapsto & \Esp\Big[   \left\|  X \right\|_s^s \Big]^{\frac{1}{s}}
+  %\end{array}
+  s \mapsto \Esp\Big[   \left\|  X \right\|_s^s \right]^{\frac{1}{s}} 
+  \quad  \mbox{es creciente}
+  \]
+  %
+\end{corolario}
+\begin{proof}
+  Aplicando la desigualdad de H\"older a $\|X\|_s^s$ \ y \ $1$ \ se obtiene
+  %
+  \[
+  \forall \: r  > 1, \quad \Esp\Big[ \|X\|_s^s  \Big] \le \Esp\Big[ \|X\|_{r
+      s}^{r s} \Big]^{\frac1r}
+  \]
+  %
+  Se cierra la prueba elevando la  desigualdad a la potencia $\frac1s$ y notando
+  que $t = r s > s$.
+\end{proof}
 
-\hspace{1cm} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Varias  otras desigualdades  se encuentran  en  la literatura  (ver por  ejemplo
+en~\cite[y notas  debidas a  Pearson]{Sho29} para unas  de las  m\'as antiguas),
+as\'i  que  no  se  puede  ser  exaustivo. Presentamos  en  esta  secci\'on  las
+principales.}
 
-\SZ{Desigualdades  con   momentos:  Holder  va   a  dar  $\Esp[|X|^s]^{\frac1s}$
-  creciente con  $s$...  Ver  Shohat 1929  y editorial note  debido a  Pearson \
-  $\kappa \ge \gamma^2+1$.}
+
+%  $\kappa \ge \gamma^2+1$ Shohat

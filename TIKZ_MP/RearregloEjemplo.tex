@@ -18,7 +18,7 @@ normcdf(\x)=1/(1 + exp(-0.07056*(\x)^3 - 1.5976*(\x)));
 };};
 %
 %
-% beta incompleta (k,l) para l entero, k > 0
+% beta incompleta (k,l) int_0^r u^(k-1) (1-u)^() para l entero, k > 0
 \tikzmath{function betainc(\x,\k,\l) {
     if \x <= 0 then {return 0;}
     else {if \x > 1 then {return betainc(1,\k,\l);}
@@ -89,14 +89,17 @@ normcdf(\x)=1/(1 + exp(-0.07056*(\x)^3 - 1.5976*(\x)));
 \end{scope}
 %
 % curva de Lorentz
-\begin{scope}[xshift=11.25cm,yshift=1cm,scale=.65]
+\begin{scope}[xshift=11.25cm,yshift=.5cm,scale=.65]
 \pgfmathsetmacro{\sx}{1.5};% x-scaling
 \pgfmathsetmacro{\sy}{2.75};% y-scaling 
 \pgfmathsetmacro{\mx}{3.25};% maximo en x
 \pgfmathsetmacro{\B}{betainc(1,\d/2,(\nu-\d)/2+1)};% B(d/2,(nu-d)/2+1)
 \pgfmathsetmacro{\ss}{(1/(\nu+2))+(((\mux)^2)+((\muy)^2))/\d};
+\pgfmathsetmacro{\nut}{2.25};% nu Student-t
+\pgfmathsetmacro{\Bt}{betainc(1,\nut/2,\d/2)};% B(d/2,nust/2)
+\pgfmathsetmacro{\st}{(\nut-2)*((1/(\nu+2))+(((\mux)^2)+((\muy)^2))/\d)};
 
-\draw[>=stealth,->] (-.25,0)--({\sx*\mx+.5},0) node[right]{\small $x$};
+\draw[>=stealth,->] (-.25,0)--({\sx*\mx+.5},0) node[right]{\small $r$};
 \draw[>=stealth,->] (0,-.15)--(0,{\sy+.5}) node[above]{\small $\L_p(r)$};
 %
 
@@ -106,6 +109,9 @@ normcdf(\x)=1/(1 + exp(-0.07056*(\x)^3 - 1.5976*(\x)));
 % Lorentz de la gausiana
 \draw[thick,dashed,domain=0:\mx,samples=50,smooth] plot({\x*\sx},{\sy*gammainc(((\x)^2)/2/\ss,\d/2)/factorial(\d/2-1)});
 %
+% Lorentz de la student-t nu' = 3;
+\draw[thick,dotted,domain=0:\mx,samples=50,smooth] plot({\x*\sx},{\sy*betainc(((\x)^2)/(\st+(\x)^2),\nut/2,\d/2)/\Bt});
+%
 \foreach \m in {0,...,\mx} {
 \draw ({\m*\sx},0)--({\m*\sx},-.1) node[below,scale=.7]{$\m$};
 }
@@ -113,7 +119,7 @@ normcdf(\x)=1/(1 + exp(-0.07056*(\x)^3 - 1.5976*(\x)));
 \draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
 \end{scope}
 %
-%\node at (1.2,-3){(a)};
-%\node at (6.6,-3){(b)};
-%\node at (13.6,-3){(c)};
+\node at (2.05,-.75){(a)};
+\node at (7.55,-.75){(b)};
+\node at (13,-.75){(c)};
 \end{tikzpicture}

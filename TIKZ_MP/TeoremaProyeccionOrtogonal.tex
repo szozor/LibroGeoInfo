@@ -1,0 +1,21 @@
+\begin{tikzpicture}%[scale=.9]
+\shorthandoff{>}
+%
+\draw (5,2.5)--(0,0)--(12,0);
+\draw (1.25,.25) node{\small $\sigma^2(X)$};
+%
+\draw[thick] (5,1) node[scale=.6]{$\bullet$} --(7.5,3.5) node[scale=.6]{$\bullet$};
+\draw (6.25,2.25) node[above,scale=.7]{$Y$};
+%
+\draw[thick,dash dot] (5,1)--(7.5,1.75) node[scale=.6]{$\bullet$};
+\draw (6.5,1.25) node[scale=.7]{\rotatebox{18}{$\Esp[Y|X]$}};
+%
+\draw[thick,dashed] (7.5,3.5)--(7.5,1.75);
+\draw (7.5,2.5) node[right,scale=.7]{\rotatebox{-90}{$Y - \Esp[Y|X]$}};
+\draw (7.3,1.7)--(7.3,1.9)--(7.5,2);
+%
+\draw[thick,dotted] (5,1)--(11,.75) node[scale=.6]{$\bullet$} --(7.5,3.5);
+\draw (8,.7) node[scale=.75]{$g(X)$};
+\draw (9.25,2.35) node[scale=.75]{\rotatebox{-40}{$Y-g(X)$}};
+%
+\end{tikzpicture}

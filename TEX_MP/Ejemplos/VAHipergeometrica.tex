@@ -1,0 +1,90 @@
+\subsubseccion{Ley hipergeometrica}
+\label{Sssec:MP:Hipergeometrica}
+
+Esta ley aparece por ejemplo cuando  se hace una experiencia con una poblaci\'on
+de tama\~no  \ $N$ \ (ej.  $N$ bolas en una  urna), que pueden  partenecer a dos
+clases, con  \ $K$  \ estados parteneciendo  a la  primera clase (a  veces dicho
+estados de excito; ej. $K$ \ bolas  negras), $N-K$ a la secunda clase, y se hace
+\ $n$  \ tiros. $X$ es  el n\'umero de  tiros parteneciendo en la  primera clase
+(n\'umero de excitos).
+
+Se denota \ $X \,  \sim \, \H(N,K,n)$ \ con \ $N \in \Nset,  \quad K \in \{ 0 \;
+\ldots \; N\}, \quad n \in \{ 0  \; \ldots \; N\}$ \ y sus caracter\'isticas son
+las siguientes:
+
+\begin{caracteristicas}
+%
+Dominio de definici\'on & $\X = \left\{ \max(0,n+K-N) \; \ldots \; \min(n,K)
+\right\}$\\[2mm]
+\hline
+%
+Parametros & $N \in \Nset$ \: (poblaci\'on)\newline $K \in \{ 0 \; \ldots \;
+N\}$ \ (n\'umero de estados exitosos)\newline $n \in \{ 0 \; \ldots \; N\}$ \:
+(n\'umero de tiros)\\[2mm]
+\hline
+%
+Distribuci\'on de probabilidad & \protect$p_X(k) =
+\frac{\bino{K}{k} \bino{N-K}{n-k}}{\bino{N}{n}}$\protect\\[2mm]
+\hline
+%
+Promedio & $\displaystyle m_X = \frac{n}{N} \, K$\\[2mm]
+\hline
+%
+Varianza & $\displaystyle \sigma_X^2 = \frac{n \, (N-n)}{N^2 (N-1)} \, K \,
+(N-K)$\\[2mm]
+\hline
+%%
+\modif{Sesgo} & $\displaystyle \gamma_X = \frac{(N - 2 \, K) (N - 2 \, n)}{N-2}
+\, \sqrt{\frac{N-1}{n K (N-K) (N-n)}}$\\[2mm]
+\hline
+%%
+Curtosis por exceso & $\displaystyle \SZ{\widebar{\kappa}_X = ...}$\\[2mm]
+\hline
+%
+Generadora de probabilidad & $G_X(z) = \frac{\bino{N-K}{n}}{\bino{N}{n}} \:
+\hypgeom{2}{1}(-n , -K ; N-K-n+1 ; z)$ \ sobre \ $\Cset$\\[2mm]
+\hline
+%
+Generadora de momentos & $M_X(u) = \frac{\bino{N-K}{n}}{\bino{N}{n}}  \:
+\hypgeom{2}{1}\left( -n , -K ; N-K-n+1 ; e^u \right)$ \ sobre \
+$\Cset$\\[2mm]
+\hline
+%%
+Funci\'on caracter\'istica  & $\Phi_X(\omega) =  \frac{\bino{N-K}{n}}{\bino{N}{n}}  \:
+\hypgeom{2}{1}\left( -n , -K ; N-K-n+1 ; e^{\imath \omega} \right)$
+\end{caracteristicas}
+
+Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
+figura Fig.~\ref{Fig:MP:Hipergeometrica}.
+%
+\begin{figure}[h!]
+% \begin{center} \input{TIKZ_MP/Hipergeometrica} \end{center}
+%
+\leyenda{Ilustraci\'on de una distribuci\'on  de probabilidad Hipergeometrica (a), y la
+  funci\'on de repartici\'on asociada (b), \SZ{con $n = 6, \quad p = \frac13$.}}
+\label{Fig:MP:Hipergeometrica}
+\end{figure}
+\SZ{Otros ilustraciones para otros $p$? CERRAR}
+
+% Cuando  $n  = 1$,  se  recupera  la lei  de  Bernoulli  $\B(p) \equiv  \B(1,p)$.
+% Ad\'emas, se muestra  sencillamente usando la generadora de  probabilidad que
+% %
+% De este resultado,  se puede notar que, por  ejemplo, le distribuci\'on binomial
+% aparece en el conteo de eventos independientes de misma probabilidad entre $n$.
+
+% Tambi\'en,  la ley binomial  tiene una  propiedad de  reflexividad, consecuencia
+% directa de la de Bernoulli:
+% %
+% \begin{lema}[Reflexividad]
+% \label{Lem:MP:ReflexividadBinomial}
+% %
+%   Sea \ $X \, \sim \, \B(n,p)$. Entonces
+%   %
+%   \[
+%   n-X \, \sim \, \B(n,1-p)
+%   \]
+%   %
+% \end{lema}
+
+% Nota que cuando $p = 0$ (resp. $p = 1$) la variable es cierta $X = 0$ (resp.  $X
+% = n$).

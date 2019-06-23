@@ -76,20 +76,20 @@ La denominaci\'on  {\em generadora de  probabilidad} (pgf para  {\em probability
 \begin{lema}
 \label{Lem:MP:GeneracionProbabilidades}
 %
-  Cuando \ $\X = \Nset^d$ \ para cualquier \ $k = \begin{bmatrix} k_1 & \ldots &
-    k_d \end{bmatrix}^t \in \Nset^d$, con $K = \sum_{i=1}^d k_i$
+  Cuando \ $\X = \Nset^d$ \ para cualquier \ \modif{$x = \begin{bmatrix} x_1 & \ldots &
+    x_d \end{bmatrix}^t \in \Nset^d$, con $k = \sum_{i=1}^d x_i$}
   %
   \[
-  \frac1{\prod_{i=1}^d  k_i!} \, \left.\frac{\partial^K  G_X}{\partial z_1^{k_1}
-      \ldots \partial z_d^{k_d}}\right|_{z=0} = P_X(k) = P(X = k)
+  \frac1{\prod_{i=1}^d  \modif{x_i!}} \, \left.\frac{\partial^k  G_X}{\partial z_1^{\modif{x_1}}
+      \ldots \partial z_d^{\modif{x_d}}}\right|_{z=0} = P_X(\modif{x}) = P(X = \modif{x})
   \]
 \end{lema}
 %
 \begin{proof}
   Se puede escribir la funci\'on \ $G_X$ \ bajo su forma de generadora ordinaria
-  \ $\displaystyle G_X(z) =  \sum_{n \in \Nset^d} \left( \prod_{i=1}^d z_i^{n_i}
-  \right)  P(X   =  n)$  \   con  \  $n   =  \begin{bmatrix}  n_1  &   \cdots  &
-    n_d  \end{bmatrix}^t$.  A  continuaci\'on,  se nota  que  la serie  converge
+  \ $\displaystyle G_X(z) =  \sum_{\modif{x} \in \Nset^d} \left( \prod_{i=1}^d z_i^{\modif{x_i}}
+  \right)  P(X   =  \modif{x})$  \   con  \  $\modif{x}   =  \begin{bmatrix}  \modif{x_1}  &   \cdots  &
+    \modif{x_d}  \end{bmatrix}^t$.  A  continuaci\'on,  se nota  que  la serie  converge
   uniformamente por  lo menos en  la bola $\Bset_d \equiv  \Bset_d(1)$, probando
   que $G_X$  es diferenciable en $\Bset_d$,  as\'i que se puede  ver esta series
   como el desarollo de Taylor de $G_X$ (o, equivalentemente, diferenciar bajo la
@@ -383,7 +383,8 @@ $\real{u_i} = 0$,  esta funci\'on es siempre definida.   Entonces, una funci\'on
 generadora muy \'util que se usa frecuentemente es la de momentos para este tipo
 de argumentos,  lo que es conocida  como funci\'on caracter\'istica y  que es al
 final definida  sobre $\Rset^d$  de manera siguiente~\cite{Luk61,  Gol61, Fel68,
-  JohKot97, Muk00, AthLah06}:
+  JohKot97, Muk00, AthLah06, Sas13}:
+
 
 \begin{definicion}[funci\'on   caracter\'istica]
 \label{Def:MP:FuncionCaracteristica}
@@ -532,7 +533,9 @@ Resumimos algunas otras propiedades importantes de la funci\'on caracter\'istica
 %
 \end{enumerate}
 
-\SZ{Formulacion de inversion general; caso con densidad y se cuadrado integrable; uno-uno casi siempre}
+\SZ{Formulacion de inversion general; caso con densidad y se cuadrado integrable; uno-uno casi siempre
+
+Ver bien Sasvari 2013, Billingley p. 365}
 
 \aver{
 
@@ -544,12 +547,6 @@ El requisito  para esta importante relaci\'on es  que \ $\int_{-\infty}^{\infty}
 |p(x)|^2 \, dx<\infty$;  sin embargo, a\'un es v\'alida  para distribuciones con
 una contribuci\'on  tipo $\delta$.  Por otro  lado los momentos,  si existen, se
 obtienen derivando la funci\'on $C$ tal como expresa la siguiente proposici\'on:
-
-Para  una   variable  aleatoria  compleja   $Z=X+iY$,  usando  la   noci\'on  de
-transformada de Fourier bidimensional, se define:
-$$
-C_Z(\mu) \equiv \int e^{\mu^* z-\mu z^*} p(z) \, d^2z .
-$$
 
 {\teorema (Bochner, Goldberg).... } %%
 

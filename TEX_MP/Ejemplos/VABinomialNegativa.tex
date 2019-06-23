@@ -1,7 +1,7 @@
 \subsubseccion{Ley Binomial negativa}
 \label{Sssec:MP:BinomialNegativa}
 
-Se denota \  $X \, \sim \, N\B(r,p)$ \  con \ $r \in \Nset^*, \quad  p \in [0 \;
+Se denota \  $X \, \sim \, \B_-(r,p)$ \  con \ $r \in \Nset^*, \quad  p \in [0 \;
 1)$ \ y sus caracter\'isticas son las siguientes:
 
 \begin{caracteristicas}
@@ -13,7 +13,7 @@ Parametros & $r  \in \Nset^*,  \quad p \in [0  \;
 1)$\\[2mm]
 \hline
 %
-Distribuci\'on  de  probabilidad  &  \protect$\displaystyle  p_X(k)  =  \bino{k+r-1}{k}  p^k
+Distribuci\'on  de  probabilidad  &  \protect$\displaystyle  p_X(x)  =  \bino{x+r-1}{x}  p^x
 (1-p)^r$\protect\\[2mm]
 \hline
 %
@@ -62,15 +62,17 @@ figura Fig.~\ref{Fig:MP:BinomialNegativa}.
 \end{figure}
 \SZ{Otros ilustraciones para otros $r, p$?}
 
-Esta ley aparece cuando se repite una experencia binaria \ $X_i \in \{ 0 \, , \,
-1 \},  i = 1, \ldots$  \ con \ $P(X_i=1)  = p$ \ de  manera independiente ($X_i$
-independientes) hasta  que \  $r$ \  variables valen 0,  con \  $r$ \  fijo. Los
-n\'umeros de  excitos \ $X_i =  1$ \ sigue una  ley \ $N\B(r,p)$  (el calculo es
-directo).  Dicho de otra  manera, $X = \sum_{i=1}^N X_i$ \ con  \ $N$ \ variable
+Esta ley aparece  cuando se repite una experencia  binaria \ $X_i \in \{  0 \; 1
+\}, i  = 1,  \ldots$ \ con  \ $P(X_i=1)  = p$ \  de manera  independiente ($X_i$
+independientes)  hasta que  \ $r$  \ variables  valen 0,  con \  $r$ \  fijo. El
+n\'umero  de  excito  \ $X$  \  sigue  una  ley  \  $\B_-(r,p)$ (el  calculo  es
+directo). Dicho de  otra manera, $X =  \sum_{i=1}^N X_i$ \ con \  $N$ \ variable
 aleatoria tal que $X_N = 0$ \ y \ $r = \sum_{i=1}^N (1-X_i)$: condicionalmente a
-\ $N$, la variable es binomial de parametro $p$.  Se puede ver que \ $P(N = n) =
-\bino{n}{r-1} (1-p)^r  p^{n-r}$ \ y la  ley de la binomial  negativa se recupera
-tambi\'en,          por         ejemplo,         a          trav\'es         del
+\ $N$,  la variable \modif{\ $X$ \}  es binomial de parametro  $p$\modif{, \ie \
+    $P(X=x|N=n) = \bino{n}{x} p^x (1-p)^{n-x}$}.  Se puede ver que \ $P(N = n) =
+  \bino{n}{r-1} (1-p)^r p^{n-r}$} \ y la ley de la binomial negativa se recupera
+\modif{a        trav\'es        del        teorema        de        probabilidad
+  total~\ref{Teo:MP:ProbaTotalDiscreto}    o   tambi\'en,}   a    trav\'es   del
 teorema~\ref{Teo:MP:SumaAleatoriaGeneradoraProbabilidad}. En el caso \ $r = 1$ \
 aparece que \ $N \sim \G(1-p)$ \ y\ldots tambi\'en \ $X \sim \G(1-p)$.
 %

@@ -72,8 +72,8 @@ las de la  teor\'ia de conjuntos (ver entre  otros~\cite{Spi76, Bre88, ManWol95,
 \item Combinaci\'on o  uni\'on de eventos: \  $A \cup B$ implica que  se da $A$,
   \'o $B$, o ambos (por ejemplo, para un dado de 6 caras, si $A$ son los eventos
   ``cara par'' y $B$ los eventos ``cara menor o igual a 3'', resulta $A \cup B =
-  \{1 \, ,  \, 2 \, , \,  3 \, , \, 4  \, , \, 6\}$). Seg\'un  la literatura, se
-  denota a veces \ $A+B$ \ o \ $A \vee B$.
+  \{1 \; 2 \; 3 \; 4 \;  6\}$). Seg\'un la literatura, se denota a veces \ $A+B$
+  \ o \ $A \vee B$.
 %
 \item  Intersecci\'on de  eventos:  \ $A\cap  B$  implica que  se dan  ambos
   $A$~y~$B$ (en  el ejemplo precedente,  $A \cap  B = \{  2 \}$). Se  denota a
@@ -81,7 +81,7 @@ las de la  teor\'ia de conjuntos (ver entre  otros~\cite{Spi76, Bre88, ManWol95,
 %
 \item Complemento de un evento: \ $\bar{A}$ indica que no se da $A$. Se denota a
   veces \ $-A$ \ o \ $A^\complement$  (en el ejemplo precedente, $\bar{A} = \{ 1
-  \, , \, 3 \, , \, 5 \}$).
+  \; 3 \; 5 \}$).
 %
 \item   Eventos  {\it  disjuntos}   o  {\it   mutuamente  excluyentes}   o  {\it
     incompatibles}: \ son aquellos que no se  superponen, se anota \ $A \cap B =
@@ -150,9 +150,8 @@ la  manera siguiente  (~\cite{Hal50,  Fel68, Fel71,  Bre88, IbaPar97,  AthLah06,
 %
 \noindent Es sencillo mostrar que $\Omega$  tambi\'en est\'a en $\A$, y que $\A$
 es cerrado  por la intersecci\'on  numerable.  Un ejemplo  de $\sigma$-\'algebra
-sobre \ $\Omega = \{ 1 \,  , \, 2 \, , \, 3 \, , \, 4 \, ,  \, 5 \, , \, 6 \}$ \
-puede ser \ $\A = \big\{ \emptyset \, , \, \Omega \, , \, \{ 1 \, , \, 2 \, , \,
-3 \} \, , \, \{ 4 \, , \, 5 \, , \, 6 \} \big\}$.
+sobre \ $\Omega = \{ 1  \; 2 \; 3 \; 4 \; 5 \; 6 \}$  \ puede ser \ $\A = \big\{
+\emptyset \; \Omega \; \{ 1 \; 2 \; 3 \} \; \{ 4 \; 5 \; 6 \} \big\}$.
 
 A partir de \ $(\Omega,\A)$, \ se  asocia una noci\'on de probabilidad \ $P$ \ a
 un dado  evento. Esta queda  determinada por los siguientes  requisitos llamados
@@ -390,8 +389,8 @@ Algunas propiedades interesantes son las siguientes:
     recopilada  y publicada  despu\'es de  su muerte  por Richard  Price.}). Les
   vamos a ver en forma de lemma:
 
-\begin{lema}[F\'ormula de probabilidad total]
-\label{Lem:MP:ProbaTotalDiscreto}
+\begin{teorema}[F\'ormula de probabilidad total]
+\label{Teo:MP:ProbaTotalDiscreto}
 %
   Sea \ $J \subseteq  \Nset$ \ y \ $\{ B_j \}_{j \in  J}$ \ un conjunto completo
   de eventos  no nulos  mutuamente excluyentes, \ie  tal que  \ $B_i \cap  B_j =
@@ -401,7 +400,7 @@ Algunas propiedades interesantes son las siguientes:
   \[
   P(A) = \sum_{j \in J} P(A|B_j) P(B_j) 
   \]
-\end{lema}
+\end{teorema}
 %
 \begin{proof}
   Escribimos \  $A = A  \cap \left( \bigcup_j  B_j \right) = \bigcup_j  \left( A

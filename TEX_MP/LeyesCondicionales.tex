@@ -169,12 +169,52 @@ esta subtilesa,  \modif{$g_B$ define una medida de  probabilidad, que llamaremos
   \]
 \end{definicion}
 %
-\modif{\noindent Nota: Tomando  $A = \X$, de la primera f\'ormula  que define la medida
-de probabilidad condicional se recupera  el equivalente continuo de la f\'ormula
-de probabilidad total:
+\modif{ Claramente,  $\left( \Rset^{d_Y} , \B(\Rset^{d_Y})  , P_{Y|X=x} \right)$
+  define  un  espacio  de probabilidad  y,  a  veces,  por abuso  de  escritura,
+  denotaremos $Y|X=x$  la variable aleatoria $(\Omega,\A,P) \to  \left( \Rset^{d_Y} ,
+  \B(\Rset^{d_Y}) , P_{Y|X=x} \right)$.
+
+\
+
+  En el  contexto de  variable aleatorias  independientes, intuitivamente
+  conocer a $X$ no va a  llevar ``informaci\'on'' sobre $Y$, lo que se formaliza
+  de la manera siguiente:
 %
-\begin{lema}[F\'ormula de probabilidad total (caso general)]
-\label{Lem:MP:ProbaTotalGeneral}
+\begin{lema}[Probabilidad condicional e independencia]
+\label{Lem:MP:MedidaCondicionalIndependencia}
+%
+  Sean \ $X$ \ e \ $Y$ \ vectores aleatorios independientes, entonces
+%
+  \[
+  \forall \: x \in \X, \: B \in \B(\Rset^{d_Y}), \quad P_{Y|X=x}(B) = P_Y(B)
+  \]
+  %
+  A continuaci\'on, obviamente,
+  %
+  \[
+  F_{Y|X=x}(y) = F_Y(y)
+  \]
+\end{lema}
+\begin{proof}
+  Inmediatamente, de la independencia, tenemos
+  %
+  \begin{eqnarray*}
+  P\big( ( X \in A) \cap (Y \in B) \big) & = &  P(X \in A) \, P(Y \in B)\\
+  %
+  & = & P_Y(B) \, \int_A dP_X(x)\\
+  %
+  & = & \int_A  P_Y(B) \, dP_X(x)
+  \end{eqnarray*}
+  %
+  lo que cierra la prueba.
+\end{proof}
+
+Ahora,  tomando  $A  = \X$ en  la  primera  f\'ormula  que  define la  medida  de
+probabilidad condicional se recupera el  equivalente continuo de la f\'ormula de
+probabilidad total:
+%
+\begin{teorema}[F\'ormula de probabilidad total (caso general)]
+\label{Teo:MP:ProbaTotalGeneral}
 %
 %  Sean \  $X$ \  e \ $Y$  \ vectores aleatorias  y $\X  = X(\Omega), \quad  \Y =
 %  Y(\Omega)$. Entonces
@@ -192,7 +232,7 @@ de probabilidad total:
   %
   Si $P_X$  admite una densidad, se  escribe todo notando que  $dP_X(x) = p_X(x)
   d\mu_L(x) \equiv p_X(x) dx$.
-\end{lema}
+\end{teorema}
 % que se escribe con la densidad $dP_X = p_X d\mu_L$ si $X$
 %admite una densidad.
 }
@@ -292,8 +332,8 @@ Notar  que:
   las densidades por la expresi\'on  \ $p_{X,Y}(x,y) = p_{Y|X=x}(y) \, p_X(x)$ \
   y luego por integraci\'on con respecto a $x$:
 %
-\begin{lema}[F\'ormula de probabilidad total (caso con densidades)]
-\label{Lem:MP:ProbaTotalContinuo}
+\begin{teorema}[F\'ormula de probabilidad total (caso con densidades)]
+\label{Teo:MP:ProbaTotalContinuo}
 %
   Si  \  $(X,Y)$ \  admite  una  densidad  de probabilidad  conjunta  $p_{X,Y}$,
   entonces \ $Y$ \ tiene una  densidad de probabilida que se recupera a trav\'es
@@ -302,13 +342,13 @@ Notar  que:
   \[
   p_Y(y) = \int_\X p_{Y|X=x}(y) \, p_X(x) \, dx.
   \]
-\end{lema}
+\end{teorema}
 
 De  la expresi\'on  la  densidad condicional,  $p_{X,Y}(x,y)  = p_{Y|X=x}(y)  \,
 p_X(x) =  p_{X|Y=y}(x) \, p_Y(y)$,  y de la  f\'ormula de probabilidad  total se
 recupera sencillamente el equivalente continuo de la formula de Bay\'es:
 %
-\begin{lema}[F\'ormula de Bayes (caso continuo)]\label{Lem:MP:BayesContinuo}
+\begin{teorema}[F\'ormula de Bayes (caso continuo)]\label{Teo:MP:BayesContinuo}
 %
 %  Sean  \ $X$  \ e  \ $Y$  \  vectores aleatorias  que admiten  una densidad  de
 %  probabilidad  conjunta   $p_{X,Y}$,  y   \  $\X  =   X(\Omega),  \quad   \Y  =
@@ -318,7 +358,7 @@ recupera sencillamente el equivalente continuo de la formula de Bay\'es:
   \forall \, y \in \Y\modif{, \:  x \in \X,} \qquad p_{Y|X=x}(y) = \frac{p_{X|Y=y}(x) \,
     p_Y(y)}{\displaystyle \int_\Y p_{X|Y=y}(x) \, p_Y(y) \, dy}.
   \]
-\end{lema}
+\end{teorema}
 }
 
 Volvemos \modif{ahora} al ejemplo~\ref{Ej:MP:Suma}:

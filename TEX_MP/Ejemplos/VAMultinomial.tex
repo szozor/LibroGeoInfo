@@ -17,10 +17,10 @@ binomial.  Las caracter\'isticas de \ $X \ \sim \ \M(n,p)$ \ son las siguientes:
 Dominio de definici\'on~\footnote{De hecho, se puede considerar que el vector
 aleatorio es \ $(k-1)$-dimensional \ $\widetilde{X} = \begin{bmatrix}
 \widetilde{X}_1 & \cdots & \widetilde{X}_{k-1} \end{bmatrix}^t$ \ definido sobre
-el dominio \ $\widetilde{\X} = \left\{ m \in \{ 0 \, , \, \ldots \, , \,
-n\}^{k-1}, \: \sum_{i=1}^{k-1} m_i \le n
-\right\}$.\label{Foot:MP:MultinomialDominio}} & $\X = \left\{ m \in \{ 0 \, , \,
-\ldots \, , \, n\}^k, \: \sum_{i=1}^k m_i = n \right\}$\\[2mm]
+el dominio \ $\widetilde{\X} = \left\{ x \in \{ 0 \; \ldots \;
+n\}^{k-1}, \: \sum_{i=1}^{k-1} x_i \le n
+\right\}$.\label{Foot:MP:MultinomialDominio}} & $\X = \left\{ x \in \{ 0 \;
+\ldots \; n\}^k, \: \sum_{i=1}^k x_i = n \right\}$\\[2mm]
 \hline
 %
 Parametros & $n \in \Nset^*, \quad p \in  \Simp{k-1} = \left\{ p \in [ 0 \; 1
@@ -28,11 +28,11 @@ Parametros & $n \in \Nset^*, \quad p \in  \Simp{k-1} = \left\{ p \in [ 0 \; 1
 \hline
 %
 Distribuci\'on de probabilidad~\footnote{Tratando de $\widetilde{X}$, su masa de
-probabilidad es dada por \ $p_{\widetilde{X}}(m) = \frac{n!}{\prod_{i=1}^k m_i!}
-\prod_{i=1}^{k-1} p_i^{m_i} \, \left( 1 - \sum_{i=1}^{k-1} p_i
-\right)^{n-\sum_{i=1}^{k-1} m_i}$.\label{Foot:MP:MultinomialMasa}} &
-$\displaystyle p_X(m) = \frac{n!}{\prod_{i=1}^k m_i!}  \prod_{i=1}^k
-p_i^{m_i}$\\[2mm]
+probabilidad es dada por \ $p_{\widetilde{X}}(x) = \frac{n!}{\prod_{i=1}^k x_i!}
+\prod_{i=1}^{k-1} p_i^{x_i} \, \left( 1 - \sum_{i=1}^{k-1} p_i
+\right)^{n-\sum_{i=1}^{k-1} x_i}$.\label{Foot:MP:MultinomialMasa}} &
+$\displaystyle p_X(x) = \frac{n!}{\prod_{i=1}^k x_i!}  \prod_{i=1}^k
+p_i^{x_i}$\\[2mm]
 \hline
 %
 Promedio & $\displaystyle m_X = n \, p$\\[2mm]
@@ -66,8 +66,8 @@ Funci\'on caracter\'istica & $\displaystyle \Phi_X(\omega) = \left( p^t e^{\imat
 % Mediana $\left\lfloor n p \right\rfloor$ o $\left\lceil n p \right\rceil
 % CDF	$I_{1-p}(n-k,k+1)$ regularized incomplete beta function
 
-Es sencillo  ver que  cada componente  \ $X_j$ \  es binomial,  $X_j \,  \sim \,
-\B(n,p_j)$.
+\SZ{Agrecacion; corolario: Es sencillo  ver que  cada componente  \ $X_j$ \  es binomial,  $X_j \,  \sim \,
+\B(n,p_j)$.}
 
 Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
 figura Fig.~\ref{Fig:MP:Multinomial}.
