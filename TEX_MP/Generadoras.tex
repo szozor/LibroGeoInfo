@@ -505,6 +505,9 @@ y~\ref{Teo:MP:SumaAleatoriaGeneradoraMomentos}:
 
 Resumimos algunas otras propiedades importantes de la funci\'on caracter\'istica:
 %
+\modif{
+\begin{teorema}[Propiedades principales de la funci\'on caracter\'istica]\label{Teo:MP:PropCarac}
+%
 \begin{enumerate}
 \item\label{Prop:MP:ContinuidadPhiX}  $\Phi_X$  es  una  funci\'on  continua  en
   $\Rset^d$~\cite[Prop.~5.2.1]{Pin09}.  Eso es una  consecuencia del  teorema de
@@ -532,21 +535,114 @@ Resumimos algunas otras propiedades importantes de la funci\'on caracter\'istica
   \right|^2 \ge 0$.
 %
 \end{enumerate}
+\end{teorema}
 
-\SZ{Formulacion de inversion general; caso con densidad y se cuadrado integrable; uno-uno casi siempre
+Como   lo  hemos   notado   en  las   subsecciones   anteriores,  la   funci\'on
+caracter\'istica define  completamente el  vector aleatorio. En  particular, hay
+una relaci\'on uno-uno (casi siempre) entre \ $\Phi_X$ \ y la medida \ $P_X$. En
+particular, existe una  f\'ormula de inversion permitiendo volver  a la medida \
+$P_X$ \ a partir de \ $\Phi_X$~\cite{Sas13}:
+%
+\begin{teorema}
+  Sea \ $X$  \ vector aleatorio $d$-dimensional de  funci\'on caracter\'istica \
+  $\Phi_X$.   Sea  \ $A  =  \optimes_{i=1}^d (a_i  \;  b_i)  \in \B(\Rset^d)$  y
+  $\partial   A   =   \optimes_{i=1}^d    [a_i   \;   b_i]   \setminus   A$   su
+  borde. Entonces~\footnote{Se  prolonga la  funci\'on \ $\frac{e^{-  \imath a_j
+        \omega_j}  -  e^{-  \imath  b_j  \omega_j}}{\imath  \omega_j}$  \  en  \
+    $\omega_j  = 0$ \  por su  l\'imite \  $\displaystyle \lim_{\omega_j  \to 0}
+    \frac{e^{-  \imath  a_j  \omega_j}   -  e^{-  \imath  b_j  \omega_j}}{\imath
+      \omega_j} = b_j - a_j$.},
+  %
+  \[
+  \lim_{w \to +\infty} \frac{1}{(2 \pi)^d}  \int_{[-w \; w]^d} \left( \prod_{j =
+      1}^d \frac{e^{-  \imath a_j \omega_j} - e^{-  \imath b_j \omega_j}}{\imath
+      \omega_j} \right) \Phi_X(\omega) \, d\omega = \int_{\Rset^d} \prod_{j=1}^d
+  \left( \un_{\left( a_j \; b_j  \right)}(x_j) + \frac12 \un_{\left\{ a_j \; b_j
+      \right\}}(x_j) \right) dP_X(x)
+  \]
+  %
+  En particular, cuando $P_X$ vale 0  sobre el borde de $A$, es decir $P_X\left(
+  \partial A \right) = 0$, se obtiene
+  %
 
-Ver bien Sasvari 2013, Billingley p. 365}
+  \[
+  \lim_{w \to +\infty} \frac{1}{(2 \pi)^d}  \int_{[-w \; w]^d} \left( \prod_{j =
+      1}^d  \frac{e^{- \imath  a_j  \omega_j}  - e^{-  \imath  b_j \omega_j}}{\imath  \omega_j}
+  \right) \Phi_X(\omega) \, d\omega = P_X(A).
+  \]
+\end{teorema}
+%
+Nota: el l\'imite $\displaystyle\lim_{T \to +\infty} \int_{[-T \; T]^d}$ se nota
+a  veces  $\displaystyle \operatorname{vp}  \int_{\Rset^d}$,  integral {\it  en
+  valor principal}.
+%
+\begin{proof}
+  Por definici\'on de la funci\'on caracter\'istica, tenemos
+  %
+  \[
+  \int_{[-w \;  w]^d} \left( \prod_{j =  1}^d \frac{e^{- \imath  a_j \omega_j} -
+      e^{- \imath  b_j \omega_j}}{\imath \omega_j} \right)  \Phi_X(\omega) \,
+  d\omega  = \int_{[-w \;  w]^d} \left(  \prod_{j =  1}^d \frac{e^{-  \imath a_j
+        \omega_j}  -  e^{- \imath  b_j  \omega_j}}{\imath  \omega_j} \right)  \,
+  \int_{\Rset^d} e^{\imath \omega^t x} \, dP_X(x) \, d\omega
+  \]
+  %
+  Ahora, notando que  $\left| \frac{e^{- \imath a_j \omega_j}  - e^{- \imath b_j
+        \omega_j}}{\imath \omega_j}  \, e^{\imath \omega^t x} \right|  \le b_j -
+  a_j$   \   uniformamente   acotado.    Se   puede   evocar   el   teorema   de
+  Fubini~\ref{Teo:MP:Fubini}  para  intercambiar   las  integrales,  as\'i  que,
+  notando que $e^{\imath \omega^t x} = \prod_{j=1}^d e^{\imath \omega_j x_j}$,
+  %
+  \[
+  \int_{[-w \;  w]^d} \left( \prod_{j =  1}^d \frac{e^{- \imath  a_j \omega_j} -
+      e^{- \imath  b_j \omega_j}}{\imath \omega_j} \right)  \Phi_X(\omega) \,
+  d\omega  = \int_{\Rset^d} \left(  \prod_{j=1}^d \int_{-w}^w  \frac{e^{- \imath
+        \omega_j  (a_j -  x_j)}  -  e^{- \imath  \omega_j  (b_j -  x_j)}}{\imath
+      \omega_j} \, d\omega_j \right) \, dP_X(x)
+  \]
+  %
+  Se nota que
+  %
+  \begin{eqnarray*}
+  \int_{-w}^w \frac{e^{- \imath \omega_j (a_j - x_j)} - e^{- \imath \omega_j
+  (b_j - x_j)}}{\imath \omega_j} \, d\omega_j & = & - \int_{-w}^w \frac{e^{+
+  \imath \omega_j (a_j - x_j)} - e^{- \imath \omega_j (b_j - x_j)}}{\imath
+  \omega_j} \, d\omega_j\\[2mm]
+  %
+  & = & \int_{-w}^w \frac{\sin(\omega_j (b_j - x_j)) - \sin(\omega_j (a_j -
+  x_j))}{\omega_j} \, d\omega_j
+  \end{eqnarray*}
+  %
+  por cambio de variables $\omega_j \to - \omega_j$ en la primera linea, tomando
+  entonce  la media  suma de  los  terminos derecho/izquierdo  dando la  secunda
+  linea. Seguimos notando que
+  %
+  \[
+  \int_{-w}^w  \frac{\sin(\omega (c  - x))}{\omega}  \, d\omega  = \sign(c  - x)
+  \int_{-w |c - x|}{w |c - x|} \frac{\sin(\omega)}{\omega} \, d\omega
+  \]
+  %
+  es  decir,  de  $\displaystyle  \lim_{T \to  +\infty}  \int_{-T}^T  \frac{\sin
+    \omega}{\omega} d\omega = \pi$~\SZ{\cite{toto}}, se obtiene
+
+  %
+  \[
+  \lim_{w \to  +\infty} \int_{-w}^w \frac{\sin(\omega  (c - x))}{\omega}
+  \, d\omega = \pi \sign(c-x)
+  \]
+  %
+  Se  acaba  la   prueba  de  \  $\left|  \frac{\sin(\omega_j   (b_j  -  x_j)  -
+      \sin(\omega_j  (a_j -  x_j))}{\omega_j} \right|  < 2$  \  conjuntamente al
+  teorema     de     convergiencia    dominada~\ref{Teo:MP:ConvergenciaDominada}
+  permitiendo   permutar   integral  y   l\'imite,   y   de  $\sign(b_j-x_i)   -
+  \sign(a_j-x_i) = 2 \, \un_{\left(  a_j \; b_j \right)}(x_j) + \un_{\left\{ a_j
+      \; b_j \right\}}(x_j)$.
+\end{proof}
+ }
+
+\SZ{caso con densidad y se cuadrado integrable; uno-uno casi siempre}
 
 \aver{
-
-Si la pdf \ $p(x)$ es de cuadrado integrable, entonces 
-$$
-p(x) = \frac{1}{2	pi} \int e^{-i \xi x} C_X(\xi) \, d\xi .
-$$
-El requisito  para esta importante relaci\'on es  que \ $\int_{-\infty}^{\infty}
-|p(x)|^2 \, dx<\infty$;  sin embargo, a\'un es v\'alida  para distribuciones con
-una contribuci\'on  tipo $\delta$.  Por otro  lado los momentos,  si existen, se
-obtienen derivando la funci\'on $C$ tal como expresa la siguiente proposici\'on:
 
 {\teorema (Bochner, Goldberg).... } %%
 
