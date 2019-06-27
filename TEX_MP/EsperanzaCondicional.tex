@@ -127,6 +127,20 @@ evaluac\'ion de momentos a partir de esperanza condicional es el siguiente:
   \Esp\left[ \left.  f(X) \, g(Y) \, \right|  \, X \right] =  f(X) \, \Esp\left[
     g(Y) | X\right]
   \]
+  %
+  M\'as generalmente, para $h$ medible
+  %
+  \[
+  \Esp\left[ \left.  h(X,Y) \, \right|  \, X=x \right] =  \Esp\left[
+    h(x,Y) | X=x\right]
+  \]
+  %
+  lo que se simplifica si adem\'as \ $X$ \ e \ $Y$ \ son independientes:
+  %
+  \[
+  \mbox{$X$  \ e  \ $Y$  \  independientes} \quad  \Rightarrow \quad  \Esp\left[
+    \left.  h(X,Y) \, \right| \, X=x \right] = \Esp\left[ h(x,Y) \right]
+  \]
 \end{teorema}
 %
 \begin{proof}
@@ -174,7 +188,8 @@ evaluac\'ion de momentos a partir de esperanza condicional es el siguiente:
   \Esp[ f(X) \, g(Y) | X = x] = f(x) \, \Esp[g(Y) | X=x]
   \]
   %
-  lo que cierra la prueba.
+  lo que  cierra la  prueba de la  primera identidad.  Las otras se  prueban con
+  exactamente los mismos pasos.
 \end{proof}
 
 Un resultado  que  sirve a  veces  como definici\'on,  en  el contexto  de
@@ -223,8 +238,8 @@ aproximar una variable minimizar el error cuadratico promedio~\cite{Kay93, Rob07
   define un producto escalar.  Seg\'un el teorema de proyecci\'on ortogonal (ver
   figura~\ref{Fig:MP:TeoProyOrto}  y~\cite{JacPro03,   AthLah06,  toto}),  el  \
   $f(X)$ \ \'unico, que minimiza \ $\Esp\left[  \| Y - f(X) \|^2 \right]$, es la
-  proyecci\'on ortogonal de \ $Y$ \ sobre el espacio \ $\sigma^2(X) = \{ g(X) \:
-  \forall g \:  \mbox{medible con} \: g(X) \:  \mbox{de cuadrado integrable}\}$.
+  proyecci\'on ortogonal  de \ $Y$ \ sobre  el espacio \ $\sigma^2(X)  = \{ g(X)
+  \tq g \: \mbox{es medible con} \y g(X) \: \mbox{es de cuadrado integrable}\}$.
   En otros  terminos, la  desviaci\'on \ $Y  - \Esp[Y|X]$  \ entre \  $Y$ \  y \
   $\Esp[Y|X]$  \  es   ortogonal  a  cualquier  \  $g(X)   \in  \sigma^2(X)$,  y
   reciprocamente si \ $Y  - f(X)$ \ es ortogonal a cualquier  \ $g(X)$, $f(X)$ \
@@ -234,8 +249,8 @@ aproximar una variable minimizar el error cuadratico promedio~\cite{Kay93, Rob07
 \begin{figure}[h!]
   \begin{center}     \input{TIKZ_MP/TeoremaProyeccionOrtogonal}     \end{center}
   \leyenda{Ilustraci\'on del  teorema de  proyecci\'on ortogonal.  El  espacio \
-    $\sigma^2(X)  = \{  g(X)  \: \forall  g  \: \mbox{medible  con}  \: g(X)  \:
-    \mbox{de cuadrado integrable}\}$ \ es  representado por el plano y el vector
+    $\sigma^2(X) = \{ g(X) \tq g \: \mbox{es medible con} \y g(X) \: \mbox{es de
+      cuadrado  integrable}\}$  \ es  representado  por  el  plano y  el  vector
     representa $Y$. La linea punteada representa  la desviaci\'on \ $Y - g(X)$ \
     entre \ $Y$ \ y \ $g(X)$ \ dado \ $g(X) \in \sigma^2(X)$, siendo su cuadrado
     promedio  es m\'inimo  cuando (linea  con guiones)  \ $g(X)  =  \Esp[Y|X]$ \

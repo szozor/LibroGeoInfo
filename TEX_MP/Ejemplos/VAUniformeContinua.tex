@@ -33,7 +33,7 @@ para~\footnote{En el caso l\'imite \ $u \to  0$, \ $\lim_{u \to 0} \frac{ e^{b u
 \hline
 %
 Funci\'on caracter\'istica & $\displaystyle  \Phi_X(\omega) = \frac{ e^{\imath a
-\omega} - e^{\imath b \omega}}{\omega}$
+\omega} - e^{\imath b \omega}}{\imath \, \omega}$
 \end{caracteristicas}
 
 % Momentos & $ \Esp\left[ X^k \right] = p^k$\\[2mm]
@@ -70,9 +70,13 @@ p_X(x) = \frac{1}{|\D|} \un_{\D}(x)
 %
 La media va a ser el centro de gravedad de $\D$.
 
-%Cuando $\lambda \to +\infty$ la variable tiende a una variable cierta $X = 0$.
-\SZ{Esta distribuci\'on aparece..., propiedades}
-% en  el conteo  de conteo  de  une repetici\'on  de una  experiencia de  maneja
-% independiente hasta que  occure un evento de probabilidad  $p$; por ejemplo el
-% n\'umero de tiro de un dado  equilibriado hasta que occurre un ``6'' sigue una
-% ley geometrica de parametro $p = \frac16$.
+Vamos  a  ver  el  el   cap\'itulo  siguiente  que  esta  distribuci\'on  es  la
+distribuci\'on  definida sobre  un conjunto  de volumen  finito que  maximiza la
+entrop\'ia, \ie  que es la  ``menos informativa''. Por  ejemplo, si se  busca un
+par\'ametro  modelizado como  aleatorio (enfoque  Bayesiano), definido  sobre un
+conjunto de volumen finito, sin  a priori m\'as, una tendencia natural/intuitiva
+es de asignar la ``misma probabilidad'' a cada punto del conjunto. Aparece as\'i
+naturalmente en la inferencia Bayesiana~\cite{Rob07}.
+ 
+Notar que  cuando $b \to a$,  la variable tiende a  una variable cierta  $X = a$
+(ver principio de esta secci\'on).

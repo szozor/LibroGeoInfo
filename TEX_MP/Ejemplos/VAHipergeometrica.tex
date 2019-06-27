@@ -2,69 +2,93 @@
 \label{Sssec:MP:Hipergeometrica}
 
 Esta ley aparece por ejemplo cuando  se hace una experiencia con una poblaci\'on
-de tama\~no  \ $N$ \ (ej.  $N$ bolas en una  urna), que pueden  partenecer a dos
-clases, con  \ $K$  \ estados parteneciendo  a la  primera clase (a  veces dicho
-estados de excito; ej. $K$ \ bolas  negras), $N-K$ a la secunda clase, y se hace
-\ $n$  \ tiros. $X$ es  el n\'umero de  tiros parteneciendo en la  primera clase
+de tama\~no  \ $n$ \ (ej.  $n$ bolas en una  urna), que pueden  partenecer a dos
+clases, con  \ $k$  \ estados parteneciendo  a la  primera clase (a  veces dicho
+estados de excito; ej. $k$ \ bolas  negras), $n-k$ a la secunda clase, y se hace
+\ $m$  \ tiros. $X$ es  el n\'umero de  tiros parteneciendo en la  primera clase
 (n\'umero de excitos).
 
-Se denota \ $X \,  \sim \, \H(N,K,n)$ \ con \ $N \in \Nset,  \quad K \in \{ 0 \;
-\ldots \; N\}, \quad n \in \{ 0  \; \ldots \; N\}$ \ y sus caracter\'isticas son
-las siguientes:
+Se denota \ $X \,  \sim \, \H(n,k,m)$ \ con \ $n \in \Nset$,  \quad $k \in \{ 0 \;
+\ldots \; n \}$, \quad $m \in \{  0 \; \ldots \; m \}$ \ y sus caracter\'isticas
+son las siguientes:
 
 \begin{caracteristicas}
 %
-Dominio de definici\'on & $\X = \left\{ \max(0,n+K-N) \; \ldots \; \min(n,K)
+Dominio de definici\'on & $\X = \left\{ \max(0,k+m-n) \; \ldots \; \min(k,m)
 \right\}$\\[2mm]
 \hline
 %
-Parametros & $N \in \Nset$ \: (poblaci\'on)\newline $K \in \{ 0 \; \ldots \;
-N\}$ \ (n\'umero de estados exitosos)\newline $n \in \{ 0 \; \ldots \; N\}$ \:
+Parametros & $n \in \Nset$ \: (poblaci\'on)\newline $k \in \{ 0 \; \ldots \;
+n\}$ \ (n\'umero de estados exitosos)\newline $m \in \{ 0 \; \ldots \; n\}$ \:
 (n\'umero de tiros)\\[2mm]
 \hline
 %
-Distribuci\'on de probabilidad & \protect$p_X(k) =
-\frac{\bino{K}{k} \bino{N-K}{n-k}}{\bino{N}{n}}$\protect\\[2mm]
+Distribuci\'on de probabilidad & \protect$p_X(x) =
+\frac{\smallbino{k}{x} \smallbino{n-k}{m-x}}{\smallbino{n}{m}}$\protect\\[2mm]
 \hline
 %
-Promedio & $\displaystyle m_X = \frac{n}{N} \, K$\\[2mm]
+Promedio & $\displaystyle m_X = \frac{m}{n} \, k$\\[2mm]
 \hline
 %
-Varianza & $\displaystyle \sigma_X^2 = \frac{n \, (N-n)}{N^2 (N-1)} \, K \,
-(N-K)$\\[2mm]
+Varianza & $\displaystyle \sigma_X^2 = \frac{m \, (n-m)}{n^2 (n-1)} \, k \,
+(n-k)$\\[2mm]
 \hline
 %%
-\modif{Sesgo} & $\displaystyle \gamma_X = \frac{(N - 2 \, K) (N - 2 \, n)}{N-2}
-\, \sqrt{\frac{N-1}{n K (N-K) (N-n)}}$\\[2mm]
+\modif{Sesgo} & $\displaystyle \gamma_X = \frac{(n - 2 \, k) (n - 2 \, m)}{n-2}
+\, \sqrt{\frac{n-1}{m k (n-k) (n-m)}}$\\[2mm]
 \hline
 %%
 Curtosis por exceso & $\displaystyle \SZ{\widebar{\kappa}_X = ...}$\\[2mm]
 \hline
 %
-Generadora de probabilidad & $G_X(z) = \frac{\bino{N-K}{n}}{\bino{N}{n}} \:
-\hypgeom{2}{1}(-n , -K ; N-K-n+1 ; z)$ \ sobre \ $\Cset$\\[2mm]
+Generadora de probabilidad & $G_X(z) = \frac{\smallbino{n-k}{m}}{\smallbino{n}{m}} \:
+\: \hypgeom{2}{1}(-m , -k ; n-k-m+1 ; z)$ \ sobre \ $\Cset$\\[2mm]
 \hline
 %
-Generadora de momentos & $M_X(u) = \frac{\bino{N-K}{n}}{\bino{N}{n}}  \:
-\hypgeom{2}{1}\left( -n , -K ; N-K-n+1 ; e^u \right)$ \ sobre \
+Generadora de momentos & $M_X(u) = \frac{\smallbino{n-k}{m}}{\smallbino{n}{k}}  \:
+\: \hypgeom{2}{1}\left( -m , -k ; n-k-m+1 ; e^u \right)$ \ sobre \
 $\Cset$\\[2mm]
 \hline
 %%
-Funci\'on caracter\'istica  & $\Phi_X(\omega) =  \frac{\bino{N-K}{n}}{\bino{N}{n}}  \:
-\hypgeom{2}{1}\left( -n , -K ; N-K-n+1 ; e^{\imath \omega} \right)$
+Funci\'on caracter\'istica  & $\Phi_X(\omega) =  \frac{\smallbino{n-k}{m}}{\smallbino{n}{m}}  \:
+\: \hypgeom{2}{1}\left( -m , -k ; n-k-m+1 ; e^{\imath \, \omega} \right)$
 \end{caracteristicas}
 
 Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
 figura Fig.~\ref{Fig:MP:Hipergeometrica}.
 %
 \begin{figure}[h!]
-% \begin{center} \input{TIKZ_MP/Hipergeometrica} \end{center}
+\begin{center} \input{TIKZ_MP/Hipergeometrica} \end{center}
 %
-\leyenda{Ilustraci\'on de una distribuci\'on  de probabilidad Hipergeometrica (a), y la
-  funci\'on de repartici\'on asociada (b), \SZ{con $n = 6, \quad p = \frac13$.}}
+\leyenda{Ilustraci\'on  de una  distribuci\'on  de probabilidad  Hipergeometrica
+  (a), y la funci\'on de repartici\'on asociada (b), con \ $n = 100$, \quad $k =
+  12$, \quad $m = 40$.}
 \label{Fig:MP:Hipergeometrica}
 \end{figure}
-\SZ{Otros ilustraciones para otros $p$? CERRAR}
+
+\SZ{Otros ilustraciones para otros $n, k, m$?}
+
+La ley tiene propiedades de reflexividad del mismo tipo que para la ley binomial:
+%
+\begin{lema}[Reflexividad]
+\label{Lem:MP:ReflexividadHipergeometrica}
+%
+  Sea \ $X \, \sim \, \H(n,k,m)$. Entonces
+  %
+  \[
+  m-X \, \sim \, \H(n,n-k,m) \qquad \mbox{y} \qquad k-X \sim \H(n,k,n-m)
+  \]
+  %
+\end{lema}
+%
+\begin{proof}
+  El  primer   resultado  es  inmediato  de  $P(m-X   =  x)  =  P(X   =  m-x)  =
+  \frac{\smallbino{k}{m-x} \smallbino{n-k}{x}}{\smallbino{n}{m}}$. El secundo de
+  $P(k-X    =     x)    =     P(X    =    k-x)     =    \frac{\smallbino{k}{k-x}
+    \smallbino{n-k}{m-k+x}}{\smallbino{n}{m}}      =      \frac{\smallbino{k}{x}
+    \smallbino{n-k}{n-m-x}}{\smallbino{n}{n-m}}$  notando   que  $\bino{a}{b}  =
+  \bino{a}{a-b}$.
+\end{proof}
 
 % Cuando  $n  = 1$,  se  recupera  la lei  de  Bernoulli  $\B(p) \equiv  \B(1,p)$.
 % Ad\'emas, se muestra  sencillamente usando la generadora de  probabilidad que

@@ -2,11 +2,12 @@
 \label{Sssec:MP:HipergeometricaMultivariada}
 
 Esta ley aparece por ejemplo cuando  se se generaliza la ley hipergeometrica con
-$c > 2$ clases \ con \ $K_i$ \ estados en la clase $i$, $\sum_i K_i = N$.
+$c > 2$ clases \ con \ $k_i$ \ estados en la clase $i$, $\sum_i k_i = n$.
 
-Se denota \ $X \, \sim \, \H\M(N,K,n)$ \ con \ $\displaystyle N \in \Nset, \quad
-K = (K_1  \, , \, \ldots  \, , \, K_c) \in  \left\{ \{ 0 \; \ldots  \; N\}^c \tq
-  \sum_{i=1}^c K_i = N \right\}, \quad n \in \{ 0 \; \ldots \; N\}$.
+Se denota \ $X \, \sim \, \H\M(n,k,m)$ \ con \ $\displaystyle n \in \Nset$, \quad
+$k = \begin{bmatrix} k_1 & \cdots & k_c\end{bmatrix}^t \in \left\{ \{ 0 \; \ldots
+  \; n\}^c  \tq \sum_{i=1}^c k_i  = n \right\}$,  \quad $m \in  \{ 0 \;  \ldots \;
+n\}$.
 
 Entonces, como en el caso de la ley multinomial, a pesar de que se escribe \ $X$
 \ de manera $c$-dimensional, el vector  partenece a una variedad claramente \ $d
@@ -17,24 +18,24 @@ Sus caracter\'isticas son las siguientes:
 
 \begin{caracteristicas}
 %
-Dominio de definici\'on & $\displaystyle \X = \left\{ k \in \optimes_{i=1}^c \{
-0 \; \ldots \; K_i \} \tq \sum_{i=1}^c k_i = n \right\}$\\[2mm]
+Dominio de definici\'on & $\displaystyle \X = \left\{ x \in \optimes_{i=1}^c \{
+0 \; \ldots \; k_i \} \tq \sum_{i=1}^c x_i = m \right\}$\\[2mm]
 \hline
 %
-Parametros & $N \in \Nset^*$ \: (poblaci\'on)\newline $c \in \Nset^*$ \: (n\'umero de clases)\newline $\displaystyle K \in \left\{
-\{ 0 \; \ldots \; N\}^c \tq \sum_{i=1}^c K_i = N \right\}$ \ (n\'umero de
-estados en cada clase)\newline $n \in \{ 0 \; \ldots \; N\}$ \: (n\'umero de
+Parametros & $n \in \Nset^*$ \: (poblaci\'on)\newline $c \in \Nset^*$ \: (n\'umero de clases)\newline $\displaystyle k \in \left\{
+\{ 0 \; \ldots \; n\}^c \tq \sum_{i=1}^c k_i = n \right\}$ \ (n\'umero de
+estados en cada clase)\newline $m \in \{ 0 \; \ldots \; m\}$ \: (n\'umero de
 tiros)\\[2mm]
 \hline
 %
-Distribuci\'on de probabilidad & \protect$\displaystyle p_X(k) =
-\frac{\prod_{i=1}^c \bino{K_i}{k_i}}{\bino{N}{n}}$\protect\\[2mm]
+Distribuci\'on de probabilidad & \protect$\displaystyle p_X(x) =
+\frac{\prod_{i=1}^c \smallbino{k_i}{x_i}}{\smallbino{n}{m}}$\protect\\[2mm]
 \hline
 %
-Promedio & $\displaystyle m_X = \frac{n}{N} \, K$\\[2mm]
+Promedio & $\displaystyle m_X = \frac{m}{n} \, k$\\[2mm]
 \hline
 %
-Covarianza & $\displaystyle \Sigma_X = \frac{n (N-n)}{N^2 (N-1)} \left( N \diag K - K K^t \right)$\\[2mm]
+Covarianza & $\displaystyle \Sigma_X = \frac{m (n-m)}{n^2 (n-1)} \left( n \diag k - k k^t \right)$\\[2mm]
 \hline
 %
 %
@@ -50,17 +51,19 @@ Covarianza & $\displaystyle \Sigma_X = \frac{n (N-n)}{N^2 (N-1)} \left( N \diag 
 %\, e^{\imath \omega} \right)^n$
 \end{caracteristicas}
 
-Cuando $c = 2$ se recupera 
+Cuando $c = 2$ se recupera la ley hipergeometrica.
 
 Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
-figura Fig.~\ref{Fig:MP:Hipergeometrica}.
+figura Fig.~\ref{Fig:MP:HipergeometricaMultivaluada}.
 %
 \begin{figure}[h!]
 % \begin{center} \input{TIKZ_MP/HipergeometricaMultivariada} \end{center}
 %
-\leyenda{Ilustraci\'on de una distribuci\'on  de probabilidad Hipergeometrica (a) \SZ{con $n = 6, \quad p = \frac13$.}}
+\leyenda{Ilustraci\'on de una distribuci\'on  de probabilidad Hipergeometrica multivaluada con (a) \SZ{con $n = 6, \quad p = \frac13$.}}
 \label{Fig:MP:HipergeometricaMultivariada}
 \end{figure}
+
+
 \SZ{CERRAR}
 
 \SZ{Reflexibilidad? Stabilidad por agregaci\'on, Marginales hipegeometrica}

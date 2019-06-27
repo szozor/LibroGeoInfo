@@ -58,7 +58,7 @@
 \def\pCov{\operatorname{pCov}} % Pseudo-covarianza
 \def\Curt{\operatorname{Curt}} % Curtosis
 \def\Excurt{\operatorname{ExCurt}} % Curtosis por excesso
-\def\Asim{\operatorname{Sesgo}} % Asimetria {\operatorname{Asim}}
+\def\Asim{\operatorname{Ses}} % Asimetria {\operatorname{Asim}}
 \def\e{\operatorname{e}} % exponential con un e solo
 \def\Jac{\operatorname{J}} % Jacobiana
 \def\Hess{\mathcal{H}} % Hessiana
@@ -98,8 +98,10 @@
 \newcommand{\PocC}[2]{#1^{\overline{#2}}}
 \newcommand{\PocD}[2]{#1^{\underline{#2}}}
 % Coefficiente binomial
-\newcommand{\bino}[2]{\left( \hspace{-2mm} \protect\begin{array}{c} #1 \\[-1.5mm] #2 \protect\end{array} \hspace{-2mm} \right)}
-%\newcommand{\bino}[2]{\begin{pmatrix} \! #1 \\[-1.5mm] #2 \! \end{pmatrix}}
+\newcommand{\bino}[2]{\Big( \hspace{-1mm} \protect\begin{array}{c} #1 \\[-2.5mm] #2 \protect\end{array} \hspace{-1mm} \Big)}
+%\newcommand{\bino}[2]{\begin{pmatrix} \! #1 \!\\[-1.5mm] \! #2 \! \end{pmatrix}}
+%\newcommand{\bino}[2]{\begin{psmallmatrix} \! #1 \! \\ \! #2 \!\vspace{.25mm} \end{psmallmatrix}}
+\newcommand{\smallbino}[2]{\begin{psmallmatrix} \! #1 \! \\ \! #2 \!\vspace{.25mm} \end{psmallmatrix}}
 % funcion hipergeometrica
 \newcommand{\hypgeom}[2]{\mbox{}_{#1}F_{#2}}
 %

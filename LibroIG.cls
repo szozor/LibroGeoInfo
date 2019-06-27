@@ -18,6 +18,9 @@
 \RequirePackage{xspace} % spacing package
 \RequirePackage{epsfig,graphics,graphicx,color,tikz,tikz-3dplot,pgfplots,etoolbox} % figures packages
 \usetikzlibrary{math}% paquete de mathematica en tikz
+\usetikzlibrary{calc,fixedpointarithmetic}
+\usetikzlibrary{fpu}
+\RequirePackage{fp}
 \RequirePackage{enumitem} % to manage the labels... en enumerate
 %\RequirePackage[labelsep=endash]{caption}
 %\RequirePackage{setspace} % space package

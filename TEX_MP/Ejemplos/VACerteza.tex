@@ -2,14 +2,14 @@
 \label{Sssec:MP:Certeza}
 
 
-El caso \ $X = a$ \ deterministico ($\forall \, \omega, \: X(\omega) = a$) puede
-ser ver visto  como un caso degenerado de  variable/vector aleatorio. Visto como
-vector  aleatorio,  sus  caracter\'isticas  principales  vistas  en  las  secciones
-anteriores son resimudas en la tabla siguiente:
+El caso \ $X = a \in \Rset^d$ \ deterministico ($\forall \, \omega, \: X(\omega)
+= a$)  puede ser ver  visto como un  caso degenerado de vector  aleatorio. Visto
+as\'i, sus caracter\'isticas principales  vistas en las secciones anteriores son
+resimudas en la tabla siguiente:
 
 \begin{caracteristicas}
 %
-Dominio de definici\'on & $\X = \{ a \}$\\[2mm]
+Dominio de definici\'on & $\X = \{ a \}, \quad a \in \Rset^d$\\[2mm]
 \hline
 %
 Distribuci\'on de probabilidad & $p_X(x) = \un_{\{a\}}(x)$\\[2mm]
@@ -18,24 +18,24 @@ Distribuci\'on de probabilidad & $p_X(x) = \un_{\{a\}}(x)$\\[2mm]
 Promedio & $\displaystyle m_X = a$\\[2mm]
 \hline
 %
-Varianza & $\displaystyle \sigma_X^2 = 0$\\[2mm]
+Covarianza & $\displaystyle \Sigma_X = 0$\\[2mm]
 \hline
 %
-\modif{Sesgo} & $\gamma_X = 0$\\[2mm]
+\modif{Sesgo} (caso escalad) & $\gamma_X = 0$\\[2mm]
 \hline
 %
-Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = -3$\\[2mm]
+Curtosis por exceso (caso escalar) & $\displaystyle \widebar{\kappa}_X = -3$\\[2mm]
 \hline
 %
-Generadora de probabilidad & $\displaystyle G_X(z) = z^a$ \ para \ $z \in \Cset$
-\ si $a \ge 0$ \ y \ $\Cset^*$ \ si no\\[2mm]
+Generadora de probabilidad & $\displaystyle G_X(z) = \prod_{i=1}^d z_i^{a_i}$ \ para \ $z_i \in \Cset$
+\ si $a_i \ge 0$ \ y \ $\Cset^*$ \ si no\\[2mm]
 \hline
 %
-Generadora de momentos & $\displaystyle M_X(u) = e^{a u}$ \ para \ $u \in
-\Cset$\\[2mm]
+Generadora de momentos & $\displaystyle M_X(u) = e^{a^t u}$ \ para \ $u \in
+\Cset^d$\\[2mm]
 \hline
 %
-Funci\'on caracter\'istica & $\displaystyle \Phi_X(\omega) = e^{\imath a
+Funci\'on caracter\'istica & $\displaystyle \Phi_X(\omega) = e^{\imath \, a^t
 \omega}$
 \end{caracteristicas}
 
@@ -43,7 +43,7 @@ Funci\'on caracter\'istica & $\displaystyle \Phi_X(\omega) = e^{\imath a
 % Momento factorial & $\Esp\left[ (X)_k \right] = ?$\\[2mm]
 
 La funci\'on de masa y funci\'on de repartici\'on son representadas en la figura
-Fig.~\ref{Fig:MP:Certeza}.
+Fig.~\ref{Fig:MP:Certeza} en el caso escalar.
 %
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/Certeza} \end{center}

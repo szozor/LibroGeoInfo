@@ -20,8 +20,12 @@ Lg = gammainc(u,d/2);
 
 
 % Lo mismo para la Student-t
-u = r.^2/((nu-2)*v);
-Ls = 2/(d*beta(d/2,(nu+d)/2))*hypergeom([d/2 (nu+d)/2],d/2+1,-u);
+nust = 2.25;
+sd = (nust-2)*v;
+u = (r.^2)./(sd+r.^2);
+
+Ls = betainc(u,nust/2,d/2);
+%2/(d*beta(d/2,(nu+d)/2))*[1 hypergeom([d/2 (nu+d)/2],d/2+1,-u(2:end))];
 
 % Lo mismo para la uniforme de misa varianza
 %a = sqrt(3*(nu+3)/(nu+2));
@@ -35,5 +39,5 @@ Ls = 2/(d*beta(d/2,(nu+d)/2))*hypergeom([d/2 (nu+d)/2],d/2+1,-u);
 %Iar = [1-2*asin(1-r(1:I)/sqrt(2)/s)/pi ones(1,l)];
 
 
-plot(r,Lp,'r-',r,Lg,'k-',r,Ls,'b-')
+plot(r,Lp,'r-',r,Lg,'k-',r,Ls,'b.')
 %,r,Iur,'b--',r,erf(r/sqrt(2*v)),'r-',r,Iar,'k-',r,1-exp(-2*r/s),'k--')

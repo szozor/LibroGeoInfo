@@ -105,44 +105,48 @@ para $k = 3$.
 Vectores  de  distribuci\'on  de  Dirichlet tienen  tambi\'en  unas  propiedades
 notables, parecidas a las de la beta:
 %
-\begin{lema}[Reflexividad]
-\label{Lem:MP:ReflexividadDir}
+\begin{lema}[Reflexividad]\label{Lem:MP:ReflexividadDir}
 %
-Sea \ $X \, \sim  \, \Dir(a), \: a \in \Rset_+^{* \, k}$ \  y \ $\Pi$ \ matriz \
-$k \times k$ \ de permutaci\'on. Entonces
+  Sea  \ $X \,  \sim \,  \Dir(a), \:  a \in  \Rset_+^{* \,  k}$ \  y \  $\Pi \in
+  \mathfrak{S}_k(\Rset)$ \ matriz \ de permutaci\'on. Entonces
   %
   \[
   \Pi X \, \sim \, \Dir\left( \Pi a \right)
   \]
   %
 \end{lema}
+
+%
+\begin{proof}
+  El resultado es inmediato por cambio  de variables $x \to \Pi x$, la Jacobiana
+  siende   $\Pi$,   de   valor   absoluto   determinente  igual   a   $1$   (ver
+  secci\'on~\ref{Sec:MP:Transformacion}).
+\end{proof}
 %
 Adem\'as, se muestra una stabilidad remplazando dos componentes por su suma:
 %
-\begin{lema}[Stabilidad por agregaci\'on]
-\label{Lem:MP:StabSumaDir}
+\begin{lema}[Stabilidad por agregaci\'on]\label{Lem:MP:StabSumaDir}
 %
   Sea  \ $X =  \begin{bmatrix} X_1  & \cdots  & X_k  \end{bmatrix}^t \,  \sim \,
-  \Dir(a), \: a = \begin{bmatrix} a_1 & \cdots & a_k \end{bmatrix}^t \in
-  \Rset_+^{* \, k}$ \ y \ $J^{(i,j)} = \begin{bmatrix} I_{j-1} & \un_i & 0 \\[1mm]
-    0 & 0 & I_{k-j}\end{bmatrix}$ \ matriz  \ $(k-1) \times k$ \ donde \ $I_l$ \
-  es  la identidad $l  \times l$,  $\un_i$ el  vector con  component $i$-\'esima
-  igual a  1 (0 si no)  y $0$ matrices de  0 (todas de tama\~no  adcuado).  En \
-  $J^{(i,j)} X$ \ se saca la componente $j$-\'esima, se re-emplaza la componente
-  $i$-\'esima  por   la  suma  $X_i   +  X_j$  \   y  se  conservan   las  otras
-  componentes. Entonces,
+  \Dir(a),  \:  a =  \begin{bmatrix}  a_1 &  \cdots  &  a_k \end{bmatrix}^t  \in
+  \Rset_+^{*  \,  k}$  \  y  \  $G^{(i,j)}$ \  matriz  de  agrupaci\'on  de  las
+  $(i,j)$-\'esima componentes (ver notaciones). Entonces,
   %
   \[
-  J^{(i,j)} X \, \sim \, \Dir\left( J^{(i,j)} a \right)  
+  G^{(i,j)} X \, \sim \, \Dir\left( G^{(i,j)} a \right)  
   \]
   %
 \end{lema}
 %
 \begin{proof}
-  Del lema precediente, notando que existe una matriz de permutaci\'on \ $\Pi$ \
-  tal que  \ $J^{(i,j)}  = J^{(1,2)} \Pi$,  se puede  concentrarse en el  caso \
-  $(i,j) = (1,2)$. Sea el cambio de variables $g: x = (x_1,\ldots,x_k) \mapsto u
-  =  (u_1,\ldots,u_k) = (x_1,x_1+x_2,x_3,\ldots,x_k)$.  Entonces \  $g^{-1}(u) =
+  Se  puede probar  este resultado  a partir  de la  funci\'on caracter\'istica,
+  usando      las      propiedades      de      la      funci\'on      confluent
+  hipergeom\'etrica~\cite{SriKar85, Hum22, App25,  AppKam26, Erd37, Erd40}. Pero
+  se  puede tambi\'en  tener un  enfoque m\'as  directo.  Del  lema precediente,
+  notando que existe una matriz de  permutaci\'on \ $\Pi$ \ tal que \ $G^{(i,j)}
+  = G^{(1,2)} \Pi$, se  puede concentrarse en el caso \ $(i,j)  = (1,2)$. Sea el
+  cambio de  variables $g: x =  (x_1,\ldots,x_k) \mapsto u  = (u_1,\ldots,u_k) =
+  (x_1,x_1+x_2,x_3,\ldots,x_k)$.        Entonces       \      $g^{-1}(u)       =
   (u_1,u_2-u_1,u_3,\ldots,u_k)$ \ es de determinente de matriz Jacobiana igual a
   \ $1$ \ dando para $U = g(X)$ \ la densidad
   %
@@ -156,7 +160,7 @@ Adem\'as, se muestra una stabilidad remplazando dos componentes por su suma:
   densidad
   %
   \begin{eqnarray*}
-  p_{J^{(1,2)} X}(u_2,\ldots,u_k) & = & \frac{\prod_{i=3}^k u_i^{a_i-1}}{B(a)}
+  p_{G^{(1,2)} X}(u_2,\ldots,u_k) & = & \frac{\prod_{i=3}^k u_i^{a_i-1}}{B(a)}
   \int_0^{u_2} u_1^{a_1-1} \left( u_2 - u_1 \right)^{a_2-1} \, du_1\\[2mm]
   %
   & = & \frac{\prod_{i=3}^k u_i^{a_i-1}}{B(a)} \, u_2^{a_1+a_2-1} \int_0^1
@@ -165,10 +169,10 @@ Adem\'as, se muestra una stabilidad remplazando dos componentes por su suma:
   %
   con el cambio de variables $u_1 = u_2 v_1$. Se cierra la prueba notando que la
   integral   vale  \  $B(a_1,a_2)$   \  y   que  \   $\frac{B(a_1,a_2)}{B(a)}  =
-  \frac{1}{B\left( J^{(1,2)} a \right)}$.
+  \frac{1}{B\left( G^{(1,2)} a \right)}$.
 \end{proof}
 
-De este lema, aplicado de manera recueriva, se obtiene en corolario siguiente:
+De este lema, aplicado de manera recursiva, se obtiene en corolario siguiente:
 %
 \begin{corolario}
 \label{Cor:MP:MarginalDirichletBeta}
