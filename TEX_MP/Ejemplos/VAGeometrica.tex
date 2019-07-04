@@ -63,7 +63,22 @@ experiencia de maneja  independiente hasta que occure un  evento de probabilidad
 $p$; por ejemplo  el n\'umero de tiro de un dado  equilibriado hasta que occurre
 un ``6'' sigue una ley geom\'etrica de parametro $p = \frac16$.
 
-Nota que cuando \  $p =  1$ \ la variable es cierta \  $X = 1$.   
+Esta ley esta v\'inculada con la binomial negativa, siendo un caso particular:
 
+% En el caso \ $r = 1$ \
+%aparece que \ $N \sim \G(1-p)$ dando:
+%%
+\begin{lema}[V\'inculo con la ley Binomial negativa]\label{Lem:MP:VinculoGeomBinoNegativa}
+%
+  Sea \ $X \sim \B_-(1,p)$, entonces tenemos tambi\'en
+  %
+  \[
+  X \sim \G(1-p).
+  \]
+\end{lema}
+%
+Si volvemos  a la representation  de $X \sim  \B_-(1,p)$ como $X  = \sum_{i=1}^N
+X_i$  con $X_i  \sim \B(p)$  independientes,  $N$ tal  que \  $X_N  = 0$  \ y  \
+$\sum_{i=1}^N (1-X_i) = 1$, aparece que, tambi\'en, $N \sim \G(1-p)$.
 
-\SZ{?`Que propiedad mas?}
+Nota que cuando \  $p =  1$ \ la variable es cierta \  $X = 1$.

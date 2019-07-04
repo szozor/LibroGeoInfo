@@ -2,15 +2,15 @@
 \label{Sssec:MP:Hipergeometrica}
 
 Esta ley aparece por ejemplo cuando  se hace una experiencia con una poblaci\'on
-de tama\~no  \ $n$ \ (ej.  $n$ bolas en una  urna), que pueden  partenecer a dos
-clases, con  \ $k$  \ estados parteneciendo  a la  primera clase (a  veces dicho
-estados de excito; ej. $k$ \ bolas  negras), $n-k$ a la secunda clase, y se hace
-\ $m$  \ tiros. $X$ es  el n\'umero de  tiros parteneciendo en la  primera clase
-(n\'umero de excitos).
+de tama\~no \  $n$ \ (ej.  $n$ bolas  en una urna), que pueden  partenecer a dos
+clases, con  \ $k$ \ num\'ero  de elementos de  la primera clase (a  veces dicho
+estados de excito; ej. $k$ \ bolas  negras), $n-k$ \ num\'ero de elementos de la
+secunda clase, y se  hace \ $m$ \ tiros si reemplazamiento.   $X$ es el n\'umero
+de tiros parteneciendo en la primera clase (n\'umero de excitos).
 
-Se denota \ $X \,  \sim \, \H(n,k,m)$ \ con \ $n \in \Nset$,  \quad $k \in \{ 0 \;
-\ldots \; n \}$, \quad $m \in \{  0 \; \ldots \; m \}$ \ y sus caracter\'isticas
-son las siguientes:
+Se denota \ $X \, \sim \, \H(n,k,m)$ \  con \ $n \in \Nset^*$, \quad $k \in \{ 0
+\;  \ldots  \;  n  \}$,  \quad  $m  \in  \{  0 \;  \ldots  \;  m  \}$  \  y  sus
+caracter\'isticas son las siguientes:
 
 \begin{caracteristicas}
 %
@@ -18,7 +18,7 @@ Dominio de definici\'on & $\X = \left\{ \max(0,k+m-n) \; \ldots \; \min(k,m)
 \right\}$\\[2mm]
 \hline
 %
-Parametros & $n \in \Nset$ \: (poblaci\'on)\newline $k \in \{ 0 \; \ldots \;
+Parametros & $n \in \Nset^*$ \: (poblaci\'on)\newline $k \in \{ 0 \; \ldots \;
 n\}$ \ (n\'umero de estados exitosos)\newline $m \in \{ 0 \; \ldots \; n\}$ \:
 (n\'umero de tiros)\\[2mm]
 \hline
@@ -30,28 +30,37 @@ Distribuci\'on de probabilidad & \protect$p_X(x) =
 Promedio & $\displaystyle m_X = \frac{m}{n} \, k$\\[2mm]
 \hline
 %
-Varianza & $\displaystyle \sigma_X^2 = \frac{m \, (n-m)}{n^2 (n-1)} \, k \,
-(n-k)$\\[2mm]
+Varianza~\footnote{En el caso degenerado \ $n = 1$, o \ $m = 0$, o \ $m = 1 =
+n$; en ambos casos, la variable es cierta (ver fin de la
+subsecci\'on).\label{Foot:MP:HipergeometricaVarianza}} & $\displaystyle
+\sigma_X^2 = \left\{ \protect\begin{array}{ccc} \frac{m \, (n-m)}{n^2 (n-1)} \,
+k \, (n-k) & \mbox{si} & n > 1\\[2mm] 0 & \mbox{si} & n =
+1\end{array}\protect\right.$\\[2mm]
 \hline
 %%
-\modif{Sesgo} & $\displaystyle \gamma_X = \frac{(n - 2 \, k) (n - 2 \, m)}{n-2}
-\, \sqrt{\frac{n-1}{m k (n-k) (n-m)}}$\\[2mm]
-\hline
+Sesgo~\footnote{Cuando \ $m \in \{ 0 \; n \}$, tenemos \ $k \in \{ 0 \; n
+\}$. Entonces, la variable es cierta (ver fin de la subsecci\'on) as\'i que no
+hay asimetr\'ia. Si \ $n = 2$, \ y \ $k=m=1 \not\in \{0 \; n \}$, tenemos $P(X =
+0) = P(X = 1) = \frac12$ sim\'etrico: de nuevo el sesgo vale cero.} &
+$\displaystyle \gamma_X = \left\{ \!\! \begin{array}{cl} \frac{(n - 2 k) (n - 2
+m)}{n-2} % \sqrt{\frac{n-1}{m k (n-k) (n-m)}} & \mbox{si} \: n \ne 2, \quad k,l
+\not\in \{ 0 \; n \} \\[2mm] 0 & \mbox{si no} \end{array} \right.$\\[2mm]
+%\hline
 %%
-Curtosis por exceso & $\displaystyle \SZ{\widebar{\kappa}_X = ...}$\\[2mm]
-\hline
+%\SZ{Curtosis por exceso} & $\displaystyle \widebar{\kappa}_X = $\\[2mm]
+%\hline
 %
 Generadora de probabilidad & $G_X(z) = \frac{\smallbino{n-k}{m}}{\smallbino{n}{m}} \:
-\: \hypgeom{2}{1}(-m , -k ; n-k-m+1 ; z)$ \ sobre \ $\Cset$\\[2mm]
+\: \hypgeom{2}{1}(-m , -k ; n-m-k+1 ; z)$ \ sobre \ $\Cset$\\[2mm]
 \hline
 %
 Generadora de momentos & $M_X(u) = \frac{\smallbino{n-k}{m}}{\smallbino{n}{k}}  \:
-\: \hypgeom{2}{1}\left( -m , -k ; n-k-m+1 ; e^u \right)$ \ sobre \
+\: \hypgeom{2}{1}\left( -m , -k ; n-m-k+1 ; e^u \right)$ \ sobre \
 $\Cset$\\[2mm]
 \hline
 %%
 Funci\'on caracter\'istica  & $\Phi_X(\omega) =  \frac{\smallbino{n-k}{m}}{\smallbino{n}{m}}  \:
-\: \hypgeom{2}{1}\left( -m , -k ; n-k-m+1 ; e^{\imath \, \omega} \right)$
+\: \hypgeom{2}{1}\left( -m , -k ; n-m-k+1 ; e^{\imath \, \omega} \right)$
 \end{caracteristicas}
 
 Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
@@ -66,7 +75,23 @@ figura Fig.~\ref{Fig:MP:Hipergeometrica}.
 \label{Fig:MP:Hipergeometrica}
 \end{figure}
 
-\SZ{Otros ilustraciones para otros $n, k, m$?}
+\SZ{Otros ilustraciones para otros $n, k, m$? Poner el Sesgo (ya lo tengo)? El Curtosis (lo tengo que simplificar)?}
+
+Notar: la variable resuelta cierta en los casos siguientes
+%
+\begin{itemize}
+\item  $m = 0  \: \Rightarrow  \: X  = 0$:  no se  sortean elementos,  as\'i que
+  siempre se sortea $0$ elementos de la primera clase;
+%
+\item $m =  n \: \Rightarrow \: X =  k$: si se sortean todos los  elementos de la
+  poblaci\'on, se sortean todos los \ $k$ \ de la primera clase;
+%
+\item $k = 0 \: \Rightarrow \: X = 0$: si la primera clase no tiene elementos, no
+  se puede tirar elementos de esta clase;
+%
+\item $k = n  \: \Rightarrow \: X = m$: al rev\'es si  la secunda clase no tiene
+  elementos, todos los sorteados partenecen a la primera clase.
+\end{itemize}
 
 La ley tiene propiedades de reflexividad del mismo tipo que para la ley binomial:
 %
@@ -80,6 +105,14 @@ La ley tiene propiedades de reflexividad del mismo tipo que para la ley binomial
   \]
   %
 \end{lema}
+%
+Se puede ver  que si en una urna con  bolas negras y blancas, con  \ $k$ \ bolas
+negras, y \ $X$  \ es el n\'umero de bolas negras  sorteadas, $m-X$ \ representa
+las bolas blancas sorteadas. Es decir que  en \ $m-X$ \ se intercambia los roles
+de las bolas  negras y blancas.  De la misma manera,  $k-X$ representa las bolas
+negras que quedan en la urna, entre las  \ $n-m$ \ que quedan, es decir que en \
+$k-X$ \ se intercambia  los roles de las bolas sorteadas y  las que quedan en la
+urna. M\'as formalmente:
 %
 \begin{proof}
   El  primer   resultado  es  inmediato  de  $P(m-X   =  x)  =  P(X   =  m-x)  =

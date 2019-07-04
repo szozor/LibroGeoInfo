@@ -26,8 +26,8 @@ Varianza & $\sigma_X^2 = n \, p \, (1-p)$\\[2mm]
 \modif{Sesgo} & $\displaystyle \gamma_X = \frac{1 - 2 \, p}{\sqrt{n \, p \, (1-p)}}$\\[2mm]
 \hline
 %
-Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = \frac{1 - 6 \, p + 6 \, p^2}{n \, p
-\, (1-p)} $\\[2mm]
+Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = \frac{1 - 6 \, p + 6
+\, p^2}{n \, p \, (1-p)} $\\[2mm]
 \hline
 %
 Generadora  de probabilidad  &  $\displaystyle  G_X(z) =  \left(  1 -  p  + p  z
@@ -66,7 +66,7 @@ Cuando  $n  = 1$,  se  recupera  la lei  de  Bernoulli  $\B(p) \equiv  \B(1,p)$.
 Ad\'emas, se muestra  sencillamente usando la generadora de  probabilidad que
 %
 \begin{lema}
-\label{Lem:BinomilaSumaBernoulli}
+\label{Lem:BinomialSumaBernoulli}
 %
   Sean \  $X_i \,  \sim \, \B(p),  \quad i  = 1, \ldots  , n$  \ independientes,
   entonces
@@ -92,6 +92,12 @@ directa de la de Bernoulli:
   \]
   %
 \end{lema}
+%
+Si  tomamos  el  ejemplo  de  una  moneda  que se  tira  $n$  veces  de  maneras
+independientes, con  probabilidad $p$ que  aparezca una cara, $X$  representa el
+n\'umero de caras tiradas. Entonces, $n-X$  es el n\'umero de secas: en $n-X$ se
+intercambian los roles de la cara y seca. M\'as formalmente:
+%
 \begin{proof}
   El  resultado es  inmediato  de la  propiedad  de reflexividad  de  la ley  de
   Bernoulli,                           conjuntamente                          al

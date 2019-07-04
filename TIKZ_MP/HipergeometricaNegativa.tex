@@ -1,0 +1,103 @@
+\begin{tikzpicture}[fixed point arithmetic]%[scale=.9]
+\shorthandoff{>}
+%
+\pgfmathsetmacro{\sx}{.375};% x-scaling
+\pgfmathsetmacro{\r}{.05};% radius arc non continuity F_X
+%\pgfmathsetmacro{\p}{1/3};% probabilidad p
+\pgfmathsetmacro{\n}{100};% numero n de la poblacion
+\pgfmathsetmacro{\k}{12};% numero k de estados exitosos
+\pgfmathsetmacro{\rr}{40};% numero de rechazos para parar
+%
+% primera proba (n-k) (n-k-1) ... (n-k-r+1) / n (n-1) ... (n-r+1)
+% debhiperneg(\n,\k,\rr)
+\tikzmath{function debhiperneg(\a,\b,\c) {
+    if \c == 0 then {return 1;}
+    else {return ((\a-\b)/\a)*debhiperneg(\a-1,\b,\c-1);};
+};};
+%
+
+\pgfmathsetmacro{\ui}{2}; % numeros de indices finales nulos dibujados
+%
+% masa
+\begin{scope}
+%
+\pgfmathsetmacro{\sy}{10};% y-scaling
+%
+% proba nulas del principio 0 -> d-1
+\foreach \y in {-2,...,-1} {
+\pgfmathsetmacro{\xl}{int(\y)};\global\let\x\xl;
+\draw ({\sx*\x},0)--({\sx*\x},-.1) node[below,scale=.7]{$\x$};
+\draw ({\sx*\x},0) node[scale=.6]{$\bullet$};
+}
+%
+% proba nulas del fin f+1 -> ui
+\foreach \y in {1,...,\ui} {
+\pgfmathsetmacro{\xl}{int(\k+\y)};\global\let\x\xl;
+\draw ({\sx*\x},0)--({\sx*\x},-.1) node[below,scale=.7]{$\x$};
+\draw ({\sx*\x},0) node[scale=.6]{$\bullet$};
+}
+%
+\pgfmathsetmacro{\pr}{debhiperneg(\n,\k,\rr)};% valor de la primer proba no nula
+\pgfmathsetmacro{\maxp}{\pr};% proba maximal (inicializacion)
+%
+\foreach \x in {0,...,\k} {
+%\pgfmathsetmacro{\xl}{int(\f-\y)};\global\let\x\xl;
+\draw ({\sx*\x},0)--({\sx*\x},-.1) node[below,scale=.7]{$\x$};
+\draw[dotted] ({\sx*\x},0)--({\sx*\x},{\sy*\pr}) node[scale=.6]{$\bullet$};
+%
+\pgfmathsetmacro{\prl}{\pr*(\x+\rr)*(\k-\x)/((\x+1)*(\n-\rr-\x))};\global\let\pr\prl;% proba actualizado
+\pgfmathsetmacro{\maxpl}{(abs(\pr-\maxp)+\pr+\maxp)/2};\global\let\maxp\maxpl;% proba max actualizado
+}
+%
+\draw[>=stealth,->] ({-2*\sx-.25},0)--({\sx*(\k+\ui)+.35},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.15)--(0,{\sy*\maxp+.25}) node[above]{\small $p_X$};
+%\draw (0,{((1-\p)^\n)*\sy})--(-.1,{((1-\p)^\n)*\sy}) node[left,scale=.7]{$(1-p)^n$};
+%\draw (0,{\n*\p*((1-\p)^(\n-1))*\sy})--(-.1,{\n*\p*((1-\p)^(\n-1))*\sy}) node[left,scale=.7]{$n \, p \, (1-p)^{n-1}$};
+%
+\node at ({(\sx*(\ui+\k)+.25)/2},-1) [scale=.9]{(a)};
+\end{scope}
+%
+%
+% reparticion
+\begin{scope}[xshift=8.25cm]
+%
+\pgfmathsetmacro{\sy}{2.5};% y-scaling 
+%
+\draw[>=stealth,->] ({-2*\sx-.25},0)--({\sx*(\k+\ui)+.5},0) node[right]{\small $x$};
+\draw[>=stealth,->] (0,-.15)--(0,{\sy+.25}) node[above]{\small $F_X$};
+%
+% proba nulas del principio 0 -> d-1
+\foreach \y in {-2,...,1} {
+\pgfmathsetmacro{\xl}{int(\y)};\global\let\x\xl;
+\draw ({\sx*\x},0)--({\sx*\x},-.1) node[below,scale=.7]{$\x$};
+}
+\draw ({-2*\sx},0)--(0,0);
+%
+% proba nulas del fin f+1 -> ui
+\foreach \y in {0,...,\ui} {
+\pgfmathsetmacro{\xl}{int(\y+\k)};\global\let\x\xl;
+\draw ({\sx*\x},0)--({\sx*\x},-.1) node[below,scale=.7]{$\x$};
+}
+\draw ({\sx*\k},\sy) node[scale=.6]{$\bullet$} --({\sx*(\k+\ui)},\sy);
+%
+\pgfmathsetmacro{\pr}{debhiperneg(\n,\k,\rr)};% valor de la primera proba no nula
+\pgfmathsetmacro{\cum}{\pr};% valor inicial de la cumulativa
+%
+\pgfmathsetmacro{\fk}{\k-1}
+\foreach \x in {0,...,\fk} {
+\draw ({\sx*\x},0)--({\sx*\x},-.1) node[below,scale=.7]{$\x$};
+\draw ({\sx*\x},{\sy*\cum}) node[scale=.6]{$\bullet$} --({\sx*(\x+1)},{\sy*\cum});
+\draw ({\sx*(\x+1)+\r},{\sy*\cum+\r}) arc (90:270:\r);
+\draw[dotted] ({\sx*\x},{\sy*(\cum-\pr)})--({\sx*\x},{\sy*\cum});
+%
+\pgfmathsetmacro{\prl}{\pr*(\x+\rr)*(\k-\x)/((\x+1)*(\n-\rr-\x))};\global\let\pr\prl;% proba actualizado
+\pgfmathsetmacro{\cuml}{\cum+\pr}\global\let\cum\cuml;% cumulativa actualizada
+}
+\draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
+%\draw (0,{((1-\p)^\n)*\sy})--(-.1,{((1-\p)^\n)*\sy}) node[left,scale=.7]{$(1-p)^n$};
+%\draw (0,{\n*\p*((1-\p)^(\n-1))*\sy})--(-.1,{\n*\p*((1-\p)^(\n-1))*\sy}) node[left,scale=.7]{$n \, p \, (1-p)^{n-1}$};
+%
+\node at ({(\sx*(\ui+\k)+.5)/2},-1) [scale=.9]{(b)};
+\end{scope}
+%
+\end{tikzpicture}

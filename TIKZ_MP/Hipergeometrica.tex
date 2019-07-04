@@ -59,10 +59,10 @@
 \pgfmathsetmacro{\maxpl}{(abs(\pr-\maxp)+\pr+\maxp)/2};\global\let\maxp\maxpl;% proba max actualizado
 }
 %
+%\pgfmathsetmacro{\maxpl}{ceil(100*\maxp)/100)};
 \draw[>=stealth,->] ({-2*\sx-.25},0)--({\sx*\ui+.35},0) node[right]{\small $x$};
 \draw[>=stealth,->] (0,-.15)--(0,{\sy*\maxp+.25}) node[above]{\small $p_X$};
-%\draw (0,{((1-\p)^\n)*\sy})--(-.1,{((1-\p)^\n)*\sy}) node[left,scale=.7]{$(1-p)^n$};
-%\draw (0,{\n*\p*((1-\p)^(\n-1))*\sy})--(-.1,{\n*\p*((1-\p)^(\n-1))*\sy}) node[left,scale=.7]{$n \, p \, (1-p)^{n-1}$};
+\draw (0,{\sy/4})--(-.1,{\sy/4}) node[left]{\small $\frac14$};
 %
 \node at ({(\sx*(2+\f)+.25)/2},-1) [scale=.9]{(a)};
 \end{scope}
@@ -82,6 +82,7 @@
 \draw ({\sx*\x},0)--({\sx*\x},-.1) node[below,scale=.7]{$\x$};
 }
 \draw ({-2*\sx},0)--({\sx*\d},0);
+\draw ({\sx*\d+\r},\r) arc (90:270:\r);
 %
 % proba nulas del fin f+1 -> ui
 \foreach \y in {\fn,...,\ui} {
@@ -103,8 +104,7 @@
 \pgfmathsetmacro{\cuml}{\cum-\pr}\global\let\cum\cuml;% cumulativa actualizada
 \pgfmathsetmacro{\prl}{\pr*\x*(\n-\k-\m+\x)/((\m-\x+1)*(\k-\x+1))};\global\let\pr\prl;% proba actualizado
 }
-%\draw (0,{((1-\p)^\n)*\sy})--(-.1,{((1-\p)^\n)*\sy}) node[left,scale=.7]{$(1-p)^n$};
-%\draw (0,{\n*\p*((1-\p)^(\n-1))*\sy})--(-.1,{\n*\p*((1-\p)^(\n-1))*\sy}) node[left,scale=.7]{$n \, p \, (1-p)^{n-1}$};
+\draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
 %
 \node at ({(\sx*(\ui+2)+.5)/2},-1) [scale=.9]{(b)};
 \end{scope}

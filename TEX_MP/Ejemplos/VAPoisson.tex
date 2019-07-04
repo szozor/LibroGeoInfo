@@ -73,6 +73,30 @@ Ad\'emas, se muestra  sencillamente usando la generadora de  probabilidad que
   \]
 \end{lema}
 
+
+La ley de Poisson esta v\'inculada a la ley binomiam negativa, como caso l\'imite:
+%
+\begin{lema}[V\'inculo con la binomial negativa]
+\label{Lem:MP:VinvuloPoissonBinomialNegativa}
+%
+  Sean  \  $X_r  \,  \sim  \,  \B_-\left( \frac{\lambda}{r+\lambda} \, , \, r \right)$  \
+  con $\lambda > 0$ fijo, entonces
+  %
+  \[
+  \limitd{r \to \infty} X_r \, = \, X \, \sim \, \P(\lambda)
+  \]
+\end{lema}
+\begin{proof}
+  Se sale de la forma de la  distribuci\'on binomial negativa y de la formula de
+  Stirling~\footnote{De hecho, esta  formula es probablemente debida previamente
+    a  A.  De  Moivre~\cite{Dem56,  Pea24,  Cam86, Dut91},  y  fue mejorada  por
+    Stirling m\'as tarde. Fue mejorada a\'un m\'as por el famoso matem\'atico S.
+    Ramanujan     recientemente~\cite[\S~4.1]{AndBer13}.\label{Foot:MP:Stirling}}
+  para \ $\log\Gamma(z) = \left( z - \frac12 \right) \log z - z + \frac12 \log(2
+  \pi) + o(1)$ \ en \ $z \to +\infty$~\cite{Sti30, AbrSte70, GraRyz15}.
+\end{proof}
+
+
 Cuando $\lambda = 0$ la variable es  cierta $X = 0$ (usando la convenci\'on $0^0
 = 1$).  \SZ{ Esta  distribuci\'on aparece... eventos despues tiempo exponencial;
   conteo. Ej en fisica. Ecuacion del telegrafo}

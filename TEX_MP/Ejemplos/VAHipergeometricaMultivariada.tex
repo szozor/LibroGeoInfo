@@ -2,7 +2,8 @@
 \label{Sssec:MP:HipergeometricaMultivariada}
 
 Esta ley aparece por ejemplo cuando  se se generaliza la ley hipergeometrica con
-$c > 2$ clases \ con \ $k_i$ \ estados en la clase $i$, $\sum_i k_i = n$.
+$c > 2$ clases \ con \ $k_i$  \ num\'ero de elementos de la clase \ $i$, $\sum_i
+k_i = n$.
 
 Se denota \ $X \, \sim \, \H\M(n,k,m)$ \ con \ $\displaystyle n \in \Nset$, \quad
 $k = \begin{bmatrix} k_1 & \cdots & k_c\end{bmatrix}^t \in \left\{ \{ 0 \; \ldots
@@ -10,48 +11,61 @@ $k = \begin{bmatrix} k_1 & \cdots & k_c\end{bmatrix}^t \in \left\{ \{ 0 \; \ldot
 n\}$.
 
 Entonces, como en el caso de la ley multinomial, a pesar de que se escribe \ $X$
-\ de manera $c$-dimensional, el vector  partenece a una variedad claramente \ $d
-=  c-1$  \  dimensional  y  en  el  caso  \  $c  =  2$  \  se  recupera  la  ley
+\  de manera  $c$-dimensional, el  vector partenece  a un  espacio  claramente \
+$(c-1)$-dimensional.  Notar que  en el  caso \  $c  = 2$  \ se  recupera la  ley
 hipergeometrica.
 
 Sus caracter\'isticas son las siguientes:
 
 \begin{caracteristicas}
 %
-Dominio de definici\'on & $\displaystyle \X = \left\{ x \in \optimes_{i=1}^c \{
-0 \; \ldots \; k_i \} \tq \sum_{i=1}^c x_i = m \right\}$\\[2mm]
+Dominio de definici\'on~\footnote{De hecho, se puede considerar que el vector
+aleatorio es \ $(c-1)$-dimensional \ $\widetilde{X} = \begin{bmatrix}
+\widetilde{X}_1 & \cdots & \widetilde{X}_{c-1} \end{bmatrix}^t$ \ definido sobre
+el dominio \ $\displaystyle \widetilde{\X} = \left\{ x \in \optimes_{i=1}^{c-1}
+\{ 0 \; \ldots \; k_i\} \tq \max\left( 0 \, , \,  \sum_{i=1}^{c-1} k_i + m - n  \right) \: \le \: \sum_{i=1}^{c-1} x_i \: \le \: m
+\right\}$.\label{Foot:MP:HipergeomMultiDominio}} & $\displaystyle \X = \left\{ x
+\in \optimes_{i=1}^c \{ 0 \; \ldots \; k_i \} \tq   \sum_{i=1}^c x_i = m
+\right\}$\\[2mm]
 \hline
 %
-Parametros & $n \in \Nset^*$ \: (poblaci\'on)\newline $c \in \Nset^*$ \: (n\'umero de clases)\newline $\displaystyle k \in \left\{
-\{ 0 \; \ldots \; n\}^c \tq \sum_{i=1}^c k_i = n \right\}$ \ (n\'umero de
-estados en cada clase)\newline $m \in \{ 0 \; \ldots \; m\}$ \: (n\'umero de
-tiros)\\[2mm]
+Parametros~\footnote{Los parametros de \ $\widetilde{X}$ \ son  \ $n \in \Nset^*$, \ $m \in \{  0 \; \ldots \; n \}$ \ y \ $\widetilde{k} =
+\protect\begin{bmatrix} k_1 & \cdots & k_{c-1} \end{bmatrix}^t\protect \in \left\{ q
+\in \{ 0 \; \ldots \; n \}^{c-1} \tq \sum_{i=1}^{c-1} q_i \, \le \, n
+\right\}$.\label{Foot:MP:MultinomialParametro}} & $n \in \Nset^*$ \: (poblaci\'on)\newline $c \in \Nset^*$ \:
+(n\'umero de clases)\newline $\displaystyle k \in \left\{ q \in \{ 0 \; \ldots \;
+n\}^c \tq \sum_{i=1}^c q_i = n \right\}$ \ (n\'umeros de elementos de cada
+clase)\newline $m \in \{ 0 \; \ldots \; n\}$ \: (n\'umero de tiros)\\[2mm]
 \hline
 %
-Distribuci\'on de probabilidad & \protect$\displaystyle p_X(x) =
-\frac{\prod_{i=1}^c \smallbino{k_i}{x_i}}{\smallbino{n}{m}}$\protect\\[2mm]
+Distribuci\'on de probabilidad~\footnote{La masa de probabilidad de \ $\widetilde{X}$ \ es \ $\displaystyle p_{\widetilde{X}}(x) = \frac{\prod_{i=1}^{c-1}
+\bino{k_i\vspace{1mm}}{x_i} \, \smallbino{n - \sum_{i=1}^{c-1} k_i\vspace{2mm}}{m -
+\sum_{i=1}^{c-1} x_i}}{\bino{n}{m}}$.\label{Foot:MP:HipergeomMultiMasa}.} &
+\protect$\displaystyle p_X(x) = \frac{\prod_{i=1}^c
+\smallbino{k_i}{x_i}}{\smallbino{n}{m}}$\protect\\[2mm]
 \hline
 %
 Promedio & $\displaystyle m_X = \frac{m}{n} \, k$\\[2mm]
 \hline
 %
-Covarianza & $\displaystyle \Sigma_X = \frac{m (n-m)}{n^2 (n-1)} \left( n \diag k - k k^t \right)$\\[2mm]
-\hline
+Covarianza~\footnote{Ver notas de pie~\ref{Foot:MP:HipergeometricaVarianza} y~\ref{Foot:MP::MultinomialCovarianza}.} & $\displaystyle \Sigma_X = \left\{ \protect\begin{array}{ccc} \frac{m (n-m)}{n^2 (n-1)} \left( n \diag
+k - k k^t \right)  & \mbox{si} & n > 1\\ 0 & \mbox{si} & n = 1\end{array}\protect\right. $
+%\\[2mm]
+%\hline
 %
 %
-%Generadora  de probabilidad  &  $\displaystyle  G_X(z) =  \left(  1 -  p  + p  z
+%Generadora  de probabilidad~\footnote{Ver nota de pie~\ref{Foot:MP:MultinomialGeneProba} reemplazando $n$ por $m$.}  &  $\displaystyle  G_X(z) =  \left(  1 -  p  + p  z
 %\right)^n$ \ sobre \ $\Cset$\\[2mm]
 %\hline
 %%
-%Generadora  de momentos  &  $\displaystyle  M_X(u) =  \left(1  - p  +  p \,  e^u
+%Generadora  de momentos~\footnote{Ver nota de pie~\ref{Foot:MP:MultinomialGeneMomentos} reemplazando $n$ por $m$.}  &  $\displaystyle  M_X(u) =  \left(1  - p  +  p \,  e^u
 %\right)^n$ \ sobre \ $\Cset$\\[2mm]
 %\hline
 %%
-%Funci\'on caracter\'istica  & $\displaystyle \Phi_X(\omega) =  \left( 1 -  p + p
+%Funci\'on caracter\'istica~\footnote{Ver nota de pie~\ref{Foot:MP:MultinomialCaracteristica} reemplazando $n$ por $m$.}  & $\displaystyle \Phi_X(\omega) =  \left( 1 -  p + p
 %\, e^{\imath \omega} \right)^n$
 \end{caracteristicas}
-
-Cuando $c = 2$ se recupera la ley hipergeometrica.
+\SZ{Ver si se calcula Phi}
 
 Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
 figura Fig.~\ref{Fig:MP:HipergeometricaMultivaluada}.
@@ -59,14 +73,136 @@ figura Fig.~\ref{Fig:MP:HipergeometricaMultivaluada}.
 \begin{figure}[h!]
 % \begin{center} \input{TIKZ_MP/HipergeometricaMultivariada} \end{center}
 %
-\leyenda{Ilustraci\'on de una distribuci\'on  de probabilidad Hipergeometrica multivaluada con (a) \SZ{con $n = 6, \quad p = \frac13$.}}
+\leyenda{\SZ{Ilustraci\'on de una distribuci\'on  de probabilidad Hipergeometrica multivaluada con (a) con $n = 6, \quad p = \frac13$.}}
 \label{Fig:MP:HipergeometricaMultivariada}
 \end{figure}
 
 
-\SZ{CERRAR}
+Notar: cuando $c = 2$ se  recupera la ley hipergeometrica; adem\'as $X$ resuelta
+cierta   en  los  casos   siguientes  (ver   subesecci\'on  anterior   para  las
+explicaciones/ilustraciones):
+%
+\begin{itemize}
+\item $m =  0 \: \Rightarrow \: X = 0$;
+%
+\item  $m = n \: \Rightarrow \: X = k$;
+%
+\item $k = n \un_i \: \Rightarrow \: X = m \un_i$.
+\end{itemize}
 
-\SZ{Reflexibilidad? Stabilidad por agregaci\'on, Marginales hipegeometrica}
+% \SZ{casos particulares a ver; caso de propiedades de reflexividad a ver (igual
+%   para la multinomial)}
+
+Vectores  de  distribuci\'on  hipergeometricas multivaluada  tienen  propiedades
+notables similares a las de la  hipergeometricas y de la multinomial, a saber de
+tipo reflexividad, con respecto a una permutaci\'on de variable y con respecto a
+una agregaci\'on.
+%
+\begin{lema}[Reflexividad]
+\label{Lem:MP:ReflexividadHipergeomMulti}
+%
+  Sea \ $X \, \sim \, \H\M(n,k,m)$. Entonces
+  %
+  \[
+  k-X \sim \H\M(n,k,n-m)
+  \]
+  %
+\end{lema}
+%
+Como  el en  contexto  escalar, si  en una  urna  tenemos bolas  de $c$  colores
+diferentes,  con  un n\'umero  $k_i$  para el  $i$-\'esimo  color,  $X_i$ es  el
+num\'ero de este color que se sorte\'o y $k_i-X_i$ representan las de este color
+que quedan en la urna, entre las  \ $n-m = \sum_{i=1}^c (k_i-X_i)$ \ que quedan,
+es decir que en \ $k-X$ \ se  intercambia los roles de las bolas sorteadas y las
+que quedan en la urna. M\'as formalmente:
+%
+\begin{proof}
+  %El  primer   resultado  es  inmediato  de  $P(m-X   =  x)  =  P(X   =  m-x)  =
+  %\frac{\smallbino{k}{m-x} \smallbino{n-k}{x}}{\smallbino{n}{m}}$. El secundo de
+  Sea $Y =  k-X$. De $P(Y = y) =  P(k-X = y) = P(X  = k-y) = \frac{\prod_{i=1}^c
+    \smallbino{k_i}{k_i-y_i}}{\smallbino{n}{m}}       =      \frac{\prod_{i=1}^c
+    \smallbino{k_i}{y_i}}{\smallbino{n}{n-m}}$   notando   que  $\bino{a}{b}   =
+  \bino{a}{a-b}$. Se cierra la prueba  recordandose que \ $\sum_{i=1}^c k_i = n$
+  \  y  \ $\sum_{i=1}^c  x_i  =  m$,  dando \  $\sum_{i=1}^c  k_i  =  n$ \  y  \
+  $\sum_{i=1}^c y_i = n-m$.
+\end{proof}
+%
+\begin{lema}[Efecto de una permutaci\'on]\label{Lem:MP:PermutacionHipergeomMulti}
+%
+  Sea  \ $X =  \begin{bmatrix} X_1  & \cdots  & X_c  \end{bmatrix}^t \,  \sim \,
+  \H\M(n,k,m)$  \   y  \   $\Pi  \in  \perm_c(\Rset)$   \  matriz   \  de
+  permutaci\'on. Entonces
+  %
+  \[
+  \Pi X \, \sim \, \H\M\left( n ,  \Pi k , m \right)
+  \]
+  %
+\end{lema}
+%
+\begin{proof}
+  La  prueba sigue  paso paso  la de  la multinomial.  Notando la  permutation \
+  $\sigma$ \  tal que \ $\Pi  = \sum_{i=1}^c \un_i  \un_{\sigma(i)}^t$, se puede
+  ver   que  \  $\displaystyle   P(\Pi  X   =  x)   =  P(X   =  \Pi^{-1}   x)  =
+  \frac{\prod_{i=1}^c       \bino{k_i}{x_{\sigma^{-1}(i)}}}{\bino{n}{m}}       =
+  \frac{\prod_{i=1}^c \bino{k_{\sigma(i)}}{x_i}}{\bino{n}{m}} $  \ por cambio de
+  indices.
+\end{proof}
+%
+\begin{lema}[Stabilidad por agregaci\'on]\label{Lem:MP:StabAgregacionHipergeomMulti}
+%
+  Sea  \ $X =  \begin{bmatrix} X_1  & \cdots  & X_c  \end{bmatrix}^t \,  \sim \,
+  \H\M(n,k,m)$ \ y \ $G^{(i,j)}$ \ matriz de agrupaci\'on de las $(i,j)$-\'esima
+  componentes (ver notaciones). Entonces,
+  %
+  \[
+  G^{(i,j)} X \, \sim \, \H\M\left( n , G^{(i,j)} k , m \right)  
+  \]
+  %
+\end{lema}
+%
+Este resultado es  intuitivo en el hecho  de que vuelve a agrupar  las clases \
+$i$ \ e \ $j$ \ en una clase, que tiene entonces  \ $k_i + k_j$ \ elementos.
+%
+
+%
+\begin{proof}
+ Del  lema precediente,
+  notando  que  existen  matrices  de permutaci\'on~\footnote{$\Pi_k$  pone  las
+    componentes $i$ \ e \ $j$ el  las posiciones $c-1$ y $c$, sin cambiar el orden
+    de  las  precedientes;  $\Pi_{k-1}$  trazlada  la  \'ultima  componente  en  la
+    posici\'on $\min(i,j)$.}  \ $\Pi_k \in  \perm_k(\Rset)$ \ y \ $\Pi_{k-1} \in
+  \perm_{k-1}(\Rset)$ \ tal que \ $G^{(i,j)} = \Pi_{k-1} \, G^{(c-1,c)} \, \Pi_k$,
+  se puede concentrarse en el caso \ $(i,j) = (c-1,c)$. Ahora, claramente,
+  %
+  \begin{eqnarray*}
+  P(G^{(c-1,c)} X = x) & = & \displaystyle P\left( \bigcap_{i=1}^{c-2} \big( X_i = x_i \big)
+  \: \cap \: \big( X_{c-1} + X_c = x_{c-1} \big) \right)\\[2mm]
+  %
+  & = & \displaystyle \sum_{t=0}^{x_{c-1}} P\left( \bigcap_{i=1}^{c-2} \big( X_i = x_i \big)
+  \: \cap \: \big( X_{c-1} = t\big) \: \cap \: \big( X_c = t-x_{c-1} \big) \right)\\[2mm]
+  %
+  & = & \frac{\prod_{i=1}^{c-2} \bino{k_i}{x_i}}{\bino{n}{m}}
+  \: \sum_{t=0}^{x_{c-1}} \bino{k_{c-1}}{t}\bino{k_c}{x_c-t}
+  \end{eqnarray*}
+  %
+  Se  cierra  la  prueba   de  la  identidad  de  Chu-Vandermonde~\footnote{Este
+    identidad es  debido a A.-T. Vandermonde  en 1772, pero  esta conocida desde
+    1303 por el matematico chino  Chu Shi-Chieh, explicando la denominaci\'on de
+    este    identidad~\cite{AndLar94}   o~\cite[p.~59-60]{Ask75}.    Se   prueba
+    escribiendo $(1+x)^{r+s} = (1+x)^r (1+x)^s$  y desorrando con la formula del
+    binomio       cada      potencia.}        $\displaystyle      \sum_{t=0}^{l}
+  \bino{r}{t}\bino{s}{l-t}   =  \bino{r+s}{l}$~\cite[Ec.~(21),  p.~59]{Kun97_v1}
+  o~\cite[Ec.~0.156]{GraRyz15}.
+\end{proof}
+
+De este lema, aplicado de manera recursiva, se obtiene el corolario siguiente:
+%
+\begin{corolario}\label{Cor:MP:MarginalMultinomial}
+%
+  Sea  \ $X  \,  \sim \,  \H\M(n,k,m)$, entonces  \  $\displaystyle X_i  \, \sim  \,
+  \H(n,k_i,m)$.
+\end{corolario}
+
 % Cuando  $n  = 1$,  se  recupera  la lei  de  Bernoulli  $\B(p) \equiv  \B(1,p)$.
 % Ad\'emas, se muestra  sencillamente usando la generadora de  probabilidad que
 % %

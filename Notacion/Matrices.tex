@@ -85,12 +85,12 @@ completud}.\label{foot:Notaciones:ResolucionlIdentitad}},\vspace{1mm}\newline $\
 \\[2.5mm]
 \hline
 %
-$\mathfrak{S}_d(\Kset)$ & Conjunto de las matrices de permutaciones de \
-$\M_{d,d}(\Kset)$\vspace{1mm}\newline $\mathfrak{S}_d(\Kset) = \left\{ \Pi =
+$\perm_d(\Kset)$ & Conjunto de las matrices de permutaciones de \
+$\M_{d,d}(\Kset)$\vspace{1mm}\newline $\displaystyle \perm_d(\Kset) = \left\{ \Pi =
 \protect\begin{bmatrix} \un_{\sigma(1)} & \cdots &
-\un_{\sigma(d)} \end{bmatrix}\protect, \quad \sigma \in \mathfrak{S}_d
+\un_{\sigma(d)} \end{bmatrix}^t\protect = \sum_{i=1}^d \un_i \un_{\sigma(i)}^t, \quad \sigma \in \perm_d
 \right\}$\vspace{1mm}\newline Tiene exactamente un $1$ en cada linea y en cada
-columna, y $0$ en los otros componentes.\\[2.5mm]
+columna, y $0$ en los otros componentes.\vspace{1mm}\newline Notar: \quad $\forall \: \Pi \in \perm_d(\Kset), \quad \Pi^{-1} = \Pi^t$.\\[2.5mm]
 \hline
 %
 $\P_{d,k}^+(\Kset)$ & Conjunto~\footref{foot:Notaciones:POVM} de $k$-uplet de
@@ -190,7 +190,7 @@ $\varepsilon(\sigma)$
 \varepsilon(\sigma) = \prod_{1 \le i \le j \le d} \sign\left( \sigma(j) -
 \sigma(i) \right)$ \ con \ $\sign$ \ funci\'on ``signo''.} de una matriz
 (cuadrada) de \ $\M_{d,d}(\Kset)$,\vspace{1mm}\newline $\displaystyle \det M =
-\sum_{\sigma \in \mathfrak{S}_d} \varepsilon(\sigma) \prod_{i=1}^d
+\sum_{\sigma \in \perm_d} \varepsilon(\sigma) \prod_{i=1}^d
 M_{\sigma(i),i}$\vspace{1mm}\newline con \ $\displaystyle
 \varepsilon(\sigma) = \prod_{1 \le i \le j \le d} \sign\left( \sigma(j) -
 \sigma(i) \right)$ \ signatura de la permutaci\'on \ $\sigma$.\vspace{1mm}\\[2.5mm]

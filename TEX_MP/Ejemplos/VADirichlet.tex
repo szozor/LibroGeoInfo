@@ -29,7 +29,7 @@ Dominio de definici\'on~\footnote{De hecho, se puede considerar que el vector
 aleatorio es \ $(k-1)$-dimensional \ $\widetilde{X} = \begin{bmatrix}
 \widetilde{X}_1 & \cdots & \widetilde{X}_{k-1} \end{bmatrix}^t$ \ definido sobre
 el hipertriangulo \ $\widetilde{\X} = \Tri_{k-1} = \left\{ \widetilde{x} \in [0
-\; 1]^{k-1}, \: \sum_{i=1}^{k-1} \widetilde{x}_i \le 1 \right\}$, proyecci\'on
+\; 1]^{k-1} \tq \sum_{i=1}^{k-1} \widetilde{x}_i \le 1 \right\}$, proyecci\'on
 del simplex sobre el hiperplano \ $x_k = 0$.\label{Foot:MP:DirichletXtilde}} &
 $\X = \Simp{k-1}, \: k \in \Nset \setminus \{ 0 \; 1 \}$\\[2mm]
 \hline
@@ -53,26 +53,23 @@ Promedio & $\displaystyle m_X = \bar{a}$\\[2.5mm]
 %\frac{a}{\sum_{i=1}^k a_i} \equiv \overline{a}$\\[2.5mm]
 \hline
 %
-Covarianza & $\displaystyle \Sigma_X = \frac{\diag\left( \bar{a} \right) -
-\bar{a} \bar{a}^t}{1 + \alpha}$\\[2.5mm]
-%\sum_{i=1}^k a_k}$\\[2.5mm]
+Covarianza~\footnote{Ver nota de pie~\ref{Foot:MP:MultinomialCov}.} &
+$\displaystyle \Sigma_X = \frac{\diag\left( \bar{a} \right) - \bar{a}
+\bar{a}^t}{1 + \alpha}$\\[2.5mm]
 \hline
 %
-Generadora de momentos~\footnote{El v\'inculo entre las funciones generadoras de
-momento de \ $X$ \ y \ $\widetilde{X}$ \ es trivialmente \
-$M_{\widetilde{X}}\left( \widetilde{u} \right) = M_X\left( \begin{bmatrix}
-\widetilde{u} & 0 \end{bmatrix}^t \right)$ \ o \ $M_X(u) = e^{\imath u_k}
-M_{\widetilde{X}}\left( \begin{bmatrix} u_1 - u_k & \cdots & u_{k-1} -
-u_k \end{bmatrix}^t \right)$, y similarmente para la funci\'on
-caracter\'istica.\label{Foot:MP:Dirichlet}} & $\displaystyle M_X(u) =
-\Phi_2^{(k)}( a , \alpha \, ; \, u )$ \ para \ $u \in \Cset$\\[2mm]
+Generadora de momentos~\footnote{Ver nota de
+pie~\ref{Foot:MP:MultinomialGeneMomentos}, reemplazando $n$ por $1$.}  &
+$\displaystyle M_X(u) = \Phi_2^{(k)}( a , \alpha \, ; \, u )$ \ para \ $u \in
+\Cset$\\[2mm]
 \hline
 %
-Funci\'on caracter\'istica~\footnote{La forma de la funci\'on generadora de
-momento viene directamente de la escritura de las series de Taylor de $e^{u_i
-x_i}$ \ o de la forma integral de la funci\'on confluente
-hipergeom\'etrica~\cite{Phi88}.} & $\displaystyle \Phi_X(\omega) = \Phi_2^{(k)}(
-a , \alpha \, ; \, \imath \omega )$
+Funci\'on caracter\'istica~\footnote{Ver nota de
+pie~\ref{Foot:MP:MultinomialGeneMomentos}, reemplazando $n$ por $1$.  Ademas, la
+forma de la funci\'on generadora de momento viene directamente de la escritura
+de las series de Taylor de $e^{u_i x_i}$ \ o de la forma integral de la
+funci\'on confluente hipergeom\'etrica~\cite{Phi88}.} & $\displaystyle
+\Phi_X(\omega) = \Phi_2^{(k)}( a , \alpha \, ; \, \imath \omega )$
 \end{caracteristicas}
 
 %$k$-variada~\footnote{$\Phi_2^{(k)}(a;b;z)     =     \sum_{m    \in     \Nset^k}
@@ -108,7 +105,7 @@ notables, parecidas a las de la beta:
 \begin{lema}[Reflexividad]\label{Lem:MP:ReflexividadDir}
 %
   Sea  \ $X \,  \sim \,  \Dir(a), \:  a \in  \Rset_+^{* \,  k}$ \  y \  $\Pi \in
-  \mathfrak{S}_k(\Rset)$ \ matriz \ de permutaci\'on. Entonces
+  \perm_k(\Rset)$ \ matriz \ de permutaci\'on. Entonces
   %
   \[
   \Pi X \, \sim \, \Dir\left( \Pi a \right)
@@ -143,9 +140,13 @@ Adem\'as, se muestra una stabilidad remplazando dos componentes por su suma:
   usando      las      propiedades      de      la      funci\'on      confluent
   hipergeom\'etrica~\cite{SriKar85, Hum22, App25,  AppKam26, Erd37, Erd40}. Pero
   se  puede tambi\'en  tener un  enfoque m\'as  directo.  Del  lema precediente,
-  notando que existe una matriz de  permutaci\'on \ $\Pi$ \ tal que \ $G^{(i,j)}
-  = G^{(1,2)} \Pi$, se  puede concentrarse en el caso \ $(i,j)  = (1,2)$. Sea el
-  cambio de  variables $g: x =  (x_1,\ldots,x_k) \mapsto u  = (u_1,\ldots,u_k) =
+  notando  que  existen  matrices  de permutaci\'on~\footnote{$\Pi_k$  pone  las
+    componentes $i$ \ e \ $j$ el  las posiciones $1$ y $2$, sin cambiar el orden
+    de  las  siguientes;  $\Pi_{k-1}$  trazlada  la  primera  componente  en  la
+    posici\'on $\min(i,j)$.}  \ $\Pi_k \in  \perm_k(\Rset)$ \ y \ $\Pi_{k-1} \in
+  \perm_{k-1}(\Rset)$ \ tal que \ $G^{(i,j)} = \Pi_{k-1} \, G^{(1,2)} \, \Pi_k$,
+  se puede concentrarse en el caso \ $(i,j) = (1,2)$. Sea el cambio de variables
+  $g:    x    =    (x_1,\ldots,x_k)    \mapsto   u    =    (u_1,\ldots,u_k)    =
   (x_1,x_1+x_2,x_3,\ldots,x_k)$.        Entonces       \      $g^{-1}(u)       =
   (u_1,u_2-u_1,u_3,\ldots,u_k)$ \ es de determinente de matriz Jacobiana igual a
   \ $1$ \ dando para $U = g(X)$ \ la densidad
