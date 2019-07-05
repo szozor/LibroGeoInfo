@@ -3,7 +3,9 @@
 
 Esta ley aparece por ejemplo cuando  se se generaliza la ley hipergeometrica con
 $c > 2$ clases \ con \ $k_i$  \ num\'ero de elementos de la clase \ $i$, $\sum_i
-k_i = n$.
+k_i = n$.  Se estudia esta ley, entre otros, por la primera vez, en el ensayo de
+Montmort  en  1708~\cite{Mon13},  o  m\'as   tarde,  en  1740,  en  trabajos  de
+Simpson~\cite{Sim40, Hal90}.
 
 Se denota \ $X \, \sim \, \H\M(n,k,m)$ \ con \ $\displaystyle n \in \Nset$, \quad
 $k = \begin{bmatrix} k_1 & \cdots & k_c\end{bmatrix}^t \in \left\{ \{ 0 \; \ldots
@@ -23,24 +25,29 @@ Dominio de definici\'on~\footnote{De hecho, se puede considerar que el vector
 aleatorio es \ $(c-1)$-dimensional \ $\widetilde{X} = \begin{bmatrix}
 \widetilde{X}_1 & \cdots & \widetilde{X}_{c-1} \end{bmatrix}^t$ \ definido sobre
 el dominio \ $\displaystyle \widetilde{\X} = \left\{ x \in \optimes_{i=1}^{c-1}
-\{ 0 \; \ldots \; k_i\} \tq \max\left( 0 \, , \,  \sum_{i=1}^{c-1} k_i + m - n  \right) \: \le \: \sum_{i=1}^{c-1} x_i \: \le \: m
+\{ 0 \; \ldots \; k_i\} \tq \max\left( 0 \, , \, \sum_{i=1}^{c-1} k_i + m - n
+\right) \: \le \: \sum_{i=1}^{c-1} x_i \: \le \: m
 \right\}$.\label{Foot:MP:HipergeomMultiDominio}} & $\displaystyle \X = \left\{ x
-\in \optimes_{i=1}^c \{ 0 \; \ldots \; k_i \} \tq   \sum_{i=1}^c x_i = m
+\in \optimes_{i=1}^c \{ 0 \; \ldots \; k_i \} \tq \sum_{i=1}^c x_i = m
 \right\}$\\[2mm]
 \hline
 %
-Parametros~\footnote{Los parametros de \ $\widetilde{X}$ \ son  \ $n \in \Nset^*$, \ $m \in \{  0 \; \ldots \; n \}$ \ y \ $\widetilde{k} =
-\protect\begin{bmatrix} k_1 & \cdots & k_{c-1} \end{bmatrix}^t\protect \in \left\{ q
-\in \{ 0 \; \ldots \; n \}^{c-1} \tq \sum_{i=1}^{c-1} q_i \, \le \, n
-\right\}$.\label{Foot:MP:MultinomialParametro}} & $n \in \Nset^*$ \: (poblaci\'on)\newline $c \in \Nset^*$ \:
-(n\'umero de clases)\newline $\displaystyle k \in \left\{ q \in \{ 0 \; \ldots \;
-n\}^c \tq \sum_{i=1}^c q_i = n \right\}$ \ (n\'umeros de elementos de cada
-clase)\newline $m \in \{ 0 \; \ldots \; n\}$ \: (n\'umero de tiros)\\[2mm]
+Parametros~\footnote{Los parametros de \ $\widetilde{X}$ \ son \ $n \in
+\Nset^*$, \ $m \in \{ 0 \; \ldots \; n \}$ \ y \ $\widetilde{k} =
+\protect\begin{bmatrix} k_1 & \cdots & k_{c-1} \end{bmatrix}^t\protect \in
+\left\{ q \in \{ 0 \; \ldots \; n \}^{c-1} \tq \sum_{i=1}^{c-1} q_i \, \le \, n
+\right\}$.\label{Foot:MP:MultinomialParametro}} & $n \in \Nset^*$ \:
+(poblaci\'on)\newline $c \in \Nset^*$ \: (n\'umero de clases)\newline
+$\displaystyle k \in \left\{ q \in \{ 0 \; \ldots \; n\}^c \tq \sum_{i=1}^c q_i
+= n \right\}$ \ (n\'umeros de elementos de cada clase)\newline $m \in \{ 0 \;
+\ldots \; n\}$ \: (n\'umero de tiros)\\[2mm]
 \hline
 %
-Distribuci\'on de probabilidad~\footnote{La masa de probabilidad de \ $\widetilde{X}$ \ es \ $\displaystyle p_{\widetilde{X}}(x) = \frac{\prod_{i=1}^{c-1}
-\bino{k_i\vspace{1mm}}{x_i} \, \smallbino{n - \sum_{i=1}^{c-1} k_i\vspace{2mm}}{m -
-\sum_{i=1}^{c-1} x_i}}{\bino{n}{m}}$.\label{Foot:MP:HipergeomMultiMasa}.} &
+Distribuci\'on de probabilidad~\footnote{La masa de probabilidad de \
+$\widetilde{X}$ \ es \ $\displaystyle p_{\widetilde{X}}(x) =
+\frac{\prod_{i=1}^{c-1} \bino{k_i\vspace{1mm}}{x_i} \, \smallbino{n -
+\sum_{i=1}^{c-1} k_i\vspace{2mm}}{m - \sum_{i=1}^{c-1}
+x_i}}{\bino{n}{m}}$.\label{Foot:MP:HipergeomMultiMasa}.} &
 \protect$\displaystyle p_X(x) = \frac{\prod_{i=1}^c
 \smallbino{k_i}{x_i}}{\smallbino{n}{m}}$\protect\\[2mm]
 \hline
@@ -48,32 +55,47 @@ Distribuci\'on de probabilidad~\footnote{La masa de probabilidad de \ $\widetild
 Promedio & $\displaystyle m_X = \frac{m}{n} \, k$\\[2mm]
 \hline
 %
-Covarianza~\footnote{Ver notas de pie~\ref{Foot:MP:HipergeometricaVarianza} y~\ref{Foot:MP::MultinomialCovarianza}.} & $\displaystyle \Sigma_X = \left\{ \protect\begin{array}{ccc} \frac{m (n-m)}{n^2 (n-1)} \left( n \diag
-k - k k^t \right)  & \mbox{si} & n > 1\\ 0 & \mbox{si} & n = 1\end{array}\protect\right. $
+Covarianza~\footnote{Ver notas de pie~\ref{Foot:MP:HipergeometricaVarianza}
+y~\ref{Foot:MP::MultinomialCovarianza}.} & $\displaystyle \Sigma_X = \left\{
+\protect\begin{array}{ccc} \frac{m (n-m)}{n^2 (n-1)} \left( n \diag k - k k^t
+\right) & \mbox{si} & n > 1\\ 0 & \mbox{si} & n = 1\end{array}\protect\right.$
 %\\[2mm]
 %\hline
 %
 %
-%Generadora  de probabilidad~\footnote{Ver nota de pie~\ref{Foot:MP:MultinomialGeneProba} reemplazando $n$ por $m$.}  &  $\displaystyle  G_X(z) =  \left(  1 -  p  + p  z
+%Generadora  de probabilidad~\footnote{Ver nota de pie~\ref{Foot:MP:MultinomialGeneProba}
+%reemplazando $n$ por $m$.}  &  $\displaystyle  G_X(z) =  \left(  1 -  p  + p  z
 %\right)^n$ \ sobre \ $\Cset$\\[2mm]
 %\hline
 %%
-%Generadora  de momentos~\footnote{Ver nota de pie~\ref{Foot:MP:MultinomialGeneMomentos} reemplazando $n$ por $m$.}  &  $\displaystyle  M_X(u) =  \left(1  - p  +  p \,  e^u
+%Generadora  de momentos~\footnote{Ver nota de pie~\ref{Foot:MP:MultinomialGeneMomentos}
+%reemplazando $n$ por $m$.}  &  $\displaystyle  M_X(u) =  \left(1  - p  +  p \,  e^u
 %\right)^n$ \ sobre \ $\Cset$\\[2mm]
 %\hline
 %%
-%Funci\'on caracter\'istica~\footnote{Ver nota de pie~\ref{Foot:MP:MultinomialCaracteristica} reemplazando $n$ por $m$.}  & $\displaystyle \Phi_X(\omega) =  \left( 1 -  p + p
+%Funci\'on caracter\'istica~\footnote{Ver nota de pie~\ref{Foot:MP:MultinomialCaracteristica}
+%reemplazando $n$ por $m$.}  & $\displaystyle \Phi_X(\omega) =  \left( 1 -  p + p
 %\, e^{\imath \omega} \right)^n$
 \end{caracteristicas}
+
 \SZ{Ver si se calcula Phi}
 
-Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
-figura Fig.~\ref{Fig:MP:HipergeometricaMultivaluada}.
+La masa  de probabilidad es representada  en la
+figura Fig.~\ref{Fig:MP:HipergeometricaMultivariada}.
 %
 \begin{figure}[h!]
-% \begin{center} \input{TIKZ_MP/HipergeometricaMultivariada} \end{center}
+\begin{center} \input{TIKZ_MP/HipergeometricaMultivariada} \end{center}
 %
-\leyenda{\SZ{Ilustraci\'on de una distribuci\'on  de probabilidad Hipergeometrica multivaluada con (a) con $n = 6, \quad p = \frac13$.}}
+\leyenda{Ilustraci\'on  de una  distribuci\'on  de probabilidad  hipergeometrica
+  multivariada  para   \  $c  =  3$   \  del  vector   \  $(c-1)$-dimensional  \
+  $\widetilde{X} = \protect\begin{bmatrix}  X_1 & X_2 \protect\end{bmatrix}^t$ \
+  ($X_3 = m-X_1-X_2$) \ con las  marginales \ $p_{X_1}, \: p_{X_2}$ \ (ver notas
+  de                                      pie~\ref{Foot:MP:HipergeomMultiDominio}
+  y~\ref{Foot:MP:HipergeomMultiMasa}).  Es  dibujada solamente la distribuci\'on
+  sobre $\widetilde{\X}$, siendo esta  nula afuera de $\widetilde{\X}$.  Los
+    parametros son \ $n = 18$, \ $m = 5$, \ $k = \protect\begin{bmatrix} 9 & 6 &
+      3 \protect\end{bmatrix}^t$  (a), $k  = \protect\begin{bmatrix} 6  & 6  & 6
+      \protect\end{bmatrix}^t$ (b).}
 \label{Fig:MP:HipergeometricaMultivariada}
 \end{figure}
 
@@ -191,7 +213,7 @@ $i$ \ e \ $j$ \ en una clase, que tiene entonces  \ $k_i + k_j$ \ elementos.
     este    identidad~\cite{AndLar94}   o~\cite[p.~59-60]{Ask75}.    Se   prueba
     escribiendo $(1+x)^{r+s} = (1+x)^r (1+x)^s$  y desorrando con la formula del
     binomio       cada      potencia.}        $\displaystyle      \sum_{t=0}^{l}
-  \bino{r}{t}\bino{s}{l-t}   =  \bino{r+s}{l}$~\cite[Ec.~(21),  p.~59]{Kun97_v1}
+  \bino{r}{t}\bino{s}{l-t}   =  \bino{r+s}{l}$~\cite[Ec.~(21),  p.~59]{Knu97_v1}
   o~\cite[Ec.~0.156]{GraRyz15}.
 \end{proof}
 
@@ -225,3 +247,11 @@ De este lema, aplicado de manera recursiva, se obtiene el corolario siguiente:
 
 % Nota que cuando $p = 0$ (resp. $p = 1$) la variable es cierta $X = 0$ (resp.  $X
 % = n$).
+
+
+\
+
+Nota: esta  ley se  generaliza de  la misma manera  que para  la hipergeometrica
+negativa,  dando una  ley  hipergeometrica negativa  multivariada  o, de  manera
+equivalente, generalizando la hipergeometrica negativa  a m\'as de dos clases se
+obtiene la ley hipergeometrica negativa. \SZ{Anadirlo en una seccion?}

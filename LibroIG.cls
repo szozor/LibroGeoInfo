@@ -10,6 +10,7 @@
 
 %% EDULP: margenes superior e inferior 2 cm, margenes izquierdo y derecho 3 cm
 \RequirePackage[left=2cm,right=2cm,top=3cm,bottom=3cm]{geometry}
+%\RequirePackage[utf8]{inputenc} % encoding
 \RequirePackage[latin1]{inputenc} % encoding
 \RequirePackage[T1]{fontenc} % font encoding
 \RequirePackage{amsmath,amssymb,amsthm,bbm,mathtools} % mathematical packages
@@ -21,6 +22,9 @@
 \usetikzlibrary{calc,fixedpointarithmetic}
 \usetikzlibrary{fpu}
 \RequirePackage{fp}
+%\RequirePackage{standalone}
+%\usepgfplotslibrary{external} 
+%\tikzexternalize
 \RequirePackage{enumitem} % to manage the labels... en enumerate
 %\RequirePackage[labelsep=endash]{caption}
 %\RequirePackage{setspace} % space package

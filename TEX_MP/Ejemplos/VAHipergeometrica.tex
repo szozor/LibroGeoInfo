@@ -6,7 +6,8 @@ de tama\~no \  $n$ \ (ej.  $n$ bolas  en una urna), que pueden  partenecer a dos
 clases, con  \ $k$ \ num\'ero  de elementos de  la primera clase (a  veces dicho
 estados de excito; ej. $k$ \ bolas  negras), $n-k$ \ num\'ero de elementos de la
 secunda clase, y se  hace \ $m$ \ tiros si reemplazamiento.   $X$ es el n\'umero
-de tiros parteneciendo en la primera clase (n\'umero de excitos).
+de  tiros parteneciendo  en la  primera clase  (n\'umero de  excitos).  Esta ley
+apareci\'o en trabajos de de Moivre en 1710~\cite{Dem10, Hal90}.
 
 Se denota \ $X \, \sim \, \H(n,k,m)$ \  con \ $n \in \Nset^*$, \quad $k \in \{ 0
 \;  \ldots  \;  n  \}$,  \quad  $m  \in  \{  0 \;  \ldots  \;  m  \}$  \  y  sus
@@ -38,16 +39,17 @@ k \, (n-k) & \mbox{si} & n > 1\\[2mm] 0 & \mbox{si} & n =
 1\end{array}\protect\right.$\\[2mm]
 \hline
 %%
-Sesgo~\footnote{Cuando \ $m \in \{ 0 \; n \}$, tenemos \ $k \in \{ 0 \; n
-\}$. Entonces, la variable es cierta (ver fin de la subsecci\'on) as\'i que no
-hay asimetr\'ia. Si \ $n = 2$, \ y \ $k=m=1 \not\in \{0 \; n \}$, tenemos $P(X =
-0) = P(X = 1) = \frac12$ sim\'etrico: de nuevo el sesgo vale cero.} &
-$\displaystyle \gamma_X = \left\{ \!\! \begin{array}{cl} \frac{(n - 2 k) (n - 2
-m)}{n-2} % \sqrt{\frac{n-1}{m k (n-k) (n-m)}} & \mbox{si} \: n \ne 2, \quad k,l
-\not\in \{ 0 \; n \} \\[2mm] 0 & \mbox{si no} \end{array} \right.$\\[2mm]
+%Sesgo~\footnote{Cuando \ $m \in \{ 0 \; n \}$, tenemos \ $k \in \{ 0 \; n
+%\}$. Entonces, la variable es cierta (ver fin de la subsecci\'on) as\'i que no
+%hay asimetr\'ia. Si \ $n = 2$, \ y \ $k=m=1 \not\in \{0 \; n \}$, tenemos $P(X =
+%0) = P(X = 1) = \frac12$ sim\'etrico: de nuevo el sesgo vale cero.} &
+%$\displaystyle \gamma_X = \left\{ \!\! \begin{array}{cl} \frac{(n - 2 k) (n - 2
+%m)}{n-2} % \sqrt{\frac{n-1}{m k (n-k) (n-m)}} & \mbox{si} \: n \ne 2, \quad k,l
+%\not\in \{ 0 \; n \} \\[2mm] 0 & \mbox{si no} \end{array} \right.$\\[2mm]
 %\hline
 %%
-%\SZ{Curtosis por exceso} & $\displaystyle \widebar{\kappa}_X = $\\[2mm]
+%Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = $\\[2mm]
+% 0 si no
 %\hline
 %
 Generadora de probabilidad & $G_X(z) = \frac{\smallbino{n-k}{m}}{\smallbino{n}{m}} \:
@@ -75,7 +77,11 @@ figura Fig.~\ref{Fig:MP:Hipergeometrica}.
 \label{Fig:MP:Hipergeometrica}
 \end{figure}
 
-\SZ{Otros ilustraciones para otros $n, k, m$? Poner el Sesgo (ya lo tengo)? El Curtosis (lo tengo que simplificar)?}
+\SZ{Otros ilustraciones para otros $n, k, m$?
+
+  Poner el  Sesgo (ya  lo tengo)?  El Curtosis (lo  tengo que  simplificar)? muy
+  pesadas...      Momento      factorial      $f_q      =      \frac{\PocD{m}{q}
+    \PocD{k}{q}}{\PocD{n}{q}}$ permitiendo calcular todo.}
 
 Notar: la variable resuelta cierta en los casos siguientes
 %

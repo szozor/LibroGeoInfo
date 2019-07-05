@@ -51,8 +51,8 @@
 %
 \draw[>=stealth,->] ({-2*\sx-.25},0)--({\sx*(\k+\ui)+.35},0) node[right]{\small $x$};
 \draw[>=stealth,->] (0,-.15)--(0,{\sy*\maxp+.25}) node[above]{\small $p_X$};
-%\draw (0,{((1-\p)^\n)*\sy})--(-.1,{((1-\p)^\n)*\sy}) node[left,scale=.7]{$(1-p)^n$};
-%\draw (0,{\n*\p*((1-\p)^(\n-1))*\sy})--(-.1,{\n*\p*((1-\p)^(\n-1))*\sy}) node[left,scale=.7]{$n \, p \, (1-p)^{n-1}$};
+\draw (0,{\sy/5})--(-.1,{\sy/5}) node[left]{\small $\frac15$};
+%\draw (0,{\sy*\maxp})--(-.1,{\sy*\maxp}) node[left]{\small $\maxp$};
 %
 \node at ({(\sx*(\ui+\k)+.25)/2},-1) [scale=.9]{(a)};
 \end{scope}
@@ -94,8 +94,6 @@
 \pgfmathsetmacro{\cuml}{\cum+\pr}\global\let\cum\cuml;% cumulativa actualizada
 }
 \draw (0,\sy)--(-.1,\sy) node[left,scale=.7]{$1$};
-%\draw (0,{((1-\p)^\n)*\sy})--(-.1,{((1-\p)^\n)*\sy}) node[left,scale=.7]{$(1-p)^n$};
-%\draw (0,{\n*\p*((1-\p)^(\n-1))*\sy})--(-.1,{\n*\p*((1-\p)^(\n-1))*\sy}) node[left,scale=.7]{$n \, p \, (1-p)^{n-1}$};
 %
 \node at ({(\sx*(\ui+\k)+.5)/2},-1) [scale=.9]{(b)};
 \end{scope}

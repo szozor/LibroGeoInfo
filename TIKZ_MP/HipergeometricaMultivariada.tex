@@ -1,0 +1,255 @@
+%\begin{tikzpicture}[fixed point arithmetic,scale=.8]
+\begin{tikzpicture}[scale=.8]
+\shorthandoff{>}
+%
+%
+%\pgfmathsetmacro{\n}{5};% numeros para la multinomial
+\pgfmathsetmacro{\dec}{.5};% shitf para dibujar las marginales
+%
+% ratio de pochammer decrecientes (b)_c / (a)_c
+\tikzmath{function poc(\a,\b,\c) {
+    if \c == 0 then {return 1;}
+    else {return ((\b/\a)*poc(\a-1,\b-1,\c-1);};
+};};
+%
+%
+% Ejemplo
+\begin{scope}
+%
+% c = 3 clases
+\pgfmathsetmacro{\ku}{9};% k_1
+\pgfmathsetmacro{\kd}{6};% k_2
+\pgfmathsetmacro{\n}{18};% n
+\pgfmathsetmacro{\m}{5};% m
+%
+\pgfmathsetmacro{\k}{\ku+\kd};% k_1+k_2
+% Nota : con el fixed point, no anda min & max
+% pero max(a,b) = (a+b+abs(a-b))/2  & min(a,b) = (a+b-abs(a-b))/2;
+\pgfmathsetmacro{\s}{int((\m-\n+\k+abs(\m-\n+\k))/2)}; % x1+x2 min posible 
+\pgfmathsetmacro{\S}{int((\m+\k-abs(\m-\k))/2)}; % x1+x2 max posible
+%
+\pgfmathsetmacro{\su}{int((\m-\n+\ku+abs(\m-\n+\ku))/2)}; % x1 min posible 
+\pgfmathsetmacro{\Su}{int((\m+\ku-abs(\m-\ku))/2)}; % x1 max posible
+%
+\pgfmathsetmacro{\sd}{int((\m-\n+\kd+abs(\m-\n+\kd))/2)}; % x2 min posible 
+\pgfmathsetmacro{\Sd}{int((\m+\kd-abs(\m-\kd))/2)}; % x2 max posible 
+
+\begin{axis}[
+    colormap = {whiteblack}{color(0cm)  = (white);color(1cm) = (black)},
+    width=.55\textwidth,
+    %height=.5\textheight,%\axisdefaultheight
+    view={35}{60},
+    enlargelimits=false,
+    xmin={-\dec},
+    xmax={\Su+\dec},
+    ymin={-\dec},
+    ymax={\Sd+\dec},
+    zmax={.42},
+    color=black,
+    xtick={0,...,\Su},
+    ytick={0,...,\Sd},
+    xlabel=$x_1$,
+    ylabel=$x_2$,
+    zlabel=$p_{\widetilde{X}}$,
+]
+%
+
+%
+% Marginale 1
+\pgfmathsetmacro{\bu}{1}; % init primer coef bino (k1 x1)
+% Inicialisacion parte 2 de la probabilidad marginal, i.e. 2nd coef. binomial / (n m)
+\pgfmathsetmacro{\bd}{poc(\n-\ku+\su,\m,\su)*poc(\n,\n-\ku+\su,\m)};
+\foreach \xu in {0,...,\Su} { % bucla en x_1
+   \ifnum\numexpr\xu > \numexpr\su-1
+      \ifnum\numexpr\xu < \numexpr\Su+1
+         \addplot3 [dotted,domain=0:{\bu*\bd},samples=2, samples y=0,color=black]
+          (\xu,{\Sd+\dec},\x)  node[scale=.55]{$\bullet$};
+      \fi
+   \fi
+   \pgfmathsetmacro{\blu}{\bu*(\ku-\xu)/(\xu+1)};
+   \global\let\bu\blu;% parte proba en x1 actualizado
+   \pgfmathsetmacro{\bld}{\bd*(\m-\xu)/(\n-\m-\ku+\xu+1)};
+   \global\let\bd\bld;% parte 2 de la proba actualizado
+   %
+   % lineas x1 abajo
+   \addplot3 [domain={-\dec}:{\Sd+\dec},samples=2, samples y=0,color=black!10] (\xu,\x,0);
+}
+\node at (axis cs:{3*\Su/4},{\Sd+\dec},{.25})[right]{$p_{X_1}$};
+%
+%
+% Marginale 2
+\pgfmathsetmacro{\bd}{1}; % init primer coef bino (k2 x2)
+% Inicialisacion parte 2 de la probabilidad marginal, i.e. 2nd coef. binomial / (n m)
+\pgfmathsetmacro{\bu}{poc(\n-\kd+\sd,\m,\sd)*poc(\n,\n-\kd+\sd,\m)};
+\foreach \xd in {0,...,\Sd} { % bucla en x_2
+   \ifnum\numexpr\xd > \numexpr\sd-1
+      \ifnum\numexpr\xd < \numexpr\Sd+1
+         \addplot3 [dotted,domain=0:{\bd*\bu},samples=2, samples y=0,color=black]
+          ({-\dec},\xd,\x)  node[scale=.55]{$\bullet$};
+      \fi
+   \fi
+   \pgfmathsetmacro{\bld}{\bd*(\kd-\xd)/(\xd+1)};
+   \global\let\bd\bld;% parte proba en x2 actualizado
+   \pgfmathsetmacro{\blu}{\bu*(\m-\xd)/(\n-\m-\kd+\xd+1)};
+   \global\let\bu\blu;% parte 2 de la proba actualizado
+   %
+   % lineas x2 abajo
+   \addplot3 [domain={-\dec}:{\Su+\dec},samples=2, samples y=0,color=black!10] (\x,\xd,0);
+}
+\node at (axis cs:{-\dec},{.6*\Sd},{.25})[right]{$p_{X_2}$};
+%
+% bivariada
+%
+% Inicialisacion parte 3 de la probabilidad, i.e. terco coef. binomial / (n m)
+\pgfmathsetmacro{\bt}{poc(\n-\k+\s,\m,\s)*poc(\n,\n-\k+\s,\m)};
+%\pgfmathsetmacro{\plim}{.000001};% si debajo de este valor, se pone a cero (liberar memorio) 
+%\pgfmathsetmacro{\sy}{1.1};% scaling en y, para la bivariada 
+%
+% ahora bucla sobre x = x1+x2
+\foreach \xs in {\s,...,\S} {
+   \pgfmathsetmacro{\bu}{1};% inic coef. bino. parte x1 de la proba
+   \foreach \xu in {0,...,\ku} { % bucla en x_1
+      \pgfmathsetmacro{\bd}{1};% inic coef. bino. parte x2 de la proba
+      \foreach \xd in {0,...,\kd} { % bucla en x_2
+         %\pgfmathsetmacro{\tx}{\xu+\xd};
+         \pgfmathparse{int(round(\xu+\xd-\xs))};\let\dif\pgfmathresult;
+         \ifnum\dif=0 %\numexpr\xu+\xd = \numexpr\xs % si x_1+x_2 = x que fijamos
+            %\pgfmathsetmacro{\pr}{\bu*\bd*\bt};
+            \addplot3 [dotted,domain=0:{\bu*\bd*\bt},samples=2, samples y=0,color=black]
+            (\xu,\xd,\x)  node[scale=.85]{$\bullet$};
+         \fi
+         \pgfmathsetmacro{\bld}{\bd*(\kd-\xd)/(\xd+1)};
+         \global\let\bd\bld;% parte proba en x2 (x1 fijo) actualizado
+      }
+      \pgfmathsetmacro{\blu}{\bu*(\ku-\xu)/(\xu+1)};
+      \global\let\bu\blu;% parte proba en x1 actualizado
+   }
+   \pgfmathsetmacro{\blt}{\bt*(\m-\xs)/(\n-\m-\k+\xs+1)};
+   \global\let\bt\blt;% parte 3 de la proba actualizado
+}
+\end{axis}
+\node at ({.6*\Su},-1)[scale=.9]{(a)};
+\end{scope}
+%
+%
+% -----------------------------------
+%
+% Ejemplo 
+\begin{scope}[xshift = 10.5cm]
+%
+% c = 3 clases
+\pgfmathsetmacro{\ku}{6};% k_1
+\pgfmathsetmacro{\kd}{6};% k_2
+\pgfmathsetmacro{\n}{18};% n
+\pgfmathsetmacro{\m}{5};% m
+%
+\pgfmathsetmacro{\k}{\ku+\kd};% k_1+k_2
+% Nota : con el fixed point, no anda min & max
+% pero max(a,b) = (a+b+abs(a-b))/2  & min(a,b) = (a+b-abs(a-b))/2;
+\pgfmathsetmacro{\s}{int((\m-\n+\k+abs(\m-\n+\k))/2)}; % x1+x2 min posible 
+\pgfmathsetmacro{\S}{int((\m+\k-abs(\m-\k))/2)}; % x1+x2 max posible
+%
+\pgfmathsetmacro{\su}{int((\m-\n+\ku+abs(\m-\n+\ku))/2)}; % x1 min posible 
+\pgfmathsetmacro{\Su}{int((\m+\ku-abs(\m-\ku))/2)}; % x1 max posible
+%
+\pgfmathsetmacro{\sd}{int((\m-\n+\kd+abs(\m-\n+\kd))/2)}; % x2 min posible 
+\pgfmathsetmacro{\Sd}{int((\m+\kd-abs(\m-\kd))/2)}; % x2 max posible 
+
+\begin{axis}[
+    colormap = {whiteblack}{color(0cm)  = (white);color(1cm) = (black)},
+    width=.55\textwidth,
+    %height=.5\textheight,%\axisdefaultheight
+    view={35}{60},
+    enlargelimits=false,
+    xmin={-\dec},
+    xmax={\Su+\dec},
+    ymin={-\dec},
+    ymax={\Sd+\dec},
+    zmax={.42},
+    color=black,
+    xtick={0,...,\Su},
+    ytick={0,...,\Sd},
+    xlabel=$x_1$,
+    ylabel=$x_2$,
+    zlabel=$p_{\widetilde{X}}$,
+]
+%
+%
+% Marginale 1
+\pgfmathsetmacro{\bu}{1}; % init primer coef bino (k1 x1)
+% Inicialisacion parte 2 de la probabilidad marginal, i.e. 2nd coef. binomial / (n m)
+\pgfmathsetmacro{\bd}{poc(\n-\ku+\su,\m,\su)*poc(\n,\n-\ku+\su,\m)};
+\foreach \xu in {0,...,\Su} { % bucla en x_1
+   \ifnum\numexpr\xu > \numexpr\su-1
+      \ifnum\numexpr\xu < \numexpr\Su+1
+         \addplot3 [dotted,domain=0:{\bu*\bd},samples=2, samples y=0,color=black]
+          (\xu,{\Sd+\dec},\x)  node[scale=.55]{$\bullet$};
+      \fi
+   \fi
+   \pgfmathsetmacro{\blu}{\bu*(\ku-\xu)/(\xu+1)};
+   \global\let\bu\blu;% parte proba en x1 actualizado
+   \pgfmathsetmacro{\bld}{\bd*(\m-\xu)/(\n-\m-\ku+\xu+1)};
+   \global\let\bd\bld;% parte 2 de la proba actualizado
+   %
+   % lineas x1 abajo
+   \addplot3 [domain={-\dec}:{\Sd+\dec},samples=2, samples y=0,color=black!10] (\xu,\x,0);
+}
+\node at (axis cs:{\ku/2},{\kd+\dec},{.1})[right]{$p_{X_1}$};
+%
+%
+% Marginale 2
+\pgfmathsetmacro{\bd}{1}; % init primer coef bino (k2 x2)
+% Inicialisacion parte 2 de la probabilidad marginal, i.e. 2nd coef. binomial / (n m)
+\pgfmathsetmacro{\bu}{poc(\n-\kd+\sd,\m,\sd)*poc(\n,\n-\kd+\sd,\m)};
+\foreach \xd in {0,...,\Sd} { % bucla en x_2
+   \ifnum\numexpr\xd > \numexpr\sd-1
+      \ifnum\numexpr\xd < \numexpr\Sd+1
+         \addplot3 [dotted,domain=0:{\bd*\bu},samples=2, samples y=0,color=black]
+          ({-\dec},\xd,\x)  node[scale=.55]{$\bullet$};
+      \fi
+   \fi
+   \pgfmathsetmacro{\bld}{\bd*(\kd-\xd)/(\xd+1)};
+   \global\let\bd\bld;% parte proba en x2 actualizado
+   \pgfmathsetmacro{\blu}{\bu*(\m-\xd)/(\n-\m-\kd+\xd+1)};
+   \global\let\bu\blu;% parte 2 de la proba actualizado
+   %
+   % lineas x2 abajo
+   \addplot3 [domain={-\dec}:{\Su+\dec},samples=2, samples y=0,color=black!10] (\x,\xd,0);
+}
+\node at (axis cs:{-\dec},{.6*\Sd},{.25})[right]{$p_{X_2}$};
+%
+% bivariada
+%
+% Inicialisacion parte 3 de la probabilidad, i.e. terco coef. binomial / (n m)
+\pgfmathsetmacro{\bt}{poc(\n-\k+\s,\m,\s)*poc(\n,\n-\k+\s,\m)};
+%\pgfmathsetmacro{\plim}{.000001};% si debajo de este valor, se pone a cero (liberar memorio) 
+%\pgfmathsetmacro{\sy}{1.1};% scaling en y, para la bivariada 
+%
+% ahora bucla sobre x = x1+x2
+\foreach \xs in {\s,...,\S} {
+   \pgfmathsetmacro{\bu}{1};% inic coef. bino. parte x1 de la proba
+   \foreach \xu in {0,...,\ku} { % bucla en x_1
+      \pgfmathsetmacro{\bd}{1};% inic coef. bino. parte x2 de la proba
+      \foreach \xd in {0,...,\kd} { % bucla en x_2
+         %\pgfmathsetmacro{\tx}{\xu+\xd};
+         \pgfmathparse{int(round(\xu+\xd-\xs))};\let\dif\pgfmathresult;
+         \ifnum\dif=0 %\numexpr\xu+\xd = \numexpr\xs % si x_1+x_2 = x que fijamos
+            %\pgfmathsetmacro{\pr}{\bu*\bd*\bt};
+            \addplot3 [dotted,domain=0:{\bu*\bd*\bt},samples=2, samples y=0,color=black]
+            (\xu,\xd,\x)  node[scale=.85]{$\bullet$};
+         \fi
+         \pgfmathsetmacro{\bld}{\bd*(\kd-\xd)/(\xd+1)};
+         \global\let\bd\bld;% parte proba en x2 (x1 fijo) actualizado
+      }
+      \pgfmathsetmacro{\blu}{\bu*(\ku-\xu)/(\xu+1)};
+      \global\let\bu\blu;% parte proba en x1 actualizado
+   }
+   \pgfmathsetmacro{\blt}{\bt*(\m-\xs)/(\n-\m-\k+\xs+1)};
+   \global\let\bt\blt;% parte 3 de la proba actualizado
+}
+\end{axis}
+\node at ({.6*\Su},-1)[scale=.9]{(b)};
+%
+\end{scope}
+%
+\end{tikzpicture}

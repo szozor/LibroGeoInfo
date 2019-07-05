@@ -17,7 +17,7 @@
 % ultima proba non nula F (F-1) ... (F-f+1) / n (n-1) ... (n-f+1)
 % finhiper(\F,\n,\f)
 \tikzmath{function finhiper(\a,\b,\c) {
-    if \c == 1 then {return (\a/\b;}
+    if \c == 1 then {return (\a/\b);}
     else {return (\a/\b)*finhiper(\a-1,\b-1,\c-1);};
 };};
 %

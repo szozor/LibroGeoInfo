@@ -34,6 +34,14 @@
     zlabel=$p_{\widetilde{X}}$,
 ]
 %
+% Lineas
+\foreach \mu in {0,...,\n} {
+  %
+  % lineas (m1,m2) abajo
+  \addplot3 [domain={-\dec}:{\n+\dec},samples=2, samples y=0,color=black!10] (\mu,\x,0);
+  \addplot3 [domain={-\dec}:{\n+\dec},samples=2, samples y=0,color=black!10] (\x,\mu,0);
+}
+%
 \pgfmathsetmacro{\bu}{(1-\pu-\pd)^\n};% coeficiente binomial por la probabilidad p1
 \pgfmathsetmacro{\bd}{\bu};% coeficiente binomial por la probabilidad p2
 %
@@ -43,7 +51,8 @@
 \foreach \mu in {0,...,\n} {
   \foreach \md in {0,...,\n} {
     \ifnum \numexpr\mu+\md < \numexpr\n+1
-      \addplot3 [dotted,domain=0:\bd,samples=2, samples y=0,color=black] (\mu,\md,\x)  node[scale=.85]{$\bullet$};
+      \addplot3 [dotted,domain=0:\bd,samples=2, samples y=0,color=black]
+      (\mu,\md,\x)  node[scale=.85]{$\bullet$};
       %
       \pgfmathsetmacro{\bld}{\bd*\pd*(\n-\md)/((\md+1)*(1-\pu-\pd))};
       \global\let\bd\bld;% proba en m2 (m1 fijo) actualizado
@@ -51,12 +60,10 @@
   }
   %
   % Marginales
-  \addplot3 [dotted,domain=0:\bmu,samples=2, samples y=0,color=black] (\mu,{\n+\dec},\x)  node[scale=.55]{$\bullet$};
-  \addplot3 [dotted,domain=0:\bmd,samples=2, samples y=0,color=black] ({-\dec},\mu,\x)  node[scale=.55]{$\bullet$};
-  %
-  % lineas (m1,m2) abajo
-  \addplot3 [domain={-\dec}:{\n+\dec},samples=2, samples y=0,color=black!10] (\mu,\x,0);
-  \addplot3 [domain={-\dec}:{\n+\dec},samples=2, samples y=0,color=black!10] (\x,\mu,0);
+  \addplot3 [dotted,domain=0:\bmu,samples=2, samples y=0,color=black]
+  (\mu,{\n+\dec},\x)  node[scale=.55]{$\bullet$};
+  \addplot3 [dotted,domain=0:\bmd,samples=2, samples y=0,color=black]
+  ({-\dec},\mu,\x)  node[scale=.55]{$\bullet$};
   %
   \pgfmathsetmacro{\blu}{\bu*\pu*(\n-\mu)/((\mu+1)*(1-\pu-\pd))};
   \global\let\bu\blu;\global\let\bd\blu;% proba inicial en m1 actualizada
@@ -70,11 +77,10 @@
 %
 \node at (axis cs:{3*\n/4},{\n+\dec},{\mau/2})[right]{$p_{X_1}$};
 \node at (axis cs:{-\dec},{3*\n/4},{\mad/2})[above]{$p_{X_2}$};
+%
 \end{axis}
 \node at ({3*\n/4},-1)[scale=.9]{(a)};
 \end{scope}
-%
-%
 %
 %
 % Ejemplo [1 1 1]/3
@@ -106,6 +112,14 @@
     zlabel=$p_{\widetilde{X}}$,
 ]
 %
+% Lineas
+\foreach \mu in {0,...,\n} {
+  %
+  % lineas (m1,m2) abajo
+  \addplot3 [domain={-\dec}:{\n+\dec},samples=2, samples y=0,color=black!10] (\mu,\x,0);
+  \addplot3 [domain={-\dec}:{\n+\dec},samples=2, samples y=0,color=black!10] (\x,\mu,0);
+}
+%
 \pgfmathsetmacro{\bu}{(1-\pu-\pd)^\n};% coeficiente binomial por la probabilidad p1
 \pgfmathsetmacro{\bd}{\bu};% coeficiente binomial por la probabilidad p2
 %
@@ -115,7 +129,8 @@
 \foreach \mu in {0,...,\n} {
   \foreach \md in {0,...,\n} {
     \ifnum \numexpr\mu+\md < \numexpr\n+1
-      \addplot3 [dotted,domain=0:\bd,samples=2, samples y=0,color=black] (\mu,\md,\x)  node[scale=.85]{$\bullet$};
+      \addplot3 [dotted,domain=0:\bd,samples=2, samples y=0,color=black]
+      (\mu,\md,\x)  node[scale=.85]{$\bullet$};
       %
       \pgfmathsetmacro{\bld}{\bd*\pd*(\n-\md)/((\md+1)*(1-\pu-\pd))};
       \global\let\bd\bld;% proba en m2 (m1 fijo) actualizado
@@ -123,12 +138,10 @@
   }
   %
   % Marginales
-  \addplot3 [dotted,domain=0:\bmu,samples=2, samples y=0,color=black] (\mu,{\n+\dec},\x)  node[scale=.55]{$\bullet$};
-  \addplot3 [dotted,domain=0:\bmd,samples=2, samples y=0,color=black] ({-\dec},\mu,\x)  node[scale=.55]{$\bullet$};
-  %
-  % lineas (m1,m2) abajo
-  \addplot3 [domain={-\dec}:{\n+\dec},samples=2, samples y=0,color=black!10] (\mu,\x,0);
-  \addplot3 [domain={-\dec}:{\n+\dec},samples=2, samples y=0,color=black!10] (\x,\mu,0);
+  \addplot3 [dotted,domain=0:\bmu,samples=2, samples y=0,color=black]
+  (\mu,{\n+\dec},\x)  node[scale=.55]{$\bullet$};
+  \addplot3 [dotted,domain=0:\bmd,samples=2, samples y=0,color=black]
+  ({-\dec},\mu,\x)  node[scale=.55]{$\bullet$};
   %
   \pgfmathsetmacro{\blu}{\bu*\pu*(\n-\mu)/((\mu+1)*(1-\pu-\pd))};
   \global\let\bu\blu;\global\let\bd\blu;% proba inicial en m1 actualizada

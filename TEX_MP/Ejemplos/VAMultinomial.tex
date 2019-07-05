@@ -5,13 +5,18 @@ Esta ley es una generalizaci\'on de la ley binomial y aparece por ejemplo cuando
 se  repite  una  experiencia  a  \  $k$  \ estados  \  $n$  \  veces  de  manera
 independiente y nos  interesamos a la probabilidad que  el primer evento aparece
 $n_1$ veces,  el secundo  $n_2$ veces, \ldots  (ej. para  $k = 6$,  contamos los
-n\'umeros de $1$, de $2$, \ldots cuando tiramos $n$ veces este dado).  Se denota
-\ $X \ \sim \ \M(n,p)$ \ con \  $n \in \Nset^*$ \ y \ $p = \begin{bmatrix} p_1 &
-  \cdots & p_k \end{bmatrix}^t \in  \Simp{k-1}$ \ the \ $(k-1)$-simplex estandar
-(ver figure~\ref{Fig:MP:Dirichlet}-(a) y notaciones).   Entonces, a pesar de que
-se escribe \  $X$ \ de manera $k$-dimensional, el vector  partenece a un espacio
-claramente \ $d = k-1$ \ dimensional y en el caso \ $k = 2$ \ se recupera la ley
-binomial.  Las caracter\'isticas de \ $X \ \sim \ \M(n,p)$ \ son las siguientes:
+n\'umeros de  $1$, de $2$, \ldots  cuando tiramos $n$ veces  este dado). Aparece
+tambi\'en    esta   ley    por   la    primera    vez   en    el   trabajo    de
+J. Bernoulli~\cite{Ber1713, Hal90} (ver tambi\'en  el ensayo de Montmort de 1708
+con otras notaciones~\cite{Mon13}).
+
+Se  denota  \  $X  \ \sim  \  \M(n,p)$  \  con  \  $n  \in  \Nset^*$ \  y  \  $p
+= \begin{bmatrix}  p_1 & \cdots  & p_k \end{bmatrix}^t  \in \Simp{k-1}$ \  the \
+$(k-1)$-simplex  estandar (ver figure~\ref{Fig:MP:Dirichlet}-(a)  y notaciones).
+Entonces, a pesar de que se escribe \ $X$ \ de manera $k$-dimensional, el vector
+partenece a un espacio claramente \ $d =  k-1$ \ dimensional y en el caso \ $k =
+2$  \ se  recupera la  ley binomial.   Las caracter\'isticas  de \  $X \  \sim \
+\M(n,p)$ \ son las siguientes:
 
 \begin{caracteristicas}
 %
@@ -82,8 +87,8 @@ Funci\'on caracter\'istica~\footnote{Notar: $\Phi_{\widetilde{X}}\left(
 % Mediana $\left\lfloor n p \right\rfloor$ o $\left\lceil n p \right\rceil
 % CDF	$I_{1-p}(n-k,k+1)$ regularized incomplete beta function
 
-Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
-figura Fig.~\ref{Fig:MP:Multinomial}.
+Su    masa     de    probabilidad     es    representadas    en     la    figura
+Fig.~\ref{Fig:MP:Multinomial}.
 %
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/Multinomial} \end{center}
@@ -93,11 +98,11 @@ figura Fig.~\ref{Fig:MP:Multinomial}.
   \protect\begin{bmatrix}   X_1  &  X_2   \protect\end{bmatrix}^t$  \   ($X_3  =
   1-X_1-X_2$)  \ con  las marginales  \ $p_{X_1},  \: p_{X_2}$  \ (ver  notas de
   pie~\ref{Foot:MP:MultinomialDominio}   y~\ref{Foot:MP:MultinomialMasa}).    Es
-  dibujada solamente  la distribuci\'on sobre  $\X$, siendo esta nula  afuera de
-  $\X$.  Los parametros son \ $n = 5$ \ y \ $p = \protect\begin{bmatrix} \frac25
-    &    \frac13    &   \frac4{15}    \protect\end{bmatrix}^t$    (a),   $p    =
-  \protect\begin{bmatrix} \frac13  & \frac12 &  \frac16 \protect\end{bmatrix}^t$
-  (b).}
+  dibujada solamente la distribuci\'on  sobre $\widetilde{\X}$, siendo esta nula
+  afuera  de $\widetilde{\X}$.   Los  parametros  son \  $n  = 5$  \  y  \ $p  =
+  \protect\begin{bmatrix}      \frac25      &      \frac13     &      \frac4{15}
+    \protect\end{bmatrix}^t$ (a), $p = \protect\begin{bmatrix} \frac13 & \frac12
+    & \frac16 \protect\end{bmatrix}^t$ (b).}
 \label{Fig:MP:Multinomial}
 \end{figure}
 
@@ -205,3 +210,10 @@ similar al de la binomial como suma de Bernoulli independientes:
   \sum_{i=1}^n X_i \, \sim \, \M(n,p)
   \]
 \end{lema}
+
+\
+
+Nota: esta ley  se generaliza de la misma manera que  para la binomial negativa,
+dando una  ley multinomial negativa  o, de manera equivalente,  generalizando la
+binomial  negativa  a  m\'as  de  dos  clases  se  obtiene  la  ley  multinomial
+negativa. \SZ{Anadirlo en una seccion?}

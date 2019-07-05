@@ -8,8 +8,8 @@
   el  contexto  de  juego (cartas,  dados),  bajo  entre  otros el  impulso  del
   matem\'atico  italiano y  jugador de  dados y  cartas Gerolamo  Cardano  en el
   siglo~{XVI},  y a\'un  m\'as bajo  el trabajo  muy profundo  de  la dinast\'ia
-  Bernoulli,   y  en   particular  Jacob   Bernoulli~\cite[en  lat\'in]{Ber1713}
-  o~\cite{Ber1713:2}.  En  particular, Bernoulli  se interes\'o no  solamente al
+  Bernoulli,   y  en   particular  Jacob   Bernoulli~\cite[en  lat\'in]{Ber13}
+  o~\cite{Ber13:2}.  En  particular, Bernoulli  se interes\'o no  solamente al
   resultado de un  sorteo, impredictible, pero en lo que pasa  cuando se hace un
   gran num\'ero de sorteos. As\'i  sali\'o la idea de ``resultado promedio''. En
   realidad el trabajo de Bernoulli ha ido m\'as adelante: prob\'o la ley de gran
@@ -335,20 +335,22 @@ aleatoria $X$. Los momentos relevantes usuales
     k_d \end{bmatrix}^t \in \Nset^d, \quad K = \sum_{i=1}^d k_i$ \ mediante
   %
   \[
-  f_{k_1,\ldots,k_d} = \Esp\left[ \prod_{i=1}^d \left( X_i \right)_{k_i} \right]
+  \modif{f_{k_1,\ldots,k_d} = \Esp\left[ \prod_{i=1}^d \PocD{X_i}{k_i} \right]}
   %  \equiv \Esp\left[  \prod_{k=0}^{r-1} (X-k)  \right] =  \sum_{n  = r}^\infty
   % \frac{n!}{(n-r)!} \, P(X = n).
  \]
  %
- con    \     $\left(    x    \right)_n    =     \prod_{i=0}^{n-1}    (x-i)    =
- \frac{\Gamma(x+1)}{\Gamma(x-n+1)}$, con \ $\Gamma$ \ la funci\'on
-Gamma~\cite{AbrSte70, AndAsk99, GraRyz15}   \   (usamos   la  convenci\'on   usual   \
- $\prod_0^{-1} = 1$ \ y \ el hecho que  \ $\Gamma(z) = + \infty$ \ para $- z \in
- \Nset$)   s\'imbolo  de   Pochhammer~\footnote{De  hecho,   en   las  funciones
-   especiales, se define como  la factorial creciente $(x)_n = \prod_{i=0}^{n-1}
-   (x+i)  \frac{\Gamma(x+n)}{\Gamma(x)}$  \  mientras  que esta  definici\'on  a
-   trav\'es   de   la   factorial   decreciente   se   encuentra   en   analysis
-   combinatorial~\cite{Poc70,  Knu92}.\label{Foot:MP:Pochhammer}}. Se  puede ver
+ \modif{con    \     $\PocD{x}{n}$ \ factorial decreciente (ver notaciones).}
+%    =     \prod_{i=0}^{n-1}    (x-i)    =
+% \frac{\Gamma(x+1)}{\Gamma(x-n+1)}$, con \ $\Gamma$ \ la funci\'on
+%Gamma~\cite{AbrSte70, AndAsk99, GraRyz15}   \   (usamos   la  convenci\'on   usual   \
+% $\prod_0^{-1} = 1$ \ y \ el hecho que  \ $\Gamma(z) = + \infty$ \ para $- z \in
+% \Nset$)   s\'imbolo  de   Pochhammer~\footnote{De  hecho,   en   las  funciones
+%   especiales, se define como  la factorial creciente $(x)_n = \prod_{i=0}^{n-1}
+%   (x+i)  \frac{\Gamma(x+n)}{\Gamma(x)}$  \  mientras  que esta  definici\'on  a
+%   trav\'es   de   la   factorial   decreciente   se   encuentra   en   analysis
+%   combinatorial~\cite{Poc70,  Knu92}.\label{Foot:MP:Pochhammer}}. 
+Se  puede ver
  que cuando \ $\X = \{ 0 \; \ldots  \; n \}, \: n \in \Nset$, \ $f_K =
  0$ \ cuando \ $K > n$.
 %

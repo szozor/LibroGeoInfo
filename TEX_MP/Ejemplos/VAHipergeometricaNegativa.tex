@@ -10,7 +10,8 @@ tiros  fijos,  se  hace tiros  hasta  que  $r$  elementos  de la  seconda  clase
 (fracascos)  sean tiradas.   $X$ es  el n\'umero  de tiros  parteneciendo  en la
 primera clase  (n\'umero de excitos). Es decir  que cuando $X =  x$, tenemos $k$
 elementos de  la primera clase en  los ``primeros'' $x+r-1$  tiros, el \'ultimos
-parteneciendo a la seconda clase.
+parteneciendo a la seconda clase.  Parece que se encuentran las primeras huellas
+de esta ley en trabajos del marquesano de Condorcet en 1785~\cite{Con85}.
 
 Se denota \ $X \,  \sim \, \H_-(n,k,r)$ \ con \ $n \in \Nset^*$,  \quad $k \in \{ 0 \;
 \ldots \; n \}$, \quad $m \in \{  0 \; \ldots \; n-k \}$ \ y sus caracter\'isticas
@@ -38,27 +39,29 @@ posibilidades de la seconda clase sobre las $n-x-(r-1)$ elementos que quedan.} &
 Promedio & $\displaystyle m_X = \frac{r \, k}{n - k + 1}$\\[2mm]
 \hline
 %
-Varianza & \SZ{$\displaystyle \sigma_X^2 = \frac{r \, k (n+1) (n-k-r+1)}{(n-k+1)^2 (n-k+2)}$}\\[2mm]
+Varianza & $\displaystyle \sigma_X^2 = \frac{r \, k (n+1) (n-k-r+1)}{(n-k+1)^2 (n-k+2)}$\\[2mm]
 \hline
 %%
-\modif{Sesgo} & \SZ{$ $}\\[2mm]
-\hline
+%\modif{Sesgo} & \SZ{$\gamma_X =  $}\\[2mm]
+%\hline
 %%
-Curtosis por exceso & $\displaystyle \SZ{\widebar{\kappa}_X = ...}$\\[2mm]
+%Curtosis por exceso & $\displaystyle \SZ{\widebar{\kappa}_X = ...}$\\[2mm]
+%\hline
+%
+Generadora de probabilidad & $G_X(z) = \frac{\smallbino{n-r}{k}}{\smallbino{n}{k}} \:
+\: \hypgeom{2}{1}(r , -k ; r-n ; z)$ \ sobre \ $\Cset$\\[2mm]
 \hline
 %
-%Generadora de probabilidad & $G_X(z) = \frac{\smallbino{n-k}{m}}{\smallbino{n}{m}} \:
-%\: \hypgeom{2}{1}(-m , -k ; n-m-k+1 ; z)$ \ sobre \ $\Cset$\\[2mm]
-%\hline
-%%
-%Generadora de momentos & $M_X(u) = \frac{\smallbino{n-k}{m}}{\smallbino{n}{k}}  \:
-%\: \hypgeom{2}{1}\left( -m , -k ; n-m-k+1 ; e^u \right)$ \ sobre \
-%$\Cset$\\[2mm]
-%\hline
-%%%
-%Funci\'on caracter\'istica  & $\Phi_X(\omega) =  \frac{\smallbino{n-k}{m}}{\smallbino{n}{m}}  \:
-%\: \hypgeom{2}{1}\left( -m , -k ; n-m-k+1 ; e^{\imath \, \omega} \right)$
+Generadora de momentos & $M_X(u) = \frac{\smallbino{n-r}{k}}{\smallbino{n}{k}} \:
+\: \hypgeom{2}{1}\left(r , -k ; r-n ; e^u \right)$ \ sobre \ $\Cset$\\[2mm]
+\hline
+%
+Funci\'on caracter\'istica  & $\Phi_X(\omega) =  \frac{\smallbino{n-r}{k}}{\smallbino{n}{k}} \:
+\: \hypgeom{2}{1}\left(r , -k ; r-n ; e^{\imath \, \omega} \right)$
 \end{caracteristicas}
+
+\SZ{Poner sesgo y curtosis? Expresiones  muy pesadas... Momento factorial $f_q =
+  \frac{\PocC{r}{q} \PocD{k}{q}}{\PocC{n-k+1}{q}}$ permitiendo calcular todo.}
 
 Su masa  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
 figura Fig.~\ref{Fig:MP:HipergeometricaNegativa}.
@@ -68,7 +71,7 @@ figura Fig.~\ref{Fig:MP:HipergeometricaNegativa}.
 %
 \leyenda{Ilustraci\'on  de una  distribuci\'on  de probabilidad  Hipergeometrica
   (a), y la funci\'on de repartici\'on asociada (b), con \ $n = 100$, \quad $k =
-  12$, \quad $r = 40$. \SZ{poner escala y}}
+  12$, \quad $r = 40$.}
 \label{Fig:MP:HipergeometricaNegativa}
 \end{figure}
 
