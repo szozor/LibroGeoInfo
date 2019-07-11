@@ -1,6 +1,13 @@
 \subsubseccion{Distribuci\'on exponencial}
 \label{Sssec:MP:Exponencial}
 
+A pesar de que sea un caso particular de la distribuci\'on Gamma que vamos a ver
+m\'as  adelante,  estudiada por  Pearson  desde  el  a\~no 1895~\cite{Pea95},  o
+apareci\'o  quizas   un  poco   antes  en  trabajos   de  L.   Boltzmann   o  de
+Whitworth~\cite{BalBas95} (como caso lim\'ite  de la ley de Poisson), apareci\'o
+esta  ley  de  manera  ``propia''   mucho  m\'as  tarde,  entre  otros  en  1930
+en~\cite[Ec.~(46)]{Kon30}.
+
 Se denota $X \,  \sim \, \E(\lambda)$ \ con \ $\lambda  \in \Rset_+^*$ \ llamada
 {\em  taza}  (inversa  de  {\em   escala}),  y  sus  caracter\'isticas  son  las
 siguientes:
@@ -10,7 +17,7 @@ siguientes:
 Dominio de definici\'on & $\X = \Rset_+$\\[2mm]
 \hline
 %
-Parametro & $\lambda \in \Rset_+^*$\\[2mm]
+Par\'ametro & $\lambda \in \Rset_+^*$\\[2mm]
 \hline
 %
 Densidad  de probabilidad &  $\displaystyle p_X(x)  = \lambda  e^{-\lambda x}$\\[2mm]
@@ -55,9 +62,131 @@ funci\'on de repartici\'on asociada (b), con $\lambda = 1.5$.}
 \end{figure}
 \SZ{Poner escalas; Otros ilustraciones para otros $\lambda$?}
 
-Cuando $\lambda \to +\infty$ la variable tiende a una variable cierta $X = 0$.
-\SZ{Esta distribuci\'on aparece... Propiedades}
-% en  el conteo  de conteo  de  une repetici\'on  de una  experiencia de  maneja
-% independiente hasta que  occure un evento de probabilidad  $p$; por ejemplo el
-% n\'umero de tiro de un dado  equilibriado hasta que occurre un ``6'' sigue una
-% ley geometrica de parametro $p = \frac16$.
+La  ley exponencial  es conocida  como siendo  {\em sin  memoria}, es  decir, si
+buscamos \  $X$ \  visto como un  tiempo (ej.  tiempo de desintegraci\'on  de un
+atomo radioactivo) tal que
+%
+\[
+\forall \: x_0 \ge 0, \, x \ge 0, \quad P( X > x+x_0 | X > x_0) = P(X > x)
+\]
+%
+\ie  la  probabilidad  que  $X  >  x+x_0$  (extra  tiempo  despu\'es  de  $x_0$)
+condicionalmente  a $X >  x_0$ es  exactamente la  de $X  > x+x_0$  (se olvid\'o
+$x_0$), tenemos, por la definici\'on de la probabilidad condicional
+%
+\[
+\forall \: x_0 \ge 0, \, x \ge 0, \quad \frac{1-F_X(x+x_0)}{1-F_X(x_0)} = 1-F_X(x)
+\]
+%
+Por diferenciaci\'on con respeto a $x$ eso da, en $x \to 0$,
+%
+\[
+\forall  \: x_0  \ge 0,  \quad  F_X'(x_0) +  \lambda F_X(x_0)  = \lambda  \qquad
+\mbox{con} \qquad \lambda = F_X'(0)
+\]
+%
+Teneiendo en cuenta de que $F_X$  es una funci\'on de repartici\'on, aparece que
+$F_X(x) = \left( 1 - e^{-\lambda x} \right) \un_{\Rset_+}(x)$, ley exponencial.
+
+Como  lo hemos  evocado  tratando de  la  ley de  Poisson,  esta es  v\'inculada
+intimamente a la ley exponencial a trav\'es del processo dicho de poisson:
+%
+\begin{lema}[V\'inculo con la ley de Poisson]
+\label{Lem:MP:VinculoExponencialPoisson}
+%
+  Sea  $T_0 =  0$ \  y \  $\forall \:  n \in  \Nset^*$ las  variables aleatorias
+  positivas \ $T_n$ \ tales que $T_{n+1}  - T_n \ge 0$ \ son independientes y de
+  distribuci\'on $\E(\lambda)$. Fijamos \ $T > 0$ \ y sea \ $X$ \ el n\'umero de
+  variables  \  $T_n$  \  que  partenecen  a   $(0  \;  T)$,  \ie  $T_X  <  T  <
+  T_{X+1}$. Entonces
+  %
+  \[
+  X \sim \P(\lambda T)
+  \]
+\end{lema}
+%
+Dicho  de otra manera,  si tenemos  eventos que  aparecen en  tiempos aleatorios
+tales  que los  incrementos de  tiempos entre  eventos son  independientes  y de
+distribuci\'on  exponencial de  taza $\lambda$,  el  n\'umero de  eventos en  un
+intervalo  de tiempo $T$  dado sigue  una ley  de Poisson,  de taza  $\lambda T$
+proporcional al  intervalo, y proporcional a  la taza de la  ley exponencial. El
+par\'ametro \ $\lambda$ \ representa la taza de evento por unidad de tiempo.
+%
+\begin{proof}
+Por definici\'on,
+%
+\begin{eqnarray*}
+P(X = n) & = & P(X\le n) - P(X \le n-1) \\[2mm]
+%
+& = & P(T_{n+1} > T) - P(T_n > T)\\[2mm]
+%
+& = & F_{T_n}(T) - F_{T_{n+1}}(T)
+\end{eqnarray*}
+%
+Ahora, notando que
+%
+\[
+T_n = \sum_{i=0}^{n-1} \left( T_{i+1} - T_i \right)
+\]
+%
+de la  independencia de los  incrementos de tiempo,  y de las propiedades  de la
+funci\'on caracter\'istica, tenemos
+%
+\[
+\Phi_{T_n}(\omega) = \frac{\lambda^n}{(1-\imath \, \omega)^n}
+\]
+%
+De  la  f\'ormula  de  inversion del  teorema~\ref{Teo:MP:InversionDensidad}  se
+prueba  que~\footnote{Una manera  es  de  hacer una  integraci\'on  en el  plano
+  complejo  y usar  los lemas  de Jordan  y teorema  de residuos~\cite{CarKro05}
+  o~\cite[Cap.~4]{AblFok03}.  Nota: de hecho se  reconoce en \ $\Phi_{T_n}$ \ la
+  funci\'on caracter\'istica de una ley gamma \ $\G(n,\lambda)$, ley que vamos a
+  ver en la secci\'on~\ref{Sssec:MP:Gamma}.}
+%
+\[
+p_{T_n}(x) = \frac{\lambda^n x^{n-1} e^{-\lambda x}}{(n-1)!} \un_{\Rset_+}(x)
+\]
+%
+Con integraciones por partes, se obtiene sencillamente
+%
+\[
+F_{T_n}(T) = 1 - \sum_{i=0}^{n-1} \frac{\lambda^i T^i e^{-\lambda T}}{i!}
+\]
+%
+lo que cierra la prueba.
+\end{proof}
+%
+En  f\'isica,  se  modela la  ley  de  tiempo  de desintegraci\'on  como  siendo
+exponencial,  y   se  supone  que  los   desintegraciuones  son  independientes,
+explicando el modelo de Poisson  para el n\'umero de desintegraci\'on durante un
+tiempo dado.
+
+Una otra caracter\'istica de esta ley  es su stabilidad con respecto al operador
+no lineal m\'inimo:
+%
+\begin{lema}[Stabilidad por el m\'in]
+\label{Lem:MP:StabilidadExponencialMinimo}
+%
+  Sean  $X_i \sim \E(\lambda), \: i = 1, \ldots , n$ \  independientes. Entonces,
+  \[
+  \min_{i=1,\ldots,n} X_i \equiv X \sim \E(n \lambda)
+  \]
+\end{lema}
+%
+\begin{proof}
+Inmediatamente, para cualquief $x \ge 0$
+%
+\begin{eqnarray*}
+1-F_X(x) & = & P(X > x) \\[2mm]
+%
+& = & P\left( \bigcap_{i=1}^n \big( X_i > x \big) \right)\\[2mm]
+%
+& = & \prod_{i=1}^n P(X_i > x)\\[2mm]
+%
+& = & e^{- n \lambda x}
+\end{eqnarray*}
+%
+La   secunda   linea   viene   de   la  equivalencia   entre   los   eventos   $
+\min_{i=1,\ldots,n}  X_i >  x$ y  $\bigcap_{i=1}^n  \big( X_i  > x  \big)$ y  la
+tercera de la independencia de los $X_i$.
+\end{proof}

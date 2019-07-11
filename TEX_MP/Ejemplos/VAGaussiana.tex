@@ -1,17 +1,63 @@
 \subsubseccion{Distribuci\'on normal o Gaussiana multivariada real}
 \label{Sssec:MP:Gaussiana}
 
+En el caso escalar,  esta ley parece aparecer por unas de  las primeras veces en
+trabajos de de  Moivre como approximaci\'on de la ley  binomial para $n$ grande,
+usando  la   formula  de  Stirling~\cite{Moi30,  Moi33,   Moi56,  Pea24,  Hal90,
+  JohKot95:v1, Hal06}.  Se  puede ver tambi\'en el trabajo  de F.  Galton, quien
+contruy\'o un  experimento, la caja dicha  de Galton, que ilustra  por una parte
+como se puede obtener la ley  binomial como suma de Bernoulli, y la convergencia
+a la  Gausiana~\cite[Figs.~7-9, p.~63]{Gal89} o~\cite[p.~38]{Pea20}.   Aparte de
+Moivre, la ley  gausiana fue desarollado mucho por  los matem\'aticos como Gauss
+en el estudio del movimiento  de planetas con perturbaciones (predicci\'on de la
+trayectoria de C\'eres)~\cite{Gau09, Pea24, Hal06}, basado en trabajos de A.  M.
+Legendre~\cite{Leg05, Hal06}, o Laplace  en mismo tipos de problema~\cite{Lap09,
+  Lap09:Supp,  Lap20, Pea24,  Hal06}.  De  hecho, apoyandose  en trabajos  de de
+Moivre,  la formaliz\'o  antes  y m\'as  claramente  Laplace, quien  revandic\'o
+entonces  su partenidad  (ver por  ejemplo~\cite{Pea20}). Por  eso, esta  ley es
+tambi\'en conocida como ley de Laplace-Gauss.
+
+En el contexto multivariado, la extensi\'on natural de la ley binomial siendo al
+ley multinomial, es sin sorpresa  que se introdujo la gausiana multivaluada como
+approximaci\'on de la multinomial.  Este trabajo  es debido entre otros a J.  L.
+Lagrange en  los a\~nos 1770, con  correcciones debido unas  decadas despu\'es a
+A. de  Morgan~\cite{Mor38}. Pero apareci\'o  antes en el caso  bidimensional, en
+particular  a  trav\'es  del  estudio  del coeficiente  de  correlaci\'on  entre
+variables   aleatorias  (ver   por  ejemplo   trabajos   de  Galton~\cite{Gal77,
+  Gal77:Nature, Pea20}).
+
+A pesar de que parece menos natural en la modelisaci\'on de fenomenos aleatorio,
+la ley  gausiana es  seguramente unas de  las m\'as importante  en probabilidad,
+sino que  la m\'as importante y la  m\'as expendida en la  naturaleza. Eso viene
+sin duda del teorema del l\'imite  centrale. En dos palabras, cuando se suman un
+numero  importante  de  variables  aleatorias  (independientes,  de  misma  ley,
+admitiendo  una varianza,  o con  menos restricciones~\cite[Cap.~11]{AthLah06}),
+corectamente normalizado, esta suma tiende a una gausiana~\footnote{De hecho, la
+  approximaci\'on de  la ley binomial por  una gausiana cuando $n$  es grande es
+  una  caso particular del  teorema, siendo  la binomial  una suma  de Bernoulli
+  independientes.}. En  la naturaleza,  se puede ver  el ruido  (se\~nales) como
+suma de un n\'umero importante  de fuentes de ruido independientes, justificando
+el  modelo  gausiano~\cite{Fel71, Cam86,  AshDol99,  JacPro03, AthLah06,  Ren07,
+  Bil12}.      Ad\'emas,      como     lo     vamos     a      ver     en     el
+capitulo~\ref{Cap:SZ:Informacion},  esta   ley  es  la   de  incerteza  m\'axima
+(maximizando la entrop\'ia) teniendo  una dada varianza. Aparece naturalmente en
+termod\'inamica    (gaz    perfecto,   con    un    n\'umero    muy   alto    de
+particulas)~\cite{Max67, Bol96,  Bol98, Gib02, Jay65}. En  estimaci\'on, bajo la
+hipotesis  gausiana,  los  estimadores  de  par\'ametros  minimizando  el  error
+cuadratico  promedio son generalmente  lineal~\cite{Kay93, Rob07}.   Todas estas
+consideraciones  dan a la  ley gausiana  un rol  central en  la teor\'ia  de las
+probabilidades.
+
 Se denota $X \, \sim \, \N(m,\Sigma)$ \  con \ $m \in \Rset^d$ \ y \ $\Sigma \in
-P_d^+(\Rset)$  \  conjunto  de  las   matrices  de  \  $\Rset^{d  \times  d}$  \
-s\'imetricas definidas positivas. Las  caracter\'isticas de la Gaussiana son las
-siguientes:
+P_d^+(\Rset)$ \  conjunto de las  matrices de \ $\M_{d,d}(Rset)$  \ s\'imetricas
+definidas positivas. Las caracter\'isticas de la Gaussiana son las siguientes:
 
 \begin{caracteristicas}
 %
 Dominio de definici\'on & $\X = \Rset^d$\\[2mm]
 \hline
 %
-Parametros & $m \in \Rset^d, \: \Sigma \in P_d^+(\Rset)$\\[2mm]
+Par\'ametros & $m \in \Rset^d, \: \Sigma \in P_d^+(\Rset)$\\[2mm]
 \hline
 %
 Densidad de probabilidad & $\displaystyle p_X(x) = \frac{1}{(2
@@ -119,9 +165,4 @@ covarianza  es   diagonal  (lema~\ref{Lem:MP:IndependenciaCov}),  pero   que  la
 reciproca es falsa en general. El \'ultimo teorema muestra que la reciproca vale
 en el caso gausiano.
 
-%Cuando $\lambda \to +\infty$ la variable tiende a una variable cierta $X = 0$.
-\SZ{Esta distribuci\'on aparece...}
-% en  el conteo  de conteo  de  une repetici\'on  de una  experiencia de  maneja
-% independiente hasta que  occure un evento de probabilidad  $p$; por ejemplo el
-% n\'umero de tiro de un dado  equilibriado hasta que occurre un ``6'' sigue una
-% ley geometrica de parametro $p = \frac16$.
+\SZ{y mas}

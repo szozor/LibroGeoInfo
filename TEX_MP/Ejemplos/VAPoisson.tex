@@ -1,6 +1,21 @@
 \subsubseccion{Ley de Poisson}
 \label{Sssec:MP:Poisson}
 
+Esta  ley fue  introducida por  Poisson en  1837 como  caso l\'imite  de  la ley
+binomial     para     $n$     grande,      con     el     producto     $n     p$
+fijo~\cite[Cap.~3]{Poi37},~\cite{Hal90}.    Se  intereso   en  su   estudio  del
+comportamentio  probabilistico del conteo  de experiencia  de Bernoulli  bajo la
+hipotesis de  independencia (dando lugar a  la ley binomial)  en ciencia humana,
+para una poblaci\'on  importante ($n$ grande), pero con  un valor promedio dado.
+De hecho, se conocia esta ley,  tambi\'en como caso l\'imite de la binomial, por
+lo menos desde un trabajo de de Moivre unas decadas antes~\cite{Moi10}. Aparecio
+tambi\'en  m\'as  tarde  en  muchos   procesos  f\'isicos,  como  el  conteo  de
+desintegraci\'on   atomica  por   secundo   en  un   material  radioactivo,   o,
+(aproximadamente) a trav\'es del conteo  de particulas que caen en una peque\~na
+superficia cuanto se tiras particulas  uniformamente en una grande superficia en
+trabajos de W. S. Gosset~\footnote{Fue connocido bajo en nombre ``Student''; ver
+  nota de pie~\ref{Foot:MP:Student}.}~\cite{Stu07}.
+
 Se denota $X \,  \sim \, \P(\lambda)$ \ con \ $\lambda  \in \Rset_+^*$ \ llamada
 {\em taza}, y sus caracter\'isticas son las siguientes:
 
@@ -9,7 +24,7 @@ Se denota $X \,  \sim \, \P(\lambda)$ \ con \ $\lambda  \in \Rset_+^*$ \ llamada
 Dominio de definici\'on & $\X = \Nset$\\[2mm]
 \hline
 %
-Parametro & $\lambda \in \Rset_+^*$\\[2mm]
+Par\'ametro & $\lambda \in \Rset_+^*$\\[2mm]
 \hline
 %
 Distribuci\'on  de  probabilidad   &  $\displaystyle  p_X(x)  =  \frac{\lambda^x
@@ -74,33 +89,53 @@ Ad\'emas, se muestra  sencillamente usando la generadora de  probabilidad que
 \end{lema}
 
 
-La ley de Poisson esta v\'inculada a la ley binomiam negativa, como caso l\'imite:
+Como lo hemos introducido, la ley de Poisson esta v\'inculada a la ley binomial, como caso l\'imite:
 %
-\begin{lema}[V\'inculo con la binomial negativa]
-\label{Lem:MP:VinvuloPoissonBinomialNegativa}
+\begin{lema}[V\'inculo con la ley binomial]
+\label{Lem:MP:VinvuloPoissonBinomial}
 %
-  Sean  \  $X_r  \,  \sim  \,  \B_-\left( \frac{\lambda}{r+\lambda} \, , \, r \right)$  \
+  Sean  \  $X_n  \,  \sim  \,  \B\left( n \, , \, \frac{\lambda}{n} \right)$  \
   con $\lambda > 0$ fijo, entonces
   %
   \[
-  \limitd{r \to \infty} X_r \, = \, X \, \sim \, \P(\lambda)
+  X_n \, \limitd{n \to \infty} \, X \, \sim \, \P(\lambda)
   \]
 \end{lema}
 \begin{proof}
-  Se sale de la forma de la  distribuci\'on binomial negativa y de la formula de
+  Se sale de la forma de la  distribuci\'on binomial y de la formula de
   Stirling~\footnote{De hecho, esta  formula es probablemente debida previamente
-    a  A.  De  Moivre~\cite{Dem56,  Pea24,  Cam86, Dut91},  y  fue mejorada  por
+    a  A.  De  Moivre~\cite{Moi56,  Pea24,  Cam86, Dut91},  y  fue mejorada  por
     Stirling m\'as tarde. Fue mejorada a\'un m\'as por el famoso matem\'atico S.
     Ramanujan     recientemente~\cite[\S~4.1]{AndBer13}.\label{Foot:MP:Stirling}}
   para \ $\log\Gamma(z) = \left( z - \frac12 \right) \log z - z + \frac12 \log(2
   \pi) + o(1)$ \ en \ $z \to +\infty$~\cite{Sti30, AbrSte70, GraRyz15}.
 \end{proof}
 
+Aparece  que la  ley de  Poisson esta  v\'inculada tambi\'en  a la  ley binomial
+negativa, tambi\'en como caso l\'imite:
+%
+\begin{lema}[V\'inculo con la binomial negativa]
+\label{Lem:MP:VinvuloPoissonBinomialNegativa}
+%
+Sean \ $X_r \, \sim \, \B_-\left( \frac{\lambda}{r+\lambda} \, , \, r \right)$ \
+con $\lambda > 0$ fijo, entonces
+  %
+  \[
+  X_R \, \limitd{r \to \infty} \, X \, \sim \, \P(\lambda)
+  \]
+\end{lema}
+\begin{proof}
+  Se  sale de nuevo  la forma  de la  distribuci\'on binomial  negativa y  de la
+  formula de Stirling para probarlo.
+\end{proof}
 
-Cuando $\lambda = 0$ la variable es  cierta $X = 0$ (usando la convenci\'on $0^0
-= 1$).  \SZ{ Esta  distribuci\'on aparece... eventos despues tiempo exponencial;
-  conteo. Ej en fisica. Ecuacion del telegrafo}
-% en  el conteo  de conteo  de  une repetici\'on  de una  experiencia de  maneja
-% independiente hasta que  occure un evento de probabilidad  $p$; por ejemplo el
-% n\'umero de tiro de un dado  equilibriado hasta que occurre un ``6'' sigue una
-% ley geometrica de parametro $p = \frac16$.
+M\'as all\'a  del contexto discreto, esta  ley esta tambi\'en  v\'inculada a ley
+exponencial, por  el processo  dicho de Poisson.  Si eventos pueden  aparecer de
+manera aleatoria  en el tiempo tal que,  entre dos eventos, el  tiempo sigue una
+ley exponencial de par\'ametro $\lambda$,  y que estos tiempos son independientes,
+entonces dado  un intervalo $T$ de tiempo  , el n\'umero de  estos eventos sigue
+una ley de Poisson de par\'ametro $\lambda T$.  Lo vamos a ver en el ejemplo de la
+ley exponencial m\'as adelante.
+
+Al final, nota que cuando $\lambda = 0$ la variable es cierta $X = 0$ (usando la
+convenci\'on $0^0 = 1$).

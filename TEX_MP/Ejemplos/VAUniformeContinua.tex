@@ -1,6 +1,15 @@
 \subsubseccion{Distribuci\'on uniforme sobre un intervalo}
 \label{Sssec:MP:UniformeContinua}
 
+Esta distribuci\'on es  la m\'as natural que se usa  cuando queremos modelar una
+falta de  informaci\'on sobre una variable,  sabiendo que vive en  un espacio de
+volumen  finito: sin  a  priori  m\'as, una  tendencia  natural/intuitiva es  de
+asignar  la ``misma  probabilidad'' a  cada punto  del conjunto.  En particular,
+aparece as\'i  naturalmente en  la inferencia Bayesiana  que consiste  a modelar
+como aleatorio un par\'ametro que se quierre inferir~\cite{Rob07} (la ley es dicha
+ley {\em a  priori}; ver tambi\'en~\cite{Bay63} o~\cite{Lap20}; tal  a priori es
+conocido como a a priori de Laplace).
+
 Se denota $X \, \sim \, \U([a \; b])$. Las caracter\'isticas de \ $X$ \ son las
 siguientes:
 
@@ -9,7 +18,7 @@ siguientes:
 Dominio de definici\'on & $\X = [a \; b]$\\[2mm]
 \hline
 %
-Parametros & $(a,b) \in \Rset, \: b > a$\\[2mm]
+Par\'ametros & $(a,b) \in \Rset, \: b > a$\\[2mm]
 \hline
 %
 Densidad de probabilidad & $p_X(x) = \frac{1}{b-a}$\\[2mm]
@@ -58,6 +67,56 @@ son representadas en la figura Fig.~\ref{Fig:MP:Uniformecontinua}.
 funci\'on de repartici\'on asociada (b).}
 \label{Fig:MP:Uniformecontinua}
 \end{figure}
+
+Una nota  importante es que cada ley  continua es v\'inculada a  la ley uniforme
+sobre $(0 \; 1)$ de la manera siguiente:
+%
+\begin{lema}[Inversi\'on]\label{Lem:MP:InversionUniforme}
+Sea $X$, continua sobre $\X \subset \Rset$, de funci\'on de repartici\'on $F_X$. Entonces
+%
+\[
+U \equiv F_X(X) \sim \U(0 \; 1)
+\]
+%
+Reciprocamente, definiendo la funci\'on de repartici\'on inversa (o quantile)
+%
+\[
+F_X^{-1}(u) = \inf \{ x \tq F(x) \ge u \}
+\]
+%
+si $V \sim \U( 0 \; 1 )$,
+%
+\[
+Y = F_X^{-1}(V) \quad \Rightarrow \quad F_Y(y) = F_X(y)
+\]
+\end{lema}
+%
+Cuando  $F_X$ se  inversa  sencillamente eso  da  una manera  sencille de  tirar
+sampleos de funci\'on de repartici\'on $F_X$ a partir de sampleos tirados seg\'un
+una ley uniforme.
+%
+\begin{proof}
+Inmediatamente, $F_X$ siendo creciente,
+%
+\begin{eqnarray*}
+P(U \le u) & = &  P( F_X(X) \le u)\\[2mm]
+%
+& = & P(X \le F_X^{-1}(u))\\[2mm]
+%
+& = & F_X\left( F_X^{-1} (u) \right)
+\end{eqnarray*}
+%
+Similarmente
+%
+\begin{eqnarray*}
+P(Y \le y) & = &  P( F_X^{-1}(V) \le y)\\[2mm]
+%
+& = & P(V \le F_X(y))\\[2mm]
+%
+& = & F_X(y)
+\end{eqnarray*}
+%
+\end{proof}
 
 De manera  general, para  cualquier ensemble $\D  \subset \Rset^d$ de  volumen \
 $|\D|$ \,  la variable uniforma sobre $\D$  tiene la densidad con  respecto a la

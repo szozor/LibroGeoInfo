@@ -9,7 +9,7 @@ trav\'es de transformaciones  de la medida de probabilidad,  conocidas como {\em
   funciones generadoras}  o {\em funciones  generatrices}~\footnote{De hecho, de
   manera general,  se introdujeron  tales funciones en  un marco  m\'as general,
   asociado   a   sucesiones  de   n\'umeros,   bajo   el   impulso  de   A.   de
-  Moivre~\cite{Dem30};   ver   tambi\'en~\cite{Sti30,   Eul41,   Eul50,   Dem56}
+  Moivre~\cite{Moi30};   ver   tambi\'en~\cite{Sti30,   Eul41,   Eul50,   Moi56}
   o~\cite[Sec.~1.2.9]{Knu97_v1}.        \label{Foot:MP:Generadora}}~\cite{Lap20}.
 Existen varias funciones, cuyas tienes  propiedades particulares que vamos a ver
 en las subsecciones siguientes. Entre  otros, estas funciones dadas como valores
@@ -383,7 +383,7 @@ $\real{u_i} = 0$,  esta funci\'on es siempre definida.   Entonces, una funci\'on
 generadora muy \'util que se usa frecuentemente es la de momentos para este tipo
 de argumentos,  lo que es conocida  como funci\'on caracter\'istica y  que es al
 final definida  sobre $\Rset^d$  de manera siguiente~\cite{Luk61,  Gol61, Fel68,
-  SteWei71, JohKot97, Muk00, AthLah06, Sas13}:
+  SteWei71, JohKot97, Muk00, AshDol99, AthLah06, Sas13}:
 
 
 \begin{definicion}[funci\'on   caracter\'istica]
@@ -538,10 +538,10 @@ lector.
 Como   lo  hemos   notado   en  las   subsecciones   anteriores,  la   funci\'on
 caracter\'istica define  completamente el  vector aleatorio. En  particular, hay
 una relaci\'on uno-uno (casi siempre) entre \ $\Phi_X$ \ y la medida \ $P_X$. En
-particular, existe una  f\'ormula de inversion permitiendo volver  a la medida \
-$P_X$ \ a partir de \ $\Phi_X$~\cite{Sas13}:
+particular, existe una f\'ormula de inversi\'on permitiendo volver a la medida \
+$P_X$ \ a partir de \ $\Phi_X$~\cite{AshDol99, Sas13}:
 %
-\begin{teorema}[Inversi\'on f\'ormula]\label{Teo:MP:InversionFourierStieljes}
+\begin{teorema}[F\'ormula de inversi\'on]\label{Teo:MP:InversionFourierStieljes}
 %
   Sea \ $X$  \ vector aleatorio $d$-dimensional de  funci\'on caracter\'istica \
   $\Phi_X$.   Sea  \  $\displaystyle  A  = \optimes_{i=1}^d  (a_i  \;  b_i)  \in
@@ -662,7 +662,16 @@ probabilidad.
 \end{teorema}
 %
 \begin{proof}
-\SZ{hacer o mandar a libros Sasvari p. 21}
+  Varias pruebas  existen (ej.~\cite[p.~21]{Sas13}). Una  bastante directa puede
+  ser       de      salir      de       la      f\'ormula       general      del
+  teorema~\ref{Teo:MP:InversionFourierStieljes}, de  fijar \ $a$ \ y  \ poner $b
+  \equiv x \in  \Rset^d$. Se toma la derivada  \ $\frac{\partial^d}{\partial x_1
+    \cdots \partial x_d}$ \ de  la integral \ $\displaystyle \frac{1}{(2 \pi)^d}
+  \int_{\optimes_{j=1}^d   [-w_j  \;  w_j]}   \Phi_X(\omega)  \prod_{j   =  1}^d
+  \frac{e^{- \imath \,  a_j \omega_j} - e^{- \imath  \, b_j \omega_j}}{\imath \,
+    \omega_j} \: d\omega$ \ y se  evoca el teorema de convergencia dominada para
+  intercambiar  derivaci\'on e integraci\'on,  y luego  tomar el  l\'imite, para
+  obtener el resultado.
 \end{proof}
 
 \begin{teorema}[Inversi\'on, caso discreto]\label{Teo:MP:InversionMasa}
@@ -786,6 +795,8 @@ Cumulant generating function .... %%
 }
 
 
+
+\SZ{teorema de Polya?}
 
 \SZ{hablar de la cota de Chernoff con la mgf o pgf?}
 

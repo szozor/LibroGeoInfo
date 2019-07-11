@@ -1,16 +1,17 @@
 \subsubseccion{Distribuci\'on Gamma}
 \label{Sssec:MP:Gamma}
 
+\SZ{Pearson 1895}
 Se  denota $X \,  \sim \,  \G(a,b)$ \  con \  $a \in  \Rset_+^*$ \  llamado {\em
-parametro de  forma} \ y \  $b \in \Rset_+^*$  \ llamada {\em taza}  (inversa de
-{\em escala}).  Las caracter\'isticas son:
+par\'ametro de  forma} \ y \  $b \in \Rset_+^*$  \ llamada {\em taza}  (inversa de
+{\em escala}). \SZ{Cuando $a \in \Nset^*$ es entero, la ley es a veces conocida como ley de Erlang~\cite{} A. K. Erlang, a Danish telephone engineer who is considered the founder of queueing theory Cf. Cox} Las caracter\'isticas son:
 
 \begin{caracteristicas}
 %
 Dominio de definici\'on & $\X = \Rset_+$\\[2mm]
 \hline
 %
-Parametros & $a \in \Rset_+^*$ \ (forma), \: $b \in \Rset_+^*$ \ (taza)\\[2mm]
+Par\'ametros & $a \in \Rset_+^*$ \ (forma), \: $b \in \Rset_+^*$ \ (taza)\\[2mm]
 \hline
 %
 Densidad  de probabilidad  &  $\displaystyle p_X(x)  =  \frac{b^a \, x^{a-1} \,  e^{-b
@@ -62,7 +63,7 @@ punteada), $1$ (linea mixta), $2$ (linea guionada) y $3$ (linea llena).}
 \end{figure}
 
 Nota  que para  \  $X \,  \sim  \, \G(1,b)$  \ es  una  variable exponencial  de
-parametro \  $b$, \ie \ $X \,  \sim \, \E(b)$. Cuando  \ $a < 1$,  la densidad \
+par\'ametro \  $b$, \ie \ $X \,  \sim \, \E(b)$. Cuando  \ $a < 1$,  la densidad \
 $p_X$  \ diverge  para \  $x  \to 0$  \ (divergencia  integrable). Adem\'as,  se
 muestra tambi\'en sencillamente con las funciones caracter\'isticas que:
 %
@@ -76,6 +77,9 @@ muestra tambi\'en sencillamente con las funciones caracter\'isticas que:
   \sum_{i=1}^n X_i \, \sim \, \G\left( \sum_{i=1}^n a_i \, , \, b \right)
   \]
 \end{lema}
+%
+En particular, la  suma de variable independientes de  ley exponencial sigue una
+distribuci\'on de Erlang de par\'ametro de forma $n$.
 
 Adem\'as,  se muestra  sencillamente  por  cambio de  variables  y la  funci\'on
 caracter\'istica un v\'inculo con variables gausianas:
@@ -96,7 +100,7 @@ La distribuci\'on Gamma aparece entre  otros en problema de inferencia Bayesiana
 como distribuci\'on a priori conjugado~\footnote{En la inferencia Bayesiana, nos
   interesamos al paremetro (posiblemente  multivariado) \ $\theta$ \ subyancente
   a una  distribuci\'on. Por ejemplo,  sabemos tener observaciones  sorteados de
-  una distribuci\'on de Poisson, pero con el parametro \ $\lambda$ \ desconocido
+  una distribuci\'on de Poisson, pero con el par\'ametro \ $\lambda$ \ desconocido
   y nos interesamos a \ $\theta \equiv \lambda$. El enfoque Bayesiano consiste a
   considerar el paremetro  \ $\Theta$ \ aleatorio, tal  que la distribuci\'on de
   las observaciones  sea vista como distribuci\'on condicional  \ $p_{X|\Theta =
@@ -110,13 +114,13 @@ como distribuci\'on a priori conjugado~\footnote{En la inferencia Bayesiana, nos
   posible es  tomarla en una familia  parametrizada tal que  la distribuci\'on a
   posterior  partenece  tambi\'en a  esta  familia: es  lo  que  se llama  prior
   conjugado. La idea es que si  vienen observaciones, en lugar de re-calcular el
-  posterior,   se   puede   actualizar   solamente  los   parametros   (llamados
-  hiperparametros).    \SZ{Ver    nota    de    pie    en    el    cap    2    a
-    modificar}.\label{Foot:MP:BayesPrior} } del parametro $\lambda$ de la ley de
+  posterior,   se   puede   actualizar   solamente  los   par\'ametros   (llamados
+  hiperpar\'ametros).    \SZ{Ver    nota    de    pie    en    el    cap    2    a
+    modificar}.\label{Foot:MP:BayesPrior} } del par\'ametro $\lambda$ de la ley de
 Poisson~\cite{Rob07}.
 
 \SZ{Esta distribuci\'on aparece...}
 % en  el conteo  de conteo  de  une repetici\'on  de una  experiencia de  maneja
 % independiente hasta que  occure un evento de probabilidad  $p$; por ejemplo el
 % n\'umero de tiro de un dado  equilibriado hasta que occurre un ``6'' sigue una
-% ley geometrica de parametro $p = \frac16$.
+% ley geometrica de par\'ametro $p = \frac16$.
