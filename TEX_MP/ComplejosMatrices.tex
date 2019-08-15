@@ -134,9 +134,9 @@ Resuelte de esta definici\'on equivalente los hechos siguientes:
     \]
 %    \SZ{Decir  antes,  que $\Sigma_{X,Y}  \equiv  \Cov[X,Y]$  y $\Sigma_{Y,X}  =
 %      \Sigma_{X,Y}^t$}.  
-Se puede ver que la covarianza de $Z$ no contiene todos
-    los  terminos   de  orden   2.  Por  eso,   se  define  tambi\'en   la  {\em
-      pseudo-covarianza}, sin terminos conjugados,
+    Se puede  ver que  la covarianza de  $Z$ no  contiene todos los  terminos de
+    orden  2.  Por  eso, se  define  tambi\'en la  {\em pseudo-covarianza},  sin
+    terminos conjugados,
     \[
     \check{\Sigma}_Z \equiv \pCov[Z] \equiv \Esp\left[ (Z-m_Z) (Z-m_Z)^t \right]
     \]
@@ -144,14 +144,14 @@ Se puede ver que la covarianza de $Z$ no contiene todos
     Ahora, se puede ver que
     %
     \[
-    \check{\Sigma}_Z =  \left( \Sigma_X  - \Sigma_Y \right)  + \imath \left(  \Sigma_{X,Y} + 
-      \Sigma_{X,Y}^t \right)
+    \check{\Sigma}_Z  =  \left( \Sigma_X  -  \Sigma_Y  \right)  + \imath  \left(
+      \Sigma_{X,Y} + \Sigma_{X,Y}^t \right)
     \]
     %
     Entonces,  se  recupera  inmediatamente   $\Sigma_X,  \:  \Sigma_Y$  \  y  \
     $\Sigma_{X,Y}$  \  a  partir  de  \ $\Sigma_Z$  \  y  \  $\check{\Sigma}_Z$;
     Claramente,   los   momentos   centrales   de   orden  2   son   dados   por
-    \underline{ambas} \ $\Sigma_Z$ \ y \ $\check{\Sigma}_Z$.
+    \underline{ambas}  \  $\Sigma_Z$  \   y  \  $\check{\Sigma}_Z$.
   \end{itemize}
   %
   Los momentos  as\'i definidos heriden  naturalmente de las propiedades  de las
@@ -272,7 +272,22 @@ siguiente~\cite[Def.~17.4.1]{Lap17}:
 \end{definicion}
 %
 Se podr\'ia ampliar  esta definici\'on hablando de vector propio  al torno de un
-vector $\mu$, conservando solamente la nulidad de la pseudo-covarianza.
+vector $\mu$, conservando solamente la nulidad de la pseudo-covarianza. Como li v\'imos tranatdo de vectores circulares, tenemos la implicaci\'on siguiente:
+
+\begin{teorema}[Circularidad]
+\label{Teo:MP:Circularidad}
+%
+  Sea   \   $Z$ vector alatorio complejo.  Entonces,
+%
+  \[
+  Z \:  \mbox{ circular en torno  de } \:  m \qquad \Longrightarrow \qquad  Z \:
+  \mbox{ propio en torno de } \: m
+  \]
+\end{teorema}
+%
+%\begin{proof}
+%  V\'imos la directa en la  secci\'on~\ref{Ssec:MP:VAComplejos}, despu\'es de la definici\'on~.
+%\end{proof}
 
 Los vectores propios tienen  propiedades particulares, entre otros las siguientes.
 

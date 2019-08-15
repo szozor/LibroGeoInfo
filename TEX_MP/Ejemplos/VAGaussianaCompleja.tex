@@ -5,13 +5,151 @@ Por definici\'on, un vector aleatorio complejo $d$-dimensional \ $Z = X + \imath
 Y$ \  es gausiano significa que  el vector $2 d$-dimensional  \ $\widetilde{Z} =
 \begin{bmatrix}  X^t &  Y^t \end{bmatrix}^t$  \ es  gausiano. Se  puede entonces
 referirse  en el  caso de  vectores gausianos,  pero como  lo presentamos  en la
-secci\'on~\ref{Sec:MP:VectoresComplejosMatricesAleatorias},   es  frecuentemente
-m\'as comodo trabajar con \ $Z$  \ en lugar de \ $\widetilde{Z}$. En particular,
-en  el marco de  las comunicaciones  en ingeneria,  se trabaja  con modulaciones
-dichas en fase y en cuadratura (se\~nal multiplicado respectivamente por un seno
-y  un coseno)  y  en  lugar de  trabajar  con dos  componente  se considera  una
-modulaci\'on  con una exponencial  compleja y  la se\~nal/variable  compleja. Se
-puede por ejemplo referirse a~\cite{Lap17} (ver en particular el capitulo~24).
+secci\'on~\ref{Ssec:MP:VAComplejos}, es frecuentemente m\'as comodo trabajar con
+\  $Z$ \  en lugar  de \  $\widetilde{Z}$.  En particular,  en el  marco de  las
+comunicaciones en  ingeneria, se  trabaja con modulaciones  dichas en fase  y en
+cuadratura (se\~nal multiplicado  respectivamente por un seno y  un coseno) y en
+lugar  de trabajar  con dos  componente se  considera una  modulaci\'on  con una
+exponencial  compleja  y la  se\~nal/variable  compleja.  Se  puede por  ejemplo
+referirse a~\cite{Lap17} (ver en particular el capitulo~24).
 
-\SZ{
-caso general y caso circular}
+En el caso general, la gausiana real siendo completamente descritar por su media
+y su matriz de covarianza, la  gausiana compleja va a ser completamente definida
+por   la  media,   la  matriz   de  covarianza   y  la   pseudo-covarianza  (ver
+Sec.~\ref{Sec:MP:VectoresComplejosMatricesAleatorias}  por las  relaciones entre
+la  covarianza  de  \ $\widetilde{Z}$  \  y  estas  matrices).   $Z \,  \sim  \,
+\C\N(m,\Sigma,\check{\Sigma})$  \   con  \  $m  \in  \Cset^d$,   \  $\Sigma  \in
+P_d^+(\Cset)$ \  conjunto de  las matrices de  \ $\M_{d,d}(\Cset)$  \ hermiticas
+definida  positivas, y  \  $\check{\Sigma}  \in S_d(\Cset)$  \  conjunto de  las
+matrices  de  \  $\M_{d,d}(\Cset)$  \  symmetricas (ver  notaciones).   Un  caso
+particular  aparece cuando  \ $Z$  \ es  propio en  torno de  \ $m$,  lo  que es
+equivalente en el caso gausiano a tener \ $Z$ \ circular (ver m\'as adelante) en
+torno de  \ $0$, dado cuando  \ $\check{\Sigma} =  0$: en este caso  usaremos la
+misma notaci\'on,  $Z \,  \sim \, \C\N(m,\Sigma)$.  Las caracter\'isticas  de la
+Gaussiana compleja son las siguientes~\cite{Lap07, Pic96, Bos95}:
+
+\begin{caracteristicas}
+%
+Dominio de definici\'on & $\Z = \Cset^d$\\[2mm]
+\hline
+%
+Par\'ametros & $m \in \Cset^d, \:\: \Sigma \in P_d^+(\Cset), \:\: \check{\Sigma}
+\in S_d(\Cset)$\\[2mm]
+\hline
+%
+Densidad de probabilidad & \\[1mm]
+%
+Caso general: & $\displaystyle p_Z(z) = \frac{1}{\pi^d \left| \Sigma
+ \right|^{\frac12} \left| P \right|^{\frac12}} \: e^{- (z-m)^\dag P^{-1} (z-m) +
+ \real{(z-m)^t R^t P^{-1} (z-m)}}$\vspace{2.5mm}\newline
+ con~\footnote{En~\cite{Pic96} la expresi\'on es ligieramente diferente, pero se
+ recupera usando la simetr\'ia \ $\check{\Sigma}^* =
+ \check{\Sigma}^\dag$. Recordar que \ $\cdot^{-*} = \left( \cdot^* \right)^{-1}$
+ \ (ver notaciones).} \ $P = \Sigma - \check{\Sigma} \Sigma^{-*}
+ \check{\Sigma}^\dag, \quad R = \check{\Sigma}^\dag \Sigma^{-1}$.\\[2.5mm]
+%
+Caso circular: & $\displaystyle p_Z(z) = \frac{1}{\pi^d \left| \Sigma \right|}
+ \: e^{- (z-m)^\dag \Sigma^{-1} (z-m)}$\\[2.5mm]
+\hline
+%
+Promedio & $ m_Z = m$\\[2mm]
+\hline
+%
+Covarianza & $\Sigma_Z = \Sigma$\\[2mm]
+\hline
+%
+Pseudo-covarianza & $\check{\Sigma}_Z = \check{\Sigma}$\\[2mm]
+\hline
+%%
+%Generadora de  momentos &  $\displaystyle M_X(u) =  e^{u^t \Sigma u + u^t m}$  \ para \  $u \in
+%\Cset^d$\\[2mm]
+%\hline
+%%
+Funci\'on caracter\'istica & \\[1mm]
+%
+Caso general: & $\displaystyle \Phi_Z(\omega) = e^{-\frac14
+\omega^\dag \Sigma \omega - \frac14 \real{\omega^\dag \check{\Sigma} \omega^*} +
+\imath \real{\omega^\dag m}}, \quad \omega \in \Cset^d$\\[1mm]
+%
+Caso circular: & $\displaystyle \Phi_Z(\omega) = e^{-\frac14
+\omega^\dag \Sigma \omega +
+\imath \real{\omega^\dag m}}, \quad \omega \in \Cset^d$
+\end{caracteristicas}
+
+Notar que  en el caso  escalar propio (circular),  la varianza de  \ $Z$ \  es \
+$\sigma_Z^2 =  2 \sigma^2$. El  coefficiente 2  viene del hecho  de que \  $Z$ \
+contiene dos componentes independientes de varianza $\sigma^2$.
+
+Los vectores aleatorios complejos van a compartir las propiedades del caso real,
+siendo equivalente  a un vector  $2d$-dimensional gausiano real. Primero,  en el
+caso circular, se puede escribir $Z \, \egald \, \Sigma^{\frac12} N + m$ \ con \
+$N \, \sim \, \C\N(0,I)$ \ donde \ $N$ \ es dicha {\em Gausiana estandar} o {\em
+centrada-normalizada}. Las caracter\'isticas  de \ $X$ \ son  v\'inculadas a las
+de \ $N$ \ (y vice-versa) por transformaci\'on afine (ver secciones anteriores).
+
+Como  en el  caso  real, la  gausiana  es estable  por  combinaci\'on lineal  de
+vectores independientes:
+%
+\begin{teorema}[Stabilidad]
+\label{Teo:MP:StabilidadGaussianaCompleja}
+%
+  Sean \ $A_i , i = 1,\ldots,n$ \  matrices de \ $\Cset^{d' \times d}, d' \le d$ \
+  de   rango  lleno,   $b_i   \in  \Cset^{d'}$   \   y  \   $Z_i   \,  \sim   \,
+  \C\N(m_i,\Sigma_i,\check{\Sigma}_i)$ \ independientes, entonces
+  %
+  \[
+  \sum_{i=1}^n \left( A_i  Z_i + b_i \right) \,  \sim \, \C\N\left( \sum_{i=1}^n
+    \left( m_i + b_i \right) \, ,  \, \sum_{i=1}^n A_i \Sigma_i A_i^\dag \, , \,
+    \sum_{i=1}^n A_i \check{\Sigma}_i A_i^t \right)
+  \]
+  % En  particular, cualquier  combinaci\'on  lineal de  los  componentes de  un
+  vector  gaussiano  complejo da  una  gaussiana  compleja.  Reciprocamente,  si
+  cualquier combinaci\'on lineal de los componentes de un vector aleatorio sigue
+  una ley gaussiana compleja, entonces el vector es gaussiano complejo.
+\end{teorema}
+
+El teorema del l\'imite central y sus variantes se recuperan del caso real.
+%
+\begin{teorema}[Teorema del l\'imite central (caso complejo)]
+\label{Teo:MP:CLTComplejo}
+%
+  Sea  \  $\{  Z_i \}_{i  \in  \Nset^*}$  \  una  serie de  vectores  aleatorios
+  independientes, de misma  ley, y que admiten un promedio \  $m$, una matriz de
+  covarianza   \   $\Sigma$   \    y   una   matriz   de   pseudo-covarianza   \
+  $\check{\Sigma}$. Entonces
+  %
+  \[
+  \frac{1}{\sqrt{n}}  \sum_{i=1}^m  \left( Z_i  -  m  \right)  \: \limitd{n  \to
+    +\infty} \: W \sim \C\N\left( 0 , \Sigma , \check{\Sigma} \right)
+  \]
+  %
+  donde  \ $\limitd{}$ \  significa que  el l\'imite  es en  distribuci\'on (ver
+  notaciones).
+\end{teorema}
+%
+No   lo   presentamos,  pero   se   transpone   sencillamente   el  teorema   de
+Lindenberg-Feller~\ref{Teo:MP:LindenbergFeller} al caso complejo.
+
+Al final, v\'imos en la  secci\'on~\ref{Ssec:MP:VAComplejos} que si un vector es
+circular, entonces  su pseudo-covarianza es nula,  pero la reciproca  no vale en
+general. Aparece que en el contexto gausiano tenemos la reciproca:
+%
+
+\begin{teorema}[Circularidad]\label{Teo:MP:CircularidadGaussiana}
+%
+Sea \ $Z \, \sim \, \C\N(m,\Sigma,\check{\Sigma})$.  Entonces,
+  %
+  \[
+  Z \: \mbox{ circular  en torno de } \: m \qquad  \Longleftrightarrow \qquad Z \:
+\mbox{ propio en torno de } \: m
+  \]
+\end{teorema}
+%
+\begin{proof}
+  V\'imos     la    directa    en     la    secci\'on~\ref{Ssec:MP:VAComplejos},
+  teorema~\ref{Teo:MP:Circularidad}.  Reciprocamente,  si \  $Z$ \ es  propio en
+  torno de \ $m$, por definici\'on \ $\check{\Sigma} = 0$ \ y el resultado viene
+  de la forma de  la funci\'on caracter\'istica por ejemplo: $\Phi_{Z-m}(\omega)
+  = e^{-\frac14 \omega^\dag \Sigma \omega } = \Phi_{Z-m}\left( e^{\imath \theta}
+    \omega \right) = \Phi_{e^{\imath \theta} (Z-m)}(\omega)$.
+\end{proof}

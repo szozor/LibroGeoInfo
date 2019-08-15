@@ -48,16 +48,17 @@ cuadratico  promedio son generalmente  lineal~\cite{Kay93, Rob07}.   Todas estas
 consideraciones  dan a la  ley gausiana  un rol  central en  la teor\'ia  de las
 probabilidades.
 
-Se denota $X \, \sim \, \N(m,\Sigma)$ \  con \ $m \in \Rset^d$ \ y \ $\Sigma \in
-P_d^+(\Rset)$ \  conjunto de las  matrices de \ $\M_{d,d}(\Rset)$  \ s\'imetricas
-definidas positivas. Las caracter\'isticas de la Gaussiana son las siguientes:
+Se denota \  $X \, \sim \, \N(m,\Sigma)$ \  con \ $m \in \Rset^d$  \ y \ $\Sigma
+\in  P_d^+(\Rset)$  \  conjunto  de   las  matrices  de  \  $\M_{d,d}(\Rset)$  \
+s\'imetricas definidas positivas. Las  caracter\'isticas de la Gaussiana son las
+siguientes:
 
 \begin{caracteristicas}
 %
 Dominio de definici\'on & $\X = \Rset^d$\\[2mm]
 \hline
 %
-Par\'ametros & $m \in \Rset^d, \: \Sigma \in P_d^+(\Rset)$\\[2mm]
+Par\'ametros & $m \in \Rset^d, \:\: \Sigma \in P_d^+(\Rset)$\\[2mm]
 \hline
 %
 Densidad de probabilidad & $\displaystyle p_X(x) = \frac{1}{(2
@@ -77,19 +78,13 @@ Covarianza & $\Sigma_X = \Sigma$\\[2mm]
 Curtosis por exceso (caso escalar) & $\widebar{\kappa}_X = 0$\\[2mm]
 \hline
 %
-Generadora de  momentos &  $\displaystyle M_X(u) =  e^{u^t \Sigma u + u^t m}$  \ para \  $u \in
-\Cset^d$\\[2mm]
+Generadora de momentos & $\displaystyle M_X(u) = e^{u^t \Sigma u + u^t m}$ \
+para \ $u \in \Cset^d$\\[2mm]
 \hline
 %
 Funci\'on  caracter\'istica   &  $\displaystyle  \Phi_X(\omega)   =  e^{-\frac12
 \omega^t \Sigma \omega + \imath \omega^t m}$
 \end{caracteristicas}
-
-% Momentos & $ \Esp\left[ X^k \right] = p^k$\\[2mm]
-% Momento factorial & $\Esp\left[ (X)_k \right] = ?$\\[2mm]
-% Generadora de probabilidad & $G_X(z) = e^{\lambda (z-1)}$ \ para \ $z \in \Cset$\\[2mm]
-% modo 0
-% Mediana 0
 
 Nota: trivialmente, se puede escribir $X  \, \egald \, \Sigma^{\frac12} N + m$ \
 con \ $N \, \sim \, \N(0,I)$ \  donde \ $N$ \ es dicha {\em Gausiana estandar} o
@@ -144,7 +139,6 @@ La gaussiana tiene un par de propiedades particulares:
   Este  resultato se proba  usando funci\'on  caracter\'istica de  la gaussiana,
   conjuntamente al teorema~\ref{Teo:MP:PropiedadesFuncionCaracteristica}.
 \end{proof}
-
 %
 \begin{teorema}[Independencia]
 \label{Teo:MP:IndependenciaGaussiana}
@@ -184,13 +178,13 @@ siguiente~\cite{Spi76, BroDav87, AshDol99, JacPro03, AthLah06, Bil12}:
 
 \begin{teorema}[Teorema del l\'imite central]\label{Teo:MP:CLT}
 %
-  Sea  $\{   X_i  \}_{i   \in  \Nset^*}$  una   serie  de   vectores  aleatorios
-  independientes, de  misma ley, y que admiten  un promedio $m$ y  una matriz de
-  covarianza $\Sigma$. Entonces
+  Sea  \  $\{  X_i \}_{i  \in  \Nset^*}$  \  una  serie de  vectores  aleatorios
+  independientes, de misma ley,  y que admiten un promedio \ $m$  \ y una matriz
+  de covarianza \ $\Sigma$. Entonces
   %
   \[
-  \frac{1}{\sqrt{n}} \sum_{i=1}^m \left( X_i  - m \right) \limitd{n \to +\infty}
-  Y \sim \N\left( 0 , \Sigma \right)
+  \frac{1}{\sqrt{n}}  \sum_{i=1}^m  \left( X_i  -  m  \right)  \: \limitd{n  \to
+    +\infty} \: Y \sim \N\left( 0 , \Sigma \right)
   \]
   %
   donde  \ $\limitd{}$ \  significa que  el l\'imite  es en  distribuci\'on (ver
@@ -233,7 +227,7 @@ prueba.  Dejamos el  lector a  libros m\'as  especializados como~\cite{AshDol99,
   Bil12, AthLah16, Lin22}.
 % Lindeberg 1920
 
-\begin{teorema}[Teorema de Lindenberg-Feller]
+\begin{teorema}[Teorema de Lindenberg-Feller]\label{Teo:MP:LindenbergFeller}
 %
   Sean  $\{  X_i \}_{i  \in  \Nset^*}$  vectores  aleatorios independientes,  no
   necesariamente de misma distribuci\'on de probabilidad, con \ $X_i$ \ de media
@@ -252,7 +246,7 @@ prueba.  Dejamos el  lector a  libros m\'as  especializados como~\cite{AshDol99,
   entonces
   %
   \[
-  Y_n \limitd{n \to +\infty} Y \sim \N\left( 0 , I \right)
+  Y_n \: \limitd{n \to +\infty} \: Y \sim \N\left( 0 , I \right)
   \]
 \end{teorema}
 %
