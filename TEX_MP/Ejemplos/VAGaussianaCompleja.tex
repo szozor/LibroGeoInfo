@@ -6,12 +6,13 @@ Y$ \  es gausiano significa que  el vector $2 d$-dimensional  \ $\widetilde{Z} =
 \begin{bmatrix}  X^t &  Y^t \end{bmatrix}^t$  \ es  gausiano. Se  puede entonces
 referirse  en el  caso de  vectores gausianos,  pero como  lo presentamos  en la
 secci\'on~\ref{Ssec:MP:VAComplejos}, es frecuentemente m\'as comodo trabajar con
-\  $Z$ \  en lugar  de \  $\widetilde{Z}$.  En particular,  en el  marco de  las
+\  $Z$ \  en lugar  de \  $\widetilde{Z}$.  En  particular, en  el marco  de las
 comunicaciones en  ingeneria, se  trabaja con modulaciones  dichas en fase  y en
 cuadratura (se\~nal multiplicado  respectivamente por un seno y  un coseno) y en
 lugar  de trabajar  con dos  componente se  considera una  modulaci\'on  con una
-exponencial  compleja  y la  se\~nal/variable  compleja.  Se  puede por  ejemplo
-referirse a~\cite{Lap17} (ver en particular el capitulo~24).
+exponencial  compleja y  la  se\~nal/variable compleja.   Se  puede por  ejemplo
+referirse  a~\cite{Lap17} (ver en  particular el  capitulo~24) o~\cite{SchSch03,
+  EriKoi06}.
 
 En el caso general, la gausiana real siendo completamente descritar por su media
 y su matriz de covarianza, la  gausiana compleja va a ser completamente definida
@@ -25,8 +26,9 @@ matrices  de  \  $\M_{d,d}(\Cset)$  \  symmetricas (ver  notaciones).   Un  caso
 particular  aparece cuando  \ $Z$  \ es  propio en  torno de  \ $m$,  lo  que es
 equivalente en el caso gausiano a tener \ $Z$ \ circular (ver m\'as adelante) en
 torno de  \ $0$, dado cuando  \ $\check{\Sigma} =  0$: en este caso  usaremos la
-misma notaci\'on,  $Z \,  \sim \, \C\N(m,\Sigma)$.  Las caracter\'isticas  de la
-Gaussiana compleja son las siguientes~\cite{Lap07, Pic96, Bos95}:
+misma notaci\'on,  $Z \, \sim  \, \C\N(m,\Sigma)$.  Las caracter\'isticas  de la
+gaussiana  compleja   son  las  siguientes~\cite{Lap17,   Pic96,  Goo63,  Bos95,
+  SchSch03, EriKoi06}:
 
 \begin{caracteristicas}
 %
@@ -81,21 +83,21 @@ $\sigma_Z^2 =  2 \sigma^2$. El  coefficiente 2  viene del hecho  de que \  $Z$ \
 contiene dos componentes independientes de varianza $\sigma^2$.
 
 Los vectores aleatorios complejos van a compartir las propiedades del caso real,
-siendo equivalente  a un vector  $2d$-dimensional gausiano real. Primero,  en el
-caso circular, se puede escribir $Z \, \egald \, \Sigma^{\frac12} N + m$ \ con \
-$N \, \sim \, \C\N(0,I)$ \ donde \ $N$ \ es dicha {\em Gausiana estandar} o {\em
-centrada-normalizada}. Las caracter\'isticas  de \ $X$ \ son  v\'inculadas a las
-de \ $N$ \ (y vice-versa) por transformaci\'on afine (ver secciones anteriores).
+siendo equivalente  a un vector  $2d$-dimensional gausiano real.
 
-Como  en el  caso  real, la  gausiana  es estable  por  combinaci\'on lineal  de
-vectores independientes:
+% De  manera  general,  las caracter\'isticas  de  \  $X$  \ gausiano  real  son
+% v\'inculadas a las  de \ $N$ \ (y vice-versa)  por transformaci\'on afine (ver
+% secciones anteriores).
+Primero, como en  el caso real, la gausiana es  estable por combinaci\'on lineal
+de vectores independientes:
 %
 \begin{teorema}[Stabilidad]
 \label{Teo:MP:StabilidadGaussianaCompleja}
 %
-  Sean \ $A_i , i = 1,\ldots,n$ \  matrices de \ $\Cset^{d' \times d}, d' \le d$ \
-  de   rango  lleno,   $b_i   \in  \Cset^{d'}$   \   y  \   $Z_i   \,  \sim   \,
-  \C\N(m_i,\Sigma_i,\check{\Sigma}_i)$ \ independientes, entonces
+Sean \ $A_i , i = 1,\ldots,n$ \  matrices de \ $\Cset^{d' \times d}, d' \le d$ \
+de   rango   lleno,   $b_i  \in   \Cset^{d'}$   \   y   \   $Z_i  \,   \sim   \,
+\C\N(m_i,\Sigma_i,\check{\Sigma}_i)$    \   $d$-dimensionales,   independientes,
+entonces
   %
   \[
   \sum_{i=1}^n \left( A_i  Z_i + b_i \right) \,  \sim \, \C\N\left( \sum_{i=1}^n
@@ -107,6 +109,49 @@ vectores independientes:
   cualquier combinaci\'on lineal de los componentes de un vector aleatorio sigue
   una ley gaussiana compleja, entonces el vector es gaussiano complejo.
 \end{teorema}
+%
+Adem\'as, en el  caso complejo se tiene  una estabilidad combinando \ $Z$  \ y \
+$Z^*$:
+%
+\begin{teorema}%[Stabilidad]
+\label{Teo:MP:StabilidadGaussianaComplejaZZestrella}
+%
+Sean \ $A \in \M_{d',d}(\Cset)$, \  $B \in \M_{d',d}(\Cset)$ \ tales que \ ambas
+\ $A+B$ \ y \  $A-B$ \ \SZ{sean de rango lleno}, $c \in \Cset^{d'}$  \ y \ $Z \,
+\sim \, \C\N(m,\Sigma,\check{\Sigma})$ \ $d$-dimensonal, entonces
+  %
+  \[
+  A Z + B Z^* + c \: \sim \: \C\N\left( \mu , C , \check{C}  \right)
+  \]
+  %
+  con
+  %
+  \[
+  \begin{array}{lll}
+  \mu & = & A m + B m^* + c\\[2.5mm]
+  %
+  C & = & A \Sigma A^\dag + B \Sigma^* B^\dag + A \check{\Sigma} B^\dag + B
+  \check{\Sigma}^* A^\dag\\[2.5mm]
+  %
+  \check{C} & = & A \check{\Sigma} A^t + B \check{\Sigma} B^t + A \Sigma B^t + B
+  \Sigma^* A^t
+  \end{array}
+  \]
+\end{teorema}
+\begin{proof}
+  Tomando  la  forma  real  $2d$-dimensional  \  $Z$ \  es  en  biyecci\'on  con
+  $\widetilde{Z} = \begin{bmatrix} X\\Y \end{bmatrix}$ \ y entonces \ $Z^*$ \ en
+  biyecci\'on con \ $\widetilde{Z^*} = \begin{bmatrix} X\\-Y \end{bmatrix}$. Eso
+  da \ $A  Z + B Z^*  + c$ \ en biyecci\'on  con $\begin{bmatrix} A+B &  0\\ 0 &
+    A-B  \end{bmatrix}  \begin{bmatrix}  X\\Y  \end{bmatrix}  +  \begin{bmatrix}
+    \real{c}\\ \imag{c} \end{bmatrix}$. Notando que \ $\begin{bmatrix} A+B & 0\\
+    0    &   A-B    \end{bmatrix}$   \    es    de   rango    lleno,   por    el
+  teorema~\ref{Teo:MP:StabilidadGaussiana} este vector es gausiano, lo que proba
+  que \  $A Z  + B  Z^* + c$  \ es  gausiano complejo. Las  formas de  la media,
+  covarianza y pseudo-covarianza siguen de calculos directos.
+\end{proof}
+%
+Evidentemente, se puede combinar los dos teoremas anteriores.
 
 El teorema del l\'imite central y sus variantes se recuperan del caso real.
 %
@@ -129,6 +174,122 @@ El teorema del l\'imite central y sus variantes se recuperan del caso real.
 %
 No   lo   presentamos,  pero   se   transpone   sencillamente   el  teorema   de
 Lindenberg-Feller~\ref{Teo:MP:LindenbergFeller} al caso complejo.
+
+Notamos tambi\'en que, en el caso  circular, se puede escribir naturalmente \ $Z
+\, \egald \, \Sigma^{\frac12} N + m$ \  con \ $N \, \sim \, \C\N(0,I)$ \ donde \
+$N$ \  es dicha  {\em Gausiana estandar}  o {\em centrada-normalizada}.   Eso se
+generaliza en dos direcciones.  La  primera pone tambi\'en en juega una gausiana
+estandar~\cite{Lap17}:
+%
+\begin{teorema}
+\label{Teo:MP:GausianaComplejaWWestrella}
+%
+Sea \  $Z \sim  \C\N(m,\Sigma,\check{\Sigma})$.  Entonces, existen  matrices (no
+\'unicas) \ $A \in \M_{d,d}(\Cset)$, \ $B \in \M_{d,d}(\Cset)$ \ tales que
+  %
+  \[
+  Z \egald A W + B W^* + m
+  \]
+  %
+  con \ $W \sim \C\N(0,I)$ \ gausiana estandar.
+  %
+\end{teorema}
+\begin{proof}
+  Inmediatamente
+  %
+  \[
+  Z   =  \begin{bmatrix}   I   &  \imath   I\end{bmatrix}  \begin{bmatrix}   X\\
+    Y\end{bmatrix}
+  \egald \begin{bmatrix} I & \imath I\end{bmatrix} M \begin{bmatrix} U\\
+    V\end{bmatrix}
+  \]
+  %
+  con \ $U \sim \N(0,I)$ \ y \  $V \sim \N(0,I)$ \ independientes, y \ $M$ \ tal
+  que  \ $M  M^t =  \begin{bmatrix} \Sigma_X  & \Sigma_{XY}  \\  \Sigma_{XY}^t &
+    \Sigma_Y  \end{bmatrix}$  \   (ej.  raiz  cuadrade  de  esta   matriz  de  \
+  $P_{2d}^+(\Rset)$,    o     descomposici\'on    de    Cholesky~\cite{HorJoh13,
+    Bha07}). Ahora, volviendo a la forma compleja tenemos
+  %
+  \[
+  Z     \egald   \begin{bmatrix}    I   &   \imath   I\end{bmatrix}
+  M \begin{bmatrix} I  & I\\ -\imath I &  \imath I \end{bmatrix} \begin{bmatrix}
+    \frac12 (U + \imath V)\\ \frac12 (U - \imath V)\end{bmatrix}
+  \]
+  %
+  Se cierra la prueba denotando
+  %
+  \[
+  \begin{bmatrix}   A   &   B\end{bmatrix}   =  \begin{bmatrix} I &
+    \imath  I\end{bmatrix}  M  \begin{bmatrix}  I  &  I\\  -\imath  I  &  \imath
+    I \end{bmatrix}
+  \]
+  %
+  y notando que $\frac12 (U + \imath V) \sim \C\N(0,I)$.
+\end{proof}
+%
+Nota,  usando  la  descomposici\'on   de  Cholesky,  tenemos  \  $M$  triangular
+superior~\footnote{Se puede hacer el  mismo razonamiento con la forma triangular
+  inferior;  se cambia  los roles  de \  $X$  \ e  \ $Y$  \ en  las matrices  de
+  covarianza.},   y   entonces   bloc-triangular   \   lo   que   conduce,   por
+identificaci\'on  de  los bloques  de  \ $M  M^t  =  \begin{bmatrix} \Sigma_X  &
+  \Sigma_{XY}  \\  \Sigma_{XY}^t &  \Sigma_Y  \end{bmatrix}$,  a una  soluci\'on
+posible con
+%
+% $M = \begin{bmatrix} \alpha & \beta \\ 0 & \gamma \end{bmatrix}$ \ da \ $M M^t
+% =    \begin{bmatrix}    \Sigma_X   &    \Sigma_{XY}    \\   \Sigma_{XY}^t    &
+%   \Sigma_Y \end{bmatrix} = $\begin{bmatrix}  \alpha \alpha^t + \beta \beta^t &
+%   \beta \gamma^t \\  \\gamma \beta^t & \gamma \gamma^t  \end{bmatrix}$. Eso da
+% por   ejemplo  $\gamma   =   \Sigma_Y^{\frac12}$,  \   $\beta  =   \Sigma_{XY}
+% \Sigma_Y^{-\frac12}$  \   y  \  $\alpha   =  \left(  \Sigma_X   -  \Sigma_{XY}
+%   \Sigma_Y^{-1}  \Sigma_{XY}^t  \right)^{\frac12}$. Por  el  otro  lado, $A  =
+% \alpha + \gamma - \imath \beta$ \ y \ $B = \alpha - \gamma + \imath \beta$, es
+% decir
+%
+%
+%
+\[
+\left\{\begin{array}{lll}
+A & = & \left( \Sigma_X - \Sigma_{XY} \Sigma_Y^{-1} \Sigma_{XY}^t
+\right)^{\frac12} + \Sigma_Y^{\frac12} - \imath \Sigma_{XY}
+\Sigma_Y^{-\frac12}\\[2.5mm]
+%
+B & = &  \left( \Sigma_X - \Sigma_{XY} \Sigma_Y^{-1} \Sigma_{XY}^t
+\right)^{\frac12} - \Sigma_Y^{\frac12} + \imath \Sigma_{XY}
+\Sigma_Y^{-\frac12}
+\end{array}\right.
+\]
+%
+La  secunda  extensi\'on  pone  en  juega  una sola  gausiana  compleja  sin  su
+conjugada~\cite{EriKoi06, SchSch03}:
+%
+\begin{teorema}
+\label{Teo:MP:GausianaComplejaWIDiago}
+%
+  Sea \ $Z \sim \C\N(m,\Sigma,\check{\Sigma})$. Entonces, existe una matriz \ $C
+  \in \M_{d,d}(\Cset)$ \ tal que
+  %
+  \[
+  Z \egald C W + m
+  \]
+  %
+  con \ $W \sim \C\N(0,I,\Delta)$ \ con \ $\Delta \in P_d(\Rset)$ \ (real) diagonal.
+  %
+\end{teorema}
+\begin{proof}
+  Eso  viene  de teoremas  de  diagonalizaci\'on  conjunta. M\'as  precisamente,
+  siendo \ $\Sigma  \in P_d^+(\Cset)$ \ y \  $\check{\Sigma} \in S_d(\Cset)$, se
+  aplica el  teorema~\cite[Teo.~7.6.5]{HorJoh13} diciendo que  existe una matriz
+  no  singular (invertible)  \  $C$ \  tal  que \  $\Sigma  = C  C^\dag$  \ y  \
+  $\check{\Sigma} = C  \Delta C^t$ \ con $\Delta$ \  real diagonal con elementos
+  positivos  ($\Delta  \in  P_d(\Rset)$  \  diagonal).  Inmediatamente,  por  el
+  teorema~\ref{Teo:MP:StabilidadGaussianaCompleja}, tenemos
+  %
+  \[
+  C^{-1} (Z - m) \egald W \sim \C\N(0,I,\Delta)
+  \]
+  lo que cierra la prueba.
+\end{proof}
+
 
 Al final, v\'imos en la  secci\'on~\ref{Ssec:MP:VAComplejos} que si un vector es
 circular, entonces  su pseudo-covarianza es nula,  pero la reciproca  no vale en
@@ -153,3 +314,6 @@ Sea \ $Z \, \sim \, \C\N(m,\Sigma,\check{\Sigma})$.  Entonces,
   = e^{-\frac14 \omega^\dag \Sigma \omega } = \Phi_{Z-m}\left( e^{\imath \theta}
     \omega \right) = \Phi_{e^{\imath \theta} (Z-m)}(\omega)$.
 \end{proof}
+
+
+%\SZ{Caso $X \sim \N(m,\Sigma)$; modulaci\'on $Z = e^{\imath \theta} X$}
