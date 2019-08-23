@@ -228,37 +228,35 @@ Sea \  $Z \sim  \C\N(m,\Sigma,\check{\Sigma})$.  Entonces, existen  matrices (no
 \end{proof}
 %
 Nota,  usando  la  descomposici\'on   de  Cholesky,  tenemos  \  $M$  triangular
-superior~\footnote{Se puede hacer el  mismo razonamiento con la forma triangular
-  inferior;  se cambia  los roles  de \  $X$  \ e  \ $Y$  \ en  las matrices  de
-  covarianza.},   y   entonces   bloc-triangular   \   lo   que   conduce,   por
-identificaci\'on  de  los bloques  de  \ $M  M^t  =  \begin{bmatrix} \Sigma_X  &
-  \Sigma_{XY}  \\  \Sigma_{XY}^t &  \Sigma_Y  \end{bmatrix}$,  a una  soluci\'on
-posible con
-%
-% $M = \begin{bmatrix} \alpha & \beta \\ 0 & \gamma \end{bmatrix}$ \ da \ $M M^t
-% =    \begin{bmatrix}    \Sigma_X   &    \Sigma_{XY}    \\   \Sigma_{XY}^t    &
-%   \Sigma_Y \end{bmatrix} = $\begin{bmatrix}  \alpha \alpha^t + \beta \beta^t &
-%   \beta \gamma^t \\  \\gamma \beta^t & \gamma \gamma^t  \end{bmatrix}$. Eso da
-% por   ejemplo  $\gamma   =   \Sigma_Y^{\frac12}$,  \   $\beta  =   \Sigma_{XY}
-% \Sigma_Y^{-\frac12}$  \   y  \  $\alpha   =  \left(  \Sigma_X   -  \Sigma_{XY}
-%   \Sigma_Y^{-1}  \Sigma_{XY}^t  \right)^{\frac12}$. Por  el  otro  lado, $A  =
-% \alpha + \gamma - \imath \beta$ \ y \ $B = \alpha - \gamma + \imath \beta$, es
-% decir
-%
-%
+inferior~\footnote{Se puede hacer el  mismo razonamiento con la forma triangular
+  superior;  se cambia  los roles  de \  $X$  \ e  \ $Y$  \ en  las matrices  de
+  covarianza.},  y  entonces bloc-triangular  inferior  \  $M =  \begin{bmatrix}
+  \alpha  &  0  \\  \beta  &  \gamma \end{bmatrix}$.   Eso  conduce,  a  $M  M^t
+= \begin{bmatrix} \Sigma_X & \Sigma_{XY} \\ \Sigma_{XY}^t &
+  \Sigma_Y \end{bmatrix}  = \begin{bmatrix} \alpha \alpha^t &  \alpha \beta^t \\
+  \beta \alpha^t &  \beta \beta^t + \gamma \gamma^t  \end{bmatrix}$.  Eso da por
+ejemplo \   $\alpha    =   \Sigma_X^{\frac12}$,    \    $\beta   =    \Sigma_{XY}^t
+\Sigma_X^{-\frac12}$ \ y \ $\gamma = \left( \Sigma_Y - \Sigma_{XY}^t \Sigma_X^{-1}
+  \Sigma_{XY} \right)^{\frac12}$.   Por el otro lado,  $A = \alpha  + \gamma +
+\imath \beta$ \ y \ $B = \alpha - \gamma + \imath \beta$. Una soluci\'on posible
+es entonces
 %
 \[
 \left\{\begin{array}{lll}
-A & = & \left( \Sigma_X - \Sigma_{XY} \Sigma_Y^{-1} \Sigma_{XY}^t
-\right)^{\frac12} + \Sigma_Y^{\frac12} - \imath \Sigma_{XY}
-\Sigma_Y^{-\frac12}\\[2.5mm]
+A & = & \Sigma_X^{\frac12} + \left( \Sigma_Y - \Sigma_{XY}^t \Sigma_X^{-1} \Sigma_{XY}
+\right)^{\frac12}  + \imath \Sigma_{XY}^t
+\Sigma_X^{-\frac12}\\[2.5mm]
 %
-B & = &  \left( \Sigma_X - \Sigma_{XY} \Sigma_Y^{-1} \Sigma_{XY}^t
-\right)^{\frac12} - \Sigma_Y^{\frac12} + \imath \Sigma_{XY}
-\Sigma_Y^{-\frac12}
+B & = &  \Sigma_X^{\frac12} - \left( \Sigma_Y - \Sigma_{XY}^t \Sigma_X^{-1} \Sigma_{XY}
+\right)^{\frac12} + \imath \Sigma_{XY}^t
+\Sigma_X^{-\frac12}
 \end{array}\right.
 \]
 %
+Se  puede   re-escribir  estas  matrices   a  partir  de   \  $\Sigma$  \   y  \
+$\check{\Sigma}$       \      usando       las       relaciones      de       la
+secci\'on~\ref{Ssec:MP:VAComplejos}.
+
 La  secunda  extensi\'on  pone  en  juega  una sola  gausiana  compleja  sin  su
 conjugada~\cite{EriKoi06, SchSch03}:
 %
