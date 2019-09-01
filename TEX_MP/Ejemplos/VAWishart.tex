@@ -5,11 +5,13 @@ Este ejemplo es una  generalizaci\'on matriz-variada de la distribuci\'on gamma.
 Se puede ver  una matriz como un vector, guardando por  ejemplo sus columnas una
 bajo la  precediente.  Sin embargo, tal  distribuci\'on apareciendo naturalmente
 en un contexto de estimaci\'on de  matriz de covarianza (ver m\'as adelante), es
-m\'as  natural  verla  matriz-variate.    Tal  distrubuci\'on  es  debido  a  J.
-Wishart~\cite{Wis28, GupNag99, And03}, y  aparece as\'i naturalmente en problema
-de      inferencia     Bayesiana      como      distribuci\'on     a      priori
-conjugado~\footref{Foot:MP:BayesPrior} del  par\'ametro $p$ de  la ley gaussiana
-multivariada~\cite{Rob07}.
+m\'as natural verla matriz-variate.  Tal distrubuci\'on fue introducida en $d=2$
+dimensiones por R. Fisher en 1915~\cite{Fis15}, y el caso general es debido a J.
+Wishart~\cite{Wis28,   Mui82,  GupNag99,   And03,  Seb04}.    Aparece  tambi\'en
+naturalmente en  problema de inferencia  Bayesiana como distribuci\'on  a priori
+conjugado~\footref{Foot:MP:BayesPrior}   de   la   matriz   de   precisi\'on   \
+$\Sigma^{-1}$   \   (inversa   de   la   covarianza)   de   la   ley   gaussiana
+multivariada~\cite[Ec.~(4.4.5)]{Rob07}.
 
 Se denota \  $X \, \sim \, W_d(V,\nu)$  \ donde el dominio de  definici\'on es \
 $P_d^+(\Rset)$,  conjunto   matrices  simetricas  definida   positivas,  $V  \in
@@ -18,29 +20,29 @@ caracter\'isticas de la distribuci\'on son las siguientes:
 
 \begin{caracteristicas}
 %
-Dominio de definici\'on~\footnote{De hecho, se puede considerar que la matriz
-aleatoria es equivalent a tener un vector \ $\frac{d (d+1)}{2}$-dimensional; por
-la simetria, claramente \ $X$ \ tiene solamente \ $\frac{d (d+1)}{2}$ \
-componentes diferentes; adem\'as, se puede probar que cualquier matriz \ $A \in
-P_d^+(\Rset)$ \ se descompone bajo la forma \ $A = L L^t$ \ con \ $L$ \
-triangular inferior con elementos no nulos sobre su diagonal, llamado
-descomposici\'on de Cholesky~\cite{GupNag99, Bha07, Har08, HorJoh13} y
-reciprocamente. Eso muestra que \ $A$ \ se define a partir de \ $\frac{d
-(d+1)}{2}$ \ ``grados de libertad''.\label{Foot:MP:WishartXtilde}} & $\X =
-P_d^+(\Rset), \: d \in \Nset^*$\\[2mm]
-\hline
+  Dominio de definici\'on~\footnote{De hecho,  se puede considerar que la matriz
+    aleatoria es equivalent a tener un vector \ $\frac{d (d+1)}{2}$-dimensional;
+    por la simetria, claramente \ $X$  \ tiene solamente \ $\frac{d (d+1)}{2}$ \
+    componentes diferentes; adem\'as, se puede  probar que cualquier matriz \ $A
+    \in P_d^+(\Rset)$ \ se  factoriza bajo la forma \ $A = L L^t$  \ con \ $L$ \
+    triangular  inferior  con elementos  positivos  sobre  su diagonal,  llamado
+    factorizaci\'on de Cholesky~\cite{Cho10, GupNag99, Bha07, Har08, HorJoh13} y
+    reciprocamente. Eso  muestra que \  $A$ \ se  define a partir de  \ $\frac{d
+      (d+1)}{2}$ \ ``grados de libertad''.\label{Foot:MP:WishartXtilde}} & $\X =
+  P_d^+(\Rset), \: d \in \Nset^*$\\[2mm]
+  \hline
 %
 Par\'ametros & $V \in P_d^+(\Rset)$ (escala) y \ $\nu > d-1$ \ (grados de
 libertad)\\[2mm]
 \hline
 %
-Densidad de probabilidad~\footnote{La densidad de probabilidad corresponde a la
-densidad conjunta de los \ $\frac{d (d+1)}{2}$ \ elementos \ $X_{i,j}, \: 1 \le
-i \le j \le d$~\cite{Wis28, PedRic91, SulTra96, GupNag99,
-And03}.\label{Foot:MP:WishartDensidad}} & $\displaystyle p_X(x) =
-\frac{|x|^{\frac{\nu-d-1}{2}} \, e^{-\frac12 \Tr\left( V^{-1}
-x\right)}}{2^{\frac{d \nu}{2}} \, |V|^{\frac{\nu}{2}} \, \Gamma_d\left(
-\frac{\nu}{2} \right)}$\\[2mm]
+Densidad de probabilidad~\footnote{La densidad  de probabilidad corresponde a la
+  densidad conjunta  de los \ $\frac{d  (d+1)}{2}$ \ elementos \  $X_{i,j}, \: 1
+  \le i  \le j \le  d$~\cite{Wis28, PedRic91, SulTra96, Mui82,  GupNag99, And03,
+    Seb04}.\label{Foot:MP:WishartDensidad}}    &    $\displaystyle   p_X(x)    =
+\frac{|x|^{\frac{\nu-d-1}{2}}      \,      e^{-\frac12     \Tr\left(      V^{-1}
+      x\right)}}{2^{\frac{d \nu}{2}} \, |V|^{\frac{\nu}{2}} \, \Gamma_d\left(
+    \frac{\nu}{2} \right)}$\\[2mm]
 \hline
 %
 Promedio & $\displaystyle m_X = \nu \, V$\\[2mm]
@@ -51,14 +53,14 @@ K (V \otimes I) \big)$\\[2mm]
 % $\Cov[X_{i,j},X_{k,l}] = nu \left( V_{i,k} V_{j,l} +V_{i,l} V_{j,k} \right)$}
 \hline
 %
-Funci\'on caracter\'istica~\footnote{\SZ{Se proba que la funci\'on generadora de
+Funci\'on caracter\'istica~\footnote{Se prueba que la funci\'on generadora de
 momentos no existe en
-general}.\label{Foot:MP:CaracteristicaWishart}} &
+general.\label{Foot:MP:CaracteristicaWishart}} &
 $\displaystyle \Phi_X(\omega) = \left| I - 2 \imath \omega V
 \right|^{-\frac{\nu}{2}}, \quad \omega \in S_d(\Rset)$
 \end{caracteristicas}
-
-(ver~\cite{PedRic91, SulTra96, And03}).
+%
+%(ver~\cite{PedRic91, SulTra96, And03}).
 
 Fijense que $p_X$ no es la distribuci\'on conjuntos de los componentes de \ $X$:
 el hecho de  que \ $X$ \ sea  uan matriz aleatoria de \  $P_d^+(\Rset)$ \ impone
@@ -130,7 +132,7 @@ distribuci\'on como gamma matriz-variada.
 La distribuci\'on  de Wishart aparece naturalmente en  problemas de estimaci\'on
 de matriz de covarianza en el contexto gausiano:
 %
-\begin{lema}[V\'inculo con vectores gausianos~\cite{Seb04}]
+\begin{lema}[V\'inculo con vectores gausianos~\cite{Mui82, GupNad99, And03, Seb04}]
   Sean \ $X_i \, \sim \, \N(0,V), \: i = 1, \ldots , n > d-1$ \ independientes y
   la  matriz  \  $S  =  \sum_{i=1}^n   X_i  X_i^t$  \  llamada  {\em  matriz  de
     dispersi\'on} (scatter matrix en ingl\'es). Entonces, \ $S \in P_d^+(\Rset)$
@@ -152,6 +154,104 @@ re-obtener las  expreciones del promedio y de  las covarianzas~\footnote{Para la
 el  lema conduce  a  lo que  es  conocido como  Wishart no  central~\cite{And03,
   Seb04}.
 
-\SZ{Que propedad mas? Ver Gupta Nagar 1999}
+Las distrubuciones de Wishart tienen  varias propiedades m\'as que se encuentren
+por   ejemplo  en  los   libros  especialisados~\cite{Mui82,   GupNad99,  And03,
+  Seb04}. Entre estas, terminaremos esta secci\'on con la factorizaci\'on de una
+matriz de distribuci\'on  de Wishart de la manera siguiente:  sea \ $X$ definido
+sobre  $P_d^+(\Rset)$;  entonces, \  $\forall  \:  \omega,  \quad X(\omega)  \in
+P_d^+(\Rset)$ \  puede escribirse  por factorizaci\'on de  Cholesky, es  decir \
+$X(\omega)  = T(\omega)  T(\omega)^t$  \ con  \  $T$ \  triangular inferior  con
+elementos     positivos      sobre     su     diagonal      (ver     nota     de
+pie~\footref{Foot:MP:WishartXtilde}).  En  el contexto de  Wishart (de parametro
+$(I,\nu)$),  aparece  que  se   puede  caracterizar  la  distribuci\'on  de  los
+coefficientes.     Eso    es   conocido    como    {\em   descomposici\'on    de
+  Bartlett}~\cite{Bar34,  Mui82, GupNag99,  And03}  y se  formaliza  en el  caso
+Wishart general de la manera siguiente:
+%
+\begin{teorema}[Descomposici\'on de Bartlett]\label{Teo:MP:Bartlett}
+%
+  Sea \ $X \, \sim \, W_d(V,\nu)$ \  y \ $V = L L^t$ factorizaci\'on de Cholesky
+  de \ $V$ \ con \ $L$ \ triangular inferior. Entonces, tenemos
+  %
+  \[
+  X \, \egald \, L U U^t L^t
+  \]
+  %
+  con \ $U$ de componentes independientes, $U_{ii} > 0$, tales que
+  %
+  \[
+  \left\{\begin{array}{lll}
+  %
+  U_{ij} = 0 & \mbox{si} & j > i \:\: \mbox{($T$ \ triangular inferior)}\\[2mm]
+  %
+  U_{ij} \, \sim \, \N(0,1) & \mbox{si} & j < i\\[2mm]
+  %
+  U_{ii}^2 \, \sim \, \G\left( \frac{\nu-i+1}{2} \, , \, \frac12 \right) & &
+  %
+  \end{array}\right.
+  \]
+\end{teorema}
+%
+\begin{proof}
+  Primero, se nota del lema~\ref{Lem:MP:StabilidadWishartLineal} que \ $X \egald
+  L  Y  L^t$  \  con  \  $Y  \, \sim  \,  W_d(I,\nu)$,  de  densidad  $p_Y(y)  =
+  \frac{|y|^{\frac{\nu-d-1}{2}}    e^{-\frac12    \Tr(y)}}{2^{\frac{d   \nu}{2}}
+    \Gamma_d\left(  \frac{\nu}{2} \right)}$.  Ahora, sea  la  factorizaci\'on de
+  Cholesky de  \ $Y =  U U^t$ (\ie  para cada $\omega$ se  factoriza $Y(\omega)$
+  dando  $U(\omega)$)   y  la  transformaci\'ion   $g:  Y  \mapsto   U$.   M\'as
+  precisamente,  la  densidad  $p_X$   siendo  la  de  los  $\frac{d  (d+1)}{2}$
+  componentes diferentes  de $X$ (parte  triangular inferior), $g: (X)_{1  \le j
+    \le i \le d} \mapsto (U)_{1 \le  j \le i \le d}$.
+  %
+  % \SZ{Se calcula entonces la Jacobiana de la transformaci\'on inversa ZZZ}
+  %
+  Seg\'un el  teorema~2.1.9 de~\cite{Mui82}, el valor  absoluto del determinente
+  de la jacobiana de \ $g^{-1}$ \ es dado por
+  \[
+  \left| \Jac_{g^{-1}}(u) \right| = 2^d \prod_{i=1}^d u_{ii}^{d-i+1}
+  \]
+  
+  Se nota ahora que \ siendo \ $u$ \ triangular inferior,
+  %
+  \[
+  \Tr(x) =  \sum_{i=1}^d x_{ii}  = \sum_{1 \le j \le i \le d} u_{ij}^2, \qquad
+  |x| = |u|^2 = \prod_{i=1}^d u_{ii}^2.
+  \]
+  %
+  Del  teorema~\ref{Teo:MP:TransformacionInyectivaDensidad}   obtenemos  para  \
+  $u_{ii}  > 0$ \  (vers notaciones  para la  escritura de  $\Gamma_d$ funci\'on
+  gamma multivariada, como producto de funciones Gamma)
+  %
+  \begin{eqnarray*}
+  p_U(u) & = &\left| \Jac_{g^{-1}}(u) \right| \,  p_X(u u^t) \\[2mm]
+  %
+  & = & 2^d \prod_{i=1}^d u_{ii}^{d-i+1} \: \frac{\displaystyle \prod_{i=1}^d
+  u_{ii}^{\nu-d-1} \, e^{ -\frac12 \sum_{i=1}^d \sum_{j=1}^i  u_{ij}^2}}{\displaystyle
+  2^{\frac{d \nu}{2}} \pi^{\frac{d (d-1)}{4}} \prod_{i=1}^d \Gamma\left(
+  \frac{\nu-i+1}{2} \right)}\\[2mm]
+  %
+  & = & \left( \prod_{i=1}^d \: \frac{2^{1 - \frac{\nu-i+1}{2}} \,
+  u_{ii}^{\nu-i} \, e^{-\frac12 t_{ii}^2}}{\Gamma\left( \frac{\nu-i+1}{2} \right)}
+  \right) \left( \prod_{1 \le j < i \le d} \frac{\displaystyle
+  e^{-\frac{t_{ij}^2}{2}}}{\sqrt{2 \pi}} \right)
+  \end{eqnarray*}
+  %
+  Por productos, se concluye que  las conmponentes son independientes. Luego, en
+  el secundo  producto se  reconoce un producto  de leyes  gausianas estandares,
+  as\'i que los  $U_{ij}, \: 1 \le j  < i \le d$ \ son  gausianas estandares. Al
+  final,   la   densidad  de   \   $U_{ii}$   \   siendo  \   $p_{U_{ii}}(u)   =
+  \frac{2^{1-\frac{\nu-i+1}{2}}  \, u^{\nu-i} \,  e^{-\frac12 u^2}}{\Gamma\left(
+      \frac{\nu-i+1}{2}      \right)}$,      por     transformaci\'ion      (ver
+  corolario~\ref{Cor:MP:TransformacionInyectivaDensidadEscalar}), la densidad de
+  \  $U_{ii}^2$  \  es  \  $p_{U_{ii}^2}(v)  =  \frac{2^{-\frac{\nu-i+1}{2}}  \,
+    v^{\frac{\nu-i+1}{2}-1} \, \, e^{-\frac12 v}}{\Gamma\left( \frac{\nu-i+1}{2}
+    \right)}$: es  la ley  Gamma \ $\G\left(  \frac{\nu-i+1}{2} \, ,  \, \frac12
+  \right)$ \ (ver subsecci\'on~\ref{Sssec:MP:Gamma}).
+\end{proof}
+%
+Nota: la distribuci\'on de \ $U_{ii}$ \ es a veces llamada {\em raiz-gamma}.
 
-\SZ{Y donde aparece mas?}
+Esta   descomposici\'on   permite   de   sortear   sencillamente   matrices   de
+distribuciones   de   Wishart,  con   grado   de   libertad  no   necesariamente
+entero~\footnote{De hecho, en la  literatura, esta descomposici\'on aparece casi
+  siempre con \ $\nu$ \ entero, pero la prueba no necesite este v\'inculo.}.

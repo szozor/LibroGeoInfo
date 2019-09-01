@@ -1,10 +1,41 @@
 \subsubseccion{Distribuci\'on Gamma}
 \label{Sssec:MP:Gamma}
 
-\SZ{Pearson 1895}
+Como lo intrdujimos  en el ejemplo de la ley exponencial,  esta familia de leyes
+fue  estudiada  por primera  vez  al  fin del  siglo  XIV,  bajo  el impulso  de
+Pearson~\cite{Pea95}.   De hecho,  seg\'un Lancaster~\cite{Lan66}  se encuentran
+trazas  de esta  ley en  trabajos de  Laplace como  posterior  distribuci\'on en
+inferencia Bayesiana (elementos conduciendo a la ley Gamma) para la estimaci\'on
+de  la  dispersi\'on $\frac1{\sigma^2}$  de  una  ley  Gausiana.  De  hecho,  la
+distribuci\'on Gamma  aparece feecuntemente en problema  de inferencia Bayesiana
+como distribuci\'on a priori conjugado~\footnote{En la inferencia Bayesiana, nos
+  interesamos al paremetro (posiblemente  multivariado) \ $\theta$ \ subyancente
+  a una  distribuci\'on. Por ejemplo,  sabemos tener observaciones  sorteados de
+  una  distribuci\'on  de  Poisson,  pero  con  el  par\'ametro  \  $\lambda$  \
+  desconocido  y  nos interesamos  a  \  $\theta  \equiv \lambda$.   El  enfoque
+  Bayesiano consiste a  considerar el paremetro \ $\Theta$  \ aleatorio, tal que
+  la  distribuci\'on   de  las  observaciones  sea   vista  como  distribuci\'on
+  condicional \  $p_{X|\Theta = \theta}(x)$, llamada  distribuci\'on de sampleo.
+  Dados las  observaciones $X = x$,  la meta es de  determinar la distribuci\'on
+  dicha a posteriori \  $p_{\Theta|X = x}$ \ a partir de  la cual se puede hacer
+  estimaci\'on  de \ $\theta$  dados las  observaciones, calcular  intervalos de
+  confianza,  etc.   Por  eso, el  metodo  se  apoya  sobre  la regla  de  Bayes
+  $p_{\Theta|X=x}(\theta)  \propto  p_{X|\Theta=\theta}(x)  p_\Theta(\theta)$  \
+  as\'i que se necesita elegir una distribuci\'on \ $p_\Theta$ \ dicha a priori.
+  Una  elecci\'on posible es  tomarla en  una familia  parametrizada tal  que la
+  distribuci\'on a  posterior partenece tambi\'en a  esta familia: es  lo que se
+  llama prior  conjugado. La idea  es que si  vienen observaciones, en  lugar de
+  re-calcular  el  posterior, se  puede  actualizar  solamente los  par\'ametros
+  (llamados  hiperpar\'ametros).    \SZ{Ver  nota   de  pie  en   el  cap   2  a
+    modificar}.\label{Foot:MP:BayesPrior} } del  par\'ametro $\lambda$ de la ley
+de Poisson~\cite{Rob07}. Se encuentren tambi\'en  trazas de esta ley en trabajos
+de  J.   Bienaym\'e  como  distribuci\'on  l\'imite  del   promedio  centrado  y
+renormalizado de  los componentes de  un vector de  ley multinomial~\cite{Bie38,
+  Lan66}.
+
 Se  denota $X \,  \sim \,  \G(a,b)$ \  con \  $a \in  \Rset_+^*$ \  llamado {\em
 par\'ametro de  forma} \ y \  $b \in \Rset_+^*$  \ llamada {\em taza}  (inversa de
-{\em escala}). \SZ{Cuando $a \in \Nset^*$ es entero, la ley es a veces conocida como ley de Erlang~\cite{} A. K. Erlang, a Danish telephone engineer who is considered the founder of queueing theory Cf. Cox} Las caracter\'isticas son:
+{\em escala}). Las caracter\'isticas son:
 
 \begin{caracteristicas}
 %
@@ -62,6 +93,13 @@ punteada), $1$ (linea mixta), $2$ (linea guionada) y $3$ (linea llena).}
 \label{Fig:MP:Gamma}
 \end{figure}
 
+Cuando $a \in \Nset^*$ es entero, la ley es a veces conocida como ley de Erlang,
+del nombre  de un ingeniero dan\'es  trabajando en (fundador de  la) teor\'ia de
+colas~\cite{Cox62, Erl09, Erl25, Bro48}.  Si  $a = \frac{n}{2}$ \ con $n$ entero
+y $\beta  = \frac12$,  se conoce  tambi\'e como ley  {\em chi-cuadrado}  con $n$
+grados de libertad (ver ej.~\cite{JohKot95:v1}).
+% cf archivo queueing theory "Hillier"en mi carpeta
+
 Nota  que para  \  $X \,  \sim  \, \G(1,b)$  \ es  una  variable exponencial  de
 par\'ametro \  $b$, \ie \ $X \,  \sim \, \E(b)$. Cuando  \ $a < 1$,  la densidad \
 $p_X$  \ diverge  para \  $x  \to 0$  \ (divergencia  integrable). Adem\'as,  se
@@ -94,32 +132,11 @@ caracter\'istica un v\'inculo con variables gausianas:
   \sum_{i=1}^n  X_i^2 \,  \sim \,  \G\left( \frac{n}{2}  \, ,  \,  \frac{1}{2 \,
       \sigma^2} \right)
   \]
+  %
+  (ley chi-cuadrado precisamente con \ $n$ \ grados de libertad).
 \end{lema}
 
-La distribuci\'on Gamma aparece entre  otros en problema de inferencia Bayesiana
-como distribuci\'on a priori conjugado~\footnote{En la inferencia Bayesiana, nos
-  interesamos al paremetro (posiblemente  multivariado) \ $\theta$ \ subyancente
-  a una  distribuci\'on. Por ejemplo,  sabemos tener observaciones  sorteados de
-  una distribuci\'on de Poisson, pero con el par\'ametro \ $\lambda$ \ desconocido
-  y nos interesamos a \ $\theta \equiv \lambda$. El enfoque Bayesiano consiste a
-  considerar el paremetro  \ $\Theta$ \ aleatorio, tal  que la distribuci\'on de
-  las observaciones  sea vista como distribuci\'on condicional  \ $p_{X|\Theta =
-    \theta}(x)$, llamada distribuci\'on de sampleo. Dados las observaciones $X =
-  x$,  la  meta  es  de  determinar  la  distribuci\'on  dicha  a  posteriori  \
-  $p_{\Theta|X =  x}$ \ a  partir de  la cual se  puede hacer estimaci\'on  de \
-  $\theta$ dados  las observaciones, calcular intervalos de  confianza, etc. Por
-  eso,  el metodo  se  apoya  sobre la  regla  de Bayes  $p_{\Theta|X=x}(\theta)
-  \propto  p_{X|\Theta=\theta}(x)  p_\Theta(\theta)$  \  as\'i que  se  necesita
-  elegir  una distribuci\'on  \ $p_\Theta$  \  dicha a  priori.  Una  elecci\'on
-  posible es  tomarla en una familia  parametrizada tal que  la distribuci\'on a
-  posterior  partenece  tambi\'en a  esta  familia: es  lo  que  se llama  prior
-  conjugado. La idea es que si  vienen observaciones, en lugar de re-calcular el
-  posterior,   se   puede   actualizar   solamente  los   par\'ametros   (llamados
-  hiperpar\'ametros).    \SZ{Ver    nota    de    pie    en    el    cap    2    a
-    modificar}.\label{Foot:MP:BayesPrior} } del par\'ametro $\lambda$ de la ley de
-Poisson~\cite{Rob07}.
-
-\SZ{Esta distribuci\'on aparece...}
+%\SZ{Esta distribuci\'on aparece...}
 % en  el conteo  de conteo  de  une repetici\'on  de una  experiencia de  maneja
 % independiente hasta que  occure un evento de probabilidad  $p$; por ejemplo el
 % n\'umero de tiro de un dado  equilibriado hasta que occurre un ``6'' sigue una
