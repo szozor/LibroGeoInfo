@@ -1,13 +1,18 @@
 \subsubseccion{Distribuci\'on Beta}
 \label{Sssec:MP:Beta}
 
-
-\SZ{Estas distribuciones fueron introducidas Pearson~\cite{Pea95, Pea16}; Gini en 1911 primera intrudicci\'on moderna~}
-
-La distribuci\'on beta  aparece entre otros en problema  de inferencia Bayesiana
-como   distribuci\'on   a   priori  conjugado~\footref{Foot:MP:BayesPrior}   del
-par\'ametro $p$ de la ley Binomial~\cite{Rob07}.
-
+Estas   distribuciones  fueron   popularizadas   por  Pearson   en  los   a\~nos
+1895~\cite{Pea95, Pea16, DavEdw01}  bajo la denominaci\'on Pearson tipo  I en su
+estudio  de  la teoria  de  la evoluci\'on  y  la  modelizaci\'on con  variables
+asimetricas.  De  hecho, aparecio  mucho tiempo antes,  en en trabajos  de Bayes
+publicado en un papel postumo  por R. Price en 1763~\cite{Bay63}. Aparentemente,
+la  denominaci\'on estandar  ``beta''  es denido  al  estadistician, demgrafo  y
+sociologo italiano C.  Gini en  1911 en estudio del ``sex ratio'' (desequilibrio
+entre    los    nacimientos    de    muchachos/muchachas)   con    un    enfoque
+baysiano~\cite{Gin11,   For17,  DavEdw01}.    La  distribuci\'on   beta  aparece
+precisamente,   entre  otros,   en   problema  de   inferencia  Bayesiana   como
+distribuci\'on  a priori conjugado~\footref{Foot:MP:BayesPrior}  del par\'ametro
+$p$ de la ley binomial~\cite{Rob07}.
 
 Se denota $X  \sim \beta(a,b)$ \ con  \ $(a,b) \in \Rset_+^{* \,  2}$ \ llamados
 {\em par\'ametros de forma}.  Las caracter\'isticas son:
@@ -78,8 +83,42 @@ de variables, se demuestra el lema siguiente:
   \]
   %
 \end{lema}
+
+
+\begin{lema}[Un v\'inculo con la ley exponencial]
+\label{Lem:MP:VinculoBetaExponencial}
 %
-\begin{lema}[V\'inculo con la ley gamma]
+  Sea  \   $X  \,  \sim  \,   \beta(a,1)$. Entonces
+  %
+  \[
+  - \log X \, \sim \, \E(a)
+  \]
+  %
+\end{lema}
+%
+\begin{proof}
+  El   resultado  es   inmediato  de   la  f\'ormula   de   transformaci\'on  del
+  corolario~\ref{Cor:MP:TransformacionInyectivaDensidadEscalar}.
+\end{proof}
+
+
+\begin{lema}[Un v\'inculo con la ley uniforme]
+\label{Lem:MP:VinculoBetaUniforme}
+%
+  Sea  \   $X  \,  \sim  \,   \U([0 \; 1])$ \ y \ $a > 0$. Entonces
+  %
+  \[
+  U^{\frac{1}{a}} \, \sim \, \beta(a,1)
+  \]
+  %
+\end{lema}
+%
+\begin{proof}
+  El   resultado  es   inmediato  de   la  f\'ormula   de   transformaci\'on  del
+  corolario~\ref{Cor:MP:TransformacionInyectivaDensidadEscalar}.
+\end{proof}
+
+\begin{lema}[Un v\'inculo con la ley gamma]
 \label{Lem:MP:VinculoBetaGamma}
 %
   Sea  \   $X  \,  \sim  \,   \G(a,c)$  \  e  \   $Y  \,  \sim   \,  \G(b,c)$  \
@@ -142,7 +181,7 @@ de variables, se demuestra el lema siguiente:
   densidad de probabilidad).   Pasando, se recupera el hecho que  \ $X+Y \, \sim
   \, \G(a+b,1)$.
 \end{proof}
-%
+
 \begin{lema}[Stabilidad por producto]
 \label{Lem:StabilidadBeta}
 %
@@ -220,14 +259,34 @@ de variables, se demuestra el lema siguiente:
   cierra la prueba.
 \end{proof}
 
-\SZ{Exponencial como limite de $n beta(1,n)$. $e^{-X} \sim beta(l,1)$}
 
-\SZ{Esta distribuci\'on aparece...}
-% en  el conteo  de conteo  de  une repetici\'on  de una  experiencia de  maneja
-% independiente hasta que  occure un evento de probabilidad  $p$; por ejemplo el
-% n\'umero de tiro de un dado  equilibriado hasta que occurre un ``6'' sigue una
-% ley geometrica de par\'ametro $p = \frac16$.
+\begin{lema}[Ley Gamma como caso l\'imite de beta]
+\label{Lem:GamaLimiteBeta}
+%
+  Sea \ $X_n \, \sim \, \beta(a,n)$. Entonces
+  %
+  \[
+  n X_n \limitd{n \to +\infty} X \, \sim \, \G(a,1)
+  \]
+\end{lema}
+%
+\begin{proof}
+  De la f\'ormula de transformaci\'on tenemos la distribuci\'on de $n X_n$
+  %
+  \begin{eqnarray*}
+  p_{n X_n}(x) & = & \frac{1}{n} , \frac{\left( \frac{x}{n} \right)^{a-1} \left( 1
+  - \frac{x}{n} \right)^{n-1}}{B(a,n)} \, \un_{(0 \; 1)}\left( \frac{x}{n} \right)\\[2mm]
+  %
+  & = & \frac{x^{a-1}}{\Gamma(a)} \: \frac{\Gamma(n+a)}{n^a \Gamma(n)} \: \left( 1 -
+  \frac{x}{n} \right)^{n-1} \: \un_{(0 \; n)(x)}
+  \end{eqnarray*}
+  %
+  El resultado sigue  notando que \ $\un_{(0 \;  n)} \to \un_{\Rset_+^*}$, \quad
+  $\left(  1 -  \frac{x}{n} \right)^{n-1}  \to e^{-x}$  \ y  de la  f\'ormula de
+  Stirling (ver secci\'on~\ref{Sssec:MP:Poisson}).
+\end{proof}
 
+\
 
 La distribuci\'on beta  se generaliza al caso matriz-variada  $X$ definido sobre
 $\X$  tal que $X$  y $I-X$  son en  $P_d^+(\Rset)$; se  denota \  $X \,  \sim \,
