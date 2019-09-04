@@ -14,17 +14,20 @@ es m\'as  conocida por su  introducci\'on por William  Sealy Gosset~\footnote{De
 varianza empiricos~\cite{Stu08}.   Fue estudiada entre  otros intensivamente por
 el  famoso matematico  R. Fisher~\cite{Fis25}.   En la  literatura, esta  ley es
 conocida bajo  los nombres {\em  Student}, {\em Student-$t$} o  simplemente {\em
-  $t$-distribuci\'on} o a\'un  bajo el nombre {\em Pearson tipo  IV} debido a la
-familia de Pearson~\cite{Pea95}.
+  $t$-distribuci\'on} o  a\'un bajo el nombre  {\em Pearson tipo IV}  en el caso
+escalar  y {\em  Pearson tipo  VII}  (para $\frac{\nu+d}{2}$  entero; ver  m\'as
+abajo), debido  a la  familia de Pearson~\cite{Pea95,  JohKot95:v1, JohKot95:v1,
+  KotBal00, FanKot90}.  Esta distribuci\'on aparece como a  priori conjugado del
+promedio de una gausiana en inferencia bayesiana~\cite{Rob07, KotNad04}.
 
-%Se denota con \ $X \sim t_\nu(m,\Sigma)$  \ con \ $m \in \Rset^d$, \ $\Sigma \in
-%P_d^+(\Rset)$  \  conjunto  de  las   matrices  de  \  $\Rset^{d  \times  d}$  \
-%s\'imetricas definidas positivas. $m$ \ es llamado {\em par\'ametro de posici\'on}
-%(no es  la media  que puede  no existir), \  $\Sigma$ \  es llamada  {\em matriz
-%  caracter\'istica} (no es [proporcional a]  la covarianza que puede no existir)
-%y \ $\nu > 0$ \ llamado  {\em grados de libertad}.  Las caracter\'isticas de una
-%Student-$t$ son las siguientes:
-
+Se denota con \ $X \sim t_\nu(m,\Sigma)$  \ con \ $m \in \Rset^d$, \ $\Sigma \in
+P_d^+(\Rset)$  \  conjunto  de  las   matrices  de  \  $\Rset^{d  \times  d}$  \
+s\'imetricas definidas positivas. $m$ \ es llamado {\em par\'ametro de posici\'on}
+(no es  la media  que puede  no existir), \  $\Sigma$ \  es llamada  {\em matriz
+  caracter\'istica} (no es [proporcional a]  la covarianza que puede no existir)
+y \ $\nu > 0$ \ llamado  {\em grados de libertad}.  Las caracter\'isticas de una
+Student-$t$ son las siguientes:
+%
 \begin{caracteristicas}
 %
 Dominio de definici\'on & $\X = \Rset^d$\\[2mm]
@@ -70,7 +73,7 @@ recientemente~\cite{Sut86, Hur95, KibJoa06, SonPar14}.} & $\displaystyle
 \Phi_X(\omega) = \frac{\nu^{\frac{\nu}{4}}}{2^{\frac{\nu}{2}-1} \Gamma\left(
 \frac{\nu}{2} \right)} \, e^{\imath \omega^t m} \, \left( \omega^t \Sigma \omega
 \right)^{\frac{\nu}{4}} K_{\frac{\nu}{2}}\left( \sqrt{\nu \, \omega^t \Sigma
-\omega} \right) $
+\omega} \right)$
 \end{caracteristicas}
 
 Nota: nuevamente se puede escribir $X \, \egald \, \Sigma^{\frac12} S + m$ \ con
@@ -188,19 +191,124 @@ b$.
   X_\nu \, \limitd{\nu \to \infty} \, = \, X \, \sim \, \N(m,\Sigma)
   \]
   %
-  donde  \  $\displaystyle  \limitd{}$  \   significa  que  el  l\'imite  es  en
-  distribuci\'on.
+  con \ $\displaystyle \limitd{}$ \ l\'imite es en distribuci\'on.
 \end{lema}
 \begin{proof}
   La prueba  es inmediata tomando el  logaritmo de la  densidad de probabilidad,
-  usando   la  formula   de   Stirling~\footnote{Ver nota de pie~\footref{Foot:MP:Stirling}}  para \ $\log\Gamma(z)  = \left(  z -
-    \frac12 \right)  \log z  - z +  \frac12 \log(2 \pi)  + o(1)$  \ en \  $z \to
+  usando      la     formula      de     Stirling~\footnote{Ver      nota     de
+    pie~\footref{Foot:MP:Stirling}} para  \ $\log\Gamma(z) = \left(  z - \frac12
+  \right)  \log  z  -  z  +  \frac12   \log(2  \pi)  +  o(1)$  \  en  \  $z  \to
   +\infty$~\cite{Sti30, AbrSte70, GraRyz15} \ y \ $-\frac{d+\nu}{2} \log\left( 1
     +  \frac{(x-m)^t \Sigma^{-1} (x-m)}{\nu}  \right) =  -\frac{d+\nu}{2} \left(
     \frac{(x-m)^t \Sigma^{-1} (x-m)}{\nu} + o\left( \nu^{-1} \right) \right) = -
   \frac{(x-m)^t \Sigma^{-1} (x-m)}{2} + o(1)$.
 \end{proof}
 
+Las   variables   Student-t   tienen   varias   representaciones   estocasticas,
+relacionadas a la gausiana~\cite{FanKot90, And03, KotNad04}:
+%
+\begin{lema}[Relaci\'on con la distribuci\'on Gamma]\label{Lem:MP:StudentGamma}
+%
+  Sea \  $G \, \sim \,  \G\left( \frac{\nu}{2} , \frac{\nu}{2} \right)$ \ y \ $Y  \, \sim \,
+  \N(0,I)$  \ con $\nu >  0$ \ e \  $Y$ \ independiente de  \ $G$. Entonces,
+  para $\Sigma \in P_d^+(\Rset)$ y $m \in \Rset^d$,
+  %
+  \[
+  \frac{\Sigma^{\frac12} Y}{\sqrt{G}} + m  \, \sim \, t_\nu(m,\Sigma)
+  \]
+  %
+\end{lema}
+\begin{proof}
+  Sea \ $X = \frac{Y}{\sqrt{G}}$. De la nota siguiendo la tabla de caracter\'isticas
+  es  necesario  y suficiente  probar  que $X  \sim  t_\nu(0,I)$.  Ahora, de  la
+  independencia tenemos
+  %
+  \[
+  p_{X|G=g}(x)  = (2  \pi)^{-\frac{d}{2}}  g^{\frac{d}{2}} e^{-  \frac{x^t x g}{2}}
+  \]
+  %
+  Entonces, multiplicando \ $p_{X|G=g}$ \ por \ $p_G$ \ y por marginalizaci\'on,
+  obtenemos
+  %
+  \begin{eqnarray*}
+  p_X(x) & = & \frac{\nu^{\frac{\nu}{2}}}{2^{\frac{\nu+d}{2}} \pi^{\frac{d}{2}}
+  \Gamma\left( \frac{\nu}{2} \right)} \, \int_{\Rset_+} g^{\frac{\nu+d}{2}-1} \,
+  e^{- \frac{x^t x + \nu}{2} \, g} \, dg\\[2mm]
+  %
+  & = & \frac{\nu^{\frac{\nu}{2}} \left( \nu + x^t x \right)^{-
+  \frac{\nu+d}{2}}}{\pi^{\frac{d}{2}} \Gamma\left( \frac{\nu}{2} \right)} \,
+  \int_{\Rset_+} u^{\frac{\nu+d}{2}-1} \, e^{- u} \, du\\[2mm]
+  %
+  & = & \frac{\Gamma\left( \frac{\nu+d}{2} \right)}{(\pi \nu)^{\frac{d}{2}}
+  \Gamma\left( \frac{\nu}{2} \right)} \, \left( 1 + \frac{x^t x}{\nu} \right)^{-
+  \frac{\nu+d}{2}}
+  \end{eqnarray*}
+ %
+  La secunda linea viene del cambio de variables \ $u = \frac{x^t x + \nu}{2} \,
+  g$  \  y la  tercera  reconociendo  en la  integral  la  funci\'on Gamma  (ver
+  notaciones).
+\end{proof}
+%
+%
+\begin{lema}[Relaci\'on con la distribuci\'on de Wishart]\label{Lem:MP:StudentWishart}
+%
+  Sea \  $W \, \sim \,  \W(I,\nu+d-1)$ \ $d \times  d$ Wishart, \ $Y  \, \sim \,
+  \N(0,\nu I)$  \ con $\nu >  0$ \ e \  $Y$ \ independiente de  \ $W$. Entonces,
+  para $\Sigma \in P_d^+(\Rset)$ y $m \in \Rset^d$,
+  %
+  \[
+  \Sigma^{\frac12} W^{-\frac12} Y + m  \, \sim \, t_\nu(m,\Sigma)
+  \]
+  %
+\end{lema}
+\begin{proof}
+  Sea \ $X = W^{-\frac12} Y$. De la nota siguiendo la tabla de caracter\'isticas
+  es  necesario  y suficiente  probar  que $X  \sim  t_\nu(0,I)$.  Ahora, de  la
+  independencia tenemos
+  %
+  \[
+  p_{X|W=w}(x)  = (2  \pi \nu)^{-\frac{d}{2}}  |w|^{\frac12} e^{-  \frac{x^t w  x}{2
+      \nu}}
+  \]
+  %
+  Denotamos  por \  $D =  \left\{ w_{ij},  \: 1  \le j  \le i  \le d  \tq  w \in
+    P_d^+(\Rset) \right\}$ \ y, por abuso de  escritura, \ $dv = \prod_{ 1 \le j
+    \le i \le d} dw_{ij}$.  Entonces,  multiplicando \ $p_{X|W=w}$ \ por \ $p_W$
+  \ y por marginalizaci\'on, obtenemos
+  % ($\propto$ significa ``proporcional  a'', i.e., olvidando el coefficiente de
+  % normalizaci\'on)
+  %
+  \begin{eqnarray*}
+  p_X(x) & = & \int_D \frac{|w|^{\frac{\nu-1}{2}} e^{- \frac{x^t w x}{2 \nu} -
+  \frac12 \Tr(w)}}{2^{\frac{d (\nu+d)}{2}} (\pi \nu)^{\frac{d}{2}} \Gamma_d \left(
+  \frac{\nu+d-1}{2} \right)} \, dw\\[2mm]
+  %
+  & = & \frac{\Gamma\left( \frac{\nu+d}{2} \right)}{(\pi \nu)^{\frac{d}{2}}
+  \Gamma\left( \frac{\nu}{2} \right)} \left| I + \frac{x x^t}{\nu}
+  \right|^{-\frac{\nu+d}{2}} \: \int_D \frac{|w|^{\frac{\nu+d-d-1}{2}} e^{-
+  \frac12 \Tr\left( \left[ I + \frac{x x^t}{\nu} \right] w \right)}}{2^{\frac{d
+  (\nu+d)}{2}} \left| \left( I + \frac{x x^t}{\nu} \right)^{-1}
+  \right|^{\frac{\nu+d}{2}} \Gamma_d \left( \frac{\nu+d}{2} \right)} \, dw\\[2mm]
+  %
+  & = & \frac{\Gamma\left( \frac{\nu+d}{2} \right)}{(\pi \nu)^{\frac{d}{2}}
+  \Gamma\left( \frac{\nu}{2} \right)} \: \left( 1 + \frac{x^t x}{\nu}
+  \right)^{-\frac{\nu+d}{2}} \, \int_D \frac{|w|^{\frac{\nu+d-d-1}{2}} e^{-
+  \frac12 \Tr\left( \left[ I + \frac{x x^t}{\nu} \right] w \right)}}{2^{\frac{d
+  (\nu+d)}{2}} \left| \left( I + \frac{x x^t}{\nu} \right)^{-1}
+  \right|^{\frac{\nu+d}{2}} \Gamma_d \left( \frac{\nu+d}{2} \right)} \, dw
+  \end{eqnarray*}
+%
+  Para  \ $a, b  \in \Rset^d,  \: M  \in \M_{d,d}(\Rset)$,  en la  secunda linea
+  usamos la  identidad \  $a^t M b  = \Tr(b a^t  M)$ \  y \ $\Gamma_d\left(  x -
+    \frac12 \right) = \frac{\Gamma\left(  x - \frac{d}{2} \right)}{\Gamma(x)} \,
+  \Gamma_d(x)$ \ (ver  notaciones) y en la tercera linea  usamos la identidad de
+  Sylvester~\cite{Syl51} o~\cite[\S~18.1]{Har08} \ $\left|  I + a b^t\right| = 1
+  + b^t a$. Se concluye que \ $X \sim t_\nu(0,I)$ \ reconociendo en el factor de
+  la integral  como la  distribuci\'on \  $t_\nu(0,I)$ \ y  en el  integrande la
+  distribuci\'on de Wishart \ $\W(I,\nu+d)$ \ que suma entonces a la unidad.
+  %  la  formula de  Sherman-Morrison-Woodbury  $\left(  I  + \frac{x  x^t}{\nu}
+  % \right)^{-1} = I$~\cite{HorJoh13, Har08}
+\end{proof}
 
 \SZ{
 %corolario suma dis independientes... via condicionalmente a...
@@ -210,6 +318,10 @@ Sampling distribution, Gosset, Fisher 25.
 Applications
 }
 
+M\'as propiedades de esta distribuci\'on se encuentran en libros especializados,
+por ejemplo~\cite{KotNad04} completamente dedicado a esta distribuci\'on.
+
+\
 
 La distribuci\'on  Student-t se generaliza  al caso matriz-variada  $X$ definido
 sobre $M_{d,d'}(\Rset)$;  se denota  \ $X \,  \sim \,  t_\nu(M,\Sigma,\Omega)$ \

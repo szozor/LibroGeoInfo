@@ -13,7 +13,7 @@ conjugado~\footref{Foot:MP:BayesPrior}   de   la   matriz   de   precisi\'on   \
 $\Sigma^{-1}$   \   (inversa   de   la   covarianza)   de   la   ley   gaussiana
 multivariada~\cite[Ec.~(4.4.5)]{Rob07}.
 
-Se denota \  $X \, \sim \, W_d(V,\nu)$  \ donde el dominio de  definici\'on es \
+Se denota \  $X \, \sim \, \W(V,\nu)$  \ donde el dominio de  definici\'on es \
 $P_d^+(\Rset)$,  conjunto   matrices  simetricas  definida   positivas,  $V  \in
 P_d^+(\Rset)$ par\'ametro de  escala y \ $\nu > d-1$ \  grados de libertad.  Las
 caracter\'isticas de la distribuci\'on son las siguientes:
@@ -66,7 +66,7 @@ Fijense que $p_X$ no es la distribuci\'on conjuntos de los componentes de \ $X$:
 el hecho de  que \ $X$ \ sea  uan matriz aleatoria de \  $P_d^+(\Rset)$ \ impone
 v\'inculos sobre sus compnentes; entre otros, $X_{i,j} = X_{j,i}$.
 
-Inmediatamente, si  $d = 1$, la  distribuci\'on de Whishart \  $W_1(V,\nu)$ \ se
+Inmediatamente, si  $d = 1$, la  distribuci\'on de Whishart \  $\W(V,\nu)$ \ se
 reduce  a la  distribuci\'on Gamma  $\G\left(\frac{\nu}{2} \,  , \,  \frac1{2 V}
 \right)$. De este  hecho, se la podr\'ia ver  como extensi\'on matriz-variada de
 la  distribuci\'on  gamma.  La  distribuci\'on  de  Wishart  tiene varias  otras
@@ -75,10 +75,10 @@ propiedades como las siguientes.
 \begin{lema}[Stabilidad por transformaci\'on lineal]
 \label{Lem:MP:StabilidadWishartLineal}
 %
-  Sea $X \,  \sim \, W_d(V,\nu)$ \ y \  $A \in \Rset^{d \times d'}$  \ con \ $d'
+  Sea $X \,  \sim \, \W(V,\nu)$ \ y \  $A \in \Rset^{d \times d'}$  \ con \ $d'
   \le d$ \ y de rango lleno. Entonces
   \[
-  A^t X A \, \sim \, W_{d'}\left( A^t V A , \nu \right)
+  A^t X A \, \sim \, \W\left( A^t V A , \nu \right)
   \]
   %
   En particular, si $d'  = 1$, \ $A^t X A \, \sim  \, G\left( \frac{\nu}{2} \, ,
@@ -117,15 +117,15 @@ distribuci\'on como gamma matriz-variada.
 \begin{lema}[Stabilidad por suma]
 \label{Lem:MP:StabilidadWishartSuma}
 %
-  Sea $X_i \,  \sim \, W_d(V,\nu_i), \: i = 1,\ldots,n$ independientes. Entonces
+  Sea $X_i \,  \sim \, \W(V,\nu_i), \: i = 1,\ldots,n$ independientes. Entonces
   \[
-  \sum_{i=1}^n X_i \, \sim \, W_d\left( V \, , \, \sum_{i=1}^n \nu_i \right)
+  \sum_{i=1}^n X_i \, \sim \, \W\left( V \, , \, \sum_{i=1}^n \nu_i \right)
   \]
 \end{lema}
 %
 \begin{proof}
   El     resultado     es     inmediato     saliendo     de     la     funci\'on
-  caract\'eristica~\footref{Foot:MP:CaracteristicaWishart} y notando que como el
+  caract\'eristica~\footref{Foot:MP:CaracteristicaWishart} y notando que como en
   el context vectorial $\Phi_{\sum_i X_i} = \prod_i \Phi_{X_i}$.
 \end{proof}
 
@@ -137,7 +137,7 @@ de matriz de covarianza en el contexto gausiano:
   la  matriz  \  $S  =  \sum_{i=1}^n   X_i  X_i^t$  \  llamada  {\em  matriz  de
     dispersi\'on} (scatter matrix en ingl\'es). Entonces, \ $S \in P_d^+(\Rset)$
   (c.   s.)   \  ($S$ es  sim\'etrica  definida  positiva  casi siempre,  o  con
-  probabilidad uno) y \ $S \,\sim \, W_d(V,n)$.
+  probabilidad uno) y \ $S \,\sim \, \W(V,n)$.
 \end{lema}
 %
 Este resultado  permite tambi\'en probar  el lema~\ref{Lem:MP:StabilidadWishart}
@@ -170,7 +170,7 @@ Wishart general de la manera siguiente:
 %
 \begin{teorema}[Descomposici\'on de Bartlett]\label{Teo:MP:Bartlett}
 %
-  Sea \ $X \, \sim \, W_d(V,\nu)$ \  y \ $V = L L^t$ factorizaci\'on de Cholesky
+  Sea \ $X \, \sim \, \W(V,\nu)$ \  y \ $V = L L^t$ factorizaci\'on de Cholesky
   de \ $V$ \ con \ $L$ \ triangular inferior. Entonces, tenemos
   %
   \[
@@ -194,7 +194,7 @@ Wishart general de la manera siguiente:
 %
 \begin{proof}
   Primero, se nota del lema~\ref{Lem:MP:StabilidadWishartLineal} que \ $X \egald
-  L  Y  L^t$  \  con  \  $Y  \, \sim  \,  W_d(I,\nu)$,  de  densidad  $p_Y(y)  =
+  L  Y  L^t$  \  con  \  $Y  \, \sim  \,  \W(I,\nu)$,  de  densidad  $p_Y(y)  =
   \frac{|y|^{\frac{\nu-d-1}{2}}    e^{-\frac12    \Tr(y)}}{2^{\frac{d   \nu}{2}}
     \Gamma_d\left(  \frac{\nu}{2} \right)}$.  Ahora, sea  la  factorizaci\'on de
   Cholesky de  \ $Y =  U U^t$ (\ie  para cada $\omega$ se  factoriza $Y(\omega)$
