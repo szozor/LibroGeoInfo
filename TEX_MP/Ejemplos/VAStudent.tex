@@ -56,7 +56,7 @@ ser\'ia posible en el caso \ $\nu \le 2$.} & $\displaystyle \Sigma_X =
 no~\footref{Foot:MP:ExistenciaMomentosStudent}.\\[2.5mm]
 \hline
 %
-\modif{Sesgo} (caso escala) & $\displaystyle \gamma_X = 0$ \ si \ $\nu > 3$; \ no
+\modif{Asimetr\'ia} (caso escala) & $\displaystyle \gamma_X = 0$ \ si \ $\nu > 3$; \ no
 existe si no~\footref{Foot:MP:ExistenciaMomentosStudent}.\\[2mm]
 \hline
 %
@@ -87,7 +87,7 @@ y    (b)   y    una   densidad    en   un    contexto    bi-dimensional   figura
 Fig.~\ref{Fig:MP:Student}(c).
 %
 \begin{figure}[h!]
-\begin{center} \input{TIKZ_MP/Student} \end{center}
+%\begin{center} \input{TIKZ_MP/Student} \end{center}
 % 
 \leyenda{Ilustraci\'on  de  una  densidad  de probabilidad  Student-$t$  escalar
   estandar (a),  y la funci\'on  de repartici\'on asociada  (b) con \ $\nu  = 1$
@@ -209,9 +209,9 @@ relacionadas a la gausiana~\cite{FanKot90, And03, KotNad04}:
 %
 \begin{lema}[Relaci\'on con la distribuci\'on Gamma]\label{Lem:MP:StudentGamma}
 %
-  Sea \  $G \, \sim \,  \G\left( \frac{\nu}{2} , \frac{\nu}{2} \right)$ \ y \ $Y  \, \sim \,
-  \N(0,I)$  \ con $\nu >  0$ \ e \  $Y$ \ independiente de  \ $G$. Entonces,
-  para $\Sigma \in P_d^+(\Rset)$ y $m \in \Rset^d$,
+  Sea \ $G \,  \sim \, \G\left( \frac{\nu}{2} , \frac{\nu}{2} \right)$  \ y \ $Y
+  \,  \sim  \, \N(0,I)$  \  con  $\nu >  0$  \  e \  $Y$  \  independiente de  \
+  $G$. Entonces, para $\Sigma \in P_d^+(\Rset)$ y $m \in \Rset^d$,
   %
   \[
   \frac{\Sigma^{\frac12} Y}{\sqrt{G}} + m  \, \sim \, t_\nu(m,\Sigma)
@@ -248,7 +248,6 @@ relacionadas a la gausiana~\cite{FanKot90, And03, KotNad04}:
   g$  \  y la  tercera  reconociendo  en la  integral  la  funci\'on Gamma  (ver
   notaciones).
 \end{proof}
-%
 %
 \begin{lema}[Relaci\'on con la distribuci\'on de Wishart]\label{Lem:MP:StudentWishart}
 %
@@ -308,6 +307,140 @@ relacionadas a la gausiana~\cite{FanKot90, And03, KotNad04}:
   distribuci\'on de Wishart \ $\W(I,\nu+d)$ \ que suma entonces a la unidad.
   %  la  formula de  Sherman-Morrison-Woodbury  $\left(  I  + \frac{x  x^t}{\nu}
   % \right)^{-1} = I$~\cite{HorJoh13, Har08}
+\end{proof}
+
+Como lo hemos introducido, la  distribuci\'on de Student aparece naturalmente en
+el  marco  de la  estimaci\'on,  especialmente  a  trav\'es de  la  estimaci\'on
+empirica de la media y covarianza~\cite{Mui82, GupNad99, BilBre99, And03, Seb04}:
+% resp. p 80 teo 3.2.1 -- p. 92 teo 3.3.6 -- p. 87 prop. 7.1 -- p. 77 teo. 3.3.2 -- p. 63 teo. 3.1
+% Nota : ver corolarios 2 y 3, p. 25 de Seber
+% VER GupNad Th. 4.2.1
+%
+\begin{teorema}%[]
+%
+  Sean  \  $X_i \,  \sim  \,  \N(m,\Sigma), \:  i  =  1, \ldots  ,  n  > d-1$  \
+  independientes,       y      sea       la       media      empirica       (ver
+  corolario~\ref{Cor:MP:MediaEmpiricaGauss})
+  %
+  \[
+  \overline{X} = \frac{1}{n} \sum_{i=1}^n X_i
+  \]
+  %
+  y  la  covarianza empirica  construida  a partir  de  la  media empirica  (ver
+  corolario~\ref{Cor:MP:WishartEstimacion})
+  %
+  \[
+  \overline{\Sigma}  =  \frac{1}{n-1}  \sum_{i=1}^n  \left( X_i  -  \overline{X}
+  \right) \left( X_i - \overline{X} \right)^t
+  \]
+  %
+  Entonces:
+  %
+  \begin{itemize}
+  \item  $\overline{X} - m \,  \sim \,  \N\left(  0 \,  , \,  \frac{1}{n} \,  \Sigma
+    \right)$ \ y  \ $\overline{\Sigma} \, \sim \,  \W( \Sigma \, , \, n-1  ) $ \
+    son independientes;
+  %
+  \item \SZ{$\overline{\Sigma}^{-\frac12} \, \left(  \overline{X} - m \right) \,
+      \sim \, t_{\nu}\left( \right)$}
+  \end{itemize}
+\end{teorema}
+%
+\begin{proof}
+  Se      refiera      a     los      corolarios~\ref{Cor:MP:MediaEmpiricaGauss}
+  y~\ref{Cor:MP:WishartEstimacion}   por   lo  de   las   distribuciones  de   \
+  $\overline{X}-m$ \ y de \ $\overline{\Sigma}$ \ respectivamente.
+
+  A continuaci\'on,  sean \  $\widetilde{X}_i =  X_i - m$  \ y  \ $\widetilde{X}
+  =        \begin{bmatrix}        \widetilde{X}_1        &       \cdots        &
+    \widetilde{X}_n \end{bmatrix}$. Obviamente
+  %
+  \[
+  \overline{X} - m = \widetilde{X} \un
+  \]
+  %
+  con \ $\un \in  \Rset^n$ \ vector de componentes iguales a \  $1$ \ y vimos en
+  la prueba del corolario~\ref{Cor:MP:WishartEstimacion} que
+  %
+  \[
+  \overline{\Sigma} = \frac{1}{n-1} \widetilde{X} \left( I - \frac{\un \un^t}{n}
+  \right) \widetilde{X}^t
+  \]
+  %
+  $A = I - \frac{\un \un^t}{n} \in  P_n(\Rset)$ \ es idemponenta de rango 1, con
+  $A  \un = 0$,  as\'i que  por diagonalizaci\'on~\cite{HorJoh13,  Bat97, Bat07}
+  tenemos
+  %
+  \[
+  A = P \begin{bmatrix} I_{n-1} & 0\\ 0 & 0 \end{bmatrix} P^t \qquad \mbox{con} \qquad
+  P = \begin{bmatrix} B & \frac{1}{\sqrt{n}} \un \end{bmatrix}
+  \]
+  %
+  $P P^t = P P^t = I$ \ y
+  %
+  \[
+  B \in \M_{n,n-1}(\Rset) \quad \mbox{tal que} \quad  B^t B = I \: \mbox{ y } \:
+  \un^t B = 0
+  \]
+  %
+  Ahora,   poniendo   la  descomposici\'on   diagonal   de   \   $A$  \   en   \
+  $\overline{\Sigma}$ \ obtenemos (ver~corolario~\ref{Cor:MP:WishartEstimacion})
+  %
+  \[
+  \overline{\Sigma} = \frac{1}{n-1} \, Y Y^t \qquad \mbox{con} \qquad Y = \widetilde{X} B
+  \]
+  %
+  Luego, de la gausianidad y independencia de los \ $\widetilde{X}_i$ \ tenemos,
+  para \   $\widetilde{x}   =    \begin{bmatrix}   \widetilde{x}_1   &   \cdots   &
+    \widetilde{x}_n \end{bmatrix} \in \M_{d,n}(\Rset)$
+  %
+  \begin{eqnarray*}
+  p_{\widetilde{X}}(\widetilde{x}) & = & (2 \pi)^{-\frac{n d}{2}}
+  |\Sigma|^{-\frac{n}{2}} \exp\left(- \frac12 \sum_{i=1}^n \widetilde{x}_i^t
+  \Sigma^{-1} \widetilde{x}_i \right)\\[2mm]
+  %
+  & = & (2 \pi)^{-\frac{n d}{2}} |\Sigma|^{-\frac{n}{2}} \exp\left(- \frac12
+  \sum_{i=1}^n \Tr\left( \Sigma^{-1} \widetilde{x}_i \widetilde{x}_i^t
+  \right) \right)\\[2mm]
+  %
+  & = & (2 \pi)^{-\frac{n d}{2}} |\Sigma|^{-\frac{n}{2}} \exp\left(- \frac12
+  \Tr\left( \Sigma^{-1} \widetilde{x} \widetilde{x}^t \right) \right)
+  \end{eqnarray*}
+  %
+  Sea    la     transformaci\'on    \    $\begin{bmatrix}     Y    &    \sqrt{n}
+    \overline{\widetilde{X}}   \end{bmatrix}   =   \widetilde{X}   P$,   \ie   \
+  $\widetilde{X}        =       \begin{bmatrix}        Y        &       \sqrt{n}
+    \overline{\widetilde{X}} \end{bmatrix}  P^t$.  Se nota que  \ $|P| =  1$ \ y
+  por                            transformaci\'on                           (ver
+  teorema~\ref{Teo:MP:TransformacionInyectivaDensidad}),    para   \    $y   \in
+  \M_{d,n-1}(\Rset)$ \ y \ $x \in \Rset^d$
+  %
+  \begin{eqnarray*}
+  p_{Y,\sqrt{n} \overline{\widetilde{X}}}(y,x) & = & (2 \pi)^{-\frac{n d}{2}}
+  |\Sigma|^{-\frac{n}{2}} \exp\left(- \frac12 \Tr\left(
+  \Sigma^{-1} \begin{bmatrix} y & x \end{bmatrix} P^t P \begin{bmatrix} y^t\\
+  x \end{bmatrix}\right) \right)\\[2mm]
+  %
+  & = & (2 \pi)^{-\frac{n d}{2}} |\Sigma|^{-\frac{n}{2}} \exp\left(- \frac12
+  \Tr\left( \Sigma^{-1} \left( y y^t + x x^t \right) \right) \right)\\[2mm]
+  %
+  & = & (2 \pi)^{-\frac{(n-1) d}{2}} |\Sigma|^{-\frac{n-1}{2}} \exp\left(-
+  \frac12 \Tr\left( \Sigma^{-1} y y^t \right) \right) \times (2
+  \pi)^{-\frac{d}{2}} |\Sigma|^{-\frac12} \exp\left(- \frac12 x^t \Sigma^{-1} x
+  \right)
+  \end{eqnarray*}
+  %
+  Claramente,  de la factorizaci\'on  de las  distribuciones, $Y  = X  B$ \  y \
+  $\sqrt{n}  \overline{\widetilde{X}}$  \ son  independientes,  es  decir que  \
+  $\frac{1}{n-1} \, Y Y^t = \overline{\Sigma}$ \ y \ $\overline{\widetilde{X}} =
+  \overline{X} -  m$ \ son  independientes, lo que  cierra la prueba  del primer
+  item.  Pasando, la forma  de $p_{Y,\sqrt{n}  \overline{\widetilde{X}}}(y,x)$ \
+  confirma  que  \ $\overline{X}-m$  \  es  gausiana  centrada de  covarianza  \
+  $\frac{1}{n} \,  \Sigma$, y  que los \  $Y_i$ \ son  independientes gausianos,
+  dando la distribuci\'on  de Wishart del lema~\ref{Lem:MP:WishartGausiana} paea
+  la covarianza empirica.
+
+
 \end{proof}
 
 \SZ{

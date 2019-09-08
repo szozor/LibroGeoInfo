@@ -104,12 +104,27 @@ entonces
     \left( m_i + b_i \right) \, ,  \, \sum_{i=1}^n A_i \Sigma_i A_i^\dag \, , \,
     \sum_{i=1}^n A_i \check{\Sigma}_i A_i^t \right)
   \]
-  % En  particular, cualquier  combinaci\'on  lineal de  los  componentes de  un
-  vector  gaussiano  complejo da  una  gaussiana  compleja.  Reciprocamente,  si
-  cualquier combinaci\'on lineal de los componentes de un vector aleatorio sigue
-  una ley gaussiana compleja, entonces el vector es gaussiano complejo.
+  %
+  En particular, cualquier combinaci\'on lineal  de los componentes de un vector
+  gaussiano complejo  da una  gaussiana compleja.  Reciprocamente,  si cualquier
+  combinaci\'on lineal de  los componentes de un vector  aleatorio sigue una ley
+  gaussiana compleja, entonces el vector es gaussiano complejo.
 \end{teorema}
 %
+El corolario~\ref{Cor:MP:MediaEmpiricaGauss} se extiende naturalmente al caso complejo:
+%
+\begin{corolario}[Media empirica]\label{Cor:MP:MediaEmpiricaGaussCompleja}
+%
+  Sean \ $Z_i \, \sim \, \C\N\left(  m , \Sigma , \check{\Sigma} \right), \: i =
+  1, \ldots , n$ \ independientes. Entonces,
+  %
+  \[
+  \overline{Z} =  \frac{1}{n} \sum_{i=1}^n Z_i \,  \sim \, \C\N\left( m  \, , \,
+    \frac{1}{n} \Sigma \, , \, \frac{1}{n} \check{\Sigma} \right)
+  \]
+  %
+\end{corolario}
+
 Adem\'as, en el  caso complejo se tiene  una estabilidad combinando \ $Z$  \ y \
 $Z^*$:
 %
@@ -172,6 +187,13 @@ El teorema del l\'imite central y sus variantes se recuperan del caso real.
   notaciones).
 \end{teorema}
 %
+%
+Como en el caso real, aparece que  la media empirica hechas a partir de vectores
+complejos independientes de media \  $m$, admitiendo una covarianza \ $\Sigma$ \
+una  pseudo-covarianza \  $\check{\Sigma}$, y  de misma  ley  (no necesariamente
+gausiana),  tiende a  ser gausiana  compleja  de media  \ $m$,  de covarianza  \
+$\frac{1}{n} \Sigma$, y de pseudo-covarianza \ $\frac{1}{n} \check{\Sigma}$.
+
 No   lo   presentamos,  pero   se   transpone   sencillamente   el  teorema   de
 Lindenberg-Feller~\ref{Teo:MP:LindenbergFeller} al caso complejo.
 

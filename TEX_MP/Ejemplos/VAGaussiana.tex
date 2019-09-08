@@ -74,7 +74,7 @@ Promedio & $ m_X = m$\\[2mm]
 Covarianza & $\Sigma_X = \Sigma$\\[2mm]
 \hline
 %
-\modif{Sesgo} (caso escalar) & $\gamma_X = 0$\\[2mm]
+\modif{Asimetr\'ia} (caso escalar) & $\gamma_X = 0$\\[2mm]
 \hline
 %
 Curtosis por exceso (caso escalar) & $\widebar{\kappa}_X = 0$\\[2mm]
@@ -141,6 +141,23 @@ La gaussiana tiene un par de propiedades particulares:
   Este  resultato se proba  usando funci\'on  caracter\'istica de  la gaussiana,
   conjuntamente al teorema~\ref{Teo:MP:PropiedadesFuncionCaracteristica}.
 \end{proof}
+%
+\begin{corolario}[Media empirica]\label{Cor:MP:MediaEmpiricaGauss}
+%
+  Sean \ $X_i \, \sim \, \N(m,\Sigma), \: i = 1, \ldots , n$ \ independientes. Entonces,
+  %
+  \[
+  \overline{X} =  \frac{1}{n} \sum_{i=1}^n  X_i \,  \sim \, \N\left(  m \,  , \,
+    \frac{1}{n} \Sigma \right)
+  \]
+   %
+  $\overline{X}$  es llamada {\em  media empirica}~\footnote{Es  la estimaci\'on
+    \'optima de  la media  $m$ a  partir de los  $X_i$ en  el sentido  del error
+    cuadratico  promedio   m\'inimo,  o  en   el  sentido  de   la  verosimlitud
+    m\'axima~\cite{Kay93, Rob07}.}, y es un estimador ``natural'' de la media de
+  un vector aleatorio a partir de copias independientes de misma ley.
+  %
+\end{corolario}
 %
 \begin{teorema}[Independencia]
 \label{Teo:MP:IndependenciaGaussiana}
@@ -223,6 +240,11 @@ siguiente~\cite{Spi76, BroDav87, LehCas98, AshDol99, JacPro03, AthLah06, Bil12}:
   caracter\'istica  implica  la  convergencia en  distribuci\'on~\cite{AshDol99,
     Bil12, AthLah06}.
 \end{proof}
+%
+En particular, la  media empirica hechas a partir  de vectores independientes de
+media  $m$,  admitiendo  una  covarianza  \  $\Sigma$  \  y  de  misma  ley  (no
+necesariamente gausiana), tiedne a ser gausiana  de media \ $m$ \ y covarianza \
+$\frac{1}{n} \Sigma$.
 
 Existen  varias   variantes  de  este   teorema  que  enunciamos,  sin   dar  la
 prueba.  Dejamos el  lector a  libros m\'as  especializados como~\cite{AshDol99,
@@ -254,7 +276,7 @@ prueba.  Dejamos el  lector a  libros m\'as  especializados como~\cite{AshDol99,
 %
 En  numerosos libros,  este teorema  es  dado en  el caso  escalar. Se  extiende
 sencillamente al caso multivariado gracia a lo que es conocido como {\it teorema
-  de Cram\'er-Wold}, diciendo  que una secuencia de vecotores  aleatorios \ $Y_n
+  de Cram\'er-Wold},  diciendo que una  secuencia de vectores aleatorios  \ $Y_n
 \limitd{}  Y$ \  si y  solamente para  cualquier \  $u \in  \Rset^d$ \  $u^t Y_n
 \limitd{} u^t Y$~\cite{AshDol99, AthLah06, Bil12}.
 

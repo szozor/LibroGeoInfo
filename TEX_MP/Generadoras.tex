@@ -745,6 +745,31 @@ y~\ref{Teo:MP:SumaAleatoriaGeneradoraMomentos}:
   \]
 \end{teorema}
 
+Gracia a la  funci\'on caractr\'istica, se muestra tambi\'en  que para un vector
+aleatorio $d$-dimensional \ $X$, conocer  la distribuci\'on de cualquier $a^t X$
+para $a  \in \Rset^d$  permite conocer la  distribuci\'on de  \ $X$~\cite{Mui82,
+  Sas13}:
+%
+\begin{teorema}
+  Sea \ $X$ \ vector aleatorio $d$-dimensional. La distribuci\'on \ $p_X$ \ de \
+  $X$  \  es completamente  determinada  por  el  conjunto de  distribuciones  \
+  $\left\{ p_{a^t X},  \: \forall \: a \in  \Rset^d, a \ne 0 \right\}$  \ de las
+  variables \ $a^t X$.
+\end{teorema}
+%
+\begin{proof}
+  Por definici\'on  de la funci\'on caracter\'istica, $\forall \: \omega \in \Rset$
+  %
+  \begin{eqnarray*}
+  \Phi_{a^t X}(\omega) & = & \Esp\left[ e^{\imath \, \omega a^t X} \right]\\[2mm]
+  %
+  & = & \Phi_X(\omega a)
+  \end{eqnarray*}
+  %
+  Se concluye  notando que \ $\left\{  a \omega \tq a  \in \Rset^d, a  \ne 0, \:
+    \omega \in \Rset \right\} = \Rset^d$.
+\end{proof}
+
 Un otro resultado  interesante se v\'incula a la noci\'on de  mezcla de escala y
 toma la forma siguiente:
 %

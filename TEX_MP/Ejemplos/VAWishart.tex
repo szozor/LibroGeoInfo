@@ -7,9 +7,9 @@ bajo la  precediente.  Sin embargo, tal  distribuci\'on apareciendo naturalmente
 en un contexto de estimaci\'on de  matriz de covarianza (ver m\'as adelante), es
 m\'as natural verla matriz-variate.  Tal distrubuci\'on fue introducida en $d=2$
 dimensiones por R. Fisher en 1915~\cite{Fis15}, y el caso general es debido a J.
-Wishart~\cite{Wis28,   Mui82,  GupNag99,   And03,  Seb04}.    Aparece  tambi\'en
-naturalmente en  problema de inferencia  Bayesiana como distribuci\'on  a priori
-conjugado~\footref{Foot:MP:BayesPrior}   de   la   matriz   de   precisi\'on   \
+Wishart~\cite{Wis28,   Mui82,  BilBre99,   GupNag99,  And03,   Seb04}.   Aparece
+tambi\'en naturalmente en problema de inferencia Bayesiana como distribuci\'on a
+priori  conjugado~\footref{Foot:MP:BayesPrior}  de la  matriz  de precisi\'on  \
 $\Sigma^{-1}$   \   (inversa   de   la   covarianza)   de   la   ley   gaussiana
 multivariada~\cite[Ec.~(4.4.5)]{Rob07}.
 
@@ -38,7 +38,7 @@ libertad)\\[2mm]
 %
 Densidad de probabilidad~\footnote{La densidad  de probabilidad corresponde a la
   densidad conjunta  de los \ $\frac{d  (d+1)}{2}$ \ elementos \  $X_{i,j}, \: 1
-  \le i  \le j \le  d$~\cite{Wis28, PedRic91, SulTra96, Mui82,  GupNag99, And03,
+  \le i  \le j \le  d$~\cite{Wis28, PedRic91, SulTra96, Mui82, BilBre99,  GupNag99, And03,
     Seb04}.\label{Foot:MP:WishartDensidad}}    &    $\displaystyle   p_X(x)    =
 \frac{|x|^{\frac{\nu-d-1}{2}}      \,      e^{-\frac12     \Tr\left(      V^{-1}
       x\right)}}{2^{\frac{d \nu}{2}} \, |V|^{\frac{\nu}{2}} \, \Gamma_d\left(
@@ -76,7 +76,7 @@ propiedades como las siguientes.
 \label{Lem:MP:StabilidadWishartLineal}
 %
   Sea $X \,  \sim \, \W(V,\nu)$ \ y \  $A \in \Rset^{d \times d'}$  \ con \ $d'
-  \le d$ \ y de rango lleno. Entonces
+  \le d$, \ de rango lleno. Entonces
   \[
   A^t X A \, \sim \, \W\left( A^t V A , \nu \right)
   \]
@@ -130,14 +130,27 @@ distribuci\'on como gamma matriz-variada.
 \end{proof}
 
 La distribuci\'on  de Wishart aparece naturalmente en  problemas de estimaci\'on
-de matriz de covarianza en el contexto gausiano:
+de matriz de covarianza en el contexto gausiano~\cite{Mui82, BilBre99, GupNad99,
+  And03, Seb04, KotNad04}:
 %
-\begin{lema}[V\'inculo con vectores gausianos~\cite{Mui82, GupNad99, And03, Seb04}]
+\begin{lema}[V\'inculo con vectores gausianos]\label{Lem:MP:WishartGausiana}
+%
   Sean \ $X_i \, \sim \, \N(0,V), \: i = 1, \ldots , n > d-1$ \ independientes y
   la  matriz  \  $S  =  \sum_{i=1}^n   X_i  X_i^t$  \  llamada  {\em  matriz  de
     dispersi\'on} (scatter matrix en ingl\'es). Entonces, \ $S \in P_d^+(\Rset)$
   (c.   s.)   \  ($S$ es  sim\'etrica  definida  positiva  casi siempre,  o  con
-  probabilidad uno) y \ $S \,\sim \, \W(V,n)$.
+  probabilidad uno) y \
+  %
+  \[
+  S = \sum_{i=1}^n X_i X_i^t \,\sim \, \W(V,n).
+  \]
+  %
+  Eso de re-escribe de manera compacta bajo la forma
+  %
+  \[
+  X X^t  \,\sim \, \W(V,n)  \qquad \mbox{con} \qquad  X = \begin{bmatrix}  X_1 &
+    \cdots & X_n \end{bmatrix}
+  \]
 \end{lema}
 %
 Este resultado  permite tambi\'en probar  el lema~\ref{Lem:MP:StabilidadWishart}
@@ -154,19 +167,128 @@ re-obtener las  expreciones del promedio y de  las covarianzas~\footnote{Para la
 el  lema conduce  a  lo que  es  conocido como  Wishart no  central~\cite{And03,
   Seb04}.
 
-Las distrubuciones de Wishart tienen  varias propiedades m\'as que se encuentren
-por   ejemplo  en  los   libros  especialisados~\cite{Mui82,   GupNad99,  And03,
-  Seb04}. Entre estas, terminaremos esta secci\'on con la factorizaci\'on de una
-matriz de distribuci\'on  de Wishart de la manera siguiente:  sea \ $X$ definido
-sobre  $P_d^+(\Rset)$;  entonces, \  $\forall  \:  \omega,  \quad X(\omega)  \in
-P_d^+(\Rset)$ \  puede escribirse  por factorizaci\'on de  Cholesky, es  decir \
+Este  lema  se  extiende  a  trav\'es  de  lo  que  aparece  como  combinaciones
+ortonormales~~\cite{Mui82, GupNad99, BilBre99, And03, Seb04, KotNad04}:
+%
+\begin{lema}[V\'inculo con vectores gausianos y matriz idempotenta]\label{Lem:MP:WishartGausianaIdempotenta}
+%
+  Sean \ $X_i \, \sim \, \N(0,V), \: i = 1, \ldots , n > d-1$ \ independientes y
+  denotamos \ $X = \begin{bmatrix} X_1 & \cdots & X_n \end{bmatrix}$ \ matriz de
+  \ $\M_{d,n}(\Rset)$. Sea  \ $A \in S_n(\Rset)$ \  idempotenta, es decir \
+  $A^2 = A$ \ de rango $q > d-1$. Entonces
+  %
+  \[
+  X A X^t \,\sim \, \W(V,q)
+  \]
+\end{lema}
+%
+\begin{proof}
+  $A$ \  siendo idempotenta, existe una  matriz \ $B \in  \M_{n,q}(\Rset)$ \ tal
+  que~\footnote{$A$ siendo idempotenta, si $x$  es un autovector con autovalor \
+    $\lambda$ \ tenemos  \ $\lambda x = A x  = A^2 x = \lambda^2  x$, es decir \
+    $\lambda (\lambda-1) = 0$: las autovalores  son $0$ o $1$.  Del rango $q$, y
+    $A \in S_n(\Rset)$  se diagonaliza bajo la forma \ $A  = \begin{bmatrix} B &
+      \widetilde{B}   \end{bmatrix}    \begin{bmatrix}   I   &   0    \\   0   &
+      0 \end{bmatrix} \begin{bmatrix} B^t\\ \widetilde{B}^t \end{bmatrix}$ \ con
+    $B    \in     \M_{n,q}(\Rset)$    \    y    \     $\begin{bmatrix}    B    &
+      \widetilde{B}             \end{bmatrix}$            de            columnas
+    ortonormales~\cite[Teo.~21.5.7]{Har08} o~\cite{HorJoh13}.}  \  $A = B B^t$ \
+  y \ $B^t B = I$~\cite{Har08}. Entonces,
+  %
+  \[
+  X A  X^t =  Y Y^t \qquad  \mbox{con} \qquad Y  = X  B = \begin{bmatrix}  Y_1 &
+    \cdots & Y_q \end{bmatrix}
+  \]
+  %
+  Ahora,    del   teorema~\ref{Teo:MP:StabilidadGaussiana}    los    $Y_i$   son
+  gausianos de media nula. Adem\'as
+  %
+  \begin{eqnarray*}
+  \Esp\left[ Y_i Y_j^t \right] & = & \sum_{k,l=1}^n B_{ki} B_{lj} \Esp\left[ X_k
+  X_l^t \right]\\[2mm]
+  %
+  & = & \left( \sum_{k=1}^n B_{ki} B_{kj} \right) V
+  \end{eqnarray*}
+  %
+  de la independencia de los $X_k$ que son de covarianza $V$. De $B^t B = I$ \ie
+  \ $\sum_{k=1}^n  B_{ki} B_{kj} = \un_{\{i\}}(j)$  \ tenemos que los  \ $Y_i$ \
+  son  independientes  (gausianos  de  covarianza  nula  para  $i  \ne  j$),  de
+  covarianza $V$.  La prueba se cierra del lema~\ref{Lem:MP:WishartGausiana}.
+\end{proof}
+%
+En particular,  la distribuci\'on, de Wishart  aparece en la  estimaci\'on de la
+matriz de covarianza de un vector  gausiano a partir de copias independientes de
+vectores gausianos independientes de mismos parametros~\cite{KotNad04, BilBre99,
+  And03, Seb04, GupNad04}:
+% Resp. ?? -- cap. 7 prop 7.1 -- corr 7.2.2, 7.2.3 -- ?? -- Cap. 9
+%
+\begin{corolario}\label{Cor:MP:WishartEstimacion}
+  Sean  \  $X_i \,  \sim  \,  \N(m,\Sigma), \:  i  =  1, \ldots  ,  n  > d-1$  \
+  independientes,       y      sea       la       media      empirica       (ver
+  corolario~\ref{Cor:MP:MediaEmpiricaGauss})
+  %
+  \[
+  \overline{X} = \frac{1}{n} \sum_{i=1}^n X_i
+  \]
+  %
+  Sean las  matrices aleatorias~\footnote{La primera matriz  aparece por ejemplo
+    cuando querememos estimar  $\Sigma$, conociendo $m$, y la  secinda cuando no
+    se conoce $m$. En cada caso, la renormalizaci\'on asegurida que la media del
+    estimador es  precisamente $\Sigma$,  es decir que  los estimadores  son sin
+    sesgo.}
+  %
+  \[
+  \overline{\Sigma}_m =  \frac{1}{n} \sum_{i=1}^n (X_i  - m) (X_i -  m)^t \qquad
+  \mbox{y} \qquad  \overline{\Sigma} =  \frac{1}{n-1} \sum_{i=1}^n \left(  X_i -
+    \overline{X} \right) \left( X_i - \overline{X} \right)^t
+  \]
+  %
+  Entonces
+  %
+  \[
+  \overline{\Sigma}_m  \, \sim  \,  \W\left( \frac{1}{n}  \,  \Sigma \,  , \,  n
+  \right)  \qquad   \mbox{y}  \qquad  \overline{\Sigma}  \,   \sim  \,  \W\left(
+    \frac{1}{n-1} \, \Sigma \, , \, n-1 \right)
+  \]
+  %
+\end{corolario}
+%
+\begin{proof}
+  Denotamos  \  $\widetilde{X}_i   =  X_i  -  m  \,   \sim  \,  \N(0,\Sigma)$  \
+  independientes, \ $\widetilde{X} =  \begin{bmatrix} \widetilde{X}_1 & \cdots &
+    \widetilde{X}_n \end{bmatrix}$  \ matriz de  \ $\M_{d,n}(\Rset)$ \ y  \ $\un
+  \in  \Rset^n$ \  vector de  componentes  iguales a  $1$.  Entonces,  denotando
+  $\overline{\widetilde{X}}   =  \frac{1}{n}   \sum_{i=1}^n   \widetilde{X}_i  =
+  \frac{1}{n}  \sum_{i=1}^n (X_i  - m)  = \frac{1}{n}  \sum_{i=1}^n X_i  -  m$ \
+  tenemos \ $X_i -  \overline{X} = \widetilde{X}_i - \overline{\widetilde{X}}$ y
+  se muestra sencillamente que
+  %
+  \[
+  \overline{\Sigma}_m   =  \frac{1}{n}   \widetilde{X}   \widetilde{X}^t  \qquad
+  \mbox{y}  \qquad \overline{\Sigma}  = \frac{1}{n-1}  \widetilde{X} \left(  I -
+    \frac{\un \un^t}{n} \right) \widetilde{X}^t
+  \]
+  %
+  Adem\'as,  se  proba  sencillamente  que   \  $I  -  \frac{\un  \un^t}{n}  \in
+  S_n(\Rset)$ es idempotenta de rango $n-1$. El resultado es consecuencia de los
+  lemas~\ref{Lem:MP:StabilidadWishartLineal}   (por    la   normalizaci\'on)   y
+  de~\ref{Lem:MP:WishartGausiana}       y~\ref{Lem:MP:WishartGausianaIdempotenta}
+  respectivamente.
+\end{proof}
+
+Las distribuciones de Wishart tienen  varias propiedades m\'as que se encuentren
+por ejemplo  en los  libros especialisados~\cite{Mui82, GupNad99,  And03, Seb04,
+  NadKot04}. Entre estas, terminaremos  esta secci\'on con la factorizaci\'on de
+una  matriz de  distribuci\'on de  Wishart  de la  manera siguiente:  sea \  $X$
+definido sobre  $P_d^+(\Rset)$; entonces, \ $\forall \:  \omega, \quad X(\omega)
+\in P_d^+(\Rset)$ \ puede escribirse por factorizaci\'on de Cholesky, es decir \
 $X(\omega)  = T(\omega)  T(\omega)^t$  \ con  \  $T$ \  triangular inferior  con
 elementos     positivos      sobre     su     diagonal      (ver     nota     de
 pie~\footref{Foot:MP:WishartXtilde}).  En  el contexto de  Wishart (de parametro
 $(I,\nu)$),  aparece  que  se   puede  caracterizar  la  distribuci\'on  de  los
 coefficientes.     Eso    es   conocido    como    {\em   descomposici\'on    de
-  Bartlett}~\cite{Bar34,  Mui82, GupNag99,  And03}  y se  formaliza  en el  caso
-Wishart general de la manera siguiente:
+  Bartlett}~\cite{Bar34,  Mui82,  BilBre99,  GupNag99,  And03,  NadKot04}  y  se
+formaliza en el caso Wishart general de la manera siguiente:
 %
 \begin{teorema}[Descomposici\'on de Bartlett]\label{Teo:MP:Bartlett}
 %
@@ -210,6 +332,8 @@ Wishart general de la manera siguiente:
   \[
   \left| \Jac_{g^{-1}}(u) \right| = 2^d \prod_{i=1}^d u_{ii}^{d-i+1}
   \]
+  %
+  (ver tambi\'en la prueba del teorema 7.2.1 de~\cite{And03} o~\cite[Prop.~2.22]{BilBre99}).
   
   Se nota ahora que \ siendo \ $u$ \ triangular inferior,
   %
