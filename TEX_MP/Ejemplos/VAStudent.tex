@@ -87,7 +87,7 @@ y    (b)   y    una   densidad    en   un    contexto    bi-dimensional   figura
 Fig.~\ref{Fig:MP:Student}(c).
 %
 \begin{figure}[h!]
-%\begin{center} \input{TIKZ_MP/Student} \end{center}
+\begin{center} \input{TIKZ_MP/Student} \end{center}
 % 
 \leyenda{Ilustraci\'on  de  una  densidad  de probabilidad  Student-$t$  escalar
   estandar (a),  y la funci\'on  de repartici\'on asociada  (b) con \ $\nu  = 1$
@@ -205,7 +205,8 @@ b$.
 \end{proof}
 
 Las   variables   Student-t   tienen   varias   representaciones   estocasticas,
-relacionadas a la gausiana~\cite{FanKot90, And03, KotNad04}:
+relacionadas a la gausiana~\cite{FanKot90, And03, KotNad04, AndKau65}:
+% ej. KotNad p. 7 para la secunda
 %
 \begin{lema}[Relaci\'on con la distribuci\'on Gamma]\label{Lem:MP:StudentGamma}
 %
@@ -251,18 +252,20 @@ relacionadas a la gausiana~\cite{FanKot90, And03, KotNad04}:
 %
 \begin{lema}[Relaci\'on con la distribuci\'on de Wishart]\label{Lem:MP:StudentWishart}
 %
-  Sea \  $W \, \sim \,  \W(I,\nu+d-1)$ \ $d \times  d$ Wishart, \ $Y  \, \sim \,
-  \N(0,\nu I)$  \ con $\nu >  0$ \ e \  $Y$ \ independiente de  \ $W$. Entonces,
-  para $\Sigma \in P_d^+(\Rset)$ y $m \in \Rset^d$,
+  Sea \ $W \, \sim \, \W( \Sigma^{-1} \, , \, \nu+d-1)$ \ $d \times d$ \ Wishart
+  con \ $\Sigma \in P_d^+(\Rset)$, \ $Y \,  \sim \, \N(0,\nu I)$ \ con $\nu > 0$
+  \ e \ $Y$ \ independiente de \  $W$. Entonces, para \ 
+  %$R \in P_d^+(\Rset)$ \ y
+  \ $m \in \Rset^d$,
   %
   \[
-  \Sigma^{\frac12} W^{-\frac12} Y + m  \, \sim \, t_\nu(m,\Sigma)
+  W^{-\frac12} Y + m \, \sim \, t_\nu\left( m , \Sigma \right)
   \]
   %
 \end{lema}
 \begin{proof}
   Sea \ $X = W^{-\frac12} Y$. De la nota siguiendo la tabla de caracter\'isticas
-  es  necesario  y suficiente  probar  que $X  \sim  t_\nu(0,I)$.  Ahora, de  la
+  es  necesario  y suficiente  probar  que $X  \sim  t_\nu(0,\Sigma)$.  Ahora, de  la
   independencia tenemos
   %
   \[
@@ -279,42 +282,48 @@ relacionadas a la gausiana~\cite{FanKot90, And03, KotNad04}:
   %
   \begin{eqnarray*}
   p_X(x) & = & \int_D \frac{|w|^{\frac{\nu-1}{2}} e^{- \frac{x^t w x}{2 \nu} -
-  \frac12 \Tr(w)}}{2^{\frac{d (\nu+d)}{2}} (\pi \nu)^{\frac{d}{2}} \Gamma_d \left(
+  \frac12 \Tr\left( \Sigma w \right)}}{2^{\frac{d (\nu+d)}{2}} (\pi
+  \nu)^{\frac{d}{2}} \left| \Sigma^{-1} \right|^{\frac{\nu+d-1}{2}} \Gamma_d \left(
   \frac{\nu+d-1}{2} \right)} \, dw\\[2mm]
   %
   & = & \frac{\Gamma\left( \frac{\nu+d}{2} \right)}{(\pi \nu)^{\frac{d}{2}}
-  \Gamma\left( \frac{\nu}{2} \right)} \left| I + \frac{x x^t}{\nu}
-  \right|^{-\frac{\nu+d}{2}} \: \int_D \frac{|w|^{\frac{\nu+d-d-1}{2}} e^{-
-  \frac12 \Tr\left( \left[ I + \frac{x x^t}{\nu} \right] w \right)}}{2^{\frac{d
-  (\nu+d)}{2}} \left| \left( I + \frac{x x^t}{\nu} \right)^{-1}
+  \Gamma\left( \frac{\nu}{2} \right)} \left| \Sigma + \frac{x x^t}{\nu}
+  \right|^{-\frac{\nu+d}{2}} \left| \Sigma
+  \right|^{\frac{\nu+d-1}{2}} \: \int_D \frac{|w|^{\frac{\nu+d-d-1}{2}} e^{-
+  \frac12 \Tr\left( \left[ \Sigma + \frac{x x^t}{\nu} \right] w \right)}}{2^{\frac{d
+  (\nu+d)}{2}} \left| \left( \Sigma + \frac{x x^t}{\nu} \right)^{-1}
   \right|^{\frac{\nu+d}{2}} \Gamma_d \left( \frac{\nu+d}{2} \right)} \, dw\\[2mm]
   %
   & = & \frac{\Gamma\left( \frac{\nu+d}{2} \right)}{(\pi \nu)^{\frac{d}{2}}
-  \Gamma\left( \frac{\nu}{2} \right)} \: \left( 1 + \frac{x^t x}{\nu}
-  \right)^{-\frac{\nu+d}{2}} \, \int_D \frac{|w|^{\frac{\nu+d-d-1}{2}} e^{-
-  \frac12 \Tr\left( \left[ I + \frac{x x^t}{\nu} \right] w \right)}}{2^{\frac{d
-  (\nu+d)}{2}} \left| \left( I + \frac{x x^t}{\nu} \right)^{-1}
-  \right|^{\frac{\nu+d}{2}} \Gamma_d \left( \frac{\nu+d}{2} \right)} \, dw
+  \Gamma\left( \frac{\nu}{2} \right) \left| \Sigma \right|^{\frac12}} \: \left( 1
+  + \frac{x^t \Sigma^{-1} x}{\nu} \right)^{-\frac{\nu+d}{2}} \, \int_D
+  \frac{|w|^{\frac{\nu+d-d-1}{2}} e^{- \frac12 \Tr\left( \left[ I + \frac{x
+  x^t}{\nu} \right] w \right)}}{2^{\frac{d (\nu+d)}{2}} \left| \left( I + \frac{x
+  x^t}{\nu} \right)^{-1} \right|^{\frac{\nu+d}{2}} \Gamma_d \left( \frac{\nu+d}{2}
+  \right)} \, dw
   \end{eqnarray*}
-%
+  %
   Para  \ $a, b  \in \Rset^d,  \: M  \in \M_{d,d}(\Rset)$,  en la  secunda linea
   usamos la  identidad \  $a^t M b  = \Tr(b a^t  M)$ \  y \ $\Gamma_d\left(  x -
     \frac12 \right) = \frac{\Gamma\left(  x - \frac{d}{2} \right)}{\Gamma(x)} \,
-  \Gamma_d(x)$ \ (ver  notaciones) y en la tercera linea  usamos la identidad de
-  Sylvester~\cite{Syl51} o~\cite[\S~18.1]{Har08} \ $\left|  I + a b^t\right| = 1
-  + b^t a$. Se concluye que \ $X \sim t_\nu(0,I)$ \ reconociendo en el factor de
-  la integral  como la  distribuci\'on \  $t_\nu(0,I)$ \ y  en el  integrande la
-  distribuci\'on de Wishart \ $\W(I,\nu+d)$ \ que suma entonces a la unidad.
+  \Gamma_d(x)$ \ (ver notaciones) y en  la tercera linea usamos $\left| \Sigma +
+    \frac{x   x^t}{\nu}   \right|  =   \left|   \Sigma   \right|   \left|  I   +
+    \frac{\Sigma^{-1}   x    x^t}{\nu}   \right|$   \   y    la   identidad   de
+  Sylvester~\cite{Syl51} o~\cite[\S~18.1]{Har08} \ $\left| I + a b^t \right| = 1
+  + b^t  a$. Se  concluye que \  $X \sim  t_\nu(0,\Sigma)$ \ reconociendo  en el
+  factor de  la integral como  la distribuci\'on \  $t_\nu(0,\Sigma)$ \ y  en el
+  integrande la  distribuci\'on de Wishart \  $\W( \left( I  + \frac{x x^t}{\nu}
+  \right),\nu+d)$ \ que suma entonces a la unidad.
   %  la  formula de  Sherman-Morrison-Woodbury  $\left(  I  + \frac{x  x^t}{\nu}
   % \right)^{-1} = I$~\cite{HorJoh13, Har08}
 \end{proof}
 
 Como lo hemos introducido, la  distribuci\'on de Student aparece naturalmente en
 el  marco  de la  estimaci\'on,  especialmente  a  trav\'es de  la  estimaci\'on
-empirica de la media y covarianza~\cite{Mui82, GupNad99, BilBre99, And03, Seb04}:
+empirica de la media y covarianza~\cite{Mui82, GupNag99, BilBre99, And03, Seb04}:
 % resp. p 80 teo 3.2.1 -- p. 92 teo 3.3.6 -- p. 87 prop. 7.1 -- p. 77 teo. 3.3.2 -- p. 63 teo. 3.1
 % Nota : ver corolarios 2 y 3, p. 25 de Seber
-% VER GupNad Th. 4.2.1
+% VER GupNag Th. 4.2.1
 %
 \begin{teorema}%[]
 %
@@ -337,12 +346,12 @@ empirica de la media y covarianza~\cite{Mui82, GupNad99, BilBre99, And03, Seb04}
   Entonces:
   %
   \begin{itemize}
-  \item  $\overline{X} - m \,  \sim \,  \N\left(  0 \,  , \,  \frac{1}{n} \,  \Sigma
-    \right)$ \ y  \ $\overline{\Sigma} \, \sim \,  \W( \Sigma \, , \, n-1  ) $ \
-    son independientes;
+  \item $\overline{X} -  m \, \sim \,  \N\left( 0 \, , \,  \frac{1}{n} \, \Sigma
+    \right)$ \ y  \ $\overline{\Sigma} \, \sim \, \W(  \frac{1}{n-1} \Sigma \, ,
+    \, n-1 ) $ \ son independientes;
   %
-  \item \SZ{$\overline{\Sigma}^{-\frac12} \, \left(  \overline{X} - m \right) \,
-      \sim \, t_{\nu}\left( \right)$}
+  \item $\sqrt{\frac{n (n-d)}{n-1}} \: \overline{\Sigma}^{\, -\frac12} \, \left(
+      \overline{X} - m \right) \, \sim \, t_{n-d}\left( 0 \, , \, I \right)$
   \end{itemize}
 \end{teorema}
 %
@@ -356,7 +365,7 @@ empirica de la media y covarianza~\cite{Mui82, GupNad99, BilBre99, And03, Seb04}
     \widetilde{X}_n \end{bmatrix}$. Obviamente
   %
   \[
-  \overline{X} - m = \widetilde{X} \un
+  \overline{\widetilde{X}} \equiv \overline{X} - m = \frac{1}{n} \, \widetilde{X} \un
   \]
   %
   con \ $\un \in  \Rset^n$ \ vector de componentes iguales a \  $1$ \ y vimos en
@@ -437,19 +446,37 @@ empirica de la media y covarianza~\cite{Mui82, GupNad99, BilBre99, And03, Seb04}
   item.  Pasando, la forma  de $p_{Y,\sqrt{n}  \overline{\widetilde{X}}}(y,x)$ \
   confirma  que  \ $\overline{X}-m$  \  es  gausiana  centrada de  covarianza  \
   $\frac{1}{n} \,  \Sigma$, y  que los \  $Y_i$ \ son  independientes gausianos,
-  dando la distribuci\'on  de Wishart del lema~\ref{Lem:MP:WishartGausiana} paea
+  dando la distribuci\'on  de Wishart del lema~\ref{Lem:MP:WishartGausiana} para
   la covarianza empirica.
 
-
+  A continuaci\'on,
+  %
+  \[
+  \sqrt{\frac{n   (n-d)}{n-1}}   \,   \overline{\Sigma}^{\,   -\frac12}   \left(
+    \overline{X}-m \right)  = \frac{1}{\sqrt{n-1}} \:  \Sigma^{- \frac12} \left(
+    \Sigma^{-1}  \, \overline{\Sigma}  \, \Sigma^{-1}  \right)^{-\frac12} \left(
+    \sqrt{n (n-d)} \: \Sigma^{-\frac12} \left( \overline{X}-m \right) \right)
+  \]
+  %
+  Del           teorema~\ref{Teo:MP:StabilidadGaussiana}          y          del
+  lema~\ref{Lem:MP:StabilidadWishartLineal} tenemos
+  %
+  \[
+  \sqrt{n (n-d)}  \: \Sigma^{-\frac12} \left( \overline{X}-m \right)  \, \sim \,
+  \N(0 ,  (n-d) I)  \qquad \mbox{y} \qquad  \Sigma^{-1} \,  \overline{\Sigma} \,
+  \Sigma^{-1}  \, \sim  \, \W\left(  \left( (n-1)  \Sigma \right)^{-1}  \,  , \,
+    n-d+d-1 \right)
+  \]
+  %
+  Se   cierra   la  prueba   usando   los  lemas~\ref{Lem:MP:StudentWishart}   \
+  y~\ref{Lem:MP:StabilidadLineal}.
 \end{proof}
 
-\SZ{
-%corolario suma dis independientes... via condicionalmente a...
+%\SZ{
+% VER LO QUE PASA SI overline{Sigma} si X_i y X_i-overline{X} para estandardizar los datos.
 
-Sampling distribution, Gosset, Fisher 25.
-
-Applications
-}
+%Sampling distribution, Gosset, Fisher 25. Applications
+%}
 
 M\'as propiedades de esta distribuci\'on se encuentran en libros especializados,
 por ejemplo~\cite{KotNad04} completamente dedicado a esta distribuci\'on.
@@ -463,5 +490,6 @@ P_{d'}^+(\Rset)$   y  la  densidad   est  dada   por  $\displaystyle   p_X(x)  =
 \frac{\Gamma_d\left(      \frac{\nu+d+d'-1}{2}\right)}{\pi^{\frac{\nu     d}{2}}
   \Gamma_d\left(       \frac{\nu+d-1}{2}\right)      \,       \left|      \Sigma
   \right|^{\frac{d'}{2}}  \left|  \Omega \right|^{\frac{d}{2}}}  \:  \left| I  +
-  \Sigma^{-1}  (x-M) \Omega^{-1}  (x-M)^t \right|^{-  \frac{\nu+d+d'-1}{2}}$. Se
-refiera a~\cite[Cap.~4]{GupNag99} para tener m\'as informaciones.
+  \Sigma^{-1}     (x-M)     \,     \Omega^{-1}     \,     (x-M)^t     \right|^{-
+  \frac{\nu+d+d'-1}{2}}$. Se refiera  a~\cite[Cap.~4]{GupNag99} para tener m\'as
+detalles.
