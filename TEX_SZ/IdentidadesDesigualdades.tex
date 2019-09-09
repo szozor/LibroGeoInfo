@@ -508,9 +508,6 @@ informaci\'on intimamente  relacionada al error cuadr\'atico  en la estimaci\'on
 de   un  par\'ametro   a  partir   de  una   variable  parametrizado   por  este
 par\'ametro~\cite{Fis22, Fis25:07, Kay93, Bos07, CovTho06, Fri04}.
 
-%{\it Antes de  ir m\'as adelante, mencionamos que en  esta secci\'on, se usar\'a
-%  el logaritmo natural.}
-%
 \begin{definicion}[Matriz informaci\'on de Fisher par\'ametrica]
 \label{Def:SZ:MatrizFisherParametrica}
 %
@@ -535,8 +532,7 @@ par\'ametro~\cite{Fis22, Fis25:07, Kay93, Bos07, CovTho06, Fri04}.
   condiciones de regularidad, se puede mostrar~\footnote{Es una consecuencia del
     teorema de la divergencia, suponiendo que los bordes del soporte \ $\X$ \ no
     dependen  de \  $\theta$ \  y que  la funci\'on  score se  cancela  en estos
-    bordes.}  que \ $J_\theta(X) = - \Esp[\Hess_\theta \log p_X(X;\theta)]$
-  % \ vale tambi\'en menos el promedio de la
+    bordes.}  que  \ $J_\theta(X) =  - \Esp[\Hess_\theta \log  p_X(X;\theta)]$ \
   con $\Hess_\theta$ la Hessiana~\footnote{Recordamos de que, para \ $f: \Rset^m
     \mapsto  \Rset,  \quad \Hess_\theta  f$  \ es  la  matriz  de componentes  \
     $\frac{\partial^2 f}{\partial \theta_i \partial \theta_j}$.}  $\Hess_\theta$
@@ -587,10 +583,7 @@ Es interesante notar que:
 %
 \item Es sencillo ver  que, por definici\'on \ $J_\theta(X)$ \ y  \ $J(X)$ \ son
   sim\'etricas y que \ $J_\theta(X) > 0$  \ y \ $J(X) > 0$ \ (matrices definidas
-  positivas).
-  %  \ donde  estas  desiguladades  significan que  las  matrices son  definidas
-  % positivas (los autovalores son positivos).
-  Adem\'as,
+  positivas).  Adem\'as,
   %
   \[
   \forall \ A \ \mbox{matrix no singular}, \quad J(AX) = A^{-t} J(X) A^{-1},
@@ -674,7 +667,6 @@ covarianza.
   \left( I + \Jac_b(\theta) \right)^t \ge 0.
   \]
   %
-  %donde $A \ge 0$ significa que  $A$ es definida no negativa.  
   En particular, en el caso \ $\theta$ \ escalar,
   %
   \[
@@ -734,11 +726,7 @@ informaci\'on de Fisher, \ie \  $J_\theta(X)$ \ caracteriza la informaci\'on que
   $\Esp\left[   \left(    \widehat{\theta}(X)   -   \theta_0    \right)   \left(
       \widehat{\theta}(X)      -      \theta_0      \right)^t     \right]      =
   \Sigma_{\widehat{\theta}}$, la  desigualdad de Cauchy-Bunyakovsky-Schwarz (ver
-  corolario~\ref{Cor:MP:CBS}, pagina~\pageref{Cor:MP:CBS})
-  % ~\footnote{De hecho, fue probada por Cauchy para sumas en 1821~\cite{Cau21},
-  %   para integrales  por Bunyakovsky  en 1859~\cite{Bou59} y  m\'as elegamente
-  %   por Schwarz en 1888~\cite{Sch88}. Ver tambi\'en~\cite{Ste04}.}
-  conduce a
+  corolario~\ref{Cor:MP:CBS}, pagina~\pageref{Cor:MP:CBS}) conduce a
   %
   \[
   \left( u^t \left( I + \Jac_b(\theta)  \right)^t v \right)^2 \: = \: \Esp\left[
@@ -785,9 +773,6 @@ determinente-traza''  \ $|A|^{\frac1d} \le  \frac1d \Tr(A)$,  con igualdad  si y
 solamente si  \ $A = I$~\cite[cap.~11, sec.~4]{MagNeu99},  dando otras versiones
 escalares de  la desigualdad  de Cram\'er-Rao, por  ejemplo, de la  versi\'on no
 param\'etrica,
-% \Tr\left(\Sigma_{\widehat{\theta}}  \right)  \,  \ge  \, \frac{d^2  \,  \left(
-%     \Tr\left(I   +  \Jac_b(\theta)  \right)   \right)^2}{\Trleft|  J_\theta(X)
-% \right|} \qquad \mbox{y} \qquad
 %
 \[
 \left| \Sigma_X  \right|^{\frac1d} \,  \ge \, \frac{d}{\Tr\left(  J(X) \right)},
@@ -1444,6 +1429,7 @@ entr\'opica,  teorema~\ref{Teo:SZ:EPI}, dada en  el caso  escalar en~\cite{Joh04
   \]
   %
   es decir, tomando el promedio en $W$,
+  %
   \[
   J(X+Y) \: \le  \: a^2 J(X) + (1-a)^2 J(Y) +  a (1-a) \left( \Esp\left[
       S_X(X) S_Y(Y)^t \right] + \Esp\left[ S_Y(Y) S_X(X)^t \right] \right).

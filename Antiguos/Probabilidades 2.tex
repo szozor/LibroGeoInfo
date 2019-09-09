@@ -23,10 +23,36 @@ independientes  cierto   atributo  aparece  $k$   veces,  se  identifica   a  la
 probabilidad  asociada a  un  proceso o  ensayo  con la  frecuencia relativa  de
 ocurrencia  $\frac{k}{K}$ del  atributo~\cite[\&  Ref.]{Bra76, Hal90,  DavEdw01,
   ShaVov06}.
+% ~\footnote{A pesar de que las  nociones de azar (que proviene del \'arabe {\it
+%     zahr} que significa dado, flor)  o de aleatoriedad (del lat\'in {\it alea}
+%   que es suerte, dado) son muy antiguas~\cite{Ser00}, el matem\'atico italiano
+%   y jugador de dados y cartas Gerolamo Cardano es ``probablemente'' uno de los
+%   primeros  en tratar  matem\'aticamente  el concepto  de  probabilidad en  el
+%   siglo~{XVI},  en su  libro sobre  los juegos  de azar  escrito en  1564 pero
+%   publicado  en  1663~\cite{Car63} (ver~\cite{Bel05}  o~\cite[Cap.~4]{Hal90}).
+%   Entre  los numerosos  matem\'aticos  que desarrollaron  la  teor\'ia de  las
+%   probabilidades,  en  particular los  franceses  Pierre  de  Fermat y  Blaise
+%   Pascal~\cite[Cap.~5]{Hal90},  hay  que mencionar  tambi\'en  al suizo  Jacob
+%   Bernoulli   (miembro   de    una   dinast\'ia   de   matem\'aticos)~\cite[en
+%   lat\'in]{Ber1713}   o~\cite{Ber13:2}  y   al   franco-ingl\'es  Abraham   de
+%   Moivre~\cite{Moi56}.   El franc\'es  Pierre  Simon Laplace~\cite{Lap20}  fue
+%   quiz\'as uno de  los primeros en proveer un  aporte importante al desarrollo
+%   de la teor\'ia de las probabilidades en los siglos XVIII-XIX, a trav\'es del
+%   punto     de     vista     ``frecuentista''     y     combinatorial     (ver
+%   tambi\'en~\cite[Caps.~13, 15 \&~22]{Hal90}).}.  lim N->infty n/N indef.
 
-Los  axiomas  de  Kolmogorov  proveen  requisitos  suficientes  para  determinar
-completamente las propiedades  de la medida de probabilidad  $P(A)$ que se puede
-asociar a un evento $A$ entre un conjunto de resultados o eventos de un proceso.
+Los axiomas de Kolmogorov
+%~\footnote{Un paso importante es debido a Kolmogorov en
+%  1933  que  se apoy\'o  sobre  trabajos  de  Richard von  Mises~\cite{Mis32}  y
+%  tambi\'en sobre  la teor\'ia de  la medida y  de la integraci\'on,  debidas entre
+%  otros a \'Emile Borel y Henri
+%%Henri-Leon
+%  Lebesgue~\cite{Bor98,   Bor09,   Leb04,   Leb18,   Hal50},   para   formalizar
+%  anal\'iticamente  la  teoria   de  las  probabilidades~\cite{Kol56,  BarNov78,
+%    JacPro03}.}
+proveen requisitos suficientes para  determinar completamente las propiedades de
+la medida de probabilidad  $P(A)$ que se puede asociar a un  evento $A$ entre un
+conjunto de resultados o eventos de un proceso.
 
 Llamemos $\Omega$ al {\it espacio  muestral} o {\it espacio fundamental}, que es
 el  espacio  de {\it  muestras}  ({\it outcomes},  en  ingl\'es)  \ $\omega  \in
@@ -338,6 +364,25 @@ Algunas propiedades interesantes son las siguientes:
   P(B|A)  = \frac{P(B)}{P(A)}  P(A|B)$, de  donde \  $P(A|B)$ \  y \  $P(B|A)$ \
   coinciden s\'olo cuando \ $A$ \ y \ $B$ \ tienen la misma probabilidad;
 %
+%\item {\it  f\'ormula de probabilidad  total}: \ si  $\{ B_j \}$ es  un conjunto
+%  completo de eventos no nulos mutuamente excluyentes, entonces
+%  %
+%  \[
+%  P(A) = \sum_j P(A|B_j) P(B_j) 
+%  \]
+%  %
+%  \big(viene de \ $A = A \cap  \left( \bigcup_j B_j \right) = \bigcup_j \left( A
+%    \cap B_j \right)$ \ donde los \ $A \cap B_j$ \ son mutuamente excluyentes, y
+%  $P\left( A \cap B_j \right) = P(A|B_j) P(B_j)$\big) ;
+%
+%\item {\it  f\'ormula de Bayes}:  \ si  $\{ B_j \}$  es un conjunto  completo de
+%  eventos no nulos mutuamente excluyentes, entonces
+  %
+%  \[
+%  P(B_i|A) = \frac{P(A \cap B_i)}{P(A)} = \frac{P(A|B_i) P(B_i)}{\sum_j P(A|B_j)
+%    P(B_j)};
+%  \]
+  %
 \end{itemize}
 
 \modif{Las dos propiedades importantes son  la f\'ormula de probabilidad total y

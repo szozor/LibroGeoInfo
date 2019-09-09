@@ -35,17 +35,6 @@ adecuada).
   con \ $\mu$ \  medida adecuada (discreta en el caso discreto  o de Lebesgue en
   el caso diferencial).
 \end{definicion}
-%
-%Esta definici\'on se transpone naturalmente a la entrop\'ia diferencial:
-%%
-%\begin{definicion}[Entrop\'ia diferencial condicional]\label{Def:SZ:entropiadiferencialcondicional}
-%  Sean $X$ e  $Y$ dos variables aleatorias continuas,  la entrop\'ia condicional
-%  de $X$ sabiendo $Y$ es definida por
-%  %
-%  \[
-%  H(X|Y) = - \int_{\Rset^d} p_{X,Y}(x,y) \log p_{X|Y}(x,y) \, dx \, dy
-%  \]
-%\end{definicion}
 
 Si $X$  e $Y$ son indepedientes, $p_{X|Y=y}$  se reduce a $p_X$,  as\'i que vale
 cero la entrop\'ia condicional: obviamente,
@@ -59,16 +48,13 @@ cero la entrop\'ia condicional: obviamente,
   \]
 \end{propiedades}
 %
-Esta  propiedad
-%  vale  en ambos  casos,  discreto  como  continuo.  En  el  casodiscreto, 
-se interpreta como el hecho  de que $Y$ no lleva ninguna informaci\'on
-sobre $X$, y entonces ninguna medici\'on  de $Y$ va a cambiar la incerteza sobre
-$X$.
+Esta  propiedad  se  interpreta como  el  hecho  de  que  $Y$ no  lleva  ninguna
+informaci\'on sobre  $X$, y entonces ninguna  medici\'on de $Y$ va  a cambiar la
+incerteza sobre $X$.
 
 Siendo $H(X|Y=y)$  una entrop\'ia, va a  heredar de todas las  propiedades de la
 entrop\'ia  (o  entrop\'ia   diferencial).   Adem\'as,  de  $p_{X,Y}(\cdot,y)  =
 p_{X|Y=y} p_Y(y)$ se deduce la propiedad siguiente
-%  (v\'alida para  la  entrop\'ia  como  para su  extensi\'ondiferencial)
 %
 \begin{propiedades}
 \item\label{Prop:SZ:cadena}  {\it Regla de  cadena}
@@ -77,9 +63,7 @@ p_{X|Y=y} p_Y(y)$ se deduce la propiedad siguiente
   H(X,Y) =  H(X|Y) +  H(Y).
   \]
   %
-  Esta regla
-  % , v\'alida en ambos casos, discreto como continuo,
-  se generaliza sencillamente a
+  Esta regla se generaliza sencillamente a
   %
   \[
   H(X_1 , \ldots , X_n) = H(X_1) + \sum_{i=2}^n H(X_i|X_{i-1} , \ldots , X_1).
@@ -109,7 +93,6 @@ entre \ $X$ \ e \ $Y$:
   I(X;Y) = H(X|Y)-H(X) = H(Y|X)-H(Y) = H(X,Y) - H(X) - H(Y);
   \]
   %
-  %En el caso discreto s
   Se expresa
   %
   \[
@@ -119,12 +102,6 @@ entre \ $X$ \ e \ $Y$:
   %
   con \ $\mu$ \  medida adecuada (discreta en el caso discreto  o de Lebesgue en
   el caso diferencial).
-  %y su forma diferencial se escribe
-  %%
-  %\[
-  %I(X;Y)  = \int_{\Rset^d}  p_{X,Y}(x,y) \log  \left( \frac{p_{X,Y}(x,y)}{p_X(x)
-  %    p_Y(y)} \right) \, dx \, dy
-  %\]
 \end{definicion}
 
 Las  diferentes  cantidades  pueden  ser  vistas  a  trav\'es  de  una  visi\'on
@@ -161,12 +138,9 @@ Kullback-Leibler~\cite{KulLei51, Kul68, CovTho06, Rio07}:
 \begin{definicion}[Entrop\'ia relativa]
 \label{Def:SZ:entropiarelativa}
 %
-  La entrop\'ia relativa,  o divergencia de una medida  de probabilidad $Q$, con
-  respeto a una  medida de probabilidad de referencia  $P$ tal que \underline{$Q
-    \ll P$}, ambas definidas sobre $\Rset^d$,
-  % donde \underline{el soporte de $p$ incluye lo de $q$} ($p(x) = 0 \Rightarrow
-  % q(x) = 0$),
-  es definida como
+La entrop\'ia  relativa, o  divergencia de una  medida de probabilidad  $Q$, con
+respeto a una medida de probabilidad de referencia $P$ tal que \underline{$Q \ll
+  P$}, ambas definidas sobre $\Rset^d$, es definida como
   %
   \[
   \Dkl[Q]{P}  =  \int_{\Rset^d}  \frac{dQ}{dP}(x) \, \log  \left(  \frac{dQ}{dP}(x)
@@ -185,17 +159,11 @@ Kullback-Leibler~\cite{KulLei51, Kul68, CovTho06, Rio07}:
     de generalidad.  En el caso  continuo, esta razonamiento no vale m\'as, esta
     cantidad dependiendo de los estados\ldots}
   %
-  %o, en su forma diferencial
-  %
  \[
  \Dkl[q]{p}  \equiv \Dkl[Q]{P}  = \int_{\Rset^d}  \log  \left( \frac{q(x)}{p(x)}
  \right) \, q(x) \, d\mu(x).
  \]
   %
- % (en  este \'ultimo  caso, la  condici\'on de inclusi\'on  del soporte  de $q$
- % dentro
- % del de $p$ se formula como de que $q$ es absolutamente continua con respeto a
- % $p$)
 \end{definicion}
 %
 Inicialmente, esta  medida fue  introducida por Kullback  y Leibler en  la misma
@@ -213,17 +181,14 @@ respeto a la distribuci\'on de  referencia (``verdadera''), a veces llamado {\it
 relativamente  a   la  distribuci\'on  $p$.    En  la  misma  linea,   se  puede
 inmediatamente  ver  de   la  definici\'on  general  Def.~\ref{Def:SZ:ShanonMu},
 pagina~\pageref{Def:SZ:ShanonMu}, que  $\Dkl[Q]{P} \equiv -H\left( \frac{dQ}{dP}
-\right)$ \ con respeto a la medida $\mu = P$.
-%Esta medida puede  ser vista tambi\'en como una  entrop\'ia de la distribuci\'on
-%$q$, relativamente  a una distribuci\'on de  referencia $p$.
-Por ejemplo,  en el caso discreto  finito, si $p$ es  la distribuci\'on uniforme
-sobre un  alfabeto de cardinal $\alpha$,  $\Dkl[q]{p} = \log \alpha  - H(q)$, lo
-que representa una desviaci\'on de la  entrop\'ia de su valor m\'aximo. La misma
-interpretaci\'on  queda en  el caso  continuo  con la  ley uniforme  ($p$ y  $q$
-definidas sobre  el mismo espacio de volumen  finito) o con la  gaussiana ($p$ y
-$q$  teniendo la misma  matriz de  covarianza).  {\it  Como para  la entrop\'ia,
-  cuando se necesitar\'a  un logaritmo especificamente de base  $a$, se notar\'a
-  la divergencia $D_{\mathrm{kl},a}$.}
+\right)$ \ con respeto a la medida  $\mu = P$.  Por ejemplo, en el caso discreto
+finito,  si $p$  es la  distribuci\'on uniforme  sobre un  alfabeto  de cardinal
+$\alpha$, $\Dkl[q]{p} = \log \alpha  - H(q)$, lo que representa una desviaci\'on
+de la  entrop\'ia de su  valor m\'aximo. La  misma interpretaci\'on queda  en el
+caso continuo con la ley uniforme ($p$ y $q$ definidas sobre el mismo espacio de
+volumen  finito) o  con la  gaussiana ($p$  y $q$  teniendo la  misma  matriz de
+covarianza).  {\it Como para la  entrop\'ia, cuando se necesitar\'a un logaritmo
+  especificamente de base $a$, se notar\'a la divergencia $D_{\mathrm{kl},a}$.}
 
 \begin{lema}[Positividad de la entrop\'ia relativa]
 \label{Lem:SZ:PositividadEntropiaRelativa}
@@ -232,7 +197,6 @@ $q$  teniendo la misma  matriz de  covarianza).  {\it  Como para  la entrop\'ia,
   \Dkl[Q]{P} \ge 0 \quad \mbox{con igualdad ssi} \quad P = Q. %\quad (c.s.)
   \]
   %
-  %donde $(c.s.)$ significa ``casi siempre''.
 \end{lema}
 %
 \begin{proof}
@@ -259,12 +223,9 @@ $q$  teniendo la misma  matriz de  covarianza).  {\it  Como para  la entrop\'ia,
   (constante,      la      constante     siendo      igual      a     1      del
   lema~\ref{Lem:RelacionIntegracionDerivadasRadon} y  \ $P$ \  y \ $Q$  \ siendo
   medidas de probabilidad).
-%, \ \ie \ $p = q \quad (c.s.)$ \ porque ambas suman a uno.
 \end{proof}
 
-Esta propiedad
-%, v\'alida en el  caso discreto como continuo, 
-tiene consecuencias fijandose de que
+Esta propiedad tiene consecuencias fijandose de que
 %
 \[
 I(X;Y) = \Dkl[P_{X,Y}]{P_X P_Y},

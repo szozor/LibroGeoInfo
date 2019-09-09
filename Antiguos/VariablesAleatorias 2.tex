@@ -146,14 +146,24 @@ con respecto a una medida:
   d\mu(\omega) = \mu(A),
   \]
   %
-  donde  \  $\un_A$  \  es   la  funci\'on  indicadora  del  conjunto  $A$  (ver
-  notaciones).   $d\mu(\omega)$  se escribe  a  veces tambi\'en  $\mu(d\omega)$,
-  medida de  un ``infinit\'esimo''.  Claramente, por propiedades  de una medida,
-  para $ A_i, A_j$ disjuntos $\un_{A_i} + \un_{A_j} = \un_{A_i \cup A_j}$, dando
-  $\displaystyle \int_\Omega \left( \un_{A_i} + \un_{A_j} \right) d\mu(\omega) =
-  \mu(A_i \cup A_j) = \mu(A_i) + \mu(A_j) = \int_\Omega \un_{A_i} d\mu(\omega) +
-  \int_\Omega  \un_{A_j} d\mu(\omega)$  y entonces,  sin perdida  de generalidad
-  para un conjunto $\{ A_j \}$ numerable
+  donde $\un_A$ es la funci\'on indicadora (ver notaciones).
+  %
+%  \[
+%  \un_A(\omega) = \left\{
+%  \begin{array}{ccc}
+%  1 & \mbox{si} & \omega \in A\\
+%  0 & \mbox{si} & \omega \not\in A
+%  \end{array} \right.
+%  \]
+  %
+  es  la funci\'on  indicadora del  conjunto $A$.   $d\mu(\omega)$ se  escribe a
+  veces tambi\'en $\mu(d\omega)$,  medida de un ``infinit\'esimo''.  Claramente,
+  por  propiedades  de una  medida,  para $  A_i,  A_j$  disjuntos $\un_{A_i}  +
+  \un_{A_j}  =  \un_{A_i \cup  A_j}$,  dando  $\displaystyle \int_\Omega  \left(
+    \un_{A_i} + \un_{A_j} \right) d\mu(\omega)  = \mu(A_i \cup A_j) = \mu(A_i) +
+  \mu(A_j)  =   \int_\Omega  \un_{A_i}  d\mu(\omega)   +  \int_\Omega  \un_{A_j}
+  d\mu(\omega)$ y entonces, sin perdida  de generalidad para un conjunto $\{ A_j
+  \}$ numerable
   %, con los $A_j$ disjuntos,  
   y $\{  a_j \}$ reales no negativos,  la integral de la  funci\'on escalonada \
   $\displaystyle \sum_j a_j \un_{A_j}$ \ es dada por
@@ -166,7 +176,7 @@ con respecto a una medida:
   Para  los  $A_i$  disjuntos  es   la  consecuencia  directa  de  la  propiedad
   precedente, y  si $A_i,  A_j$ no son  disjuntos.  De hecho,  sufice considerar
   $A_i\setminus  A_j,  \:  A_j\setminus  A_i,  A_i \cap  A_j$  \  con  \modif{$A
-    \setminus B = \{ \omega \tq \omega \in  A \: \et \: \omega \not\in B \}$} \
+    \setminus B = \{ \omega \tq \omega \in  A \: \and \: \omega \not\in B \}$} \
   y respectivamente los coefficientes \ $a_i,  \: a_j, \: a_i + a_j$ para volver
   al caso de conjuntos disjuntos.
   %
@@ -392,13 +402,36 @@ otra, dando una definici\'on muy general de densidad:
   tambi\'en llamada derivada de Radon-Nikod\'ym.
 \end{definicion}
 
-Notar que  dos funciones  pueden cumplir esta  definici\'on, por ejemplo  si son
-iguales  $\mu$-casi siempre.   De hecho,  si dos  funciones \  $p_1 =  p_2 \quad
-(\mu\mbox{-c.s.})$, y $C$ es el conjunto  donde no son iguales, siendo de medida
-nula, de \ $\displaystyle  \int_A p_1(\omega) d\mu(\omega) = \int_{A\setminus C}
-p_1(\omega) d\mu(\omega) = \int_{A\setminus C} p_2(\omega) d\mu(\omega) = \int_A
-p_2(\omega) d\mu(\omega)$ \ se ve  que dos funciones iguales casi siempre pueden
-ser densidad de una medida con respecto a una otra.
+Notar   que dos funciones pueden  cumplir esta definici\'on,  por ejemplo si
+son  iguales $\mu$-casi siempre.
+%diferentes  en  un conjunto  de  medida  \  $\mu$  \  igual a  cero.  M\'as
+%generalmente viene ac\'a la noci\'on de igualdad casi siempre:
+%%
+%\begin{definicion}[Igualidad $\mu$-casi siempre]
+%  Dos funciones  medibles \ $p_1$  \ y \  $p_2$ \ son dichas  iguales $\mu$-casi
+%  siempre,
+%  %
+%  \[
+%  p_1 = p_2 \quad (\mu\mbox{-c.s.})
+%  \]
+%  %
+%  si y solamente son iguales excepto sobre un conjunto de medida nula,
+%  %
+%  \[
+%  \mu\left( \left\{ \omega: \: p_1(\omega) \ne p_2(\omega) \right\} \right) = 0.
+%  \]
+%\end{definicion}
+%
+%\noindent 
+De hecho, si  dos funciones \ $p_1  = p_2 \quad (\mu\mbox{-c.s.})$, y  $C$ es el
+conjunto donde no son iguales, siendo de medida nula, 
+%notando \  $A \setminus C = \{ \omega: \omega \in
+%A \:  \mbox{y} \:  \omega \not\in C\}$,  
+de \ $\displaystyle  \int_A p_1(\omega)
+d\mu(\omega) =  \int_{A\setminus C} p_1(\omega)  d\mu(\omega) = \int_{A\setminus
+  C} p_2(\omega) d\mu(\omega) = \int_A p_2(\omega) d\mu(\omega)$ \ se ve que dos
+funciones iguales casi siempre pueden ser  densidad de una medida con respecto a
+una otra.
 
 Es sencillo ver que  si $\mu(A) = 0$, necesariamente $\nu(A) =  0$. De eso viene
 la noci\'on de absoluta continuidad:
@@ -522,6 +555,7 @@ Ac\'a, notamos dos hechos interesantes:
   $\mu_L(\optimes_{i=1}^d ( j_i \; j_i+1]) = 1 < +\infty$.
 %
 \item $\forall \:  A \in \A, \quad  \mu_L(A) = |A|$ volumen de $A$.
+% \ donde  $|\cdot|$ denota el  volumen de un conjunto (puede ser infinito).
 %
 \item Para una funci\'on \ $g$ \ suficientemente ``suave'', la integraci\'on con
   respecto a la medida de Lebesgue coincide naturalmente con la integraci\'on de
@@ -545,6 +579,14 @@ dando lugar a medidas discretas:
   %
   \[
   \forall   \  B  \in   \B(\Rset^d),  \quad   \delta_{x_0}(B)  =   \un_B(x_0)
+  %  =
+  %\left\{ \begin{array}{ccc}
+  %%
+  %1 & \mbox{si} & x_0 \in B\\[2.5mm]
+  %%
+  %0 & \mbox{si} & x_0 \not\in B
+  %%
+  %\end{array}\right..
   \]
   %
   Dado un conjunto \ $\X = \{  x_i \}_i$ \ discreto (finito o infinito numerable),
@@ -567,6 +609,9 @@ Notar que,
   medida de Lebesgue).
 %
 \item $\forall  \: A \in \A,  \quad \mu_\X(A) =  |\X \cap A|$ cardenal de $\X \cap A$.
+%\  donde $|\cdot|$
+%  denota el cardinal de un conjunto, equivalente discreto del volumen (puede ser
+%  infinito tambi\'en).
 %
 \item Para una funci\'on \ $g$ \ medible,
   \[
@@ -666,7 +711,11 @@ Naturalmente, de las propiedades de una medida de probabilidad se tiene:
 Cuando se trabaja  con $d \ge 2$ variables aleatorias  es conveniente definir un
 {\it vector aleatorio}  de dimensi\'on~$d$, y apelar para  su estudio a nociones
 del \'algebra  lineal y  a notaci\'on matricial.   Se tiene el  vector aleatorio
-$d$-dimensional  \ $X  = \begin{bmatrix}  X_1 &  \cdots &  X_d \end{bmatrix}^t$,
+$d$-dimensional \ $X = \begin{bmatrix} X_1 & \cdots & X_d \end{bmatrix}^t$,
+%%%%%%%%%%%%
+%\modif{aca, saque la definicion de la transpuesta porque esta en las notaciones}
+%%%%%%%%%%%%
+% donde $\cdot^t$ denota la transpuesta,
 caracterizado por  $d$-uplas de  variables aleatorias reales.   Como en  el caso
 univariado,  se  define  este  vector  de  la  siguiente  manera~\cite{AshDol99,
   AthLah06, Coh13, Bre88}:
@@ -682,10 +731,10 @@ univariado,  se  define  este  vector  de  la  siguiente  manera~\cite{AshDol99,
   %
   donde  $\B(\Rset^d)$  son  los  borelianos  de  $\Rset^d$,  $\sigma$-\'algebra
   generada por los productos cartesianos  $(-\infty \; b_1] \times \cdots \times
-  (-\infty \;  b_d]$ y donde  la medida $P_X$  sobre $\B(\Rset^d)$ es  la medida
-  imagen  de $P$  llamada {\it  distribuci\'on de  probabilidad} de  la variable
-  aleatoria (o  vector aleatorio)  \ $X$. Como  en el caso  escalar, \modif{para
-    cualquier $B \in \B(\Rset^d)$}
+  (-\infty  \;  b_d]$ y  donde la  medida $P_X$  sobre $\B(\Rset^d)$  es la
+  medida  imagen de  $P$  llamada  {\it distribuci\'on  de  probabilidad} de  la
+  variable aleatoria (o vector aleatorio) \ $X$. Como en el caso escalar,  \modif{para cualquier
+    $B \in \B(\Rset^d)$}
   %
  \[
  (X \in B) \equiv X^{-1}(B) = \{ \omega \in \Omega \tq X(\omega) \in B \} \qquad
@@ -813,12 +862,15 @@ pre-imagen.  \modif{Adem\'as, a veces,  y por abuso, llamaremos frecuentemente a
 \begin{definicion}[Variable aleatoria discreta]
 \label{Def:MP:VariableAleatoriaDiscreta}
 %
-Una  variable  aleatoria se  dice  {\it discreta}  cuando  $\X  = X(\Omega)$  es
-discreto, finito o  infinito numerable. En otras palabras,  los posibles valores
-de una variable aleatoria discreta $X$ consisten en un conjunto contable (finito
-o infinito  numerable) de  n\'umeros reales, \  $\X =  \{ x_j \}$  \ y  se puede
-escribir a \  $X$ \ como una {\it  variable escalonada} (ver ej.~\cite{AthLah06,
-  HogMck13}),
+  Una  variable aleatoria se  dice {\it  discreta} cuando  $\X =  X(\Omega)$ es
+  discreto,  finito o  infinito numerable.
+\modif{aca saque la notacion del cardenal, porque ya esta en las notaciones}
+  % En  lo que sigue, denotaremos  por $|\X|$ al cardinal  de $\X$, posiblemente
+  % infinito.
+  En otras palabras, los posibles valores de una variable aleatoria discreta $X$
+  consisten en un  conjunto contable (finito o infinito  numerable) de n\'umeros
+  reales, \  $\X = \{  x_j \}$ \  y se puede  escribir a \  $X$ \ como  una {\it
+    variable escalonada} (ver ej.~\cite{AthLah06, HogMck13}),
   %
   \[
   X = \sum_j x_j \un_{A_j} \quad \mbox{con} \quad A_j = X^{-1}(\{ x_j \}).
@@ -900,13 +952,16 @@ figura~\ref{Fig:MP:ProbaDiscreta}-(b).
 
 Un caso especial se tiene cuando un  valor $x_k$ es cierto o seguro, y no ocurre
 ninguno de los  otros valores $x_j \  (j \ne k)$. La forma  de la distribuci\'on
-es: \ $p_X(x) = 1$ \ si \ $x =  x_k$ \ y $0$ si no; el vector de probabilidad se
-escribir\'a  \  $p_X  =  \un_k$  (ver  notaciones;  el  vector  posiblemente  de
-dimensi\'on infinita).  Se denota tambi\'en  con el {\it s\'imbolo de Kronecker}
-\ $\delta_{jk} = 1$ \  si \ $j = k$ \ y 0 si  no. En este libro, evitaremos usar
-este  s\'imbolo  para no  confundirlo  con la  medida  de  Dirac.  Sin  embargo,
-resuelta  que \  $P_X$ \  es precisamente  la medida  de Dirac  en \  $x_k$ (ver
-Def.~\ref{Def:MP:Dirac}).
+es:  \ $p_X(x)  = 1$  \  si \  $x =  x_k$  \ y  $0$ si  no;  el vector  de
+probabilidad  se escribir\'a  \ $p_X  = \un_k$ 
+%donde $\un_k$  denota el vector 
+(ver notaciones; el vector posiblemente  de dimensi\'on infinita).
+% de componente  $k$-esima igual a
+%1, siendo las otras nulas, lo que  s
+See denota tambi\'en  con el {\it s\'imbolo de Kronecker} \  $\delta_{jk} = 1$ \
+si \ $j = k$ \ y 0 si  no. En este libro, evitaremos usar este s\'imbolo para no
+confundirlo  con la medida  de Dirac.  Sin embargo,  resuelta que  \ $P_X$  \ es
+precisamente la medida de Dirac en \ $x_k$ (ver Def.~\ref{Def:MP:Dirac}).
 
 
 Otra   situaci\'on  particular   es  la   de  {\it   equiprobabilidad}   o  {\it
@@ -1080,6 +1135,8 @@ $P_X$:
   Por abuso de terminolog\'ia, en lo que sigue llamaremos a $p_X$ tambi\'en {\it
     distribuci\'on de  probabilidad}, a pesar de  que no tiene  el mismo sentido
   que la masa de probabilidad del caso discreto.
+%, y denotaremos $|\X|$ el volumen
+%  (o medida de Lebesgue) de $\X$, posiblemente infinito.
 \end{definicion}
 %
 La  escritura  integral de  $F_X$  justifica  de  nuevo la  denominaci\'on  {\it
@@ -1264,9 +1321,10 @@ Terminamos mencionando el  resultado siguiente, probado en~\cite[Ec.~(2.5)~p.~47
   con respecto a la medida $\sigma$-finita $\mu_{\widetilde{\X}} + \mu_L$.
 \end{teorema}
 %
-Dicho  de  otra  manera, cualquier  variable  aleatoria  es  mixta, como  en  el
-ejemplo~\ref{Ej:MP:Mixta}.  Del teorema, es discreta  cuando $a = 1$, y continua
-cuando $a = 0$.
+Dicho  de  otra manera,  cualquier  variable aleatoria  es  mixta,  como en  el
+ejemplo~\ref{Ej:MP:Mixta}.
+% pagina~\pageref{Ej:MP:Mixta}. 
+Del teorema, es discreta cuando $a = 1$, y continua cuando $a = 0$.
 
 
 % ================================= Vector discreto
@@ -1285,6 +1343,8 @@ Un ejemplo de vector aleatorio discreto  puede ser dado por un conjunto de dados
   \optimes_{i=1}^d \X_i$ \ donde \ $\X_i =  X_i(\Omega)$. Se dice que \ $X$ \ es
   {\it discreto} cuando $\X \subseteq \Nset^d$, \ es discreto, finito o infinito
   numerable.
+  %  En lo  que sigue,  denotaremos tambi\'en  por $|\X|$  el cardinal  de $\X$,
+  % posiblemente infinito.
 \end{definicion}
 
 Obviamente, la  medida de probabilidad  en los $\displaystyle  x = (x_1 \,  , \,
@@ -1319,6 +1379,8 @@ vector aleatorio:
   \,   x_{j_d})$   sea   la   $j$-esima   componente  del   vector   $p_X$   con
   \modif{$\displaystyle  j =  1  +  \sum_{i=1}^d (j_i  -  1) \,  \prod_{k=i+1}^d
     \alpha_k$}.
+%   \  con  \   $\displaystyle  \prod_{k=0}^1  \equiv  1$   \  por
+%  convenci\'on.
 \end{definicion}
 %
 \noindent  De  nuevo,  \modif{se  puede  interpretar $p_X$}  como  densidad  con
@@ -1339,12 +1401,27 @@ X_i  \:  \mbox{mutuamente  independientes}  \quad \Leftrightarrow  \quad  p_X  =
 %
 En  notaci\'on  tensorial,  $p_X  =  p_{X_1} \otimes  \cdots  \otimes  p_{X_d}$,
 \modif{producto de Kronecker (ver notaciones)}.
+% donde $\otimes$  denota el producto tensorial o externo  entre los vectores de
+%    probabilidades~\footnote{``Tensor''    $d$-dimensional    de    componentes
+%   $(j_1,\ldots,j_d)$  el producto $\prod_i  p_{X_i} (x_{j_i})$.}.   Cuando los
+%  $\alpha_i$  son  finito y  la  notaci\'on  vectorial  de la  definici\'on  es
+% adoptada, esta expresi\'on queda valide donde $\otimes$ representa el producto
+%  de   Kronecker~\footnote{Para  \  $p   =  \begin{bmatrix}  p_1  &   \cdots  &
+%     p_n  \end{bmatrix}^t$  \  y  \   $q  =  \begin{bmatrix}  q_1  &  \cdots  &
+%     q_m  \end{bmatrix}^t$, \ el  producto de  Kronecker est\'a  dado por  \ $p
+%   \otimes q$ \  vector de tama\~no $n m$  de componente \ $\left[ (j-1)  m + k
+%   \right]$-esima igual al producto  \ $p_j q_k$ \ para \ $1 \le  j \le n, \: 1
+%   \le  k  \le  m$.   Notar  que   este  producto  es  asociativo  pero  no  es
+%   conmutativo.\label{Foot:MP:Kronecker}}.
 
 Al  final, de la  f\'ormula de  calculo de  funci\'on de  repartici\'on marginal
-vista  en  la  secci\'on~\ref{Ssec:MP:VAGeneral},  para un  subconjunto  $I_k  =
-(i_1,\ldots,i_k)$ de $1  \le k \le d$ elementos  de $\{ 1 \; \ldots  \; d \}^k$,
-$X_{I_k}   =  \begin{bmatrix}   X_{i_1}  &   \cdots   &  X_{i_k}\end{bmatrix}^t$
-\modif{tiene como} probabilidad marginal o distribuci\'on marginal
+vista en la secci\'on~\ref{Ssec:MP:VAGeneral},
+% la pagina~\pageref{Pagina:MP:MarginalesF}, 
+para un subconjunto $I_k = (i_1,\ldots,i_k)$ de $1 \le k \le d$ elementos de $\{
+1  \;  \ldots  \;  d  \}^k$,  $X_{I_k} =  \begin{bmatrix}  X_{i_1}  &  \cdots  &
+  X_{i_k}\end{bmatrix}^t$    \modif{tiene   como}   probabilidad    marginal   o
+distribuci\'on marginal
+% de $X_{I_k}$ es dada por
 %
 \[
 p_{X_{I_k}}(x_{I_k}) = \sum_{\forall i \not\in I_k, x_i \in \X_i} p_X(x).
@@ -1399,6 +1476,8 @@ referencia  $\mu$  sobre  $\Rset^d$   para  definir  una  noci\'on  de  densidad
   %
   Usaremos   la   terminolog\'ia  (por   abuso)   de   {\it  distribuci\'on   de
     probabilidad}.
+  % y denotaremos  todav\'ia \ $|\X|$ \ el  volumen (o medida de  Lebesgue) de \
+  % $\X$, posiblemente infinito.
 \end{definicion}
 
 Como en el caso  escalar, $p_X \ge 0$ \ (no es necesario que  sea menor que 1) y
@@ -1408,12 +1487,14 @@ satisface la condici\'on de normalizaci\'on
 \int_\X p_X(x) \, dx = \int_{\Rset^d} p_X(x) \ dx  = 1.
 \]
 
-El  teorema~\ref{Teo:MP:DescompositionMixta}  se  cumple  tambi\'en en  el  caso
-$d$-dimensional: cualquier  medida de probabilidad \ $P_X$  (resp.  funci\'on de
-repartici\'on \ $F_X$) \ se  descompone como combinaci\'on convexa de una medida
-de probabilidad (resp.  funci\'on de repartici\'on) discreta y una continua.  En
-otros  t\'erminos existe  un \  $\widetilde{X}$ \  discreto tal  que \  $P_X \ll
-\mu_{\widetilde{\X}} + \mu_L \: (\sigma$-finita).
+El                                      teorema~\ref{Teo:MP:DescompositionMixta}
+%,pagina~\pageref{Teo:MP:DescompositionMixta}    
+se cumple tambi\'en en el caso $d$-dimensional: cualquier medida de probabilidad
+\  $P_X$  (resp.  funci\'on  de  repartici\'on \  $F_X$)  \  se descompone  como
+combinaci\'on  convexa  de  una  medida  de probabilidad  (resp.   funci\'on  de
+repartici\'on)  discreta  y una  continua.   En  otros  t\'erminos existe  un  \
+$\widetilde{X}$ \  discreto tal que \  $P_X \ll \mu_{\widetilde{\X}}  + \mu_L \:
+(\sigma$-finita).
 
 Mencionamos que las $d$ variables  aleatorias $X_1, \ldots, X_d$, componentes de
 un vector  aleatorio $X$, son independientes  si y solamente si  la funci\'on de
@@ -1425,12 +1506,13 @@ X_i \:  \mbox{ mutuamente independientes} \quad \Leftrightarrow  \quad p_X(x) =
 \]
 
 
-Seguimos  esta  secci\'on mencionando  que,  de  la  f\'ormula de  c\'alculo  de
-funci\'on       de      repartici\'on       marginal      vista       en      la
-secci\'on~\ref{Ssec:MP:VAGeneral},  para un  subconjunto  $I_k =  (i_1  \, ,  \,
-\ldots \, , \, i_k)$ de $1 \le k \le d$ elementos de $\{ 1 \; \ldots \; d \}^k$,
-$X_{I_k}   =  \begin{bmatrix}   X_{i_1}  &   \cdots   &  X_{i_k}\end{bmatrix}^t$
-\modif{tiene la} {\it densidad de probabilidad marginal}
+Seguimos esta secci\'on mencionando que, de la f\'ormula de c\'alculo de funci\'on
+de  repartici\'on marginal vista en la secci\'on~\ref{Ssec:MP:VAGeneral},
+%  pagina~\pageref{Pagina:MP:MarginalesF}, 
+para un subconjunto $I_k = (i_1 \, , \,  \ldots \, , \, i_k)$ de $1 \le k \le d$
+elementos de  $\{ 1 \; \ldots \;  d \}^k$, $X_{I_k} =  \begin{bmatrix} X_{i_1} &
+  \cdots & X_{i_k}\end{bmatrix}^t$ \modif{tiene la} {\it densidad de probabilidad marginal}
+% de $X_{I_k}$ es dada por
 %
 \[
 p_{X_{I_k}}(x_{I_k})  = \int_{\times_{i  \not\in  I_k} \X_i}  p_X(x) \,  \prod_{i
@@ -1482,6 +1564,8 @@ ensemble y luego de una densidad de probabilidad:
   p^\downarrow_X(x)  =  \int_0^{+\infty}  \un_{\P_u^\downarrow}(x) \,  du.
   \]
   %
+  %  (recuerdense  de que  $\un_A$  es  el indicator  del  conjunto  $A$) ,  \ie
+  % $\un_A(x) = 1$ si $x \in A$ y cero sino.
 \end{definicion}
 %
 De  \ $\forall  \, t  < \tau  \: \Leftrightarrow  \: \P_\tau  \subseteq  \P_t \:
@@ -1513,7 +1597,8 @@ figura~\ref{Fig:MP:ensemblerearreglado}-b para el caso escalar $d=1$.
   %
 \label{Fig:MP:ensemblerearreglado}
 \end{figure}
-%
+% =  \B  \left( 0  , r_\P  \right)$ con  $\frac{2
+%    \pi^{d/2} r_\P^d}{\Gamma(d/2)} = |\P|$.
 \modif{Notar  que, por  construcci\'on, $p_X^\downarrow$  cae el  la  familia de
   densidades                            esfericas                           (ver
   secci\'on~\ref{Sec:MP:EjemplosDistribucionesProb})~\cite{Lor54,       FanKot90,
@@ -1535,6 +1620,8 @@ sii:
   dx,
   \]
   %
+  %donde \ $\B(0,r) = \{ x \in \Rset^d:  \: \|x\| lge r \}$ \ es la bola centrada
+  %en \ $0$ \ y de rayo  \ $r$ \ 
   (las \'ultimas integrales son obviamente iguales a 1).
 \end{definicion}
 %
@@ -1662,6 +1749,7 @@ $\frac{\Tr  \Sigma_X}{d} I$  y con  \ $\nu'  = 2.25$  \ grado  de  libertad (ver
 secci\'on~\ref{Sec:MP:EjemplosDistribucionesProb}). Eso  ilustra graficamente la
 relaci\'on de  mayorizaci\'on \ $g_X \prec p_X$  \ y que ambas  \ $s_X \not\prec
 p_X$ \ y \ $p_X \not\prec s_X$.
+% $p(x) = \frac{}{}$$ y la ley arcsin $q_X(x) = $
 
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/RearregloEjemplo} \end{center}

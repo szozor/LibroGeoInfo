@@ -141,13 +141,18 @@ momentos de $X$ a trav\'es de las derivadas de $G_X$:
 \item $G_X(1) = 1$, condici\'on de normalizaci\'on.
 %
 \item $\nabla_z G_X(1) = \Esp[X]$.
+% \ donde $\nabla_z$ indica el gradiente, \ie el
+%  vector de componente $i$-esima \ $\frac{\partial}{\partial z_i}$.
 %
 \item $\Hess_z G_X(1)  + \diag\left( \nabla_z G_X(1) \right)  = \Esp\left[ X X^t
-  \right]$ \ donde  \ $\Hess_z$ \ es  la matrice Hessiana y \  $\diag(a)$ es une
-  matriz diagonal de componentes \ $(i,i)$-esima  \ $a_i$ \ (vector $a$ sobre la
-  diagonal).  Entonces la matriz de covarianza  es dada por \ $\Cov[X] = \Hess_z
-  G_X(1)  + \diag\left(  \nabla_z G_X(1)  \right) -  \nabla_z  G_X(1) \nabla_z^t
-  G_X(1)$.
+  \right]$  \ donde  \ $\Hess_z$  \ es  la matrice  Hessiana
+%, \ie  la  matriz de
+%  componente $(i,j)$-esima \ $\frac{\partial^2}{\partial z_i \partial z_j}$, 
+y \
+  $\diag(a)$ es  une matriz  diagonal de componentes  \ $(i,i)$-esima \  $a_i$ \
+  (vector $a$ sobre la diagonal).  Entonces  la matriz de covarianza es dada por
+  \ $\Cov[X] =  \Hess_z G_X(1) + \diag\left( \nabla_z  G_X(1) \right) - \nabla_z
+  G_X(1) \nabla_z^t G_X(1)$.
 \end{itemize}
 
 \
@@ -628,6 +633,7 @@ veces \ $\displaystyle \operatorname{vp} \!  \int_\Rset$, integral {\it en valor
   %
   es  decir, de  \ $\displaystyle  \lim_{T \to  +\infty}  \int_{-T}^T \frac{\sin
     \omega}{\omega} d\omega = \pi$~\cite[Ec.~3.721]{GraRyz15}, se obtiene
+
   %
   \[
   \lim_{w \to  +\infty} \int_{-w}^w \frac{\sin(\omega  (c - x))}{\omega}

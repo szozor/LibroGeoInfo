@@ -178,9 +178,6 @@ un canal de transmisi\'on y  redefinir una capacidad canal extendidas (capacidad
 tipo $\lambda$;  basicamente se  usa el mismo  enfoque que Shannon,  pero usando
 $H_\lambda^\hcd$ en lugar de $H$, ver secci\'on~6 del papel).
 
-% ----- Entropias generalizadas h,phi
-%\paragraph{Una  clase m\'as  general  y sus  propiedades}
-
 \
 
 Las entrop\'ias  tipo Havdra-Charv\'at-Dar\'oczy fueron  (re)descubiertos varias
@@ -259,9 +256,6 @@ Adem\'as  se conserva  la  Schur-concavidad \ con una reciproca:
   p \prec q \quad \Longleftrightarrow \quad \hhphi[p] \ge \hhphi[q] \quad \forall \:
   (h,\phi).
   \]
-  %
-  % \centerline{Reciprocamente,  si $\quad \forall \:  (h,\phi), \quad \hhphi[p]
-  %   \ge \hhphi[q] \quad \mbox{ entonces } \quad p \prec q$}
   %
   En otros t\'erminos,  se obtiene la relaci\'on de  mayorisaci\'on si se cumple
   la  relaci\'on  de ordre  entr\'opicas  para  \underline{todos}  los pares  de
@@ -680,13 +674,11 @@ D_J(Q\|P) = \Dkl[P]{Q} + \Dkl[Q]{P}.
 \noindent  Esta  versi\'on  simetrizada  de la  divergencia  queda  naturalmente
 positiva,  pero sufre  todav\'ia  de  unas debilidades  de  $\Dkl{}$. Esta  bien
 definida siempre que  \ $P \ll Q$ \  conjuntamente a \ $Q \ll P$  \ (las medidas
-son dichas {\it medidas equivalentes} en este caso).
-%   el  soporte  de  $p$  es  incluido  en   lo  de  $q$  y
-vice-versa. Adem\'as,  no cumple tampoco  la desigualdad triangular. A  pesar de
-sus debilidades, se us\'o bastante en problemas de discriminaci\'on, debido a su
-positividad con igualdad  si y solamente si $P = Q$  (propiedad herida del hecho
-de que la suma  de t\'erminos positivos es nula si y  solamente si cada uno vale
-cero).
+son  dichas {\it  medidas  equivalentes}  en este  caso).   Adem\'as, no  cumple
+tampoco  la  desigualdad triangular.   A  pesar  de  sus debilidades,  se  us\'o
+bastante en problemas de discriminaci\'on,  debido a su positividad con igualdad
+si  y solamente  si $P  =  Q$ (propiedad  herida del  hecho  de que  la suma  de
+t\'erminos positivos es nula si y solamente si cada uno vale cero).
 
 Unas decadas despu\'es, Lin  introdujo lo que llam\'o $K$-divergencia directada,
 $K(P,Q)   =  \Dkl[P]{\frac{P+Q}{2}}$,   su  versi\'on   simetrizada,   antes  de
@@ -712,17 +704,14 @@ $\Djs$ heride obviamente de $\Dkl{}$  su positividad con igualdad si y solamente
 si $P_{(1)}  = P_{(2)}$.  La  misma propiedad puede  ser vista a trav\'es  de la
 desigualdad de  Jensen, dando este  nombre a la  medida.  Adem\'as, se  quita el
 problema  de definici\'on,  siendo de  que $P_{(i)}  \ll \pi_1  P_{(1)}  + \pi_2
-P_{(2)}$.
-% el soporte  de $\pi_1 p_{(1)}  + \pi_2
-%p_{(2)}$ siempre contiene  el de $p_{(1)}$ y el de  $p_{(2)}$. 
-No  es sim\'etrica  en general,  pero se  obtiene esta  propiedad cuando  $\pi =
-\pi_{\mathrm{u}} \equiv  [\frac12 \quad \frac12]^t$.  Adem\'as, en  este caso, a
-pesar de  que la  divergencia no cumpla  la desigualdad triangular,  aparece que
-$\Big( J_{\mathrm{js}}^{\pi_{\mathrm{u}}}(P_{(1)},P_{(2)}) \Big)^s,  \quad 0 < s
-\le \frac12$  es una metrica~\footnote{Se  necesita sol\'o de que  los $P_{(i)}$
-  admiten una densidad con respeto a una medida $\sigma$-finita; nos referiremos
-  al                                   resultado~\ref{Teo:MP:DescompositionMixta},
-  pagina~\pageref{Teo:MP:DescompositionMixta}.}~\cite[Teorema~1                 \&
+P_{(2)}$.  No es  sim\'etrica en general, pero se  obtiene esta propiedad cuando
+$\pi =  \pi_{\mathrm{u}} \equiv [\frac12  \quad \frac12]^t$.  Adem\'as,  en este
+caso, a pesar de que la divergencia no cumpla la desigualdad triangular, aparece
+que $\Big(  J_{\mathrm{js}}^{\pi_{\mathrm{u}}}(P_{(1)},P_{(2)}) \Big)^s, \quad 0
+<  s  \le  \frac12$ es  una  metrica~\footnote{Se  necesita  sol\'o de  que  los
+  $P_{(i)}$ admiten una  densidad con respeto a una  medida $\sigma$-finita; nos
+  referiremos           al           resultado~\ref{Teo:MP:DescompositionMixta},
+  pagina~\pageref{Teo:MP:DescompositionMixta}.}~\cite[Teorema~1                \&
 Nota~2]{OstVaj03} o~\cite{EndSch03, KafOst91, OsaBus18}.  Si puede parecer m\'as
 l\'ogico definir  tal divergencia con a priori/proporciones  $\pi_i$ iguales, de
 hecho la  versi\'on no sim\'etrica,  con pesos $\pi_i$  se vuelve natural  en el
@@ -1155,19 +1144,15 @@ Unos  a\~nos  despu\'es,  se introdujo  una  clase  m\'as  general debido  a  I.
 Csisz\'ar~\cite{Csi63, Csi67, CsiShi04}, T.  Morimoto~\cite{Mor63} o S.  M.  Ali
 \& S. D.  Silvey~\cite{AliSil66},  clase que llamaremos {\it $\phi$-divergencias
   de Csisz\`ar}. De manera general, con $Q \ll P$, toma la forma
-%En el caso continuo toma la forma
 %
 \[
 \cphi[Q]{P} = \int_\X \phi\left( \frac{dQ}{dP}(x) \right) \, dP(x),
 \]
 %
-donde $\phi$ es una funci\'on convexa
-% y  donde el soporte $\X$ de $p$ incluye lo
-%de $q$, y en el caso discreto una suma reemplaza la integral. 
-Estas divergencias  o casos particulares  fueron muy estudiadas las  decadas que
-siguieron, dando tambi\'en lugar a varias aplicaciones~\cite{GupSha76, BurRao82,
-  CreRea84,  BenCha89,  Teb92,   BenBor92,  SalMen93,  Sal94,  Csi95,  CrePar00,
-  LieVaj06}.
+donde $\phi$ es  una funci\'on convexa. Estas divergencias  o casos particulares
+fueron muy estudiadas las decadas  que siguieron, dando tambi\'en lugar a varias
+aplicaciones~\cite{GupSha76,  BurRao82,  CreRea84,  BenCha89,  Teb92,  BenBor92,
+  SalMen93, Sal94, Csi95, CrePar00, LieVaj06}.
 
 Como para el caso de las $\phi$-entrop\'ias, esta clase se enmarca dentro de una
 clase    un     poco    m\'as    general~\cite[Secs.~4.5~\&~5]{AliSil66}    (ver
@@ -1177,15 +1162,14 @@ tambi\'en~\cite[Sec.~I]{OrsPar95}):
 \label{Def:SZ:HPhiDivergencia}
 %
   La  $(h,\phi)$-divergencia  de  una  distribuci\'on de  probabilidad  $Q$  con
-  respeto a una distribuci\'on de referencia $P$ tal que $Q \ll P$
-  % de soporte $\X$ incluyendo el soporte de $q$ es definida por
+  respeto a una  distribuci\'on de referencia $P$ tal que $Q  \ll P$ es definida
+  por
   %
   \[
   \chphi[Q]{P} =  h\left( \int_\X  \phi\left( \frac{dQ}{dP}(x) \right)  \, dP(x)
   \right)
   \]
   %
-  %en el caso discreto, y
   Si $P$ y $Q$ admiten una densidad con respeto a una medida $\mu$,
   %
   \[
@@ -1392,12 +1376,10 @@ sobre la extensi\'on  de este problema en el marco  general. \SZ{Tal estudio fue
 El  problema  se formaliza  como  en el  caso  Shannon,  buscando la  entrop\'ia
 m\'axima  sujeto a  v\'inculos: sea  $X$ variable  aleatoria viviendo  sobre $\X
 \subset \Rset^d$ con  $K$ momentos \ $\Esp\left[ M_k(X) \right]  = m_k$ \ fijos,
-con $M_x: \X \to \Rset$, el problema de $(h,\phi)$-entrop\'ia m\'axima se formula
-de  la manera  siguiente:
-%  en el  caso continuo  (es  el caso  discreto, hay  que
-%re-emplazar integrales por  sumas): 
-sean \ $M(x) = \begin{bmatrix} 1 & M_1(x) & \cdots & M_K(x) \end{bmatrix}^t$ \ y
-\ $m = \begin{bmatrix} 1 & m_1 & \cdots & m_K \end{bmatrix}^t$, \ se busca,
+con  $M_x: \X  \to  \Rset$,  el problema  de  $(h,\phi)$-entrop\'ia m\'axima  se
+formula de  la manera  siguiente: sean \  $M(x) =  \begin{bmatrix} 1 &  M_1(x) &
+  \cdots & M_K(x) \end{bmatrix}^t$ \ y \ $m = \begin{bmatrix} 1 & m_1 & \cdots &
+  m_K \end{bmatrix}^t$, \ se busca,
 %
 \[
 p^* = \argmax_p \hhphi[p] \qquad \mbox{sujeto a} \qquad p \ge 0, \quad \int_\X M(x)

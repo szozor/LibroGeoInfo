@@ -20,10 +20,18 @@ caso, para  cualquier $x  \in \X$, tenemos  $P_X(x) = P(X  = x)  \ne 0$ y  de la
 definici\'on de  la probabilidad condicional Def.~\ref{Def:MP:ProbaCondicional},
 \modif{$\displaystyle \forall \: B \in \B(\Rset^{d_Y}), \quad P(Y \in B | X = x)
   = \frac{P\big(  (Y \in B) \cap (X  = x) \big)}{P(X=x)}$} define  una medida de
-probabilidad que llamamos medida de probabilidad condicional.  Siendo una medida
-de  probabilidad, nos  referimos a  la  subsecci\'on anterior  para definir  una
-funci\'on  de  repartici\'on tomando  $\displaystyle  \modif{B} =  \prod_{i=1}^d
-(-\infty \; y_i]$, caracterizando completamente la medida de probabilidad:
+probabilidad que llamamos medida de probabilidad condicional.
+% y que
+%denotaremos
+%%
+%\[
+%P_{Y|X=x}(A) = P(Y \in A | X = x).
+%\]
+%
+Siendo una medida de probabilidad, nos referimos a la subsecci\'on anterior para
+definir  una  funci\'on  de  repartici\'on tomando  $\displaystyle  \modif{B}  =
+\prod_{i=1}^d  (-\infty  \; y_i]$,  caracterizando  completamente  la medida  de
+probabilidad:
 %
 \begin{definicion}[Medida de probabilidad y funci\'on de repartici\'on condicional ($X$ discreto)]
 \label{Def:MP:ReparticionCondicionalDiscreta}
@@ -209,8 +217,8 @@ probabilidad total:
 \begin{teorema}[F\'ormula de probabilidad total (caso general)]
 \label{Teo:MP:ProbaTotalGeneral}
 %
-  Sean \  $X$ \  e \ $Y$  \ vectores aleatorias  y $\X  = X(\Omega), \quad  \Y =
-  Y(\Omega)$. Entonces
+%  Sean \  $X$ \  e \ $Y$  \ vectores aleatorias  y $\X  = X(\Omega), \quad  \Y =
+%  Y(\Omega)$. Entonces
   %
   \[
   \forall \  B \in  \B\left( \Rset^{d_Y}  \right), \qquad P(Y  \in B)  = \int_\X
@@ -226,6 +234,8 @@ probabilidad total:
   Si $P_X$  admite una densidad, se  escribe todo notando que  $dP_X(x) = p_X(x)
   d\mu_L(x) \equiv p_X(x) dx$.
 \end{teorema}
+% que se escribe con la densidad $dP_X = p_X d\mu_L$ si $X$
+%admite una densidad.
 }
 
 Por \'ultimo, si $(X,Y)$ admite una densidad, en sencillo ver que $P_{Y|X=x} \ll
@@ -234,8 +244,7 @@ Por \'ultimo, si $(X,Y)$ admite una densidad, en sencillo ver que $P_{Y|X=x} \ll
 \right)$ y $B \in \B\left( \Rset^{d_Y} \right)$,
 %
 \begin{eqnarray*}
-P\Big( (X \in A) \cap (Y \in B) \Big) & = & \int_{A \times B} p_{X,Y}(x,y) \, dx
-\, dy\\[2mm]
+P\Big( (X \in A) \cap (Y \in B) \Big) & = & \int_{A \times B} p_{X,Y}(x,y) \, dx \, dy\\[2mm]
 %
 & = & \int_B \left( \int_A \frac{p_{X,Y}(x,y)}{p_X(x)} \, dy \right) p_X(x) \, dx
 \end{eqnarray*}
@@ -297,6 +306,27 @@ Notar  que:
   \int_{\modif{\Y}} p_{Y|X=x}(y) \, dy = 1.
   \]
   %
+  %\modif{con $\Y = Y(\Omega)$.}
+%
+%\item escribiendo  \ $p_{X,Y}(x,y)  = p_{Y|X=x}(y) \,  p_X(x) =  p_{X|Y=y}(x) \,
+%  p_Y(y)$, \ se obtiene
+%  %
+%  \[
+%  p_{Y|X=x}(y)   =  \frac{p_{X|Y=y}(x) \,   p_Y(y)}{p_X(x)}   =  \frac{p_{X|Y=y}(x)
+%    \, p_Y(y)}{\displaystyle \int_{\Rset^{d_Y}} p_{X|Y=y}(x) \, p_Y(y) \, dy},
+%  \]
+%  %
+%  equivalente continuo, con densidades, de la f\'ormula de Bayes;
+%
+%\item  por la  expresi\'on  \ $p_{X,Y}(x,y)  =  p_{Y|X=x}(y) \,  p_X(x)$, \  por
+%  integraci\'on con respecto a $x$ obtenemos
+%  %
+%  \[
+%  p_Y(y) = \int_{\Rset^{d_X}} p_{Y|X=x}(y) \, p_X(x) \, dx,
+%  \]
+%  %
+%  generalizaci\'on de la f\'ormula de  probabilidades totales al caso continuo con
+%  densidad de probabilidad.
 \end{itemize}
 
 \modif{Tambi\'en, se  escribe la f\'ormula  de probabilidad total a  trav\'es de

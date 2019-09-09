@@ -83,6 +83,13 @@ Luego,   de    la   distribuci\'on   marginal    $\displaystyle   P_{X_i}(B)   =
 $\displaystyle  \Esp[X_i] = \int_{\Rset^d}  x_i \,  dP_X(x)$, dando  la \'ultima
 formulaci\'on en el caso vectorial.
 
+%$p(x)\,dx$, e integrando sobre el rango permitido de $x$:
+%$$
+%E[X] = \langle x\rangle = \int_{\Omega} x \ p(x)\,dx \equiv \mu
+%$$
+%si  la  integral  existe.  La  \emph{esperanza} de  la  variable  aleatoria  $X$
+%representa  el valor  medio  que puede  tomar  entre todos  los  eventos de  una
+%prueba. 
 Una variable  aleatoria $X$ se dice  integrable cuando $E[|X|] <  \infty$. De la
 misma  manera, un  vector aleatorio  admite  una media  si y  solamente si  cada
 componente  es   integrable.  Veremos  m\'as  adelante   que  existen  variables
@@ -93,8 +100,8 @@ representa la posici\'on alrededor de la cual se ``distribuye las probabilidades
 de  occurencia''. Es  el equivalente  probabil\'istico de  centro de  gravedad o
 barycentro en mec\'anica.
 
-En el  caso de variables  aleatorias discretas, de soporte  \modif{$\X$ discreto
-  finito o numerable,} inmediatamente
+En  el caso de  variables aleatorias  discretas, de  soporte \modif{$\X$ discreto finito o numerable,}%  = \{  x_i \}$},
+inmediatamente
 %
 \[
 \Esp[X] = \modif{\sum_{x \in \X} x \, P(X = x) = \sum_{x \in \X} x \, p_X(x).}
@@ -116,9 +123,8 @@ En el  caso de variables  aleatorias discretas, de soporte  \modif{$\X$ discreto
 \begin{ejemplo}
 \label{Ej:MP:DiscretaSinMedia}
 %
-Sea  \ $\X  = \Nset^*$  \ con  \modif{$P(X =  x) =  \frac{6}{\pi^2 \,  x^2}$}. \
-Claramente, \modif{$\sum_x\frac{6}{\pi^2 \, x}$} diverge, as\'i que $X$ no tiene
-una media.
+  Sea \ $\X = \Nset^*$ \ con  \modif{$P(X = x) = \frac{6}{\pi^2 \, x^2}$}. \ Claramente,
+  \modif{$\sum_x\frac{6}{\pi^2 \, x}$} diverge, as\'i que $X$ no tiene una media.
 \end{ejemplo}
 
 En el caso de vectores  aleatorios continuos, obtenemos la expresi\'on siguiente
@@ -276,7 +282,9 @@ medio se calcula a partir del de $X$:
 \end{proof}
 
 De  manera general,  estas medias  son llamadas  {\it momentos}  de  la variable
-aleatoria $X$. Los momentos relevantes usuales son los siguientes:
+aleatoria $X$. Los momentos relevantes usuales
+%\underline{en el caso escalar} ($d = 1$) 
+ son los siguientes:
 %
 \begin{itemize}
 \item para  el ``monomio'' $f(x) =  x^{\otimes K}$ producto tensiorial  de $x$ \
@@ -308,19 +316,20 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
   \'ordenes mayores, para la caracterizaci\'on de una distribuci\'on.  Para $K =
   2$, en el caso  escalar, el momento de orden 2 es  el an\'alogo del momento de
   inercia de la mec\'anica.\newline Por ejemplo, para la distribuci\'on uniforme
-  $p_X(x)  =  \frac{1}{b-a}$  en el  intervalo  $[  a  \;  b]$, resulta  $m_K  =
+  $p_X(x) =  \frac{1}{b-a}$ en el  intervalo $[  a \; b]$, resulta  $m_K =
   \frac{b^{K+1}-a^{K+1}}{(K+1)(b-a)}$.   En particular,  $m_1  = \frac{a+b}{2}$,
   valor  medio del  intervalo.\newline  Fijense  de que  $X^{\otimes  K}$ no  es
   siempre integrable,  por ejemplo, en el  caso con densidad,  si $p_X(x)$ tiene
   soporte  (semi)infinito, necesariamente  la funci\'on  $p_X$ debe  tender  a 0
-  cuando \modif{$\|  x \|  \rightarrow \infty$.}  Si  $p_X(x)$ es {\it  de largo
-    alcance}, en el  sentido de que no cae a 0  suficientemente r\'apido con $x$
-  para  $x$  grandes, algunos  momentos  pueden  no  existir.  Por  ejemplo,  la
-  distribuci\'on   de   probabilidad   de   Cauchy--Lorentz  (o   funci\'on   de
-  Breit--Wigner), dada  por \ $p_X(x)  = \alpha \,  \left( 1 +  (x-x_0)^t R^{-1}
-    (x-x_0)  \right)^{- \,  \frac{d+1}{2}}$  \ sobre  $\Rset^d$,  con la  matriz
-  cuadrada \  $R > 0, \: x_0  \in \Rset^d$ \ y  \ $\alpha > 0$  \ coeficiente de
-  normalizaci\'on, no tiene momentos finitos de orden $K \geq 1$.
+  cuando \modif{$\| x \| \rightarrow \infty$.}
+  % , donde $|\cdot|$ denota la norma euclideana.
+  Si  $p_X(x)$ es  {\it de  largo alcance},  en el  sentido de  que no  cae  a 0
+  suficientemente r\'apido con $x$ para  $x$ grandes, algunos momentos pueden no
+  existir.  Por ejemplo, la distribuci\'on de probabilidad de Cauchy--Lorentz (o
+  funci\'on  de Breit--Wigner),  dada  por \  $p_X(x)  = \alpha  \,  \left( 1  +
+    (x-x_0)^t R^{-1}  (x-x_0) \right)^{-  \, \frac{d+1}{2}}$ \  sobre $\Rset^d$,
+  con la  matriz cuadrada \ $R  > 0, \:  x_0 \in \Rset^d$ \  y \ $\alpha >  0$ \
+  coeficiente de normalizaci\'on, no tiene momentos finitos de orden $K \geq 1$.
 %
 \item Frecuentemente (especialmente en el  caso de variables discretas $X$ sobre
   $\X  =  \Nset$),  resulta   \'util  introducir  los  $K$-\'esimo  {\it  momento
@@ -333,9 +342,19 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
   % \frac{n!}{(n-r)!} \, P(X = n).
  \]
  %
- \modif{con \ $\PocD{x}{n}$ \ factorial decreciente (ver notaciones).}  Se puede
- ver que cuando \ $\X  = \{ 0 \; \ldots \; n \}, \: n \in  \Nset$, \ $f_K = 0$ \
- cuando \ $K > n$.
+ \modif{con    \     $\PocD{x}{n}$ \ factorial decreciente (ver notaciones).}
+%    =     \prod_{i=0}^{n-1}    (x-i)    =
+% \frac{\Gamma(x+1)}{\Gamma(x-n+1)}$, con \ $\Gamma$ \ la funci\'on
+%Gamma~\cite{AbrSte70, AndAsk99, GraRyz15}   \   (usamos   la  convenci\'on   usual   \
+% $\prod_0^{-1} = 1$ \ y \ el hecho que  \ $\Gamma(z) = + \infty$ \ para $- z \in
+% \Nset$)   s\'imbolo  de   Pochhammer~\footnote{De  hecho,   en   las  funciones
+%   especiales, se define como  la factorial creciente $(x)_n = \prod_{i=0}^{n-1}
+%   (x+i)  \frac{\Gamma(x+n)}{\Gamma(x)}$  \  mientras  que esta  definici\'on  a
+%   trav\'es   de   la   factorial   decreciente   se   encuentra   en   analysis
+%   combinatorial~\cite{Poc70,  Knu92}.\label{Foot:MP:Pochhammer}}. 
+Se  puede ver
+ que cuando \ $\X = \{ 0 \; \ldots  \; n \}, \: n \in \Nset$, \ $f_K =
+ 0$ \ cuando \ $K > n$.
 %
 %  o {\it cumulantes}
 \item Los {\it  momentos centrales} se definen alrededor  de la media $\Esp[X]$,
@@ -398,14 +417,23 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
     \Sigma_{Y,X}^t.\].\newline Se  puede notar que, para dos  componentes $i \ne
     j$ de  $X$, $\Sigma_X$ tiene  como $(i,j)$-\'esima componente  la covarianza
     $\Cov[X_i,X_j]  = \Esp\left[  \left(  X_i  - m_{X_i}  \right)  \left( X_j  -
-        m_{X_j} \right) \right]$  entre las variables $X_i$ y  $X_j$ y tiene las
-    varianzas  de los  $X_i$ en  su diagonal.  Adem\'as, es  sencillo ver  que \
-    $\Sigma_X  \in   P_d(\Rset)$,  \ie  \   $\Cov[X]$  \  es   sim\'etrica,  por
-    construcci\'on, y \ $\Cov[X] \ge 0$  ($\forall \, \mu \in \Rset, \quad \mu^t
-    \Sigma_X \mu  \ge 0$; en el caso  escalar la varianza es  no negativa),} con
-  igualdad  s\'olo cuando  $P_X =  \delta_{x_0}$ para  un $x_0$  dado,  esto es,
-  cuando  no   hay  incerteza  sobre   el  resultado.   De  la   desigualdad  de
-  Cauchy-Bunyakovsky-Schwarz           (ver          corolario~\ref{Cor:MP:CBS},
+        m_{X_j} \right) \right]$ entre las variables $X_i$ y $X_j$
+    % , y escribimos
+    %  %
+  %  \[
+  %  \Cov[X_i,X_j]  =  \Esp\left[ \left(  X_i  -  m_{X_i}  \right) \left(  X_j  -
+  %      m_{X_j} \right) \right].
+  %  \]
+  %
+ % La matriz de covarianza tiene 
+    y tiene las varianzas de los  $X_i$ en su diagonal. Adem\'as,
+  % , y las covarianzas entre componentes en las componentes no diagonales.
+    es  sencillo ver  que \  $\Sigma_X  \in P_d(\Rset)$,  \ie \  $\Cov[X]$ \  es
+    sim\'etrica, por  construcci\'on, y \ $\Cov[X]  \ge 0$ ($\forall  \, \mu \in
+    \Rset, \quad \mu^t \Sigma_X \mu \ge 0$; en el caso escalar la varianza es no
+    negativa),} con  igualdad s\'olo cuando  $P_X = \delta_{x_0}$ para  un $x_0$
+  dado, esto es, cuando no hay  incerteza sobre el resultado.  De la desigualdad
+  de       Cauchy-Bunyakovsky-Schwarz      (ver      corolario~\ref{Cor:MP:CBS},
   pagina~\pageref{Cor:MP:CBS}) se proba sencillamente de que
   %
   \[
@@ -424,11 +452,12 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
   al rev\'es ($a<0$), se tiene \modif{la relaci\'on entre desviaciones \ $\Delta
     X_2  = a  \Delta X_1$,  conduciendo a}  \ $\rho_{12}  = \frac{a}{|a|}  = \pm
   1$.\newline Tambi\'en,  \modif{se puede ver que  \[ \Var\left[ \|  \Delta X \|
-    \right]  =  \Tr  \Sigma_X.\]}  La  covarianza  est\'a  bien  definida  si  \
-  \modif{$\| X \|$} \ es una variable aleatoria de cuadrado integrable, esto es,
-  cuando \ \modif{$E\left[ \| X \|^2 \right] < \infty$}.  Se proba sencillamente
-  \modif{(desallorando el  ``producto'' y usando la linealidad  de la esperanza)
-    que
+    \right] = \Tr \Sigma_X.\]}
+  % $\Tr$ siendo la traza y \ $|\cdot|$ \ la norma euclideana de un vector.
+  La covarianza  est\'a bien definida si \  \modif{$\| X \|$} \  es una variable
+  aleatoria de cuadrado integrable, esto  es, cuando \ \modif{$E\left[ \| X \|^2
+    \right]  <   \infty$}.   Se  proba   sencillamente  \modif{(desallorando  el
+    ``producto'' y usando la linealidad de la esperanza) que
   %
   \[
   \Cov[X,Y] = \Esp\left[ X Y^t \right] - m_X m_Y^t
@@ -469,8 +498,9 @@ inmediatamente,
   desviaci\'on est\'andar igual a 1).
   %
 \item  En  el  caso  escalar,  el  tercer momento  central  permite  definir  el
-  \modif{{\it   coeficiente   de  asimetr\'ia}   o   m\'as  sencillamente   {\it
-      asimetr\'ia}} (o skewness en ingles)~\cite{Spi76, Pea05}:
+  \modif{{\it coeficiente de asimetr\'ia} o m\'as sencillamente {\it asimetr\'ia}}
+%coeficiente de asimetr\'ia} 
+  (o skewness en ingles)~\cite{Spi76, Pea05}:
   \[
   \Asim[X]  \equiv \gamma_X  \equiv \Esp\left[  \left( \frac{X  - m_X}{\sigma_X}
     \right)^3 \right] = \frac{\zeta_3}{\sigma_X^3},
@@ -527,6 +557,29 @@ inmediatamente,
   \]
 \end{itemize}
 
+%Tratando de covarianza, m\'as generalmente, para dos vectores aleatorios \ $X$ \
+%e \ $Y$, se define la matriz de covarianza conjunta como
+%%
+%\[
+%\Sigma_{X,Y} \equiv  \Cov[X,Y] =  \Esp\left[ \left( X  - m_X\right) \left(  Y -
+%    m_Y \right)^t \right] = \Esp\left[ X Y^t \right] - m_X m_Y^t.
+%\]
+%%
+%Esta matriz contiene las covarianzas $\Cov[X_i,Y_j]$.
+
+
+%\SZ{Caso  complejos a  hacer  (SZ: me  encargo  de eso):  usando la  biyecci\'on
+%  $\Cset^d$ y $\Rset^{2 d}$; Pero, en terminos complejos, habria que definir los
+%  momentos  de  orden   superior  con  los  $Z_i$  y   $Z_i^*$  para  no  perder
+%  ``informaciones''.  Al  orden 1,  no hay perdida  por biyecci\'on  $\Cset^d$ y
+%  $\Rset^{2 d}$.   Al orden 2 por ejemplo,  si miramos los que  es definido como
+%  matriz  de covarianza  en el  caso complejo  $\Esp[(Z-m_Z)  (Z-m_Z)^+]$ matriz
+%  hermitica; si  comparamos a la  covarianza de $\widetilde{Z}$\ldots  Se pierde
+%  momentos,  lo  que es  obvio  (en  la  definicion complejas  tenemos  $\frac{d
+%    (d+1}{2}$ momentos diferentes (los otros se obtienen por simetria), mientras
+%  que en realidad al orden 2 hay $d (2d+1)$ momentos.  Se define as\'i... pseudo
+%  covarianza. Se complica a\'un m\'as  al orden superior.  Ver caso circular: la
+%  pseudo covarianza vale 0.}
 
 % ================================= Independencia, identidades y desigualdades
 
@@ -576,13 +629,15 @@ Fijense  de que  la  reciproca es  falsa en  general:
 \begin{ejemplo}[Uniforme sobre el disco unitario]
 \label{Ej:MP:UniformeDiscoUnitario}
 %
-Sea \ $X = (X_1,X_2)$ \  uniforme sobre el disco unitario \modif{o bola unitaria
-  2-dimensional  $\Bset_2$  (ver  notaciones)},  i.e., $p_X(x)  =  \frac{1}{\pi}
-\un_{\Sset^2}(x)$.   Claramente, los \  $X_i$ no  pueden ser  independientes del
-hecho  que \  $\X_i  =  [-1 \;  1]$  \ y  \  $\X  \ne \X_1  \times  \X_2$ \  (es
-estrictamente incluido  en el producto  cartesiano).  Por simetr\'ia  central de
-$p_X$, es sencillo ver  que $\Esp[X_1 X_2] = 0$ \ y  similarmente \ $\Esp[X_i] =
-0$: a pesar de que los \ $X_i$ \ no sean independientes, $\Cov[X_1,X_2] = 0$.
+  Sea  \ $X  =  (X_1,X_2)$ \  uniforme  sobre el  disco  unitario \modif{o  bola
+    unitaria  2-dimensional  $\Bset_2$   (ver  notaciones)},  i.e.,  $p_X(x)  =
+    \frac{1}{\pi} \un_{\Sset^2}(x)$.
+    % \ con \ $\Sset^2 = \{ (x_1,x_2) \in \Rset^2: \: x_1^2 + x_2^2 \le 1 \}$.
+    Claramente, los \ $X_i$ no pueden ser independientes del hecho que \ $\X_i =
+    [-1 \; 1]$ \  y \ $\X \ne \X_1 \times \X_2$  \ (es estrictamente incluido en
+    el producto cartesiano).   Por simetr\'ia central de $p_X$,  es sencillo ver
+    que $\Esp[X_1 X_2] =  0$ \ y similarmente \ $\Esp[X_i] =  0$: a pesar de que
+    los \ $X_i$ \ no sean independientes, $\Cov[X_1,X_2] = 0$.
 \end{ejemplo}
 
 \modif{La  consecuencia  de  la  independencia  sobre  la  covarianza}  facilita
@@ -696,6 +751,9 @@ desigualdades.
 %
 Viene del teorema incial aplicado a \ $\Sigma_X^{-\frac12} (X - m_X)$, \ $g(x)
 = \modif{\| x\ |^2}$ \ y \ $a = \varepsilon^2$.
+% , notando de que \  $\left( \left\| \Sigma_X^{-\frac12} (X - m_X) \right\|^2
+%   \ge \varepsilon^2 \right) \, = \, (\|X\| \ge \varepsilon)$.
+%
 %
 \begin{corolario}[Markov]
 \label{Cor:MP:Markov}
@@ -752,9 +810,13 @@ aleatorio.
   $\phi$ es dicha estrictamente convexa  si la desigualdad es estricta, salvo si
   $x_2  =  x_1$.\newline Se  puede  ver  de  que si  \  $\phi$  \ es  dos  veces
   diferenciable, su matriz Hessiana \modif{es simetrica no negativa, $\Hess \phi
-    \in  P_d(\Rset)$}.\newline  \modif{Se  muestra  por  recurrencia  au},  para
-  cualquier conjunto \ $\{ x_i \}_i$ numerable de elementos de \ $\X$ \ y reales
-  positivos \ $\{ \pi_i \}_i$ \ tales que $\sum_i \pi_i = 1$,
+    \in P_d(\Rset)$}.\newline
+  % $\Hess \phi  \ge 0$ donde las  componentes de la Hessiana  son las derivadas
+  % partiales secundas de  $\phi$, $\frac{\partial^2 \phi}{\partial x_i \partial
+  %   x_j}$.\newline 
+  \modif{Se muestra por recurrencia au}, para cualquier conjunto \ $\{ x_i \}_i$
+  numerable de  elementos de \  $\X$ \  y reales positivos  \ $\{ \pi_i  \}_i$ \
+  tales que $\sum_i \pi_i = 1$,
   %
   \[
   \phi\left( \sum_i \pi_i x_i \right) \le \sum_i \pi_i \phi(x_i).
@@ -834,6 +896,8 @@ real. $r^* > 1$ \ tal que  \ $\frac1r + \frac1{r^*}$ \ es llamado {\it conjugado
     \right\|_{r^*}^{r^*} \right]^{\frac1{r^*}}.
   \]
   %
+  % donde \ $\| x \|_r = \left( \sum_i \left| x_i \right|^r \right)^{\frac1r}$ \
+  % denota la norma $r$ de un vector ($\|\cdot\|_2 \equiv |\cdot|$).
   Se obtiene la igualda si y solamente si existe un \ $\lambda$ \ tal que \ $X =
   \lambda Y$ \ casi siempre.
 \end{teorema}
@@ -893,6 +957,7 @@ Cauchy-Bunyakovsky-Schwarz~\footnote{Esta  desigualdad, fue  probada  por Cauchy
     \right\|^2} \right]\modif{.}
   \]
   %
+%  (recuersense de que \ $|\cdot| \equiv  \| \cdot \|_2$).  
   Se obtiene la igualda si y solamente si existe un \ $\lambda$ \ tal que \ $X =
   \lambda Y$ \ casi siempre.
 \end{corolario}
@@ -919,8 +984,13 @@ continuo).
   Sean \  $X$ \ vectores  aleatorios $d$-dimensionales. Entonces
   %
   \[
-  s \mapsto \Esp\Big[ \left\|  X \right\|_s^s \Big]^{\frac{1}{s}} \quad \mbox{es
-    creciente}
+  %\begin{array}{llcl}
+  %f:& \Rset_+^* & \to & \Rset_+^*\\[2mm]
+  %
+  %& s & \mapsto & \Esp\Big[   \left\|  X \right\|_s^s \Big]^{\frac{1}{s}}
+  %\end{array}
+  s \mapsto \Esp\Big[   \left\|  X \right\|_s^s \Big]^{\frac{1}{s}} 
+  \quad  \mbox{es creciente}
   \]
   %
 \end{corolario}
