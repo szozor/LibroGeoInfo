@@ -1,0 +1,134 @@
+% --------------------------------- Familia  exponencial
+\subseccion{Familia exponencial}
+
+% Kay p. 110 & 124
+% Lehman & Casela p. 23
+% Kotz & Balakrishnan p. 659
+% Robert p. 115
+% van den Bos p. 30
+% Cencov p. 245, 279
+% Ibarola Perez p. 174
+% Mukhopadhyay p. 141
+
+Muchas de las leyes que hemos visto, que sean discreta o continuas, partenecen a
+una clase que comparte propriedades  particulares, y que juega un rol particular
+que sean en f\'isica (ej. en problema de maximizaci\'on de entrop\'ia de Shannon
+como lo vamos a ver en  el c\'apitulo~\ref{Cap:SZ:Informacion}) o en el marco de
+la inferencia bayesiana. Esta clase es la familia dicha exponencial~\cite{Dar35,
+  Koo36, And70, LehCas98, IbPer12,  Muk00, KotBal00, Rob07, Bos07, Cen82, Kay93,
+  NieNoc10}.   En inferencia  bayesiana  permite por  ejemplo  deducir a  priori
+conjugados, es decir tales que la  distribuci\'on dicha a posteriori caiga en la
+misma  familia (\ie  tenga la  misma forma  param\'etrica pero  con par\'ametros
+dependientes        de       los       datos)~\footnote{Ver        nota       de
+  pie~\footref{Foot:SZ:BayesPrior}. Recordamos  que si observaciones  tienen una
+  distribuci\'on \  $p_{X|\Theta=\theta}(x)$ \  con una distribuci\'on  a priori
+  del par\'ametro $p_\Theta(\theta)$, por la  regla de Bayes el a posteriori, es
+  decir  la   ley  del  parametro  dados   las  observaciones  es   dada  por  \
+  $p_{\Theta|X=x}(\theta) \propto p_{X|\Theta=\theta}(x) p_\Theta(\theta)$ \ con
+  \ $\propto$ \ significando ``proporcional  a''. Si $p_{\Theta|X=x}$ \ tiene la
+  misma forma param\'etrica que \  $p_\Theta(\theta)$ \ inferir \ $\theta$ \ con
+  datos  que se  observan se  reduce a  actualizar el  par\'ametro de  la  ley a
+  posteriori.}. Notar  que esta familia  es conocido o  a veces {\em  familia de
+  Koopman-Darmois}  debido  a   la  introducci\'on  por  Koopman~\cite{Koo36}  o
+Darmois~\cite{Dar35}  en   los  a\~nos   1935-1936  (ver  tambi\'en   Pitman  \&
+~\cite{Pit36}) y es definida de la manera siguiente:
+%
+\begin{definicion}[Familia exponencial y exponencial natural]\label{Def:MP:FamiliaExponencial}
+%
+  Sea  \ $X$  \  vector aleatorio  definido  sobre \  $\X  \subset \Rset^d$,  de
+  densidad  de probabilidad  \  $p_X$ \  \ con  respecto  a una  medida \  $\mu$
+  (discreta, continua o  mixta). La distribuci\'on de probabilidad  \ $p_X$ \ es
+  dicha de  la {\em familia  exponencial de orden  $k$}, $k \in \Nset^*$,  si se
+  escribe de la forma
+  %
+  \[
+  p_X(x) = C(\theta) \, h(x) \, \exp\left( \eta(\theta)^t T(x) \right)
+  \]
+  %
+  donde
+  %
+  \[
+  C:  \Theta \subset  \Rset^m \mapsto  \Rset_+,  \qquad h:  \X \mapsto  \Rset_+,
+  \qquad \eta: \Theta \mapsto \Rset^k, \qquad T: \X \mapsto \Rset^k
+  \]
+  %
+  con \ $m \in \Nset$.  En otras palabras, la familia exponencial es una familia
+  parametrica de la  forma as\'i definida. La familia  es dicha {\em exponencial
+    natural} si tiene la forma
+  %
+  \[
+  p_X(x) = \frac{1}{Z(\eta)}  \, h(x) \, \exp\left( \eta^t  T(x) \right) = \h(x)
+  \, exp\left( \eta^t S(x) - \varphi(\eta) \right)
+  \]
+  %
+  con
+  %
+  \[
+  \eta \in N \subset \Rset^k, \qquad Z: \Rset^k \mapsto \Rset_+, \qquad \varphi = \log(Z),
+  \qquad h: \X \mapsto \Rset_+, \qquad T: \X \mapsto \Rset^k
+  \]
+  %
+  donde \  $N = \left\{ \eta \in  \Rset^k \tq \int_\X \h(x)  \, exp\left( \eta^t
+      S(x) - \varphi(\eta) \right) \, d\mu(x)  < + \infty \right\}$ \ es llamado
+  {\em espacio de par\'ametros naturales}.
+\end{definicion}
+%
+Se notara  que con  la reparametrizaci\'on \  $\eta(\theta)$ \ se  puede siempre
+(por lo  menos formalmente) escribir una  ley de la familia  exponencial bajo su
+forma natural. Con respeto a cada termino:
+%
+\begin{itemize}
+\item $T$ es llamada {\em estad\'istica suficiente} de la ley. \SZ{completar}
+%
+\item  $\theta$  es el  par\'ametro,  multivariado,  y  $\eta$ es  llamado  {\em
+    par\'ametro natural}.
+%
+\item La funci\'on $Z$ es llamada  {\em funci\'on de partici\'on}; no solo juega
+  el  rol de  normalizaci\'on  de  la ley,  \SZ{pero  tiene una  significaci\'on
+    f\'isica}.
+\end{itemize}
+
+Se notara que, en particular, \ $Z$ \ es relacionada a los momentos de $T$:
+%
+\begin{teorema}[Funci\'on de partici\'on y generadora de momentos]
+%
+  Sea \  $X$ \  de distribuci\'on exponencial  natural de par\'ametro  natural \
+  $\eta$ \ y estad\'istica suficiente \ $T$  \ y denotamos \ $Z$ la funci\'on de
+  partici\'on. Entonces, la funci\'on generadora  \ $M_{T(X)}$ \ de los momentos
+  de \ $T$ es relacionada a \ $Z$ \ y \ a \ $\varphi = \log Z$ \ por
+  %
+  \[
+  \forall \: u \tq u+\eta \in N, \quad M_{T(X)}(u) = \frac{Z(u+\eta)}{Z(\eta)} =
+  e^{\varphi(u+\eta) - \varphi(\eta)}
+  \]
+  %
+  En particular, si \  $\varphi$ \ es diferenciable tenemos
+  %
+  \[
+  \nabla \varphi (\eta) = \Esp\left[ T(X) \right]
+  \]
+  %
+  y si si \ $\varphi$ \ es dos veces diferenciable tenemos
+  %
+  \[
+  \Hess \varphi (\eta) = \Cov\left[ T(X) \right]
+  \]
+
+  \SZ{A ver si hablamos de cumulantes }
+\end{teorema}
+%
+\begin{proof}
+  De la definici\'on de la function generadora de $T(X)$, tenemos
+  %
+  \begin{eqnarray*}
+  M_{T(X)}(u) & = &\Esp\left[ \exp\left( u^t T(X) \right) \right]\\[2mm]
+  %
+  & = & \int_\X \frac{1}{Z(\eta)} \, h(x) \, \exp\left( (u + \eta)^t T(x) \right) \,
+  d\mu(x)\\[2mm]
+  %
+& = & \exp\left( \varphi(u+\eta) - \varphi(\eta) \right) \int_\X h(x) \, \exp\left( (u + \eta)^t T(x) - \varphi(u+\eta) \right) \, d\mu(x)
+  \end{eqnarray*}
+\end{proof}
+
+
+\SZ{Van den Bos 2007, p. 33, informaci\'on de Fisher}
