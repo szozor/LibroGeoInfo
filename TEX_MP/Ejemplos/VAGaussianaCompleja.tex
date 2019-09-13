@@ -94,10 +94,10 @@ de vectores independientes:
 \begin{teorema}[Stabilidad]
 \label{Teo:MP:StabilidadGaussianaCompleja}
 %
-Sean \ $A_i , i = 1,\ldots,n$ \  matrices de \ $\Cset^{d' \times d}, d' \le d$ \
-de   rango   lleno,   $b_i  \in   \Cset^{d'}$   \   y   \   $Z_i  \,   \sim   \,
-\C\N(m_i,\Sigma_i,\check{\Sigma}_i)$    \   $d$-dimensionales,   independientes,
-entonces
+  Sean \ $A_i , i = 1,\ldots,n$  \ matrices de \ $\M_{d',d}(\Cset), \: d' \le d$
+  \  de   rango  lleno,   $b_i  \in  \Cset^{d'}$   \  y   \  $Z_i  \,   \sim  \,
+  \C\N(m_i,\Sigma_i,\check{\Sigma}_i)$   \   $d$-dimensionales,  independientes,
+  entonces
   %
   \[
   \sum_{i=1}^n \left( A_i  Z_i + b_i \right) \,  \sim \, \C\N\left( \sum_{i=1}^n
@@ -227,7 +227,7 @@ Sea \  $Z \sim  \C\N(m,\Sigma,\check{\Sigma})$.  Entonces, existen  matrices (no
   \]
   %
   con \ $U \sim \N(0,I)$ \ y \  $V \sim \N(0,I)$ \ independientes, y \ $M$ \ tal
-  que  \ $M  M^t =  \begin{bmatrix} \Sigma_X  & \Sigma_{XY}  \\  \Sigma_{XY}^t &
+  que  \ $M  M^t =  \begin{bmatrix} \Sigma_X  & \Sigma_{X,Y}  \\  \Sigma_{X,Y}^t &
     \Sigma_Y  \end{bmatrix}$  \   (ej.  raiz  cuadrade  de  esta   matriz  de  \
   $P_{2d}^+(\Rset)$,    o     descomposici\'on    de    Cholesky~\cite{HorJoh13,
     Bha07}). Ahora, volviendo a la forma compleja tenemos
@@ -254,23 +254,23 @@ inferior~\footnote{Se puede hacer el  mismo razonamiento con la forma triangular
   superior;  se cambia  los roles  de \  $X$  \ e  \ $Y$  \ en  las matrices  de
   covarianza.},  y  entonces bloc-triangular  inferior  \  $M =  \begin{bmatrix}
   \alpha  &  0  \\  \beta  &  \gamma \end{bmatrix}$.   Eso  conduce,  a  $M  M^t
-= \begin{bmatrix} \Sigma_X & \Sigma_{XY} \\ \Sigma_{XY}^t &
+= \begin{bmatrix} \Sigma_X & \Sigma_{X,Y} \\ \Sigma_{X,Y}^t &
   \Sigma_Y \end{bmatrix}  = \begin{bmatrix} \alpha \alpha^t &  \alpha \beta^t \\
   \beta \alpha^t &  \beta \beta^t + \gamma \gamma^t  \end{bmatrix}$.  Eso da por
-ejemplo \   $\alpha    =   \Sigma_X^{\frac12}$,    \    $\beta   =    \Sigma_{XY}^t
-\Sigma_X^{-\frac12}$ \ y \ $\gamma = \left( \Sigma_Y - \Sigma_{XY}^t \Sigma_X^{-1}
-  \Sigma_{XY} \right)^{\frac12}$.   Por el otro lado,  $A = \alpha  + \gamma +
+ejemplo \   $\alpha    =   \Sigma_X^{\frac12}$,    \    $\beta   =    \Sigma_{X,Y}^t
+\Sigma_X^{-\frac12}$ \ y \ $\gamma = \left( \Sigma_Y - \Sigma_{X,Y}^t \Sigma_X^{-1}
+  \Sigma_{X,Y} \right)^{\frac12}$.   Por el otro lado,  $A = \alpha  + \gamma +
 \imath \beta$ \ y \ $B = \alpha - \gamma + \imath \beta$. Una soluci\'on posible
 es entonces
 %
 \[
 \left\{\begin{array}{lll}
-A & = & \Sigma_X^{\frac12} + \left( \Sigma_Y - \Sigma_{XY}^t \Sigma_X^{-1} \Sigma_{XY}
-\right)^{\frac12}  + \imath \Sigma_{XY}^t
+A & = & \Sigma_X^{\frac12} + \left( \Sigma_Y - \Sigma_{X,Y}^t \Sigma_X^{-1} \Sigma_{X,Y}
+\right)^{\frac12}  + \imath \Sigma_{X,Y}^t
 \Sigma_X^{-\frac12}\\[2.5mm]
 %
-B & = &  \Sigma_X^{\frac12} - \left( \Sigma_Y - \Sigma_{XY}^t \Sigma_X^{-1} \Sigma_{XY}
-\right)^{\frac12} + \imath \Sigma_{XY}^t
+B & = &  \Sigma_X^{\frac12} - \left( \Sigma_Y - \Sigma_{X,Y}^t \Sigma_X^{-1} \Sigma_{X,Y}
+\right)^{\frac12} + \imath \Sigma_{X,Y}^t
 \Sigma_X^{-\frac12}
 \end{array}\right.
 \]

@@ -369,48 +369,48 @@ que los autovalores corespondientes  $\lambda^\Gauss_i$ sean en orden creciente,
 \ie
 %
 \[
-\Sigma_\Gauss  =  U \diag\left(  \lambda^\Gauss_1  ,  \ldots ,  \lambda^\Gauss_d
-\right)  U^t \qquad  \mbox{con} \qquad  0  \le \lambda^\Gauss_1  \le \cdots  \le
-\lambda^\Gauss_d,
+\Sigma_\Gauss  =  U  \diag\left(  \begin{bmatrix} \lambda^\Gauss_1  &  \cdots  &
+    \lambda^\Gauss_d \end{bmatrix}^t \right) U^t  \qquad \mbox{con} \qquad 0 \le
+\lambda^\Gauss_1 \le \cdots \le \lambda^\Gauss_d,
 \]
 %
-donde $\diag$ es la matriz diagonal teniendo los $\lambda_i$ en su diagonal. Sea
-\  $R_X  =  U^t  \Sigma_X  U$.   Es  sencillo  ver  que  \  $\left|  \Sigma_X  +
-  \Sigma_\Gauss \right|  = \left| R_X +  \Lambda_\Gauss \right|$ \ (de  $|A B| =
-|A| \,  |B|$) \ y  que \ $\Tr \Sigma_X  = \Tr R_X$  (de $\Tr(A B) =  \Tr(B A)$).
-Entonces,  el problema  se reduce  a maximizar  \ $\left|  R_X  + \Lambda_\Gauss
-\right|$  \ sujeto  a \  $\Tr R_X  \le \P$  \ y  \ $R_X  \ge 0$  sim\'etica.  La
-desigualdad de Hadamard ya evocada da \ $\left| R_X + \Lambda_\Gauss \right| \le
-\prod_i \left(  R_X + \Lambda_\Gauss  \right)_{i,i} = \prod_i \left(  \left( R_X
-  \right)_{i,i} +  \lambda^\Gauss_i \right)$  \ donde $(\cdot)_{i,i}$  denota la
-componente $i,i$  de la  matriz, con  igualdad si y  solamente si  \ $R_X$  \ es
-diagonal: para maximizar \ $\left| R_X + \Lambda_\Gauss \right|$, \ $R_X$ \ debe
-ser diagonal (dada una diagonal, se  alcanza el m\'aximo si los otros t\'erminos
-son  nulos).  Es  decir que  la base  que diagonaliza  \ $\Sigma_\Gauss$  \ debe
-diagonalizar  tambi\'en  $\Sigma_X$.   Sean  \ $\lambda^X_i$  \  los  t\'erminos
-diagonales  de  $R_X$: queda  que  maximizar  \  $\prod_i \left(  \lambda^X_i  +
-  \lambda^\Gauss_i  \right)$  \ sujeto  a  $\sum_i \lambda^X_i  \le  \P$  \ y  \
-$\lambda^X_i \ge 0$.   Este problema de optimizaci\'on sujeto  a una desigualdad
-se  resuelva  con el  enfoque  de  Karush-Kuhn-Tucker~\footnote{Se introduce  el
-  factor  de   Lagrange  y   se  maximiza  \   $\prod_i  \left(   \lambda^X_i  +
-    \lambda^\Gauss_i \right) + \eta  \sum_i \lambda^X_i$.  Eso da \ $\lambda^X_i
-  + \lambda^\Gauss_i = \lambda$ \ constante si $\lambda$ es tal que se satisfaga
-  la positividad de $\lambda^X_i$, y  $\lambda^X_i = 0$ sino. En otras palabras,
-  \ $\lambda^X_i = \left( \lambda - \lambda^\Gauss_i \right)_+$ con $\lambda$ el
-  factor  de Lagrande  despu\'es de  una  reescritura. Queda  que maximizar  los
-  $\lambda^X_i$ para  maximizar $\left| R_X + \Lambda_\Gauss  \right|$, es decir
-  tomar  $\lambda$ lo  m\'as grande  que  se puede,  pero satisfaciendo  $\sum_i
-  \lambda^X_i   \le  \P$,   \ie   alcanzando  la   igualdad.\label{Foot:SZ:KKT}}
-(KKT)~\cite{Mil00,  CamMar09},   dando  \   $\lambda^X_i  =  \left(   \lambda  -
-  \lambda^\Gauss_i  \right)_+$  \  con  \  $(\cdot)_+ =  \max(\cdot,0)$  \  y  \
-$\lambda$ \ tal que \ $\sum_i \left( \lambda - \lambda^\Gauss_i \right)_+ = \P$.
-En conclusi\'on, la capacidad es dada por
+donde $\diag$ es la matriz diagonal teniendo los $\lambda_i$ en su diagonal (ver
+notaciones).  Sea \  $R_X =  U^t \Sigma_X  U$.  Es  sencillo ver  que  \ $\left|
+  \Sigma_X + \Sigma_\Gauss \right| =  \left| R_X + \Lambda_\Gauss \right|$ \ (de
+$|A B| = |A| \,  |B|$) \ y que \ $\Tr \Sigma_X = \Tr  R_X$ (de $\Tr(A B) = \Tr(B
+A)$).   Entonces,   el  problema  se  reduce   a  maximizar  \   $\left|  R_X  +
+  \Lambda_\Gauss  \right|$ \ sujeto  a \  $\Tr R_X  \le \P$  \ y  \ $R_X  \ge 0$
+sim\'etica.   La  desigualdad  de  Hadamard  ya  evocada  da  \  $\left|  R_X  +
+  \Lambda_\Gauss \right| \le \prod_i \left( R_X + \Lambda_\Gauss \right)_{i,i} =
+\prod_i  \left( \left(  R_X \right)_{i,i}  + \lambda^\Gauss_i  \right)$  \ donde
+$(\cdot)_{i,i}$  denota la  componente $i,i$  de la  matriz, con  igualdad  si y
+solamente  si  \   $R_X$  \  es  diagonal:  para  maximizar   \  $\left|  R_X  +
+  \Lambda_\Gauss \right|$,  \ $R_X$ \ debe  ser diagonal (dada  una diagonal, se
+alcanza el  m\'aximo si los otros t\'erminos  son nulos).  Es decir  que la base
+que  diagonaliza \  $\Sigma_\Gauss$  \ debe  diagonalizar tambi\'en  $\Sigma_X$.
+Sean \ $\lambda^X_i$ \ los t\'erminos diagonales de $R_X$: queda que maximizar \
+$\prod_i  \left( \lambda^X_i  +  \lambda^\Gauss_i \right)$  \  sujeto a  $\sum_i
+\lambda^X_i \le \P$ \ y \  $\lambda^X_i \ge 0$.  Este problema de optimizaci\'on
+sujeto    a    una    desigualdad    se    resuelva   con    el    enfoque    de
+Karush-Kuhn-Tucker~\footnote{Se introduce el factor  de Lagrange y se maximiza \
+  $\prod_i  \left(   \lambda^X_i  +  \lambda^\Gauss_i  \right)   +  \eta  \sum_i
+  \lambda^X_i$.  Eso da \ $\lambda^X_i + \lambda^\Gauss_i = \lambda$ \ constante
+  si  $\lambda$ es  tal  que se  satisfaga  la positividad  de $\lambda^X_i$,  y
+  $\lambda^X_i = 0$  sino. En otras palabras, \ $\lambda^X_i  = \left( \lambda -
+    \lambda^\Gauss_i \right)_+$ con $\lambda$ el factor de Lagrande despu\'es de
+  una reescritura. Queda que  maximizar los $\lambda^X_i$ para maximizar $\left|
+    R_X + \Lambda_\Gauss \right|$, es  decir tomar $\lambda$ lo m\'as grande que
+  se puede,  pero satisfaciendo $\sum_i  \lambda^X_i \le \P$, \ie  alcanzando la
+  igualdad.\label{Foot:SZ:KKT}}    (KKT)~\cite{Mil00,    CamMar09},   dando    \
+$\lambda^X_i = \left( \lambda - \lambda^\Gauss_i \right)_+$ \ con \ $(\cdot)_+ =
+\max(\cdot,0)$  \  y  \  $\lambda$  \   tal  que  \  $\sum_i  \left(  \lambda  -
+  \lambda^\Gauss_i \right)_+ = \P$.  En conclusi\'on, la capacidad es dada por
 %
 \begin{eqnarray*}
 C =  \frac12 \log \left(  \frac{\left| \Sigma_\Gauss +  \Sigma_X \right|}{\left|
       \Sigma_\Gauss  \right|}  \right)  & \quad \mbox{con} \quad &  \Sigma_X  =  U
-\diag\left( \left(\lambda - \lambda^\Gauss_1\right)_+ , \ldots , \left(\lambda -
-    \lambda^\Gauss_d \right)_+ \right) U^t,\\[2.5mm]
+\diag\left( \begin{bmatrix} \left(\lambda - \lambda^\Gauss_1\right)_+ & \cdots & \left(\lambda -
+    \lambda^\Gauss_d \right)_+ \end{bmatrix}^t \right) U^t,\\[2.5mm]
 %
 & &  \lambda \ \mbox{ tal que } \:
 \sum_i \left(\lambda - \lambda^\Gauss_i \right)_+ = \P

@@ -48,8 +48,11 @@ Densidad de probabilidad~\footnote{La densidad  de probabilidad corresponde a la
 Promedio & $\displaystyle m_X = \nu \, V$\\[2mm]
 \hline
 %
-Covarianza & $\displaystyle \Sigma_X = \nu \big( J (V \otimes V) + (V \otimes I)
-K (V \otimes I) \big)$\\[2mm]
+Covarianza & $\displaystyle \Sigma_X = \nu \sum_{i,j=1}^d \Big( \left( \un_i
+\un_j^t V \right) \!\otimes\! \left( \un_j \un_i^t V \right) + \left( V \un_i
+\un_j^t V \right) \!\otimes\! \left( \un_i \un_j^t \right) \Big)$\\[2mm]
+%\big( J (V \otimes V) + (V \otimes I)
+%K (V \otimes I) \big)$\\[2mm]
 % $\Cov[X_{i,j},X_{k,l}] = nu \left( V_{i,k} V_{j,l} +V_{i,l} V_{j,k} \right)$}
 \hline
 %
@@ -75,8 +78,8 @@ propiedades como las siguientes.
 \begin{lema}[Stabilidad por transformaci\'on lineal]
 \label{Lem:MP:StabilidadWishartLineal}
 %
-  Sea $X \,  \sim \, \W(V,\nu)$ \ y \  $A \in \Rset^{d \times d'}$  \ con \ $d'
-  \le d$, \ de rango lleno. Entonces
+Sea $X \, \sim \, \W(V,\nu)$ \ y  \ $A \in \M_{d,d'}(\Rset)$ \ con \ $d' \le d$,
+\ de rango lleno. Entonces
   \[
   A^t X A \, \sim \, \W\left( A^t V A , \nu \right)
   \]

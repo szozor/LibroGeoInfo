@@ -903,7 +903,7 @@ ninguno de los  otros valores $x_j \  (j \ne k)$. La forma  de la distribuci\'on
 es: \ $p_X(x) = 1$ \ si \ $x =  x_k$ \ y $0$ si no; el vector de probabilidad se
 escribir\'a  \  $p_X  =  \un_k$  (ver  notaciones;  el  vector  posiblemente  de
 dimensi\'on infinita).  Se denota tambi\'en  con el {\it s\'imbolo de Kronecker}
-\ $\delta_{jk} = 1$ \  si \ $j = k$ \ y 0 si  no. En este libro, evitaremos usar
+\ $\delta_{j,k} = 1$ \  si \ $j = k$ \ y 0 si  no. En este libro, evitaremos usar
 este  s\'imbolo  para no  confundirlo  con la  medida  de  Dirac.  Sin  embargo,
 resuelta  que \  $P_X$ \  es precisamente  la medida  de Dirac  en \  $x_k$ (ver
 Def.~\ref{Def:MP:Dirac}).
@@ -1310,13 +1310,13 @@ vector aleatorio:
   %,  de hecho una probabilidad  conjunta para  este producto  puede ser  nula.\newline 
   En el  caso multivariado, la notaci\'on  vectorial es m\'as  delicada de usar:
   $p_X$ ser\'ia un ``tensor'' \modif{(o tabla)} $d$-dimensional (una matriz para
-  $d  = 2$,  \modif{una ``tabla''  3  dimensonal para  $d=3$,\ldots}).  Pero  es
-  posible  usar una  notaci\'on vectorial,  recordando que  $\Nset^d$  puede ser
-  puesto  en  biyecci\'on  con  $\Nset$,  y dada  una  biyecci\'on  usarla  para
-  etiquetar los  componentes de $p_X$  puestos en vector.   En el caso  finito \
-  $\X_i = \{ x_{j_i} \}_{j=1}^{\alpha_i}$ \ con \ $\alpha_i = |\X_i| < +\infty$,
-  \ se puede organizar los componentes tales que $p_X(x_{j_1}\, , \, \ldots \, ,
-  \,   x_{j_d})$   sea   la   $j$-esima   componente  del   vector   $p_X$   con
+  $d   =  2$,  \modif{una   ``tabla''  3   dimensonal  para   $d=3$,\ldots;  ver
+    notaciones}).  Pero es posible usar una notaci\'on vectorial, recordando que
+  $\Nset^d$ puede ser puesto en  biyecci\'on con $\Nset$, y dada una biyecci\'on
+  usarla para etiquetar los componentes de  $p_X$ puestos en vector.  En el caso
+  finito \ $\X_i = \{ x_{j_i}  \}_{j=1}^{\alpha_i}$ \ con \ $\alpha_i = |\X_i| <
+  +\infty$, \ se  puede organizar los componentes tales  que $p_X(x_{j_1}\, , \,
+  \ldots \,  , \,  x_{j_d})$ sea  la $j$-esima componente  del vector  $p_X$ con
   \modif{$\displaystyle  j =  1  +  \sum_{i=1}^d (j_i  -  1) \,  \prod_{k=i+1}^d
     \alpha_k$}.
 \end{definicion}
@@ -1333,12 +1333,12 @@ independientes si y solamente si la funci\'on de r\'epartici\'on se factoriza, o
 equivalentemente la funci\'on de masa se factoriza, \ie
 %
 \[
-X_i  \:  \mbox{mutuamente  independientes}  \quad \Leftrightarrow  \quad  p_X  =
-\modif{\prod_{i=1}^d p_{X_i}}.
+X_i  \:  \mbox{mutuamente  independientes}  \quad \Leftrightarrow  \quad  p_X(x)  =
+\modif{\prod_{i=1}^d p_{X_i}(x_i)}.
 \]
 %
 En  notaci\'on  tensorial,  $p_X  =  p_{X_1} \otimes  \cdots  \otimes  p_{X_d}$,
-\modif{producto de Kronecker (ver notaciones)}.
+\modif{producto externo (ver notaciones)}.
 
 Al  final, de la  f\'ormula de  calculo de  funci\'on de  repartici\'on marginal
 vista  en  la  secci\'on~\ref{Ssec:MP:VAGeneral},  para un  subconjunto  $I_k  =

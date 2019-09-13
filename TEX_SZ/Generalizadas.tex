@@ -37,21 +37,22 @@ para  probabilidades  incompletas~\footnote{En  esta  secci\'on, los  $p_i$  son
 invarianza de  $H(p)$ por permutaci\'on de  os $p_i$, (ii) la  continuidad de la
 incerteza elemental  $H(p_i)$ ($p_i$ visto como  probabilidad incompleta), (iii)
 $H\left( \frac12 \right) = 1 $,  (iv) la aditividad $H(p \otimes q) = H(p)+H(q)$
-donde $p \otimes  q$ es el producto de  Kronecker o tensorial~\footnote{Ver nota
-  de   pie~\ref{Foot:MP:Kronecker}   pagina~\pageref{Foot:MP:Kronecker}.},   \ie
-probabilidad conjunta de dos variables independientes, y consider\'o en lugar de
-la recursividad  un axioma  dicho de  valor promedio, axioma  muy parecido  a la
-recursividad. Para $p$ \ y \ $q$ probabilidades incompletas tales que $p \, \cup
-\, q = \begin{bmatrix} p_1 & \cdots  & p_n & q_1 & \cdots & q_m \end{bmatrix}^t$
-sea incompleta  ($w_p +  w_q \le  1$), el  axioma (v) es  $H(p \,  \cup \,  q) =
-\frac{w_p \, H(p) +  w_q \, H(q)}{w_p + w_q}$.  Demostr\'o que  con (v) en lugar
-de la recursividad,  el conjunto de axiomas conduce de nuevo  a la entrop\'ia de
-Shannon.  La generalizaci\'on propuesta por R\'enyi era de generalizar el axioma
-(v) reemplazando la media aritm\'etica por una media generalizada (v') $H^\ren(p
-\, \cup  \, q)  = g^{-1}  \left( \frac{w_p \,  g\big( H^\ren(p)  \big) +  w_q \,
-    g\big( H^\ren(q) \big)}{w_p +  w_q}\right)$ con $g$ estrictamente mon\'otona
-y  continua,  llamado  media  {\it  cuasi-aritm\'etica,  o  cuasi-lineal,  o  de
-  Kolmogorov-Nagumo}.       De     las      propiedades     de      la     media
+donde $p \otimes  q$ es el producto \modif{externo (ver notaciones)},
+% ~\footnote{Ver           nota          de          pie~\ref{Foot:MP:Kronecker}
+%   pagina~\pageref{Foot:MP:Kronecker}.},
+\ie  probabilidad conjunta  de dos  variables independientes,  y  consider\'o en
+lugar de la recursividad un axioma  dicho de valor promedio, axioma muy parecido
+a la recursividad. Para $p$ \ y \ $q$ probabilidades incompletas tales que $p \,
+\cup  \,  q   =  \begin{bmatrix}  p_1  &   \cdots  &  p_n  &  q_1   &  \cdots  &
+  q_m \end{bmatrix}^t$ sea incompleta ($w_p + w_q \le 1$), el axioma (v) es $H(p
+\, \cup \,  q) = \frac{w_p \, H(p)  + w_q \, H(q)}{w_p +  w_q}$.  Demostr\'o que
+con (v) en lugar  de la recursividad, el conjunto de axiomas  conduce de nuevo a
+la  entrop\'ia de  Shannon.  La  generalizaci\'on propuesta  por R\'enyi  era de
+generalizar  el axioma  (v) reemplazando  la  media aritm\'etica  por una  media
+generalizada (v')  $H^\ren(p \, \cup \,  q) = g^{-1} \left(  \frac{w_p \, g\big(
+    H^\ren(p) \big) + w_q \,  g\big( H^\ren(q) \big)}{w_p + w_q}\right)$ con $g$
+estrictamente mon\'otona  y continua,  llamado media {\it  cuasi-aritm\'etica, o
+  cuasi-lineal,  o  de  Kolmogorov-Nagumo}.   De  las propiedades  de  la  media
 cuasi-aritm\'etica~\cite{Nag30,  Kol30, Kol91, HarLit52},  eso es  equivalente a
 buscar una entrop\'ia elemental $H^\ren(p_i)$ y reemplazar la media aritm\'etica
 \ $\sum_i  p_i H^\ren(p_i)$ por  una media de Kolmogorov-Nagumo,  $g^{-1} \left(

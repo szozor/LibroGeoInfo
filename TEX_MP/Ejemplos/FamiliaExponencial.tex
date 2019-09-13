@@ -42,7 +42,7 @@ Darmois~\cite{Dar35}  en   los  a\~nos   1935-1936  (ver  tambi\'en   Pitman  \&
   escribe de la forma
   %
   \[
-  p_X(x) = C(\theta) \, h(x) \, \exp\left( \eta(\theta)^t T(x) \right)
+  p_X(x) = C(\theta) \, h(x) \, \exp\left( \eta(\theta)^t S(x) \right)
   \]
   %
   donde
@@ -53,11 +53,11 @@ Darmois~\cite{Dar35}  en   los  a\~nos   1935-1936  (ver  tambi\'en   Pitman  \&
   \]
   %
   con \ $m \in \Nset$.  En otras palabras, la familia exponencial es una familia
-  parametrica de la  forma as\'i definida. La familia  es dicha {\em exponencial
-    natural} si tiene la forma
+  parametrica  de la  forma as\'i  definida, con  $\Theta$ \  el espacio  de los
+  par\'ametros. La familia es dicha {\em exponencial natural} si tiene la forma
   %
   \[
-  p_X(x) = \frac{1}{Z(\eta)}  \, h(x) \, \exp\left( \eta^t  T(x) \right) = \h(x)
+  p_X(x) = \frac{1}{Z(\eta)}  \, h(x) \, \exp\left( \eta^t  S(x) \right) = h(x)
   \, exp\left( \eta^t S(x) - \varphi(\eta) \right)
   \]
   %
@@ -68,7 +68,7 @@ Darmois~\cite{Dar35}  en   los  a\~nos   1935-1936  (ver  tambi\'en   Pitman  \&
   \qquad h: \X \mapsto \Rset_+, \qquad T: \X \mapsto \Rset^k
   \]
   %
-  donde \  $N = \left\{ \eta \in  \Rset^k \tq \int_\X \h(x)  \, exp\left( \eta^t
+  donde \  $N = \left\{ \eta \in  \Rset^k \tq \int_\X h(x)  \, \exp\left( \eta^t
       S(x) - \varphi(\eta) \right) \, d\mu(x)  < + \infty \right\}$ \ es llamado
   {\em espacio de par\'ametros naturales}.
 \end{definicion}
@@ -94,39 +94,39 @@ Se notara que, en particular, \ $Z$ \ es relacionada a los momentos de $T$:
 %
   Sea \  $X$ \  de distribuci\'on exponencial  natural de par\'ametro  natural \
   $\eta$ \ y estad\'istica suficiente \ $T$  \ y denotamos \ $Z$ la funci\'on de
-  partici\'on. Entonces, la funci\'on generadora  \ $M_{T(X)}$ \ de los momentos
+  partici\'on. Entonces, la funci\'on generadora  \ $M_{S(X)}$ \ de los momentos
   de \ $T$ es relacionada a \ $Z$ \ y \ a \ $\varphi = \log Z$ \ por
   %
   \[
-  \forall \: u \tq u+\eta \in N, \quad M_{T(X)}(u) = \frac{Z(u+\eta)}{Z(\eta)} =
+  \forall \: u \tq u+\eta \in N, \quad M_{S(X)}(u) = \frac{Z(u+\eta)}{Z(\eta)} =
   e^{\varphi(u+\eta) - \varphi(\eta)}
   \]
   %
   En particular, si \  $\varphi$ \ es diferenciable tenemos
   %
   \[
-  \nabla \varphi (\eta) = \Esp\left[ T(X) \right]
+  \nabla \varphi (\eta) = \Esp\left[ S(X) \right]
   \]
   %
   y si si \ $\varphi$ \ es dos veces diferenciable tenemos
   %
   \[
-  \Hess \varphi (\eta) = \Cov\left[ T(X) \right]
+  \Hess \varphi (\eta) = \Cov\left[ S(X) \right]
   \]
 
   \SZ{A ver si hablamos de cumulantes }
 \end{teorema}
 %
 \begin{proof}
-  De la definici\'on de la function generadora de $T(X)$, tenemos
+  De la definici\'on de la function generadora de $S(X)$, tenemos
   %
   \begin{eqnarray*}
-  M_{T(X)}(u) & = &\Esp\left[ \exp\left( u^t T(X) \right) \right]\\[2mm]
+  M_{S(X)}(u) & = &\Esp\left[ \exp\left( u^t S(X) \right) \right]\\[2mm]
   %
-  & = & \int_\X \frac{1}{Z(\eta)} \, h(x) \, \exp\left( (u + \eta)^t T(x) \right) \,
+  & = & \int_\X \frac{1}{Z(\eta)} \, h(x) \, \exp\left( (u + \eta)^t S(x) \right) \,
   d\mu(x)\\[2mm]
   %
-& = & \exp\left( \varphi(u+\eta) - \varphi(\eta) \right) \int_\X h(x) \, \exp\left( (u + \eta)^t T(x) - \varphi(u+\eta) \right) \, d\mu(x)
+& = & \exp\left( \varphi(u+\eta) - \varphi(\eta) \right) \int_\X h(x) \, \exp\left( (u + \eta)^t S(x) - \varphi(u+\eta) \right) \, d\mu(x)
   \end{eqnarray*}
 \end{proof}
 

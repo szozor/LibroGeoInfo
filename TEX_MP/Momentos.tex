@@ -259,8 +259,13 @@ medio se calcula a partir del de $X$:
 %
 \begin{proof}
   Sea $B \in \B(\Rset^d)$ \ y consideramos \ $f(x) = \un_B(x)$. Entonces, $\Y
-  = \{  0 \;  1 \}$ y inmediatamente  \[P_Y = P_X(B) \, \delta_1 + (1-P_X(B))
-  \, \delta_0.\] Entonces
+  = \{  0 \;  1 \}$ y inmediatamente
+  %
+  \[
+  P_Y = P_X(B) \, \delta_1 + (1-P_X(B)) \, \delta_0.
+  \]
+  %
+  Entonces
   %
   \[
   \Esp[f(X)]  =  \int_\Rset  P_X(B)  \,  d\delta_1 +  \int_\Rset  (1-P_X(B))  \,
@@ -279,13 +284,14 @@ De  manera general,  estas medias  son llamadas  {\it momentos}  de  la variable
 aleatoria $X$. Los momentos relevantes usuales son los siguientes:
 %
 \begin{itemize}
-\item para  el ``monomio'' $f(x) =  x^{\otimes K}$ producto tensiorial  de $x$ \
-  $K$ veces~\footnote{Recuerdense  de que $x  \otimes x$ es una  matriz teniendo
-    como  componentes   $x_i  x_j$;  entonces  $x^{\otimes  K}$   en  un  tensor
-    $K$-dimensional teniendo como componentes $ \displaystyle \left[ x^{\otimes
-        K}  \right]_{i_1,\ldots,i_K} =  \prod_j x_{i_j}$.}   \ siendo  \  $K \in
-  \Nset^*$, se  obtiene el tensor de los  $K${\it-\'esimo momentos (ordinarios)}
-  de $X$:
+\item    para    el    ``monomio''    $f(x)   =    x^{\otimes    K}$    producto
+  \modif{externo}~\footnote{Recuerdense  de  que $x  \otimes  x$  es una  matriz
+    teniendo como componentes  $x_i x_j$; entonces $x^{\otimes K}$  en un tensor
+    $K$-dimensional teniendo como  componentes $ \displaystyle \left[ x^{\otimes
+        K}  \right]_{i_1,\ldots,i_K} =  \prod_{j=1}^K x_{i_j}$.}
+   de $x$  \ $K$
+  veces \ siendo \ $K \in \Nset^*$, se obtiene \modif{el tensor conteniendo todo
+    los} $K${\it-\'esimo momentos (ordinarios)} de $X$:
   %
   \[
   m_K \equiv \Esp\left[  X^{\otimes K} \right] = \int_{\Rset^d}  x^{\otimes K} \
@@ -293,22 +299,23 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
   \]
   %
   que tiene unidades de $\prod_j X_{i_j}$  (de $X_i^K$ si los componentes de $X$
-  tienen la misma ``unidad'').  Se escribe tambi\'en los momentos de orden \ $K$
-  \ como
+  tienen la  misma ``unidad'').  Se escriben  tambi\'en los momentos  de orden \
+  $K$ \ \modif{bajo la escritura (con el mismo $m$, por abuso)}
   %
   \[
   m_{k_1,\ldots,k_d}  =  \Esp\left[   \prod_{i=1}^d  X_i^{k_i}  \right]  \quad
   \mbox{con} \quad \sum_i k_i = K.
   \]
   %
-  Se puede  incluir el caso $K=0$ con  la convenci\'on $x^{\otimes 0}  = 1$, que
-  corresponde  a  la condici\'on  de  normalizaci\'on:  \  $\displaystyle m_0  =
-  \int_\Rset dP_X(x)  = 1$.   La media es  el primer  momento: $m_1 =  \Esp[X] =
-  m_X$.  T\'ipicamente,  los primeros momentos  son m\'as relevantes que  los de
-  \'ordenes mayores, para la caracterizaci\'on de una distribuci\'on.  Para $K =
-  2$, en el caso  escalar, el momento de orden 2 es  el an\'alogo del momento de
-  inercia de la mec\'anica.\newline Por ejemplo, para la distribuci\'on uniforme
-  $p_X(x)  =  \frac{1}{b-a}$  en el  intervalo  $[  a  \;  b]$, resulta  $m_K  =
+  \modif{que son los componentes de $m_K$.}   Se puede incluir el caso $K=0$ con
+  la  convenci\'on $x^{\otimes  0} =  1$, que  corresponde a  la  condici\'on de
+  normalizaci\'on: \ $\displaystyle m_0 =  \int_\Rset dP_X(x) = 1$.  La media es
+  el  primer  momento: $m_1  =  \Esp[X]  =  m_X$.  T\'ipicamente,  los  primeros
+  momentos  son  m\'as  relevantes  que   los  de  \'ordenes  mayores,  para  la
+  caracterizaci\'on de una distribuci\'on.  Para $K = 2$, en el caso escalar, el
+  momento  de   orden  2  es  el   an\'alogo  del  momento  de   inercia  de  la
+  mec\'anica.\newline  Por ejemplo,  para la  distribuci\'on uniforme  $p_X(x) =
+  \frac{1}{b-a}$   en   el   intervalo   $[   a   \;   b]$,   resulta   $m_K   =
   \frac{b^{K+1}-a^{K+1}}{(K+1)(b-a)}$.   En particular,  $m_1  = \frac{a+b}{2}$,
   valor  medio del  intervalo.\newline  Fijense  de que  $X^{\otimes  K}$ no  es
   siempre integrable,  por ejemplo, en el  caso con densidad,  si $p_X(x)$ tiene
@@ -317,18 +324,20 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
     alcance}, en el  sentido de que no cae a 0  suficientemente r\'apido con $x$
   para  $x$  grandes, algunos  momentos  pueden  no  existir.  Por  ejemplo,  la
   distribuci\'on   de   probabilidad   de   Cauchy--Lorentz  (o   funci\'on   de
-  Breit--Wigner), dada  por \ $p_X(x)  = \alpha \,  \left( 1 +  (x-x_0)^t R^{-1}
-    (x-x_0)  \right)^{- \,  \frac{d+1}{2}}$  \ sobre  $\Rset^d$,  con la  matriz
-  cuadrada \  $R > 0, \: x_0  \in \Rset^d$ \ y  \ $\alpha > 0$  \ coeficiente de
-  normalizaci\'on, no tiene momentos finitos de orden $K \geq 1$.
+  Breit--Wigner), dada  por \ $p_X(x)  = \modif{\frac{\Gamma\left( \frac{d+1}{2}
+      \right)}{\pi^{\frac{d+1}{2}} \, \left| R \right|^{\frac12}}} \, \left( 1 +
+    (x-x_0)^t R^{-1}  (x-x_0) \right)^{-  \, \frac{d+1}{2}}$ \  sobre $\Rset^d$,
+  con  \ \modif{$R \in  P_d^+(\Rset), \:  x_0 \in  \Rset^d$}, no  tiene momentos
+  finitos de orden $K \geq 1$.
 %
 \item Frecuentemente (especialmente en el  caso de variables discretas $X$ sobre
   $\X  =  \Nset$),  resulta   \'util  introducir  los  $K$-\'esimo  {\it  momento
     factorial}   de   $X,  \quad   k   =   \begin{bmatrix}   k_1  &   \cdots   &
-    k_d \end{bmatrix}^t \in \Nset^d, \quad K = \sum_{i=1}^d k_i$ \ mediante
+    k_d \end{bmatrix}^t \in \Nset^d, \quad K = \sum_{i=1}^d k_i$ \ mediante \modif{el tensor de orden $K$}
   %
   \[
-  \modif{f_{k_1,\ldots,k_d} = \Esp\left[ \prod_{i=1}^d \PocD{X_i}{k_i} \right]}
+  \modif{f_K \quad  \mbox{de componentes} \quad  f_{k_1,\ldots,k_d} = \Esp\left[
+      \prod_{i=1}^d \PocD{X_i}{k_i} \right]}
   %  \equiv \Esp\left[  \prod_{k=0}^{r-1} (X-k)  \right] =  \sum_{n  = r}^\infty
   % \frac{n!}{(n-r)!} \, P(X = n).
  \]
@@ -357,14 +366,16 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
   central  con respecto a  la media,  \ie \  $X-m_X \egald  -(X-m_X)$ \  donde \
   $\egald$ \ significa que los vectores aleatorios tiene la misma distribuci\'on
   de probabilidad, entonces todos los momentos centrales impares son nulos.  Los
-  momentos (centrales) brindan medidas que caracterizan la distribuci\'on.
+  momentos     (centrales)    brindan     medidas     que    caracterizan     la
+  distribuci\'on. \modif{Cuando existen:}
   %
   \begin{enumerate}
   \item El primer momento, o media:
+   %
    \[
     m_X = \Esp[X].
    \]
-  %
+   %
  \item El segundo momento central se conoce como {\it matriz de covarianza}.  En
    el caso escalar, hablamos de {\it varianza}, o {\it dispersi\'on} o tambi\'en
    {\it desviaci\'on cuadr\'atica media}.
@@ -388,12 +399,12 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
     $X$  \  e  \ $Y$  \  respectivamente  $d$  y  $d'$-dimensonal (con  $d'$  no
     necesariamente igual a  $d$), hablamos de {\it covarianza  entre $X$ e $Y$},
     que se escribe
-  %
+    %
     \[
     \Sigma_{X,Y} = \equiv \Cov[X,Y] = \Esp\left[ \left( X - m_X \right) \left( Y
         - m_Y \right)^t \right].
     \]
-  %
+    %
     Esta  matriz   partenece  a  \  $\M_{d,d'}(\Rset)$  \   y  \[\Sigma_{X,Y}  =
     \Sigma_{Y,X}^t.\].\newline Se  puede notar que, para dos  componentes $i \ne
     j$ de  $X$, $\Sigma_X$ tiene  como $(i,j)$-\'esima componente  la covarianza
@@ -417,18 +428,22 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
   anticorrelacionadas) y 1 (variables completamente correlacionadas) como:
   %
   \[
-  \rho_{ij} = \rho_{ji} \equiv \frac{\Cov[X_i,X_j]}{\sigma_{X_i} \sigma_{X_j}}.
+  \rho_{i,j} = \rho_{j,i} \equiv \frac{\Cov[X_i,X_j]}{\sigma_{X_i} \sigma_{X_j}}.
   \]
   %
   Como ejemplo, dadas $X_1$ y $X_2 = a X_1 + b$ que fluct\'uan en fase ($a>0$) o
   al rev\'es ($a<0$), se tiene \modif{la relaci\'on entre desviaciones \ $\Delta
-    X_2  = a  \Delta X_1$,  conduciendo a}  \ $\rho_{12}  = \frac{a}{|a|}  = \pm
-  1$.\newline Tambi\'en,  \modif{se puede ver que  \[ \Var\left[ \|  \Delta X \|
-    \right]  =  \Tr  \Sigma_X.\]}  La  covarianza  est\'a  bien  definida  si  \
-  \modif{$\| X \|$} \ es una variable aleatoria de cuadrado integrable, esto es,
-  cuando \ \modif{$E\left[ \| X \|^2 \right] < \infty$}.  Se proba sencillamente
-  \modif{(desallorando el  ``producto'' y usando la linealidad  de la esperanza)
-    que
+    X_2  = a  \Delta X_1$,  conduciendo a}  \ $\rho_{1,2}  = \frac{a}{|a|}  = \pm
+  1$.\newline Tambi\'en,  \modif{se puede ver que
+  %
+    \[
+    \Var\left[ \| \Delta X \| \right] = \Tr \Sigma_X.
+    \]}
+   %
+  La covarianza  est\'a bien definida si \  \modif{$\| X \|$} \  es una variable
+  aleatoria de cuadrado integrable, esto  es, cuando \ \modif{$E\left[ \| X \|^2
+    \right]  <   \infty$}.   Se  proba   sencillamente  \modif{(desallorando  el
+    ``producto'' y usando la linealidad de la esperanza) que
   %
   \[
   \Cov[X,Y] = \Esp\left[ X Y^t \right] - m_X m_Y^t
@@ -471,6 +486,7 @@ inmediatamente,
 \item  En  el  caso  escalar,  el  tercer momento  central  permite  definir  el
   \modif{{\it   coeficiente   de  asimetr\'ia}   o   m\'as  sencillamente   {\it
       asimetr\'ia}} (o skewness en ingles)~\cite{Spi76, Pea05}:
+  %
   \[
   \Asim[X]  \equiv \gamma_X  \equiv \Esp\left[  \left( \frac{X  - m_X}{\sigma_X}
     \right)^3 \right] = \frac{\zeta_3}{\sigma_X^3},
@@ -478,10 +494,70 @@ inmediatamente,
   %
   momento de orden  3 de la variable estandar, que  resulta adimensional y puede
   tener  signo positivo  o negativo,  anul\'andose para  distribuciones  que son
-  sim\'etricas respecto del valor medio.
+  sim\'etricas respecto  del valor medio.   \modif{En el contexto  multivariado, la
+    extensi\'on  natural es  el tensor  de orden  3 de  los momentos  del vector
+    centrado   y   estandardizado    $\Sigma_X^{-\frac12}   \left(   X   -   m_X
+    \right)$~\cite{MorRoh94}:
+  %
+  \[
+  \Asim[X] \equiv \gamma_X \equiv \Esp\left[ \left( \Sigma_X^{-\frac12} \left( X
+        - m_X \right) \right)^{\otimes 3} \right].
+  \]
+  %
+  Sin  embargo, se  puede querer  un  resumen de  la asimetr\'ia  a trav\'es  un
+  n\'umero  escalar  o  un  vector.   Se  encuentran  en  la  literatura  varias
+  proposiciones  en   esta  direcci\'on~\cite{Mar70,  MalAfi73,   Iso82,  Sri84,
+    MorRoh94, BalBri07, Kol08, BalSca12}.  La mayor\'ia de estas extensiones se
+  relacionan con $\gamma_X$ (ej. suma de los terminos cuadrados en~\cite{Mar70},
+  vector  de  $i$-\'esima   componente  la  suma  en  $j$   de  las  componentes
+  $(j,j,i)$-\'esima de $\gamma_X$ en~\cite{MorRho94}  o el vector de $i$-\'esima
+  componente la suma en $j,k$ de las componentes $(j,k,i)$-\'esima de $\gamma_X$
+  en~\cite{Kol08}).  Todas coinciden  con $\gamma_X$  o su  cuadrado en  el caso
+  escalar y cada  medida es invariente por transformaci\'on $X \mapsto  A X + b$
+  con $A \in \M_{d,d}(\Rset)$ invertible y $b \in \Rset^d$.}
+%  Por ejemplo,  en~\cite{Mar70} (ver  tambi\'en~\cite{BalSca12, Seb04})  como \
+%  $\displaystyle  \gamma_X^{\mathrm{mar}}  = \sum_{i,j,k=1}^d  \left(  \gamma_X
+% \right)_{i,j,k}^2$.  Esta medida est  estrictamente positiva desde que hay una
+% asimetr\'ia en una direcci\'on,  pero no da ninguna direcci\'on de asimetr\'ia
+% por  ejemplo.  En el caso escalar,  $\gamma_X^{\mathrm{m}}$ coincide con\ldots
+%   $\gamma_X^2$.   Una   otra   propuesta  es   dada  en~\cite{MorRho94}   (ver
+%  tambi\'en~\cite{BalSca12})  como   \  $\gamma_X^{\mathrm{mrs}}  =  \Esp\left[
+%   \left\|   \Sigma_X^{-\frac12}   \left(    X   -   m_X   \right)   \right\|^2
+%   \Sigma_X^{-\frac12} \left( X - m_X \right) \right]$.  Es un vector que tiene
+% una direcci\'on y que se relaciona con $\gamma_X$ bajo la forma $\displaystyle
+%  \left(  \gamma_X^{\mathrm{mrs}}  \right)_i  =  \sum_{j=1}^d  \left(  \gamma_X
+% \right)_{j,j,i}$.   Sin embargo, la  significaci\'on de la direcci\'on  no queda
+% clara~\cite{BalSca12}. Adem\'as no toma  en cuenta todos los momentos de orden
+% 3, lo que dio lugar  a una extensi\'on propuesta en~\cite{Kol08} bajo la forma
+% de un vector $d$-dimensional de componente $i$-\'esima \ $\displaystyle \left(
+%   \gamma_X^{\mathrm{k}}    \right)_i   =   \sum_{j,k=1}^d    \left(   \gamma_X
+%  \right)_{j,k,i}$.   Esta definici\'on  coincide  con  la  asimetr\'ia del  caso
+% escalar,  pero la significaci\'on  de la direcci\'on  de este vector  no queda
+% claro tampoco.   Adem\'as, en el caso $d  > 1$, puede ser cero a  pesar de que
+%  haya  asimetr\'ia   (terminos  positivos  y  negativos  en   la  suma  pueden
+% compensarse).  Mencionamos el trabajo  de~\cite{MalAfi73} donde la idea  es de
+% proyectar \ $X-m_X$  \ sobre un vector \ $u \in \Sset_d$  \ y de considerar la
+%  asim\'etria  de  este  escalar, $\gamma_X^{\mathrm{ma}}  (u)  =  \frac{\left(
+%     \Esp\left[   \left(  u^t   (X-m_X)  \right)^3   \right]  \right)^2}{\left(
+%     \Var\left[ u^t (X-m_X) \right] \right)^3}$ \ y \ $\gamma_X^{\mathrm{ma}} =
+%  \max{u \in \Sset_d}  \gamma_X^{\mathrm{ma}}(u)$.  So  notara que  se podr\'ia
+%  definir tales  medidas con  el vector  estandardizado  \ $\Sigma_X^{-\frac12}
+% (X-m_X)$  \ dando \ $\gamma_{\Sigma_X^{-\frac12}  (X-m_X)}^{\mathrm{ma}} (u) =
+%    \gamma_X^{\mathrm{ma}}    \left(    \frac{\Sigma_X^{-\frac12}    u}{\left\|
+%       \Sigma_X^{-\frac12} u \right\|}  \right)$, \ $\gamma_X^{\mathrm{ma}} (v)
+%      =      \gamma_{\Sigma_X^{-\frac12}     (X-m_X)}^{\mathrm{ma}}      \left(
+%   \frac{\Sigma_X^{\frac12} v}{\left\|  \Sigma_X^{\frac12} v \right\|} \right)$
+%    \    y     \    $\gamma_X^{\mathrm{ma}}    =    \gamma_{\Sigma_X^{-\frac12}
+%   (X-m_X)}^{\mathrm{ma}}$. Esta medida  fue modificada en~\cite{BalBri07} como
+%     \      $\displaystyle     \gamma_X^{\mathrm{bbq}}     =     \int_{\Sset_d}
+% \gamma_{\Sigma_X^{-\frac12} (X-m_X)}^{\mathrm{ma}} (u)  d\mu(u)$ \ con \ $\mu$
+% \ medida de Haar sobre $\Sset_d$.  Estas \'ultimas medidas no se relacionan de
+% manera obvia al tensor \ $\gamma_X$, pero coinciden con \ $\gamma_X^2$ \ en el
+% caso escalar..}
   %
 \item  En  el caso  escalar,  el  cuarto momento  central  da  lugar  a la  {\it
     curtosis}~\cite{Pea05, Wes14}:
+  %
   \[
   \Curt[X]  \equiv \kappa_X  \equiv \Esp\left[  \left( \frac{X  - m_X}{\sigma_X}
     \right)^4 \right] = \frac{\zeta_4}{\sigma_X^4},
@@ -497,18 +573,75 @@ inmediatamente,
     pesadas} o tambi\'en leptoc\'urtica cuando  $\kappa_X > 3$ (para $\kappa_X =
   3$  la distribuci\'on es  a veces  dicha mesoc\'urtica).   A veces,  se define
   entonces la {\it curtosis por exceso}
+  %
   \[
   \Excurt[X]  \equiv \widebar{\kappa}_X  = \Curt[X]  - 3  =  \Esp\left[ \left(
       \frac{X     -     m_X}{\sigma_X}    \right)^4     \right]     -    3     =
   \frac{\zeta_4}{\sigma_X^4} - 3.
   \]
+  %
   M\'as que  el pico de distribuci\'on,  la curtosis (por  excesso) describe las
   colas de una distribuci\'on (pesadas para el curtosis por exceso o livianas en
-  el caso contrario)~\cite{Wes14}.
+  el caso contrario)~\cite{Wes14}. \modif{Como  para la asimetr\'ia, la extensi\'on
+    natural multivariada de la curtosis es el tensor de orden 4
+  %
+    \[
+    \Curt[X] \equiv  \kappa_X \equiv \Esp\left[ \left(  \Sigma_X^{-\frac12} (X -
+        m_X) \right)^{\otimes 4} \right]
+    \]
+  %
+    Se muestra  de nuevo que en  el contexto gausiano multivariado  $p_X(x) = (2
+    \pi)^{-\frac{d}{2}}   |\Sigma|^{-\frac12}    \exp\left(   -\frac12   (x-m)^t
+      \Sigma^{-1} (x-m) \right)$ (ver m\'as adelante) que , \ $\displaystyle m_X
+    = m,  \: \Sigma_X =  \Sigma, \: \gamma_X  = 0, \: \kappa_X  = \sum_{i,j=1}^d
+    \Big( \left(  \un_i \un_i^t \right)  \!\otimes\! \left( \un_j \un_j^t  \right) +
+    \left( \un_i \un_j^t  \right) \!\otimes\! \left( \un_i \un_j^t  \right) + \left(
+      \un_i \un_j^t \right) \!\otimes\! \left(  \un_j \un_i^t \right) \Big)$ \ as\'i
+    que se  puede definir una  curtosis multivariada por  exceso (sub-entendido,
+    con respeto a la gausiana) como:
+  %
+  \[
+  \Excurt[X] \equiv \widebar{\kappa}_X =  \Curt[X] - \sum_{i,j=1}^d \Big( \left(
+    \un_i \un_i^t  \right) \!\otimes\! \left(  \un_j \un_j^t \right) +  \left( \un_i
+    \un_j^t \right) \!\otimes\! \left( \un_i  \un_j^t \right) + \left( \un_i \un_j^t
+  \right) \!\otimes\! \left( \un_j \un_i^t \right) \Big).
+  \]
+  %
+  Se encuentren en la literatura varias medidas aletrnativas dando un resumen de
+  la curtosis a trav\'es un n\'umero escalar o una matriz~\cite{Mar70, MalAfi73,
+    Sri84,  MorRoh94,  Kol08, Seb04}.   La  mayor\'ia  de  estas extensiones  se
+  relacionan  con  $\kappa_X$  (ej.  suma  de  las  componentes  $(i,i,j,j)$  de
+  $\kappa_X$ en~\cite{Mar70},  matriz de  $(i,j)$-\'esima componente la  suma en
+  $k$ de las componentes  $(i,k,k,j)$-\'esima de $\kappa_X$ en~\cite{MorRho94} o
+  la matriz  de $(i,j)$-\'esima componente la  suma en $k,l$  de las componentes
+  $(k,l,i,j)$-\'esima  de  $\gamma_X$  en~\cite{Kol08}).   Todas  coinciden  con
+  $\kappa_X$ (resp. $\overline{\kappa}_X$)  en el caso escalar y  cada medida es
+  invariente   por  transformaci\'on  $X   \mapsto  A   X  +   b$  con   $A  \in
+  \M_{d,d}(\Rset)$ invertible y $b \in \Rset^d$.}
+%  se  encuentra  en~\cite[\S~2.7]{Seb04}  una extensi\'on  multivariada  de  la
+% curtosis cuando $\Sigma_X \in P_d^+(\Rset)$ (no degenerada, \ie invertible):
+%    %
+%    \[
+%    \Curt[X] \equiv \kappa_X = \Esp\left[  \left( \left( X - m_X \right)^t
+%          \Sigma_X^{-1} \left( X - m_X \right) \right)^2 \right]
+%    \]
+%    %
+%    Se muestra  de nuevo que en  el contexto gausiano multivariado  $p_X(x) = (2
+%%    \pi)^{-\frac{d}{2}}   |\Sigma|^{-\frac12}    \exp\left(   -\frac12   (x-m)^t
+%      \Sigma^{-1}  (x-m) \right)$  (ver m\'as  adelante) que  , \  $m_X =  m, \:
+%    \sigma_X = \sigma, \: \gamma_X = 0, \: \kappa_X = d (d+2)$ y se usa la misma
+%    terminologia  describiendo las  colas  de distribuciones  con  respeto a  la
+%    gausiana.  As\'i,  se puede de  nuedo definir una curtosis  multivariada por
+%    exceso como:
+%  %
+%  \[
+%  \Excurt[X] \equiv \widebar{\kappa}_X = \Curt[X] - d (d+2).
+%  \]
   \end{enumerate}
   %
-  Fijense de que, en  el contexto escalar $d = 1$, se  vinculan los cumulantes y
-  los momentos ordinarios directamente de las definiciones:
+  Fijense  de   que,  en  el  contexto   escalar  $d  =  1$,   se  vinculan  los
+  \modif{momentos  centrales}  y los  momentos  ordinarios  directamente de  las
+  definiciones:
   %
   \[
   \zeta_k = \sum_{l=0}^k \binom{k}{l} \left( - m_X \right)^{k-l} m_l
@@ -618,13 +751,14 @@ A_i A_j \Cov[X_i,X_j].
 %
 \underline{Si}   los   $X_i$   son  independientes,   \underline{entonces}   las
 covarianzas conjuntas son nulas as\'i que, respectivamente,
+%
 \[
 \Cov\left[ \sum_i  A_i X_i +  B \right] =  \sum_i A_i \Sigma_{X_i}  A_i^t \qquad
 \mbox{y}  \qquad  \Cov\left[  \sum_i  A_i   X_i  +  B  \right]  =  \sum_i  A_i^2
 \sigma_{X_i}^2.
 \]
 
-Si el  teorema da  una implocaci\'on  de la independencia,  de hecho  existe una
+Si el  teorema da  una implicaci\'on  de la independencia,  de hecho  existe una
 reciproca que toma la forma siguiente:
 %
 \begin{teorema}[Independencia y momentos]
@@ -705,8 +839,9 @@ Viene del teorema incial aplicado a \ $\Sigma_X^{-\frac12} (X - m_X)$, \ $g(x)
   %
   \[
   \forall \: \varepsilon \ge  0, \quad \mbox{tal que} \quad \varphi(\varepsilon)
-  \ne     0,     \qquad     P\left( \modif{\| X \|}     >     \varepsilon \right)     \:     \le     \:
-  \frac{\Esp\left[ \varphi\left( \modif{\| X \|} \right) \right]}{\varphi(\varepsilon)}.
+  \ne  0,  \qquad P\left(  \modif{\|  X  \|} >  \varepsilon  \right)  \: \le  \:
+  \frac{\Esp\left[      \varphi\left(      \modif{\|      X     \|}      \right)
+    \right]}{\varphi(\varepsilon)}.
  \]
 \end{corolario}
 %

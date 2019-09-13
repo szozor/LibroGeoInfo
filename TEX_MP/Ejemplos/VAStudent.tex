@@ -21,9 +21,9 @@ abajo), debido  a la  familia de Pearson~\cite{Pea95,  JohKot95:v1, JohKot95:v1,
 promedio de una gausiana en inferencia bayesiana~\cite{Rob07, KotNad04}.
 
 Se denota con \ $X \sim t_\nu(m,\Sigma)$  \ con \ $m \in \Rset^d$, \ $\Sigma \in
-P_d^+(\Rset)$  \  conjunto  de  las   matrices  de  \  $\Rset^{d  \times  d}$  \
-s\'imetricas definidas positivas. $m$ \ es llamado {\em par\'ametro de posici\'on}
-(no es  la media  que puede  no existir), \  $\Sigma$ \  es llamada  {\em matriz
+P_d^+(\Rset)$ \ conjunto  de las matrices de \  $\M_{d,d}(\Rset)$ \ s\'imetricas
+definidas positivas. $m$ \ es llamado  {\em par\'ametro de posici\'on} (no es la
+media   que  puede  no   existir),  \   $\Sigma$  \   es  llamada   {\em  matriz
   caracter\'istica} (no es [proporcional a]  la covarianza que puede no existir)
 y \ $\nu > 0$ \ llamado  {\em grados de libertad}.  Las caracter\'isticas de una
 Student-$t$ son las siguientes:
@@ -56,12 +56,16 @@ ser\'ia posible en el caso \ $\nu \le 2$.} & $\displaystyle \Sigma_X =
 no~\footref{Foot:MP:ExistenciaMomentosStudent}.\\[2.5mm]
 \hline
 %
-\modif{Asimetr\'ia} (caso escala) & $\displaystyle \gamma_X = 0$ \ si \ $\nu > 3$; \ no
-existe si no~\footref{Foot:MP:ExistenciaMomentosStudent}.\\[2mm]
+\modif{Asimetr\'ia} & $\displaystyle \gamma_X = 0$ \ si \ $\nu > 3$; \ no existe
+si no~\footref{Foot:MP:ExistenciaMomentosStudent}.\\[2mm]
 \hline
 %
-Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = \frac{6}{\nu-4}$ \ si
-\ $\nu > 4$; \ no existe si no~\footref{Foot:MP:ExistenciaMomentosStudent}.\\[2mm]
+Curtosis por exceso & \modif{$\displaystyle \widebar{\kappa}_X = \frac{2}{\nu-4}
+\sum_{i,j=1}^d \Big( \! \left(
+    \un_i \un_i^t \right) \otimes \left(  \un_j \un_j^t \right) +  \left( \un_i
+    \un_j^t \right) \otimes \left( \un_i  \un_j^t \right) + \left( \un_i \un_j^t
+  \right) \otimes \left( \un_j \un_i^t \right) \! \Big)$}\newline si \ $\nu >
+4$; \ no existe si no~\footref{Foot:MP:ExistenciaMomentosStudent}.\\[2mm]
 \hline
 %
 Funci\'on caracter\'istica~\footnote{Se muestra sencillamente que la funci\'on
@@ -108,11 +112,14 @@ Fig.~\ref{Fig:MP:Student}(c).
 
 Nota: el caso  \ $\nu = 1$ \  es conocido como distribuci\'on de  {\em Cauchy} o
 {\em Cauchy  Breit-Wigner}~\cite{SamTaq94, toto,  titi}.  Es un  caso particular
-tambi\'en de distrubuci\'on $\alpha$-estables~\cite{SamTaq94}.
+tambi\'en  de distrubuci\'on  $\alpha$-estables~\cite{SamTaq94}.  En particular,
+una  combinaci\'on  lineal  de  variables  de  Cauchy  independientes  queda  de
+Cauchy. Pero,  no viola  el teorema del  l\'imite central  del hecho de  que una
+variable de Cauchy no admite covarianza.
 
 Contrariamente al caso gaussiano, de la forma de la densidad de probabilidad, es
-claro que si la matriz \ $\Sigma$  \ es diagona, la densidad no factoriza, as\'i
-que  las componentes  del vector  no  son independientes.  Este ejemplo  muestra
+claro que si la matriz \ $\Sigma$ \ es diagonal, la densidad no factoriza, as\'i
+que  las componentes  del vector  no son  independientes.  Este  ejemplo muestra
 claramente que  la reciproca del lema~\ref{Lem:MP:IndependenciaCov}  es falsa en
 general.
 
@@ -121,8 +128,8 @@ Sin embargo, las distribuciones Student-$t$ tienen varias propiedades notables.
 \begin{lema}[Stabilidad por transformaci\'on lineal]
 \label{Lem:MP:StabilidadLineal}
 %
-  Sea \ $X  \, \sim \, t_\nu(m,\Sigma)$,  \ $A$ \ matriz de  \ $\Rset^{d' \times
-    d}$ \ con \ $d' \le d$, y de rango lleno y \ $b \in \Rset^{d'}$. Entonces
+  Sea \ $X \, \sim \,  t_\nu(m,\Sigma)$, \ $A$ \ matriz de \ $\M_{d',d}(\Rset))$
+  \ con \ $d' \le d$, y de rango lleno y \ $b \in \Rset^{d'}$. Entonces
   %
   \[
   A X + b\, \sim \, t_\nu( A m + b , A \Sigma A^t)

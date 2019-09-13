@@ -1,45 +1,76 @@
-\begin{notation}{Matrices \& vectores}
+\begin{notation}{Vectores, matrices, tensores}
+%
+$\M_d(\Kset) \equiv \Kset^d$ & Espacio de vector \ $M = \protect\begin{bmatrix} M_1\\
+\vdots\\ M_d \protect\end{bmatrix}$ \ con \ $M_i \in \Kset$ \ y \ $\Kset = \Rset$ \ o \
+$\Cset$.\\[2.5mm]
+\hline
 %
 $\M_{d,d'}(\Kset)$ & Espacio de matrices \ $M$, \ de tama\~no \ $d \times d'$, \
-de componentes \ $M_{i,j} \in \Kset$ \ con \ $\Kset = \Rset$ \ o \ $\Cset$;
-$\M_{d,1}(\Kset) \equiv \Kset^d$.\\[2.5mm]
+de componentes \ $M_{i,j} \in \Kset$;\vspace{1mm}\newline $\M_{d,1} \equiv
+\Kset^d$ as\'i que se usar\'a esta notaci\'on cuando~\footnote{Si una
+dimensi\'on es $1$, se saca de las dimensiones (caso degenerado).} \ $d, d' >
+1$.\\[2.5mm]
 \hline
 %
-$\cdot^*$ & Conjugaci\'on, componente por componente, $M^*$ \ es de componente \
-$(i,j)$-\'esima \ $M_{i,j}^*$\\[2.5mm]
+$\M_{d_1 , \ldots , d_K}(\Kset)$ & Espacio de tensores \ $M$, \ de orden
+$K$, de tama\~no \ $d_1 \times \cdots \times d_K$, \ de componentes \
+$M_{i_1,\ldots,i_K} \in \Kset$;\vspace{1mm}\newline De nuevo, con esta
+notaci\'on se supone que $d_i > 1, i = 1,\ldots,K$.\\[2.5mm]
 \hline
 %
-$\cdot^t$ & Transpuesta, $M^t$ \ es de componente \ $(i,j)$-\'esima \
-$M_{j,i}$\\[2.5mm]
+$\cdot^*$ & Conjugaci\'on, componente por componente, $M^*$ \ es de componentes \
+ \ $M_{i_1,\ldots,i_K}^*$\\[2.5mm]
 \hline
 %
-$\cdot^\dag$ & Transconjugada, $M^\dag = \left( M^* \right)^t$ \ es de
-componente \ $(i,j)$-\'esima \ $M_{j,i}^*$\\[2.5mm]
+$\cdot^t$ & Transpuesta, $\forall M \in \M_d(\Kset), \: M^t =
+\protect\begin{bmatrix} M_1 & \cdots & M_d \protect\end{bmatrix}$ \ y $ \forall
+M \in \M_{d,d'}(\Kset)$, $M^t$ \ es de componente \ $(i,j)$-\'esima \
+$M_{i,j}$\\[2.5mm]
+\hline
+%
+$\cdot^\dag$ & Transconjugada, $M^\dag = \left( M^* \right)^t$\\[2.5mm]
+% \ es de
+%componente \ $(i_1,\ldots,i_K)$-\'esima \ $M_{i_K,\ldots,i_1}^*$\\[2.5mm]
 \hline
 %
 $\real{\cdot}$ & Parte real, $\real{M}$ \ es de
-componente \ $(i,j)$-\'esima \ $\real{M_{i,j}}$\\[2.5mm]
+componente \  $\real{M_{i_1,\ldots,i_K}}$\\[2.5mm]
 \hline
 %
 $\imag{\cdot}$ & Parte imaginaria, $\imag{M}$ \ es de
-componente \ $(i,j)$-\'esima \ $\imag{M_{i,j}}$\\[2.5mm]
+componente \  $\imag{M_{i_1,\ldots,i_K}}$\\[2.5mm]
 \hline
 %
-$\otimes$ & Producto de Kronecker o externo: $A \otimes B$ \ es la matriz bloc de bloc \
-$(i,j)$-\'esima \ $A_{i,j} B$,\vspace{1mm}\newline para \ $A \in
-\M_{d,d'}(\Kset), \: B \in \M_{n,n'}(\Kset)$, tenemos \ $A \otimes B \in \M_{d n,
-d' n'}(\Kset)$ \ tal que,\vspace{1mm}\newline
+% o externo  $\otimes$ &  Producto de Kronecker:  para $A \in  \Kset^{d_1 \times
+%   \cdots \times d_K}, \quad B  \in \Kset^{d'_1 \times \cdots \times d'_L}$, el
+% producto  de Kronecker \  $A \otimes  B$ \  es el  tensor bloc  de $\Kset^{d_1
+%   \times  \cdots  \times d_K,d'_1  \times  \cdots  \times  d'_L}$, de  bloc  \
+% $(i_1,\ldots)$-\'esima  \  $A_{i,j}  B$,\vspace{1mm}\newline  para  \  $A  \in
+% \M_{d,d'}(\Kset), \: B \in \M_{n,n'}(\Kset)$, tenemos \ $A \otimes B \in \M_{d
+%   n, d' n'}(\Kset)$ \ tal que,\vspace{1mm}\newline
+%%
+%$
+%A \otimes B = \protect\begin{bmatrix}
+%A_{1,1} B  & \cdots  & A_{1,d'} B\\
+%% \vdots   &  \vdots & \vdots\\
+%A_{d,1} B  & \cdots  & A_{d,d'} B
+%%\protect\end{bmatrix}
+%$\vspace{1mm}\\[2.5mm]
+%\hline
 %
-$
-A \otimes B = \protect\begin{bmatrix}
-A_{1,1} B  & \cdots  & A_{1,d'} B\\
- \vdots   &  \vdots & \vdots\\
-A_{d,1} B  & \cdots  & A_{d,d'} B
-\protect\end{bmatrix}
-$\vspace{1mm}\\[2.5mm]
+$\otimes$ & Producto externo~\footnote{Se encuentra tambi\'en el s\'imbolo \
+$\otimes$ \ para el producto de Kronecker: para matrices por ejemplo \ $A
+\otimes B$ \ ser\'a la matriz de componentes bloc \ $A_{i,j} B$. De hecho, es
+equivalente a ``desarollar'' el tensor de forma matricial, o equivalente de la
+vectorizaci\'on de una matriz (ver ej.~\cite{MagNeu79}).}: para $A \in
+\M_{d_1,\ldots,d_K}(\Kset), \quad B \in \M_{d'_1,\ldots,d'_K}(\Kset)$ \ el
+producto externo \ $A \optimes B$ \ es el tensor de orden \ $K+L$ \ de
+componente \ $(i_1,\ldots,i_K,j_1,\ldots,j_L)$-\'esima \ $A_{i_1,\ldots,i_K}
+B_{j_1,\ldots,j_L} $.\vspace{1mm}\newline Nota: para \ $a \in \M_d(Kset), \quad
+b \in \M_{d'}(\Kset)$, \ $a \otimes b = a b^t$.\\[2.5mm]
 \hline
 %
-$\cdot^{\otimes k}$ & $k$ veces el producto de Kronecker, $A^{\otimes k}
+$\cdot^{\otimes k}$ & $k$ veces el producto externo, $A^{\otimes k}
 = \underbrace{A \otimes \cdots \otimes A}_{k \:\, \mbox{\footnotesize
 veces}}$.\\[2.5mm]
 \hline
@@ -49,7 +80,7 @@ $S_d(\Kset)$ & Conjunto de matrices de \ $\Kset$ \ simetricas, \quad $S_d(\Kset)
 \hline
 %
 $H_d(\Cset)$ & Conjunto de matrices de \ $\Cset$ \ hermiticas (a simetr\'ia
-hermitica),\vspace{1mm}\newline $H_d(\Cset) = \left\{ M \in \M_{d,d}(\Cset) \tq \, M^\dag = M
+hermitica),\vspace{1mm}\newline $H_d(\Cset) = \left\{ M \in \M{d,d}(\Cset) \tq \, M^\dag = M
 \right\}$.\vspace{1mm}\newline Notar que se tiene \ $H_d(\Rset) \equiv
 S_d(\Rset)$.\\[2.5mm]
 \hline
@@ -113,16 +144,26 @@ $\un$ & Vector de componentes iguales a 1, \ $\un = \protect\begin{bmatrix} 1\\
 $\un_i$ & Vector de componentes $j$-\'esima iguales a $\un_{\{i\}}(j)$.\\[2.5mm]
 \hline
 %
-$\diag$ & Matriz diagonal (bloc) con el argumento en su
-diagonal,\vspace{1mm}\newline para \ $\displaystyle V = (V_1,\ldots,V_n) \in
-\M_{d_1,d_1}(\Kset) \times \cdots \times \M_{d_n,d_n}(\Kset),$\vspace{1mm}\newline
-$\diag(V) = \sum_{i=1}^d \left( \un_i \un_i^t \right) \otimes V_i =
+$\diag$ & Matriz diagonal  con los componentes del vector argumento en su
+diagonal,\vspace{1mm}\newline para \ $\displaystyle v \in \Kset^d,$\vspace{1mm}\newline
+$\displaystyle \diag(v) = \sum_{i=1}^d \left( \un_i \un_i^t \right) v_i =
 \protect\begin{bmatrix}
-  V_1  &   0    & \cdots &    0   \\
+  v_1  &   0    & \cdots &    0   \\
    0   & \ddots & \ddots & \vdots \\
 \vdots & \ddots & \ddots &    0   \\
-   0   & \cdots &    0   &   V_d
+   0   & \cdots &    0   &   v_d
 \end{bmatrix}\protect$.\vspace{1mm}\\[2.5mm]
+%
+%$\diag$ & Matriz diagonal (bloc) con el argumento en su
+%diagonal,\vspace{1mm}\newline para \ $\displaystyle V = (V_1,\ldots,V_n) \in
+%\M_{d_1,d_1}(\Kset) \times \cdots \times \M_{d_n,d_n}(\Kset),$\vspace{1mm}\newline
+%$\diag(V) = \sum_{i=1}^d \left( \un_i \un_i^t \right) \otimes V_i =
+%\protect\begin{bmatrix}
+%  V_1  &   0    & \cdots &    0   \\
+%   0   & \ddots & \ddots & \vdots \\
+%\vdots & \ddots & \ddots &    0   \\
+%   0   & \cdots &    0   &   V_d
+%\end{bmatrix}\protect$.\vspace{1mm}\\[2.5mm]
 \hline
 %
 $0$ & Se notar\'a el vector o una matriz de componentes ceros como el caso
@@ -135,38 +176,38 @@ $0 \equiv \protect\begin{bmatrix}
 \hline
 %
 $I_d \quad , \quad I$ & Matriz cuadrada $d \times d$, identidad, \ $I \equiv I_d
-= \diag \un$\vspace{1mm}\newline (se saca el \'indice cuando no hay ambiguedad)\\[2.5mm]
+= \diag(\un)$\vspace{1mm}\newline (se saca el \'indice cuando no hay ambiguedad)\\[2.5mm]
 \hline
 %
-$J$ & Matriz de comutaci\'on~\footnote{M\'as generalmente es definida sobre \
-$\M_{d d',d d'}(\Kset)$ \ y los bloques son en \
-$\M_{d,d'}(\Kset)$~\cite{MagNeu79, NeuWan83}.\label{Foot:MP:ComutacionMatriz}} de
-\ $\M_{d^2,d^2}(\Kset)$ \ de bloques \ $J_{i,j} = \un_j \un_i^t \in
-\M_{d,d}(\Kset)$ \ poniendo la componente (linea) \ $i$-\'esima de un vector
-(matriz) \ en la componente (linea) \ $j$-\'esima,\vspace{1mm}\newline
-%
-$ \displaystyle J  = \sum_{i,j=1}^d \left( \un_i \un_j^t  \right) \otimes \left(
-  \un_j \un_i^t \right) =
-\protect\begin{bmatrix}
-\un_1 \un_1^t & \un_2 \un_1^t & \cdots & \un_d \un_1^t\\
-    \vdots    &    \vdots     & \cdots &     \vdots   \\
-\un_1 \un_d^t & \un_2 \un_d^t & \cdots & \un_d \un_d^t
-\protect\end{bmatrix}$.\vspace{1mm}\\[2.5mm]
-\hline
-%
-$K$ & Matriz de no-comutaci\'on~\footref{Foot:MP:ComutacionMatriz} de \
-$\M_{d^2,d^2}(\Kset)$ \ de bloques \ $K_{i,j} = \un_i \un_j^t \in \M_{d,d}(\Kset)$
-\ poniendo la componente (linea) \ $j$-\'esima de un vector (matriz) \ en la
-posici\'on (linea) \ $i$-\'esima,\vspace{1mm}\newline
-%
-$ \displaystyle K  = \sum_{i,j=1}^d \left( \un_i \un_j^t  \right) \otimes \left(
-  \un_i \un_j^t \right)
-\protect\begin{bmatrix}
-\un_1 \un_1^t & \un_1 \un_2^t & \cdots & \un_1 \un_d^t\\
-   \vdots     &    \vdots    & \cdots &     \vdots   \\
-\un_d \un_1^t & \un_d \un_2^t & \cdots & \un_d \un_d^t
-\protect\end{bmatrix}$.\vspace{1mm}\\[2.5mm]
-\hline
+%$J$ & Matriz de comutaci\'on~\footnote{M\'as generalmente es definida sobre \
+%$\M_{d d',d d'}(\Kset)$ \ y los bloques son en \
+%$\M_{d,d'}(\Kset)$~\cite{MagNeu79, NeuWan83}.\label{Foot:MP:ComutacionMatriz}} de
+%\ $\M_{d^2,d^2}(\Kset)$ \ de bloques \ $J_{i,j} = \un_j \un_i^t \in
+%\M_{d,d}(\Kset)$ \ poniendo la componente (linea) \ $i$-\'esima de un vector
+%(matriz) \ en la componente (linea) \ $j$-\'esima,\vspace{1mm}\newline
+%%
+%$ \displaystyle J  = \sum_{i,j=1}^d \left( \un_i \un_j^t  \right) \otimes \left(
+%  \un_j \un_i^t \right) =
+%\protect\begin{bmatrix}
+%\un_1 \un_1^t & \un_2 \un_1^t & \cdots & \un_d \un_1^t\\
+%    \vdots    &    \vdots     & \cdots &     \vdots   \\
+%\un_1 \un_d^t & \un_2 \un_d^t & \cdots & \un_d \un_d^t
+%\protect\end{bmatrix}$.\vspace{1mm}\\[2.5mm]
+%\hline
+%%
+%$K$ & Matriz de no-comutaci\'on~\footref{Foot:MP:ComutacionMatriz} de \
+%$\M_{d^2,d^2}(\Kset)$ \ de bloques \ $K_{i,j} = \un_i \un_j^t \in \M_{d,d}(\Kset)$
+%\ poniendo la componente (linea) \ $j$-\'esima de un vector (matriz) \ en la
+%posici\'on (linea) \ $i$-\'esima,\vspace{1mm}\newline
+%%
+%$ \displaystyle K  = \sum_{i,j=1}^d \left( \un_i \un_j^t  \right) \otimes \left(
+%  \un_i \un_j^t \right)
+%\protect\begin{bmatrix}
+%\un_1 \un_1^t & \un_1 \un_2^t & \cdots & \un_1 \un_d^t\\
+%   \vdots     &    \vdots    & \cdots &     \vdots   \\
+%\un_d \un_1^t & \un_d \un_2^t & \cdots & \un_d \un_d^t
+%\protect\end{bmatrix}$.\vspace{1mm}\\[2.5mm]
+%\hline
 %
 $G^{(i,j)}$ & Matriz de agregaci\'on de \ $\M_{d-1,d}(\Kset)$. Para $i < j$,
 multiplicado a un vector $x \in \Kset^d$ se saca la $j$-\'esima componente de

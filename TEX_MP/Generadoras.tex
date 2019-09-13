@@ -60,7 +60,7 @@ Esta funci\'on est definida sobre un producto cartesiano de anillos~\footnote{Si
     z_i^{x_i}  \,  dP_X(x)  \right|  \le \int_{\Rset_+^d}  \left|  \prod_{i=1}^d
     z_i^{x_i}  \right|  \,  dP_X(x)  \le \int_{\Rset_+^d}  \left|  \prod_{i=1}^d
     R_i^{x_i} \right| \, dP_X(x) < +\infty$.  El mismo enfoque se usa para todos
-  los hipercuadrantes  \ $\otimes_i  \Rset_{\pm}$. Adem\'as, claramente,  para \
+  los hipercuadrantes  \ $\optimes_i  \Rset_{\pm}$. Adem\'as, claramente,  para \
   $\left| z_i \right| \, =  \, 1$ \ tenemos $\displaystyle \left| \int_{\Rset^d}
     \prod_{i=1}^d  z_i^{x_i}  \,   dP_X(x)  \right|  \le  \int_{\Rset^d}  \left|
     \prod_{i=1}^d z_i^{x_i} \right| \,  dP_X(x) \le \int_{\Rset^d} dP_X(x) = 1$,
@@ -143,11 +143,12 @@ momentos de $X$ a trav\'es de las derivadas de $G_X$:
 \item $\nabla_z G_X(1) = \Esp[X]$.
 %
 \item $\Hess_z G_X(1)  + \diag\left( \nabla_z G_X(1) \right)  = \Esp\left[ X X^t
-  \right]$ \ donde  \ $\Hess_z$ \ es  la matrice Hessiana y \  $\diag(a)$ es une
-  matriz diagonal de componentes \ $(i,i)$-esima  \ $a_i$ \ (vector $a$ sobre la
-  diagonal).  Entonces la matriz de covarianza  es dada por \ $\Cov[X] = \Hess_z
-  G_X(1)  + \diag\left(  \nabla_z G_X(1)  \right) -  \nabla_z  G_X(1) \nabla_z^t
-  G_X(1)$.
+  \right]$  \  donde  \ $\Hess_z$  \  es  la  matrice  Hessiana y  \  $\diag(a)$
+  \modif{matriz  diagonal  de  componentes   \  $(i,i)$-esima  \  $a_i$  \  (ver
+    notaciones).}
+  % vector $a$ sobre la diagonal).
+  Entonces la  matriz de covarianza  es dada por  \ $\Cov[X] = \Hess_z  G_X(1) +
+  \diag\left( \nabla_z G_X(1) \right) - \nabla_z G_X(1) \nabla_z^t G_X(1)$.
 \end{itemize}
 
 \
@@ -309,7 +310,7 @@ y~\ref{Teo:MP:SumaAleatoriaGeneradoraProbabilidad}:
 \label{Teo:MP:PropiedadesGeneradoraMomentos}
 %
   Sean  \   $X$  \  e  \   $Y$  \  dos   vectores  aleatorios  $d$-dimensionales
-  independientes,  \ $A$  \ una  matriz de  \  $\Rset^{d' \times  d}$ \  y \  $b
+  independientes,  \ $A$  \ una  matriz de  \  $\M_{d',d}(\Rset)$ \  y \  $b
   =   \begin{bmatrix}    b_1   &    \cdots   &   b_{d'}    \end{bmatrix}^t   \in
   \Rset^{d'}$.  Entonces para  cualquier $u  =  \begin{bmatrix} u_1  & \cdots  &
     u_{d'} \end{bmatrix}^t \in \Cset^{d'}$ \ (donde la funci\'on existe):
@@ -713,7 +714,7 @@ y~\ref{Teo:MP:SumaAleatoriaGeneradoraMomentos}:
 \label{Teo:MP:PropiedadesFuncionCaracteristica}
 %
   Sean  \   $X$  \  e  \   $Y$  \  dos   vectores  aleatorios  $d$-dimensionales
-  independientes,  \ $A$  \ una  matriz de  \  $\Rset^{d' \times  d}$ \  y \  $b
+  independientes,  \ $A$  \ una  matriz de  \  $\M_{d',d}(\Rset)$ \  y \  $b
   =  \begin{bmatrix} b_1  &  \cdots &  b_{d'}  \end{bmatrix}^t \in  \Rset^{d'}$.
   Entonces  para  cualquier  $\omega  =  \begin{bmatrix}  \omega_1  &  \cdots  &
     \omega_{d'} \end{bmatrix}^t \in \Rset^{d'}$:
