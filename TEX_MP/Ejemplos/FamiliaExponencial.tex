@@ -27,26 +27,26 @@
 
 Muchas de las leyes que hemos visto, que sean discreta o continuas, partenecen a
 una clase que comparte propriedades  particulares, y que juega un rol particular
-que sean en f\'isica (ej. en problema de maximizaci\'on de entrop\'ia de Shannon
+que sea en f\'isica (ej. en  problema de maximizaci\'on de entrop\'ia de Shannon
 como lo vamos a ver en  el c\'apitulo~\ref{Cap:SZ:Informacion}) o en el marco de
 la inferencia bayesiana. Esta clase es la familia dicha exponencial~\cite{Dar35,
   Koo36, And70, LehCas98, IbPer12,  Muk00, KotBal00, Rob07, Bos07, Cen82, Kay93,
-  NieNoc10}.   En inferencia  bayesiana  permite por  ejemplo  deducir a  priori
-conjugados, es decir tales que la  distribuci\'on dicha a posteriori caiga en la
-misma  familia (\ie  tenga la  misma forma  param\'etrica pero  con par\'ametros
-dependientes        de       los       datos)~\footnote{Ver        nota       de
-  pie~\footref{Foot:SZ:BayesPrior}. Recordamos  que si observaciones  tienen una
-  distribuci\'on \  $p_{X|\Theta=\theta}(x)$ \  con una distribuci\'on  a priori
-  del par\'ametro $p_\Theta(\theta)$, por la  regla de Bayes el a posteriori, es
-  decir  la   ley  del  parametro  dados   las  observaciones  es   dada  por  \
-  $p_{\Theta|X=x}(\theta) \propto p_{X|\Theta=\theta}(x) p_\Theta(\theta)$ \ con
-  \ $\propto$ \ significando ``proporcional  a''. Si $p_{\Theta|X=x}$ \ tiene la
-  misma forma param\'etrica que \  $p_\Theta(\theta)$ \ inferir \ $\theta$ \ con
-  datos  que se  observan se  reduce a  actualizar el  par\'ametro de  la  ley a
-  posteriori.}. Notar  que esta familia  es conocido o  a veces {\em  familia de
-  Koopman-Darmois}  debido  a   la  introducci\'on  por  Koopman~\cite{Koo36}  o
-Darmois~\cite{Dar35}  en   los  a\~nos   1935-1936  (ver  tambi\'en   Pitman  \&
-~\cite{Pit36}) y es definida de la manera siguiente:
+  NieNoc10}.  En inferencia bayesiana,  cuando una distribuci\'on de sampleo cae
+en esta  familia, se  puede por  ejemplo deducir a  priori conjugados,  es decir
+tales que  la distribuci\'on dicha a  posteriori caiga en la  misma familia (\ie
+tenga la  misma forma  param\'etrica pero con  par\'ametros dependientes  de los
+datos)~\footnote{Ver nota de pie~\footref{Foot:SZ:BayesPrior}. Recordamos que si
+  observaciones tienen  una distribuci\'on \ $p_{X|\Theta=\theta}(x)$  \ con una
+  distribuci\'on a  priori del par\'ametro  $p_\Theta(\theta)$, por la  regla de
+  Bayes el a  posteriori, es decir la ley del  parametro dados las observaciones
+  es   dada  por   \   $p_{\Theta|X=x}(\theta)  \propto   p_{X|\Theta=\theta}(x)
+  p_\Theta(\theta)$  \ con  \ $\propto$  \ significando  ``proporcional  a''. Si
+  $p_{\Theta|X=x}$ \ tiene la misma forma param\'etrica que \ $p_\Theta(\theta)$
+  \ inferir  \ $\theta$ \ con  datos que se  observan se reduce a  actualizar el
+  par\'ametro de la  ley a posteriori.}. Notar que esta familia  es conocido o a
+veces  {\em   familia  de  Koopman-Darmois}  debido  a   la  introducci\'on  por
+Koopman~\cite{Koo36}  o  Darmois~\cite{Dar35}   en  los  a\~nos  1935-1936  (ver
+tambi\'en Pitman~\cite{Pit36}) y es definida de la manera siguiente:
 %
 \begin{definicion}[Familia exponencial y exponencial natural]\label{Def:MP:FamiliaExponencial}
 %
@@ -95,16 +95,16 @@ forma natural. Con respeto a cada termino:
 \begin{itemize}
 \item $S$ es llamada {\em estad\'istica suficiente} de la ley. \SZ{completar}
 %
-\item  $\theta$  es el  par\'ametro,  multivariado,  y  $\eta$ es  llamado  {\em
-    par\'ametro natural}.
+\item $\theta$  es el par\'ametro, escalar  o multivariado, y  $\eta$ es llamado
+  {\em par\'ametro natural}.
 %
 \item La funci\'on $Z$ es llamada  {\em funci\'on de partici\'on}; no solo juega
-  el  rol de  normalizaci\'on  de  la ley,  \SZ{pero  tiene una  significaci\'on
-    f\'isica}.
+  el rol de  normalizaci\'on de la ley, pero  tiene una significaci\'on f\'isica
+  como lo vamos a evocar. Aparecio en f\'isica esdatistica por ejemplo en trabajos de Gibbs~\cite{Gib01, Gib02}
 \end{itemize}
 
-Se notara que, en particular, \ $Z$ \ es relacionada a los momentos de $S$:
-  \SZ{A ver si hablamos de cumulantes }
+Se notara que,  en particular, \ $Z$ \  es relacionada a los momentos  de $S$, o
+$\varphi$ a los cumulantes:
 %
 \begin{teorema}[Funci\'on de partici\'on y generadora de momentos]
 %
