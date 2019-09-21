@@ -78,7 +78,8 @@ La denominaci\'on  {\em generadora de  probabilidad} (pgf para  {\em probability
 \label{Lem:MP:GeneracionProbabilidades}
 %
   Cuando \ $\X = \Nset^d$ \ para cualquier \ \modif{$x = \begin{bmatrix} x_1 & \ldots &
-    x_d \end{bmatrix}^t \in \Nset^d$, con $k = \sum_{i=1}^d x_i$}
+    x_d \end{bmatrix}^t \in 
+  \Part{k,d}$ (ver notaciones)}
   %
   \[
   \frac1{\prod_{i=1}^d  \modif{x_i!}} \, \left.\frac{\partial^k  G_X}{\partial z_1^{\modif{x_1}}
@@ -117,8 +118,9 @@ en ingles):
 \begin{lema}
 \label{Lem:MP:GeneracionMomentosFactoriales}
 %
-  Para cualquier \  $k = \begin{bmatrix} k_1 & \cdots  & k_d \end{bmatrix}^t \in
-  \Nset^d$ \ con \ $K =  \sum_{i=1}^d k_i$, derivando $G_X$ se proba que, cuando
+  \modif{Para cualquier \  $k = \begin{bmatrix} k_1 & \cdots  & k_d \end{bmatrix}^t \in \Part{K,d}$,}
+  %\Nset^d$ \ con \ $K =  \sum_{i=1}^d k_i$,
+ derivando $G_X$ se proba que, cuando
   existen~\footnote{En el  caso extremo,  el rayo de  convergencia de  la serie
     dando $G_X$ es igual a 1, as\'i  que no hay garantia que las derivadas en $z
     = 1$ existen.}
@@ -272,14 +274,20 @@ probabildad \  $p_X$, denotando $s =  -u$, esta funci\'on se  interpreta como la
 transformada (bilateral) de Laplace de \ $p_X$.
 
 
-La  generadora de  los momentos  permite recuperar  directamente los  momentos a
-trav\'es de derivadas, sin hacer combinaciones:
+Se muestra  que esta  funci\'on es  continua en su  dominio de  definici\'on, en
+particular en  un entorno de  \ $u =  0$ donde queda  positiva. Eso viene  de la
+continuidad  de $x \mapsto  e^{u^t x}$  \ y  de la  convergencia uniforme  de la
+integral en el dominio de definici\'on (ver secciones anteriores y el teorema de
+convergencia  dominada). Adem\'as,  si admite  un  desarollo de  Taylor en  este
+punto, la generadora de los momentos permite recuperar directamente los momentos
+a trav\'es de derivadas, sin hacer combinaciones:
 %
 \begin{lema}
-\label{Lem:MP:GenracionMomentos}
+\label{Lem:MP:GeneracionMomentos}
 %
-  Para cualquier \  $k = \begin{bmatrix} k_1 & \cdots  & k_d \end{bmatrix}^t \in
-  \Nset^d$ \ con \ $K =  \sum_{i=1}^d k_i$, derivando $M_X$ se proba que, cuando
+  Para cualquier \  $k = \begin{bmatrix} k_1 & \cdots  & k_d \end{bmatrix}^t \in \modif{\Part{K,d}}$
+%  \Nset^d$ \ con \ $K =  \sum_{i=1}^d k_i$, 
+derivando $M_X$ se proba que, cuando
   existen
   %
   \[
@@ -430,8 +438,9 @@ recuperar directamente los momentos a trav\'es de derivadas:
 \begin{lema}
 \label{Lem:MP:GeneracionMomentoViaCaracteristica}
 %
-  Para cualquier \  $k = \begin{bmatrix} k_1 & \cdots  & k_d \end{bmatrix}^t \in
-  \Nset^d$ \  con \  $K =  \sum_{i=1}^d k_i$, derivando  $\Phi_X$ se  proba que,
+  Para cualquier \  $k = \begin{bmatrix} k_1 & \cdots  & k_d \end{bmatrix}^t \in \modif{\Part{K,d}}$,
+%  \Nset^d$ \  con \  $K =  \sum_{i=1}^d k_i$, 
+derivando  $\Phi_X$ se  proba que,
   cuando existen
   %
   \[
@@ -800,21 +809,177 @@ toma la forma siguiente:
 
 %\SZ{Hablar de la forma en el caso escamar con le funcion quantile?}
 
-\aver{
-
 %{\teorema (Bochner, Goldberg).... } %%
 
 
-%\hfill
+% ================================= Funcion generadora de momentos
 
-Cumulant generating function .... %%
+\modif{
+\subseccion{Funci\'on generadora de cumulantes y secunda funci\'on caracter\'istica}
+\label{Ssec:MP:GeneradoraCumulantes}
 
-\SZ{Se define los cumulantes. coinciden con los momentos centrados solo para $k = 1, 2, 3$.}
+A  veces aparece  m\'as comodo  trabajar con  momentes especiales  llamados {\em
+  cumulantes}.   Esos   fueron  introducidos  T.   N.   Thiele   en  los  a\~nos
+1889~\cite{Thi89} y aparecen  bajo esta denominaci\'on en un  papel de R. Fisher
+\& J.   Wishart 4 decadas despu\'es~\cite{FisWis32}.  Estos  momentos aparecen a
+trav\'es del logaritmo de la funci\'on  generadora de momentos.  Como lo vamos a
+ver  en  la  seci\'on~\ref{Ssec:MP:FamiliaExponencial}  tratando de  la  familia
+exponencial, aparece  que el  logarotmo de la  generadora de momentos  tiene una
+significaci\'on f\'isica,  permitiendo de calcular  energias libre o  interna en
+f\'isica estadistica a trav\'es de lo que conocido como funci\'on de partici\'on
+(ver~\cite{Gib01,  Gib02,  Fis29}). Se  refiera  tambi\'en a~\cite{Luc70,  titi,
+  toto, Amblard} para lo que sigue.
+% Gibbs 1901, Fisher 1929
 
-\hfill
+\begin{definicion}[Generadora de los cumulantes]
+  Sea \ $X$ \ vector aleatorio y  \ $M_X(u) = \Esp\left[ e^{u^t X} \right]$ \ su
+  generadora de momentos. Etonces, se define la funci\'on {\em generadora de los
+  cumulantes} como
+  %
+  \[
+  C_X(u) = \log M_X(u) = \log\left( \Esp\left[ e^{u^t X} \right] \right)
+  \]
+\end{definicion}
+%
+Del hecho que que $M_X$ es compleja, hace falta entender el logaritmo como de un
+n\'umero  complejo~\cite{Abl03,  CarKro05}.  De  la continuidad  de  $M_X$,  con
+$M_X(0) = 1$, la generadora de los  momentos es real positiva por lo menos en un
+enterno de $u = 0$, as\'i que  la generadora de los cumulantes va a ser definida
+por lo menos en un enterno de $u = 0$.
 
-}
+A partir de esta definici\'on, se define los dichos {\em cumulantes} de la misma
+manera que para los momentos:
+%
+\begin{definicion}[Cumulantes]
+  Sea  \ $X$  \ vector  aleatorio $d$-dimensional  y $C_X(u)  = \log  M_X(u)$ la
+  generadora de  los momentos.  Esta funci\'on  es definida por  lo menos  en un
+  entorno  de $u  = 0$,  $C_X(0)  = 0$  \ y  si  admite en  desarollo de  Taylor
+  alrededor de $u = 0$, se escribe
+  %
+  \[
+  C_X(u)     =    \sum_{K=1}^{+\infty}     \,     \sum_{k    \in     \Part{K,d}}
+  \kappa_{k_1,\ldots,k_d} \, \frac{u_1^{k_1} \ldots u_d^{k_d}}{K!}
+  \]
+  %
+  donde  el  tensor \  $\kappa_K$  \  de  order \  $K$  \  y de  componentes  $k
+  \in \Part{K,d}$ llamados {\em cumulentes}
+  %
+  \[
+  \kappa_{k_1,\ldots,k_d} \, = \, \left.\frac{\partial^K C_X}{\partial u_1^{k_1}
+      \ldots \partial u_d^{k_d}} \right|_{u = 0}
+  \]
+  %
+  es llamado {\em cumulente de orden $K$ de $X$}
+\end{definicion}
 
+Se podra notar que
+%
+\begin{itemize}
+\item $\kappa_1 = \nabla C_X(0) = m_X$ \ media de $X$;
+%
+\item $\kappa_2 = \Hess C_X(0) = \Sigma_X = \zeta_2$ \ covarianza de $X$;
+%
+\item $\kappa_3 = \zeta_3$ \ momento centrado de orden 3;
+%
+\item Pero, $\forall K > 3, \quad \kappa_K \ne \zeta_K$.
+\end{itemize}
+
+Sin embargo, en  el caso escalar \  $d=1$ \ de \ $m_k  = \left. \frac{\partial^k
+    M_X}{\partial     u^k}    \right|_{u=0}    =     \left.     \frac{\partial^k
+    \exp(C_X)}{\partial   u^k}   \right|_{u=0}$   \   o   $\kappa_k   =   \left.
+  \frac{\partial^k C_X}{\partial  u^k} \right|_{u=0} =  \left.  \frac{\partial^k
+    \log(C_X)}{\partial u^k} \right|_{u=0}$. Se relacionan cumulentes y momentos
+de  la  formula  de  Fa\`a   di  Bruno~\footnote{Esta  formula  es  asociada  al
+  matem\'atico italiano Francesco  Fa\`a di Bruno que publico  su formula en los
+  a\~nos 1855, 1857.  Pero fue  probada desde 1800 por el matem\'atico franc\'es
+  Louis Fran\c{c}ois Antoine Arbogast~\cite{Abo00}}  que da las derivadas de una
+funci\'on compuesta~\cite{Faa55,  Faa57} mediante los  polinimios incompletos de
+Bell, dados para $n \ge k$
+%
+\[
+B_{n,k}(x_1,\ldots,x_{n-k+1})  = n!   \sum_{j  \in D_{n,k}}  \prod_{i=1}^{n-k+1}
+\frac{1}{j_j!} \left( \frac{x_i}{i!} \right)^{j_i}
+\]
+%
+con
+%
+\[
+D_{n,k}  =  \left\{ j  \in  \Nset^{n-k+1} \tq  \sum_{i=1}^{n-k+1}  j_i  = k  \et
+  \sum_{i=1}^{n-k+1} i j_i = n \right\}
+\]
+
+\begin{lema}[Relaci\'on momentos-cumulantes]
+  Sea  \ $X$ \  variable aleatorias  escalares. Cuando  existen, los  momentos y
+  cumulantes son relacionados por las formulas
+%
+\[\left\{\begin{array}{lll}
+m_k & = & \displaystyle \sum_{n=1}^k B_{k,n}( \kappa_1 , \ldots , \kappa_{n-k+1}) \\[2mm]
+%
+\kappa_k & = & \displaystyle \sum_{n=1}^k (-1)^n (n-1)! B_{k,n}( m_1 , \ldots , m_{n-k+1}) \\[2mm]
+\end{array}\right.\]
+%
+Notando que \ $C_{X-m_X}(u) = -u m_X + C_X(u)$ \ se obtiene inmediatamente
+%
+\[\left\{\begin{array}{lll}
+\zeta_k & = & \displaystyle \sum_{n=1}^k B_{k,n}( 0 , \kappa_2 , \ldots , \kappa_{n-k+1}) \\[2mm]
+%
+\kappa_k & = & \displaystyle \sum_{n=1}^k (-1)^n (n-1)! B_{k,n}( 0 , \zeta_2 , \ldots , \zeta_{n-k+1}) \\[2mm]
+\end{array}\right.\]
+\end{lema}
+%
+De hecho,  se podri\'a definir as\'i  de manera {\em ad-hoc},  los cumulantes que
+las generadoras adminetn o no desarollos de Taylor en $u = 0$.
+
+La  generalizaci\'on  en el  caso  multivariado  es  posible, mediante  calculos
+bastante pesados, usando el mismo enfoque de derivada de funciones compuestas.
+
+\
+
+Para cerra esta secci\'on, se puede evocar  el hecho de que la generadora de los
+momentos no  esta siempre  bien definida sobre  todo $\Cset^d$, mientras  que la
+funci\'on caracter\'istica es  siempre bien definida. A veces, y  a pesar de que
+no sea necesario (el comportamiento en $u=0$ es importante), se usa el logaritmo
+de la funci\'on caracter\'istica para definir los cumulantes.
+%
+\begin{definicion}[Secunda funci\'on caracter\'istica]
+  Sea  \ $X$  \  vector aleatorio  y  \ $\Phi_X(\omega)  = \Esp\left[  e^{\imath
+      \omega^t X}  \right]$ \ su funci\'on caracter\'istica.  Etonces, se define
+  la {\em secunda funci\'on caracter\'istica} como
+  %
+  \[
+  \Psi_X(\omega) = \log \Phi_X(\omega) = \log\left( \Esp\left[ e^{\imath \omega^t X} \right] \right)
+  \]
+\end{definicion}
+%
+De  nuevo  del hecho  que  que  $\Phi_X$ es  compleja,  hace  falta entender  el
+logaritmo  como   de  un  n\'umero  complejo~\cite{Abl03,  CarKro05}   y  de  la
+continuidad de $\Phi_X$,  con $\Phi_X(0) = 1$, la  funci\'on caracter\'istica es
+real positiva por lo menos en un enterno de $u = 0$, as\'i que la $Psi$ va a ser
+definida  por lo menos  en un  enterno de  $u =  0$. Si  admite un  desarollo de
+Taylor,  se muestra inmediatamente  que los  cumulantes satisfacen  tambi\'en la
+relaci\'on siguiente:
+%
+\begin{lema}[Cumulantes a partir de la secunda funci\'on caracter\'istica]
+  Sea \ $X$ \ vector aleatorio $d$-dimensional y $\Psi_X(u) = \log \Phi_X(u)$ su
+  secunda  funci\'on caracter\'istica.  Si  admite en  desarollo de  Taylor, los
+  cumulantes de orden $K$ satisfacen
+  %
+  \[
+  \kappa_{k_1,\ldots,k_d}    \,   =   \,    (-\imath)^K   \left.\frac{\partial^K
+      \Psi_X}{\partial    \omega_1^{k_1}    \ldots   \partial    \omega_d^{k_d}}
+  \right|_{\omega   =    0},   \qquad    \begin{bmatrix}   k_1   &    \cdots   &
+    k_d \end{bmatrix}^t \in \Part{K,d}
+  \]
+\end{lema}
+
+  }
+
+
+
+
+\vspace{2cm}
+
+\centerline{\underline{\hspace{10cm}}}
 
 
 \SZ{teorema de Polya?}

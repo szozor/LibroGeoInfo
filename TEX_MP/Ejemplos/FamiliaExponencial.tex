@@ -1,6 +1,9 @@
 % --------------------------------- Familia  exponencial
 \subseccion{Familia exponencial}
+\label{Ssec:MP:FamiliaExponencial}
 
+% Familia exponencial:
+% --------------------
 % Kay p. 110 & 124
 % Lehman & Casela p. 23
 % Kotz & Balakrishnan p. 659
@@ -9,6 +12,18 @@
 % Cencov p. 245, 279
 % Ibarola Perez p. 174
 % Mukhopadhyay p. 141
+
+
+% Estadistica suficiente:
+% -----------------------
+% Kay p. 102-103
+% Lehman & Casela p.
+% Kotz & Balakrishnan p.
+% Robert p.
+% van den Bos p.
+% Cencov p.
+% Ibarola Perez p.
+% Mukhopadhyay p. 
 
 Muchas de las leyes que hemos visto, que sean discreta o continuas, partenecen a
 una clase que comparte propriedades  particulares, y que juega un rol particular
@@ -49,7 +64,7 @@ Darmois~\cite{Dar35}  en   los  a\~nos   1935-1936  (ver  tambi\'en   Pitman  \&
   %
   \[
   C:  \Theta \subset  \Rset^m \mapsto  \Rset_+,  \qquad h:  \X \mapsto  \Rset_+,
-  \qquad \eta: \Theta \mapsto \Rset^k, \qquad T: \X \mapsto \Rset^k
+  \qquad \eta: \Theta \mapsto \Rset^k, \qquad S: \X \mapsto \Rset^k
   \]
   %
   con \ $m \in \Nset$.  En otras palabras, la familia exponencial es una familia
@@ -58,17 +73,17 @@ Darmois~\cite{Dar35}  en   los  a\~nos   1935-1936  (ver  tambi\'en   Pitman  \&
   %
   \[
   p_X(x) = \frac{1}{Z(\eta)}  \, h(x) \, \exp\left( \eta^t  S(x) \right) = h(x)
-  \, exp\left( \eta^t S(x) - \varphi(\eta) \right)
+  \, \exp\left( \eta^t S(x) - \varphi(\eta) \right)
   \]
   %
   con
   %
   \[
   \eta \in N \subset \Rset^k, \qquad Z: \Rset^k \mapsto \Rset_+, \qquad \varphi = \log(Z),
-  \qquad h: \X \mapsto \Rset_+, \qquad T: \X \mapsto \Rset^k
+  \qquad h: \X \mapsto \Rset_+, \qquad S: \X \mapsto \Rset^k
   \]
   %
-  donde \  $N = \left\{ \eta \in  \Rset^k \tq \int_\X h(x)  \, \exp\left( \eta^t
+  donde \  $\displaystyle N = \left\{ \eta \in  \Rset^k \tq \int_\X h(x)  \, \exp\left( \eta^t
       S(x) - \varphi(\eta) \right) \, d\mu(x)  < + \infty \right\}$ \ es llamado
   {\em espacio de par\'ametros naturales}.
 \end{definicion}
@@ -78,7 +93,7 @@ Se notara  que con  la reparametrizaci\'on \  $\eta(\theta)$ \ se  puede siempre
 forma natural. Con respeto a cada termino:
 %
 \begin{itemize}
-\item $T$ es llamada {\em estad\'istica suficiente} de la ley. \SZ{completar}
+\item $S$ es llamada {\em estad\'istica suficiente} de la ley. \SZ{completar}
 %
 \item  $\theta$  es el  par\'ametro,  multivariado,  y  $\eta$ es  llamado  {\em
     par\'ametro natural}.
@@ -88,17 +103,18 @@ forma natural. Con respeto a cada termino:
     f\'isica}.
 \end{itemize}
 
-Se notara que, en particular, \ $Z$ \ es relacionada a los momentos de $T$:
+Se notara que, en particular, \ $Z$ \ es relacionada a los momentos de $S$:
+  \SZ{A ver si hablamos de cumulantes }
 %
 \begin{teorema}[Funci\'on de partici\'on y generadora de momentos]
 %
   Sea \  $X$ \  de distribuci\'on exponencial  natural de par\'ametro  natural \
-  $\eta$ \ y estad\'istica suficiente \ $T$  \ y denotamos \ $Z$ la funci\'on de
+  $\eta$ \ y estad\'istica suficiente \ $S$  \ y denotamos \ $Z$ la funci\'on de
   partici\'on. Entonces, la funci\'on generadora  \ $M_{S(X)}$ \ de los momentos
-  de \ $T$ es relacionada a \ $Z$ \ y \ a \ $\varphi = \log Z$ \ por
+  de \ $S$ es relacionada a \ $Z$ \ y \ a \ $\varphi = \log Z$ \ por
   %
   \[
-  \forall \: u \tq u+\eta \in N, \quad M_{S(X)}(u) = \frac{Z(u+\eta)}{Z(\eta)} =
+  \forall \: u \: \mbox{ tal que } \: u+\eta \in N, \quad M_{S(X)}(u) = \frac{Z(u+\eta)}{Z(\eta)} =
   e^{\varphi(u+\eta) - \varphi(\eta)}
   \]
   %
@@ -108,17 +124,19 @@ Se notara que, en particular, \ $Z$ \ es relacionada a los momentos de $T$:
   \nabla \varphi (\eta) = \Esp\left[ S(X) \right]
   \]
   %
-  y si si \ $\varphi$ \ es dos veces diferenciable tenemos
+  y si \ $\varphi$ \ es dos veces diferenciable tenemos
   %
   \[
   \Hess \varphi (\eta) = \Cov\left[ S(X) \right]
   \]
-
-  \SZ{A ver si hablamos de cumulantes }
+  %
+  Pasando,  de \  $\Cov\left[ S(X)  \right] \ge  0$ \ tenemos  que \  $\varphi$  \ es
+  convexa~\cite{CamMar09}.
+%
 \end{teorema}
 %
 \begin{proof}
-  De la definici\'on de la function generadora de $S(X)$, tenemos
+  De la definici\'on de la funci\'on generadora de \ $S(X)$, tenemos
   %
   \begin{eqnarray*}
   M_{S(X)}(u) & = &\Esp\left[ \exp\left( u^t S(X) \right) \right]\\[2mm]
@@ -126,7 +144,34 @@ Se notara que, en particular, \ $Z$ \ es relacionada a los momentos de $T$:
   & = & \int_\X \frac{1}{Z(\eta)} \, h(x) \, \exp\left( (u + \eta)^t S(x) \right) \,
   d\mu(x)\\[2mm]
   %
-& = & \exp\left( \varphi(u+\eta) - \varphi(\eta) \right) \int_\X h(x) \, \exp\left( (u + \eta)^t S(x) - \varphi(u+\eta) \right) \, d\mu(x)
+  & = & \exp\left( \varphi(u+\eta) - \varphi(\eta) \right) \int_\X h(x) \,
+  \exp\left( (u + \eta)^t S(x) - \varphi(u+\eta) \right) \, d\mu(x)\\[2mm]
+  %
+  & = & \exp\left( \varphi(u+\eta) - \varphi(\eta) \right)
+  \end{eqnarray*}
+  %
+  A continuaci\'on,
+  %
+  \begin{eqnarray*}
+  \Esp\left[ S(X) \right] & = & \left. \nabla_u M_{S(X)} \right|_{u=0}\\[2mm]
+  %
+  & = & \left. \nabla \varphi(u+\eta) \exp\left( \varphi(u+\eta) - \varphi(\eta) \right) \right|_{u=0}\\[2mm]
+  %
+  & = & \nabla \varphi(\eta)
+  \end{eqnarray*}
+  %
+  y
+  %
+  \begin{eqnarray*}
+  \Esp\left[ S(X)^2 \right] & = & \left. \Hess_u M_{S(X)} \right|_{u=0}\\[2mm]
+  %
+  & = & \left. \Hess \varphi(u+\eta) \exp\left( \varphi(u+\eta) - \varphi(\eta)
+  \right) \right|_{u=0} + \left. \nabla \varphi(u+\eta) \nabla^t \varphi(u+\eta)
+  \exp\left( \varphi(u+\eta) - \varphi(\eta) \right) \right|_{u=0}\\[2mm]
+  %
+  & = & \Hess \varphi(\eta) + \nabla \varphi(\eta) \nabla^t \varphi(\eta)\\[2mm]
+  %
+  & = & \Hess \varphi(\eta) + \Esp\left[ S(X) \right] \Esp\left[ S(X) \right]^t
   \end{eqnarray*}
 \end{proof}
 

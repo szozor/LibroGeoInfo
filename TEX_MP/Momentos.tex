@@ -303,8 +303,10 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
   $K$ \ \modif{bajo la escritura (con el mismo $m$, por abuso)}
   %
   \[
-  m_{k_1,\ldots,k_d}  =  \Esp\left[   \prod_{i=1}^d  X_i^{k_i}  \right]  \quad
-  \mbox{con} \quad \sum_i k_i = K.
+  m_{k_1,\ldots,k_d}   =  \Esp\left[   \prod_{i=1}^d  X_i^{k_i}   \right]  \quad
+  \mbox{con}  \quad \modif{\begin{bmatrix}  k_1 &  \cdots &  k_d \end{bmatrix}^t
+    \in \Part{K,d} }
+%\sum_i k_i = K.
   \]
   %
   \modif{que son los componentes de $m_K$.}   Se puede incluir el caso $K=0$ con
@@ -333,7 +335,9 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
 \item Frecuentemente (especialmente en el  caso de variables discretas $X$ sobre
   $\X  =  \Nset$),  resulta   \'util  introducir  los  $K$-\'esimo  {\it  momento
     factorial}   de   $X,  \quad   k   =   \begin{bmatrix}   k_1  &   \cdots   &
-    k_d \end{bmatrix}^t \in \Nset^d, \quad K = \sum_{i=1}^d k_i$ \ mediante \modif{el tensor de orden $K$}
+    k_d \end{bmatrix}^t \in \Part{K,d}$
+%\Nset^d, \quad K = \sum_{i=1}^d k_i$
+ \ mediante \modif{el tensor de orden $K$}
   %
   \[
   \modif{f_K \quad  \mbox{de componentes} \quad  f_{k_1,\ldots,k_d} = \Esp\left[
@@ -358,8 +362,10 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
   Se escribe tambi\'en
   %
   \[
-  \zeta_{k_1,\ldots,k_d}   =   \Esp\left[   \prod_{i=1}^d   \left(   X_i-\Esp[X_i]
-    \right)^{k_i} \right] \quad \mbox{con} \quad \sum_i k_i = K.
+  \zeta_{k_1,\ldots,k_d}   =  \Esp\left[   \prod_{i=1}^d   \left(  X_i-\Esp[X_i]
+    \right)^{k_i}  \right] \quad \mbox{con}  \quad \modif{\begin{bmatrix}  k_1 &
+      \cdots & k_d \end{bmatrix}^t \in \Part{K,d}}
+%\sum_i k_i = K.
   \]
   %
   Se deduce que si la  distribuci\'on de probabilidad satisface a una simetr\'ia
