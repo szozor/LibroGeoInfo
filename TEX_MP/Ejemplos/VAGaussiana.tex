@@ -119,6 +119,29 @@ Fig.~\ref{Fig:MP:Gaussiana}(c).
 
 La gaussiana tiene un par de propiedades particulares:
 %
+\begin{lema}[Gausiana y cumulantes]
+%
+  Sea \  $X$ \ vector aleatorio de  media $m$, covarianza $\Sigma$  y de secunda
+  funci\'on caracter\'istica admtiendo un desarollo de Taylor. Entonces
+  %
+  \[
+  \kappa_k[X] =  0 \quad \forall \: k  \ge 4 \quad \Longleftrightarrow  \quad X \sim
+  \N(m,\Sigma)
+  \]
+\end{lema}
+%
+\begin{proof}
+  La pueba es inmediata del lema~\ref{Lem:MP:CumSecFctCarac},
+  %
+  \[
+  \kappa_k[X]  =  0  \quad  \forall  \:  k \ge  4  \quad  \Longleftrightarrow  \quad
+  \Psi_X(\omega) = \imath \, \omega^t m - \frac12 \omega^t \Sigma \omega
+  \]
+  %
+  lo que es nada m\'as que la secunda funci\'on caracter\'istica de la gausiana,
+  esa determiniendo completamente la ley.
+\end{proof}
+%
 \begin{teorema}[Stabilidad]
 \label{Teo:MP:StabilidadGaussiana}
 %

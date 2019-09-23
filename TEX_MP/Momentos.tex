@@ -284,88 +284,88 @@ De  manera general,  estas medias  son llamadas  {\it momentos}  de  la variable
 aleatoria $X$. Los momentos relevantes usuales son los siguientes:
 %
 \begin{itemize}
-\item    para    el    ``monomio''    $f(x)   =    x^{\otimes    K}$    producto
+\item    para    el    ``monomio''    $f(x)   =    x^{\otimes    k}$    producto
   \modif{externo}~\footnote{Recuerdense  de  que $x  \otimes  x$  es una  matriz
-    teniendo como componentes  $x_i x_j$; entonces $x^{\otimes K}$  en un tensor
-    $K$-dimensional teniendo como  componentes $ \displaystyle \left[ x^{\otimes
-        K}  \right]_{i_1,\ldots,i_K} =  \prod_{j=1}^K x_{i_j}$.}
+    teniendo como componentes  $x_i x_j$; entonces $x^{\otimes k}$  en un tensor
+    $k$-dimensional teniendo como  componentes $ \displaystyle \left[ x^{\otimes
+        k}  \right]_{i_1,\ldots,i_k} =  \prod_{j=1}^k x_{i_j}$.}
    de $x$  \ $K$
-  veces \ siendo \ $K \in \Nset^*$, se obtiene \modif{el tensor conteniendo todo
-    los} $K${\it-\'esimo momentos (ordinarios)} de $X$:
+  veces \ siendo \ $k \in \Nset^*$, se obtiene \modif{el tensor conteniendo todo
+    los} $k${\it-\'esimo momentos (ordinarios)} de $X$:
   %
   \[
-  m_K \equiv \Esp\left[  X^{\otimes K} \right] = \int_{\Rset^d}  x^{\otimes K} \
+  m_k[X] \equiv \Esp\left[  X^{\otimes k} \right] = \int_{\Rset^d}  x^{\otimes k} \
   dP_X(x)
   \]
   %
-  que tiene unidades de $\prod_j X_{i_j}$  (de $X_i^K$ si los componentes de $X$
+  que tiene unidades de $\prod_{j=1}^k X_{i_j}$  (de $X_i^k$ si los componentes de $X$
   tienen la  misma ``unidad'').  Se escriben  tambi\'en los momentos  de orden \
-  $K$ \ \modif{bajo la escritura (con el mismo $m$, por abuso)}
+  $k$ \ \modif{bajo la escritura (con el mismo $m$, por abuso)}
   %
   \[
-  m_{k_1,\ldots,k_d}   =  \Esp\left[   \prod_{i=1}^d  X_i^{k_i}   \right]  \quad
-  \mbox{con}  \quad \modif{\begin{bmatrix}  k_1 &  \cdots &  k_d \end{bmatrix}^t
-    \in \Part{K,d} }
-%\sum_i k_i = K.
+  m_{i_1,\ldots,i_k}[X]  =  \Esp\left[   \prod_{j=1}^k  X_{i_j}  \right]  \quad
+  \mbox{con} \quad \modif{(i_1 , \ldots , i_k) \in \{ 1 , \ldots , d \}^k }
   \]
   %
-  \modif{que son los componentes de $m_K$.}   Se puede incluir el caso $K=0$ con
-  la  convenci\'on $x^{\otimes  0} =  1$, que  corresponde a  la  condici\'on de
-  normalizaci\'on: \ $\displaystyle m_0 =  \int_\Rset dP_X(x) = 1$.  La media es
-  el  primer  momento: $m_1  =  \Esp[X]  =  m_X$.  T\'ipicamente,  los  primeros
+  \modif{que son los  componentes de $m_k[X]$.}  Se puede  incluir el caso $k=0$
+  con la convenci\'on  $x^{\otimes 0} = 1$, que corresponde  a la condici\'on de
+  normalizaci\'on: \ $\displaystyle m_0[X] =  \int_\Rset dP_X(x) = 1$.  La media
+  es el primer  momento: $m_1[X] = \Esp[X] =  m_X$.  T\'ipicamente, los primeros
   momentos  son  m\'as  relevantes  que   los  de  \'ordenes  mayores,  para  la
-  caracterizaci\'on de una distribuci\'on.  Para $K = 2$, en el caso escalar, el
+  caracterizaci\'on de una distribuci\'on.  Para $k = 2$, en el caso escalar, el
   momento  de   orden  2  es  el   an\'alogo  del  momento  de   inercia  de  la
   mec\'anica.\newline  Por ejemplo,  para la  distribuci\'on uniforme  $p_X(x) =
-  \frac{1}{b-a}$   en   el   intervalo   $[   a   \;   b]$,   resulta   $m_K   =
-  \frac{b^{K+1}-a^{K+1}}{(K+1)(b-a)}$.   En particular,  $m_1  = \frac{a+b}{2}$,
-  valor  medio del  intervalo.\newline  Fijense  de que  $X^{\otimes  K}$ no  es
+  \frac{1}{b-a}$   en  el   intervalo   $[   a  \;   b]$,   resulta  $m_k[X]   =
+  \frac{b^{k+1}-a^{k+1}}{(k+1)(b-a)}$.  En particular, $m_1[X] = \frac{a+b}{2}$,
+  valor  medio del  intervalo.\newline  Fijense  de que  $X^{\otimes  k}$ no  es
   siempre integrable,  por ejemplo, en el  caso con densidad,  si $p_X(x)$ tiene
-  soporte  (semi)infinito, necesariamente  la funci\'on  $p_X$ debe  tender  a 0
+  soporte (semi)infinito,  necesariamente la funci\'on  $p_X$ debe tender  a $0$
   cuando \modif{$\|  x \|  \rightarrow \infty$.}  Si  $p_X(x)$ es {\it  de largo
-    alcance}, en el  sentido de que no cae a 0  suficientemente r\'apido con $x$
+    alcance}, en el sentido de que no cae a $0$ suficientemente r\'apido con $x$
   para  $x$  grandes, algunos  momentos  pueden  no  existir.  Por  ejemplo,  la
   distribuci\'on   de   probabilidad   de   Cauchy--Lorentz  (o   funci\'on   de
   Breit--Wigner), dada  por \ $p_X(x)  = \modif{\frac{\Gamma\left( \frac{d+1}{2}
       \right)}{\pi^{\frac{d+1}{2}} \, \left| R \right|^{\frac12}}} \, \left( 1 +
     (x-x_0)^t R^{-1}  (x-x_0) \right)^{-  \, \frac{d+1}{2}}$ \  sobre $\Rset^d$,
   con  \ \modif{$R \in  P_d^+(\Rset), \:  x_0 \in  \Rset^d$}, no  tiene momentos
-  finitos de orden $K \geq 1$.
+  finitos de orden $k \geq 1$.
 %
 \item Frecuentemente (especialmente en el  caso de variables discretas $X$ sobre
-  $\X  =  \Nset$),  resulta   \'util  introducir  los  $K$-\'esimo  {\it  momento
-    factorial}   de   $X,  \quad   k   =   \begin{bmatrix}   k_1  &   \cdots   &
-    k_d \end{bmatrix}^t \in \Part{K,d}$
-%\Nset^d, \quad K = \sum_{i=1}^d k_i$
- \ mediante \modif{el tensor de orden $K$}
+  $\X  =  \Nset$),  resulta   \'util  introducir  los 
+  % $k$-\'esimo
+  {\it momentos factorials} de $X$
+  % ,  \quad   i  =   \begin{bmatrix}  k_1  &   \cdots  &   k_d  \end{bmatrix}^t
+  % \in \Part{k,d}$ \Nset^d, \quad K = \sum_{i=1}^d k_i$
+ \ mediante
+ % \modif{el tensor de orden $K$}
   %
   \[
-  \modif{f_K \quad  \mbox{de componentes} \quad  f_{k_1,\ldots,k_d} = \Esp\left[
-      \prod_{i=1}^d \PocD{X_i}{k_i} \right]}
+  %\modif{f_K[X] \quad  \mbox{de componentes} \quad  
+  \modif{f_{k_1,\ldots,k_d}[X] = \Esp\left[ \prod_{i=1}^d \PocD{X_i}{k_i} \right]}
   %  \equiv \Esp\left[  \prod_{k=0}^{r-1} (X-k)  \right] =  \sum_{n  = r}^\infty
   % \frac{n!}{(n-r)!} \, P(X = n).
  \]
  %
  \modif{con \ $\PocD{x}{n}$ \ factorial decreciente (ver notaciones).}  Se puede
- ver que cuando \ $\X  = \{ 0 \; \ldots \; n \}, \: n \in  \Nset$, \ $f_K = 0$ \
- cuando \ $K > n$.
+ ver  que  cuando  \ $\X  =  \{  0  \; \ldots  \;  n  \},  \:  n \in  \Nset$,  \
+ $f_{k_1,\ldots,k_d}[X] = 0$ \ cuando hay por lo menos un \ $k_i > n$.
 %
 %  o {\it cumulantes}
 \item Los {\it  momentos centrales} se definen alrededor  de la media $\Esp[X]$,
-  \ie, como  el tensor de  los $K$-\'esimo momentos  de la {\it  desviaci\'on} \
+  \ie, como  el tensor de  los $k$-\'esimo momentos  de la {\it  desviaci\'on} \
   $\Delta X \equiv X-\Esp[X]$:
   %
   \[
-  \zeta_K \equiv \Esp\left[  \left( X - \Esp[X] \right)^{\otimes K} \right].
+  \zeta_k[X] \equiv \Esp\left[  \left( X - \Esp[X] \right)^{\otimes k} \right].
   \]
   %
   Se escribe tambi\'en
   %
   \[
-  \zeta_{k_1,\ldots,k_d}   =  \Esp\left[   \prod_{i=1}^d   \left(  X_i-\Esp[X_i]
-    \right)^{k_i}  \right] \quad \mbox{con}  \quad \modif{\begin{bmatrix}  k_1 &
-      \cdots & k_d \end{bmatrix}^t \in \Part{K,d}}
-%\sum_i k_i = K.
+  \zeta_{i_1,\ldots,i_k}[X]   =  \Esp\left[   \prod_{j=1}^k   \left(  X_{i_j}-\Esp[X_{i_j}]
+    \right)  \right] \quad \mbox{con}  \quad  \quad \modif{(i_1 , \ldots , i_k) \in \{ 1 , \ldots , d \}^k }
+  % \modif{\begin{bmatrix}  k_1 & \cdots  & k_d \end{bmatrix}^t  \in \Part{K,d}}
+  % \sum_i k_i = K.
   \]
   %
   Se deduce que si la  distribuci\'on de probabilidad satisface a una simetr\'ia
@@ -387,11 +387,11 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
    {\it desviaci\'on cuadr\'atica media}.
   %
   \[
-  \Sigma_X \equiv  \Cov[X] \equiv  \zeta_2 = \Esp\left[  \left( X -  m_X \right)
+  \Sigma_X \equiv  \Cov[X] \equiv  \zeta_2[X] = \Esp\left[  \left( X -  m_X \right)
     \left( X - m_X \right)^t \right].
   \]
   %
-  \SZ{Se  conoce  tambi\'en  la  matriz  inversa \  $\Sigma_X^{-1}$  \  bajo  la
+  \modif{Se  conoce  tambi\'en  la  matriz  inversa \  $\Sigma_X^{-1}$  \  bajo  la
     denominaci\'ion {\em matriz de precisi\'on}.}
   %
   En el caso escalar, la varianza se escribe en general
@@ -495,7 +495,7 @@ inmediatamente,
   %
   \[
   \Asim[X]  \equiv \gamma_X  \equiv \Esp\left[  \left( \frac{X  - m_X}{\sigma_X}
-    \right)^3 \right] = \frac{\zeta_3}{\sigma_X^3},
+    \right)^3 \right] = \frac{\zeta_3[X]}{\sigma_X^3},
   \]
   %
   momento de orden  3 de la variable estandar, que  resulta adimensional y puede
@@ -566,7 +566,7 @@ inmediatamente,
   %
   \[
   \Curt[X]  \equiv \kappa_X  \equiv \Esp\left[  \left( \frac{X  - m_X}{\sigma_X}
-    \right)^4 \right] = \frac{\zeta_4}{\sigma_X^4},
+    \right)^4 \right] = \frac{\zeta_4[X]}{\sigma_X^4},
   \]
   % 
   momento de orden  4 de la variable estandar,  que posibilita diferenciar entre
@@ -583,7 +583,7 @@ inmediatamente,
   \[
   \Excurt[X]  \equiv \widebar{\kappa}_X  = \Curt[X]  - 3  =  \Esp\left[ \left(
       \frac{X     -     m_X}{\sigma_X}    \right)^4     \right]     -    3     =
-  \frac{\zeta_4}{\sigma_X^4} - 3.
+  \frac{\zeta_4[X]}{\sigma_X^4} - 3.
   \]
   %
   M\'as que  el pico de distribuci\'on,  la curtosis (por  excesso) describe las
@@ -647,23 +647,40 @@ inmediatamente,
   %
   Fijense  de   que,  en  el  contexto   escalar  $d  =  1$,   se  vinculan  los
   \modif{momentos  centrales}  y los  momentos  ordinarios  directamente de  las
-  definiciones:
+  definiciones: \modif{
   %
   \[
-  \zeta_k = \sum_{l=0}^k \binom{k}{l} \left( - m_X \right)^{k-l} m_l
+  \zeta_k[X] = \sum_{l=0}^k \binom{k}{l} \left( - m_X \right)^{k-l} m_l[X]
   \]
   %
-  para cualquier  $k \in  \Nset$, siendo $m_0  = \zeta_0  = 1$.  Por  ejemplo, \
-  $\zeta_2  =  m_2  -  m_1^2$  \   que  es  nada  m\'as  que  la  relaci\'on  de
-  K\"onig-Huyggens, mientras que \ $\zeta_3 = m_3 - 3 m_1 m_2 + 2 m_1^3$.  En el
-  contexto  multivariado,  la relaci\'on  momentos--momentos  centrales toma  la
-  expresi\'on
+  y
   %
   \[
-  \zeta_{k_1,\ldots,k_d}  = \sum_{l_1  =  0}^{k_1} \cdots  \sum_{l_d =  0}^{k_d}
-  \left(  \prod_{i=1}^d  \binom{k_i}{l_i}  \left(  -  m_{X_i}  \right)^{k_i-l_i}
-  \right) \, m_{l_1,\ldots,l_d}.
+  m_k[X] = \sum_{l=0}^k \binom{k}{l} m_X^{k-l} \zeta_l[X]
   \]
+  %
+  para cualquier $k \in \Nset$, siendo  $m_0[X] = \zeta_0[X] = 1$.  Por ejemplo,
+  \ $\zeta_2[X] =  m_2[X] - m_1[X]^2$ \  que es nada m\'as que  la relaci\'on de
+  K\"onig-Huyggens, mientras  que \ $\zeta_3[X] =  m_3[X] - 3 m_1[X]  m_2[X] + 2
+  m_1[X]^3$.   En  el contexto  multivariado,  las relaci\'ones  momentos--momentos
+  centrales toman las expresi\'ones
+  %
+  \[
+  \zeta_{i_1,\ldots,i_k}[X] =  \sum_{I \subset \{1 , \ldots  , k\}} (-1)^{k-|I|}
+  m_J[X] \prod_{l \not\in I} m_{X_{i_l}}
+  % \sum_{l_1  =  0}^{k_1}  \cdots  \sum_{l_d =  0}^{k_d}  \left(  \prod_{i=1}^d
+  %   \binom{k_i}{l_i}   \left(   -   m_{X_i}   \right)^{k_i-l_i}   \right)   \,
+  % m_{l_1,\ldots,l_d}[X].
+  \]
+  %
+  y
+  %
+  \[
+  m_{i_1,\ldots,i_k}[X]  = \sum_{I  \subset \{1 , \ldots , k\}} \zeta_I[X] \prod_{l \not\in I} m_{X_{i_l}} 
+  \]
+  %
+  donde, por abuso de scritura \ $m_J \equiv m_{j_1,\ldots,j_{|J|}}$ (y similarmente para $\zeta$).
+}
 \end{itemize}
 
 

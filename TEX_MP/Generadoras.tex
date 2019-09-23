@@ -127,11 +127,10 @@ en ingles):
   %
   \[
   \left.\frac{\partial^K     G_X}{\partial     z_1^{k_1}     \cdots     \partial
-      z_d^{k_d}}\right|_{z=1}    =   \Esp\left[    \prod_{i=1}^d    \left(   X_i
-    \right)_{k_i} \right]
+      z_d^{k_d}}\right|_{z=1} = \Esp\left[ \prod_{i=1}^d \PocD{X_i}{k_i} \right]
   \]
   %
-  momento factorial~\footnote{Recuerdense que  $(x)_n = \prod_{i=0}^{n-1} (x-i),
+  momento factorial~\footnote{Recuerdense que  $\PocD{x}{n} = \prod_{i=0}^{n-1} (x-i),
     \quad n > 0$ \ s\'imbolo de Pochhammer, con la convenci\'on $(x)_0 = 1$; ver
     pagina~\pageref{Foot:MP:Pochhammer}} de $X$.
 \end{lema}
@@ -285,15 +284,14 @@ a trav\'es de derivadas, sin hacer combinaciones:
 \begin{lema}
 \label{Lem:MP:GeneracionMomentos}
 %
-  Para cualquier \  $k = \begin{bmatrix} k_1 & \cdots  & k_d \end{bmatrix}^t \in \modif{\Part{K,d}}$
+  Para cualquier \  \modif{$k > 0, \quad (i_1,\ldots,i_k) \in \{ 1 , \ldots , d \}^k $}
 %  \Nset^d$ \ con \ $K =  \sum_{i=1}^d k_i$, 
-derivando $M_X$ se proba que, cuando
-  existen
+  derivando $M_X$ se proba que, cuando existen
   %
   \[
-  \left.\frac{\partial^K     M_X}{\partial     u_1^{k_1}     \cdots     \partial
-      u_d^{k_d}}\right|_{u=0}  = \Esp\left[  \prod_{i=1}^d  X_i^{k_i} \right]  =
-  m_{k_1,\ldots,k_d}
+  \modif{\left.\frac{\partial^k     M_X}{\partial     u_{i_1}     \cdots     \partial
+      u_{i_k}}\right|_{u=0}  = \Esp\left[  \prod_{j=1}^k  X_{i_j} \right]  =
+  m_{i_1,\ldots,i_k}[X]}
   \]
   %
   momento de orden \ $k$ \ de \ $X$.
@@ -438,15 +436,14 @@ recuperar directamente los momentos a trav\'es de derivadas:
 \begin{lema}
 \label{Lem:MP:GeneracionMomentoViaCaracteristica}
 %
-  Para cualquier \  $k = \begin{bmatrix} k_1 & \cdots  & k_d \end{bmatrix}^t \in \modif{\Part{K,d}}$,
+  Para cualquier \  \modif{$k > 0, \quad (i_1,\ldots,i_k) \in \{ 1 , \ldots , d \}^k$},
 %  \Nset^d$ \  con \  $K =  \sum_{i=1}^d k_i$, 
-derivando  $\Phi_X$ se  proba que,
-  cuando existen
+  derivando $\Phi_X$ se proba que, cuando existen
   %
   \[
-  (-   \imath)^K  \,   \left.\frac{\partial^K   \Phi_X}{\partial  \omega_1^{k_1}
-      \cdots    \partial    \omega_d^{k_d}}\right|_{\omega=0}    =    \Esp\left[
-    \prod_{i=1}^d X_i^{k_i} \right] = m_{k_1,\ldots,k_d}
+  (-   \imath)^k  \,   \left.\frac{\partial^k   \Phi_X}{\partial  \omega_{i_1}
+      \cdots    \partial    \omega_{i_k}}\right|_{\omega=0}    =    \Esp\left[
+    \prod_{j=1}^k X_{i_j} \right] = m_{i_1,\ldots,i_k}[X]
   \]
   %
   momento de orden \ $k$ \ de \ $X$.
@@ -858,36 +855,36 @@ manera que para los momentos:
   alrededor de $u = 0$, se escribe
   %
   \[
-  C_X(u)     =    \sum_{K=1}^{+\infty}     \,     \sum_{k    \in     \Part{K,d}}
-  \kappa_{k_1,\ldots,k_d} \, \frac{u_1^{k_1} \ldots u_d^{k_d}}{K!}
+  C_X(u)     =    \sum_{k=1}^{+\infty}     \,     \sum_{(i_1,\ldots,i_k)    \in     \{1 , \ldots , d \}^k}
+  \kappa_{i_1,\ldots,i_k}[X] \, \frac{u_{i_1} \ldots u_{i_k}}{k!}
   \]
   %
-  donde  el  tensor \  $\kappa_K$  \  de  order \  $K$  \  y de  componentes  $k
-  \in \Part{K,d}$ llamados {\em cumulentes}
+  donde  el  tensor  \ $\kappa_k[X]$  \  de  order  \  $k$  \ y  de  componentes
+  $\kappa_{i_1,\ldots,i_k}[X]$ llamados {\em cumulentes},
   %
   \[
-  \kappa_{k_1,\ldots,k_d} \, = \, \left.\frac{\partial^K C_X}{\partial u_1^{k_1}
-      \ldots \partial u_d^{k_d}} \right|_{u = 0}
+  \kappa_{i_1,\ldots,i_k}[X] \, = \, \left.\frac{\partial^k C_X}{\partial u_{i_1}
+      \ldots \partial u_{i_k}} \right|_{u = 0}
   \]
   %
-  es llamado {\em cumulente de orden $K$ de $X$}
+  es llamado {\em cumulente de orden $k$ de $X$.}
 \end{definicion}
 
 Se podra notar que
 %
 \begin{itemize}
-\item $\kappa_1 = \nabla C_X(0) = m_X$ \ media de $X$;
+\item $\kappa_1[X] = \nabla C_X(0) = m_X$ \ media de $X$;
 %
-\item $\kappa_2 = \Hess C_X(0) = \Sigma_X = \zeta_2$ \ covarianza de $X$;
+\item $\kappa_2[X] = \Hess C_X(0) = \Sigma_X = \zeta_2[X]$ \ covarianza de $X$;
 %
-\item $\kappa_3 = \zeta_3$ \ momento centrado de orden 3;
+\item $\kappa_3[X] = \zeta_3[X]$ \ momento centrado de orden 3;
 %
-\item Pero, $\forall K > 3, \quad \kappa_K \ne \zeta_K$.
+\item Pero, $\forall \: k > 3, \quad \kappa_k[X] \ne \zeta_k[X]$.
 \end{itemize}
 
-Sin embargo, en  el caso escalar \  $d=1$ \ de \ $m_k  = \left. \frac{\partial^k
+Sin embargo, en  el caso escalar \  $d=1$ \ de \ $m_k[X]  = \left. \frac{\partial^k
     M_X}{\partial     u^k}    \right|_{u=0}    =     \left.     \frac{\partial^k
-    \exp(C_X)}{\partial   u^k}   \right|_{u=0}$   \   o   $\kappa_k   =   \left.
+    \exp(C_X)}{\partial   u^k}   \right|_{u=0}$   \   o   $\kappa_k[X]   =   \left.
   \frac{\partial^k C_X}{\partial  u^k} \right|_{u=0} =  \left.  \frac{\partial^k
     \log(C_X)}{\partial u^k} \right|_{u=0}$. Se relacionan cumulentes y momentos
 de  la  formula  de  Fa\`a   di  Bruno~\footnote{Esta  formula  es  asociada  al
@@ -914,17 +911,17 @@ D_{n,k}  =  \left\{ j  \in  \Nset^{n-k+1} \tq  \sum_{i=1}^{n-k+1}  j_i  = k  \et
   cumulantes son relacionados por las formulas
 %
 \[\left\{\begin{array}{lll}
-m_k & = & \displaystyle \sum_{n=1}^k B_{k,n}( \kappa_1 , \ldots , \kappa_{n-k+1}) \\[2mm]
+m_k[X] & = & \displaystyle \sum_{n=1}^k B_{k,n}( \kappa_1[X] , \ldots , \kappa_{n-k+1}[X]) \\[2mm]
 %
-\kappa_k & = & \displaystyle \sum_{n=1}^k (-1)^n (n-1)! B_{k,n}( m_1 , \ldots , m_{n-k+1}) \\[2mm]
+\kappa_k[X] & = & \displaystyle \sum_{n=1}^k (-1)^n (n-1)! B_{k,n}( m_1[X] , \ldots , m_{n-k+1}[X]) \\[2mm]
 \end{array}\right.\]
 %
 Notando que \ $C_{X-m_X}(u) = -u m_X + C_X(u)$ \ se obtiene inmediatamente
 %
 \[\left\{\begin{array}{lll}
-\zeta_k & = & \displaystyle \sum_{n=1}^k B_{k,n}( 0 , \kappa_2 , \ldots , \kappa_{n-k+1}) \\[2mm]
+\zeta_k[X] & = & \displaystyle \sum_{n=1}^k B_{k,n}( 0 , \kappa_2[X] , \ldots , \kappa_{n-k+1}[X]) \\[2mm]
 %
-\kappa_k & = & \displaystyle \sum_{n=1}^k (-1)^n (n-1)! B_{k,n}( 0 , \zeta_2 , \ldots , \zeta_{n-k+1}) \\[2mm]
+\kappa_k[X] & = & \displaystyle \sum_{n=1}^k (-1)^n (n-1)! B_{k,n}( 0 , \zeta_2[X] , \ldots , \zeta_{n-k+1}[X]) \\[2mm]
 \end{array}\right.\]
 \end{lema}
 %
@@ -949,7 +946,8 @@ de la funci\'on caracter\'istica para definir los cumulantes.
   la {\em secunda funci\'on caracter\'istica} como
   %
   \[
-  \Psi_X(\omega) = \log \Phi_X(\omega) = \log\left( \Esp\left[ e^{\imath \omega^t X} \right] \right)
+  \Psi_X(\omega)  =  \log   \Phi_X(\omega)  =  \log\left(  \Esp\left[  e^{\imath
+        \omega^t X} \right] \right)
   \]
 \end{definicion}
 %
@@ -961,20 +959,65 @@ definida  por lo menos  en un  enterno de  $u =  0$. Si  admite un  desarollo de
 Taylor,  se muestra inmediatamente  que los  cumulantes satisfacen  tambi\'en la
 relaci\'on siguiente:
 %
-\begin{lema}[Cumulantes a partir de la secunda funci\'on caracter\'istica]
+\begin{lema}[Cumulantes a partir de la secunda funci\'on caracter\'istica]\label{Lem:MP:CumSecFctCarac}
+%
   Sea \ $X$ \ vector aleatorio $d$-dimensional y $\Psi_X(u) = \log \Phi_X(u)$ su
   secunda  funci\'on caracter\'istica.  Si  admite en  desarollo de  Taylor, los
-  cumulantes de orden $K$ satisfacen
+  cumulantes de orden $k$ satisfacen
   %
   \[
-  \kappa_{k_1,\ldots,k_d}    \,   =   \,    (-\imath)^K   \left.\frac{\partial^K
-      \Psi_X}{\partial    \omega_1^{k_1}    \ldots   \partial    \omega_d^{k_d}}
-  \right|_{\omega   =    0},   \qquad    \begin{bmatrix}   k_1   &    \cdots   &
-    k_d \end{bmatrix}^t \in \Part{K,d}
+  \kappa_{i_1,\ldots,i_k}[X]    \,   =   \,    (-\imath)^k   \left.\frac{\partial^k
+      \Psi_X}{\partial    \omega_{i_1}    \ldots   \partial    \omega_{i_k}}
+  \right|_{\omega   =    0},   \qquad    (i_1 , \ldots , i_k) \in \{ 1 , \ldots , d \}^k
   \]
 \end{lema}
 
-  }
+
+Varias propiedades de la  funci\'on \ $C_X$ \ se deducen de  las de \ $M_X$. Nos
+enfocamos  en la  propiedad  relacionana a  combinaciones  lineales de  vectores
+independientes, con consecuencias sobre los cumulantes:
+%
+\begin{teorema}%[Funci\'on generadora de probabilidad de una ]
+\label{Teo:MP:PropiedadesGeneradoraCumulantes}
+%
+  Sean  \   $X$  \  e  \   $Y$  \  dos   vectores  aleatorios  $d$-dimensionales
+  independientes,  \ $A$  \ una  matriz de  \ $\M_{d',d}(\Rset)$  \ y  \  $b \in
+  \Rset^{d'}$.  Entonces para cualquier $u \in \Cset^{d'}$ \ (donde la funci\'on
+  existe):
+  %
+  \[
+  C_{A X + b}(u) =  u^t b +  C_X\left( A^t u \right),
+  \]
+  %
+  y para cualquier $u \in \Cset^d$ \ (donde la funci\'on existe):
+  %
+  \[
+  M_{X+Y}(u) = C_X(u) + C_Y(u)
+  \]
+  %
+  Las  consecuencias de este  sobre los  cumulantes es  que~\footnote{La primera
+    relaci\'on  se generaliza  sencillamente con  $A$ matricial,  pero  para dar
+    expresiones compactas,  se necesita introducir  m\'as profundamente calculos
+    tensiorales, lo  que va  m\'as all\'a del  enfoque de este  libro.},
+  %
+  \[
+  \forall \: a \in \Rset, \quad \kappa_K[a X] = a^K \kappa_K[X] \qquad \mbox{y}
+  \qquad \kappa_K[X+Y] = \kappa_K[X] + \kappa_K[Y]
+  \]
+\end{teorema}
+%
+\begin{proof}
+  Las relaciones tratanto de $C$  son consecuencias directas del teorema pruebas
+  siguen    punto   a    punto   los    mismos    pasos   que    las   de    los
+  teoremas~\ref{Teo:MP:PropiedadesGeneradoraMomentos}, tomando el logaritmo de \
+  $M_X$. Las relaciones sobre los cumulantes es entonces consecuencias de las de
+  \  $C_X$ \ y  de la  definici\'on de  los cumulantes  a trav\'es  derivadas de
+  $C_X$.
+\end{proof}
+%
+Se notar\'a que, remarcablemente y contrariamente a los momentos, los cumulantes
+de cualquier orden son funciones lineales de variables aleatorias independientes
+(para los momentos, vale sol\'o hasta el orden $3$).  }
 
 
 
@@ -983,7 +1026,9 @@ relaci\'on siguiente:
 
 \centerline{\underline{\hspace{10cm}}}
 
-
 \SZ{teorema de Polya?}
 
 \SZ{hablar de la cota de Chernoff con la mgf o pgf?}
+
+
+\SZ{Hablar del problema de Hamburger?}

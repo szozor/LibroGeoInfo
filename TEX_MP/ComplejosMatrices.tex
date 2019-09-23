@@ -91,17 +91,19 @@ Resuelte de esta definici\'on equivalente los hechos siguientes:
   \]
   %
 %
-\item Los momentos de orden \ $K$ \ siendos definido a partir de las componentes
+\item Los momentos de orden \ $k$ \ siendos definido a partir de las componentes
   de \ $X$ \ y de \ $Y$, se definen tambi\'en bajo la forma
   %
   \[
-  m_{k_1 , \ldots , k_d \, ; \, k'_1 , \ldots , k'_d} = \Esp\left[ \prod_{i=1}^d
-    Z_i^{k_i}  \,  \prod_{i=1}^d   Z_i^{* \: k'_i}  \right]  \quad
-  \mbox{con} \quad \sum_i (k_i + k'_i) = K
+  m_{i_1  ,  \ldots ,  i_l  \,  ;  \, i'_1  ,  \ldots  , i'_n}[Z]  =  \Esp\left[
+    \prod_{j=1}^l Z_{i_j}  \, \prod_{j=1}^n Z_{i'_j}^*  \right] \quad \mbox{con}
+  \quad l+n = k, \quad (i_1 , \ldots i_l , i'_1 \ldots i'_n) \in \{ 1 , \ldots , d \}^k
+  % \sum_i (k_i + k'_i) = K
   \]
   %
-  y similarmente para los momentos centrales  $\zeta_{k_1 , \ldots , k_d \, ; \,
-    k'_1 , \ldots , k'_d}$.  En particular,
+  y similarmente para los momentos centrales  $\zeta_{i_1 , \ldots , i_l \, ; \,
+    i'_1 ,  \ldots ,  i'_n}[Z]$ y los  cumulantes a  partir del logaritmo  de la
+  funci\'on caracter\'istica por ejemplo (er m\'as adelante).  En particular,
   %
   \begin{itemize}
   \item La media de \ $Z = X + \imath Y$ \ es definida por
@@ -171,10 +173,12 @@ Resuelte de esta definici\'on equivalente los hechos siguientes:
   \mbox{con} \quad \omega \in \Cset^d
   \]
   %
-  (ver  por  ejemplo~\cite[Cap.~17]{Lap17}).   Las funciones  generadoras  as\'i
-  definidas heriden naturalmente de las  propiedades de las del caso real. Entre
-  otros, interpretando  la funci\'on caracter\'istica como funci\'on  de ambos \
-  $\omega$ \ y \ $\omega^*$, y derivando como si ser\'ian variables ``independientes'':
+  (ver  por  ejemplo~\cite[Cap.~17]{Lap17}).  De  nuevo  se  define  la  secunda
+  funci\'on   caracteristica  tomando  el   logaritmo  $\Psi_X(\omega)   =  \log
+  \Phi_X(\omega)$.    Las   funciones   generadoras  as\'i   definidas   heriden
+  naturalmente  de  las   propiedades  de  las  del  caso   real.  Entre  otros,
+  interpretando la funci\'on caracter\'istica como funci\'on de ambos \ $\omega$
+  \ y \ $\omega^*$, y derivando como si ser\'ian variables ``independientes'':
   %
   \begin{itemize}
   \item $\Esp[Z]  = - 2 \, \imath  \left. \nabla_{\omega^*} \Phi_Z  \right|_{\omega =
@@ -398,15 +402,17 @@ simetria particular).  En este marco  general, $X$ viviendo sobre  $\X \subseteq
   $\displaystyle      p_X       =      \frac{\partial^{d      d'} F_X}{\prod_{i=1}^d
     \prod_{j=1}^{d'} \partial x_{i,j}}$.
 %
-\item Los  momentos se definen como en  el caso de vectores;  Por ejemplo, todos
-  los momentos de orden $K$ son dados por
+\item Los  momentos y  cumulantes se definen  como en  el caso de  vectores; Por
+  ejemplo, todos los momentos de orden $k$ son dados por
   %
   \[
-  m_K = \Esp\left[ X^{\otimes K} \right]
+  m_k[X] = \Esp\left[ X^{\otimes k} \right]
   \]
   %
-  donde \  $\cdot^{\otimes K}$ \ es  \ $K$ \  veces el \modif{producto interno (ver notaciones)}, y
-  similarmente para los momentos centrales $\zeta_K$. En particular,
+  donde \ $\cdot^{\otimes k}$ \ es \ $k$ \ veces el \modif{producto interno (ver
+    notaciones)}, y  similarmente para los  momentos centrales $\zeta_K-k[X]$  y a
+  trav\'es  de  la secunda  funci\'on  caracter\'istica  para  los cumulantes  \
+  $\kappa_K[X]$ (ver m\'as adelante). En particular,
   %
   \begin{itemize}
   \item La media es definida por
@@ -444,6 +450,9 @@ simetria particular).  En este marco  general, $X$ viviendo sobre  $\X \subseteq
   \Phi_X(\omega) =  \Esp\left[ e^{\imath  \Tr\left( \omega^t X  \right)} \right]
   \quad \mbox{con} \quad \omega \in \M_{d,d'}(\Rset)
   \]
+  %
+  De nuevo  se define la  secunda funci\'on caracteristica tomando  el logaritmo
+  $\Psi_X(\omega) = \log \Phi_X(\omega)$.
 %
 \item Ahora es sencillo ver de que, si existent, se puede recuperar los momentos
   por  diferenciaci\'on   como  en  el  caso  de   vectores,
@@ -480,7 +489,7 @@ tiene  $\frac{d (d+1)}{2}$  \  componentes linealmente  independientes. A  veces
 resuelte m\'as  comodo definir  la funci\'on caracter\'istica  en este  caso con
 $\omega \in  S_d(\Rset)$ para  respectar las simetrias  del problema y  no tener
 ninguna degenerencia  de esa misma (ver por  ejemplo~\cite{PedRic91, And03}).  A
-veces, es a\'un  dificil o imposible calcular en  $\\M_{d,d}(\Rset)$ entero. Eso
+veces, es a\'un  dificil o imposible calcular en  todo \ $\M_{d,d}(\Rset)$. Eso
 tiene consecuencias:
 %
 \begin{itemize}

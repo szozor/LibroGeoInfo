@@ -88,7 +88,28 @@ siendo equivalente  a un vector  $2d$-dimensional gausiano real.
 % De  manera  general,  las caracter\'isticas  de  \  $X$  \ gausiano  real  son
 % v\'inculadas a las  de \ $N$ \ (y vice-versa)  por transformaci\'on afine (ver
 % secciones anteriores).
-Primero, como en  el caso real, la gausiana es  estable por combinaci\'on lineal
+
+Primero, los cumulantes de orden superior o igual a $4$ valen cero:
+%
+\begin{lema}[Gausiana compleja y cumulantes]
+%
+  Sea \ $Z$ \ vector aleatorio complejo de media $m$, de covarianza $\Sigma$, de
+  pseudo-covarianze  $\check{\Sigma}$ y  de  secunda funci\'on  caracter\'istica
+  admtiendo un desarollo de Taylor. Entonces para cualquier
+  %
+  \[
+  \kappa_{i_1,\ldots,i_l,i'_1,\ldots,i'_m}[Z] = 0 \quad \forall \: ( i_1, \ldots
+  , i_l  , i'_1  , i'_m  \in \{  1 , \ldots  , d  \}^{l+m}, \,  l+m \ge  4 \quad
+  \Longleftrightarrow \quad X \sim \C\N(m,\Sigma,\check{\sigma})
+  \]
+  %
+\end{lema}
+%
+%\begin{proof}
+%  La pueba sigue paso a paso la del lema~\ref{Lem:MP:CumSecFctCarac}.
+%\end{proof}
+
+Secundo, como en  el caso real, la gausiana es  estable por combinaci\'on lineal
 de vectores independientes:
 %
 \begin{teorema}[Stabilidad]

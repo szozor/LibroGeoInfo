@@ -17,13 +17,11 @@
 % Estadistica suficiente:
 % -----------------------
 % Kay p. 102-103
-% Lehman & Casela p.
-% Kotz & Balakrishnan p.
-% Robert p.
-% van den Bos p.
-% Cencov p.
-% Ibarola Perez p.
-% Mukhopadhyay p. 
+% Lehman & Casela p. 32-44
+% Robert p. 14
+% Cencov p. 28
+% Ibarola Perez p. 163
+% Mukhopadhyay p. 284
 
 Muchas de las leyes que hemos visto, que sean discreta o continuas, partenecen a
 una clase que comparte propriedades  particulares, y que juega un rol particular
@@ -83,9 +81,9 @@ tambi\'en Pitman~\cite{Pit36}) y es definida de la manera siguiente:
   \qquad h: \X \mapsto \Rset_+, \qquad S: \X \mapsto \Rset^k
   \]
   %
-  donde \  $\displaystyle N = \left\{ \eta \in  \Rset^k \tq \int_\X h(x)  \, \exp\left( \eta^t
-      S(x) - \varphi(\eta) \right) \, d\mu(x)  < + \infty \right\}$ \ es llamado
-  {\em espacio de par\'ametros naturales}.
+  donde  \ $\displaystyle  N =  \left\{  \eta \in  \Rset^k \tq  \int_\X h(x)  \,
+    \exp\left(  \eta^t  S(x) -  \varphi(\eta)  \right)  \,  d\mu(x) <  +  \infty
+  \right\}$ \ es (convexo y) llamado {\em espacio de par\'ametros naturales}.
 \end{definicion}
 %
 Se notara  que con  la reparametrizaci\'on \  $\eta(\theta)$ \ se  puede siempre
@@ -98,24 +96,28 @@ forma natural. Con respeto a cada termino:
 \item $\theta$  es el par\'ametro, escalar  o multivariado, y  $\eta$ es llamado
   {\em par\'ametro natural}.
 %
-\item La funci\'on $Z$ es llamada  {\em funci\'on de partici\'on}; no solo juega
-  el rol de  normalizaci\'on de la ley, pero  tiene una significaci\'on f\'isica
-  como lo vamos a evocar. Aparecio en f\'isica esdatistica por ejemplo en trabajos de Gibbs~\cite{Gib01, Gib02}
+\item  La funci\'on  $Z$ es  llamada {\em  funci\'on de  partici\'on};  A veces,
+  $\varphi$ es as\'i llamada {\em  log-funci\'on de partici\'on}; no solo juegan
+  un  rol en  la  normalizaci\'on de  la  ley, pero  tienen una  significaci\'on
+  f\'isica  como lo vamos  a evocar.  Aparecio $Z$  en f\'isica  esdatistica por
+  ejemplo en trabajos de Gibbs~\cite{Gib01, Gib02}.
 \end{itemize}
 
 Se notara que,  en particular, \ $Z$ \  es relacionada a los momentos  de $S$, o
 $\varphi$ a los cumulantes:
 %
-\begin{teorema}[Funci\'on de partici\'on y generadora de momentos]
+\begin{teorema}[Funci\'on de partici\'on y generadoras]
 %
   Sea \  $X$ \  de distribuci\'on exponencial  natural de par\'ametro  natural \
   $\eta$ \ y estad\'istica suficiente \ $S$  \ y denotamos \ $Z$ la funci\'on de
-  partici\'on. Entonces, la funci\'on generadora  \ $M_{S(X)}$ \ de los momentos
-  de \ $S$ es relacionada a \ $Z$ \ y \ a \ $\varphi = \log Z$ \ por
+  partici\'on y  $\varphi$ su logaritmo.  Entonces,  las funci\'ones generadoras
+  de los momentos y de los cumulantes \ $M_{S(X)}$ \ y \ $C_{S(X)}$ \ del vector
+  aleatorio \ $S$ son relacionadas a \ $Z$ \ y \ a \ $\varphi = \log Z$ \ por, \
+  $\forall \: u \: \mbox{ tal que } \: u+\eta \in N$,
   %
   \[
-  \forall \: u \: \mbox{ tal que } \: u+\eta \in N, \quad M_{S(X)}(u) = \frac{Z(u+\eta)}{Z(\eta)} =
-  e^{\varphi(u+\eta) - \varphi(\eta)}
+  M_{S(X)}(u) =  \frac{Z(u+\eta)}{Z(\eta)} \qquad \mbox{y}  \qquad C_{S(X)}(u) =
+  \varphi(u+\eta) - \varphi(\eta)
   \]
   %
   En particular, si \  $\varphi$ \ es diferenciable tenemos
@@ -144,18 +146,21 @@ $\varphi$ a los cumulantes:
   & = & \int_\X \frac{1}{Z(\eta)} \, h(x) \, \exp\left( (u + \eta)^t S(x) \right) \,
   d\mu(x)\\[2mm]
   %
-  & = & \exp\left( \varphi(u+\eta) - \varphi(\eta) \right) \int_\X h(x) \,
-  \exp\left( (u + \eta)^t S(x) - \varphi(u+\eta) \right) \, d\mu(x)\\[2mm]
+  & = & \frac{Z(u+\eta)}{Z(\eta)} \int_\X \frac{1}{Z(\eta)} \, h(x) \,
+  \exp\left( (u + \eta)^t S(x) \right) \, d\mu(x)\\[2mm]
   %
-  & = & \exp\left( \varphi(u+\eta) - \varphi(\eta) \right)
+  & = &  \frac{Z(u+\eta)}{Z(\eta)}
   \end{eqnarray*}
   %
-  A continuaci\'on,
+  La secunda  relaci\'on es inmediata  de \ $C_X  = \log M_X$ \  conjuntamente a
+  \ $\varphi = \log Z$.
+
+  A continuaci\'on, los cumulantes y momentos coinciden hasta el orden $3$, dando inmediatamenta
   %
   \begin{eqnarray*}
-  \Esp\left[ S(X) \right] & = & \left. \nabla_u M_{S(X)} \right|_{u=0}\\[2mm]
+  \Esp\left[ S(X) \right] & = & \left. \nabla_u C_{S(X)} \right|_{u=0}\\[2mm]
   %
-  & = & \left. \nabla \varphi(u+\eta) \exp\left( \varphi(u+\eta) - \varphi(\eta) \right) \right|_{u=0}\\[2mm]
+  & = & \left. \nabla_u \left( \varphi(u+\eta) - \varphi(\eta) \right) \right|_{u=0}\\[2mm]
   %
   & = & \nabla \varphi(\eta)
   \end{eqnarray*}
@@ -163,17 +168,15 @@ $\varphi$ a los cumulantes:
   y
   %
   \begin{eqnarray*}
-  \Esp\left[ S(X)^2 \right] & = & \left. \Hess_u M_{S(X)} \right|_{u=0}\\[2mm]
+  \Cov\left[ S(X) \right] & = & \left. \Hess_u C_{S(X)} \right|_{u=0}\\[2mm]
   %
-  & = & \left. \Hess \varphi(u+\eta) \exp\left( \varphi(u+\eta) - \varphi(\eta)
-  \right) \right|_{u=0} + \left. \nabla \varphi(u+\eta) \nabla^t \varphi(u+\eta)
-  \exp\left( \varphi(u+\eta) - \varphi(\eta) \right) \right|_{u=0}\\[2mm]
+  & = & \left. \Hess_u \left( \varphi(u+\eta) - \varphi(\eta)  \right) \right|_{u=0}\\[2mm]
   %
-  & = & \Hess \varphi(\eta) + \nabla \varphi(\eta) \nabla^t \varphi(\eta)\\[2mm]
-  %
-  & = & \Hess \varphi(\eta) + \Esp\left[ S(X) \right] \Esp\left[ S(X) \right]^t
+  & = & \Hess \varphi(\eta)
   \end{eqnarray*}
 \end{proof}
 
 
 \SZ{Van den Bos 2007, p. 33, informaci\'on de Fisher}
+
+\SZ{Volver a esta en el problema MaxEnt (revisar el texto)}
