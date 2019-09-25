@@ -53,7 +53,31 @@ para que \ $R$ \ sea \'unica.
 \end{teorema}
 %
 \begin{proof}
-\SZ{Ponerla}
+  Sea  \ $Y  =  R^{-\frac12} \left(  X -  m  \right)$.  Por  definici\'on y  del
+  teorema~\ref{Teo:MP:PropiedadesFuncionCaracteristica},  por  cualquier  matriz
+  ortogonal $O$ y cualquier $\omega \in \Rset^d$
+  %
+  \[
+  \Phi_Y(\omega) = \Phi_{O Y}(\omega) = \Phi_Y(O^t \omega)
+  \]
+  %
+  En  otros  terminos,  la  funci\'on  caracter\'istica  queda  invariante  bajo
+  cualquier transformaci\'on  ortogonal (rotaci\'on) sobre  $\omega$, y entonces
+  depende solamente de  la norma euclideana de \ $\omega$.  Es decir, existe una
+  funci\'on escalar \ $\varphi_X$ \ tal que
+  %
+  \[
+  \Phi_Y(\omega) = \varphi_X(\omega^t \omega)
+  \]
+  %
+  De nuevo, del teorema~\ref{Teo:MP:PropiedadesFuncionCaracteristica},
+  %
+  \[
+  \Phi_X(\omega) = \Phi_{R^{\frac12}  Y + m}(\omega) = e^{\imath  \, \omega^t m}
+  \Phi_Y( R^{\frac12} \omega)
+  \]
+  % 
+  lo que cierra la prueba.
 \end{proof}
 %
 Se  notar\'a que  si tomamos  una matriz  caracter\'istica $R$  y  la generadora
@@ -64,7 +88,8 @@ factor positivo.
 \begin{teorema}
   Sea \  $X$ \  vector aleatorio $d$-dimensional  de distribuci\'on  eliptica al
   torno de $0$  \ y de matriz caracter\'istica \  $R \in P_d^+(\Rset)$. Entonces
-  los momentos centrales impares son nulos y los pares son dados por
+  los momentos  centrales y cumulantes impares  son nulos y los  pares son dados
+  por
   %
   \[
   \zeta_{i_1,\ldots,i_{2  k}}[X] =  (-2)^k \,  \varphi_X^{(k)}(0)  \sum_{\pi \in
@@ -193,4 +218,6 @@ Hablar de nuevo de la Student-t como GSM~\cite{toto, titi, FanKot90, KotNad04}
 
 }
 
-\SZ{Caso complejo, con matriz unitaria}
+\SZ{Caso complejo, con matriz unitaria
+
+Ver Shiryayev}

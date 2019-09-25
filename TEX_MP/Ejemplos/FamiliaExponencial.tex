@@ -4,24 +4,24 @@
 
 % Familia exponencial:
 % --------------------
-% Kay p. 110 & 124
-% Lehman & Casela p. 23
-% Kotz & Balakrishnan p. 659
-% Robert p. 115
-% van den Bos p. 30
-% Cencov p. 245, 279
-% Ibarola Perez p. 174
-% Mukhopadhyay p. 141
+% Kay 1993, p. 110 & 124
+% Lehman & Casela 1998, p. 23
+% Kotz & Balakrishnan 2000, p. 659
+% Robert 2007, p. 115
+% van den Bos 2007, p. 30
+% Cencov 1982, p. 245, 279
+% Ibarola Perez 2012, p. 174
+% Mukhopadhyay 2000, p. 141
 
 
 % Estadistica suficiente:
 % -----------------------
-% Kay p. 102-103
-% Lehman & Casela p. 32-44
-% Robert p. 14
-% Cencov p. 28
-% Ibarola Perez p. 163
-% Mukhopadhyay p. 284
+% Kay 1993, p. 102-103
+% Lehman & Casela 1998, p. 32-44
+% Robert 2007, p. 14
+% Cencov 1982, p. 28
+% Ibarola Perez 2012, p. 163
+% Mukhopadhyay 2000, p. 284
 
 Muchas de las leyes que hemos visto, que sean discreta o continuas, partenecen a
 una clase que comparte propriedades  particulares, y que juega un rol particular
@@ -91,7 +91,38 @@ Se notara  que con  la reparametrizaci\'on \  $\eta(\theta)$ \ se  puede siempre
 forma natural. Con respeto a cada termino:
 %
 \begin{itemize}
-\item $S$ es llamada {\em estad\'istica suficiente} de la ley. \SZ{completar}
+\item  $S$  es  llamada  {\em  estad\'istica suficiente}  o  {\em  estad\'istica
+    exaustiva}. Esta  denominaci\'on viene  del hecho que  el conocimiento  de \
+  $S(x)$  \  es  suficiente para  estimar  $\eta$,  o  un resumen  exaustivo  de
+  $\eta$. En particular, la estimaci\'on de verosimilitud~\footnote{El estimador
+    del m\'aximo  de verosilitud \ $\eta_{\mathrm{mv}}$  \ es el \  $\eta$ \ que
+    m\'aximiza \ $p_X$  \ o cualquier funci\'on creciente  como el logaritmo por
+    ejemplo.    Para   la   familia   exponencial,  eso   da   sencillamente   \
+    $\eta_{\mathrm{mv}}$  \  satisficiendo  \  $S(x)  =  \nabla  \varphi(\eta)$,
+    dependiente    solamente     de    $S(x)$.},    o     cualquier    estimador
+  Bayesiano~\footnote{Ver nota  de pie~\footref{Foot:SZ:BayesPrior}. Recuerdense
+    que se modeliza  el par\'ametro como aleatorio, as\'i  que la distribuci\'on
+    que se considera se ve como la distribuci\'on condicional \ $p_{X|N=\eta}(x)
+    =   h(x)  \exp\left(   \eta^t  S(x)   -  \varphi(\eta)   \right)$,   con  la
+    distribuci\'on  a  priori   \  $p_N(\eta)$.   De  la  regla   de  Bayes,  la
+    distribuci\'on a  posteriori, \ie del par\'ametro dadas  las observaciones \
+    $x$ \  se escribe \ $p_{N|X=x}(\eta) \propto  p_{X|N=\eta}(x) p_N(\eta)$. Si
+    se da un  costo de estimaci\'on \ $C(\widehat{\eta},N)  > 0$ \ caracerizando
+    la  ``distancia'' entre  la estimaci\'on  y el  parametro  ``verdadero'', se
+    busca la funci\'on  $\widehat{\eta}$ que minimiza el costo  promedio, lo que
+    es equivalente para cada \ $x$ \  a buscar el valor \ $\widehat{\eta}$ \ que
+    minimiza \  $\displaystyle \int C(\widehat{\eta},\eta)  \, \exp\left( \eta^t
+      S(x)  - \varphi(\eta)  \right) \,  p_N(\eta)  \, d\mu(\eta)$~\cite{Rob07}:
+    claramente,  el m\'inimo depende  solamente de  $S(x)$.}  de  $\eta$ depende
+  solamente  de $S(X)$~\cite{Kay93,  LehCas98, Rob07,  Cen82,  IbaPer12, Muk00}.
+  Formalmente, una  estadistica \ $T(X)$ \  es suficiente para  un par\'ametro \
+  $\theta$ \ si la  distribuci\'on de \ $X$ \ condicionalmente a  \ $S(X) = s$ \
+  no depende m\'as de \ $\theta$.   Por ejemplo, para la familia exponencial, en
+  el caso discreto, tenemos,\ $\displaystyle p_{X|S(X) = s}(x) = \frac{P\big( (X
+    = x) \cap (S(X) = s) \big)}{P(S(X)  = s)} = \frac{h(x) \exp\left( \eta^t s -
+      \varphi(\eta) \right) \un_{\{ S(x) \}}(s)}{\sum_x h(x) \exp\left( \eta^t s
+      -  \varphi(\eta) \right) \un_{\{  S(x) \}}(s)}  = \frac{h(x)  \un_{\{ S(x)
+      \}}(s)}{\sum_x h(x) \un_{\{ S(x) \}}(s)}$.
 %
 \item $\theta$  es el par\'ametro, escalar  o multivariado, y  $\eta$ es llamado
   {\em par\'ametro natural}.
@@ -132,8 +163,8 @@ $\varphi$ a los cumulantes:
   \Hess \varphi (\eta) = \Cov\left[ S(X) \right]
   \]
   %
-  Pasando,  de \  $\Cov\left[ S(X)  \right] \ge  0$ \ tenemos  que \  $\varphi$  \ es
-  convexa~\cite{CamMar09}.
+  Pasando, de  \ $\Cov\left[ S(X)  \right] \ge 0$  \ tenemos que, hessiana  de \
+  $\varphi$ \ siendo positiva, \ $\varphi$ \ es convexa~\cite{CamMar09}.
 %
 \end{teorema}
 %
