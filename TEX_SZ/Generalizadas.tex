@@ -1378,13 +1378,13 @@ El  problema  se formaliza  como  en el  caso  Shannon,  buscando la  entrop\'ia
 m\'axima  sujeto a  v\'inculos: sea  $X$ variable  aleatoria viviendo  sobre $\X
 \subset \Rset^d$ con  $K$ momentos \ $\Esp\left[ M_k(X) \right]  = m_k$ \ fijos,
 con  $M_x: \X  \to  \Rset$,  el problema  de  $(h,\phi)$-entrop\'ia m\'axima  se
-formula de  la manera  siguiente: sean \  $M(x) =  \begin{bmatrix} 1 &  M_1(x) &
-  \cdots & M_K(x) \end{bmatrix}^t$ \ y \ $m = \begin{bmatrix} 1 & m_1 & \cdots &
+formula de  la manera  siguiente: sean \  $M(x) =  \begin{bmatrix} M_1(x) &
+  \cdots & M_K(x) \end{bmatrix}^t$ \ y \ $m = \begin{bmatrix} m_1 & \cdots &
   m_K \end{bmatrix}^t$, \ se busca,
 %
 \[
-p^* = \argmax_p \hhphi[p] \qquad \mbox{sujeto a} \qquad p \ge 0, \quad \int_\X M(x)
-\, p(x) \, d\mu(x) = m.
+p^* = \argmax_p  \hhphi[p] \qquad \mbox{sujeto a} \qquad p  \ge 0, \quad \int_\X
+\, p(x) \, d\mu(x) = 1, \quad \int_\X M(x) \, p(x) \, d\mu(x) = m.
 \]
 %
 donde  los   dos  primeros  v\'inculos  aseguran  de   que  $p^*$  (positividad,
@@ -1392,32 +1392,33 @@ normalizaci\'on) sea  una distribuci\'on de  probabilidad. Si $\phi$  es convexa
 (resp.  c\'oncava),  $h$ es creciente  (resp.  decreciente) as\'i  que maximizar
 $\hhphi$ es  equivalente a maximizar $\hphi$ (resp.   $H_{-\phi}$).  Sin perdida
 de generalidad, se  puede considerar la situaci\'on $\phi$  convexa.  Como en el
-caso de  Shannon, introduciendo factores de Lagrange  $\eta = \begin{bmatrix}
-  \eta_0  & \eta_1  & \cdots  & \eta_K  \end{bmatrix}^t$ para  tener en
-cuenta    los     v\'inculos,    el    problema     variacional    consiste    a
-resolver~\cite{GelFom63, Bru04, Mil00, CamMar09, CovTho06}
+caso  de   Shannon,  introduciendo  factores   de  Lagrange  $\eta_0,   \:  \eta
+= \begin{bmatrix} \eta_1 & \cdots & \eta_K \end{bmatrix}^t$ para tener en cuenta
+los  v\'inculos,  el problema  variacional  consiste a  resolver~\cite{GelFom63,
+  Bru04, Mil00, CamMar09, CovTho06}
 %
 \[
-p^* =  \argmax_p \int_\X \left(  - \phi\left( p(x)  \right) + \eta^t  M(x) \,
-  p(x) \right) d\mu(x)
+p^* =  \argmax_p \int_\X  \left( - \phi\left(  p(x) \right)  + \eta_0 \,  p(x) +
+  \eta^t M(x) \, p(x) \right) d\mu(x)
 \]
 %
-donde $\eta$ ser\'a determinado para satisfacer los v\'inculos.  De nuevo, de la
-ecuaci\'on  de  Euler-Lagrange~\cite{GelFom63, Bru04}  en  el  caso continuo,  o
-derivando con  respeto a las probabilidades  en el caso discreto,  se obtiene la
-ecuaci\'on $- \phi'(p(x))  + \eta^t M(x) = 0$.   La funci\'on entr\'opica $\phi$
-es c\'oncava y  de clase $C^2$, as\'i que $\phi'$ es  continua decreciente, y de
-la monotonicidad es invertible. Entonces,
+donde $\eta_0, \eta$ ser\'an determinados  para satisfacer a los v\'inculos.  De
+nuevo,  de la  ecuaci\'on de  Euler-Lagrange~\cite{GelFom63, Bru04}  en  el caso
+continuo, o derivando  con respeto a las probabilidades en  el caso discreto, se
+obtiene la ecuaci\'on $- \phi'(p(x)) +  \eta_0 + \eta^t M(x) = 0$.  La funci\'on
+entr\'opica $\phi$ es c\'oncava y de  clase $C^2$, as\'i que $\phi'$ es continua
+decreciente, y de la monotonicidad es invertible. Entonces,
 %
 \[
-p^*(x) = \phi'^{-1}\left( \eta^t M(x) \right)
+p^*(x) = \phi'^{-1}\left( \eta^t M(x) - \varphi(\eta) \right)
 \]
 %
-con  $\eta$  tal  que  se  satisfacen los  v\'inculos  de  normalizaci\'on  y
-momentos.   Si el  resultado no  es positivo  en $\X$,  de las  condiciones KKT,
-$p^*(x)  =  \Big(  \phi'^{-1}\left(  \eta^t  M(x)  \right)  \Big)_+$.   Estas
-distribuci\'ones no  caen en general en  la familia exponencial.   De una forma,
-usando entrop\'ia generales permite escaparse de esta familia.
+con $\eta$  tal que se satisfacen  los v\'inculos de  momentos y $\varphi(\eta)$
+tal que  se satisface el  v\'inculo de normalizaci\'on.   Si el resultado  no es
+positivo  en $\X$,  de las  condiciones  KKT, $p^*(x)  = \Big(  \phi'^{-1}\left(
+  \eta^t M(x) - \varphi(\eta)  \right) \Big)_+$.  Estas distribuci\'ones no caen
+en general en la familia exponencial.  De una forma, usando entrop\'ia generales
+permite escaparse de esta familia.
 
 Como  en el  caso de  Shannon, queda  obviamente  el hecho  de que  no se  puede
 determinar $\eta$ tal que se satisfacen todos los v\'inculos (y en particular
@@ -1425,12 +1426,12 @@ la de normalizaci\'on).
 
 Tal como en el caso Shannon, existe una prueba informacional:
 %
-\begin{lema}
-\label{Lem:SZ:MaxPhiEntInformacional}
+\begin{lema}\label{Lem:SZ:MaxPhiEntInformacional}
 %
-  Sea \  $\displaystyle \P_m =  \left\{ p  \ge 0: \:  \int_\X M_k(x) \,  p(x) \,
-    d\mu(x) = m \right\}$ \ y \  $p^* \in \P_m$ \ que satisfaga \ $\phi'(p^*(x))
-  = \eta^t M(x)$. Entonces
+  Sea \  $\displaystyle \P_m =  \left\{ p  \ge 0 \tq  \int_\X  p(x) \,
+    d\mu(x) =  1, \quad \int_\X M_k(x)  \, p(x) \, d\mu(x)  = m \right\}$  \ y \
+  $p^*  \in   \P_m$  \   que  satisfaga  \   $\phi'(p^*(x))  =  \eta^t   M(x)  +
+  \eta_0$. Entonces
   %
   \[
   \forall  \, p  \in  \P_m,  \quad \hhphi[p]  \le  \hhphi[p^*] \qquad  \mbox{con
@@ -1446,7 +1447,8 @@ Tal como en el caso Shannon, existe una prueba informacional:
   \bphi[p]{p^*} & = & \hphi[p^*] - \hphi[p] - \int_\X \big( p(x) - p^*(x) \big)
   \, \phi'\left( p^*(x) \right) \, d\mu(x)\\[2.5mm]
   %
-  & = & \hphi[p^*] - \hphi[p] - \eta^t \int_\X \big( p(x) - p^*(x) \big)
+  & = & \hphi[p^*] - \hphi[p] - \eta_0 \int_\X \big( p(x) - p^*(x) \big)
+  \, d\mu(x) - \eta^t \int_\X \big( p(x) - p^*(x) \big)
   \, M(x) \, d\mu(x)\\[2.5mm]
   %
   & = & \hphi[p^*] - \hphi[p]

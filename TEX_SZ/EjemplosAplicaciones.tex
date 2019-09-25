@@ -323,11 +323,11 @@ Un canal de  comunicaci\'on continuo relativamente simple es  conocido como {\it
   canal  gaussiano}~\cite[Sec.~25]{Sha48},~\cite{CovTho06,  Rio07}:  $X$ es  una
 variable continua definida  sobre $\X \subseteq \Rset^d$ y la  salida $Y$ es una
 versi\'on ruidosa de $X$, \ie $Y =  X + \xi$ con el ruido $\xi$ independiente de
-$X$. En  el canal gaussiano, $\xi  \equiv \Gauss$ es un  vector gaussiano.  Este
+$X$. En  el canal gaussiano, $\xi  \equiv \N$ es un  vector gaussiano.  Este
 canal es tambi\'en definido por  su densidad de probabilidad ``de transici\'on''
 $p_{Y|X=x}(y)$,  \ie por  la distribuci\'on  del ruido.   Tal canal  es descrito
 figura  Fig.~\ref{Fig:SZ:CanalGaussiano}.   Se  supone  conocida  la  matriz  de
-covarianza $\Sigma_\Gauss$ del ruido, y se  nota $\Sigma_X$ la de la entrada. En
+covarianza $\Sigma_\N$ del ruido, y se  nota $\Sigma_X$ la de la entrada. En
 pr\'actica, no se puede mandar un mensaje a una potencia tan alta que se quiere,
 lo que se traduce por una limitaci\'on
 %
@@ -342,9 +342,9 @@ potencia l\'imite permitida por componente (sampleo).
 \begin{center} \input{TIKZ_SZ/CanalGaussiano} \end{center}
 %
 \leyenda{Canal gaussiano. La entrada $X$, modelizada por un vector aleatorio, es
-  corrupta aditivamente por un ruido gaussiano $\Gauss$ independiente de $X$. La
-  salida es entonces $Y = X + \Gauss$ y el canal es completamente descrito por \
-  $p_{Y|X=x}(y)   =   p_{\Gauss}(y-x)$  \   (obviamente   independiente  de   la
+  corrupta aditivamente por un ruido gaussiano $\N$ independiente de $X$. La
+  salida es entonces $Y = X + \N$ y el canal es completamente descrito por \
+  $p_{Y|X=x}(y)   =   p_\N(y-x)$  \   (obviamente   independiente  de   la
   distribuci\'on de la entrada).}
 %
 \label{Fig:SZ:CanalGaussiano}
@@ -352,68 +352,68 @@ potencia l\'imite permitida por componente (sampleo).
 
 
 Por  definici\'on, la informaci\'on  mutua $I(X;Y)$  entrada-salida es  dada por
-$I(X;Y) = H(Y) - H(Y|X) = H(Y) - H(\Gauss)$. Maximizar $I(X;Y)$ es equivalente a
-maximizar  $H(Y) =  H(X  + \Gauss)$  sujeto  a $\Tr\left(  \Sigma_X \right)  \le
+$I(X;Y) = H(Y) - H(Y|X) = H(Y) - H(\N)$. Maximizar $I(X;Y)$ es equivalente a
+maximizar  $H(Y) =  H(X  + \N)$  sujeto  a $\Tr\left(  \Sigma_X \right)  \le
 \P$. Fijando  un $\Sigma_X$, la  propiedad~\ref{Prop:SZ:cotamaximagaussiana} \ de
 la entrop\'ia diferencial implica que $H(Y)$  sea m\'axima si y solamente si $Y$
 es gaussiana,  es decir  si y solamente  si $X$  est gaussiana, dando  $I(X;Y) =
-\frac12  \log \left|  \Sigma_X +  \Sigma_\Gauss  \right| -  \frac12 \log  \left|
-  \Sigma_\Gauss \right|$. Tomando en cuenta  el l\'imite de potencia, hace falta
-maximizar $\left| \Sigma_X  + \Sigma_\Gauss \right|$ sujeto a  $\Tr \Sigma_X \le
+\frac12  \log \left|  \Sigma_X +  \Sigma_\N  \right| -  \frac12 \log  \left|
+  \Sigma_\N \right|$. Tomando en cuenta  el l\'imite de potencia, hace falta
+maximizar $\left| \Sigma_X  + \Sigma_\N \right|$ sujeto a  $\Tr \Sigma_X \le
 \P$ \  y \ $\Sigma_X  \ge 0$ sim\'etica  lo que no  es trivial.  Se  encuentra el
 enfoque  permitiendo solucionar  el problema  en~\cite[Sec.~9.4]{CovTho06}.  Sea
 $U$, matriz  ortogonal ($U U^t =  U^t U = I$)  de los autovectores  de la matriz
-$\Sigma_\Gauss  \ge 0$  sim\'etica~\footnote{Se  recordar\'a de  que  $A \ge  0$
+$\Sigma_\N  \ge 0$  sim\'etica~\footnote{Se  recordar\'a de  que  $A \ge  0$
   significa que $A$  es definida no negativa.}, de  columnas $u_i$ ordenadas tal
-que los autovalores corespondientes  $\lambda^\Gauss_i$ sean en orden creciente,
+que los autovalores corespondientes  $\lambda^\N_i$ sean en orden creciente,
 \ie
 %
 \[
-\Sigma_\Gauss  =  U  \diag\left(  \begin{bmatrix} \lambda^\Gauss_1  &  \cdots  &
-    \lambda^\Gauss_d \end{bmatrix}^t \right) U^t  \qquad \mbox{con} \qquad 0 \le
-\lambda^\Gauss_1 \le \cdots \le \lambda^\Gauss_d,
+\Sigma_\N  =  U  \diag\left(  \begin{bmatrix} \lambda^\N_1  &  \cdots  &
+    \lambda^\N_d \end{bmatrix}^t \right) U^t  \qquad \mbox{con} \qquad 0 \le
+\lambda^\N_1 \le \cdots \le \lambda^\N_d,
 \]
 %
 donde $\diag$ es la matriz diagonal teniendo los $\lambda_i$ en su diagonal (ver
 notaciones).  Sea \  $R_X =  U^t \Sigma_X  U$.  Es  sencillo ver  que  \ $\left|
-  \Sigma_X + \Sigma_\Gauss \right| =  \left| R_X + \Lambda_\Gauss \right|$ \ (de
+  \Sigma_X + \Sigma_\N \right| =  \left| R_X + \Lambda_\N \right|$ \ (de
 $|A B| = |A| \,  |B|$) \ y que \ $\Tr \Sigma_X = \Tr  R_X$ (de $\Tr(A B) = \Tr(B
 A)$).   Entonces,   el  problema  se  reduce   a  maximizar  \   $\left|  R_X  +
-  \Lambda_\Gauss  \right|$ \ sujeto  a \  $\Tr R_X  \le \P$  \ y  \ $R_X  \ge 0$
+  \Lambda_\N  \right|$ \ sujeto  a \  $\Tr R_X  \le \P$  \ y  \ $R_X  \ge 0$
 sim\'etica.   La  desigualdad  de  Hadamard  ya  evocada  da  \  $\left|  R_X  +
-  \Lambda_\Gauss \right| \le \prod_i \left( R_X + \Lambda_\Gauss \right)_{i,i} =
-\prod_i  \left( \left(  R_X \right)_{i,i}  + \lambda^\Gauss_i  \right)$  \ donde
+  \Lambda_\N \right| \le \prod_i \left( R_X + \Lambda_\N \right)_{i,i} =
+\prod_i  \left( \left(  R_X \right)_{i,i}  + \lambda^\N_i  \right)$  \ donde
 $(\cdot)_{i,i}$  denota la  componente $i,i$  de la  matriz, con  igualdad  si y
 solamente  si  \   $R_X$  \  es  diagonal:  para  maximizar   \  $\left|  R_X  +
-  \Lambda_\Gauss \right|$,  \ $R_X$ \ debe  ser diagonal (dada  una diagonal, se
+  \Lambda_\N \right|$,  \ $R_X$ \ debe  ser diagonal (dada  una diagonal, se
 alcanza el  m\'aximo si los otros t\'erminos  son nulos).  Es decir  que la base
-que  diagonaliza \  $\Sigma_\Gauss$  \ debe  diagonalizar tambi\'en  $\Sigma_X$.
+que  diagonaliza \  $\Sigma_\N$  \ debe  diagonalizar tambi\'en  $\Sigma_X$.
 Sean \ $\lambda^X_i$ \ los t\'erminos diagonales de $R_X$: queda que maximizar \
-$\prod_i  \left( \lambda^X_i  +  \lambda^\Gauss_i \right)$  \  sujeto a  $\sum_i
+$\prod_i  \left( \lambda^X_i  +  \lambda^\N_i \right)$  \  sujeto a  $\sum_i
 \lambda^X_i \le \P$ \ y \  $\lambda^X_i \ge 0$.  Este problema de optimizaci\'on
 sujeto    a    una    desigualdad    se    resuelva   con    el    enfoque    de
 Karush-Kuhn-Tucker~\footnote{Se introduce el factor  de Lagrange y se maximiza \
-  $\prod_i  \left(   \lambda^X_i  +  \lambda^\Gauss_i  \right)   +  \eta  \sum_i
-  \lambda^X_i$.  Eso da \ $\lambda^X_i + \lambda^\Gauss_i = \lambda$ \ constante
+  $\prod_i  \left(   \lambda^X_i  +  \lambda^\N_i  \right)   +  \eta  \sum_i
+  \lambda^X_i$.  Eso da \ $\lambda^X_i + \lambda^\N_i = \lambda$ \ constante
   si  $\lambda$ es  tal  que se  satisfaga  la positividad  de $\lambda^X_i$,  y
   $\lambda^X_i = 0$  sino. En otras palabras, \ $\lambda^X_i  = \left( \lambda -
-    \lambda^\Gauss_i \right)_+$ con $\lambda$ el factor de Lagrande despu\'es de
+    \lambda^\N_i \right)_+$ con $\lambda$ el factor de Lagrande despu\'es de
   una reescritura. Queda que  maximizar los $\lambda^X_i$ para maximizar $\left|
-    R_X + \Lambda_\Gauss \right|$, es  decir tomar $\lambda$ lo m\'as grande que
+    R_X + \Lambda_\N \right|$, es  decir tomar $\lambda$ lo m\'as grande que
   se puede,  pero satisfaciendo $\sum_i  \lambda^X_i \le \P$, \ie  alcanzando la
   igualdad.\label{Foot:SZ:KKT}}    (KKT)~\cite{Mil00,    CamMar09},   dando    \
-$\lambda^X_i = \left( \lambda - \lambda^\Gauss_i \right)_+$ \ con \ $(\cdot)_+ =
+$\lambda^X_i = \left( \lambda - \lambda^\N_i \right)_+$ \ con \ $(\cdot)_+ =
 \max(\cdot,0)$  \  y  \  $\lambda$  \   tal  que  \  $\sum_i  \left(  \lambda  -
-  \lambda^\Gauss_i \right)_+ = \P$.  En conclusi\'on, la capacidad es dada por
+  \lambda^\N_i \right)_+ = \P$.  En conclusi\'on, la capacidad es dada por
 %
 \begin{eqnarray*}
-C =  \frac12 \log \left(  \frac{\left| \Sigma_\Gauss +  \Sigma_X \right|}{\left|
-      \Sigma_\Gauss  \right|}  \right)  & \quad \mbox{con} \quad &  \Sigma_X  =  U
-\diag\left( \begin{bmatrix} \left(\lambda - \lambda^\Gauss_1\right)_+ & \cdots & \left(\lambda -
-    \lambda^\Gauss_d \right)_+ \end{bmatrix}^t \right) U^t,\\[2.5mm]
+C =  \frac12 \log \left(  \frac{\left| \Sigma_\N +  \Sigma_X \right|}{\left|
+      \Sigma_\N  \right|}  \right)  & \quad \mbox{con} \quad &  \Sigma_X  =  U
+\diag\left( \begin{bmatrix} \left(\lambda - \lambda^\N_1\right)_+ & \cdots & \left(\lambda -
+    \lambda^\N_d \right)_+ \end{bmatrix}^t \right) U^t,\\[2.5mm]
 %
 & &  \lambda \ \mbox{ tal que } \:
-\sum_i \left(\lambda - \lambda^\Gauss_i \right)_+ = \P
+\sum_i \left(\lambda - \lambda^\N_i \right)_+ = \P
 \end{eqnarray*}
 %
 alcanzada por $X$ gaussiano de matriz de covarianza $\Sigma_X$ as\'i construida.
@@ -421,9 +421,9 @@ alcanzada por $X$ gaussiano de matriz de covarianza $\Sigma_X$ as\'i construida.
 La  \'ultima condici\'on  se resuelva  a  trav\'es de  lo que  es conocido  como
 ``llenado   de   agua''   (water-filling   en   ingl\'es),   illustrado   figura
 Fig.~\ref{Fig:SZ:WaterFilling}.   El  principio  es  parecido  a  tener  niveles
-$\lambda^\Gauss_i$  representando  las  potencias  del  ruido (en  la  base  que
+$\lambda^\N_i$  representando  las  potencias  del  ruido (en  la  base  que
 diagonaliza la  matriz de covarianza), y  de ``llenar con agua''  hasta un nivel
-$\lambda$ tal que el ``volumen''  a\~nadido vale $\P$; en cada $\lambda^\Gauss_i$
+$\lambda$ tal que el ``volumen''  a\~nadido vale $\P$; en cada $\lambda^\N_i$
 se ha a\~nadido el $\lambda^X_i$~\cite[Sec.~9.4]{CovTho06}.
 
 \begin{figure}[h!]
@@ -433,7 +433,7 @@ se ha a\~nadido el $\lambda^X_i$~\cite[Sec.~9.4]{CovTho06}.
 \leyenda{Principio   del  ``water-filling''   para  obtener   los  $\lambda^X_i$
   satisfaciendo  el v\'inculo de  potencia l\'imite  y permitiendo  de construir
   $\Sigma_X$ a partir  de la matriz diagonal de los $\lambda^X_i$  y la base que
-  diagonaliza  la  covarianza  $\Sigma_\Gauss$  del  ruido.  La  zona  en  grise
+  diagonaliza  la  covarianza  $\Sigma_\N$  del  ruido.  La  zona  en  grise
   representa esquem\'aticamente $\P$.}
 %
 \label{Fig:SZ:WaterFilling}
@@ -442,10 +442,10 @@ se ha a\~nadido el $\lambda^X_i$~\cite[Sec.~9.4]{CovTho06}.
 En   el   caso   escalar,   se   obtiene
 %
 \[
-C = \frac12 \log\left( 1 + \frac{\P}{\sigma_\Gauss^2} \right),
+C = \frac12 \log\left( 1 + \frac{\P}{\sigma_\N^2} \right),
 \]
 %
-donde     $\frac{\P}{\sigma_\Gauss^2}$     es     conocido    como     relaci\'on
+donde     $\frac{\P}{\sigma_\N^2}$     es     conocido    como     relaci\'on
 se\~nale-ruido~\footnote{Esta formula es muy  parecida a la de Shannon, Laplume,
   o Clavier~\cite{Sha48,  Lap48, Cla48} (ver tambi\'en~\cite[Sec.~9.3]{CovTho06}
   o~\cite[Sec.~11.2]{Rio07}).   De hecho,  si se  considera  s\'imbolos mandados

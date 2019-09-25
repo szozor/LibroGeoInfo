@@ -62,48 +62,53 @@ $\Esp\left[ M_k(X) \right] = m_k$ \ fijos, con $M_x: \X \to \Rset$. Suponemos de
 que $X$ tiene una densidad \ $p$ \ con respeto a una medida $\mu$, basicamente \
 $\mu_L$ \ en el contexto continuo y $\mu_\X$ en el caso discreto. El problema de
 entrop\'ia  m\'axima   se  formula  de   la  manera  siguiente:  sean   \  $M(x)
-=  \begin{bmatrix} 1  &  M_1(x) &  \cdots &  M_K(x)  \end{bmatrix}^t$ \  y \  $m
-= \begin{bmatrix} 1 & m_1 & \cdots & m_K \end{bmatrix}^t$ (si $K = 0, \: M = m =
-1$), \ se busca,
+=  \begin{bmatrix}  M_1(x)  &  \cdots   &  M_K(x)  \end{bmatrix}^t$  \  y  \  $m
+=  \begin{bmatrix} m_1  &  \cdots  & m_K  \end{bmatrix}^t$  (si $K  =  0$ \  $M$
+desaparece)
+%, \:
+% M = m = 1$), \ se busca,
 %
 \[
-p^* = \argmax_p H(p) \qquad \mbox{sujeto a} \qquad p \ge 0, \quad \int_\X M(x)
-\, p(x) \, d\mu(x) = m,
+p^* = \argmax_p H(p) \qquad \mbox{sujeto a} \qquad p \ge 0, \quad \int_\X p(x) \, d\mu(x) = 1 \quad \mbox{y} 
+\quad \int_\X M(x) \, p(x) \, d\mu(x) = m,
 \]
 %
 donde los dos primeros v\'inculos (positividad, normalizaci\'on) aseguran de que
 $p^*$ sea una distribuci\'on de probabilidad. En el ejemplo del gas perfecto, $K
 = 1, \, M_1(x) = \sum_i  x_i^2$ \ (los $x_i$ son las velocidades). Introduciendo
-factores  de  Lagrange  $\eta =  \begin{bmatrix}  \eta_0  &  \eta_1 &  \cdots  &
-  \eta_K  \end{bmatrix}^t$ para  tener  en cuenta  los  v\'inculos, el  problema
+factores de  Lagrange $\eta_0,  \quad \eta =  \begin{bmatrix} \eta_1 &  \cdots &
+  \eta_K \end{bmatrix}^t$  \ para  tener en cuenta  los v\'inculos,  el problema
 variacional   consiste  a   resolver~\cite{GelFom63,  Bru04,   Mil00,  CamMar09,
   CovTho06}
 %
 \[
-p^* = \argmax_p  \int_\X \left( - p(x)  \log p(x) + \eta^t M(x)  \, p(x) \right)
-d\mu(x),
+p^* = \argmax_p \int_\X  \left( - p(x) \log p(x) + \eta_0  \, p(x) + \eta^t M(x)
+  \, p(x) \right) d\mu(x),
 \]
 %
-donde $\eta$  ser\'a determinado para satisfacer  a los v\'inculos.   En el caso
-continuo $\mu  = \mu_L$ se  usa la ecuaci\'on  de Euler-Lagrange~\cite{GelFom63,
-  Bru04}, esquematicamente anulando la ``derivada'' del integrande con respeto a
-$p$; en  el caso  discreto, se anula  realmente un  gradiente con respeto  a los
-componentes de $p$. Reparametrizando los factores de Lagrange, se obtiene as\'i
+donde $\eta_0, \eta$ ser\'an determinados  para satisfacer a los v\'inculos.  En
+el    caso   continuo    $\mu   =    \mu_L$    se   usa    la   ecuaci\'on    de
+Euler-Lagrange~\cite{GelFom63, Bru04}, esquematicamente anulando la ``derivada''
+del integrande  con respeto a  $p$; en el  caso discreto, se anula  realmente un
+gradiente con respeto a los componentes de $p$. Reparametrizando los factores de
+Lagrange, se obtiene as\'i
 %
 \[
-p^*(x) = \e^{\eta^t M(x)},
+p^*(x) = \frac{1}{Z(\eta)} e^{\eta^t M(x)} = e^{\eta^t M(x) - \varphi(\eta)},
 \]
 %
-con $\eta$ tal  que se satisfacen los v\'inculos  de normalizaci\'on y momentos.
-Esta  distribuci\'on   cae  en  la  familia  exponencial   que  \SZ{hemos  visto
-  secci\'on~\ref{Sec:MP:}}, donde los $M_k$ son las estad\'isticas suficientes y
-los $\eta_k$ los par\'ametros naturales.
+con  $\eta$ tal que  se satisfacen  los v\'inculos  de momentos  y \  $Z(\eta) =
+e^{\varphi(\eta)} =  \displaystyle \int_\X e^{\eta^t  M(x)} d\mu(x)$ coeficiente
+de  normalizaci\'on.   Esta  distribuci\'on   cae  precisamente  en  la  familia
+exponencial  que hemos  visto  secci\'on~\ref{Ssec:MP:FamiliaExponencial}, donde
+$M$ es  la estad\'istica suficiente y  $\eta$ el par\'ametros  naturale (en este
+caso, $h(x) = 1$).
 
-Un problema que  puede aparecer es que  no se puede determinar $\eta$  tal que se
-satisfacen  todos los  v\'inculos,  en particular  la  de normalizaci\'on.   Por
-ejemplo,  si $\X  = \Rset$  y $K  = 0$,  \ $p$  \ deber\'ia  ser  constante (ley
-uniforme) sobre\ldots $\Rset$, lo que no es normalizable. De la misma manera, si
-$K  =  3$  \  y  \   $M_k(x)  =  x^k$,  tampoco  es  normalizable  la  funci\'on
+Un problema que puede  aparecer es que no se puede determinar  $\eta$ tal que se
+satisfacen todos los  v\'inculos, en particular se puede que  no se normaliza la
+ley.  Por ejemplo,  si $\X = \Rset$ y  $K = 0$, \ $p$ \  deber\'ia ser constante
+(ley  uniforme) sobre\ldots  $\Rset$, lo  que no  es normalizable.  De  la misma
+manera, si $K  = 3$ \ y \  $M_k(x) = x^k$, tampoco es  normalizable la funci\'on
 obtenida~\footnote{En el  enfoque Bayesiano se puede que  no sea problem\'atico,
   si el  a posteriori es normalizable~\cite{Rob07},  pero va m\'as  all\'a de la
   meta de  esta secci\'on.}.  En  otros terminos, en  este caso, el  problema no
@@ -118,10 +123,10 @@ soluci\'on.
 \begin{lema}
 \label{Lem:SZ:MaxEntPruebaInfo}
 %
-  Sea  \ $\displaystyle  \P_m =  \left\{ p  \ge 0:  \: \int_\X  M(x) \,  p(x) \,
-    d\mu(x) = m \right\}$ \ conjunto  de densidades con respeto a $\mu$, con los
-  mismos momentos $M$, y sea \ $p^* \in  \P_m$ \ que sea de la forma \ $p^*(x) =
-  \e^{\eta^t M(x)}$. Entonces
+Sea \  $\displaystyle \P_m = \left\{  p \ge 0 \tq  \int_\X p(x) \,  d\mu(x) = 1,
+  \quad \int_\X M(x)  \, p(x) \, d\mu(x) = m \right\}$  \ conjunto de densidades
+con respeto a $\mu$, con los mismos momentos \ $M$, y sea \ $p^* \in \P_m$ \ que
+sea de la forma \ $p^*(x) = \e^{\eta^t M(x) - \varphi(\eta)}$. Entonces
   %
   \[
   \forall \,  p \in \P_m, \quad  H(p) \le H(p^*) \qquad  \mbox{con igualdad ssi}
@@ -140,22 +145,22 @@ soluci\'on.
   p(x) \, \log p^*(x) \, d\mu(x)
   \end{eqnarray*}
   %
-  De $\log p^* = \eta^t M$ se obtiene
+  De $\log p^* = \eta^t M - \varphi(\eta)$ se obtiene
   %
   \begin{eqnarray*}
-  H(p) & = & - \Dkl[p]{p^*} - \int_\X \eta^t M(x) p(x)
+  H(p) & = & - \Dkl[p]{p^*} - \int_\X \left( \eta^t M(x) - \varphi(\eta) \right) p(x)
   \, d\mu(x)\\[2.5mm]
   %
-  & = & - \Dkl[p]{p^*} - \int_\X \eta^t M(x) \, p^*(x) \, d\mu(x)\\[2.5mm]
+  & = & - \Dkl[p]{p^*} - \int_\X \left( \eta^t M(x) - \varphi(\eta) \right) p^*(x) \, d\mu(x)\\[2.5mm]
   %
   & = & - \Dkl[p]{p^*} - \int_\X p^*(x) \log p^*(x) \, d\mu(x)\\[2.5mm]
   %
   & = & - \Dkl[p]{p^*} + H(p^*)
   \end{eqnarray*}
   %
-  porque $p, p^* \in \P_m$ \ (segunda  linea) y \ $\eta^t M = \log p^*$ (tercera
-  linea). La prueba se cierra notando que $\Dkl[p]{p^*} \ge 0$ con igualdad si y
-  solamente si $p = p^* \quad (\mu$-c.s.).
+  porque $p,  p^* \in \P_m$ \  (segunda linea) y  \ $\eta^t M -  \varphi(\eta) =
+  \log p^*$ (tercera  linea). La prueba se cierra  notando que $\Dkl[p]{p^*} \ge
+  0$ con igualdad si y solamente si $p = p^* \quad (\mu$-c.s.).
 \end{proof}
 %
 Este lema prueba que, dados  v\'inculos ``razonables'', la entrop\'ia es acotada
@@ -186,9 +191,9 @@ Def.~\ref{Def:SZ:entropiarelativa}). Es decir, tomando \ $\mu = \widetilde{P}$ \
 medida   de   probabilidad   aparece   inmediatamente
 %
 \[
-P^* = \argmax_P \Dkl[P]{\widetilde{P}}  \quad \mbox{sujeto a} \quad \int_\X M(x)
+P^* = \argmax_P \Dkl[P]{\widetilde{P}}  \quad \mbox{sujeto a}  \int_\X M(x)
 \,  dP(x) =  m  \qquad \Leftrightarrow  \qquad \frac{dP^*}{d\widetilde{P}}(x)  =
-\e^{\eta^t x}.
+\e^{\eta^t x - \varphi(\eta)}.
 \]
 
 % ================================= EPI
@@ -522,7 +527,7 @@ par\'ametro~\cite{Fis22, Fis25:07, Kay93, Bos07, CovTho06, Fri04}.
   donde \  $\nabla_\theta = \left[ \cdots  \: \frac{\partial}{\partial \theta_i}
     \: \cdots  \right]^t$ \  es el gradiente  en \  $\theta$ \ y  \ $\log$  \ el
   \underline{logaritmo  natural}.  Es  la matriz  de covarianza  del  {\it score
-    param\'etrico} \ $S(X) = \nabla_\theta  \log p_X(X;\theta)$ \ notando que su
+    param\'etrico} \ $S_\theta(X) = \nabla_\theta  \log p_X(X;\theta)$ \ notando que su
   media es  igual a  cero (escribiando el  promedio y intercambiando  integral y
   gradiente),  siendo   \  $\log  p_X$  \  la   {\it  log-verosimilitud}.   Bajo
   condiciones de regularidad, se puede mostrar~\footnote{Es una consecuencia del
@@ -540,6 +545,15 @@ Como  para  la  entrop\'ia,  la  matriz  de Fisher  se  escribe  generalmente  \
 $J_\theta(X)$, \ a pesar de que no sea  funci\'on de \ $X$ \ pero de la densidad
 de  probabilidad.  Se  la  notar\'a  tambi\'en \  $J_\theta(p_X)$  \ seg\'un  la
 escritura la m\'as conveniente.
+
+Notar  que para  une  distribuci\'on  de la  familia  exponencial natural  vista
+secci\'on~\ref{Ssec:MP:FamiliaExponencial},  $p_X(x;\eta)  =  \exp\left(  \eta^t
+  S(x)  - \varphi(\eta)  \right)$  \  tenemos \  $S_\eta(x)  = \nabla_\eta  \log
+p_X(x;\eta) = S(x) - \nabla \varphi(\eta) = S(x) - \Esp[S(X)]$ as\'i que
+%
+\[
+J_\eta(X) = \Cov[S(X)] = \Hess \varphi(\eta)
+\]
 
 En el caso  continuo, $\mu = \mu_L$, con una  densidad diferenciable, tomando el
 gradiente en \ $x$  \ en lugar de \ $\theta$ \ da  la matriz de informaci\'on de
@@ -694,7 +708,7 @@ informaci\'on de Fisher, \ie \  $J_\theta(X)$ \ caracteriza la informaci\'on que
 \ $X$ \ tiene sobre \ $\theta$.
 %
 \begin{proof}
-  Sea  \   $S  =  \nabla_\theta  \log   p_X$  \  y  \   $\theta_0  =  \Esp\left[
+  Sea  \   $S_\theta  =  \nabla_\theta  \log   p_X$  \  y  \   $\theta_0  =  \Esp\left[
     \widehat{\theta}(X) \right] = \theta +  b(\theta)$.  Fijandose que \ $p_X \,
   \nabla_\theta \log p_X = \nabla_\theta  p_X$, que \ $\widehat{\theta}$ \ no es
   funci\'on de \ $\theta$,  y que el soporte \ $\X$ \  no depende de \ $\theta$,
@@ -704,7 +718,7 @@ informaci\'on de Fisher, \ie \  $J_\theta(X)$ \ caracteriza la informaci\'on que
     pagina~\pageref{Teo:MP:IntegralParametro}.}
   %
   \begin{eqnarray*}
-  \Esp\left[ S(X) \left( \widehat{\theta}(X) - \theta_0 \right)^t \right] & = &
+  \Esp\left[ S_\theta(X) \left( \widehat{\theta}(X) - \theta_0 \right)^t \right] & = &
   \int_\X \nabla_\theta p_X(x;\theta) \widehat{\theta}(x)^t \, dx - \left(
   \int_\X \nabla_\theta p_X(x;\theta) \, dx \right) \theta_0^t\\[2.5mm]
   %
@@ -718,7 +732,7 @@ informaci\'on de Fisher, \ie \  $J_\theta(X)$ \ caracteriza la informaci\'on que
   & = & \left( I + \Jac_b(\theta) \right)^t
   \end{eqnarray*}
   %
-  Adem\'as, fijandose  que \  $\Esp\left[ S(X) S(X)^t  \right] =  J_\theta(X)$ y
+  Adem\'as, fijandose  que \  $\Esp\left[ S_\theta(X) S_\theta(X)^t  \right] =  J_\theta(X)$ y
   $\Esp\left[   \left(    \widehat{\theta}(X)   -   \theta_0    \right)   \left(
       \widehat{\theta}(X)      -      \theta_0      \right)^t     \right]      =
   \Sigma_{\widehat{\theta}}$, la  desigualdad de Cauchy-Bunyakovsky-Schwarz (ver
@@ -726,7 +740,7 @@ informaci\'on de Fisher, \ie \  $J_\theta(X)$ \ caracteriza la informaci\'on que
   %
   \[
   \left( u^t \left( I + \Jac_b(\theta)  \right)^t v \right)^2 \: = \: \Esp\left[
-    u^t S(X) \left( \widehat{\theta}(X) -  \theta_0 \right)^t v \right]^2 \: \le
+    u^t S_\theta(X) \left( \widehat{\theta}(X) -  \theta_0 \right)^t v \right]^2 \: \le
   \: u^t J_\theta(X) u \: v^t \Sigma_{\widehat{\theta}} \, v.
   \]
   %
@@ -734,7 +748,7 @@ informaci\'on de Fisher, \ie \  $J_\theta(X)$ \ caracteriza la informaci\'on que
   \right)^t \,  v$ \ (recordandose  que \ $J_\theta$ \  es sim\'etrica).\newline
   Para  $\theta$  parametro  de  posici\'on,  $\widehat{\Theta}  =  X$,  con  la
   elecci\'on  de \  $u$,  en la  desigualdad  de Cauchy-Bunyakovsky-Schwarz,  se
-  obtiene la igualdad  cuando \ $v^t J(X)^{-1} S(x) \propto v^t  (x - \theta)$ \
+  obtiene la igualdad  cuando \ $v^t J(X)^{-1} S_\theta(x) \propto v^t  (x - \theta)$ \
   para cualquier \ $v$  \ y \ $x$ (c.s.), est decir  \ $\nabla_x p_X (x) \propto
   J(X) (x -  \theta) p_X(x)$, lo que es la  ecuaci\'on diferencial que satisface
   (solamente) la gaussiana: en este caso, se verifica a posteriori que \ $J(X) =
@@ -915,15 +929,15 @@ informaci\'on de Fisher.
 \label{Teo:SZ:DeBruijn}
 %
   Sea \ $X$ \  un vector aleatorio continuo sobre un abierto  de \ $\Rset^d$ \ y
-  admitiendo una matriz de covarianza, y sea \  $Y = X + T \Gauss$ \ donde \ $T$
+  admitiendo una matriz de covarianza, y sea \  $Y = X + T \N$ \ donde \ $T$
   \ es determinista, $d  \times d'$ \ con \ $ d \le d'$,  de rango m\'aximo, y \
-  $\Gauss$ \  un vector  gaussiano centrado y  de covarianza  \ $\Sigma_\Gauss$,
+  $\N$ \  un vector  gaussiano centrado y  de covarianza  \ $\Sigma_\N$,
   independiente  de \  $X$ \  (ver  figura Fig.~\ref{Fig:SZ:deBruijnVerdu}-(a)).
   Entonces, la  entrop\'ia de Shannon  y la informaci\'on  de Fisher de \  $Y$ \
   satisfacen
   %
   \[
-  \nabla_T H(Y) = J(Y) \, T \, \Sigma_\Gauss,
+  \nabla_T H(Y) = J(Y) \, T \, \Sigma_\N,
   \]
   %
   donde \ $\nabla_T \, \cdot$ \ es la matriz de componentes \ $\frac{\partial \,
@@ -933,18 +947,18 @@ informaci\'on de Fisher.
     $\theta$.}  $\theta$,
   %
   \[
-  \frac{\partial}{\partial \theta}  H(Y) = \Tr\left( J(Y) \,  T \, \Sigma_\Gauss
+  \frac{\partial}{\partial \theta}  H(Y) = \Tr\left( J(Y) \,  T \, \Sigma_\N
     \, \frac{\partial T^t}{\partial \theta} \right).
   \]
 \end{teorema}
 %
 \begin{proof}
   La clave de este resultado viene del hecho  de que la densidad \ $p$ \ de \ $T
-  \Gauss$ \ satisface una  ecuaci\'on diferencial particular.  La distribuci\'on
-  de  \ $T  \Gauss$  \ se  escribe \  $p(x)  = (2  \pi)^{-\frac{d}{2}} \left|  T
-    \Sigma_\Gauss  T^t  \right|^{-\frac12} \exp\left(  -  \frac12  x^t \left(  T
-      \Sigma_\Gauss T^t \right)^{-1} x \right)$ \  (el rango m\'aximo de \ $T$ \
-  asegura  que \  $T  \Sigma_\Gauss T^t$  \  sea invertible).   Para una  matriz
+  \N$ \ satisface una  ecuaci\'on diferencial particular.  La distribuci\'on
+  de  \ $T  \N$  \ se  escribe \  $p(x)  = (2  \pi)^{-\frac{d}{2}} \left|  T
+    \Sigma_\N  T^t  \right|^{-\frac12} \exp\left(  -  \frac12  x^t \left(  T
+      \Sigma_\N T^t \right)^{-1} x \right)$ \  (el rango m\'aximo de \ $T$ \
+  asegura  que \  $T  \Sigma_\N T^t$  \  sea invertible).   Para una  matriz
   invertible $R$,  desarollando \ $|R|$  \ con respecto  a su l\'inea \  $i$, se
   obtiene que  \ $\frac{\partial |R|}{\partial R_{i,j}} =  R_{i,j}^*$ \ cofactor
   de  \ $R_{i,j}$,  dando por  la regla  de Cram\'er  \ $\nabla_R  |R| =  |R| \,
@@ -953,56 +967,56 @@ informaci\'on de Fisher.
     |R|^{-\frac12}}{\partial     T_{i,j}}     =    \sum_{k,l}     \frac{\partial
     |R|^{-\frac12}}{\partial R_{k,l}}  \frac{\partial R_{k,l}}{\partial T_{i,j}}
   =   -\frac12    |R|^{-\frac12}   \sum_{k,l}   \left(    R^{-1}   \right)_{l,k}
-  \frac{\partial R_{k,l}}{\partial T_{i,j}}$ \ con \ $R = T \Sigma_\Gauss T^t$ \
+  \frac{\partial R_{k,l}}{\partial T_{i,j}}$ \ con \ $R = T \Sigma_\N T^t$ \
   (sim\'etrica) y c\'alculos b\'asicos se obtiene finalmente
   %
   \[
-  \nabla_T  \left|   T  \Sigma_\Gauss  T^t  \right|^{-\frac12}  =   -  \left|  T
-    \Sigma_\Gauss T^t \right|^{-\frac12} \left( T \Sigma_\Gauss T^t \right)^{-1}
-  T \Sigma_\Gauss.
+  \nabla_T  \left|   T  \Sigma_\N  T^t  \right|^{-\frac12}  =   -  \left|  T
+    \Sigma_\N T^t \right|^{-\frac12} \left( T \Sigma_\N T^t \right)^{-1}
+  T \Sigma_\N.
   \]
   %
-  Adem\'as, de \ $\left( T  \Sigma_\Gauss T^t \right) \left( T \Sigma_\Gauss T^t
-  \right)^{-1}  =  I$ \  viene  \  $\frac{\partial  \left( T  \Sigma_\Gauss  T^t
-    \right)^{-1}}{\partial T_{i,j}} = -  \left( T \Sigma_\Gauss T^t \right)^{-1}
-  \frac{\partial \left( T \Sigma_\Gauss  T^t \right)}{\partial T_{i,j}} \left( T
-    \Sigma_\Gauss T^t \right)^{-1}$.  Usando le vector \ $\un_i$ \ con 1 en su \
+  Adem\'as, de \ $\left( T  \Sigma_\N T^t \right) \left( T \Sigma_\N T^t
+  \right)^{-1}  =  I$ \  viene  \  $\frac{\partial  \left( T  \Sigma_\N  T^t
+    \right)^{-1}}{\partial T_{i,j}} = -  \left( T \Sigma_\N T^t \right)^{-1}
+  \frac{\partial \left( T \Sigma_\N  T^t \right)}{\partial T_{i,j}} \left( T
+    \Sigma_\N T^t \right)^{-1}$.  Usando le vector \ $\un_i$ \ con 1 en su \
   $i$-\'esima componente, y cero si no, se obtiene
   %
   \begin{eqnarray*}
-  \frac{\partial \left( x^t \left( T \Sigma_\Gauss T^t \right)^{-1} x
-  \right)}{\partial T_{i,j}} & = & - x^t \left( T \Sigma_\Gauss T^t \right)^{-1}
-  \left( \un_i \un_j^t \Sigma_\Gauss T^t + T \Sigma_\Gauss \un_j \un_i^t \right) \left( T
-  \Sigma_\Gauss T^t \right)^{-1} x\\[2.5mm]
+  \frac{\partial \left( x^t \left( T \Sigma_\N T^t \right)^{-1} x
+  \right)}{\partial T_{i,j}} & = & - x^t \left( T \Sigma_\N T^t \right)^{-1}
+  \left( \un_i \un_j^t \Sigma_\N T^t + T \Sigma_\N \un_j \un_i^t \right) \left( T
+  \Sigma_\N T^t \right)^{-1} x\\[2.5mm]
   %
-  & = & - 2 \, \un_i^t \left( T \Sigma_\Gauss T^t \right)^{-1} x x^t \left( T
-  \Sigma_\Gauss T^t \right)^{-1} T \Sigma_\Gauss \un_j
+  & = & - 2 \, \un_i^t \left( T \Sigma_\N T^t \right)^{-1} x x^t \left( T
+  \Sigma_\N T^t \right)^{-1} T \Sigma_\N \un_j
   \end{eqnarray*}
   %
   usando la relaci\'on  \ $x^t A \un_k \un_l^t B  x = \un_l^t B x  x^t A \un_k =
   \un_k^t A^t x x^t  B^t \un_l$ \ (escalares comutan y un  escalar es igual a su
-  transpuesta) y usando la simetr\'ia de \ $T \Sigma_\Gauss T^t$.  Eso significa
+  transpuesta) y usando la simetr\'ia de \ $T \Sigma_\N T^t$.  Eso significa
   que
   %
   \[
-  \nabla_T \left( x^t \left( T \Sigma_\Gauss T^t \right)^{-1} x \right) = - 2 \,
-  \left(  T \Sigma_\Gauss  T^t \right)^{-1}  x  x^t \left(  T \Sigma_\Gauss  T^t
-  \right)^{-1} T \Sigma_\Gauss,
+  \nabla_T \left( x^t \left( T \Sigma_\N T^t \right)^{-1} x \right) = - 2 \,
+  \left(  T \Sigma_\N  T^t \right)^{-1}  x  x^t \left(  T \Sigma_\N  T^t
+  \right)^{-1} T \Sigma_\N,
   \]
   %
   dando
   %
   \[
-  \nabla_T p(x)  = \left( - \left(  T \Sigma_\Gauss T^t \right)^{-1}  + \left( T
-      \Sigma_\Gauss  T^t   \right)^{-1}  x   x^t  \left(  T   \Sigma_\Gauss  T^t
-    \right)^{-1} \right) T \Sigma_\Gauss \, p(x).
+  \nabla_T p(x)  = \left( - \left(  T \Sigma_\N T^t \right)^{-1}  + \left( T
+      \Sigma_\N  T^t   \right)^{-1}  x   x^t  \left(  T   \Sigma_\N  T^t
+    \right)^{-1} \right) T \Sigma_\N \, p(x).
   \]
   %
   Tomando la Hessiana de \ $p$ \  con respeto a \ $x$ \ se obtiene sencillamente
   que \ $p$ \ satisface la ecuaci\'on diferencial
   %
   \[
-  \nabla_T \, p = \Hess_x \, p \: T \, \Sigma_\Gauss.
+  \nabla_T \, p = \Hess_x \, p \: T \, \Sigma_\N.
   \]
   %
   Suponiende que  se puede intervertir derivadas  y integrales (ver~\cite{Bar84,
@@ -1018,15 +1032,15 @@ informaci\'on de Fisher.
   \, dy - \int_{\Rset^d} \nabla_T \, p_Y(y) \, dy\\[2.5mm]
   %
   & = & - \left( \int_{\Rset^d} \Hess_y \, p_Y(y) \log p_Y(y) \, dy \right) T \,
-  \Sigma_\Gauss - \nabla_T \int_{\Rset^d} p_Y(y) \, dy\\[2.5mm]
+  \Sigma_\N - \nabla_T \int_{\Rset^d} p_Y(y) \, dy\\[2.5mm]
   %
   & = & - \left( \int_{\Rset^d} \left( \Hess_y \Big( p_Y(y) \log p_Y(y) \Big) -
   \Hess_y \, p_Y(y) - \frac{\nabla_y \, p_Y(y) \, \nabla_y \, p_Y(y)^t}{p_Y(y)}
-  \right) \, dy \right) T \, \Sigma_\Gauss\\[2.5mm]
+  \right) \, dy \right) T \, \Sigma_\N\\[2.5mm]
   %
   & = & - \left( \int_{\Rset^d} \Hess_y \Big( p_Y(y) \log p_Y(y) \Big) \, dy -
-  \int_{\Rset^d} \Hess_y p_Y(y) \, dy \right) T \, \Sigma_\Gauss \: + \: J(Y) \, T
-  \, \Sigma_\Gauss
+  \int_{\Rset^d} \Hess_y p_Y(y) \, dy \right) T \, \Sigma_\N \: + \: J(Y) \, T
+  \, \Sigma_\N
   \end{eqnarray*}
   %
   usando la  ecuaci\'on diferencial  en la  segunda l\'inea, el  hecho de  que \
@@ -1042,12 +1056,12 @@ informaci\'on de Fisher.
   \Tr\left( \nabla_T \cdot \, \frac{\partial T^t}{\partial \theta} \right)$.
 \end{proof}
 
-La versi\'on  inicial de la identidad de  de Bruijn, con \  $\Sigma_\Gauss = I$,
+La versi\'on  inicial de la identidad de  de Bruijn, con \  $\Sigma_\N = I$,
 que se escribe
 %
 \[
-\frac{d}{d\theta}     H(X+\sqrt{\theta}    \Gauss)    =     \frac12    \Tr\left(
-  J(X+\sqrt{\theta} \Gauss) \right),
+\frac{d}{d\theta}     H(X+\sqrt{\theta}    \N)    =     \frac12    \Tr\left(
+  J(X+\sqrt{\theta} \N) \right),
 \]
 %
 se recupera  en el caso particular  \ $T =  \sqrt{\theta} I$.  En este  caso, la
@@ -1063,7 +1077,7 @@ Existe una  otra forma  muy similar  de esta desigualdad  debido a  Guo, Shamai,
 Verd\'u,  Palomar~\cite{GuoSha05, PalVer06,  TorZoz18}.  Esta  versi\'on vincula
 a\'un m\'as el mundo  de la informaci\'on y el de la  estimaci\'on.  Del lado de
 la  comunicaci\'on, consiste  a  caracterizar la  informaci\'on  mutua entre  la
-entrada \ $X$ \ de un canal ruidoso y su  salida, \ $Y = S X + \Gauss$ \ donde \
+entrada \ $X$ \ de un canal ruidoso y su  salida, \ $Y = S X + \N$ \ donde \
 $S$ \ coresponde a un pre-tratamiento antes de la salida. Eso es ilustrado en la
 figura  Fig.~\ref{Fig:SZ:deBruijnVerdu}-(b).  Del lado  de la  estimaci\'on, uno
 puede querer  estimar \ $X$  \ observando solamente  \ $Y$.  Es conocido  que el
@@ -1079,32 +1093,32 @@ identidad entre \ $I(X;Y)$ \ y \ $\E(X|Y)$:
 \label{Teo:SZ:GuoShamaiVerdu}
 %
   Sea \ $X$ \ un vector aleatorio  continuo sobre un abierto de \ $\Rset^{d'}$ \
-  y admitiendo una  matriz de covarianza, y sea \  $Y = S X +  \Gauss$ \ donde \
-  $S$  es determinista,  $d  \times d'$,  y  \ $\Gauss$  \  un vector  gaussiano
-  centrado  y de covarianza  $\Sigma_\Gauss$, independiente  de $X$  (ver figura
+  y admitiendo una  matriz de covarianza, y sea \  $Y = S X +  \N$ \ donde \
+  $S$  es determinista,  $d  \times d'$,  y  \ $\N$  \  un vector  gaussiano
+  centrado  y de covarianza  $\Sigma_\N$, independiente  de $X$  (ver figura
   Fig.~\ref{Fig:SZ:deBruijnVerdu}-(b)). Entonces, la informaci\'on mutua entre \
   $X$ \ e \ $Y$ \ y  la matriz de covarianza del estimador de error cuadr\'atico
   m\'inimo satisfacen
   %
   \[
-  \nabla_S \, I(X;Y) = \Sigma_\Gauss^{-1} S \, \E(X|Y).
+  \nabla_S \, I(X;Y) = \Sigma_\N^{-1} S \, \E(X|Y).
   \]
   %
   Si \ $S = S(\snr)$ \ depende de un par\'ametro escalar $\snr$,
   %
   \[
-  \frac{\partial}{\partial \snr} I(X;Y) = \Tr\left( \Sigma_\Gauss^{-1} \, S \,
+  \frac{\partial}{\partial \snr} I(X;Y) = \Tr\left( \Sigma_\N^{-1} \, S \,
     \E(X|Y) \, \frac{\partial S^t}{\partial \snr} \right).
   \]
 \end{teorema}
 %
 \begin{proof}
-  Notando  que \ $p_{Y|X=x}  (y) =  (2 \pi)^{-\frac{d}{2}}  \left| \Sigma_\Gauss
-  \right|^{-\frac12}  \exp\left( -\frac12  (y-S  x)^t \Sigma_\Gauss^{-1}  (y-Sx)
+  Notando  que \ $p_{Y|X=x}  (y) =  (2 \pi)^{-\frac{d}{2}}  \left| \Sigma_\N
+  \right|^{-\frac12}  \exp\left( -\frac12  (y-S  x)^t \Sigma_\N^{-1}  (y-Sx)
   \right)$   \   viene  \   $\nabla_S   \,   p_{Y|X=x}(y)   =  p_{Y|X=x}(y)   \,
-  \Sigma_\Gauss^{-1}  (y -  S x)  x^t$ \  (ver  unos pasos  de la  prueba de  la
+  \Sigma_\N^{-1}  (y -  S x)  x^t$ \  (ver  unos pasos  de la  prueba de  la
   identidad de de  Bruijn) as\'i que \ $\nabla_y  \, p_{Y|X=x}(y) = p_{Y|X=x}(y)
-  \, \Sigma_\Gauss^{-1} (y - S x)$, dando
+  \, \Sigma_\N^{-1} (y - S x)$, dando
   %
   \[
   \nabla_S \, p_{Y|X=x}(y) = \nabla_y \, p_{Y|X=x}(y) x^t \qquad \mbox{y} \qquad
@@ -1112,8 +1126,8 @@ identidad entre \ $I(X;Y)$ \ y \ $\E(X|Y)$:
   \]
   %
   (multiplicando ambos lados por $p_X$). Ahora, \ $I(X;Y) = H(Y) - H(Y|X) = H(Y)
-  - H(\Gauss)$ \ (de la independencia, cuando \ $X  = x$, \ $Y = S x + \Gauss$ \
-  gaussiana de  misma convarianza que \  $\Gauss$ \ y  de promedio \ $S  x$ (ver
+  - H(\N)$ \ (de la independencia, cuando \ $X  = x$, \ $Y = S x + \N$ \
+  gaussiana de  misma convarianza que \  $\N$ \ y  de promedio \ $S  x$ (ver
   ejemplo~\ref{Ej:MP:SumaCond}, pagina~\pageref{Ej:MP:SumaCond}), as\'i que
   %
   \begin{eqnarray*}
@@ -1149,34 +1163,34 @@ identidad entre \ $I(X;Y)$ \ y \ $\E(X|Y)$:
   \nabla_y p_Y(y) & = & \int_{\Rset^{d'}} \nabla_y \, p_{Y|X=x}(y) \, p_X(x) \,
   dx\\[2.5mm]
   %
-  & = & - \Sigma_\Gauss^{-1} \int_{\Rset^{d'}} (y - S x) \, p_{Y|X=x}(y) \, p_X(x) \,
+  & = & - \Sigma_\N^{-1} \int_{\Rset^{d'}} (y - S x) \, p_{Y|X=x}(y) \, p_X(x) \,
   dx\\[2.5mm]
   %
-  & = & - \Sigma_\Gauss^{-1} \left( y - S \int_{\Rset^{d'}} x \, p_{X|Y=y}(x) \,dx
+  & = & - \Sigma_\N^{-1} \left( y - S \int_{\Rset^{d'}} x \, p_{X|Y=y}(x) \,dx
   \right) p_Y(y)\\[2.5mm]
   %
-  & = & - \Sigma_\Gauss^{-1} \Big( y - S \Esp\left[X | Y=y \right] \Big) \, p_Y(y)
+  & = & - \Sigma_\N^{-1} \Big( y - S \Esp\left[X | Y=y \right] \Big) \, p_Y(y)
   \end{eqnarray*}
   %
   escribiendo $p_{Y|X=x}(y)  \, p_X(x) =  p_{X|Y=y}(x) \, p_Y(y)$ en  la tercera
   l\'inea. Esta ecuaci\'on permite escribir
   %
   \begin{eqnarray*}
-  \nabla_S I(X;Y) & = & \Sigma_\Gauss^{-1} \int_{\Rset^d} \Big( y - S \Esp\left[X |
+  \nabla_S I(X;Y) & = & \Sigma_\N^{-1} \int_{\Rset^d} \Big( y - S \Esp\left[X |
   Y=y \right] \Big) \Esp\left[X^t | Y=y \right] \, p_Y(y) \, dy\\[2.5mm]
   %
-  & = & \Sigma_\Gauss^{-1} \left( \Esp\left[ Y \Esp\left[ X^t|Y \right] \right] - S
+  & = & \Sigma_\N^{-1} \left( \Esp\left[ Y \Esp\left[ X^t|Y \right] \right] - S
   \Esp\left[ \Esp\left[X | Y \right] \Esp\left[X | Y \right]^t \right]
   \right)\\[2.5mm]
   %
-  & = & \Sigma_\Gauss^{-1} \left( \Esp\left[ Y X^t \right] - S \Esp\left[
+  & = & \Sigma_\N^{-1} \left( \Esp\left[ Y X^t \right] - S \Esp\left[
   \Esp\left[X | Y \right] \Esp\left[X | Y \right]^t \right] \right)\\[2.5mm]
   %
-  & = & \Sigma_\Gauss^{-1} S \left( \Esp\left[ X X^t \right] - \Esp\left[
+  & = & \Sigma_\N^{-1} S \left( \Esp\left[ X X^t \right] - \Esp\left[
   \Esp\left[X | Y \right] \Esp\left[X | Y \right]^t \right] \right)
   \end{eqnarray*}
   %
-  la \'ultima l\'inea viniendo de $Y  = S X + \Gauss$ con $\Gauss$ independiente
+  la \'ultima l\'inea viniendo de $Y  = S X + \N$ con $\N$ independiente
   de  $X$ y  de  promedio 0.   La prueba  se  cierra notando  que \  $\Esp\left[
     \Esp[X|Y] \right]  = \Esp[X]$  \ y por  la formula de  K\"onig-Huyggens (ver
   cap\'itulo~\ref{cap:MP:TeoriaProbabilidades},
@@ -1188,11 +1202,11 @@ identidad entre \ $I(X;Y)$ \ y \ $\E(X|Y)$:
 \end{proof}
 %
 \noindent  La  primera versi\'on  de  esta  identidad se  recupera  con  \ $S  =
-\sqrt{\snr}$, \ $\Sigma_\Gauss =  I$ \ y \ $X$ \ de  covarianza la identidad; $s$ \
+\sqrt{\snr}$, \ $\Sigma_\N =  I$ \ y \ $X$ \ de  covarianza la identidad; $s$ \
 es conocido como relaci\'on se\~nale/ruido en este caso.
 
 Existen versiones a\'un m\'as completas  (con gradientes con respeto a la matriz
-\  $\Sigma_\Gauss$  \  por  ejemplo)  que se  pueden  consultar  en~\cite{Joh04,
+\  $\Sigma_\N$  \  por  ejemplo)  que se  pueden  consultar  en~\cite{Joh04,
   PalVer06, PayPal09}.
 
 
@@ -1228,15 +1242,15 @@ entrop\'ia''~\cite{WanMad04}.
 %
 \begin{proof}
   De la desigualdad de la potencia entr\'opica se obtiene \ $N(X + \sqrt{\theta}
-  \Gauss)  \ge N(X)  + \theta  \left| \Sigma_\Gauss  \right|^{\frac1d}$. Tomando
-  $\Sigma_\Gauss =  I$, se  obtiene \ $\forall  \, \theta  > 0,$ \  $\frac{N(X +
-    \sqrt{\theta} \Gauss) - N(X)}{\theta}  \ge 1$.  Entonces, tomando el l\'imite
+  \N)  \ge N(X)  + \theta  \left| \Sigma_\N  \right|^{\frac1d}$. Tomando
+  $\Sigma_\N =  I$, se  obtiene \ $\forall  \, \theta  > 0,$ \  $\frac{N(X +
+    \sqrt{\theta} \N) - N(X)}{\theta}  \ge 1$.  Entonces, tomando el l\'imite
   \ $\theta \to 0$, aparece  que \ $\left. \frac{d}{d\theta} N(X + \sqrt{\theta}
-    \Gauss)   \right|_{\theta  =   0}  \ge   1$.   La   prueba  se   cierra  con
-  $\frac{d}{d\theta}  N(X   +  \sqrt{\theta}   \Gauss)  =  \frac{1}{2   \pi  \e}
-  \frac{d}{d\theta}  \exp\left( \frac2d  H(X +  \sqrt{\theta} \Gauss)  \right) =
-  \frac2d  N(X +  \sqrt{\theta}  \Gauss) \frac{d}{d\theta}  H(X +  \sqrt{\theta}
-  \Gauss) = d N(X +  \sqrt{\theta} \Gauss) \Tr\left( J(X + \sqrt{\theta} \Gauss)
+    \N)   \right|_{\theta  =   0}  \ge   1$.   La   prueba  se   cierra  con
+  $\frac{d}{d\theta}  N(X   +  \sqrt{\theta}   \N)  =  \frac{1}{2   \pi  \e}
+  \frac{d}{d\theta}  \exp\left( \frac2d  H(X +  \sqrt{\theta} \N)  \right) =
+  \frac2d  N(X +  \sqrt{\theta}  \N) \frac{d}{d\theta}  H(X +  \sqrt{\theta}
+  \N) = d N(X +  \sqrt{\theta} \N) \Tr\left( J(X + \sqrt{\theta} \N)
   \right)$ \ (por la identidad de  de Bruijn).  Adem\'as, la igualdad se obtiene
   cuando se  alcanza la cota  de la desigualdad  de la potencia  entr\'opica, es
   decir cuando \ $X$ \ es gaussiano de varianza proporcional a la del ruido, que
