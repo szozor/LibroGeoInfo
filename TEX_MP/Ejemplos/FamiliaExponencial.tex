@@ -77,11 +77,11 @@ tambi\'en Pitman~\cite{Pit36}) y es definida de la manera siguiente:
   con
   %
   \[
-  \eta \in N \subset \Rset^k, \qquad Z: \Rset^k \mapsto \Rset_+, \qquad \varphi = \log(Z),
-  \qquad h: \X \mapsto \Rset_+, \qquad S: \X \mapsto \Rset^k
+  \eta \in \mathrm{N} \subset \Rset^k, \qquad Z: \Rset^k \mapsto \Rset_+, \qquad
+  \varphi = \log(Z), \qquad h: \X \mapsto \Rset_+, \qquad S: \X \mapsto \Rset^k
   \]
   %
-  donde  \ $\displaystyle  N =  \left\{  \eta \in  \Rset^k \tq  \int_\X h(x)  \,
+  donde  \ $\displaystyle  \mathrm{N} =  \left\{  \eta \in  \Rset^k \tq  \int_\X h(x)  \,
     \exp\left(  \eta^t  S(x) -  \varphi(\eta)  \right)  \,  d\mu(x) <  +  \infty
   \right\}$ \ es (convexo y) llamado {\em espacio de par\'ametros naturales}.
 \end{definicion}
@@ -120,18 +120,19 @@ forma natural. Con respeto a cada termino:
   no depende m\'as de \ $\theta$.   Por ejemplo, para la familia exponencial, en
   el caso discreto, tenemos,\ $\displaystyle p_{X|S(X) = s}(x) = \frac{P\big( (X
     = x) \cap (S(X) = s) \big)}{P(S(X)  = s)} = \frac{h(x) \exp\left( \eta^t s -
-      \varphi(\eta) \right) \un_{\{ S(x) \}}(s)}{\sum_x h(x) \exp\left( \eta^t s
-      -  \varphi(\eta) \right) \un_{\{  S(x) \}}(s)}  = \frac{h(x)  \un_{\{ S(x)
-      \}}(s)}{\sum_x   h(x)  \un_{\{   S(x)   \}}(s)}$  \   no   depende  de   \
-  $\eta$.      \SZ{Veremos     en      el     capitulo~\ref{Cap:SZ:Informacion},
-    secci\'on~\ref{Ssec:SZ:Fisher}}  que la informaci\'on  de Fisher  en $\eta$,
-  medida informacional  y apareciendo en  la cota del error  cuadratico m\'inimo
-  posible de  un estimador de  \ $\eta$, es  la covarianza de $S$,  mostrando de
-  nuevo  que \  $S$ \  es sufiente  para caracterizar  \ $\eta$.  En  este mismo
-  capitulo,   secci\'on~\ref{Ssec:SZ:MaxEnt},   veremos    que,   sujeto   a   \
-  $\Esp[S(X)]$,  la  distribuci\'on  que  m\'aximiza la  entrop\'ia,  medida  de
-  incerteza,  es una  distribuci\'on exponencial,  enfatizando esta  familia con
-  respecto a una estadistica dada.
+      \varphi(\eta)  \right) \un_{\{  S(x) \}}(s)}{\displaystyle  \sum_{x\in \X}
+    h(x)  \exp\left( \eta^t  s -  \varphi(\eta) \right)  \un_{\{ S(x)  \}}(s)} =
+  \frac{h(x)  \un_{\{ S(x)  \}}(s)}{\displaystyle \sum_{x  \in \X}  h(x) \un_{\{
+      S(x)   \}}(s)}$   \   no   depende   de   \   $\eta$.    Veremos   en   el
+  capitulo~\ref{Cap:SZ:Informacion},   secci\'on~\ref{Ssec:SZ:Fisher}   que   la
+  informaci\'on de  Fisher en $\eta$,  medida informacional y apareciendo  en la
+  cota del error cuadratico m\'inimo posible  de un estimador de \ $\eta$, es la
+  covarianza  de  $S$,  mostrando  de  nuevo  que  \  $S$  \  es  sufiente  para
+  caracterizar      \      $\eta$.        En      este      mismo      capitulo,
+  secci\'on~\ref{Ssec:SZ:MaxEnt},  veremos  que,  sujeto  a \  $\Esp[S(X)]$,  la
+  distribuci\'on  que m\'aximiza  la  entrop\'ia, medida  de  incerteza, es  una
+  distribuci\'on  exponencial, enfatizando el  rol de  esta familia  en f\'isica
+  cuando se tiene la media de una estadistica fija (ej. energ\'ia fija).
 %
 \item $\theta$  es el par\'ametro, escalar  o multivariado, y  $\eta$ es llamado
   {\em par\'ametro natural}.
@@ -216,7 +217,171 @@ $\varphi$ a los cumulantes:
   \end{eqnarray*}
 \end{proof}
 
+En problemas  de estimaci\'on, frecuentemente, se tiene  $n$ vectores aleatorios
+independiente  de misma  ley que  se  usan para  estimar un  p\'arametro. En  la
+familia exponencial, resuelte que  la distribuci\'on conjunta en tal situaci\'on
+queda en la familia exponencial:
+%
+\begin{lema}
+  Sean \  $X_1 , \ldots ,  X_n$ \ vectores aleatorios,  independientes, de misma
+  ley de la familia exponencial natural,  de estadistica suficiente \ $S$ \ y de
+  log-funci\'on de  partici\'on \ $\varphi$. Entonces  la ley conjunta  de los \
+  $X_i$  \   cae  el  la   familia  exponencial  de  estadistica   suficiente  \
+  $\displaystyle   (x_1,\ldots,x_n)  \mapsto   \sum_{i=1}^n  S(x_i)$   \   y  de
+  log-funci\'on de partici\'on \ $n \varphi$.
+\end{lema}
+%
+\begin{proof}
+  El resulta  es inmediato siendos  los \ $X_i$  \ independientes, dando  la ley
+  conjunta como el producto de las leyes de los $X_i$.
+\end{proof}
 
-\SZ{Van den Bos 2007, p. 33, informaci\'on de Fisher}
 
-\SZ{Volver a esta en el problema MaxEnt (revisar el texto)}
+Muchas distribuciones  caen en la familia  exponencial, como por  ejemplo la ley
+gamma.
+%
+\begin{ejemplo}
+  Sea  \  $p_X$  \  distribuci\'on  gamma \  $t_\nu(0,I)$.  Esta  distribuci\'on
+  partenece a la familia exponencial. De hecho, se puede escribir la ley bajo la
+  forma
+  %
+  \[
+p_X(x) = 
+  \]
+  %
+  \SZ{Aparece  que  el  par\'amtetro natural  es  $\eta  =  $ y  le  estadistica
+    suficiente correspondiente es $S(x) = $.}
+\end{ejemplo}
+
+Si muchas distribuciones  partenecen a la familia exponencial,  no todas cane en
+esta familia:
+%
+\begin{ejemplo}
+  Sea \ $p_X$ \ distribuci\'on  Student-t \ $t_\nu(0,I)$. Esta distribuci\'on no
+  cae el  la familia exponencial. De  hecho, se puede todav\'ia  escribir la ley
+  bajo la forma
+  %
+  \[
+  p_X(x) = C(\nu) \exp\left( - \frac{d+\nu}{2} \log\left( 1 + \frac{x^t x}{\nu} \right) \right)
+  \]
+  %
+  A    pesar   de    que    la   ley    parece    tener   la    forma   de    la
+  definici\'on~\ref{Def:MP:FamiliaExponencial}    con   \    $\eta(\nu)    =   -
+  \frac{d+\nu}{2}$, su factor \ $\log\left(  1 + \frac{x^t x}{\nu} \right)$ \ no
+  es funci\'on \'unicamente de \ $x$; se queda el par\'ametro \ $\nu$.  Lo mismo
+  occurre naturalmente para cualquier distribuci\'on \ $t_\nu(m,\Sigma)$.
+\end{ejemplo}
+
+De las distribuciones que hemos visto:
+%
+\begin{itemize}
+\item Caen en la familia exponencial:
+%
+\item No partenecen a la familia exponencial:
+\end{itemize}
+
+\SZ{Pasar todas las distribuciones vistas y decir la cuales son el la familia exponencial. Primero 2 ejemplos emfatizado: la gausiana (es),}
+
+Las distribuciones exponenciales aparecen frecuentemente en f\'isica estadistica
+a trav\'es  de la teor\'ia de Boltzmann~\cite{Bol,  MezMon}. Adem\'as, cuantidad
+f\'isica se derivan de la log-funci\'on partici\'on~\cite{toto, titi}:
+%
+\begin{ejemplo}
+  En f\'isica estadistica, se enfrente al problema de descripci\'on macroscopico
+  de un sistema  de muchas particular (ej. hirviente de  un liquido). Hay tantas
+  particulas que no se puede estudiar tales sistemas con las leyes usuales de la
+  mec\'anica, as\'i que se usa  un enfoque probabilistico. Por eso, se considera
+  un espacio  \ $\X$  \ $d$-dimensional dicho  {\em espacio  de configuraciones}
+  (puede ser  discreto o  continuo). En \  $x =  \begin{bmatrix} x_1 &  \cdots &
+    x_d\end{bmatrix}$,  cada  \ $x_i$  \  representa el  {\em  estado}  de la  \
+  $i$-\'esima particula  (posici\'on, velocidad, esp\'in,\ldots).  Lo importante
+  es que a un  tipo de sistema se asocia una funci\'on  energ\'ia \ $\E(x)$. Por
+  ejemplo, en un sistema  sin interacciones, $\displaystyle \E(x) = \sum_{i=1}^d
+  \E_i(x_i)$.  El el caso  del gaz  perfecto, $\displaystyle  \E(x) =  \frac12 m
+  \sum_{i=1}^d x_i^2$ \ donde  \ $m$ \ es la masa de cada  particula y \ $x_i$ \
+  la  velocidad  de  la  \  $i$-\'esima particula  (espacio  de  configuraciones
+  continuo).   En  el  {\em   modelo  ferromagnetico  de  Ising},  se  considera
+  particulas en una ret\'icula y \ $x_i = \pm 1$ \ es el esp\'in de la particula
+  \ $i$ (espacio de configuraciones  discreto).  Sometido a un campo magnetico \
+  $B$,  la  energ\'ia  es  dada  por  \ $\displaystyle  \E(x)  =  -  \sum_{(i,j)
+    \mbox{\tiny  vecinos}}  x_i  x_j  - B  \sum_{i=1}^d  x_i$~\cite{titi,  toto,
+    MezMon}.  Se puede poner pesos \ $J_{i,j}$ \ en cada vecinos, positivos para
+  interracciones    ferromagneticos,     y    negativos    para    interacciones
+  antiferromagneticos (modelos  {\em vidrio de esp\'in}, o  m\'as exactamente de
+  Edwards-Anderson~\cite{titi,  toto,  MezMon}).  El  modelo de  Curie-Weiss  se
+  presenta  de  la misma  manera,  con la  energ\'ia  $\displaystyle  \E(x) =  -
+  \frac{1}{d}  \sum_{(i,j)   \mbox{\tiny  pares}}  x_i  x_j   +  B  \sum_{i=1}^d
+  x_i$~\cite{MezMon, toto, titi}.
+  % Boltzmann 1877
+
+  Seg\'un  la  teoria  de  Gibbs-Boltzmann,  la  dicha  {\em  distribuci\'on  de
+    Gibbs-Boltzman}  asociada  a  un  espacio  de configuraci\'on  y  modelo  de
+  energ\'ia es dada por
+  %
+  \[
+  p_X(x) = \frac{1}{Z(\beta)}  \exp\left( - \beta \E(x) \right),  \qquad \beta =
+  \frac{1}{k_B T}
+  \]
+  %
+  donde $k_B \approx  1.38 \times 10^{-23}$ julio por kelvin  es la constante de
+  Boltzmann,  y  \ $T$  \  es la  temperatura  en  kelvin.  Esta  distribuci\'on
+  partenece claramente a la familia exponencial natural de par\'ametro \ $\beta$
+  \  y de  estad\'istica suficiente  \ $-\E(x)$  (ac\'a, $h  = 1$).  En f\'isica
+  estadistica, la  log-funci\'on de partici\'on  aparece en varias  cantidades y
+  potenciales f\'isicos:
+  %
+  \[
+  F(\beta) = - \frac{1}{\beta} \log Z(\beta)
+  \]
+  %
+  es la {\em energ\'ia libre} del  sistema. Es la energ\'ia disponible (o que se
+  puede usar) de un sistema aislado.
+
+  Luego, se define
+  %
+  \[
+  U(\beta) =  \frac{\partial}{\partial \beta} \left( \beta F(\beta)  \right) = -
+  \frac{\partial \log Z(\beta)}{\partial \beta} = \Esp\left[ \E(X) \right]
+  \]
+  %
+  donde  \  $X$ \  seria  el  vector aleatorio  de  distribuci\'on  \ $p_X$.   \
+  $U(\beta)$ \ es  la {\em energ\'ia interna} del  sistema, promedio estadistico
+  de la energ\'i a trav\'es de todas las configuraciones posibles.
+
+  Se define  tambi\'en una medida de  incerteza llamada {\em  entrop\'ia} o {\em
+    entrop\'ia de  Gibbs}, concepto  en lo cual  volveremos profundamente  en el
+  capitulo~\ref{Cap:SZ:Informacion}  en el marco  de variables  aleatorias m\'as
+  generales.  Esta medida caracteriza las fluctuaciones de la energ\'ia libre,
+  %
+  \[
+  S(\beta) = \beta^2 \frac{\partial}{\partial \beta} F(\beta)
+  \]
+  %
+  Aparece   por   un  lado   que   \  $S(\beta)   =   \log   Z(\beta)  -   \beta
+  \frac{\partial}{\partial \beta} \log Z(\beta)$  \ es decir, reconiciendo en el
+  primer t\'ermino \ $- \beta F(\beta)$ \ y en el secundo \ $\beta U(\beta)$,
+  %
+  \[
+  F = U - k_B T S
+  \]
+  %
+  conocido como transformada de Legendre de la energ\'ia interna, y consecuencia
+  de la primera ley de la  termodynamica. Aparece tambi\'en que $S(\beta) = \log
+  Z(\beta) +  \beta \Esp[ \E(X) ] =  \int_\X \left( \log Z(\beta)  + \beta \E(x)
+  \right) p_X(x) \, d\mu(x)$ \ es decir
+  %
+  \[
+  S = - \int_\X p_X(x) \, \log p_X(x) \, d\mu(x)
+  \]
+  %
+  Volveremos    en    esta    definici\'on    de    la    entrop\'ia    en    el
+  capitulo~\ref{Cap:SZ:Informacion}.
+\end{ejemplo}
+
+\SZ{A ver~\cite{Bol96, Bol98, Jay65,
+  Mer10, Mer18, Gib02, CovTho06,
+      Rio07, Max67}}
+% Ver information geometry
+% https://en.wikipedia.org/wiki/Partition_function_(mathematics)
+
+%\SZ{Van den Bos 2007, p. 33, informaci\'on de Fisher}
