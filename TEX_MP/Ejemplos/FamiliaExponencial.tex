@@ -33,7 +33,7 @@ la inferencia bayesiana. Esta clase es la familia dicha exponencial~\cite{Dar35,
 en esta  familia, se  puede por  ejemplo deducir a  priori conjugados,  es decir
 tales que  la distribuci\'on dicha a  posteriori caiga en la  misma familia (\ie
 tenga la  misma forma  param\'etrica pero con  par\'ametros dependientes  de los
-datos)~\footnote{Ver nota de pie~\footref{Foot:SZ:BayesPrior}. Recordamos que si
+datos)~\footnote{Ver nota de pie~\footref{Foot:MP:BayesPrior}. Recordamos que si
   observaciones tienen  una distribuci\'on \ $p_{X|\Theta=\theta}(x)$  \ con una
   distribuci\'on a  priori del par\'ametro  $p_\Theta(\theta)$, por la  regla de
   Bayes el a  posteriori, es decir la ley del  parametro dados las observaciones
@@ -91,15 +91,15 @@ Se notara  que con  la reparametrizaci\'on \  $\eta(\theta)$ \ se  puede siempre
 forma natural. Con respeto a cada termino:
 %
 \begin{itemize}
-\item  $S$  es  llamada  {\em  estad\'istica suficiente}  o  {\em  estad\'istica
+\item  $S(X)$ es  llamada {\em  estad\'istica suficiente}  o  {\em estad\'istica
     exaustiva}. Esta  denominaci\'on viene  del hecho que  el conocimiento  de \
-  $S(x)$  \  es  suficiente para  estimar  $\eta$,  o  un resumen  exaustivo  de
+  $S(X)$  \  es  suficiente para  estimar  $\eta$,  o  un resumen  exaustivo  de
   $\eta$. En particular, la estimaci\'on de verosimilitud~\footnote{El estimador
     del m\'aximo  de verosilitud \ $\eta_{\mathrm{mv}}$  \ es el \  $\eta$ \ que
     m\'aximiza \ $p_X$  \ o cualquier funci\'on creciente  como el logaritmo por
     ejemplo.    Para   la   familia   exponencial,  eso   da   sencillamente   \
     $\eta_{\mathrm{mv}}$  \  satisficiendo  \  $S(x)  =  \nabla  \varphi(\eta)$,
-    dependiente    solamente     de    $S(x)$.},    o     cualquier    estimador
+    dependiente solamente de  $S(x)$.\label{Foot:MP:MLE}}, o cualquier estimador
   Bayesiano~\footnote{Ver nota  de pie~\footref{Foot:SZ:BayesPrior}. Recuerdense
     que se modeliza  el par\'ametro como aleatorio, as\'i  que la distribuci\'on
     que se considera se ve como la distribuci\'on condicional \ $p_{X|N=\eta}(x)
@@ -152,9 +152,10 @@ $\varphi$ a los cumulantes:
   Sea \  $X$ \  de distribuci\'on exponencial  natural de par\'ametro  natural \
   $\eta$ \ y estad\'istica suficiente \ $S$  \ y denotamos \ $Z$ la funci\'on de
   partici\'on y  $\varphi$ su logaritmo.  Entonces,  las funci\'ones generadoras
-  de los momentos y de los cumulantes \ $M_{S(X)}$ \ y \ $C_{S(X)}$ \ del vector
-  aleatorio \ $S$ son relacionadas a \ $Z$ \ y \ a \ $\varphi = \log Z$ \ por, \
-  $\forall \: u \: \mbox{ tal que } \: u+\eta \in N$,
+  de los  momentos y de  los cumulantes \  $M_{S(X)}$ \ y  \ $C_{S(X)}$ \  de la
+  estad\'istica  suficiente \  $S(X)$ \  son relacionadas  a  \ $Z$  \ y  \ a  \
+  $\varphi = \log  Z$ \ por, \ $\forall \:  u \: \mbox{ tal que  } \: u+\eta \in
+  N$,
   %
   \[
   M_{S(X)}(u) =  \frac{Z(u+\eta)}{Z(\eta)} \qquad \mbox{y}  \qquad C_{S(X)}(u) =
@@ -226,9 +227,10 @@ queda en la familia exponencial:
   Sean \  $X_1 , \ldots ,  X_n$ \ vectores aleatorios,  independientes, de misma
   ley de la familia exponencial natural,  de estadistica suficiente \ $S$ \ y de
   log-funci\'on de  partici\'on \ $\varphi$. Entonces  la ley conjunta  de los \
-  $X_i$  \   cae  el  la   familia  exponencial  de  estadistica   suficiente  \
-  $\displaystyle   (x_1,\ldots,x_n)  \mapsto   \sum_{i=1}^n  S(x_i)$   \   y  de
-  log-funci\'on de partici\'on \ $n \varphi$.
+  $X_i$ \ cae  el la familia exponencial  de mismo orden que el  de \ $p_{X_i}$,
+  con  el   mismo  par\'ametro,  de  estadistica   suficiente  \  $\displaystyle
+  (X_1,\ldots,X_n)  \mapsto  \sum_{i=1}^n  S(X_i)$   \  y  de  log-funci\'on  de
+  partici\'on \ $n \varphi$.
 \end{lema}
 %
 \begin{proof}
@@ -236,55 +238,133 @@ queda en la familia exponencial:
   conjunta como el producto de las leyes de los $X_i$.
 \end{proof}
 
-
-Muchas distribuciones  caen en la familia  exponencial, como por  ejemplo la ley
-gamma.
+Muchas  distribuciones caen  en  la  familia exponencial,  que  sean discreta  o
+continua, como lo vamos a ver en dos ejemplos.
 %
 \begin{ejemplo}
-  Sea  \  $p_X$  \  distribuci\'on  gamma \  $t_\nu(0,I)$.  Esta  distribuci\'on
-  partenece a la familia exponencial. De hecho, se puede escribir la ley bajo la
-  forma
+  Sea  \ $p_X$  \ distribuci\'on  de Bernoulli  \ $\B(p)$.   Esta distribuci\'on
+  partenece a la familia exponencial de  orden $1$.  De hecho, se puede escribir
+  la ley \ $p_X(x) = p^x (1-p)^{1-x}$ \ bajo la forma
   %
   \[
-p_X(x) = 
+  p_X(x) = \exp\left( x \log \left( \frac{p}{1-p} \right) + \log(1-p) \right)
   \]
   %
-  \SZ{Aparece  que  el  par\'amtetro natural  es  $\eta  =  $ y  le  estadistica
-    suficiente correspondiente es $S(x) = $.}
+  Aparece  que el par\'ametro  natural es  \ $\eta  = \log  \left( \frac{p}{1-p}
+  \right)$ \  y la estadistica  suficiente correspondiente es  \ $S(X) =  X$. En
+  particular, para \  $X_i, \: i = 1,  \ldots , n$ \ independientes  tales que \
+  $X_i  \sim  \B(p)$, una  estadistica  sufficiente de  la  ley  conjunta es  el
+  promedio empirico $\displaystyle  \widebar{X} = \frac{1}{n} \sum_{i=1}^n X_i$.
+  Aparece  que  el estimador  de  verosimilitud  m\'axima~\footnote{Ver nota  de
+    pie~\footref{Foot:MP:MLE}}  es  precisamente  el  promedio empirico;  es  el
+  estimador  \  $\widehat{p}$  \   de  error  cuadratico  \  $\Esp\left[  \left(
+      \widehat{p} - p \right)^2 \right]$ \ m\'inimo (ver ej.~\cite{Kay93}).
 \end{ejemplo}
 
-Si muchas distribuciones  partenecen a la familia exponencial,  no todas cane en
+\begin{ejemplo}
+  Sea \ $p_X$ \ distribuci\'on gamma \ $\G(a,b)$.  Esta distribuci\'on partenece
+  a la familia exponencial  de orden $2$.  De hecho, se puede  escribir la ley \
+  bajo la forma
+  %
+  \[
+  p_X(x)     =    \frac{1}{x}    \,     \exp\left(    \begin{bmatrix}     a    &
+      b \end{bmatrix} \begin{bmatrix}  \log x \\ - x  \end{bmatrix} - \log\left(
+      \frac{\Gamma(a)}{b^a} \right)\right)
+  \]
+  %
+  El   par\'ametro  natural   es   as\'i   \  $\eta   =   \begin{bmatrix}  a   &
+    b \end{bmatrix}^t$ \ y la  estadistica suficiente correspondiente es \ $S(X)
+  = \begin{bmatrix} \log x & - x \end{bmatrix}^t$.
+\end{ejemplo}
+
+Si muchas distribuciones  partenecen a la familia exponencial,  no todas caen en
 esta familia:
 %
 \begin{ejemplo}
-  Sea \ $p_X$ \ distribuci\'on  Student-t \ $t_\nu(0,I)$. Esta distribuci\'on no
+  Sea \ $p_X$ \ distribuci\'on  Student-t \ $t_\nu(m,\Sigma)$. Esta distribuci\'on no
   cae el  la familia exponencial. De  hecho, se puede todav\'ia  escribir la ley
   bajo la forma
   %
   \[
-  p_X(x) = C(\nu) \exp\left( - \frac{d+\nu}{2} \log\left( 1 + \frac{x^t x}{\nu} \right) \right)
+  p_X(x)   =  C(\nu,\Sigma)   \exp\left(  -   \frac{d+\nu}{2}  \log\left(   1  +
+      \frac{(x-m)^t \Sigma^{-1} (x-m)}{\nu} \right) \right)
   \]
   %
   A    pesar   de    que    la   ley    parece    tener   la    forma   de    la
   definici\'on~\ref{Def:MP:FamiliaExponencial}    con   \    $\eta(\nu)    =   -
-  \frac{d+\nu}{2}$, su factor \ $\log\left(  1 + \frac{x^t x}{\nu} \right)$ \ no
-  es funci\'on \'unicamente de \ $x$; se queda el par\'ametro \ $\nu$.  Lo mismo
-  occurre naturalmente para cualquier distribuci\'on \ $t_\nu(m,\Sigma)$.
+  \frac{d+\nu}{2}$,  su  factor  \  $\log\left( 1  +  \frac{(x-m)^t  \Sigma^{-1}
+      (x-m)}{\nu} \right)$  \ no es funci\'on  \'unicamente de \  $x$; se quedan
+  todo los par\'ametros \ $\nu, \: m, \: \Sigma$. A\'un si un de esos es fijo, y
+  no visto como par\'ametro, quedar\'a un parametro en este termino.
+\end{ejemplo}
+
+Se puede tambi\'en que una ley  partenece o no a la familia exponencial, seg\'un
+que unos par\'ametros sean fijos  (de hecho, no on par\'ametros m\'as entonces),
+o no:
+%
+\begin{ejemplo}
+  Sea \  $p_X$ \ distribuci\'on  binomial \  $\B(n,p)$. Si \  $n$ \ es  fijo, es
+  decir  no  visto  como  par\'ametro,  la  distribuci\'on  cae  el  la  familia
+  exponencial  de orden $1$.  Si se  consideran ambos  \ $n$  \ y  \ $p$  \ como
+  par\'ametros,  no  cea m\'as  en  la familia  exponencial.  Para  ver eso,  se
+  escribir la ley bajo la forma
+  %
+  \[
+  %begin{eqnarray*}
+  p_X(x) = \frac{n!}{x! (n-x)!}  \exp\left( x \log\left( \frac{p}{1-p}
+    \right) + n \, \log(1-p) \right)
+  %\\[2mm]
+  %
+  %& = & \frac{1}{x!}  \exp\left( - \log\left( (n-x)! \right) + x \log\left(
+  %\frac{p}{1-p} \right) + n \, \log(1-p) + \log(n!) \right)
+  %\end{eqnarray*}
+  \]
+  %
+  Entonces, si  \ $n$  \ es fijo,  se concluye que  \ $p_X$  \ es en  la familia
+  exponencial de  orden $1$, de  par\'ametro \ $\eta =  \log\left( \frac{p}{1-p}
+  \right)$  \  y estad\'istica  suficiente  correspondiente  \  $S(x) =  x$.  Al
+  rev\'es,  si \  $n$ \  es un  par\'ametro  (que \  $p$ \  sea fijo  o no),  en
+  $(n-x)!$, no se puede  ``separar'' \ $x$ \ de \ $n$  \ y tampoco escribir este
+  termino  de la  forma \  $\exp(  f(n) g(x)  )$: la  ley  no es  de la  familia
+  exponencial mas.
 \end{ejemplo}
 
 De las distribuciones que hemos visto:
 %
 \begin{itemize}
-\item Caen en la familia exponencial:
+\item Caen en  la familia exponencial la leyes: de  Bernoulli, binomial cuando \
+  $n$ \ es fijo, negative binomial cuando  \ $r$ \ es fijo, multinomial cuando \
+  $n$ \  es fijo,  geometrica, de poisson,  gausiana~\footnote{En este  caso, se
+    puede ver el par\'ametro como \  $\left( m , \Sigma^{-1} \right)$ \ en lugar
+    del vector formado  de los \ $m_i$ \ y  \ $\left( \Sigma^{-1} \right)_{i,j},
+    \:  i \le  j$ \  y la  estad\'istica suficiente  como \  $\left( x  ,  x x^t
+    \right)$ \ siendo $x^t \Sigma^{-1} x = \Tr\left( \Sigma^{-1} x x^t \right)$,
+    en lugar del vector formado  de los \ $x_i$ \ y \ $x_i x_j,  \: i \le j$ (de
+    la   simetr\'ia).   El   orden  es   $d  +   \frac{d   (d+1)}{2}$.},  gamma,
+  Wishart~\footnote{De  nuevo,  en  este   caso  se  puede  ver  el  par\'ametro
+    formalmente  como \  $\left(  \nu ,  V^{-1}  \right)$ \  y la  estad\'istica
+    suficiente como \  $\left( \log |x| ,  x \right)$. El orden es  $1 + \frac{d
+      (d+1)}{2}$.}, beta, de Dirichlet
 %
-\item No partenecen a la familia exponencial:
+% resp. eta = log(p/(1-p)), log(p/(1-p)), log p, log p = [log p_1 ... \log p_k], log(1-p), log lambda
+%       (m,Sigma^{-1}), [a b], (nu,V^{-1}), [a b], a = [a_1 ... a_k]
+% resp. S = x, x, x, x = [x_1 ... x_k], x, x
+%       (x,x x^t), [log x -x], (log |x| , x), [log x  log(1-x)], [log x_1 ... log(x_k)]
+%
+\item No partenecen a la familia  exponencial las leyes: binomial cuando \ $n$ \
+  es  un  par\'ametro, negative  binomial  cuando \  $r$  \  es un  par\'ametro,
+  multinomial cuando \ $n$ \ es un par\'ametro, hipergeometrica, hipergeometrica
+  negativa,     hipergeometrica      multivaluada~\footnote{En     los     casos
+    hipergeometricos, har\'ia falta que sean  fijos respectivamente \ $n, m, k$,
+    \ $n,  r, k$  \ y  \ $n,  m, k_1, \ldots  , k_c$  \ y  la leyes  no ser\'ian
+    parametricas  mas.}, Student-t, uniformas~\footnote{Eso  viene del  hecho de
+    que el soporte depende de los par\'ametros.}.
 \end{itemize}
 
-\SZ{Pasar todas las distribuciones vistas y decir la cuales son el la familia exponencial. Primero 2 ejemplos emfatizado: la gausiana (es),}
-
 Las distribuciones exponenciales aparecen frecuentemente en f\'isica estadistica
-a trav\'es  de la teor\'ia de Boltzmann~\cite{Bol,  MezMon}. Adem\'as, cuantidad
-f\'isica se derivan de la log-funci\'on partici\'on~\cite{toto, titi}:
+a  trav\'es de  la teor\'ia  de Boltzmann~\cite{Bol96,  Bol98,  Gib02, LanLif80,
+  MezMon09,  Mer10,  Mer18}.  Adem\'as,  cuantidad  f\'isica  se  derivan de  la
+log-funci\'on partici\'on~\cite{Max67, Gib02, LanLif80, MezMon09, Mer10, Mer18}:
 %
 \begin{ejemplo}
   En f\'isica estadistica, se enfrente al problema de descripci\'on macroscopico
@@ -294,25 +374,27 @@ f\'isica se derivan de la log-funci\'on partici\'on~\cite{toto, titi}:
   un espacio  \ $\X$  \ $d$-dimensional dicho  {\em espacio  de configuraciones}
   (puede ser  discreto o  continuo). En \  $x =  \begin{bmatrix} x_1 &  \cdots &
     x_d\end{bmatrix}$,  cada  \ $x_i$  \  representa el  {\em  estado}  de la  \
-  $i$-\'esima particula  (posici\'on, velocidad, esp\'in,\ldots).  Lo importante
+  $i$-\'esima particula (posici\'on,  velocidad, esp\'in,\ldots).  Lo importante
   es que a un  tipo de sistema se asocia una funci\'on  energ\'ia \ $\E(x)$. Por
   ejemplo, en un sistema  sin interacciones, $\displaystyle \E(x) = \sum_{i=1}^d
-  \E_i(x_i)$.  El el caso  del gaz  perfecto, $\displaystyle  \E(x) =  \frac12 m
+  \E_i(x_i)$.  El  el caso  del gaz perfecto,  $\displaystyle \E(x) =  \frac12 m
   \sum_{i=1}^d x_i^2$ \ donde  \ $m$ \ es la masa de cada  particula y \ $x_i$ \
   la  velocidad  de  la  \  $i$-\'esima particula  (espacio  de  configuraciones
   continuo).   En  el  {\em   modelo  ferromagnetico  de  Ising},  se  considera
   particulas en una ret\'icula y \ $x_i = \pm 1$ \ es el esp\'in de la particula
   \ $i$ (espacio de configuraciones  discreto).  Sometido a un campo magnetico \
   $B$,  la  energ\'ia  es  dada  por  \ $\displaystyle  \E(x)  =  -  \sum_{(i,j)
-    \mbox{\tiny  vecinos}}  x_i  x_j  - B  \sum_{i=1}^d  x_i$~\cite{titi,  toto,
-    MezMon}.  Se puede poner pesos \ $J_{i,j}$ \ en cada vecinos, positivos para
-  interracciones    ferromagneticos,     y    negativos    para    interacciones
-  antiferromagneticos (modelos  {\em vidrio de esp\'in}, o  m\'as exactamente de
-  Edwards-Anderson~\cite{titi,  toto,  MezMon}).  El  modelo de  Curie-Weiss  se
+    \mbox{\tiny  vecinos}} x_i  x_j  - B  \sum_{i=1}^d x_i$~\cite{Len20,  Isi25,
+    Ons44, LanLif80, MezMon09, Mer10, Mer18}.   Se puede poner pesos \ $J_{i,j}$
+  \ en cada vecinos,  positivos para interracciones ferromagneticos, y negativos
+  para  interacciones antiferromagneticos  (modelos {\em  vidrio de  esp\'in}, o
+  m\'as  exactamente  de  Edwards-Anderson~\cite{EdwAnd75,  LanLif80,  MezMon09,
+    Mer10,  Mer18}).  El  modelo de  Curie-Weiss~\footnote{Fue llamado  as\'i en
+    homenaje  a los trabajos  de P.  Curie~\cite{Cur95} y  P. Weiss~\cite{Wei96,
+      Wei07}  quien  trabajaron   sobre  los  materiales  ferromagneticos.}   se
   presenta  de  la misma  manera,  con la  energ\'ia  $\displaystyle  \E(x) =  -
   \frac{1}{d}  \sum_{(i,j)   \mbox{\tiny  pares}}  x_i  x_j   +  B  \sum_{i=1}^d
-  x_i$~\cite{MezMon, toto, titi}.
-  % Boltzmann 1877
+  x_i$~\cite{MezMon09, Mer10, Mer18}.
 
   Seg\'un  la  teoria  de  Gibbs-Boltzmann,  la  dicha  {\em  distribuci\'on  de
     Gibbs-Boltzman}  asociada  a  un  espacio  de configuraci\'on  y  modelo  de
@@ -334,8 +416,9 @@ f\'isica se derivan de la log-funci\'on partici\'on~\cite{toto, titi}:
   F(\beta) = - \frac{1}{\beta} \log Z(\beta)
   \]
   %
-  es la {\em energ\'ia libre} del  sistema. Es la energ\'ia disponible (o que se
-  puede usar) de un sistema aislado.
+  es  la  {\em  energ\'ia  libre}  o  {\em energ\'ia  libre  de  Helmholtz}  del
+  sistema.  Es la  energ\'ia disponible  (o  que se  puede usar)  de un  sistema
+  aislado.
 
   Luego, se define
   %
@@ -346,12 +429,14 @@ f\'isica se derivan de la log-funci\'on partici\'on~\cite{toto, titi}:
   %
   donde  \  $X$ \  seria  el  vector aleatorio  de  distribuci\'on  \ $p_X$.   \
   $U(\beta)$ \ es  la {\em energ\'ia interna} del  sistema, promedio estadistico
-  de la energ\'i a trav\'es de todas las configuraciones posibles.
+  de la energ\'ia a trav\'es de todas las configuraciones posibles.
 
   Se define  tambi\'en una medida de  incerteza llamada {\em  entrop\'ia} o {\em
-    entrop\'ia de  Gibbs}, concepto  en lo cual  volveremos profundamente  en el
-  capitulo~\ref{Cap:SZ:Informacion}  en el marco  de variables  aleatorias m\'as
-  generales.  Esta medida caracteriza las fluctuaciones de la energ\'ia libre,
+    entrop\'ia  de  Gibbs}~\cite{Bol77, Bol96,  Bol98,  Gib02, Jay65,  LanLif80,
+    MezMon09, Mer10,  Mer18}.  Esta medida  caracteriza las fluctuaciones  de la
+  energ\'ia libre~\footnote{Se  usa la letra \ $S$  \ que la primera  que se uso
+    historicamente. Obviamente  no corresponde a la estadica  sufficiente que es
+    ac\'a $\E$.},
   %
   \[
   S(\beta) = \beta^2 \frac{\partial}{\partial \beta} F(\beta)
@@ -366,21 +451,23 @@ f\'isica se derivan de la log-funci\'on partici\'on~\cite{toto, titi}:
   \]
   %
   conocido como transformada de Legendre de la energ\'ia interna, y consecuencia
-  de la primera ley de la  termodynamica. Aparece tambi\'en que $S(\beta) = \log
-  Z(\beta) +  \beta \Esp[ \E(X) ] =  \int_\X \left( \log Z(\beta)  + \beta \E(x)
-  \right) p_X(x) \, d\mu(x)$ \ es decir
+  de la  primera ley de  la termodynamica. Aparece tambi\'en  que $\displaystyle
+  S(\beta) = \log Z(\beta) + \beta  \Esp[ \E(X) ] = \int_\X \left( \log Z(\beta)
+    + \beta \E(x) \right) p_X(x) \, d\mu(x)$ \ es decir
   %
   \[
   S = - \int_\X p_X(x) \, \log p_X(x) \, d\mu(x)
   \]
   %
   Volveremos    en    esta    definici\'on    de    la    entrop\'ia    en    el
-  capitulo~\ref{Cap:SZ:Informacion}.
+  capitulo~\ref{Cap:SZ:Informacion} en un marco m\'as general.
 \end{ejemplo}
 
 \SZ{A ver~\cite{Bol96, Bol98, Jay65,
   Mer10, Mer18, Gib02, CovTho06,
       Rio07, Max67}}
+
+\SZ{Hablar de estadistica suficiente m\'inima?}
 % Ver information geometry
 % https://en.wikipedia.org/wiki/Partition_function_(mathematics)
 
