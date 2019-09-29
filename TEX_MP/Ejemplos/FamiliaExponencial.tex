@@ -111,7 +111,7 @@ forma natural. Con respeto a cada termino:
     la  ``distancia'' entre  la estimaci\'on  y el  parametro  ``verdadero'', se
     busca la funci\'on  $\widehat{\eta}$ que minimiza el costo  promedio, lo que
     es equivalente para cada \ $x$ \  a buscar el valor \ $\widehat{\eta}$ \ que
-    minimiza \  $\displaystyle \int C(\widehat{\eta},\eta)  \, \exp\left( \eta^t
+    minimiza \ $\displaystyle \int_N C(\widehat{\eta},\eta) \, \exp\left( \eta^t
       S(x)  - \varphi(\eta)  \right) \,  p_N(\eta)  \, d\mu(\eta)$~\cite{Rob07}:
     claramente,  el m\'inimo depende  solamente de  $S(x)$.}  de  $\eta$ depende
   solamente  de $S(X)$~\cite{Kay93,  LehCas98, Rob07,  Cen82,  IbaPer12, Muk00}.
@@ -335,21 +335,25 @@ De las distribuciones que hemos visto:
 \item Caen en  la familia exponencial la leyes: de  Bernoulli, binomial cuando \
   $n$ \ es fijo, negative binomial cuando  \ $r$ \ es fijo, multinomial cuando \
   $n$ \  es fijo,  geometrica, de poisson,  gausiana~\footnote{En este  caso, se
-    puede ver el par\'ametro como \  $\left( m , \Sigma^{-1} \right)$ \ en lugar
-    del vector formado  de los \ $m_i$ \ y  \ $\left( \Sigma^{-1} \right)_{i,j},
-    \:  i \le  j$ \  y la  estad\'istica suficiente  como \  $\left( x  ,  x x^t
-    \right)$ \ siendo $x^t \Sigma^{-1} x = \Tr\left( \Sigma^{-1} x x^t \right)$,
-    en lugar del vector formado  de los \ $x_i$ \ y \ $x_i x_j,  \: i \le j$ (de
-    la   simetr\'ia).   El   orden  es   $d  +   \frac{d   (d+1)}{2}$.},  gamma,
-  Wishart~\footnote{De  nuevo,  en  este   caso  se  puede  ver  el  par\'ametro
-    formalmente  como \  $\left(  \nu ,  V^{-1}  \right)$ \  y la  estad\'istica
-    suficiente como \  $\left( \log |x| ,  x \right)$. El orden es  $1 + \frac{d
-      (d+1)}{2}$.}, beta, de Dirichlet
+    puede ver  el par\'ametro  natural como \  $\left( \Sigma^{-1} m  , -\frac12
+      \Sigma^{-1}  \right)$ \  en  lugar del  vector  formado de  los \  $\left(
+      \Sigma^{-1} m \right)_i$ \ y \ $-\frac12 \left( \Sigma^{-1} \right)_{i,j},
+    \: 1 \le i \le j \le d$ \ y la estad\'istica suficiente como \ $\left( x , x
+      x^t \right)$  \ siendo  $x^t \Sigma^{-1} x  = \Tr\left( \Sigma^{-1}  x x^t
+    \right)$, en lugar  del vector formado de los  \ $x_i$ \ y \ $x_i  x_j, \: 1
+    \le  i  \le  j \le  d$  (de  la  simetr\'ia).   El  orden es  $d  +  \frac{d
+      (d+1)}{2}$.}, gamma, Wishart~\footnote{De nuevo, en este caso se puede ver
+    el  par\'ametro  natural  formalmente  como \  $\left(  \frac{\nu-d-1}{2}  ,
+      -\frac12 V^{-1}  \right)$ \ y  la estad\'istica suficiente como  \ $\left(
+      \log |x|  , x \right)$.  El orden es  $1 + \frac{d (d+1)}{2}$.},  beta, de
+  Dirichlet.
 %
-% resp. eta = log(p/(1-p)), log(p/(1-p)), log p, log p = [log p_1 ... \log p_k], log(1-p), log lambda
-%       (m,Sigma^{-1}), [a b], (nu,V^{-1}), [a b], a = [a_1 ... a_k]
-% resp. S = x, x, x, x = [x_1 ... x_k], x, x
-%       (x,x x^t), [log x -x], (log |x| , x), [log x  log(1-x)], [log x_1 ... log(x_k)]
+% resp. eta = log(p/(1-p)), log(p/(1-p)), log p, log p = [log p_1 ... \log p_k],
+%       log(1-p), log lambda, (Sigma^{-1} m , -1/2 Sigma^{-1}), [a b],
+%       ( (nu-d-1)/2 , -1/2 V^{-1}), [a b], a = [a_1 ... a_k]
+% resp. S = x, x, x, x = [x_1 ... x_k], x,
+%       x, (x,x x^t), [log x -x], (log |x| , x),
+%       [log x  log(1-x)], [log x_1 ... log(x_k)]
 %
 \item No partenecen a la familia  exponencial las leyes: binomial cuando \ $n$ \
   es  un  par\'ametro, negative  binomial  cuando \  $r$  \  es un  par\'ametro,
@@ -390,8 +394,8 @@ log-funci\'on partici\'on~\cite{Max67, Gib02, LanLif80, MezMon09, Mer10, Mer18}:
   para  interacciones antiferromagneticos  (modelos {\em  vidrio de  esp\'in}, o
   m\'as  exactamente  de  Edwards-Anderson~\cite{EdwAnd75,  LanLif80,  MezMon09,
     Mer10,  Mer18}).  El  modelo de  Curie-Weiss~\footnote{Fue llamado  as\'i en
-    homenaje  a los trabajos  de P.  Curie~\cite{Cur95} y  P. Weiss~\cite{Wei96,
-      Wei07}  quien  trabajaron   sobre  los  materiales  ferromagneticos.}   se
+    relaci\'on  a los trabajos  de P.  Curie~\cite{Cur95} y  P. Weiss~\cite{Wei96,
+      Wei07}    sobre  los  materiales  ferromagneticos.}   se
   presenta  de  la misma  manera,  con la  energ\'ia  $\displaystyle  \E(x) =  -
   \frac{1}{d}  \sum_{(i,j)   \mbox{\tiny  pares}}  x_i  x_j   +  B  \sum_{i=1}^d
   x_i$~\cite{MezMon09, Mer10, Mer18}.
@@ -434,9 +438,8 @@ log-funci\'on partici\'on~\cite{Max67, Gib02, LanLif80, MezMon09, Mer10, Mer18}:
   Se define  tambi\'en una medida de  incerteza llamada {\em  entrop\'ia} o {\em
     entrop\'ia  de  Gibbs}~\cite{Bol77, Bol96,  Bol98,  Gib02, Jay65,  LanLif80,
     MezMon09, Mer10,  Mer18}.  Esta medida  caracteriza las fluctuaciones  de la
-  energ\'ia libre~\footnote{Se  usa la letra \ $S$  \ que la primera  que se uso
-    historicamente. Obviamente  no corresponde a la estadica  sufficiente que es
-    ac\'a $\E$.},
+  energ\'ia libre~\footnote{La  letra \ $S$ \ se  uso historicamente. Obviamente
+    no corresponde a la estadica sufficiente que es ac\'a \ $\E$.},
   %
   \[
   S(\beta) = \beta^2 \frac{\partial}{\partial \beta} F(\beta)
@@ -462,10 +465,6 @@ log-funci\'on partici\'on~\cite{Max67, Gib02, LanLif80, MezMon09, Mer10, Mer18}:
   Volveremos    en    esta    definici\'on    de    la    entrop\'ia    en    el
   capitulo~\ref{Cap:SZ:Informacion} en un marco m\'as general.
 \end{ejemplo}
-
-\SZ{A ver~\cite{Bol96, Bol98, Jay65,
-  Mer10, Mer18, Gib02, CovTho06,
-      Rio07, Max67}}
 
 \SZ{Hablar de estadistica suficiente m\'inima?}
 % Ver information geometry
