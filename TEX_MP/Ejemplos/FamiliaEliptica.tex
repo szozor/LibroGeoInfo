@@ -85,8 +85,8 @@ de  probabilidad,  o  equivalentemente  por su  funci\'on  car\'acteristica.  La
 %
 \begin{teorema}[Funci\'ones y generadoras caracter\'isticas]\label{Teo:MP:GeneradorasCaracteristicas}
 %
-  Sea \  $X$ \  vector aleatorio $d$-dimensional  de distribuci\'on  eliptica al
-  torno  de  $m \in  \Rset^d$  \  y de  matriz  caracter\'istica  \ $\Sigma  \in
+  Sea \ $X$ \ vector aleatorio $d$-dimensional a simetr\'ia eliptica al torno de
+  \   $m  \in  \Rset^d$   \  y   de  matriz   caracter\'istica  \   $\Sigma  \in
   P_d^+(\Rset)$. Entonces la funci\'on caract\'eristica se escribe bajo la forma
   %
   \[
@@ -180,7 +180,8 @@ Varias vectores que hemos visto caen en esta familia:
 Un  caso particular que  va a  jugar un  rol importante  es el  de un  vector de
 distribuci\'on uniforme sobre la esfera \ $\Sset_d$, \ $U \sim \U(\Sset_d)$~\SZ{\cite{toto, titi, FanKot01}:}
 %
-\begin{ejemplo}
+\begin{ejemplo}[Distribuci\'on uniforme sobre la esfera unitaria]\label{Ej:MP:GeneCaracUniformeEsfera}
+%
   Sea \  $U \sim \U(\Sset_d)$. Entonces  \ $U \sim  \ED\left( 0 , I  , \varphi_U
   \right)$ \ con
   %
@@ -479,7 +480,7 @@ como  una mezcla de  escala de  un vector  uniforme sobre  la esfera  unitaria \
 $\Sset_d$. Este resultado es  debido a Sch{\oe}nberg~\cite{Sch38, FanKot01} y se
 enuncia como sigue:
 %
-\begin{teorema}
+\begin{teorema}[Mezcla de escala de base uniforme]\label{Teo:MP:MezclaUniforme}
   Sea  \ $X$ \  $d$-dimensional a  simetria esferica.  Entonces, este  vector se
   escribe estocasticamente como
   %
@@ -633,17 +634,166 @@ $\alpha_k$:
   Ahora, $(X-m)^t \Sigma^{-1} (X-m) = R^2 U^t U = R^2$, lo que cierra la prueba.
 \end{proof}
 
+Fijense  que  un vector  a  simetr\'ia  eliptica  no admite  necesariamente  una
+densidad con respeto a la medida de  Lebesgue, como por ejemplo en el caso de un
+vector uniforme  sobre $\Sset_d$  (pero esa tiene  una densidad,  constante, con
+respeto a la medida de Haar sobre la esfera). Un otro ejemplo puede ser \ $X = B
+G$  \ con  \  $B \sim  \B(p)$  \  y \  $G  \sim \N(0,I)$  \  independiente de  \
+$B$. $\Phi_X(\omega)  = p \, e^{-\frac{\|  \omega \|^2}{2}} + 1  - p$ \  no es \
+$L_1$,  \ie no tiene  una transformada  de Fourier  inversa usual.  Sin embargo,
+cuando un vector eliptici admite una densidad, esa tiene propiedades remarcables
+tambi\'en.
+%
+\begin{teorema}
+%
+  Sea \ $X \sim \ED(m,\Sigma,\varphi_X)$. Si  admite una  densidad~\footnote{De hecho, sufice  que admita
+    una densidad  con respeto  a una medida  que depende solamente  del volumen,
+    como la de Lebesgue pero  tambi\'en, de Haar.}, entonces esta densidad tiene
+  la forma
+  %
+  \[
+  p_X(x)  = |Sigma|^{-\frac12} d_X\left( (x-m)^t \Sigma^{-1} (x-m) \right)
+  \]
+  %
+  donde \ $d_X:  \Rset_+ \mapsto \Rset_+$ \ escalar,  es llamada {\em generadora
+    de densidad}. Reciprocamente, si la densidad  tiene esta forma, \ $X$ \ es a
+  simetr\'ia eliptica.
+\end{teorema}
+%
+\begin{proof}
+  Si perdida de generalidad, se puede considerar \ $X \sim \ED(0,I,\varphi_X)$ \
+  y recuperar el  caso general por cambio de variables.  Entonces, por cambio de
+  variables  (ver secci\'on~\ref{Sec:MP:Transformacion}) tenemos  para cualquier
+  matriz ortogonal \ $O$ \ y cualquier \ $x$
+  %
+  \[
+  p_X(x) = \Phi_{O X}(x) = |O|^{-\frac12} p_X\left( O^{-\frac12} x \right) = p_X\left( O^{-\frac12} x \right)
+  \]
+  %
+  siendo \ $|O|  = 1$~\cite{Bha97, HorJoh13}. $O^{-\frac12}$ \  es tambi\'en una
+  matriz  de  rotaci\'on,  probando de  que  \  $p_X$  \ queda  invariante  bajo
+  cualquier roraci\'on  de su  argumento, es decir  que depende solamente  de la
+  norma de $x$.
+\end{proof}
+
+De este resultado, cuando \ $X$ \ admite una densidad de probablidad, se escribe tambien
+%
+\[
+X \sim \ED(m,\Sigma,d_X)
+\]
+%
+a\'un que puede ser confuso.
+% (el uso de la letra $d$ o $\varphi$ permite diferenciar).
+
+Claramente, para \ $X \sim  \ED(m,\Sigma,d_X)$, los niveles de probabildad \ $\{
+x \tq p_X(x)  = c \} = \left\{  x \tq (x-m)^t \Sigma^{-1} (x-m) =  c \right\}$ \
+son   elipsiodes  centrados   en   \  $m$,   de   direcciones  y   estiramientos
+respectivamente  dados  por los  autovectores  y  autovalores  de $\Sigma$.  Eso
+justifica tambi\'en la denominaci\'on ``$X$ \ a distribuci\'on eliptica''.
+
+Como lo vimos, de una forma, toda las caracterisricas estadisticas de \ $X$ \ es
+en el  ``rayo'' \ $R \egald  \sqrt{(X-m)^t \Sigma^{1} (X-m)}$. En  lo que sigue,
+sin perdida de generalidad, se puede concentrarse en $X \ED(0,I,d_X)$.
+
+Primero, se puede escribir la ley de $R$ a partir de $d_X$:
+%
+\begin{teorema}[Densidad del rayo]\label{Teo:MP:DensidadRayo}
+  Sea $X \sim \ED(0,I,d_X)$ y $R  \egald \|X\|$. Si $X$ admite una densidad, $R$
+  admite tambi\'en una densidad que se escribe
+  %
+  \[
+  p_R(r)  =  \frac{2  \pi^{\frac{d}{2}}}{\Gamma\left(  \frac{d}{2}  \right)}  \,
+  r^{d-1} \, d_X\left( r^2 \right)
+  \]
+\end{teorema}
+%
+\begin{proof}
+  Como lo  hemos visto en la prueba  del teorema~\ref{Teo:MP:MezclaUniforme}, la
+  funci\'on de repartici\'on de $R$ se escribe
+  %
+  \[
+  F_R(r) = \int_{\Bset_d(0,r)} dP_X(x)
+  \]
+  %
+  es decir, $P_X$ admitiendo una densidad
+  %
+  \[
+  F_R(r) = \int_{\Bset_d(0,r)} d_X\left( x^t x \right) \, dx
+  \]
+  %
+  lo que da, de~\cite[Ec.~4.642]{GraRyz15}
+  %
+  \[
+  F_R(r)  =  \frac{2  \pi^{\frac{d}{2}}}{\Gamma\left(  \frac{d}{2}  \right)}  \,
+  \int_0^r \rho^{d-1} d_X\left( \rho^2 \right) \, d\rho
+  \]
+  %
+  $F_R$   es    continua   y   diferenciable,   llegando    al   resultado   del
+  teorema.  Volveremos   a  este  resultado  m\'as  adelante   tratando  de  las
+  coordenadas esfericas.
+\end{proof}
+
+De  este  resultado,  se puede  ahora  dar  la  relaci\'on  que existe  entre  \
+$\varphi_X$ \  y \ $d_X$  \ siendos \  $\Phi_X$ \ y  \ $p_X$ \  relacionados por
+transformada de Fourier.
+%
+\begin{teorema}
+%
+  Sea  \  $X  \sim   \ED(m,\Sigma,\varphi_X)  \equiv  \ED(m,\Sigma,d_X)$  \  las
+  generadoras caracter\'isticas y de densidad son relacionadas por
+  %
+  \[
+  \varphi_X\left(   w^2   \right)   =   \left(   2   \pi   \right)^{\frac{d}{2}}
+  w^{1-\frac{d}{2}}  \int_{\Rset_+}  r^{\frac{d}{2}}  d_X\left( r^2  \right)  \,
+  J_{\frac{d}{2}-1}( r  w) \, dr\qquad  \mbox{y} \qquad d_X\left( r^2  \right) =
+  \left(   2   \pi   \right)^{-\frac{d}{2}}   r^{1-\frac{d}{2}}   \int_{\Rset_+}
+  w^{\frac{d}{2}} \varphi_X\left( w^2 \right) \, J_{\frac{d}{2}-1}( r w) \, dw
+  \]
+  %
+  Esta    transformaci\'on    es   conocida    como    {\em   transformada    de
+    Hankel}~\cite{Lor54, Pou10}.
+\end{teorema}
+%
+\begin{proof}
+  Hay varias pruebas de este resultado. Una elegante se basa sobre la generadora
+  caracteristica  de variable  $U  \sim \U(\Sset_d)$.  Primero,  sin perdida  de
+  generalidad, consideramos $m = 0, \:  \Sigma = I$. Entonces, de la escritura \
+  $X \egald R \, U$ \ tenemos
+  %
+  \begin{eqnarray*}
+  \Phi_X(\omega) & = & \Esp\left[ e^{\imath \, R \omega^t U} \right]\\[2mm]
+  %
+  & = & \Esp\left[ \Esp\left[ \left. e^{\imath \, R \omega^t U} \right| R \right]
+  \right]\\[2mm]
+  %
+  & = & \Esp\left[ \Phi_U\left( R^2 \| \omega \|^2 \right)  \right]
+  \end{eqnarray*}
+  %
+  Es    decir,    del    ejemplo~\ref{Ej:MP:GeneCaracUniformeEsfera}    y    del
+  teorema~\ref{Teo:MP:DensidadRayo} se obtiene
+  %
+  \[
+  \varphi_X\left(  \|  \omega  \|^2  \right)  =  2^{\frac{d}{2}-1}  \Gamma\left(
+    \frac{d}{2}  \right)  \int_{\Rset_+}  \left(   r  \|  \omega  \|  \right)^{-
+    \frac{d-2}{2}}  J_{\frac{d}{2}-1}  \left( r  \|  \omega  \| \right)  \frac{2
+    \pi^{\frac{d}{2}}}{\Gamma\left(  \frac{d}{2} \right)}  r^{d-1}  \, d_X\left(
+    r^2 \right) \, dr
+  \]
+  %
+  Eso da  la expresi\'on  de \ $\varphi_X$  \ comp  transformada de Hankel  de \
+  $d_X$. Para la transformaci\'on inversa, sufice recordarse que $\Phi_X$ siendo
+  transformada  de  Fourier  de  $p_X$,  tenemos $p_X$  tranformada  inversa  de
+  $\Phi_X$.  Luego,  por  simetr\'ia  (cambio  de variables  $w  \to  -w$,  esta
+  transformada inversa  es nada mas que  la transformada directa,  por un factor
+  $(2 \pi)^{-d}$ (ver teoremas~\ref{Teo:MP:InversionDensidad}).
+\end{proof}
+
+
 \SZ{
 \begin{itemize}
 \item mzcla consistente? varphi ind dimension?
 
 \item Volver a los cumulantes $2 k$: se puede decir m\'as?
-
-\item Si X adimte una densidad... misma prueba que para phiX; escritura sim ED(m,Sigma,dX)
-
-\item Ley de r via dX
-
-\item Transformada de Hankel
 
 \item Coordenadas hyperesfericas
 
