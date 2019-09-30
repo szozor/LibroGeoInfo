@@ -12,32 +12,86 @@
 % Ibarola Perez p.
 % Mukhopadhyay p.
 
-\begin{definicion}
-  Sea  \  $X$  \ vector  aleatorio  $d$-dimensional  real.  $X$  \ es  dicho  de
-  distribuci\'on eliptica al  torno de $m \in \Rset^d$ \ si  existe una matriz \
-  $R \in P_d^+(\Rset)$ \ tal que para cualquier matriz ortogonal \ $O$,
+El estudio de  estos vectores es bastante antigua. Hace  falta volver a trabajos
+de Maxwell en 1867  sobre la teoria del gas para encontrar  unas de las primeras
+menciones  a este  formalismo~\cite{Max67}  o~\cite[pp.~377--391]{Nie52:v1}.  El
+problema de Maxwell era de encontrar una distribuci\'on (tridimensional) que sea
+isotropica  y  separable   a  la  vez:  monstr\'o  que   tal  distribuci\'on  es
+necesariamente    gausiana    (es     ahora    conocido    como    teorema    de
+Maxwell-Hershel~\footnote{Ver~\cite[Prop.~4.11]{BilBre99}.   Se notar\'a  que no
+  hay muchas menciones  de este teorema bajo esta  denominaci\'on. no sabemos si
+  la raz\'on es que  no tienen ni Maxwell, ni Herschel la  partenidad o si no lo
+  revendicaron.}.   La clase  de las  distribuciones eliptical,  o  a simetr\'ia
+eliptica   en    estad\'istica   o   procesamiento   de    la   se\~nal,   entre
+otros~\cite{Bar34, Bar34:07, Kel71, Chu73, CamHua81, Eat81, Kan94, Yao73, Lau75,
+  Lor54,  Ver64,  ArePin06,   BlaTho68,  ChiPas08,  Gol76,  RanWei93,  RanWei95,
+  KotNad01}.
+
+Empezamos  por  la  definici\'on,  antes  de  ir  m\'as  all\'a  estudiando  sus
+propiedades remarcables.
+
+\begin{definicion}[Vector esfericamente invariante]
+  Sea  \  $X$  \  vector   aleatorio  $d$-dimensional  real.   $X$  \  es  dicho
+  esfericamente  invariante,  o   rotacionalmente  invariante,  o  a  simetr\'ia
+  esferica, o de distribuci\'on esferica \ si para cualquier matriz ortogonal (o
+  de rotaci\'on)~\footnote{Recordarse que \ $O$  \ es ortogonal o de rotaci\'on
+    si \ $O O^t = O^t O = I$.} \ $O$,
   %
   \[
-  O R^{-\frac12}  \left( X - m  \right) \: \egald  \: R^{-\frac12} \left( X  - m
-  \right)
+  O  X  \: \egald  \: X
   \]
   %
-  $m$  \  es  llamado  {\em  par\'ametro   de  posici\'on}  y  \  $R$  \  matriz
-  caracter\'istica.
+\end{definicion}
+
+Tales vectores modelizan naturalmente  fenomenos isotropicos. Pero m\'as all\'a,
+se puede que haya direcciones  privilegiadas ortogonales pero con simetrias, \ie
+en  lugar  de   simetr\'ias  esfericas,  simetr\'ias  como  en   una  pelota  de
+rugby. Adem\'as, se puede que eso se pasa al torno de un punto no cero.
+%
+\begin{definicion}[Vector a simetr\'ia eliptica]
+  Sea  \  $X$  \ vector  aleatorio  $d$-dimensional  real.   $X$  \ es  dicho  a
+  simetr\'ia  eliptica,   o  elipticalmente  invariante,   o  de  distribuci\'on
+  eliptica, al torno de \ $m \in  \Rset^d$, \ si existe una matriz \ $\Sigma \in
+  P_d^+(\Rset)$ \ tal que para cualquier matriz ortogonal \ $O$,
+  %
+  \[
+  O  \,   \Delta^{-\frac12}  \,  Q^t  \left(   X  -  m  \right)   \:  \egald  \:
+  \Delta^{-\frac12} \, Q^t \left( X - m \right)
+  \]
+  %
+  donde la  matriz diagonal \ $\Delta  > 0$ \ es  la matriz de  autovalores de \
+  $\Sigma$ \  y \ $Q$ \  la matriz de los  autovectores correspondientes (matriz
+  ortogonal~\cite{Bha97, Bha07, HorJoh13}), \ $\Sigma  = Q \Delta Q^t$. Dicho de
+  otra manera, \ $\Delta^{-\frac12} Q^t \left(  X - m \right)$ \ es a simetr\'ia
+  esferica.
+
+  $m$ \ es llamado {\em par\'ametro de posici\'on} y \ la matriz \ $\Sigma$ \ es
+  llamada {\em matriz caracter\'istica}.
 \end{definicion}
 %
-Se  puede  inmediatamente  ver que  \  $R$  \  es  definida mediante  un  factor
-escalar. De hecho, si un  \ $R$ \ conviene, cualquier \ $a R$ \  con \ $a > 0$ \
-conviene tambi\'en. Se puede  a\~nadir un v\'inculo, por ejemplo \ $Tr  R = d$ \
-para que \ $R$ \ sea \'unica.
+Se puede inmediatamente  ver que \ $\Sigma$ \ es definida  por lo menos mediante
+un factor escalar. De hecho, si un \ $\Sigma$ \ conviene, cualquier \ $a \Sigma$
+\ con \ $a > 0$ \ conviene tambi\'en.
 
-\begin{teorema}
+Comparativamente a un  vector esfericamente invariante, \ $m$ \  es el centro de
+simetr\'ia,   $P$   contiene   las   direciones   de   ``estiramientos''   y   \
+$\Delta^{\frac12}$  \   los  factores  de   estiramientos,  $X  \egald  m   +  P
+\Delta^{\frac12} Y$ \  con \ $Y$ \ a simetr\'ia  esferica. Para \ $m =  0$ \ y \
+$\Delta \propto I$, se recupera obviamente un vector a simetr\'ia esferica.
+
+Como lo hemos visto, un vector aleatorio es completamente definido por su medida
+de  probabilidad,  o  equivalentemente  por su  funci\'on  car\'acteristica.  La
+\'ultima tiene una forma particular en el contexto eliptico:
+%
+\begin{teorema}[Funci\'ones y generadoras caracter\'isticas]\label{Teo:MP:GeneradorasCaracteristicas}
+%
   Sea \  $X$ \  vector aleatorio $d$-dimensional  de distribuci\'on  eliptica al
-  torno  de  $m   \in  \Rset^d$  \  y  de  matriz   caracter\'istica  \  $R  \in
+  torno  de  $m \in  \Rset^d$  \  y de  matriz  caracter\'istica  \ $\Sigma  \in
   P_d^+(\Rset)$. Entonces la funci\'on caract\'eristica se escribe bajo la forma
   %
   \[
-  \Phi_X(\omega) = e^{\imath \, \omega^t m} \varphi_X\left( \omega^t R \omega \right)
+  \Phi_X(\omega)  = e^{\imath  \,  \omega^t m}  \varphi_X\left( \omega^t  \Sigma
+    \omega \right)
   \]
   %
   donde  \  $\varphi_X:  \Rset_+  \mapsto  \Rset$ \  escalar,  es  llamado  {\em
@@ -45,15 +99,18 @@ para que \ $R$ \ sea \'unica.
   funci\'on caracteristica se escribe
   %
   \[
-  \Psi_X(\omega) = \imath \, \omega^t m + \psi_X\left( \omega^t R \omega \right)
+  \Psi_X(\omega) =  \imath \, \omega^t  m + \psi_X\left( \omega^t  \Sigma \omega
+  \right)
   \]
   %
-  donde  \  $\psi_X = \log \varphi_X:  \Rset_+  \mapsto  \Rset$ \  escalar. La llamaremos  {\em
-    secunda generadora caracter\'istica}.
+  donde  \ $\psi_X  =  \log \varphi_X:  \Rset_+  \mapsto \Rset$  \ escalar.   La
+  llamaremos  {\em secunda generadora  caracter\'istica}. Reciprocamente,  si la
+  funci\'on caracter\'istica tiene esta forma, \ $X$ \ es a simetr\'ia eliptica.
 \end{teorema}
 %
 \begin{proof}
-  Sea  \ $Y  =  R^{-\frac12} \left(  X -  m  \right)$.  Por  definici\'on y  del
+  Sea \  $Y = \Delta^{-\frac12} Q^t  \left( X - m  \right)$ \ con \  $\Sigma = Q
+  \Delta  Q^t$  \ diagonalizaci\'on  de  \  $\Sigma$.   Por definici\'on  y  del
   teorema~\ref{Teo:MP:PropiedadesFuncionCaracteristica},  por  cualquier  matriz
   ortogonal $O$ y cualquier $\omega \in \Rset^d$
   %
@@ -73,45 +130,187 @@ para que \ $R$ \ sea \'unica.
   De nuevo, del teorema~\ref{Teo:MP:PropiedadesFuncionCaracteristica},
   %
   \[
-  \Phi_X(\omega) = \Phi_{R^{\frac12}  Y + m}(\omega) = e^{\imath  \, \omega^t m}
-  \Phi_Y( R^{\frac12} \omega)
+  \Phi_X(\omega)  \:  = \:  \Phi_{Q  \Delta^{\frac12} Y  +  m}(\omega)  \: =  \:
+  e^{\imath  \, \omega^t  m} \,  \Phi_Y( \Delta^{\frac12}  Q^t \omega)  \:  = \:
+  e^{\imath \, \omega^t m} \, \varphi_x( \omega^t Q \Delta Q^t \omega)
   \]
   % 
-  lo que cierra la prueba.
+  lo que  cierra la prueba  directa. Reciproca, si  \ $\Phi_X$ \ tiene  la forma
+  dada, para  cualquier matriz ortogonal \  $O$ \ $\Phi_{O  Y}(\omega) = \Phi_Y(
+  O^t \omega ) = \Phi_Y(\omega)$ \  y, por relaci\'on uno-uno entre la medida de
+  probabilidad  de una variable  aleatorio y  su funci\'on  caracter\'istica, $Y
+  \egald O Y$.
 \end{proof}
 %
-Se  notar\'a que  si tomamos  una matriz  caracter\'istica $R$  y  la generadora
-correspondiente $\varphi$, \ $a R$  \ y \ $\varphi_X\left( \frac{u}{a} \right)$ \
-conviene tambi\'en, lo  que es de acuerdo con la indeterminencia  de $R$ bajo un
-factor positivo.
+Se notar\'a que si tomamos  una matriz caracter\'istica $\Sigma$ y la generadora
+correspondiente  $\varphi$, \  $a  \Sigma$ \  y  \ $\varphi_X\left(  \frac{u}{a}
+\right)$ \ conviene tambi\'en, lo que  es de acuerdo con la indeterminencia de \
+$\Sigma$ \ bajo un factor positivo.  Se puede a\~nadir un v\'inculo, por ejemplo
+fijando  \  $\Tr \Sigma$  \  para  que  \ $\Sigma$  \  y  \ $\varphi_X$  \  sean
+\'unicamente definidas. Entonces, \ $X$ \ ser\'a completamente caracterizado por
+\ $m, \: \Sigma$ \ y \ $\varphi_X$, y escribiremos
+%
+\[
+X \, \sim \, \ED \left( m , \Sigma , \varphi_X \right)
+\]
 
-\begin{teorema}
-  Sea \  $X$ \  vector aleatorio $d$-dimensional  de distribuci\'on  eliptica al
-  torno de $0$  \ y de matriz caracter\'istica \  $R \in P_d^+(\Rset)$. Entonces
-  los momentos  centrales y cumulantes impares  son nulos y los  pares son dados
-  por
+Varias vectores que hemos visto caen en esta familia:
+%
+\begin{ejemplo}[Distribuci\'on gausiana]
+  Sea \  $X \sim \N(m,\Sigma)$.  Entonces, \ $X \sim  \ED(m,\Sigma,\varphi_X)$ \
+  con
   %
   \[
-  \zeta_{i_1,\ldots,i_{2  k}}[X] =  (-2)^k \,  \varphi_X^{(k)}(0)  \sum_{\pi \in
-    \Pi_{2 k , 2}} \prod_{(l,n) \in \pi} R_{i_l,i_n}
+  \varphi_X(u) = e^{-\frac{u}{2}}
   \]
   %
-  y
+\end{ejemplo}
+%
+\begin{ejemplo}[Distribuci\'on Student-t]
+  Sea \  $X \sim t_\nu(m,\Sigma)$.  Entonces, \ $X \sim  \ED(m,\Sigma,\varphi_X)$ \
+  con
   %
   \[
-  \kappa_{i_1,\ldots,i_{2  k}}[X]  =  (-2)^k  \, \psi_X^{(k)}(0)  \sum_{\pi  \in
-    \Pi_{2 k , 2}} \prod_{(l,n) \in \pi} R_{i_l,i_n}
+  \varphi_X(u)   =  \frac{\nu^{\frac{\nu}{4}}}{2^{\frac{\nu}{2}-1}  \Gamma\left(
+      \frac{\nu}{2}   \right)}   \,  u^{\frac{\nu}{4}}   K_{\frac{\nu}{2}}\left(
+    \sqrt{\nu \, u} \right)
+  \]
+\end{ejemplo}
+
+Un  caso particular que  va a  jugar un  rol importante  es el  de un  vector de
+distribuci\'on uniforme sobre la esfera \ $\Sset_d$, \ $U \sim \U(\Sset_d)$~\SZ{\cite{toto, titi, FanKot01}:}
+%
+\begin{ejemplo}
+  Sea \  $U \sim \U(\Sset_d)$. Entonces  \ $U \sim  \ED\left( 0 , I  , \varphi_U
+  \right)$ \ con
+  %
+  \[
+  \varphi_U(u)   =  2^{\frac{d}{2}-1}   \Gamma\left(   \frac{d}{2}  \right)   \,
+  u^{-\frac{d-2}{4}} \, J_{\frac{d}{2}-1}\left( \sqrt{u} \right)
+  \]
+  %
+  con \  $J_\nu$ \  funci\'on de Bessel  primera especie  y de orden  $\nu$ (ver
+  notaciones).
+  
+  De hecho, de la definici\'on de la funci\'on caracter\'istica, tenemos
+  %
+  \[
+  \Phi_U(\omega) =  \frac{1}{|\Sset_d|} \int_{\Sset_d} e^{\imath  \, \omega^t s}
+  d\mu_H(s)
+  \]
+  %
+  con \ $\mu_H$ \ la medida de Haar~\footnote{Para \ $S \subset \Sset$ \ $\mu(S)
+    =    |S|$.}     sobre    la    esfera    y    \    $|Sset_d|    =    \frac{2
+    \pi^{\frac{d}{2}}}{\Gamma\left(  \frac{d}{2} \right)}$  \ la  surfaca  de la
+  esfera  unitaria~\cite{GraRyz15}.   Ahora,  denotanto  \  $\Sset_d^+$  \  y  \
+  $\Sset_d^-$  \ respectivamente  la semiesfera  superior y  inferior,  se puede
+  parametrizar \ $s \in \Sset_d^{\pm}$ \  bajo la forma \ $s = \begin{bmatrix} b
+    & \pm \sqrt{1-\|b\|^2} \end{bmatrix}^t, \quad b \in \Bset_{d-1}$, lo que da,
+  siguiendo~\cite[ec.~4.644]{GraRyz15} (cambio de variables) y notando $\mu_L$ \
+  la medida de Lebesgue,
+  %
+  \begin{eqnarray*}
+  \Phi_U(\omega) & = & \frac{2 \, \Gamma\left( \frac{d}{2}
+  \right)}{\pi^{\frac{d}{2}}} \int_{\Bset_{d-1}} \frac{e^{\imath \, \omega^t
+  s}}{\sqrt{1-\|b\|^2}} d\mu_L(b)\\[2mm]
+  %
+  & = & \frac{\Gamma\left( \frac{d}{2} \right)}{\sqrt{\pi} \, \Gamma\left(
+  \frac{d-1}{2} \right)} \int_0^{\pi} e^{\imath \, \| \omega \| \cos\theta} \,
+  \sin^{d-2}\theta \, d\theta
+  \end{eqnarray*}
+  %
+  Al final,  de la forma de la  funci\'on de Bessel~\cite[Ec.~8.411-7]{GraRyz15}
+  (ver tambi\'en~\cite{AbrSte70, Wat22, GraMat95}), se obtiene
+  %
+  \[
+  \Phi_U(\omega) =  \frac{2^{\frac{d}{2}-1} \Gamma\left( \frac{d}{2} \right)}{\|
+    \omega \|^{\frac{d}{2}-1}} \, J_{\frac{d}{2}-1}\left( \|\omega\| \right)
+  \]
+  %
+  lo que cierra  la prueba. Volveremos a esta  funci\'on caracteristica tratando
+  de las coordenadas esfericas.
+\end{ejemplo}
+
+La forma de la funci\'on caracter\'istica tiene varias consecuencias. La primera
+es  que se  puede escribir  estocaticamente un  vector a  simetr\'ia  eliptica a
+partir de un vector esfericamente invariante de varias maneras, entre otros:
+%
+\begin{corolario}
+  Sea  \ $Y  \sim  \ED(0,I,\varphi_Y)$, \  $m \in  \Rset^d$  \ y  \ $\Sigma  \in
+  P_d^+(\Rset)$. \ Sean \ $\Sigma = Q \Delta Q^t$ \ la descomposici\'on diagonal
+  de \ $\Sigma$, \ $\Sigma^{\frac12} = Q \Delta^{\frac12} Q^t$ \'unica matriz de
+  \  $P_d^+(\Rset)$ \  raiz cuadrada  de \  $\Sigma$,  y \  $\Sigma =  L L^t$  \
+  descomposici\'on  de  Cholesky   de  \  $\Sigma$,  con  \   $L$  \  triangular
+  inferior~\cite{HorJoh13, Bha07}.  Entonces
+  %
+  \[
+  Q \Delta^{\frac12} Y + m \: \egald \:  \Sigma^{\frac12} Y + m \: \egald \: L Y
+  + m \: \sim \: \ED(m,\Sigma,\varphi_Y)
+  \]
+\end{corolario}
+%
+\begin{proof}
+  El             resultado            es             consecuencia            del
+  teorema~\ref{Teo:MP:PropiedadesFuncionCaracteristica}  y  de  la forma  de  la
+  funci\'on caracter\'istica del teorema~\ref{Teo:MP:GeneradorasCaracteristicas}.
+\end{proof}
+
+Una otra consecuencia es que, dado el orden, el tensor de los momentos tiene una
+structura dada para cualquier ley, bajo un factor escalar que depende de la ley.
+Eso vale tambi\'en para los cumulantes:
+%
+\begin{teorema}[Momentos centrales y cumulantes]\label{Teo:MP:MomentosCumulantesEliptica}
+%
+  Sea \  $X$ \  vector aleatorio $d$-dimensional  de distribuci\'on  eliptica al
+  torno  de  un  vector \  $m$,  y  de  matriz  caracter\'istica \  $\Sigma  \in
+  P_d^+(\Rset)$.  Entonces, si  estos momentos y cumulantes existen,  \ $m$ \ es
+  la media de \ $X$, \ie
+  %
+  \[
+  \zeta_1 = 0, \qquad \kappa_1 = m
+  \]
+  %
+  y para cualquier orden superior a  $2$, los momentos centrales y cumulantes de
+  orden impares son ceros,
+  %
+  \[
+  \zeta_{i_1,\ldots,i_{2  k  +1}}[X] =  \kappa_{i_1,\ldots,i_{2  k  +1}}[X] =  0,
+  \qquad k \ge 1
+  \]
+  %
+  y los de orden pare son dados para \ $k \ge 1$, por
+  %
+  \[
+  \zeta_{i_1,\ldots,i_{2   k}}[X]   =   \alpha_k\left(  \varphi_X   \right)   \,
+  c_{i_1,\ldots,i_{2 k}}(\Sigma) \qquad  y \qquad \kappa_{i_1,\ldots,i_{2 k}}[X]
+  = \alpha_k\left( \psi_X \right) \, c_{i_1,\ldots,i_{2 k}}(\Sigma)
+  % (-2)^k \, \varphi_X^{(k)}(0)  \sum_{\pi \in \Pi_{2 k ,  2}} \prod_{(l,n) \in
+  %   \pi} \Sigma_{i_l,i_n}
+  \]
+  %
+  % y
+  %  %
+  % \[
+  %  \kappa_{i_1,\ldots,i_{2 k}}[X]  = (-2)^k  \, \psi_X^{(k)}(0)  \sum_{\pi \in
+  %   \Pi_{2 k , 2}} \prod_{(l,n) \in \pi} \Sigma_{i_l,i_n}
+  % \]
+  %
+  con
+  %
+  \[
+  c_{i_1,\ldots,i_{2k}}(\Sigma) = \sum_{\pi \in  \Pi_{2 k , 2}} \prod_{(l,n) \in
+    \pi} \Sigma_{i_l,i_n} \qquad \mbox{y} \qquad \alpha_k(f) = (-2)^k f^{(k)}(0)
   \]
   %
   donde   \  $\Pi_{2   k  ,   2}$   \  es   el  conjunto   de  particiones   por
   pares~\footnote{Por ejemplo,  $\Pi_{4,2} =  \big\{ \{1,2\} ,  \{3,4\} \:  , \:
-    \{1,3\} , \{2,4\} \: , \: \{1,4\}  , \{2,3\} \big\}$, un \ $\pi$ \ puede ser
-    $\big\{ \{1,3\} , \{2,4\} \big\}$ \ y en el producto va a dar \ $R_{i_1,i_3}
-    R_{i_2,i_4}$.} de $\{ 1 , \ldots , 2 k \}$.
+    \{1,3\} , \{2,4\} \: , \: \{1,4\}  , \{2,3\} \big\}$; cuando \ $\pi = \big\{
+    \{1,3\} , \{2,4\} \big\}$, el  t\'ermino del producto es \ $\Sigma_{i_1,i_3}
+    \Sigma_{i_2,i_4}$.} de $\{ 1 , \ldots , 2 k \}$.
 \end{teorema}
 %
-Una  prueba es  dada por  inducci\'on en~\cite{BerBen86}  para los  momentos (ver
-tambi\'en~\cite[p.~44]{FanKot90} para  el resultat con los  momentos). Damos una
+Una prueba  es dada  por inducci\'on en~\cite{BerBen86}  para los  momentos (ver
+tambi\'en~\cite[p.~44]{FanKot90} para el resultat  con los momentos).  Damos una
 prueba m\'as directa, valida para ambos momentos y cumulantes.
 %
 \begin{proof}
@@ -126,42 +325,55 @@ prueba m\'as directa, valida para ambos momentos y cumulantes.
       \Psi_X}{\partial          \omega_{i_1}          \cdots          \partial
       \omega_{i_k}}\right|_{\omega=0}
   \]
-  %
-  Salimos de la formula de Hardy~\cite[Prop.~1]{Har06}, generalizando la formula
-  de Fa\`a di  Bruno~\cite{Faa55, Faa57}: Para \ $h(\omega)  = f\left( g(\omega)
-  \right), \quad \forall \: k \in \Nset^*,  \quad \forall \: (i_1 , \ldots , i_k
-  ) \in \{ 1 , \ldots , d \}^k$,
-  %
-  \[
-  \frac{\partial^k h}{\partial \omega_{i_1} \cdots  \partial \omega_{i_k}} = \sum_{\pi \in
-    \Pi_k}  f^{(|\pi|)}\left( g(\omega)  \right) \prod_{B  \in  \pi} \frac{\partial^{|B|}
-    g}{\displaystyle \prod_{j \in B} \partial \omega_{i_j}}
-  \]
-  %
-  donde \ $\Pi_k$ \  es el  conjunto de las  particiones de \ $\{ 1 ,  \ldots ,  k \}$,
-  $f^{(n)}$  la $n$-esima derivada  de $f$.  En la  expresi\'on de  los momentos
-  centrales y cumulantes tenemos
+  
+  Por  definici\'on  de  los  momentos  centrales  $\zeta_1  =  0$.   Luego,  de
+  $\Psi_X(\omega)  =  \imath \,  \omega^t  m  +  \log\left( \varphi_X(  \omega^t
+    \omega) \right)$ \ tenemos
   %
   \[
-  g(\omega) = \sum_{i,j=1}^d \omega_i \omega_i R_{i,j}
+  \nabla_\omega \Psi_X(\omega) =  \imath \, m + \frac{2  \, \varphi_X'( \omega^t
+    \omega)}{\varphi_X'( \omega^t \omega)} \, \omega
   \]
   %
-  as\'i que, por simetr\'ia de $R$,
+  Recordandose que \ $\Phi_X(0) = \Esp\left[  e^{\imath \, 0^t X} \right] = 1$ \
+  y \ $m =  - \imath \, \nabla_\omega \Psi_X(0)$: \ $m$ \ es  la media de \ $X$\
+  lo que corresponde a la intuici\'on.
+
+  Luego, salimos de la  formula de Hardy~\cite[Prop.~1]{Har06}, generalizando la
+  formula de  Fa\`a di  Bruno~\cite{Faa55, Faa57}: Para  \ $h(\omega)  = f\left(
+    g(\omega) \right), \quad  \forall \: n \in \Nset^*, \quad  \forall \: (i_1 ,
+  \ldots , i_n ) \in \{ 1 , \ldots , d \}^n$,
+  %
+  \[
+  \frac{\partial^n  h}{\partial  \omega_{i_1}  \cdots \partial  \omega_{i_n}}  =
+  \sum_{\pi  \in \Pi_n}  f^{(|\pi|)}\left( g(\omega)  \right) \prod_{B  \in \pi}
+  \frac{\partial^{|B|} g}{\displaystyle \prod_{j \in B} \partial \omega_{i_j}}
+  \]
+  %
+  donde \ $\Pi_n$  \ es el conjunto de las  particiones de \ $\{ 1  , \ldots , n
+  \}$,  $f^{(l)}$  la $l$-esima  derivada  de $f$.   En  la  expresi\'on de  los
+  momentos centrales y cumulantes tenemos
+  %
+  \[
+  g(\omega) = \sum_{i,j=1}^d \omega_i \omega_j \Sigma_{i,j}
+  \]
+  %
+  as\'i que, por simetr\'ia de $\Sigma$,
   %
   \[
   \frac{\partial  g}{\partial   \omega_{j_1}}  =  2   \sum_{l=1}^d  \omega_{j_1}
-  R_{j_1,l},   \qquad   \frac{\partial^2   g}{\partial   \omega_{j_1}   \partial
-    \omega_{j_2}}   =  2   R_{j_1,j_2},  \qquad   \forall   \:  k   \ge  3,   \:
+  \Sigma_{j_1,l},  \qquad  \frac{\partial^2  g}{\partial  \omega_{j_1}  \partial
+    \omega_{j_2}}  =  2 \Sigma_{j_1,j_2},  \qquad  \forall  \:  n \ge  3,  \quad
   \frac{\partial^n g}{\prod_{l=1}^n \partial \omega_{j_l}} = 0
   \]
   %
   Es decir que, para $n \ge 1$,
   %
   \[
-  \left.     \frac{\partial^n     g}{\prod_{l=1}^n    \partial     \omega_{j_l}}
+  \left.      \frac{\partial^n    g}{\prod_{l=1}^n     \partial    \omega_{j_l}}
   \right|_{\omega = 0} = \left\{\begin{array}{ccl}
   %
-  2   R_{j_1,j_2} & \mbox{si} & n = 2\\[2mm]
+  2   \Sigma_{j_1,j_2} & \mbox{si} & n = 2\\[2mm]
   %
   0 & \mbox{si} & n \ne 2
   %
@@ -169,7 +381,7 @@ prueba m\'as directa, valida para ambos momentos y cumulantes.
   \]
   %
   Entonces,  en la formula  de Hardy  tomada en  $\omega =  0$ quedan  solas las
-  particiones  que  contienen  unicamente  pares  de indices.  Eso  da  momentos
+  particiones  que  contienen unicamente  pares  de  indices.   Eso da  momentos
   centrales y cumulantes nulos para $k$ impar (obvio por sim\'etria). Adema\'as,
   siendo \  $\Pi_{2 k , 2}$  \ el conjunto de  particiones por pares de  $\{ 1 ,
   \ldots , 2 k \}$, notando que necesariamente cada partici\'on de \ $\Pi_{2 k ,
@@ -178,55 +390,278 @@ prueba m\'as directa, valida para ambos momentos y cumulantes.
   \[
   \left.   \frac{\partial^{2  k}   h}{\partial   \omega_{i_1}  \cdots   \partial
       \omega_{i_{2  k}}}\right|_{\omega =  0} =  \sum_{\pi  \in \Pi_{2  k ,  2}}
-  f^{(k)}(0) \prod_{(l,n) \in \pi} \left( 2 R_{i_l,i_n} \right)
+  f^{(k)}(0) \prod_{(l,n) \in \pi} \left( 2 \Sigma_{i_l,i_n} \right)
   \]
   %
   La prueba  se cierra  tomando respectivamente  \ $f =  \varphi_X$ \  y \  $f =
   \psi_X$.
 \end{proof}
+%
+Veremos m\'as adelante una prueba a\'un m\'as directa y obvia que, a orden dado,
+el  tensor de  los momentos  tiene  una structura  dada bajo  un factor  escalar
+dependiendo   de  la   ley.   Lo   que  es   menos  obvio,   de   la  relaci\'on
+momentos-cumulantes, que eso vale para el tensor de los cumulantes, y que, m\'as
+que eso, estas structuras son las mismas.
 
-Se puede  ver en este resultado  que, dado el  orden, el tensor de  los momentos
-tiene una structura dada para cualquier  ley, bajo un factor escalar que depende
-de  la ley.  Eso vale  tambi\'en para  los cumulantes  y adem\'as  el  tensor de
-cumulante de  orden $2k$  tiene la misma  estructura que  el de los  momentos de
-orden $2 k$. Veremos m\'as ademante que este resulta es obvio para los momentos,
-pero de la  relaci\'on momentos-cumulantes, es menos evidente  para el tensor de
-los cumulabtes.
-
+De este  resultado se puede tambi\'en  explicitar la matriz de  covariancia y el
+tensor curtosis para un vector a simetr\'ia eliptica~\cite[p.~44]{FanKot90}:
+%
 \begin{corolario}
   Sea \  $X$ \  vector aleatorio $d$-dimensional  de distribuci\'on  eliptica al
-  torno de $0$  \ y de matriz caracter\'istica \  $R \in P_d^+(\Rset)$. Entonces
+  torno   de   $0$   \   y    de   matriz   caracter\'istica   \   $\Sigma   \in
+  P_d^+(\Rset)$. Entonces
   %
   \[
-  \Sigma_X = - 2 \,  \varphi_X'(0) R
+  \Sigma_X = - 2 \,  \varphi_X'(0) \Sigma
   \]
   %
   y
   %
   \[
-  \kappa_X =  - \frac{  2 \, \varphi_X''(0)}{\varphi_X(0)}  \sum_{i,j=1}^d \Big(
-  \left( \un_i  \un_i^t \right)  \otimes \left( \un_j  \un_j^t \right)  + \left(
-    \un_i \un_j^t  \right) \otimes \left(  \un_i \un_j^t \right) +  \left( \un_i
-    \un_j^t \right) \otimes \left( \un_j \un_i^t \right) \Big)
+  \kappa_X   =   \frac{\varphi_X''(0)}{4    \,   \big(   \varphi_X(0)   \big)^2}
+  \sum_{i,j=1}^d \Big( \left( \un_i \un_i^t \right) \otimes \left( \un_j \un_j^t
+  \right) + \left( \un_i \un_j^t  \right) \otimes \left( \un_i \un_j^t \right) +
+  \left( \un_i \un_j^t \right) \otimes \left( \un_j \un_i^t \right) \Big)
   \]
   %
-%\SZ{Escribir con la secunda}
 \end{corolario}
+\begin{proof}
+  El resultado es inmediato por lo  de la covarianza.  Para la curtosis, momento
+  central de  orden cuatro del  vector normalizado, es equivalente  considerar \
+  $\Sigma  = -  \frac{1}{2  \, \varphi_X(0)}  I$,  lo que  da  el resultado  del
+  corrolario.
+\end{proof}
+%
+Nota: de $\Tr(\Sigma_X) = \Tr\left( \Esp\left[ (X-m_X) (X-m_X)^t \right] \right)
+= \Esp\left[ (X-m_X)^t  (X-m_X) \right]$ \ tenemos para  $U \sim \U(\Sset_d)$, \
+$\Tr(\Sigma_U) = 1$, \ie
+%
+\[
+\mbox{Para } \: U \sim \U(\Sset_d), \quad \Sigma_U = \frac{1}{d} I
+\]
+%Se  notar\'a  que  $\varphi_X(0)  =  1$  \  m\'axima,  y  que  necesariamente  \
+%$\varphi_X'(0)  < 0$,  o, tambi\'en,  que $\varphi_X''(0)  > 0$:  $\phi_X$  \ es
+%(localmente) concava al torno de $0$;
 
-\SZ{Invariante por rotacion... GSM
+Se  puede  ver  de  este  corolario  que  la  covarianza  es  proporcional  a  \
+$\Sigma$. Es decir que un v\'inculo que se puede poner tambi\'en para fijar \ $(
+\Sigma , \varphi_X )$ \ es de  imponer un homotecia a \ $\varphi_X$ \ para tener
+$\varphi_X'(0) = - \frac12$, para que \ $\Sigma$ \ y \ $\Sigma_X$ \ coincidan.
+
+De  la  forma de  la  funci\'on caracter\'istica  se  proba  tambi\'en que  para
+cualquier transformaci\'on  af\'in de un  vector a simetr\'ia eliptica  queda un
+vector a simetr\'ia eliptica:
+%
+\begin{teorema}
+  Sea  \  $X \,  \sim  \,  \ED(m,\Sigma,\varphi_X)$  \ $d$-dimensional,  $A  \in
+  \M_{d',d}$  \  de  rango   lleno  tal  que  \  $d'  \le  d$   \  y  \  $c  \in
+  \Rset^{d'}$. Entonces
+  %
+  \[
+  A X + c \: \sim \: \ED(A m + c , A \Sigma A^t , \varphi_X)
+  \]
+  %
+\end{teorema}
+%
+\begin{proof}
+  El  resultado es  inmediato  de  la forma  de  la funci\'on  caracter\'istica,
+  teorema~\ref{Teo:MP:GeneradorasCaracteristicas}   y   como  consecuencia   del
+  teorema~\ref{Teo:MP:PropiedadesFuncionCaracteristica}.
+\end{proof}
+%
+En particular, la proyecci\'on de  un vector a simetr\'ia eliptica queda eliptica
+al  torno de  la proyecci\'on  del vector  posici\'on, con  la  misma generadora
+caracter\'istica.
+
+Una consecuencia importante de la  forma de la funci\'on caracter\'istica es que
+sirve a probar  que un vector a simetr\'ia  esferica se escribe estocasticamente
+como  una mezcla de  escala de  un vector  uniforme sobre  la esfera  unitaria \
+$\Sset_d$. Este resultado es  debido a Sch{\oe}nberg~\cite{Sch38, FanKot01} y se
+enuncia como sigue:
+%
+\begin{teorema}
+  Sea  \ $X$ \  $d$-dimensional a  simetria esferica.  Entonces, este  vector se
+  escribe estocasticamente como
+  %
+  \[
+  X \egald R \, U \qquad \mbox{con} \qquad U \sim \U(\Sset_d), \quad R > 0 \quad \mbox{independientes}
+  \]
+  %
+  M\'as generalmente, para \ $Y \sim \ED(m,\Sigma,\varphi_Y)$,
+  %
+  \[
+  Y \egald \Sigma^{\frac12} R \, U + m
+  \]
+  %
+  Adem\'as, inmediatamente
+  %
+  \[
+  R \egald \| X \|
+  \]
+  %
+  (obviamente, $\frac{X}{\| X \|} \egald U$).
+\end{teorema}
+%
+\begin{proof}
+  Escribimos \  $\omega = \rho u$ \  con \ $\rho \ge  0$ \ y \  $u \in \Sset_d$.
+  Entonces, con  \ $\mu_H$ \ la  medida de Haar sobre  la esfera y \  $P_X$ \ la
+  medida de probabilidad de \ $X$, tenemos
+  %
+  \begin{eqnarray*}
+  \Phi_X(\omega) & = & \varphi_X(\rho^2)\\[2mm]
+  %
+  & = & \frac{1}{|\Sset_d|} \int_{\Sset_d} \varphi_X(\rho^2) \, d\mu(v)\\[2mm]
+  %
+  & = & \frac{1}{|\Sset_d|} \int_{\Sset_d} \Phi_X(\rho v) \, d\mu(v)\\[2mm]
+  %
+  & = & \frac{1}{|\Sset_d|} \int_{\Sset_d} \left( \int_{\Rset^d} e^{\imath \,
+  \rho v^t x} \, dP_X(x) \right) \, d\mu(v)\\[2mm]
+  %
+  & = & \int_{\Rset^d} \left( \int_{\Sset_d} e^{\imath \, \rho v^t x} \,
+  \frac{1}{|\Sset_d|} \, d\mu(v) \right) \, dP_X(x)\\[2mm]
+  %
+  & = & \int_{\Rset^d} \Phi_U(\rho x) \, dP_X(x)\\[2mm]
+  %
+  & = & \int_{\Rset^d} \varphi_U(\rho^2 \|x\|^2) \, dP_X(x)
+  \end{eqnarray*}
+  %
+  con \ $\Phi_U$ \ funci\'on caracteristica  de un vector \ $U \sim \U(\Sset_d)$
+  \ y  \ $\varphi_U$  \ la generadora  caracter\'istica correspondiente.   Sea \
+  $F_R(r) = 0$ \ para \ $r \le 0$ \ y
+  %
+  \[
+  F_R(r) = \int_{\Bset(0,r)} dP_X(x)
+  \]
+  %
+  si no.  Claramente  \ $F_R$ \ es creciente  de $0$ a $1$: es  una funci\'on de
+  repartici\'on. Notando \ $R$ \  la variable aleatoria positiva de funci\'on de
+  repartici\'on \ $F_R$,
+  %
+  \begin{eqnarray*}
+  \Phi_X(\omega) & = & \int_{\Rset_+} \varphi_U( \rho^2 r^2) \, dF_R(r)\\[2mm]
+  %
+  & = & \int_{\Rset_+} \Phi_U(r \omega) \, dF_R(r)\\[2mm]
+  %
+  & = & \Esp\left[ \Esp\left[ \left. e^{\imath \, \omega^t R U} \right | R \right] \right]
+  \end{eqnarray*}
+  %
+  el paso  de la ante\'ultima  a la  \'ultima linea siendo  valido para \  $R$ \
+  independiente  de \  $U$.  En otros  terminos, con  \  $R$ \  de funci\'on  de
+  repartici\'on \  $F_R$ \ y  \ $U \sim  \U(\Sset_d)$ \ independiente de  \ $R$,
+  tenemos del teorema de esperanza total~\ref{Teo:MP:EsperanzaTotal},
+  %
+  \[
+  \Phi_X(\omega) = \Phi_{R U}(\omega)
+  \]
+  %
+  La prueba se  cierra de la relaci\'on uno-uno entre  la medida de probabilidad
+  de un vector aleatorio y la funci\'on caracter\'istica. De \ $X \egald R \, U$
+  \ y \ $\| U \| = 1$ \ viene \ $R \egald \| X \|$.
+\end{proof}
+
+De esta escritura, se puede ir un paso m\'as all\'a~\cite[Teo~2.3]{FanKot}:
+%
+\begin{corolario}
+  Sea  \ $X$ \  $d$-dimensional a  simetria esferica.  Entonces, este  vector se
+  escribe estocasticamente como
+  %
+  \[
+  X =  \|X\| \: \frac{X}{\|X\|}
+  \]
+  %
+  tales  que  \ $\|  X  \|  \egald  R$ \  y  \  $\frac{X}{\|X\|} \egald  U  \sim
+  \U(\Sset_d)$ \ son independientes.
+\end{corolario}
+%
+\begin{proof}
+  Seg\'un~\cite{FanKot01, Zol86}, si  dos vectores aleatorios \ $A$ \  y \ $B$ \
+  son iguales en distribuci\'on, para cualquier conjunto de funciones medibles \
+  $f_1, \ldots ,f_n$, $\begin{bmatrix}  f_1(A) & \cdots & f_n(A) \end{bmatrix}^t
+  \egald \begin{bmatrix} f_1(B) & \cdots & f_n(B) \end{bmatrix}^t$. Se lo aplica
+  a \ $f_1(x) = \|x\|$, \ $f_2(x) = \frac{x}{\|x\|}$ \ con \ $X \egald R \ U$.
+\end{proof}.
+
+De la escritura  $X \egald R \,  U$, se puede ver $X  \sim \ED(0,I,\varphi_X)$ \
+como mu\~necas rusas: a cada escala  $R = r$ tenemos una distribuci\'on uniforma
+sobre la esfera de este rayo $r$. Por eso, $X$ es tambi\'en dicho {\em mezcla de
+  escala}  de una  {\em base}  \ uniforme  y \  $R$ \  es llamada  {\em variable
+  generadora}.
+
+De esta  escritura, queda ahora claro  que cada tensor de  momentos centrales de
+orden  par  tienen  una estrctura  fija:  de  \  $X  =  R \Sigma  U$  \  tenemos
+$\zeta_{i_1,\ldots,i_{2k}}[X]     =    \Esp\left[     R^{2     k}    \right]
+\zeta_{i_1,\ldots,i_{2k}}[\Sigma  U]$  (ver  ej.~\cite[teo.~2.8]{FanKot01}  para
+$\Sigma  \propto I$). Adem\'as,  se puede  dar una  otra forma  del coefficiente
+$\alpha_k$:
+%
+\begin{lema}
+  El  coeficiente  \  $\alpha_k$ \  del  tensor  de  los monetos  centrales  del
+  teorema~\ref{Teo:MP:MomentosCumulantesEliptica} es tambi\'en dado por
+  %
+  \[
+  \alpha_k   =    \frac{\Gamma\left(   \frac{d}{2}   \right)}{2^k   \Gamma\left(
+      \frac{d}{2}  + k\right)}  \, \Esp\left[  \left( (X-m)^t  \Sigma^{-1} (X-m)
+    \right)^k \right]
+  \]
+\end{lema}
+%
+\begin{proof}
+  Por ejemplo, del desarollo  de Taylor  de la funci\'on  de Bessel  dado en~\cite{GraRyz15},
+  aplicado a \ $\varphi_U(u)  = 2^{\frac{d}{2}} \Gamma\left( \frac{d}{2} \right)
+  u^{-\frac{d-2}{4}} J_{\frac{d}{2}-1} \left( \sqrt{u} \right)$ \ se obtiene
+  %
+  \[
+  \varphi_U^{(k)}(0)   =  \frac{(-1)^k   \Gamma\left(   \frac{d}{2}  \right)}{4^k
+  \Gamma\left( \frac{d}{2} + k\right)}
+  \]
+  %
+  A continuaci\'on, para \ $X \sim \ED(m,\Sigma,\varphi_X)$,  de $X-m = R \ \Sigma \ U$ \ ($R$ es escalar) y de la formula del tensor de momentos
+  centrales se obtiene
+  %
+  \[
+  \zeta_{i_1,\ldots,i_{2    k}}[X]     =    \Esp\left[    R^{2     k}    \right]
+  \zeta_{i_1,\ldots,i_{2   k}}[\Sigma   U]   =   \Esp\left[  R^{2   k}   \right]
+  \alpha_k(\varphi_U) c_{i_1,\ldots,i_{2 k}}(\Sigma)
+  \]
+  %
+  es decir
+  %
+  \[
+  \alpha_k(\varphi_X) = (-2)^k \varphi_U^{(k)}(0) \Esp\left[ R^{2 k} \right]
+  \]
+  %
+  Ahora, $(X-m)^t \Sigma^{-1} (X-m) = R^2 U^t U = R^2$, lo que cierra la prueba.
+\end{proof}
+
+\SZ{
+\begin{itemize}
+\item mzcla consistente? varphi ind dimension?
+
+\item Volver a los cumulantes $2 k$: se puede decir m\'as?
+
+\item Si X adimte una densidad... misma prueba que para phiX; escritura sim ED(m,Sigma,dX)
+
+\item Ley de r via dX
+
+\item Transformada de Hankel
+
+\item Coordenadas hyperesfericas
+
+\item GSM y consistante
+
+
+\item  Hablar de  nuevo de  la Gausiana con el $r$, de Student-t con $r$ y como  GSM~\cite{toto, titi,  FanKot90,
+    KotNad04} y la Student-r con $r$ pero que no es GSM (nota con casi GSM X/sqrt(G+||X||)).
+
+\end{itemize}
+
+Citar mi HDR
+
 
 Ver BilBre def 13.3
 
 
 Ver 1.5 de KotNad04 entre otros, Mui82, m\'as lis ref.
-
-Hablar de nuevo de la Student-t como GSM~\cite{toto, titi, FanKot90, KotNad04}
-
-% Salimos de Nota:  $m_X = m$, \  $\Sigma_X = 2 \varphi_X'(0) R$,  \ $\gamma_X =
-% 0$,  \  $\kappa_X =  -  \frac{2 \varphi_X''(0)}{\varphi_X'(0)}  \sum_{i,j=1}^d
-% \Big(  \left( \un_i  \un_i^t \right)  \otimes \left(  \un_j \un_j^t  \right) +
-% \left( \un_i  \un_j^t \right)  \otimes \left( \un_i  \un_j^t \right)  + \left(
-%   \un_i \un_j^t \right) \otimes \left( \un_j \un_i^t \right) \Big)$
 
 }
 
