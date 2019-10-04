@@ -1,0 +1,448 @@
+\subsubseccion{Distribuci\'on Student-$r$ multivariada}
+\label{Sssec:MP:StudentR}
+
+\SZ{
+%En   el  caso   escalar,  esta   ley   fue  introducida   inicialmente  por   F.
+%R. Helmert~\cite{Hel75, Hel76, She95}  y J.  L\"uroth~\cite{Lur76, Pfa96}.  Pero
+%es m\'as  conocida por su  introducci\'on por William  Sealy Gosset~\footnote{De
+%  hecho,  Gosset  fue  un  estudiante  trabajando en  la  f\'abrica  de  cerveza
+%  irlandesa  Guiness  sobre estad\'istica  relacionada  a  la  qui\'imica de  la
+%  cerveza.   A pesar  que hay  varias  explicaciones sobre  el hecho  de que  se
+%  public\'o este trabajo bajo el nombre ``Student''. Unas es que fue para que no
+%  se  sabe que  la f\'abrica  estaba  trabajando sobre  estas estadisticas  para
+%  estudiar  la calidad  de  la cerveza~\cite{Wen16}.\label{Foot:MP:Student}}  en
+%1908,  trabajando  sobre variables  centradas  normalizadas  por  el promedio  y
+%varianza empiricos~\cite{Stu08}.   Fue estudiada entre  otros intensivamente por
+%el  famoso matematico  R. Fisher~\cite{Fis25}.   En la  literatura, esta  ley es
+%conocida bajo  los nombres {\em  Student}, {\em Student-$t$} o  simplemente {\em
+%  $t$-distribuci\'on} o  a\'un bajo el nombre  {\em Pearson tipo IV}  en el caso
+%escalar  y 
+{\em  Pearson tipo  IIIa$\alpha$}
+%  (para $\frac{\nu+d}{2}$  entero; ver  m\'as
+%abajo), 
+debido  a la  familia de Pearson~\cite{Pea95,  JohKot95:v1, JohKot95:v1,  KotBal00, FanKot90}.
+%  Esta distribuci\'on aparece como a  priori conjugado del
+%promedio de una gausiana en inferencia bayesiana~\cite{Rob07, KotNad04}.
+}
+
+Se denota con \ $X \sim \R_\nu(m,\Sigma)$ \ con \ $m \in \Rset^d$, \ $\Sigma \in
+P_d^+(\Rset)$. $m$ \ es llamado  {\em par\'ametro de posici\'on}, \ $\Sigma$
+  \ es  llamada {\em matriz  caracter\'istica} y \  $\nu > d-2$ \  llamado {\em
+  grados  de  libertad}.   Las  caracter\'isticas  de una  Student-$r$  son  las
+siguientes:
+%
+\begin{caracteristicas}
+%
+Dominio de definici\'on & $\X = m + \Sigma^{\frac12} \, \Bset_d\left( 0 , \sqrt{\nu+2} \right) = \left\{ x \in \Rset^d \tq \Sigma^{-\frac12} (x-m) \in \Bset\left( 0 , \sqrt{\nu+2} \right) \right\}$\\[2mm]
+\hline
+%
+Par\'ametro & $\nu > d-2$ \ (grados de libertad), \ $m \in \Rset^d$ \
+(posici\'on), \ $\Sigma \in P_d^+(\Rset)$ \ (matriz caracer\'istica)\\[2mm]
+\hline
+%
+Densidad de probabilidad & $\displaystyle p_X(x) = \frac{\Gamma\left(
+\frac{\nu}{2} + 1 \right)}{\pi^{\frac{d}{2}} (\nu+2)^{\frac{d}{2}} \Gamma\left(
+\frac{\nu-d}{2} + 1 \right) \, \left| \Sigma \right|^{\frac12}} \, \left( 1 -
+\frac{(x-m)^t \Sigma^{-1} (x-m)}{\nu+2} \right)^{\!\frac{\nu-d}{2}} \!\! \un_\X(x)$\\[2mm]
+\hline
+%
+Promedio & $\displaystyle m_X = m$.\\[2.5mm]
+\hline
+%
+Covarianza & $\displaystyle \Sigma_X =
+\frac{\Gamma\left( \frac{d}{2} + 1 \right) }{\pi^{\frac{d}{2}}} \: \Sigma$.\\[2.5mm]
+\hline
+%
+\modif{Asimetr\'ia} & $\displaystyle \gamma_X = 0$.\\[2mm]
+\hline
+%
+Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = \frac{- 2}{\nu+4}
+\sum_{i,j=1}^d \Big( \! \left(
+    \un_i \un_i^t \right) \otimes \left(  \un_j \un_j^t \right) +  \left( \un_i
+    \un_j^t \right) \otimes \left( \un_i  \un_j^t \right) + \left( \un_i \un_j^t
+  \right) \otimes \left( \un_j \un_i^t \right) \! \Big)$.\\[2mm]
+\hline
+%
+Funci\'on caracter\'istica & $\displaystyle
+\Phi_X(\omega) = \frac{2^{\frac{\nu}{2}} \Gamma\left(
+\frac{\nu}{2} +1 \right)}{(\nu+2)^{\frac{\nu}{4}}} \, e^{\imath \omega^t m} \, \left( \omega^t \Sigma \omega
+\right)^{- \frac{\nu}{4}} J_{\frac{\nu}{2}}\left( \sqrt{(\nu+2) \, \omega^t \Sigma
+\omega} \right)$
+\end{caracteristicas}
+
+Nota: nuevamente se puede escribir $X \, \egald \, \Sigma^{\frac12} R + m$ \ con
+\ $R \, \sim \, \R_\nu(0,I)$ \ donde \ $R$ \ es dicha {\em Student-$r$ estandar}
+y  las caracter\'isticas  de \  $X$  \ son  v\'inculadas a  las  de \  $R$ \  (y
+vice-versa) por transformaci\'on lineal (ver secciones anteriores).
+
+La densidad de probabilidad Student-$r$ estandar y la funci\'on de repartici\'on
+en el caso escalar  son representadas en la figura Fig.~\ref{Fig:MP:StudentR}-(a)
+y    (b)   y    una   densidad    en   un    contexto    bi-dimensional   figura
+Fig.~\ref{Fig:MP:StudentR}(c).
+%%
+\begin{figure}[h!]
+%\begin{center} \input{TIKZ_MP/StudentR} \end{center}
+% 
+\leyenda{Ilustraci\'on  de  una  densidad  de probabilidad  Student-$r$  escalar
+  estandar (a),  y la funci\'on  de repartici\'on asociada  (b) con \ \SZ{$\nu  = 1$
+  (linea llena), \ $\nu = 3$ (linea  guionada), \ $\nu = 7$ (linea punteada) \ y
+  \ $\nu \to +\infty$ (linea llena fina; ver m\'as adelante)} grados de libertad,
+  as\'i que una densidad de probabilidad Student-$r$ bi-dimensional con \ \SZ{$\nu =
+  1$} \  grado de libertad,  centrada, y de  matriz caracter\'istica \  $\Sigma =
+  R(\theta) \Delta^2  R(\theta)^t$ \ con \  $R(\theta) = \protect\begin{bmatrix}
+    \cos\theta    &     -    \sin\theta\\[2mm]    \sin\theta     &    \cos\theta
+    \protect\end{bmatrix}$   \   matriz   de    rotaci\'on   y   \   $\Delta   =
+  \diag\left(\protect\begin{bmatrix}  1   &  a\protect\end{bmatrix}  \right)$  \
+  matriz  de   cambio  de  escala,   y  sus  marginales   \  $X_1  \,   \sim  \,
+  \R_\nu\left(0,\cos^2\theta +  a^2 \sin^2\theta \right)$ \  y \ $X_2  \, \sim \,
+  \R_\nu\left(0,\sin^2\theta   +   a^2  \cos^2\theta   \right)$   \  (ver   m\'as
+  adelante). En la figura, \SZ{$a = \frac13$ \ y \ $\theta = \frac{\pi}{6}$}.}
+\label{Fig:MP:StudentR}
+\end{figure}
+
+Nota:  en el  caso \  $\nu =  d$ \  la ley  es uniforme  adentro del  dominio de
+definici\'on  $X  \sim  \U\left(  m  + \Sigma^{\frac12}  \,  \Bset_d\left(  0  ,
+    \sqrt{d+2} \right) \right)$. Para \ $d-2 < \nu < d$ \ la densidad diverge
+en los bordes del dominio de definici\'on (divergencia integrable).
+
+Contrariamente al caso gaussiano, de la forma de la densidad de probabilidad, es
+claro que si la matriz \ $\Sigma$ \ es diagonal, la densidad no factoriza, as\'i
+que  las componentes  del vector  no son  independientes.  Este  ejemplo muestra
+claramente y nuevamente  que la reciproca del lema~\ref{Lem:MP:IndependenciaCov}
+es falsa en general.
+
+Sin embargo, las distribuciones Student-$r$ tienen varias propiedades notables.
+
+\begin{lema}[Stabilidad por transformaci\'on lineal]
+\label{Lem:MP:StabilidadLinealStudentR}
+%
+  Sea \ $X \, \sim \,  \R_\nu(m,\Sigma)$, \ $A$ \ matriz de \ $\M_{d',d}(\Rset))$
+  \ con \ $d' \le d$, y de rango lleno y \ $b \in \Rset^{d'}$. Entonces
+  %
+  \[
+  A X + b\, \sim \, \R_\nu( A m + b , A \Sigma A^t)
+  \]
+  %
+  En particular los componentes de \ $X$ \ son student-$r$,
+  %
+  \[
+  X_i \, \sim \, \R_\nu(m_i , \Sigma_{i,i} )
+  \]
+\end{lema}
+\begin{proof}
+  La prueba es inmediata usando  la funci\'on caracter\'istica y sus propiedades
+  por  transformaci\'on lineal.  La condici\'on  sobre \  $A$ \  es  necesaria y
+  suficiente para que \ $A \Sigma A^t \in P_{d'}^+(\Rset)$.
+\end{proof}
+
+\begin{lema}[L\'imite Gausiana]
+\label{Lem:MP:LimiteStudentRGaussiana}
+%
+  Sea \  $X_\nu \, \sim  \, \R_\nu(m,\Sigma)$ \ vector  Student-$r$ parametizado
+  por \ $\nu$ \ sus grados de libertad. Entonces
+  %
+  \[
+  X_\nu \, \limitd{\nu \to \infty} \, = \, X \, \sim \, \N(m,\Sigma)
+  \]
+  %
+  con \ $\displaystyle \limitd{}$ \ l\'imite es en distribuci\'on.
+\end{lema}
+\begin{proof}
+  La prueba  es inmediata tomando el  logaritmo de la  densidad de probabilidad,
+  usando      la     formula      de     Stirling~\footnote{Ver      nota     de
+    pie~\footref{Foot:MP:Stirling}} para  \ $\log\Gamma(z) = \left(  z - \frac12
+  \right)  \log  z  -  z  +  \frac12   \log(2  \pi)  +  o(1)$  \  en  \  $z  \to
+  +\infty$~\cite{Sti30, AbrSte70, GraRyz15} \  y \ $\frac{\nu-d}{2} \log\left( 1
+    - \frac{(x-m)^t  \Sigma^{-1} (x-m)}{\nu} \right) =  - \frac{\nu-d}{2} \left(
+    \frac{(x-m)^t \Sigma^{-1} (x-m)}{\nu+2} + o\left( \nu^{-1} \right) \right) =
+  - \frac{(x-m)^t \Sigma^{-1}  (x-m)}{2} + o(1)$. Adem\'as, se  nota que $\X \to
+  \Rset^d$.
+\end{proof}
+
+%Las   variables   Student-t   tienen   varias   representaciones   estocasticas,
+%relacionadas a la gausiana~\cite{FanKot90, And03, KotNad04, AndKau65}:
+%% ej. KotNad p. 7 para la secunda
+%
+\begin{lema}[Relaci\'on con la distribuci\'on Gamma]\label{Lem:MP:StudentRGamma}
+%
+  Sea \ \SZ{$V \sim \G\left( \frac{\nu-d}{2}+1 \, , \, \frac{\nu}{2} \right)$} \
+  y  \   $G  \,  \sim  \,   \N(0,I)$  \  $d$-dimensional   e  independientes  de
+  $V$. Entonces, para $\Sigma \in P_d^+(\Rset)$ y $m \in \Rset^d$,
+  %
+  \[
+  \frac{\Sigma^{\frac12} G}{\sqrt{V + \|G\|^2}} \, \sim \, \R_\nu( m , \Sigma )
+  \]
+  %
+\end{lema}
+\begin{proof}
+  Sea \ $X = \frac{G}{\sqrt{V + \|G\|}}$. De la nota siguiendo la tabla de caracter\'isticas
+  es  necesario  y suficiente  probar  que $X  \sim  \R_\nu(0,I)$.  Ahora, de  la
+%  independencia tenemos
+%  %
+%  \[
+%  p_{X|G=g}(x)  = (2  \pi)^{-\frac{d}{2}}  g^{\frac{d}{2}} e^{-  \frac{x^t x g}{2}}
+%  \]
+%  %
+%  Entonces, multiplicando \ $p_{X|G=g}$ \ por \ $p_G$ \ y por marginalizaci\'on,
+%  obtenemos
+%  %
+%  \begin{eqnarray*}
+%  p_X(x) & = & \frac{\nu^{\frac{\nu}{2}}}{2^{\frac{\nu+d}{2}} \pi^{\frac{d}{2}}
+%  \Gamma\left( \frac{\nu}{2} \right)} \, \int_{\Rset_+} g^{\frac{\nu+d}{2}-1} \,
+%  e^{- \frac{x^t x + \nu}{2} \, g} \, dg\\[2mm]
+%  %
+%  & = & \frac{\nu^{\frac{\nu}{2}} \left( \nu + x^t x \right)^{-
+%  \frac{\nu+d}{2}}}{\pi^{\frac{d}{2}} \Gamma\left( \frac{\nu}{2} \right)} \,
+%  \int_{\Rset_+} u^{\frac{\nu+d}{2}-1} \, e^{- u} \, du\\[2mm]
+%  %
+%  & = & \frac{\Gamma\left( \frac{\nu+d}{2} \right)}{(\pi \nu)^{\frac{d}{2}}
+%  \Gamma\left( \frac{\nu}{2} \right)} \, \left( 1 + \frac{x^t x}{\nu} \right)^{-
+%  \frac{\nu+d}{2}}
+%  \end{eqnarray*}
+% %
+%  La secunda linea viene del cambio de variables \ $u = \frac{x^t x + \nu}{2} \,
+%  g$  \  y la  tercera  reconociendo  en la  integral  la  funci\'on Gamma  (ver
+%  notaciones).
+\end{proof}
+%%
+%\begin{lema}[Relaci\'on con la distribuci\'on de Wishart]\label{Lem:MP:StudentWishart}
+%%
+%  Sea \ $W \, \sim \, \W( \Sigma^{-1} \, , \, \nu+d-1)$ \ $d \times d$ \ Wishart
+%  con \ $\Sigma \in P_d^+(\Rset)$, \ $Y \,  \sim \, \N(0,\nu I)$ \ con $\nu > 0$
+%  \ e \ $Y$ \ independiente de \  $W$. Entonces, para \ 
+%  %$R \in P_d^+(\Rset)$ \ y
+%  \ $m \in \Rset^d$,
+%  %
+%  \[
+%  W^{-\frac12} Y + m \, \sim \, \T_\nu\left( m , \Sigma \right)
+%  \]
+%  %
+%\end{lema}
+%\begin{proof}
+%  Sea \ $X = W^{-\frac12} Y$. De la nota siguiendo la tabla de caracter\'isticas
+%  es  necesario  y suficiente  probar  que $X  \sim  \T_\nu(0,\Sigma)$.  Ahora, de  la
+%  independencia tenemos
+%  %
+%  \[
+%  p_{X|W=w}(x)  = (2  \pi \nu)^{-\frac{d}{2}}  |w|^{\frac12} e^{-  \frac{x^t w  x}{2
+%      \nu}}
+%  \]
+%  %
+%  Denotamos  por \  $D =  \left\{ w_{ij},  \: 1  \le j  \le i  \le d  \tq  w \in
+%    P_d^+(\Rset) \right\}$ \ y, por abuso de  escritura, \ $dv = \prod_{ 1 \le j
+%    \le i \le d} dw_{ij}$.  Entonces,  multiplicando \ $p_{X|W=w}$ \ por \ $p_W$
+%  \ y por marginalizaci\'on, obtenemos
+%  % ($\propto$ significa ``proporcional  a'', i.e., olvidando el coefficiente de
+%  % normalizaci\'on)
+%  %
+%  \begin{eqnarray*}
+%  p_X(x) & = & \int_D \frac{|w|^{\frac{\nu-1}{2}} e^{- \frac{x^t w x}{2 \nu} -
+%  \frac12 \Tr\left( \Sigma w \right)}}{2^{\frac{d (\nu+d)}{2}} (\pi
+%  \nu)^{\frac{d}{2}} \left| \Sigma^{-1} \right|^{\frac{\nu+d-1}{2}} \Gamma_d \left(
+%  \frac{\nu+d-1}{2} \right)} \, dw\\[2mm]
+%  %
+%  & = & \frac{\Gamma\left( \frac{\nu+d}{2} \right)}{(\pi \nu)^{\frac{d}{2}}
+%  \Gamma\left( \frac{\nu}{2} \right)} \left| \Sigma + \frac{x x^t}{\nu}
+%  \right|^{-\frac{\nu+d}{2}} \left| \Sigma
+%  \right|^{\frac{\nu+d-1}{2}} \: \int_D \frac{|w|^{\frac{\nu+d-d-1}{2}} e^{-
+%  \frac12 \Tr\left( \left[ \Sigma + \frac{x x^t}{\nu} \right] w \right)}}{2^{\frac{d
+%  (\nu+d)}{2}} \left| \left( \Sigma + \frac{x x^t}{\nu} \right)^{-1}
+%  \right|^{\frac{\nu+d}{2}} \Gamma_d \left( \frac{\nu+d}{2} \right)} \, dw\\[2mm]
+%  %
+%  & = & \frac{\Gamma\left( \frac{\nu+d}{2} \right)}{(\pi \nu)^{\frac{d}{2}}
+%  \Gamma\left( \frac{\nu}{2} \right) \left| \Sigma \right|^{\frac12}} \: \left( 1
+%  + \frac{x^t \Sigma^{-1} x}{\nu} \right)^{-\frac{\nu+d}{2}} \, \int_D
+%  \frac{|w|^{\frac{\nu+d-d-1}{2}} e^{- \frac12 \Tr\left( \left[ I + \frac{x
+%  x^t}{\nu} \right] w \right)}}{2^{\frac{d (\nu+d)}{2}} \left| \left( I + \frac{x
+%  x^t}{\nu} \right)^{-1} \right|^{\frac{\nu+d}{2}} \Gamma_d \left( \frac{\nu+d}{2}
+%  \right)} \, dw
+%  \end{eqnarray*}
+%  %
+%  Para  \ $a, b  \in \Rset^d,  \: M  \in \M_{d,d}(\Rset)$,  en la  secunda linea
+%  usamos la  identidad \  $a^t M b  = \Tr(b a^t  M)$ \  y \ $\Gamma_d\left(  x -
+%    \frac12 \right) = \frac{\Gamma\left(  x - \frac{d}{2} \right)}{\Gamma(x)} \,
+%  \Gamma_d(x)$ \ (ver notaciones) y en  la tercera linea usamos $\left| \Sigma +
+%    \frac{x   x^t}{\nu}   \right|  =   \left|   \Sigma   \right|   \left|  I   +
+%    \frac{\Sigma^{-1}   x    x^t}{\nu}   \right|$   \   y    la   identidad   de
+%  Sylvester~\cite{Syl51} o~\cite[\S~18.1]{Har08} \ $\left| I + a b^t \right| = 1
+%  + b^t  a$. Se  concluye que \  $X \sim  \T_\nu(0,\Sigma)$ \ reconociendo  en el
+%  factor de  la integral como  la distribuci\'on \  $\T_\nu(0,\Sigma)$ \ y  en el
+%  integrande la  distribuci\'on de Wishart \  $\W( \left( I  + \frac{x x^t}{\nu}
+%  \right),\nu+d)$ \ que suma entonces a la unidad.
+%  %  la  formula de  Sherman-Morrison-Woodbury  $\left(  I  + \frac{x  x^t}{\nu}
+%  % \right)^{-1} = I$~\cite{HorJoh13, Har08}
+%\end{proof}
+
+%Como lo hemos introducido, la  distribuci\'on de Student aparece naturalmente en
+%el  marco  de la  estimaci\'on,  especialmente  a  trav\'es de  la  estimaci\'on
+%empirica de la media y covarianza~\cite{Mui82, GupNag99, BilBre99, And03, Seb04}:
+%% resp. p 80 teo 3.2.1 -- p. 92 teo 3.3.6 -- p. 87 prop. 7.1 -- p. 77 teo. 3.3.2 -- p. 63 teo. 3.1
+%% Nota : ver corolarios 2 y 3, p. 25 de Seber
+%% VER GupNag Th. 4.2.1
+%%
+%\begin{teorema}%[]
+%%
+%  Sean  \  $X_i \,  \sim  \,  \N(m,\Sigma), \:  i  =  1, \ldots  ,  n  > d-1$  \
+%  independientes,       y      sea       la       media      empirica       (ver
+%  corolario~\ref{Cor:MP:MediaEmpiricaGauss})
+%  %
+%  \[
+%  \overline{X} = \frac{1}{n} \sum_{i=1}^n X_i
+%  \]
+%  %
+%  y  la  covarianza empirica  construida  a partir  de  la  media empirica  (ver
+%  corolario~\ref{Cor:MP:WishartEstimacion})
+%  %
+%  \[
+%  \overline{\Sigma}  =  \frac{1}{n-1}  \sum_{i=1}^n  \left( X_i  -  \overline{X}
+%  \right) \left( X_i - \overline{X} \right)^t
+%  \]
+%  %
+%  Entonces:
+%  %
+%  \begin{itemize}
+%  \item $\overline{X} -  m \, \sim \,  \N\left( 0 \, , \,  \frac{1}{n} \, \Sigma
+%    \right)$ \ y  \ $\overline{\Sigma} \, \sim \, \W(  \frac{1}{n-1} \Sigma \, ,
+%    \, n-1 ) $ \ son independientes;
+%  %
+%  \item $\sqrt{\frac{n (n-d)}{n-1}} \: \overline{\Sigma}^{\, -\frac12} \, \left(
+%      \overline{X} - m \right) \, \sim \, \T_{n-d}\left( 0 \, , \, I \right)$
+%  \end{itemize}
+%\end{teorema}
+%%
+%\begin{proof}
+%  Se      refiera      a     los      corolarios~\ref{Cor:MP:MediaEmpiricaGauss}
+%  y~\ref{Cor:MP:WishartEstimacion}   por   lo  de   las   distribuciones  de   \
+%  $\overline{X}-m$ \ y de \ $\overline{\Sigma}$ \ respectivamente.
+%
+%  A continuaci\'on,  sean \  $\widetilde{X}_i =  X_i - m$  \ y  \ $\widetilde{X}
+%  =        \begin{bmatrix}        \widetilde{X}_1        &       \cdots        &
+%    \widetilde{X}_n \end{bmatrix}$. Obviamente
+%  %
+%  \[
+%  \overline{\widetilde{X}} \equiv \overline{X} - m = \frac{1}{n} \, \widetilde{X} \un
+%  \]
+%  %
+%  con \ $\un \in  \Rset^n$ \ vector de componentes iguales a \  $1$ \ y vimos en
+%  la prueba del corolario~\ref{Cor:MP:WishartEstimacion} que
+%  %
+%  \[
+%  \overline{\Sigma} = \frac{1}{n-1} \widetilde{X} \left( I - \frac{\un \un^t}{n}
+%  \right) \widetilde{X}^t
+%  \]
+%  %
+%  $A = I - \frac{\un \un^t}{n} \in  P_n(\Rset)$ \ es idemponenta de rango 1, con
+%  $A  \un = 0$,  as\'i que  por diagonalizaci\'on~\cite{HorJoh13,  Bat97, Bat07}
+%  tenemos
+%  %
+%  \[
+%  A = P \begin{bmatrix} I_{n-1} & 0\\ 0 & 0 \end{bmatrix} P^t \qquad \mbox{con} \qquad
+%  P = \begin{bmatrix} B & \frac{1}{\sqrt{n}} \un \end{bmatrix}
+%  \]
+%  %
+%  $P P^t = P P^t = I$ \ y
+%  %
+%  \[
+%  B \in \M_{n,n-1}(\Rset) \quad \mbox{tal que} \quad  B^t B = I \: \mbox{ y } \:
+%  \un^t B = 0
+%  \]
+%  %
+%  Ahora,   poniendo   la  descomposici\'on   diagonal   de   \   $A$  \   en   \
+%  $\overline{\Sigma}$ \ obtenemos (ver~corolario~\ref{Cor:MP:WishartEstimacion})
+%  %
+%  \[
+%  \overline{\Sigma} = \frac{1}{n-1} \, Y Y^t \qquad \mbox{con} \qquad Y = \widetilde{X} B
+%  \]
+%  %
+%  Luego, de la gausianidad y independencia de los \ $\widetilde{X}_i$ \ tenemos,
+%  para \   $\widetilde{x}   =    \begin{bmatrix}   \widetilde{x}_1   &   \cdots   &
+%    \widetilde{x}_n \end{bmatrix} \in \M_{d,n}(\Rset)$
+%  %
+%  \begin{eqnarray*}
+%  p_{\widetilde{X}}(\widetilde{x}) & = & (2 \pi)^{-\frac{n d}{2}}
+%  |\Sigma|^{-\frac{n}{2}} \exp\left(- \frac12 \sum_{i=1}^n \widetilde{x}_i^t
+%  \Sigma^{-1} \widetilde{x}_i \right)\\[2mm]
+%  %
+%  & = & (2 \pi)^{-\frac{n d}{2}} |\Sigma|^{-\frac{n}{2}} \exp\left(- \frac12
+%  \sum_{i=1}^n \Tr\left( \Sigma^{-1} \widetilde{x}_i \widetilde{x}_i^t
+%  \right) \right)\\[2mm]
+%  %
+%  & = & (2 \pi)^{-\frac{n d}{2}} |\Sigma|^{-\frac{n}{2}} \exp\left(- \frac12
+%  \Tr\left( \Sigma^{-1} \widetilde{x} \widetilde{x}^t \right) \right)
+%  \end{eqnarray*}
+%  %
+%  Sea    la     transformaci\'on    \    $\begin{bmatrix}     Y    &    \sqrt{n}
+%    \overline{\widetilde{X}}   \end{bmatrix}   =   \widetilde{X}   P$,   \ie   \
+%  $\widetilde{X}        =       \begin{bmatrix}        Y        &       \sqrt{n}
+%    \overline{\widetilde{X}} \end{bmatrix}  P^t$.  Se nota que  \ $|P| =  1$ \ y
+%  por                            transformaci\'on                           (ver
+%  teorema~\ref{Teo:MP:TransformacionInyectivaDensidad}),    para   \    $y   \in
+%  \M_{d,n-1}(\Rset)$ \ y \ $x \in \Rset^d$
+%  %
+%  \begin{eqnarray*}
+%  p_{Y,\sqrt{n} \overline{\widetilde{X}}}(y,x) & = & (2 \pi)^{-\frac{n d}{2}}
+%  |\Sigma|^{-\frac{n}{2}} \exp\left(- \frac12 \Tr\left(
+%  \Sigma^{-1} \begin{bmatrix} y & x \end{bmatrix} P^t P \begin{bmatrix} y^t\\
+%  x \end{bmatrix}\right) \right)\\[2mm]
+%  %
+%  & = & (2 \pi)^{-\frac{n d}{2}} |\Sigma|^{-\frac{n}{2}} \exp\left(- \frac12
+%  \Tr\left( \Sigma^{-1} \left( y y^t + x x^t \right) \right) \right)\\[2mm]
+%  %
+%  & = & (2 \pi)^{-\frac{(n-1) d}{2}} |\Sigma|^{-\frac{n-1}{2}} \exp\left(-
+%  \frac12 \Tr\left( \Sigma^{-1} y y^t \right) \right) \times (2
+%  \pi)^{-\frac{d}{2}} |\Sigma|^{-\frac12} \exp\left(- \frac12 x^t \Sigma^{-1} x
+%  \right)
+%  \end{eqnarray*}
+%  %
+%  Claramente,  de la factorizaci\'on  de las  distribuciones, $Y  = X  B$ \  y \
+%  $\sqrt{n}  \overline{\widetilde{X}}$  \ son  independientes,  es  decir que  \
+%  $\frac{1}{n-1} \, Y Y^t = \overline{\Sigma}$ \ y \ $\overline{\widetilde{X}} =
+%  \overline{X} -  m$ \ son  independientes, lo que  cierra la prueba  del primer
+%  item.  Pasando, la forma  de $p_{Y,\sqrt{n}  \overline{\widetilde{X}}}(y,x)$ \
+%  confirma  que  \ $\overline{X}-m$  \  es  gausiana  centrada de  covarianza  \
+%  $\frac{1}{n} \,  \Sigma$, y  que los \  $Y_i$ \ son  independientes gausianos,
+%  dando la distribuci\'on  de Wishart del lema~\ref{Lem:MP:WishartGausiana} para
+%  la covarianza empirica.
+%
+%  A continuaci\'on,
+%  %
+%  \[
+%  \sqrt{\frac{n   (n-d)}{n-1}}   \,   \overline{\Sigma}^{\,   -\frac12}   \left(
+%    \overline{X}-m \right)  = \frac{1}{\sqrt{n-1}} \:  \Sigma^{- \frac12} \left(
+%    \Sigma^{-1}  \, \overline{\Sigma}  \, \Sigma^{-1}  \right)^{-\frac12} \left(
+%    \sqrt{n (n-d)} \: \Sigma^{-\frac12} \left( \overline{X}-m \right) \right)
+%  \]
+%  %
+%  Del           teorema~\ref{Teo:MP:StabilidadGaussiana}          y          del
+%  lema~\ref{Lem:MP:StabilidadWishartLineal} tenemos
+%  %
+%  \[
+%  \sqrt{n (n-d)}  \: \Sigma^{-\frac12} \left( \overline{X}-m \right)  \, \sim \,
+%  \N(0 ,  (n-d) I)  \qquad \mbox{y} \qquad  \Sigma^{-1} \,  \overline{\Sigma} \,
+%  \Sigma^{-1}  \, \sim  \, \W\left(  \left( (n-1)  \Sigma \right)^{-1}  \,  , \,
+%    n-d+d-1 \right)
+%  \]
+%  %
+%  Se   cierra   la  prueba   usando   los  lemas~\ref{Lem:MP:StudentWishart}   \
+%  y~\ref{Lem:MP:StabilidadLineal}.
+%\end{proof}
+
+
+M\'as propiedades de esta distribuci\'on se encuentran en libros especializados,
+por ejemplo~\cite{FanKot90, KotBal00}.
+
+%\
+
+%La distribuci\'on  Student-t se generaliza  al caso matriz-variada  $X$ definido
+%sobre $M_{d,d'}(\Rset)$;  se denota  \ $X \,  \sim \,  \T_\nu(M,\Sigma,\Omega)$ \
+%donde  \ $M  \in  M_{d,d'}(\Rset), \:  \Sigma  \in P_d^+(\Rset),  \: \Omega  \in
+%P_{d'}^+(\Rset)$   y  la  densidad   est  dada   por  $\displaystyle   p_X(x)  =
+%\frac{\Gamma_d\left(      \frac{\nu+d+d'-1}{2}\right)}{\pi^{\frac{\nu     d}{2}}
+%  \Gamma_d\left(       \frac{\nu+d-1}{2}\right)      \,       \left|      \Sigma
+%  \right|^{\frac{d'}{2}}  \left|  \Omega \right|^{\frac{d}{2}}}  \:  \left| I  +
+%  \Sigma^{-1}     (x-M)     \,     \Omega^{-1}     \,     (x-M)^t     \right|^{-
+%  \frac{\nu+d+d'-1}{2}}$. Se refiera  a~\cite[Cap.~4]{GupNag99} para tener m\'as
+%detalles.
+
+%\SZ{Proyeccion uniforme sobre  le esfera; mas adelante, SR  como proy unif, pero
+%  tambien SR: no puede ser consistente!}

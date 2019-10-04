@@ -25,7 +25,7 @@ Maxwell-Hershel~\footnote{Ver~\cite[Prop.~4.11]{BilBre99}.   Se notar\'a  que no
 eliptica   en    estad\'istica   o   procesamiento   de    la   se\~nal,   entre
 otros~\cite{Bar34, Bar34:07, Kel71, Chu73, CamHua81, Eat81, Kan94, Yao73, Lau75,
   Lor54,  Ver64,  ArePin06,   BlaTho68,  ChiPas08,  Gol76,  RanWei93,  RanWei95,
-  KotNad01}.
+  ZozVig, Zoz, Mui82, BilBre99, KotNad01}.
 
 Empezamos  por  la  definici\'on,  antes  de  ir  m\'as  all\'a  estudiando  sus
 propiedades remarcables.
@@ -167,7 +167,7 @@ Varias vectores que hemos visto caen en esta familia:
 \end{ejemplo}
 %
 \begin{ejemplo}[Distribuci\'on Student-t]
-  Sea \  $X \sim t_\nu(m,\Sigma)$.  Entonces, \ $X \sim  \ED(m,\Sigma,\varphi_X)$ \
+  Sea \  $X \sim \T_\nu(m,\Sigma)$.  Entonces, \ $X \sim  \ED(m,\Sigma,\varphi_X)$ \
   con
   %
   \[
@@ -176,9 +176,20 @@ Varias vectores que hemos visto caen en esta familia:
     \sqrt{\nu \, u} \right)
   \]
 \end{ejemplo}
+%
+\begin{ejemplo}[Distribuci\'on Student-r]
+  Sea \  $X \sim \R_\nu(m,\Sigma)$.  Entonces, \ $X \sim  \ED(m,\Sigma,\varphi_X)$ \
+  con
+  %
+  \[
+  \varphi_X(u)   =   \frac{2^{\frac{\nu}{2}}   \Gamma\left(   \frac{\nu}{2}   +1
+    \right)}{(\nu+2)^{\frac{\nu}{4}}}            \,           u^{-\frac{\nu}{4}}
+  J_{\frac{\nu}{2}}\left( \sqrt{(\nu+2) \, u} \right)
+  \]
+\end{ejemplo}
 
 Un  caso particular que  va a  jugar un  rol importante  es el  de un  vector de
-distribuci\'on uniforme sobre la esfera \ $\Sset_d$, \ $U \sim \U(\Sset_d)$~\SZ{\cite{toto, titi, FanKot01}:}
+distribuci\'on uniforme sobre la esfera \ $\Sset_d$, \ $U \sim \U(\Sset_d)$~\SZ{\cite{toto, titi, FanKot90}:}
 %
 \begin{ejemplo}[Distribuci\'on uniforme sobre la esfera unitaria]\label{Ej:MP:GeneCaracUniformeEsfera}
 %
@@ -201,14 +212,14 @@ distribuci\'on uniforme sobre la esfera \ $\Sset_d$, \ $U \sim \U(\Sset_d)$~\SZ{
   \]
   %
   con \ $\mu_H$ \ la medida de Haar~\footnote{Para \ $S \subset \Sset$ \ $\mu(S)
-    =    |S|$.}     sobre    la    esfera    y    \    $|Sset_d|    =    \frac{2
+    =    |S|$.}     sobre    la    esfera    y   \    $|\Sset_d|    =    \frac{2
     \pi^{\frac{d}{2}}}{\Gamma\left(  \frac{d}{2} \right)}$  \ la  surfaca  de la
   esfera  unitaria~\cite{GraRyz15}.   Ahora,  denotanto  \  $\Sset_d^+$  \  y  \
   $\Sset_d^-$  \ respectivamente  la semiesfera  superior y  inferior,  se puede
-  parametrizar \ $s \in \Sset_d^{\pm}$ \  bajo la forma \ $s = \begin{bmatrix} b
-    & \pm \sqrt{1-\|b\|^2} \end{bmatrix}^t, \quad b \in \Bset_{d-1}$, lo que da,
-  siguiendo~\cite[ec.~4.644]{GraRyz15} (cambio de variables) y notando $\mu_L$ \
-  la medida de Lebesgue,
+  parametrizar \  $s \in \Sset_d^{\pm}$ \  bajo la forma \  $s = \begin{bmatrix}
+    b^t & \pm \sqrt{1-\|b\|^2} \end{bmatrix}^t, \quad b \in \Bset_{d-1}$, lo que
+  da,  siguiendo~\cite[ec.~4.644]{GraRyz15}  (cambio  de  variables)  y  notando
+  $\mu_L$ \ la medida de Lebesgue,
   %
   \begin{eqnarray*}
   \Phi_U(\omega) & = & \frac{2 \, \Gamma\left( \frac{d}{2}
@@ -268,23 +279,27 @@ Eso vale tambi\'en para los cumulantes:
   la media de \ $X$, \ie
   %
   \[
-  \zeta_1 = 0, \qquad \kappa_1 = m
+  \zeta_1[X] = 0, \qquad \kappa_1[X] = m
   \]
   %
   y para cualquier orden superior a  $2$, los momentos centrales y cumulantes de
   orden impares son ceros,
   %
   \[
-  \zeta_{i_1,\ldots,i_{2  k  +1}}[X] =  \kappa_{i_1,\ldots,i_{2  k  +1}}[X] =  0,
-  \qquad k \ge 1
+  \zeta_{2 k + 1}[X] = \kappa_{2 k + 1}[X] = 0, \qquad k \ge 1
+  %_{i_1,\ldots,i_{2  k  +1}}[X] =  \kappa_{i_1,\ldots,i_{2  k  +1}}[X] =  0,
+  %\qquad k \ge 1
   \]
   %
   y los de orden pare son dados para \ $k \ge 1$, por
   %
   \[
-  \zeta_{i_1,\ldots,i_{2   k}}[X]   =   \alpha_k\left(  \varphi_X   \right)   \,
-  c_{i_1,\ldots,i_{2 k}}(\Sigma) \qquad  y \qquad \kappa_{i_1,\ldots,i_{2 k}}[X]
-  = \alpha_k\left( \psi_X \right) \, c_{i_1,\ldots,i_{2 k}}(\Sigma)
+  \zeta_{2 k}[X] = \alpha_k\left(  \varphi_X   \right) \T_k(\Sigma)
+  %{i_1,\ldots,i_{2   k}}[X]   =   \alpha_k\left(  \varphi_X   \right)   \,
+  %c_{i_1,\ldots,i_{2 k}}(\Sigma)
+ \qquad  y \qquad \kappa_{2 k}[X] = \alpha_k\left(  \psi_X   \right) \T_k(\Sigma)
+%_{i_1,\ldots,i_{2 k}}[X]
+%  = \alpha_k\left( \psi_X \right) \, c_{i_1,\ldots,i_{2 k}}(\Sigma)
   % (-2)^k \, \varphi_X^{(k)}(0)  \sum_{\pi \in \Pi_{2 k ,  2}} \prod_{(l,n) \in
   %   \pi} \Sigma_{i_l,i_n}
   \]
@@ -296,11 +311,18 @@ Eso vale tambi\'en para los cumulantes:
   %   \Pi_{2 k , 2}} \prod_{(l,n) \in \pi} \Sigma_{i_l,i_n}
   % \]
   %
-  con
+  con el coefficient \ $\alpha_k$ \ dado por
   %
   \[
-  c_{i_1,\ldots,i_{2k}}(\Sigma) = \sum_{\pi \in  \Pi_{2 k , 2}} \prod_{(l,n) \in
-    \pi} \Sigma_{i_l,i_n} \qquad \mbox{y} \qquad \alpha_k(f) = (-2)^k f^{(k)}(0)
+  \alpha_k(f) = (-2)^k f^{(k)}(0)
+  \]
+  %
+  y el tensor \ $\T_k(\Sigma)$ \ de orden \ $2 k$ \ de componentes
+  %
+  \[
+  \T_{i_1,\ldots,i_{2k}}(\Sigma) = \sum_{\pi \in \Pi_{2 k , 2}} \prod_{(l,n) \in
+    \pi} \Sigma_{i_l,i_n}
+  % \qquad \mbox{y} \qquad \alpha_k(f) = (-2)^k f^{(k)}(0)
   \]
   %
   donde   \  $\Pi_{2   k  ,   2}$   \  es   el  conjunto   de  particiones   por
@@ -399,8 +421,8 @@ prueba m\'as directa, valida para ambos momentos y cumulantes.
 \end{proof}
 %
 Veremos m\'as adelante una prueba a\'un m\'as directa y obvia que, a orden dado,
-el  tensor de  los momentos  tiene  una structura  dada bajo  un factor  escalar
-dependiendo   de  la   ley.   Lo   que  es   menos  obvio,   de   la  relaci\'on
+el tensor  de los  momentos centrales  tiene una structura  dada bajo  un factor
+escalar  dependiendo  de la  ley.   Lo  que es  menos  obvio,  de la  relaci\'on
 momentos-cumulantes, que eso vale para el tensor de los cumulantes, y que, m\'as
 que eso, estas structuras son las mismas.
 
@@ -474,10 +496,49 @@ En particular, la proyecci\'on de  un vector a simetr\'ia eliptica queda eliptic
 al  torno de  la proyecci\'on  del vector  posici\'on, con  la  misma generadora
 caracter\'istica.
 
+Eso  v\'incula   tambi\'n  un  vector  a  simetr\'ia   eliptica  coin  cualquier
+proyecci\'on:
+%
+\begin{teorema}[Proyecci\'on y componentes]
+  Sea \ $X$, vector aleatorio $d$-dimensonal de componentes $X_i$. Entonces
+  %
+  \[
+  X \sim \ED(m,\Sigma,\varphi_X) \qquad  \Longleftrightarrow \qquad \forall \: a
+  \in \Rset^d, \quad a^t (X - m) \egald \sqrt{\frac{a^t \Sigma a}{\Sigma_{i,i}}}
+  (X_i - m_i)
+  \]
+\end{teorema}
+%
+\begin{proof}
+  Sea \ $X \sim \ED(m,\Sigma,\varphi_X)$, entonces
+  %
+  \[
+  \Phi_{a^t (X - m)}(\omega) = \Phi_{X - m}(\omega a) = \varphi_X\left( \omega^2
+    a^t \Sigma  a \right)  = \Phi_{X_i-m_i}\left( \omega  \sqrt{\frac{a^t \Sigma
+        a}{\Sigma_{i,i}}}\right)  = \Phi_{\sqrt{\frac{a^t \Sigma
+        a}{\Sigma_{i,i}}} (X_i-m_i)}\left( \omega  \right)
+  \]
+  %
+  (se puede sacar el valor absoluto a $\omega$ porque, necesariamente, $X_i-m_i$
+  es     a     simetr\'ia    eliptica,     es     decir    $(X_i-m_i)     \egald
+  -(X_i-m_i)$). Reciprocamente,  si para cualquier $a \in  \Rset^d$ tenemos $a^t
+  (X  -  m)  \egald  \sqrt{\frac{a^t  \Sigma  a}{\Sigma_{i,i}}}  (X_i  -  m_i)$,
+  necesariamente
+  %
+  \[
+  \Phi_{X  - m}(a) =  \Esp\left[ e^{\imath  \, a^t  (X-m)} \right]  = \Esp\left[
+    e^{\imath \, \sqrt{\frac{a^t \Sigma a}{\Sigma_{i,i}}} (X_i - m_i)} \right] =
+  \Phi_{X_i-m_i}\left( \sqrt{\frac{a^t \Sigma a}{\Sigma_{i,i}}}\right)
+  \]
+  %
+  Es  una  funci\'on  de  $a^t  \Sigma  a$,  lo que  cierra  la  prueba  por  el
+  teorema~\ref{Teo:MP:GeneradorasCaracteristicas}.
+\end{proof}
+
 Una consecuencia importante de la  forma de la funci\'on caracter\'istica es que
 sirve a probar  que un vector a simetr\'ia  esferica se escribe estocasticamente
 como  una mezcla de  escala de  un vector  uniforme sobre  la esfera  unitaria \
-$\Sset_d$. Este resultado es  debido a Sch{\oe}nberg~\cite{Sch38, FanKot01} y se
+$\Sset_d$. Este resultado es  debido a Sch{\oe}nberg~\cite{Sch38, FanKot90} y se
 enuncia como sigue:
 %
 \begin{teorema}[Mezcla de escala de base uniforme]\label{Teo:MP:MezclaUniforme}
@@ -560,7 +621,7 @@ enuncia como sigue:
   \ y \ $\| U \| = 1$ \ viene \ $R \egald \| X \|$.
 \end{proof}
 
-De esta escritura, se puede ir un paso m\'as all\'a~\cite[Teo~2.3]{FanKot}:
+De esta escritura, se puede ir un paso m\'as all\'a~\cite[Teo~2.3]{FanKot90}:
 %
 \begin{corolario}
   Sea  \ $X$ \  $d$-dimensional a  simetria esferica.  Entonces, este  vector se
@@ -575,7 +636,7 @@ De esta escritura, se puede ir un paso m\'as all\'a~\cite[Teo~2.3]{FanKot}:
 \end{corolario}
 %
 \begin{proof}
-  Seg\'un~\cite{FanKot01, Zol86}, si  dos vectores aleatorios \ $A$ \  y \ $B$ \
+  Seg\'un~\cite{FanKot90, Zol86}, si  dos vectores aleatorios \ $A$ \  y \ $B$ \
   son iguales en distribuci\'on, para cualquier conjunto de funciones medibles \
   $f_1, \ldots ,f_n$, $\begin{bmatrix}  f_1(A) & \cdots & f_n(A) \end{bmatrix}^t
   \egald \begin{bmatrix} f_1(B) & \cdots & f_n(B) \end{bmatrix}^t$. Se lo aplica
@@ -588,12 +649,14 @@ sobre la esfera de este rayo $r$. Por eso, $X$ es tambi\'en dicho {\em mezcla de
   escala}  de una  {\em base}  \ uniforme  y \  $R$ \  es llamada  {\em variable
   generadora}.
 
-De esta  escritura, queda ahora claro  que cada tensor de  momentos centrales de
-orden  par  tienen  una estrctura  fija:  de  \  $X  =  R \Sigma  U$  \  tenemos
-$\zeta_{i_1,\ldots,i_{2k}}[X]     =    \Esp\left[     R^{2     k}    \right]
-\zeta_{i_1,\ldots,i_{2k}}[\Sigma  U]$  (ver  ej.~\cite[teo.~2.8]{FanKot01}  para
-$\Sigma  \propto I$). Adem\'as,  se puede  dar una  otra forma  del coefficiente
-$\alpha_k$:
+De  esta escritura,  queda ahora  claro que  cada tensor  de  momentos centrales
+tienen  una estrctura  fija: de  \ $X  =  R \Sigma  U$ \  tenemos $\zeta_l[X]  =
+\Esp\left[  R^l \right]  \zeta_l[\Sigma  U]$ (ver  ej.~\cite[teo.~2.8]{FanKot90}
+para $\Sigma \propto I$): la estructura, com\'un a cualquier vector aleatorio de
+$\ED(m,\Sigma,\varphi_X)$ es dada por \  $\zeta_k[\Sigma U]$ (cero cuando $l = 2
+k + 1$, por  simetr\'ia central) y el factor, dependiente de  la ley es dada por
+el  momento  del  ``rayo'' $R$.  Adem\'as,  se  puede  dar  una otra  forma  del
+coefficiente $\alpha_k$:
 %
 \begin{lema}
   El  coeficiente  \  $\alpha_k$ \  del  tensor  de  los monetos  centrales  del
@@ -616,13 +679,14 @@ $\alpha_k$:
   \Gamma\left( \frac{d}{2} + k\right)}
   \]
   %
-  A continuaci\'on, para \ $X \sim \ED(m,\Sigma,\varphi_X)$,  de $X-m = R \ \Sigma \ U$ \ ($R$ es escalar) y de la formula del tensor de momentos
+  A  continuaci\'on, para  \ $X  \sim \ED(m,\Sigma,\varphi_X)$,  de $X-m  =  R \
+  \Sigma  \ U$  \  ($R$ es  escalar)  y de  la formula  del  tensor de  momentos
   centrales se obtiene
   %
   \[
-  \zeta_{i_1,\ldots,i_{2    k}}[X]     =    \Esp\left[    R^{2     k}    \right]
-  \zeta_{i_1,\ldots,i_{2   k}}[\Sigma   U]   =   \Esp\left[  R^{2   k}   \right]
-  \alpha_k(\varphi_U) c_{i_1,\ldots,i_{2 k}}(\Sigma)
+  \zeta_{2    k}[X]     =    \Esp\left[    R^{2     k}    \right]
+  \zeta_{2   k}[\Sigma   U]   =   \Esp\left[  R^{2   k}   \right]
+  \alpha_k(\varphi_U) \T_k(\Sigma)
   \]
   %
   es decir
@@ -652,7 +716,7 @@ tambi\'en.
   la forma
   %
   \[
-  p_X(x)  = |Sigma|^{-\frac12} d_X\left( (x-m)^t \Sigma^{-1} (x-m) \right)
+  p_X(x)  = |\Sigma|^{-\frac12} d_X\left( (x-m)^t \Sigma^{-1} (x-m) \right)
   \]
   %
   donde \ $d_X:  \Rset_+ \mapsto \Rset_+$ \ escalar,  es llamada {\em generadora
@@ -745,13 +809,23 @@ transformada de Fourier.
   \[
   \varphi_X\left(   w^2   \right)   =   \left(   2   \pi   \right)^{\frac{d}{2}}
   w^{1-\frac{d}{2}}  \int_{\Rset_+}  r^{\frac{d}{2}}  d_X\left( r^2  \right)  \,
-  J_{\frac{d}{2}-1}( r  w) \, dr\qquad  \mbox{y} \qquad d_X\left( r^2  \right) =
-  \left(   2   \pi   \right)^{-\frac{d}{2}}   r^{1-\frac{d}{2}}   \int_{\Rset_+}
-  w^{\frac{d}{2}} \varphi_X\left( w^2 \right) \, J_{\frac{d}{2}-1}( r w) \, dw
+  J_{\frac{d}{2}-1}( r w) \, dr
   \]
   %
-  Esta    transformaci\'on    es   conocida    como    {\em   transformada    de
-    Hankel}~\cite{Lor54, Pou10}.
+  y reciprocamente
+  %
+  \[
+  d_X\left( r^2 \right) =  \left( 2 \pi \right)^{-\frac{d}{2}} r^{1-\frac{d}{2}}
+  \int_{\Rset_+}     w^{\frac{d}{2}}    \varphi_X\left(    w^2     \right)    \,
+  J_{\frac{d}{2}-1}( r w) \, dw
+  \]
+  %
+  La transformaci\'on dando \  $w^{\frac{d}{2}-1} \varphi_X\left( w^2 \right)$ \
+  a partir  de \  $r^{\frac{d}{2}-1} d_X\left( r^2  \right)$ \ es  conocida como
+  {\em transformada de Hankel} de orden \ $\frac{d}{2}-1$~\cite{Lor54, Pou10}. A
+  veces, la transformaci\'on dando \ $\varphi_X\left( w^2 \right)$ \ a partir de
+  \ $d_X\left( r^2 \right)$ \ es llamada {\em transformada de Hankel modificada}
+  de orden \ $\frac{d}{2}-1$.
 \end{teorema}
 %
 \begin{proof}
@@ -788,19 +862,328 @@ transformada de Fourier.
   $(2 \pi)^{-d}$ (ver teoremas~\ref{Teo:MP:InversionDensidad}).
 \end{proof}
 
+Volvemos a los ejemplos:
+%
+\begin{ejemplo}[Distribuci\'on gausiana - continuaci\'on]
+%
+  En el caso gausiano, se obtiene sencillamente
+  %
+  \[
+  d_X\left(r^2\right) \propto e^{- \frac{r^2}{2}}
+  \]
+  %
+  dando
+  %
+  \[
+  p_R(r) \propto r^{d-1} e^{- \frac{r^2}{2}}
+  \]
+  %
+  En conclusi\'on, $R^2 \sim \G\left( \frac{d}{2} , \frac12\right)$ ley Gamma.
+\end{ejemplo}
+%
+\begin{ejemplo}[Distribuci\'on Student-t]
+%
+  En el caso Student-t con $\nu$ grados de libertad, se obtiene sencillamente
+  %
+  \[
+  d_X\left(r^2\right) \propto \left( 1 + \frac{r^2}{\nu} \right)^{-\frac{d+\nu}{2}}
+  \]
+  %
+  dando
+  %
+  \[
+  p_R(r) \propto \frac{r^{d-1}}{\left( 1 + \frac{r^2}{\nu} \right)^{\frac{d+\nu}{2}}}
+  \]
+  %
+  Con \ $F = \frac{R^2}{d}$ \ se obtiene por transformaci\'on
+  %
+  \[
+  p_F(f)   \propto   \frac{f^{\frac{d}{2}-1}}{\left(   1   +   \frac{d}{\nu}   f
+    \right)^{\frac{d+\nu}{2}}}
+  \]
+  %
+  conocido como ley de Fisher-Snedecor (o $F$), de grados de libertad $(d,\nu)$,
+  o tipo Pearson VI, o  beta de secunda especie~\cite{JohKot95:v2, Muk00, Bre88,
+    IbaPer12} (ratio de Gamma independientes).
+\end{ejemplo}
+%
+\begin{ejemplo}[Distribuci\'on Student-r]
+%
+  En el caso Student-r con $\nu$ grados de libertad, se obtiene sencillamente
+  %
+  \[
+  d_X\left(r^2\right)      \propto     \left(     1      -     \frac{r^2}{\nu+2}
+  \right)^{\frac{\nu-d}{2}} \un_{(0 \; \nu+2)}\left( r^2 \right)
+  \]
+  %
+  dando
+  %
+  \[
+  p_R(r) \propto r^{d-1}  \left( 1 - \frac{r^2}{\nu+2} \right)^{\frac{\nu-d}{2}}
+  \un_{(0 \; \nu+2)}\left( r^2 \right)
+  \]
+  %
+  as\'i    que   \   $\frac{R^2}{\nu+2}    \sim   \beta\left(    \frac{d}{2}   ,
+    \frac{\nu-d}{2}+1 \right)$ \ distribuci\'on beta.
+\end{ejemplo}
+
+Tratando de  vector a simetr\'ia  esferica, resuelte frecuentemente  m\'as comodo
+tratarlo en su representaci\'on en coordenadas hiperesfericas, es decir, para $d
+\ge 2$
+%
+\[
+x_i = r \left( \prod_{k=1}^{i-1} \sin\theta_k \right) \cos \theta_i, \quad 1 \le
+i \le d
+\]
+%
+con
+%
+\[
+(r,\theta_1,\ldots,\theta_{d-1}) \in \Rset_+ \times [0 \; \pi)^{d-2} \times [0 \; 2 \pi)
+\]
+%
+y las convenciones
+%
+\[
+\theta_d = 0, \quad \prod_{k=1}^{0} = 1
+\]
+%
+\SZ{HAcer un dibujo para $d = 2, 3$}
+
+En  el caso  de vector  a simetr\'ia  esferica, aparece  que el  rayo $R$  y los
+angulos     son     independientes      y     se     puede     calcular     cada
+distribuci\'on~\cite{FanKot90, Lor54, Zoz, toto, titi}:
+%
+\begin{teorema}
+  Sea  \  $X  \sim  \ED(0,I,d_X)$  \  y \  su  representaci\'on  en  coordenadas
+  hiperesfericas \  $X_i = R \left( \prod_{k=1}^{i-1}  \sin\Theta_k \right) \cos
+  \Theta_i, \quad 1 \le  i \le d$. Entonces $R$ y los $\Theta_i,  \: 1 \le i \le
+  d-1$ \ son independientes y
+  %
+  \[
+  p_R(r) = \frac{2  \pi^{\frac{d}{2}}}{\Gamma\left( \frac{d}{2} \right)} r^{d-1}
+  d_X\left( r^2 \right)
+  \]
+  %
+  \[
+  p_{\Theta_i}(\theta_i)        =       \frac{\Gamma\left(       \frac{d-j+1}{2}
+    \right)}{\sqrt{\pi}   \,  \Gamma\left(   \frac{d-j}{2}  \right)}   \,  \big(
+  \sin\theta_i \big)^{d-i-1}  \, \un_{[0 \;  \pi)}(\theta_i), \quad 1 \le  i \le
+  d-2 , \qquad p_{\Theta_{d-1}}(\theta_{d-1}) =  \frac{1}{2 \pi} \, \un_{[0 \; 2
+    \pi)}(\theta_{d-1})
+  \]
+  %
+%  y
+%  %
+%  \[
+%  p_{\Theta_{d-1}}(\theta_{d-1})   =   \frac{1}{2   \pi}   \,   \un_{[0   \;   2
+%    \pi)}(\theta_{d-1})
+%  \]
+\end{teorema}
+%
+\begin{proof}
+  Sea      la       transformaci\'on      $g:      (x_1,\ldots,x_d)      \mapsto
+  (r,\theta_1,\ldots,\theta_{d-1})$. La jacobiana de $g^{-1}$ tiene la forma
+  %
+  \[
+  \Jac_{g^{-1}} = \begin{bmatrix}
+  %
+    \frac{\partial x_1}{\partial r} & \frac{\partial x_1}{\partial \theta_1} & 0 & \cdots & 0\\
+  %
+    \vdots & \vdots & \ddots & \ddots & \vdots\\
+  %
+    \vdots & \vdots &  & \ddots  & 0\\
+  %
+    \frac{\partial x_{d-1}}{\partial r} & \frac{\partial x_{d-1}}{\partial
+    \theta_1} & \cdots & & \frac{\partial x_{d-1}}{\partial \theta_{d-1}}\\
+  %
+    \frac{\partial x_d}{\partial  r} & \frac{\partial  x_d}{\partial \theta_1} &
+    \cdots & \cdots & \frac{\partial x_d}{\partial \theta_{d-1}}
+  %
+  \end{bmatrix}
+  \]
+  %
+  Desarrolando   el   determinante  por   la   \'ultima   columna  por   ejemplo
+  (ver~\cite{Bha97, HorJoh13}), y as\'i por inducci\'on se obtiene
+  %
+  \[
+  \left|   \Jac_{g^{-1}}  \right|  =   r^{d-1}  \prod_{j=1}^{d-2}   \left(  \sin
+    \theta_i\right)^{d-j-1}
+  \]
+  %
+  Entonces,  por  transformaci\'on  (ver  secci\'on~\ref{Sec:MP:Transformacion})
+  tenemos
+  %
+  \[
+  f_{R,\Theta_1,\ldots,\Theta_{d-1}}(r,\theta_1,\ldots,\theta_{d-1}) = d_X\left(
+    r^2    \right)     r^{d-1}    \prod_{j=1}^{d-2}    \left(     \left(    \sin
+      \theta_i\right)^{d-j-1} \un_{[0 \; \pi)}(\theta_i) \right) \, \un_{[0 \; 2
+    \pi)}(\theta_{d-1})
+  \]
+  %
+  Claramente  se  factoriza  probando  la  independencia  y  la  forma  de  cada
+  distribuci\'on   marginal.    El   factor   viene    de   la   normalizaci\'on
+  (ver~\cite[Ec.~8.380-2]{GraRyz15}   para  los   angulos,   lo  que   determina
+  necesariamente el del rayo).
+\end{proof}
+%
+Obviamente,   se   recupera   la   ley   de   \   $R   \egald   \|X\|$   \   que
+encontramos.  Ad\'emas, estas coordenadas  hiperesfericas, a  $r=1$, parametriza
+$\Sset_d$  y permite  por ejemplo  de probar  la independencia  entre  $\|X\|$ y
+$\frac{X}{\|X\|}$ (y entonces la  escritura en mezcla), de calcular directamente
+\ $\Phi_U(\omega)$ \ para \ $U  \sim \U(\Sset_d)$, o de vincular las generadoras
+caracter\'istica y de densidad entre otros.
+
+En la familia  eliptica, hay una subfamilia particular  que queda invariante por
+marginalizaci\'on, como la gausiana por ejemplo:
+%
+\begin{definicion}[Consistencia~\cite{Yao73, Kan94}]
+%
+  Sea \  $X = \begin{bmatrix} X_1 &  \cdots & X_d \end{bmatrix}$  \ a simetr\'ia
+  eliptica  de  generadora  de  densidad  $d_X$.   Este  vector  es  dicho  {\em
+    consistente}  si  la  generadora  de  densidad \  $d_{\widetilde{X}}$  \  de
+  $\widetilde{X} = \begin{bmatrix} X_1 &  \cdots & X_{d'} \end{bmatrix}, \: d' <
+  d$ \ tiene la misma forma que \ $d_X$ \ donde el par\'ametro dimensional \ $d$
+  \ es  reemplazado por  \ $d'$.
+
+  Se proba  que, equivalentemente, la generadora caracteristica  \ $\varphi_X$ \
+  no  es relacionada explicitamente  a $d$  (ver~\cite{Kan94, FanKot90}  para la
+  prueba).   Entonces,  m\'as  all\'a,  $\varphi_X$  va  a  ser  una  generadora
+  caracter\'istica  de  un vector  aleatorio  de  cualquier  dimensi\'on $d  \in
+  \Nset^*$,  \ie por  marginalizaci\'on, pero  tambi\'en por  ``extensi\'on'' de
+  dimensi\'on (a dimensi\'on dada, puede  ser vista como marginales de un vector
+  de misma ley de dimensi\'on m\'as grande).
+\end{definicion}
+
+
+\begin{ejemplo}[Distribuci\'on gausiana - continuaci\'on]
+%
+  La gausiana es consistente. De hecho, tenemos para cualquier dimensi\'on $d$
+  %
+  \[
+  d_X\left(r^2\right)  =  (2   \pi)^{-\frac{d}{2}}  e^{-  \frac{r^2}{2}}
+  %    \qquad     \mbox{y}    \qquad    \forall    \,    d'     <    d,    \quad
+  % d_{\widetilde{X}}\left(r^2\right) = (2
+  % \pi)^{-\frac{d'}{2}} e^{- \frac{r^2}{2}}
+  \]
+  %
+  forma dada.  Las marginales de  una gausiana es gausiana, y cualquier gausiana
+  puede ser vista como marginale de una gausiana de dimensi\'on m\'as grande.
+
+  Por un otro lado tenemos
+  \[
+  \varphi_X\left( w^2 \right) =  e^{- \frac{w^2}{2}}
+  \]
+  %
+  independiente de la dimensiona $d$.
+\end{ejemplo}
+%
+\begin{ejemplo}[Distribuci\'on Student-t - continuaci\'on]
+%
+  La Student-t es tambi\'en consistence: tenemos
+  %
+  \[
+  \varphi_X\left(  w^2 \right)  = \frac{\nu^{\frac{\nu}{4}}}{2^{\frac{\nu}{2}-1}
+    \,   \Gamma\left(    \frac{\nu}{2}   \right)}   \,    w^{\frac{\nu}{2}}   \,
+  K_{\frac{\nu}{2}}(\sqrt{\nu} w)
+  \]
+  %
+  independiente de  la dimension $d$.
+
+  Por  un  otro  lado,  por  transformada  inversa  de  Hankel,  para  cualquier
+  dimensi\'on $d$ (ver~\cite[Ec.~6.576-7]{GraRyz})
+  %
+  \[
+  d_X\left( r^2 \right)    =   \frac{\Gamma\left(   \frac{d+\nu}{2}
+    \right)}{(\pi \nu)^{\frac{d'}{2}} \Gamma\left( \frac{\nu}{2} \right)} \left(
+    1 + \frac{r^2}{\nu} \right)^{- \frac{d+\nu}{2}}
+  \]
+  %
+  Las marginales  de un Student-t con  $\nu$ grados de  libertad queda Student-t
+  con  $\nu$  grados de  libertad  y cualquier  Student-t  con  $\nu$ grados  de
+  libertad pued  ser vista  como marginal  de un Student-t  con $\nu$  grados de
+  libertad de dimensi\'on m\'as grande.
+\end{ejemplo}
+
+\begin{ejemplo}[Distribuci\'on student-$r$ - continuaci\'on]
+  $X \sim \R_\nu(m,\Sigma)$ no es consistente. Puede parecer contradictorio porque las  marginales de $X$ son student-$r$ con grado de libertad $\nu$. \SZ{Sin embarfgo}
+
+%  En  calculos, recuendense del  ejemplo~\ref{Ej:MP:GeneCaracUniformeEsfera} que
+%  la generadora caracter\'istica toma la forma
+%  %
+%  \[
+%  \varphi_X\left(  w^2  \right)  =  2^{\frac{d}{2}-1}  \Gamma\left(  \frac{d}{2}
+%  \right) \, w^{1-\frac{d}{2}} \, J_{\frac{d}{2}-1}\left( w \right)
+%  \]
+%  %
+%  depende explicitamente de  $d$. M\'as all\'a, para $d'  < d$, por transformada
+%  inversa de Hankel y~\cite[Ec.~6.575-1]{GraRyz15}, se obtiene
+%  %
+%  \[
+%  d_{\widetilde{X}}\left(   r^2   \right)   =   \frac{\Gamma\left(   \frac{d}{2}
+%    \right)}{\pi^{\frac{d'}{2}} \Gamma\left( \frac{d-d'}{2}  \right)} \left( 1 -
+%    r^2 \right)^{\frac{d-2-d'}{2}} \un_{(0 \; 1)}(r)
+%  \]
+%  %
+%  y no existe para  $d' > d$.  Claramente lar marginales depende  de ambas $d$ y
+%  $d'$;  no son  uniforma, como  lo vimos  sin  calculos y  no se  puede ver  la
+%  uniforma sobre la  esfera como marginal de un  vector aleatorio de dimensi\'on
+%  m\'as  alta.  De  hecho, se  puede notar  que las  marginales de  \ $U$  \ son
+%  Student-r con  \ $\nu = d-2$  \ grados de  libertad, a condici\'on que  $\nu >
+%  d'-2$, es decir sol\'o cuando $d'  < d$ (ver~\cite{titi, toto, Zoz}). Cuando \
+%  $d' = d-1$, la distribuci\'on diverge en los bordes de. Notar que si no cambia
+%  el grado de libertad para cualquier marginales, depende de la dimensi\'on $d$:
+%  la generadora de densidad no depende solamente de $d'$.
+\end{ejemplo}
+
+\begin{ejemplo}[Distribuci\'on uniforme sobre la esfera - continuaci\'on]
+  Claramente, $U \sim  \U(\Sset_d)$ (se supone no es consistente: las  marginales de $U$ no
+  pueden ser uniformes sobre $\Sset_{d'}$;  sin calculo, se queda claro que para
+  $d' =  d-1$, el  vector es  definido en la  bola $\Bset_{d-1}(\Rset)$,  y, por
+  inducci\'on es lo mismo para cualquier dimensi\'on m\'as baja.
+
+  En  calculos, recuendense del  ejemplo~\ref{Ej:MP:GeneCaracUniformeEsfera} que
+  la generadora caracter\'istica toma la forma
+  %
+  \[
+  \varphi_X\left(  w^2  \right)  =  2^{\frac{d}{2}-1}  \Gamma\left(  \frac{d}{2}
+  \right) \, w^{1-\frac{d}{2}} \, J_{\frac{d}{2}-1}\left( w \right)
+  \]
+  %
+  depende explicitamente de  $d$. M\'as all\'a, para $d'  < d$, por transformada
+  inversa de Hankel y~\cite[Ec.~6.575-1]{GraRyz15}, se obtiene
+  %
+  \[
+  d_{\widetilde{X}}\left(   r^2   \right)   =   \frac{\Gamma\left(   \frac{d}{2}
+    \right)}{\pi^{\frac{d'}{2}} \Gamma\left( \frac{d-d'}{2}  \right)} \left( 1 -
+    r^2 \right)^{\frac{d-2-d'}{2}} \un_{(0 \; 1)}(r)
+  \]
+  %
+  y no existe para  $d' > d$.  Claramente lar marginales depende  de ambas $d$ y
+  $d'$;  no son  uniforma, como  lo vimos  sin  calculos y  no se  puede ver  la
+  uniforma sobre la  esfera como marginal de un  vector aleatorio de dimensi\'on
+  m\'as  alta.  De  hecho, se  puede notar  que las  marginales de  \ $U$  \ son
+  Student-r con  \ $\nu = d-2$  \ grados de  libertad, a condici\'on que  $\nu >
+  d'-2$, es decir sol\'o cuando $d'  < d$ (ver~\cite{titi, toto, Zoz}). Cuando \
+  $d' = d-1$, la distribuci\'on diverge en los bordes de. Notar que si no cambia
+  el grado de libertad para cualquier marginales, depende de la dimensi\'on $d$:
+  la generadora de densidad no depende solamente de $d'$.
+\end{ejemplo}
 
 \SZ{
 \begin{itemize}
-\item mzcla consistente? varphi ind dimension?
 
 \item Volver a los cumulantes $2 k$: se puede decir m\'as?
 
-\item Coordenadas hyperesfericas
+\item Maxwell-Hershel
+%\item Ver Kano, Rao
 
-\item GSM y consistante
+\item GSM (y consistante) %
+  Esta \'ultima  aserci\'on es precisamente una caracterizaci\'on  posible de la
+  GSM~\cite{Yao94}.
 
 
-\item  Hablar de  nuevo de  la Gausiana con el $r$, de Student-t con $r$ y como  GSM~\cite{toto, titi,  FanKot90,
+\item  Hablar de  nuevo de   de Student-t como  GSM~\cite{toto, titi,  FanKot90,
     KotNad04} y la Student-r con $r$ pero que no es GSM (nota con casi GSM X/sqrt(G+||X||)).
 
 \end{itemize}
