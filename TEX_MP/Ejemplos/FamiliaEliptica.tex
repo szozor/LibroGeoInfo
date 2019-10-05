@@ -675,12 +675,9 @@ De esta escritura, se puede ir un paso m\'as all\'a~\cite[Teo~2.3]{FanKot90}:
 \end{corolario}
 %
 \begin{proof}
-  Recuerdense que si  dos vectores aleatorios \ $A$  \ y \ $B$ \  son iguales en
-  distribuci\'on, para  cualquier conjunto de funciones medibles  \ $f_1, \ldots
-  ,f_n$,   $\begin{bmatrix}   f_1(A)   &   \cdots   &   f_n(A)   \end{bmatrix}^t
-  \egald         \begin{bmatrix}        f_1(B)         &         \cdots        &
-    f_n(B) \end{bmatrix}^t$~\cite{FanKot90,  Zol86}. Se lo aplica a  \ $f_1(x) =
-  \|x\|$, \ $f_2(x) = \frac{x}{\|x\|}$ \ con \ $X \egald R \ U$.
+  Se  aplica  el  teorema~\ref{Teo:MP:IgualdadDistribucionFuncionVA} a  \  $f(x)
+  = \begin{bmatrix} \|x\|\\ \frac{x}{\|x\|} \end{bmatrix}$ \ con \ $X \egald Y =
+  R \ U$.
 \end{proof}.
 
 De la escritura  $X \egald R \,  U$, se puede ver $X  \sim \ED(0,I,\varphi_X)$ \
@@ -988,7 +985,19 @@ y las convenciones
 \[
 \theta_d = 0, \quad \prod_{k=1}^{0} = 1
 \]
+
+Los  par\'ametros   de  las  coordenadas  hiperesfericas   (rayo,  angulos)  son
+representadas en las figuras~\ref{Fig:MP:CoordenadasHiperesfericas}(a) para $d =
+2$, y~\ref{Fig:MP:CoordenadasHiperesfericas}(b) para $d = 3$.
+
+\begin{figure}[h!]
+\begin{center} \input{TIKZ_MP/CoordenadasHiperesfericas} \end{center}
+% 
+\leyenda{Coordenadas hiperesfericas para un punto dado de $\Rset^d$. (a) caso $d
+  = 2$ y (b) caso $d = 3$.}
 %
+\label{Fig:MP:CoordenadasHiperesfericas}
+\end{figure}
 \SZ{HAcer un dibujo para $d = 2, 3$}
 
 En  el caso  de vector  a simetr\'ia  esferica, aparece  que el  rayo $R$  y los

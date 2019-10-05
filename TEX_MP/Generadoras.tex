@@ -801,8 +801,37 @@ toma la forma siguiente:
   & = & \int_\Rset \Phi_X(r \omega) \, dP_R(r)
   \end{eqnarray*}
 \end{proof}
-
- }
+ 
+De la funci\'on  caracter\'istica (o tambi\'en de la  generadoda de momentos) se
+puede probar resultados sobre la escritura estocastica de vectores aleaorios que
+se va a revelar frecuentement muy \'util:
+%
+\begin{teorema}\label{Teo:MP:IgualdadDistribucionFuncionVA}
+  Sean  dos vectores  aleatorios $d$-dimensional  \ $X$  \ e  \ $Y$  \  de misma
+  distribuci\'on  de  probabilidad. Entonces,  para  cualquier  funci\'on \  $f:
+  \Rset^d  \to \Rset^{d'}$ \  medible, $f(X)$  \ y  \ $f(Y)$  \ tienen  la misma
+  distribuci\'on de probabilidad ($d'$ puede  ser menor, igual o mayor que $d$),
+  \ie
+  %
+  \[
+  X  \egald  Y \quad  \Longrightarrow  \quad  f(X) \, \egald \, f(Y)
+  \]
+\end{teorema}
+%
+\begin{proof}
+  Este resultado se encuentra entre otros en~\cite[aserci\'on~2~p.~13]{FanKot90}
+  o \cite{Zol86} y se proba sencillamente por la funci\'on caracter\'istica:
+  %
+  \[
+  \Phi_{f(X)}(\omega)  =  \Esp\left[  e^{\imath  \,  \omega^t  f(X)}  \right]  =
+  \int_{\Rset^d}  e^{\imath  \,  \omega^t  f(x)}  \,  dP_X(x)  =  \int_{\Rset^d}
+  e^{\imath \, \omega^t f(x)} \, dP_Y(x) = \Phi_{f(Y)}(\omega)
+  \]
+  %
+  Se concluye  del caract\'er uno-uno  entre la funci\'on caracter\'istica  y la
+  medida de probabilidad.
+\end{proof} 
+}
 
 %\SZ{Hablar de la forma en el caso escamar con le funcion quantile?}
 
