@@ -1,0 +1,186 @@
+\begin{tikzpicture}[scale=.75]
+\shorthandoff{>}
+
+% CUIDADO
+% Para el dibujo de la esfera, todo era hecho  en coordenadas esfericas de fisica (theta,phi)
+% Para el punto x, se usan las coordenadas como en el libro, (theta_1,theta_2)
+% (on dos parametrizaciones de la misma cosa...)
+%
+% Proyeccion para diburar un punto (x_1,x_2,x_3) teniendo en cuenta el angulo de vision
+\pgfmathdeclarefunction{projx}{2}{\pgfmathparse{#1*cos(\Az)-#2*sin(\Az)}}
+\pgfmathdeclarefunction{projy}{3}{\pgfmathparse{#1*sin(\Az)*sin(\El)+#2*cos(\Az)*sin(\El)+#3*cos(\El)}}
+
+
+% unas definiciones para elegir el angolu de vision
+\pgfmathsetmacro{\El}{35} % Elevacion
+\pgfmathsetmacro{\Az}{-105}% Azimuth
+%
+\pgfmathsetmacro\r{3.25} % rayo del circulo (d=2) y de la esfera (d=3)
+%
+%
+% punto x para el caso d = 2
+\pgfmathsetmacro\tpbi{55} % theta_1
+\pgfmathsetmacro\xpbi{\r*cos(\tpbi)} % x_1
+\pgfmathsetmacro\ypbi{\r*sin(\tpbi)} % x_2
+%
+%
+% punto x para el caso d = 3
+%\pgfmathsetmacro\tp{55} % theta punto x
+%\pgfmathsetmacro\pp{45} % phi punto x
+\pgfmathsetmacro\tu{60} % theta_1 punto x
+\pgfmathsetmacro\td{40} %theta_2 punto x
+\pgfmathsetmacro\xp{\r*cos(\tu)} % x_1 de x
+\pgfmathsetmacro\yp{\r*sin(\tu)*cos(\td)} % x_2 de x
+\pgfmathsetmacro\zp{\r*sin(\tu)*sin(\td)} % x_3 de x
+%\pgfmathsetmacro\xp{\rp*cos(\tp)*cos(\pp)} % x_1 de x
+%\pgfmathsetmacro\yp{\rp*sin(\tp)*cos(\pp)} % x_2 de x
+%\pgfmathsetmacro\zp{\rp*sin(\pp)} % x_3 de x
+%
+%
+% funcion permitiendo calcular phi(theta) dando la linea de cumbre
+\pgfmathdeclarefunction{phicr}{1}{\pgfmathparse{
+atan((sin(#1)*cos(\Az)+cos(#1)*sin(\Az))/(tan(\El)))
+}}
+%
+% ====================================================================
+%
+% -----------------
+% | Circulo d = 2 |
+% -----------------
+%
+\begin{scope}
+%
+%  axes
+% ------
+%
+\draw[>=stealth, ->] ({-1.2*\r},0)--({1.2*\r},0) node[right] {\footnotesize $x_1$};
+\draw[>=stealth, ->] (0,{-1.2*\r})--(0,{1.2*\r}) node[above] {\footnotesize $x_2$};
+%
+%
+%  Circulo
+% --------
+%
+\draw[thick] (0,0) circle (\r);
+%
+%\draw (\r,0) node[below]{$r$};
+%
+%
+%  punto x, r, theta_1
+% --------------------
+%
+\draw[thick] (0,0) -- (\xpbi,\ypbi) node[scale=.9]{$\bullet$};
+\draw[thick] (0,0) -- (\xpbi,\ypbi) node[above right]{$\boldsymbol{x}$};
+\draw ({\xpbi/2},{1.05*\ypbi/2}) node[above]{$\boldsymbol{r}$};
+\draw[->,>=stealth,thick] ({\r/2},0)  arc (0:\tpbi:{\r/2});
+\draw ({\r*cos(\tpbi/2)/2},{\r*sin(\tpbi/2)/2}) node[right] {$\boldsymbol{\theta_1}$};
+%
+\node at (0,{-\r-1.25}) [scale=.9]{(a)};
+\end{scope}
+%
+%
+% ====================================================================
+%
+% ----------
+% | Esfera |
+% ----------
+%
+\begin{scope}[xshift=10cm]
+%
+%
+%  angulo de visibilidad
+% -----------------------
+%
+\pgfmathsetmacro\tv{-\Az}
+%
+%
+% Axes
+% -----
+%
+\draw[>=stealth, ->] (0,0)--({projx(\r*2,0)},{projy(\r*2,0,0)}) node[below]
+{\footnotesize $x_1$};
+\draw[>=stealth, ->] (0,0)--({projx(0,\r*1.2)},{projy(0,\r*1.2,0)}) node[right]
+{\footnotesize $x_2$};
+\draw[>=stealth, ->] (0,0)--(0,{projy(0,0,\r*1.5)}) node[above]
+{\footnotesize $x_3$};
+%
+%
+% Esfera
+% ------
+%
+% interior de la esfera / linea de cumbre
+\filldraw[very thick, domain=-\Az:-\Az+360, variable=\t, samples=180, fill opacity=.1]
+plot ({projx(\r*cos(\t)*cos(phicr(\t)),\r*sin(\t)*cos(phicr(\t)))} , 
+      {projy(\r*cos(\t)*cos(phicr(\t)),\r*sin(\t)*cos(phicr(\t)),\r*sin(phicr(\t)))});
+%
+% Ecuador (para visualisar la esfera), dado por phi = 0:
+% parte visible
+\draw[domain=-\Az+180:-\Az+360, variable=\t, samples=90]
+plot ({projx(\r*cos(\t),\r*sin(\t))},{projy(\r*cos(\t),\r*sin(\t),0)});
+%
+% partie invisible
+\draw[dashed, domain=-\Az:-\Az+180, variable=\t, samples=45]
+plot ({projx(\r*cos(\t),\r*sin(\t))},{projy(\r*cos(\t),\r*sin(\t),0)});
+%
+% Linea de longitud para que se vea bien la surfaza: theta = 0 y 90
+% parte visible theta = 0
+\draw[domain=phicr(0):phicr(0)+180, variable=\p, samples=90]
+plot ({projx(\r*cos(\p),0)},{projy(\r*cos(\p),0,\r*sin(\p))});
+%
+% partie escondida theta = 0
+\draw[dashed, domain=phicr(0)+180:phicr(0)+360, variable=\p, samples=90]
+plot ({projx(\r*cos(\p),0)},{projy(\r*cos(\p),0,\r*sin(\p))});
+%
+% parte visible theta = 90
+\draw[domain=phicr(90):phicr(90)+180, variable=\p, samples=90]
+plot ({projx(0,\r*cos(\p))},{projy(0,\r*cos(\p),\r*sin(\p))});
+%
+% partie escondida theta = 90
+\draw[dashed, domain=phicr(90)+180:phicr(90)+360, variable=\p, samples=90]
+plot ({projx(0,\r*cos(\p))},{projy(0,\r*cos(\p),\r*sin(\p))});
+%
+%
+% Punto
+% ------
+%
+%
+% Posicion del punto x
+\draw[thick] (0,0) --
+({projx(\xp,\yp},{projy(\xp,\yp,\zp)})
+node[scale=.7]{$\bullet$};
+%
+\draw[thick]
+({projx(\xp,\yp},{projy(\xp,\yp,\zp)})
+node[right]{$\boldsymbol{x}$};
+%
+%
+% proyecciones para poner los angulos
+\draw[thick,dashed] ({projx(\xp,\yp},{projy(\xp,\yp,\zp})
+-- ({projx(\xp,\yp},{projy(\xp,\yp,0});
+\draw[thick,dashed] (0,0)
+-- ({projx(\xp,\yp},{projy(\xp,\yp,0});
+%
+%
+% notacion del rayo
+\draw ({projx(.45*\xp,.45*\yp},{projy(.45*\xp,.45*\yp,.45*\zp})
+node[above] {$\boldsymbol{r}$};
+%
+%
+% notacion del angulo theta_1
+\pgfmathsetmacro{\proptu}{.525} % "rayo" para dibujar el angulo
+\draw[->,>=stealth]
+({projx(\proptu*\xp,0)},{projy(\proptu*\xp,0,0)}) to [bend right=20]
+node[pos=0.4,below,scale=.75] {$\boldsymbol{\theta_1}$}
+({projx(\proptu*\xp,\proptu*\yp)},{projy(\proptu*\xp,\proptu*\yp,0)});
+%
+%
+% notacion del angulo theta_2
+\pgfmathsetmacro{\propp}{.625} % "rayo" para dibujar el angulo
+\draw[->,>=stealth]
+({projx(\propp*\xp,\propp*\yp)},{projy(\propp*\xp,\propp*\yp,0)}) to [bend right=20]
+node[pos=0.4,right,scale=.75] {$\boldsymbol{\theta_2}$}
+({projx(\propp*\xp,\propp*\yp)},{projy(\propp*\xp,\propp*\yp,\propp*\zp)});
+%
+\node at (0,{-\r-1.25}) [scale=.9]{(b)};
+\end{scope}
+%
+\end{tikzpicture}
