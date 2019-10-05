@@ -1,4 +1,4 @@
-\begin{tikzpicture}[scale=.75]
+\begin{tikzpicture}[scale=.8]
 \shorthandoff{>}
 
 % CUIDADO
@@ -15,7 +15,7 @@
 \pgfmathsetmacro{\El}{35} % Elevacion
 \pgfmathsetmacro{\Az}{-105}% Azimuth
 %
-\pgfmathsetmacro\r{3.25} % rayo del circulo (d=2) y de la esfera (d=3)
+\pgfmathsetmacro\r{3.5} % rayo del circulo (d=2) y de la esfera (d=3)
 %
 %
 % punto x para el caso d = 2
@@ -25,10 +25,8 @@
 %
 %
 % punto x para el caso d = 3
-%\pgfmathsetmacro\tp{55} % theta punto x
-%\pgfmathsetmacro\pp{45} % phi punto x
 \pgfmathsetmacro\tu{60} % theta_1 punto x
-\pgfmathsetmacro\td{40} %theta_2 punto x
+\pgfmathsetmacro\td{45} %theta_2 punto x
 \pgfmathsetmacro\xp{\r*cos(\tu)} % x_1 de x
 \pgfmathsetmacro\yp{\r*sin(\tu)*cos(\td)} % x_2 de x
 \pgfmathsetmacro\zp{\r*sin(\tu)*sin(\td)} % x_3 de x
@@ -70,9 +68,9 @@ atan((sin(#1)*cos(\Az)+cos(#1)*sin(\Az))/(tan(\El)))
 %
 \draw[thick] (0,0) -- (\xpbi,\ypbi) node[scale=.9]{$\bullet$};
 \draw[thick] (0,0) -- (\xpbi,\ypbi) node[above right]{$\boldsymbol{x}$};
-\draw ({\xpbi/2},{1.05*\ypbi/2}) node[above]{$\boldsymbol{r}$};
+\draw ({\xpbi/2},{1.05*\ypbi/2}) node[above,scale=.75]{$\boldsymbol{r}$};
 \draw[->,>=stealth,thick] ({\r/2},0)  arc (0:\tpbi:{\r/2});
-\draw ({\r*cos(\tpbi/2)/2},{\r*sin(\tpbi/2)/2}) node[right] {$\boldsymbol{\theta_1}$};
+\draw ({\r*cos(\tpbi/2)/2},{\r*sin(\tpbi/2)/2}) node[right,scale=.75] {$\boldsymbol{\theta_1}$};
 %
 \node at (0,{-\r-1.25}) [scale=.9]{(a)};
 \end{scope}
@@ -146,7 +144,7 @@ plot ({projx(0,\r*cos(\p))},{projy(0,\r*cos(\p),\r*sin(\p))});
 % Posicion del punto x
 \draw[thick] (0,0) --
 ({projx(\xp,\yp},{projy(\xp,\yp,\zp)})
-node[scale=.7]{$\bullet$};
+node[scale=.75]{$\bullet$};
 %
 \draw[thick]
 ({projx(\xp,\yp},{projy(\xp,\yp,\zp)})
@@ -154,31 +152,36 @@ node[right]{$\boldsymbol{x}$};
 %
 %
 % proyecciones para poner los angulos
-\draw[thick,dashed] ({projx(\xp,\yp},{projy(\xp,\yp,\zp})
--- ({projx(\xp,\yp},{projy(\xp,\yp,0});
-\draw[thick,dashed] (0,0)
--- ({projx(\xp,\yp},{projy(\xp,\yp,0});
+% x1 = 0
+%\draw[thick,dashed] ({projx(\xp,\yp},{projy(\xp,\yp,\zp})--({projx(0,\yp},{projy(0,\yp,\zp});
+%\draw[thick,dashed] (0,0)--({projx(0,\yp},{projy(0,\yp,\zp});
+%\draw[thick,dashed] ({projx(0,\yp},{projy(0,\yp,0})--({projx(0,\yp},{projy(0,\yp,\zp});
 %
 %
 % notacion del rayo
-\draw ({projx(.45*\xp,.45*\yp},{projy(.45*\xp,.45*\yp,.45*\zp})
-node[above] {$\boldsymbol{r}$};
+\pgfmathsetmacro{\propr}{.6} % distancia del rao para anotar "r"
+\draw ({projx(\propr*\xp,\propr*\yp},{projy(\propr*\xp,\propr*\yp,\propr*\zp})
+node[below,scale=.75] {$\boldsymbol{r}$};
 %
 %
 % notacion del angulo theta_1
-\pgfmathsetmacro{\proptu}{.525} % "rayo" para dibujar el angulo
+\pgfmathsetmacro{\proptu}{.45} % "rayo" para dibujar el angulo
+\draw[thick,dotted] ({projx(\xp,\yp},{projy(\xp,\yp,\zp})--({projx(\xp,0},{projy(\xp,0,\zp});;% proy x2=0
+\draw[thick,dotted] (0,0)--({projx(\xp,0},{projy(\xp,0,\zp}) node[scale=.7]{$\bullet$};% proy x2=0
 \draw[->,>=stealth]
-({projx(\proptu*\xp,0)},{projy(\proptu*\xp,0,0)}) to [bend right=20]
-node[pos=0.4,below,scale=.75] {$\boldsymbol{\theta_1}$}
-({projx(\proptu*\xp,\proptu*\yp)},{projy(\proptu*\xp,\proptu*\yp,0)});
+({projx(\proptu*\xp,0)},{projy(\proptu*\xp,0,0)}) to [bend left=20]
+node[pos=0.25,left,scale=.75] {$\boldsymbol{\theta_1}$}
+({projx(\proptu*\xp,0)},{projy(\proptu*\xp,0,\proptu*\zp)});
 %
 %
 % notacion del angulo theta_2
-\pgfmathsetmacro{\propp}{.625} % "rayo" para dibujar el angulo
+\pgfmathsetmacro{\propp}{.55} % "rayo" para dibujar el angulo
+\draw[thick,dashed] ({projx(\xp,\yp},{projy(\xp,\yp,\zp})--({projx(0,\yp},{projy(0,\yp,\zp});;% proy x1=0
+\draw[thick,dashed] (0,0)--({projx(0,\yp},{projy(0,\yp,\zp}) node[scale=.7]{$\bullet$};% proy x1=0
 \draw[->,>=stealth]
-({projx(\propp*\xp,\propp*\yp)},{projy(\propp*\xp,\propp*\yp,0)}) to [bend right=20]
-node[pos=0.4,right,scale=.75] {$\boldsymbol{\theta_2}$}
-({projx(\propp*\xp,\propp*\yp)},{projy(\propp*\xp,\propp*\yp,\propp*\zp)});
+({projx(0,\propp*\yp)},{projy(0,\propp*\yp,0)}) to [bend right=20]
+node[pos=0.3,right,scale=.75] {$\boldsymbol{\theta_2}$}
+({projx(0,\propp*\yp)},{projy(0,\propp*\yp,\propp*\zp)});
 %
 \node at (0,{-\r-1.25}) [scale=.9]{(b)};
 \end{scope}
