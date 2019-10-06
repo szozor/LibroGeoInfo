@@ -935,14 +935,14 @@ D_{n,k}  =  \left\{ j  \in  \Nset^{n-k+1} \tq  \sum_{i=1}^{n-k+1}  j_i  = k  \et
   \sum_{i=1}^{n-k+1} i j_i = n \right\}
 \]
 
-\begin{lema}[Relaci\'on momentos-cumulantes]
-  Sea  \ $X$ \  variable aleatorias  escalares. Cuando  existen, los  momentos y
+\begin{lema}[Relaci\'on momentos-cumulantes -- caso escalar]
+  Sea  \  $X$ \  variable  aleatoria escalar.  Cuando  existen,  los momentos y
   cumulantes son relacionados por las formulas
 %
 \[\left\{\begin{array}{lll}
 m_k[X] & = & \displaystyle \sum_{n=1}^k B_{k,n}( \kappa_1[X] , \ldots , \kappa_{n-k+1}[X]) \\[2mm]
 %
-\kappa_k[X] & = & \displaystyle \sum_{n=1}^k (-1)^n (n-1)! B_{k,n}( m_1[X] , \ldots , m_{n-k+1}[X]) \\[2mm]
+\kappa_k[X] & = & \displaystyle \sum_{n=1}^k (-1)^n (n-1)! B_{k,n}( m_1[X] , \ldots , m_{n-k+1}[X])
 \end{array}\right.\]
 %
 Notando que \ $C_{X-m_X}(u) = -u m_X + C_X(u)$ \ se obtiene inmediatamente
@@ -950,16 +950,99 @@ Notando que \ $C_{X-m_X}(u) = -u m_X + C_X(u)$ \ se obtiene inmediatamente
 \[\left\{\begin{array}{lll}
 \zeta_k[X] & = & \displaystyle \sum_{n=1}^k B_{k,n}( 0 , \kappa_2[X] , \ldots , \kappa_{n-k+1}[X]) \\[2mm]
 %
-\kappa_k[X] & = & \displaystyle \sum_{n=1}^k (-1)^n (n-1)! B_{k,n}( 0 , \zeta_2[X] , \ldots , \zeta_{n-k+1}[X]) \\[2mm]
+\kappa_k[X] & = & \displaystyle \sum_{n=1}^k (-1)^n (n-1)! B_{k,n}( 0 , \zeta_2[X] , \ldots , \zeta_{n-k+1}[X])
 \end{array}\right.\]
 \end{lema}
 %
 De hecho,  se podri\'a definir as\'i  de manera {\em ad-hoc},  los cumulantes que
-las generadoras adminetn o no desarollos de Taylor en $u = 0$.
+las generadoras admiten o no desarollos de Taylor en $u = 0$.
 
 La  generalizaci\'on  en el  caso  multivariado  es  posible, mediante  calculos
 bastante   pesados,  usando   el  mismo   enfoque  de   derivada   de  funciones
-compuestas~\cite[Teo.~5.1.4]{Sta99} o~\cite{Har06, LacAmb97, Bri01, Shi84}.
+compuestas~\cite[Teo.~5.1.4]{Sta99} o~\cite{Har06,  LacAmb97, Bri01, Shi84}. Eso
+conduce a las relaciones siguientes (formula de Leonov y Shiryayev):
+%
+\begin{lema}[Relaci\'on momentos-cumulantes -- caso general]
+  Sea \  $X$ \ vector  aleatoro. Cuando existen,  los momentos y  cumulantes son
+  relacionados por las formulas
+  %
+  \[\left\{\begin{array}{lll}
+  m_{i_1,\ldots,i_k}[X] & = & \displaystyle \sum_{\pi \in \Pi_k} \prod_{B \in
+  \pi} \kappa_{i_B}[X] \\[5mm]
+  %
+  \kappa_{i_1,\ldots,i_k}[X] & = & \displaystyle \sum_{\pi \in \Pi_k}
+  (-1)^{|\pi|-1} \Gamma(|\pi|) \prod_{B \in \pi} m_{i_B}[X]
+  \end{array}\right.\]
+  %
+  donde \  $\Pi_k$ \  es el conjunto  de las  particiones~\footnote{Por ejemplo,
+    $\Pi_3  = \Big\{  \big\{ \{1,2,3\}  \big\} \:  , \:  \big\{ \{1,2\}  , \{3\}
+    \big\} \: , \: \big\{ \{1,3\} ,  \{2\} \big\} \: , \: \big\{ \{2,3\} , \{1\}
+    \big\}$; cuando \ $\pi = \big\{ \{1,2\} , \{3\} \Big\}$, tenemos el producot
+    para \ $B = \{1,2\}$ con los indices \  $i_1,i_2$ \ y \ $B = \{3\}$ \ con el
+    indice $i_3$.}  de \ $\{  1 ,  \ldots , k  \}$ \ y  \ $m_{j_B}$ \  denota el
+  momento de indices $\{ j_l \tq \: l \in B \}$.
+
+  Notando  que \ $C_X(u)  = u^t  m_X +  \log \left(  M_{X-m_X}(u) \right)$  \ se
+  obtiene inmediatamente
+  %
+  \[\left\{\begin{array}{lll} \zeta_{i_1,\ldots,i_k}[X] & = & \displaystyle
+  \sum_{\pi \in \Pi_k} \prod_{B \in \pi} \Big( \kappa_{i_B}[X] + \big( m_{X_{i_B}}
+  - \kappa_{i_B}[X] \big) \un_{\{1\}}(|B|) \Big) \\[2mm]
+  %
+  \kappa_{i_1,\ldots,i_k}[X]  &  = &  \displaystyle  \sum_{\pi \in  \Pi_k}
+  (-1)^{|\pi|-1}  \Gamma(|\pi|) \prod_{B \in  \pi} \Big(  \zeta_{i_B}[X] +
+  \big( m_{_{i_B}} - \zeta_{i_B}[X] \big) \un_{\{1\}}(|B|) \Big)
+  \end{array}\right.\]
+  %
+\end{lema}
+%
+\begin{proof}
+  Recordamosnos que para \ $k \in \Nset^*, \quad (i_1 , \ldots , i_k) \in \{ 1 ,
+  \ldots , d \}^k$,
+  %
+  \[
+  m_{i_1,\ldots,i_k}[X]    =   \left.\frac{\partial^k    M_X}{\partial   u_{i_1}
+      \cdots    \partial    u_{i_k}}\right|_{u=0}    \qquad   \mbox{y}    \qquad
+  \kappa_{i_1,\ldots,i_k}[X]  =   \left.\frac{\partial^k  C_X}{\partial  u_{i_1}
+      \cdots \partial u_{i_k}}\right|_{u=0}
+  \]
+  %
+  Salimos ahora  de la formula de  Hardy~\cite[Prop.~1]{Har06}, generalizando la
+  formula de  Fa\`a di  Bruno~\cite{Faa55, Faa57}: Para  \ $h(x)  = f\left(
+    g(u) \right), \quad  \forall \: n \in \Nset^*, \quad  \forall \: (i_1 ,
+  \ldots , i_n ) \in \{ 1 , \ldots , d \}^n$,
+  %
+  \[
+  \frac{\partial^n h}{\partial u_{i_1} \cdots  \partial u_{i_n}} = \sum_{\pi \in
+    \Pi_n} f^{(|\pi|)}\left( g(u) \right) \prod_{B \in \pi} \frac{\partial^{|B|}
+    g}{\displaystyle \prod_{j \in B} \partial u_{i_j}}
+  \]
+  %
+  donde \ $f^{(l)}$ \ es la $l$-esima derivada de \ $f$. Cuando se lo aplica a \
+  $g = C_X$ \  y \ $f(u) = \exp(u)$, dando \  $f^{(n)}(u) = \exp(u)$, se obtiene
+  inmediatamente  la   relaci\'on  dando  los  momentos  en   funci\'on  de  los
+  cumulantes. Al rev\'es, cuando  se lo aplica a \ $g = M_X$ \  y \ $f(u) = \log
+  u$,  dando  \  $f^{(n)}(u)  = \frac{(-1)^{n-1}  \Gamma(n)}{u^n}$,  se  obtiene
+  inmediatamente  la  relaci\'on  dando  los  cumulantes  en  funci\'on  de  los
+  momentos.
+
+  Para lo de los momentos centrales, se nota simplemente que para \ $k = 1$ \ el
+  cumulante y el momento coinciden, y que para $k > 1$ lo cumulantes de $X$ y de
+  $X-m_X$ coinciden.
+  % que, de $\frac{\partial^n e^{u^t
+  %     m_X}$. Reciprocamente,  \ $\frac{\partial \Psi}{\partial  \omega_i}(0) =
+  %   \imath m_{X_i}$ \  y \ para \ $n  > 1$, $\frac{\partial^n \Psi_X}{\partial
+  %     \omega_{i_1}   \cdots  \partial   \omega_{i_n}}(0)   =  \frac{\partial^n
+  %     \log(\Phi_{X-m_X})}{\partial      \omega_{i_1}      \cdots      \partial
+  %     \omega_{i_n}}(0)$
+\end{proof}
+%
+% Se notar\'a  que para \ $k = 1$  \ el cumulante y el  momento coinciden, y que
+%  para $k  > 1$  lo cumulantes  de $X$  y de  $X-m_X$ coinciden,  as\'i  que se
+% vincular\'a  sencillamente cumulantes y momentos centrales  con estas formulas
+% Para lo de los momentos centrales, se nota simplemente que para \ $k = 1$ \ el
+% cumulante y el momento coinciden, y que para $k > 1$ lo cumulantes de $X$ y de
+% $X-m_X$ coinciden.
 
 \
 

@@ -301,10 +301,10 @@ Eso vale tambi\'en para los cumulantes:
   \[
   \zeta_{2 k}[X] = \alpha_k\left(  \varphi_X   \right) \T_k(\Sigma)
   %{i_1,\ldots,i_{2   k}}[X]   =   \alpha_k\left(  \varphi_X   \right)   \,
-  %c_{i_1,\ldots,i_{2 k}}(\Sigma)
+  %\psi_{i_1,\ldots,i_{2 k}}(\Sigma)
  \qquad  y \qquad \kappa_{2 k}[X] = \alpha_k\left(  \psi_X   \right) \T_k(\Sigma)
 %_{i_1,\ldots,i_{2 k}}[X]
-%  = \alpha_k\left( \psi_X \right) \, c_{i_1,\ldots,i_{2 k}}(\Sigma)
+%  = \alpha_k\left( \psi_X \right) \, \psi_{i_1,\ldots,i_{2 k}}(\Sigma)
   % (-2)^k \, \varphi_X^{(k)}(0)  \sum_{\pi \in \Pi_{2 k ,  2}} \prod_{(l,n) \in
   %   \pi} \Sigma_{i_l,i_n}
   \]
@@ -331,10 +331,11 @@ Eso vale tambi\'en para los cumulantes:
   \]
   %
   donde   \  $\Pi_{2   k  ,   2}$   \  es   el  conjunto   de  particiones   por
-  pares~\footnote{Por ejemplo,  $\Pi_{4,2} =  \big\{ \{1,2\} ,  \{3,4\} \:  , \:
-    \{1,3\} , \{2,4\} \: , \: \{1,4\}  , \{2,3\} \big\}$; cuando \ $\pi = \big\{
-    \{1,3\} , \{2,4\} \big\}$, el  t\'ermino del producto es \ $\Sigma_{i_1,i_3}
-    \Sigma_{i_2,i_4}$.} de $\{ 1 , \ldots , 2 k \}$.
+  pares~\footnote{Por  ejemplo, $\Pi_{4,2}  =  \Big\{ \big\{  \{1,2\} ,  \{3,4\}
+    \big\} \:  , \: \big\{  \{1,3\} ,  \{2,4\} \big\} \:  , \: \big\{  \{1,4\} ,
+    \{2,3\} \big\} \big\}$; cuando \ $\pi = \big\{ \{1,3\} , \{2,4\} \Big\}$, el
+    t\'ermino del producto es \ $\Sigma_{i_1,i_3} \Sigma_{i_2,i_4}$.} de $\{ 1 ,
+  \ldots , 2 k \}$.
 \end{teorema}
 %
 Una prueba  es dada  por inducci\'on en~\cite{BerBen86}  para los  momentos (ver
@@ -347,7 +348,7 @@ prueba m\'as directa, valida para ambos momentos y cumulantes.
   %
   \[
   \zeta_{i_1,\ldots,i_k}[X]     =     (-    \imath)^k     \left.\frac{\partial^k
-      \Phi_X}{\partial          \omega_{i_1}          \cdots          \partial
+      \Phi_{X-m_X}}{\partial          \omega_{i_1}          \cdots          \partial
       \omega_{i_k}}\right|_{\omega=0}       \qquad       \mbox{y}       \qquad
   \kappa_{i_1,\ldots,i_k}[X]     =    (-     \imath)^k    \left.\frac{\partial^k
       \Psi_X}{\partial          \omega_{i_1}          \cdots          \partial
@@ -367,10 +368,10 @@ prueba m\'as directa, valida para ambos momentos y cumulantes.
   y \ $m =  - \imath \, \nabla_\omega \Psi_X(0)$: \ $m$ \ es  la media de \ $X$\
   lo que corresponde a la intuici\'on.
 
-  Luego, salimos de la  formula de Hardy~\cite[Prop.~1]{Har06}, generalizando la
-  formula de  Fa\`a di  Bruno~\cite{Faa55, Faa57}: Para  \ $h(\omega)  = f\left(
-    g(\omega) \right), \quad  \forall \: n \in \Nset^*, \quad  \forall \: (i_1 ,
-  \ldots , i_n ) \in \{ 1 , \ldots , d \}^n$,
+  Luego, salimos de  la formula de Hardy, extensi\'on de de  Fa\`a di Bruno, que
+  vimos  secci\'on~\ref{Ssec:MP:GeneradoraCumulantes}  que  recordamos:  Para  \
+  $h(\omega) = f\left( g(\omega) \right),  \quad \forall \: n \in \Nset^*, \quad
+  \forall \: (i_1 , \ldots , i_n ) \in \{ 1 , \ldots , d \}^n$,
   %
   \[
   \frac{\partial^n  h}{\partial  \omega_{i_1}  \cdots \partial  \omega_{i_n}}  =
@@ -378,8 +379,8 @@ prueba m\'as directa, valida para ambos momentos y cumulantes.
   \frac{\partial^{|B|} g}{\displaystyle \prod_{j \in B} \partial \omega_{i_j}}
   \]
   %
-  donde \ $\Pi_n$  \ es el conjunto de las  particiones de \ $\{ 1  , \ldots , n
-  \}$,  $f^{(l)}$  la $l$-esima  derivada  de $f$.   En  la  expresi\'on de  los
+  con \ $\Pi_n$  \ el conjunto de las  particiones de \ $\{ 1  , \ldots , n
+  \}$ \ y \ $f^{(l)}$  la $l$-esima  derivada  de $f$.   En  la  expresi\'on de  los
   momentos centrales y cumulantes tenemos
   %
   \[
@@ -435,12 +436,11 @@ De este  resultado se puede tambi\'en  explicitar la matriz de  covariancia y el
 tensor curtosis para un vector a simetr\'ia eliptica~\cite[p.~44]{FanKot90}:
 %
 \begin{corolario}
-  Sea \  $X$ \  vector aleatorio $d$-dimensional  de distribuci\'on  eliptica al
-  torno   de   $0$   \   y    de   matriz   caracter\'istica   \   $\Sigma   \in
-  P_d^+(\Rset)$. Entonces
+  Sea \  $X$ \  vector aleatorio $d$-dimensional  de distribuci\'on  eliptica de
+  matriz caracter\'istica \ $\Sigma \in P_d^+(\Rset)$. Entonces
   %
   \[
-  \Sigma_X = - 2 \,  \varphi_X'(0) \Sigma
+  \Sigma_X = - 2 \,  \varphi_X'(0) \, \Sigma
   \]
   %
   y
@@ -708,9 +708,10 @@ coefficiente $\alpha_k$:
 \end{lema}
 %
 \begin{proof}
-  Por ejemplo, del desarollo  de Taylor  de la funci\'on  de Bessel  dado en~\cite{GraRyz15},
-  aplicado a \ $\varphi_U(u)  = 2^{\frac{d}{2}} \Gamma\left( \frac{d}{2} \right)
-  u^{-\frac{d-2}{4}} J_{\frac{d}{2}-1} \left( \sqrt{u} \right)$ \ se obtiene
+  Por  ejemplo,  del  desarollo  de  Taylor  de  la  funci\'on  de  Bessel  dado
+  en~\cite{GraRyz15},   aplicado   a   \   $\varphi_U(u)   =   2^{\frac{d}{2}-1}
+  \Gamma\left(  \frac{d}{2} \right) u^{-\frac{d-2}{4}}  J_{\frac{d}{2}-1} \left(
+    \sqrt{u} \right)$ \ se obtiene
   %
   \[
   \varphi_U^{(k)}(0)   =  \frac{(-1)^k   \Gamma\left(   \frac{d}{2}  \right)}{4^k

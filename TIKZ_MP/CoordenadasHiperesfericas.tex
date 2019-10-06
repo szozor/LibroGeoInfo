@@ -1,4 +1,4 @@
-\begin{tikzpicture}[scale=.8]
+\begin{tikzpicture}[scale=.7]
 \shorthandoff{>}
 
 % CUIDADO
@@ -82,7 +82,7 @@ atan((sin(#1)*cos(\Az)+cos(#1)*sin(\Az))/(tan(\El)))
 % | Esfera |
 % ----------
 %
-\begin{scope}[xshift=10cm]
+\begin{scope}[xshift=10.5cm]
 %
 %
 %  angulo de visibilidad
@@ -170,7 +170,7 @@ node[below,scale=.75] {$\boldsymbol{r}$};
 \draw[thick,dotted] (0,0)--({projx(\xp,0},{projy(\xp,0,\zp}) node[scale=.7]{$\bullet$};% proy x2=0
 \draw[->,>=stealth]
 ({projx(\proptu*\xp,0)},{projy(\proptu*\xp,0,0)}) to [bend left=20]
-node[pos=0.25,left,scale=.75] {$\boldsymbol{\theta_1}$}
+node[pos=0,left,scale=.75] {$\boldsymbol{\theta_1}$}
 ({projx(\proptu*\xp,0)},{projy(\proptu*\xp,0,\proptu*\zp)});
 %
 %
