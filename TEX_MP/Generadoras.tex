@@ -911,59 +911,65 @@ Se podra notar que
 \item Pero, $\forall \: k > 3, \quad \kappa_k[X] \ne \zeta_k[X]$.
 \end{itemize}
 
-Sin embargo, en  el caso escalar \  $d=1$ \ de \ $m_k[X]  = \left. \frac{\partial^k
-    M_X}{\partial     u^k}    \right|_{u=0}    =     \left.     \frac{\partial^k
-    \exp(C_X)}{\partial   u^k}   \right|_{u=0}$   \   o   $\kappa_k[X]   =   \left.
-  \frac{\partial^k C_X}{\partial  u^k} \right|_{u=0} =  \left.  \frac{\partial^k
-    \log(C_X)}{\partial u^k} \right|_{u=0}$. Se relacionan cumulentes y momentos
-de  la  formula  de  Fa\`a   di  Bruno~\footnote{Esta  formula  es  asociada  al
-  matem\'atico italiano Francesco  Fa\`a di Bruno que publico  su formula en los
-  a\~nos 1855, 1857.  Pero fue  probada desde 1800 por el matem\'atico franc\'es
-  Louis Fran\c{c}ois Antoine Arbogast~\cite{Abo00}}  que da las derivadas de una
-funci\'on compuesta~\cite{Faa55,  Faa57} mediante los  polinimios incompletos de
-Bell~\cite{Bel27}, dados para $n \ge k$
+%Sin embargo, en  el caso escalar \  $d=1$ \ de \ $m_k[X]  = \left. \frac{\partial^k
+%    M_X}{\partial     u^k}    \right|_{u=0}    =     \left.     \frac{\partial^k
+%    \exp(C_X)}{\partial   u^k}   \right|_{u=0}$   \   o   $\kappa_k[X]   =   \left.
+%  \frac{\partial^k C_X}{\partial  u^k} \right|_{u=0} =  \left.  \frac{\partial^k
+%    \log(C_X)}{\partial u^k} \right|_{u=0}$. Se relacionan cumulentes y momentos
+%de  la  formula  de  Fa\`a   di  Bruno~\footnote{Esta  formula  es  asociada  al
+%  matem\'atico italiano Francesco  Fa\`a di Bruno que publico  su formula en los
+%  a\~nos 1855, 1857.  Pero fue  probada desde 1800 por el matem\'atico franc\'es
+%  Louis Fran\c{c}ois Antoine Arbogast~\cite{Abo00}}  que da las derivadas de una
+%funci\'on compuesta~\cite{Faa55,  Faa57} mediante los  polinimios incompletos de
+%Bell~\cite{Bel27}, dados para $n \ge k$
+%%
+%\[
+%B_{n,k}(x_1,\ldots,x_{n-k+1})  = n!   \sum_{j  \in D_{n,k}}  \prod_{i=1}^{n-k+1}
+%\frac{1}{j_j!} \left( \frac{x_i}{i!} \right)^{j_i}
+%\]
+%%
+%con
+%%
+%\[
+%D_{n,k}  =  \left\{ j  \in  \Nset^{n-k+1} \tq  \sum_{i=1}^{n-k+1}  j_i  = k  \et
+%  \sum_{i=1}^{n-k+1} i j_i = n \right\}
+%\]
 %
-\[
-B_{n,k}(x_1,\ldots,x_{n-k+1})  = n!   \sum_{j  \in D_{n,k}}  \prod_{i=1}^{n-k+1}
-\frac{1}{j_j!} \left( \frac{x_i}{i!} \right)^{j_i}
-\]
+%\begin{lema}[Relaci\'on momentos-cumulantes -- caso escalar]
+%  Sea  \  $X$ \  variable  aleatoria escalar.  Cuando  existen,  los momentos y
+%  cumulantes son relacionados por las formulas
+%  %
+%  \[\left\{\begin{array}{lll}
+%  m_k[X] & = & \displaystyle \sum_{n=1}^k B_{k,n}( \kappa_1[X] , \ldots ,
+%  \kappa_{n-k+1}[X])\\[2mm]
+%  %
+%  \kappa_k[X] & = & \displaystyle \sum_{n=1}^k (-1)^n (n-1)! B_{k,n}( m_1[X] ,
+%  \ldots , m_{n-k+1}[X])
+%  \end{array}\right.\]
+%  %
+%  Notando que \ $C_{X-m_X}(u) = -u m_X + C_X(u)$ \ se obtiene inmediatamente
+%  %
+%  \[\left\{\begin{array}{lll}
+%  \zeta_k[X] & = & \displaystyle \sum_{n=1}^k B_{k,n}( 0 , \kappa_2[X] , \ldots ,
+%  \kappa_{n-k+1}[X])\\[4mm]
+%  %
+%  \kappa_k[X] & = & \displaystyle \sum_{n=1}^k (-1)^n (n-1)! B_{k,n}( 0 ,
+%  \zeta_2[X] , \ldots , \zeta_{n-k+1}[X])
+%  \end{array}\right.\]
+%\end{lema}
 %
-con
+%De hecho,  se podri\'a definir as\'i  de manera {\em ad-hoc},  los cumulantes que
+%las generadoras admiten o no desarollos de Taylor en $u = 0$.
+%La  generalizaci\'on  en el  caso  multivariado  es  posible, mediante  calculos
+%bastante   pesados,  usando   el  mismo   
+De hecho, se  puede relacionar momentos y cumulantes con  el enfoque de derivada
+de funciones  compuestas~\cite[Teo.~5.1.4]{Sta99} o~\cite{Har06}. Eso  conduce a
+las relaciones siguientes (formula  de Leonov y Shiryayev~\cite{LeoShi59, Shi84,
+  LacAmb97, Bri01}):
 %
-\[
-D_{n,k}  =  \left\{ j  \in  \Nset^{n-k+1} \tq  \sum_{i=1}^{n-k+1}  j_i  = k  \et
-  \sum_{i=1}^{n-k+1} i j_i = n \right\}
-\]
-
-\begin{lema}[Relaci\'on momentos-cumulantes -- caso escalar]
-  Sea  \  $X$ \  variable  aleatoria escalar.  Cuando  existen,  los momentos y
-  cumulantes son relacionados por las formulas
+\begin{lema}[Relaci\'on momentos-cumulantes]% -- caso general]
 %
-\[\left\{\begin{array}{lll}
-m_k[X] & = & \displaystyle \sum_{n=1}^k B_{k,n}( \kappa_1[X] , \ldots , \kappa_{n-k+1}[X]) \\[2mm]
-%
-\kappa_k[X] & = & \displaystyle \sum_{n=1}^k (-1)^n (n-1)! B_{k,n}( m_1[X] , \ldots , m_{n-k+1}[X])
-\end{array}\right.\]
-%
-Notando que \ $C_{X-m_X}(u) = -u m_X + C_X(u)$ \ se obtiene inmediatamente
-%
-\[\left\{\begin{array}{lll}
-\zeta_k[X] & = & \displaystyle \sum_{n=1}^k B_{k,n}( 0 , \kappa_2[X] , \ldots , \kappa_{n-k+1}[X]) \\[2mm]
-%
-\kappa_k[X] & = & \displaystyle \sum_{n=1}^k (-1)^n (n-1)! B_{k,n}( 0 , \zeta_2[X] , \ldots , \zeta_{n-k+1}[X])
-\end{array}\right.\]
-\end{lema}
-%
-De hecho,  se podri\'a definir as\'i  de manera {\em ad-hoc},  los cumulantes que
-las generadoras admiten o no desarollos de Taylor en $u = 0$.
-
-La  generalizaci\'on  en el  caso  multivariado  es  posible, mediante  calculos
-bastante   pesados,  usando   el  mismo   enfoque  de   derivada   de  funciones
-compuestas~\cite[Teo.~5.1.4]{Sta99} o~\cite{Har06,  LacAmb97, Bri01, Shi84}. Eso
-conduce a las relaciones siguientes (formula de Leonov y Shiryayev):
-%
-\begin{lema}[Relaci\'on momentos-cumulantes -- caso general]
-  Sea \  $X$ \ vector  aleatoro. Cuando existen,  los momentos y  cumulantes son
+  Sea \ $X$ \ vector aleatoro.  Cuando existen, los momentos y cumulantes de son
   relacionados por las formulas
   %
   \[\left\{\begin{array}{lll}
@@ -982,16 +988,17 @@ conduce a las relaciones siguientes (formula de Leonov y Shiryayev):
     indice $i_3$.}  de \ $\{  1 ,  \ldots , k  \}$ \ y  \ $m_{j_B}$ \  denota el
   momento de indices $\{ j_l \tq \: l \in B \}$.
 
-  Notando  que \ $C_X(u)  = u^t  m_X +  \log \left(  M_{X-m_X}(u) \right)$  \ se
-  obtiene inmediatamente
+  % Notando  que \ $C_X(u) =  u^t m_X +  \log \left( M_{X-m_X}(u) \right)$  \ se
+  % obtiene inmediatamente
+  Adem\'as, momentos centrales y cumulantes se vinculan bajo la forma
   %
   \[\left\{\begin{array}{lll} \zeta_{i_1,\ldots,i_k}[X] & = & \displaystyle
-  \sum_{\pi \in \Pi_k} \prod_{B \in \pi} \Big( \kappa_{i_B}[X] + \big( m_{X_{i_B}}
-  - \kappa_{i_B}[X] \big) \un_{\{1\}}(|B|) \Big) \\[2mm]
+  \sum_{\pi \in \Pi_k} \prod_{B \in \pi} \Big( \kappa_{i_B}[X] - m_{X_{i_B}}
+  \un_{\{1\}}(|B|) \Big) \\[5mm]
   %
-  \kappa_{i_1,\ldots,i_k}[X]  &  = &  \displaystyle  \sum_{\pi \in  \Pi_k}
-  (-1)^{|\pi|-1}  \Gamma(|\pi|) \prod_{B \in  \pi} \Big(  \zeta_{i_B}[X] +
-  \big( m_{_{i_B}} - \zeta_{i_B}[X] \big) \un_{\{1\}}(|B|) \Big)
+  \kappa_{i_1,\ldots,i_k}[X]  &  = &  \displaystyle  m_{X_{i_1}}
+  \un_{\{1\}}(k) +  \sum_{\pi \in  \Pi_k}
+  (-1)^{|\pi|-1}  \Gamma(|\pi|) \prod_{B \in  \pi} \zeta_{i_B}[X]
   \end{array}\right.\]
   %
 \end{lema}
@@ -1008,8 +1015,13 @@ conduce a las relaciones siguientes (formula de Leonov y Shiryayev):
   \]
   %
   Salimos ahora  de la formula de  Hardy~\cite[Prop.~1]{Har06}, generalizando la
-  formula de  Fa\`a di  Bruno~\cite{Faa55, Faa57}: Para  \ $h(x)  = f\left(
-    g(u) \right), \quad  \forall \: n \in \Nset^*, \quad  \forall \: (i_1 ,
+  formula  de Fa\`a  di Bruno~\cite{Faa55,  Faa57}~\footnote{Esta formula  da la
+    derivaci\'on  $k$-\'esima de  una funci\'on  compuesta escalar  mediante los
+    polinimios  incompletos  de Bell~\cite{Bel27}.  La  formula  es asociada  al
+    matem\'atico italiano Francesco Fa\`a di Bruno que publico su formula en los
+    a\~nos  1855,  1857.   Pero  fue  probada desde  1800  por  el  matem\'atico
+    franc\'es Louis Fran\c{c}ois Antoine Arbogast~\cite{Abo00}.}: Para \ $h(x) =
+  f\left( g(u) \right), \quad \forall \:  n \in \Nset^*, \quad \forall \: (i_1 ,
   \ldots , i_n ) \in \{ 1 , \ldots , d \}^n$,
   %
   \[
@@ -1044,13 +1056,16 @@ conduce a las relaciones siguientes (formula de Leonov y Shiryayev):
 % cumulante y el momento coinciden, y que para $k > 1$ lo cumulantes de $X$ y de
 % $X-m_X$ coinciden.
 
+De hecho,  se podri\'a definir as\'i  de manera {\em ad-hoc},  los cumulantes que
+las generadoras admiten o no desarollos de Taylor en $u = 0$.
+
 \
 
 Para cerra esta secci\'on, se puede evocar  el hecho de que la generadora de los
 momentos no  esta siempre  bien definida sobre  todo $\Cset^d$, mientras  que la
 funci\'on caracter\'istica es  siempre bien definida. A veces, y  a pesar de que
-no sea necesario (el comportamiento en $u=0$ es importante), se usa el logaritmo
-de la funci\'on caracter\'istica para definir los cumulantes.
+no sea necesario  (el comportamiento en $u=0$ es importante), se  usa a veces el
+logaritmo de la funci\'on caracter\'istica para definir los cumulantes.
 %
 \begin{definicion}[Secunda funci\'on caracter\'istica]
   Sea  \ $X$  \  vector aleatorio  y  \ $\Phi_X(\omega)  = \Esp\left[  e^{\imath
@@ -1063,13 +1078,12 @@ de la funci\'on caracter\'istica para definir los cumulantes.
   \]
 \end{definicion}
 %
-De  nuevo  del hecho  que  que  $\Phi_X$ es  compleja,  hace  falta entender  el
-logaritmo  como   de  un  n\'umero  complejo~\cite{Abl03,  CarKro05}   y  de  la
-continuidad de $\Phi_X$,  con $\Phi_X(0) = 1$, la  funci\'on caracter\'istica es
-real positiva por lo menos en un enterno de $u = 0$, as\'i que la $Psi$ va a ser
-definida  por lo menos  en un  enterno de  $u =  0$. Si  admite un  desarollo de
-Taylor,  se muestra inmediatamente  que los  cumulantes satisfacen  tambi\'en la
-relaci\'on siguiente:
+De nuevo del hecho de que $\Phi_X$ es compleja, hace falta entender el logaritmo
+como  de un  n\'umero complejo~\cite{Abl03,  CarKro05}  y de  la continuidad  de
+$\Phi_X$, con  $\Phi_X(0) = 1$,  la funci\'on caracter\'istica es  real positiva
+por lo menos en un enterno de $u =  0$, as\'i que la $Psi$ va a ser definida por
+lo menos en un enterno de $u =  0$. Si admite un desarollo de Taylor, se muestra
+inmediatamente que los cumulantes satisfacen tambi\'en la relaci\'on siguiente:
 %
 \begin{lema}[Cumulantes a partir de la secunda funci\'on caracter\'istica]\label{Lem:MP:CumSecFctCarac}
 %
