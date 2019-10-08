@@ -490,7 +490,9 @@ Resumimos algunas otras propiedades importantes de la funci\'on caracter\'istica
 %
 \item\label{Prop:MP:MaximoPhiX}   $\left|  \Phi_X(\omega)   \right|   \le  1   =
   \Phi_X(0)$: \  $\left| \Phi_X(\omega)  \right|$ es m\'axima  en $\omega  = 0$.
-  Eso viene directamente de $\left| e^{\imath \omega^t x} \right| = 1$.
+  Eso  viene directamente de  $\left| e^{\imath  \omega^t x}  \right| =  1$. Eso
+  significa tambi\'en que $$\Phi_X(\Rset^r) \subset \{ z \in \Cset \tq |z| \le 1
+  \}$$
 %
 \item\label{Prop:MP:HermiticaPhiX}    $\Phi_X(-\omega)    =   \Phi_X^*(\omega)$:
   $\Phi_X$ tiene una s\'imetria hermitica.
@@ -504,22 +506,44 @@ Resumimos algunas otras propiedades importantes de la funci\'on caracter\'istica
   %
   Dicho   de   otra   manera,   la   matriz  de   componente   \   $(k,l)$-esima
   $\Phi_X(w_l-w_k)$ es a hermitica (s\'imetria herm\'itica dada por la propiedad
-  anterior, y  no negativa  definida). Esta positividad  viene de  \ $\sum_{k,l}
-  a_k^*  a_l e^{\imath (w_l-w_k)^t  x} =  \left| \sum_l  a_l e^{\imath  w_l^t x}
-  \right|^2 \ge 0$.
+  anterior, y no negativa definida).  Esta positividad viene de \ $\displaystyle
+  \sum_{k,l=1}^n  a_k^*  a_l  e^{\imath  (w_l-w_k)^t  x}  =  \left|  \sum_l  a_l
+    e^{\imath w_l^t x} \right|^2 \ge 0$.
 %
 \end{enumerate}
 \end{teorema}
 
-De hecho, existe una reciproca de este teorema, debido a S. Bochner~\footnote{De
-  hecho, lo prob\'o Bochner en el caso escalar $d = 1$, pero se extiende al caso
-  multivariado.}~\cite{Boc32, Boc59, Gol61, Pin09, Sas13}
+Si  una funci\'on  \ $f:  \Rset^d \mapsto  \Cset$ \  es a  simetria  hermitica y
+definida  positivas, obviamente  $f(0) \in  \Rset_+$ ($n  = 1,  a_1 =  1,  x_1 =
+0$). Adem\'as, tomando $a_1  = 1, \, a_2 = \pm 1$ y $w_1  = 0$, para cualquier \
+$w_2 = w \in \Rset^d$ \ se obtiene \ $\left| f(w) \right| \le \left| \real{f(w)}
+\right| \le  f(0)$: $|f|$ es  m\'axima en $0$.  En lo que sigue,  denotaremos el
+convexo (ver notaciones)
+%
+\[
+\PD_d  = \big\{  \Phi: \Rset^d  \mapsto \Cset  \: \mbox{  continuas,  a simetria
+  hermitica y definida positivas con } \: \Phi(0) = 1 \big\}
+\]
+%
+(la  clase de  las funci\'on  continuas,  a simetr\'ia  herm\'itica y  definidas
+positivas es definida  bajo un factor real positivo).  Se notar\'a tambien, que,
+por proyeci\'on del argumento de la funci\'on,
+%
+\[
+\PD_1 \supset \PD_2 \cdots \supset \PD
+\]
+%
+
+De  hecho,  existe una  reciproca  al  teorema~\ref{Teo:MP:PropCarac}, debido  a
+S. Bochner~\footnote{De  hecho, lo prob\'o Bochner  en el caso escalar  $d = 1$,
+  pero  se extiende  al  caso multivariado.}~\cite{Boc32,  Boc59, Gol61,  Pin09,
+  Sas13}
 %
 \begin{teorema}[Bochner]\label{Teo:MP:Bochner}
 %
-  Una funci\'on \ $\Phi: \Rset^d \mapsto \Cset$ \ es continua, definida no negativa
-  (con  \ $\Phi(0)  =  1$)  si y  solamente  existe una  medida  \  $\mu$ \  (de
-  probabilidad) sobre \ $\B(\Rset^d)$ \ tal que
+  Una  funci\'on \  $\Phi: \Rset^d  \mapsto \Cset$  \ es  continua,  definida no
+  negativa con \ $\Phi(0) = 1$, \ie  $\Phi \in \PD_d$, si y solamente existe una
+  medida \ $\mu$ \ de probabilidad sobre \ $\B(\Rset^d)$ \ tal que
   %
   \[
   \forall \:  \omega \in \Rset^d, \quad \Phi(\omega)  = \int_{\Rset^d} e^{\imath
@@ -537,6 +561,10 @@ probabilidad $P_X$  es medible, continua,  definida no negativa, con  $\Phi(0) =
 puede  encontrar una  linda prueba  en~\cite[Sec.~1.7]{Sas13} adonde  dejamor el
 lector.
 %\end{proof}
+
+%
+\[
+\]
 
 Como   lo  hemos   notado   en  las   subsecciones   anteriores,  la   funci\'on
 caracter\'istica define  completamente el  vector aleatorio. En  particular, hay

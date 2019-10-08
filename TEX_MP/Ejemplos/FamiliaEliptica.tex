@@ -97,7 +97,7 @@ de  probabilidad,  o  equivalentemente  por su  funci\'on  car\'acteristica.  La
     \omega \right)
   \]
   %
-  donde  \  $\varphi_X:  \Rset_+  \mapsto  \Rset$ \  escalar,  es  llamado  {\em
+  donde  \  $\varphi_X:  \Rset_+  \mapsto  [-1 \; 1]$ \  escalar,  es  llamado  {\em
     generadora  caracter\'istica}. Tomando el  logaritmo, obviamente  la secunda
   funci\'on caracteristica se escribe
   %
@@ -106,7 +106,7 @@ de  probabilidad,  o  equivalentemente  por su  funci\'on  car\'acteristica.  La
   \right)
   \]
   %
-  donde  \ $\psi_X  =  \log \varphi_X:  \Rset_+  \mapsto \Rset$  \ escalar.   La
+  donde  \ $\psi_X  =  \log \varphi_X:  \Rset_+  \mapsto \Cset$  \ escalar.   La
   llamaremos  {\em secunda generadora  caracter\'istica}. Reciprocamente,  si la
   funci\'on caracter\'istica tiene esta forma, \ $X$ \ es a simetr\'ia eliptica.
 \end{teorema}
@@ -115,7 +115,7 @@ de  probabilidad,  o  equivalentemente  por su  funci\'on  car\'acteristica.  La
   Sea \  $Y = \Delta^{-\frac12} Q^t  \left( X - m  \right)$ \ con \  $\Sigma = Q
   \Delta  Q^t$  \ diagonalizaci\'on  de  \  $\Sigma$.   Por definici\'on  y  del
   teorema~\ref{Teo:MP:PropiedadesFuncionCaracteristica},  por  cualquier  matriz
-  ortogonal $O$ y cualquier $\omega \in \Rset^d$
+  ortogonal \ $O$ \ y cualquier \ $\omega \in \Rset^d$
   %
   \[
   \Phi_Y(\omega) = \Phi_{O Y}(\omega) = \Phi_Y(O^t \omega)
@@ -143,6 +143,12 @@ de  probabilidad,  o  equivalentemente  por su  funci\'on  car\'acteristica.  La
   O^t \omega ) = \Phi_Y(\omega)$ \  y, por relaci\'on uno-uno entre la medida de
   probabilidad  de una variable  aleatorio y  su funci\'on  caracter\'istica, $Y
   \egald O Y$.
+
+  Al final, de la simetr\'ia herm\'itica  de la funci\'on de repartici\'on, y de
+  la simetr\'ia  eliptica, tenemos $\varphi_X^*\left(  \| \omega \|^2  \right) =
+  \varphi_X\left(  \| -\omega  \|^2  \right) =  \varphi_X\left(  \| \omega  \|^2
+  \right)$,  lo que proba  que \  $\varphi_X$ \  es a  valores reales,  siendo a
+  valores tambi\'en de modulo menor que $\varphi_X(0) = 1$.
 \end{proof}
 %
 Se notar\'a que si tomamos  una matriz caracter\'istica $\Sigma$ y la generadora
@@ -156,40 +162,6 @@ fijando  \  $\Tr \Sigma$  \  para  que  \ $\Sigma$  \  y  \ $\varphi_X$  \  sean
 \[
 X \, \sim \, \ED \left( m , \Sigma , \varphi_X \right)
 \]
-
-%Varias vectores que hemos visto caen en esta familia:
-%%
-%\begin{ejemplo}[Distribuci\'on gausiana]
-%  Sea \  $X \sim \N(m,\Sigma)$.  Entonces, \ $X \sim  \ED(m,\Sigma,\varphi_X)$ \
-%  con
-%  %
-%  \[
-%  \varphi_X(u) = e^{-\frac{u}{2}}
-%  \]
-%  %
-%\end{ejemplo}
-%
-%\begin{ejemplo}[Distribuci\'on Student-t]
-%  Sea \  $X \sim \T_\nu(m,\Sigma)$.  Entonces, \ $X \sim  \ED(m,\Sigma,\varphi_X)$ \
-%  con
-%  %
-%  \[
-%  \varphi_X(u)   =  \frac{\nu^{\frac{\nu}{4}}}{2^{\frac{\nu}{2}-1}  \Gamma\left(
-%%      \frac{\nu}{2}   \right)}   \,  u^{\frac{\nu}{4}}   K_{\frac{\nu}{2}}\left(
-%    \sqrt{\nu \, u} \right)
-%  \]
-%\end{ejemplo}
-%
-%\begin{ejemplo}[Distribuci\'on Student-r]
-%  Sea \  $X \sim \R_\nu(m,\Sigma)$.  Entonces, \ $X \sim  \ED(m,\Sigma,\varphi_X)$ \
-%  con
-%  %
-%  \[
-%  \varphi_X(u)   =   \frac{2^{\frac{\nu}{2}}   \Gamma\left(   \frac{\nu}{2}   +1
-%    \right)}{(\nu+2)^{\frac{\nu}{4}}}            \,           u^{-\frac{\nu}{4}}
-%  J_{\frac{\nu}{2}}\left( \sqrt{(\nu+2) \, u} \right)
-%  \]
-%\end{ejemplo}
 
 Vamos a  ver m\'as adelante varios  ejemplos de variable  a simetr\'ia elipticas
 que ya hemos vistos en las subsecciones anteriores.  Un caso particular que va a
@@ -500,8 +472,17 @@ vector a simetr\'ia eliptica:
 En particular, la proyecci\'on de  un vector a simetr\'ia eliptica queda eliptica
 al  torno de  la proyecci\'on  del vector  posici\'on, con  la  misma generadora
 caracter\'istica.
+%
+%\begin{definici\'on}
+%  En lo que sigue, se notar\'a
+%  %
+%  \[
+%
+%  \]
+%
+%\end{definici\'on}
 
-Eso  v\'incula   tambi\'n  un  vector  a  simetr\'ia   eliptica  coin  cualquier
+Eso  v\'incula   tambi\'n  un  vector  a  simetr\'ia   eliptica  con  cualquier
 proyecci\'on:
 %
 \begin{teorema}[Proyecci\'on y componentes]
@@ -526,8 +507,8 @@ proyecci\'on:
   %
   (se puede sacar el valor absoluto a $\omega$ porque, necesariamente, $X_i-m_i$
   es     a     simetr\'ia    eliptica,     es     decir    $(X_i-m_i)     \egald
-  -(X_i-m_i)$). Reciprocamente,  si para cualquier $a \in  \Rset^d$ tenemos $a^t
-  (X  -  m)  \egald  \sqrt{\frac{a^t  \Sigma  a}{\Sigma_{i,i}}}  (X_i  -  m_i)$,
+  -(X_i-m_i)$). Reciprocamente, si para cualquier  \ $a \in \Rset^d$ \ tenemos \
+  $a^t (X  - m)  \egald \sqrt{\frac{a^t \Sigma  a}{\Sigma_{i,i}}} (X_i  - m_i)$,
   necesariamente
   %
   \[
@@ -585,7 +566,8 @@ tambi\'en~\cite{KeiSte74, Tei60}) y se enuncia como sigue:
   escribe estocasticamente como
   %
   \[
-  X \egald R \, U \qquad \mbox{con} \qquad U \sim \U(\Sset_d), \quad R > 0 \quad \mbox{independientes}
+  X \egald R \, U \qquad \mbox{con} \qquad U \sim \U(\Sset_d), \quad R > 0 \quad
+  \mbox{independientes}
   \]
   %
   M\'as generalmente, para \ $Y \sim \ED(m,\Sigma,\varphi_Y)$,
@@ -604,26 +586,26 @@ tambi\'en~\cite{KeiSte74, Tei60}) y se enuncia como sigue:
 \end{teorema}
 %
 \begin{proof}
-  Escribimos \  $\omega = \rho u$ \  con \ $\rho \ge  0$ \ y \  $u \in \Sset_d$.
+  Escribimos \  $\omega = w u$ \  con \ $w \ge  0$ \ y \  $u \in \Sset_d$.
   Entonces, con  \ $\mu_H$ \ la  medida de Haar sobre  la esfera y \  $P_X$ \ la
   medida de probabilidad de \ $X$, tenemos
   %
   \begin{eqnarray*}
-  \Phi_X(\omega) & = & \varphi_X(\rho^2)\\[2mm]
+  \Phi_X(\omega) & = & \varphi_X\left( w^2 \right)\\[2mm]
   %
-  & = & \frac{1}{|\Sset_d|} \int_{\Sset_d} \varphi_X(\rho^2) \, d\mu(v)\\[2mm]
+  & = & \frac{1}{|\Sset_d|} \int_{\Sset_d} \varphi_X\left( w^2 \right) \, d\mu_H(v)\\[2mm]
   %
-  & = & \frac{1}{|\Sset_d|} \int_{\Sset_d} \Phi_X(\rho v) \, d\mu(v)\\[2mm]
+  & = & \frac{1}{|\Sset_d|} \int_{\Sset_d} \Phi_X(w v) \, d\mu_H(v)\\[2mm]
   %
   & = & \frac{1}{|\Sset_d|} \int_{\Sset_d} \left( \int_{\Rset^d} e^{\imath \,
-  \rho v^t x} \, dP_X(x) \right) \, d\mu(v)\\[2mm]
+  w v^t x} \, dP_X(x) \right) \, d\mu_H(v)\\[2mm]
   %
-  & = & \int_{\Rset^d} \left( \int_{\Sset_d} e^{\imath \, \rho v^t x} \,
-  \frac{1}{|\Sset_d|} \, d\mu(v) \right) \, dP_X(x)\\[2mm]
+  & = & \int_{\Rset^d} \left( \int_{\Sset_d} e^{\imath \, w v^t x} \,
+  \frac{1}{|\Sset_d|} \, d\mu_H(v) \right) \, dP_X(x)\\[2mm]
   %
-  & = & \int_{\Rset^d} \Phi_U(\rho x) \, dP_X(x)\\[2mm]
+  & = & \int_{\Rset^d} \Phi_U(w x) \, dP_X(x)\\[2mm]
   %
-  & = & \int_{\Rset^d} \varphi_U(\rho^2 \|x\|^2) \, dP_X(x)
+  & = & \int_{\Rset^d} \varphi_U\left( w^2 \|x\|^2 \right) \, dP_X(x)
   \end{eqnarray*}
   %
   con \ $\Phi_U$ \ funci\'on caracteristica  de un vector \ $U \sim \U(\Sset_d)$
@@ -636,19 +618,19 @@ tambi\'en~\cite{KeiSte74, Tei60}) y se enuncia como sigue:
   %
   si no.  Claramente  \ $F_R$ \ es creciente  de $0$ a $1$: es  una funci\'on de
   repartici\'on. Notando \ $R$ \  la variable aleatoria positiva de funci\'on de
-  repartici\'on \ $F_R$,
+  repartici\'on \ $F_R$ \ y \ $P_R$ \ la medida de probabilidad asociada,
   %
   \begin{eqnarray*}
-  \Phi_X(\omega) & = & \int_{\Rset_+} \varphi_U( \rho^2 r^2) \, dF_R(r)\\[2mm]
+  \Phi_X(\omega) & = & \int_{\Rset_+} \varphi_U( w^2 r^2) \, dP_R(r)\\[2mm]
   %
-  & = & \int_{\Rset_+} \Phi_U(r \omega) \, dF_R(r)\\[2mm]
+  & = & \int_{\Rset_+} \Phi_U(r \omega) \, dP_R(r)\\[2mm]
   %
   & = & \Esp\left[ \Esp\left[ \left. e^{\imath \, \omega^t R U} \right | R \right] \right]
   \end{eqnarray*}
   %
   el paso  de la ante\'ultima  a la  \'ultima linea siendo  valido para \  $R$ \
-  independiente  de \  $U$.  En otros  terminos, con  \  $R$ \  de funci\'on  de
-  repartici\'on \  $F_R$ \ y  \ $U \sim  \U(\Sset_d)$ \ independiente de  \ $R$,
+  independiente  de  \ $U$.   En  otros  terminos, con  \  $R$  \  de medida  de
+  probabilidad \  $P_R$ \  y \ $U  \sim \U(\Sset_d)$  \ independiente de  \ $R$,
   tenemos del teorema de esperanza total~\ref{Teo:MP:EsperanzaTotal},
   %
   \[
@@ -697,11 +679,11 @@ el  momento  del  ``rayo'' $R$.  Adem\'as,  se  puede  dar  una otra  forma  del
 coefficiente $\alpha_k$:
 %
 \begin{lema}
-  El  coeficiente  \  $\alpha_k$ \  del  tensor  de  los monetos  centrales  del
-  teorema~\ref{Teo:MP:MomentosCumulantesEliptica} es tambi\'en dado por
+  El coeficiente \ $\alpha_k(\varphi_X)$ \  del tensor de los momentos centrales
+  del teorema~\ref{Teo:MP:MomentosCumulantesEliptica} es tambi\'en dado por
   %
   \[
-  \alpha_k   =    \frac{\Gamma\left(   \frac{d}{2}   \right)}{2^k   \Gamma\left(
+  \alpha_k(\varphi_X) = \frac{\Gamma\left( \frac{d}{2} \right)}{2^k \Gamma\left(
       \frac{d}{2}  + k\right)}  \, \Esp\left[  \left( (X-m)^t  \Sigma^{-1} (X-m)
     \right)^k \right]
   \]
@@ -775,7 +757,7 @@ tambi\'en.
   %
   siendo \ $|O|  = 1$~\cite{Bha97, HorJoh13}. $O^{-\frac12}$ \  es tambi\'en una
   matriz  de  rotaci\'on,  probando de  que  \  $p_X$  \ queda  invariante  bajo
-  cualquier roraci\'on  de su  argumento, es decir  que depende solamente  de la
+  cualquier rotaci\'on  de su  argumento, es decir  que depende solamente  de la
   norma de $x$.
 \end{proof}
 
@@ -792,11 +774,11 @@ Claramente, para \ $X \sim  \ED(m,\Sigma,d_X)$, los niveles de probabildad \ $\{
 x \tq p_X(x)  = c \} = \left\{  x \tq (x-m)^t \Sigma^{-1} (x-m) =  c \right\}$ \
 son   elipsiodes  centrados   en   \  $m$,   de   direcciones  y   estiramientos
 respectivamente  dados  por los  autovectores  y  autovalores  de $\Sigma$.  Eso
-justifica tambi\'en la denominaci\'on ``$X$ \ a distribuci\'on eliptica''.
+justifica tambi\'en la denominaci\'on ``$X$ \ a simetr\'ia eliptica''.
 
 Como lo vimos, de una forma, toda las caracterisricas estadisticas de \ $X$ \ es
-en el  ``rayo'' \ $R \egald  \sqrt{(X-m)^t \Sigma^{1} (X-m)}$. En  lo que sigue,
-sin perdida de generalidad, se puede concentrarse en $X \ED(0,I,d_X)$.
+en el  ``rayo'' \ $R \egald  \sqrt{(X-m)^t \Sigma^{-1} (X-m)}$. En  lo que sigue,
+sin perdida de generalidad, se puede concentrarse en $X \sim \ED(0,I,d_X)$.
 
 Primero, se puede escribir la ley de $R$ a partir de $d_X$:
 %
@@ -900,71 +882,6 @@ transformada de Fourier.
   transformada inversa  es nada mas que  la transformada directa,  por un factor
   $(2 \pi)^{-d}$ (ver teoremas~\ref{Teo:MP:InversionDensidad}).
 \end{proof}
-
-%Volvemos a los ejemplos:
-%%
-%\begin{ejemplo}[Distribuci\'on gausiana - continuaci\'on]
-%%
-%  En el caso gausiano, se obtiene sencillamente
-%  %
-%  \[
-%  d_X\left(r^2\right) \propto e^{- \frac{r^2}{2}}
-%  \]
-%  %
-%  dando
-%  %
-%  \[
-%  p_R(r) \propto r^{d-1} e^{- \frac{r^2}{2}}
-%  \]
-%  %
-%  En conclusi\'on, $R^2 \sim \G\left( \frac{d}{2} , \frac12\right)$ ley Gamma.
-%\end{ejemplo}
-%
-%\begin{ejemplo}[Distribuci\'on Student-t]
-%%
-%  En el caso Student-t con $\nu$ grados de libertad, se obtiene sencillamente
-%  %
-%  \[
-%  d_X\left(r^2\right) \propto \left( 1 + \frac{r^2}{\nu} \right)^{-\frac{d+\nu}{2}}
-%  \]
-%  %
-%  dando
-%  %
-%  \[
-%  p_R(r) \propto \frac{r^{d-1}}{\left( 1 + \frac{r^2}{\nu} \right)^{\frac{d+\nu}{2}}}
-%  \]
-%  %
-%  Con \ $F = \frac{R^2}{d}$ \ se obtiene por transformaci\'on
-%  %
-%  \[
-%  p_F(f)   \propto   \frac{f^{\frac{d}{2}-1}}{\left(   1   +   \frac{d}{\nu}   f
-%    \right)^{\frac{d+\nu}{2}}}
-%  \]
-%  %
-%  conocido como ley de Fisher-Snedecor (o $F$), de grados de libertad $(d,\nu)$,
-%  o tipo Pearson VI, o  beta de secunda especie~\cite{JohKot95:v2, Muk00, Bre88,
-%    IbaPer12} (ratio de Gamma independientes).
-%\end{ejemplo}
-%
-%\begin{ejemplo}[Distribuci\'on Student-r]
-%%
-%  En el caso Student-r con $\nu$ grados de libertad, se obtiene sencillamente
-%  %
-%  \[
-%  d_X\left(r^2\right)      \propto     \left(     1      -     \frac{r^2}{\nu+2}
-%  \right)^{\frac{\nu-d}{2}} \un_{(0 \; \nu+2)}\left( r^2 \right)
-%  \]
-%  %
-%  dando
-  %
-%  \[
-%  p_R(r) \propto r^{d-1}  \left( 1 - \frac{r^2}{\nu+2} \right)^{\frac{\nu-d}{2}}
-%  \un_{(0 \; \nu+2)}\left( r^2 \right)
-%  \]
-%  %
-%  as\'i    que   \   $\frac{R^2}{\nu+2}    \sim   \beta\left(    \frac{d}{2}   ,
-%    \frac{\nu-d}{2}+1 \right)$ \ distribuci\'on beta.
-%\end{ejemplo}
 
 Tratando de  vector a simetr\'ia  esferica, resuelte frecuentemente  m\'as comodo
 tratarlo en su representaci\'on en coordenadas hiperesfericas, es decir, para $d
@@ -1099,16 +1016,122 @@ marginalizaci\'on, como la gausiana por ejemplo:
   Se proba  que, equivalentemente, la generadora caracteristica  \ $\varphi_X$ \
   no  es relacionada explicitamente  a $d$  (ver~\cite{Kan94, FanKot90}  para la
   prueba).   Entonces,  m\'as  all\'a,  $\varphi_X$  va  a  ser  una  generadora
-  caracter\'istica  de  un vector  aleatorio  de  cualquier  dimensi\'on $d  \in
+  caracter\'istica  de un  vector aleatorio  de cualquier  dimensi\'on \  $d \in
   \Nset^*$,  \ie por  marginalizaci\'on, pero  tambi\'en por  ``extensi\'on'' de
   dimensi\'on (a dimensi\'on dada, puede  ser vista como marginales de un vector
-  de misma ley de dimensi\'on m\'as grande).
+  de misma ley de dimensi\'on m\'as grande), \ie $\omega \mapsto \varphi_X\left(
+    \| \omega  \|^2 \right) \, \in  \, \PD$ \ conjuntos  de funci\'on hermiticas
+  definidas    positivas,     unidad    al    origen     (ver    notaciones    o
+  secci\'on~\ref{Ssec:MP:Generadoras}).
 \end{definicion}
 
-Varias vectores  que hemos visto caen  en la familia eliptica.  No admiten todas
-una densidad con respeto a la medida de Lebesgue, como lo hemos visto con la ley
-uniforme sobre la  esfera (admite una con respeto a la  medida de Haar), tampoco
-no son todas consistentes.
+
+Si \  $X$ \  a simetr\'a  esferica (y por  transformaci\'on af\'in  a simetr\'ia
+eliptica)  se escribe  siempre  como mezcla  de  escala de  base uniforme,  esta
+escritura estocastica no es \'unica. Por  ejemplo, si consideramos $X = A \, G$,
+con \
+%$m \in \Rset^d$, , $\Sigma \in P_d^+(\Rset)$, 
+$A$ \ variable  aleatoria positiva \ y \ $G \sim  \N(0,I)$ independiente de $G$,
+queda claro que \ $X$ \  es a simetr\'ia esferica. Estos vectores, llamados {\em
+  mezcla  de escala  de  base gausiana},  o  simplemente {\em  mezcla de  escala
+  gausiana}  (GSM para  Gaussian scale  mixture en  ingl\'es)  fueron estudiados
+intensivamente de manera formal~\cite{Kan94,  Yao73, Ver64, Pic70, Kel71, Kin72,
+  KeiSte74, Tei60, AndMal74}.  Ecuentra aplicaciones en varias area, modelizando
+la  textura  de imagenes  o  data  de radar  (e.g.   suma  aleatoria de  vecores
+gausianos)~\cite{PorStr03,   BomBea08,  Sel08,  ShiSel07,   ZozVig10,  TisNic04,
+  TodTab07}.
+
+Una  pregunta natural  es  de saber  si  se puede  escribir  cualquier vector  a
+simetr\'a  esferica como mezcla  de escala  de base  gausiana.  La  respuesta es
+negativa. Por ejemplo,  del dominio de definici\'on de  la variable, queda claro
+que un  vector uniforme sobre la  esfera no puede  ser mezcla de escala  de base
+gausiana (ver  un otro contra-ejemplo en~\cite{Pic70}).  Escribir  un vecor como
+tal mezcla  resuelte posible  solamente bajo restricciones.  M\'as precisamente,
+una condici\'on necesaria  y sufiente est que la  variable debe ser consistente,
+como    lo    prob\'o    tambi\'en    Sch{\oe}nberg~\cite[Teo.~2]{Sch38}    (ver
+tambi\'en~\cite[Teo.~2]{SteVan05},            \cite[Lem.~2.2]{Yao94}           o
+\cite[Teo.~1]{Kan94}).
+%
+\begin{teorema}[Sch{\oe}berg'38]
+  Sea \ $X \sim  \ED\left( m , \Sigma , \varphi_X \right)$.  Entonces $X$ es una
+  mezcla de  gausiana si y  solamente si $X$  es consistente, lo que  se escribe
+  tambi\'en, con $Y = \sigma^{-\frac12} (X-m)$,
+  %
+  \[
+  Y \, \egald \, A \, G \quad \Leftrightarrow \quad \Phi_Y \in \PD
+  \]
+  %
+  con \ $A > 0$ \ independiente de \ $G \sim \N(0,I)$.
+\end{teorema}
+%
+\begin{proof}
+  La directa es inmediata de
+  %
+  \[
+  \Phi_Y(\omega)  =  \Esp\left[  \Esp\left[  \Phi_G( A  \omega)  \left.  \right|
+      A\right] \right]
+  \]
+  %
+  conjuntamente a $\Phi_G \in \PD$  (eso es inmediato tambi\'en de $\varphi_G(w)
+  = e^{-\frac{w}{2}}$).
+
+  La reciproca es  m\'as dificil a probar. Para los  detalles, dejamos el lector
+  a~\cite{Sch38}. Los  elementos de  prueba son los  siguiente. De  la escritura
+  como mezcla de  escala uniforme tenemos entonces para cualquier $d$
+  %
+  \[
+  \varphi_X\left(  w^2  \right)   =  2^{\frac{d}{2}-1}  \Gamma\left(  \frac{d}{2}
+  \right) \int_{\Rset_+} \left(  w r \right)^{1-\frac{d}{2}} J_{\frac{d}{2}-1}(w
+  r) \, dP_{R_d}(r)
+  \]
+  %
+  con \  $R_d$ \ la  variable generadora de  base uniforme correspondiente  a la
+  dimension   $d$   (ver   prueba  del   teorema~\ref{Teo:MP:MezclaUniforme}   y
+  ejemplo~\ref{Ej:MP:GeneCaracUniformeEsfera}).  Por   cambio  de  variables  se
+  escribe tambi\'en
+  %
+  \[
+  \varphi_X\left(  w^2  \right)   =   \int_{\Rset_+}  2^{\frac{d}{2}-1}  \Gamma\left(  \frac{d}{2}
+  \right) \left(  w   r  \sqrt{d}  \right)^{1-\frac{d}{2}}
+  J_{\frac{d}{2}-1}\left( w r \sqrt{d}  \right) \, dP_{R_d}\left( r \sqrt{d}
+  \right)
+  \]
+  %
+  Eso siendo  valid en cualquier orden,  se nota $P_R$ el  l\'imite de $P_{R_d}$
+  cuando $d$ tiende al infinito.  Luego,  el desarollo de Taylor de la funci\'on
+  de Bessel  y de  la f\'ormula de  Stirling~\cite[Ec.~8.402~y~8.327]{GraRyz} se
+  proba que
+  %
+  \[
+  \lim_{d \to +\infty} 2^{\frac{d}{2}-1} \Gamma\left( \frac{d}{2} \right) \left(
+    w  r \sqrt{d} \right)^{1-\frac{d}{2}}  J_{\frac{d}{2}-1}\left( w  r \sqrt{d}
+  \right) \: = \: e^{-\frac{w^2 r^2}{2}}
+  \]
+  %
+  Todo el  juego consiste a probar  que la convergencia es  uniforme, para poder
+  intercambiar limite e integral.  Dio una prueba Sch{\oe}nberg en~\cite{Sch38},
+  y  luego  propuso  un  ``m\'as  moderna''  Steerneman  y  van  Perlo-ten-Kleij
+  en~\cite{SteVan05}. Basicamente se reconoce en $2^{\frac{d}{2}-1} \Gamma\left(
+    \frac{d}{2}   \right)   \left(    w   r   \sqrt{d}   \right)^{1-\frac{d}{2}}
+  J_{\frac{d}{2}-1}\left( w r \sqrt{d} \right)$ la funci\'on caracter\'istica de
+  $q_d(x)  \propto \left(  1  - \frac{x^2}{d}  \right)_+^{\frac{d-3}{2}}$ \  que
+  tiende a  la gausiana (ver e.g. secci\'on~\ref{Sssec:MP:StudentR}).  Se usa el
+  lema  de  Scheff\'e  o  de  Riez  (ver~\cite{Rie28,  Sch47,  Nov72,  Kus10}  o
+  \cite{AthLah06, Bog07:v1, Bil12}) para probar la convergencia de la integral.
+% (es similar al uso del teorema de convergencia dominada).
+\end{proof}
+%
+Se encuentra una prueba alternativa tambi\'en en~\cite{FanKot90, Kin72}.
+
+
+\SZ{Adelantar}
+
+
+Varios  vectores aleatorios que  hemos visto  caen en  la familia  eliptica.  No
+admiten todas  una densidad con respeto a  la medida de Lebesgue,  como lo hemos
+visto con la ley uniforme sobre la esfera (admite una con respeto a la medida de
+Haar), tampoco no  son todas consistentes (y entonces no  se escriben todas como
+mezcla de escala de base gausiana).
 %
 \begin{ejemplo}[Distribuci\'on gausiana]
 %
@@ -1127,14 +1150,19 @@ no son todas consistentes.
   r^{d-1} e^{- \frac{r^2}{2}}
   \]
   %
-  Aparece que \ $R^2 \sim \G\left( \frac{d}{2} , \frac12\right)$ \ distribuci\'on Gamma.
+  Aparece   que  \   $R^2  \sim   \G\left(  \frac{d}{2}   ,   \frac12\right)$  \
+  distribuci\'on Gamma.
   
   Adem\'as,   la  generadora   caracter\'istica  siendo   independiente   de  la
-  dimensi\'on  \ $d$, o  equivalentemente la  generadora de  densidad \  $d_X$ \
-  teniendo la forma que damos para cualquier dimensi\'on (cambiar de dimensi\'on
-  es equivalente a  cambiar $d$), la gausiana es  consistente; Las marginales de
-  una  gausiana  son  gausianas,  y  cualquier gausiana  puede  ser  vista  como
-  marginale de gausiana de cualquier dimensi\'on m\'as grande.
+  dimensi\'on \  $d$, \  $\Phi_X \in \PD$,  o equivalentemente la  generadora de
+  densidad  \ $d_X$ \  teniendo la  forma que  damos para  cualquier dimensi\'on
+  (cambiar  de  dimensi\'on  es  equivalente  a cambiar  $d$),  la  gausiana  es
+  consistente;  Las  marginales  de  una  gausiana son  gausianas,  y  cualquier
+  gausiana puede ser  vista como marginale de gausiana  de cualquier dimensi\'on
+  m\'as grande.
+
+  Obviamente, se  escribe como  mezcla de  escala de gausiana  con \  $A =  1$ \
+  variable cierta.
 \end{ejemplo}
 
 \begin{ejemplo}[Distribuci\'on Student-t]
@@ -1173,13 +1201,15 @@ no son todas consistentes.
     IbaPer12} (ratio de Gamma independientes).
 
   La Student-t es  tambi\'en consistence de la independencia  de \ $\varphi_X$ \
-  con la dimensi\'on \ $d$, o  equivalentemente de hecho de que la generadora de
-  densidad  \ $d_X$ \  teniendo la  forma que  damos para  cualquier dimensi\'on
-  (cambiar de dimensi\'on  es equivalente a cambiar $d$);  Las marginales de una
-  Student-t con \ $\nu$ \ grados de libertad queda Student-t con $\nu$ grados de
-  libertad y  cualquier Student-t  con $\nu$ grados  de libertad pued  ser vista
-  como  marginal de  un  Student-t con  $\nu$  grados de  libertad de  cualquier
-  dimensi\'on m\'as grande.
+  con la dimensi\'on \ $d$, \  $\Phi_X \in \PD$, o equivalentemente del hecho de
+  que  la generadora de  densidad \  $d_X$ \  teniendo la  forma que  damos para
+  cualquier dimensi\'on  (cambiar de dimensi\'on es equivalente  a cambiar $d$);
+  Las  marginales de  una  Student-t con  \  $\nu$ \  grados  de libertad  queda
+  Student-t con $\nu$ grados de  libertad y cualquier Student-t con $\nu$ grados
+  de libertad pued  ser vista como marginal de un Student-t  con $\nu$ grados de
+  libertad de cualquier dimensi\'on m\'as grande.
+
+\SZ{GSM}
 \end{ejemplo}
 
 \begin{ejemplo}[Distribuci\'on student-$r$]
@@ -1212,10 +1242,14 @@ no son todas consistentes.
   embargo, la  dependencia de  \ $\varphi_X$  \ en \  $d$ \  es escondida  en el
   v\'inculo sobre el  grado de libertad \  $\nu > d-2$. Dicho de  otra manera, a
   $\nu$  dado,  si  aumentamos la  dimension,  se  lo  puede hacer  solamente  a
-  condici\'on que  $d < \nu+2$. Tratando de  \ $d_X$, las marginales  de $X$ son
-  student-$r$ con  grado de  libertad $\nu$, pero  una Student-$r$ no  puede ser
-  vista como marginales de cualquier  dimensi\'on m\'as grande; es posible hasta
-  la dimensi\'on m\'axima $\lfloor \nu+2 \rfloor$.
+  condici\'on que $d < \nu+2$, \ie $\Phi_X \not\in \PD$ \ ($\Phi_X \in \PD_n, \:
+  n < \nu+2$).   Tratando de \ $d_X$, las marginales de  $X$ son student-$r$ con
+  grado  de  libertad  $\nu$, pero  una  Student-$r$  no  puede ser  vista  como
+  marginales  de  cualquier  dimensi\'on  m\'as  grande;  es  posible  hasta  la
+  dimensi\'on m\'axima $\lceil \nu+2 \rceil-1$.
+
+  Obviamente, del  soporte acotado de  la densidad, $X$  no puede ser  mezcla de
+  escala de gausiana. \SZ{En calculos...}
 \end{ejemplo}
 
 \begin{ejemplo}[Distribuci\'on uniforme sobre la esfera - continuaci\'on]
@@ -1250,6 +1284,9 @@ no son todas consistentes.
   $d' = d-1$, la distribuci\'on diverge en los bordes de. Notar que si no cambia
   el grado de libertad para cualquier marginales, depende de la dimensi\'on $d$:
   la generadora de densidad no depende solamente de $d'$.
+
+  Obviamente, del  soporte acotado de  la densidad, $X$  no puede ser  mezcla de
+  escala de gausiana. \SZ{En calculos...}
 \end{ejemplo}
 
 \SZ{
