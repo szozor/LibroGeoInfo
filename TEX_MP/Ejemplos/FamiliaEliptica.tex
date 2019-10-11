@@ -1442,14 +1442,15 @@ se escribe como  mezcla de escala de base Student-r.  Este resultado fue probado
 por ejemplo  en el  caso escalar  \ $d=1$ \  en~\cite{Wil56, KeiSte74},  pero se
 extiende sencillamente al caso multivariado:
 %
-\begin{teorema}[Mezcla de escala de base Student-r]
+\begin{teorema}[Mezcla de escala de base Student-r -- a partir de la generadora caracter\'istica]
 %
   Sea \  $X \sim \ED(m,\Sigma,\varphi_X)$  \ $d$-dimensional. Si  $\varphi_X \in
   \PDSI_n, \: n  > d$, entonces se  puede escribir $X$ como mezcla  de escala de
   Student-r con $\nu = n-2$ grados de libertad, y reciprocamente
   %
   \[
-  \varphi_X \in \PDSI_n, \: n > d \quad \Leftrightarrow X \egald B \, \Sigma^{\frac12} \, S_{m-2} + m
+  \varphi_X \in  \PDSI_n, \:  n > d  \quad \Leftrightarrow  \quad X \egald  B \,
+  \Sigma^{\frac12} \, S_{m-2} + m
   \]
   %
   con \ $B > 0$ \ independiente de \ $S_{m-2} \sim \R_{m-2}(0,I)$.
@@ -1459,16 +1460,17 @@ extiende sencillamente al caso multivariado:
 %Sin perdida de generalidad, consideramos $m = 0, \: \Sigma = I$.
   La prueba la m\'as sencilla se apoya sobre el hecho de que si \ $\varphi_X \in
   \PDSI_n$,   se  puede  considerar   un  vector   $n$-dimensional  \   $Y  \sim
-  \ED(0,I,\varphi_X)$ \ de  generadora caracter\'istica $\varphi_X$. Escribiendo
-  $Y \egald  R U$ \  con \ $U  \sim \U(\Sset_n)$, y reciprocamente.   Ahora, del
-  ejemplo~\ref{Ej:MP:UniformeCnt}, la proyecci\'on $d$-dimensional de \ $U$ \ es
-  Student-r  con  $n-2$  grados  de  libertad, y  reciprocamente  se  puede  ver
-  cualquier  Student-r con  $n-2$ grados  de  libertad como  proyecci\'on de  un
-  uniforme  m\'as  grande.  Adem\'as,   $U$  siendo  independiente  de  $R$,  la
-  proyecci\'on est tambi\'en independiente de $R$. Eso cierra la prueba.
+  \ED(0,I,\varphi_X)$  \  de  generadora  caracter\'istica  \  $\varphi_X$  \  y
+  escribir \  $Y \egald  R \, U$ \  con \  $U \sim \U(\Sset_n)$,  y reciprocamente.
+  Ahora, del ejemplo~\ref{Ej:MP:UniformeCnt}, la proyecci\'on $d$-dimensional de
+  \ $U$ \  es Student-r con $n-2$ grados de libertad,  y reciprocamente se puede
+  ver cualquier Student-r  con $n-2$ grados de libertad  como proyecci\'on de un
+  uniforme  m\'as  grande.   Adem\'as,  $U$  siendo  independiente  de  $R$,  la
+  proyecci\'on es tambi\'en independiente de $R$. Eso cierra la prueba.
 
-  Alternativamente, escribiendo  la generadora  caract\'eristica a partir  de la
-  mezcla uniforme $n$-dimensional como en el teorema~\ref{Teo:MP:SchoenbergCaracteristica}, en
+  Alternativamente, escribiendo  la generadora  caracter\'istica a partir  de la
+  mezcla        uniforme         $n$-dimensional        como        en        el
+  teorema~\ref{Teo:MP:SchoenbergCaracteristica}, en
   %
   \[
   \varphi_X\left(  w^2 \right)  = \int_{\Rset_+}  2^{\frac{n}{2}-1} \Gamma\left(
@@ -1483,19 +1485,40 @@ extiende sencillamente al caso multivariado:
   = n-2$ \ grados de libertad.
 \end{proof}
 %
-Se notar\'a,  pasando, que para  buscar la ley  de $B$, sufice ver  la Student-r
+Se notar\'a, pasando, que  para buscar la ley de \ $B$,  sufice ver la Student-r
 como proyecci\'on de una uniforme de dimensi\'on \ $d+2$, \ie
 %
 \[
-Y  \sim  \ED(0,I,\varphi_X) \:  (d+2)\mbox{-dimensional},  \quad  Y  \egald R  U
+Y  \sim  \ED(0,I,\varphi_X) \:  (d+2)\mbox{-dimensional},  \quad  Y  \egald R \, U
 \Leftrightarrow B \egald R
 \]
 
-\SZ{Adelantar: mezcla de Student-r: Keilson KeiSte74 \S~3.3, Williamson Wil56 \S~2 para $d=1$.}
+De nuevo, existe un teorema equivalente tratando de la generadora de densidad:
+%
 
-Nota: obviamenre, si denotamos \  $\mathfrac{S}_{n,d}$ \ el conjunto de vectores
+%
+\begin{teorema}[Mezcla de escala de base Student-r -- a partir de la generadora de densidad]
+%
+  Sea \  $X \sim \ED(m,\Sigma,d_X)$  \ $d$-dimensional. Si  $d_X \in
+  \CM_n, \: n  > d$, entonces se  puede escribir $X$ como mezcla  de escala de
+  Student-r con $\nu = n-2$ grados de libertad, y reciprocamente
+  %
+  \[
+  d_X \in  \CM_n, \:  n > d  \quad \Leftrightarrow  \quad X \egald  B \,
+  \Sigma^{\frac12} \, S_{m-2} + m
+  \]
+  %
+  con \ $B > 0$ \ independiente de \ $S_{m-2} \sim \R_{m-2}(0,I)$.
+\end{teorema}
+%
+\begin{proof}
+%Sin perdida de generalidad, consideramos $m = 0, \: \Sigma = I$.
+\SZ{Hacerla}
+\end{proof}
+
+Nota: obviamente, si denotamos \  $\mathfrak{S}_{n,d}$ \ el conjunto de vectores
 aleatorios  $d$-dimensjonal,  mezcla  de  Student-r  con \  $n-2$  \  grados  de
-libertad, $\mathfrac{S}_{d+1,d} \supset \mathfrac{S}_{d+2,d} \supset \cdots$ \ y
+libertad, $\mathfrak{S}_{d+1,d} \supset \mathfrak{S}_{d+2,d} \supset \cdots$ \ y
 \  $\displaystyle  \bigcap_{n=d+1}^{+\infty}$ \  es  el  conjunto  de mezcla  de
 gausiana $d$-dimensional.
 
