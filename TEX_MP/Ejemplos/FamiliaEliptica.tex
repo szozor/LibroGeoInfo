@@ -162,6 +162,34 @@ fijando  \  $\Tr \Sigma$  \  para  que  \ $\Sigma$  \  y  \ $\varphi_X$  \  sean
 \[
 X \, \sim \, \ED \left( m , \Sigma , \varphi_X \right)
 \]
+%
+y   los  conjuntos  de   generadoras  caracter\'isticas   que  resultan   de  la
+restricci\'on  de   $\PD_d$  (y  de  $\PD$)  a   las  funciones  caracteristicas
+esfericamente invariante como
+%
+\[
+\PDSI_d = \big\{ 
+%\begin{array}{lll} 
+\varphi: \Rset_+ \mapsto [-1 ; 1]  \:\: \mbox{  continuas con } \:\: \varphi(0) = 1  \tq \Phi: 
+%& \Rset^d \to \Cset & \in \PD_d \\[-1mm] & 
+x \mapsto \varphi\left( \| x \|^2 \right)
+% & \end{array} 
+\in \PD_d \big\}
+\]
+%
+y
+%
+\[
+\PDSI = \bigcap_{d=1}^{+\infty} \PDSI_d = \big\{ 
+%\begin{array}{lll} 
+\varphi: \Rset_+ \mapsto [-1 ; 1]  \:\: \mbox{  continuas con } \:\: \varphi(0) = 1  \tq \Phi: 
+%& \Rset^d \to \Cset & \in \PD_d \\[-1mm] & 
+x \mapsto \varphi\left( \| x \|^2 \right)
+% & \end{array} 
+\in \PD \big\}
+\]
+%
+(ver notaciones).
 
 Vamos a  ver m\'as adelante varios  ejemplos de variable  a simetr\'ia elipticas
 que ya hemos vistos en las subsecciones anteriores.  Un caso particular que va a
@@ -529,20 +557,21 @@ caso gausiano.  De hecho  este resultado es  general en  el marco de  vectores a
 sim\'etria eliptica~\cite{BilBre99, Max67}:
 %
 \begin{teorema}[Maxwell-Hershell]
-  Sea \  $X \ED(m,I,\varphi_X)$. Las  componentes $X_i$ son independientes  si y
-  solamente si $X \sim \N(m, \alpha I)$ con $\alpha > 0$. En otros terminos, los
-  solos vectores a  simetr\'ia esferica al torno de un  vector $m$ son gausianos
-  de covarianza proporcional a la identidad y de media $m$.
+  Sea \ $X \sim \ED(m,I,\varphi_X)$. Las componentes $X_i$ son independientes si
+  y solamente si $X  \sim \N(m, \alpha I)$ con $\alpha >  0$. En otros terminos,
+  los  solos vectores  a  simetr\'ia esferica  al  torno de  un  vector $m$  son
+  gausianos de covarianza proporcional a la identidad y de media $m$.
 \end{teorema}
 %
 \begin{proof}
-  Del  teorema~\cite{Teo:MP:TranformacionAfinEliptica}, \ $\begin{bmatrix}  X_1  &
+  Del teorema~\cite{Teo:MP:TranformacionAfinEliptica},  \ $\begin{bmatrix} X_1 &
     X_2    \end{bmatrix}^t     \sim    \ED\left(    \begin{bmatrix}     m_1    &
-      m_2 \end{bmatrix}^t,  I, \varphi_X  \right)$ \ y \  $X_i \sim \ED(  m_i ,  1 ,
-  \varphi_X)$.  Si  estas  variables  son  independientes  buscamos  entonces  \
-  $\varphi_X$ \ tal  que \ $\forall \: \omega \in  \Rset^2, \quad \varphi_X\left(
-    \omega_1^2  +  \omega_2^2   \right)  =  \varphi_X\left(  \omega_1^2  \right)
-  \varphi_X\left( \omega_2^2 \right)$, \ie por reparametrizaci\'on
+      m_2 \end{bmatrix}^t, I, \varphi_X \right)$ \ y  \ $X_i \sim \ED( m_i , 1 ,
+  \varphi_X)$.  Si  estas variables son  independientes (condici\'on necesaria),
+  buscamos entonces  \ $\varphi_X$ \ tal  que \ $\forall \:  \omega \in \Rset^2,
+  \quad  \varphi_X\left(  \omega_1^2  +  \omega_2^2  \right)  =  \varphi_X\left(
+    \omega_1^2   \right)   \varphi_X\left(    \omega_2^2   \right)$,   \ie   por
+  reparametrizaci\'on
   %
   \[
   \forall  \:   (u,v)  \in  \Rset_+^2,  \qquad   \varphi_X(u+v)  =  \varphi_X(u)
@@ -1002,27 +1031,31 @@ $\frac{X}{\|X\|}$ (y entonces la  escritura en mezcla), de calcular directamente
 caracter\'istica y de densidad entre otros.
 
 En la familia  eliptica, hay una subfamilia particular  que queda invariante por
-marginalizaci\'on, como la gausiana por ejemplo:
+marginalizaci\'on, y extensi\'on, como la gausiana por ejemplo:
 %
 \begin{definicion}[Consistencia~\cite{Yao73, Kan94}]
 %
   Sea \  $X = \begin{bmatrix} X_1 &  \cdots & X_d \end{bmatrix}$  \ a simetr\'ia
   eliptica  de  generadora  de  densidad  $d_X$.   Este  vector  es  dicho  {\em
     consistente}  si  la  generadora  de  densidad \  $d_{\widetilde{X}}$  \  de
-  $\widetilde{X} = \begin{bmatrix} X_1 &  \cdots & X_{d'} \end{bmatrix}, \: d' <
-  d$ \ tiene la misma forma que \ $d_X$ \ donde el par\'ametro dimensional \ $d$
-  \ es  reemplazado por  \ $d'$.
+  $\widetilde{X} = \begin{bmatrix} X_1 &  \cdots & X_{d'} \end{bmatrix}$ \ tiene
+  la misma  forma que  \ $d_X$  \ donde el  par\'ametro dimensional  \ $d$  \ es
+  reemplazado   por  \  $d'$.   En  otros   termoinos  tenemos   invarianza  por
+  marginalizaci\'on  si $d' <  d$, pero  se puede  ver $X$  como marginal  de un
+  vector m\'as grande con la  misma generadora de probabilidad re-emplazando $d$
+  por $d'$.
 
   Se proba  que, equivalentemente, la generadora caracteristica  \ $\varphi_X$ \
-  no  es relacionada explicitamente  a $d$  (ver~\cite{Kan94, FanKot90}  para la
-  prueba).   Entonces,  m\'as  all\'a,  $\varphi_X$  va  a  ser  una  generadora
-  caracter\'istica  de un  vector aleatorio  de cualquier  dimensi\'on \  $d \in
-  \Nset^*$,  \ie por  marginalizaci\'on, pero  tambi\'en por  ``extensi\'on'' de
-  dimensi\'on (a dimensi\'on dada, puede  ser vista como marginales de un vector
-  de misma ley de dimensi\'on m\'as grande), \ie $\omega \mapsto \varphi_X\left(
-    \| \omega  \|^2 \right) \, \in  \, \PD$ \ conjuntos  de funci\'on hermiticas
-  definidas    positivas,     unidad    al    origen     (ver    notaciones    o
-  secci\'on~\ref{Ssec:MP:Generadoras}).
+  no  es  relacionada a  \  $d$  (ver~\cite{Kan94,  FanKot90} para  la  prueba).
+  Entonces, $\varphi_X$  va a ser  una generadora caracter\'istica de  un vector
+  aleatorio   de  cualquier   dimensi\'on  \   $d  \in   \Nset^*$,  o,   con  la
+  caracterisaci\'on por functiones definida positivas (ver teorema de Bocher), \
+  $\varphi_X   \in  \PDSI$  (ver   notaciones,  y   las  a   continuaci\'on  del
+  teorema~\ref{Teo:MP:GeneradorasCaracteristicas}).
+%$\omega \mapsto \varphi_X\left(
+%    \| \omega  \|^2 \right) \, \in  \, \PD$ \ conjuntos  de funci\'on hermiticas
+%  definidas    positivas,     unidad    al    origen     (ver    notaciones    o
+%  secci\'on~\ref{Ssec:MP:Generadoras}).
 \end{definicion}
 
 
@@ -1052,32 +1085,32 @@ como    lo    prob\'o    tambi\'en    Sch{\oe}nberg~\cite[Teo.~2]{Sch38}    (ver
 tambi\'en~\cite[Teo.~2]{SteVan05},            \cite[Lem.~2.2]{Yao94}           o
 \cite[Teo.~1]{Kan94}).
 %
-\begin{teorema}[Sch{\oe}berg'38]
+\begin{teorema}[Sch{\oe}berg'38 -- a partir de la generadora caracter\'istica]
   Sea \ $X \sim  \ED\left( m , \Sigma , \varphi_X \right)$.  Entonces $X$ es una
-  mezcla de  gausiana si y  solamente si $X$  es consistente, lo que  se escribe
-  tambi\'en, con $Y = \sigma^{-\frac12} (X-m)$,
+  mezcla de  gausiana si y  solamente si $X$  es consistente, es decir
+  % lo que se escribe tambi\'en, con $Y = \sigma^{-\frac12} (X-m)$,
   %
   \[
-  Y \, \egald \, A \, G \quad \Leftrightarrow \quad \Phi_Y \in \PD
+  X \,  \egald \,  A \, \Sigma^{\frac12}  \, G  + m \quad  \Leftrightarrow \quad
+  \varphi_X \in \PDSI
   \]
   %
   con \ $A > 0$ \ independiente de \ $G \sim \N(0,I)$.
 \end{teorema}
 %
 \begin{proof}
-  La directa es inmediata de
+  La directa es inmediata de la formula de esperanza total
   %
   \[
-  \Phi_Y(\omega)  =  \Esp\left[  \Esp\left[  \Phi_G( A  \omega)  \left.  \right|
-      A\right] \right]
+  \varphi_X(w)  =  \Esp\big[ \,  \Esp\left[  \varphi_G\left( A w \right)  \left.  \right|
+      A\right] \, \big]
   \]
   %
-  conjuntamente a $\Phi_G \in \PD$  (eso es inmediato tambi\'en de $\varphi_G(w)
-  = e^{-\frac{w}{2}}$).
+  conjuntamente a \ $\varphi_G: w \mapsto e^{-\frac{w}{2}} \: \in \PDSI$.
 
   La reciproca es  m\'as dificil a probar. Para los  detalles, dejamos el lector
-  a~\cite{Sch38}. Los  elementos de  prueba son los  siguiente. De  la escritura
-  como mezcla de  escala uniforme tenemos entonces para cualquier $d$
+  a~\cite{Sch38}. Los  elementos de prueba  son los siguientes. De  la escritura
+  como mezcla de escala uniforme tenemos entonces para cualquier \ $d$
   %
   \[
   \varphi_X\left(  w^2  \right)   =  2^{\frac{d}{2}-1}  \Gamma\left(  \frac{d}{2}
@@ -1091,9 +1124,9 @@ tambi\'en~\cite[Teo.~2]{SteVan05},            \cite[Lem.~2.2]{Yao94}           o
   escribe tambi\'en
   %
   \[
-  \varphi_X\left(  w^2  \right)   =   \int_{\Rset_+}  2^{\frac{d}{2}-1}  \Gamma\left(  \frac{d}{2}
-  \right) \left(  w   r  \sqrt{d}  \right)^{1-\frac{d}{2}}
-  J_{\frac{d}{2}-1}\left( w r \sqrt{d}  \right) \, dP_{R_d}\left( r \sqrt{d}
+  \varphi_X\left(  w^2 \right)  = \int_{\Rset_+}  2^{\frac{d}{2}-1} \Gamma\left(
+    \frac{d}{2}   \right)   \left(    w   r   \sqrt{d}   \right)^{1-\frac{d}{2}}
+  J_{\frac{d}{2}-1}\left(  w r  \sqrt{d}  \right) \,  dP_{R_d}\left( r  \sqrt{d}
   \right)
   \]
   %
@@ -1109,22 +1142,130 @@ tambi\'en~\cite[Teo.~2]{SteVan05},            \cite[Lem.~2.2]{Yao94}           o
   \]
   %
   Todo el  juego consiste a probar  que la convergencia es  uniforme, para poder
-  intercambiar limite e integral.  Dio una prueba Sch{\oe}nberg en~\cite{Sch38},
-  y  luego  propuso  un  ``m\'as  moderna''  Steerneman  y  van  Perlo-ten-Kleij
-  en~\cite{SteVan05}. Basicamente se reconoce en $2^{\frac{d}{2}-1} \Gamma\left(
-    \frac{d}{2}   \right)   \left(    w   r   \sqrt{d}   \right)^{1-\frac{d}{2}}
-  J_{\frac{d}{2}-1}\left( w r \sqrt{d} \right)$ la funci\'on caracter\'istica de
-  $q_d(x)  \propto \left(  1  - \frac{x^2}{d}  \right)_+^{\frac{d-3}{2}}$ \  que
-  tiende a  la gausiana (ver e.g. secci\'on~\ref{Sssec:MP:StudentR}).  Se usa el
-  lema  de  Scheff\'e  o  de  Riez  (ver~\cite{Rie28,  Sch47,  Nov72,  Kus10}  o
-  \cite{AthLah06, Bog07:v1, Bil12}) para probar la convergencia de la integral.
+  intercambiar   l\'imite   e    integral.    Dio   una   prueba   Sch{\oe}nberg
+  en~\cite{Sch38},  y  luego  propuso  un  ``m\'as moderna''  Steerneman  y  van
+  Perlo-ten-Kleij  en~\cite{SteVan05}.  Basicamente  se reconoce  en  $w \mapsto
+  2^{\frac{d}{2}-1}   \Gamma\left(  \frac{d}{2}   \right)   \left(  w   \sqrt{d}
+  \right)^{1-\frac{d}{2}}   J_{\frac{d}{2}-1}\left(  w   \sqrt{d}   \right)$  la
+  funci\'on  caracter\'istica  de  $q_d(x)  \propto  \left(  1  -  \frac{x^2}{d}
+  \right)_+^{\frac{d-3}{2}}$   \   que   tiende   a  la   gausiana   (ver   e.g.
+  secci\'on~\ref{Sssec:MP:StudentR}).   Se usa el  lema de  Scheff\'e o  de Riez
+  (ver~\cite{Rie28,  Sch47, Nov72,  Kus10} o  \cite{AthLah06,  Bog07:v1, Bil12})
+  para probar la convergencia de la integral.
 % (es similar al uso del teorema de convergencia dominada).
 \end{proof}
 %
-Se encuentra una prueba alternativa tambi\'en en~\cite{FanKot90, Kin72}.
+\noindent Se encuentra una prueba alternativa tambi\'en en~\cite{FanKot90, Kin72}.
 
+Este  teorema pone  en  juega la  condici\'on  necesaria y  suficiente sobre  la
+funci\'on caracter\'istica para  tener una mezcla de escala  gausiana, as\'i que
+no es necesario que \ $X$ \ admita una densidad de probabilidad. sin embargo, al
+imagen de la  consistencia que se exprime tambi\'en a  trav\'es de la generadora
+de  densidad,  el  teorema  de  Sch{\oe}nber tiene  una  versi\'on  usando  esta
+generadora.   Por  eso,  introducimos  el conjunto  de  funciones  complatemente
+monotonas   sobre  $\Rset_+$   hasta   un  cierto   orden,   y  para   cualquier
+orden~\footnote{Una funci\'on  \ $f: I \subset  \Rset \mapsto \Rset$  \ es dicha
+  {\em absolutamente monotona} si es continua, diferenciable a todos los ordenes
+  en el interior of $I$, y todas sus derivadas son positivas, $ \forall \: k \in
+  \Nset, \quad f^{(k)} \ge 0$.  $f$ \ es dicha {\em completamente monotona} si \
+  $f(-x)$ \ es absolutamente monotona~\cite{Ber29}.}:
+%
+\[
+\CM_n = \left\{ f: \Rset_+ \mapsto \Rset_+ \: \mbox{ continuas, diferenciables hasta
+    el orden $n$ } \tq \forall \, k =  0 , \ldots , n, \:\: (-1)^k f^{(k)} \ge 0
+\right\}
+\]
+%
+y
+%
+\[
+\CM = \bigcap_{n=0}^{+\infty}  \CM_n = \left\{ f: \Rset_+  \mapsto \Rset_+ \: \mbox{
+    continuas, infinitemente  diferenciables }  \tq \forall \,  k \in  \Nset, \:\:
+  (-1)^k f^{(k)} \ge 0 \right\}
+\]
+%
+\begin{teorema}[Sch{\oe}berg'38 -- a partir de la generadora de densidad]
+  Sea \ $X \sim \ED\left( m , \Sigma , d_X \right)$.  Entonces $X$ es una mezcla
+  de  gausiana  si  y  solamente   si  $d_X$  es  completamente  monotona  sobre
+  $\Rset_+$
+  % lo que se escribe tambi\'en, con $Y = \sigma^{-\frac12} (X-m)$,
+  %
+  \[
+  X \, \egald \, A \, \Sigma^{\frac12}  \, G + m \quad \Leftrightarrow \quad d_X
+  \in \CM
+  \]
+  %
+  con \ $A > 0$ \ independiente de \ $G \sim \N(0,I)$.
+\end{teorema}
+%
+\begin{proof}
+  La prueba se apoya sobre el teorema de Haussdorf-Bernstein-Widder que proba la
+  equivalencia entre la  clase de funciones completamente monotonas  y la de las
+  funciones \ $f$ \ que se escriben como una transformada de Laplace-Stieltjes
+  %
+  \[
+  f(t) = \int_{\Rset_+} e^{-t u} d\mu(u)
+  \]
+  %
+  donde  $\mu$  es  una  medida finita  (ver~\cite[Teo.~3]{Sch38},  \cite{Ber29,
+    Haus21:I, Haus21:II,  Wid32}, \cite[\S~12]{Wid46}, \cite[\S~XIII.4]{Fel71}).
+  %
+  % Feller v2, p.  439; Widder p. 160; Schoenberg th. 3  y sec. 4 (Hausdorff'21,
+  % Bernstein'29, Carlson'21),
+  % 
+  Con el  cambio de variables  $u = \frac{1}{2  a^2}$ \ y  \ $\mu\big( (0  \; u)
+  \big) =  (2 u)^{\frac{d}{2}} P_A\left( \left( \frac{1}{\sqrt{2  u}} \; +\infty
+    \right) \right)$,  se aplica entonces este teorema  a (formula de probabilidad
+  total)
+  %
+  \[
+  d_X(r)  =  (2 \pi)^{-\frac{d}{2}} \int_{\Rset_+} a^{-d} e^{-\frac{r}{2 a^2}} dP_A(a) 
+  \]
 
-\SZ{Adelantar}
+  Basicamente la  directa viene  de esta  formula de probabilidad  total y  de \
+  $\displaystyle     \frac{d^k    e^{-\frac{r}{2    a^2}}}{dr^k}     =    (-1)^k
+  \frac{e^{-\frac{r}{2 a^2}}}{2^k  a^{2 k}}$ \  (se usa para  poder intercambiar
+  derivada    e     integral    el    teorema     de    convergencia    dominada
+  sec.~\ref{Ssec:MP:VAPreliminaria}).
+
+  De  nuevo,   la  reciproca   es  m\'as  dificil   a  probar  y   es  detallada
+  en~\cite[\S~12]{Wid46}  por  ejemplo~\footnote{Se  muestra  que  si  $d_X$  es
+    completamente  monotona,  se  puede   escribir  \  $\displaystyle  d_X(n)  =
+    \int_{\Rset_+}  v^n  d\mu(v) =  \int_{\Rset_+}  e^{-n  u} d\mu\left(  e^{-u}
+    \right)$,  momento   de  orden  $n$~\cite{Hau21:I,   Hau21:II},  visto  como
+    transformada de Laplace-Stieljes en $t =  n$. Se define la funci\'on $d(r) =
+    \int_{\Rset_+} e^{- r  u} d\mu\left( e^{-u} \right)$ que  coincide con $d_X$
+    en $\Nset$. Se proba finalmente que $d_X(r)-d(r)$ se prolonga analiticamente
+    en en semi plano complejo $\real{s}  \ge 0$ y de la analicidad que coinciden
+    en todo este plano~\cite{Car21, CarKro05}.}
+\end{proof}
+
+Se  notar\'a  que  la consistencia  se  manifesta  tambi\'en  a trav\'es  de  la
+generadora de la mezcla gausiana:
+%
+\begin{lema}
+  Sea  \ $\varphi_X  \in  \PDSI$ (o  $d_X  \in \CM$).  Entonces, para  cualquier
+  dimension \ $d$ \ y  $X \sim \ED(m,\Sigma,\varphi_X)$ \ $d$-dimensional, en la
+  escritura  \ $X  \egald  A \,  \Sigma^{\frac12} G  +  m$ \  con  \ $A  > 0$  \
+  independiente de \ $G  \sim \N(0,I)$ la ley de $A$ no  depende de la dimension
+  $d$.
+\end{lema}
+%
+\begin{proof}
+  La  prueba  es  inmediata del  hecho  de  que  para  cualquier matriz  $M  \in
+  \M_{d,n}(\Rset)$  de rango  lleno con  $d \le  n$, \  $\widetilde{X}  \egald A
+  \widetilde{\Sigma}^{\frac12}  \widetilde{G}  $  \  con \  $\widetilde{G}  \sim
+  \N(0,I)$  \  $n$-dimensional,  tenemos  $X   =  M  \widetilde{X}  \egald  A  M
+  \widetilde{\Sigma}^{\frac12}     \widetilde{G}    \egald     A     \left(    M
+    \widetilde{\Sigma}  M^t \right)^{\frac12}  G$  \ con  \ $\widetilde{G}  \sim
+  \N(0,I)$ \ $d$-dimensional (ver teorema~\ref{Teo:MP:StabilidadGaussiana}). Una
+  mezcla de gausiana queda mezcla  de proyecci\'on, con la misma generadora $A$,
+  y al  rev\'es pyede  ser vista  como proyecci\'on de  una mezcla  de dimension
+  m\'as grande (no va a cambiar la generadora).
+\end{proof}
+
+\SZ{Adelantar:  ley  de  $A$  via  Laplace,  Fourier  a  ver.  Volver  sobre  la
+  independencia de $A$ con $d$.}
 
 
 Varios  vectores aleatorios que  hemos visto  caen en  la familia  eliptica.  No
@@ -1249,7 +1390,7 @@ mezcla de escala de base gausiana).
   dimensi\'on m\'axima $\lceil \nu+2 \rceil-1$.
 
   Obviamente, del  soporte acotado de  la densidad, $X$  no puede ser  mezcla de
-  escala de gausiana. \SZ{En calculos...}
+  escala de gausiana. \SZ{En calculos... Recordar $X/\sqrt{...}$}
 \end{ejemplo}
 
 \begin{ejemplo}[Distribuci\'on uniforme sobre la esfera - continuaci\'on]
@@ -1288,6 +1429,9 @@ mezcla de escala de base gausiana).
   Obviamente, del  soporte acotado de  la densidad, $X$  no puede ser  mezcla de
   escala de gausiana. \SZ{En calculos...}
 \end{ejemplo}
+
+
+\SZ{Adelantar: mezcla de Student-r: Keilson KeiSte74 \S~3.3, Williamson Wil56 \S~2 para $d=1$.}
 
 \SZ{
 \begin{itemize}
