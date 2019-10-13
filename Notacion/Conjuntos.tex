@@ -179,6 +179,9 @@ tama\~no \ $d \in \Nset^*$,\vspace{1mm}\newline $\displaystyle \Part{k,d} =
 $\perm_n$ & Conjunto de las permutaciones de \ $\{ 1 \, , \, \ldots \, , \, n \}$\\[2.5mm]
 \hline
 %
+$C^k(I)$ & Conjunto de las functiones \ $f:\Rset \mapsto \Rset$ \ $k$ veces diferenciable y de derivadas continuas\\[2.5mm]
+\hline
+%
 $\PD_d$ & Conjuntos (convexo) de las funciones \ $f: \Rset^d \mapsto \Cset$ continuas, a
 simetr\'ia herm\'itica \ $f(-x) = f^*(x)$,\newline definida positivas, \
 $\forall \: n \in \Nset^*$, \ $a_i \in \Cset, x_i \in \Rset^d, \: i = 1, \ldots
@@ -200,12 +203,13 @@ de las funciones \ $f: \Rset_+ \mapsto [-1 \; 1]$ continuas con \ $f(0) = 1$ \
 tal que $F: x \mapsto f\left( \|x\|^2 \right) \: \in \PD$.\\[2.5mm]
 \hline
 %
-$\CM_n$ & Conjuntos (convexo) de las funciones \ $f: \Rset_+ \mapsto $ \
-continuas y \ $n$ \ veces diferenciables tal que \ $\forall \, k = 0 , \ldots ,
-n, \:\: (-1)^k f^{(k)} \ge 0$.\\[2.5mm]
+$\CM_n$ & Conjuntos (convexo) de las funciones \ $f \in C^{n-1}(\Rset_+)$ \
+tales que \ $\forall \, k = 0 , \ldots , n-1, \:\: (-1)^k f^{(k)} \ge 0$ \ y \
+$(-1)^{n-1} f^{(n-1)}$ \ es decreciente.\newline Dicho de otra manera, cuando \
+$n \ge 2$, \ $(-1)^k f^{(k)}$ \ es convexa, $k = 0, \ldots , n-2$.\\[2.5mm]
 \hline
 %
 $\CM$ & Conjuntos (convexo) $\displaystyle \bigcap_{n=0}^{+\infty} \, \CM_n$ de
-las funciones \ $f: \Rset_+ \mapsto \Rset$ \ continuas, infinitemente
-diferenciable tal que \ $\forall \, k \in \Nset, \:\: (-1)^k f^{(k)} \ge 0$.
+las funciones \ $f \in C^{\infty}(\Rset_+)$ \ tales que \ $\forall \, k \in
+\Nset, \:\: (-1)^k f^{(k)} \ge 0$.
 \end{notation}

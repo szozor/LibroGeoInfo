@@ -550,11 +550,11 @@ proyecci\'on:
 \end{proof}
 
 Vimos   en   las  secciones~\ref{Sssec:MP:StudentT}   y~\ref{Sssec:MP:StudentR},
-tratando  de vectores  de distribuci\'on  Student, situaciones  en la  cuales la
-matriz  de  covarianza es  (propporcional  a)  la  identidad, mientras  que  las
-componentes del vector no son independientes, contrariamente a lo que pasa en el
-caso gausiano.  De hecho  este resultado es  general en  el marco de  vectores a
-sim\'etria eliptica~\cite{BilBre99, Max67}:
+tratando de  vectores de  distribuci\'on Student-$t$ y  -$r$, situaciones  en la
+cuales la matriz  de covarianza es (propporcional a)  la identidad, mientras que
+las componentes del  vector no son independientes, contrariamente  a lo que pasa
+en el caso gausiano.  De hecho este resultado es general en el marco de vectores
+a sim\'etria eliptica~\cite{BilBre99, Max67}:
 %
 \begin{teorema}[Maxwell-Hershell]
   Sea \ $X \sim \ED(m,I,\varphi_X)$. Las componentes $X_i$ son independientes si
@@ -695,7 +695,7 @@ De la escritura  $X \egald R \,  U$, se puede ver $X  \sim \ED(0,I,\varphi_X)$ \
 como mu\~necas rusas: a cada escala o  capa \ $R = r$ tenemos una distribuci\'on
 uniforma sobre la esfera de este rayo  $r$. Por eso, $X$ es tambi\'en dicho {\em
   mezcla de  escala} de  una {\em base}  \ uniforme  y \ $R$  \ es  llamada {\em
-  variable generadora} con respeto a  esta base. En esta situaci\'on, llamaremos
+  variable generadora} con respecto a  esta base. En esta situaci\'on, llamaremos
 tambi\'en la variable \ $R$ \ {\em rayo}.
 
 De  esta escritura,  queda ahora  claro que  cada tensor  de  momentos centrales
@@ -749,9 +749,9 @@ coefficiente $\alpha_k$:
 \end{proof}
 
 Fijense  que  un vector  a  simetr\'ia  eliptica  no admite  necesariamente  una
-densidad con respeto a la medida de  Lebesgue, como por ejemplo en el caso de un
+densidad con respecto a la medida de  Lebesgue, como por ejemplo en el caso de un
 vector uniforme  sobre $\Sset_d$  (pero esa tiene  una densidad,  constante, con
-respeto a la medida de Haar sobre la esfera). Un otro ejemplo puede ser \ $X = B
+respecto a la medida de Haar sobre la esfera). Un otro ejemplo puede ser \ $X = B
 G$  \ con  \  $B \sim  \B(p)$  \  y \  $G  \sim \N(0,I)$  \  independiente de  \
 $B$. $\Phi_X(\omega)  = p \, e^{-\frac{\|  \omega \|^2}{2}} + 1  - p$ \  no es \
 $L_1$,  \ie no tiene  una transformada  de Fourier  inversa usual.  Sin embargo,
@@ -761,7 +761,7 @@ tambi\'en.
 \begin{teorema}
 %
   Sea \ $X \sim \ED(m,\Sigma,\varphi_X)$. Si  admite una  densidad~\footnote{De hecho, sufice  que admita
-    una densidad  con respeto  a una medida  que depende solamente  del volumen,
+    una densidad  con respecto  a una medida  que depende solamente  del volumen,
     como la de Lebesgue pero  tambi\'en, de Haar.}, entonces esta densidad tiene
   la forma
   %
@@ -1150,7 +1150,7 @@ tambi\'en~\cite[Teo.~2]{SteVan05},            \cite[Lem.~2.2]{Yao94}           o
   2^{\frac{d}{2}-1}   \Gamma\left(  \frac{d}{2}   \right)   \left(  w   \sqrt{d}
   \right)^{1-\frac{d}{2}}   J_{\frac{d}{2}-1}\left(  w   \sqrt{d}   \right)$  la
   funci\'on  caracter\'istica  de  $q_d(x)  \propto  \left(  1  -  \frac{x^2}{d}
-  \right)_+^{\frac{d-3}{2}}$   \   que   tiende   a  la   gausiana   (ver   e.g.
+  \right)_+^{\frac{d-3}{2}}$  \  que  tiende  a  la gausiana  (ver  por  ejemplo
   secci\'on~\ref{Sssec:MP:StudentR}).   Se usa el  lema de  Scheff\'e o  de Riez
   (ver~\cite{Rie28,  Sch47, Nov72,  Kus10} o  \cite{AthLah06,  Bog07:v1, Bil12})
   para probar la convergencia de la integral.
@@ -1170,20 +1170,20 @@ orden~\footnote{Una funci\'on  \ $f: I \subset  \Rset \mapsto \Rset$  \ es dicha
   {\em absolutamente monotona} si es continua, diferenciable a todos los ordenes
   en el interior of $I$, y todas sus derivadas son positivas, $ \forall \: k \in
   \Nset, \quad f^{(k)} \ge 0$.  $f$ \ es dicha {\em completamente monotona} si \
-  $f(-x)$ \ es absolutamente monotona~\cite{Ber29}.}:
+  $f(-x)$ \ es absolutamente monotona~\cite{Ber29}.} (ver notaciones):
 %
 \[
-\CM_n = \left\{ f: \Rset_+ \mapsto \Rset_+ \: \mbox{ continuas, diferenciables hasta
-    el orden $n$ } \tq \forall \, k =  0 , \ldots , n, \:\: (-1)^k f^{(k)} \ge 0
+\CM_n = \left\{ f \in C^{n-1}(\Rset_+) \tq \forall \, k = 0 , \ldots , n-1, \:\:
+  (-1)^k  f^{(k)}  \ge 0  \:  \et \:(-1)^k  f^{(k)}  \:  \mbox{ es  decreciente}
 \right\}
 \]
 %
 y
 %
 \[
-\CM = \bigcap_{n=0}^{+\infty}  \CM_n = \left\{ f: \Rset_+  \mapsto \Rset_+ \: \mbox{
-    continuas, infinitemente  diferenciables }  \tq \forall \,  k \in  \Nset, \:\:
-  (-1)^k f^{(k)} \ge 0 \right\}
+\CM = \bigcap_{n=0}^{+\infty} \CM_n =  \left\{ f \in
+  C^{\infty}(\Rset_+)  \tq \forall \,  k \in  \Nset, \:\:  (-1)^k f^{(k)}  \ge 0
+\right\}
 \]
 %
 \begin{teorema}[Sch{\oe}berg'38 -- a partir de la generadora de densidad]
@@ -1231,15 +1231,17 @@ y
   sec.~\ref{Ssec:MP:VAPreliminaria}).
 
   De  nuevo,   la  reciproca   es  m\'as  dificil   a  probar  y   es  detallada
-  en~\cite[\S~12]{Wid46}  por  ejemplo~\footnote{Se  muestra  que  si  $d_X$  es
-    completamente  monotona,  se  puede   escribir  \  $\displaystyle  d_X(n)  =
-    \int_{\Rset_+}  v^n  d\mu(v) =  \int_{\Rset_+}  e^{-n  u} d\mu\left(  e^{-u}
-    \right)$,  momento   de  orden  $n$~\cite{Hau21:I,   Hau21:II},  visto  como
-    transformada de Laplace-Stieljes en $t =  n$. Se define la funci\'on $d(r) =
-    \int_{\Rset_+} e^{- r  u} d\mu\left( e^{-u} \right)$ que  coincide con $d_X$
-    en $\Nset$. Se proba finalmente que $d_X(r)-d(r)$ se prolonga analiticamente
-    en en semi plano complejo $\real{s}  \ge 0$ y de la analicidad que coinciden
-    en todo este plano~\cite{Car21, CarKro05}.}
+  en~\cite[\S~12]{Wid46} por ejemplo.  Basicamente, se muestra que si  \ $d_X$ \
+  es  completamente  monotona,  se  puede  escribir \  $\displaystyle  d_X(n)  =
+  \int_{\Rset_+}  v^n  d\mu(v)  =  \int_{\Rset_+}  e^{-n  u}  d\mu\left(  e^{-u}
+  \right)$, momento de  orden \ $n$ con respecto a una  medida de probabilidad \
+  $\mu$~\cite{Hau21:I, Hau21:II}, visto como transformada de Laplace-Stieljes en
+  \ $t = n$.  Se define la funci\'on \ $\displaystyle f(r) = \int_{\Rset_+} e^{-
+    r  u} d\mu\left(  e^{-u}  \right)$ \  que coincide  con  \ $d_X$  \ sobre  \
+  $\Nset$.   Se  proba   finalmente  que  \  $d_X(r)  -   f(r)$  \  se  prolonga
+  analiticamente  en el  semi  plano  complejo \  $\real{s}  \ge 0$  \  y de  la
+  analiticidad  que  \ $d_X$  \  y  \ $f$  \  coinciden  entonces  en todo  este
+  plano~\cite{Car21, CarKro05}.
 \end{proof}
 
 Se  notar\'a  que  la consistencia  se  manifesta  tambi\'en  a trav\'es  de  la
@@ -1269,13 +1271,13 @@ generadora de la mezcla gausiana:
     de dominio imagen (bolas por proyecci\'on de la esfera).}.
 \end{proof}
 
-\SZ{Adelantar:  ley  de  $A$  via  Laplace,  Fourier  a  ver.  Volver  sobre  la
+\SZ{Adelantar: ley de  $A$ via Laplace, Fourier a ver,  Mellin.  Volver sobre la
   independencia de $A$ con $d$.}
 
 
 Varios  vectores aleatorios que  hemos visto  caen en  la familia  eliptica.  No
-admiten todas  una densidad con respeto a  la medida de Lebesgue,  como lo hemos
-visto con la ley uniforme sobre la esfera (admite una con respeto a la medida de
+admiten todas  una densidad con respecto a  la medida de Lebesgue,  como lo hemos
+visto con la ley uniforme sobre la esfera (admite una con respecto a la medida de
 Haar), tampoco no  son todas consistentes (y entonces no  se escriben todas como
 mezcla de escala de base gausiana).
 %
@@ -1311,7 +1313,7 @@ mezcla de escala de base gausiana).
   variable cierta.
 \end{ejemplo}
 
-\begin{ejemplo}[Distribuci\'on Student-t]
+\begin{ejemplo}[Distribuci\'on Student-$t$]
 %
   Sea \ $X \sim \T_\nu(m,\Sigma)$.  Entonces, \ $X \sim \ED(m,\Sigma,\varphi_X)$
   \ o equivalentemente \ $X \sim \ED(m,\Sigma,d_X)$ con
@@ -1346,16 +1348,23 @@ mezcla de escala de base gausiana).
   o tipo Pearson VI, o  beta de secunda especie~\cite{JohKot95:v2, Muk00, Bre88,
     IbaPer12} (ratio de Gamma independientes).
 
-  La Student-t es  tambi\'en consistence de la independencia  de \ $\varphi_X$ \
+  La Student-$t$ es tambi\'en consistence de la independencia de \ $\varphi_X$ \
   con la dimensi\'on \ $d$, \  $\Phi_X \in \PD$, o equivalentemente del hecho de
   que  la generadora de  densidad \  $d_X$ \  teniendo la  forma que  damos para
   cualquier dimensi\'on  (cambiar de dimensi\'on es equivalente  a cambiar $d$);
-  Las  marginales de  una  Student-t con  \  $\nu$ \  grados  de libertad  queda
-  Student-t con $\nu$ grados de  libertad y cualquier Student-t con $\nu$ grados
-  de libertad pued  ser vista como marginal de un Student-t  con $\nu$ grados de
-  libertad de cualquier dimensi\'on m\'as grande.
+  Las  marginales de  una Student-$t$  con \  $\nu$ \  grados de  libertad queda
+  Student-$t$ con  $\nu$ grados  de libertad y  cualquier Student-$t$  con $\nu$
+  grados de  libertad pued ser vista  como marginal de un  Student-$t$ con $\nu$
+  grados de libertad de cualquier dimensi\'on m\'as grande.
 
-  \SZ{GSM~\cite{FanKot90, KotNad04}}
+  Ya        v\'imos        en       la        secci\'on~\ref{Sssec:MP:StudentT},
+  lema~\ref{Lem:MP:MezclaGaussianaEscalaStudentT},    que    se   escribe    una
+  Student-$t$   como   mezcla   de   escala   Gausiana   donde   \   $A   \egald
+  \frac{1}{\sqrt{V}},  \: V \sim  \G\left( \frac{\nu}{2}  \, ,  \, \frac{\nu}{2}
+  \right)$ ley Gamma, \ie \ $A$ \  es la raiz cuadrada de una Gamma inversa (ver
+  tambi\'en~\cite{FanKot90, KotNad04}). \SZ{Se puede re-obtener este resultado buscando directamente $p_A$ por transformaci\'on (Laplace, Fourier) inversa de $d_X$ o $\varphi_X$, lema~\ref{toto} y~\cite[Cap.~5, Tab.~A.5.1, Ec.~14]{Pou10} o~\cite[Cap.~2, Tab.~2.5]{Pou10}.}
+%
+% con Mellin \cite[Cap.~2, Tab.~2.5]{Pou10}
 \end{ejemplo}
 
 \begin{ejemplo}[Distribuci\'on student-$r$]
@@ -1394,8 +1403,14 @@ mezcla de escala de base gausiana).
   marginales  de  cualquier  dimensi\'on  m\'as  grande;  es  posible  hasta  la
   dimensi\'on m\'axima $\lceil \nu+2 \rceil-1$.
 
-  Obviamente, del  soporte acotado de  la densidad, $X$  no puede ser  mezcla de
-  escala de gausiana. \SZ{En calculos... Recordar $X/\sqrt{...}$}
+  Obviamente, sin calculos, se ve del soporte acotado de la densidad que \ $X$ \
+  no  puede   ser  mezcla   de  escala  de   gausiana.   Pero  recordar   de  la
+  secci\'on~\ref{Sssec:MP:StudentR},  lema~\ref{Lem:MP:StudentRGamma}, que  \ $X
+  \egald \frac{\sqrt{\nu+2} \: \Sigma^{\frac12} \, G}{\sqrt{V + \|G\|^2}} + m \,
+  \sim \, \R_\nu( m , \Sigma )$  \ con \ $V \sim \G\left( \frac{\nu-d}{2}+1 \, ,
+    \,  \frac12 \right)$  \  y \  $G \,  \sim  \, \N(0,I)$  \ $d$-dimensional  e
+  independientes de $V$.  Parece una mezcla de Gausiana,  pero con la generadora
+  que ser\'ia dependiente de \ $G$ \ en este caso.
 \end{ejemplo}
 
 \begin{ejemplo}[Distribuci\'on uniforme sobre la esfera - continuaci\'on]\label{Ej:MP:UniformeCnt}
@@ -1426,27 +1441,27 @@ mezcla de escala de base gausiana).
   $d'$;  no son  uniforma, como  lo vimos  sin  calculos y  no se  puede ver  la
   uniforma sobre la  esfera como marginal de un  vector aleatorio de dimensi\'on
   m\'as  alta.  De  hecho, se  puede notar  que las  marginales de  \ $U$  \ son
-  Student-r con  \ $\nu = d-2$  \ grados de  libertad, a condici\'on que  $\nu >
+  Student-$r$ con \ $\nu  = d-2$ \ grados de libertad, a  condici\'on que $\nu >
   d'-2$, es decir sol\'o cuando $d'  < d$ (ver~\cite{titi, toto, Zoz}). Cuando \
   $d' = d-1$, la distribuci\'on diverge en los bordes de. Notar que si no cambia
   el grado de libertad para cualquier marginales, depende de la dimensi\'on $d$:
-  la generadora de densidad no depende solamente de $d'$.
-
-  Obviamente, del  soporte acotado de  la densidad, $X$  no puede ser  mezcla de
-  escala de gausiana. \SZ{En calculos...}
+  la  generadora de  densidad no  depende  solamente de  $d'$.  Obviamente,  del
+  soporte acotado de  la densidad, se vio que  \ $X$ \ no pod\'ia  ser mezcla de
+  escala de gausiana.
 \end{ejemplo}
 
 Si un vector a simetr\'ia eliptica no siempre como como mezcla de escala de base
 gausiana, existe una situaci\'on que  podemos ver como ``intermediato'': a veces
-se escribe como  mezcla de escala de base Student-r.  Este resultado fue probado
-por ejemplo  en el  caso escalar  \ $d=1$ \  en~\cite{Wil56, KeiSte74},  pero se
-extiende sencillamente al caso multivariado:
+se  escribe como  mezcla  de escala  de  base Student-$r$.   Este resultado  fue
+probado  por  ejemplo  en el  caso  escalar  \  $d=1$ \  en~\cite{Wil56,  Kem71,
+  KeiSte74} (ver unos elementos en~\cite{Dan51}), pero se extiende sencillamente
+al caso multivariado:
 %
-\begin{teorema}[Mezcla de escala de base Student-r -- a partir de la generadora caracter\'istica]
+\begin{teorema}[Mezcla de escala de base Student-$r$ -- a partir de la generadora caracter\'istica]
 %
   Sea \  $X \sim \ED(m,\Sigma,\varphi_X)$  \ $d$-dimensional. Si  $\varphi_X \in
   \PDSI_n, \: n  > d$, entonces se  puede escribir $X$ como mezcla  de escala de
-  Student-r con $\nu = n-2$ grados de libertad, y reciprocamente
+  Student-$r$ con $\nu = n-2$ grados de libertad, y reciprocamente
   %
   \[
   \varphi_X \in  \PDSI_n, \:  n > d  \quad \Leftrightarrow  \quad X \egald  B \,
@@ -1461,10 +1476,10 @@ extiende sencillamente al caso multivariado:
   La prueba la m\'as sencilla se apoya sobre el hecho de que si \ $\varphi_X \in
   \PDSI_n$,   se  puede  considerar   un  vector   $n$-dimensional  \   $Y  \sim
   \ED(0,I,\varphi_X)$  \  de  generadora  caracter\'istica  \  $\varphi_X$  \  y
-  escribir \  $Y \egald  R \, U$ \  con \  $U \sim \U(\Sset_n)$,  y reciprocamente.
+  escribir \ $Y \egald  R \, U$ \ con \ $U  \sim \U(\Sset_n)$, y reciprocamente.
   Ahora, del ejemplo~\ref{Ej:MP:UniformeCnt}, la proyecci\'on $d$-dimensional de
-  \ $U$ \  es Student-r con $n-2$ grados de libertad,  y reciprocamente se puede
-  ver cualquier Student-r  con $n-2$ grados de libertad  como proyecci\'on de un
+  \ $U$ \ es Student-$r$ con $n-2$ grados de libertad, y reciprocamente se puede
+  ver cualquier Student-$r$ con $n-2$ grados de libertad como proyecci\'on de un
   uniforme  m\'as  grande.   Adem\'as,  $U$  siendo  independiente  de  $R$,  la
   proyecci\'on es tambi\'en independiente de $R$. Eso cierra la prueba.
 
@@ -1481,72 +1496,147 @@ extiende sencillamente al caso multivariado:
   %
   se  reconoce  en \  $  w  \mapsto  2^{\frac{d}{2}-1} \Gamma\left(  \frac{d}{2}
   \right)  \left(  \sqrt{d  w}  \right)^{1-\frac{d}{2}}  J_{\frac{d}{2}-1}\left(
-    \sqrt{d w} \right)$ la generadora  caracteristica de la Student-r con \ $\nu
-  = n-2$ \ grados de libertad.
+    \sqrt{d w}  \right)$ la  generadora caracteristica de  la Student-$r$  con \
+  $\nu = n-2$ \ grados de libertad.
 \end{proof}
+
+De nuevo, existe un teorema equivalente tratando de la generadora de densidad:
 %
-Se notar\'a, pasando, que  para buscar la ley de \ $B$,  sufice ver la Student-r
+
+%
+\begin{teorema}[Mezcla de escala de base Student-$r$ -- a partir de la generadora de densidad]
+%
+  Sea \  $X \sim \ED(m,\Sigma,d_X)$ \  $d$-dimensional. Si $d_X \in  \CM_n, \: n
+  \in  \Nset^*$,  entonces  se puede  escribir  $X$  como  mezcla de  escala  de
+  Student-$r$ con $\nu = 2 n + d - 2$ grados de libertad, y reciprocamente
+  %
+  \[
+  d_X \in  \CM_n, \:  n \in \Nset^*  \quad \Leftrightarrow  \quad X \egald  B \,
+  \Sigma^{\frac12} \, S_{2 n + d - 2} + m
+  \]
+  %
+  con \ $B > 0$ \ independiente de \ $S_{2 n + d - 2} \sim \R_{2 n + d - 2}(0,I)$.
+\end{teorema}
+%
+\begin{proof}
+  La reciproca es inmediata de
+  %
+  \[
+  d_X(r) = \frac{\Gamma\left( \frac{d}{2}  + n \right)}{\pi^{\frac{d}{2}} (2 n +
+    d)^{\frac{d}{2}} \Gamma(n)} \, \int_{\Rset_+}  b^{-d} \left( 1 - \frac{r}{(2
+      n + d) b^2} \right)_+^{\! n - 1} dP_B(b)
+  \]
+  %
+  Si  $n   =  1$,  claramente  \  $\displaystyle   d_X(r)  =  \frac{\Gamma\left(
+      \frac{d}{2}   +  1   \right)}{\pi^{\frac{d}{2}}   (d+2)^{\frac{d}{2}}}  \,
+  \int_{\left( \sqrt{\frac{r}{2  n + d}}  \; +\infty \right)} b^{-d}  dP_B(b)$ \
+  representa  una  medida de  \  $\left( \sqrt{\frac{r}{2  n  +  d}} \;  +\infty
+  \right)$: es decreciente con \ $r$. Si $n \ge 2$, se muestra que se puede usar
+  el teorema de  convergencia dominada para intercambiar derivada  e integral, y
+  eso hasta el orden $n-1$, dando, para $0 \le k \le n-1$
+  %
+ \[
+ (-1)^k     d_X^{(k)}(r)     =     \frac{\Gamma\left(    \frac{d}{2}     +     n
+   \right)}{\pi^{\frac{d}{2}}   (2  n   +  d)^{\frac{d}{2}+k}   \Gamma(n-k)}  \,
+ \int_{\Rset_+} b^{-d-2k} \left( 1 - \frac{r}{(2 n + d) b^2} \right)_+^{\! n - k
+   - 1} dP_B(b) \: \ge \: 0
+  \]
+  %
+  y  de nuevo  \ $\displaystyle  (-1)^{n-1} d_X^{(n-1)}(r)  = \frac{\Gamma\left(
+      \frac{d}{2} + n \right)}{\pi^{\frac{d}{2}} (2 n + d)^{\frac{d}{2}+n-1}} \,
+  \int_{\left( \sqrt{\frac{r}{2 n + d}} \; +\infty \right)} b^{-d-2n+2} dP_B(b)$
+  \ es decreciente.
+
+  Una prueba detallada  de la propiedad directa se  encuentra en~\cite{Wil56} en
+  el  contexto  escalar,  pero  se  extiende  al  caso  multivariado  sin  costo
+  adicional.  Basicamente, se proba que para \  $f \in \CM_n$, \ $\forall \: k =
+  1,  \ldots ,  n-1$ \  y \  $\alpha >  0$, \  (i) \  $t^{k-1} f^{(k)}(t)$  \ es
+  integrable sobre \  $(\alpha \; +\infty)$ \ y \  (ii) \ $\displaystyle \lim_{t
+    \to +\infty} t^k f^{(k)}(t) = 0$. Luego, sea \ $P_n$  \ medida finita tal que
+  %
+  \[
+  P_n\big( (a \; b) \big) = (-1)^n \left( f^{(n-1)}(b) - f^{(n-1)}(a) \right)
+  \]
+  %
+  Es una  medida por la decrecencia de  \ $(-1)^{n-1} f^{(n-1)}$ \  y finita del
+  resultado (i).   Entonces, se  escribe el  desarollo de Taylor  al torno  de \
+  $\alpha$, hasta el  orden \ $n-1$ \  con resto de la forma  integral, es decir
+  cuando \ $\alpha \ge t$
+  %
+  \[
+  f(t) =  \sum_{k=0}^{n-1} \frac{(t-\alpha)^k}{k!}  \,  f^{(k)}(\alpha) - (-1)^n
+  \int_{(t \; \alpha)} \frac{(t-u)^{n-1}}{(n-1)!}  \, dP_n(u)
+  \]
+  %
+  Escribiendo  \  $(t-u)^{n-1}  =  (-1)^{n-1}  u^{n-1} \left(  1  -  \frac{t}{u}
+  \right)^{n-1}$ \  y aplicando  el desarollo precediente  a \ $d_X(r)$,  con el
+  cambio de variables $u = (2 n + d) b^2$ \ se obtiene
+  %
+  \[
+  d_X(r)  =  \sum_{k=0}^{n-1}  \frac{(r-\alpha)^k}{k!}  \,  d_X^{(k)}(\alpha)  +
+  \frac{(2  n + d)^{n-1}}{\Gamma(n)}  \int_{\left( \sqrt{\frac{t}{2  n +  d}} \;
+      \sqrt{\frac{\alpha}{2 n + d}} \right)} \left(  1 - \frac{r}{(2 n + d) b^2}
+  \right)^{n-1} \, dP_n\big( (2 n + d) b^2 \big)
+  \]
+  %
+  Ahora, dejando $\alpha$ tender al infinoto, se nota que: \ $d_X(\alpha) \to 0$
+  \ (generadora de densidad $d$-dimensional, $\alpha^{d-1} d_X(\alpha^2)$ \ debe
+  tender a 0); \ del punto (ii), cada  termino de la suma tiende a 0. Queda solo
+  el termino integral, que se escribe tambi\'en
+  %
+  \[
+  d_X(r) =  \frac{(2 n +  d)^{n-1}}{\Gamma(n)} \int_{\Rset_+} b^{-d} \left(  1 -
+    \frac{r}{(2 n + d) b^2} \right)_+^{\!n-1} \, b^{2 n +d - 2} dP_n\big( (2 n +
+  d) b^2 \big)
+  \]
+  %
+  Tiene precisamente la forma de  mezcla de Student-$r$ $d$-dimensional con \ $2
+  n + d -  2$ \ grados de libertad, con \ $P_B$  \ definida por \ $\displaystyle
+  P_B(A)   =   \frac{\pi^{\frac{d}{2}}   (2   n   +  d)^{\frac{2   n   +   d   -
+        2}{2}}}{\Gamma\left( \frac{d}{2} + n \right)} \int_A  b^{2 n + d - 2} \,
+  dP_n\big( (2 n + d) b^2 \big)$.
+
+\SZ{Bien fijar que todo listo.}
+\end{proof}
+
+Nota: obviamente, si denotamos \  $\mathfrak{S}_{n,d}$ \ el conjunto de vectores
+aleatorios  $d$-dimensjonal, mezcla  de  Student-$r$  con \  $n-2$  \ grados  de
+libertad, $\mathfrak{S}_{d+1,d} \supset \mathfrak{S}_{d+2,d} \supset \cdots$ \ y
+\  $\displaystyle  \bigcap_{n=d+1}^{+\infty}$ \  es  el  conjunto  de mezcla  de
+gausiana $d$-dimensional.
+
+Se notar\'a tmbi\'en que para buscar la  ley de \ $B$, sufice ver la Student-$r$
 como proyecci\'on de una uniforme de dimensi\'on \ $d+2$, \ie
 %
 \[
 Y  \sim  \ED(0,I,\varphi_X) \:  (d+2)\mbox{-dimensional},  \quad  Y  \egald R \, U
 \Leftrightarrow B \egald R
 \]
+%
+Adem\'as, se  puede imaginar tambi\'en buscar  la ley de una  mezcla de gausiana
+pasando por la  de mezcla de Student-$r$, tomando el  l\'imite cuando $d$ tiende
+al infinito de la ley de $B$.
 
-De nuevo, existe un teorema equivalente tratando de la generadora de densidad:
-%
+\
 
-%
-\begin{teorema}[Mezcla de escala de base Student-r -- a partir de la generadora de densidad]
-%
-  Sea \  $X \sim \ED(m,\Sigma,d_X)$  \ $d$-dimensional. Si  $d_X \in
-  \CM_n, \: n  > d$, entonces se  puede escribir $X$ como mezcla  de escala de
-  Student-r con $\nu = n-2$ grados de libertad, y reciprocamente
-  %
-  \[
-  d_X \in  \CM_n, \:  n > d  \quad \Leftrightarrow  \quad X \egald  B \,
-  \Sigma^{\frac12} \, S_{m-2} + m
-  \]
-  %
-  con \ $B > 0$ \ independiente de \ $S_{m-2} \sim \R_{m-2}(0,I)$.
-\end{teorema}
-%
-\begin{proof}
-%Sin perdida de generalidad, consideramos $m = 0, \: \Sigma = I$.
-\SZ{Hacerla}
-\end{proof}
-
-Nota: obviamente, si denotamos \  $\mathfrak{S}_{n,d}$ \ el conjunto de vectores
-aleatorios  $d$-dimensjonal,  mezcla  de  Student-r  con \  $n-2$  \  grados  de
-libertad, $\mathfrak{S}_{d+1,d} \supset \mathfrak{S}_{d+2,d} \supset \cdots$ \ y
-\  $\displaystyle  \bigcap_{n=d+1}^{+\infty}$ \  es  el  conjunto  de mezcla  de
-gausiana $d$-dimensional.
+La mayoria  de estos  resultados se  extienden al caso  complejo, con  ahora $Z$
+esfericamente invariante si no cambia por transformaci\'on lineal unitaria, \ $H
+Z \egald Z$  \ con \ $H$  \ unitaria, $H H^\dag =  H^\dag H = I$.  Ahora, lo que
+juega el rol de  esfera va a ser la esfera compleja  $d$-dimensional \ $\{ u \in
+\Cset^d \tq u^\dag u = 1 \}$. Ver~\cite{} para tener m\'as detailles.
 
 \SZ{
 \begin{itemize}
 
 \item Volver a los cumulantes $2 k$: se puede decir m\'as?
 
-%\item Ver Kano, Rao
-
-%\item GSM (y consistante) %
-%  Esta \'ultima aserci\'on es  precisamente una caracterizaci\'on posible de la
-%  GSM~\cite{Yao94}. Formal~\cite{Kan94,  Yao73, Ver64, Pic70,  Kel71, KeiSte74,
-%    Tei60,     AndMal74},     Schoenber~\cite{Sch38,     SteVan05},     Laplace
-%  transfo~\cite{Fel71,  Wil56, Wid46},  Appli~\cite{PorStr03,  BomBea08, Sel08,
-%    ShiSel07, ZozVig10, TisNic04, TodTab07}
-%\item  Hablar de  nuevo de   de Student-t como  GSM~\cite{toto, titi,  FanKot90,
-%    KotNad04} y la Student-r con $r$ pero que no es GSM (nota con casi GSM X/sqrt(G+||X||)).
-
 \item Citar mi HDR~\cite[Sec.~3.2.1]{Zoz12}
 
-\item Ver BilBre def 13: extension matricial
+\item Caso complejo, con matriz unitaria; 
 
-\item Caso complejo, con matriz unitaria
+\item Ver BilBre def 13: extension matricial
 
 \item Ver Shiryayev
-
-\item Ver BilBre def 13: extension matricial
 
 \end{itemize}
 

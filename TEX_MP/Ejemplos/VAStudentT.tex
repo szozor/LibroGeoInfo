@@ -148,41 +148,41 @@ Sin embargo, las distribuciones Student-$t$ tienen varias propiedades notables.
   suficiente para que \ $A \Sigma A^t \in P_{d'}^+(\Rset)$.
 \end{proof}
 
-% \begin{lema}[V\'inculo con las distribuciones Gamma y Gausiana (mezcla Gaussiana de escala)]
-% \label{Lem:MP:MezclaGaussianaEscalaStudentT}
-% %
-%   Sea \ $V \sim \G\left( \frac{\nu}{2} \, ,  \, \frac{\nu}{2} \right)$ \ y \ $G \, \sim \,
-%   \N(0,I)$ \ independientes. Entonces
-%   %
-%   \[
-%   \frac{G}{\sqrt{V}} \, \sim \, \T_\nu( 0 , I )
-%   \]
-%   %
-%   Dicho de  otra manera, se puede escribir  \ $X \, \sim  \, \T_\nu(m,\Sigma)$ \
-%   esticasticamente bajo la forma \ $X \egald \frac{\Sigma^{\frac12} G}{\sqrt{V}}
-%   + m $ \ donde \ $\egald$ \ significa que la igualdad es en distribuci\'on.
-% \end{lema}
-% \begin{proof}
-%   Lo  m\'as  simple  es  de  salir  de la  formula  de  probabilidad  total  del
-%   teorema~\ref{Teo:MP:ProbaTotalContinuo},  notando  que  condicionalmente  a  \
-%   $V=v$ \ la variable es gausiana de covarianza $\frac{1}{v} I$,
-% %
-% \begin{eqnarray*}
-% p_X(x) & = & \int_\Rset p_{X|V=v}(x) \, p_V(v) \, dv\\[2mm]
-% %
-% & \propto & \int_0^{+\infty} v^{\frac{d}{2}} e^{-\frac{v}{2} x^t x}
-% v^{\frac{\nu}{2}-1} e^{-\frac{\nu}{2} v} \, dv\\[2mm]
-% %
-% & \propto & \left( 1 + \frac{x^t x}{\nu} \right)^{- \frac{d+\nu}{2}}
-% \int_0^{+\infty} u^{\frac{d+\nu}{2}-1} e^{-u} \, du\\[2mm]
-% %
-% & \propto & \left( 1 + \frac{x^t x}{\nu} \right)^{- \frac{d+\nu}{2}}
-% \end{eqnarray*}
-% %
-% con  \ $\propto$  \ significando  ``proporcional a''  (el coeficiente  es  lo de
-% normalizaci\'on) y  el cambio de  variables $v  = \frac{2 \,  u}{\nu + x^t  x} =
-% \frac{\frac{2}{\nu}}{1 + \frac{x^t x}{\nu}} \, u$.
-% \end{proof}
+\begin{lema}[V\'inculo con las distribuciones Gamma y Gausiana (mezcla Gaussiana de escala)]
+\label{Lem:MP:MezclaGaussianaEscalaStudentT}
+%
+  Sea \ $V \sim \G\left( \frac{\nu}{2} \, ,  \, \frac{\nu}{2} \right)$ \ y \ $G \, \sim \,
+  \N(0,I)$ \ independientes. Entonces
+  %
+  \[
+  \frac{G}{\sqrt{V}} \, \sim \, \T_\nu( 0 , I )
+  \]
+  %
+  Dicho de  otra manera, se puede escribir  \ $X \, \sim  \, \T_\nu(m,\Sigma)$ \
+  esticasticamente bajo la forma \ $X \egald \frac{\Sigma^{\frac12} G}{\sqrt{V}}
+  + m $ \ donde \ $\egald$ \ significa que la igualdad es en distribuci\'on.
+\end{lema}
+\begin{proof}
+  Lo  m\'as  simple  es  de  salir  de la  formula  de  probabilidad  total  del
+  teorema~\ref{Teo:MP:ProbaTotalContinuo},  notando  que  condicionalmente  a  \
+  $V=v$ \ la variable es gausiana de covarianza $\frac{1}{v} I$,
+  %
+  \begin{eqnarray*}
+  p_X(x) & = & \int_\Rset p_{X|V=v}(x) \, p_V(v) \, dv\\[2mm]
+  %
+  & \propto & \int_0^{+\infty} v^{\frac{d}{2}} e^{-\frac{v}{2} x^t x}
+  v^{\frac{\nu}{2}-1} e^{-\frac{\nu}{2} v} \, dv\\[2mm]
+  %
+  & \propto & \left( 1 + \frac{x^t x}{\nu} \right)^{- \frac{d+\nu}{2}}
+  \int_0^{+\infty} u^{\frac{d+\nu}{2}-1} e^{-u} \, du\\[2mm]
+  %
+  & \propto & \left( 1 + \frac{x^t x}{\nu} \right)^{- \frac{d+\nu}{2}}
+  \end{eqnarray*}
+  %
+  con \  $\propto$ \  significando ``proporcional a''  (el coeficiente es  lo de
+  normalizaci\'on) y el  cambio de variables $v  = \frac{2 \, u}{\nu +  x^t x} =
+  \frac{\frac{2}{\nu}}{1 + \frac{x^t x}{\nu}} \, u$.
+\end{proof}
 %
 Nota: este  lema permite tambi\'en  probar el lema~\ref{Lem:MP:StabilidadLineal}
 escribiendo \ $A X + b \egald  \sqrt{\frac{\nu}{V}} A \Sigma^{\frac12} G + A m +
@@ -211,7 +211,7 @@ b$.
   \frac{(x-m)^t \Sigma^{-1} (x-m)}{2} + o(1)$.
 \end{proof}
 
-Las   variables   Student-t   tienen   varias   representaciones   estocasticas,
+Las   variables  Student-$t$   tienen   varias  representaciones   estocasticas,
 relacionadas a la gausiana~\cite{FanKot90, And03, KotNad04, AndKau65}:
 % ej. KotNad p. 7 para la secunda
 %
@@ -329,9 +329,10 @@ lema~\ref{Lem:MP:StabilidadLinealStudentT} escribiendo \ $A X + b \egald \frac{A
   % \right)^{-1} = I$~\cite{HorJoh13, Har08}
 \end{proof}
 
-Como lo hemos introducido, la  distribuci\'on de Student aparece naturalmente en
+Como lo hemos introducido, la distribuci\'on Student-$t$ aparece naturalmente en
 el  marco  de la  estimaci\'on,  especialmente  a  trav\'es de  la  estimaci\'on
-empirica de la media y covarianza~\cite{Mui82, GupNag99, BilBre99, And03, Seb04}:
+empirica  de  la  media  y covarianza~\cite{Mui82,  GupNag99,  BilBre99,  And03,
+  Seb04}:
 % resp. p 80 teo 3.2.1 -- p. 92 teo 3.3.6 -- p. 87 prop. 7.1 -- p. 77 teo. 3.3.2 -- p. 63 teo. 3.1
 % Nota : ver corolarios 2 y 3, p. 25 de Seber
 % VER GupNag Th. 4.2.1
@@ -494,7 +495,7 @@ por ejemplo~\cite{KotNad04} completamente dedicado a esta distribuci\'on.
 
 \
 
-La distribuci\'on  Student-t se generaliza  al caso matriz-variada  $X$ definido
+La distribuci\'on Student-$t$ se  generaliza al caso matriz-variada $X$ definido
 sobre $M_{d,d'}(\Rset)$;  se denota \  $X \, \sim \,  \T_\nu(M,\Sigma,\Omega)$ \
 donde  \ $M  \in  M_{d,d'}(\Rset), \:  \Sigma  \in P_d^+(\Rset),  \: \Omega  \in
 P_{d'}^+(\Rset)$   y  la   densidad  es   dada  por   $\displaystyle   p_X(x)  =
