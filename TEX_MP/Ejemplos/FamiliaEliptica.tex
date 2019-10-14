@@ -1043,13 +1043,12 @@ marginalizaci\'on, y extensi\'on, como la gausiana por ejemplo:
 %
   Sea \  $X = \begin{bmatrix} X_1 &  \cdots & X_d \end{bmatrix}$  \ a simetr\'ia
   eliptica  de  generadora  de  densidad  $d_X$.   Este  vector  es  dicho  {\em
-    consistente}  si  la  generadora  de  densidad \  $d_{\widetilde{X}}$  \  de
-  $\widetilde{X} = \begin{bmatrix} X_1 &  \cdots & X_{d'} \end{bmatrix}$ \ tiene
-  la misma  forma que  \ $d_X$  \ donde el  par\'ametro dimensional  \ $d$  \ es
-  reemplazado   por  \  $d'$.   En  otros   termoinos  tenemos   invarianza  por
-  marginalizaci\'on  si $d' <  d$, pero  se puede  ver $X$  como marginal  de un
-  vector m\'as grande con la  misma generadora de probabilidad re-emplazando $d$
-  por $d'$.
+    consistente}   si  la   generadora  de   densidad  \   $d_{X'}$  \   de  $X'
+  = \begin{bmatrix} X_1 & \cdots &  X_{d'} \end{bmatrix}$ \ tiene la misma forma
+  que \ $d_X$  \ donde el par\'ametro  dimensional \ $d$ \ es  reemplazado por \
+  $d'$.  En  otros termoinos tenemos  invarianza por marginalizaci\'on si  $d' <
+  d$, pero se puede ver $X$ como marginal de un vector m\'as grande con la misma
+  generadora de probabilidad re-emplazando $d$ por $d'$.
 
   Se proba  que, equivalentemente, la generadora caracteristica  \ $\varphi_X$ \
   no  es  relacionada a  \  $d$  (ver~\cite{Kan94,  FanKot90} para  la  prueba).
@@ -1255,7 +1254,7 @@ y
 Se  notar\'a  que  la consistencia  se  manifesta  tambi\'en  a trav\'es  de  la
 generadora de la mezcla gausiana:
 %
-\begin{lema}\label{Lem:MP:AIndeêndiented}
+\begin{lema}\label{Lem:MP:AIndependienteD}
   Sea  \ $\varphi_X  \in  \PDSI$ (o  $d_X  \in \CM$).  Entonces, para  cualquier
   dimension \ $d$ \ y  $X \sim \ED(m,\Sigma,\varphi_X)$ \ $d$-dimensional, en la
   escritura  \ $X  \egald  A \,  \Sigma^{\frac12} G  +  m$ \  con  \ $A  > 0$  \
@@ -1265,18 +1264,17 @@ generadora de la mezcla gausiana:
 %
 \begin{proof}
   La  prueba  es  inmediata del  hecho  de  que  para  cualquier matriz  $M  \in
-  \M_{d,n}(\Rset)$  de rango  lleno con  $d \le  n$, \  $\widetilde{X}  \egald A
-  \widetilde{\Sigma}^{\frac12}  \widetilde{G}  $  \  con \  $\widetilde{G}  \sim
-  \N(0,I)$  \  $n$-dimensional,  tenemos  $X   =  M  \widetilde{X}  \egald  A  M
-  \widetilde{\Sigma}^{\frac12}     \widetilde{G}    \egald     A     \left(    M
-    \widetilde{\Sigma}  M^t \right)^{\frac12}  G$  \ con  \ $\widetilde{G}  \sim
-  \N(0,I)$ \ $d$-dimensional (ver teorema~\ref{Teo:MP:StabilidadGaussiana}). Una
-  mezcla de gausiana queda mezcla  de proyecci\'on, con la misma generadora $A$,
-  y al  rev\'es pyede  ser vista  como proyecci\'on de  una mezcla  de dimension
-  m\'as grande (no va a cambiar la generadora)~\footnote{Cuidense de que no anda
-    si salimos a partir de una mezcla de base uniforme: como lo vamos a ver, las
-    proyecciones no son uniforme m\'as si $d < n$, lo que se intuite por razones
-    de dominio imagen (bolas por proyecci\'on de la esfera).}.
+  \M_{d,n}(\Rset)$ de rango lleno con $d  \le n$, \ $X \egald A \Sigma^{\frac12}
+  G $ \ con  \ $G \sim \N(0,I)$ \ $n$-dimensional, tenemos $X' =  M X \egald A M
+  \Sigma^{\frac12} G \egald A \left( M  \Sigma M^t \right)^{\frac12} G'$ \ con \
+  $G'         \sim        \N(0,I)$         \         $d$-dimensional        (ver
+  teorema~\ref{Teo:MP:StabilidadGaussiana}). Una mezcla de gausiana queda mezcla
+  de proyecci\'on,  con la misma  generadora $A$, y  al rev\'es puede  ser vista
+  como proyecci\'on de una mezcla de  dimension m\'as grande (no va a cambiar la
+  generadora)~\footnote{Cuidense  de que  no anda  si  salimos a  partir de  una
+    mezcla  de base  uniforme: como  lo  vamos a  ver, las  proyecciones no  son
+    uniforme m\'as si $d  < n$, lo que se intuite por  razones de dominio imagen
+    (bolas por proyecci\'on de la esfera).}.
 \end{proof}
 
 \SZ{Adelantar: ley de  $A$ via Laplace, Fourier a ver,  Mellin.  Volver sobre la
@@ -1436,11 +1434,12 @@ mezcla de escala de base gausiana).
   \right) \, w^{1-\frac{d}{2}} \, J_{\frac{d}{2}-1}\left( w \right)
   \]
   %
-  depende explicitamente de  $d$. M\'as all\'a, para $d'  < d$, por transformada
+  depende  explicitamente  de $d$.  M\'as  all\'a,  para $d'  <  d$  \  y \  $X'
+  =  \begin{bmatrix} X_1 &  \cdots &  X_{d'} \end{bmatrix}^t$,  por transformada
   inversa de Hankel y~\cite[Ec.~6.575-1]{GraRyz15}, se obtiene
   %
   \[
-  d_{\widetilde{X}}\left(   r^2   \right)   =   \frac{\Gamma\left(   \frac{d}{2}
+  d_{X'}\left(     r^2      \right)     =     \frac{\Gamma\left(     \frac{d}{2}
     \right)}{\pi^{\frac{d'}{2}} \Gamma\left( \frac{d-d'}{2}  \right)} \left( 1 -
     r^2 \right)^{\frac{d-2-d'}{2}} \un_{(0 \; 1)}(r)
   \]
@@ -1466,7 +1465,7 @@ probado  por  ejemplo  en el  caso  escalar  \  $d=1$ \  en~\cite{Wil56,  Kem71,
 al caso multivariado:
 %
 \begin{teorema}[Mezcla de escala de base Student-$r$ -- a partir de la generadora caracter\'istica]
-\label{Teo:MP:MezclaStidentRCaracteristica}
+\label{Teo:MP:MezclaStudentRCaracteristica}
 %
   Sea \  $X \sim \ED(m,\Sigma,\varphi_X)$  \ $d$-dimensional. Si  $\varphi_X \in
   \PDSI_n, \: n  > d$, entonces se  puede escribir $X$ como mezcla  de escala de
@@ -1474,10 +1473,10 @@ al caso multivariado:
   %
   \[
   \varphi_X \in  \PDSI_n, \:  n > d  \quad \Leftrightarrow  \quad X \egald  B \,
-  \Sigma^{\frac12} \, S_{m-2} + m
+  \Sigma^{\frac12} \, S_{n-2} + m
   \]
   %
-  con \ $B > 0$ \ independiente de \ $S_{m-2} \sim \R_{m-2}(0,I)$.
+  con \ $B > 0$ \ independiente de \ $S_{n-2} \sim \R_{n-2}(0,I)$.
 \end{teorema}
 %
 \begin{proof}
@@ -1514,7 +1513,7 @@ De nuevo, existe un teorema equivalente tratando de la generadora de densidad:
 
 %
 \begin{teorema}[Mezcla de escala de base Student-$r$ -- a partir de la generadora de densidad]
-\label{Teo:MP:MezclaStidentRDensidad}
+\label{Teo:MP:MezclaStudentRDensidad}
 %
   Sea \  $X \sim \ED(m,\Sigma,d_X)$ \  $d$-dimensional. Si $d_X \in  \CM_n, \: n
   \in  \Nset^*$,  entonces  se puede  escribir  $X$  como  mezcla de  escala  de
@@ -1804,34 +1803,38 @@ matriz caracteristica \ $\Sigma$:
     \quad A X + c \: \sim \: \CED(A m + c , A \Sigma A^\dag , \varphi_Z)$;
   %
   \item Teorema~\ref{Teo:MP:ProyeccionComponentesEliptica} en: Sea \ $Z$, vector
-    aleatorio  complejo $d$-dimensonal  de componentes  $Z_i$. Entonces  $Z \sim
-    \CED(m,\Sigma,\varphi_Z)  \quad  \Leftrightarrow  \quad  \forall  \:  a  \in
-    \Cset^d,   \quad   a^\dag  (Z   -   m)   \egald  \sqrt{\frac{a^\dag   \Sigma
-        a}{\Sigma_{i,i}}} (Z_i - m_i)$;
+    aleatorio   complejo   $d$-dimensonal   de   componentes   $Z_i$.   Entonces
+    $\displaystyle Z  \sim \CED(m,\Sigma,\varphi_Z) \quad  \Leftrightarrow \quad
+    \forall \:  a \in  \Cset^d, \quad a^\dag  (Z - m)  \egald \sqrt{\frac{a^\dag
+        \Sigma a}{\Sigma_{i,i}}} (Z_i - m_i)$;
   %
   \item Teorema~\ref{Teo:MP:MaxwellHershell} en:  \ $Z \sim \CED(m,I,\varphi_Z)$
     \ tiene sus independientes si y solamente si \ $Z \sim \CN(m, \alpha I)$ con
     $\alpha > 0$;
   %
-  \item \SZ{Teorema~\ref{Teo:MP:MezclaUniforme} en:};
+  \item  Teorema~\ref{Teo:MP:MezclaUniforme} en:  \ $Z  \sim \CED(0,I,\varphi_Z)
+    \:\: \Leftrightarrow  \:\: Z \egald R \,  U$ \:\: con \:\:  $U \sim \U\left(
+      \SCset_d \right)$  \ uniforme sobre  la esfera $d$-dimensional  compleja y
+    m\'as generalmente, para \ $Z \sim \ED(m,\Sigma,\varphi_Z)$, \quad $Y \egald
+    \Sigma^{\frac12} R \, U + m$.
   %
-  %
-  \item \SZ{Corolario~\ref{Cor:MP:MezclaUniforme} en:};
+  \item  Corolario~\ref{Cor:MP:MezclaUniforme} en: $Z  \sim \CED(0,I,\varphi_Z)$
+    da $\| Z \|  \egald R$ \ y \ $\frac{Z}{\|Z\|} \egald  U \sim \U(\SCset_d)$ \
+    son independientes;
   %
   \item \SZ{Lema para alpha momentos \ref{Lem:MP:AlphaConR}};
   %
-  \item \SZ{Teorema~\ref{Teo:MP:DensidadRayo} en: \ $Z \sim \CED(0,I,d_Z)$ \ y \
-      $R  \egald \|Z\|$  \ admite  una  densidad que  se escribe  $\displaystyle
-      p_R(r)  =  \frac{2  \pi^d}{\Gamma(d)}   \,  r^{2  d-1}  \,  d_X\left(  r^2
-      \right)$};
+  \item Teorema~\ref{Teo:MP:DensidadRayo} en: \ $Z  \sim \CED(0,I,d_Z)$ \ y \ $R
+    \egald \|Z\|$ \  admite una densidad que se  escribe $\displaystyle p_R(r) =
+    \frac{2 \pi^d}{\Gamma(d)} \, r^{2 d-1} \, d_X\left( r^2 \right)$;
   %
   \item   Teorema~\ref{Teo:MP:TransformadaDeHankel}   en:   para   \   $Z   \sim
     \CED(m,\Sigma,\varphi_Z)   \equiv  \CED(m,\Sigma,d_Z)$  \   las  generadoras
-    caracter\'isticas y de  densidad son relacionadas por\newline $\displaystyle
+    caracter\'isticas y de  densidad son relacionadas por $\displaystyle
     \varphi_Z\left( w^2 \right) =  \left( 2 \pi \right)^d w^{1-d} \int_{\Rset_+}
     r^d  d_Z\left(  r^2  \right)  \,  J_{d-1}(  r  w)  \,  dr  \quad$  y  $\quad
     \displaystyle  d_Z\left( r^2  \right) =  \left( 2  \pi  \right)^{-d} r^{1-d}
-    \int_{\Rset_+} w^d \varphi_Z\left( w^2 \right) \, J_{d-1}( r w) \, dw$:
+    \int_{\Rset_+} w^d \varphi_Z\left( w^2 \right) \, J_{d-1}( r w) \, dw$;
   %
   % \item Coordenadas hiperesfericas
   %
@@ -1845,15 +1848,15 @@ matriz caracteristica \ $\Sigma$:
     \Leftrightarrow \:\: d_Z \in  \CM$, \ con \ $A > 0$  \ independiente de \ $G
     \sim \CN(0,I)$;
   %
-  \item Lema~\ref{Lem:MP:AIndeêndiented} en: \ $\varphi_Z \in \PDSI$ (o $d_Z \in
+  \item Lema~\ref{Lem:MP:AIndependienteD} en: \ $\varphi_Z \in \PDSI$ (o $d_Z \in
     \CM$)   \   y    para   cualquier   dimension   \   $d$    \   y   $Z   \sim
     \CED(m,\Sigma,\varphi_Z)$ \  $d$-dimensional, en la escritura \  $X \egald A
     \, \Sigma^{\frac12}  G + m$  \ con \  $A > 0$ \  independiente de \  $G \sim
     \CN(0,I)$ la ley de \ $A$ \ no depende de la dimension $d$;
   %
-  \item \SZ{Mezcla de Student con carac~\ref{Teo:MP:MezclaStidentRCaracteristica}};
+  \item \SZ{Mezcla de Student con carac~\ref{Teo:MP:MezclaStudentRCaracteristica}};
   %
-  \item \SZ{Mezcla de Student con densidad~\ref{Teo:MP:MezclaStidentRDensidad}}
+  \item \SZ{Mezcla de Student con densidad~\ref{Teo:MP:MezclaStudentRDensidad}}
   \end{itemize}
 %
 \item \SZ{A ver unif compleja, gausiana compleja, extension student-r}

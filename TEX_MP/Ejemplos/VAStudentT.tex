@@ -495,13 +495,33 @@ por ejemplo~\cite{KotNad04} completamente dedicado a esta distribuci\'on.
 
 \
 
-La distribuci\'on Student-$t$ se  generaliza al caso matriz-variada $X$ definido
-sobre $M_{d,d'}(\Rset)$;  se denota \  $X \, \sim \,  \T_\nu(M,\Sigma,\Omega)$ \
-donde  \ $M  \in  M_{d,d'}(\Rset), \:  \Sigma  \in P_d^+(\Rset),  \: \Omega  \in
-P_{d'}^+(\Rset)$   y  la   densidad  es   dada  por   $\displaystyle   p_X(x)  =
-\frac{\Gamma_d\left(      \frac{\nu+d+d'-1}{2}\right)}{\pi^{\frac{\nu     d}{2}}
-  \Gamma_d\left(       \frac{\nu+d-1}{2}\right)      \,       \left|      \Sigma
-  \right|^{\frac{d'}{2}}  \left|  \Omega \right|^{\frac{d}{2}}}  \:  \left| I  +
-  \Sigma^{-1}     (x-M)     \,     \Omega^{-1}     \,     (x-M)^t     \right|^{-
-  \frac{\nu+d+d'-1}{2}}$. Se refiera  a~\cite[Cap.~4]{GupNag99} para tener m\'as
-detalles.
+La distribuci\'on  Student-$t$ se generaliza al  caso complejo \  $Z$ \ definido
+sobre $\Cset^d$; se denota  \ $Z \, \sim \, \CT_\nu(m,\Sigma)$ \  donde \ $m \in
+\Cset^d$, \ $\Sigma \in P_d^+(\Cset)$ \ y la densidad es dada por \
+%
+\[
+p_Z(z) = \frac{\Gamma\left( d  + \frac{\nu}{2} \right)}{\pi^d \nu^d \Gamma\left(
+    \frac{\nu}{2}   \right)  \,   \left|   \Sigma  \right|}   \:   \left(  1   +
+  \frac{(z-m)^\dag \, \Sigma^{-1} \, (z-m)}{\nu} \right)^{- \frac{\nu}{2}-d}
+\]
+%
+(ver  por  ejemplo~\cite[\S~5.12  y   ref.]{KotNad04}  para  una  versi\'on  muy
+parecida).
+% Gupta 64, Tan 73, 69b
+%Se puede referirse  a~\cite[Cap.~4]{GupNag99} para tener m\'as
+%detalles.
+
+\
+
+Tambi\'en, la  distribuci\'on Student-$t$  se generaliza al  caso matriz-variada
+$X$   definido  sobre   $M_{d,d'}(\Rset)$;   se   denota  \   $X   \,  \sim   \,
+\T_\nu(M,\Sigma,\Omega)$  \  donde  \  $M  \in M_{d,d'}(\Rset),  \:  \Sigma  \in
+P_d^+(\Rset),  \:  \Omega  \in  P_{d'}^+(\Rset)$  y  la  densidad  es  dada  por
+$\displaystyle             p_X(x)             =             \frac{\Gamma_d\left(
+    \frac{\nu+d+d'-1}{2}\right)}{\pi^{\frac{\nu       d}{2}}      \Gamma_d\left(
+    \frac{\nu+d-1}{2}\right)  \,  \left|  \Sigma  \right|^{\frac{d'}{2}}  \left|
+    \Omega \right|^{\frac{d}{2}}} \: \left| I + \Sigma^{-1} (x-M) \, \Omega^{-1}
+  \,      (x-M)^t     \right|^{-     \frac{\nu+d+d'-1}{2}}$.      Se     refiera
+a~\cite{Dic67}, \cite[Cap.~4]{GupNag99} o~\cite[\S5.11   y
+ref.]{KotNag04}   para   tener   m\'as   detalles.
+% Dickey 66, Cornis 54
