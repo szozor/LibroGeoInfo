@@ -19,14 +19,14 @@ y su matriz de covarianza, la  gausiana compleja va a ser completamente definida
 por   la  media,   la  matriz   de  covarianza   y  la   pseudo-covarianza  (ver
 Sec.~\ref{Sec:MP:VectoresComplejosMatricesAleatorias}  por las  relaciones entre
 la  covarianza  de  \ $\widetilde{Z}$  \  y  estas  matrices).   $Z \,  \sim  \,
-\C\N(m,\Sigma,\check{\Sigma})$  \   con  \  $m  \in  \Cset^d$,   \  $\Sigma  \in
+\CN(m,\Sigma,\check{\Sigma})$  \   con  \  $m  \in  \Cset^d$,   \  $\Sigma  \in
 P_d^+(\Cset)$ \  conjunto de  las matrices de  \ $\M_{d,d}(\Cset)$  \ hermiticas
 definida  positivas, y  \  $\check{\Sigma}  \in S_d(\Cset)$  \  conjunto de  las
 matrices  de  \  $\M_{d,d}(\Cset)$  \  symmetricas (ver  notaciones).   Un  caso
 particular  aparece cuando  \ $Z$  \ es  propio en  torno de  \ $m$,  lo  que es
 equivalente en el caso gausiano a tener \ $Z$ \ circular (ver m\'as adelante) en
 torno de  \ $0$, dado cuando  \ $\check{\Sigma} =  0$: en este caso  usaremos la
-misma notaci\'on,  $Z \, \sim  \, \C\N(m,\Sigma)$.  Las caracter\'isticas  de la
+misma notaci\'on,  $Z \, \sim  \, \CN(m,\Sigma)$.  Las caracter\'isticas  de la
 gaussiana  compleja   son  las  siguientes~\cite{Lap17,   Pic96,  Goo63,  Bos95,
   SchSch03, EriKoi06}:
 
@@ -100,7 +100,7 @@ Primero, los cumulantes de orden superior o igual a $4$ valen cero:
   \[
   \kappa_{i_1,\ldots,i_l,i'_1,\ldots,i'_m}[Z] = 0 \quad \forall \: ( i_1, \ldots
   , i_l  , i'_1  , i'_m  \in \{  1 , \ldots  , d  \}^{l+m}, \,  l+m \ge  4 \quad
-  \Longleftrightarrow \quad X \sim \C\N(m,\Sigma,\check{\sigma})
+  \Longleftrightarrow \quad X \sim \CN(m,\Sigma,\check{\sigma})
   \]
   %
 \end{lema}
@@ -117,11 +117,11 @@ de vectores independientes:
 %
   Sean \ $A_i , i = 1,\ldots,n$  \ matrices de \ $\M_{d',d}(\Cset), \: d' \le d$
   \  de   rango  lleno,   $b_i  \in  \Cset^{d'}$   \  y   \  $Z_i  \,   \sim  \,
-  \C\N(m_i,\Sigma_i,\check{\Sigma}_i)$   \   $d$-dimensionales,  independientes,
+  \CN(m_i,\Sigma_i,\check{\Sigma}_i)$   \   $d$-dimensionales,  independientes,
   entonces
   %
   \[
-  \sum_{i=1}^n \left( A_i  Z_i + b_i \right) \,  \sim \, \C\N\left( \sum_{i=1}^n
+  \sum_{i=1}^n \left( A_i  Z_i + b_i \right) \,  \sim \, \CN\left( \sum_{i=1}^n
     \left( m_i + b_i \right) \, ,  \, \sum_{i=1}^n A_i \Sigma_i A_i^\dag \, , \,
     \sum_{i=1}^n A_i \check{\Sigma}_i A_i^t \right)
   \]
@@ -136,11 +136,11 @@ El corolario~\ref{Cor:MP:MediaEmpiricaGauss} se extiende naturalmente al caso co
 %
 \begin{corolario}[Media empirica]\label{Cor:MP:MediaEmpiricaGaussCompleja}
 %
-  Sean \ $Z_i \, \sim \, \C\N\left(  m , \Sigma , \check{\Sigma} \right), \: i =
+  Sean \ $Z_i \, \sim \, \CN\left(  m , \Sigma , \check{\Sigma} \right), \: i =
   1, \ldots , n$ \ independientes. Entonces,
   %
   \[
-  \overline{Z} =  \frac{1}{n} \sum_{i=1}^n Z_i \,  \sim \, \C\N\left( m  \, , \,
+  \overline{Z} =  \frac{1}{n} \sum_{i=1}^n Z_i \,  \sim \, \CN\left( m  \, , \,
     \frac{1}{n} \Sigma \, , \, \frac{1}{n} \check{\Sigma} \right)
   \]
   %
@@ -154,10 +154,10 @@ $Z^*$:
 %
 Sean \ $A \in \M_{d',d}(\Cset)$, \  $B \in \M_{d',d}(\Cset)$ \ tales que \ ambas
 \ $A+B$ \ y \  $A-B$ \ \SZ{sean de rango lleno}, $c \in \Cset^{d'}$  \ y \ $Z \,
-\sim \, \C\N(m,\Sigma,\check{\Sigma})$ \ $d$-dimensonal, entonces
+\sim \, \CN(m,\Sigma,\check{\Sigma})$ \ $d$-dimensonal, entonces
   %
   \[
-  A Z + B Z^* + c \: \sim \: \C\N\left( \mu , C , \check{C}  \right)
+  A Z + B Z^* + c \: \sim \: \CN\left( \mu , C , \check{C}  \right)
   \]
   %
   con
@@ -201,7 +201,7 @@ El teorema del l\'imite central y sus variantes se recuperan del caso real.
   %
   \[
   \frac{1}{\sqrt{n}}  \sum_{i=1}^m  \left( Z_i  -  m  \right)  \: \limitd{n  \to
-    +\infty} \: W \sim \C\N\left( 0 , \Sigma , \check{\Sigma} \right)
+    +\infty} \: W \sim \CN\left( 0 , \Sigma , \check{\Sigma} \right)
   \]
   %
   donde  \ $\limitd{}$ \  significa que  el l\'imite  es en  distribuci\'on (ver
@@ -219,7 +219,7 @@ No   lo   presentamos,  pero   se   transpone   sencillamente   el  teorema   de
 Lindenberg-Feller~\ref{Teo:MP:LindenbergFeller} al caso complejo.
 
 Notamos tambi\'en que, en el caso  circular, se puede escribir naturalmente \ $Z
-\, \egald \, \Sigma^{\frac12} N + m$ \  con \ $N \, \sim \, \C\N(0,I)$ \ donde \
+\, \egald \, \Sigma^{\frac12} N + m$ \  con \ $N \, \sim \, \CN(0,I)$ \ donde \
 $N$ \  es dicha  {\em Gausiana estandar}  o {\em centrada-normalizada}.   Eso se
 generaliza en dos direcciones.  La  primera pone tambi\'en en juega una gausiana
 estandar~\cite{Lap17}:
@@ -227,14 +227,14 @@ estandar~\cite{Lap17}:
 \begin{teorema}
 \label{Teo:MP:GausianaComplejaWWestrella}
 %
-Sea \  $Z \sim  \C\N(m,\Sigma,\check{\Sigma})$.  Entonces, existen  matrices (no
+Sea \  $Z \sim  \CN(m,\Sigma,\check{\Sigma})$.  Entonces, existen  matrices (no
 \'unicas) \ $A \in \M_{d,d}(\Cset)$, \ $B \in \M_{d,d}(\Cset)$ \ tales que
   %
   \[
   Z \egald A W + B W^* + m
   \]
   %
-  con \ $W \sim \C\N(0,I)$ \ gausiana estandar.
+  con \ $W \sim \CN(0,I)$ \ gausiana estandar.
   %
 \end{teorema}
 \begin{proof}
@@ -267,7 +267,7 @@ Sea \  $Z \sim  \C\N(m,\Sigma,\check{\Sigma})$.  Entonces, existen  matrices (no
     I \end{bmatrix}
   \]
   %
-  y notando que $\frac12 (U + \imath V) \sim \C\N(0,I)$.
+  y notando que $\frac12 (U + \imath V) \sim \CN(0,I)$.
 \end{proof}
 %
 Nota,  usando  la  descomposici\'on   de  Cholesky,  tenemos  \  $M$  triangular
@@ -306,14 +306,14 @@ conjugada~\cite{EriKoi06, SchSch03}:
 \begin{teorema}
 \label{Teo:MP:GausianaComplejaWIDiago}
 %
-  Sea \ $Z \sim \C\N(m,\Sigma,\check{\Sigma})$. Entonces, existe una matriz \ $C
+  Sea \ $Z \sim \CN(m,\Sigma,\check{\Sigma})$. Entonces, existe una matriz \ $C
   \in \M_{d,d}(\Cset)$ \ tal que
   %
   \[
   Z \egald C W + m
   \]
   %
-  con \ $W \sim \C\N(0,I,\Delta)$ \ con \ $\Delta \in P_d(\Rset)$ \ (real) diagonal.
+  con \ $W \sim \CN(0,I,\Delta)$ \ con \ $\Delta \in P_d(\Rset)$ \ (real) diagonal.
   %
 \end{teorema}
 \begin{proof}
@@ -326,7 +326,7 @@ conjugada~\cite{EriKoi06, SchSch03}:
   teorema~\ref{Teo:MP:StabilidadGaussianaCompleja}, tenemos
   %
   \[
-  C^{-1} (Z - m) \egald W \sim \C\N(0,I,\Delta)
+  C^{-1} (Z - m) \egald W \sim \CN(0,I,\Delta)
   \]
   lo que cierra la prueba.
 \end{proof}
@@ -339,7 +339,7 @@ general. Aparece que en el contexto gausiano tenemos la reciproca:
 
 \begin{teorema}[Circularidad]\label{Teo:MP:CircularidadGaussiana}
 %
-Sea \ $Z \, \sim \, \C\N(m,\Sigma,\check{\Sigma})$.  Entonces,
+Sea \ $Z \, \sim \, \CN(m,\Sigma,\check{\Sigma})$.  Entonces,
   %
   \[
   Z \: \mbox{ circular  en torno de } \: m \qquad  \Longleftrightarrow \qquad Z \:

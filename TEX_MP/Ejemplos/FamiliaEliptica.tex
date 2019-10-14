@@ -1,6 +1,12 @@
 % --------------------------------- Familia  eliptica
-\subseccion{Familia eliptica real}
+\subseccion{Familia eliptica}
 \label{Ssec:MP:FamiliaEliptica}
+
+
+% --------------------------------- Familia  eliptica real
+
+\subsubseccion{Caso real}
+\label{Ssec:MP:FamiliaElipticaReal}
 
 % --------------------
 % Bilingsley p. 
@@ -24,11 +30,11 @@ Maxwell-Hershel~\footnote{Ver~\cite[Prop.~4.11]{BilBre99}.   Se notar\'a  que no
   la raz\'on es que  no tienen ni Maxwell, ni Herschel la  partenidad o si no lo
   revendicaron. Sin embargo, ver~\cite{Max67}}.   Volveremos en este teorema. La
 clase de  las distribuciones  eliptical, o a  simetr\'ia eliptica  fue estudiada
-intensivamnte formalmente~\cite{Bar34, Bar34:07,  Ver64, CamHua81, Eat81, Kan94,
-  Lau75, Yao73,  KotNad01, FanKot90, Mui82,  BilBre99}. Fue tambi\'en  usadas en
-aplicaciones   en  estad\'istica~\cite{BlaTho68,   Chu73,   YanKot03,  ArePin06,
-  ChiPas08},  o  procesamiento  de  se\~nal  o  imagenes~\cite{Gol76,  RanWei93,
-  RanWei95, ZozVig10, Zoz12}, entre otros.
+intensivamente  formalmente~\cite{Bar34,  Bar34:07,  Ver64, McgWag68,  CamHua81,
+  Eat81,  Kan94,  Lau75,  Yao73,   KotNad01,  FanKot90,  Mui82,  BilBre99}.  Fue
+tambi\'en  usadas   en  aplicaciones  en   estad\'istica~\cite{BlaTho68,  Chu73,
+  YanKot03,  ArePin06,  BauPas07,  ChiPas08},   o  procesamiento  de  se\~nal  o
+imagenes~\cite{Gol76, RanWei93, RanWei95, ZozVig10, Zoz12}, entre otros.
 
 Empezamos  por  la  definici\'on,  antes  de  ir  m\'as  all\'a  estudiando  sus
 propiedades remarcables.
@@ -62,7 +68,7 @@ rugby. Adem\'as, se puede que eso se pasa al torno de un punto no cero.
   \Delta^{-\frac12} \, Q^t \left( X - m \right)
   \]
   %
-  donde la  matriz diagonal \ $\Delta  > 0$ \ es  la matriz de  autovalores de \
+  donde la  matriz diagonal \ $\Delta > 0$ \ es  la matriz de  autovalores de \
   $\Sigma$ \  y \ $Q$ \  la matriz de los  autovectores correspondientes (matriz
   ortogonal~\cite{Bha97, Bha07, HorJoh13}), \ $\Sigma  = Q \Delta Q^t$. Dicho de
   otra manera, \ $\Delta^{-\frac12} Q^t \left(  X - m \right)$ \ es a simetr\'ia
@@ -435,7 +441,7 @@ que eso, estas structuras son las mismas.
 De este  resultado se puede tambi\'en  explicitar la matriz de  covariancia y el
 tensor curtosis para un vector a simetr\'ia eliptica~\cite[p.~44]{FanKot90}:
 %
-\begin{corolario}
+\begin{corolario}\label{Lem:MP:MediaCovarianzaEliptica}
   Sea \  $X$ \  vector aleatorio $d$-dimensional  de distribuci\'on  eliptica de
   matriz caracter\'istica \ $\Sigma \in P_d^+(\Rset)$. Entonces
   %
@@ -482,7 +488,7 @@ vector a simetr\'ia eliptica:
 %
 \begin{teorema}\label{Teo:MP:TranformacionAfinEliptica}
   Sea  \  $X \,  \sim  \,  \ED(m,\Sigma,\varphi_X)$  \ $d$-dimensional,  $A  \in
-  \M_{d',d}$  \  de  rango   lleno  tal  que  \  $d'  \le  d$   \  y  \  $c  \in
+  \M_{d',d}(\Rset)$  \ de  rango  lleno tal  que  \ $d'  \le  d$ \  y  \ $c  \in
   \Rset^{d'}$. Entonces
   %
   \[
@@ -513,7 +519,7 @@ caracter\'istica.
 Eso  v\'incula   tambi\'n  un  vector  a  simetr\'ia   eliptica  con  cualquier
 proyecci\'on:
 %
-\begin{teorema}[Proyecci\'on y componentes]
+\begin{teorema}[Proyecci\'on y componentes]\label{Teo:MP:ProyeccionComponentesEliptica}
   Sea \ $X$, vector aleatorio $d$-dimensonal de componentes $X_i$. Entonces
   %
   \[
@@ -556,7 +562,7 @@ las componentes del  vector no son independientes, contrariamente  a lo que pasa
 en el caso gausiano.  De hecho este resultado es general en el marco de vectores
 a sim\'etria eliptica~\cite{BilBre99, Max67}:
 %
-\begin{teorema}[Maxwell-Hershell]
+\begin{teorema}[Maxwell-Hershell]\label{Teo:MP:MaxwellHershell}
   Sea \ $X \sim \ED(m,I,\varphi_X)$. Las componentes $X_i$ son independientes si
   y solamente si $X  \sim \N(m, \alpha I)$ con $\alpha >  0$. En otros terminos,
   los  solos vectores  a  simetr\'ia esferica  al  torno de  un  vector $m$  son
@@ -673,7 +679,7 @@ tambi\'en~\cite{KeiSte74, Tei60}) y se enuncia como sigue:
 
 De esta escritura, se puede ir un paso m\'as all\'a~\cite[Teo~2.3]{FanKot90}:
 %
-\begin{corolario}
+\begin{corolario}\label{Cor:MP:MezclaUniforme}
   Sea  \ $X$ \  $d$-dimensional a  simetria esferica.  Entonces, este  vector se
   escribe estocasticamente como
   %
@@ -707,7 +713,7 @@ k + 1$, por  simetr\'ia central) y el factor, dependiente de  la ley es dada por
 el  momento  del  ``rayo'' $R$.  Adem\'as,  se  puede  dar  una otra  forma  del
 coefficiente $\alpha_k$:
 %
-\begin{lema}
+\begin{lema}\label{Lem:MP:AlphaConR}
   El coeficiente \ $\alpha_k(\varphi_X)$ \  del tensor de los momentos centrales
   del teorema~\ref{Teo:MP:MomentosCumulantesEliptica} es tambi\'en dado por
   %
@@ -812,8 +818,8 @@ sin perdida de generalidad, se puede concentrarse en $X \sim \ED(0,I,d_X)$.
 Primero, se puede escribir la ley de $R$ a partir de $d_X$:
 %
 \begin{teorema}[Densidad del rayo]\label{Teo:MP:DensidadRayo}
-  Sea $X \sim \ED(0,I,d_X)$ y $R  \egald \|X\|$. Si $X$ admite una densidad, $R$
-  admite tambi\'en una densidad que se escribe
+  Sea \ $X \sim \ED(0,I,d_X)$ \ y \ $R \egald \|X\|$. \ $R$ admite tambi\'en una
+  densidad que se escribe
   %
   \[
   p_R(r)  =  \frac{2  \pi^{\frac{d}{2}}}{\Gamma\left(  \frac{d}{2}  \right)}  \,
@@ -851,7 +857,7 @@ De  este  resultado,  se puede  ahora  dar  la  relaci\'on  que existe  entre  \
 $\varphi_X$ \  y \ $d_X$  \ siendos \  $\Phi_X$ \ y  \ $p_X$ \  relacionados por
 transformada de Fourier.
 %
-\begin{teorema}
+\begin{teorema}\label{Teo:MP:TransformadaDeHankel}
 %
   Sea  \  $X  \sim   \ED(m,\Sigma,\varphi_X)  \equiv  \ED(m,\Sigma,d_X)$  \  las
   generadoras caracter\'isticas y de densidad son relacionadas por
@@ -1187,6 +1193,8 @@ y
 \]
 %
 \begin{teorema}[Sch{\oe}berg'38 -- a partir de la generadora de densidad]
+\label{Teo:MP:SchoenbergDensidad}
+%
   Sea \ $X \sim \ED\left( m , \Sigma , d_X \right)$.  Entonces $X$ es una mezcla
   de  gausiana  si  y  solamente   si  $d_X$  es  completamente  monotona  sobre
   $\Rset_+$
@@ -1247,7 +1255,7 @@ y
 Se  notar\'a  que  la consistencia  se  manifesta  tambi\'en  a trav\'es  de  la
 generadora de la mezcla gausiana:
 %
-\begin{lema}
+\begin{lema}\label{Lem:MP:AIndeêndiented}
   Sea  \ $\varphi_X  \in  \PDSI$ (o  $d_X  \in \CM$).  Entonces, para  cualquier
   dimension \ $d$ \ y  $X \sim \ED(m,\Sigma,\varphi_X)$ \ $d$-dimensional, en la
   escritura  \ $X  \egald  A \,  \Sigma^{\frac12} G  +  m$ \  con  \ $A  > 0$  \
@@ -1458,6 +1466,7 @@ probado  por  ejemplo  en el  caso  escalar  \  $d=1$ \  en~\cite{Wil56,  Kem71,
 al caso multivariado:
 %
 \begin{teorema}[Mezcla de escala de base Student-$r$ -- a partir de la generadora caracter\'istica]
+\label{Teo:MP:MezclaStidentRCaracteristica}
 %
   Sea \  $X \sim \ED(m,\Sigma,\varphi_X)$  \ $d$-dimensional. Si  $\varphi_X \in
   \PDSI_n, \: n  > d$, entonces se  puede escribir $X$ como mezcla  de escala de
@@ -1505,6 +1514,7 @@ De nuevo, existe un teorema equivalente tratando de la generadora de densidad:
 
 %
 \begin{teorema}[Mezcla de escala de base Student-$r$ -- a partir de la generadora de densidad]
+\label{Teo:MP:MezclaStidentRDensidad}
 %
   Sea \  $X \sim \ED(m,\Sigma,d_X)$ \  $d$-dimensional. Si $d_X \in  \CM_n, \: n
   \in  \Nset^*$,  entonces  se puede  escribir  $X$  como  mezcla de  escala  de
@@ -1617,13 +1627,249 @@ Adem\'as, se  puede imaginar tambi\'en buscar  la ley de una  mezcla de gausiana
 pasando por la  de mezcla de Student-$r$, tomando el  l\'imite cuando $d$ tiende
 al infinito de la ley de $B$.
 
-\
 
-La mayoria  de estos  resultados se  extienden al caso  complejo, con  ahora $Z$
-esfericamente invariante si no cambia por transformaci\'on lineal unitaria, \ $H
-Z \egald Z$  \ con \ $H$  \ unitaria, $H H^\dag =  H^\dag H = I$.  Ahora, lo que
-juega el rol de  esfera va a ser la esfera compleja  $d$-dimensional \ $\{ u \in
-\Cset^d \tq u^\dag u = 1 \}$. Ver~\cite{} para tener m\'as detailles.
+% --------------------------------- Familia  eliptica compleja
+
+\subsubseccion{Caso complejo en unas palabras}
+\label{Ssec:MP:FamiliaElipticaCompleja}
+
+V\'imos en la secci\'on~\ref{Sec:MP:VectoresComplejosMatricesAleatorias} el caso
+de vectores aleatorio reales, y la noci\'on de circularidad. No es equivalente a
+la de esfericidad, a\'un  que hay v\'inculos, como lo vamos a  ver. De hecho, la
+necesidad  de trabajar con  vector a  simetr\'ia eliptica  se justifica  con los
+mismos   argumentos   que   llevaron   al   estudio   de   vectores   aleatorios
+complejos.
+\SZ{
+%  Ahora, lo que
+%juega el rol de  esfera va a ser la esfera compleja  $d$-dimensional \ $\{ u \in
+%\Cset^d \tq u^\dag u = 1 \}$. 
+Ver~\cite{Bau} para tener m\'as detailles.}
+
+Antes de  ir m\'as  all\'a, empezamos  con la definici\'on  de tales  vectores a
+simetr\'ia eliptica.
+%
+\begin{definicion}[Vector complejo esfericamente invariante]
+  Sea  \  $Z$ \  vector  aleatorio $d$-dimensional  complejo.   $X$  \ es  dicho
+  esfericamente  invariante,  o   rotacionalmente  invariante,  o  a  simetr\'ia
+  esferica,   o  de  distribuci\'on   esferica  \   si  para   cualquier  matriz
+  unitaria~\footnote{Recordarse que \ $V$ \ es  unitaria si \ $V V^\dag = V^\dag
+    V = I$.} \ $V$,
+  %
+  \[
+  V  Z  \: \egald  \: Z
+  \]
+  %
+\end{definicion}
+
+A continuaci\'on,  como en  el caso real,  se extiende haciendo  estiramientos y
+transformaci\'on unitaria (equivalente de una rotaci\'on) de manera siguiente:
+%
+\begin{definicion}[Vector complejo a simetr\'ia eliptica]
+  Sea  \ $Z$  \ vector  aleatorio $d$-dimensional  complejo.  $Z$  \ es  dicho a
+  simetr\'ia  eliptica,   o  elipticalmente  invariante,   o  de  distribuci\'on
+  eliptica, al torno de \ $m \in  \Cset^d$, \ si existe una matriz \ $\Sigma \in
+  P_d^+(\Cset)$ \ tal que para cualquier matriz unitaria \ $V$,
+  %
+  \[
+  V  \,   \Delta^{-\frac12}  \,  Q^\dag  \left(   X  -  m  \right)   \:  \egald  \:
+  \Delta^{-\frac12} \, Q^\dag \left( X - m \right)
+  \]
+  %
+  donde la matriz real diagonal \ $\Delta  > 0$ \ es la matriz de autovalores de
+  \ $\Sigma$ \ y \ $Q$  \ la matriz de los autovectores correspondientes (matriz
+  unitaria~\cite{Bha97,  Bha07, HorJoh13}),  \ $\Sigma  = Q  \Delta  Q^\dag$. Es
+  decir, \  $\Delta^{-\frac12} Q^\dag \left(  X - m  \right)$ \ es  a simetr\'ia
+  esferica.
+
+  De  nuevo, $m$  \  es  un par\'ametro  de  posici\'on y  \  $\Sigma$ \  matriz
+  caracter\'istica.
+\end{definicion}
+%
+Obviamente, se queda en el caso complejo la indeterminaci\'on mediante un factor
+escalar.
+
+El v\'inculo entre la simetr\'ia eliptica y la circularidad es tambi\'en obvia:
+%
+\begin{lema}
+  Sea \ $Z$ \ vector complejo  $d$-dimensional a simetr\'ia eliptica al torno de
+  \ $m \in \Cset^d$. Entonces \ $Z-m$ \ es circular.
+\end{lema}
+%
+\begin{proof}
+  La prueba es  inmediata de \ $Z-m \egald  Q \, \Delta^{\frac12} \, Y$  \ con \
+  $Y$ \  a simetr\'ia  esferica. Se  cierra la prueba  de, \  $e^{\imath \theta}
+  (Z-m) \egald Q \, \Delta^{\frac12} \,  \big( e^{\imath \theta} I \big) \, Y$ \
+  conjuntamente a \ $e^{\imath \theta} I$ \ unitaria.
+\end{proof}
+%Como antes,  para estudiar  los vectores a  simetr\'ia eliptica, sin  perdida de
+%generalidad se puede restringirnos al caso a simetr\'ia esferica.
+
+Es importante notar  las inmersiones biyectivas de \ $\Cset^d$  \ en \ $\Rset^{2
+  d}$ \  y de $\M_{d',d}(\Cset)$ \  en un subconjunto de  \ $\M_{2 d', 2d}(\Rset)$
+siguientes:
+%
+\[
+\forall \: z  \in \Cset^d \qquad \mbox{en biyecci\'on  con} \qquad \widetilde{z}
+= \begin{bmatrix} \real{z}\\ \imag{z} \end{bmatrix} \in \Rset^{2 d}
+\]
+%
+\[
+\forall  \:  M \in  \M_{d',d}(\Cset)  \qquad  \mbox{en  biyecci\'on con}  \qquad
+\overline{M}   =   \begin{bmatrix}   \real{M}   &  -   \imag{M}\\   \imag{M}   &
+  \real{M} \end{bmatrix} \in \M_{2d',2d}(\Rset)
+\]
+%
+Claramente para matrices $M, N$ y un vector $z$,
+%
+\[
+M z \quad \mbox{es en biyecci\'on con} \quad \overline{M} \, \widetilde{z}, \qquad
+M N \quad \mbox{es en biyecci\'on con} \quad \overline{M} \, \overline{N}
+\]
+%
+Llamaremos   {\em    forma   real}   ambas   inmersiones    y   las   escrituras
+precedientes. Adem\'as, se ve sencillamente que
+%
+\begin{itemize}
+\item  $\displaystyle   \overline{M^\dag}  =  \overline{M}^{\,   t}$,
+%  \quad  con  consecuencia
+%
+\item $\displaystyle M \in H_d(\Cset) \:\: \Leftrightarrow \:\:
+  \overline{M}  \in  S_{2d}(\Rset)  \:\:  \Leftrightarrow  \:\:  \real{M}^t  =
+  \real{M} \, \et \, \imag{M}^t = - \imag{M}$,
+%
+\item  $\forall \:  M \in  H_d(\Cset), \:  z  \in \Cset^d,  \quad z^\dag  M z  =
+  \widetilde{z}^t \, \overline{M} \, \widetilde{z}$,
+%
+\item $M$ \ unitaria $\:\:\Leftrightarrow\:\: \overline{M}$ \ ortogonal.
+\end{itemize}
+%
+\[
+\overline{M} \:\: \mbox{unitaria}  \quad \Leftrightarrow \quad \overline{M} \:\:
+\mbox{ortogonal}
+\]
+
+Ahora, se v\'incula naturalmente la noci\'on de elipticidad del caso complejo al
+caso real:
+%
+\begin{lema}
+  Sea \ $Z$ \ vector complejo  $d$-dimensional a simetr\'ia eliptica al torno de
+  \  $m$.  Entonces,  $\widetilde{Z}$ \  \ vector  real $2d$-dimensionales  es a
+  simetr\'ia eliptica al torno de \ $\widetilde{m}$.
+\end{lema}
+%
+\begin{proof}
+  Se obtiene la forma real de la descomposici\'on \ $\Sigma = Q \Delta Q^\dag$ \
+  bajo  la forma  \ $\overline{\Sigma}  = \overline{Q}  \,  \overline{\Delta} \,
+  \overline{Q}^t$ \ con \ $\overline{\Delta}  = \begin{bmatrix} \Delta & 0\\ 0 &
+    \Delta  \end{bmatrix}   \in  P_{2d}^+(\Rset)$  \   diagonal,  $\overline{Q}$
+  ortogonal.   La prueba se  cierra saliendo  de la  definici\'on~\ref{} escrita
+  bajo   su   forma    real,   notando   que   $\overline{\Delta^{-\frac12}}   =
+  \overline{\Delta}^{-\frac12}$.
+\end{proof}
+
+De esta equivalencia, todos  los resultados anteriores se extienden naturalmente
+al caso  complejo. Para \ $Z$ \  a simetr\'a eliptica al  torno de \ $m$  \ y de
+matriz caracteristica \ $\Sigma$:
+%
+\begin{itemize}
+\item  De la  secci\'on~\ref{Ssec:MP:VAComplejos} se  obtiene  $\Phi_Z(\omega) =
+  \Phi_{\widetilde{Z}}\left(    \widetilde{\omega}     \right)    =    e^{\imath
+    \widetilde{\omega}^t       \widetilde{m}}      \varphi_{\widetilde{Z}}\left(
+    \widetilde{\omega}^t  \, \overline{\Sigma}  \, \widetilde{\omega}  \right) =
+  e^{\imath  \real{\omega^\dag m}} \varphi_{\widetilde{Z}}\left(  \omega^\dag \,
+    \Sigma \omega  \right)$;\newline Denotaremos $\varphi_{\widetilde{Z}} \equiv
+  \varphi_Z$ \ quien, con  $m$ y $\Sigma$ caracteriza completamente $Z$;\newline
+  Escribiremos $Z \sim \CED\left( m , \Sigma , \varphi_Z \right)$.
+%
+\item Similarmente, si \ $Z$ \  admite una densidad, se obtiene la densidad bajo
+  la  forma~\footnote{Se  notar\'a  que,  escribiendo las  formas  diagonales  \
+    $\Sigma  =  Q  \Delta  Q^\dag$  \ y  $\overline{\Sigma}  =  \overline{Q}  \,
+    \overline{\Delta}  \, \overline{Q}^t$ \  con \  $Q$ \  y \  $\overline{Q}$ \
+    respectivamente  unitaria y ortogonal,  tenemos \  $\left| \overline{\Sigma}
+    \right|  = \left|  \overline{\Delta}  \right| =  \left|  \Delta \right|^2  =
+    \left| \Sigma  \right|^2$.}  \ $p_Z(z) =  |\Sigma|^{-1} d_Z\left( (z-m)^\dag
+    \Sigma^{-1} (z-m)  \right)$ \ con  \ $d_Z \equiv  d_{\widetilde{Z}}: \Rset_+
+  \mapsto \Rset_+$.
+%
+\item  De eso,  se extiende  naturalmente la mayorio de los teoremas:
+%
+  \begin{itemize}
+  %
+  \item  \SZ{ Momentos  y  cumulantes~\ref{Teo:MP:MomentosCumulantesEliptica}, y
+      corrolario~\ref{Lem:MP:MediaCovarianzaEliptica}}
+  %
+  \item  Teorema~\ref{Teo:MP:TranformacionAfinEliptica}  en:  \  $Z \,  \sim  \,
+    \CED(m,\Sigma,\varphi_Z)$ \  $d$-dimensional, $A \in  \M_{d',d}(\Cset)$ \ de
+    rango lleno tal que  \ $d' \le d$ \ y \  $c \in \Cset^{d'} \quad \Rightarrow
+    \quad A X + c \: \sim \: \CED(A m + c , A \Sigma A^\dag , \varphi_Z)$;
+  %
+  \item Teorema~\ref{Teo:MP:ProyeccionComponentesEliptica} en: Sea \ $Z$, vector
+    aleatorio  complejo $d$-dimensonal  de componentes  $Z_i$. Entonces  $Z \sim
+    \CED(m,\Sigma,\varphi_Z)  \quad  \Leftrightarrow  \quad  \forall  \:  a  \in
+    \Cset^d,   \quad   a^\dag  (Z   -   m)   \egald  \sqrt{\frac{a^\dag   \Sigma
+        a}{\Sigma_{i,i}}} (Z_i - m_i)$;
+  %
+  \item Teorema~\ref{Teo:MP:MaxwellHershell} en:  \ $Z \sim \CED(m,I,\varphi_Z)$
+    \ tiene sus independientes si y solamente si \ $Z \sim \CN(m, \alpha I)$ con
+    $\alpha > 0$;
+  %
+  \item \SZ{Teorema~\ref{Teo:MP:MezclaUniforme} en:};
+  %
+  %
+  \item \SZ{Corolario~\ref{Cor:MP:MezclaUniforme} en:};
+  %
+  \item \SZ{Lema para alpha momentos \ref{Lem:MP:AlphaConR}};
+  %
+  \item \SZ{Teorema~\ref{Teo:MP:DensidadRayo} en: \ $Z \sim \CED(0,I,d_Z)$ \ y \
+      $R  \egald \|Z\|$  \ admite  una  densidad que  se escribe  $\displaystyle
+      p_R(r)  =  \frac{2  \pi^d}{\Gamma(d)}   \,  r^{2  d-1}  \,  d_X\left(  r^2
+      \right)$};
+  %
+  \item   Teorema~\ref{Teo:MP:TransformadaDeHankel}   en:   para   \   $Z   \sim
+    \CED(m,\Sigma,\varphi_Z)   \equiv  \CED(m,\Sigma,d_Z)$  \   las  generadoras
+    caracter\'isticas y de  densidad son relacionadas por\newline $\displaystyle
+    \varphi_Z\left( w^2 \right) =  \left( 2 \pi \right)^d w^{1-d} \int_{\Rset_+}
+    r^d  d_Z\left(  r^2  \right)  \,  J_{d-1}(  r  w)  \,  dr  \quad$  y  $\quad
+    \displaystyle  d_Z\left( r^2  \right) =  \left( 2  \pi  \right)^{-d} r^{1-d}
+    \int_{\Rset_+} w^d \varphi_Z\left( w^2 \right) \, J_{d-1}( r w) \, dw$:
+  %
+  % \item Coordenadas hiperesfericas
+  %
+  \item Teorema~\ref{Teo:MP:SchoenbergCaracteristica} en: \ $Z \sim \CED\left( m
+      , \Sigma , \varphi_Z \right) \egald \, A \, \Sigma^{\frac12} \, G + m \:\:
+    \Leftrightarrow \:\: \varphi_Z  \in \PDSI$, \ con \ $A  > 0$ \ independiente
+    de \ $G \sim \CN(0,I)$;
+  %
+  \item  Teorema~\ref{Teo:MP:SchoenbergDensidad} en:  \ $Z  \sim \CED\left(  m ,
+      \Sigma  , d_Z  \right)  \egald \,  A \,  \Sigma^{\frac12}  \, G  + m  \:\:
+    \Leftrightarrow \:\: d_Z \in  \CM$, \ con \ $A > 0$  \ independiente de \ $G
+    \sim \CN(0,I)$;
+  %
+  \item Lema~\ref{Lem:MP:AIndeêndiented} en: \ $\varphi_Z \in \PDSI$ (o $d_Z \in
+    \CM$)   \   y    para   cualquier   dimension   \   $d$    \   y   $Z   \sim
+    \CED(m,\Sigma,\varphi_Z)$ \  $d$-dimensional, en la escritura \  $X \egald A
+    \, \Sigma^{\frac12}  G + m$  \ con \  $A > 0$ \  independiente de \  $G \sim
+    \CN(0,I)$ la ley de \ $A$ \ no depende de la dimension $d$;
+  %
+  \item \SZ{Mezcla de Student con carac~\ref{Teo:MP:MezclaStidentRCaracteristica}};
+  %
+  \item \SZ{Mezcla de Student con densidad~\ref{Teo:MP:MezclaStidentRDensidad}}
+  \end{itemize}
+%
+\item \SZ{A ver unif compleja, gausiana compleja, extension student-r}
+\end{itemize}
+
+
+\SZ{
+% --------------------------------- Familia  eliptica matricial
+
+\subsubseccion{Caso matriz variado en unas palabras}
+\label{Ssec:MP:FamiliaElipticaMatriz}
+}
+
+\vspace{2cm}
+
+\centerline{\underline{\hspace{10cm}}}
 
 \SZ{
 \begin{itemize}
