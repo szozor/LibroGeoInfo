@@ -268,9 +268,15 @@ el vector  aleatorio \ $X$.   Adem\'as, de  este v\'inculo entre  \ $G_X$ \  y \
 $M_X$, y del  dominio de definici\'on de \  $G_X$, queda claro que \  $M_X$ \ es
 definida sobre un  producto cartesiano de franjas del plano  complejo, $ v_i \le
 \real{u_i} \le  V_i$ \ donde \  $v_i \le 0 \le  V_i$ \ llamamos  {\em indices de
-  convergencia}.  En el  caso de variables escalares admitiendo  una densidad de
-probabilidad \ $p_X$,  denotando $s = -u$, esta funci\'on  se interpreta como la
-transformada (bilateral) de Laplace de \ $p_X$.
+  convergencia}.  En el caso de variables escalares \modif{denotando \ $s = -u$,
+  esta   funci\'on   se   interpreta   como   la   transformada   bilateral   de
+  Laplace-Stieltjes de  la medida  \ $P_X$.   Si adem\'as \  $P_X$ \  admite una
+  densidad \ $p_X$,  esta funci\'on se interpreta entonces  como la transformada
+  bilateral de Laplace  usual de \ $p_X$. Se  refiera por ejemplo a~\cite{Wid46}
+  para   m\'as   detalles   sobre   esta   transformaci\'on  (y   la   nota   de
+  pie~\ref{Foot:MP:LaplaceStieltjes}                    de                    la
+  secci\'on~\ref{Ssec:MP:FamiliaEliptica} m\'as adelante para el caso unilateral
+  usual).}
 
 
 Se muestra  que esta  funci\'on es  continua en su  dominio de  definici\'on, en
@@ -555,7 +561,7 @@ S. Bochner~\footnote{De  hecho, lo prob\'o Bochner  en el caso escalar  $d = 1$,
 \end{teorema}
 %
 %\begin{proof}
-En el  teorema, vimos que la  transformada de Fourier-Stieljes de  una medida de
+En el teorema,  vimos que la transformada de Fourier-Stieltjes  de una medida de
 probabilidad $P_X$  es medible, continua,  definida no negativa, con  $\Phi(0) =
 1$. La  reciproca es  m\'as dificil  a probar y  necesita lemas  adicionales. Se
 puede  encontrar una  linda prueba  en~\cite[Sec.~1.7]{Sas13} adonde  dejamor el
@@ -572,7 +578,7 @@ una relaci\'on uno-uno (casi siempre) entre \ $\Phi_X$ \ y la medida \ $P_X$. En
 particular, existe una f\'ormula de inversi\'on permitiendo volver a la medida \
 $P_X$ \ a partir de \ $\Phi_X$~\cite{AshDol99, Sas13}:
 %
-\begin{teorema}[F\'ormula de inversi\'on]\label{Teo:MP:InversionFourierStieljes}
+\begin{teorema}[F\'ormula de inversi\'on]\label{Teo:MP:InversionFourierStieltjes}
 %
   Sea \ $X$  \ vector aleatorio $d$-dimensional de  funci\'on caracter\'istica \
   $\Phi_X$.   Sea  \  $\displaystyle  A  = \optimes_{i=1}^d  (a_i  \;  b_i)  \in
@@ -694,7 +700,7 @@ probabilidad.
 \begin{proof}
   Varias pruebas  existen (ej.~\cite[p.~21]{Sas13}). Una  bastante directa puede
   ser       de      salir      de       la      f\'ormula       general      del
-  teorema~\ref{Teo:MP:InversionFourierStieljes}, de  fijar \ $a$ \ y  \ poner $b
+  teorema~\ref{Teo:MP:InversionFourierStieltjes}, de  fijar \ $a$ \ y  \ poner $b
   \equiv x \in  \Rset^d$. Se toma la derivada  \ $\frac{\partial^d}{\partial x_1
     \cdots \partial x_d}$ \ de  la integral \ $\displaystyle \frac{1}{(2 \pi)^d}
   \int_{\optimes_{j=1}^d   [-w_j  \;  w_j]}   \Phi_X(\omega)  \prod_{j   =  1}^d
