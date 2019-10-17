@@ -212,8 +212,12 @@ esfera \ $\Sset_d$, \ $U \sim \U(\Sset_d)$~\cite{FanKot90}:
   u^{-\frac{d-2}{4}} \, J_{\frac{d}{2}-1}\left( \sqrt{u} \right)
   \]
   %
-  con \  $J_\nu$ \  funci\'on de Bessel  primera especie  y de orden  $\nu$ (ver
-  notaciones).
+  con \ $J_\nu$ \ funci\'on de Bessel~\footnote{Seg\'un Sch{\oe}nberg~\cite[Nota
+    de  pie~9]{Sch38} and Watson~\cite[p.~24,  nota de  pie~*]{Wat22}, deber\'ia
+    llamarse  integral  de  Poisson  proque fue  introducida  primariamente  por
+    Poisson en 1823~\cite{Poi23}, pero  apareci\'o implicitamente a\'un antes en
+    trabajos  de Euler~\cite[Cap.~X, \S~1036]{Eul1769}.}   primera especie  y de
+  orden $\nu$ (ver notaciones).
   
   De hecho, de la definici\'on de la funci\'on caracter\'istica, tenemos
   %
@@ -878,14 +882,14 @@ transformada de Fourier.
   %
   La transformaci\'on dando \  $w^{\frac{d}{2}-1} \varphi_X\left( w^2 \right)$ \
   a partir  de \  $r^{\frac{d}{2}-1} d_X\left( r^2  \right)$ \ es  conocida como
-  {\em transformada  de Hankel}  de orden \  $\frac{d}{2}-1$~\cite{Lor54, Pou99,
-    Pou10}. A veces, la transformaci\'on dando \ $\varphi_X\left( w^2 \right)$ \
-  a partir de \ $d_X\left( r^2 \right)$ \ es llamada {\em transformada de Hankel
-    modificada} de orden \ $\frac{d}{2}-1$.
+  {\em transformada  de Hankel}  de orden \  $\frac{d}{2}-1$~\cite{Sch38, Sch69,
+    Sch71,  Lor54,   Pou99,  Pou10}.  A  veces,  la   transformaci\'on  dando  \
+  $\varphi_X\left( w^2  \right)$ \ a  partir de \  $d_X\left( r^2 \right)$  \ es
+  llamada {\em transformada de Hankel modificada} de orden \ $\frac{d}{2}-1$.
 
   M\'as generalmente, \ $\varphi_X$ \ es relacionada a la medida de probabilidad
   \   $P_R$  \  del   rayo  por   transformaci\'on  dicha   de  Hankel-Stieltjes
-  (modificada)~\cite{Nus73, ChoHai70}
+  (modificada)~\cite{Sch38, Nus73, ChoHai70, Sch71}
   %
   \[
   \varphi_X(w^2)   =    2^{\frac{d}{2}-1}   \Gamma\left(   \frac{d}{2}   \right)
@@ -1674,6 +1678,17 @@ al caso multivariado:
   $\nu = n-2$ \ grados de libertad.
 \end{proof}
 
+Pasando, se notar\'a que para buscar la ley de \ $B$, sufice ver la Student-$r$
+como  proyecci\'on  de una  uniforme  de  dimensi\'on \  $d+2$,  \ie  \ $X  \sim
+\ED(m,\Sigma,\varphi_X) \egald B \Sigma^{\frac12} S_{n-2} + m$, $d$-dimensional:
+%
+\[
+\mbox{Construimos     }     \:\:     Y     \sim     \ED(0,I,\varphi_X)     \quad
+(d+2)\mbox{-dimensional}  \qquad   \mbox{y}  \qquad  Y   \egald  R  \,   U  \:\:
+\Leftrightarrow \:\: B \egald R
+\]
+
+
 De nuevo, existe un teorema equivalente tratando de la generadora de densidad:
 %
 
@@ -1766,31 +1781,36 @@ De nuevo, existe un teorema equivalente tratando de la generadora de densidad:
   \]
   %
   Tiene precisamente la forma de  mezcla de Student-$r$ $d$-dimensional con \ $2
-  n + d -  2$ \ grados de libertad, con \ $P_B$  \ definida por \ $\displaystyle
-  P_B(A)   =   \frac{\pi^{\frac{d}{2}}   (2   n   +  d)^{\frac{2   n   +   d   -
-        2}{2}}}{\Gamma\left( \frac{d}{2} + n \right)} \int_A  b^{2 n + d - 2} \,
-  dP_n\big( (2 n + d) b^2 \big)$.
-
+  n + d -  2$ \ grados de libertad.
+  % , con \ $P_B$ \ definida por \
+  %  %
+  % \[
+  %   P_B(A)  =   \frac{\pi^{\frac{d}{2}}  (2   n  +   d)^{\frac{2  n   +   d  -
+  %       2}{2}}}{\Gamma\left( \frac{d}{2} +  n \right)} \int_A b^{2 n  + d - 2}
+  % \, dP_n\big( (2 n + d) b^2 \big) \qquad \mbox{con} \qquad \SZ{P_n\big( (a \;
+  %   b) \big) = (-1)^n \left( f^{(n-1)}(b) - f^{(n-1)}(a) \right)}
+  % \]
 \SZ{Bien fijar que todo listo.}
 \end{proof}
+
+Pasando, se notar\'a que la ley de \ $B$ \ es tambi/'en dada por
+%
+\[
+P_B(A) = \frac{\pi^{\frac{d}{2}} (2 n + d)^{\frac{2 n + d - 2}{2}}}{\Gamma\left(
+    \frac{d}{2} + n \right)}  \int_A b^{2 n + d - 2} \, dP_n\big(  (2 n + d) b^2
+\big)  \qquad \mbox{con}  \qquad \SZ{P_n\big(  (a \;  b) \big)  =  (-1)^n \left(
+    f^{(n-1)}(b) - f^{(n-1)}(a) \right)}
+\]
+
 
 Nota: obviamente, si denotamos \  $\mathfrak{S}_{n,d}$ \ el conjunto de vectores
 aleatorios  $d$-dimensjonal, mezcla  de  Student-$r$  con \  $n-2$  \ grados  de
 libertad, $\mathfrak{S}_{d+1,d} \supset \mathfrak{S}_{d+2,d} \supset \cdots$ \ y
-\  $\displaystyle  \bigcap_{n=d+1}^{+\infty}$ \  es  el  conjunto  de mezcla  de
-gausiana $d$-dimensional.
-
-Se notar\'a tmbi\'en que para buscar la  ley de \ $B$, sufice ver la Student-$r$
-como proyecci\'on de una uniforme de dimensi\'on \ $d+2$, \ie
-%
-\[
-Y  \sim  \ED(0,I,\varphi_X) \:  (d+2)\mbox{-dimensional},  \quad  Y  \egald R \, U
-\Leftrightarrow B \egald R
-\]
-%
-Adem\'as, se  puede imaginar tambi\'en buscar  la ley de una  mezcla de gausiana
-pasando por la  de mezcla de Student-$r$, tomando el  l\'imite cuando $d$ tiende
-al infinito de la ley de $B$.
+\    $\displaystyle    \mathfrak{S}_{+\infty,d}   =    \bigcap_{n=d+1}^{+\infty}
+\mathfrak{S}_{n,d}$    \    es   el    conjunto    de    mezcla   de    gausiana
+$d$-dimensional. As\'i, se puede imaginar  tambi\'en buscar la ley de una mezcla
+de gausiana pasando por la de  mezcla de Student-$r$, tomando el l\'imite cuando
+$n$ tiende al infinito de la ley de $B$.
 
 
 % --------------------------------- Familia  eliptica compleja
@@ -2017,12 +2037,23 @@ matriz caracteristica \ $\Sigma$:
     \, \Sigma^{\frac12}  G + m$  \ con \  $A > 0$ \  independiente de \  $G \sim
     \CN(0,I)$ la ley de \ $A$ \ no depende de la dimension $d$;
   %
-  \item \SZ{Mezcla de Student con carac~\ref{Teo:MP:MezclaStudentRCaracteristica}, secci\'on~\ref{Sssec:MP:StudentR}};
+  \item   Teorema~\ref{Teo:MP:MezclaStudentRCaracteristica}   en:   \  $Z   \sim
+    \CED(m,\Sigma,\varphi_Z)$ \ $d$-dimensional con \ $\varphi_z \in \PDSI_n, \: n
+    > 2  d$, dando la escritura estoc\'astica  \ $Z$ \  como mezcla  de escala  de Student-$r$
+    compleja con $\nu = n-2$  grados de libertad, y reciprocamente: \ $\varphi_Z
+    \in  \PDSI_n,  \:  n >  2  d  \quad  \Leftrightarrow  \quad  X \egald  B  \,
+    \Sigma^{\frac12}  \, S_{n-2}  + m$  \ con  \ $B  > 0$  \ independiente  de \
+    $S_{n-2} \sim \CR_{n-2}(0,I)$ (ver secci\'on~\ref{Sssec:MP:StudentR});
   %
-  \item \SZ{Mezcla de Student con densidad~\ref{Teo:MP:MezclaStudentRDensidad}}
+  \item    Teorema~\ref{Teo:MP:MezclaStudentRDensidad}    en:    \    $Z    \sim
+    \CED(m,\Sigma,d_Z)$  \  $d$-dimensional con  \  $d_X  \in  \CM_n, \:  n  \in
+    \Nset^*$, dando la escritura estoc\'astica \  $Z$ \ como mezcla de escala de
+    Student-$r$ con $\nu = 2 n +  2 d - 2$ grados de libertad, y reciprocamente:
+    \ $d_Z \in \CM_n, \: n \in \Nset^* \quad \Leftrightarrow \quad Z \egald B \,
+    \Sigma^{\frac12} \, S_{2 n +  2 d - 2} + m$ \ con \  $B > 0$ \ independiente
+    de \ $S_{2 n + 2 d - 2} \sim \CR_{2 n + 2 d - 2}(0,I)$.
   \end{itemize}
 %
-%\item \SZ{A ver unif compleja, gausiana compleja, extension student-r}
 \end{itemize}
 
 
