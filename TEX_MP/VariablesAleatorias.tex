@@ -65,7 +65,7 @@ definir  una  medida  im\'agen   sobre  el  espacio  de  llegada~\cite{AshDol99,
 \begin{proof}
   Por   definici\'on,  claramente   $\mu_f  \ge   0$.    Adem\'as,  obviosamente
   $f^{-1}(\emptyset) =  \emptyset$ \ dando $\mu_f(\emptyset)  = \mu(\emptyset) =
-  0$.  Luego,  si para un  conjunto numerable $\{  B_j \}$ de elementos  de $\B$
+  0$.   Luego, para  un conjunto  numerable  $\{ B_j  \}$ de  elementos de  $\B$
   disjuntos entre s\'i, las pre-im\'agenes  de los $B_j$ tambi\'en son disjuntos
   entre s\'i  (para $k  \ne j$ no  se puede  tener $\omega \in  f^{-1}(B_j) \cap
   f^{-1}(B_k)$  sino  $\omega$  tendr\'ia  dos im\'agenes  distintas  por  $f$).
@@ -380,7 +380,7 @@ otra, dando una definici\'on muy general de densidad:
   \Rset_+$ \ medible tal que
   %
   \[
-  \forall \, A \in \A, \quad \nu(A) = \int_A p(\omega) d\mu(\omega),
+  \forall \, A \in \A, \quad \nu(A) = \int_A p(\omega) \, d\mu(\omega),
   \]
   %
   $p$ \ es llamada densidad de \ $\nu$ \ con respecto a \ $\mu$, denotada
@@ -408,8 +408,12 @@ la noci\'on de absoluta continuidad:
 %
   Sean  \  $\mu$  \  y  \  $\nu$  \ dos  medidas  sobre  un  espacio  medible  \
   $(\Omega,\A)$.   Se dice que  \ $\nu$  \ es  {\it absolutamente  continua} con
-  respecto a \ $\mu$, denotado \[\nu \ll \mu,\] si \ $\forall \: A \in \A, \quad
-  \mu(A) = 0 \: \Rightarrow \: \nu(A) = 0$.
+  respecto a \ $\mu$, denotado
+  %
+  \[
+  \nu \ll \mu \qquad  \mbox{si } \:\: \forall \: A \in \A,  \quad \mu(A) = 0 \:
+  \Rightarrow \: \nu(A) = 0.
+  \]
 \end{definicion}
 %
 De    hecho,     se    muestra    la    rec\'iproca     de    la    definici\'on
@@ -471,7 +475,7 @@ densidades.
   suponemos \ $\nu \ll \lambda$ \ y \ $\lambda \ll \mu$. Entonces
   %
   \begin{itemize}
-  \item $\quad \nu \ll \mu$;
+  \item $\quad \nu \ll \mu \:$ \ (transitividad);
   %
   \item  equivalentemente,  el soporte  (ensemble  de  puntos  que no  anula  la
     funci\'on)  de \  $\displaystyle  \frac{d\nu}{d\mu}$ \  est\'a \  inclu\'ido
@@ -528,11 +532,11 @@ Ac\'a, notamos dos hechos interesantes:
   Riemann.
 \end{itemize}
 %
-La medida de  Lebesgue es as\'i natural para la integraci\'on.  Luego, en lo que
+La medida de Lebesgue es as\'i  natural para la integraci\'on.  Luego, en lo que
 sigue, al  mencionar igualdad  $\mu_L$-casi siempre, diremos  simplemente ``casi
 siempre'' $(c.s.)$, entendiendo que es con  respecto a la medida de Lebesgue. De
-la misma manera, hablando de densidad, sin precisiones, se entender\'a que s con
-respecto a $\mu_L$.
+la misma  manera, hablando de densidad,  sin precisiones, se  entender\'a que es
+con respecto a $\mu_L$.
 
 Al  ``contrario'' de  la medida  de  Lebesgue, medidas  discretas son  tambi\'en
 particulares. La  m\'as ``elemental''  es conocida como  {\it medida  de Dirac},
@@ -696,23 +700,25 @@ univariado,  se  define  este  vector  de  la  siguiente  manera~\cite{AshDol99,
 \noindent Nota: a veces tenemos que considerar el caso de matrices aleatorias, o
 funciones  medibles  a  valores  matriciales.    Dado  que  se  puede  poner  en
 biyecci\'on  una  matriz  con  un  vector (por  ejemplo  poniendo  cada  columna
-``debajo'' de  su columna  antecedente), no desarrollaremos  m\'as este  caso, a
-pesar de que a veces sea m\'as  conveniente trabajar con matrices en lugar de su
-forma en vector.
+``debajo''  de  su columna  antecedente).  \modif{Volveremos  m\'as adelante  en
+  matriz aleatorias.}
+%, no desarrollaremos  m\'as este  caso, a
+%pesar de que a veces sea m\'as  conveniente trabajar con matrices en lugar de su
+%forma en vector.
 
 \
 
 De las propiedades de una medida sobre una $\sigma$-\'algebra, para caracterizar
-completamente la distribuci\'on $P_X$ de nuevo es suficiente conocerla sobre los
-elementos de la forma $\displaystyle  \optimes_{i=1}^d (-\infty \; b_i]$, \ie la
-funci\'on de repartici\'on  multivariada~\cite{AshDol99, AthLah06, Coh13, Bre88,
-  HogMck13}:
+completamente la  distribuci\'on $P_X$, de  nuevo es suficiente  conocerla sobre
+los elementos de la forma $\displaystyle \optimes_{i=1}^d (-\infty \; b_i]$, \ie
+la  funci\'on  de  repartici\'on multivariada~\cite{AshDol99,  AthLah06,  Coh13,
+  Bre88, HogMck13}:
 %
 \begin{definicion}[Funci\'on de repartici\'on multivariada]
 \label{Def:MP:FuncionReparticionMultivariada}
 %
   La funci\'on de repartici\'on $F_X$ de  un vector aleatorio $X$ es definida en
-  $x = (x_1 , \ldots , x_d)$ por
+  $x = \begin{bmatrix} x_1 & \cdots & x_d \end{bmatrix}^d$ por
   %
   \[
   F_X(x) =  P_X\left( \optimes_{i=1}^d (-\infty \; x_i]  \right) = P\left(
@@ -856,7 +862,7 @@ aleatoria~\cite{AshDol99, AthLah06, HogMck13}:
   infinito.
 \end{definicion}
 %
-En  la  Fig.~\ref{Fig:MP:ProbaDiscreta}-(a)   se  muestra  una  representaci\'on
+En  la  figura~\ref{Fig:MP:ProbaDiscreta}-(a)  se muestra  una  representaci\'on
 gr\'afica de una distribuci\'on de probabilidad discreta.
 
 Notar  que siendo  $P_X$ una  medida de  probabilidad, $p_X  \ge 0$  \  y est\'a
@@ -952,7 +958,7 @@ la noci\'on de mayorizaci\'on:
   q_i^\downarrow
   \]
   %
-  (sienco las \'ultimas sumas iguales a 1).  Si los alfabetos de definici\'on de
+  (siendo las \'ultimas sumas iguales a 1).  Si los alfabetos de definici\'on de
   \ $p$  \ y \ $q$  \ son de tama\~nos  diferentes, \ $\alpha$ \  es el tama\~no
   m\'as grande y  la distribuci\'on sobre el alfabeto  m\'as corto es completada
   por  estados  de  probabilidad  0  (ser\'ia  equivalente  a  a\~nadir  estados
@@ -981,9 +987,10 @@ distribuci\'on $p$ de tama\~no~$\alpha$~\cite[p.~9,
 \]
 %
 En este  sentido, los  casos particulares de  equiprobabilidad y de  certeza, se
-dice  que  son  distribuciones  extremas.  Notamos que  uno  implica  ignorancia
+dice  que  son distribuciones  extremas.   Notamos  que  uno implica  ignorancia
 m\'axima  en el  resultado de  la variable  mientras que  el otro  corresponde a
-conocimiento completo.
+conocimiento completo.  \modif{Veremos en el cap\'itulo~\ref{Cap:SZ:Informacion}
+  el rol importante de este orden sobre las medidas informacionales.}
 
 La     relaci\'on      de     mayorizaci\'on     es      ilustrada     en     la
 figura~\ref{Fig:MP:mayorizacionplot}, donde  se representan las  sumas parciales
@@ -1053,8 +1060,8 @@ $P_X$:
   entonces se dice que $X$ {\it admite una densidad} y \ $p_X$ \ es llamada {\it
     densidad de  probabilidad} de $X$ (dando  por entendido ``con  respecto a la
   medida de Lebesgue'').   Notando que $P_X(B) = P_X(B \cap  \X)$, el soporte de
-  $p_X$ es  necesariamente $\X = X(\Omega)$  (\ie $p_X(\widebar{\X}) = 0$  \ y \
-  $p_X(\X) \ne 0$), y
+  $p_X$ es necesariamente $\X = X(\Omega)$  (\ie $p_X(\widebar{\X}) = \{ 0 \}$ \
+  y \ $p_X(\X) > 0$), y
   %
   \[
   \forall \, B \in \B(\Rset), \quad P_X(B) = \int_{B \cap \X} p_X(x) \, dx.
@@ -1066,7 +1073,7 @@ $P_X$:
   F_X(x) = \int_{-\infty}^x p_X(u) \, du
   \]
   %
-  (esta expersi\'on es valids por  cualquier medida $\mu$, densidad con respecto
+  (esta expresi\'on es valida para  cualquier medida $\mu$, densidad con respecto
   a esta  medida de referencia,  e integraci\'on sobre  $(-\infty \; x]$  con el
   ``diferencial'' \ $d\mu(x)$).  Dicho de  otra manera, si $F_X$ es (continua y)
   derivable  sobre $\Rset$,  al menos  por partes,  $X$ admite  una  densidad de
@@ -1094,9 +1101,9 @@ claramente
 esto  es, $\{  x \}$  es de  medida $P_X$  nula.  \modif{Similarmente, cualquier
   conjuntos numerable de $\Rset$ es de medida $P_X$ nula.}
 
-Notar aue  aun cuando $0 \le  F_X \le 1$, \  $p_X$ puede ser mayor  que uno. Por
+Notar que  a\'un cuando $0 \le  F_X \le 1$, \  $p_X$ puede ser mayor  que uno. Por
 ejemplo, para  \ $F_X(x)  = 2  \, x \,  \un_{\left[ 0  \; \frac12  \right)}(x) +
-\un_{\left[  \frac12  \;  +\infty  \right)}(x)$, que  define  correctamente  una
+\un_{\left[  \frac12  \;  +\infty  \right)}(x)$, que  define  una
 funci\'on  de   repartici\'on,  \   $p_X(x)  =  2   \un_{\left[  0   \;  \frac12
   \right)}(x)$.  No es  contradictorio en  el  sentido de  que $p_X$  no es  una
 probabilidad, sino  que $p_X(x) \, dx$  puede ser visto como  la probabilidad de
@@ -1202,12 +1209,12 @@ la  medida  de  Lebesgue.  Se  la  llama  {\it  funci\'on generalizada}  o  {\it
   car\'acter no ordinario  (la integral siendo divergente en  el sentido usual).
   Esto va m\'as all\'a de la meta  del cap\'itulo y el lector se podr\'a referir
   a~\cite{Sch66, GelShi64,  GelShi68} por  ejemplo.}.  En particular,  $F_X(x) =
-\un_{\Rset_+}(x-x_k)$ \modif{($\un_{\Rset_+}$ es conocido tambi\'en como {\it funci\'on
-  de  Heaviside}~\footnote{\modif{Viene del  nombre del  f\'isico  ingles Oliver
-    Heaviside quien estudio las ecuaciones electromagneticas de Maxwell.}})} y en
-el sentido de las  distribuciones, $\frac{d F_X}{dx} = \delta_{x_k}$.  Adem\'as,
-se usan  en general las propiedades,  para cualquier function  \ $f$ \ y  real \
-$x_0$,
+\un_{\Rset_+}(x-x_k)$  \modif{($\un_{\Rset_+}$ es  conocido tambi\'en  como {\it
+    funci\'on  de  Heaviside}~\footnote{\modif{Viene  del  nombre  del  f\'isico
+      ingles Oliver  Heaviside quien estudio  las ecuaciones electromagn\'eticas
+      de Maxwell.}})} y en el sentido de las distribuciones, $\frac{d F_X}{dx} =
+\delta_{x_k}$.   Adem\'as, se usan  en general  las propiedades,  para cualquier
+function \ $f$ \ y real \ $x_0$,
 %
 \[
 f(x) \delta(x-x_0) = f(x_0) \delta(x-x_0) \qquad \mbox{y} \qquad \int_\Rset f(x)
@@ -1287,9 +1294,9 @@ Un ejemplo de vector aleatorio discreto  puede ser dado por un conjunto de dados
   numerable.
 \end{definicion}
 
-Obviamente, la  medida de probabilidad  en los $\displaystyle  x = (x_1 \,  , \,
-\ldots \, , \, x_d)  \in \optimes_{i=1}^d \X_i$ \ caracteriza completamente este
-vector aleatorio:
+Obviamente, la medida de probabilidad  en los $\displaystyle x = \begin{bmatrix}
+  x_1 &  \cdots & x_d  \end{bmatrix}^t \in \optimes_{i=1}^d \X_i$  \ caracteriza
+completamente este vector aleatorio:
 %
 \begin{definicion}[Funci\'on de masa de probabilidad conjunta]
 \label{Def:MP:FuncionMasaConjunta}
@@ -1365,15 +1372,15 @@ referencia  $\mu$  sobre  $\Rset^d$   para  definir  una  noci\'on  de  densidad
   multivariada]
 \label{Def:MP:VectorAleatorioContinuo}
 %
-  Un vector aleatorio \ $X = \begin{bmatrix} X_1 & \cdots & X_d \end{bmatrix}^t$
-  \ se  dice {\it continuo} si  su funci\'on de repartici\'on  $F_X$ es continuo
-  sobre      $\Rset^d$.      Como      en     el      caso      escalar,     por
-  definici\'on~\ref{Def:MP:DensidadMedida}  (y la rec\'iproca  evocaca despu\'es
-  de la definici\'on), se dice que $X$ admite una densidad de probabilidad $p_X$
-  con respecto a  una medida $\mu$ sobre $\Rset^d$ si $P_X  \ll \mu$.  De nuevo,
-  nos enfocamos en la medida (llamada  de referencia) $\mu = \mu_L$ de Lebesgue:
-  si existe una funci\'on no negativa y medible \ $p_X: \Rset^d \mapsto \Rset$ \
-  tal que
+Un vector aleatorio \ $X = \begin{bmatrix} X_1 & \cdots & X_d \end{bmatrix}^t$ \
+se dice {\it continuo} si su  funci\'on de repartici\'on $F_X$ es continua sobre
+$\Rset^d$.         Como       en        el        caso       escalar,        por
+definici\'on~\ref{Def:MP:DensidadMedida} (y la  rec\'iproca evocada despu\'es de
+la definici\'on), se dice que $X$  admite una densidad de probabilidad $p_X$ con
+respecto a  una medida $\mu$  sobre $\Rset^d$ si  $P_X \ll \mu$.  De  nuevo, nos
+enfocamos en  la medida (llamada  de referencia) $\mu  = \mu_L$ de  Lebesgue: si
+existe una funci\'on no negativa y  medible \ $p_X: \Rset^d \mapsto \Rset$ \ tal
+que
   %
   \[
   \forall \,  B \in \B(\Rset^d),  \quad P_X(B) =  \int_B p_X(x) \, dx  = \int_{B
@@ -1401,8 +1408,8 @@ referencia  $\mu$  sobre  $\Rset^d$   para  definir  una  noci\'on  de  densidad
     probabilidad}.
 \end{definicion}
 
-Como en el caso  escalar, $p_X \ge 0$ \ (no es necesario que  sea menor que 1) y
-satisface la condici\'on de normalizaci\'on
+Como en el caso  escalar, $p_X \ge 0$, \ pero no es  necesario que sea menor que
+1, y satisface la condici\'on de normalizaci\'on
 %
 \[
 \int_\X p_X(x) \, dx = \int_{\Rset^d} p_X(x) \ dx  = 1.
@@ -1515,7 +1522,7 @@ figura~\ref{Fig:MP:ensemblerearreglado}-b para el caso escalar $d=1$.
 \end{figure}
 %
 \modif{Notar  que, por  construcci\'on, $p_X^\downarrow$  cae el  la  familia de
-  densidades                            esfericas                           (ver
+  densidades                            esf\'ericas                           (ver
   secci\'on~\ref{Sec:MP:EjemplosDistribucionesProb})~\cite{Lor54,       FanKot90,
     CamHua81, Eat81}.}
 
@@ -1555,126 +1562,128 @@ es necesariamente concava).
   Consideramos la densidad  de probabilidad $d$-dimensional mezcla~\footnote{Una
     mezcla  de ley  es definida  como  combinaci\'on convexa  $f =  \sum_{i=1}^k
     \alpha_i f_i$ de leyes  $f_i$ con $\alpha = \protect\begin{bmatrix} \alpha_1
-      &  \cdots  &  \alpha_k  \end{bmatrix}^t\protect \in  \Simp{k-1}$.}  \SZ{de
-    Student-r (ver secci\'on~\ref{Sec:MP:EjemplosDistribucionesProb})}
-%
-\[
-\displaystyle  p_X(x) =  \alpha \left(  \left( 1  - \left\|  x +  m \right\|^2
-  \right)^{\frac{\nu-d}{2}} \un_{\Bset_d(-m,1)}(x)  + \left(  1 - \left\|  x -
-      m \right\|^2 \right)^{\frac{\nu-d}{2}} \un_{\Bset_d(m,1)}(x)\right)
-\]
-%
-con
-%
-\[
-\nu > d-2, \qquad m \in  \Rset^d \setminus \Bset_d \qquad \mbox{y} \qquad \alpha
-=   \frac{\Gamma\left(  \frac{\nu}{2}  +   1  \right)}{2   \,  \pi^{\frac{d}{2}}
-  \Gamma\left(   \frac{\nu-d}{2}  +  1   \right)}  \quad   \mbox{coeficiente  de
-  normalizaci\'on}
-\]
-%
-Esta         densidad         de         probabilidad        es         dibujada
-figura~\ref{Fig:MP:ensemblerearreglado}-((b) izquierda) para $d = 1, \: \nu = 5,
-m = 1$ y  figura~\ref{Fig:MP:RearregloMayorizacionEjemplo}-(a) para $d = 2, \:
-\nu  = 6,  \: m  = \frac{1}{\sqrt{d}}  \un$.  El  dominio de  definici\'on, el
-m\'aximo,       y       la       matriz       de       covarianza       \SZ{(ver
-  secci\'on~\ref{Sec:MP:EjemplosDistribucionesProb})} son dados por
-%
-\[
-\X = \Bset_d(-m,1) \: \cup  \: \Bset_d(m,1), \qquad \max_\X p_X(x) = \alpha,
-\qquad \Sigma_X = \frac{1}{\nu+2} I + m m^t
-\]
+      &   \cdots  &  \alpha_k   \end{bmatrix}^t\protect  \in   \Simp{k-1}$.}  de
+  Student-$r$ (ver secci\'on~\ref{Sssec:MP:StudentR})
+  %
+  \[
+  %\displaystyle   \un_{\Bset_d(-m,1)}(x)   \un_{\Bset_d(m,1)}(x)
+  p_X(x)   =   \alpha   \left(  \left(   1   -   \left\|   x  +   m   \right\|^2
+    \right)_+^{\frac{\nu-d}{2}} + \left(  1 - \left\| x - m
+      \right\|^2 \right)_+^{\frac{\nu-d}{2}} \right)
+  \]
+  %
+  con
+  %
+  \[
+  \nu  > d-2,  \qquad m  \in \Rset^d  \setminus \Bset_d  \qquad  \mbox{y} \qquad
+  \alpha = \frac{\Gamma\left( \frac{\nu}{2}  + 1 \right)}{2 \, \pi^{\frac{d}{2}}
+    \Gamma\left(  \frac{\nu-d}{2}  +   1  \right)}  \quad  \mbox{coeficiente  de
+    normalizaci\'on}
+  \]
+  %
+  y \ $(\cdot)_+ = \max(x,0)$ \ (ver notaciones).  Esta densidad de probabilidad
+  es dibujada figura~\ref{Fig:MP:ensemblerearreglado}-((b)  izquierda) para $d =
+  1, \:  \nu = 5, m =  1$ y figura~\ref{Fig:MP:RearregloMayorizacionEjemplo}-(a)
+  para  $d = 2,  \: \nu  = 6,  \: m  = \frac{1}{\sqrt{d}}  \un$.  El  dominio de
+  definici\'on,    el   m\'aximo,    y    la   matriz    de   covarianza    (ver
+  secci\'on~\ref{Sssec:MP:StudentR}) son dados por
+  %
+  \[
+  \X =  \Bset_d(-m,1) \: \cup \:  \Bset_d(m,1), \qquad \max_\X  p_X(x) = \alpha,
+  \qquad \Sigma_X = \frac{1}{\nu+2} I + m m^t
+  \]
 
-Ahora, para \ $\tau  > \alpha, \: \P_\tau = \emptyset$ \  y para cualquier $\tau
-\in [0 \; \alpha]$  buscando los $x$ tal que $p_X(x) >  \tau$ (notando que las
-bolas en $\X$ son disjuntas) conduce a
-%
-\[
-\P_\tau = \Bset_d(-m , \beta_\tau) \: \cup \: \Bset_d(m , \beta_\tau) \qquad
-\mbox{con} \qquad  \beta_\tau = \sqrt{  1 - \left( \frac{2  \, \pi^{\frac{d}{2}}
-      \Gamma\left(    \frac{\nu-d}{2}   +1    \right)    \,   \tau}{\Gamma\left(
-        \frac{\nu}{2} +1 \right)} \right)^{\frac{2}{\nu-d}}}
-\]
-%
-Notando  que las esferas  de \  $\P_\tau$ \  son disjuntas,  queda claro  que el
-volumen de  \ $\P_\tau$ \ es  dado por \ $\left|  \P_\tau \right| =  2 \, \left|
-  \Bset_d\left(  0 ,  \beta_\tau  \right)  \right| =  \left|  \Bset_d\left( 0  ,
-    2^{\frac{1}{d}}   \beta_\tau  \right)  \right|$,   que  conduce   al  dominio
+  Ahora, para \ $\tau > \alpha, \: \P_\tau = \emptyset$ \ y para cualquier $\tau
+  \in [0 \; \alpha]$  buscando los $x$ tal que $p_X(x) >  \tau$ (notando que las
+  bolas en $\X$ son disjuntas) conduce a
+  %
+  \[
+  \P_\tau = \Bset_d(-m  , \beta_\tau) \: \cup \:  \Bset_d(m , \beta_\tau) \qquad
+  \mbox{con} \qquad \beta_\tau = \sqrt{  1 - \left( \frac{2 \, \pi^{\frac{d}{2}}
+        \Gamma\left(   \frac{\nu-d}{2}    +1   \right)   \,   \tau}{\Gamma\left(
+          \frac{\nu}{2} +1 \right)} \right)^{\frac{2}{\nu-d}}}
+  \]
+  %
+  Notando que las bolas que constituan  \ $\P_\tau$ \ son disjuntas, queda claro
+  que el volumen de  \ $\P_\tau$ \ es dado por \ $\left|  \P_\tau \right| = 2 \,
+  \left| \Bset_d\left( 0 , \beta_\tau \right) \right| = \left| \Bset_d\left( 0 ,
+      2^{\frac{1}{d}}  \beta_\tau  \right)  \right|$,  que  conduce  al  dominio
   rearreglado,
-%
-\[
-\P^{\downarrow}_\tau  =  \Bset_d\left( 0  ,  2^{\frac{1}{d}}  \beta_\tau \right)
-\]
-%
-Ahora, se muestra sencillamente que $x \in \P^{\downarrow}_u$ es equivalente a
-%
-\[
-\displaystyle  u   <  \frac{\Gamma\left(  \frac{\nu}{2}  +   1  \right)}{2  \,
-  \pi^{\frac{d}{2}}  \Gamma\left( \frac{\nu-d}{2}  + 1  \right)} \,  \left(  1 -
-  \frac{\|x\|^2}{4^{\frac1d}}  \right)^{\frac{\nu-d}{2}}  \un_{\Bset_d\left(0  ,
-    2^{\frac1d} \right)}(x)
-\]
-%
-De la definici\'on~\ref{Def:MP:RearregloDensidad} obtenemos al final
- %
- \[
- p^{\downarrow}_X(x)  =  \frac{\Gamma\left(  \frac{\nu}{2}  +  1  \right)}{2  \,
-   \pi^{\frac{d}{2}}  \Gamma\left( \frac{\nu-d}{2} +  1 \right)}  \, \left(  1 -
-   \frac{\|x\|^2}{4^{\frac1d}}  \right)^{\frac{\nu-d}{2}}  \un_{\Bset_d\left(0 ,
-     2^{\frac1d} \right)}(x)
+  %
+  \[
+  \P^{\downarrow}_\tau = \Bset_d\left( 0 , 2^{\frac{1}{d}} \beta_\tau \right)
+  \]
+  %
+  Ahora, se muestra sencillamente que $x \in \P^{\downarrow}_u$ es equivalente a
+  %
+  \[
+  \displaystyle  u   <  \frac{\Gamma\left(  \frac{\nu}{2}  +   1  \right)}{2  \,
+    \pi^{\frac{d}{2}} \Gamma\left(  \frac{\nu-d}{2} + 1  \right)} \, \left(  1 -
+    \frac{\|x\|^2}{4^{\frac1d}}  \right)_+^{\frac{\nu-d}{2}}
+  % \un_{\Bset_d\left(0 ,      2^{\frac1d} \right)}(x)
+  \]
+  %
+  De la definici\'on~\ref{Def:MP:RearregloDensidad} obtenemos al final
+   %
+  \[
+  p^{\downarrow}_X(x)  =  \frac{\Gamma\left(  \frac{\nu}{2}  + 1  \right)}{2  \,
+    \pi^{\frac{d}{2}} \Gamma\left(  \frac{\nu-d}{2} + 1  \right)} \, \left(  1 -
+    \frac{\|x\|^2}{4^{\frac1d}}  \right)_+^{\frac{\nu-d}{2}}
+  % \un_{\Bset_d\left(0 ,      2^{\frac1d} \right)}(x)
  \]
-%
+  %
  dibujada figura~\ref{Fig:MP:ensemblerearreglado}-((b) derecha)  para $d = 1, \:
  \nu = 5$ y figura~\ref{Fig:MP:RearregloMayorizacionEjemplo} para $d = 2, \: \nu
- = 6$.
-%
-Finalmente, la curva de Lorentz es dada por
-%
-\begin{eqnarray*}
-\L_{p_X}(r) & = & \frac{\Gamma\left( \frac{\nu}{2} + 1 \right)}{2 \,
-\pi^{\frac{d}{2}} \Gamma\left( \frac{\nu-d}{2} + 1 \right)} \int_{\Bset_d(0,r)}
-\left( 1 - \frac{\|x\|^2}{4^{\frac1d}} \right)^{\frac{\nu-d}{2}}
-\un_{\Bset_d\left(0 , 2^{\frac1d} \right)}(x) \, dx\\
-%
-& = & \frac{\Gamma\left( \frac{\nu}{2} + 1 \right)}{2 \, \pi^{\frac{d}{2}}
-\Gamma\left( \frac{\nu-d}{2} + 1 \right)} \frac{2 \,
-\pi^{\frac{d}{2}}}{\Gamma\left( \frac{d}{2} \right)} \int_0^r \rho^{d-1} \left( 1 -
-\frac{\rho^2}{4^{\frac1d}} \right)^{\frac{\nu-d}{2}} \un_{\left[ 0 \; 2^{\frac1d}
-\right]}(\rho) \, d\rho
-\end{eqnarray*}
-%
-pasando  en coordenadas  hiperesferica (ver~\cite{Lor54,  FanKot90,  CamHua81} y
-secci\'on~\ref{Sec:MP:EjemplosDistribucionesProb}). Por el cambio de variable $u
-= \frac{\rho^2}{4^{\frac1d}}$ obtenemos
-%
-\[
-\L_{p_X}(r)      =      \frac{\displaystyle     \int_0^{\frac{r^2}{4^{\frac1d}}}
-  u^{\frac{d}{2}-1} (1-u)^{\frac{\nu-d}{2}}  \, du}{B\left( \frac{d}{2}  \, , \,
-    \frac{\nu-d}{2} + 1 \right)}
-\]
-%
-conocida  como funci\'on  beta incompleta~\cite[Ec.~8.392]{GraRyz15},  tomada en
-$\frac{r^2}{4^{\frac1d}}$.                                                     La
-figura~\ref{Fig:MP:RearregloMayorizacionEjemplo}-(c)  dibuja  $\L_{p_X}(r)$ para
-$d  = 2,  \: \nu  =  6$, la  de la  ley  gausiana esferica  $g_X$ de  covarianza
-$\frac{\Tr \Sigma_X}{d} I$ y la de la ley Student-t esferica $s_X$ de covarianza
-$\frac{\Tr  \Sigma_X}{d} I$  y con  \ $\nu'  = 2.25$  \ grado  de  libertad (ver
-secci\'on~\ref{Sec:MP:EjemplosDistribucionesProb}). Eso  ilustra graficamente la
-relaci\'on de  mayorizaci\'on \ $g_X \prec p_X$  \ y que ambas  \ $s_X \not\prec
-p_X$ \ y \ $p_X \not\prec s_X$.
+ = 6$. Pasando, se reconoce una ley Student-$r$ con un grado de libertad $\nu$.
 
-\begin{figure}[h!]
-\begin{center} \input{TIKZ_MP/RearregloEjemplo} \end{center}
-%
-\leyenda{(a) Densidad de probabilidad $p_X$ del ejemplo~\ref{Ej:MP:Rearreglo} en
-  el contexto bi-dimensional $d = 2$ y  para $\nu = 6, \: m = \frac{1}{\sqrt{d}}
-  \un$. (b) Densidad rearreglada $p^{\downarrow}_X$. (c) Equivalente continua de
-  la curva de Lorentz para la densidad $p_X$ (linea llena), la densidad gausiana
-  esferica \ $g_X$  \ con covarianza de  misma traza que la de  $p_X$ (linea con
-  guiones) y  la densidad Student-t  \ con covarianza  de misma traza que  la de
-  $p_X$ \ y \  $\nu' = 2.25$ \ grado de libertad  (linea punteada): \ $g_X \prec
-  p_X$ \ pero \ $s_X \not\prec p_X$ \ y \ $p_X \not\prec s_X$.}
-\label{Fig:MP:RearregloMayorizacionEjemplo}
-\end{figure}
+ Finalmente, la curva de Lorentz es dada por
+  %
+  \begin{eqnarray*}
+  \L_{p_X}(r) & = & \frac{\Gamma\left( \frac{\nu}{2} + 1 \right)}{2 \,
+  \pi^{\frac{d}{2}} \Gamma\left( \frac{\nu-d}{2} + 1 \right)} \int_{\Bset_d(0,r)}
+  \left( 1 - \frac{\|x\|^2}{4^{\frac1d}} \right)^{\frac{\nu-d}{2}}
+  \un_{\Bset_d\left(0 , 2^{\frac1d} \right)}(x) \, dx\\
+  %
+  & = & \frac{\Gamma\left( \frac{\nu}{2} + 1 \right)}{2 \, \pi^{\frac{d}{2}}
+  \Gamma\left( \frac{\nu-d}{2} + 1 \right)} \frac{2 \,
+  \pi^{\frac{d}{2}}}{\Gamma\left( \frac{d}{2} \right)} \int_0^r \rho^{d-1} \left( 1 -
+  \frac{\rho^2}{4^{\frac1d}} \right)^{\frac{\nu-d}{2}} \un_{\left[ 0 \; 2^{\frac1d}
+  \right]}(\rho) \, d\rho
+  \end{eqnarray*}
+  %
+  pasando en coordenadas hiperesf\'erica (ver~\cite{Lor54, FanKot90, CamHua81} y
+  secci\'on~\ref{Sec:MP:EjemplosDistribucionesProb}). Por  el cambio de variable
+  $u = \frac{\rho^2}{4^{\frac1d}}$ obtenemos
+  %
+  \[
+  \L_{p_X}(r)     =     \frac{\displaystyle     \int_0^{\frac{r^2}{4^{\frac1d}}}
+    u^{\frac{d}{2}-1} (1-u)^{\frac{\nu-d}{2}} \, du}{B\left( \frac{d}{2} \, , \,
+      \frac{\nu-d}{2} + 1 \right)}
+  \]
+  %
+  conocida como funci\'on  beta incompleta~\cite[Ec.~8.392]{GraRyz15}, tomada en
+  $\frac{r^2}{4^{\frac1d}}$.                                                   La
+  figura~\ref{Fig:MP:RearregloMayorizacionEjemplo}-(c) dibuja $\L_{p_X}(r)$ para
+  $d =  2, \: \nu  = 6$, la  de la ley  gausiana esf\'erica $g_X$  de covarianza
+  $\frac{\Tr  \Sigma_X}{d} I$  y  la de  la  ley Student-t  esf\'erica $s_X$  de
+  covarianza  $\frac{\Tr \Sigma_X}{d}  I$  y con  \  $\nu' =  2.25$  \ grado  de
+  libertad (ver  secci\'on~\ref{Sec:MP:EjemplosDistribucionesProb}). Eso ilustra
+  graficamente la relaci\'on de mayorizaci\'on \ $g_X \prec p_X$ \ y que ambas \
+  $s_X \not\prec p_X$ \ y \ $p_X \not\prec s_X$.
+
+  \begin{figure}[h!]
+  \begin{center} \input{TIKZ_MP/RearregloEjemplo} \end{center}
+  %
+  \leyenda{(a) Densidad de  probabilidad $p_X$ del ejemplo~\ref{Ej:MP:Rearreglo}
+    en  el  contexto  bi-dimensional  $d  =  2$   y  para  $\nu  =  6,  \:  m  =
+    \frac{1}{\sqrt{d}}  \un$. (b)  Densidad rearreglada  $p^{\downarrow}_X$. (c)
+    Equivalente continua  de la curva de  Lorentz para la  densidad $p_X$ (linea
+    llena), la  densidad gausiana esf\'erica \  $g_X$ \ con  covarianza de misma
+    traza que  la de  $p_X$ (linea con  guiones) y  la densidad Student-t  \ con
+    covarianza de  misma traza que la  de $p_X$ \ y  \ $\nu' = 2.25$  \ grado de
+    libertad (linea punteada): \ $g_X \prec  p_X$ \ pero \ $s_X \not\prec p_X$ \
+    y \ $p_X \not\prec s_X$.}
+  \label{Fig:MP:RearregloMayorizacionEjemplo}
+  \end{figure}
 \end{ejemplo}
 }

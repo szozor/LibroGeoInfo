@@ -108,8 +108,8 @@ se da en el teorema siguiente~\cite{Bre88, JacPro03, AthLah06, Coh13, HogMck13}:
 \begin{teorema}[Densidad de probabilidad por transformaci\'on continua inyectiva
   diferenciable]\label{Teo:MP:TransformacionInyectivaDensidad}
 %
-  Sean $X$, vector aleatorio  $d$-dimensional continuo que  admite una densidad
-  de probabilidad  $p_X$, y sea \ $g:\Rset^d  \mapsto \Rset^d$ una  funci\'on continua
+  Sea $X$, vector aleatorio $d$-dimensional  continuo que admite una densidad de
+  probabilidad $p_X$, y sea \ $g:\Rset^d \mapsto \Rset^d$ una funci\'on continua
   inyectiva y diferenciable tal que
   %  ~\footnote{\modif{De  hecho,  se   puede  extender  el  resultado  para  un
   %      determinente del  Jacobiano cancelandose  en  un conjunto  de punto  de
@@ -180,7 +180,7 @@ El caso escalar puede ser visto como caso particular, dando:
 %
 \noindent De hecho,  se pueden ver estos resultados  esquem\'aticamente como una
 ``conservaci\'on'' de  probabilidad, $p_X(x)  dx = p_Y(y)  dy$, el  volumen $dy$
-estando  relacionado  al  $dx$ a  traves  de  lamatriz  Jacobiana (ver  nota  de
+estando  relacionado al  $dx$  a traves  de  la matriz  Jacobiana  (ver nota  de
 pie~\ref{Foot:SZ:Jacobiana}).
 
 Una  forma  alternativa  de derivar  este  corolario  consiste  en salir  de  la
@@ -209,14 +209,14 @@ $g$ es inyectiva, dando
 \begin{teorema}[Densidad   de   probabilidad   por   transformaci\'on   continua
   no inyectiva diferenciable]\label{Teo:MP:TransformacionNoInyectivaDensidad}
 %
-  Sean $X$, vector aleatorio $d$-dimensional continuo que admite una densidad de
+  Sea $X$, vector aleatorio $d$-dimensional  continuo que admite una densidad de
   probabilidad  $p_X$,  y sea  $g:(\Rset^d  ,  \B(\Rset^d))  \mapsto (\Rset^d  ,
   \B(\Rset^d))$  una  funci\'on continua  y  diferenciable.  Denotamos  $\left\{
     \X_{[k]} \right\}_{k=0}^m$ la partici\'on  de $\X$ tal que $\left| \Jac_g(y)
   \right| = 0$ sobre  $\X_{[0]}$, y para todo $k \ge 1$  se tiene \ $g: \X_{[k]}
-  \mapsto  \Y$ \  inyectiva  y  tal que  \  $\left| \Jac_g(y)  \right|  > 0$.  \
-  Suponemos que $\X_{[0]}$ es de medida de Lebesgue nula, notamos \ $g_k^{-1}$ \
-  la funci\'on inversa  de \ $g$ \ sobre \ $g(\X_{[k]})$  \ (rama $k$-\'esima de
+  \mapsto  \Y$ \  inyectiva  y tal  que \  $\left|  \Jac_g(y) \right|  > 0$.   \
+  Suponemos que $\X_{[0]}$ es de medida \modif{$P_X$} nula, notamos \ $g_k^{-1}$
+  \ la funci\'on inversa de \ $g$ \ sobre \ $g(\X_{[k]})$ \ (rama $k$-\'esima de
   la  funci\'on   multivaluada  $g^{-1}$),  \  $\Jac_{g_k^{-1}}$   \  su  matriz
   Jacobiana, e \  $I(y) = \{ k \tq  y \in g(\X_{[k]}) \}$ \  los \'indices tales
   que  \  $y$  \  tiene  un   inverso  por  $g_k$.   Esto  es  ilustrado  en  la
@@ -239,15 +239,39 @@ $g$ es inyectiva, dando
 \end{teorema}
 %
 \begin{proof}
-  Basta escribir \  $B = \bigcup_{k = 0}^m \left( B  \cap g(\X_{[k]}) \right)$ \
-  uni\'on de  borelianos disjuntos,  notar que por  consecuencia \  $g^{-1}(B) =
-  \bigcup_{k  =0}^m  g^{-1}\left(  B  \cap  g(\X_{[k]}) \right)$  \  uni\'on  de
-  borelianos  disjuntos \  y \  por linealidad  escribir la  integraci\'on sobre
-  $g^{-1}(B)$ como la suma de  integrales sobre $g^{-1}\left( B \cap g(\X_{[k]})
-  \right)$. Se cierra  la prueba notando que \  $g^{-1}\left( B \cap g(\X_{[0]})
-  \right)$ es necesariamente de medida de Lebesgue nula, siendo la integral nula
-  y  que \  $g^{-1}\left( B  \cap g(\X_{[k]})  \right) =  g_k^{-1}\left(  B \cap
-    g(\X_{[k]}) \right)$.
+  \modif{Basta escribir \  $g^{-1}(B) = \bigcup_{k = 0}^m  \left( g^{-1}(B) \cap
+      \X_{[k]} \right)$, uni\'on de borelianos disjuntos. Siendo $g^{-1}(B) \cap
+    \X_{[k]} = g_k^{-1}(B)$, y siendo $\X_{[0]}$ de medida nula, se obtiene
+  %
+  \[
+  P_Y(B) = P_X(g^{-1}(B)) = \sum_{k=1}^m \int_{g_k^{-1}(B)} p_X(x) \, dx
+  \]
+  %
+  Se  nota ahora  que $g_k(g_k^{-1}(B)) = B \cap g(\X_{[k]})  \subset  B$ pero  no es  necesariamente
+  $B$. Sin embargo, Por cambio de variables $x = g_k^{-1}(y)$ en cada integral, tenemos intonces
+  %
+  \[
+  P_Y(B)  =   \sum_{k=1}^m \int_{B \cap g(\X_{[k]})}
+  p_X\left( g_k^{-1}(y) \right) \left| \Jac_{g_k^{-1}}(y) \right| \, dy  =   \int_B
+  \sum_{k=1}^m  \un_{g(\X_{[k]})}(y) \, p_X\left( g_k^{-1}(y) \right) \left| \Jac_{g_k^{-1}}(y) \right| \, dy
+  \]
+  %
+  Por definici\'on de $I(y)$, $y \in B \cap g(\X_{[k]}) \:\: \Leftrightarrow \:\: k \in I(y) $, lo conduce finalmente a
+  %
+  \[
+  P_Y(B)  = \int_{B \cap  g(\X_{[k]})} \sum_{k  \in I(y)}  p_X\left( g_k^{-1}(y)
+  \right) \left| \Jac_{g_k^{-1}}(y) \right| \, dy
+  \]
+ }
+ % Basta escribir \ $B = \bigcup_{k  = 0}^m \left( B \cap g(\X_{[k]}) \right)$ \
+ % uni\'on de  borelianos disjuntos, notar  que por consecuencia \  $g^{-1}(B) =
+ % \bigcup_{k  =0}^m  g^{-1}\left( B  \cap  g(\X_{[k]})  \right)$  \ uni\'on  de
+ % borelianos disjuntos  \ y  \ por linealidad  escribir la  integraci\'on sobre
+ % $g^{-1}(B)$ como la suma de integrales sobre $g^{-1}\left( B \cap g(\X_{[k]})
+ % \right)$. Se cierra la prueba  notando que \ $g^{-1}\left( B \cap g(\X_{[0]})
+ % \right)$ es  necesariamente de  medida de Lebesgue  nula, siendo  la integral
+ % nula y que \ $g^{-1}\left( B \cap g(\X_{[k]}) \right) = g_k^{-1}\left( B \cap
+ %   g(\X_{[k]}) \right)$.
 \end{proof}
 
 \begin{figure}[h!]
@@ -291,7 +315,7 @@ P\left(   X   \in  \X_{[k]}   \cap   g_k^{-1}(-\infty  \;   y]  \right)   =
 %
 P(X \in \X_{[k]}) & \mbox{si} & y > \sup \Y_{[k]}\\[2.5mm]
 %
-0 & \mbox{si} & y < \inf \Y_{[k]}\\[2.5mm]
+0 & \mbox{si} & y < \inf \Y_{[k]}
 \end{array}\right.
 \]
 %
@@ -318,10 +342,10 @@ t\'erminos de sus ceros:  \ $\delta(y-g(x)\,)= \sum_{k \in I(y)} \frac{1}{\left|
 \delta(x-g_k^{-1}(y))$~\cite{ManWol95}.
 
 Es  importante   notar  que  la   condici\'on  $\X_{[0]}$  de  medida   nula  es
-importante. Aaso  contrario, $Y$  no resulta  continua como se  puede ver  en el
+importante. Al  contrario, $Y$  no resulta  continua como se  puede ver  en el
 ejemplo siguiente.
 %
-\begin{ejemplo}[Transformaci\'on con $\mu_L\left( \X_{[0]} \right) \ne 0$]
+\begin{ejemplo}[Transformaci\'on con \modif{$P_X\left( \X_{[0]} \right) \ne 0$}]
 \label{Ej:MP:X0MedidaNoNula}
 %
 Sea \ $X$ \ uniforme sobre  \ $\X = ( 3 \; 3)$ \ e \ $Y  = g(X)$ \ con \ $g(x) =
