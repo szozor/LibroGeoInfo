@@ -25,23 +25,23 @@ probabilidad.
 \label{Ssec:MP:GeneradoraProbabilidad}
 
 De  manera  general,  siguiendo  el  enfoque  de A.   de  Moivre  (ver  nota  de
-pie~\ref{Foot:MP:Generadora}) dada una sucesi\'on \ $a_n, \quad n \in \Nset$, se
-define la  funci\'on generadora  dicha {\em ordinaria}  de la sucesi\'on  como \
-$G(\{ a_n  \}_{n \in \Nset} \,  , \, z) =  \sum_{n \in \Nset} \,  z^n$. A veces,
-esta serie es conocida como transformada en $z$ de la sucesi\'on \ $\{ a_n \}_{n
-  \in \Nset}$. Tratando de variables aleatorias discretas sobre \ $\Nset$, con \
-$p_n  = P_X(n)  = P(X  = n)$,  se puede  definir as\'i  la  funci\'on generadora
-asociada a  la sucesi\'on \  $p_n$ y se  puede ver que no  es nada m\'as  que el
-momento $\Esp\left[ z^X \right]$.  De manera general, la funci\'on generadora de
-probabilidad  se define  de  la manera  siguiente~\cite{Fel68, JohKot97,  Muk00,
-  AthLah06}:
+pie~\ref{Foot:MP:Generadora}) dada  una sucesi\'on \ $\{ a_n  \}_{n \in \Nset}$,
+se define la funci\'on generadora dicha  {\em ordinaria} de la sucesi\'on como \
+$G\left( \{ a_n \}_{n  \in \Nset} \, , \, z \right) =  \sum_{n \in \Nset} a_n \,
+z^n$. A veces, esta serie es  conocida como transformada en $z$ de la sucesi\'on
+\ $\{ a_n \}_{n \in \Nset}$.  Tratando de variables aleatorias discretas sobre \
+$\Nset$, con \  $p_n = P_X(n) = P(X  = n)$, se puede definir  as\'i la funci\'on
+generadora asociada a la sucesi\'on \ $p_n$  y se puede ver que no es nada m\'as
+que  el momento  $\Esp\left[  z^X  \right]$.  De  manera  general, la  funci\'on
+generadora  de  probabilidad  se  define  de  la  manera  siguiente~\cite{Fel68,
+  JohKot97, Muk00, AthLah06}:
 %
 \begin{definicion}[funci\'on   generadora   de   probabilidad  o   de   momentos
   factoriales]
 \label{Def:MP:GeneradoraProbabilidadFactorial}
 %
   Sea $X = \begin{bmatrix} X_1  & \cdots & X_d \end{bmatrix}^t$ vector aleatorio
-  $d$ dimensional  definido sobre $\X  \subset \Rset^d$.  La  funci\'on definida
+  $d$-dimensional  definido sobre $\X  \subset \Rset^d$.  La  funci\'on definida
   por
   %
   \[
@@ -53,19 +53,41 @@ probabilidad  se define  de  la manera  siguiente~\cite{Fel68, JohKot97,  Muk00,
     generadora de momentos factoriales} de $X$.
 \end{definicion}
 %
-Esta funci\'on est definida sobre un producto cartesiano de anillos~\footnote{Si
-  para \ $\left| z_i \right| \,  = \, R_i$ \ la integral converge uniformamente,
-  para cualquier  \ $z \in  \Cset^d, \:  r_i \le \left|  z_i \right| \le  R_i$ \
-  tenemos  por ejemplo  \ $\displaystyle  \left|  \int_{\Rset_+^d} \prod_{i=1}^d
-    z_i^{x_i}  \,  dP_X(x)  \right|  \le \int_{\Rset_+^d}  \left|  \prod_{i=1}^d
-    z_i^{x_i}  \right|  \,  dP_X(x)  \le \int_{\Rset_+^d}  \left|  \prod_{i=1}^d
-    R_i^{x_i} \right| \, dP_X(x) < +\infty$.  El mismo enfoque se usa para todos
-  los hipercuadrantes  \ $\optimes_i  \Rset_{\pm}$. Adem\'as, claramente,  para \
-  $\left| z_i \right| \, =  \, 1$ \ tenemos $\displaystyle \left| \int_{\Rset^d}
-    \prod_{i=1}^d  z_i^{x_i}  \,   dP_X(x)  \right|  \le  \int_{\Rset^d}  \left|
-    \prod_{i=1}^d z_i^{x_i} \right| \,  dP_X(x) \le \int_{\Rset^d} dP_X(x) = 1$,
-  lo       que      prueba       que      \       $r_i      \le       1      \le
-  R_i$.\label{Foot:MP:GeneradoraProbabilidadExistencia}} en  el plano complejos,
+Esta    funci\'on   est    definida    sobre   un    producto   cartesiano    de
+anillos~\footnote{Para \ $i =  1, \ldots, d$, sean los reales \  $r_i, \: R_i$ \
+  tales que  \ $0 \le r_i  \le R_i$. Consideramos  \ $j = \begin{bmatrix}  j_1 &
+    \cdots & j_d  \end{bmatrix}^t \in \{ -1  \; +1 \}^d$ \ y  a continuaci\'on \
+  $\D_j  =  \optimes_{i=1}^d  \left(  j_i  \Rset_+  \right)$  \  ($  -\Rset_+  =
+  \Rset_-$),  \  los  \ $2^d$  \  hipercuadrantes  de  \ $\Rset^d$.   Notamos  \
+  $\rho_{j_i} = r_i \un_{\{-1\}}(j_i)  + R_i \un_{\{+1\}}(j_i)$.  Supongamos que
+  en   cada  hipercuadrante  \   $\displaystyle  \int_{\D_j}   \,  \prod_{i=1}^d
+  \rho_{j_i}^{x_i} \,  dP_X(x) < +\infty$. \ Es  sencillo ver que \  para \ $x_i
+  \in \left(  j_i \Rset_+ \right)$,  \ $r_i \le  |z_i| \le R_i  \:\: \Rightarrow
+  \:\: |z_i|^{x_i} \le \rho_{j_i}^{x_i}$.  Entonces, por teorema de convergencia
+  dominada  las   integrales  \  $\displaystyle   \int_{\D_j}  \,  \prod_{i=1}^d
+  z_i^{x_i}  \,  dP_X(x)$ \  convergen,  y  por  consecuencia, \  $\displaystyle
+  \int_{\Rset^d} \prod_{i=1}^d  z_i^{x_i} \, dP_X(x)$ \ converge.   Ahora, en el
+  producto  cartesiano  de  los  circulos  unitarios \  $|z_i|=1$  \  tenemos  \
+  $\displaystyle \left| \prod_{i=1}^d z_i^{x_i}  \right| = 1$, de integral sobre
+  \ $\D_j$  \ convergente (vale  $P_X(\D_j) \le 1$).   De nuevo, por  teorema de
+  convergencia dominada,  $\displaystyle \int_{\D_j} \prod_{i=1}^d  z_i^{x_i} \,
+  dP_X(x)$ \ converge sobre el producto cartesiano de circulos unitarios, lo que
+  asegura la existancia  de \ $R_i \ge 1$  \ y $r_i \le 1$ (un  anillo puede ser
+  resctricto al circulo).
+  % Si  para  \  $\left| z_i  \right|  \,  =  \,  R_i$  \ la  integral  converge
+  % uniformamente,  para cualquier  \  $z \in  \Cset^d,  \: r_i  \le \left|  z_i
+  % \right|   \le  R_i$   \  tenemos   por  ejemplo   \   $\displaystyle  \left|
+  %   \int_{\Rset_+^d}   \prod_{i=1}^d   z_i^{x_i}   \,  dP_X(x)   \right|   \le
+  % \int_{\Rset_+^d}  \left|  \prod_{i=1}^d  z_i^{x_i}  \right| \,  dP_X(x)  \le
+  % \int_{\Rset_+^d}  \left|  \prod_{i=1}^d   R_i^{x_i}  \right|  \,  dP_X(x)  <
+  % +\infty$.   El  mismo  enfoque  se  usa para  todos  los  hipercuadrantes  \
+  % $\optimes_i \Rset_{\pm}$.  Adem\'as, claramente, para \  $\left| z_i \right|
+  % \,  = \,  1$ \  tenemos $\displaystyle  \left|  \int_{\Rset^d} \prod_{i=1}^d
+  %   z_i^{x_i}  \,  dP_X(x)  \right|  \le \int_{\Rset^d}  \left|  \prod_{i=1}^d
+  %   z_i^{x_i}  \right| \,  dP_X(x) \le  \int_{\Rset^d}  dP_X(x) =  1$, lo  que
+  % prueba que \ $r_i \le 1 \le R_i$.
+\label{Foot:MP:GeneradoraProbabilidadExistencia}}
+ en  el plano complejos,
 $r_i \, \le \, \left|  z_i \right| \, \le \, R_i$ \ con \ $r_i  \le 1$ \ y \ $R_i
 \ge 1$.
 
@@ -79,7 +101,8 @@ La denominaci\'on  {\em generadora de  probabilidad} (pgf para  {\em probability
 %
   Cuando \ $\X = \Nset^d$ \ para cualquier \ \modif{$x = \begin{bmatrix} x_1 & \ldots &
     x_d \end{bmatrix}^t \in 
-  \Part{k,d}$ (ver notaciones)}
+  \Part{k,d} =  \left\{ x = \begin{bmatrix}  x_1 & \cdots  & x_d \end{bmatrix}^t
+    \in \Nset^d \tq \sum_{i=1}^d x_i = k \right\}$ (ver notaciones)}
   %
   \[
   \frac1{\prod_{i=1}^d  \modif{x_i!}} \, \left.\frac{\partial^k  G_X}{\partial z_1^{\modif{x_1}}
@@ -94,9 +117,9 @@ La denominaci\'on  {\em generadora de  probabilidad} (pgf para  {\em probability
   =  \begin{bmatrix} \modif{x_1}  &  \cdots &  \modif{x_d} \end{bmatrix}^t$.   A
   continuaci\'on, se nota que la serie converge uniformamente por lo menos en la
   bola  $\Bset_d \equiv  \Bset_d(1)$,  probando que  $G_X$  es diferenciable  en
-  $\Bset_d$, as\'i que  se puede ver esta series como el  desarollo de Taylor de
-  $G_X$ (o, equivalentemente, diferenciar bajo la suma y tomar la derivada en $z
-  = 0$), lo que cierra la prueba.
+  $\Bset_d$, as\'i  que esta series  es nada mas  que el desarollo de  Taylor de
+  $G_X$ al torno de $z = 0$ (o, equivalentemente, se puede diferenciar la suma y
+  tomar la derivada en $z = 0$), lo que cierra la prueba.
 \end{proof}
 
 De este resultado,  se puede notar que, en el caso  discreto, hay una relaci\'on
@@ -120,19 +143,19 @@ en ingles):
 %
   \modif{Para cualquier \  $k = \begin{bmatrix} k_1 & \cdots  & k_d \end{bmatrix}^t \in \Part{K,d}$,}
   %\Nset^d$ \ con \ $K =  \sum_{i=1}^d k_i$,
- derivando $G_X$ se proba que, cuando
-  existen~\footnote{En el  caso extremo,  el rayo de  convergencia de  la serie
-    dando $G_X$ es igual a 1, as\'i  que no hay garantia que las derivadas en $z
-    = 1$ existen.}
+  derivando $G_X$ se proba que,  cuando existen~\footnote{En el caso extremo, un
+    anillo  del  dominio de  convergencia  de la  serie  dando  $G_X$ puede  ser
+    restricto al circulo  unitario, as\'i que no hay  garantia que las derivadas
+    en $z = 1$ existen.}
   %
   \[
   \left.\frac{\partial^K     G_X}{\partial     z_1^{k_1}     \cdots     \partial
       z_d^{k_d}}\right|_{z=1} = \Esp\left[ \prod_{i=1}^d \PocD{X_i}{k_i} \right]
   \]
   %
-  momento factorial~\footnote{Recuerdense que  $\PocD{x}{n} = \prod_{i=0}^{n-1} (x-i),
-    \quad n > 0$ \ s\'imbolo de Pochhammer, con la convenci\'on $(x)_0 = 1$; ver
-    pagina~\pageref{Foot:MP:Pochhammer}} de $X$.
+  momento  factorial~\footnote{Recuerdense que $\PocD{x}{n}  = \prod_{i=0}^{n-1}
+    (x-i), \quad n > 0$ \  s\'imbolo de Pochhammer, con la convenci\'on $(x)_0 =
+    1$; ver nota de pie~\ref{Foot:MP:Pochhammer}.} de $X$.
 \end{lema}
 
 De  este resultado,  se ve  por ejemplo  que, cuando  existen, se  recuperan los
@@ -145,7 +168,7 @@ momentos de $X$ a trav\'es de las derivadas de $G_X$:
 %
 \item $\Hess_z G_X(1)  + \diag\left( \nabla_z G_X(1) \right)  = \Esp\left[ X X^t
   \right]$  \  donde  \ $\Hess_z$  \  es  la  matrice  Hessiana y  \  $\diag(a)$
-  \modif{matriz  diagonal  de  componentes   \  $(i,i)$-esima  \  $a_i$  \  (ver
+  \modif{matriz diagonal de componentes \ $(i,i)$-\'esima igual a \ $a_i$ \ (ver
     notaciones).}
   % vector $a$ sobre la diagonal).
   Entonces la  matriz de covarianza  es dada por  \ $\Cov[X] = \Hess_z  G_X(1) +
@@ -169,8 +192,8 @@ siguiente.
     z_d \end{bmatrix}\in \Cset^d$ \ (donde existen las funciones):
   %
   \[
-  G_{\diag(a) X + b}(z) =  \prod_{i=1}^d z_i^{b_i} G_X\left( z_1^{a_1} , \ldots ,
-    z_d^{a_d} \right),
+  G_{\diag(a)  X +  b}(z)  = \left(  \prod_{i=1}^d  z_i^{b_i} \right)  G_X\left(
+    z_1^{a_1} , \ldots , z_d^{a_d} \right),
   \]
   %
   \[
@@ -203,14 +226,13 @@ trav\'es esta funci\'on generadora.
 De  la  tercera identidad,  se  puede  hacer un  paso  m\'as  tratando de  sumas
 aleatorias de vectores aleatorios:
 %
-\begin{teorema}
-\label{Teo:MP:SumaAleatoriaGeneradoraProbabilidad}
+\begin{teorema}\label{Teo:MP:SumaAleatoriaGeneradoraProbabilidad}
 %
-  Sea  \ $X_n,  \quad n  \in  \Nset$ \,  una sucesi\'on  de vectores  aleatorios
+  Sea  \ $\{  X_n \}_{n  \in \Nset}$  \, una  sucesi\'on de  vectores aleatorios
   indepedientes de  misma distribuci\'on  (resp.  generadora de  probabilidad) \
-  $P_X$ \  (resp. $G_X$)  \ y  \ $N$ \  una variable  definida sobre  \ $\Nset$,
-  independiente de los  \ $X_n$. Sea el vector aleatorio \  $ S_N = \sum_{n=0}^N
-  X_n$. Entonces
+  $P_X$ \  (resp.  $G_X$) \  y \  $N$ \ una  variable aletoria definida  sobre \
+  $\Nset$, independiente  de los  \ $X_n$.  Sea  el vector  aleatorio \ $  S_N =
+  \sum_{n=0}^N X_n$. Entonces
   %
   \[
   G_{S_N}(z) =  G_N \big( G_X(z) \big),
@@ -240,7 +262,7 @@ aleatorias de vectores aleatorios:
 Como lo hemos visto, la  funci\'on generadora de probabilidad permite recucperar
 los  momentos  de  un  vector  aleatorio  a trav\'es  de  combinaciones  de  sus
 derivadas.   Con una pequa\~na  modificaci\'on, se  puede definir  una funci\'on
-generada  permitiendo  recuperar  m\'as  directamente los  momentos,  de  manera
+permitiendo   recuperar    m\'as   directamente   los    momentos,   de   manera
 siguiente~\cite{Fel68, JohKot97, Muk00, AthLah06}:
 %
 \begin{definicion}[funci\'on generadora de momentos]
@@ -267,7 +289,7 @@ Entonces, como \ $G_X$, la  generadora de los momentos caracteriza completamente
 el vector  aleatorio \ $X$.   Adem\'as, de  este v\'inculo entre  \ $G_X$ \  y \
 $M_X$, y del  dominio de definici\'on de \  $G_X$, queda claro que \  $M_X$ \ es
 definida sobre un  producto cartesiano de franjas del plano  complejo, $ v_i \le
-\real{u_i} \le  V_i$ \ donde \  $v_i \le 0 \le  V_i$ \ llamamos  {\em indices de
+\real{u_i} \le  V_i$ \ donde \  $v_i \le 0 \le  V_i$ \ son llamados  {\em indices de
   convergencia}.  En el caso de variables escalares \modif{denotando \ $s = -u$,
   esta   funci\'on   se   interpreta   como   la   transformada   bilateral   de
   Laplace-Stieltjes de  la medida  \ $P_X$.   Si adem\'as \  $P_X$ \  admite una
@@ -338,7 +360,7 @@ y~\ref{Teo:MP:SumaAleatoriaGeneradoraProbabilidad}:
   M_{X+Y}(u) = M_X(u) \, M_Y(u)
   \]
   %
-  Adem\'as,  para \  $X_n, \quad  n  \in \Nset$  \, una  sucesi\'on de  vectores
+  Adem\'as,  para \  $\{ X_n  \}_{n \in  \Nset}$ \,  una sucesi\'on  de vectores
   aleatorios  indepedientes  de   misma  distribuci\'on  (resp.   generadora  de
   momentos) \ $P_X$ \ (resp. $M_X$) \  y \ $N$ \ una variable aleatoria definida
   sobre \ $\Nset$, independiente de los \ $X_n$, y \ $ S_N = \sum_{n=0}^N X_n$,
@@ -352,31 +374,6 @@ y~\ref{Teo:MP:SumaAleatoriaGeneradoraProbabilidad}:
   Las  pruebas  siguen   punto  a  punto  los  mismos  pasos   que  las  de  los
   teoremas~\ref{Teo:MP:PropiedadesGeneradoraProbabilidad}
   y~\ref{Teo:MP:SumaAleatoriaGeneradoraProbabilidad}.
-\end{proof}
-
-\
-
-De nuevo, se puede hacer un  paso m\'as tratando de sumas aleatorias de vectores
-aleatorios como en el teorema~\ref{Teo:MP:SumaAleatoriaGeneradoraProbabilidad}:
-%
-\begin{teorema}
-\label{Teo:MP:SumaAleatoriaGeneradoraMomentos}
-%
-  Sea  \ $X_n,  \quad n  \in  \Nset$ \,  una sucesi\'on  de vectores  aleatorios
-  indepedientes de  misma distribuci\'on  (resp.  generadora de  probabilidad) \
-  $P_X$ \  (resp. $M_X$) \  e \  $N$ \ una  variable aleatoria definida  sobre \
-  $\Nset$,  independiente de los  \ $X_n$.  Sea el  vector aleatorio  \ $  S_N =
-  \sum_{n=0}^N X_n$. Entonces
-  %
-  \[
-  M_{S_N}(u) =  G_N \big( M_X(u) \big),
-  \]
-  %
-\end{teorema}
-%
-\begin{proof}
-  El         resultado        es         consecuencia         directa        del
-  teorema~\ref{Teo:MP:SumaAleatoriaGeneradoraProbabilidad}.
 \end{proof}
 %\cite{Fra09}%%p.73
 
@@ -467,15 +464,14 @@ En particular, se recuperan
   covarianza.
 \end{itemize}
 
-Fijense de  que \  $\Phi_X$ \  no es siempre  diferencial en  $\omega =  0$; Por
-ejemplo,    en   el    caso    de   la    distribuci\'on   de    Cauchy--Lorentz
-univariada~\footnote{Lo      mismo       occure      en      la      extensi\'on
-  multivariada~\cite{SamTaq94}.}\ $p_X(x) =  \frac{\gamma}{\pi \left( \gamma^2 +
-    (x-x_0)^2  \right)}$ \  con  \ $\gamma  >  0$, resulta  \ $\Phi_X(\omega)  =
-e^{-\imath x_0  \omega -\gamma |\omega}  $. Esta funci\'on est\'a  definida para
-todo $\omega$,  pero no es  derivable en  $\omega = 0$,  lo que coincide  con el
-hecho  de  que  no  est\'an   definidos  los  momentos  para  esta  densidad  de
-probabilidad.
+Notar que \ $\Phi_X$ \ no es siempre diferenciable en $\omega = 0$; Por ejemplo,
+en el caso de la distribuci\'on de Cauchy--Lorentz univariada~\footnote{Lo mismo
+  occure   en   la   extensi\'on   multivariada~\cite{SamTaq94}.}\   $p_X(x)   =
+\frac{\gamma}{\pi \left(  \gamma^2 + (x-x_0)^2 \right)}$  \ con \  $\gamma > 0$,
+resulta  \ $\Phi_X(\omega)  = e^{-\imath  x_0 \omega  -\gamma |\omega|}  $. Esta
+funci\'on est\'a definida para todo $\omega$,  pero no es derivable en $\omega =
+0$, lo que coincide con el hecho  de que no est\'an definidos los momentos mayor
+o igual a uno para esta densidad de probabilidad.
 
 Resumimos algunas otras propiedades importantes de la funci\'on caracter\'istica:
 %
@@ -488,8 +484,8 @@ Resumimos algunas otras propiedades importantes de la funci\'on caracter\'istica
 \item\label{Prop:MP:ContinuidadPhiX}  $\Phi_X$   es  una  funci\'on   medible  y
   continua en $\Rset^d$~\cite[Prop.~5.2.1]{Pin09}.   Eso es una consecuencia del
   teorema           de            convergencia           dominada           (ver
-  teorema~\ref{Teo:MP:ConvergenciaDominada}
-  pagina~\pageref{Teo:MP:ConvergenciaDominada}).
+  teorema~\ref{Teo:MP:ConvergenciaDominada}).
+  % pagina~\pageref{Teo:MP:ConvergenciaDominada}).
 %
 \item\label{Prop:MP:PhiXZero} $\Phi_X(0) = 1  $: Eso es inmediato escribiendo la
   integral, siendo $P_X$ una medida de probabilidad.
@@ -503,31 +499,32 @@ Resumimos algunas otras propiedades importantes de la funci\'on caracter\'istica
 \item\label{Prop:MP:HermiticaPhiX}    $\Phi_X(-\omega)    =   \Phi_X^*(\omega)$:
   $\Phi_X$ tiene una s\'imetria hermitica.
 %
-\item  $\Phi_X$ es  una no negativa  definida, \ie  para  un conjunto
+\item  $\Phi_X\in  \PD_d$,  es  definida  no  negativa,  \ie  para  un  conjunto
   arbitrario de \ $n  \ge 1$ \ n\'umeros complejos \ $a_1 , \ldots  , a_n$ \ y \
   $n$ \ vectores \ $w_1 , \ldots , w_n$ \ de \ $\Rset^d$, se cumple
   \[
   \sum_{k,l=1}^n a_k^* a_l \Phi_X(w_l-w_k) \ge 0
   \]
   %
-  Dicho   de   otra   manera,   la   matriz  de   componente   \   $(k,l)$-esima
+  Dicho   de  otra   manera,   la  matriz   de   componente  \   $(k,l)$-\'esima
   $\Phi_X(w_l-w_k)$ es a hermitica (s\'imetria herm\'itica dada por la propiedad
-  anterior, y no negativa definida).  Esta positividad viene de \ $\displaystyle
-  \sum_{k,l=1}^n  a_k^*  a_l  e^{\imath  (w_l-w_k)^t  x}  =  \left|  \sum_l  a_l
-    e^{\imath w_l^t x} \right|^2 \ge 0$.
+  anterior,  y   no  negativa  definida),   \ie  matriz  de   $P_n(\Cset)$  (ver
+  notaciones).  Esta positividad viene  de \ $\displaystyle \sum_{k,l=1}^n a_k^*
+  a_l e^{\imath (w_l-w_k)^t x} =  \left| \sum_l a_l e^{\imath w_l^t x} \right|^2
+  \ge 0$.
 %
 \end{enumerate}
 \end{teorema}
 
-Si  una funci\'on  \ $f:  \Rset^d \mapsto  \Cset$ \  es a  simetria  hermitica y
+Si una  funci\'on \  $f: \Rset^d \mapsto  \Cset$ \  es a simetr\'ia  hermitica y
 definida  positivas, obviamente  $f(0) \in  \Rset_+$ ($n  = 1,  a_1 =  1,  x_1 =
 0$). Adem\'as, tomando $a_1  = 1, \, a_2 = \pm 1$ y $w_1  = 0$, para cualquier \
 $w_2 = w \in \Rset^d$ \ se obtiene \ $\left| f(w) \right| \le \left| \real{f(w)}
-\right| \le  f(0)$: $|f|$ es  m\'axima en $0$.  En lo que sigue,  denotaremos el
+\right| \le  f(0)$: $|f|$ es m\'axima en  $0$.  En lo que  sigue, denotaremos el
 convexo (ver notaciones)
 %
 \[
-\PD_d  = \big\{  \Phi: \Rset^d  \mapsto \Cset  \: \mbox{  continuas,  a simetria
+\PD_d =  \big\{ \Phi:  \Rset^d \mapsto \Cset  \: \mbox{ continuas,  a simetr\'ia
   hermitica y definida positivas con } \: \Phi(0) = 1 \big\}
 \]
 %
@@ -540,7 +537,7 @@ por proyeci\'on del argumento de la funci\'on,
 \]
 %
 
-De  hecho,  existe una  reciproca  al  teorema~\ref{Teo:MP:PropCarac}, debido  a
+De  hecho, existe  una rec\'iproca  al teorema~\ref{Teo:MP:PropCarac},  debido a
 S. Bochner~\footnote{De  hecho, lo prob\'o Bochner  en el caso escalar  $d = 1$,
   pero  se extiende  al  caso multivariado.}~\cite{Boc32,  Boc59, Gol61,  Pin09,
   Sas13}
@@ -563,7 +560,7 @@ S. Bochner~\footnote{De  hecho, lo prob\'o Bochner  en el caso escalar  $d = 1$,
 %\begin{proof}
 En el teorema,  vimos que la transformada de Fourier-Stieltjes  de una medida de
 probabilidad $P_X$  es medible, continua,  definida no negativa, con  $\Phi(0) =
-1$. La  reciproca es  m\'as dificil  a probar y  necesita lemas  adicionales. Se
+1$. La  rec\'iproca es m\'as dificil  a probar y necesita  lemas adicionales. Se
 puede  encontrar una  linda prueba  en~\cite[Sec.~1.7]{Sas13} adonde  dejamor el
 lector.
 %\end{proof}
@@ -668,7 +665,7 @@ veces \ $\displaystyle \operatorname{vp} \!  \int_\Rset$, integral {\it en valor
   \]
   %
   es  decir, de  \ $\displaystyle  \lim_{T \to  +\infty}  \int_{-T}^T \frac{\sin
-    \omega}{\omega} d\omega = \pi$~\cite[Ec.~3.721]{GraRyz15}, se obtiene
+    \omega}{\omega} d\omega = \pi$ \ \cite[Ec.~3.721]{GraRyz15}, se obtiene
   %
   \[
   \lim_{w \to  +\infty} \int_{-w}^w \frac{\sin(\omega  (c - x))}{\omega}
@@ -740,13 +737,13 @@ probabilidad.
   con   el  l\'imite   \  $\displaystyle   \lim_{y_j  \to   x_j}  \frac{\sin(w_j
     (y_j-x_j))}{w_j( y_j-x_j)}  = 1$. Ad\'emas, con  el mismo enfoque  que en el
   cas general acotando  el integrande, por el teorema  de convergencia dominada,
-  se  puede intercambiar  l\'imite  e integral,  as\'i  que, por  $\displaystyle
+  se  puede  intercambiar  l\'imite  e  integral,  as\'i  que  \  $\displaystyle
   \lim_{x_j   \to   \infty}    \frac{\sin(w_j   (y_j-x_j))}{w_j(   y_j-x_j)}   =
   \un_{x_j}(y_j)$, lo cierra la prueba
 \end{proof}
 
-Como las  funci\'ones \ $G_X$ \  y \ $M_X$, la  funci\'on caracter\'istica tiene
-entre    otros    propiedades    similares     a    las    a    las    de    los
+Como las  funciones \  $G_X$ \  y \ $M_X$,  la funci\'on  caracter\'istica tiene
+entre      otros      propiedades      similares      a     las      de      los
 teoremas~\ref{Teo:MP:PropiedadesGeneradoraMomentos}
 y~\ref{Teo:MP:SumaAleatoriaGeneradoraMomentos}:
 %
@@ -760,17 +757,17 @@ y~\ref{Teo:MP:SumaAleatoriaGeneradoraMomentos}:
     \omega_{d'} \end{bmatrix}^t \in \Rset^{d'}$:
   %
   \[
-  \Phi_{A X + b}(\omega) =  e^{\imath \omega^t b} \Phi_X\left( A^t \omega \right),
+  \Phi_{A X + b}(\omega) =  e^{\imath \omega^t b} \, \Phi_X\left( A^t \omega \right),
   \]
   %
-  y   para   cualquier  $\omega   =   \begin{bmatrix}   \omega_1   &  \cdots   &
+  y   para   cualquier \  $\omega   =   \begin{bmatrix}   \omega_1   &  \cdots   &
     \omega_d \end{bmatrix}^t \in \Rset^d$:
   %
   \[
   \Phi_{X+Y}(\omega) = \Phi_X(\omega) \, \Phi_Y(\omega)
   \]
   %
-  Adem\'as,  para \  $X_n, \quad  n  \in \Nset$  \, una  sucesi\'on de  vectores
+  Adem\'as,  para \  $\{ X_n  \}_{n \in  \Nset}$ \,  una sucesi\'on  de vectores
   aleatorios  indepedientes  de   misma  distribuci\'on  (resp.   generadora  de
   momentos) \ $P_X$ \ (resp. $M_X$) \  e \ $N$ \ una variable aleatoria definida
   sobre \ $\Nset$, independiente de los \ $X_n$, y \ $ S_N = \sum_{n=0}^N X_n$,
@@ -810,11 +807,12 @@ toma la forma siguiente:
 %
 \begin{teorema}
   Sea \  $X$ \ vector aleatorio de  funci\'on caracter\'istica \ $\Phi_X$  \ y \
-  $R$ \ variable aleatoria independiente de  \ $X$ \ y de medida de probabilidad
-  \ $P_R$. Entonces, la funci\'on caracter\'istica de \ $R X$ \ es dada por
+  $M$ \ variable aleatoria independiente de  \ $X$ \ y de medida de probabilidad
+  \ $P_M$.  Entonces, la funci\'on caracter\'istica  de la mezcla de escala \ $M
+  X$ \ es dada por
   %
   \[
-  \Phi_{R X}(\omega) = \int_\Rset \Phi_X(r \omega) \, dP_R(r)
+  \Phi_{M X}(\omega) = \int_\Rset \Phi_X(m \omega) \, dP_M(m)
   \]
 \end{teorema}
 %
@@ -824,21 +822,21 @@ toma la forma siguiente:
   teorema~\ref{Teo:MP:EsperanzaCondicionalFXY}, se tiene
   %
   \begin{eqnarray*}
-  \Phi_{R X}(\omega) & = & \Esp\left[ e^{\imath \, \omega^t R X} \right]\\[2mm]
+  \Phi_{M X}(\omega) & = & \Esp\left[ e^{\imath \, \omega^t M X} \right]\\[2mm]
   %
-  & = & \Esp\left[ \Esp\left[ \left. e^{\imath \, \omega^t R X} \right| R \right] \right]\\[2mm]
+  & = & \Esp\left[ \Esp\left[ \left. e^{\imath \, \omega^t M X} \right| M \right] \right]\\[2mm]
   %
-  & = & \int_\Rset \Esp\left[ \left. e^{\imath \, \omega^t r X} \right| R=r \right] dP_R(r)\\[2mm]
+  & = & \int_\Rset \Esp\left[ \left. e^{\imath \, \omega^t m X} \right| M=m \right] dP_M(m)\\[2mm]
   %
-  & = & \int_\Rset \Esp\left[ e^{\imath \, \omega^t r X} \right] dP_R(r)\\[2mm]
+  & = & \int_\Rset \Esp\left[ e^{\imath \, \omega^t m X} \right] dP_M(m)\\[2mm]
   %
-  & = & \int_\Rset \Phi_X(r \omega) \, dP_R(r)
+  & = & \int_\Rset \Phi_X(m \omega) \, dP_M(m)
   \end{eqnarray*}
 \end{proof}
  
 De la funci\'on  caracter\'istica (o tambi\'en de la  generadoda de momentos) se
-puede probar resultados sobre la escritura estocastica de vectores aleaorios que
-se va a revelar frecuentement muy \'util:
+puede probar  resultados sobre la escritura estoc\'astica  de vectores aleaorios
+que se va a revelar frecuentement muy \'util:
 %
 \begin{teorema}\label{Teo:MP:IgualdadDistribucionFuncionVA}
   Sean  dos vectores  aleatorios $d$-dimensional  \ $X$  \ e  \ $Y$  \  de misma
@@ -878,32 +876,33 @@ se va a revelar frecuentement muy \'util:
 \subseccion{Funci\'on generadora de cumulantes y secunda funci\'on caracter\'istica}
 \label{Ssec:MP:GeneradoraCumulantes}
 
-A  veces aparece  m\'as comodo  trabajar con  momentes especiales  llamados {\em
-  cumulantes}.   Esos   fueron  introducidos  T.   N.   Thiele   en  los  a\~nos
+A  veces aparece  m\'as comodo  trabajar con  momentos especiales  llamados {\em
+  cumulantes}.   Esos fueron  introducidos  por  T.  N.   Thiele  en los  a\~nos
 1889~\cite{Thi89,   Thi03,  Cram46,   Hal00,   Hal98}  y   aparecen  bajo   esta
-denominaci\'on   en  un  papel   de  R.   Fisher  \&   J.   Wishart   4  decadas
-despu\'es~\cite{FisWis32}.  Estos momentos aparecen  a trav\'es del logaritmo de
-la   funci\'on  generadora   de  momentos.    Como  lo   vamos  a   ver   en  la
+denominaci\'on  en  un  papel  de  R.   Fisher \&  J.   Wishart  cuatro  decadas
+despu\'es~\cite{FisWis32}.  Estos  cumulantes aparecen a  trav\'es del logaritmo
+de  la  funci\'on   generadora  de  momentos.   Como  lo  vamos   a  ver  en  la
 seci\'on~\ref{Ssec:MP:FamiliaExponencial}  tratando de  la  familia exponencial,
 aparece que el logarotmo de  la generadora de momentos tiene una significaci\'on
-f\'isica,  permitiendo  de  calcular   energias  libre  o  interna  en  f\'isica
-estadistica  a  trav\'es  de  lo  que conocido  como  funci\'on  de  partici\'on
-(ver~\cite{Gib01,  Gib02,  Fis30}). Se  refiera  tambi\'en a~\cite{Luc70,  titi,
-  toto, Amblard} para lo que sigue.
+f\'isica,  permitiendo  de  calcular  energias  libres o  internas  en  f\'isica
+estadistica  a  trav\'es de  lo  que se  conoce  como  funci\'on de  partici\'on
+(ver~\cite{Gib01,        Gib02,       Fis30}       y        m\'as       adelante
+secci\'on~\ref{Ssec:MP:FamiliaExponencial}). Se refiera tambi\'en a~\cite{Luc70,
+  titi, toto, Amblard} para lo que sigue.
 % Gibbs 1901, Fisher 1929
 
 \begin{definicion}[Generadora de los cumulantes]
   Sea \ $X$ \ vector aleatorio y  \ $M_X(u) = \Esp\left[ e^{u^t X} \right]$ \ su
-  generadora de momentos. Etonces, se define la funci\'on {\em generadora de los
-  cumulantes} como
+  generadora de  momentos. Entonces, se  define la funci\'on {\em  generadora de
+    los cumulantes} como
   %
   \[
   C_X(u) = \log M_X(u) = \log\left( \Esp\left[ e^{u^t X} \right] \right)
   \]
 \end{definicion}
 %
-Del hecho que que $M_X$ es compleja, hace falta entender el logaritmo como de un
-n\'umero  complejo~\cite{Abl03,  CarKro05}.  De  la continuidad  de  $M_X$,  con
+Del hecho que $M_X$ es compleja, hace  falta entender el logaritmo como el de un
+n\'umero  complejo~\cite{Abl03,  CarKro05}.  De  la  continuidad  de $M_X$,  con
 $M_X(0) = 1$, la generadora de los  momentos es real positiva por lo menos en un
 enterno de $u = 0$, as\'i que  la generadora de los cumulantes va a ser definida
 por lo menos en un enterno de $u = 0$.
@@ -915,7 +914,7 @@ manera que para los momentos:
   Sea  \ $X$  \ vector  aleatorio $d$-dimensional  y $C_X(u)  = \log  M_X(u)$ la
   generadora de  los momentos.  Esta funci\'on  es definida por  lo menos  en un
   entorno  de $u  = 0$,  $C_X(0)  = 0$  \ y  si  admite en  desarollo de  Taylor
-  alrededor de $u = 0$, se escribe
+  al torno de $u = 0$, se escribe
   %
   \[
   C_X(u)     =    \sum_{k=1}^{+\infty}     \,     \sum_{(i_1,\ldots,i_k)    \in     \{1 , \ldots , d \}^k}
@@ -1003,8 +1002,8 @@ las relaciones siguientes (formula  de Leonov y Shiryayev~\cite{LeoShi59, Shi84,
 %
 \begin{lema}[Relaci\'on momentos-cumulantes]% -- caso general]
 %
-  Sea \ $X$ \ vector aleatoro.  Cuando existen, los momentos y cumulantes de son
-  relacionados por las formulas
+  Sea \  $X$ \ vector aleatorio.   Cuando existen, los momentos  y cumulantes de
+  son relacionados por las formulas
   %
   \[\left\{\begin{array}{lll}
   m_{i_1,\ldots,i_k}[X] & = & \displaystyle \sum_{\pi \in \Pi_k} \prod_{B \in
@@ -1050,10 +1049,10 @@ las relaciones siguientes (formula  de Leonov y Shiryayev~\cite{LeoShi59, Shi84,
   %
   Salimos ahora  de la formula de  Hardy~\cite[Prop.~1]{Har06}, generalizando la
   formula  de Fa\`a  di Bruno~\cite{Faa55,  Faa57}~\footnote{Esta formula  da la
-    derivaci\'on  $k$-\'esima de  una funci\'on  compuesta escalar  mediante los
-    polinimios  incompletos  de Bell~\cite{Bel27}.  La  formula  es asociada  al
-    matem\'atico italiano Francesco Fa\`a di Bruno que publico su formula en los
-    a\~nos  1855,  1857.   Pero  fue  probada desde  1800  por  el  matem\'atico
+    derivada  $k$-\'esima  de  una  funci\'on  compuesta  escalar  mediante  los
+    polinimios  incompletos de  Bell~\cite{Bel27}.   La formula  es asociada  al
+    matem\'atico italiano Francesco Fa\`a di Bruno que public\'o su f\'ormula en
+    los  a\~nos 1855, 1857.   Pero fue  probada desde  1800 por  el matem\'atico
     franc\'es Louis Fran\c{c}ois Antoine Arbogast~\cite{Abo00}.}: Para \ $h(x) =
   f\left( g(u) \right), \quad \forall \:  n \in \Nset^*, \quad \forall \: (i_1 ,
   \ldots , i_n ) \in \{ 1 , \ldots , d \}^n$,
@@ -1064,7 +1063,7 @@ las relaciones siguientes (formula  de Leonov y Shiryayev~\cite{LeoShi59, Shi84,
     g}{\displaystyle \prod_{j \in B} \partial u_{i_j}}
   \]
   %
-  donde \ $f^{(l)}$ \ es la $l$-esima derivada de \ $f$. Cuando se lo aplica a \
+  donde \ $f^{(l)}$ \ es la $l$-\'esima derivada de \ $f$. Cuando se lo aplica a \
   $g = C_X$ \  y \ $f(u) = \exp(u)$, dando \  $f^{(n)}(u) = \exp(u)$, se obtiene
   inmediatamente  la   relaci\'on  dando  los  momentos  en   funci\'on  de  los
   cumulantes. Al rev\'es, cuando  se lo aplica a \ $g = M_X$ \  y \ $f(u) = \log
@@ -1090,15 +1089,15 @@ las relaciones siguientes (formula  de Leonov y Shiryayev~\cite{LeoShi59, Shi84,
 % cumulante y el momento coinciden, y que para $k > 1$ lo cumulantes de $X$ y de
 % $X-m_X$ coinciden.
 
-De hecho,  se podri\'a definir as\'i  de manera {\em ad-hoc},  los cumulantes que
-las generadoras admiten o no desarollos de Taylor en $u = 0$.
+De hecho, se  podri\'a definir as\'i de manera {\em  ad-hoc} los cumulantes, que
+las generadoras admitan o no desarollos de Taylor en $u = 0$.
 
 \
 
-Para cerra esta secci\'on, se puede evocar  el hecho de que la generadora de los
+Para cerrar  esta secci\'on, se puede evocar  el hecho que la  generadora de los
 momentos no  esta siempre  bien definida sobre  todo $\Cset^d$, mientras  que la
-funci\'on caracter\'istica es  siempre bien definida. A veces, y  a pesar de que
-no sea necesario  (el comportamiento en $u=0$ es importante), se  usa a veces el
+funci\'on  caracter\'istica es  siempre bien  definida. A  pesar de  que  no sea
+necesario (el comportamiento  en $u=0$ es importante), se  usa frecuentemente el
 logaritmo de la funci\'on caracter\'istica para definir los cumulantes.
 %
 \begin{definicion}[Secunda funci\'on caracter\'istica]
@@ -1112,12 +1111,12 @@ logaritmo de la funci\'on caracter\'istica para definir los cumulantes.
   \]
 \end{definicion}
 %
-De nuevo del hecho de que $\Phi_X$ es compleja, hace falta entender el logaritmo
-como  de un  n\'umero complejo~\cite{Abl03,  CarKro05}  y de  la continuidad  de
+De nuevo  del hecho que $\Phi_X$  es compleja, hace falta  entender el logaritmo
+como el de  un n\'umero complejo~\cite{Abl03, CarKro05}, y  de la continuidad de
 $\Phi_X$, con  $\Phi_X(0) = 1$,  la funci\'on caracter\'istica es  real positiva
-por lo menos en un enterno de $u =  0$, as\'i que la $Psi$ va a ser definida por
-lo menos en un enterno de $u =  0$. Si admite un desarollo de Taylor, se muestra
-inmediatamente que los cumulantes satisfacen tambi\'en la relaci\'on siguiente:
+por lo menos en un enterno de $u = 0$, as\'i que $\Psi$ va a ser definida por lo
+menos en  un entorno de $u  = 0$. Si admite  un desarollo de  Taylor, se muestra
+inmediatamente que los cumulantes satisfacen la relaci\'on siguiente:
 %
 \begin{lema}[Cumulantes a partir de la secunda funci\'on caracter\'istica]\label{Lem:MP:CumSecFctCarac}
 %
@@ -1133,26 +1132,31 @@ inmediatamente que los cumulantes satisfacen tambi\'en la relaci\'on siguiente:
 \end{lema}
 
 
-Varias propiedades de la  funci\'on \ $C_X$ \ se deducen de  las de \ $M_X$. Nos
-enfocamos  en la  propiedad  relacionana a  combinaciones  lineales de  vectores
-independientes, con consecuencias sobre los cumulantes:
+Varias propiedades de las  funciones \ $C_X$ \ y \ $\Psi_X$  \ se deducen de las
+de  \ $M_X$  \ y  de \  $\Phi_X$. Nos  enfocamos en  la propiedad  relacionana a
+combinaciones lineales  de vectores independientes, con  consecuencias sobre los
+cumulantes:
 %
 \begin{teorema}%[Funci\'on generadora de probabilidad de una ]
 \label{Teo:MP:PropiedadesGeneradoraCumulantes}
 %
   Sean  \   $X$  \  e  \   $Y$  \  dos   vectores  aleatorios  $d$-dimensionales
   independientes,  \ $A$  \ una  matriz de  \ $\M_{d',d}(\Rset)$  \ y  \  $b \in
-  \Rset^{d'}$.  Entonces para cualquier $u \in \Cset^{d'}$ \ (donde la funci\'on
-  existe):
+  \Rset^{d'}$.   Entonces  para  cualquier  $u  \in  \Cset^{d'}$  \  (donde  las
+  funciones existen):
   %
   \[
-  C_{A X + b}(u) =  u^t b +  C_X\left( A^t u \right),
+  C_{A  X +  b}(u) =  u^t b  + C_X\left(  A^t u  \right) \qquad  \mbox{y} \qquad
+  \Psi_{A  X +  b}(\omega) =  \imath  \, \omega^t  b +  \Psi_X\left( A^t  \omega
+  \right)
   \]
   %
-  y para cualquier $u \in \Cset^d$ \ (donde la funci\'on existe):
+  y  para cualquier  $u \in  \Cset^d$ \  o \  $\omega \in  \Rset^d$ \  (donde la
+  funciones existen):
   %
   \[
-  M_{X+Y}(u) = C_X(u) + C_Y(u)
+  C_{X+Y}(u)  = C_X(u)  +  C_Y(u) \qquad  \mbox{y}  \qquad \Psi_{X+Y}(\omega)  =
+  \Psi_X(\omega) + \Psi_Y(\omega)
   \]
   %
   Las  consecuencias de este  sobre los  cumulantes es  que~\footnote{La primera
@@ -1167,28 +1171,15 @@ independientes, con consecuencias sobre los cumulantes:
 \end{teorema}
 %
 \begin{proof}
-  Las relaciones tratanto de $C$  son consecuencias directas del teorema pruebas
-  siguen    punto   a    punto   los    mismos    pasos   que    las   de    los
-  teoremas~\ref{Teo:MP:PropiedadesGeneradoraMomentos}, tomando el logaritmo de \
-  $M_X$. Las relaciones sobre los cumulantes es entonces consecuencias de las de
-  \  $C_X$ \ y  de la  definici\'on de  los cumulantes  a trav\'es  derivadas de
-  $C_X$.
+  Las relaciones tratanto de \ $C_X$ \ y \ $\Psi_X$ \ son consecuencias directas
+  de           los           teoremas~\ref{Teo:MP:PropiedadesGeneradoraMomentos}
+  y~\ref{Teo:MP:PropiedadesCaracteristicaMomentos},  tomando el  logaritmo  de \
+  $M_X$ o  de $\Phi_X$ respectivamente.  Las relaciones sobre los  cumulantes es
+  entonces  consecuencias de  las  de  \ $C_X$  \  (o de  \  $\Psi_X$)  y de  la
+  definici\'on  de  los  cumulantes a  trav\'es  derivadas  de  $C_X$\ (o  de  \
+  $\Psi_X$).
 \end{proof}
 %
 Se notar\'a que, remarcablemente y contrariamente a los momentos, los cumulantes
 de cualquier orden son funciones lineales de variables aleatorias independientes
 (para los momentos, vale sol\'o hasta el orden $3$).  }
-
-
-
-
-\vspace{2cm}
-
-\centerline{\underline{\hspace{10cm}}}
-
-\SZ{teorema de Polya?}
-
-\SZ{hablar de la cota de Chernoff con la mgf o pgf?}
-
-
-\SZ{Hablar del problema de Hamburger?}
