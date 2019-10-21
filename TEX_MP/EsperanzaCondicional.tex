@@ -2,7 +2,7 @@
 \label{Sec:MP:EsperanzaCondicional}
 
 Vimos en  la secci\'on~\ref{Sec:MP:LeyesCondicionales} que  una pregunta natural
-era de, dados  dos vectores aleatorios \  $X$ \ e \ $Y$,  caracterizar el vector
+era, dados dos  vectores aleatorios \ $X$  \ e \ $Y$, de  caracterizar el vector
 $Y$ si ``observamos $X$''.  M\'as adelante,  nos podemos interesar a la media de
 $Y$ cuando observamos  $X$. Una manera intuitiva es de  definir tal media cuando
 ``sabemos'' que  $X=x$ a partir  de la ley  condicional $P_{Y|X=x}$~\cite{Fel68,
@@ -16,11 +16,11 @@ $Y$ cuando observamos  $X$. Una manera intuitiva es de  definir tal media cuando
   f(x) \equiv \Esp[Y | X=x ] = \int_{\Rset^{d_Y}} y \, dP_{Y|X=x}(y)
   \]
   %
-  Se define la esperanza condicional de $Y$ condicionalment a $X$ como siendo la
+  Se define la esperanza \modif{de $Y$ condicionalmente a $X$} como siendo la
   variable aleatoria
   %
   \[
-  \Esp[Y|X] = f(X)
+  \Esp[Y \, | \, X] = f(X)
   \]
 \end{definicion}
 
@@ -29,13 +29,14 @@ probabilidad \ $\left( \Rset^d , \B(\Rset^d) , P_{Y|X=x} \right)$, heride de las
 propiedades de la media. Entre otros, es lineal, lo que da
 %
 \[
-\Esp\left[ \sum_i a_i Y_i | X \right] = \sum_i a_i \Esp[Y_i|X]
+\Esp\left[ \left. \sum_i  a_i Y_i \, \right| \, X \right]  = \sum_i a_i \Esp[Y_i
+\, | \, X]
 \]
 %
 satisface la desiguadad de Jensen, para $\phi$ convexa
 %
 \[
-\Esp\big[ \phi(Y) | X \big] \ge \phi\big( \Esp[Y|X] \, \big)
+\Esp\big[ \phi(Y) \, | \, X \big] \ge \phi\big( \Esp[Y \, | \, X] \, \big)
 \]
 %
 entre otros.
@@ -97,7 +98,7 @@ lema~\ref{Teo:MP:ProbaTotalContinuo}.
   %
   \[
   \int_{\Rset^{d_Y}}   \un_B(y)   \,   dP_Y(y)   =   \int_{\Rset^{d_X}}   \left(
-    \int_{\Rset^{d_Y}} \un_B(y) dP_{Y|X=x}(y) \right) \, dP_X(x)
+    \int_{\Rset^{d_Y}} \un_B(y) \, dP_{Y|X=x}(y) \right) \, dP_X(x)
   \]
   %
   \ie
@@ -188,8 +189,8 @@ evaluac\'ion de momentos a partir de esperanza condicional es el siguiente:
   \Esp[ f(X) \, g(Y) | X = x] = f(x) \, \Esp[g(Y) | X=x]
   \]
   %
-  lo que  cierra la  prueba de la  primera identidad.  Las otras se  prueban con
-  exactamente los mismos pasos.
+  lo que cierra la prueba de la primera identidad.  Las otras se prueban con los
+  mismos pasos.
 \end{proof}
 
 Un resultado  que  sirve a  veces  como definici\'on,  en  el contexto  de
@@ -224,7 +225,8 @@ lo que cierra la prueba.
 \end{proof}
 %
 Este resultado  es muy conocido en el  mundo de la estimaci\'on  donde se quiere
-aproximar una variable minimizar el error cuadratico promedio~\cite{Kay93, Rob07}.
+aproximar  una variable  minimizando el  error  cuadratico promedio~\cite{Kay93,
+  Rob07}.
 %, AthLah06, JacPro03}.  
 
 \begin{corolario}
@@ -236,28 +238,30 @@ aproximar una variable minimizar el error cuadratico promedio~\cite{Kay93, Rob07
 \begin{proof}
   Como  lo hemos visto  en la  secci\'on anterior,  $(U,V) \mapsto  \Esp[U^t V]$
   define un producto escalar.  Seg\'un el teorema de proyecci\'on ortogonal (ver
-  figura~\ref{Fig:MP:TeoProyOrto}  y~\cite{JacPro03,   AthLah06,  toto}),  el  \
-  $f(X)$ \ \'unico, que minimiza \ $\Esp\left[  \| Y - f(X) \|^2 \right]$, es la
-  proyecci\'on ortogonal  de \ $Y$ \ sobre  el espacio \ $\sigma^2(X)  = \{ g(X)
-  \tq g \: \mbox{es medible con} \et g(X) \: \mbox{es de cuadrado integrable}\}$.
-  En otros  terminos, la  desviaci\'on \ $Y  - \Esp[Y|X]$  \ entre \  $Y$ \  y \
-  $\Esp[Y|X]$  \  es   ortogonal  a  cualquier  \  $g(X)   \in  \sigma^2(X)$,  y
-  reciprocamente si \ $Y  - f(X)$ \ es ortogonal a cualquier  \ $g(X)$, $f(X)$ \
-  es necesariamente la proyecci\'on ortogonal  de \ $Y$ \ sobre \ $\sigma^2(X)$,
-  lo que cierra la prueba.
+  figura~\ref{Fig:MP:TeoProyOrto} y~\cite{JacPro03, AthLah06, toto}), el \'unico
+  \  $f(X)$ \  que minimiza  \ $\Esp\left[  \|  Y -  f(X) \|^2  \right]$, es  la
+  proyecci\'on ortogonal  de \ $Y$  \ sobre el  espacio \ $\sigma^2(X)  = \big\{
+  g(X)  \tq  g  \: \mbox{es  medible  con}  \et  g(X)  \: \mbox{es  de  cuadrado
+    integrable} \big\}$.  En otros terminos, la desviaci\'on \ $Y - \Esp[Y|X]$ \
+  entre  \ $Y$  \  y  \ $\Esp[Y|X]$  \  es ortogonal  a  cualquier  \ $g(X)  \in
+  \sigma^2(X)$, y  reciprocamente si \ $Y -  f(X)$ \ es ortogonal  a cualquier \
+  $g(X)$, $f(X)$ \ es necesariamente la  proyecci\'on ortogonal de \ $Y$ \ sobre
+  \ $\sigma^2(X)$, lo que cierra la prueba.
   %
 \begin{figure}[h!]
   \begin{center}     \input{TIKZ_MP/TeoremaProyeccionOrtogonal}     \end{center}
   \leyenda{Ilustraci\'on del  teorema de  proyecci\'on ortogonal.  El  espacio \
-    $\sigma^2(X) = \{ g(X) \tq g \: \mbox{es medible con} \et g(X) \: \mbox{es de
-      cuadrado  integrable}\}$  \ es  representado  por  el  plano y  el  vector
-    representa $Y$. La linea punteada representa  la desviaci\'on \ $Y - g(X)$ \
-    entre \ $Y$ \ y \ $g(X)$ \ dado \ $g(X) \in \sigma^2(X)$, siendo su cuadrado
-    promedio  es m\'inimo  cuando (linea  con guiones)  \ $g(X)  =  \Esp[Y|X]$ \
-    corresponde a la proyecci\'on ortogonal de \ $Y$ \ (linea mixta).}
+    $\sigma^2(X)  = \big\{  g(X) \tq  g  \: \mbox{es  medible con}  \et g(X)  \:
+    \mbox{es de cuadrado integrable} \big\}$ \ es representado por el plano y el
+    vector representa $Y$.  La linea  punteada representa la desviaci\'on \ $Y -
+    g(X)$ \ entre \ $Y$ \ y \  $g(X)$ \ dado \ $g(X) \in \sigma^2(X)$, siendo su
+    cuadrado promedio  m\'inimo cuando \ $g(X)  = \Esp[Y|X]$ \  corresponde a la
+    proyecci\'on  ortogonal  de  \  $Y$.  La linea  con  guiones  representa  la
+    desviaci\'on de cuadrado promedio m\'inimo y la linea mixta, la proyecci\'on
+    ortogonal $\Esp[Y|X]$.}
 \label{Fig:MP:TeoProyOrto}
 \end{figure}
 \end{proof}
 %
-A  veces,  este resultado  sirve  tambi\'en a  veces,  como  definici\'on de  la
-esperanza condicional.
+A  veces, este  resultado  sirve  tambi\'en como  definici\'on  de la  esperanza
+condicional.
