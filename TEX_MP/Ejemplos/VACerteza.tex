@@ -1,10 +1,10 @@
-\subsubseccion{Variable con certeza}
+\subsubseccion{Variable real con certeza}
 \label{Sssec:MP:Certeza}
 
 El caso \ $X = a \in \Rset^d$ \ deterministico ($\forall \, \omega, \: X(\omega)
 = a$)  puede ser ver  visto como un  caso degenerado de vector  aleatorio. Visto
 as\'i, sus caracter\'isticas principales  vistas en las secciones anteriores son
-resimudas en la tabla siguiente:
+resimidas en la tabla siguiente:
 
 \begin{caracteristicas}
 %
@@ -17,17 +17,20 @@ Distribuci\'on de probabilidad & $p_X(x) = \un_{\{a\}}(x)$\\[2mm]
 Promedio & $\displaystyle m_X = a$\\[2mm]
 \hline
 %
-Covarianza & $\displaystyle \Sigma_X = 0$\\[2mm]
+Covarianza~\footnote{Siendo cero la covarianza, no se define ni la asimetr\'ia,
+ni la curtosis. Sin embargo, de una manera se puede decir que la ley no es
+asim\'etrica, y con cola livianas (no hay colas).} & $\displaystyle \Sigma_X =
+0$\\[2mm]
 \hline
 %
-\modif{Asimetr\'ia} & $\gamma_X = 0$\\[2mm]
-\hline
-%
-Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = - \sum_{i,j=1}^d \Big( \! \left(
-    \un_i \un_i^t \right) \otimes \left(  \un_j \un_j^t \right) +  \left( \un_i
-    \un_j^t \right) \otimes \left( \un_i  \un_j^t \right) + \left( \un_i \un_j^t
-  \right) \otimes \left( \un_j \un_i^t \right) \! \Big)$\\[2mm]
-\hline
+%\modif{Asimetr\'ia} & $\gamma_X = 0$\\[2mm]
+%\hline
+%%
+%Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = - \sum_{i,j=1}^d \Big( \! \left(
+%    \un_i \un_i^t \right) \otimes \left(  \un_j \un_j^t \right) +  \left( \un_i
+%    \un_j^t \right) \otimes \left( \un_i  \un_j^t \right) + \left( \un_i \un_j^t
+%  \right) \otimes \left( \un_j \un_i^t \right) \! \Big)$\\[2mm]
+%\hline
 %
 Generadora de probabilidad & $\displaystyle G_X(z) = \prod_{i=1}^d z_i^{a_i}$ \ para \ $z_i \in \Cset$
 \ si $a_i \ge 0$ \ y \ $\Cset^*$ \ si no\\[2mm]
@@ -54,5 +57,9 @@ Fig.~\ref{Fig:MP:Certeza} en el caso escalar.
   repartici\'on asociada (b).}
 \label{Fig:MP:Certeza}
 \end{figure}
+
+\
+
+Notar que todo se extiende al caso complejo sin costo adicional.
 
 \SZ{Poner ac\'a la ley de los gran n\'umeros? M\'as notas historicas.}

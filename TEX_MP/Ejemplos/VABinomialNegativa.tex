@@ -3,12 +3,12 @@
 
 Formas particulares  de esta ley aparecieron  en los a\~nos 1679  en trabajos de
 Blaise  Pascal~\cite{Pas79, Hal90, DavEdw01}~\footnote{De  hecho aparece  en una
-  carta  de 1654 que  mando B.  Pascal a  P. de  Fermat, publicada  mucho tiempo
-  despu\'es.}     y    un    poco     m\'as    tarde     de    P.      R.     de
+  carta de 1654  que mand\'o B.  Pascal a P.  de  Fermat, publicada mucho tiempo
+  despu\'es.}     y     un    poco    m\'as     tarde    de    P.      R.     de
 Montmort~\cite[p.~233-248]{Mon13}.   Esta  ley  aparece  cuando  se  repite  una
-experencia binaria  exito/facasco \  con probabilidad \  $p$ \ de  exito, manera
-independiente hasta el \ $r$-\'esimo  facasco ($r$ \ fijo), contendo el n\'umero
-de excitos obtenidos cuando se para la experiencia.
+experencia binaria  \'exito/fracasco \ con probabilidad  \ $p$ \  de \'exito, de
+manera independiente  hasta el  \ $r$-\'esimo fracasco  ($r$ fijo),  contendo el
+n\'umero de excitos obtenidos cuando se para la experiencia.
 
 Se denota \ $X \, \sim \, \B_-(r,p)$ \ con \ $r \in \Nset^*$, \quad $p \in [0 \;
 1)$ \ y sus caracter\'isticas son las siguientes:
@@ -26,25 +26,25 @@ Distribuci\'on de probabilidad & \protect$\displaystyle p_X(x) = \bino{x+r-1}{x}
 \, p^x (1-p)^r$\protect\\[2mm]
 \hline
 %
-Promedio & $\displaystyle m_X = \frac{r \, p}{1-p}$\\[2mm]
+Promedio & $\displaystyle m_X = \frac{r p}{1-p}$\\[2mm]
 \hline
 %
-Varianza & $\displaystyle \sigma_X^2 = \frac{r \, p}{(1-p)^2}$\\[2mm]
+Varianza & $\displaystyle \sigma_X^2 = \frac{r p}{(1-p)^2}$\\[2mm]
 \hline
 %
-\modif{Asimetr\'ia} & $\displaystyle \gamma_X = \frac{1 + p}{\sqrt{r \, p}}$\\[2mm]
+\modif{Asimetr\'ia} & $\displaystyle \gamma_X = \frac{1 + p}{\sqrt{r p}}$ \quad para \ $p \ne 0$ \ (ver m\'as adelante)\\[2mm]
 \hline
 %
-Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = \frac{1 + 4 \, p +
-p^2}{r \, p} $\\[2mm]
+Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = \frac{1 + 4 p +
+p^2}{r p} $ \quad para \ $p \ne 0$ \ (ver m\'as adelante)\\[2mm]
 \hline
 %
 Generadora de probabilidad & $\displaystyle G_X(z) = \left( \frac{1 - p}{1 - p
-\, z} \right)^r$ \ para \ $|z| < p^{-1} $\\[2mm]
+ z} \right)^r$ \quad para \ $|z| < p^{-1} $\\[2mm]
 \hline
 %
 Generadora de momentos & $\displaystyle M_X(u) = \left( \frac{1 - p}{1 - p \,
-e^u } \right)^r$ \ para \ $\real{u} < - \ln p$\\[2mm]
+e^u } \right)^r$ \quad para \ $\real{u} < - \ln p$\\[2mm]
 \hline
 %
 Funci\'on caracter\'istica & $\displaystyle \Phi_X(\omega) = \left( \frac{1 -
@@ -69,7 +69,8 @@ figura Fig.~\ref{Fig:MP:BinomialNegativa}.
   \frac35$.}
 \label{Fig:MP:BinomialNegativa}
 \end{figure}
-\SZ{Otros ilustraciones para otros $r, p$?}
+
+\SZ{Otras ilustraciones para otros $r, p$?}
 
 Recordar que esta ley aparece cuando se repite una experencia binaria \ $X_i \in
 \{ 0 \;  1 \}, i = 1, \ldots$  \ con \ $P(X_i=1) = p$  \ de manera independiente
@@ -89,4 +90,6 @@ teorema~\ref{Teo:MP:SumaAleatoriaGeneradoraProbabilidad}.
 Esta distribuci\'on se  generaliza para \ $r \in \Rset_+^*$ \  pero se pierde la
 interpretaci\'on que v\'imos en el p\'arafo anterior.
 
-Nota: cuando \ $p = 0$ \ la variable es cierta \ $X = r$.
+Nota: cuando \ $p =  0$ \ la variable es cierta \ $X =  r$.  De nuevo, siendo la
+varianza cero  en este  caso, no se  puede definir  ni asimetr\'ia (pero  no hay
+asimetr\'ia), ni curtosis (pero la ley no tiene colas, \ie colas livianas).

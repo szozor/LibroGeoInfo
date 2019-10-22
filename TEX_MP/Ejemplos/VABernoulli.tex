@@ -1,7 +1,7 @@
 \subsubseccion{Ley de Bernoulli}
 \label{Sssec:MP:Bernoulli}
 
-Esta ley aparece  cuando se hace una experiencia con 2  estados posible, tipo un
+Esta ley aparece  cuando se hace una experiencia con dos  estados posibles, tipo un
 tiro  de  moneda.   Apareci\'o en  trabajos  muy  antiguos,  entre otros  el  de
 J.  Bernoulli  tratando  de  la  ley  de  gran  n\'umeros~\cite{Ber1713,  Hal90,
   DavEdw01}.
@@ -26,17 +26,17 @@ Promedio & $ m_X = p$\\[2mm]
 Varianza & $\sigma_X^2 = p \, (1-p)$\\[2mm]
 \hline
 %
-\modif{Asimetr\'ia} & $\displaystyle \gamma_X =  \frac{1 - 2 \, p}{\sqrt{p \, (1-p)}}$\\[2mm]
+\modif{Asimetr\'ia} & $\displaystyle \gamma_X =  \frac{1 - 2 \, p}{\sqrt{p \, (1-p)}}$ \quad para \ $p \not\in \{ 0 \; 1 \}$ (ver m\'as adelante)\\[2mm]
 \hline
 %
 Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = \frac{1 - 6 \, p + 6
-\, p^2}{p \, (1-p)}$\\[2mm]
+\, p^2}{p \, (1-p)}$ \quad para \ $p \not\in \{ 0 \; 1 \}$ (ver m\'as adelante)\\[2mm]
 \hline
 %
-Generadora de probabilidad & $G_X(z) = 1 - p + p z$ \ sobre \ $\Cset$\\[2mm]
+Generadora de probabilidad & $G_X(z) = 1 - p + p z$ \quad sobre \ $\Cset$\\[2mm]
 \hline
 %
-Generadora de momentos & $M_X(u) = 1 - p + p \, e^u$ \ sobre \ $\Cset$\\[2mm]
+Generadora de momentos & $M_X(u) = 1 - p + p \, e^u$ \quad sobre \ $\Cset$\\[2mm]
 \hline
 %
 Funci\'on caracter\'istica & $\Phi_X(\omega) = 1 - p + p \, e^{\imath \omega}$
@@ -57,10 +57,13 @@ figura Fig.~\ref{Fig:MP:Bernoulli}.
 \label{Fig:MP:Bernoulli}
 \end{figure}
 
-Nota que cuando $p = 0$ (resp. $p =  1$) la variable es cierta $X = 0$ (resp. $X
-= 1$).
+Notar que cuando $p = 0$ (resp. $p = 1$) la variable es cierta $X = 0$ (resp. $X
+= 1$). En estos casos, nuevamente,  siendo la varianza cero, no se puede definir
+ni asimetr\'ia  (pero no  hay asimetr\'ia),  ni curtosis (pero  la ley  no tiene
+colas, \ie colas livianas), como ya lo hemos visto anterioramente.
 
-La  ley de Bernoulli tiene una propiedad de reflexividad trivial:
+Se  notar\'a  tambi\'en  que  la   ley  de  Bernoulli  tiene  una  propiedad  de
+reflexividad trivial:
 %
 \begin{lema}[Reflexividad]
 \label{Lem:MP:ReflexividadBernoulli}

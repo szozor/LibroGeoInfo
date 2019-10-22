@@ -21,20 +21,20 @@ Promedio & $\displaystyle m_X = \frac{a+b}{2}$\\[2mm]
 Varianza & $\displaystyle \sigma_X^2 = \frac{(b-a) (b-a+2)}{12}$\\[2mm]
 \hline
 %%
-\modif{Asimetr\'ia} & $\gamma_X = 0$\\[2mm]
+\modif{Asimetr\'ia} & $\gamma_X = 0$ \quad para \ $b \ne a$ \ (ver m\'as adelante)\\[2mm]
 \hline
 %
 Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = -\frac65 \frac{(b-a)
-(b-a+2)+2}{(b-a) (b-a+2)}$\\[2mm]
+(b-a+2)+2}{(b-a) (b-a+2)}$ \quad para \ $b \ne a$ \ (ver m\'as adelante)\\[2mm]
 \hline
 %
-Generadora de probabilidad & $\displaystyle G_X(z) = \frac{z^a-z^{b+1}}{1-z}$ \
+Generadora de probabilidad & $\displaystyle G_X(z) = \frac{z^a-z^{b+1}}{1-z}$ \quad
 para~\footnote{En el caso l\'imite \ $z \to 1$, \ $\lim_{z \to 1} \frac{ z^a -
 z^{b+1}}{1-z} = b+1-a$} \ $z \in \Cset$ \ si $a \ge 0$ \ y \ $\Cset^*$ \ sino\\[2mm]
 \hline
 %
 Generadora de momentos & $\displaystyle M_X(u) = \frac{ e^{a u} - e^{(b+1)
-u}}{1-e^u}$ \ para~\footnote{En el caso l\'imite \ $u \to 0$, \ $\lim_{u \to 0}
+u}}{1-e^u}$ \quad para~\footnote{En el caso l\'imite \ $u \to 0$, \ $\lim_{u \to 0}
 \frac{ e^{a u} - e^{(b+1) u}}{1-e^u} = b+1-a$, y similarmente para la funci\'on
 caracter\'istica.}  \ $u \in \Cset$\\[2mm]
 \hline
@@ -62,7 +62,10 @@ Fig.~\ref{Fig:MP:UniformeDiscreta}.
 \label{Fig:MP:UniformeDiscreta}
 \end{figure}
 
-Cuando \ $b = a$, la variable tiende a una variable cierta \ $X = a$.
+Cuando \ $b  = a$, la variable tiende a  una variable cierta \ $X  = a$. En este
+caso, siendo la  varianza cero, no se puede definir ni  asimetr\'ia (pero no hay
+asimetr\'ia), ni curtosis (pero la ley no tiene colas, \ie colas livianas), como
+lo hemos visto en la secci\'on anterior.
 %
 %La ley tiene propiedades de reflexividad obvia:
 %%
@@ -81,3 +84,8 @@ Cuando \ $b = a$, la variable tiende a una variable cierta \ $X = a$.
 
 La  distribuci\'on  uniforme  aparece  por   ejemplo  en  el  tiro  de  un  dado
 equilibriado con \ $a = 1, \: b = 6$.
+
+
+Se  notar\'a que  esta  ley da  un  ejemplo m\'as  en  lo cual  la  media no  es
+necesariamente en $\X$. Tipicamente, en el  ejemplo del dado, la media es $m_X =
+\frac72 \not\in \{ 1 \; \ldots \; 6 \}$.

@@ -5,79 +5,94 @@ Esta ley es una generalizaci\'on de la ley binomial y aparece por ejemplo cuando
 se  repite  una  experiencia  a  \  $k$  \ estados  \  $n$  \  veces  de  manera
 independiente y nos  interesamos a la probabilidad que  el primer evento aparece
 $n_1$ veces,  el secundo  $n_2$ veces, \ldots  (ej. para  $k = 6$,  contamos los
-n\'umeros de  $1$, de $2$, \ldots  cuando tiramos $n$ veces  este dado). Aparece
-tambi\'en    esta   ley    por   la    primera    vez   en    el   trabajo    de
-J.  Bernoulli~\cite{Ber1713,  Hal90,  DavEdw01}  (ver  tambi\'en  el  ensayo  de
-Montmort de 1708 con otras notaciones~\cite{Mon13}).
+n\'umeros de $1$, de $2$, \ldots cuando tiramos $n$ veces este dado). Apareci\'o
+tambi\'en   esta   ley   por   la    primera   vez   en   el   trabajo   de   J.
+Bernoulli~\cite{Ber1713, Hal90,  DavEdw01} (ver tambi\'en el  ensayo de Montmort
+de 1708 con otras notaciones~\cite{Mon13}).
 
 Se  denota  \  $X  \ \sim  \  \M(n,p)$  \  con  \  $n  \in  \Nset^*$ \  y  \  $p
 = \begin{bmatrix}  p_1 & \cdots  & p_k \end{bmatrix}^t  \in \Simp{k-1}$ \  the \
-$(k-1)$-simplex  estandar (ver figure~\ref{Fig:MP:Dirichlet}-(a)  y notaciones).
-Entonces, a pesar de que se escribe \ $X$ \ de manera $k$-dimensional, el vector
-partenece a un espacio claramente \ $d =  k-1$ \ dimensional y en el caso \ $k =
-2$  \ se  recupera la  ley binomial.  El dominio de definici\'on es claramente $\Part{n}{k}$ (ver notaciones). Las caracter\'isticas  de \  $X \  \sim \
-\M(n,p)$ \ son las siguientes:
+$(k-1)$-simplex estandar  (ver figura~\ref{Fig:MP:Dirichlet}-(a) m\'as adelante,
+y  notaciones).   Entonces,  a pesar  de  que  se  escribe  \  $X$ \  de  manera
+$k$-dimensional,  el vector  partenece a  un espacio  claramente \  $d =  k-1$ \
+dimensional y en el caso \ $k = 2$ \ se recupera la ley binomial.  El dominio de
+definici\'on es claramente $\Part{n}{k}$ (ver notaciones). Las caracter\'isticas
+de \ $X \ \sim \ \M(n,p)$ \ son las siguientes:
 
 \begin{caracteristicas}
 %
-Dominio de definici\'on~\footnote{De hecho, se puede considerar que el vector
-aleatorio es \ $(k-1)$-dimensional \ $\widetilde{X} = \begin{bmatrix}
-\widetilde{X}_1 & \cdots & \widetilde{X}_{k-1} \end{bmatrix}^t$ \ definido sobre
-el dominio \ $\widetilde{\X} = \left\{ x \in \{ 0 \; \ldots \; n\}^{k-1}, \:
-\sum_{i=1}^{k-1} x_i \le n \right\}$.\label{Foot:MP:MultinomialDominio}} & $\X = \Part{n}{k}$
+Dominio de definici\'on
+%~\footnote{De hecho, se puede considerar que el vector
+%aleatorio es \ $(k-1)$-dimensional \ $\widetilde{X} = \begin{bmatrix}
+%\widetilde{X}_1 & \cdots & \widetilde{X}_{k-1} \end{bmatrix}^t$ \ definido sobre
+%el dominio \ $\widetilde{\X} = \left\{ x \in \{ 0 \; \ldots \; n\}^{k-1}, \:
+%\sum_{i=1}^{k-1} x_i \le n \right\}$.\label{Foot:MP:MultinomialDominio}}
+ & $\X = \Part{n}{k}$
 %\left\{ x \in \{ 0 \; \ldots \; n\}^k \tq \sum_{i=1}^k x_i = n \right\}$
 \\[2mm]
 \hline
 %
-Par\'ametros~\footnote{El par\'ametro de \ $\widetilde{X}$ \ es \ $\widetilde{p} =
-\protect\begin{bmatrix} p_1 & \cdots & p_{k-1} \end{bmatrix}^t\protect \in
-\left\{ q \in [0 \; 1]^{k-1} \tq \sum_{i=1}^{k-1} q_i \le 1
-\right\}$.\label{Foot:MP:MultinomialParametro}} & $n \in \Nset^*$, \quad $p \in
+Par\'ametros
+%~\footnote{El par\'ametro de \ $\widetilde{X}$ \ es \ $\widetilde{p} =
+%\protect\begin{bmatrix} p_1 & \cdots & p_{k-1} \end{bmatrix}^t\protect \in
+%\left\{ q \in [0 \; 1]^{k-1} \tq \sum_{i=1}^{k-1} q_i \le 1
+%\right\}$.\label{Foot:MP:MultinomialParametro}}
+ & $n \in \Nset^*$, \quad $p \in
 \Simp{k-1}$\\[2mm]
 \hline
 %
-Distribuci\'on de probabilidad~\footnote{La masa de probabilidad de \
-$\widetilde{X}$ \ es \ $p_{\widetilde{X}}(x) = \frac{n!}{\prod_{i=1}^{k-1} x_i!
-(n-\sum_{i=1}^{k-1} x_i)!}  \prod_{i=1}^{k-1} p_i^{x_i} \, \left( 1 -
-\sum_{i=1}^{k-1} p_i \right)^{n-\sum_{i=1}^{k-1}
-x_i}$.\label{Foot:MP:MultinomialMasa}} & $\displaystyle p_X(x) =
+Distribuci\'on de probabilidad
+%~\footnote{La masa de probabilidad de \
+%$\widetilde{X}$ \ es \ $p_{\widetilde{X}}(x) = \frac{n!}{\prod_{i=1}^{k-1} x_i!
+%(n-\sum_{i=1}^{k-1} x_i)!}  \prod_{i=1}^{k-1} p_i^{x_i} \, \left( 1 -
+%\sum_{i=1}^{k-1} p_i \right)^{n-\sum_{i=1}^{k-1}
+%x_i}$.\label{Foot:MP:MultinomialMasa}}
+ & $\displaystyle p_X(x) =
 \frac{n!}{\prod_{i=1}^k x_i!}  \prod_{i=1}^k p_i^{x_i}$\\[2mm]
 \hline
 %
-Promedio & $\displaystyle m_X = n \, p$\\[2mm]
+Promedio & $\displaystyle m_X = n p$\\[2mm]
 \hline
 %
-Covarianza~\footnote{$\Sigma_X \in P_k(\Rset)$, pero de \ $\un^t \Sigma_X \un =
-0$ \ viene \ $\Sigma_X \not\in P_k^+(\Rset)$. Eso es la consecuencia directa del
-hecho de que \ $X$ \ $d$-dimensional, vive sobre \ $\Simp{k-1}$,
-$(d-1)$-dimensional.\label{Foot:MP::MultinomialCovarianza}} & $\displaystyle
-\Sigma_X = n \left( \diag(p) - p \, p^t \right)$\\[2mm]
+Covarianza
+%~\footnote{$\Sigma_X \in P_k(\Rset)$, pero de \ $\un^t \Sigma_X \un =
+%0$ \ viene \ $\Sigma_X \not\in P_k^+(\Rset)$. Eso es la consecuencia directa del
+%hecho de que \ $X$ \ $d$-dimensional, vive sobre \ $\Simp{k-1}$,
+%$(d-1)$-dimensional.\label{Foot:MP::MultinomialCovarianza}}
+ & $\displaystyle
+\Sigma_X = n \left( \diag(p) - p p^t \right)$\\[2mm]
 \hline
 %
-Generadora de probabilidad~\footnote{Notar: $G_{\widetilde{X}}\left(
-\widetilde{z} \right) = G_X\left( \begin{bmatrix} \widetilde{z} &
-1 \end{bmatrix}^t \right)$ \ y al rev\'es \ $G_X(z) = z_k^n \,
-G_{\widetilde{X}}\left( \begin{bmatrix} \frac{z_1}{z_k} & \cdots &
-\frac{z_{k-1}}{z_k} \end{bmatrix}^t
-\right)$.\label{Foot:MP:MultinomialGeneProba}} & $\displaystyle G_X(z) = \left(
+Generadora de probabilidad
+%~\footnote{Notar: $G_{\widetilde{X}}\left(
+%\widetilde{z} \right) = G_X\left( \begin{bmatrix} \widetilde{z} &
+%1 \end{bmatrix}^t \right)$ \ y al rev\'es \ $G_X(z) = z_k^n \,
+%G_{\widetilde{X}}\left( \begin{bmatrix} \frac{z_1}{z_k} & \cdots &
+%\frac{z_{k-1}}{z_k} \end{bmatrix}^t
+%\right)$.\label{Foot:MP:MultinomialGeneProba}}
+ & $\displaystyle G_X(z) = \left(
 p^t z \right)^n$ \ para \ $z \in \Cset^k$\\[2mm]
 \hline
 %
-Generadora de momentos~\footnote{Notar: $M_{\widetilde{X}}\left( \widetilde{u}
-\right) = M_X\left( \begin{bmatrix} \widetilde{u} & 0 \end{bmatrix}^t \right)$ \
-y \ $M_X(u) = e^{n \, u_k} M_{\widetilde{X}}\left( \begin{bmatrix} u_1 - u_k &
-\cdots & u_{k-1} - u_k \end{bmatrix}^t
-\right)$.\label{Foot:MP:MultinomialGeneMomentos}} & \protect$\displaystyle
+Generadora de momentos
+%~\footnote{Notar: $M_{\widetilde{X}}\left( \widetilde{u}
+%\right) = M_X\left( \begin{bmatrix} \widetilde{u} & 0 \end{bmatrix}^t \right)$ \
+%y \ $M_X(u) = e^{n \, u_k} M_{\widetilde{X}}\left( \begin{bmatrix} u_1 - u_k &
+%\cdots & u_{k-1} - u_k \end{bmatrix}^t
+%\right)$.\label{Foot:MP:MultinomialGeneMomentos}}
+ & \protect$\displaystyle
 M_X(u) = \left( p^t e^u \right)^n, \: e^u = \begin{bmatrix} e^{u_1} & \cdots &
 e^{u_k} \end{bmatrix}^t$\protect \ para \ $u \in \Cset^k$\\[2mm]
 \hline
 %
-Funci\'on caracter\'istica~\footnote{Notar: $\Phi_{\widetilde{X}}\left(
-\widetilde{\omega} \right) = \Phi_X\left( \begin{bmatrix} \widetilde{\omega} &
-0 \end{bmatrix}^t \right)$ \ o \ $\Phi_X(\omega) = e^{\imath \, n \, \omega_k}
-\Phi_{\widetilde{X}}\left( \begin{bmatrix} \omega_1 - \omega_k & \cdots &
-\omega_{k-1} - \omega_k \end{bmatrix}^t
-\right)$.\label{Foot:MP:MultinomialCaracteristica}} & $\displaystyle
+Funci\'on caracter\'istica
+%~\footnote{Notar: $\Phi_{\widetilde{X}}\left(
+%\widetilde{\omega} \right) = \Phi_X\left( \begin{bmatrix} \widetilde{\omega} &
+%0 \end{bmatrix}^t \right)$ \ o \ $\Phi_X(\omega) = e^{\imath \, n \, \omega_k}
+%\Phi_{\widetilde{X}}\left( \begin{bmatrix} \omega_1 - \omega_k & \cdots &
+%%\omega_{k-1} - \omega_k \end{bmatrix}^t
+%\right)$.\label{Foot:MP:MultinomialCaracteristica}} 
+& $\displaystyle
 \Phi_X(\omega) = \left( p^t e^{\imath \omega} \right)^n$
 \end{caracteristicas}
 
@@ -88,7 +103,37 @@ Funci\'on caracter\'istica~\footnote{Notar: $\Phi_{\widetilde{X}}\left(
 % Mediana $\left\lfloor n p \right\rfloor$ o $\left\lceil n p \right\rceil
 % CDF	$I_{1-p}(n-k,k+1)$ regularized incomplete beta function
 
-Su    masa     de    probabilidad     es    representadas    en     la    figura
+De hecho, se puede considerar que el vector aleatorio es \ $(k-1)$-dimensional \
+$\widetilde{X}     =    \begin{bmatrix}     \widetilde{X}_1    &     \cdots    &
+  \widetilde{X}_{k-1}   \end{bmatrix}^t$   \  definido   sobre   el  dominio   \
+$\widetilde{\X} = \left\{ x \in \{ 0 \; \ldots \; n\}^{k-1}, \: \sum_{i=1}^{k-1}
+  x_i  \le n  \right\}$. El  par\'ametro de  \ $\widetilde{X}$  \ es  entonces \
+$\widetilde{p}     =     \protect\begin{bmatrix}      p_1     &     \cdots     &
+  p_{k-1}  \end{bmatrix}^t\protect  \in  \left\{   q  \in  [0  \;  1]^{k-1}  \tq
+  \sum_{i=1}^{k-1}  q_i  \le  1  \right\}$.    La  masa  de  probabilidad  de  \
+$\widetilde{X}$   \   se    escribe   obviamente   \   $p_{\widetilde{X}}(x)   =
+\frac{n!}{\prod_{i=1}^{k-1} x_i!   (n-\sum_{i=1}^{k-1} x_i)!}  \prod_{i=1}^{k-1}
+p_i^{x_i} \, \left( 1  - \sum_{i=1}^{k-1} p_i \right)^{n-\sum_{i=1}^{k-1} x_i}$.
+Se  notar\'a al  final que  \ $G_{\widetilde{X}}\left(  \widetilde{z}  \right) =
+G_X\left(  \begin{bmatrix} \widetilde{z}  & 1  \end{bmatrix}^t \right)$  \  y al
+rev\'es   \   $G_X(z)  =   z_k^n   \,  G_{\widetilde{X}}\left(   \begin{bmatrix}
+    \frac{z_1}{z_k}  & \cdots  &  \frac{z_{k-1}}{z_k} \end{bmatrix}^t  \right)$.
+Similarmente,    \     $M_{\widetilde{X}}\left(    \widetilde{u}    \right)    =
+M_X\left(  \begin{bmatrix} \widetilde{u}  &  0 \end{bmatrix}^t  \right)$  \ y  \
+$M_X(u)  = e^{n  \, u_k}  M_{\widetilde{X}}\left(  \begin{bmatrix} u_1  - u_k  &
+    \cdots  &  u_{k-1}  -  u_k  \end{bmatrix}^t \right)$  (y  similarmente  para
+$\Phi_X$ y $\Phi_{\widetilde{X}}$).
+
+Se puede ver  tambi\'en que $\Sigma_X \un  = 0$ \ as\'a que  \ $\Sigma_X \not\in
+P_k^+(\Rset)$.   Eso  es la  consecuencia  directa  del hecho  de  que  \ $X$  \
+$d$-dimensional, vive sobre  \ $\Simp{k-1}$, $(d-1)$-dimensional. Aparentemente,
+siendo  $\Sigma_X$  no  invertibe,  no  se  puede  definir  ni  asimetr\'ia,  ni
+curtosis. Sin embargo, habr\'ia que considerar \ $\widetilde{X}$, de promedio $n
+\widetilde{p}$ y covarianza el bloque $(d-1) \times (d-1)$ de $\Sigma_X$, que es
+ahora infertible. $\gamma_{\widetilde{X}}$ \  y \ $\kappa_{\widetilde{X}}$ \ son
+bien definidos. Las expresiones, demasiado pesadas, no son dadas ac\'a.
+
+Deos ejemplos de masa de probabilidad de esta ley son representadas en la figura
 Fig.~\ref{Fig:MP:Multinomial}.
 %
 \begin{figure}[h!]
@@ -97,10 +142,11 @@ Fig.~\ref{Fig:MP:Multinomial}.
 \leyenda{Ilustraci\'on de una distribuci\'on  de probabilidad multinomial para \
   $k   =  3$   \   del   vector  \   $(k-1)$-dimensional   \  $\widetilde{X}   =
   \protect\begin{bmatrix}   X_1  &  X_2   \protect\end{bmatrix}^t$  \   ($X_3  =
-  1-X_1-X_2$)  \ con  las marginales  \ $p_{X_1},  \: p_{X_2}$  \ (ver  notas de
-  pie~\ref{Foot:MP:MultinomialDominio}   y~\ref{Foot:MP:MultinomialMasa}).    Es
-  dibujada solamente la distribuci\'on  sobre $\widetilde{\X}$, siendo esta nula
-  afuera  de $\widetilde{\X}$.   Los  par\'ametros  son \  $n  = 5$  \  y  \ $p  =
+  1-X_1-X_2$)  \ con  las marginales  \ $p_{X_1},  \: p_{X_2}$.
+  %      \      (ver      notas     de      pie~\ref{Foot:MP:MultinomialDominio}
+  % y~\ref{Foot:MP:MultinomialMasa}).
+  Es dibujada  solamente la  distribuci\'on sobre $\widetilde{\X}$,  siendo esta
+  nula afuera de  $\widetilde{\X}$.  Los par\'ametros son \  $n = 5$ \ y  \ $p =
   \protect\begin{bmatrix}      \frac25      &      \frac13     &      \frac4{15}
     \protect\end{bmatrix}^t$ (a), $p = \protect\begin{bmatrix} \frac13 & \frac12
     & \frac16 \protect\end{bmatrix}^t$ (b).}
@@ -119,7 +165,7 @@ respecto a una permutaci\'on de variable, parecidas a la de la binomial:
 \begin{lema}[Efecto de una permutaci\'on]\label{Lem:MP:PermutacionMultinomial}
 %
   Sea \ $X \, \sim \, \M(n,p), \: p \in \Simp{k-1}$ \ y \ $\Pi \in \perm_k(\Rset)$ \
-  matriz \ de permutaci\'on. Entonces
+  matriz \ de permutaci\'on (ver notaciones). Entonces
   %
   \[
   \Pi X \, \sim \, \M\left( n ,  \Pi p \right)
@@ -138,8 +184,8 @@ respecto a una permutaci\'on de variable, parecidas a la de la binomial:
   de indices.
 \end{proof}
 %
-Adem\'as ley  multinomial exhibe una stabilidad remplazando  dos componentes por
-su suma:
+Adem\'as, la ley multinomial  exhibe una stabilidad reemplazando dos componentes
+por su suma:
 %
 \begin{lema}[Stabilidad por agregaci\'on]\label{Lem:MP:StabAgregacionMultinomial}
 %
@@ -153,9 +199,9 @@ su suma:
   %
 \end{lema}
 %
-Este resultado es  intuitivo en el hecho  de que vuelve a agrupar  los estados \
-$i$ \ e \ $j$ \ en un estado, que tiene entonces la probabilidad \ $p_i + p_j$ \
-de aparecer.
+Este resultado es intuitivo del hecho que vuelve a agrupar los estados \ $i$ \ e
+\ $j$  \ en un  estado, que tiene  entonces la probabilidad \  $p_i + p_j$  \ de
+aparecer.
 %
 \begin{proof}
   Suponemos $i <  j$ (el otro caso  se recupera por simetr\'ia). A  partir de la
@@ -198,17 +244,18 @@ De este lema, aplicado de manera recursiva, se obtiene los corolarios siguientes
 \end{corolario}
 
 
-Al final, por una analisis  combinatorial, se muestra sencillamente un resultado
-similar al de la binomial como suma de Bernoulli independientes:
+Al  final,  por  una  an\'alisis  combinatorial,  se  muestra  sencillamente  un
+resultado similar al de la binomial como suma de Bernoulli independientes:
 %
 \begin{lema}\label{Lem:MultinomialSumaMultiBernoulli}
 %
-  Sean \ $U_i, \quad i = 1, \ldots ,  n, \: j = 1, \ldots , n$ \ discretas sobre
-  $\U  = \{  1 \;  \ldots \;  k \}$  de masa  de probabilidad  $p_{U_i} =  p \in
-  \Delta_{k-1}$, independientes, y $X_i = \un_{U_i} \in \Rset^k$. Entonces
+  Sean \ $U_i, \quad i  = 1, \ldots , n$ \ discretas sobre $\U  = \{ 1 \; \ldots
+  \;  k   \}$  de  masa  de   probabilidad  $p_{U_i}  =   p  \in  \Delta_{k-1}$,
+  independientes, y $X_{(i)}  = \un_{U_i}$ vectores aleatorios $k$-dimensionales
+  (son, por construcci\'on, independientes). Entonces
   %
   \[
-  \sum_{i=1}^n X_i \, \sim \, \M(n,p)
+  \sum_{i=1}^n X_{(i)} \, \sim \, \M(n,p)
   \]
 \end{lema}
 
