@@ -55,12 +55,12 @@ propiedades remarcables.
 Tales vectores modelizan naturalmente  fenomenos isotropicos. Pero m\'as all\'a,
 se puede que haya direcciones  privilegiadas ortogonales pero con simetrias, \ie
 en  lugar  de   simetr\'ias  esf\'ericas,  simetr\'ias  como  en   una  pelota  de
-rugby. Adem\'as, se puede que eso se pasa al torno de un punto no cero.
+rugby. Adem\'as, se puede que eso se pasa en torno a un punto no cero.
 %
 \begin{definicion}[Vector a simetr\'ia eliptica]
   Sea  \  $X$  \ vector  aleatorio  $d$-dimensional  real.   $X$  \ es  dicho  a
   simetr\'ia  eliptica,   o  elipticalmente  invariante,   o  de  distribuci\'on
-  eliptica, al torno de \ $m \in  \Rset^d$, \ si existe una matriz \ $\Sigma \in
+  eliptica, en torno a \ $m \in  \Rset^d$, \ si existe una matriz \ $\Sigma \in
   P_d^+(\Rset)$ \ tal que para cualquier matriz ortogonal \ $O$,
   %
   \[
@@ -94,7 +94,7 @@ de  probabilidad,  o  equivalentemente  por su  funci\'on  car\'acteristica.  La
 %
 \begin{teorema}[Funci\'ones y generadoras caracter\'isticas]\label{Teo:MP:GeneradorasCaracteristicas}
 %
-  Sea \ $X$ \ vector aleatorio $d$-dimensional a simetr\'ia eliptica al torno de
+  Sea \ $X$ \ vector aleatorio $d$-dimensional a simetr\'ia eliptica en torno a
   \   $m  \in  \Rset^d$   \  y   de  matriz   caracter\'istica  \   $\Sigma  \in
   P_d^+(\Rset)$. Entonces la funci\'on caract\'eristica se escribe bajo la forma
   %
@@ -288,8 +288,8 @@ Eso vale tambi\'en para los cumulantes:
 %
 \begin{teorema}[Momentos centrales y cumulantes]\label{Teo:MP:MomentosCumulantesEliptica}
 %
-  Sea \  $X$ \  vector aleatorio $d$-dimensional  de distribuci\'on  eliptica al
-  torno  de  un  vector \  $m$,  y  de  matriz  caracter\'istica \  $\Sigma  \in
+  Sea \  $X$ \  vector aleatorio $d$-dimensional  de distribuci\'on  eliptica en
+  torno a  un  vector \  $m$,  y  de  matriz  caracter\'istica \  $\Sigma  \in
   P_d^+(\Rset)$.  Entonces, si  estos momentos y cumulantes existen,  \ $m$ \ es
   la media de \ $X$, \ie
   %
@@ -479,7 +479,7 @@ $\Tr(\Sigma_U) = 1$, \ie
 \]
 %Se  notar\'a  que  $\varphi_X(0)  =  1$  \  m\'axima,  y  que  necesariamente  \
 %$\varphi_X'(0)  < 0$,  o, tambi\'en,  que $\varphi_X''(0)  > 0$:  $\phi_X$  \ es
-%(localmente) concava al torno de $0$;
+%(localmente) concava en torno a $0$;
 
 Se  puede  ver  de  este  corolario  que  la  covarianza  es  proporcional  a  \
 $\Sigma$. Es decir que un v\'inculo que se puede poner tambi\'en para fijar \ $(
@@ -508,7 +508,7 @@ vector a simetr\'ia eliptica:
 \end{proof}
 %
 En particular, la proyecci\'on de  un vector a simetr\'ia eliptica queda eliptica
-al  torno de  la proyecci\'on  del vector  posici\'on, con  la  misma generadora
+en  torno a  la proyecci\'on  del vector  posici\'on, con  la  misma generadora
 caracter\'istica.
 %
 %\begin{definici\'on}
@@ -569,7 +569,7 @@ a sim\'etria eliptica~\cite{BilBre99, Max67}:
 \begin{teorema}[Maxwell-Hershell]\label{Teo:MP:MaxwellHershell}
   Sea \ $X \sim \ED(m,I,\varphi_X)$. Las componentes $X_i$ son independientes si
   y solamente si $X  \sim \N(m, \alpha I)$ con $\alpha >  0$. En otros terminos,
-  los  solos vectores  a  simetr\'ia esf\'erica  al  torno de  un  vector $m$  son
+  los  solos vectores  a  simetr\'ia esf\'erica  en  torno a  un  vector $m$  son
   gausianos de covarianza proporcional a la identidad y de media $m$.
 \end{teorema}
 %
@@ -1392,7 +1392,7 @@ Laplace-Stieltjes~\footref{Foot:MP:LaplaceStieltjes}.
     una  funci\'on absolutamente  monotona  sobre  $\Rset_-$, como  lo  es \  $r
     \mapsto d_X(-r)$,  se extiende analiticamente  en el semi-plano  $\real{s} <
     0$.}. Basicamente, siendo  \ $d_X$ \ $C^\infty$, se  escribe su desarollo de
-  Taylor al torno de un $r_0 > 0$ y  se proba que sobre $r \in (0 \; r_0)$, esta
+  Taylor en torno a un $r_0 > 0$ y  se proba que sobre $r \in (0 \; r_0)$, esta
   serie de terminos todos positivos converge uniformamente. Por consecuencia, se
   tiene la convergencia uniforme tambi\'en para \  $r = s$ \ en la bola compleja
   \ $|s-r_0|  < r_0$. Se cierra  la prueba de  la validez para cualquier  $r_0 >
@@ -1749,7 +1749,7 @@ De nuevo, existe un teorema equivalente tratando de la generadora de densidad:
   \]
   %
   Es una  medida por la decrecencia de  \ $(-1)^{n-1} f^{(n-1)}$ \  y finita del
-  resultado (i)}.   Entonces, se  escribe el  desarollo de Taylor  al torno  de \
+  resultado (i)}.   Entonces, se  escribe el  desarollo de Taylor  en torno  a \
   $\alpha$, hasta el  orden \ $n-1$ \  con resto de la forma  integral, es decir
   cuando \ $\alpha \ge t$
   %
@@ -1849,7 +1849,7 @@ transformaci\'on unitaria (equivalente de una rotaci\'on) de manera siguiente:
 \begin{definicion}[Vector complejo a simetr\'ia eliptica]
   Sea  \ $Z$  \ vector  aleatorio $d$-dimensional  complejo.  $Z$  \ es  dicho a
   simetr\'ia  eliptica,   o  elipticalmente  invariante,   o  de  distribuci\'on
-  eliptica, al torno de \ $m \in  \Cset^d$, \ si existe una matriz \ $\Sigma \in
+  eliptica, en torno a \ $m \in  \Cset^d$, \ si existe una matriz \ $\Sigma \in
   P_d^+(\Cset)$ \ tal que para cualquier matriz unitaria \ $V$,
   %
   \[
@@ -1873,7 +1873,7 @@ escalar.
 El v\'inculo entre la simetr\'ia eliptica y la circularidad es tambi\'en obvia:
 %
 \begin{lema}
-  Sea \ $Z$ \ vector complejo  $d$-dimensional a simetr\'ia eliptica al torno de
+  Sea \ $Z$ \ vector complejo  $d$-dimensional a simetr\'ia eliptica en torno a
   \ $m \in \Cset^d$. Entonces \ $Z-m$ \ es circular.
 \end{lema}
 %
@@ -1934,9 +1934,9 @@ Ahora, se v\'incula naturalmente la noci\'on de elipticidad del caso complejo al
 caso real:
 %
 \begin{lema}
-  Sea \ $Z$ \ vector complejo  $d$-dimensional a simetr\'ia eliptica al torno de
+  Sea \ $Z$ \ vector complejo  $d$-dimensional a simetr\'ia eliptica en torno a
   \  $m$.  Entonces,  $\widetilde{Z}$ \  \ vector  real $2d$-dimensionales  es a
-  simetr\'ia eliptica al torno de \ $\widetilde{m}$.
+  simetr\'ia eliptica en torno a \ $\widetilde{m}$.
 \end{lema}
 %
 \begin{proof}
@@ -1950,7 +1950,7 @@ caso real:
 \end{proof}
 
 De esta equivalencia, todos  los resultados anteriores se extienden naturalmente
-al caso  complejo. Para \ $Z$ \  a simetr\'a eliptica al  torno de \ $m$  \ y de
+al caso  complejo. Para \ $Z$ \  a simetr\'a eliptica en  torno a \ $m$  \ y de
 matriz caracteristica \ $\Sigma$:
 %
 \begin{itemize}

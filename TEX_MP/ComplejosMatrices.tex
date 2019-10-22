@@ -1,12 +1,12 @@
 \seccion{Vectores aleatorios complejos y matrices aleatorias en algunas palabras.}
 \label{Sec:MP:VectoresComplejosMatricesAleatorias}
 
-En  varios  campos,  como  en  mecanica cuantica,  procesamiento  de  se\~nales,
-estadistica, estamos frente  a datos complejas o puestas  en matrices. A\'un que
+En  varios campos, como  en mec\'anica  cu\'antica, procesamiento  de se\~nales,
+estad\'istica, estamos frente a datos complejas o puestas en matrices. A\'un que
 se  puede poner en  biyecci\'on \  $\Cset$ \  y \  $\Rset^2$ \  o, similarmente,
 $\M_{d,d'}(\Rset)$ \  y \ $\Rset^{d  d'}$, puede parecer m\'as  natural trabajar
 conservando la  estructura de los  datos. Adem\'as, permite  frecuentemente usar
-escrituras  m\'as  compactas que  pasar  por  vectores  reales.
+escrituras m\'as compactas que pasar por vectores reales.
 
 En  el contexto  complejo por  ejemplo,  en el  marco de  las comunicaciones  se
 modulan las  se\~nales en general  en fase y  cuadratura, es decir con  ambos un
@@ -35,7 +35,7 @@ especializados  como~\cite{AkeBai15,  GupNag99,  AndGui10,  LivNov18,  EdeRao05,
 \label{Ssec:MP:VAComplejos}
 
 Formalmente, un vector aleatorio complejo se define de la misma manear que en el
-caso real, de la manera siguiente:
+caso real:
 %
 \begin{definicion}[Vector aleatorio complejo]
 \label{Def:MP:VectorAleatorioComplejo}
@@ -47,10 +47,10 @@ caso real, de la manera siguiente:
   \]
   %
   donde  $\B(\Cset^d)$  son  los  borelianos  de  $\Cset^d$,  $\sigma$-\'algebra
-  generada por los productos cartesianos  $(-\infty \; b_1] + \imath (-\infty \;
-  c_1] \times \cdots \times (-\infty \;  b_d] + \imath (-\infty \; c_d]$ y donde
-  la medida $P_Z$  sobre $\B(\Cset^d)$ es la medida im\'agen de  $P$. Como en el
-  caso real,
+  generada  por los  productos  cartesianos  $\big( (-\infty  \;  b_1] +  \imath
+  (-\infty \;  c_1] \big) \times \cdots  \times \big( (-\infty \;  b_d] + \imath
+  (-\infty \;  c_d] \big)$  y donde  la medida $P_Z$  sobre $\B(\Cset^d)$  es la
+  medida im\'agen de $P$. Como en el caso real,
   %
   \[
   (Z \in  B) \equiv  Z^{-1}(B) =  \{ \omega \in  \Omega \tq  Z(\omega) \in  B \}
@@ -73,7 +73,7 @@ equivalente~\cite[Cap.~17]{Lap17}:
   \]
   %
   donde \  $\widetilde{Z} \equiv  \begin{bmatrix} X\\ Y  \end{bmatrix}$ \  es un
-  vector aleatorio de \ $\Rset^{2 \,  d}$. La medida de probabilidad im\'agen es
+  vector aleatorio  de \  $\Rset^{2 d}$. La  medida de probabilidad  im\'agen es
   entonces
   %
   \[
@@ -96,16 +96,17 @@ Resuelte de esta definici\'on equivalente los hechos siguientes:
   explicitamente ambos \ $z$ \ y \ $z^*$ complejos conjugados.
 %
 \item   Si  la   medida  \   $P_{\widetilde{Z}}$  \   admite  una   derivada  de
-  Radon-Nykod\'ym con respeto a la medida  de Lebesgue sobre \ $\Rset^{2 \, d}$,
-  se  define  la  densidad de  probabilidad  de  \  $Z$  \  como \  $f_Z  \equiv
+  Radon-Nykod\'ym con respeto a la medida  de Lebesgue sobre \ $\Rset^{2 d}$, se
+  define  la  densidad   de  probabilidad  de  \  $Z$  \   como  \  $f_Z  \equiv
   f_{\widetilde{Z}} =  f_{X,Y}$. A partir  de la funci\'on de  repartici\'on, se
-  escribe entonces o a trav\'es de la derivada $2 \, d$-\'esima de $F_{X,Y}$ con
-  respeto a las compontentes \ $x_i$ \ e \ $y_i$ o, de manera equivalente,
+  escribe entonces o a trav\'es de  la derivada $(2 d)$-\'esima de $F_{X,Y}$ con
+  respeto a las compontentes \ $x_i$ \ e \ $y_i$.
+  % NO, LO QU ES COMENTADO ES FALSO! o, de manera equivalente,
   %
-  \[
-  f_Z(z) = \frac{\partial^{2 \, d}}{\partial z_1 \cdots \partial z_d \, \partial
-    z_1^* \cdots \partial z_d^*}
-  \]
+  %\[
+  %f_Z(z) =  \frac{\partial^{2 d}}{\partial z_1  \cdots \partial z_d  \, \partial
+  %  z_1^* \cdots \partial z_d^*}
+  %\]
   %
 %
 \item Los momentos de orden \ $k$ \ siendos definido a partir de las componentes
@@ -129,15 +130,16 @@ Resuelte de esta definici\'on equivalente los hechos siguientes:
     m_Z = \Esp[Z] = \Esp[X] + \imath \Esp[Y]
     \]
     %
-    La media de $Z^*$ no lleva informaci\'on m\'as de orden 1.
+    La  media de  $Z^*$ no  lleva  informaci\'on m\'as  de orden  1 ($m_{Z^*}  =
+    \Esp[Z^*] = m_Z^*$).
   %
   \item La matriz de covarianza es definida por
     \[
     \Sigma_Z \equiv \Cov[Z] \equiv \Esp\left[ (Z-m_Z) (Z-m_Z)^\dag \right]
     \]
     %
-    donde  \  $Z^\dag  =  (Z^*)^t$  \ dicho  {\em  transconjugado}  (transpuesta
-    conjugada).    Fijense  de   que,  volviendo   al   vector  $\widetilde{Z}^t
+    con \  $Z^\dag =  (Z^*)^t$ \ el  transconjugado (transpuesta  conjugada, ver
+    notaciones).    Fijense  de  que,   volviendo  al   vector  $\widetilde{Z}^t
     = \begin{bmatrix} X^t & Y^t \end{bmatrix}$ tenemos por un lado
     %
     \[
@@ -168,8 +170,8 @@ Resuelte de esta definici\'on equivalente los hechos siguientes:
     %
     Entonces,  se  recupera  inmediatamente   $\Sigma_X,  \:  \Sigma_Y$  \  y  \
     $\Sigma_{X,Y}$  \  a  partir  de  \ $\Sigma_Z$  \  y  \  $\check{\Sigma}_Z$;
-    Claramente,   los   momentos   centrales   de   orden  2   son   dados   por
-    \underline{ambas}  \  $\Sigma_Z$  \   y  \  $\check{\Sigma}_Z$.
+    Claramente,  los  momentos  centrales de  orden  2  son  dados por  ambas  \
+    $\Sigma_Z$ \ y \ $\check{\Sigma}_Z$.
   \end{itemize}
   %
   Los momentos  as\'i definidos heriden  naturalmente de las propiedades  de las
@@ -190,10 +192,10 @@ Resuelte de esta definici\'on equivalente los hechos siguientes:
   \mbox{con} \quad \omega \in \Cset^d
   \]
   %
-  (ver  por  ejemplo~\cite[Cap.~17]{Lap17}).  De  nuevo  se  define  la  secunda
-  funci\'on   caracteristica  tomando  el   logaritmo  $\Psi_X(\omega)   =  \log
+  (ver  por  ejemplo~\cite[Cap.~17]{Lap17}).   De  nuevo se  define  la  secunda
+  funci\'on  caracter\'istica  tomando   el  logaritmo  $\Psi_X(\omega)  =  \log
   \Phi_X(\omega)$.    Las   funciones   generadoras  as\'i   definidas   heriden
-  naturalmente  de  las   propiedades  de  las  del  caso   real.  Entre  otros,
+  naturalmente  de  las  propiedades  de   las  del  caso  real.   Entre  otros,
   interpretando la funci\'on caracter\'istica como funci\'on de ambos \ $\omega$
   \ y \ $\omega^*$, y derivando como si ser\'ian variables ``independientes'':
   %
@@ -209,10 +211,13 @@ Resuelte de esta definici\'on equivalente los hechos siguientes:
     4 \left. \nabla_{\omega^*} \Phi_Z \nabla_{\omega^*}^t \Phi_Z \right|_{\omega =
       0}$
   \end{itemize}
+  %
+  donde $\Hess_{\omega^*,\omega}$  significa que  se diferencia en  $\omega^*$ y
+  luego en $\omega$ (o vice-versa).
 \end{itemize}
 
 En el  marco de vectores  complejos, aparece una subclase  particular invariante
-por rotaci\'on, lo qu es conocido como vectores circulares:
+por rotaci\'on: los vectores circulares.
 %
 \begin{definicion}[Vector aleatorio complejo circular]\label{Def:MP:VectorAleatorioComplejoCircular}
 %
@@ -229,30 +234,30 @@ por rotaci\'on, lo qu es conocido como vectores circulares:
   donde \ $\egald$ \ significa ``igualdad en distribuci\'on'' (ver notaciones).
 \end{definicion}
 
-Los vectores circular tienen propiedades particulares importantes
+Los vectores circulares tienen propiedades particulares importantes:
 %
 \begin{itemize}
-\item  Si $Z$  es circular  al torno  de  un vector  $\mu$ y  admite una  media,
+\item  Si $Z$  es circular  en torno a  un vector  $\mu$ y  admite una  media,
   entonces
   %
   \[
   m_Z = \Esp[Z] = \mu
   \]
   % 
-  Eso viene  del hecho de  que $e^{\imath \theta}  \Esp\left[ Z - \mu  \right] =
+  Eso  viene del  hecho que  $e^{\imath  \theta} \Esp\left[  Z -  \mu \right]  =
   \Esp\left[  e^{\imath  \theta}  (Z  -  \mu)  \right]  =  \Esp\left[  Z  -  \mu
   \right]$. Entonces,  para cualquier \ $\theta \in  [0 \; 2 \pi),  \: \left(1 -
     e^{\imath \theta} \right) \Esp\left[ Z -  \mu \right] = 0$, lo que proba que
   \ $\Esp\left[ Z - \mu \right] = 0$.
 %
-\item Si $Z$ es circular al torno  de un vector $\mu$ y admite momentos de orden
-  2, entonces la pseudo-covarianza es  nula,
+\item Si $Z$ es circular en torno a un vector $\mu$ y admite momentos de orden
+  2, entonces la pseudo-covarianza es  cero,
   %
   \[
   \check{\Sigma}_Z = \pCov[Z] = 0
   \]
   %
-  Recordandose que $m_Z = \mu$, eso  viene del hecho de que $e^{2 \imath \theta}
+  Recordandose que $m_Z = \mu$, eso  viene del hecho que $e^{2 \imath \theta}
   \Esp\left[ (Z - m_Z) (Z - m_Z)^t \right] = \Esp\left[ \left( e^{\imath \theta}
       (Z - m_Z)  \right) \left( e^{\imath \theta} (Z -  m_Z) \right)^t \right] =
   \Esp\left[ (Z - m_Z) (Z - m_Z)^t \right]$.  Entonces, para cualquier \ $\theta
@@ -266,7 +271,7 @@ Los vectores circular tienen propiedades particulares importantes
   %
 \end{itemize}
 
-Fijense de que si la pseudo-covarianza  de un vector aleatorio complejo es nula,
+Fijense de que si la pseudo-covarianza  de un vector aleatorio complejo es cero,
 eso  no implica de  que el  vector es  circular.  Por  ejemplo, sea  $Z$ tomando
 valores sobre  $\Z = \{ 1+\imath \;  1-\imath \; -1+\imath \;  -1-\imath \}$ con
 probabilidades   $p  =   \begin{bmatrix}   \frac13  &   \frac14   &  \frac15   &
@@ -277,7 +282,7 @@ toma   sus  valores   en  $\Z$   pero  con   el  vector   de   probabilidad  $p'
 = \begin{bmatrix} \frac15 & \frac13 & \frac{13}{60} & \frac14\end{bmatrix}^t \ne
 p$.
 
-Cuando la pseudo-covarianza es nula se dice a veces que el vector es circular al
+Cuando la pseudo-covarianza es cero se dice a veces que el vector es circular al
 orden  2.  M\'as  precisamente,  en   la  literatura,  se  usa  la  definici\'on
 siguiente~\cite[Def.~17.4.1]{Lap17}:
 %
@@ -291,9 +296,9 @@ siguiente~\cite[Def.~17.4.1]{Lap17}:
   \]
 \end{definicion}
 %
-Se podr\'ia ampliar  esta definici\'on hablando de vector propio  al torno de un
-vector $\mu$, conservando solamente la  nulidad de la pseudo-covarianza. Como li
-v\'imos tranatdo de vectores circulares, tenemos la implicaci\'on siguiente:
+Se podr\'ia ampliar  esta definici\'on hablando de vector propio  en torno a un
+vector $\mu$, conservando solamente la  nulidad de la pseudo-covarianza. Como lo
+vimos tratando de vectores circulares, tenemos la implicaci\'on siguiente:
 
 \begin{teorema}[Circularidad]
 \label{Teo:MP:Circularidad}
@@ -301,14 +306,14 @@ v\'imos tranatdo de vectores circulares, tenemos la implicaci\'on siguiente:
   Sea   \   $Z$ vector alatorio complejo.  Entonces,
 %
   \[
-  Z \:  \mbox{ circular en torno  de } \:  m \qquad \Longrightarrow \qquad  Z \:
+  Z \:  \mbox{ circular en torno  a } \:  m \qquad \Longrightarrow \qquad  Z \:
   \mbox{ propio en torno de } \: m
   \]
 \end{teorema}
 
 Los vectores propios tienen  propiedades particulares, entre otros las siguientes.
 
-\begin{teorema}[Conservaci\'on del caracter propio por transformaci\'on lineal]\label{Teo:MP:PropioLineal}
+\begin{teorema}[Conservaci\'on del car\'acter propio por transformaci\'on lineal]\label{Teo:MP:PropioLineal}
 %
   Sea  $Z$  vector  aleatorio  complejo  propio  de  $\Cset^d$,  entonces,  para
   cualquier matriz $A \in \M_{d',d}(\Cset)$, el vector aleatorio $A Z$ es propio.
@@ -319,15 +324,15 @@ Los vectores propios tienen  propiedades particulares, entre otros las siguiente
 \end{proof}
 
 
-\begin{teorema}[Caracter propio y proyecci\'on]\label{Teo:MP:PropioProy}
+\begin{teorema}[Car\'acter propio y proyecci\'on]\label{Teo:MP:PropioProy}
 %
-  Un vector  aleatorio $Z$ complejo de  $\Cset^d$ es propio si  y solamente para
+  Un vector  aleatorio $Z$ complejo de  $\Cset^d$ es propio si  y solamente si para
   cualquier $c \in \Cset^d$, la variable $c^t Z$ es propia.
 \end{teorema}
 \begin{proof}
   Claramente, de \  $\Esp\left[ c^t Z \right] = c^t \Esp[Z]$  \ y \ $\pCov\left[
-    c^t Z \right] = c^t \pCov[Z] c$ \ tenemos que si $Z$ es propio, \ $\Esp[Z] =
-  0  \: \Rightarrow  \Esp\left[ c^t  Z  \right] =  0$ \  y  \ $\pCov[Z]  = 0  \:
+    c^t Z \right] = c^t \pCov[Z] c$,  \ tenemos que si $Z$ es propio, \ $\Esp[Z]
+  = 0  \: \Rightarrow  \Esp\left[ c^t  Z \right]  = 0$ \  y \  $\pCov[Z] =  0 \:
   \Rightarrow \pCov\left[  c^tZ \right] =  0$. \newline Reciprocamente,  si para
   cualquier $c$ la variable \ $c^t Z$  \ es propia, se puede elegir $d$ vectores
   $c_i^t$ puestas  en una matriz  $C$ invertible. Entonces  $\Esp[C Z] =  0$ por
@@ -341,15 +346,15 @@ Los vectores propios tienen  propiedades particulares, entre otros las siguiente
 %A real random vector is proper if and only if it is constant. CASI SIEMPRE
 %}
 
-% ================================= Caso matricial
+% ================================= Caso matricial real
 
-\subseccion{Matrices aleatorias}
+\subseccion{Matrices aleatorias reales}
 \label{Ssec:MP:MA}
 
 De la misma manera que se  puede querer trabajar con vectores complejos, a veces
 los datos son naturalmente puestas en matrices aleatorias. Por ejemplo, se puede
 querer estimar  una matriz de covarianza  a partir de una  secuencia de vectores
-aleatorios \  $X_i, \: i =  1, \ldots ,  n$ \ de media  nula y de misma  ley. Un
+aleatorios \  $X_i, \: i =  1, \ldots ,  n$ \ de media  cero y de misma  ley. Un
 estimador  natural es  de reemplazar  el  promedio estadistico  por un  promedio
 empirico usando las  observaciones/los vectores aleatorios \ $\widehat{\Sigma}_X
 = \frac1n \sum_{i=1}^n X_i X_i^t$ \ (en practica, se reemplaza los \ $X_i$ \ por
@@ -404,9 +409,9 @@ $\frac{d (d+1)}{2}$ componentes linealmente independientes.
 
 % --------------------------------- Linealmente independiente
 
-
-\subsubseccion{Caso general}
-\label{Sssec:MP:MatricesAleatoriasGeneral}
+\paragraph{Caso general}
+%\subsubseccion{Caso general}
+%\label{Sssec:MP:MatricesAleatoriasGeneral}
 
 De  manera general,  trabajamos en  el  contexto de  matrices no  necesiaramente
 cuadradas,  y  con componentes  potencialemnte  linealmente independientes  (sin
@@ -426,7 +431,7 @@ simetria particular).  En este marco  general, $X$ viviendo sobre  $\X \subseteq
   m_k[X] = \Esp\left[ X^{\otimes k} \right]
   \]
   %
-  donde \ $\cdot^{\otimes k}$ \ es \ $k$ \ veces el \modif{producto interno (ver
+  donde \ $\cdot^{\otimes k}$ \ es \ $k$ \ veces el \modif{producto externo (ver
     notaciones)}, y  similarmente para los  momentos centrales $\zeta_K-k[X]$  y a
   trav\'es  de  la secunda  funci\'on  caracter\'istica  para  los cumulantes  \
   $\kappa_K[X]$ (ver m\'as adelante). En particular,
@@ -445,7 +450,7 @@ simetria particular).  En este marco  general, $X$ viviendo sobre  $\X \subseteq
     \]
     %
     \modif{$\Sigma_X$ es un tensor de  orden $4$ de componentes $\left( \Sigma_X
-      \right)_{i,j,k,l} = \Cov[X_{i,j} X_{k,l}$.}.\newline
+      \right)_{i,j,k,l} = \Cov[X_{i,j} X_{k,l}]$.}.\newline
     % Tipicamente,  si la  vemos  en bloques  de  tama\~no \  $d  \times d$,  la
     % componente \  $(k,l)$-\'esima del bloc  \ $(i,j)$-\'esima corresponde  a \
     % $\Cov\left[  X_{i,j}  ,   X_{k,l}  \right]$.\newline  
@@ -468,7 +473,7 @@ simetria particular).  En este marco  general, $X$ viviendo sobre  $\X \subseteq
   \quad \mbox{con} \quad \omega \in \M_{d,d'}(\Rset)
   \]
   %
-  De nuevo  se define la  secunda funci\'on caracteristica tomando  el logaritmo
+  De nuevo  se define la  secunda funci\'on caracter\'istica tomando  el logaritmo
   $\Psi_X(\omega) = \log \Phi_X(\omega)$.
 %
 \item Ahora es sencillo ver de que, si existent, se puede recuperar los momentos
@@ -490,15 +495,34 @@ simetria particular).  En este marco  general, $X$ viviendo sobre  $\X \subseteq
   derivaci\'on matricial  para hacer los calculos  en la mayor\'ia  de los casos
   que   se  encuentran  en   la  literatura   (vamos  a   ver  ejemplos   en  la
   secci\'on~\ref{Sec:MP:EjemplosDistribucionesProb}).
+%
+\item Al  final, se  notara que si  las columnas  de $X$ son  independientes, se
+  factorisa funci\'on caracter\'istica  a partir de las de  cada columna: Sean \
+  $X =  \begin{bmatrix} X_{(1)} & \cdots  & X_{(d')} \end{bmatrix}$ \  con los \
+  $X_{(i)}$ \  $d$-dimensionales, y \  $\omega = \begin{bmatrix}  \omega_{(1)} &
+    \cdots   &  \omega_{(d')}   \end{bmatrix}$   \  con   \  $\omega_{(i)}   \in
+  \Rset^d$. Entonces
+  %
+    \[
+    X_{(i)}, \:\: \mbox{independientes} \qquad \Rightarrow \qquad \Phi_X(\omega)
+    = \prod_{i=1}^{d'} \Phi_{X_{(i)}}(\omega_{(i)})
+  \]
+  %
+  Es inmediato de $e^{\imath \,  \Tr(\omega^t X)} = e^{\imath \, \sum_{i=1}^{d'}
+    \omega_{(i)}^t  X_{(i)}}  =  \prod_{i=1}^{d'}  e^{\imath  \,  \omega_{(i)}^t
+    X_{(i)}}$       \        y       de       la        independencia       (ver
+  teorema~\ref{Teo:MP:IndependenciaMomentos}                                    o
+  teorema~\ref{Teo:MP:PropiedadesFuncionCaracteristica}).
+%
 \end{itemize}
 
 
 
 % --------------------------------- Simetricas
 
-
-\subsubseccion{Caso sim\'etrico}
-\label{Sssec:MP:MatricesAleatoriasSimetrico}
+\paragraph{Caso sim\'etrico}
+%\subsubseccion{Caso sim\'etrico}
+%\label{Sssec:MP:MatricesAleatoriasSimetrico}
 
 En  el contexto  sim\'etrico,  \ie el  espacio  de llegada  es  \ $\X  \subseteq
 S_d(\Rset)$ (ej.   el cono $P_d^+(\Rset)$), aparece  que por lo  m\'as la matriz
@@ -511,7 +535,7 @@ tiene consecuencias:
 %
 \begin{itemize}
 \item Si existen,  se puede recuperar los momentos  por diferenciaci\'on como en
-  el caso de  vectores, pero hay que tener  en cuenta el hecho de que  si $i \ne
+  el caso de  vectores, pero hay que tener  en cuenta el hecho  que  si $i \ne
   j$, $\omega_{i,j} = \omega_{j,i}$ aparece dos veces en $\omega$. Entonces, por
   ejemplo, se puede ver inmediatamente que
   %
