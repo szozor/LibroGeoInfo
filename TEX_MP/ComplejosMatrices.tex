@@ -11,9 +11,9 @@ escrituras m\'as compactas que pasar por vectores reales.
 En  el contexto  complejo por  ejemplo,  en el  marco de  las comunicaciones  se
 modulan las  se\~nales en general  en fase y  cuadratura, es decir con  ambos un
 seno  y un coseno.   Formalmente, se  puede considerar  modulaciones exponencial
-complejas,  dando lugar a  vectires aleatorias.  Es un  ejemplo entre  otros que
+complejas, dando  lugar a  vectores aleatorias.  Es  un ejemplo entre  otros que
 motivan  el  estudio  de  vectores aleatorio  a  valores  complejas~\cite{Lap17,
-  SchSch03, EriKoi06} .
+  SchSch03, EriKoi06, EriOll09, AmbGae96, Par18}.
 
 Con respeto  al caso  de matrices,  los primeros estudios  de tales  matrices se
 encuentrand entre  los a\~nos 1928 y 1955~\cite{Wis28,  NeuGol47, Wig55}.  Desde
@@ -100,12 +100,33 @@ Resuelte de esta definici\'on equivalente los hechos siguientes:
   define  la  densidad   de  probabilidad  de  \  $Z$  \   como  \  $f_Z  \equiv
   f_{\widetilde{Z}} =  f_{X,Y}$. A partir  de la funci\'on de  repartici\'on, se
   escribe entonces o a trav\'es de  la derivada $(2 d)$-\'esima de $F_{X,Y}$ con
-  respeto a las compontentes \ $x_i$ \ e \ $y_i$.
-  % NO, LO QU ES COMENTADO ES FALSO! o, de manera equivalente,
+  respeto a las compontentes \ $x_i$  \ e \ $y_i$. Equivalentemente, por calculo
+  de  Wirtinger~\cite{Rem91}~\footnote{Hay que entender  $z_i =  x_i +  \imath \
+    y_i$  y $z_i^* =  x_i -  \imath \  y_i$ como  si fueran  dos variables  y, a
+    continuaci\'on, ver  las derivadas  como \ $\frac{\partial}{\partial  z_i} =
+    \frac12    \left(     \frac{\partial}{\partial    x_i}    -     \imath    \,
+      \frac{\partial}{\partial  y_i} \right)$  \  y \  $\frac{\partial}{\partial
+      z_i^*}  =  \frac12  \left(   \frac{\partial}{\partial  x_i}  +  \imath  \,
+      \frac{\partial}{\partial    y_i}   \right)$    \   o,    al    rev\'es   \
+    $\frac{\partial}{\partial    x_i}   =   \frac{\partial}{\partial    z_i}   +
+    \frac{\partial}{\partial  z_i^*} \right)$  \  y \  $\frac{\partial}{\partial
+    y_i}   =    \imath   \,   \frac{\partial}{\partial   z_i}    -   \imath   \,
+  \frac{\partial}{\partial z_i^*}$.
+    % Eso  es  conocido como  respectivamente  $\Rset$-derivativa and  conjugada
+    % $\Rset$-derivada~\cite{Kre07}, y e
+    El  calculo  diferencial  as\'i  hecho   es  conocido  como  calculo  de  W.
+    Wirtinger~\cite{Rem91, Wir27}, bajo el impulso de W. Wirtinger en 1927..
+    % o $\Cset\Rset$-calculo~\cite{Kre07}.
+    De hecho,  fue introducido antes , por  lo menos desde H.  Poincar\'e en los
+    a\~nos 1899~\cite{Poi99}.\label{Foot:MP:Wirtinger}
+    % K. Kreutz-Delgado,  "The complex  gradient operator and  the CR-calculus,"
+    % Lecture Notes Supplement [online], 2007, http://dsp.ucsd.edu/~kreutz/
+}
   %
-  %\[
-  %f_Z(z) =  \frac{\partial^{2 d}}{\partial z_1  \cdots \partial z_d  \, \partial
-  %  z_1^* \cdots \partial z_d^*}
+  \[
+  f_Z =  \imath \left( \frac{\partial^{2 d} F_Z}{\partial  z_1^2 \cdots \partial
+      z_d^2} -  \frac{\partial^{2 d} F_Z}{\partial z_1^{* \,  2} \cdots \partial
+      z_d^{* \, 2}} \right)
   %\]
   %
 %
@@ -197,7 +218,8 @@ Resuelte de esta definici\'on equivalente los hechos siguientes:
   \Phi_X(\omega)$.    Las   funciones   generadoras  as\'i   definidas   heriden
   naturalmente  de  las  propiedades  de   las  del  caso  real.   Entre  otros,
   interpretando la funci\'on caracter\'istica como funci\'on de ambos \ $\omega$
-  \ y \ $\omega^*$, y derivando como si ser\'ian variables ``independientes'':
+  \ y  \ $\omega^*$, y  derivando como si ser\'ian  variables ``independientes''
+  (ver nota de pie~\ref{Foot:MP:Wirtinger}):
   %
   \begin{itemize}
   \item $\Esp[Z]  = - 2 \, \imath  \left. \nabla_{\omega^*} \Phi_Z  \right|_{\omega =
