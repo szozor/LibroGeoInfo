@@ -5,17 +5,35 @@ Esta distribuci\'on es  la m\'as natural que se usa  cuando queremos modelar una
 falta de  informaci\'on sobre una variable,  sabiendo que vive en  un espacio de
 volumen  finito: sin  a  priori  m\'as, una  tendencia  natural/intuitiva es  de
 asignar la  ``misma probabilidad''  a cada punto  del conjunto.   En particular,
-aparece as\'i  naturalmente en  la inferencia Bayesiana  que consiste  a modelar
-como aleatorio un  par\'ametro que se quierre inferir~\footnote{A  partir de una
-  distribuci\'on  parametrizada   por  un  par\'ametro   $\theta$.   El  enfoque
-  bayesiano consiste  a modelizar $\theta$ aleatorio, digamos  $\Theta$, tal que
-  la     distribuci\'on     de     observaciones     se     escribe     entonces
-  $p_{X|\Theta=\theta}(x)$.   Inferir  $\theta$ a  partir  de observaciones  $x$
-  consiste   a   determinar  la   distribuci\'on   dicha   {\it  a   posteriori}
-  $p_{\Theta|X=x}(\theta)$.  Por eso, hace  falta darse una distribuci\'on dicha
-  {\it a priori} $p_\Theta(\theta)$.\label{Foot:SZ:BayesPrior}}~\cite{Rob07} (la
+aparece as\'i  naturalmente en  la inferencia bayesiana  que consiste  a modelar
+como aleatorio un par\'ametro  que se quierre inferir~\footnote{En la inferencia
+  bayesiana, nos interesamos al paremetro (posiblemente multivariado) \ $\theta$
+  \ subyancente  a una distribuci\'on. Por ejemplo,  sabemos tener observaciones
+  sorteados  de  una  distribuci\'on  de  Poisson, pero  con  el  par\'ametro  \
+  $\lambda$ \  desconocido y  nos interesamos a  \ $\theta \equiv  \lambda$.  El
+  enfoque bayesiano consiste a considerar el par\'ametro \ $\Theta$ \ aleatorio,
+  tal que la  distribuci\'on de las observaciones sea  vista como distribuci\'on
+  condicional \  $p_{X|\Theta = \theta}(x)$, llamada  distribuci\'on de sampleo.
+  Dadas las  observaciones $X = x$,  la meta es de  determinar la distribuci\'on
+  dicha a posteriori \  $p_{\Theta|X = x}$ \ a partir de  la cual se puede hacer
+  estimaci\'on  de \ $\theta$  dadas las  observaciones, calcular  intervalos de
+  confianza, etc. Se interpreta  como distribuci\'on explicando el par\'ametro a
+  partir de  las observaciones.  Por eso, el  metodo se apoya sobre  la regla de
+  Bayes $p_{\Theta|X=x}(\theta) \propto p_{X|\Theta=\theta}(x) p_\Theta(\theta)$
+  \  as\'i que  se necesita  elegir una  distribuci\'on \  $p_\Theta$ \  dicha a
+  priori.      \SZ{Ver     nota     de     pie     en     el     cap     2     a
+    modificar}.\label{Foot:MP:BayesPrior} }
+%~\footnote{A  partir de una
+%  distribuci\'on  parametrizada   por  un  par\'ametro   $\theta$.   El  enfoque
+%  bayesiano consiste  a modelizar $\theta$ aleatorio, digamos  $\Theta$, tal que
+%  la     distribuci\'on     de     observaciones     se     escribe     entonces
+%  $p_{X|\Theta=\theta}(x)$.   Inferir  $\theta$ a  partir  de observaciones  $x$
+%  consiste   a   determinar  la   distribuci\'on   dicha   {\it  a   posteriori}
+%  $p_{\Theta|X=x}(\theta)$.  Por eso, hace  falta darse una distribuci\'on dicha
+%  {\it a priori} $p_\Theta(\theta)$.\label{Foot:SZ:BayesPrior}}
+~\cite{Rob07} (la
 ley  es dicha  ley  {\em a  priori};  ver tambi\'en~\cite{Bay63}  o~\cite{Lap12,
-  Lap14, Lap20}; tal a priori es conocido como a a priori de Laplace).
+  Lap14, Lap20}; tal a priori es conocido como a priori de Laplace).
 
 Se denota $X \, \sim \, \U([a \; b])$. Las caracter\'isticas de \ $X$ \ son las
 siguientes:
@@ -37,15 +55,15 @@ Promedio & $\displaystyle m_X = \frac{a+b}{2}$\\[2mm]
 Varianza & $\displaystyle \sigma_X^2 = \frac{(b-a)^2}{12}$\\[2mm]
 \hline
 %
-\modif{Asimetr\'ia} & $\gamma_X = 0$\\[2mm]
+\modif{Asimetr\'ia} & $\gamma_X = 0$ \quad para \ $b \ne a$\\[2mm]
 \hline
 %
-Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = -\frac65$\\[2mm]
+Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = -\frac65$ \quad para \ $b \ne a$\\[2mm]
 \hline
 %
-Generadora de momentos & $\displaystyle M_X(u) = \frac{ e^{b u} - e^{a u}}{u}$ \
+Generadora de momentos & $\displaystyle M_X(u) = \frac{ e^{b u} - e^{a u}}{u}$ \quad
 para~\footnote{En el caso l\'imite \ $u \to  0$, \ $\lim_{u \to 0} \frac{ e^{b u}
-- e^{a u}}{u} = b-a$, y similarmente para la funci\'on caracter\'istica}  \ $u \in \Cset^d$\\[2mm]
+- e^{a u}}{u} = b-a$, y similarmente para la funci\'on caracter\'istica}  \ $u \in \Cset$\\[2mm]
 \hline
 %
 Funci\'on caracter\'istica & $\displaystyle  \Phi_X(\omega) = \frac{ e^{\imath a
@@ -91,14 +109,14 @@ Reciprocamente, definiendo la funci\'on de repartici\'on inversa (o quantile)
 F_X^{-1}(u) = \inf \{ x \tq F(x) \ge u \}
 \]
 %
-si $V \sim \U( 0 \; 1 )$,
+si \ $V \sim \U( 0 \; 1 )$,
 %
 \[
 Y = F_X^{-1}(V) \quad \Rightarrow \quad F_Y(y) = F_X(y)
 \]
 \end{lema}
 %
-Cuando  $F_X$ se  inversa  sencillamente eso  da  una manera  sencille de  tirar
+Cuando  $F_X$ se  inversa  sencillamente eso  da  una manera  sencilla de  tirar
 sampleos de funci\'on de repartici\'on $F_X$ a partir de sampleos tirados seg\'un
 una ley uniforme.
 %
@@ -136,13 +154,13 @@ p_X(x) = \frac{1}{|\D|} \un_{\D}(x)
 %
 La media va a ser el centro de gravedad de $\D$.
 
-Vamos  a  ver  el  el   cap\'itulo  siguiente  que  esta  distribuci\'on  es  la
-distribuci\'on  definida sobre  un conjunto  de volumen  finito que  maximiza la
+Vamos a ver en el cap\'itulo~\ref{Cap:SZ:Informacion} que esta distribuci\'on es
+la distribuci\'on definida  sobre un conjunto de volumen  finito que maximiza la
 entrop\'ia, \ie  que es la  ``menos informativa''. Por  ejemplo, si se  busca un
-par\'ametro  modelizado como  aleatorio (enfoque  Bayesiano), definido  sobre un
+par\'ametro  modelizado como  aleatorio (enfoque  bayesiano), definido  sobre un
 conjunto de volumen finito, sin  a priori m\'as, una tendencia natural/intuitiva
-es de asignar la ``misma probabilidad'' a cada punto del conjunto. Aparece as\'i
-naturalmente en la inferencia Bayesiana~\cite{Rob07}.
+es de  asignar la ``misma probabilidad'' a  cada punto del conjunto.  Es por eso
+que aparece as\'i naturalmente en la inferencia bayesiana~\cite{Rob07}.
  
 Notar que  cuando $b \to a$,  la variable tiende a  una variable cierta  $X = a$
 (ver principio de esta secci\'on).

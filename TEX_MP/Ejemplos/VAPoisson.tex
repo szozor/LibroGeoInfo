@@ -3,18 +3,18 @@
 
 Esta  ley fue  introducida por  Poisson en  1837 como  caso l\'imite  de  la ley
 binomial     para     $n$     grande,      con     el     producto     $n     p$
-fijo~\cite[Cap.~3]{Poi37},~\cite{Hal90,  DavEdw01}.  Se  intereso en  su estudio
-del comportamentio probabilistico del conteo de experiencia de Bernoulli bajo la
-hipotesis de  independencia (dando lugar a  la ley binomial)  en ciencia humana,
-para una poblaci\'on  importante ($n$ grande), pero con  un valor promedio dado.
-De hecho, se conocia esta ley,  tambi\'en como caso l\'imite de la binomial, por
-lo menos desde un trabajo de de Moivre unas decadas antes~\cite{Moi10}. Aparecio
-tambi\'en  m\'as  tarde  en  muchos   procesos  f\'isicos,  como  el  conteo  de
-desintegraci\'on   atomica  por   secundo   en  un   material  radioactivo,   o,
-(aproximadamente) a trav\'es del conteo  de particulas que caen en una peque\~na
-superficia cuanto se tiras particulas  uniformamente en una grande superficia en
-trabajos de W. S. Gosset~\footnote{Fue connocido bajo en nombre ``Student''; ver
-  nota de pie~\ref{Foot:MP:Student}.}~\cite{Stu07}.
+fijo~\cite[Cap.~3]{Poi37},~\cite{Hal90, DavEdw01}.  Se  interes\'o Poisson en su
+estudio  al  comportamentio  probabil\'istico   del  conteo  de  experiencia  de
+Bernoulli bajo la hipotesis de independencia  (dando lugar a la ley binomial) en
+ciencia humana, para una poblaci\'on  importante ($n$ grande), pero con un valor
+promedio dado.  De hecho, se conoc\'ia esta ley, tambi\'en como caso l\'imite de
+la  binomial,  por  lo  menos  desde  un  trabajo  de  de  Moivre  unas  decadas
+antes~\cite{Moi10}.   Apareci\'o  tambi\'en   m\'as  tarde  en  muchos  procesos
+f\'isicos, como el conteo de desintegraci\'on atomica por secundo en un material
+radioactivo, o, (aproximadamente) a trav\'es del conteo de part\'iculas que caen
+en una peque\~na  superficia, cuanto se tiran part\'iculas  uniformamente en una
+grande superficia  en trabajos de  W. S. Gosset~\footnote{Fue connocido  bajo en
+  nombre ``Student''; ver nota de pie~\ref{Foot:MP:Student}.}~\cite{Stu07}.
 
 Se denota $X \,  \sim \, \P(\lambda)$ \ con \ $\lambda  \in \Rset_+^*$ \ llamada
 {\em taza}, y sus caracter\'isticas son las siguientes:
@@ -43,12 +43,12 @@ Varianza & $\sigma_X^2 = \lambda$\\[2mm]
 Curtosis por exceso & $\displaystyle \widebar{\kappa}_X = \frac1\lambda$\\[2mm]
 \hline
 %
-Generadora de probabilidad & $\displaystyle G_X(z) = e^{\lambda (z-1)}$ \ para \
+Generadora de probabilidad & $\displaystyle G_X(z) = e^{\lambda (z-1)}$ \quad para \
 $z \in \Cset$\\[2mm]
 \hline
 %
 Generadora  de momentos  & $\displaystyle  M_X(u) =  e^{\lambda \left(  e^u  - 1
-\right)}$ \ para \ $u \in \Cset$\\[2mm]
+\right)}$ \quad para \ $u \in \Cset$\\[2mm]
 \hline
 %
 Funci\'on  caracter\'istica  &  $\displaystyle  \Phi_X(\omega) =  e^{\lambda  \,
@@ -73,7 +73,8 @@ figura Fig.~\ref{Fig:MP:Poisson}.
   la funci\'on de repartici\'on asociada (b), con $\lambda = 3$.}
 \label{Fig:MP:Poisson}
 \end{figure}
-\SZ{Otros ilustraciones para otros $\lambda$?}
+
+\SZ{Otras ilustraciones para otros $\lambda$?}
 
 Ad\'emas, se muestra  sencillamente usando la generadora de  probabilidad que
 %
@@ -110,7 +111,7 @@ Como lo hemos introducido, la ley de Poisson esta v\'inculada a la ley binomial,
     a  A.  De  Moivre~\cite{Moi33, Moi56,  Pea24,  Cam86, Dut91,  Dem33}, y  fue
     mejorada por  Stirling m\'as tarde. Fue  mejorada a\'un m\'as  por el famoso
     matem\'atico                          S.                           Ramanujan
-    recientemente~\cite[\S~4.1]{AndBer13}.\label{Foot:MP:Stirling}}    para    \
+    recientemente~\cite[\S~4.1]{AndBer13}.\label{Foot:MP:Stirling}}:            \
   $\log\Gamma(z) = \left( z - \frac12 \right) \log z - z + \frac12 \log(2 \pi) +
   o(1)$ \ en \ $z \to +\infty$~\cite{Sti30, AbrSte70, GraRyz15}.
 \end{proof}
@@ -125,7 +126,7 @@ Sean \ $X_r \, \sim \, \B_-\left( \frac{\lambda}{r+\lambda} \, , \, r \right)$ \
 con $\lambda > 0$ fijo, entonces
   %
   \[
-  X_R \, \limitd{r \to \infty} \, X \, \sim \, \P(\lambda)
+  X_r \, \limitd{r \to \infty} \, X \, \sim \, \P(\lambda)
   \]
 \end{lema}
 \begin{proof}
@@ -134,12 +135,12 @@ con $\lambda > 0$ fijo, entonces
 \end{proof}
 
 M\'as all\'a  del contexto discreto, esta  ley esta tambi\'en  v\'inculada a ley
-exponencial, por  el processo  dicho de Poisson.  Si eventos pueden  aparecer de
+exponencial, por  el processo dicho de  Poisson.  Si eventos  pueden aparecer de
 manera aleatoria  en el tiempo tal que,  entre dos eventos, el  tiempo sigue una
-ley exponencial de par\'ametro $\lambda$,  y que estos tiempos son independientes,
-entonces dado  un intervalo $T$ de tiempo  , el n\'umero de  estos eventos sigue
-una ley de Poisson de par\'ametro $\lambda T$.  Lo vamos a ver en el ejemplo de la
-ley exponencial m\'as adelante.
+ley   exponencial  de   par\'ametro   $\lambda$,  y   que   estos  tiempos   son
+independientes, entonces dado  un intervalo $T$ de tiempo,  el n\'umero de estos
+eventos sigue una ley de Poisson de  par\'ametro $\lambda T$.  Lo vamos a ver en
+el ejemplo de la ley exponencial m\'as adelante.
 
-Al final, nota que cuando $\lambda = 0$ la variable es cierta $X = 0$ (usando la
-convenci\'on $0^0 = 1$).
+Al final, notar que  cuando $\lambda = 0$ la variable es  cierta $X = 0$ (usando
+la convenci\'on $0^0 = 1$).

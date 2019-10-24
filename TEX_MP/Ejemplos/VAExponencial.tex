@@ -50,43 +50,61 @@ Funci\'on     caracter\'istica     &     $\displaystyle     \Phi_X(\omega)     =
 % Mediana \ln(2)/\lambda
 % CDF 1-e^{-\lambda x}
 
-Su densidad  de probabilidad  y funci\'on de  repartici\'on son representadas  en la
-figura Fig.~\ref{Fig:MP:Exponencial}.
+Unas densidades  de probabilidad  y funciones de  repartici\'on asociadas son representadas  en la
+figura Fig.~\ref{Fig:MP:Exponencial} para varios par\'ametros.
 %
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/Exponencial} \end{center}
 % 
 \leyenda{Ilustraci\'on  de una densidad  de probabilidad  exponencial (a),  y la
-funci\'on de repartici\'on asociada (b), con $\lambda = 1.5$.}
+  funci\'on  de  repartici\'on asociada  (b),  con  $\lambda  = \frac32$  (linea
+  llena),  $\lambda  =  1$  (linea   guionada)  y  $\lambda  =  \frac12$  (linea
+  punteada).}
 \label{Fig:MP:Exponencial}
 \end{figure}
-\SZ{Poner escalas; Otros ilustraciones para otros $\lambda$?}
+%\SZ{Poner escalas; Otros ilustraciones para otros $\lambda$?}
 
 La  ley exponencial  es conocida  como siendo  {\em sin  memoria}, es  decir, si
 buscamos \  $X$ \  visto como un  tiempo (ej.  tiempo de desintegraci\'on  de un
-atomo radioactivo) tal que
+at\'omo radioactivo) tal que
 %
 \[
 \forall \: x_0 \ge 0, \, x \ge 0, \quad P( X > x+x_0 | X > x_0) = P(X > x)
 \]
 %
 \ie  la  probabilidad  que  $X  >  x+x_0$  (extra  tiempo  despu\'es  de  $x_0$)
-condicionalmente  a $X >  x_0$ es  exactamente la  de $X  > x+x_0$  (se olvid\'o
-$x_0$), tenemos, por la definici\'on de la probabilidad condicional
+condicionalmente  a $X >  x_0$ es  exactamente la  de $X  > x$  (se olvid\'o
+$x_0$). De hecho, tenemos de la definici\'on de la probabilidad condicional
 %
 \[
-\forall \: x_0 \ge 0, \, x \ge 0, \quad \frac{1-F_X(x+x_0)}{1-F_X(x_0)} = 1-F_X(x)
+\forall \: x_0 \ge 0, \, x \ge 0, \quad P(X > x+x_0 | X > x_0) = \frac{P\big( (X > x+x_0) \cap (X > x_0) \big)}{P(X > x_0)}
+% = \frac{1-F_X(x+x_0)}{1-F_X(x_0)} = 1-F_X(x)
 \]
 %
-Por diferenciaci\'on con respeto a $x$ eso da, en $x \to 0$,
+Ahora, de $(X > x+x_0) \subset (X > x_0)$ se obtiene
 %
 \[
-\forall  \: x_0  \ge 0,  \quad  F_X'(x_0) +  \lambda F_X(x_0)  = \lambda  \qquad
-\mbox{con} \qquad \lambda = F_X'(0)
+\forall \: x_0 \ge 0, \, x \ge 0, \quad P(X > x+x_0 | X > x_0) = \frac{1-F_X(x+x_0)}{1-F_X(x_0)} = 1-F_X(x)
 \]
 %
-Teneiendo en cuenta de que $F_X$  es una funci\'on de repartici\'on, aparece que
-$F_X(x) = \left( 1 - e^{-\lambda x} \right) \un_{\Rset_+}(x)$, ley exponencial.
+De la  densidad de  probabilidad, tenemos  para $x >  0$, $F_X(x)  = \left(  1 -
+  e^{-\lambda x} \right) \un_{\Rset_+}(x)$, as\'i  que $1 - F_X(x) = e^{-\lambda
+  x}$. Poniendo este resultado el la expresi\'on anterior se obtiene finalmente
+%
+\[
+\forall \: x_0 \ge 0, \, x \ge 0,  \quad P(X > x+x_0 | X > x_0) = e^{-\lambda x}
+= 1-F_X(x) = P(X > x)
+\]
+%
+%Por diferenciaci\'on con respeto a $x$ eso da, en $x \to 0$,
+%%
+%\[
+%%\forall  \: x_0  \ge 0,  \quad  F_X'(x_0) +  \lambda F_X(x_0)  = \lambda  \qquad
+%\mbox{con} \qquad \lambda = F_X'(0)
+%\]
+%%
+%Teneiendo en cuenta de que $F_X$  es una funci\'on de repartici\'on, aparece que
+%$F_X(x) = \left( 1 - e^{-\lambda x} \right) \un_{\Rset_+}(x)$, ley exponencial.
 
 Como  lo hemos  evocado  tratando de  la  ley de  Poisson,  esta es  v\'inculada
 intimamente a la ley exponencial a trav\'es del processo dicho de poisson:
@@ -118,10 +136,14 @@ Por definici\'on,
 \begin{eqnarray*}
 P(X = n) & = & P(X\le n) - P(X \le n-1) \\[2mm]
 %
-& = & P(T_{n+1} > T) - P(T_n > T)\\[2mm]
-%
-& = & F_{T_n}(T) - F_{T_{n+1}}(T)
+& = & P(T_{n+1} > T) - P(T_n > T)
 \end{eqnarray*}
+%
+Es decir
+%
+\[
+P(X = n) = F_{T_n}(T) - F_{T_{n+1}}(T)
+\]
 %
 Ahora, notando que
 %
@@ -153,13 +175,14 @@ Con integraciones por partes, se obtiene sencillamente
 F_{T_n}(T) = 1 - \sum_{i=0}^{n-1} \frac{\lambda^i T^i e^{-\lambda T}}{i!}
 \]
 %
-lo que cierra la prueba.
+Se concluye poniendo  este resultado en la expresi\'on $P(X =  n) = F_{T_n}(T) -
+F_{T_{n+1}}(T)$ que obtuvimos.
 \end{proof}
 %
 En  f\'isica,  se  modela la  ley  de  tiempo  de desintegraci\'on  como  siendo
-exponencial,  y   se  supone  que  los   desintegraciuones  son  independientes,
-explicando el modelo de Poisson  para el n\'umero de desintegraci\'on durante un
-tiempo dado.
+exponencial,  y  se supone  que  las  desintegraciones  son independientes.  Eso
+justifica  modelo de  Poisson  para modelizar  el  n\'umero de  desintegraci\'on
+durante un tiempo dado.
 
 Una otra caracter\'istica de esta ley  es su stabilidad con respecto al operador
 no lineal m\'inimo:
@@ -174,7 +197,7 @@ no lineal m\'inimo:
 \end{lema}
 %
 \begin{proof}
-Inmediatamente, para cualquief $x \ge 0$
+Inmediatamente, para cualquier $x \ge 0$
 %
 \begin{eqnarray*}
 1-F_X(x) & = & P(X > x) \\[2mm]

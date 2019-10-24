@@ -1,4 +1,4 @@
-\subsubseccion{Ley hipergeometrica}
+\subsubseccion{Ley hipergeom\'etrica}
 \label{Sssec:MP:Hipergeometrica}
 
 Esta ley aparece por ejemplo cuando  se hace una experiencia con una poblaci\'on
@@ -53,11 +53,11 @@ k \, (n-k) & \mbox{si} & n > 1\\[2mm] 0 & \mbox{si} & n =
 %\hline
 %
 Generadora de probabilidad & $G_X(z) = \frac{\smallbino{n-k}{m}}{\smallbino{n}{m}} \:
-\: \hypgeom{2}{1}(-m , -k ; n-m-k+1 ; z)$ \ sobre \ $\Cset$\\[2mm]
+\: \hypgeom{2}{1}(-m , -k ; n-m-k+1 ; z)$ \quad sobre \ $\Cset$\\[2mm]
 \hline
 %
 Generadora de momentos & $M_X(u) = \frac{\smallbino{n-k}{m}}{\smallbino{n}{k}}  \:
-\: \hypgeom{2}{1}\left( -m , -k ; n-m-k+1 ; e^u \right)$ \ sobre \
+\: \hypgeom{2}{1}\left( -m , -k ; n-m-k+1 ; e^u \right)$ \quad sobre \
 $\Cset$\\[2mm]
 \hline
 %%
@@ -71,7 +71,7 @@ figura Fig.~\ref{Fig:MP:Hipergeometrica}.
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/Hipergeometrica} \end{center}
 %
-\leyenda{Ilustraci\'on  de una  distribuci\'on  de probabilidad  Hipergeometrica
+\leyenda{Ilustraci\'on  de una  distribuci\'on  de probabilidad  hipergeom\'etrica
   (a), y la funci\'on de repartici\'on asociada (b), con \ $n = 100$, \quad $k =
   12$, \quad $m = 40$.}
 \label{Fig:MP:Hipergeometrica}
@@ -97,7 +97,14 @@ Notar: la variable resuelta cierta en los casos siguientes
 %
 \item $k = n  \: \Rightarrow \: X = m$: al rev\'es si  la secunda clase no tiene
   elementos, todos los sorteados partenecen a la primera clase.
+%
+\item  Para $n  = 1$,  necesariamente aparece  unas de  las  cuatros situaciones
+  anteriores (de hecho, dos a la vez).
 \end{itemize}
+%
+En cada de estos  casos, la varianza vale cero as\'i que  no se puede definir ni
+$\gamma_X$,  ni $\kappa_X$. A  fuera de  estos casos,  las expresiones  de estas
+cantidades son dejados al lector como exercicio.
 
 La ley tiene propiedades de reflexividad del mismo tipo que para la ley binomial:
 %

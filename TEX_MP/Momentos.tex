@@ -517,9 +517,10 @@ funci\'on   del  momento   de   inertia   con  respeto   al   centro  de   masa.
   %
   momento de orden  3 de la variable estandar, que  resulta adimensional y puede
   tener  signo positivo  o negativo,  anul\'andose para  distribuciones  que son
-  sim\'etricas respecto  del valor medio.   \modif{En el contexto  multivariado, la
-    extensi\'on  natural es  el tensor  de orden  3 de  los momentos  del vector
-    centrado   y   estandardizado    $\Sigma_X^{-\frac12}   \left(   X   -   m_X
+  sim\'etricas respecto  del valor medio.  \modif{Cuando  es positivo, significa
+    que hay m\'as  peso a la derecha  de la media, y vice-versa.  En el contexto
+    multivariado, la extensi\'on natural es el tensor de orden 3 de los momentos
+    del  vector centrado y  estandardizado $\Sigma_X^{-\frac12}  \left( X  - m_X
     \right)$~\cite{MorRoh94}:
   %
   \[
@@ -1077,6 +1078,9 @@ Nota:  se puede probar  esta desigualdad  considerando el  polinomio $\Esp\left[
   \modif{\left\| \lambda X + Y \right\|^2}  \right] \ge 0$, del secundo orden en
 $\lambda$. Siendo no negativa para cualquier $\lambda$ el discriminente debe ser
 no positivo, conduciendo a la desigualdad.
+
+\modif{Se notar\'a que de este corolario se puede v\'incular la asimetr\'ia y la
+  curtosis via la desigualdad $\gamma_X^2 \le \kappa_X$.}
 
 De hecho,  se puede ver $\Esp[X^t  Y]$ como un producto  escalar entre variables
 aleatorias. La sola subtileza es que  \modif{$\Esp\left[ \| X \|^2 \right] = 0$}

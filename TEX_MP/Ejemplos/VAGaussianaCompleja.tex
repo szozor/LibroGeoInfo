@@ -1,32 +1,34 @@
-\subsubseccion{Distribuci\'on normal o Gaussiana multivariada complejas}
+\subsubseccion{Distribuci\'on normal o gaussiana multivariada complejas}
 \label{Sssec:MP:GaussianaComplejas}
 
 Por definici\'on, un vector aleatorio complejo $d$-dimensional \ $Z = X + \imath
 Y$ \  es gausiano significa que  el vector $2 d$-dimensional  \ $\widetilde{Z} =
 \begin{bmatrix}  X^t &  Y^t \end{bmatrix}^t$  \ es  gausiano. Se  puede entonces
-referirse  en el  caso de  vectores gausianos,  pero como  lo presentamos  en la
+referirse  en el  caso de  vectores gausianos,  pero como  lo hemos presentado  en la
 secci\'on~\ref{Ssec:MP:VAComplejos}, es frecuentemente m\'as comodo trabajar con
-\  $Z$ \  en lugar  de \  $\widetilde{Z}$.  En  particular, en  el marco  de las
-comunicaciones en  ingeneria, se  trabaja con modulaciones  dichas en fase  y en
-cuadratura (se\~nal multiplicado  respectivamente por un seno y  un coseno) y en
-lugar  de trabajar  con dos  componente se  considera una  modulaci\'on  con una
-exponencial  compleja y  la  se\~nal/variable compleja.   Se  puede por  ejemplo
-referirse  a~\cite{Lap17} (ver en  particular el  capitulo~24) o~\cite{SchSch03,
-  EriKoi06}.
+\  $Z$ \  en lugar  de \  $\widetilde{Z}$.
+%  En  particular, en  el marco  de las
+%comunicaciones en  ingeneria, se  trabaja con modulaciones  dichas en fase  y en
+%cuadratura (se\~nal multiplicado  respectivamente por un seno y  un coseno) y en
+%lugar  de trabajar  con dos  componente se  considera una  modulaci\'on  con una
+%exponencial  compleja y  la  se\~nal/variable compleja.   Se  puede por  ejemplo
+%referirse  a~\cite{Lap17} (ver en  particular el  capitulo~24) o~\cite{SchSch03,
+%  EriKoi06}.
 
-En el caso general, la gausiana real siendo completamente descritar por su media
+En el caso general, la gausiana  real siendo completamente descrita por su media
 y su matriz de covarianza, la  gausiana compleja va a ser completamente definida
 por   la  media,   la  matriz   de  covarianza   y  la   pseudo-covarianza  (ver
 Sec.~\ref{Sec:MP:VectoresComplejosMatricesAleatorias}  por las  relaciones entre
-la  covarianza  de  \ $\widetilde{Z}$  \  y  estas  matrices).   $Z \,  \sim  \,
-\CN(m,\Sigma,\check{\Sigma})$  \   con  \  $m  \in  \Cset^d$,   \  $\Sigma  \in
-P_d^+(\Cset)$ \  conjunto de  las matrices de  \ $\M_{d,d}(\Cset)$  \ hermiticas
-definida  positivas, y  \  $\check{\Sigma}  \in S_d(\Cset)$  \  conjunto de  las
-matrices  de  \  $\M_{d,d}(\Cset)$  \  symmetricas (ver  notaciones).   Un  caso
-particular  aparece cuando  \ $Z$  \ es  propio en  torno a  \ $m$,  lo  que es
+la  covarianza  de  \ $\widetilde{Z}$  \  y  estas  matrices).
+
+Se denota \ $Z \, \sim \, \CN(m,\Sigma,\check{\Sigma})$ \ con \ $m \in \Cset^d$,
+\ $\Sigma \in P_d^+(\Cset)$ \ conjunto  de las matrices de \ $\M_{d,d}(\Cset)$ \
+herm\'iticas definidas positivas, y  \ $\check{\Sigma} \in S_d(\Cset)$ \ conjunto
+de las matrices de \  $\M_{d,d}(\Cset)$ \ symmetricas (ver notaciones).  Un caso
+particular  aparece cuando  \ $Z$  \  es propio  en torno  a  \ $m$,  lo que  es
 equivalente en el caso gausiano a tener \ $Z$ \ circular (ver m\'as adelante) en
-torno a  \ $0$, dado cuando  \ $\check{\Sigma} =  0$: en este caso  usaremos la
-misma notaci\'on,  $Z \, \sim  \, \CN(m,\Sigma)$.  Las caracter\'isticas  de la
+torno a  \ $m$, dado  cuando \  $\check{\Sigma} = 0$:  en este caso  usaremos la
+misma notaci\'on,  $Z \,  \sim \, \CN(m,\Sigma)$.   Las caracter\'isticas  de la
 gaussiana  compleja   son  las  siguientes~\cite{Lap17,   Pic96,  Goo63,  Bos95,
   SchSch03, EriKoi06}:
 
@@ -47,8 +49,8 @@ Caso general: & $\displaystyle p_Z(z) = \frac{1}{\pi^d \left| \Sigma
  con~\footnote{En~\cite{Pic96} la expresi\'on es ligieramente diferente, pero se
  recupera usando la simetr\'ia \ $\check{\Sigma}^* =
  \check{\Sigma}^\dag$. Recordar que \ $\cdot^{-*} = \left( \cdot^* \right)^{-1}$
- \ (ver notaciones).} \ $P = \Sigma - \check{\Sigma} \Sigma^{-*}
- \check{\Sigma}^\dag, \quad R = \check{\Sigma}^\dag \Sigma^{-1}$.\\[2.5mm]
+ \ (ver notaciones).} \ $P = \Sigma - \check{\Sigma} \, \Sigma^{-*}
+ \, \check{\Sigma}^\dag, \quad R = \check{\Sigma}^\dag \, \Sigma^{-1}$.\\[2.5mm]
 %
 Caso circular: & $\displaystyle p_Z(z) = \frac{1}{\pi^d \left| \Sigma \right|}
  \: e^{- (z-m)^\dag \Sigma^{-1} (z-m)}$\\[2.5mm]
@@ -79,7 +81,7 @@ Caso circular: & $\displaystyle \Phi_Z(\omega) = e^{-\frac14
 \end{caracteristicas}
 
 Notar que  en el caso  escalar propio (circular),  la varianza de  \ $Z$ \  es \
-$\sigma_Z^2 =  2 \sigma^2$. El  coefficiente 2  viene del hecho  de que \  $Z$ \
+$\sigma_Z^2  = 2  \sigma^2$.  El coefficiente  2 viene  del  hecho que  \ $Z$  \
 contiene dos componentes independientes de varianza $\sigma^2$.
 
 Los vectores aleatorios complejos van a compartir las propiedades del caso real,
@@ -175,16 +177,18 @@ Sean \ $A \in \M_{d',d}(\Cset)$, \  $B \in \M_{d',d}(\Cset)$ \ tales que \ ambas
   \]
 \end{teorema}
 \begin{proof}
-  Tomando  la  forma  real  $2d$-dimensional  \  $Z$ \  es  en  biyecci\'on  con
-  $\widetilde{Z} = \begin{bmatrix} X\\ Y \end{bmatrix}$ \ y entonces \ $Z^*$ \ en
-  biyecci\'on con \ $\widetilde{Z^*} = \begin{bmatrix} X\\-Y \end{bmatrix}$. Eso
-  da \ $A  Z + B Z^*  + c$ \ en biyecci\'on  con $\begin{bmatrix} A+B &  0\\ 0 &
-    A-B  \end{bmatrix}  \begin{bmatrix}  X\\ Y  \end{bmatrix}  +  \begin{bmatrix}
+  Tomando la forma real $2d$-dimensional \ $Z = X + \imath Y$ \ con $X, Y$
+  reales,   es  en   biyecci\'on  con   $\widetilde{Z}  =   \begin{bmatrix}  X\\
+    Y   \end{bmatrix}$  \  y   entonces  \   $Z^*$  \   en  biyecci\'on   con  \
+  $\widetilde{Z^*} = \begin{bmatrix} X\\-Y \end{bmatrix}$. Eso da \ $A Z + B Z^*
+  +   c$   \   en   biyecci\'on   con   $\begin{bmatrix}   A+B   &   0\\   0   &
+    A-B \end{bmatrix} \begin{bmatrix} X\\ Y \end{bmatrix} + \begin{bmatrix}
     \real{c}\\ \imag{c} \end{bmatrix}$. Notando que \ $\begin{bmatrix} A+B & 0\\
     0    &   A-B    \end{bmatrix}$   \    es    de   rango    lleno,   por    el
   teorema~\ref{Teo:MP:StabilidadGaussiana} este vector es gausiano, lo que proba
   que \  $A Z  + B  Z^* + c$  \ es  gausiano complejo. Las  formas de  la media,
-  covarianza y pseudo-covarianza siguen de calculos directos.
+  covarianza y  pseudo-covarianza siguen de calculos directos  de la expresi\'on
+  $A Z + B Z^* + c$.
 \end{proof}
 %
 Evidentemente, se puede combinar los dos teoremas anteriores.
@@ -194,14 +198,14 @@ El teorema del l\'imite central y sus variantes se recuperan del caso real.
 \begin{teorema}[Teorema del l\'imite central (caso complejo)]
 \label{Teo:MP:CLTComplejo}
 %
-  Sea  \  $\{  Z_i \}_{i  \in  \Nset^*}$  \  una  serie de  vectores  aleatorios
-  independientes, de misma  ley, y que admiten un promedio \  $m$, una matriz de
-  covarianza   \   $\Sigma$   \    y   una   matriz   de   pseudo-covarianza   \
-  $\check{\Sigma}$. Entonces
+Sea  \ $\{  Z_i \}_{i  \in  \Nset^*}$ \  una sucesi\'on  de vectores  aleatorios
+independientes, de  misma ley, y  que admiten un  promedio \ $m$, una  matriz de
+covarianza   \    $\Sigma$   \   y    una   matriz   de    pseudo-covarianza   \
+$\check{\Sigma}$. Entonces
   %
   \[
   \frac{1}{\sqrt{n}}  \sum_{i=1}^m  \left( Z_i  -  m  \right)  \: \limitd{n  \to
-    +\infty} \: W \sim \CN\left( 0 , \Sigma , \check{\Sigma} \right)
+    +\infty} \: Z \sim \CN\left( 0 , \Sigma , \check{\Sigma} \right)
   \]
   %
   donde  \ $\limitd{}$ \  significa que  el l\'imite  es en  distribuci\'on (ver
@@ -267,10 +271,10 @@ Sea \  $Z \sim  \CN(m,\Sigma,\check{\Sigma})$.  Entonces, existen  matrices (no
     I \end{bmatrix}
   \]
   %
-  y notando que $\frac12 (U + \imath V) \sim \CN(0,I)$.
+  y notando que \ $W \equiv \frac12 (U + \imath V) \sim \CN(0,I)$.
 \end{proof}
 %
-Nota,  usando  la  descomposici\'on   de  Cholesky,  tenemos  \  $M$  triangular
+Notar  que, usando  la descomposici\'on  de Cholesky,  tenemos \  $M$ triangular
 inferior~\footnote{Se puede hacer el  mismo razonamiento con la forma triangular
   superior;  se cambia  los roles  de \  $X$  \ e  \ $Y$  \ en  las matrices  de
   covarianza.},  y  entonces bloc-triangular  inferior  \  $M =  \begin{bmatrix}
@@ -278,11 +282,11 @@ inferior~\footnote{Se puede hacer el  mismo razonamiento con la forma triangular
 = \begin{bmatrix} \Sigma_X & \Sigma_{X,Y} \\ \Sigma_{X,Y}^t &
   \Sigma_Y \end{bmatrix}  = \begin{bmatrix} \alpha \alpha^t &  \alpha \beta^t \\
   \beta \alpha^t &  \beta \beta^t + \gamma \gamma^t  \end{bmatrix}$.  Eso da por
-ejemplo \   $\alpha    =   \Sigma_X^{\frac12}$,    \    $\beta   =    \Sigma_{X,Y}^t
-\Sigma_X^{-\frac12}$ \ y \ $\gamma = \left( \Sigma_Y - \Sigma_{X,Y}^t \Sigma_X^{-1}
-  \Sigma_{X,Y} \right)^{\frac12}$.   Por el otro lado,  $A = \alpha  + \gamma +
-\imath \beta$ \ y \ $B = \alpha - \gamma + \imath \beta$. Una soluci\'on posible
-es entonces
+ejemplo   \   $\alpha  =   \Sigma_X^{\frac12}$,   \   $\beta  =   \Sigma_{X,Y}^t
+\Sigma_X^{-\frac12}$  \   y  \  $\gamma  =  \left(   \Sigma_Y  -  \Sigma_{X,Y}^t
+  \Sigma_X^{-1} \Sigma_{X,Y} \right)^{\frac12}$.   A continuaci\'on, $A = \alpha
++  \gamma +  \imath \beta$  \ y  \ $B  = \alpha  - \gamma  + \imath  \beta$. Una
+soluci\'on posible es entonces
 %
 \[
 \left\{\begin{array}{lll}
@@ -333,8 +337,8 @@ conjugada~\cite{EriKoi06, SchSch03}:
 
 
 Al final, v\'imos en la  secci\'on~\ref{Ssec:MP:VAComplejos} que si un vector es
-circular, entonces  su pseudo-covarianza es nula,  pero la reciproca  no vale en
-general. Aparece que en el contexto gausiano tenemos la reciproca:
+circular, entonces su pseudo-covarianza es  nula, pero la rec\'iproca no vale en
+general. Aparece que en el contexto gausiano tenemos la rec\'iproca:
 %
 
 \begin{teorema}[Circularidad]\label{Teo:MP:CircularidadGaussiana}

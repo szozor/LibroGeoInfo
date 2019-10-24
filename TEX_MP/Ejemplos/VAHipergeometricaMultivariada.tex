@@ -1,9 +1,9 @@
 \subsubseccion{Ley hipergeometrica multivariada}
 \label{Sssec:MP:HipergeometricaMultivariada}
 
-Esta ley aparece por ejemplo cuando  se se generaliza la ley hipergeometrica con
-$c > 2$ clases \ con \ $k_i$  \ num\'ero de elementos de la clase \ $i$, $\sum_i
-k_i = n$.  Se estudia esta ley, entre otros, por la primera vez, en el ensayo de
+Esta ley aparece por ejemplo cuando  se generaliza la ley hipergeom\'etrica con $c
+> 2$ clases \ con \ $k_i$ \ num\'ero de elementos de la clase \ $i$, $\sum_i k_i
+= n$.   Se estudia esta ley,  entre otros, por la  primera vez, en  el ensayo de
 Montmort  en  1708~\cite{Mon13},  o  m\'as   tarde,  en  1740,  en  trabajos  de
 Simpson~\cite{Sim40, Hal90, DavEdw01}.
 
@@ -16,41 +16,27 @@ n\}$.
 Entonces, como en el caso de la ley multinomial, a pesar de que se escribe \ $X$
 \  de manera  $c$-dimensional, el  vector partenece  a un  espacio  claramente \
 $(c-1)$-dimensional.  Notar que  en el  caso \  $c  = 2$  \ se  recupera la  ley
-hipergeometrica.
+hipergeom\'etrica.
 
 Sus caracter\'isticas son las siguientes:
 
 \begin{caracteristicas}
 %
-Dominio de definici\'on~\footnote{De hecho, se puede considerar que el vector
-aleatorio es \ $(c-1)$-dimensional \ $\widetilde{X} = \begin{bmatrix}
-\widetilde{X}_1 & \cdots & \widetilde{X}_{c-1} \end{bmatrix}^t$ \ definido sobre
-el dominio \ $\displaystyle \widetilde{\X} = \left\{ x \in \optimes_{i=1}^{c-1}
-\{ 0 \; \ldots \; k_i\} \tq \max\left( 0 \, , \, \sum_{i=1}^{c-1} k_i + m - n
-\right) \: \le \: \sum_{i=1}^{c-1} x_i \: \le \: m
-\right\}$.\label{Foot:MP:HipergeomMultiDominio}} & $\displaystyle \X = \left\{ x
-\in \optimes_{i=1}^c \{ 0 \; \ldots \; k_i \} \tq \sum_{i=1}^c x_i = m
+Dominio de definici\'on & $\displaystyle \X = \left\{ \left. x
+\in \optimes_{i=1}^c \{ 0 \; \ldots \; k_i \} \, \right| \, \sum_{i=1}^c x_i = m
 \right\}$\\[2mm]
 \hline
 %
-Par\'ametros~\footnote{Los par\'ametros de \ $\widetilde{X}$ \ son \ $n \in
-\Nset^*$, \ $m \in \{ 0 \; \ldots \; n \}$ \ y \ $\widetilde{k} =
-\protect\begin{bmatrix} k_1 & \cdots & k_{c-1} \end{bmatrix}^t\protect \in
-\left\{ q \in \{ 0 \; \ldots \; n \}^{c-1} \tq \sum_{i=1}^{c-1} q_i \, \le \, n
-\right\}$.\label{Foot:MP:MultinomialParametro}} & $n \in \Nset^*$ \:
+Par\'ametros & $n \in \Nset^*$ \:
 (poblaci\'on)\newline $c \in \Nset^*$ \: (n\'umero de clases)\newline
-$\displaystyle k \in \Part{n}{c}$ 
+$\displaystyle k \in \Part{n,c}$ 
 %\left\{ q \in \{ 0 \; \ldots \; n\}^c \tq \sum_{i=1}^c q_i
 %= n \right\}$ 
 \ (n\'umeros de elementos de cada clase)\newline $m \in \{ 0 \;
 \ldots \; n\}$ \: (n\'umero de tiros)\\[2mm]
 \hline
 %
-Distribuci\'on de probabilidad~\footnote{La masa de probabilidad de \
-$\widetilde{X}$ \ es \ $\displaystyle p_{\widetilde{X}}(x) =
-\frac{\prod_{i=1}^{c-1} \bino{k_i\vspace{1mm}}{x_i} \, \smallbino{n -
-\sum_{i=1}^{c-1} k_i\vspace{2mm}}{m - \sum_{i=1}^{c-1}
-x_i}}{\bino{n}{m}}$.\label{Foot:MP:HipergeomMultiMasa}.} &
+Distribuci\'on de probabilidad &
 \protect$\displaystyle p_X(x) = \frac{\prod_{i=1}^c
 \smallbino{k_i}{x_i}}{\smallbino{n}{m}}$\protect\\[2mm]
 \hline
@@ -58,8 +44,9 @@ x_i}}{\bino{n}{m}}$.\label{Foot:MP:HipergeomMultiMasa}.} &
 Promedio & $\displaystyle m_X = \frac{m}{n} \, k$\\[2mm]
 \hline
 %
-Covarianza~\footnote{Ver notas de pie~\ref{Foot:MP:HipergeometricaVarianza}
-y~\ref{Foot:MP::MultinomialCovarianza}.} & $\displaystyle \Sigma_X = \left\{
+Covarianza
+%~\footnote{Ver notas de pie~\ref{Foot:MP:HipergeometricaVarianza} y~\ref{Foot:MP::MultinomialCovarianza}.} 
+& $\displaystyle \Sigma_X = \left\{
 \protect\begin{array}{ccc} \frac{m (n-m)}{n^2 (n-1)} \left( n \diag(k) - k k^t
 \right) & \mbox{si} & n > 1\\ 0 & \mbox{si} & n = 1\end{array}\protect\right.$
 %\\[2mm]
@@ -81,6 +68,34 @@ y~\ref{Foot:MP::MultinomialCovarianza}.} & $\displaystyle \Sigma_X = \left\{
 %\, e^{\imath \omega} \right)^n$
 \end{caracteristicas}
 
+De hecho, se puede considerar que el vector aleatorio es \ $(c-1)$-dimensional \
+$\widetilde{X}     =    \begin{bmatrix}     \widetilde{X}_1    &     \cdots    &
+  \widetilde{X}_{c-1}   \end{bmatrix}^t$   \  definido   sobre   el  dominio   \
+$\displaystyle    \widetilde{\X}   =    \left\{    \left.   \widetilde{x}    \in
+    \optimes_{i=1}^{c-1} \{ 0 \; \ldots \; k_i\} \, \right| \, \max\left( 0 \, ,
+    \,  \sum_{i=1}^{c-1}  k_i  +  m  -  n \right)  \:  \le  \:  \sum_{i=1}^{c-1}
+  \widetilde{x}_i \: \le \: m \right\}$. Los par\'ametros de \ $\widetilde{X}$ \
+son  entonces \  $n \in  \Nset^*$, \  $m \in  \{  0 \;  \ldots \;  n \}$  \ y  \
+$\widetilde{k}     =     \protect\begin{bmatrix}      k_1     &     \cdots     &
+  k_{c-1} \end{bmatrix}^t\protect \in \left\{ q \in \{ 0 \; \ldots \; n \}^{c-1}
+  \tq \sum_{i=1}^{c-1} q_i  \, \le \, n \right\}$. A  continuaci\'on, la masa de
+probabilidad   de  \   $\widetilde{X}$  \   es  naturalmente   \  $\displaystyle
+p_{\widetilde{X}}(x)  =  \frac{\prod_{i=1}^{c-1} \bino{k_i\vspace{1mm}}{x_i}  \,
+  \smallbino{n   -   \sum_{i=1}^{c-1}   k_i\vspace{2mm}}{m  -   \sum_{i=1}^{c-1}
+    x_i}}{\bino{n}{m}}$.
+
+Similarmente al  caso multinomial, se puede ver  que $\Sigma_X \un =  0$ \ as\'i
+que \ $\Sigma_X \not\in P_k^+(\Rset)$.  De nuevo, es la consecuencia directa del
+hecho   de  que   \  $X$   \  $c$-dimensional,   vive  sobre   una   variedad  \
+$(c-1)$-dimensional. Aparentemente, siendo $\Sigma_X$ no invertible, no se puede
+definir  ni  asimetr\'ia, ni  curtosis.  Sin  embargo,  habr\'ia para  esta  ley
+tambi\'en  que  considerar  \   $\widetilde{X}$,  de  promedio  $\frac{m}{n}  \,
+\widetilde{k}$ y de covarianza el bloque $(c-1) \times (c-1)$ de $\Sigma_X$, que
+es ahora  invertible. $\gamma_{\widetilde{X}}$ \ y  \ $\kappa_{\widetilde{X}}$ \
+son bien definidos.  Las expresiones, demasiado pesadas, no  son dadas ac\'a (se
+deja al lector como exercicio).
+
+
 \SZ{Ver si se calcula Phi}
 
 La masa  de probabilidad es representada  en la
@@ -89,21 +104,19 @@ figura Fig.~\ref{Fig:MP:HipergeometricaMultivariada}.
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/HipergeometricaMultivariada} \end{center}
 %
-\leyenda{Ilustraci\'on  de una  distribuci\'on  de probabilidad  hipergeometrica
+\leyenda{Ilustraci\'on de  una distribuci\'on de  probabilidad hipergeom\'etrica
   multivariada  para   \  $c  =  3$   \  del  vector   \  $(c-1)$-dimensional  \
   $\widetilde{X} = \protect\begin{bmatrix}  X_1 & X_2 \protect\end{bmatrix}^t$ \
-  ($X_3 = m-X_1-X_2$) \ con las  marginales \ $p_{X_1}, \: p_{X_2}$ \ (ver notas
-  de                                      pie~\ref{Foot:MP:HipergeomMultiDominio}
-  y~\ref{Foot:MP:HipergeomMultiMasa}).  Es  dibujada solamente la distribuci\'on
-  sobre $\widetilde{\X}$, siendo esta  nula afuera de $\widetilde{\X}$.  Los
-    par\'ametros son \ $n = 18$, \ $m = 5$, \ $k = \protect\begin{bmatrix} 9 & 6 &
-      3 \protect\end{bmatrix}^t$  (a), $k  = \protect\begin{bmatrix} 6  & 6  & 6
-      \protect\end{bmatrix}^t$ (b).}
+  ($X_3 = m-X_1-X_2$) \ con las marginales \ $p_{X_1}, \: p_{X_2}$.  Es dibujada
+  solamente la distribuci\'on sobre $\widetilde{\X}$, siendo esta cero afuera de
+  $\widetilde{\X}$.   Los par\'ametros  son  \ $n  =  18$, \  $m =  5$,  \ $k  =
+  \protect\begin{bmatrix}  9  &  6   &  3  \protect\end{bmatrix}^t$  (a),  $k  =
+  \protect\begin{bmatrix} 6 & 6 & 6 \protect\end{bmatrix}^t$ (b).}
 \label{Fig:MP:HipergeometricaMultivariada}
 \end{figure}
 
 
-Notar: cuando $c = 2$ se  recupera la ley hipergeometrica; adem\'as $X$ resuelta
+Notar: cuando $c = 2$ se  recupera la ley hipergeom\'etrica; adem\'as $X$ resuelta
 cierta   en  los  casos   siguientes  (ver   subesecci\'on  anterior   para  las
 explicaciones/ilustraciones):
 %
@@ -118,8 +131,8 @@ explicaciones/ilustraciones):
 % \SZ{casos particulares a ver; caso de propiedades de reflexividad a ver (igual
 %   para la multinomial)}
 
-Vectores  de  distribuci\'on  hipergeometricas multivaluada  tienen  propiedades
-notables similares a las de la  hipergeometricas y de la multinomial, a saber de
+Vectores  de  distribuci\'on  hipergeom\'etricas multivaluada  tienen  propiedades
+notables similares a las de la  hipergeom\'etricas y de la multinomial, a saber de
 tipo reflexividad, con respecto a una permutaci\'on de variable y con respecto a
 una agregaci\'on.
 %
@@ -134,13 +147,6 @@ una agregaci\'on.
   %
 \end{lema}
 %
-Como  el en  contexto  escalar, si  en una  urna  tenemos bolas  de $c$  colores
-diferentes,  con  un n\'umero  $k_i$  para el  $i$-\'esimo  color,  $X_i$ es  el
-num\'ero de este color que se sorte\'o y $k_i-X_i$ representan las de este color
-que quedan en la urna, entre las  \ $n-m = \sum_{i=1}^c (k_i-X_i)$ \ que quedan,
-es decir que en \ $k-X$ \ se  intercambia los roles de las bolas sorteadas y las
-que quedan en la urna. M\'as formalmente:
-%
 \begin{proof}
   %El  primer   resultado  es  inmediato  de  $P(m-X   =  x)  =  P(X   =  m-x)  =
   %\frac{\smallbino{k}{m-x} \smallbino{n-k}{x}}{\smallbino{n}{m}}$. El secundo de
@@ -152,6 +158,13 @@ que quedan en la urna. M\'as formalmente:
   $\sum_{i=1}^c y_i = n-m$.
 \end{proof}
 %
+Como  el en  contexto  escalar, si  en una  urna  tenemos bolas  de $c$  colores
+diferentes,  con  un n\'umero  $k_i$  para el  $i$-\'esimo  color,  $X_i$ es  el
+num\'ero de este color que se sorte\'o y $k_i-X_i$ representan las de este color
+que quedan en la urna, entre las  \ $n-m = \sum_{i=1}^c (k_i-X_i)$ \ que quedan,
+es decir que en \ $k-X$ \ se  intercambia los roles de las bolas sorteadas y las
+que quedan en la urna.
+
 \begin{lema}[Efecto de una permutaci\'on]\label{Lem:MP:PermutacionHipergeomMulti}
 %
   Sea  \ $X =  \begin{bmatrix} X_1  & \cdots  & X_c  \end{bmatrix}^t \,  \sim \,
@@ -185,8 +198,8 @@ que quedan en la urna. M\'as formalmente:
   %
 \end{lema}
 %
-Este resultado es  intuitivo en el hecho  de que vuelve a agrupar  las clases \
-$i$ \ e \ $j$ \ en una clase, que tiene entonces  \ $k_i + k_j$ \ elementos.
+Este resultado es intuitivo del hecho que  vuelve a agrupar las clases \ $i$ \ e
+\ $j$ \ en una clase, que tiene entonces \ $k_i + k_j$ \ elementos.
 %
 
 %
@@ -212,10 +225,10 @@ $i$ \ e \ $j$ \ en una clase, que tiene entonces  \ $k_i + k_j$ \ elementos.
   %
   Se  cierra  la  prueba   de  la  identidad  de  Chu-Vandermonde~\footnote{Este
     identidad es  debido a A.-T. Vandermonde  en 1772, pero  esta conocida desde
-    1303 por el matematico chino  Chu Shi-Chieh, explicando la denominaci\'on de
-    este    identidad~\cite{AndLar94}   o~\cite[p.~59-60]{Ask75}.    Se   prueba
-    escribiendo $(1+x)^{r+s} = (1+x)^r (1+x)^s$  y desorrando con la formula del
-    binomio       cada      potencia.}        $\displaystyle      \sum_{t=0}^{l}
+    1303 por  el matem\'atico chino Chu Shi-Chieh,  explicando la denominaci\'on
+    de  este   identidad~\cite{AndLar94}  o~\cite[p.~59-60]{Ask75}.   Se  prueba
+    escribiendo $(1+x)^{r+s} = (1+x)^r  (1+x)^s$ y desallorando con la f\'ormula
+    del     binomio    cada     potencia.}      $\displaystyle    \sum_{t=0}^{l}
   \bino{r}{t}\bino{s}{l-t}   =  \bino{r+s}{l}$~\cite[Ec.~(21),  p.~59]{Knu97_v1}
   o~\cite[Ec.~0.156]{GraRyz15}.
 \end{proof}
@@ -254,7 +267,7 @@ De este lema, aplicado de manera recursiva, se obtiene el corolario siguiente:
 
 \
 
-Nota: esta  ley se  generaliza de  la misma manera  que para  la hipergeometrica
-negativa,  dando una  ley  hipergeometrica negativa  multivariada  o, de  manera
-equivalente, generalizando la hipergeometrica negativa  a m\'as de dos clases se
-obtiene la ley hipergeometrica negativa. \SZ{Anadirlo en una seccion?}
+Nota: esta  ley se  generaliza de  la misma manera  que para  la hipergeom\'etrica
+negativa,  dando una  ley  hipergeom\'etrica negativa  multivariada  o, de  manera
+equivalente, generalizando la hipergeom\'etrica negativa  a m\'as de dos clases se
+obtiene la ley hipergeom\'etrica negativa. \SZ{Anadirlo en una seccion?}

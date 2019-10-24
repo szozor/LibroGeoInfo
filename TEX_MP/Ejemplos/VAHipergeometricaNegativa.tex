@@ -1,17 +1,18 @@
-\subsubseccion{Ley hipergeometrica Negativa}
+\subsubseccion{Ley hipergeom\'etrica negativa}
 \label{Sssec:MP:HipergeometricaNegativa}
 
-Esta ley aparece  por ejemplo cuando se hace una experiencia  del mismo tipo que
-para la hipergeometrica, con una poblaci\'on de tama\~no \ $n$ \ (ej.  $n$ bolas
-en  una urna),  que pueden  partenecer a  dos clases,  con \  $k$ \  num\'ero de
-elementos de la primera clase estados  de excito; ej. $k$ \ bolas negras), $n-k$
-\ num\'ero  de elementos de la  secunda clase.  Pero en  lugar de hacer  \ $m$ \
-tiros  fijos,  se  hace tiros  hasta  que  $r$  elementos  de la  seconda  clase
-(fracascos)  sean tiradas.   $X$ es  el n\'umero  de tiros  parteneciendo  en la
-primera clase  (n\'umero de excitos). Es decir  que cuando $X =  x$, tenemos $k$
+Parece  que se  encuentran las  primeras  huellas de  esta ley  en trabajos  del
+marquesano  de Condorcet  en 1785~\cite{Con85}.   Esta ley  aparece  por ejemplo
+cuando se hace  una experiencia del mismo tipo que  para la hipergeom\'etrica, con
+una poblaci\'on  de tama\~no \ $n$  \ (ej.  $n$  bolas en una urna),  que pueden
+partenecer a dos clases, con \ $k$  \ num\'ero de elementos de la primera clase,
+dichos  estados de  \'exito  (ej.  $k$  \  bolas negras),  $n-k$  \ num\'ero  de
+elementos de  la secunda clase,  dichos estados de  fracasco.  Pero en  lugar de
+hacer \ $m$ \  tiros fijos, se hace tiros hasta que  $r$ elementos de la secunda
+clase (fracascos) sean tiradas.  $X$ es el n\'umero de tiros parteneciendo en la
+primera clase (n\'umero  de \'exitos). Es decir que cuando $X  = x$, tenemos $k$
 elementos de  la primera clase en  los ``primeros'' $x+r-1$  tiros, el \'ultimos
-parteneciendo a la seconda clase.  Parece que se encuentran las primeras huellas
-de esta ley en trabajos del marquesano de Condorcet en 1785~\cite{Con85}.
+parteneciendo a la seconda clase.
 
 Se denota \ $X \,  \sim \, \H_-(n,k,r)$ \ con \ $n \in \Nset^*$,  \quad $k \in \{ 0 \;
 \ldots \; n \}$, \quad $m \in \{  0 \; \ldots \; n-k \}$ \ y sus caracter\'isticas
@@ -31,15 +32,17 @@ Distribuci\'on de probabilidad~\footnote{Para los $x+r-1$ primeros tiros, de la
 primera clase hay $\smallbino{k}{x}$ combinaciones posibles, y
 $\smallbino{n-k}{r-1}$ de la seconda clase, sobre los $\smallbino{n}{x+r-1}$
 combinaciones posibles en total. Para el \'ultimo tiro, quedan $n-k-(r-1)$
-posibilidades de la seconda clase sobre las $n-x-(r-1)$ elementos que quedan.} &
+posibilidades de la seconda clase sobre los $n-x-(r-1)$ elementos que quedan.} 
+&
 \protect$p_X(x) = \left\{ \begin{array}{ccc} \frac{\smallbino{x+r-1}{x}
-\smallbino{n-r-x}{k-x}}{\smallbino{n}{k}} & \mbox{si} & r > 0\\ \un_{\{0\}}(x) & \mbox{si} & r = 0 \end{array} \right.$\protect\\[2mm]
+\smallbino{n-r-x}{k-x}}{\smallbino{n}{k}} & \mbox{si} & r > 0\\ \un_{\{0\}}(x) &
+\mbox{si} & r = 0 \end{array} \right.$\protect\\[2mm]
 \hline
 %
-Promedio & $\displaystyle m_X = \frac{r \, k}{n - k + 1}$\\[2mm]
+Promedio & $\displaystyle m_X = \frac{r k}{n - k + 1}$\\[2mm]
 \hline
 %
-Varianza & $\displaystyle \sigma_X^2 = \frac{r \, k (n+1) (n-k-r+1)}{(n-k+1)^2 (n-k+2)}$\\[2mm]
+Varianza & $\displaystyle \sigma_X^2 = \frac{r k (n+1) (n-k-r+1)}{(n-k+1)^2 (n-k+2)}$\\[2mm]
 \hline
 %%
 %\modif{Asimetr\'ia} & \SZ{$\gamma_X =  $}\\[2mm]
@@ -69,9 +72,9 @@ figura Fig.~\ref{Fig:MP:HipergeometricaNegativa}.
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/HipergeometricaNegativa} \end{center}
 %
-\leyenda{Ilustraci\'on  de una  distribuci\'on  de probabilidad  Hipergeometrica
-  (a), y la funci\'on de repartici\'on asociada (b), con \ $n = 100$, \quad $k =
-  12$, \quad $r = 40$.}
+\leyenda{Ilustraci\'on de  una distribuci\'on de  probabilidad hipergeom\'etrica
+  negativa (a), y  la funci\'on de repartici\'on asociada (b), con  \ $n = 100$,
+  \quad $k = 12$, \quad $r = 40$.}
 \label{Fig:MP:HipergeometricaNegativa}
 \end{figure}
 
