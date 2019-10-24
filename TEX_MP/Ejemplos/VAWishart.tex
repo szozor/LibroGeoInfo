@@ -5,18 +5,18 @@ Este ejemplo es una  generalizaci\'on matriz-variada de la distribuci\'on gamma.
 Se puede ver  una matriz como un vector, guardando por  ejemplo sus columnas una
 bajo la  precediente.  Sin embargo, tal  distribuci\'on apareciendo naturalmente
 en un contexto de estimaci\'on de  matriz de covarianza (ver m\'as adelante), es
-m\'as natural verla matriz-variate.  Tal distrubuci\'on fue introducida en $d=2$
+m\'as natural verla matriz-variada.  Tal distrubuci\'on fue introducida en $d=2$
 dimensiones por R. Fisher en 1915~\cite{Fis15}, y el caso general es debido a J.
 Wishart~\cite{Wis28,   Mui82,  BilBre99,   GupNag99,  And03,   Seb04}.   Aparece
 tambi\'en naturalmente en problema de inferencia Bayesiana como distribuci\'on a
-priori  conjugado~\footref{Foot:MP:BayesPrior}  de la  matriz  de precisi\'on  \
-$\Sigma^{-1}$   \   (inversa   de   la   covarianza)   de   la   ley   gaussiana
-multivariada~\cite[Ec.~(4.4.5)]{Rob07}.
+priori conjugado  de la matriz de  precisi\'on \ $\Sigma^{-1}$ \  (inversa de la
+covarianza)  de  la  ley gaussiana  multivariada~\cite[Ec.~(4.4.5)]{Rob07}  (ver
+notas de pie~\ref{Foot:MP:BayesPrior} y~\ref{Foot:MP:BayesPriorConjugado}).
 
-Se denota \  $X \, \sim \, \W(V,\nu)$  \ donde el dominio de  definici\'on es \
+Se denota  \ $X \, \sim  \, \W(V,\nu)$ \ donde  el dominio de  definici\'on es \
 $P_d^+(\Rset)$,  conjunto   matrices  simetricas  definida   positivas,  $V  \in
-P_d^+(\Rset)$ par\'ametro de  escala y \ $\nu > d-1$ \  grados de libertad.  Las
-caracter\'isticas de la distribuci\'on son las siguientes:
+P_d^+(\Rset)$ par\'ametro de escala  y \ $\nu > d-1$ \ es  el grado de libertad.
+Las caracter\'isticas de la distribuci\'on son las siguientes:
 
 \begin{caracteristicas}
 %
@@ -28,11 +28,11 @@ caracter\'isticas de la distribuci\'on son las siguientes:
     triangular  inferior  con elementos  positivos  sobre  su diagonal,  llamado
     factorizaci\'on de Cholesky~\cite{Cho10, GupNag99, Bha07, Har08, HorJoh13} y
     reciprocamente. Eso  muestra que \  $A$ \ se  define a partir de  \ $\frac{d
-      (d+1)}{2}$ \ ``grados de libertad''.\label{Foot:MP:WishartXtilde}} & $\X =
+      (d+1)}{2}$ \ ``grado de libertad''.\label{Foot:MP:WishartXtilde}} & $\X =
   P_d^+(\Rset), \: d \in \Nset^*$\\[2mm]
   \hline
 %
-Par\'ametros & $V \in P_d^+(\Rset)$ (escala) y \ $\nu > d-1$ \ (grados de
+Par\'ametros & $V \in P_d^+(\Rset)$ (escala) y \ $\nu > d-1$ \ (grado de
 libertad)\\[2mm]
 \hline
 %
@@ -59,14 +59,14 @@ Covarianza & $\displaystyle \Sigma_X = \nu \sum_{i,j=1}^d \Big( \left( \un_i
 Funci\'on caracter\'istica~\footnote{Se prueba que la funci\'on generadora de
 momentos no existe en
 general.\label{Foot:MP:CaracteristicaWishart}} &
-$\displaystyle \Phi_X(\omega) = \left| I - 2 \imath \omega V
+$\displaystyle \Phi_X(\omega) = \left| I - 2 \, \imath \, \omega V
 \right|^{-\frac{\nu}{2}}, \quad \omega \in S_d(\Rset)$
 \end{caracteristicas}
 %
 %(ver~\cite{PedRic91, SulTra96, And03}).
 
-Fijense que $p_X$ no es la distribuci\'on conjuntos de los componentes de \ $X$:
-el hecho de  que \ $X$ \ sea  uan matriz aleatoria de \  $P_d^+(\Rset)$ \ impone
+Fijense que $p_X$ no es la  distribuci\'on conjunta de los componentes de \ $X$:
+el hecho  que \  $X$ \  sea una matriz  aleatoria de  \ $P_d^+(\Rset)$  \ impone
 v\'inculos sobre sus compnentes; entre otros, $X_{i,j} = X_{j,i}$.
 
 Inmediatamente, si  $d = 1$, la  distribuci\'on de Whishart \  $\W(V,\nu)$ \ se
@@ -93,7 +93,7 @@ Sea $X \, \sim \, \W(V,\nu)$ \ y  \ $A \in \M_{d,d'}(\Rset)$ \ con \ $d' \le d$,
 %
 \begin{proof}
   El     resultado     es     inmediato     saliendo     de     la     funci\'on
-  caract\'eristica~\footref{Foot:MP:CaracteristicaWishart} y notando de que
+  caracter\'istica~\footref{Foot:MP:CaracteristicaWishart} y notando de que
 %
 \begin{eqnarray*}
 \Phi_{A^t X A}(\omega) & = & \Esp\left[ e^{\imath \Tr\left( \omega^t A^t X A
@@ -156,11 +156,44 @@ de matriz de covarianza en el contexto gausiano~\cite{Mui82, BilBre99, GupNag99,
   \]
 \end{lema}
 %
+\begin{proof}
+  De  $\displaystyle  \Tr\left(  \omega^t  S \right)  =  \sum_{i=1}^n  \Tr\left(
+    \omega^t  X_i  X_i^t \right)  =  \sum_{i=1}^n  X_i^t  \omega X_i^t$  (siendo
+  $\omega$ sim\'etrica), y de la independencia, tenemos inmediatamente
+%
+\[
+\Phi_S(\omega)  =  \prod_{i=1}^n \Esp\left[  e^{\imath  \,  X_i^t \omega  X_i^t}
+\right] = \left( \Esp\left[ e^{\imath \, X_i^t \omega X_i^t} \right] \right)^n
+\]
+%
+Luego,
+%
+\begin{eqnarray*}
+\Esp\left[ e^{\imath \, X_i^t \omega X_i^t} \right] & = & \int_{\Rset^d} (2
+\pi)^{-\frac{d}{2}} |V|^{-\frac12} e^{\imath \, x^t \omega x^t - \frac12 x^t
+V^{-1} x} \, dx\\[2mm]
+%
+& = & |V|^{-\frac12} \left| V^{-1} - 2 \imath \, \omega \right|^{-\frac12}
+\int_{\Rset^d} (2 \pi)^{-\frac{d}{2}} \left| \left(V^{-1} - 2 \imath \,
+\omega\right)^{-1} \right|^{-\frac12} e^{- \frac12 x^t \left(V^{-1} - 2 \imath
+\, \omega \right) x} \, dx
+\end{eqnarray*}
+%
+Se puede probar  que la integral vale uno (moralmente,  integral de una densidad
+de  probabilidad gausiana)~\cite[Teo.~2.1.11]{Mui82}.  La  prueba se  cierra por
+$\left| V^{-1} - 2 \imath  \, \omega \right|^{-\frac12} = |V|^{\frac12} \left| I
+  -  2  \imath \,  \omega  V \right|^{-\frac12}$:  se  reconoce  en $\Phi_S$  la
+funci\'on caracter\'istica de la ley de wishart (a condici\'on que $n > d-1$).
+\end{proof}
+%
+Se    puede   referirse   tambi\'en    a~\cite{GupNag99,   And03,    Seb04},   o
+a~\cite[Ej.~7.2]{BilBre99} para pruebas alternativas.
+
 Este resultado  permite tambi\'en probar  el lema~\ref{Lem:MP:StabilidadWishart}
-para \ $\nu = n$ \ entero  escribiendo \ $X \egald \sum_{i=1}^n X_i X_i^t$ \ tal
-que \ $A^t X A \egald \sum_{i=1}^n A^t X_i X_i^t A = \frac1n \sum_{i=1}^n \left(
-  A^t X_i \right)  \left( A^t X_i \right)^t$ \  y notando que los \  $A^t X_i \,
-\sim \,  \N(0, A^t V  A)$ \ son independientes~\cite{Seb04}.   Adem\'as, permite
+para \  $\nu = n$  \ entero  escribiendo \ $X  \egald \sum_{i=1}^n X_i  X_i^t$ \
+as\'i que \ $A^t X A \egald  \sum_{i=1}^n A^t X_i X_i^t A = \frac1n \sum_{i=1}^n
+\left( A^t X_i \right) \left( A^t X_i  \right)^t$ \ y notando que los \ $A^t X_i
+\, \sim \, \N(0, A^t V A)$ \ son independientes~\cite{Seb04}.  Adem\'as, permite
 re-obtener las  expreciones del promedio y de  las covarianzas~\footnote{Para la
   covarianza, su usa la formula \ $\Esp[Y_1 Y_2 Y_3 Y_4] = \Esp[Y_1 Y_2]\Esp[Y_3
   Y_4]  + \Esp[Y_1 Y_3]\Esp[Y_2  Y_4] +  \Esp[Y_1 Y_4]\Esp[Y_2  Y_3]$ \  para $Y
@@ -227,7 +260,7 @@ vectores gausianos independientes de mismos parametros~\cite{KotNad04, BilBre99,
 %
 \begin{corolario}\label{Cor:MP:WishartEstimacion}
   Sean  \  $X_i \,  \sim  \,  \N(m,\Sigma), \:  i  =  1, \ldots  ,  n  > d-1$  \
-  independientes,       y      sea       la       media      empirica       (ver
+  independientes,      y       sea      la      media       emp\'irica      (ver
   corolario~\ref{Cor:MP:MediaEmpiricaGauss})
   %
   \[
@@ -346,7 +379,7 @@ formaliza en el caso Wishart general de la manera siguiente:
   \]
   %
   Del  teorema~\ref{Teo:MP:TransformacionInyectivaDensidad}   obtenemos  para  \
-  $u_{ii}  > 0$ \  (vers notaciones  para la  escritura de  $\Gamma_d$ funci\'on
+  $u_{ii}  > 0$ \  (ver notaciones  para la  escritura de  $\Gamma_d$ funci\'on
   gamma multivariada, como producto de funciones Gamma)
   %
   \begin{eqnarray*}
@@ -368,7 +401,7 @@ formaliza en el caso Wishart general de la manera siguiente:
   as\'i que los  $U_{ij}, \: 1 \le j  < i \le d$ \ son  gausianas estandares. Al
   final,   la   densidad  de   \   $U_{ii}$   \   siendo  \   $p_{U_{ii}}(u)   =
   \frac{2^{1-\frac{\nu-i+1}{2}}  \, u^{\nu-i} \,  e^{-\frac12 u^2}}{\Gamma\left(
-      \frac{\nu-i+1}{2}      \right)}$,      por     transformaci\'ion      (ver
+      \frac{\nu-i+1}{2}      \right)}$,      por      transformac\'ion      (ver
   corolario~\ref{Cor:MP:TransformacionInyectivaDensidadEscalar}), la densidad de
   \  $U_{ii}^2$  \  es  \  $p_{U_{ii}^2}(v)  =  \frac{2^{-\frac{\nu-i+1}{2}}  \,
     v^{\frac{\nu-i+1}{2}-1} \, \, e^{-\frac12 v}}{\Gamma\left( \frac{\nu-i+1}{2}
