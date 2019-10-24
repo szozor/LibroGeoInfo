@@ -1,18 +1,19 @@
-\subsubseccion{Distribuci\'on Beta}
+\subsubseccion{Distribuci\'on beta}
 \label{Sssec:MP:Beta}
 
 Estas   distribuciones  fueron   popularizadas   por  Pearson   en  los   a\~nos
 1895~\cite{Pea95, Pea16, DavEdw01}  bajo la denominaci\'on Pearson tipo  I en su
 estudio  de  la teoria  de  la evoluci\'on  y  la  modelizaci\'on con  variables
-asimetricas.  De  hecho, aparecio  mucho tiempo antes,  en en trabajos  de Bayes
+asim\'etricas.  De  hecho, apareci\'o mucho  tiempo antes, en trabajos  de Bayes
 publicado en un papel postumo  por R. Price en 1763~\cite{Bay63}. Aparentemente,
-la  denominaci\'on estandar  ``beta''  es denido  al  estadistician, demgrafo  y
-sociologo italiano C.  Gini en  1911 en estudio del ``sex ratio'' (desequilibrio
-entre    los    nacimientos    de    muchachos/muchachas)   con    un    enfoque
-baysiano~\cite{Gin11,   For17,  DavEdw01}.    La  distribuci\'on   beta  aparece
-precisamente,   entre  otros,   en   problema  de   inferencia  Bayesiana   como
-distribuci\'on  a priori conjugado~\footref{Foot:MP:BayesPrior}  del par\'ametro
-$p$ de la ley binomial~\cite{Rob07}.
+la denominaci\'on  estandar ``beta'' es  debido al estad\'istico,  dem\'ografo y
+soci\'ologo  italiano   C.   Gini   en  1911  su   estudio  del   ``sex  ratio''
+(desequilibrio  entre los  nacimientos  de muchachos/muchachas)  con un  enfoque
+bayesiano~\cite{Gin11,  For17,   DavEdw01}.   La  distribuci\'on   beta  aparece
+precisamente,   entre  otros,   en   problema  de   inferencia  bayesiana   como
+distribuci\'on   a   priori   conjugado   del   par\'ametro  $p$   de   la   ley
+binomial~\cite{Rob07}     (ver     notas     de     pie~\ref{Foot:MP:BayesPrior}
+y~\ref{Foot:MP:BayesPriorConjugado}).
 
 Se denota $X  \sim \beta(a,b)$ \ con  \ $(a,b) \in \Rset_+^{* \,  2}$ \ llamados
 {\em par\'ametros de forma}.  Las caracter\'isticas son:
@@ -52,8 +53,8 @@ Funci\'on     caracter\'istica     &     $\displaystyle     \Phi_X(\omega)     =
 \hypgeom{1}{1}\left( a , a + b \, ; \, \imath \omega \right)$
 \end{caracteristicas}
 
-Su densidad de probabilidad y funci\'on de repartici\'on son representadas en la
-figura Fig.~\ref{Fig:MP:Beta} para varios $a$ \ y \ $b$.
+Unas  densidades de  probabilidad  y funciones  de  repartici\'on asociadas  son
+representadas en la figura Fig.~\ref{Fig:MP:Beta} para varios $a$ \ y \ $b$.
 %
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/Beta} \end{center}
@@ -66,9 +67,9 @@ guionada), $(3 \, , \, 7)$ (linea llena).}
 \label{Fig:MP:Beta}
 \end{figure}
 
-Nota que se recupera la  ley uniforme sobre \ $[0 \; 1]$ \  para \ $a = b =
-1$. Se conoce la ley de $ 2 \, \beta\left( \frac12 , \frac12 \right) - 1$ \ como
-{\em ley arcseno}.
+Notar que  se recupera la  ley uniforme sobre  \ $[0 \;  1]$ \ para  \ $a =  b =
+1$. Se  conoce la ley de $  Y = 2 \,  B - 1$ \  con \ $B \,  \sim \, \beta\left(
+  \frac12 , \frac12 \right)$ \ como {\em ley arcseno}.
 
 Variables beta  tienen tambi\'en unas propiedades notables.  Primero, por cambio
 de variables, se demuestra el lema siguiente:
@@ -164,7 +165,7 @@ de variables, se demuestra el lema siguiente:
   teorema~\ref{Teo:MP:TransformacionBiyectiva},      notando     que     $\left|
     \Jac_{g^{-1}} \right| =  v$ \ y de la  independencia de \ $X$ \ e  \ $Y$, se
   obtiene para el vector aleatorio \ $W = \begin{bmatrix} U & V \end{bmatrix}^t$
-  \ la densidad de probabilidad
+  \ la densidad de probabilidad, definida sobre $[0 \; 1] \times \Rset_+$, como
   %
   \begin{eqnarray*}
     p_W(u,v) & = & p_X( u v ) \, p_Y( (1-u) v ) \, v\\[2mm]
@@ -175,11 +176,10 @@ de variables, se demuestra el lema siguiente:
     & = & \frac{u^{a-1} (1-u)^{b-1}}{B(a,b)} \times \frac{v^{a+b-1} e^{-v}}{\Gamma(a+b)}
   \end{eqnarray*}
   %
-  La  densidad se  obtiene por  marginalizaci\'on, \ie  integrando sobre  $v$ la
-  densidad conjunta,  lo que  cierra la prueba  de la primera  parte.  Adem\'as,
-  aparece claramente que \  $U$ \ y \ $V$ \ son  independientes (se factorisa la
-  densidad de probabilidad).   Pasando, se recupera el hecho que  \ $X+Y \, \sim
-  \, \G(a+b,1)$.
+  Inmediatamente, factorizandose, aparece  claramente que \ $U$ \ y  \ $V$ \ son
+  independientes. Adem\'as, se reconoce en  el primer factor la densidad beta de
+  par\'ametros $(a,b)$.   Pasando, se recupera  el hecho que  \ $X+Y \,  \sim \,
+  \G(a+b,1)$.
 \end{proof}
 
 \begin{lema}[Stabilidad por producto]
@@ -197,7 +197,7 @@ de variables, se demuestra el lema siguiente:
 \begin{proof}
   Sean \ $U  \, \sim \, \G(a,1)$, \ $V \,  \sim \, \G(b,1)$ \ y \  $W \, \sim \,
   \G(c,1)$   \   independientes  y   sean   \   $X   =  \frac{U}{U+V}$,   $Y   =
-  \frac{U+V}{U+V+V}$  \ y  \ $Z  = U+V+W$.  Del lema  anterior \  $X \,  \sim \,
+  \frac{U+V}{U+V+W}$  \ y  \ $Z  = U+V+W$.  Del lema  anterior \  $X \,  \sim \,
   \beta(a,b)$ \ y \ $Y \, \sim \, \beta(a+b,c)$. Sea la transformaci\'on
   %
   \[
@@ -260,7 +260,7 @@ de variables, se demuestra el lema siguiente:
 \end{proof}
 
 
-\begin{lema}[Ley Gamma como caso l\'imite de beta]
+\begin{lema}[Ley gamma como caso l\'imite de beta]
 \label{Lem:GamaLimiteBeta}
 %
   Sea \ $X_n \, \sim \, \beta(a,n)$. Entonces
@@ -291,9 +291,9 @@ de variables, se demuestra el lema siguiente:
 \
 
 La distribuci\'on beta  se generaliza al caso matriz-variada  $X$ definido sobre
-$\X$  tal que $X$  y $I-X$  son en  $P_d^+(\Rset)$; se  denota \  $X \,  \sim \,
+$\X$ tal que $X$ y $I-X$ partenecen  a $P_d^+(\Rset)$; se denota \ $X \, \sim \,
 \beta_d(a,b)$ \ donde \ $(a,b) \in \Rset_+^{*  \, 2}$ y la densidad est dada por
 $\displaystyle   p_X(x)    =   \frac{|x|^{a   -    \frac{d+1}{2}}   |I-x|^{b   -
-    \frac{d+1}{2}}|}{B_p\left([a  \quad  b]^t\right)},  \quad (a,b)  \in  \left(
+    \frac{d+1}{2}}}{B_p\left([a  \quad  b]^t\right)},  \quad  (a,b)  \in  \left(
   \frac{d-1}{2} \; +\infty \right)^2$. Se refiera a~\cite[Cap.~5]{GupNag99} para
-tener m\'as informaciones.
+tener m\'as detalles.

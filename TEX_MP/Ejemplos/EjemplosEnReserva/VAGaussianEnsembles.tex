@@ -1,0 +1,57 @@
+
+- The   Gaussian  unitary  ensemble   GUE(n)  $p_X   =  \frac{1}{2^{\frac{d}{2}}
+  \pi^{\frac{d^2}{2}}} e^{-\frac12  \Tr(X^2)}$ definido sobre  $\X = \Pd(\Rset)$
+  The term unitary  refers to the fact that the  distribution is invariant under
+  unitary conjugation. The Gaussian unitary ensemble models Hamiltonians lacking
+  time-reversal symmetry.
+
+- The  Gaussian  orthogonal  ensemble   GOE(n)  $p_X  \propto  e^{-  \frac{d}{4}
+  \Tr(X^2)}$ pero  con $\X =  \S_d(\Rset)$. Its distribution is  invariant under
+  orthogonal  conjugation,   and  it  models   Hamiltonians  with  time-reversal
+  symmetry.
+
+The joint probability density for the eigenvalues  of GUE/GOE is given by
+
+$\frac{1}{Z_{\beta, n}} \prod_{k=1}^n e^{-\frac{\beta d}{4}\lambda_k^2}\prod_{i<j}\left|\lambda_j-\lambda_i\right|^\beta~, \quad$ (1)
+where the Dyson index, $\beta = 1$ for GOE,2 for GUE,
+% and  4 for GSE,
+ counts the number of real components per matrix element; the normalization constant which can be explicitly computed, see Selberg integral. In the case of GUE, the formula describes a determinantal point process. Eigenvalues repel as the joint probability density has a zero (of $\beta$ th order) for coinciding eigenvalues $\lambda_j=\lambda_i$.
+
+For the distribution of the largest eigenvalue for GOE, GUE and Wishart matrices of finite dimensions, see
+Chiani M (2014). ``Distribution of the largest eigenvalue for real Wishart and Gaussian random matrices and a simple approximation for the Tracy-Widom distribution''. Journal of Multivariate Analysis. 129: 69-81. arXiv:1209.3394. doi:10.1016/j.jmva.2014.04.002
+
+
+Distribution of level spacings[edit]
+From the ordered sequence of eigenvalues $\lambda_1 < \ldots < \lambda_n < \lambda_{n+1} < \ldots$, one defines the normalized spacings $s = (\lambda_{n+1} - \lambda_n)/\langle s \rangle$, where  $\langle s \rangle =\langle  \lambda_{n+1} - \lambda_n \rangle$ is the mean spacing. The probability distribution of spacings is approximately given by, $  p_1(s) = \frac{\pi}{2}s\, \mathrm{e}^{-\frac{\pi}{4} s^2}  $
+for the orthogonal ensemble GOE $\beta =1$, $p_{2}(s)={\frac  {32}{\pi ^{2}}}s^{2}{\mathrm  {e}}^{{-{\frac  {4}{\pi }}s^{2}}}$
+for the unitary ensemble GUE  $\beta =2$, 
+%and $ p_4(s) = \frac{2^{18}}{3^6\pi^3}s^4 \mathrm{e}^{-\frac{64}{9\pi} s^2}$ $\beta=4$.
+
+The numerical constants are such that $ p_\beta(s)$  is normalized:
+and the mean spacing is, $ \int_0^\infty ds\, s\, p_\beta(s) = 1, $
+for $ \beta = 1,2,4$.
+
+\
+
+Wigner matrices are random Hermitian matrices 
+$ \textstyle H_n = (H_n(i,j))_{i,j=1}^n$  such that the entries
+$ \left\{ H_n(i, j)~, \, 1 \leq i \leq j \leq n \right\} $
+above the main diagonal are independent random variables with zero mean, and
+$ \left\{ H_n(i, j)~, \, 1 \leq i < j \leq n \right\} $
+have identical second moments.
+
+\
+
+Invariant matrix  ensembles are  random Hermitian matrices  with density  on the
+space of real symmetric/ Hermitian/ quaternionic Hermitian matrices, which is of
+the form $\textstyle \frac{1}{Z_n} e^{- n \mathrm{tr} V(H)}~, where the function
+V is called the potential$.
+
+The Gaussian ensembles are the only common special cases of these two classes of random matrices.
+
+\
+
+
+Densities of Tracy-Widom distributions for $\beta = 1, 2, 4$
+The Tracy-Widom distribution, introduced by Craig Tracy and Harold Widom (1993, 1994), is the probability distribution of the normalized largest eigenvalue of a random Hermitian matrix
+% https://en.wikipedia.org/wiki/Tracy-Widom_distribution
