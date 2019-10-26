@@ -1,17 +1,20 @@
 \subsubseccion{Distribuci\'on de Dirichlet}
 \label{Sssec:MP:Dirichlet}
 
-Esta distribuci\'on teniendo su nombre de integrales on a simplex estudiados por
-M. Lejeune-Dirichlet y J. Liouville  en 1839~\cite{GupRic01, Dir39, Lio39} en es
+Esta distribuci\'on  tiene su nombre de  integrales on a  simplex estudiados por
+M. Lejeune-Dirichlet  y J. Liouville  en 1839~\cite{GupRic01, Dir39,  Lio39}. Es
 una extensi\'on  multivariada de las variables  beta a veces  conocida como {\em
-  Beta multivariada}~\cite{OlkRub64}. Se  nota \ $X \, \sim \,  \Dir(a)$ \ con \
-$a \in \Rset_+^{*  \, k}$ \ y \  $X$ \ vive sobre el  $(k-1)$-simplex estandar \
-$\Simp{k-1}$.  $a$ es  llamado par\'ametro de forma. Como en  el caso de vectores
-de  distribuci\'on multinomial, a  pesar de  que se  escribe \  $X$ \  de manera
-$k$-dimensional, el vector partenece a una  variedad \ $d = k-1$ \ dimensional y
-en el caso  \ $k = 2$ \ se  recupera la ley beta. A veces  se parametriza la ley
-con un  par\'ametro escalar \ $\alpha  > 0$ \ y  un vector del  simplex estandar \
-$\bar{a} \in \Simp{k-1}$ \ tal que
+  beta multivariada}~\cite{OlkRub64}. Escribiendo  la forma de la distribuci\'on
+solamente  con  la variables  $x_i$,  la  integral  permitiendo normalizarla  es
+precisamente la estudiada por Lejeune-Dirichlet y Liouville.
+
+Se nota \ $X  \, \sim \, \Dir(a)$ \ con  \ $a \in \Rset_+^{* \, k}$ \  y \ $X$ \
+vive  sobre  el  $(k-1)$-simplex   estandar  \  $\Simp{k-1}$.   $a$  es  llamado
+par\'ametro de forma. Como en el caso de vectores de distribuci\'on multinomial,
+a pesar de que se escribe \ $X$ \ de manera $k$-dimensional, el vector partenece
+a una variedad \ $d = k-1$ \ dimensional y en el caso \ $k = 2$ \ se recupera la
+ley beta. A veces  se parametriza la ley con un par\'ametro  escalar \ $\alpha >
+0$ \ y un vector del simplex estandar \ $\bar{a} \in \Simp{k-1}$ \ tal que
 %
 \[
 a  = \alpha \bar{a},  \quad \mbox{\ie}  \quad \alpha  = \sum_{i=1}^k  a_i, \quad
@@ -25,12 +28,7 @@ Las caracter\'isticas de un vector de Dirichlet son:
 
 \begin{caracteristicas}
 %
-Dominio de definici\'on~\footnote{De hecho, se puede considerar que el vector
-aleatorio es \ $(k-1)$-dimensional \ $\widetilde{X} = \begin{bmatrix}
-\widetilde{X}_1 & \cdots & \widetilde{X}_{k-1} \end{bmatrix}^t$ \ definido sobre
-el hipertriangulo \ $\widetilde{\X} = \Tri_{k-1} = \left\{ \widetilde{x} \in [0
-\; 1]^{k-1} \tq \sum_{i=1}^{k-1} \widetilde{x}_i \le 1 \right\}$, proyecci\'on
-del simplex sobre el hiperplano \ $x_k = 0$.\label{Foot:MP:DirichletXtilde}} &
+Dominio de definici\'on &
 $\X = \Simp{k-1}, \: k \in \Nset \setminus \{ 0 \; 1 \}$\\[2mm]
 \hline
 %
@@ -40,12 +38,7 @@ Par\'ametros & $a = \alpha \, \bar{a} \, \in \, \Rset_+^{* \, k}$ \ (forma) \ co
 \hline
 %
 Densidad de probabilidad~\footnote{La densidad de probabilidad es dada con
-respeto a la medida de Lebesgue restricta al simplex \ $\Simp{k-1}$. Tratando
-de \ $\widetilde{X}$, el vector tiene una densidad con respeto a la medida de
-Lebesgue usual, y es dada por \ $p_{\widetilde{X}}\left( \widetilde{x} \right) =
-\frac{\prod_{i=1}^{k-1} \widetilde{x}_i^{\, a_i-1} \, \left( 1 -
-\sum_{i=1}^{k-1} \widetilde{x}_i
-\right)^{a_k-1}}{B(a)}$.\label{Foot:MP:DirichletDensidad}} & $\displaystyle
+respeto a la medida de Lebesgue restricta al simplex $\Simp{k-1}$.\label{Foot:MP:DirichletDensidad}} & $\displaystyle
 p_X(x) = \frac{\prod_{i=1}^k x_i^{a_i-1}}{B(a)}$\\[2mm]
 \hline
 %
@@ -58,17 +51,12 @@ $\displaystyle \Sigma_X = \frac{\diag\left( \bar{a} \right) - \bar{a}
 \bar{a}^t}{1 + \alpha}$\\[2.5mm]
 \hline
 %
-Generadora de momentos~\footnote{Ver nota de
-pie~\ref{Foot:MP:MultinomialGeneMomentos}, reemplazando $n$ por $1$.}  &
+Generadora de momentos  &
 $\displaystyle M_X(u) = \Phi_2^{(k)}( a , \alpha \, ; \, u )$ \ para \ $u \in
 \Cset$\\[2mm]
 \hline
 %
-Funci\'on caracter\'istica~\footnote{Ver nota de
-pie~\ref{Foot:MP:MultinomialGeneMomentos}, reemplazando $n$ por $1$.  Ademas, la
-forma de la funci\'on generadora de momento viene directamente de la escritura
-de las series de Taylor de $e^{u_i x_i}$ \ o de la forma integral de la
-funci\'on confluente hipergeom\'etrica~\cite{Phi88}.} & $\displaystyle
+Funci\'on caracter\'istica & $\displaystyle
 \Phi_X(\omega) = \Phi_2^{(k)}( a , \alpha \, ; \, \imath \omega )$
 \end{caracteristicas}
 
@@ -78,23 +66,49 @@ funci\'on confluente hipergeom\'etrica~\cite{Phi88}.} & $\displaystyle
 %  s\'imbolo  de Pochhammer  usual o  factorial creciente,  $(x)_{(n)} =  x (x+1)
 %  \ldots (x+n)$ \,  con la convenci\'ion \ $(x)_{(0)} = 1$.   De hecho, la forma
 
+De nuevo, se puede considerar que el vector aleatorio es \ $(k-1)$-dimensional \
+$\widetilde{X}     =    \begin{bmatrix}     \widetilde{X}_1    &     \cdots    &
+  \widetilde{X}_{k-1}  \end{bmatrix}^t$  \ definido  sobre  el hipertriangulo  \
+$\widetilde{\X}  = \Tri_{k-1}  = \left\{  \widetilde{x} \in  [0 \;  1]^{k-1} \tq
+  \sum_{i=1}^{k-1}  \widetilde{x}_i \le  1 \right\}$,  proyecci\'on  del simplex
+sobre el  hiperplano \ $x_k =  0$. As\'i, \ $\widetilde{X}$,  tiene una densidad
+con   respeto   a   la  medida   de   Lebesgue   usual,   y   es  dada   por   \
+$p_{\widetilde{X}}\left(   \widetilde{x}   \right)   =   \frac{\prod_{i=1}^{k-1}
+  \widetilde{x}_i^{\,  a_i-1}  \, \left(  1  - \sum_{i=1}^{k-1}  \widetilde{x}_i
+  \right)^{a_k-1}}{B(a)}$.      A      final,     se     notar\'a      que     \
+$\Phi_{\widetilde{X}}\left(         \widetilde{\omega}         \right)         =
+\Phi_X\left( \begin{bmatrix} \widetilde{\omega} & 0 \end{bmatrix}^t \right)$ \ y
+\ $\Phi_X(u) =  e^{\omega_k} \Phi_{\widetilde{X}}\left( \begin{bmatrix} \omega_1
+    - \omega_k  & \cdots &  \omega_{k-1} - \omega_k \end{bmatrix}^t  \right)$ (y
+similarmente  para $G_X$  con respeto  a $G_{\widetilde{X}}$).   Notar tambi\'en
+que, la  forma de la  funci\'on generadora de  momento viene directamente  de la
+escritura de las series  de Taylor de $e^{u_i x_i}$ \ o  de la forma integral de
+la funci\'on confluente hipergeom\'etrica~\cite{Phi88}.
+
+Naturalmente,  $\Sigma_X \un  = 0$  \  as\'i que  de nuevo  \ $\Sigma_X  \not\in
+P_k^+(\Rset)$, como consecuencia directa del  hecho que \ $X$ \ $k$-dimensional,
+vive  sobre   \  $\Simp{k-1}$,  $(k-1)$-dimensional.  De   nuevo,  para  definir
+asimetr\'ia y  curtosis habr\'ia que  considerar \ $\widetilde{X}$,  de promedio
+$\begin{bmatrix}  \bar{a}_1  &  \cdots  & \bar{a}_{k-1}  \end{bmatrix}^t$  y  de
+covarianza  el  bloque  $(k-1)  \times   (k-1)$  de  $\Sigma_X$,  que  es  ahora
+invertible. $\gamma_{\widetilde{X}}$  \ y \ $\kappa_{\widetilde{X}}$  \ son bien
+definidos. Las expresiones, demasiado pesadas, no son dadas ac\'a.
+
 La figura Fig.~\ref{Fig:MP:Dirichlet} representa  el dominio de definici\'on del
-vector (a) y su densidad de  probabildad con las marginales (ver m\'as adelante)
-para $k = 3$.
+vector (a) y la densidad de  probabildad con las marginales (ver m\'as adelante)
+para $k = 3$ y dos ejemplos de par\'ametro $a$.
 %
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/Dirichlet} \end{center}
 %
-\leyenda{Ilustraci\'on del  dominio $\Simp{k-1}$ de  definici\'on de la  ley de
+\leyenda{Ilustraci\'on  del dominio $\Simp{k-1}$  de definici\'on  de la  ley de
   Dirichlet   para  \   $k  =   3$   \  (grise   oscuro),  con   el  dominio   \
   $(k-1)$-dimensional   \  $\Tri_{k-1}$   \  del   vector  \   $\widetilde{X}  =
   \protect\begin{bmatrix}   X_1  &  X_2   \protect\end{bmatrix}^t$  \   ($X_3  =
   1-X_1-X_2$) \ (grise claro) (a), y densidad de probabilidad de $\widetilde{X}$
-  \   con   las   marginales   \   $p_{X_1},   \:   p_{X_2}$   (ver   notas   de
-  pie~\ref{Foot:MP:DirichletDominio}   y~\ref{Foot:MP:DirichletDensidad}).   Los
-  par\'ametros   son    \   $a   =    \protect\begin{bmatrix}   3   &   2    &   2
-    \protect\end{bmatrix}^t$  (b) y \  $a =  \protect\begin{bmatrix} 3  & 1  & 2
-    \protect\end{bmatrix}^t$ (c).}
+  \ con  las marginales \  $p_{X_1}, \: p_{X_2}$.   Los par\'ametros son \  $a =
+  \protect\begin{bmatrix}  3 &  2  & 2  \protect\end{bmatrix}^t$  (b) y  \ $a  =
+  \protect\begin{bmatrix} 3 & 1 & 2 \protect\end{bmatrix}^t$ (c).}
 \label{Fig:MP:Dirichlet}
 \end{figure}
 
@@ -116,11 +130,11 @@ notables, parecidas a las de la beta:
 %
 \begin{proof}
   El resultado es inmediato por cambio  de variables $x \to \Pi x$, la Jacobiana
-  siende   $\Pi$,   de   valor   absoluto   determinente  igual   a   $1$   (ver
+  siendo   $\Pi$,   de   valor   absoluto   determinente  igual   a   $1$   (ver
   secci\'on~\ref{Sec:MP:Transformacion}).
 \end{proof}
 %
-Adem\'as, se muestra una stabilidad remplazando dos componentes por su suma:
+Adem\'as, se muestra una stabilidad reemplazando dos componentes por su suma:
 %
 \begin{lema}[Stabilidad por agregaci\'on]\label{Lem:MP:StabSumaDir}
 %
@@ -182,14 +196,14 @@ De este lema, aplicado de manera recursiva, se obtiene en corolario siguiente:
   \beta\left( a_i \, , \, \alpha-a_i \right)$.
 \end{corolario}
 
-Naturalmente,  la ley de  Dirichelt siendo  una extensi\'on  de la  beta, existe
+Naturalmente, la ley de Dirichelt siendo  una extensi\'on de la ley beta, existe
 tambi\'en un v\'inculo entre esta ley y variables de distribuci\'on gamma:
 %
 \begin{lema}[V\'inculo con la ley gamma]
 \label{Lem:MP:VinculoDirichletGamma}
 %
-Sea \ $X$ \ vector $k$-dimensional de componente \ $i$-\'esima \ $X_i \, \sim \,
-\G(a_i,c), \: i = 1, \ldots , k$ \ independientes \ y \ $a$ vector de componente
+Sea \ $X$  \ vector $k$-dimensional de componentes \ $X_i  \, \sim \, \G(a_i,c),
+\:  i  = 1,  \ldots  , k$  \  independientes  \ y  \  $a$  vector de  componente
 $i$-\'esima \ $a_i$. Entonces
   %
   \[
@@ -206,9 +220,9 @@ $i$-\'esima \ $a_i$. Entonces
 \end{proof}
 
 Naturalmente,  la  distribuci\'on de  Dirichlet,  extensi\'on  de  la ley  beta,
-aparece entre  otros en problema  de inferencia Bayesiana como  distribuci\'on a
-priori  conjugado~\footref{Foot:MP:BayesPrior}  del  par\'ametro  $p$  de  la  ley
-multinomial~\cite{Rob07}, extensi\'on de la ley binomial.
+aparece entre  otros en problema  de inferencia bayesiana como  distribuci\'on a
+priori  conjugado  del  par\'ametro  $p$  de  la  ley  multinomial~\cite{Rob07},
+extensi\'on de la ley binomial.
 
 %\SZ{
 %Polya urn schemes (ver Ash entre otros) , Chinese restaurant
@@ -222,4 +236,4 @@ cumpliando la relaci\'on  de completud (ver notaciones); se denota  \ $X \, \sim
 \, \Dir_d(a)$  \ donde \  $a \in \left(  \frac{d-1}{2} \; +\infty  \right)^k$ la
 densidad  est dada por  $\displaystyle p_X(x)  = \frac{\prod_{i=1}^k  \left| x_i
   \right|^{a_i-\frac{d+1}{2}}}{B_d(a)}$.   Se  refiera a~\cite[Cap.~6]{GupNag99}
-para tener m\'as informaciones.
+para tener m\'as detalles.

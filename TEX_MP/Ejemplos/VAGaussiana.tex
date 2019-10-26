@@ -7,8 +7,8 @@ usando la formula de Stirling~\cite{Moi30, Moi33, Moi56, Pea24, PeaMoi26, Dem33,
   Hal84,  Hal90,  JohKot95:v1, DavEdw01,  Hal06}.   Se  puede  ver tambi\'en  el
 trabajo  de F.   Galton,  quien construy\'o  un  experimento, la  caja dicha  de
 Galton, que  ilustra por una  parte como se  puede obtener la ley  binomial como
-suma   de  Bernoulli,   y   la  convergencia   a  la   Gausiana~\cite[Figs.~7-9,
-p.~63]{Gal89}  o~\cite[p.~38]{Pea20}.  Aparte  de  Moivre, la  ley gausiana  fue
+suma   de  Bernoulli,   y   la  convergencia   a  la   gaussiana~\cite[Figs.~7-9,
+p.~63]{Gal89}  o~\cite[p.~38]{Pea20}.  Aparte  de  Moivre, la  ley gaussiana  fue
 desarollado mucho por los matem\'aticos  como Gauss en el estudio del movimiento
 de   planetas   con   perturbaciones   (predicci\'on  de   la   trayectoria   de
 C\'eres)~\cite{Gau09,  Pea24, DavEdw01,  Hal06}, basado  en trabajos  de  A.  M.
@@ -20,7 +20,7 @@ ejemplo~\cite{Pea20}).   Por eso,  esta ley  es tambi\'en  conocida como  ley de
 Laplace-Gauss.
 
 En el contexto multivariado, la extensi\'on natural de la ley binomial siendo la
-ley multinomial, es sin sorpresa  que se introdujo la gausiana multivaluada como
+ley multinomial, es sin sorpresa  que se introdujo la gaussiana multivaluada como
 approximaci\'on de la multinomial.  Este trabajo  es debido entre otros a J.  L.
 Lagrange en  los a\~nos 1770, con  correcciones debido unas  decadas despu\'es a
 A. de  Morgan~\cite{Mor38}. Pero apareci\'o  antes en el caso  bidimensional, en
@@ -29,25 +29,25 @@ variables   aleatorias  (ver   por  ejemplo   trabajos   de  Galton~\cite{Gal77,
   Gal77:Nature, Pea20}).
 
 A pesar de que parece menos natural en la modelisaci\'on de fenomenos aleatorios
-que leyes uniformes, la ley gausiana es seguramente unas de las m\'as importante
+que leyes uniformes, la ley gaussiana es seguramente unas de las m\'as importante
 en  probabilidad, sino  que  la m\'as  importante  y la  m\'as  expendida en  la
 naturaleza.   Eso  viene sin  duda  del teorema  del  l\'imite  central. En  dos
 palabras,  cuando  se  suman  un  n\'umero importante  de  variables  aleatorias
 (independientes,   de  misma  ley,   admitiendo  una   varianza,  o   con  menos
 restricciones~\cite[Cap.~11]{AthLah06}),  correctamente  normalizado, esta  suma
-tiende a una gausiana~\footnote{De hecho,  la approximaci\'on de la ley binomial
-  por una  gausiana cuando  $n$ es  grande es una  caso particular  del teorema,
+tiende a una gaussiana~\footnote{De hecho,  la approximaci\'on de la ley binomial
+  por una  gaussiana cuando  $n$ es  grande es una  caso particular  del teorema,
   siendo la binomial una suma  de Bernoulli independientes.}.  En la naturaleza,
 se puede ver el ruido (se\~nales) como suma de un n\'umero importante de fuentes
-de  ruido independientes,  justificando el  modelo  gausiano~\cite{Fel71, Cam86,
+de  ruido independientes,  justificando el  modelo  gaussiano~\cite{Fel71, Cam86,
   AshDol99, JacPro03, AthLah06, Ren07, Bil12}.  Ad\'emas, como lo vamos a ver en
 el  cap\'itulo~\ref{Cap:SZ:Informacion}, esta  ley es  la de  incerteza m\'axima
 (maximizando la entrop\'ia) teniendo  una dada varianza. Aparece naturalmente en
 termod\'inamica    (gaz    perfecto,   con    un    n\'umero    muy   alto    de
 particulas)~\cite{Max67, Bol96,  Bol98, Gib02, Jay65}. En  estimaci\'on, bajo la
-hipotesis  gausiana,  los  estimadores  de  par\'ametros  minimizando  el  error
+hipotesis  gaussiana,  los  estimadores  de  par\'ametros  minimizando  el  error
 cuadr\'atico promedio son  generalmente lineal~\cite{Kay93, Rob07}.  Todas estas
-consideraciones  dan a la  ley gausiana  un rol  central en  la teor\'ia  de las
+consideraciones  dan a la  ley gaussiana  un rol  central en  la teor\'ia  de las
 probabilidades.
 
 Se denota \  $X \, \sim \, \N(m,\Sigma)$ \  con \ $m \in \Rset^d$  \ y \ $\Sigma
@@ -89,13 +89,13 @@ Funci\'on  caracter\'istica   &  $\displaystyle  \Phi_X(\omega)   =  e^{-\frac12
 \end{caracteristicas}
 
 Nota: trivialmente, se puede escribir $X  \, \egald \, \Sigma^{\frac12} N + m$ \
-con \ $N \, \sim \, \N(0,I)$ \  donde \ $N$ \ es dicha {\em Gausiana estandar} o
+con \ $N \, \sim \, \N(0,I)$ \  donde \ $N$ \ es dicha {\em gaussiana estandar} o
 {\em centrada-normalizada}. Las caracter\'isticas de  \ $X$ \ son v\'inculadas a
 las  de  \  $N$ \  (y  vice-versa)  por  transformaci\'on afine  (ver  secciones
 anteriores).
 
 
-La densidad de probabilidad gausiana y  la funci\'on de repartici\'on en el caso
+La densidad de probabilidad gaussiana y  la funci\'on de repartici\'on en el caso
 escalar son  representadas en la figura Fig.~\ref{Fig:MP:Gaussiana}-(a)  y (b) y
 una      densidad      en       un      contexto      bi-dimensional      figura
 Fig.~\ref{Fig:MP:Gaussiana}(c).
@@ -119,7 +119,7 @@ Fig.~\ref{Fig:MP:Gaussiana}(c).
 
 La gaussiana tiene un par de propiedades particulares:
 %
-\begin{lema}[Gausiana y cumulantes]
+\begin{lema}[Gaussiana y cumulantes]
 %
   Sea \  $X$ \ vector aleatorio de  media $m$, covarianza $\Sigma$  y de secunda
   funci\'on caracter\'istica admtiendo un desarollo de Taylor. Entonces
@@ -138,7 +138,7 @@ La gaussiana tiene un par de propiedades particulares:
   \Psi_X(\omega) = \imath \, \omega^t m - \frac12 \omega^t \Sigma \omega
   \]
   %
-  lo que es nada m\'as que la secunda funci\'on caracter\'istica de la gausiana,
+  lo que es nada m\'as que la secunda funci\'on caracter\'istica de la gaussiana,
   esa determiniendo completamente la ley.
 \end{proof}
 %
@@ -199,9 +199,9 @@ La gaussiana tiene un par de propiedades particulares:
 Hemos visto que cuando un  vector tiene componentes independientes, la matriz de
 covarianza  es   diagonal  (lema~\ref{Lem:MP:IndependenciaCov}),  pero   que  la
 rec\'iproca es falsa en general.  El \'ultimo teorema muestra que la rec\'iproca
-vale en el caso gausiano.
+vale en el caso gaussiano.
 
-Volvemos  ahora al rol  central de  la gausiana  como modelo  probabilistico muy
+Volvemos  ahora al rol  central de  la gaussiana  como modelo  probabilistico muy
 frecuente  de fenomeos  aleatorios. Este  rol particular  viene del  teorema del
 l\'imite  central que  ya introdujimos.  A veces,  es conocido  como  teorema de
 Lindenberg-Feller (por lo menos la forma con condiciones m\'as debiles que en la
@@ -258,9 +258,9 @@ siguiente~\cite{Spi76, BroDav87, LehCas98, AshDol99, JacPro03, AthLah06, Bil12}:
   porque \ $\Phi_{X_i}(0) = 1$, $X_i$ \  siendo de media nula el gradiente de la
   funci\'on   caracter\'istica   se  cancela   en   \   $\omega   =  0$,   y   \
   $\Hess_\omega\Phi_{X_i}(0)  =  -  \Sigma$.   Se reconoce  ahora  la  funci\'on
-  caracter\'istica   de  la   gausiana,   lo  que   prueba   que  la   funci\'on
+  caracter\'istica   de  la   gaussiana,   lo  que   prueba   que  la   funci\'on
   caracter\'istica  de  \  $Y_n$  \  converge  simplemente  hacia  la  funci\'on
-  caracter\'istica  de la gausiana.   Se cierra  la pruba  usando el  teorema de
+  caracter\'istica  de la gaussiana.   Se cierra  la pruba  usando el  teorema de
   convergencia de  L\'evy, diciendo que  la convergencia simple de  la funci\'on
   caracter\'istica  implica  la  convergencia en  distribuci\'on~\cite{AshDol99,
     Bil12, AthLah06}.
@@ -268,7 +268,7 @@ siguiente~\cite{Spi76, BroDav87, LehCas98, AshDol99, JacPro03, AthLah06, Bil12}:
 %
 En particular, la  media emp\'irica hechas a partir  de vectores independientes de
 media  $m$,  admitiendo  una  covarianza  \  $\Sigma$  \  y  de  misma  ley  (no
-necesariamente gausiana), tiende a ser gausiana  de media \ $m$ \ y covarianza \
+necesariamente gaussiana), tiende a ser gaussiana  de media \ $m$ \ y covarianza \
 $\frac{1}{n} \Sigma$.
 
 Existen  varias   variantes  de  este   teorema  que  enunciamos,  sin   dar  la
@@ -309,7 +309,7 @@ Sin dar  la prueba,  la condici\'on  de Lindenberg dice  que si  la suma  de las
 ``dispersi\'ones'' de  los vectores normalizados  por los que es  basicamente la
 varianza  la   m\'as  peque\~na  de  los   componentes  de  la   suma  (una  vez
 diagonalizada)  se  concentra  asintoticamente,  la  suma  renormalizada  de  lo
-vectores centrados tiende a la gausiana (en distribuci\'on).
+vectores centrados tiende a la gaussiana (en distribuci\'on).
 
 Se  puede ver  que  se  satisface la  condici\'on  de Lindeberg  en  el caso  de
 variables independientes de misma ley, del hecho  que \ $C_n = n \Sigma$, lo que
@@ -335,10 +335,10 @@ $\delta > 0$ tal que
 entonces         se          satisface         la         condici\'on         de
 Lindeberg~\cite{AshDol99}.  Frecuentemente,  es   m\'as  sencillo  verificar  la
 condici\'on m\'as fuerte de Lyapunov para  probar la convergencia de una suma de
-vectores aleatorios a la gausiana.
+vectores aleatorios a la gaussiana.
 
 \
 
 Aparece que se puede a\'un  debilitar la condici\'on de independencia sin perder
-la   convergencia    a   la   gausiana.    Para   m\'as   detalles,    ver   por
+la   convergencia    a   la   gaussiana.    Para   m\'as   detalles,    ver   por
 ejemplo~\cite[Sec.~6.4]{BroDav87}.

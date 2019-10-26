@@ -133,10 +133,10 @@ distribuci\'on como gamma matriz-variada.
 \end{proof}
 
 La distribuci\'on  de Wishart aparece naturalmente en  problemas de estimaci\'on
-de matriz de covarianza en el contexto gausiano~\cite{Mui82, BilBre99, GupNag99,
+de matriz de covarianza en el contexto gaussiano~\cite{Mui82, BilBre99, GupNag99,
   And03, Seb04, KotNad04}:
 %
-\begin{lema}[V\'inculo con vectores gausianos]\label{Lem:MP:WishartGausiana}
+\begin{lema}[V\'inculo con vectores gaussianos]\label{Lem:MP:WishartGaussiana}
 %
   Sean \ $X_i \, \sim \, \N(0,V), \: i = 1, \ldots , n > d-1$ \ independientes y
   la  matriz  \  $S  =  \sum_{i=1}^n   X_i  X_i^t$  \  llamada  {\em  matriz  de
@@ -180,7 +180,7 @@ V^{-1} x} \, dx\\[2mm]
 \end{eqnarray*}
 %
 Se puede probar  que la integral vale uno (moralmente,  integral de una densidad
-de  probabilidad gausiana)~\cite[Teo.~2.1.11]{Mui82}.  La  prueba se  cierra por
+de  probabilidad gaussiana)~\cite[Teo.~2.1.11]{Mui82}.  La  prueba se  cierra por
 $\left| V^{-1} - 2 \imath  \, \omega \right|^{-\frac12} = |V|^{\frac12} \left| I
   -  2  \imath \,  \omega  V \right|^{-\frac12}$:  se  reconoce  en $\Phi_S$  la
 funci\'on caracter\'istica de la ley de wishart (a condici\'on que $n > d-1$).
@@ -197,16 +197,16 @@ as\'i que \ $A^t X A \egald  \sum_{i=1}^n A^t X_i X_i^t A = \frac1n \sum_{i=1}^n
 re-obtener las  expreciones del promedio y de  las covarianzas~\footnote{Para la
   covarianza, su usa la formula \ $\Esp[Y_1 Y_2 Y_3 Y_4] = \Esp[Y_1 Y_2]\Esp[Y_3
   Y_4]  + \Esp[Y_1 Y_3]\Esp[Y_2  Y_4] +  \Esp[Y_1 Y_4]\Esp[Y_2  Y_3]$ \  para $Y
-  = \begin{bmatrix}  Y_1 & Y_2 &  Y_3 & Y_4 \end{bmatrix}^t$  \ vector gausiano,
+  = \begin{bmatrix}  Y_1 & Y_2 &  Y_3 & Y_4 \end{bmatrix}^t$  \ vector gaussiano,
   formula que se  obtiene por ejemplo a partir  de la funci\'on caracter\'istica
-  de un vecor  gausiano.}. Notar que cuando los \ $X_i$  \ tienen un promemedio,
+  de un vecor  gaussiano.}. Notar que cuando los \ $X_i$  \ tienen un promemedio,
 el  lema conduce  a  lo que  es  conocido como  Wishart no  central~\cite{And03,
   Seb04}.
 
 Este  lema  se  extiende  a  trav\'es  de  lo  que  aparece  como  combinaciones
 ortonormales~~\cite{Mui82, GupNag99, BilBre99, And03, Seb04, KotNad04}:
 %
-\begin{lema}[V\'inculo con vectores gausianos y matriz idempotenta]\label{Lem:MP:WishartGausianaIdempotenta}
+\begin{lema}[V\'inculo con vectores gaussianos y matriz idempotenta]\label{Lem:MP:WishartGaussianaIdempotenta}
 %
   Sean \ $X_i \, \sim \, \N(0,V), \: i = 1, \ldots , n > d-1$ \ independientes y
   denotamos \ $X = \begin{bmatrix} X_1 & \cdots & X_n \end{bmatrix}$ \ matriz de
@@ -237,7 +237,7 @@ ortonormales~~\cite{Mui82, GupNag99, BilBre99, And03, Seb04, KotNad04}:
   \]
   %
   Ahora,    del   teorema~\ref{Teo:MP:StabilidadGaussiana}    los    $Y_i$   son
-  gausianos de media nula. Adem\'as
+  gaussianos de media nula. Adem\'as
   %
   \begin{eqnarray*}
   \Esp\left[ Y_i Y_j^t \right] & = & \sum_{k,l=1}^n B_{ki} B_{lj} \Esp\left[ X_k
@@ -248,13 +248,13 @@ ortonormales~~\cite{Mui82, GupNag99, BilBre99, And03, Seb04, KotNad04}:
   %
   de la independencia de los $X_k$ que son de covarianza $V$. De $B^t B = I$ \ie
   \ $\sum_{k=1}^n  B_{ki} B_{kj} = \un_{\{i\}}(j)$  \ tenemos que los  \ $Y_i$ \
-  son  independientes  (gausianos  de  covarianza  nula  para  $i  \ne  j$),  de
-  covarianza $V$.  La prueba se cierra del lema~\ref{Lem:MP:WishartGausiana}.
+  son  independientes  (gaussianos  de  covarianza  nula  para  $i  \ne  j$),  de
+  covarianza $V$.  La prueba se cierra del lema~\ref{Lem:MP:WishartGaussiana}.
 \end{proof}
 %
 En particular,  la distribuci\'on, de Wishart  aparece en la  estimaci\'on de la
-matriz de covarianza de un vector  gausiano a partir de copias independientes de
-vectores gausianos independientes de mismos parametros~\cite{KotNad04, BilBre99,
+matriz de covarianza de un vector  gaussiano a partir de copias independientes de
+vectores gaussianos independientes de mismos parametros~\cite{KotNad04, BilBre99,
   And03, Seb04, GupNag99}:
 % Resp. ?? -- cap. 7 prop 7.1 -- corr 7.2.2, 7.2.3 -- ?? -- Cap. 9
 %
@@ -308,7 +308,7 @@ vectores gausianos independientes de mismos parametros~\cite{KotNad04, BilBre99,
   Adem\'as,  se  proba  sencillamente  que   \  $I  -  \frac{\un  \un^t}{n}  \in
   S_n(\Rset)$ es idempotenta de rango $n-1$. El resultado es consecuencia de los
   lemas~\ref{Lem:MP:StabilidadWishartLineal}   (por    la   normalizaci\'on)   y
-  de~\ref{Lem:MP:WishartGausiana}       y~\ref{Lem:MP:WishartGausianaIdempotenta}
+  de~\ref{Lem:MP:WishartGaussiana}       y~\ref{Lem:MP:WishartGaussianaIdempotenta}
   respectivamente.
 \end{proof}
 
@@ -397,8 +397,8 @@ formaliza en el caso Wishart general de la manera siguiente:
   \end{eqnarray*}
   %
   Por productos, se concluye que  las conmponentes son independientes. Luego, en
-  el secundo  producto se  reconoce un producto  de leyes  gausianas estandares,
-  as\'i que los  $U_{ij}, \: 1 \le j  < i \le d$ \ son  gausianas estandares. Al
+  el secundo  producto se  reconoce un producto  de leyes  gaussianas estandares,
+  as\'i que los  $U_{ij}, \: 1 \le j  < i \le d$ \ son  gaussianas estandares. Al
   final,   la   densidad  de   \   $U_{ii}$   \   siendo  \   $p_{U_{ii}}(u)   =
   \frac{2^{1-\frac{\nu-i+1}{2}}  \, u^{\nu-i} \,  e^{-\frac12 u^2}}{\Gamma\left(
       \frac{\nu-i+1}{2}      \right)}$,      por      transformac\'ion      (ver

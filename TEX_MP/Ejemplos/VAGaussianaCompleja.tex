@@ -2,9 +2,9 @@
 \label{Sssec:MP:GaussianaComplejas}
 
 Por definici\'on, un vector aleatorio complejo $d$-dimensional \ $Z = X + \imath
-Y$ \  es gausiano significa que  el vector $2 d$-dimensional  \ $\widetilde{Z} =
-\begin{bmatrix}  X^t &  Y^t \end{bmatrix}^t$  \ es  gausiano. Se  puede entonces
-referirse  en el  caso de  vectores gausianos,  pero como  lo hemos presentado  en la
+Y$ \  es gaussiano significa que  el vector $2 d$-dimensional  \ $\widetilde{Z} =
+\begin{bmatrix}  X^t &  Y^t \end{bmatrix}^t$  \ es  gaussiano. Se  puede entonces
+referirse  en el  caso de  vectores gaussianos,  pero como  lo hemos presentado  en la
 secci\'on~\ref{Ssec:MP:VAComplejos}, es frecuentemente m\'as comodo trabajar con
 \  $Z$ \  en lugar  de \  $\widetilde{Z}$.
 %  En  particular, en  el marco  de las
@@ -15,8 +15,8 @@ secci\'on~\ref{Ssec:MP:VAComplejos}, es frecuentemente m\'as comodo trabajar con
 %referirse  a~\cite{Lap17} (ver en  particular el  capitulo~24) o~\cite{SchSch03,
 %  EriKoi06}.
 
-En el caso general, la gausiana  real siendo completamente descrita por su media
-y su matriz de covarianza, la  gausiana compleja va a ser completamente definida
+En el caso general, la gaussiana  real siendo completamente descrita por su media
+y su matriz de covarianza, la  gaussiana compleja va a ser completamente definida
 por   la  media,   la  matriz   de  covarianza   y  la   pseudo-covarianza  (ver
 Sec.~\ref{Sec:MP:VectoresComplejosMatricesAleatorias}  por las  relaciones entre
 la  covarianza  de  \ $\widetilde{Z}$  \  y  estas  matrices).
@@ -26,7 +26,7 @@ Se denota \ $Z \, \sim \, \CN(m,\Sigma,\check{\Sigma})$ \ con \ $m \in \Cset^d$,
 herm\'iticas definidas positivas, y  \ $\check{\Sigma} \in S_d(\Cset)$ \ conjunto
 de las matrices de \  $\M_{d,d}(\Cset)$ \ symmetricas (ver notaciones).  Un caso
 particular  aparece cuando  \ $Z$  \  es propio  en torno  a  \ $m$,  lo que  es
-equivalente en el caso gausiano a tener \ $Z$ \ circular (ver m\'as adelante) en
+equivalente en el caso gaussiano a tener \ $Z$ \ circular (ver m\'as adelante) en
 torno a  \ $m$, dado  cuando \  $\check{\Sigma} = 0$:  en este caso  usaremos la
 misma notaci\'on,  $Z \,  \sim \, \CN(m,\Sigma)$.   Las caracter\'isticas  de la
 gaussiana  compleja   son  las  siguientes~\cite{Lap17,   Pic96,  Goo63,  Bos95,
@@ -85,15 +85,15 @@ $\sigma_Z^2  = 2  \sigma^2$.  El coefficiente  2 viene  del  hecho que  \ $Z$  \
 contiene dos componentes independientes de varianza $\sigma^2$.
 
 Los vectores aleatorios complejos van a compartir las propiedades del caso real,
-siendo equivalente  a un vector  $2d$-dimensional gausiano real.
+siendo equivalente  a un vector  $2d$-dimensional gaussiano real.
 
-% De  manera  general,  las caracter\'isticas  de  \  $X$  \ gausiano  real  son
+% De  manera  general,  las caracter\'isticas  de  \  $X$  \ gaussiano  real  son
 % v\'inculadas a las  de \ $N$ \ (y vice-versa)  por transformaci\'on afine (ver
 % secciones anteriores).
 
 Primero, los cumulantes de orden superior o igual a $4$ valen cero:
 %
-\begin{lema}[Gausiana compleja y cumulantes]
+\begin{lema}[Gaussiana compleja y cumulantes]
 %
   Sea \ $Z$ \ vector aleatorio complejo de media $m$, de covarianza $\Sigma$, de
   pseudo-covarianze  $\check{\Sigma}$ y  de  secunda funci\'on  caracter\'istica
@@ -111,7 +111,7 @@ Primero, los cumulantes de orden superior o igual a $4$ valen cero:
 %  La pueba sigue paso a paso la del lema~\ref{Lem:MP:CumSecFctCarac}.
 %\end{proof}
 
-Secundo, como en  el caso real, la gausiana es  estable por combinaci\'on lineal
+Secundo, como en  el caso real, la gaussiana es  estable por combinaci\'on lineal
 de vectores independientes:
 %
 \begin{teorema}[Stabilidad]
@@ -185,8 +185,8 @@ Sean \ $A \in \M_{d',d}(\Cset)$, \  $B \in \M_{d',d}(\Cset)$ \ tales que \ ambas
     A-B \end{bmatrix} \begin{bmatrix} X\\ Y \end{bmatrix} + \begin{bmatrix}
     \real{c}\\ \imag{c} \end{bmatrix}$. Notando que \ $\begin{bmatrix} A+B & 0\\
     0    &   A-B    \end{bmatrix}$   \    es    de   rango    lleno,   por    el
-  teorema~\ref{Teo:MP:StabilidadGaussiana} este vector es gausiano, lo que proba
-  que \  $A Z  + B  Z^* + c$  \ es  gausiano complejo. Las  formas de  la media,
+  teorema~\ref{Teo:MP:StabilidadGaussiana} este vector es gaussiano, lo que proba
+  que \  $A Z  + B  Z^* + c$  \ es  gaussiano complejo. Las  formas de  la media,
   covarianza y  pseudo-covarianza siguen de calculos directos  de la expresi\'on
   $A Z + B Z^* + c$.
 \end{proof}
@@ -216,7 +216,7 @@ $\check{\Sigma}$. Entonces
 Como en el caso real, aparece que  la media emp\'irica hechas a partir de vectores
 complejos independientes de media \  $m$, admitiendo una covarianza \ $\Sigma$ \
 una  pseudo-covarianza \  $\check{\Sigma}$, y  de misma  ley  (no necesariamente
-gausiana),  tiende a  ser gausiana  compleja  de media  \ $m$,  de covarianza  \
+gaussiana),  tiende a  ser gaussiana  compleja  de media  \ $m$,  de covarianza  \
 $\frac{1}{n} \Sigma$, y de pseudo-covarianza \ $\frac{1}{n} \check{\Sigma}$.
 
 No   lo   presentamos,  pero   se   transpone   sencillamente   el  teorema   de
@@ -224,12 +224,12 @@ Lindenberg-Feller~\ref{Teo:MP:LindenbergFeller} al caso complejo.
 
 Notamos tambi\'en que, en el caso  circular, se puede escribir naturalmente \ $Z
 \, \egald \, \Sigma^{\frac12} N + m$ \  con \ $N \, \sim \, \CN(0,I)$ \ donde \
-$N$ \  es dicha  {\em Gausiana estandar}  o {\em centrada-normalizada}.   Eso se
-generaliza en dos direcciones.  La  primera pone tambi\'en en juega una gausiana
+$N$ \  es dicha  {\em Gaussiana estandar}  o {\em centrada-normalizada}.   Eso se
+generaliza en dos direcciones.  La  primera pone tambi\'en en juega una gaussiana
 estandar~\cite{Lap17}:
 %
 \begin{teorema}
-\label{Teo:MP:GausianaComplejaWWestrella}
+\label{Teo:MP:GaussianaComplejaWWestrella}
 %
 Sea \  $Z \sim  \CN(m,\Sigma,\check{\Sigma})$.  Entonces, existen  matrices (no
 \'unicas) \ $A \in \M_{d,d}(\Cset)$, \ $B \in \M_{d,d}(\Cset)$ \ tales que
@@ -238,7 +238,7 @@ Sea \  $Z \sim  \CN(m,\Sigma,\check{\Sigma})$.  Entonces, existen  matrices (no
   Z \egald A W + B W^* + m
   \]
   %
-  con \ $W \sim \CN(0,I)$ \ gausiana estandar.
+  con \ $W \sim \CN(0,I)$ \ gaussiana estandar.
   %
 \end{teorema}
 \begin{proof}
@@ -304,11 +304,11 @@ Se  puede   re-escribir  estas  matrices   a  partir  de   \  $\Sigma$  \   y  \
 $\check{\Sigma}$       \      usando       las       relaciones      de       la
 secci\'on~\ref{Ssec:MP:VAComplejos}.
 
-La  secunda  extensi\'on  pone  en  juega  una sola  gausiana  compleja  sin  su
+La  secunda  extensi\'on  pone  en  juega  una sola  gaussiana  compleja  sin  su
 conjugada~\cite{EriKoi06, SchSch03}:
 %
 \begin{teorema}
-\label{Teo:MP:GausianaComplejaWIDiago}
+\label{Teo:MP:GaussianaComplejaWIDiago}
 %
   Sea \ $Z \sim \CN(m,\Sigma,\check{\Sigma})$. Entonces, existe una matriz \ $C
   \in \M_{d,d}(\Cset)$ \ tal que
@@ -338,7 +338,7 @@ conjugada~\cite{EriKoi06, SchSch03}:
 
 Al final, v\'imos en la  secci\'on~\ref{Ssec:MP:VAComplejos} que si un vector es
 circular, entonces su pseudo-covarianza es  nula, pero la rec\'iproca no vale en
-general. Aparece que en el contexto gausiano tenemos la rec\'iproca:
+general. Aparece que en el contexto gaussiano tenemos la rec\'iproca:
 %
 
 \begin{teorema}[Circularidad]\label{Teo:MP:CircularidadGaussiana}
