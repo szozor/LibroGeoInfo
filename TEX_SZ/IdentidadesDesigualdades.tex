@@ -23,42 +23,42 @@ sistema  global  (macrosc\'opico)  es  al equilibrio  pero  las  configuraciones
 (micro-estados)  son  fluctuantes.   De  una  forma,  se  puede  asociar  a  una
 configuraci\'on su  frecuencia de ocurrencia (imaginando tener  une infinidad de
 copias del sistema en el  mismo estado macrosc\'opico), es decir su probabilidad
-de  occurencia.   En  este  marco,  la  entrop\'ia,  describiendo  la  falta  de
-informaci\'on, juega un  rol fundamental.  Un sistema sujeto  a v\'inculos, como
-por  ejemplo teniendo  una energ\'ia  dada, debe  estar en  sus estado  lo m\'as
-desorganizado dados  los v\'inculos.  En su  marco, se introdujo  la noci\'on de
-entrop\'ia  termodin\'amica,  pero la  misma  es  tremendamente  vinculada a  la
-entrop\'ia    de   Shannon~\footnote{Ver   ep\'igrafe    del   cap\'itulo\ldots}
-(claramente, identificando las frecuencias  a probabilidades de ocurrencia).  En
-otro  terminos, la  distribuci\'on describiendo  los micro-estados  debe  ser de
-entrop\'ia m\'axima,  dados los  v\'inculos.  Por ejemplo,  en un  gas perfecto,
-donde las part\'iculas no interactuan  (aparte chocandose), la energ\'ia es dada
-por las velocidades (suma de las energ\'ias cin\'eticas individuales).  Dada una
-energ\'ia  fija, la  distribuci\'on  de  las velocidad  debe  ser de  entrop\'ia
-m\'axima  sujeto  a  la  energ\'ia  dada  (nada m\'as  que  la  energ\'ia  va  a
-``organizar''  las  configuraciones posibles).   Intuitivamente,  en un  sistema
-aislado  de  $N$ part\'iculas,  las  configuraciones  van  a ser  equiprobables,
-precisamente  la   distribuci\'on  maximizando   la  entrop\'ia.   \SZ{   En  la
-  subsecci\'on Sec.~\ref{Ssec:SZ:GasPerfecto}  se va a desarollar  un poco m\'as
-  este ejemplo.}
+de occurencia (ver  secci\'on~\ref{Ssec:MP:FamiliaExponencial}).  En este marco,
+la entrop\'ia, describiendo la falta de informaci\'on, juega un rol fundamental.
+Un sistema  sujeto a v\'inculos, como  por ejemplo teniendo  una energ\'ia dada,
+debe estar  en sus estado  lo m\'as desorganizado  dados los v\'inculos.   En su
+marco, se introdujo la noci\'on  de entrop\'ia termodin\'amica, pero la misma es
+tremendamente vinculada a la  entrop\'ia de Shannon~\footnote{Ver ep\'igrafe del
+  cap\'itulo\ldots} (claramente, identificando  las frecuencias a probabilidades
+de  ocurrencia).    En  otros  terminos,  la   distribuci\'on  describiendo  los
+micro-estados  debe  ser de  entrop\'ia  m\'axima,  dados  los v\'inculos.   Por
+ejemplo,  en un  gas perfecto,  donde  las part\'iculas  no interactuan  (aparte
+chocandose), la  energ\'ia es dada por  las velocidades (suma  de las energ\'ias
+cin\'eticas individuales).   Dada una energ\'ia  fija, la distribuci\'on  de las
+velocidades debe  ser de  entrop\'ia m\'axima sujeto  a la energ\'ia  dada (nada
+m\'as  que  la  energ\'ia  va  a ``organizar''  las  configuraciones  posibles).
+Intuitivamente, en  un sistema aislado de $N$  part\'iculas, las configuraciones
+van  a   ser  equiprobables,  precisamente  la   distribuci\'on  maximizando  la
+entrop\'ia.   \SZ{ En  la  subsecci\'on Sec.~\ref{Ssec:SZ:GasPerfecto}  se va  a
+  desarollar un poco m\'as este ejemplo.}
 
 De manera general, el problema se  formaliza como la b\'usqueda de la entrop\'ia
 m\'axima  sujeto  a  v\'inculos.    Si  este  principio  naci\'o  en  mec\'anica
 estad\'istica  (ver  tambi\'en~\cite{Jay57,   Jay57:2,  Jay65,  Mer10,  Mer18}),
 encontr\'o  un  echo en  varios  campos:  en  inferencia bayesiana  para  elegir
-distribuciones       del        a       priori~\footnote{Ver       nota       de
-  pie~\footref{Foot:SZ:BayesPrior}.  En la  inferencia bayesiana de un parametro
-  modelizado  como   aleatorio  $\theta$,  para   eligir  la  ley  a   priori  \
-  $p_\Theta(\theta)$,  si se conocen  momentos por  una raz\'on  o una  otra, se
-  puede elegir esta distribuci\'on como la ``menos informativa'' posible, \ie de
-  entrop\'ia  m\'axima dados  los  momentos.}  conociendo  unos  momentos de  la
-ley~\cite{Rob07,  Jay68,  Jay82,  Csi91},  hacer  estimaci\'on  espectral  o  de
-procesos     estocasticos      autoregresivos~\cite{Bur67,     Bur75,     Jay82}
+distribuciones del a  priori~\footnote{Ver notas de pie~\ref{Foot:MP:BayesPrior}
+  y~\ref{Foot:MP:BayesPriorConjugado}.    Recuerdense  que   en   la  inferencia
+  bayesiana de un par\'ametro modelizado como aleatorio $\theta$, para eligir la
+  ley a  priori \ $p_\Theta(\theta)$, si  se conocen momentos por  una raz\'on o
+  una otra,  se puede elegir  esta distribuci\'on como la  ``menos informativa''
+  posible,  \ie de  entrop\'ia m\'axima  dados los  momentos.}   conociendo unos
+momentos  de  la  ley~\cite{Rob07,  Jay68,  Jay82,  Csi91},  hacer  estimaci\'on
+espectral o de procesos estoc\'asticos autoregresivos~\cite{Bur67, Bur75, Jay82}
 o~\cite[cap.~12]{CovTho06}, entre otros~\cite[\& ref.]{Arn01, Kap89, KapKes92}.
 
 Sea \ $X$ \ variable aleatoria viviendo sobre (de distribuci\'on de probabilidad
 de soporte) \ $X(\Omega) = \X \subseteq \Rset^d$  \ con \ $K \ge 0$ \ momentos \
-$\Esp\left[ M_k(X) \right] = m_k$ \ fijos, con $M_x: \X \to \Rset$. Suponemos de
+$\Esp\left[ M_k(X)  \right] = m_k$ \  fijos, con $M_x: \X  \to \Rset$. Suponemos
 que $X$ tiene una densidad \ $p$ \ con respeto a una medida $\mu$, basicamente \
 $\mu_L$ \ en el contexto continuo y $\mu_\X$ en el caso discreto. El problema de
 entrop\'ia  m\'axima   se  formula  de   la  manera  siguiente:  sean   \  $M(x)
@@ -75,11 +75,11 @@ p^* = \argmax_p H(p) \qquad \mbox{sujeto a} \qquad p \ge 0, \quad \int_\X p(x) \
 %
 donde los dos primeros v\'inculos (positividad, normalizaci\'on) aseguran de que
 $p^*$ sea una distribuci\'on de probabilidad. En el ejemplo del gas perfecto, $K
-= 1, \, M_1(x) = \sum_i  x_i^2$ \ (los $x_i$ son las velocidades). Introduciendo
-factores de  Lagrange $\eta_0,  \quad \eta =  \begin{bmatrix} \eta_1 &  \cdots &
-  \eta_K \end{bmatrix}^t$  \ para  tener en cuenta  los v\'inculos,  el problema
-variacional   consiste  a   resolver~\cite{GelFom63,  Bru04,   Mil00,  CamMar09,
-  CovTho06}
+=   1,  \,  M_1(x)   =  \frac12   m  \sum_i   x_i^2$  \   (los  $x_i$   son  las
+velocidades).   Introduciendo   factores  de   Lagrange   $\eta_0,  \quad   \eta
+=  \begin{bmatrix} \eta_1 &  \cdots &  \eta_K \end{bmatrix}^t$  \ para  tener en
+cuenta    los     v\'inculos,    el    problema     variacional    consiste    a
+resolver~\cite{GelFom63, Bru04, Mil00, CamMar09, CovTho06}
 %
 \[
 p^* = \argmax_p \int_\X  \left( - p(x) \log p(x) + \eta_0  \, p(x) + \eta^t M(x)
@@ -109,7 +109,7 @@ satisfacen todos los  v\'inculos, en particular se puede que  no se normaliza la
 ley.  Por ejemplo,  si $\X = \Rset$ y  $K = 0$, \ $p$ \  deber\'ia ser constante
 (ley  uniforme) sobre\ldots  $\Rset$, lo  que no  es normalizable.  De  la misma
 manera, si $K  = 3$ \ y \  $M_k(x) = x^k$, tampoco es  normalizable la funci\'on
-obtenida~\footnote{En el  enfoque Bayesiano se puede que  no sea problem\'atico,
+obtenida~\footnote{En el  enfoque bayesiano se puede que  no sea problem\'atico,
   si el  a posteriori es normalizable~\cite{Rob07},  pero va m\'as  all\'a de la
   meta de  esta secci\'on.}.  En  otros terminos, en  este caso, el  problema no
 tiene soluci\'on~\footnote{M\'as  precisamente, existen  casos en los  cuales se
@@ -133,8 +133,9 @@ sea de la forma \ $p^*(x) = \e^{\eta^t M(x) - \varphi(\eta)}$. Entonces
   \quad p = p^* \quad \mu\mbox{-(c. s.)},
   \]
   %
-  donde   $H$  es   de  la   definici\'on   general  Def.~\ref{Def:SZ:ShanonMu},
-  pagina~\pageref{Def:SZ:ShanonMu}, de la entrop\'ia con respeto a $\mu$.
+  donde   $H$  es   de  la   definici\'on   general  Def.~\ref{Def:SZ:ShanonMu}
+  %pagina~\pageref{Def:SZ:ShanonMu}, 
+  de la entrop\'ia con respeto a $\mu$.
 \end{lema}
 %
 \begin{proof}
@@ -182,13 +183,13 @@ exponencial. Por ejemplo,
 \end{itemize}
 %
 Con el enfoque del lema~\ref{Lem:SZ:MaxEntPruebaInfo}, se necesita solamente que
-$p$  sea una  densidad  con respeto  a  una medida  $\mu$  fija, cualquiera.  En
+$p$  sea una  densidad con  respeto  a una  medida $\mu$  fija, cualquiera.   En
 particular, si es una medida de probabilidad (de referencia) $\widetilde{P}$, el
-problema de entrop\'ia  m\'axima vuelve ser un problema  de minimizaci\'on de la
+problema de entrop\'ia m\'axima vuelve a ser un problema de minimizaci\'on de la
 divergencia de Kullback-Leibler entre $P$  y la medida de referencia, siendo $p$
 la    densidad    con    respeto     a    esta    medida    (ver    definici\'on
 Def.~\ref{Def:SZ:entropiarelativa}). Es decir, tomando \ $\mu = \widetilde{P}$ \
-medida   de   probabilidad   aparece   inmediatamente
+medida de probabilidad aparece inmediatamente
 %
 \[
 P^* = \argmax_P \Dkl[P]{\widetilde{P}}  \quad \mbox{sujeto a}  \int_\X M(x)
@@ -236,7 +237,7 @@ desiguladad~\cite{Sha48, Lie78, CovTho06, DemCov91, Rio07}:
   N(X+Y) \ge N\left( \widetilde{X} + \widetilde{Y} \right),
   \]
   %
-  con igualdad si y solamente si \ $X$  \ y \ $Y$ \ son gaussianas. De hecho, la
+  con igualdad si y solamente si \ $X$  \ e \ $Y$ \ son gaussianas. De hecho, la
   primera  formulaci\'on  es equivalente  a  $N(X+Y)  \ge N\left(  \widetilde{X}
   \right) +  N\left( \widetilde{Y}  \right) = \frac{1}{2  \pi \e}  \left( \left|
       \Sigma_{\widetilde{X}}  \right|^{\frac1d} +  \left| \Sigma_{\widetilde{Y}}
@@ -255,7 +256,7 @@ desiguladad~\cite{Sha48, Lie78, CovTho06, DemCov91, Rio07}:
     \sqrt{1-a} \, Y \right) \ge a \, H(X) + (1-a) \, H(Y),
   \]
   %
-  con igualdad si y solmente si \ $X$ \ e \ $Y$ \ son gaussianas con matrices de
+  con igualdad si y solamente si \ $X$ \ e \ $Y$ \ son gaussianas con matrices de
   covarianza  proporcionales.    Claramente,  se  cumple  la   igualdad  para  \
   $\widetilde{X}$  \ e  \ $\widetilde{X}$,  entonces  $H\left( \sqrt{a}  \, X  +
     \sqrt{1-a} \, Y \right) \ge a \, H(X) + (1-a) \, H(Y) \qquad \Leftrightarrow
@@ -264,13 +265,13 @@ desiguladad~\cite{Sha48, Lie78, CovTho06, DemCov91, Rio07}:
   que la desigualdad anterior  reemplazando \ $X$ \ por \ $\sqrt{a}  \, X$ \ e \
   $Y$ por \ $\sqrt{1-a} \, Y$ (y vice-versa).
 \end{enumerate}
-%
 
 La  prueba  de  esta(s)  desigualdad(es)  no es  trivial.   N\'umeras  versiones
 existen,  dadas por  ejemplo  en las  referencias~\cite{Bla65, Sta59,  ShaWea64,
   Rio07,  Rio11,  Rio17,  CovTho06,  DemCov91,  Lie78,  VerGuo06}  (ver  tambien
 teorema~6 de~\cite{Lie75}).   Como se  lo puede ver,  la gaussiana juega  un rol
 particular en esta desigualdad, saturandola.
+\SZ{Ver si la de Rioul se escribe razonablemente sencillamente.}
 
 Una gracia de la desigualdad de la potencia entr\'opica es que puede dar lugar a
 pruebas  informacionales  de  desigualdades  matriciales, como  por  ejemplo  la
@@ -288,12 +289,12 @@ entr\'opica con rearreglo~\cite{WanMad04}:
 \begin{teorema}[Desigualdad de la potencia entr\'opica con rearreglo]
 \label{Teo:SZ:EPIRearreglo}
 %
-  Sean  $X$ e $Y$  dos variables  $d$-dimensionales continuas  independientes de
-  densidades   de   probabilidades   $p_X$   y   $p_Y$   respectivamente.   Sean
-  $p^\downarrow_X$  y   $p^\downarrow_Y$  los   rearreglos  de  $p_X$   y  $p_Y$
-  respectivamente y denotamos  \ $X^\downarrow$ \ y \  $Y^\downarrow$ \ vectores
-  independientes   de   distribuci\'on   de  probabilidad   $p^\downarrow_X$   y
-  $p^\downarrow_Y$ respectivamente. Enconces, Entonces
+Sean  $X$ e  $Y$  dos variables  $d$-dimensionales  continuas independientes  de
+densidades   de  probabilidades   $p_X$   y  $p_Y$   respectivamente.   Sean   \
+$p^\downarrow_X$  \ y  \  $p^\downarrow_Y$ \  los  rearreglos de  $p_X$ y  $p_Y$
+respectivamente y  denotamos \  $X^\downarrow$ \ y  \ $Y^\downarrow$  \ vectores
+independientes  de  distribuci\'on  de   probabilidad  \  $p^\downarrow_X$  \  y
+$p^\downarrow_Y$ \ respectivamente.  Entonces
   %
   \[
   N(X + Y) \ge N(X^\downarrow + Y^\downarrow).
@@ -331,7 +332,7 @@ satisface la informaci\'on mutua aplicada a un proceso de Markov.
   \forall \: x_i, \quad P_{X_{i-1},X_{i+1}|X_i=x_i} = P_{X_{i-1}|X_i=x_i} \, P_{x_{i+1}|X_i=x_i}.
   \]
   %
-  Dicho  de  otra  manera,  condicionalmente  a \  $(X_i=x)$,  las  variables  \
+  Dicho  de otra  manera,  condicionalmente  a \  $(X_i=x_i)$,  las variables  \
   $X_{i-1}$ \ y \ $X_{i+1}$ son independientes.  Eso es equivalente a
   %
   \[
@@ -342,7 +343,7 @@ satisface la informaci\'on mutua aplicada a un proceso de Markov.
   conociendo todo el pasado se reduce  a esa conociendo el pasado inmediato (las
   probabilidades  dichas   de  transici\'on  \  $P_{X_{i+1}|X_i=x_i}$   \  y  la
   distribuci\'on inical  \ $P_{X_1}$  \ caracterizan completamente  el proceso).
-  Es sencillo fijarse de que $X_n \mapsto X_{n-1} \mapsto \ldots \mapsto X_1$ es
+  Es sencillo  fijarse que $X_n \mapsto  X_{n-1} \mapsto \ldots  \mapsto X_1$ es
   tambien un proceso de Markov.
 \end{definicion}
 
@@ -378,9 +379,9 @@ satisface la informaci\'on mutua aplicada a un proceso de Markov.
   & = & H(X) - H(X|Y) + H(X|Y) - H(X|Y,Z)
   \end{eqnarray*}
   %
-  \noindent Por  la propiedad de  que $Z \mapsto  Y \mapsto X$ sea  tambi\'en un
-  proceso de Markov,  es sencillo probar que $H(X|Y,Z)  = H(X|Y)$ (conciendo $Y$
-  sufice para caracterizar completamente $X$), lo que da
+  \noindent Por la propiedad que $Z \mapsto Y \mapsto X$ es tambi\'en un proceso
+  de Markov,  es sencillo probar que  $H(X|Y,Z) = H(X|Y)$  (conciendo $Y$ sufice
+  para caracterizar completamente $X$), lo que da
   %
   \[
   I(X;Y,Z) = I(X;Y).
@@ -409,7 +410,7 @@ satisface la informaci\'on mutua aplicada a un proceso de Markov.
   La desigualdad del teorema viene de la positividad de $I(X;Y|Z)$. Adem\'as, se
   obtiene la igualdad si  y solamente si \ $I(X;Y|Z) = 0$, es decir  \ $X$ \ e \
   $Y$ \  independientes condicionalmente a \  $Z$, lo que es  la definici\'on de
-  que $X \mapsto Z \mapsto Y$ sea un proceso de Markov.
+  que $X \mapsto Z \mapsto Y$ es un proceso de Markov.
 \end{proof}
 
 % ================================= Data Processing Theorem
@@ -453,7 +454,7 @@ desorganizado (ver ej.~\cite[y ref.]{CovTho06, Mer10, Mer18}).
 \item Adem\'as, si  los $X_n$ tienen $K$ momentos fijos  $m = \Esp[M(X_n)] \quad
   \forall \,  n$ y si \  $p^*$ \ es la  densidad (con respeto a  la medida $\mu$
   dada)  de  entrop\'ia  m\'axima  tiendo  los  mismos  momentos  como  descrito
-  subsecci\'on  Sec.~\ref{Ssec:SZ:MaxEnt}, (ej.   $K =  0$, $\X$  de  cardinal o
+  subsecci\'on  Sec.~\ref{Ssec:SZ:MaxEnt}, (ej.   $K =  0$, $\X$  de  cardenal o
   volumen finito y ley uniforme, $K = 2$, $M_k(x) = x^k$ y ley gausiana),
   %
   \[
@@ -483,7 +484,7 @@ desorganizado (ver ej.~\cite[y ref.]{CovTho06, Mer10, Mer18}).
   d\mu(x_{n+1})$.  \ $p_{X_n|X_{n+1} = x_{n+1}}$  no es necesariamente igual a \
   $q_{X_n|X_{n+1}  =  x_{n+1}}$, pero  la  divergencia  siendo  no negativa,  se
   obtiene la primera  desigualdad.  La segunda desigualdad se  obtiene tomando \
-  $q_{X_n} = p^*$.   Adem\'as, si \ $p^*$ \ es le  entrop\'ia m\'axima de mismos
+  $q_{X_n} = p^*$.   Adem\'as, si \ $p^*$ \ es de  entrop\'ia m\'axima de mismos
   momentos $m  = \Esp[M(X_n)]$  que los $X_n$,  hemos visto  de que \  $p^*(x) =
   \e^{\eta^t M(x)}$ \ ley de la familia exponencial, dando \ $\Dkl[p_{X_n}]{p^*}
   = -H(X_n) - \eta^t m$, conduciendo a la \'ultima desigualdad.
@@ -509,7 +510,7 @@ informaci\'on intimamente  relacionada al error cuadr\'atico  en la estimaci\'on
 de   un  par\'ametro   a  partir   de  una   variable  parametrizado   por  este
 par\'ametro~\cite{Fis22, Fis25:07, Kay93, Bos07, CovTho06, Fri04}.
 
-\begin{definicion}[Matriz informaci\'on de Fisher par\'ametrica]
+\begin{definicion}[Matriz informaci\'on de Fisher param\'etrica]
 \label{Def:SZ:MatrizFisherParametrica}
 %
   Sea   $X$   una   variable   aleatoria  parametrizada   por   un   par\'ametro
@@ -526,19 +527,21 @@ par\'ametro~\cite{Fis22, Fis25:07, Kay93, Bos07, CovTho06, Fri04}.
   %
   donde \  $\nabla_\theta = \left[ \cdots  \: \frac{\partial}{\partial \theta_i}
     \: \cdots  \right]^t$ \  es el gradiente  en \  $\theta$ \ y  \ $\log$  \ el
-  \underline{logaritmo  natural}.  Es  la matriz  de covarianza  del  {\it score
-    param\'etrico} \ $S_\theta(X) = \nabla_\theta  \log p_X(X;\theta)$ \ notando que su
-  media es  igual a  cero (escribiando el  promedio y intercambiando  integral y
-  gradiente),  siendo   \  $\log  p_X$  \  la   {\it  log-verosimilitud}.   Bajo
-  condiciones de regularidad, se puede mostrar~\footnote{Es una consecuencia del
-    teorema de la divergencia, suponiendo que los bordes del soporte \ $\X$ \ no
-    dependen  de \  $\theta$ \  y que  la funci\'on  score se  cancela  en estos
-    bordes.}  que  \ $J_\theta(X) =  - \Esp[\Hess_\theta \log  p_X(X;\theta)]$ \
-  con $\Hess_\theta$ la Hessiana~\footnote{Recordamos de que, para \ $f: \Rset^m
-    \mapsto  \Rset,  \quad \Hess_\theta  f$  \ es  la  matriz  de componentes  \
-    $\frac{\partial^2 f}{\partial \theta_i \partial \theta_j}$.}  $\Hess_\theta$
-  \ de  \ $\log  p_X(X;\theta)$.  Nota:  a veces se  define la  informaci\'on de
-  Fisher como $\Tr(J)$, traza de la matriz informaci\'on de Fisher.
+  logaritmo natural.  Es la matriz de covarianza del {\it score param\'etrico} \
+  $S_\theta(X) =  \nabla_\theta \log  p_X(X;\theta)$ \ notando  que su  media es
+  igual a cero (escribiando el  promedio y intercambiando integral y gradiente),
+  siendo  \  $\log p_X$  \  la  {\it  log-verosimilitud}.  Bajo  condiciones  de
+  regularidad, se puede mostrar~\footnote{Es  una consecuencia del teorema de la
+    divergencia, suponiendo que los bordes del soporte \ $\X$ \ no dependen de \
+    $\theta$ \  y que  la funci\'on score  se cancela  en estos bordes.}   que \
+  $J_\theta(X) =  - \Esp[\Hess_\theta \log p_X(X;\theta)]$  \ con $\Hess_\theta$
+  la  Hessiana
+  %~\footnote{Recordamos de que,  para \  $f: \Rset^m  \mapsto \Rset,
+  %  \quad  \Hess_\theta f$  \ es  la matriz  de componentes  \ $\frac{\partial^2
+  %    f}{\partial \theta_i  \partial \theta_j}$.}
+  \ de  \ $\log  p_X(X;\theta)$ (ver  notaciones).  Nota: a  veces se  define la
+  informaci\'on de  Fisher como  $\Tr(J)$, traza de  la matriz  informaci\'on de
+  Fisher.
 \end{definicion}
 %
 Como  para  la  entrop\'ia,  la  matriz  de Fisher  se  escribe  generalmente  \
@@ -578,7 +581,11 @@ Fisher no param\'etrica,
   Es  la matriz  de covarianza  de  la {\it  funci\'on score}  \ $\nabla_x  \log
   p_X(X)$ \ (escribiendo la media y $p_X$  siendo cero el los bordes de $\X$, se
   ve que  el promedio  de $\nabla_x  \log p_X(X)$ tambi\'en  vale cero)  o, bajo
-  condiciones de regularidad, $J(X) = - \Esp[\Hess_x \log p_X(X;\theta)]$.
+  condiciones de regularidad,
+  %
+  \[
+  J(X) = - \Esp[\Hess_x \log p_X(X;\theta)]
+  \]
   % menos el promedio de la Hessiana en \ $x$ \ de la log-verosimilitud.
 \end{definicion}
 %
@@ -590,13 +597,13 @@ Es interesante notar que:
   informaci\'on param\'etrica se reduce a la informaci\'on no param\'etrica.
 %
 \item Si \ $X$ \ es gaussiano  de matriz de covarianza \ $\Sigma_X$, entonces se
-  muestra sencillamente  de que  \ $J(X)  = \Sigma_X^{-1}$ \  (o, de  una forma,
-  inversa de la dispersi\'on o incerteza en t\'ermino de estad\'isticas de orden
-  2).
+  muestra sencillamente de que \  $J(X) = \Sigma_X^{-1}$ \ matriz de precisi\'on
+  (o,  de una  forma, inversa  de la  dispersi\'on o  incerteza en  t\'ermino de
+  estad\'isticas de orden 2).
 %
 \item Es sencillo ver  que, por definici\'on \ $J_\theta(X)$ \ y  \ $J(X)$ \ son
-  sim\'etricas y que \ $J_\theta(X) > 0$  \ y \ $J(X) > 0$ \ (matrices definidas
-  positivas).  Adem\'as,
+  sim\'etricas y que \ $J_\theta(X) > 0$ \ y \ $J(X) > 0$ \ \ie $J_\theta(X) \in
+  P_m^+(\Rset), \:\: J(X) \in P_m^+(\Rset)$.  Adem\'as,
   %
   \[
   \forall \ A \ \mbox{matrix no singular}, \quad J(AX) = A^{-t} J(X) A^{-1},
@@ -604,13 +611,14 @@ Es interesante notar que:
   %
   con   $A^{-t}  =   \left(   A^{-1}  \right)^t   =   \left(  A^t   \right)^{-1}
   $~\cite{CovTho06, DemCov91, Bar86}.  Esta relaci\'on  da a \ $J(X)$ \ un sabor
-  de informaci\'on  en el sentido  de que, cuando  \ $A$ \  es real y  tiende al
+  de  informaci\'on en  el sentido  que, cuando  \  $A$ \  es real  y tiende  al
   infinito, \ $J(AX)$ \ tiende a 0; \  $A X$ \ tiende a ser muy dispersada as\'i
   que no hay informaci\'on sobre su posici\'on.
 %
-\item $J_\theta$ \  y \ $J$ \ son  convexas en el sentido de  que para cualquier
-  conjunto de \ $\pi_k \ge 0, \, \sum_{k=1}^K \pi_k = 1$ \ y \ cualquier
-  conjunto de distribuciones \ $p_{(k)}, \ k = 1, \ldots , K$~\cite{Coh68, Fri04},
+\item $J_\theta$  \ y  \ $J$  \ son convexas  en el  sentido que  para cualquier
+  conjunto  de \  $\pi_k \ge  0, \,  \sum_{k=1}^K  \pi_k =  1$ \  y \  cualquier
+  conjunto  de distribuciones  \ $p_{(k)},  \ k  = 1,  \ldots  , K$~\cite{Coh68,
+    Fri04},
   %
   \[
   J_\theta\left(  \sum_{k=1}^K  \pi_k  p_{(k)}  \right)  \:  <  \:  \sum_{k=1}^K
@@ -619,25 +627,24 @@ Es interesante notar que:
     p_{(k)} \right),
   \]
   %
-  donde $A < B$ significa que $B-A > 0$.  La prueba es dada por
-  Cohen en  el caso  escalar, pero se  extiende sin  costo adicional en  el caso
-  multivariado.   Hace falta  probarlo para  \ $K=2$  \ y,  por  recurrencia, se
-  extiende para  cualquier \ $K$. En  este caso, observando que  \ $\big( \nabla
-  \log p  \big) \big( \nabla \log  p \big)^t \,  p = \frac{\big( \nabla  p \big)
-    \big(  \nabla p  \big)^t}{p}$, considerando  el  gradiente con  respeto a  \
-  $\theta$ (resp. a \ $x$) tratando de  \ $J_\theta$ (resp. \ $J$), se obtiene \
-  $\sum_k  \pi_k   \frac{\big(  \nabla   p_{(k)}  \big)  \big(   \nabla  p_{(k)}
-    \big)^t}{p_{(k)}} - \frac{\left( \nabla  \sum_k \pi_k p_{(k)} \right) \left(
-      \nabla   \sum_k   \pi_k  p_{(k)}   \right)^t}{\sum_k   \pi_k  p_{(k)}}   =
-  \frac{1}{\sum_k   \pi_k    p_{(k)}}   \,   \sum_{k,l}    \pi_k   \pi_l   \Big(
-  \frac{p_l}{p_{(k)}} \big( \nabla p_{(k)}  \big) \big( \nabla p_{(k)} \big)^t -
-  \big(  \nabla p_{(k)}  \big) \big(  \nabla p_l  \big)^t \Big)$,  lo  que vale,
-  tratando  del caso  $K =  2$, \  $ \frac{\pi_1  \pi_2}{p_{(2)}  p_{(2)} (\pi_1
-    p_{(1)}  + \pi_2  p_{(2)})} \big(  p_{(2)} \nabla  p_{(1)} -  p_{(1)} \nabla
-  p_{(2)} \big)  \big( p_{(2)} \nabla  p_{(1)} - p_{(1)} \nabla  p_{(2)} \big)^t
-  \ge 0$.  No puede ser id\'enticamente cero (salvo si \ $\pi_1 \pi_2 = 0$ \ o \
-  $p_{(1)} = p_{(2)}$\ldots) as\'i que se obtiene la desigualdad sobre la matriz
-  de Fisher integrando esta \'ultima desigualdad.
+  donde $A < B$ significa que $B-A > 0$.  La prueba es dada por Cohen en el caso
+  escalar, pero se  extiende sin costo adicional en  el caso multivariado.  Hace
+  falta probarlo para \ $K=2$ \ y, por recurrencia, se extiende para cualquier \
+  $K$. En  este caso, observando que \  $\big( \nabla \log p  \big) \big( \nabla
+  \log p \big)^t \, p =  \frac{\big( \nabla p \big) \big( \nabla p \big)^t}{p}$,
+  considerando el gradiente con respeto a \ $\theta$ (resp. a \ $x$) tratando de
+  \  $J_\theta$ (resp. \  $J$), se  obtiene \  $\sum_k \pi_k  \frac{\big( \nabla
+    p_{(k)} \big)  \big( \nabla p_{(k)} \big)^t}{p_{(k)}}  - \frac{\left( \nabla
+      \sum_k  \pi_k   p_{(k)}  \right)   \left(  \nabla  \sum_k   \pi_k  p_{(k)}
+    \right)^t}{\sum_k  \pi_k  p_{(k)}}   =  \frac{1}{\sum_k  \pi_k  p_{(k)}}  \,
+  \sum_{k,l} \pi_k  \pi_l \Big(  \frac{p_l}{p_{(k)}} \big( \nabla  p_{(k)} \big)
+  \big( \nabla  p_{(k)} \big)^t  - \big( \nabla  p_{(k)} \big) \big(  \nabla p_l
+  \big)^t  \Big)$, lo  que vale,  tratando del  caso $K  = 2$,  \  $ \frac{\pi_1
+    \pi_2}{p_{(2)} p_{(2)} (\pi_1 p_{(1)} + \pi_2 p_{(2)})} \big( p_{(2)} \nabla
+  p_{(1)} - p_{(1)} \nabla p_{(2)}  \big) \big( p_{(2)} \nabla p_{(1)} - p_{(1)}
+  \nabla p_{(2)}  \big)^t \ge 0$.  No  puede ser identicamente cero  (salvo si \
+  $\pi_1 \pi_2  = 0$ \ o  \ $p_{(1)} =  p_{(2)}$\ldots) as\'i que se  obtiene la
+  desigualdad sobre la matriz de Fisher integrando esta \'ultima desigualdad.
 \end{itemize}
 
 
@@ -717,8 +724,8 @@ informaci\'on de Fisher, \ie \  $J_\theta(X)$ \ caracteriza la informaci\'on que
   funci\'on de \ $\theta$,  y que el soporte \ $\X$ \  no depende de \ $\theta$,
   se obtiene~\footnote{Se supone que  los integrandes sean \ $\theta$-localmente
     integrables,  tal  que  se  puede  invertir  derivada  en  \  $\theta$  \  e
-    integraci\'on;    ver    tambi\'en    teorema~\ref{Teo:MP:IntegralParametro},
-    pagina~\pageref{Teo:MP:IntegralParametro}.}
+    integraci\'on;    ver    tambi\'en    teorema~\ref{Teo:MP:IntegralParametro}.}
+  % , pagina~\pageref{Teo:MP:IntegralParametro}.}
   %
   \begin{eqnarray*}
   \Esp\left[ S_\theta(X) \left( \widehat{\theta}(X) - \theta_0 \right)^t \right] & = &
@@ -729,7 +736,7 @@ informaci\'on de Fisher, \ie \  $J_\theta(X)$ \ caracteriza la informaci\'on que
   \left( \nabla_\theta \int_{\Rset^d} p_X(x;\theta) \, dx \right)
   \theta_0^t\\[2.5mm]
   %
-  & = & \nabla_\theta \left( \theta + b(\theta) \right)  - 
+  & = & \nabla_\theta \left( \theta + b(\theta) \right)^t  - 
   \left( \nabla_\theta 1 \right) \theta_0^t\\[2.5mm]
   %
   & = & \left( I + \Jac_b(\theta) \right)^t
@@ -739,7 +746,9 @@ informaci\'on de Fisher, \ie \  $J_\theta(X)$ \ caracteriza la informaci\'on que
   $\Esp\left[   \left(    \widehat{\theta}(X)   -   \theta_0    \right)   \left(
       \widehat{\theta}(X)      -      \theta_0      \right)^t     \right]      =
   \Sigma_{\widehat{\theta}}$, la  desigualdad de Cauchy-Bunyakovsky-Schwarz (ver
-  corolario~\ref{Cor:MP:CBS}, pagina~\pageref{Cor:MP:CBS}) conduce a
+  corolario~\ref{Cor:MP:CBS}
+  %, pagina~\pageref{Cor:MP:CBS}) 
+  conduce a
   %
   \[
   \left( u^t \left( I + \Jac_b(\theta)  \right)^t v \right)^2 \: = \: \Esp\left[
@@ -760,7 +769,7 @@ informaci\'on de Fisher, \ie \  $J_\theta(X)$ \ caracteriza la informaci\'on que
 \end{proof}
 %
 \noindent En el caso param\'etrico, no se puede estudiar el caso de igualdad del
-hecho de  que \ $\widehat{\Theta}$ \ no  es algo dado.  Adem\'as,  a\'un dado un
+hecho  que \  $\widehat{\Theta}$ \  no es  algo dado.   Adem\'as, a\'un  dado un
 estimador (expl\'icitamente independiente de $\theta$), no hay garant\'ia de que
 existe una  densidad parametrizada por  \ $\theta$ \  que alcanza la cota,  o al
 rev\'es, dada  una familia de densidades,  tampoco hay garant\'ia  que existe un
@@ -801,8 +810,9 @@ proporcional a la identidad (igualdad en la relaci\'on determinente-traza).
 Se notar\'a que, al imagen de las leyes de entrop\'ia m\'axima, la informaci\'on
 de  Fisher  juega tambi\'en  un  rol particular  en  la  inferencia bayesiana  a
 trav\'es del prior de Jeffrey~\cite{Jef46, Jef48, LehCas98, Rob07}~\footnote{Ver
-  nota de  pie~\ref{Foot:SZ:Prior} pagina~\pageref{Foot:SZ:Prior}.  A  veces, se
-  toma    como   distribuci\'on   a    priori   \    $p_\Theta(\theta)   \propto
+  nota de  pie~\ref{Foot:SZ:Prior}.
+  %pagina~\pageref{Foot:SZ:Prior}. 
+  A  veces, se  toma como  distribuci\'on a  priori \  $p_\Theta(\theta) \propto
   |J_\theta(X)|^\frac12$ \  por su invarianza por reparametrizaci\'on  \ $\eta =
   \eta(\theta)$,  \ie  el prior  de  Jeffrey en  \  $\eta$  \ es  un\'ivocamente
   obtenido con la Fisher  en \ $\eta$ \ o por cambio  de variables saliendo de \
@@ -830,7 +840,7 @@ entrop\'ia relativa~\cite{CovTho06, Fri04}:
   \[
   \Dkl[p_X(\cdot;\theta)]{p_X(\cdot;\theta_0)}   =  \frac12   \left(   \theta  -
       \theta_0  \right)^t J_{\theta_0}(X)  \left(  \theta -  \theta_0 \right)  +
-    o\left( | \theta - \theta_0 |\right),
+    o\left( \| \theta - \theta_0 \|\right),
   \]
   %
   donde \  $o(\cdot)$ \ es un resto  peque\~no con respecto a  su argumento.  En
@@ -863,7 +873,7 @@ entrop\'ia relativa~\cite{CovTho06, Fri04}:
   \frac{p_X(x;\theta)}{p_X(x;\theta_0)} \right) dx
   \end{eqnarray*}
   %
-  la \'ultimo ecuaci\'on como consecuencia de que \ $p_X$ \ suma a 1.  Entonces,
+  la \'ultima ecuaci\'on como consecuencia de que \ $p_X$ \ suma a 1.  Entonces,
   %
   \[
   \Hess_\theta     \Dkl[p_X(\cdot;\theta)]{p_X(\cdot;\theta_0)}     =    \int_\X
@@ -880,7 +890,7 @@ Este  teorema, ilustrado  en la  figura  Fig.~\ref{Fig:SZ:JCurvatura}, relaciona
 claramente  dos objectos  viniendo de  la teor\'ia  de la  estimaci\'on y  de la
 teor\'ia de la informaci\'on, mundos a  priori diferentes.  Como se lo puede ver
 en  la figura,  cuando \  $J_\theta(X)$ \  tiene peque\~nos  autovalores (figura
-(a)),  $p_\theta$ \  se \  ``aleja'' \  lentamente de  \ $\theta_0$  \  cuando \
+(a)), $p_\theta$  \ se \ ``aleja'' \  lentamente de \ $p_{\theta_0}$  \ cuando \
 $\theta$  \  se aleja  de  \  $\theta_0$: hay  una  alta  incerteza o  peque\~na
 informaci\'on sobre \ $\theta_0$. Y vice-versa (figura (b)).
 %
@@ -913,8 +923,8 @@ aparece a trav\'es de la identidad  de de Bruijn~\footnote{A pesar de que tom\'o
   van  Soest por el  Profesor de  Bruijn.}~\cite{Sta59, CovTho06,  Joh04, Bar84,
   Bar86,  PalVer06, TorZoz18}.  Esta  identidad caracteriza  lo que  es conocido
 como  canal gaussiano  de la  figura Fig~\ref{Fig:SZ:deBruijnVerdu}-(a),  \ie la
-salida \ $Y$ \ es una versi\'on ruidosa de la entrada.  La identidad vincula las
-variaciones  de  entrop\'ia de  salida  con  respeto al  nivel  de  ruido, y  la
+salida \ $Y$  \ es una versi\'on ruidosa de la  entrada.  La identidad v\'incula
+las variaciones  de entrop\'ia  de salida con  respeto al  nivel de ruido,  y la
 informaci\'on de Fisher.
 
 \begin{figure}[h!]
@@ -956,22 +966,22 @@ informaci\'on de Fisher.
 \end{teorema}
 %
 \begin{proof}
-  La clave de este resultado viene del hecho  de que la densidad \ $p$ \ de \ $T
-  \N$ \ satisface una  ecuaci\'on diferencial particular.  La distribuci\'on
-  de  \ $T  \N$  \ se  escribe \  $p(x)  = (2  \pi)^{-\frac{d}{2}} \left|  T
-    \Sigma_\N  T^t  \right|^{-\frac12} \exp\left(  -  \frac12  x^t \left(  T
-      \Sigma_\N T^t \right)^{-1} x \right)$ \  (el rango m\'aximo de \ $T$ \
-  asegura  que \  $T  \Sigma_\N T^t$  \  sea invertible).   Para una  matriz
-  invertible $R$,  desarollando \ $|R|$  \ con respecto  a su l\'inea \  $i$, se
-  obtiene que  \ $\frac{\partial |R|}{\partial R_{i,j}} =  R_{i,j}^*$ \ cofactor
-  de  \ $R_{i,j}$,  dando por  la regla  de Cram\'er  \ $\nabla_R  |R| =  |R| \,
-  R^{-t}$ \  (ver tambi\'en~\cite[cap.~1~\&~9]{MagNeu99}), es  decir \ $\nabla_R
-  |R|^{-\frac12}   =  -\frac12   |R|^{-\frac12}  R^{-t}$.    De  $\frac{\partial
-    |R|^{-\frac12}}{\partial     T_{i,j}}     =    \sum_{k,l}     \frac{\partial
-    |R|^{-\frac12}}{\partial R_{k,l}}  \frac{\partial R_{k,l}}{\partial T_{i,j}}
-  =   -\frac12    |R|^{-\frac12}   \sum_{k,l}   \left(    R^{-1}   \right)_{l,k}
-  \frac{\partial R_{k,l}}{\partial T_{i,j}}$ \ con \ $R = T \Sigma_\N T^t$ \
-  (sim\'etrica) y c\'alculos b\'asicos se obtiene finalmente
+  La clave de este resultado viene del hecho que la densidad \ $p$ \ de \ $T \N$
+  \ satisface una ecuaci\'on diferencial  particular.  La distribuci\'on de \ $T
+  \N$  \ se  escribe \  $p(x) =  (2 \pi)^{-\frac{d}{2}}  \left| T  \Sigma_\N T^t
+  \right|^{-\frac12}   \exp\left(  -   \frac12  x^t   \left(  T   \Sigma_\N  T^t
+    \right)^{-1} x  \right)$ \ (el rango  m\'aximo de \  $T$ \ asegura que  \ $T
+  \Sigma_\N  T^t$   \  sea  invertible).    Para  una  matriz   invertible  $R$,
+  desarollando \  $|R|$ \  con respecto  a su l\'inea  \ $i$,  se obtiene  que \
+  $\frac{\partial |R|}{\partial R_{i,j}} = R_{i,j}^*$ \ cofactor de \ $R_{i,j}$,
+  dando  por la  regla de  Cram\'er \  $\nabla_R  |R| =  |R| \,  R^{-t}$ \  (ver
+  tambi\'en~\cite[cap.~1~\&~9]{MagNeu99}), es decir \ $\nabla_R |R|^{-\frac12} =
+  -\frac12 |R|^{-\frac12}  R^{-t}$.  De $\frac{\partial |R|^{-\frac12}}{\partial
+    T_{i,j}}  =   \sum_{k,l}  \frac{\partial  |R|^{-\frac12}}{\partial  R_{k,l}}
+  \frac{\partial R_{k,l}}{\partial T_{i,j}} = -\frac12 |R|^{-\frac12} \sum_{k,l}
+  \left( R^{-1} \right)_{l,k} \frac{\partial R_{k,l}}{\partial T_{i,j}}$ \ con \
+  $R  = T  \Sigma_\N  T^t$ \  (sim\'etrica)  y c\'alculos  b\'asicos se  obtiene
+  finalmente
   %
   \[
   \nabla_T  \left|   T  \Sigma_\N  T^t  \right|^{-\frac12}  =   -  \left|  T
@@ -984,7 +994,7 @@ informaci\'on de Fisher.
     \right)^{-1}}{\partial T_{i,j}} = -  \left( T \Sigma_\N T^t \right)^{-1}
   \frac{\partial \left( T \Sigma_\N  T^t \right)}{\partial T_{i,j}} \left( T
     \Sigma_\N T^t \right)^{-1}$.  Usando le vector \ $\un_i$ \ con 1 en su \
-  $i$-\'esima componente, y cero si no, se obtiene
+  $i$-\'esima componente, y cero si no (ver notaciones), se obtiene
   %
   \begin{eqnarray*}
   \frac{\partial \left( x^t \left( T \Sigma_\N T^t \right)^{-1} x
@@ -1025,10 +1035,11 @@ informaci\'on de Fisher.
   Suponiende que  se puede intervertir derivadas  y integrales (ver~\cite{Bar84,
     Bar86}     donde     se      dan     condiciones     rigurosas,     y     el
   teorema~\ref{Teo:MP:IntegralParametro},
-  pagina~\pageref{Teo:MP:IntegralParametro}),     $\displaystyle     p_Y(y)     =
-  \int_{\Rset^d}  p_X(x)  \,  p(y-x)  \, dx$  \  (ver  ejemplo~\ref{Ej:MP:Suma},
-  pagina~\pageref{Ej:MP:Suma})    \   satisface   tambi\'en    esta   ecuaci\'on
-  diferencial, y adem\'as
+  %pagina~\pageref{Teo:MP:IntegralParametro}),     
+  $\displaystyle  p_Y(y)  =  \int_{\Rset^d}  p_X(x)  \, p(y-x)  \,  dx$  \  (ver
+  ejemplo~\ref{Ej:MP:Suma})
+  %,  pagina~\pageref{Ej:MP:Suma})
+  \ satisface tambi\'en esta ecuaci\'on diferencial, y adem\'as
   %
   \begin{eqnarray*}
   \nabla_T H(Y) & = & - \int_{\Rset^d} \nabla_T \, p_Y(y) \log p_Y(y)
@@ -1046,8 +1057,8 @@ informaci\'on de Fisher.
   \, \Sigma_\N
   \end{eqnarray*}
   %
-  usando la  ecuaci\'on diferencial  en la  segunda l\'inea, el  hecho de  que \
-  $p_Y$ \ suma a  1 en la tercera l\'inea (su gradiente  es cero entonces), y la
+  usando la ecuaci\'on diferencial en la segunda l\'inea, el hecho que \ $p_Y$ \
+  suma  a  1 en  la  tercera  l\'inea (su  gradiente  es  cero  entonces), y  la
   definici\'on de la matriz de Fisher  en la \'ultima l\'inea. Usando el teorema
   de la  divergencia (intergraci\'on por partes) aplicada  respectivamente a los
   componentes de \ $\nabla_y p_Y \log  p_Y$ \ y \ $\nabla_y p_Y$, suponiendo que
@@ -1131,7 +1142,9 @@ identidad entre \ $I(X;Y)$ \ y \ $\E(X|Y)$:
   (multiplicando ambos lados por $p_X$). Ahora, \ $I(X;Y) = H(Y) - H(Y|X) = H(Y)
   - H(\N)$ \ (de la independencia, cuando \ $X  = x$, \ $Y = S x + \N$ \
   gaussiana de  misma convarianza que \  $\N$ \ y  de promedio \ $S  x$ (ver
-  ejemplo~\ref{Ej:MP:SumaCond}, pagina~\pageref{Ej:MP:SumaCond}), as\'i que
+  ejemplo~\ref{Ej:MP:SumaCond},
+  % pagina~\pageref{Ej:MP:SumaCond}), 
+  as\'i que
   %
   \begin{eqnarray*}
   \nabla_S I(X;Y) & = & \nabla_S H(Y)\\[2.5mm]
@@ -1197,7 +1210,8 @@ identidad entre \ $I(X;Y)$ \ y \ $\E(X|Y)$:
   de  $X$ y  de  promedio 0.   La prueba  se  cierra notando  que \  $\Esp\left[
     \Esp[X|Y] \right]  = \Esp[X]$  \ y por  la formula de  K\"onig-Huyggens (ver
   cap\'itulo~\ref{cap:MP:TeoriaProbabilidades},
-  subsecci\'on~\ref{Ssec:MP:Momentos}, pagina~\pageref{Ssec:MP:Momentos}).
+  subsecci\'on~\ref{Ssec:MP:Momentos}).
+  % , pagina~\pageref{Ssec:MP:Momentos}).
 
   La  segunda identidad  viene de  \ $\frac{\partial  \cdot}{\partial  \snr} =
   \Tr\left(  \nabla_S \,  \frac{\partial S^t}{\partial  \snr} \right)$  \ (ver
@@ -1205,7 +1219,7 @@ identidad entre \ $I(X;Y)$ \ y \ $\E(X|Y)$:
 \end{proof}
 %
 \noindent  La  primera versi\'on  de  esta  identidad se  recupera  con  \ $S  =
-\sqrt{\snr}$, \ $\Sigma_\N =  I$ \ y \ $X$ \ de  covarianza la identidad; $s$ \
+\sqrt{\snr}$, \ $\Sigma_\N = I$ \ y \ $X$ \ de covarianza la identidad; $\snr$ \
 es conocido como relaci\'on se\~nale/ruido en este caso.
 
 Existen versiones a\'un m\'as completas  (con gradientes con respeto a la matriz
@@ -1262,10 +1276,10 @@ entrop\'ia''~\cite{WanMad04}.
 %
 Se  puede  ver  de  nuevo  el  rol  central  que  juega  la  gaussiana  en  esta
 desigualdad. Adem\'as, de la desigualdad  de Stam se puede deducir tamb\'ien las
-versiones escalares de  la desigualdad de Cram\'er-Rao. Viene  del hecho de que,
-dada una matriz de covarianza, la entrop\'ia \ $H(X)$ \ es m\'axima cuando \ $X$
-\ es gaussiano.  Entonces, para cualquier  \ $X$ \ de covarianza \ $\Sigma_X$, \
-$N(X) \le \left| \Sigma_X \right|^{\frac1d}$,  dando de la desiguldad de Stam, \
+versiones escalares de la desigualdad de Cram\'er-Rao. Viene del hecho que, dada
+una matriz de covarianza, la entrop\'ia \ $H(X)$ \ es m\'axima cuando \ $X$ \ es
+gaussiano.  Entonces, para cualquier \ $X$ \ de covarianza \ $\Sigma_X$, \ $N(X)
+\le  \left| \Sigma_X  \right|^{\frac1d}$,  dando  de la  desiguldad  de Stam,  \
 $\left| \Sigma_X \right|^{\frac1d} \Tr\left( J(X)  \right) \ge d$ \ (y las otras
 versiones  escalares de  la relaci\'on  determinente-traza).  Como  se  lo puede
 esperar, se  obtiene la igualdad si y  solamente \ $X$ \  es gaussiano (potencia
@@ -1290,21 +1304,20 @@ desigualdades en si  mismo, muy parecidas a las satisfechas  por la entrop\'ia o
 informaci\'on mutua.
 
 Primero,  al  imagen  de  la   entrop\'ia  condicional,  se  puede  definir  una
-informaci\'on         condicional         al         imagen        de         la
-definici\'on Def.~\ref{Def:SZ:entropiacondicional},
+informaci\'on            condicional            como            en            la
+definici\'on~\ref{Def:SZ:entropiacondicional},
 %
-\begin{definicion}[Matriz informaci\'on de Fisher par\'ametrica condicional]
+\begin{definicion}[Matriz informaci\'on de Fisher param\'etrica condicional]
 \label{Def:SZ:MatrizFisherParametricaCondicional}
 %
-  Sean  $X$ \  e \  $Y$ \  dos variables  aleatoria parametrizada  por  el mismo
-  par\'ametro  $m$-dimensional,  $\theta   \in  \Theta  \subseteq  \Rset^m$,  de
-  distribuci\'on de probabilidad conjunta $p_{X,Y}(\cdot,\cdot;\theta)$ continua
-  sobre   $\X   \times   \Y$   su  soporte,   $p_{X|Y=y}(\cdot;\theta)$   la
-  distribuci\'on condicional  de $X$ connociendo  $Y=y$ y $p_Y$  la distribuci\'on
-  marginal.  Suponga que  estas  distribuciones sean  diferenciable en  $\theta$
-  sobre  $\Theta$.  La  matriz de  Fisher de  $X$ condicionalmente  a $Y$  es el
-  promedio   estad\'istico   sobre   $p_Y$   de   la   matriz   de   Fisher   de
-  $p_{X|Y}(\cdot;\theta)$, es decir
+Sean  $X$ \  e \  $Y$ \  dos variables  aleatorias parametrizadas  por  el mismo
+par\'ametro   $m$-dimensional,  $\theta  \in   \Theta  \subseteq   \Rset^m$,  de
+distribuci\'on  de probabilidad conjunta  $p_{X,Y}(\cdot,\cdot;\theta)$ continua
+sobre  $\X \times  \Y$ su  soporte, $p_{X|Y=y}(\cdot;\theta)$  la distribuci\'on
+condicional  de $X$ conociendo  $Y=y$ y  \ $p_Y$  \ la  distribuci\'on marginal.
+Suponga que estas distribuciones  sean diferenciable en $\theta$ sobre $\Theta$.
+La matriz de  Fisher de $X$ condicionalmente a $Y$  es el promedio estad\'istico
+sobre $p_Y$ de la matriz de Fisher de $p_{X|Y}(\cdot;\theta)$, es decir
   %
   \[
   J_\theta(X|Y)  = \Esp\left[ \Big(  \nabla_\theta \log  p_{X|Y}(X;\theta) \Big)
@@ -1315,9 +1328,8 @@ definici\'on Def.~\ref{Def:SZ:entropiacondicional},
   ac\'a una variable aleatoria.
 \end{definicion}
 
-De  esta  definici\'on,   es  sencillo  probar  de  que   la  matriz  de  Fisher
-param\'etrica    sigue    una   regla    de    cadena    al    imagen   de    la
-propiedad~\ref{Prop:SZ:cadena},
+De esta definici\'on,  es sencillo probar que la  matriz de Fisher param\'etrica
+sigue una regla de cadena al imagen de la propiedad~\ref{Prop:SZ:cadena},
 %
 \[
 J_\theta(X,Y) = J_\theta(X|Y) + J_\theta(Y).
@@ -1335,10 +1347,10 @@ J_\theta(Y)   \quad  \Leftrightarrow   \quad  X   \:  \&   \:  Y   \:  \mbox{son
 %
 En particular,  tratando de una  secuencia $X =  \{ X_i \}_{i=1}^n$  de vectores
 aleatorias  independientes   parametrizados  por  $\theta$,   $J_\theta(X)  =  n
-J_\theta(X_i)$, lo que significa que estimando $\theta$ a partir de la secuencia
-se   baja  a   la  taza   $1/n$  la   cota  de   Cram\'er-Rao.    Se  referir\'a
-a~\cite{Fis25:07, Sta59,  Kay93, KagSmi99,  Joh04, CovTho06, Rio07}  entre otros
-para estas propiedades.
+J_\theta(X_i)$,  lo  que  significa  que  estimando  $\theta$  a  partir  de  la
+secuencia,  baja  de  un  factor  $\frac{1}{n}$ la  cota  de  Cram\'er-Rao.   Se
+referir\'a  a~\cite{Fis25:07, Sta59,  Kay93, KagSmi99,  Joh04,  CovTho06, Rio07}
+entre otros para estas propiedades.
 
 De la regla de cadena, viene  obviamente la desigualdad siguiente, parecida a la
 propiedad de super-aditividad~\ref{Prop:SZ:superaditividad},
@@ -1377,11 +1389,11 @@ Fisher~\cite{Zam98, Rio07, CovTho06, Fri04, KagSmi99}:
   J_\theta(Y|X) + J_\theta(Y) = J_\theta(X|Y) + J_\theta(X).
   \]
   %
-  Del hecho de que $p_{Y|X=x}$ no  es parametrizado por $\theta$ es sencillo ver
-  que  $J_\theta(Y|X)  =  0$,  la  prueba  se  cerrando  de  $J_\theta(X|Y)  \ge
-  0$. Adem\'as se obtiene la igualdad  si y solamente si $J_\theta(X|Y) = 0$, es
-  decir de  la ``positividad'' del  integrante dando la  matrix de Fisher,  si y
-  solamente si $p_{X|Y=y}$ no es parametrizado por $\theta$.
+  Del hecho que $p_{Y|X=x}$ no es parametrizado por $\theta$ es sencillo ver que
+  $J_\theta(Y|X) = 0$, la prueba  se cerrando de $J_\theta(X|Y) \ge 0$. Adem\'as
+  se obtiene la igualdad  si y solamente si $J_\theta(X|Y) = 0$,  es decir de la
+  ``positividad'' del  integrante dando la matrix  de Fisher, si  y solamente si
+  $p_{X|Y=y}$ no es parametrizado por $\theta$.
 \end{proof}
 
 Mencionamos de que existe tambi\'en una desigualdad parecida a la de la potencia
@@ -1391,8 +1403,8 @@ entr\'opica,  teorema~\ref{Teo:SZ:EPI}, dada en  el caso  escalar en~\cite{Joh04
 \begin{teorema}[Desigualdad convolucional de Fisher]
 \label{Teo:SZ:DesigualdadConvolucionalFisher}
 %
-  Sean  $X$  e  $Y$  dos variables  $d$-dimensionales  continuas  independientes
-  parametrizadas.  Entonces
+Sean  $X$  e  $Y$  dos  variables  $d$-dimensionales  continuas  independientes.
+Entonces
   %
   \[
   \forall \, a \in [0 \;  1], \quad J\left( \sqrt{a} \, X + \sqrt{1-a} \, Y
@@ -1406,9 +1418,10 @@ entr\'opica,  teorema~\ref{Teo:SZ:EPI}, dada en  el caso  escalar en~\cite{Joh04
 \begin{proof}
   $X$  \  e  \  $Y$  \  siendo  independientes,  tenemos  para  $W  =  X  +  Y$,
   $\displaystyle p_W(w)  = \int_\X p_X(x)  p_Y(w-x) \, dx$ convoluci\'on  de las
-  distribuciones  de  \  $X$  \   y  de  \  $Y$  (ver  ejemplo~\ref{Ej:MP:Suma},
-  pagina~\pageref{Ej:MP:Suma}).  Escribiendo $S_X =  \nabla_x \log p_X$ el score
-  de $X$ y lo mismo para $Y$ y $W$,
+  distribuciones de \ $X$ \ y de \ $Y$ (ver ejemplo~\ref{Ej:MP:Suma}).
+  %pagina~\pageref{Ej:MP:Suma}).  
+  Escribiendo $S_X =  \nabla_x \log p_X$ el score  de $X$ y lo mismo  para $Y$ y
+  $W$,
   %
   \begin{eqnarray*}
   S_W(w) & = & \int_\X \frac{p_X(x)}{p_W(w)} \, \nabla_w p_Y(w-x) \, dx\\[2.5mm]
@@ -1434,7 +1447,8 @@ entr\'opica,  teorema~\ref{Teo:SZ:EPI}, dada en  el caso  escalar en~\cite{Joh04
   %
   A    continuaci\'on,    de     la    formula    de    K\"onig-Huyggens    (ver
   cap\'itulo~\ref{cap:MP:TeoriaProbabilidades},
-  subsecci\'on~\ref{Ssec:MP:Momentos}, pagina~\pageref{Ssec:MP:Momentos}),
+  subsecci\'on~\ref{Ssec:MP:Momentos}),
+  % pagina~\pageref{Ssec:MP:Momentos}),
   %
   \[
   S_W(w) S_W(w)^t \: \le \:  \Esp\left[ \left. \left(a S_X(X) + (1-a) S_Y(Y)
@@ -1455,16 +1469,16 @@ entr\'opica,  teorema~\ref{Teo:SZ:EPI}, dada en  el caso  escalar en~\cite{Joh04
   $Y$ \ por \ $\sqrt{1-a} \, Y$.
 
   Escribiendo la desigualdad viniendo de la formula de K\"onig-Huyggens, se nota
-  de que  la igualdad es  satisfecha si y  solamente si $a S_X(w-x)  + (1-a)
-  S_Y(x) =  S_W(w)$ para cualquier  $x, w$. Integrando  en $x$ se  obtiene $-a
-  \log  p_X(w-x) + (1-a)  \log p_Y(x)  = x  S_W(w) +  g(w)$. Derivando  en $w$
-  obtenemos $-a \nabla_w \log p_X(w-x) = S_W(w) + \nabla_w g(w)$, es decir, en
-  $w = 0$, notando de que $\nabla_w \log p_X(w-x) = -\nabla_x \log p_X(w-x)$, se
-  nota de  que $\nabla_x  \log p_X(x)$ es  constante, \ie $X$  es necesariamente
-  gausiana.  Similarmente, $Y$ es  necesariamente gausiana  tambi\'en. Adem\'as,
-  calculando las informaciones de Fisher  en el caso gausiano, obtenemos $\left(
-    \Sigma_X + \Sigma_Y \right)^{-1} =  \Sigma_X^{-1} + \Sigma_Y^{-1}$ lo que es
-  posible si y solamente si $\Sigma_X$ \ y \ $\Sigma_Y$ \ son proporcionales.
+  que la igualdad es  satisfecha si y solamente si $a S_X(w-x)  + (1-a) S_Y(x) =
+  S_W(w)$ para cualquier $x, w$. Integrando  en $x$ se obtiene $-a \log p_X(w-x)
+  +  (1-a) \log  p_Y(x) =  x S_W(w)  + g(w)$.   Derivando en  $w$  obtenemos $-a
+  \nabla_w  \log p_X(w-x)  = S_W(w)  + \nabla_w  g(w)$, es  decir, en  $w  = 0$,
+  notando que  $\nabla_w \log p_X(w-x) =  -\nabla_x \log p_X(w-x)$,  se nota que
+  $\nabla_x  \log p_X(x)$  es  constante, \ie  $X$  es necesariamente  gausiana.
+  Similarmente, $Y$  es necesariamente gausiana  tambi\'en. Adem\'as, calculando
+  las informaciones de Fisher en  el caso gausiano, obtenemos $\left( \Sigma_X +
+    \Sigma_Y \right)^{-1} = \Sigma_X^{-1} +  \Sigma_Y^{-1}$ lo que es posible si
+  y solamente si $\Sigma_X$ \ y \ $\Sigma_Y$ \ son proporcionales.
 \end{proof}
 %
 Este teorema tiene varias consecuencias.  En particular, interviene en la prueba
@@ -1474,4 +1488,5 @@ de la desigualdad de la potencia entr\'opica.
 
 \SZ{  (2) ver MinFisher Frieden p. 235, Berchet Vignat 2009, Ernst 2017; cf. travaux
   rederivant MQ de Frieden-Plastino-Soffer  (1999, 2002), Reginato 98, Bickel 81
+"On the theory of Fisher's amount of information" Kagan 63, Chimento et al 2000
 }

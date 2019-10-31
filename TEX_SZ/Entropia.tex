@@ -10,7 +10,7 @@ Uno de los primeros trabajos tratando de formalizar la noci\'on de informaci\'on
 de  una cadena  de s\'imbolos  es debido  a Ralph  Hartley~\cite{Har28}.   En su
 papel,  Hartley  defini\'o  la   informaci\'on  de  una  secuencia  como  siendo
 proporcional a su longitud.  M\'as  precisamente, para s\'imbolos de un alfabeto
-de cardinal $\alpha$,  existen $\alpha^n$ cadenas distintas de  longitud $n$. Se
+de cardenal $\alpha$,  existen $\alpha^n$ cadenas distintas de  longitud $n$. Se
 defini\'o la informaci\'on  de tales cadenas como siendo  $K n$ ($K$ dependiente
 de  $\alpha$).    Para  ser  consistente,  dos  conjuntos   del  mismo  tama\~no
 $\alpha_1^{n_1} =  \alpha_2^{n_2}$ deben llegar a la  misma informaci\'on, as\'i
@@ -18,7 +18,7 @@ que  la informaci\'on  de  Hartley es  definida  como $H  = \log\left(  \alpha^n
 \right)$  donde la  base del  logaritmo es  arbitraria.  Dicho  de  otra manera,
 tomando  un logaritmo  de  base 2,  esta  informaci\'on es  nada  m\'as que  los
 n\'umeros de bits (0-1) necesarios  para codificar todas las cadenas de longitud
-$n$  de s\'imbolos de  un alfabeto  de cardinal  $\alpha$.  La  informaci\'on de
+$n$  de s\'imbolos de  un alfabeto  de cardenal  $\alpha$.  La  informaci\'on de
 Hartley  es  el equivalente  de  la entrop\'ia  de  Boltzmann  de la  mec\'anica
 estad\'istica, la famosa  f\'ormula $S = k_B \log  W$~\cite{Bol96, Bol98, Jay65,
   Mer10, Mer18}.
@@ -49,7 +49,7 @@ todos  los  estados posibles  $x$~\cite{Sha48,  ShaWea64}~\footnote{En la  misma
 \label{Def:SZ:Shannon}
 %
   Sea  $X$  una  variable  aleatoria  definida  sobre  un  alfabeto  discreto  \
-  $X(\Omega) = \X = \{ x_1 \, , \, \ldots \,  , \, x_\alpha \}$ \ de cardinal $\alpha = |\X|
+  $X(\Omega) = \X = \{ x_1 \, , \, \ldots \,  , \, x_\alpha \}$ \ de cardenal $\alpha = |\X|
   < + \infty$ finito. Sea $p_X$  la distribuci\'on de probabilidad de $X$, \ie $
   \forall \, x \in \X, \quad p_X(x) = P(X = x)$.  La entrop\'ia de Shannon de la
   variable $X$ est\'a definida por
@@ -363,10 +363,10 @@ a  las que  se puede  exigir a  una medida  de  incerteza~\cite{Sha48, ShaWea64,
 
 En muchos  casos, uno tiene que  trabajar con varias  variables aleatorias. Para
 simplificar las notaciones, consideramos  un par de variables \ $X$ \  y \ $Y$ \
-definidas respectivamente sobre los alfabetos \ $\X$  \ y \ $\Y$ \ de cardinal \
+definidas respectivamente sobre los alfabetos \ $\X$  \ y \ $\Y$ \ de cardenal \
 $\alpha = |\X|$ \ y \ $\beta = |\Y|$.  Tal par de variables puede ser vista como
 una variable $\begin{bmatrix} X\\ Y\end{bmatrix}$ definida sobre el alfabeto $\X
-\times  \Y$  de  cardinal $\alpha  \beta$  tal  que  se define  naturalmente  la
+\times  \Y$  de  cardenal $\alpha  \beta$  tal  que  se define  naturalmente  la
 entrop\'ia  para  esta  variable;  tal  entrop\'ia es  llamada  {\it  entrop\'ia
   conjunta} de $X$ y $Y$:
 %
@@ -374,7 +374,7 @@ entrop\'ia  para  esta  variable;  tal  entrop\'ia es  llamada  {\it  entrop\'ia
 \label{Def:SZ:EntropiaConjunta}
 %
   Sean \ $X$ \ e \ $Y$  \ dos variables aleatorias definidas sobre los alfabetos
-  discretos \  $\X$ \ y \ $\Y$,  de cardinal \ $\alpha  = |\X| < +\infty$  \ y \
+  discretos \  $\X$ \ y \ $\Y$,  de cardenal \ $\alpha  = |\X| < +\infty$  \ y \
   $\beta  =  |\Y|   <  +\infty$  \  respectivamente.   Sea   \  $p_{X,Y}$  \  la
   distribuci\'on de probabilidad conjunta de \ $X$ \ e \ $Y$, \ \ie $ \forall \,
   (x,y) \in \X \times  \Y, \quad p_{X,Y}(x,y) = P( (X = x) \cap  (Y = y) )$.  La
@@ -477,13 +477,13 @@ as\'i que una tasa de entrop\'ia cuando $n$ va al infinito.
 %
 \noindent Esta  cantidad siempre existe  porque $\displaystyle H(X_1 ,  \ldots ,
 X_n) \le \sum_{i=1}^n H(X_i) \le \sum_{i=1}^n  \log \alpha_i \le n \max_{1 \le i
-  \le n} \alpha_i$  donde los $\alpha_i$ son los cardinales  de los alfabetos de
+  \le n} \alpha_i$  donde los $\alpha_i$ son los cardenales  de los alfabetos de
 definici\'on de los $X_i$.
 
 \
 
 Se termina esta subsecci\'on con el caso de variables discretas definidas sobre
-un  alfabeto $\X$ de  cardinal infinito  $|\X| =  + \infty$,  por ejemplo  $\X =
+un  alfabeto $\X$ de  cardenal infinito  $|\X| =  + \infty$,  por ejemplo  $\X =
 \Nset$.   Por analog\'ia,  se puede  siempre definir  la entrop\'ia  como  en la
 definici\'on Def.~\ref{Def:SZ:Shannon}. Esta extensi\'on resuelta delicada dando
 de que unas propiedades se perdien.  Por ejemplo, la entrop\'ia no queda acotada

@@ -51,7 +51,7 @@ la  entrop\'ia de  Shannon.  La  generalizaci\'on propuesta  por R\'enyi  era de
 generalizar  el axioma  (v) reemplazando  la  media aritm\'etica  por una  media
 generalizada (v')  $H^\ren(p \, \cup \,  q) = g^{-1} \left(  \frac{w_p \, g\big(
     H^\ren(p) \big) + w_q \,  g\big( H^\ren(q) \big)}{w_p + w_q}\right)$ con $g$
-estrictamente mon\'otona  y continua,  llamado media {\it  cuasi-aritm\'etica, o
+estrictamente mon\'otona  y continua,  llamada media {\it  cuasi-aritm\'etica, o
   cuasi-lineal,  o  de  Kolmogorov-Nagumo}.   De  las propiedades  de  la  media
 cuasi-aritm\'etica~\cite{Nag30,  Kol30, Kol91, HarLit52},  eso es  equivalente a
 buscar una entrop\'ia elemental $H^\ren(p_i)$ y reemplazar la media aritm\'etica
@@ -79,8 +79,8 @@ H_1^\ren(p)  \equiv   \lim_{\lambda  \to  1}  H_\lambda^\ren(p)   =  H(p)  \quad
 \]
 %
 \noindent En otros t\'erminos, la clase de R\'enyi contiene como caso particular
-la  entrop\'ia de  Shannon.   En su  papel,  R\'enyi introdujo  una ganancia  de
-informaci\'on,  parecida  a una  entrop\'ia  relativa,  probando  que las  solas
+la entrop\'ia de Shannon.  Adem\'as, en su papel, R\'enyi introdujo una ganancia
+de informaci\'on,  parecida a  una entrop\'ia relativa,  probando que  las solas
 entrop\'ias admisibles son  la de Shannon y la que  introdujo.  Volveremos en la
 secci\'on siguiente  sobre esta entrop\'ia  relativa, o divergencia  de R\'enyi.
 Por          axiomas,          las         propiedades~\ref{Prop:SZ:continuidad}
@@ -96,13 +96,15 @@ checo]{Vaj68}) volvieron a los axiomas de Khintchin, para extender la entopia de
 Shannon,  \ie  considerando  (i)   la  invarianza  por  permutaci\'on,  (ii)  la
 continuidad, (iii) la expansividad, (iv) $H^\hc(1) = 0$ y $H^\hc\left( \frac12 ,
   \frac12   \right)  =   1$,  pero   generalizando  la   recursividad   por  (v)
-$H^\hc(p_1,\ldots,p_n)   =   H^\hc(p_1,\ldots,p_{n-2},p_{n-1}+p_n)   +   \lambda
+$H^\hc(p_1,\ldots,p_n)       =      H^\hc(p_1,\ldots,p_{n-2},p_{n-1}+p_n)      +
 (p_{n-1}+p_n)^\lambda         H^\hc\left(        \frac{p_{n-1}}{p_{n-1}        +
     p_p},\frac{p_n}{p_{n-1} + p_p} \right),  \quad \lambda > 0$~\footnote{En sus
-  papel, lo imponen  para cualquier par $(p_i, p_j)$  sin imponer la invarianza
-  por permutaci\'on, pero es equivalente  a la exposici\'on de este p\'arrafo.}.
-Con $\lambda = 1$ se recupera la recursividad estandar, pero con $\lambda \ne 1$
-eso permite dar un  peso diferente a la incerteza del estado  interno, \ie a las
+  papel, lo  imponen para cualquier par  $(p_i, p_j)$ sin  imponer la invarianza
+  por   permutaci\'on,  pero   es  equivalente   a  la   exposici\'on   de  este
+  p\'arrafo. Adem\'as,  ponen un factor $\alpha >  0$ a $(p_{n-1}+p_n)^\lambda$,
+  pero prueban que  para satisfacer a (iv), necesariamente  $\alpha = 1$.}.  Con
+$\lambda = 1$ se recupera la recursividad estandar, pero con $\lambda \ne 1$ eso
+permite  dar un peso  diferente a  la incerteza  del estado  interno, \ie  a las
 probabilidades  que  se juntan  (la  describen  como clasificaci\'on  refinada).
 Estos axiomas conducen necesariamente a la entrop\'ia (teorema~1 del papel)
 %
@@ -164,7 +166,7 @@ recursividad extendida precisamente  del modelo de Havrda-Charv\'at (teorema~4).
 Prob\'o  tambi\'en~\ref{Prop:SZ:positividad}, positividad  alcanzado en  el caso
 determinista  y  la  maximalidad~\ref{Prop:SZ:cotamaxima}  en el  caso  uniforme
 (teorema~6), que  incidentalmente $H_\lambda^\hcd\left( \frac1\alpha  , \ldots ,
-  \frac1\alpha \right)$ crece con el  cardinal $|\X| = \alpha$.  Muy interesante
+  \frac1\alpha \right)$ crece con el  cardenal $|\X| = \alpha$.  Muy interesante
 tambi\'en es que se puede definir  una entrop\'ia condicional en el mismo modelo
 que en el  caso de Shannon, \ $H_\lambda^\hcd(X|Y)  = \sum_y \left[ p_{X|Y=y}(x)
 \right]^\lambda  H_\lambda^\hcd(   p_{X|Y=y}  )$,   que  existe  una   regla  de
@@ -202,7 +204,7 @@ $\phi$-entrop\'ias  contienen Shannon como  caso particular  ($\phi(x) =  x \log
 x$),  as\'i que  la clase  de Havdra-Charv\'at-Dar\'oczy  ($\phi(x) =  \frac{x -
   x^\lambda}{2^{1-\lambda}-1}$) como mencionado, pero no la clase de R\'enyi. De
 hecho, las  $\phi$-entrop\'ias se  enmarcan en una  clase un poco  m\'as amplia,
-llamada {\it  $(h,\phi)$-entrop\'ias}~\cite{SalMen93, MenMor97}. Cambiamos ac\`a
+llamada {\it  $(h,\phi)$-entrop\'ias}~\cite{SalMen93, MenMor97}. Cambiamos ac\'a
 substancialmente su escritura  de la literatura por razones  de homogeneidad con
 la    $\phi$-entrop\'ia   (y    las   divergencias    que    se   introducir\'an
 luego)~\footnote{En  la literatura,  no hay  el signo  $-$, y  hay  que invertir
@@ -212,11 +214,11 @@ luego)~\footnote{En  la literatura,  no hay  el signo  $-$, y  hay  que invertir
 \label{Def:SZ:HPhiEntropia}
 %
   La $(h,\phi)$-entrop\'ia de una  distribuci\'on de probabilidad $p_X$ definida
-  sobre $\X$ de cardinal finito $|\X| = \alpha$ es definida por
+  sobre $\X$ de cardenal finito $|\X| = \alpha$ es definida por
   %
   \[
-  \hhphi[X] = \hhphi[p_X] = h\left(  - \sum_{x \in \X} \phi\left( p_X(x) \right)
-  \right),
+  \hhphi[X] \equiv  \hhphi[p_X] =  h\left( - \sum_{x  \in \X}  \phi\left( p_X(x)
+    \right) \right),
   \]
   %
   donde o
@@ -247,7 +249,7 @@ propiedades~\ref{Prop:SZ:continuidad}    (continuidad),~\ref{Prop:SZ:permutacion
 transformaci\'on       biyectiva      de      $X$),~\ref{Prop:SZ:expansabilidad}
 (expansabilidad, debido a $\phi(0) = 0$).
 
-Adem\'as  se conserva  la  Schur-concavidad \ con una reciproca:
+Adem\'as  se conserva  la  Schur-concavidad \ con una rec\'iproca:
 %
 \begin{propiedadesPhi}\setcounter{enumi}{\value{PropSchurConcavidad}}
 %
@@ -259,13 +261,13 @@ Adem\'as  se conserva  la  Schur-concavidad \ con una reciproca:
   \]
   %
   En otros t\'erminos,  se obtiene la relaci\'on de  mayorisaci\'on si se cumple
-  la  relaci\'on  de ordre  entr\'opicas  para  \underline{todos}  los pares  de
-  funciones entr\'opicas  $(h,\phi)$.  La  Schur-concavidad (y su  reciproca) es
-  consecuencia     de     la     desigualdad     de     Schur~\cite{Sch23}     o
-  Hardy-Littlewood-P\'olya~\cite{HarLit29,   HarLit52}  o  Karamata~\cite{Kar32}
-  (ver   tambi\'en~\cite[Cap.~3,  Prop.~C.1   \&   Cap.~4,  Prop.~B.1]{MarOlk11}
-  o~\cite[Teorema~II.3.1]{Bha97}): $p \prec q \: \Rightarrow \: \sum_i \phi(p_i)
-  \le \sum_i \phi(q_i)$ para toda funci\'on $\phi$ convexa, y reciprocamente.
+  la  desigualdad entr\'opica  para todos  los pares  de  funciones entr\'opicas
+  $(h,\phi)$.   La  Schur-concavidad (y  su  rec\'iproca)  es  consecuencia de  la
+  desigualdad  de Schur~\cite{Sch23}  o Hardy-Littlewood-P\'olya~\cite{HarLit29,
+    HarLit52} o Karamata~\cite{Kar32}  (ver tambi\'en~\cite[Cap.~3, Prop.~C.1 \&
+  Cap.~4,  Prop.~B.1]{MarOlk11} o~\cite[Teorema~II.3.1]{Bha97}):  $p \prec  q \:
+  \Rightarrow  \: \sum_i  \phi(p_i) \le  \sum_i \phi(q_i)$  para  toda funci\'on
+  $\phi$ convexa, y reciprocamente.
 \end{propiedadesPhi}
 % Schur, I.  (1923). Issai Schur Collected  Works (A.  Brauer  and H.  Rohrbach,
 % eds.), Vol. II. pp. 416œôòó427. Springer-Verlag, Berlin, 1973]
@@ -295,7 +297,7 @@ Con respecto a la concavidad~\ref{Prop:SZ:concavidad}, no se conserva en general
 \item\label{Prop:SZ:concavidadHPhi} Si $h$ es c\'oncava, entonces $\hhphi[p]$ es
   c\'oncava con  respecto a $p$.   Eso es una  consecuencia de la  concavidad de
   $\phi$ y  decrecencia de $h$ (resp.  convexidad/crecencia)  conjuntamente a la
-  concavidad de $h$.  La reciproca no  es verdad.  Por ejemplo, se puede ver que
+  concavidad de $h$.  La rec\'iproca no  es verdad.  Por ejemplo, se puede ver que
   si $\lambda  < 1$, la  entrop\'ia de R\'enyi  es c\'oncava, pero se  proba que
   existe  un  $\lambda^*(\alpha)  >  1$  tal que  para  cualquier  $\lambda  \le
   \lambda^*(\alpha)$  se conserva  la  concavidad, a  pesar  de que  $h$ no  sea
@@ -357,16 +359,16 @@ conserva solamente en el caso Shannon:
   %
   \[
   \hhphi[p_{X,Y}] \:  \le \:  \hhphi[p_X \otimes p_Y]  \quad \forall  \: p_{X,Y}
-  \qquad \Longleftrightarrow \qquad \phi(x) = x \log x,
+  \qquad \Longleftrightarrow \qquad \phi(x) = - x \log x,
   \]
   %
   \ie $\hhphi$ es una funci\'on creciente de la entrop\'ia de Shannon.
 \end{teorema}
 %
 \begin{proof}
-  La    reciproca     de    este    teorema    es    nada     m\'as    que    la
-  propidad~\ref{Prop:SZ:subaditividad} con  el hecho de que $h$  es creciente en
-  este caso.
+  La    rec\'iproca     de    este    teorema    es    nada     m\'as    que    la
+  propidad~\ref{Prop:SZ:subaditividad} con el hecho que $h$ es creciente en este
+  caso.
 
   A continuaci\'on, la parte directa se demuestra en dos etapas:
   %
@@ -376,7 +378,7 @@ conserva solamente en el caso Shannon:
     $\phi'$ de la funci\'on entr\'opica satisface a una ecuaci\'on funcional.
   %
   \item la sola soluci\'on admisible de esta ecuaci\'on se reduce a $\phi(x) = -
-    x \ln x$.
+    x \log x$.
   \end{itemize}
   %
   {\bf Etapa 1}: Sea el vector de probabildad
@@ -423,7 +425,8 @@ conserva solamente en el caso Shannon:
       -  \phi(u)}{v-u}$ es  mayor que  la derivada  $\phi'(u)$.  Aplicado  a dos
     distribuciones $p$ y $q$, de componentes $p_i$ y $q_i$, con $u = p_i$ y $v =
     q_i$  y  sumando, se  obtiene  $\hphi[q]  -  \hphi[p] \ge  \sum_i  (p_i-q_i)
-    \phi'(p_i)$ con $\hphi \equiv H_{(\id,\phi)}, \: \id$ siendo la identidad.}
+    \phi'(p_i)$ con  $\hphi \equiv H_{(\id,\phi)},  \: \id$ siendo  la identidad
+    (ver notaciones).}
   %
   \label{Fig:SZ:ConvexidadDerivada}
   \end{figure}
@@ -466,7 +469,7 @@ conserva solamente en el caso Shannon:
   marginales).
 
   {\bf Etapa 2}. De la etapa  1, se sabe que la sub-aditividad es potencialmente
-  posible  solamente si  $g(a,v,s,t,0) =  0$  sobre $D_{a,\tilde{a},b,\tilde{b}}
+  posible  solamente si  $g(u,v,s,t,0) =  0$  sobre $D_{a,\tilde{a},b,\tilde{b}}
   \cap  (0  \,  ; \,  1)^4$.   Eso  significa  que $\phi'$  debe  necesariamente
   satisfacer la ecuaci\'on funcional
   %
@@ -491,7 +494,7 @@ conserva solamente en el caso Shannon:
   Eso significa de  que $x \, \phi''(x)$  es constante sobre $x \in  (0 \; (1-a)
   \max\{b,1-b\})$, y para cualquier par $(a,b) \in (0 \; 1)^2$.  Entonces, $x \,
   \phi''(x)$  es constante  sobre $x  \in (0  \; 1  )$, es  decir que  $\phi$ es
-  necesariamente  de  la  forma $\phi(x)  =  \eta  \,  x  \ln  x +  \theta  x  +
+  necesariamente  de  la  forma $\phi(x)  =  \eta  \,  x  \log  x +  \theta  x  +
   \vartheta$. Debido a la continuidad de $\phi$, queda v\'alido sobre el cerrado
   $[0 \, ; \, 1]$.  De que se aplica a un vector de probabilidad, sumando a uno,
   se puede  reducir el  problema a  $\theta = 0$  (poniendo $\theta$  adentro de
@@ -503,9 +506,9 @@ conserva solamente en el caso Shannon:
   tenemos $\vartheta =  0$.  Para que $\phi$ sea  convexa (resp. c\'oncava) hace
   falta  tener  $\eta >  0$  (resp.   $\eta <  0$)  as\'i  que,  sin perdida  de
   generalidad, $\eta$ puede  ser puesta tambi\'en en $h$. Tomar \  $\phi (x) = x
-  \, \ln x$ \ con \ $h$ \ creciente o \  $\phi (x) = - x \, \ln x$ \ con \ $h$ \
-  decreciente es completamente equivalente, as\'i que se puede fijar $\phi (x) =
-  x  \, \ln  x$  satisfaciendo la  ecuaci\'on  funcional, y  $h$ creciente.   En
+  \, \log x$ \ con \ $h$ \ creciente o \  $\phi (x) = - x \, \log x$ \ con \ $h$
+  \ decreciente es completamente equivalente, as\'i que se puede fijar $\phi (x)
+  = - x  \, \log x$ satisfaciendo la ecuaci\'on funcional,  y $h$ creciente.  En
   conclusi\'on,  $g  =  0$ sobre  $D  \cap  (0  \,  ;  \, 1)^2$  es  decir,  por
   continuidad,  sobre  $D$  se reduce  a  necesitar  tener  $\hphi =  H$.   Esta
   entrop\'ia    siendo    sub-aditiva    (propidad~\ref{Prop:SZ:subaditividad}),
@@ -543,7 +546,7 @@ pierde  la propiedad~\ref{Prop:SZ:independenciacondicional}  por  perdida de  la
 aditividad,       y      por       consecuencia       la      propiedad       de
 positividad/independencia~\ref{Prop:SZ:Ipositive}  de  una  informaci\'on  mutua
 construida sobre un  modelo diagrama de Venn. Veremos  en la secci\'on siguiente
-que un tercero camino puede ser usar divergencias.
+que un tercer camino puede ser usar divergencias.
 % \SZ{ver con detalles \ref{Prop:SZ:condicionar} (condiconar)} \SZ{VajVas85 pour
 %   la Schur-concavite}
 
@@ -584,7 +587,7 @@ superior~\ref{Prop:SZ:cotamaxima}  (salvo  si  se  pone  v\'inculos,  ver  m\'as
 adelante), en adici\'on de las que ya la versi\'on discreta perdi\'o.
 
 Sin embargo, se conservan unas propidedades,  y entre otros si $h$ es c\'oncava,
-la  $(h,\phi)$-entrop\'ia diferencia  es c\'oncava~\ref{Prop:SZ:concavidadHPhi}.
+la $(h,\phi)$-entrop\'ia  diferencial es c\'oncava~\ref{Prop:SZ:concavidadHPhi}.
 M\'as  sorprendentemente a  primer vista,  se conserva  la $(h,\phi)$-entrop\'ia
 diferencial bajo un rearreglo~\ref{Prop:SZ:permutacionC},
 %
@@ -608,21 +611,20 @@ p  \prec q  \quad \Rightarrow  \quad \hhphi[p]  \ge \hhphi[q]  \quad  \forall \:
 (h,\phi).
 \]
 
-\SZ{Quide de la reciproca? Quid sub-aditividad ssi fct creciente de Shannon?}
+\SZ{Quide de la rec\'iproca? Quid sub-aditividad ssi fct creciente de Shannon?}
 
-Terminamos esta subsecci\'on notando de que, como para la entrop\'ia de Shannon,
-el  enfoque discreto  y diferencial  son contenido  en la  forma  general usando
+Terminamos esta subsecci\'on notando que, como para la entrop\'ia de Shannon, el
+enfoque  discreto  y  diferencial  son  contenido en  la  forma  general  usando
 densidades con respeto  a una medida (respectivamente discreta  y de Lebesgue en
 estos casos).
 %
 \begin{definicion}[Escritura \'unica de las $(h,\phi)$-entrop\'ias]
 \label{Def:SZ:HPhiEntropiaMu}
 %
-  Sea  \  $X$  \  variable  aleatoria definida  sobre  $\X  \subseteq  \Rset^d$,
-  admitiendo una densidad  de probabilidad \ $p_X$ \ con respeto  a una medida \
-  $\mu$ \  (ej.  $\mu_\X$ \  en el caso  discreto \ $\mu =  \mu_L$ \ en  el caso
-  diferencial).  La $(h,\phi)$-entrop\'ia de $X$ \underline{con respeto a $\mu$}
-  se escribe como
+Sea \ $X$ \ variable aleatoria definida sobre $\X \subseteq \Rset^d$, admitiendo
+una densidad de probabilidad  \ $p_X$ \ con respeto a una  medida \ $\mu$ \ (ej.
+$\mu_\X$ \ en  el caso discreto \ $\mu  = \mu_L$ \ en el  caso diferencial).  La
+$(h,\phi)$-entrop\'ia de $X$ con respeto a $\mu$ se escribe como
   %
   \[
   \hhphi[X] \equiv \hhphi[p_X] = h\left(  - \int_\X \phi\left( p_X(x) \right) \,
@@ -631,9 +633,9 @@ estos casos).
   %
   con  $h$  \   y  \  $\phi$  cumpliendo  los   requisitos  de  la  definici\'on
   discreta~\ref{Def:SZ:HPhiEntropia}  (de   $\phi(0)$,  se  puede   escribir  la
-  integraci\'on sobre $\Rset^d$).\newline Insistamos de nuevo en el hecho de que
-  se  puede entender  esta  definici\'on  para cualquier  $\mu$  y densidad  con
-  respeto a $\mu$, que sea discreta, de Lebesgue, o mixta.
+  integraci\'on sobre $\Rset^d$).\newline Insistamos de nuevo en el hecho que se
+  puede entender esta definici\'on para cualquier $\mu$ y densidad con respeto a
+  $\mu$, que sea discreta, de Lebesgue, o mixta.
 \end{definicion}
 
 % ================================= Csiszar & Bregman
@@ -665,7 +667,7 @@ sin  perder  la  positividad  de  esta medida  informacional  fue  simetrizarla,
 definiendo lo que es  conocido como {\it $J$-divergencia}~\cite{KulLei51, Kul68,
   Lin91}~\footnote{Esta   expresi\'on   apareci\'o  en~\cite[Ec.~(1)]{Jef46}   o
   en~\cite{Jef48},   antes   de  la   introducc\'ion   de   la  divergencia   de
-  Kullback-Leibler  en el  campo de  la estimaci\'on  Bayesiana,  Jeffrey siendo
+  Kullback-Leibler  en el  campo de  la estimaci\'on  bayesiana,  Jeffrey siendo
   citado por Kullback y Leibler.},
 %
 \[
@@ -678,15 +680,15 @@ definida siempre que  \ $P \ll Q$ \  conjuntamente a \ $Q \ll P$  \ (las medidas
 son  dichas {\it  medidas  equivalentes}  en este  caso).   Adem\'as, no  cumple
 tampoco  la  desigualdad triangular.   A  pesar  de  sus debilidades,  se  us\'o
 bastante en problemas de discriminaci\'on,  debido a su positividad con igualdad
-si  y solamente  si $P  =  Q$ (propiedad  herida del  hecho  de que  la suma  de
-t\'erminos positivos es nula si y solamente si cada uno vale cero).
+si y solamente si $P = Q$  (propiedad herida del hecho que la suma de t\'erminos
+positivos es nula si y solamente si cada uno vale cero).
 
 Unas decadas despu\'es, Lin  introdujo lo que llam\'o $K$-divergencia directada,
 $K(P,Q)   =  \Dkl[P]{\frac{P+Q}{2}}$,   su  versi\'on   simetrizada,   antes  de
 generalizarla    bajo     la    terminologia    de     {\it    divergencia    de
   Jensen}~\cite{Lin91}~\footnote{De  hecho, apareci\'o implicitamente  en varios
-  trabajos anteriores, por ejemplo  en mecanica cu\'antica~\cite{Hol73, Hol11} o
-  en reconocimiento de patrones~\cite{WonYou85}}.
+  trabajos anteriores, por  ejemplo en mec\'anica cu\'antica~\cite{Hol73, Hol11}
+  o en reconocimiento de patrones~\cite{WonYou85}}.
 %
 \begin{eqnarray*}
 \Djs(P_{(1)},P_{(2)})  &  = &
@@ -711,22 +713,22 @@ caso, a pesar de que la divergencia no cumpla la desigualdad triangular, aparece
 que $\Big(  J_{\mathrm{js}}^{\pi_{\mathrm{u}}}(P_{(1)},P_{(2)}) \Big)^s, \quad 0
 <  s  \le  \frac12$ es  una  metrica~\footnote{Se  necesita  sol\'o de  que  los
   $P_{(i)}$ admiten una  densidad con respeto a una  medida $\sigma$-finita; nos
-  referiremos           al           resultado~\ref{Teo:MP:DescompositionMixta},
-  pagina~\pageref{Teo:MP:DescompositionMixta}.}~\cite[Teorema~1                \&
-Nota~2]{OstVaj03} o~\cite{EndSch03, KafOst91, OsaBus18}.  Si puede parecer m\'as
-l\'ogico definir  tal divergencia con a priori/proporciones  $\pi_i$ iguales, de
-hecho la  versi\'on no sim\'etrica,  con pesos $\pi_i$  se vuelve natural  en el
-marco de la discriminaci\'on  donde apareci\'o implicitamente esta cantidad.  En
-particular, cuando  estamos frente a dos  hypotesis $i =  1, 2$ o clases,  a las
-cuales la distribuci\'on  de las observaciones es $P_{(i)}$,  con probabilidad a
-priori $\pi_i$.  A partir de observaciones  $x$ hay que elegir si eran sorteando
-de $P_{(1)}$ o $P_{(2)}$ (distribuciones  de sampleos, \ie condicionalmente a la
-hypotesis).   El   enfoque  Bayesiano   m\'as  natural  consiste   maximizar  la
-probabilidad   a   posteriori   (probabilidad   de  estar   en   hypotesis   $i$
-condicionalmente a la  observaci\'on), y se prueba que  la probabilidad de error
-es dada por \ $\displaystyle P_e =  \int_\X \min( \pi_1 p_{(1)}(x) \, , \, \pi_2
-p_{(2)}(x)  )   \,  d\mu(x)$   \  con  \   $p_{(i)}$  densidad  con   respeto  a
-$\mu$~\cite{Kay93}. Prob\'o Lin de que
+  referiremos           al           resultado~\ref{Teo:MP:DescompositionMixta}.
+%,  pagina~\pageref{Teo:MP:DescompositionMixta}.
+}~\cite[Teorema~1  \& Nota~2]{OstVaj03}  o~\cite{EndSch03,  KafOst91, OsaBus18}.
+Si   puede   parecer   m\'as    l\'ogico   definir   tal   divergencia   con   a
+priori/proporciones $\pi_i$  iguales, de hecho la versi\'on  no sim\'etrica, con
+pesos  $\pi_i$  se vuelve  natural  en el  marco  de  la discriminaci\'on  donde
+apareci\'o implicitamente esta cantidad.  En particular, cuando estamos frente a
+dos  hypotesis $i  = 1,  2$ o  clases,  a las  cuales la  distribuci\'on de  las
+observaciones  es $P_{(i)}$,  con probabilidad  a priori  $\pi_i$.  A  partir de
+observaciones  $x$ hay que  elegir si  eran sorteando  de $P_{(1)}$  o $P_{(2)}$
+(distribuciones de  sampleos, \ie condicionalmente a la  hypotesis).  El enfoque
+bayesiano  m\'as  natural  consiste   maximizar  la  probabilidad  a  posteriori
+(probabilidad de estar en hypotesis  $i$ condicionalmente a la observaci\'on), y
+se  prueba que  la probabilidad  de error  es dada  por \  $\displaystyle  P_e =
+\int_\X \min( \pi_1  p_{(1)}(x) \, , \,  \pi_2 p_{(2)}(x) ) \, d\mu(x)$  \ con \
+$p_{(i)}$ densidad con respeto a $\mu$~\cite{Kay93}. Prob\'o Lin de que
 %
 \[
 \frac14 \left(  H(\pi) - \Djs(P_{(1)},P_{(2)})  \right)^2 \le P_e  \le \frac12
@@ -751,9 +753,10 @@ informacionales a la Shannon viene todav\'ia del campo de la clasificaci\'on. Si
 unos datos pueden provenir de una  distribuci\'on $P_{(i)}$, $i = 1, 2$, con una
 probabilidad  $\pi_i$, la variable  aleatoria $X$  dada por  los datos  tiene la
 distribuci\'on  de mezcla  $P  =  \sum_i \pi_i  P_{(i)}$  como ilustrado  figura
-Fig.~\ref{Fig:SZ:Concavidad}-(b),  pagina~\pageref{Fig:SZ:Concavidad}.   Sea $Z$
-la variable  aleatoria binaria sobre  $\{ 1 \, ,  \, 2 \}$  tal que $P(Z =  i) =
-\pi_i$,  variable de  selecci\'on entre  las distribuciones  $P_{(i)}$  (ej.  la
+Fig.~\ref{Fig:SZ:Concavidad}-(b).
+%,  pagina~\pageref{Fig:SZ:Concavidad}.   
+Sea $Z$ la variable  aleatoria binaria sobre $\{ 1 \, , \, 2  \}$ tal que $P(Z =
+i) = \pi_i$, variable de selecci\'on entre las distribuciones $P_{(i)}$ (ej.  la
 moneda de la figura).  Por  definici\'on de la entrop\'ia condicional, $H(X|Z) =
 \sum_i \pi_i H(X|Z = i)  = \sum_i \pi_i H(p_{(i)})$. De $\Djs(P_{(1)},P_{(2)}) =
 H(p) - \sum_i  \pi_i H(p_{(i)})$ viene $\Djs(P_{(1)},P_{(2)}) =  H(X) - H(X|Z)$,
@@ -807,12 +810,12 @@ la mezcla $\sum_i \pi_i  P_{(i)}$ y $Z$ definida sobre $\{1 \,  , \, \ldots \, ,
 Un  punto  clave  que  dio  lugar   a  la  definici\'on  de  la  divergencia  de
 Jensen-Shannon es la  concavidad de la entrop\'ia de  Shannon.  Naturalmente, el
 mismo enfoque  se generaliza  a cualquier entrop\'ia  c\'oncava de un  vector de
-probabilidad. Tal generalizaci\'on fue  propuesta de maner formal por Burbea-Rao
-e~\cite{BurRao82},  y luego  generalizado  y estudiado  m\'as detenidamente  por
-Nielsen et  al.~\cite{NieBol11, NieNoc17}. A pesar  que que apareci\'o  ya en el
-papel de  Burbea \& Rao,  Nielsen llam\'o tal generalizaci\'on  ``divergencia de
-Burbea-Rao asimetrizada''.  M\'as formalemente, se puede definir una divergencia
-de Jensen de la manera siguiente:
+probabilidad. Tal generalizaci\'on fue propuesta de maner formal por J. Burbea y
+C.   R.   Rao  en~\cite{BurRao82},   y  luego  generalizado  y  estudiado  m\'as
+detenidamente  por Nielsen  et  al.~\cite{NieBol11, NieNoc17}.  A  pesar de  que
+apareci\'o ya en el papel de Burbea \& Rao, Nielsen llam\'o tal generalizaci\'on
+``divergencia  de  Burbea-Rao  asimetrizada''.   M\'as  formalemente,  se  puede
+definir una divergencia de Jensen de la manera siguiente:
 %
 \begin{definicion}[Divergencias  de Jensen]
 \label{Def:SZ:DivJensen}
@@ -839,8 +842,8 @@ $\X$)~\cite{NieBol11, NieNoc17}.
 \begin{definicion}[Divergencia $(h,\phi)$-Jensen entr\'opica]
 \label{Def:SZ:DivJensen}
 %
-  Para $(h,\phi)$-entrop\'ias  \underline{c\'oncavas} (ej.  con  $h$ c\'oncava),
-  siendo $-\hhphi$ convexa, se puede entonces asociar una divergencia de Jensen
+Para  $(h,\phi)$-entrop\'ias   c\'oncavas  (ej.   con   $h$  c\'oncava),  siendo
+$-\hhphi$ convexa, se puede entonces asociar una divergencia de Jensen
   %
   \[
   \jhphi[p_{(1)}]{p_{(2)}}     \equiv     J_{-\hhphi}^\pi(p_{(1)},p_{(2)})     =
@@ -849,7 +852,7 @@ $\X$)~\cite{NieBol11, NieNoc17}.
   \]
   %
   \noindent con \ $p_{(i)}$ \ densidad con respeto a una medida $\mu$. Cuando $h
-  \equiv \id$, se notar\'a $\jphi{}$.
+  \equiv \id$ identidad, se notar\'a $\jphi{}$.
 
   La definici\'on se generaliza a  cualquier conjunto $\{ p_{(i)} \}_{i=1}^n$ de
   distribuciones   de   probabilidades    y   $\pi$   vector   de   probabilidad
@@ -865,19 +868,22 @@ $\X$)~\cite{NieBol11, NieNoc17}.
 medida ``informaci\'on mutua  generalizada''. Eso viene de que  si se define una
 informaci\'on condicional  en el mismo esquema  que el de Shannon,  \ie para $Y$
 discreta, \ $\hhphi[X|Y] =  \sum_y p_Y(y) \hhphi[p_{X|Y=y}]$, entonces, con $\pi
-\equiv p_Y$ \ y  \ $\{ p_{(i)} \}_i \equiv \{ p_{X|Y=y} \}_y  $ aparece de que \
+\equiv p_Y$  \ y \  $\{ p_{(i)} \}_i  \equiv \{ p_{X|Y=y}  \}_y $ aparece  que \
 $D_{(h,\phi)}^{\mathrm{j},p_Y}( \{ p_{X|Y=y} \}_y  ) = \hhphi[X] - \hhphi[X|Y]$.
 \ Esta expresi\'on es parecida a una  de las formas de la informaci\'on mutua de
-Shannon,  justificando la  terminilog\'ia de  Burbea-Rao. Sin  embargo,  hay que
+Shannon,  justificando la  terminolog\'ia de  Burbea-Rao. Sin  embargo,  hay que
 tener conciencia  de que no  todo se translata  obviamente del mundo  Shannon al
 mundo  generalizado.   Por  ejemplo,   con  tal  definic\'on  de  la  entrop\'ia
 condicional, se pierde  la regla de cadena, y por  consecuencia la simetr\'ia de
 tal informaci\'on mutua generalizada o  la forma usando la entrop\'ia conjunta y
 las marginales.
 
+\SZ{A ver  si se generaliza  bajo la forma  $ \hhphi[\int \pi(y) p(x;y)]  - \int
+  \pi(y) \hhphi[p(x,y)]$.}
+
 Se  notar\'a de  que Nielsen  propus\'o generalizaciones  mas  avanzadas, usando
 generalizaciones de la noci\'on  de convexidad. Estas generalizaciones van m\'as
-all\'a de la meta del cap\'itulo y el lector so puede referir a~\cite{NieNoc17}.
+all\'a de la meta del cap\'itulo y el lector  puede referirse a~\cite{NieNoc17}.
 
 Las divergencias de Jensen tiene las propiedades siguientes
 %
@@ -982,34 +988,36 @@ de funciones~\cite{FriSri08, NieNoc17}:
     al.~\cite{FriSri08}, se usa  la derivada de F\'echet, que  es m\'as general.
     Viene  de  un  l\'imite   identica  independientemente  de  la  direcci\'on.
     Entonces,  si   una  funci\'on  tiene  una  derivada   de  Fr\'echet,  tiene
-    necesariamente derivadas de G\^ateau,  pero no es reciproca.  Esta subtileza
+    necesariamente derivadas de G\^ateau,  pero no es rec\'iproca.  Esta subtileza
     va m\'as all\'a de la meta de esta secci\'on.}.
 \end{definicion}
 %
-En  el  caso  de que  $\U  \subset  \Rset^m$  se recupera  sencillamente  la
-definici\'on original.
+En  el caso  $\U  \subset  \Rset^m$ se  recupera  sencillamente la  definici\'on
+original. Ahora,  se puede aplicar  la definici\'on~\ref{Def:SZ:DivBregmanFun} a
+la  funci\'on $-\hhphi[\cdot]$  cuanda  esta  es convexa,  para  asociar a  esta
+entrop\'ia una divergencia tipo Bregman:
 
 \begin{definicion}[Divergencia $(h,\phi)$-Bregman entr\'opica]
 \label{Def:SZ:DivBregmanEntropicas}
 %
-  Para $(h,\phi)$-entrop\'ias  \underline{c\'oncavas} (ej.  con  $h$ c\'oncava),
-  se puede entonces asociar una divergencia de Bregman
+  Para  $(h,\phi)$-entrop\'ias c\'oncavas  (ej.   con $h$  c\'oncava), se  puede
+  asociar una divergencia de Bregman
   %
   \[
   \bhphi[q]{p} = \hhphi[p] - \hhphi[q]  - h'\big(\hphi[p] \big) \int_\X ( q(x) -
   p(x) ) \phi'(p(x)) \, d\mu(x).
   \]
   %
-  Cuando $h  \equiv \id$, se notar\'a $\bphi{}$  y es equivalente a  salir de la
-  definici\'on inicial $u = p(x)$, \  $v = q(x)$ y sumar la divergencia obtenida
-  sobre  \ $\X$  \ con  respeto a  la  medida \  $\mu$.  En  el caso  particular
-  discreto toma la expresi\'on
+  Cuando  $h \equiv \id$  identidad, se  notar\'a $\bphi{}$  y es  equivalente a
+  salir  de la  definici\'on  inicial  $u =  p(x)$,  \ $v  =  q(x)$  y sumar  la
+  divergencia obtenida sobre  \ $\X$ \ con  respeto a la medida \  $\mu$.  En el
+  caso particular discreto toma la expresi\'on
   %
   \begin{eqnarray*}
     \bhphi[q]{p} \equiv B_{-\hhphi}(q\|p)
     & = & \hhphi[p] - \hhphi[q] - (p-q)^t \nabla \hhphi[p]\\[2.5mm]
     %
-    & = & \hhphi[p] - \hhphi[q] - h'\big(\hphi[p] \big) (q-p)^t \phi'(p)
+    & = & \hhphi[p] - \hhphi[q] - h'\big(\hphi[p] \big) (q-p)^t \nabla \phi(p)
   \end{eqnarray*}
   %
   % \noindent Cuando  $h \equiv \id$, se  notar\'a $\bphi{}$ y  es equivalente a
@@ -1024,7 +1032,7 @@ de Bregman, y vice-versa:
 \begin{lema}
 \label{Lem:SZ:VinculoJensenBregman}
 %
-  De    la   definiciones~\ref{Def:SZ:DivJensen},    \ref{Def:SZ:DivBregman}   y
+  De   las    definiciones~\ref{Def:SZ:DivJensen},   \ref{Def:SZ:DivBregman}   y
   \ref{Def:SZ:DivBregmanFun}, se  muestra sencillamente de  que las divergencias
   de Jensen se escriben como combinaciones convexas de divergencias de Bregman,
   %
@@ -1041,7 +1049,8 @@ de Bregman, y vice-versa:
     P_{(2)})}{\pi_1 \pi_2}
   \]
   %
-  (o similarmente con densidad $p_{(i)}$ con respeto a una medida $\mu$).
+  (o  similarmente  con densidad  $p_{(i)}$  con  respeto  a una  medida  $\mu$;
+  recuerdense tambi\'en que $\pi_1 = 1-\pi_2$).
 \end{lema}
 %
 \noindent (ver~\cite{Zha04, NieBol11, NieNoc17}).
@@ -1053,17 +1062,18 @@ y \ $J_f$ con respecto a la funci\'on convexa $f$.
 %
 \begin{center} \input{TIKZ_SZ/BregmanFJensen} \end{center}
 %
-\leyenda{$f$  estrictamente  convexa.   Las  cantidad positiva  marcada  por  la
-  dupla-flecha   representan  respectivamente   la  divergencia   de  $f$-Jensen
-  $J_f^\pi(u_1,u_2)$, diferencia entre la combinaci\"'on convexa de los $f(u_i)$
-  y $f$ de la combinaci\'on convexa de  los $u_i$, \ y la divergencia de Bregman
-  \ $B_f(u_2\|u_1)$ diferencia entre el valor en $u_2$ (punto de evaluaci\'on) y
-  la  tangente  en  $u_1$  (punto  referencia). Para  $J_f^\pi$,  se  toma  como
-  referencia $\pi_1 u_1 + \pi_2 u_2$, se calcula $D_f$ en los $u_i$ y se toma la
-  combinaci\'on convexa.}
+\leyenda{$f$ estrictamente  convexa.  Las cantidades positivas  marcadas por las
+  dupla-flechas  representan respectivamente  (a)  la divergencia  de Bregman  \
+  $B_f(u_2\|u_1)$ diferencia entre  el valor en $u_2$ (punto  de evaluaci\'on) y
+  la  tangente en  $u_1$ (punto  referencia), (b)  la divergencia  de $f$-Jensen
+  $J_f^\pi(u_1,u_2)$, diferencia entre la  combinaci\'on convexa de los $f(u_i)$
+  y $f$  de la combinaci\'on convexa  $u_\pi = \pi_1 u_1  + \pi_2 u_2$,  \ y las
+  divergencias  de  Bregman \  $B_f(u_i\|u_\pi)$;  para  $J_f^\pi$,  se toma  la
+  combinaci\'on convexa de los $B_f(u_i\|u_\pi)$.}
   %
 \label{Fig:SZ:BregmanFJensen}
 \end{figure}
+\SZ{Ver si se puede ilustrar el l\'imite dando la Bregman}
 
 La divergencia de Bregman tiene las propiedades siguientes
 %
@@ -1103,12 +1113,12 @@ la distancia de Mahalanobis con \ $f(u) = u^t K u$ \ con \ $K > 0$ \ sim\'etrica
 (siendo  la distancia $L^2$  un caso  particular), el  cuadrado de  la distancia
 $L^1$ con  $\displaystyle f(u) = \left(  \sum_i u_i \right)^2$,  la distancia de
 Itakura-Saito cuando $f(u) = - \log u$ (asociado a la entrop\'ia de Burg), entre
-otros.  Unas se exteinden sencillamente al caso continuo~\cite{FriSri08}.
+otros.  Unas se extienden sencillamente al caso continuo~\cite{FriSri08}.
 
 Como en  el caso de  divergencias de Jensen, Nielsen  propus\'o generalizaciones
-m\'as avanzadas, usando las generalizaciones  de la noci\'on de convexidad usada
+m\'as avanzadas, usando las generalizaciones de la noci\'on de convexidad usadas
 para generalizar  las divergencias  de Jensen. Estas  generalizaciones tambi\'en
-van  m\'as all\'a  de  la  meta del  cap\'itulo  y el  lector  so puede  referir
+van  m\'as  all\'a  de la  meta  del  cap\'itulo  y  el lector  puede  referirse
 a~\cite{NieNoc17}.
 
 Tambi\'en,   varias  aplicaciones   se  encuentran   en   la  literatura~\cite[y
@@ -1125,12 +1135,12 @@ Un primer paso  generalizando la noci\'on de entrop\'ia  relativa o divergencia,
 siguiendo el enfoque de Kullback  y Leibler y sus versiones tipo $J$-divergencia
 o divergencia de Jensen-Shannon fue  debido a R\'enyi. En su papel~\cite{Ren61},
 A. R\'enyi introdujo una noci\'on de  ganancia o perdida de informaci\'on de una
-distribuc\'ion (incompleta) de probabilidad  $q$ relativa a una referencia $p$,
-\  $I^\ren(q\|p)$, teniendo  un enfoque  axiom\'atico  similar al  que uso  para
-definir su entrop\'ia: (i) la medida sea invariante a una misma permutaci\'on de
-los componentes de $p$ y de $q$, (ii) si $\forall \, i, \: p_i \le q_i$ entonces
-$I^\ren(q\|p) \ge 0$ y vice versa $I(p\|q)  \le 0$, (iii) $I([1] \| [1/2]) = 1$,
-(iv)  $I( q_{(1)}  \otimes  q_{(2)} \|  p_{(1)}  \otimes p_{(2)})  =  I( q_{(1)}  \|
+distribuc\'ion (incompleta) de probabilidad $q$ relativa a una referencia $p$, \
+$I^\ren(q\|p)$, teniendo un enfoque axiom\'atico similar al que uso para definir
+su entrop\'ia:  (i) la medida  sea invariante a  una misma permutaci\'on  de los
+componentes de  $p$ y de $q$,  (ii) si $\forall \,  i, \: p_i  \le q_i$ entonces
+$I^\ren(q\|p) \ge 0$ y al rev\'es $I(p\|q)  \le 0$, (iii) $I([1] \| [1/2]) = 1$,
+(iv) $I(  q_{(1)} \otimes q_{(2)}  \| p_{(1)} \otimes  p_{(2)}) = I(  q_{(1)} \|
 p_{(1)}) +  I( q_{(2)} \|  p_{(2)})$ y (v)  una propiedad de  media generalizada
 $I(q_{(1)} \cup q_{(2)}  \| p_{(1)} \cup p_{(2)}) =  g^{-1} \left( \frac{w_{q_1}
     I^\ren(q_{(1)} \|  p_{(1)}) + w_{q_2} I^\ren(q_{(2)}  \| p_{(2)})}{w_{q_1} +
@@ -1171,14 +1181,16 @@ tambi\'en~\cite[Sec.~I]{OrsPar95}):
   \right)
   \]
   %
-  Si $P$ y $Q$ admiten una densidad con respeto a una medida $\mu$,
+  Si $P$  y $Q$ admiten  una densidad  con respeto a  una medida $\mu$,  toma la
+  forma
   %
   \[
-  \chphi[q]{p} =  h\left( \int_\X  p(x) \phi\left( \frac{q(x)}{p(x)}  \right) d\mu(x)
-  \right)
+  \chphi[q]{p}  =  h\left(  \int_\X  p(x) \phi\left(  \frac{q(x)}{p(x)}  \right)
+    d\mu(x) \right)
   \]
   %
-  en  su versi\'on  diferencial, donde o
+  %en  su versi\'on  diferencial, 
+  donde o
   %
   \begin{itemize}
   \item $\phi$ \ es estrictamente convexa y \ $h$ \ creciente, o
@@ -1197,12 +1209,12 @@ tambi\'en~\cite[Sec.~I]{OrsPar95}):
 %
 \noindent Se notar\'a de que, obviamente, $\cphi{} = D_{(\id,\phi)}^{\mathrm{c}}$.
 
-Notablemente, cuando  \ $\phi(u) = u \log  u$ \ y \  $h = \id$ \  se recupera de
-nuevo   la   divergencia    de   Kullback-Leibler:   esta   \'ultima   partenece
+Notablemente, cuando  \ $\phi(u) =  u \log u$  \ y \ $h  = \id$ \  identidad, se
+recupera de  nuevo la divergencia  de Kullback-Leibler: esta  \'ultima partenece
 simultaneamente a la clase  de Csisz\`ar y a la de Bregman y  es la sola en este
 caso~\cite{Csi91}.   Cuando \ $\phi(u)  = \pi_2  u \log  u -  (\pi_1 +  \pi_2 u)
-\log(\pi_1  + \pi_2  u)$  \ y  \  $h =  \id$  \ se  recupera  la divergencia  de
-Jensen-Shannon  \SZ{sola de  la clase  de Jensen  en este  caso?}.   Adem\'as de
+\log(\pi_1 + \pi_2 u)$ \ y \ $h = \id$ \ identidad se recupera la divergencia de
+Jensen-Shannon \SZ{sola de  la clase de Jensen en este  caso?}.  En adici\'on de
 $\Dkl{}$, la clase de Csisz\'ar contiene la ganancia de informaci\'on de R\'enyi
 para  \  $\phi(u)  = u^\lambda$  \  y  \  $h(u)  = \frac{\log  u}{\lambda-1}$  \
 apareciendo tambien  en una forma muy parecida  en~\cite{Hel09, Che52, CreRea84,
@@ -1298,23 +1310,22 @@ Las divergencias de Csisz\'ar tienen las propiedades siguientes
 \noindent  Estas  propiedades  con   varias  otras  se  encuentran  por  ejemplo
 en~\cite{Vaj72,  Csi74, LieVaj87,  KafOst91, Ost96,  OstVaj03,  Vaj09, KumChi05,
   LieVaj06}.   Como en  el caso  de las  divegencias de  Jensen, en  general las
-divergencias  sim\'etricas ($\phi  =  \phi^*$)  no satisfacen  en  general a  la
-desigualdad  triangular,  y  entonces  no   dan  lugar  a  una  distancia  entre
-distribuciones de probabilidad, aparte en casos particulares (ej. divergencia de
-la  variaci\'on  total,  divergencia  de  Hellinger o  R\'enyi  con  $\lambda  =
-\frac12$).      Sin     embargo,     se    prob\'o     en~\cite[Teoremas~1~\&~2,
-Remark~6]{KafOst91}  \ y  \  \cite{Ost96, OstVaj03,  Vaj09}  el lema  siguiente,
-condici\'on suficiente  para que una potencia  de la divergencia  satisfaga a la
-desigualdad triangular:
+divergencias  sim\'etricas ($\phi  =  \phi^*$) no  satisfacen  a la  desigualdad
+triangular,  y entonces no  dan lugar  a una  distancia entre  distribuciones de
+probabilidad, aparte  en casos particulares  (ej. divergencia de  la variaci\'on
+total,  divergencia  de Hellinger  o  R\'enyi  con  $\lambda =  \frac12$).   Sin
+embargo,  se   prob\'o  en~\cite[Teoremas~1~\&~2,  Remark~6]{KafOst91}   \  y  \
+\cite{Ost96, OstVaj03, Vaj09} el lema siguiente, condici\'on suficiente para que
+una potencia de la divergencia satisfaga a la desigualdad triangular:
 %
 \begin{lema}
 \label{Lem:SZ:PotenciaCziszarDesigualdadTriangular}
 %
-  Sea \ $\phi$ \ una funci\'on convexa tal que \ $\phi^* = \phi$, \ $\phi(0) \ne
-  0$   \  y   \  $\cphi{}$   su  divergencia   de  Csisz\'ar   asociada   ($h  =
-  \id$).  Adicionalmente  de supone  de  que  $\phi(1)  = 0$  (ver  definici\'on
-  Def.~\ref{Def:SZ:HPhiDivergencia}) y de que $\phi$ es estrictamente convexa en
-  $1$.  Si existe $\kappa \in \Rset_+^*$ tal que
+Sea \ $\phi$ \  una funci\'on convexa tal que \ $\phi^*  = \phi$, \ $\phi(0) \ne
+0$  \  y  \  $\cphi{}$  su  divergencia  de  Csisz\'ar  asociada  ($h  =  \id$).
+Adicionalmente    se   supone    que   $\phi(1)    =   0$    (ver   definici\'on
+Def.~\ref{Def:SZ:HPhiDivergencia}) y  de que $\phi$ es  estrictamente convexa en
+$1$.  Si existe $\kappa \in \Rset_+^*$ tal que
   %
   \[
   h(u) = \frac{\left( 1-u^\kappa  \right)^{\frac{1}{\kappa}}}{\phi(u)}, \quad u \in [ 0
@@ -1328,7 +1339,7 @@ desigualdad triangular:
   \mbox{satisface la desigualdad triangular}
   \]
   %
-  \noindent   y  entonces  es   una  m\'etrica   entre  dos   discribuciones  de
+  \noindent   y  entonces  es   una  m\'etrica   entre  dos   distribuciones  de
   probabilidades.
 \end{lema}
 %
@@ -1341,9 +1352,9 @@ detalles.
 Este   lema   se  us\'o   para   probar   el   caracter  m\'etrico   de   $\Big(
 J_{\mathrm{js}}^{\pi_{\mathrm{u}}}(p_{(1)},p_{(2)})  \Big)^s, \quad  0  < s  \le
 \frac12$~\cite[y   ref.]{OstVaj03,  OsaBus18},   siendo   $J_{\mathrm{js}}$  una
-divergencia  de Csisz\'ar  particular.  Se  us\'o tambi\'en  para probar  de que
-$\left( \cphi{}  \right)^s$ \ con \ $\phi(u)  = \frac{\lambda}{\lambda-1} \left(
-  \left( 1+u^\lambda \right)^{\frac{1}{\lambda}} - 2^{\frac{1}{\lambda}-1} (1+u)
+divergencia de Csisz\'ar particular.  Se us\'o tambi\'en para probar que $\left(
+  \cphi{} \right)^s$ \ con  \ $\phi(u) = \frac{\lambda}{\lambda-1} \left( \left(
+    1+u^\lambda  \right)^{\frac{1}{\lambda}}   -  2^{\frac{1}{\lambda}-1}  (1+u)
 \right)$ \ y  \ $\kappa = \min\left( \lambda  \, , \, \frac12 \right)$  \ es una
 m\'etrica~\cite{OstVaj03}.
 
@@ -1369,10 +1380,14 @@ cf Bha 43 egalement
 \label{Ssec:SZ:IdentidadesGeneralizadas}
 
 \paragraph{Principio  de entrop\'ia m\'axima}  Si este  principio naci\'o  en el
-marco de la  termodynamica o f\'isica, con la  entrop\'ia de Shannon (Boltzman),
-tratando de  las nociones generalizadas de incertas,  vuelve natural preguntarse
-sobre la extensi\'on  de este problema en el marco  general. \SZ{Tal estudio fue
-  hecho en varios trabajos~\cite{ref, BenBor92} nous, Kesavan, Kagan 63}.
+marco  de   la  termodynamica   o  f\'isica,  con   la  entrop\'ia   de  Shannon
+(Boltzman-Gibbs),  tratando de  las nociones  generalizadas de  incertas, vuelve
+natural  preguntarse  sobre  la  extensi\'on   de  este  problema  en  el  marco
+general.  Tal estudio  fue  hecho en  varios  trabajos, ej.~\cite{Mor52,  Kap89,
+  KesKap89,  KesKap90,  BorLew91:03,  BenBor92,  TebVaj93,  CosHer03,  CsiMat12,
+  BerGir15}
+%\SZ{, Kagan 63}.
+% Kap89
 
 El  problema  se formaliza  como  en el  caso  Shannon,  buscando la  entrop\'ia
 m\'axima  sujeto a  v\'inculos: sea  $X$ variable  aleatoria viviendo  sobre $\X
@@ -1429,13 +1444,13 @@ Tal como en el caso Shannon, existe una prueba informacional:
 \begin{lema}\label{Lem:SZ:MaxPhiEntInformacional}
 %
   Sea \  $\displaystyle \P_m =  \left\{ p  \ge 0 \tq  \int_\X  p(x) \,
-    d\mu(x) =  1, \quad \int_\X M_k(x)  \, p(x) \, d\mu(x)  = m \right\}$  \ y \
+    d\mu(x) =  1, \quad \int_\X M(x)  \, p(x) \, d\mu(x)  = m \right\}$  \ y \
   $p^*  \in   \P_m$  \   que  satisfaga  \   $\phi'(p^*(x))  =  \eta^t   M(x)  +
   \eta_0$. Entonces
   %
   \[
   \forall  \, p  \in  \P_m,  \quad \hhphi[p]  \le  \hhphi[p^*] \qquad  \mbox{con
-    igualdad ssi} \quad p = p^* \quad (\mu\mbox{s. s.)}.
+    igualdad ssi} \quad p = p^* \quad (\mu\mbox{-c. s.)}.
   \]
   %
 \end{lema}
@@ -1467,10 +1482,15 @@ es acotada por arriba, y que se alcanza la cota. Por ejemplo,
   distribuci\'on de $(h,\phi)$-entrop\'ia m\'axima es la distribuci\'on uniforme
   en el caso discreto tal como en el caso continuo.
 %
-\item \SZ{Con $K  = 1$, \ $\X = \Rset^d$  \ y \ $M(x) = x  x^t$ (visto con $d^2$
-    v\'inculos), y $\phi(u) = u^\lambda$ (R\'enyi o Havrda-Charv\'at-Dar\'oczy),
-    la  distribuci\'on de  entrop\'ia  m\'axima es  \SZ{Student;  Costa and  son
-      on. Gausiana se recupera caso l\'imite}.}
+\item Con $K  = 1$, \ $\X = \Rset^d$  \ y \ $M(x) = x  x^t$ (visto como $\frac{d
+    (d+1)}{2}$    v\'inculos),   y    $\phi(u)   =    u^\lambda$    (R\'enyi   o
+  Havrda-Charv\'at-Dar\'oczy),  la  distribuci\'on  de  entrop\'ia  m\'axima  es
+  Student-$t$  cuando  $\lambda  \in   \left(  \frac{d}{d+2}  \;  1  \right)$  y
+  Student-$r$  cuando  $\lambda   >  1$~\cite{Mor52,  CosHer03,  Kap89}.  Cuando
+  $\lambda   \to  1$   se  recupera   la   gaussiana  como   caso  limite   (ver
+  secciones~\ref{Sssec:MP:StudentT}  y~\ref{Sssec:MP:StudentR}), que corresponde
+  precisamente a la maximizante de le entrop\'ia de Shannon, caso l\'imite de la
+  entrop\'ia de R\'enyi (ver m\'as arriba y secci\'on~\ref{Ssec:SZ:MaxEnt}).
 \end{itemize}
 
 Como  en el  caso de  Shannon, si  $\mu =  Q$ es  una medida  de  referencia, el
@@ -1480,9 +1500,22 @@ de  $P   \ll  Q$  con   respeto  a  $Q$.    La  densidad  obtenida  es   $p^*  =
 
 \
 
+\SZ{\paragraph{Desigualdad de  la potencia entr\'opica}  EPI variaciones Madiman
+  Barron  MadBar07 EPI  generalizada  por Madiman,  etc.  Lutwak, Bercher  etc.,
+  Kagan; Boeke 77
+
+\cite{WanMad04}: EPI Renyi y reareglo
+
+\cite[p. 499]{CovTho15}: tipo EPI via Renyi (ver Beckner)
+
+Ver \cite{Sta59, Hir57, Sobolev, DemCov91}
+}
+
+\
+
 \SZ{reapparition Fisher comme courbure, cf Varma, Jizba, MenMor97...}
 
-\SZ{EPI variaciones Madiman Barron MadBar07}
+\
 
 \SZ{
    On the theory  of Fisher's
@@ -1492,10 +1525,18 @@ de  $P   \ll  Q$  con   respeto  a  $Q$.    La  densidad  obtenida  es   $p^*  =
 \
 
  y la cuantificacion
-  fina; EPI generalizada por Madiman, etc. Lutwak, Bercher etc., Kagan; Boeke 77
+  fina;
   An extension  of the Fisher information  measure I. Csisz\'ar,  P. Elias (Eds.),
   Topics   in  Information  Theory,   North-Holland,  Berlin/New   York  (1977),
-  pp. 113-123  o Hammad o  Vajda 73 o  Ferentinos81 en el marco  Fisher; Kesavan
-  gene MaxEnt}
+  pp. 113-123  o Hammad o  Vajda 73 o  Ferentinos81 en el marco  Fisher}
 
 \SZ{Revisite capacite a la Daroczy? codage; parler de la quantification fine et HCD}
+
+
+% Nota para mi
+% Schut-Ostrowsky: f sym, Schur convex ssi
+%
+% $\forall \: 0 \le i \ne j \le \alpha$, \qquad $(x_i-x_j) \left( \frac{\partial
+%     f}{\partial x_i} - \frac{\partial f}{\partial x_j} \right) \ge 0
+%
+% Ver libro de Loss y Ruskai

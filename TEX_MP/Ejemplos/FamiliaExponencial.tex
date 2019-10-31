@@ -31,17 +31,20 @@ la inferencia bayesiana. Esta clase es la familia dicha exponencial~\cite{Dar35,
   Koo36, And70, LehCas98, IbPer12,  Muk00, KotBal00, Rob07, Bos07, Cen82, Kay93,
   NieNoc10}.  En inferencia bayesiana,  cuando una distribuci\'on de sampleo cae
 en esta  familia, se  puede por  ejemplo deducir a  priori conjugados,  es decir
-tales que  la distribuci\'on dicha a  posteriori caiga en la  misma familia (\ie
+tales que  la distribuci\'on dicha  a posteriori caiga  en la misma  familia \ie
 tenga la  misma forma  param\'etrica pero con  par\'ametros dependientes  de los
-datos)~\footnote{Ver nota de pie~\footref{Foot:MP:BayesPrior}. Recordamos que si
-  observaciones tienen  una distribuci\'on \ $p_{X|\Theta=\theta}(x)$  \ con una
-  distribuci\'on a  priori del par\'ametro  $p_\Theta(\theta)$, por la  regla de
-  Bayes el a  posteriori, es decir la ley del  parametro dados las observaciones
-  es   dada  por   \   $p_{\Theta|X=x}(\theta)  \propto   p_{X|\Theta=\theta}(x)
-  p_\Theta(\theta)$  \ con  \ $\propto$  \ significando  ``proporcional  a''. Si
-  $p_{\Theta|X=x}$ \ tiene la misma forma param\'etrica que \ $p_\Theta(\theta)$
-  \ inferir  \ $\theta$ \ con  datos que se  observan se reduce a  actualizar el
-  par\'ametro de la  ley a posteriori.}. Notar que esta familia  es conocido o a
+datos         (Ver         notas         de         pie~\ref{Foot:MP:BayesPrior}
+y~\ref{Foot:MP:BayesPriorConjugado}).
+%. Recordamos que si
+%  observaciones tienen  una distribuci\'on \ $p_{X|\Theta=\theta}(x)$  \ con una
+%  distribuci\'on a  priori del par\'ametro  $p_\Theta(\theta)$, por la  regla de
+%  Bayes el a  posteriori, es decir la ley del  parametro dados las observaciones
+%  es   dada  por   \   $p_{\Theta|X=x}(\theta)  \propto   p_{X|\Theta=\theta}(x)
+%  p_\Theta(\theta)$  \ con  \ $\propto$  \ significando  ``proporcional  a''. Si
+%  $p_{\Theta|X=x}$ \ tiene la misma forma param\'etrica que \ $p_\Theta(\theta)$
+%  \ inferir  \ $\theta$ \ con  datos que se  observan se reduce a  actualizar el
+%  par\'ametro de la  ley a posteriori.}. 
+Notar que esta familia  es conocido o a
 veces  {\em   familia  de  Koopman-Darmois}  debido  a   la  introducci\'on  por
 Koopman~\cite{Koo36}  o  Darmois~\cite{Dar35}   en  los  a\~nos  1935-1936  (ver
 tambi\'en Pitman~\cite{Pit36}) y es definida de la manera siguiente:
@@ -285,9 +288,9 @@ Si muchas distribuciones  partenecen a la familia exponencial,  no todas caen en
 esta familia:
 %
 \begin{ejemplo}
-  Sea  \   $p_X$  \   distribuci\'on  Student-$t$  \   $\T_\nu(m,\Sigma)$.  Esta
-  distribuci\'on no cae el la  familia exponencial. De hecho, se puede todav\'ia
-  escribir la ley bajo la forma
+  Sea  \   $p_X$  \  distribuci\'on  Student-$t$   \  $\T_\nu(m,\Sigma)$.   Esta
+  distribuci\'on no cae el la familia exponencial en general. De hecho, se puede
+  todav\'ia escribir la ley bajo la forma
   %
   \[
   p_X(x)   =  C(\nu,\Sigma)   \exp\left(  -   \frac{d+\nu}{2}  \log\left(   1  +
@@ -300,6 +303,15 @@ esta familia:
       (x-m)}{\nu} \right)$  \ no es funci\'on  \'unicamente de \  $x$; se quedan
   todo los par\'ametros \ $\nu, \: m, \: \Sigma$. A\'un si un de esos es fijo, y
   no visto como par\'ametro, quedar\'a un par\'ametro en este t\'ermino.
+
+  De hecho,  la excepci\'on notable aparece  cuando~\footnote{Es precisamente de
+    esta forma que la  ley aparece bajo el nombre ``Pearson tipo  IV y VII'' (de
+    hecho, el par\'ametro es $\frac{\nu+d}{2}$  entero en la ley de Pearson tipo
+    VII).  La  diferencia entre  la Pearson tipo  IV o  VII y la  Student-$t$ es
+    s\'util: entre otros, el comportamiento en $\nu \to \infty$ es drasticamente
+    diferente en  cada caso  (no hay convergencia  el la  parametrizaci\'on tipo
+    Pearson).}  $\Sigma = \nu^{-1} R$ \ con $R$ conocido, independiente de $\nu$
+  y $m$ conocido.
 \end{ejemplo}
 
 Se puede tambi\'en que una ley  partenece o no a la familia exponencial, seg\'un
@@ -365,15 +377,16 @@ De las distribuciones que hemos visto:
   negativa,     hipergeometrica      multivaluada~\footnote{En     los     casos
     hipergeometricos, har\'ia falta que sean  fijos respectivamente \ $n, m, k$,
     \ $n,  r, k$  \ y  \ $n,  m, k_1, \ldots  , k_c$  \ y  la leyes  no ser\'ian
-    parametricas mas.}, Student-$t$, Student-$r$ y uniformas~\footnote{Eso viene
-    del hecho de que el soporte depende de los par\'ametros.}.
+    parametricas  mas.},   Student-$t$  en   el  caso  general,   Student-$r$  y
+  uniformas~\footnote{Eso  viene del  hecho de  que  el soporte  depende de  los
+    par\'ametros. O si no, hay que verlas de orden 0.}.
 \end{itemize}
 
 Las   distribuciones   exponenciales   aparecen   frecuentemente   en   f\'isica
 est\'adistica a trav\'es de  la teor\'ia de Boltzmann~\cite{Bol96, Bol98, Gib02,
   LanLif80, MezMon09, Mer10, Mer18}.   Adem\'as, cantidades f\'isicas se derivan
-de la  log-funci\'on partici\'on~\cite{Max67, Gib02,  LanLif80, MezMon09, Mer10,
-  Mer18}:
+de la  log-funci\'on partici\'on~\cite{Max67, Gib02,  LanLif80, Ell06, MezMon09,
+  Mer10, Mer18}:
 %
 \begin{ejemplo}
   En f\'isica estadistica, se enfrente al problema de descripci\'on macroscopico
@@ -384,15 +397,18 @@ de la  log-funci\'on partici\'on~\cite{Max67, Gib02,  LanLif80, MezMon09, Mer10,
     configuraciones} (puede ser discreto o  continuo). En \ $x = \begin{bmatrix}
     x_1 & \cdots & x_d\end{bmatrix}$, cada  \ $x_i$ \ representa el {\em estado}
   de la  \ $i$-\'esima part\'icula (posici\'on,  velocidad, esp\'in,\ldots).  Lo
-  importante es  que a un  tipo de sistema  se asocia una funci\'on  energ\'ia \
-  $\E(x)$. Por ejemplo, en un  sistema sin interacciones, $\displaystyle \E(x) =
-  \sum_{i=1}^d \E_i(x_i)$.  El el caso  del gaz perfecto, $\displaystyle \E(x) =
-  \frac12 m \sum_{i=1}^d x_i^2$ \ donde \ $m$ \ es la masa de cada particula y \
-  $x_i$ \ la velocidad de la \ $i$-\'esima particula (espacio de configuraciones
-  continuo).   En  el {\em  modelo  ferromagn\'etico  de  Ising}, se  consideran
-  part\'iculas  en una  ret\'icula y  \ $x_i  = \pm  1$ \  es el  esp\'in  de la
-  part\'icula \ $i$ (espacio de  configuraciones discreto).  Sometido a un campo
-  magn\'etico  \ $B$,  la  energ\'ia es  dada  por \  $\displaystyle  \E(x) =  -
+  importante es que a un tipo de sistema se asocia una {\em funci\'on energ\'ia}
+  \  $\E(x)$,  llamado  tambi\'en   {\em  hamiltonian}  del  sistema,  debido  a
+  W. R. Hamilton~\footnote{En 1833,  reformul\'o la mec\'anica dicha lagrangiana
+    de   1788  en  t\'ermino   de  energ\'ia~\cite{Ham1834,   Ham1835,  Lag1788,
+      MarRat10}.}. Por ejemplo, en  un sistema sin interacciones, $\displaystyle
+  \E(x) = \sum_{i=1}^d \E_i(x_i)$.  El  el caso del gaz perfecto, $\displaystyle
+  \E(x) =  \frac12 m  \sum_{i=1}^d x_i^2$ \  donde \  $m$ \ es  la masa  de cada
+  particula y \  $x_i$ \ la velocidad de la \  $i$-\'esima particula (espacio de
+  configuraciones continuo).   En el {\em modelo ferromagn\'etico  de Ising}, se
+  consideran part\'iculas en una ret\'icula y \ $x_i = \pm 1$ \ es el esp\'in de
+  la part\'icula  \ $i$  (espacio de configuraciones  discreto).  Sometido  a un
+  campo magn\'etico \  $B$, la energ\'ia es dada por \  $\displaystyle \E(x) = -
   \sum_{(i,j)   \:   \mbox{\tiny   vecinos}}    x_i   x_j   -   B   \sum_{i=1}^d
   x_i$~\cite{Len20, Isi25,  Ons44, LanLif80, MezMon09, Mer10,  Mer18}.  Se puede
   poner  pesos \  $J_{i,j}$ \  en  cada vecinos,  positivos para  interracciones

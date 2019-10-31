@@ -39,12 +39,12 @@ imagenes~\cite{Gol76, RanWei93, RanWei95, ZozVig10, Zoz12}, entre otros.
 Empezamos  por  la  definici\'on,  antes  de  ir  m\'as  all\'a  estudiando  sus
 propiedades remarcables.
 
-\begin{definicion}[Vector esf\'ericamente invariante]
+\begin{definicion}[Vector esfericamente invariante]
   Sea  \  $X$  \  vector   aleatorio  $d$-dimensional  real.   $X$  \  es  dicho
-  esf\'ericamente  invariante,  o   rotacionalmente  invariante,  o  a  simetr\'ia
-  esf\'erica, o de distribuci\'on esf\'erica \ si para cualquier matriz ortogonal (o
-  de rotaci\'on)~\footnote{Recordarse que \ $O$  \ es ortogonal o de rotaci\'on
-    si \ $O O^t = O^t O = I$.} \ $O$,
+  esfericamente  invariante,  o   rotacionalmente  invariante,  o  a  simetr\'ia
+  esf\'erica,  o  de  distribuci\'on  esf\'erica  \  si  para  cualquier  matriz
+  ortogonal (o de rotaci\'on)~\footnote{Recordarse que \ $O$ \ es ortogonal o de
+    rotaci\'on si \ $O O^t = O^t O = I$.} \ $O$,
   %
   \[
   O  X  \: \egald  \: X
@@ -512,15 +512,7 @@ simetr\'ia el\'iptica:
 En particular, la proyecci\'on de  un vector a simetr\'ia el\'iptica queda el\'iptica
 en  torno a  la proyecci\'on  del vector  posici\'on, con  la  misma generadora
 caracter\'istica.
-%
-%\begin{definici\'on}
-%  En lo que sigue, se notar\'a
-%  %
-%  \[
-%
-%  \]
-%
-%\end{definici\'on}
+
 
 Eso  v\'incula  tambi\'en  un  vector  a  simetr\'ia  el\'iptica  con  cualquier
 proyecci\'on:
@@ -561,12 +553,133 @@ proyecci\'on:
   teorema~\ref{Teo:MP:GeneradorasCaracteristicas}.
 \end{proof}
 
+Si el caract\'er el\'iptico se conserva por transformaci\'on lineal, no es el caso en general por adici\'on:
+%
+\begin{teorema}
+  Sean   \    $X   \sim   \ED(m_X,\Sigma_X,\varphi_X)$    \   e   \    $Y   \sim
+  \ED(m_Y,\Sigma_Y,\varphi_Y)$  \ independientes  con $\varphi_X$  y $\varphi_Y$
+  diferenciables (por lo menos por partes). Entonces
+  %
+  \[
+  X + Y \sim \ED(m,\Sigma,\varphi) \quad \Leftrightarrow \quad \left\{
+    \begin{array}{l}  \Sigma_Y  \propto  \Sigma_X  \quad \mbox{o}\\  X,  Y  \sim
+      \N \end{array} \right.
+  \]
+  %
+  con $\propto$ significando ``proporcional a''.
+  \end{teorema}
+  %
+\begin{proof}
+  Claramente,     si     $X$     \     e     $Y$     son     gaussianas,     del
+  teorema~\ref{Teo:MP:StabilidadGaussiana}    $X+Y$    es    guassiana,   y    a
+  continuaci\'on a simetr\'ia el\'iptica.  Tambi\'en, si $\Sigma_X$ y $\Sigma_Y$
+  son proporcionales, por reparametrizaci\'on de $\varphi_Y$ por ejemplo, se las
+  puede  considerar  iguales  (ver  indeterminancia  bajo  un  factor  escalar).
+  Entonces  $\Phi_{X+Y}(\omega)  = e^{\imath  \,  \omega^t m_X}  \varphi_X\left(
+    \omega^t   \Sigma_X   \omega\right)    \,   e^{\imath   \,   \omega^t   m_Y}
+  \varphi_Y\left( \omega^t  \Sigma_X \omega\right) \equiv  e^{\imath \, \omega^t
+    (m_X+m_Y)}  \varphi\left(  \omega^t  \Sigma_X  \omega\right)$:  $X+Y$  es  a
+  simetr\'ia el\'iptica.
+
+  Reciprocamente,  suponemos  que $X+Y$  es  a  simetr\'ia el\'iptica.  Entonces
+  existe  necesariamente una matriz  $\Sigma \in  \P_d^+(\Rset)$ y  $\varphi \in
+  \PD_d$ tal que
+  %
+  \[
+  \varphi_X\left(  \omega^t \Sigma_X  \omega\right) \,  \varphi_Y\left( \omega^t
+    \Sigma_Y \omega\right) = \varphi\left( \omega^t \Sigma \omega\right)
+  \]
+  %
+  Introducemos la matriz
+  %
+  \[
+  R_Y  = \Sigma_X^{-\frac12} \Sigma_Y  \Sigma_X^{-\frac12} \quad  \mbox{su forma
+    diagonal} \quad = Q \Delta_Y Q^t
+  \]
+  %
+  Siendo  $R_Y \in  P_d^+(\Rset)$ \  se diagonaliza  con $Q$  ortogonal  bajo la
+  forma~\cite{Bha97, Bha07, HorJoh13}
+  %
+  \[
+  R_Y = Q \Lambda_Y Q^t = Q \diag(\lambda) Q^t
+  \]
+  %
+  Donde $\lambda$ es el vector conteniendo los autovalores de $R_Y$. Sean ahora
+  %
+  \[
+  R  =  Q^t \Sigma_X^{-\frac12}  \Sigma  \Sigma_X^{-\frac12}  Q \qquad  \mbox{y}
+  \qquad \omega = \Sigma_X^{-\frac12} Q, \quad v \in \Rset^d
+  \]
+  %
+  Entonces,  si $X+Y$  es  a  simetr\'ia eli\'iptica,  la  relaci\'on entre  las
+  generadoras caracter\'isticas debe tomar la forma
+  %
+  \[
+  \varphi_X\left( v^t v \right)  \, \varphi_Y\left( \omega^t \Lambda_Y v \right)
+  = \varphi\left( v^t R v \right)
+  \]
+  %
+  Diferenciendo en $v$ se obtiene necesariamente
+  %
+  \[
+  \left( \varphi_X'\left( v^t v  \right) \, \varphi_Y\left( \omega^t \Lambda_Y v
+    \right) \,  I + \varphi_X\left(  v^t v \right) \,  \varphi_Y'\left( \omega^t
+      \Lambda_Y  v \right)  \,  \Lambda_Y \right)  v  = \varphi'\left(  v^t R  v
+  \right) R v
+  \]
+  %
+  Tomando $v =  \un_i$ se ve que  $R$ debe ser diagonal, $R  = \diag(r)$ \SZ{Ver
+    bien si no  puede occurir un ``concurso de  circonstancia'' anulando cada lado
+    de la  igualidad}.  A  continuaci\'on, para  cualquier $i =1  , \ldots  , d$
+  tenemos
+  %
+  \[
+  \varphi_X'\left( v^t v \right) \, \varphi_Y\left( \omega^t \Lambda_Y v \right)
+  +  \lambda_i \,  \varphi_X\left( v^t  v \right)  \,  \varphi_Y'\left( \omega^t
+    \Lambda_Y v \right) = r_i \, \varphi'\left( v^t R v \right)
+  \]
+  %
+  Para cualquier $i \ne j$, por combinaci\'on se obtiene entonces
+  %
+  \[
+  (r_j-r_i) \varphi_X'\left( v^t v \right) \, \varphi_Y\left( \omega^t \Lambda_Y
+    v \right) + (\lambda_i r_j - \lambda_j r_i) \, \varphi_X\left( v^t v \right)
+  \, \varphi_Y'\left( \omega^t \Lambda_Y v \right) = 0
+  \]
+  %
+  es decir
+  %
+  \[
+  (r_j-r_i) \, \frac{\varphi_X'\left( v^t v \right)}{\varphi_X\left( v^t v \right)}
+  +  (\lambda_i r_j - \lambda_j r_i) \,  \frac{\varphi_Y'\left( \omega^t
+    \Lambda_Y v \right)}{\varphi_Y\left( \omega^t
+    \Lambda_Y v \right)} = 0
+  \]
+  %
+  Tomamos $v  \in \Sset_d, \:\: w  > 0$ dando  el prim\'er t\'ermino de  la suma
+  constante   as\'i   que  el   secundo   debe   necesariamente  ser   constante
+  tambi\'en. Necesariamente, dos casos aparecen:  (i) $\forall \: i \ne j, \quad
+  \lambda_i  r_j  =  \lambda_j  r_i$,  es  decir $\forall  \:  i  \ne  j,  \quad
+  \frac{\lambda_j}{\lambda_i} = \frac{r_j}{r_i}$,  \ie $R \propto \Lambda_Y$; en
+  otras  palabras,  $\Sigma  \propto  \Sigma_Y$;  en adici\'on,  se  debe  tener
+  tambi\'en $r_j = r_i$, \ie $R  \propto I$, es decir $\Sigma \propto \Sigma_X$;
+  en  conclusi\'on, necesariamente $\Sigma_Y  \propto \Sigma_X$  y vimos  que en
+  este caso $X+Y$ es efectivamente  a simetr\'ia el\'iptica.  (ii) al contrario,
+  notando que  si $\Lambda_Y  \not\propto I$, \  $v^t \Delta_Y v$  describe todo
+  $\Rset_+$, lo que impone que $\frac{\varphi_Y'}{\varphi_Y}$ debe ser constante
+  sobre $\Rset_+$.  Es  decir que, resolviendo la ecuaci\'on  diferencial con el
+  v\'inculo que $\varphi_Y(0) = 1$,  la generadora tiene necesariamente la forma
+  $\varphi_Y(w) =  e^{-\alpha w}$, generadora de  una gaussiana.  Intercambiando
+  los roles de $X$ e $Y$ (o tomando $v$ tal que $v^t \Lambda_Y v = w > 0$ fijo),
+  lo mismo occure para $\varphi_X$, lo que cierra la prueba.
+\end{proof}
+
 Vimos   en   las  secciones~\ref{Sssec:MP:StudentT}   y~\ref{Sssec:MP:StudentR},
 tratando de  vectores de  distribuci\'on Student-$t$ y  -$r$, situaciones  en la
-cuales la matriz  de covarianza es (propporcional a)  la identidad, mientras que
+cuales la  matriz de covarianza es  (proporcional a) la  identidad, mientras que
 las componentes del  vector no son independientes, contrariamente  a lo que pasa
-en el caso gaussiano.  De hecho este resultado es general en el marco de vectores
-a sim\'etria el\'iptica~\cite{BilBre99, Max67}:
+en  el caso  gaussiano.   De hecho  este resultado  es  general en  el marco  de
+vectores a sim\'etria el\'iptica~\cite{BilBre99, Max67}:
 %
 \begin{teorema}[Maxwell-Hershell]\label{Teo:MP:MaxwellHershell}
   Sea \ $X \sim \ED(m,I,\varphi_X)$. Las componentes $X_i$ son independientes si
@@ -682,6 +795,10 @@ tambi\'en~\cite{KeiSte74, Tei60}) y se enuncia como sigue:
   de un vector aleatorio y la funci\'on caracter\'istica. De \ $X \egald R \, U$
   \ y \ $\| U \| = 1$ \ viene \ $R \egald \| X \|$.
 \end{proof}
+%
+Se puede referirse tambi\'en a \cite[Prop.~4.10]{BilBre99} para tener una prueba
+alternativa      basado     sobre      el     teorema      de     Cram\'er-Wold,
+Teo.~\ref{Teo:MP:CramerWold}.
 
 De esta escritura, se puede ir un paso m\'as all\'a~\cite[Teo~2.3]{FanKot90}:
 %
@@ -1119,7 +1236,7 @@ como       lo        prob\'o       Sch{\oe}nberg~\cite[Teo.~2]{Sch38}       (ver
 tambi\'en~\cite[Teo.~2]{SteVan05},            \cite[Lem.~2.2]{Yao73}           o
 \cite[Teo.~1]{Kan94}).
 %
-\begin{teorema}[Sch{\oe}berg'38 -- a partir de la generadora caracter\'istica]
+\begin{teorema}[Sch{\oe}nberg'38 -- a partir de la generadora caracter\'istica]
 \label{Teo:MP:SchoenbergCaracteristica}
 %
   Sea \ $X \sim  \ED\left( m , \Sigma , \varphi_X \right)$.  Entonces $X$ es una
@@ -1220,7 +1337,7 @@ y
 \right\}
 \]
 %
-\begin{teorema}[Sch{\oe}berg'38 -- a partir de la generadora de densidad]
+\begin{teorema}[Sch{\oe}nberg'38 -- a partir de la generadora de densidad]
 \label{Teo:MP:SchoenbergDensidad}
 %
   Sea \ $X \sim \ED\left( m , \Sigma , d_X \right)$.  Entonces $X$ es una mezcla
@@ -2061,13 +2178,66 @@ matriz caracter\'istica \ $\Sigma$:
 \end{itemize}
 
 
-\SZ{
 % --------------------------------- Familia  eliptica matricial
 
 \subsubseccion{Caso matriz variado en unas palabras}
 \label{Ssec:MP:FamiliaElipticaMatriz}
-}
 
+% Fang Zang: Generalized Multivariate Analysis
+La  extensi\'on  matriz  variada  de   vector  a  simetr\'ia  el\'iptica  no  es
+trivial. De hecho, hay pocas resultados en la literatura y aparece esencialmente
+en  contexto de estimaci\'on  de matriz  de covarianza~\cite[\S.~13.2]{BilBre99}
+o~\cite{Tyl82, GruRoc90,  GupVar94, GupVar95, FanLi99,  CarGon16}.  Tipicamente,
+si  uno sale de  \ $X_1,  \ldots, X_n$  \ vectores  aleatorios $d$-dimensionales
+independientes,  de misma ley,  y suponemos  la media  cero para  simplificar el
+ejemplo, un  estimador natural de la matriz  de covarianza \ $\Sigma_WX$  \ es \
+$\displaystyle \widehat{\Sigma}_X =  \frac{1}{n} \sum_{i=1}^n X_i X_i^t$, matriz
+de $S_d(\Rset)$ (y a\'un de $P_d(\Rset)$, y de $P_d^+(\Rset)$ casi siempre si $n
+\le  d$). Ahora,  si  los $X_i$  son a  sim\'etria  elipt\'ica, $W$  va a  tener
+simetr\'ia por cambio  de escala y rotaciones. M\'as  precisamente, si se supone
+$X_i$ esf\'erica,  para cualquier  rotaci\'on $O$ se  tiene $O X_i  \egald X_i$,
+dando $O  \widehat{\Sigma}_X O^t \egald \widehat{\Sigma}_X$.  Es precisamente lo
+que va a dar la noci\'on de matriz a simetr\'ia esf\'erica, y luego el\'iptica.
+
+\begin{definicion}[Matriz esfericamente invariante]
+  Sea  $X$ matriz  aleatoria  definida sobre  $\X  = S_d(\Rset)$.  $X$ es  dicha
+  esfericamente  invariante,  o   rotacionalmente  invariante,  o  a  simetr\'ia
+  esf\'erica,  o  de  distribuci\'on  esf\'erica  \  si  para  cualquier  matriz
+  ortogonal \ $O$ \ se tiene
+  %
+  \[
+  O  X O^t  \: \egald  \: X
+  \]
+  %
+\end{definicion}
+%
+Naturlamente, se  extiende como en el  caso de vectores con  estiramientos y una
+translaci\'on:
+%
+\begin{definicion}[Vector a simetr\'ia el\'iptica]
+  Sea \ $X$ \ matriz aleatoria $d$-dimensional definida sobre $\X = S_d(\Rset)$.
+  $X$  \ es dicha  a simetr\'ia  el\'iptica, o  elipticalmente invariante,  o de
+  distribuci\'on el\'iptica, en  torno a \ $M \in  \M_{d,d}(\Rset)$, \ si existe
+  una  matriz  \ $\Sigma  \in  P_d^+(\Rset)$ \  tal  que  para cualquier  matriz
+  ortogonal \ $O$,
+  %
+  \[
+  O \, \Delta^{-\frac12} \, Q^t \left( X - m \right) Q \, \Delta^{-\frac12} \, O
+  \:  \egald   \:  \Delta^{-\frac12}  \,  Q^t   \left(  X  -  m   \right)  Q  \,
+  \Delta^{-\frac12}
+  \]
+  %
+  donde la  matriz diagonal \ $\Delta  > 0$ \ es  la matriz de  autovalores de \
+  $\Sigma$ \ y \ $Q$ \ la matriz de los autovectores correspondientes, \ $\Sigma
+  = Q \Delta Q^t$.  Dicho de otra manera, \ $\Delta^{-\frac12} Q^t  \left( X - m
+  \right) Q \Delta^{-\frac12}$ \ es a simetr\'ia esf\'erica.
+
+  Llamaremos tambi\'en  $m$ \  {\em par\'ametro  de posici\'on} y  \ la  matriz \
+  $\Sigma$ \ {\em matriz caracter\'istica}.
+\end{definicion}
+
+\SZ{ADELANTAR}
+ 
 \vspace{2cm}
 
 \centerline{\underline{\hspace{10cm}}}
