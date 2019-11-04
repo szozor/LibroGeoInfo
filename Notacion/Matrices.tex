@@ -1,18 +1,18 @@
 \begin{notation}{Vectores, matrices, tensores}
 %
-$\M_d(\Kset) \equiv \Kset^d$ & Espacio de vector \ $M = \protect\begin{bmatrix} M_1\\
+$\Mat_d(\Kset) \equiv \Kset^d$ & Espacio de vector \ $M = \protect\begin{bmatrix} M_1\\
 \vdots\\ M_d \protect\end{bmatrix}$ \ con \ $M_i \in \Kset$ \ y \ $\Kset = \Rset$ \ o \
 $\Cset$.\\[2.5mm]
 \hline
 %
-$\M_{d,d'}(\Kset)$ & Espacio de matrices \ $M$, \ de tama\~no \ $d \times d'$, \
-de componentes \ $M_{i,j} \in \Kset$;\vspace{1mm}\newline $\M_{d,1} \equiv
+$\Mat_{d,d'}(\Kset)$ & Espacio de matrices \ $M$, \ de tama\~no \ $d \times d'$, \
+de componentes \ $M_{i,j} \in \Kset$;\vspace{1mm}\newline $\Mat_{d,1} \equiv
 \Kset^d$ as\'i que se usar\'a esta notaci\'on cuando~\footnote{Si una
 dimensi\'on es $1$, se saca de las dimensiones (caso degenerado).} \ $d, d' >
 1$.\\[2.5mm]
 \hline
 %
-$\M_{d_1 ,  \ldots , d_K}(\Kset)$  & Espacio de tensores~\footnote{De  hecho, el
+$\Mat_{d_1 ,  \ldots , d_K}(\Kset)$  & Espacio de tensores~\footnote{De  hecho, el
   termino ``tensor''  tiene una  significaci\'on f\'isica. El  termino ``tabla''
   ser\'ia m\'as adecuado. Pero en este  libro, usaremos tensor, del hecho que se
   usa frecuentemente,  por abuso de denominaci\'on.}  \ $M$, \ de  orden $K$, de
@@ -25,10 +25,10 @@ $\cdot^*$ & Conjugaci\'on, componente por componente, $M^*$ \ es de componentes 
  \ $M_{i_1,\ldots,i_K}^*$\\[2.5mm]
 \hline
 %
-$\cdot^t$ & Transpuesta, $\forall M \in \M_d(\Kset), \: M^t =
+$\cdot^t$ & Transpuesta, $\forall M \in \Kset^d, \: M^t =
 \protect\begin{bmatrix} M_1 & \cdots & M_d \protect\end{bmatrix}$ \ y $ \forall
-M \in \M_{d,d'}(\Kset)$, $M^t$ \ es de componente \ $(i,j)$-\'esima \
-$M_{i,j}$\\[2.5mm]
+M \in \Mat_{d,d'}(\Kset)$, $M^t$ \ es de componente \ $(i,j)$-\'esima \
+$M_{j,i}$\\[2.5mm]
 \hline
 %
 $\cdot^\dag$ & Transconjugada, $M^\dag = \left( M^* \right)^t$\\[2.5mm]
@@ -49,7 +49,7 @@ componente \  $\imag{M_{i_1,\ldots,i_K}}$\\[2.5mm]
 % producto  de Kronecker \  $A \otimes  B$ \  es el  tensor bloc  de $\Kset^{d_1
 %   \times  \cdots  \times d_K,d'_1  \times  \cdots  \times  d'_L}$, de  bloc  \
 % $(i_1,\ldots)$-\'esima  \  $A_{i,j}  B$,\vspace{1mm}\newline  para  \  $A  \in
-% \M_{d,d'}(\Kset), \: B \in \M_{n,n'}(\Kset)$, tenemos \ $A \otimes B \in \M_{d
+% \Mat_{d,d'}(\Kset), \: B \in \Mat_{n,n'}(\Kset)$, tenemos \ $A \otimes B \in \Mat_{d
 %   n, d' n'}(\Kset)$ \ tal que,\vspace{1mm}\newline
 %%
 %$
@@ -66,12 +66,12 @@ $\otimes$  &  Producto   tensorial  o  producto  externo~\footnote{Se  encuentra
   matrices por ejemplo \ $A \otimes B$  \ ser\'a la matriz de componentes bloc \
   $A_{i,j}  B$. De hecho,  es equivalente  a ``desarollar''  el tensor  de forma
   matricial,   o  equivalente  de   la  vectorizaci\'on   de  una   matriz  (ver
-  ej.~\cite{MagNeu79}).}:  para $A \in  \M_{d_1,\ldots,d_K}(\Kset), \quad  B \in
-\M_{d'_1,\ldots,d'_K}(\Kset)$ \  el producto  externo \ $A  \optimes B$ \  es el
+  ej.~\cite{MagNeu79}).}:  para $A \in  \Mat_{d_1,\ldots,d_K}(\Kset), \quad  B \in
+\Mat_{d'_1,\ldots,d'_K}(\Kset)$ \  el producto  externo \ $A  \optimes B$ \  es el
 tensor      de      orden      \      $K+L$     \      de      componente      \
 $(i_1,\ldots,i_K,j_1,\ldots,j_L)$-\'esima          \         $A_{i_1,\ldots,i_K}
-B_{j_1,\ldots,j_L} $.\vspace{1mm}\newline Nota: para \ $a \in \M_d(Kset), \quad
-b \in \M_{d'}(\Kset)$, \ $a \otimes b = a b^t$.\\[2.5mm]
+B_{j_1,\ldots,j_L} $.\vspace{1mm}\newline Nota: para \ $a \in Kset^d, \quad
+b \in \Kset^{d'}$, \ $a \otimes b = a b^t$.\\[2.5mm]
 \hline
 %
 $\cdot^{\otimes k}$ & $k$ veces el producto externo, $A^{\otimes k}
@@ -79,40 +79,58 @@ $\cdot^{\otimes k}$ & $k$ veces el producto externo, $A^{\otimes k}
 veces}}$.\\[2.5mm]
 \hline
 %
-$S_d(\Kset)$ & Conjunto de matrices de \ $\Kset$ \ sim\'etricas, \quad $S_d(\Kset) =
-\left\{ M \in \M_{d,d}(\Kset) \tq \, M^t = M \right\}$.\\[2.5mm]
+$\Sim_d(\Kset)$ & Conjunto de matrices de \ $\Kset$ \ sim\'etricas, \quad $\Sim_d(\Kset) =
+\left\{ M \in \Mat_{d,d}(\Kset) \tq \, M^t = M \right\}$.\\[2.5mm]
 \hline
 %
-$H_d(\Cset)$ & Conjunto de matrices de \ $\Cset$ \ herm\'iticas (a simetr\'ia
-hermitica),\vspace{1mm}\newline $H_d(\Cset) = \left\{ M \in \M{d,d}(\Cset) \tq \, M^\dag = M
-\right\}$.\vspace{1mm}\newline Notar que se tiene \ $H_d(\Rset) \equiv
-S_d(\Rset)$.\\[2.5mm]
+$\Her_d(\Cset)$ & Conjunto de matrices de \ $\Cset$ \ herm\'iticas (a simetr\'ia
+hermitica),\vspace{1mm}\newline $\Her_d(\Cset) = \left\{ M \in \Mat_{d,d}(\Cset) \tq \, M^\dag = M
+\right\}$.\vspace{1mm}\newline Notar que se tiene \ $\Her_d(\Rset) \equiv
+\Sim_d(\Rset)$.\\[2.5mm]
 \hline
 %
-$P_d(\Kset)$ & Conjunto de matrices herm\'iticas semidefinida
-positivas:\vspace{1mm}\newline $P_d(\Kset) = \left\{ M \in H_d(\Kset) \tq
+$\Ort_d(\Rset)$ & Conjunto de matrices ortogonales (groupo
+ortogonal):\vspace{1mm}\newline $\Ort_d(\Rset) = \left\{ Q \in \Mat_{d,d}(\Rset) \tq
+Q Q^t = Q^t Q = I \right\}$.\\[2.5mm]
+\hline
+%
+$\Unit_d(\Cset)$ & Conjunto de matrices unitarias:\vspace{1mm}\newline
+$\Unit_d(\Cset) = \left\{ Q \in \Mat_{d,d}(\Rset) \tq Q Q^\dag = Q^\dag Q = I
+\right\}$.\\[2.5mm]
+\hline
+%
+$\perm_d(\Kset)$ & Conjunto de las matrices de permutaciones de \
+$\Mat_{d,d}(\Kset)$\vspace{1mm}\newline $\displaystyle \perm_d(\Kset) = \left\{ \Pi =
+\protect\begin{bmatrix} \un_{\sigma(1)} & \cdots &
+\un_{\sigma(d)} \end{bmatrix}^t\protect = \sum_{i=1}^d \un_i \un_{\sigma(i)}^t, \quad \sigma \in \perm_d
+\right\}$\vspace{1mm}\newline Tiene exactamente un $1$ en cada linea y en cada
+columna, y $0$ en los otros componentes.\vspace{1mm}\newline Notar: \quad $\forall \: \Pi \in \perm_d(\Kset), \quad \Pi^{-1} = \Pi^t$.\\[2.5mm]
+\hline
+%
+$\Pos_d(\Kset)$ & Conjunto de matrices herm\'iticas semidefinida
+positivas:\vspace{1mm}\newline $\Pos_d(\Kset) = \left\{ M \in H_d(\Kset) \tq
 \forall \, x \in \Kset^d, \: x^\dag M x \ge 0 \right\}$.\\[2.5mm]
 \hline
 %
-$P_d^+(\Kset)$ & Conjunto de matrices herm\'iticas definida
-positivas:\vspace{1mm}\newline $P_d^+(\Kset) = \left\{ M \in H_d(\Kset) \tq
+$\Pos_d^+(\Kset)$ & Conjunto de matrices herm\'iticas definida
+positivas:\vspace{1mm}\newline $\Pos_d^+(\Kset) = \left\{ M \in H_d(\Kset) \tq
 \forall \, x \ne 0 \in \Kset^d, \: x^\dag M x > 0 \right\}$.\\[2.5mm]
 \hline
 %
 $\P_{d,k}(\Kset)$ & Conjunto~\footnote{\SZ{Este conjunto es un convexo de
-$P_d(\Kset)^k$. Pero todavia no me queda claro que estructura tiene. Si no
+$\Pos_d(\Kset)^k$. Pero todavia no me queda claro que estructura tiene. Si no
 restringimos a matrices diagonales, es un
 simplex~\cite[p.~329]{ParisRehacek_QuantumStateEstimation}. Si no, no le
-se.}\label{foot:Notaciones:POVM}} de $k$-uplet de matrices de \ $P_d(\Kset)$ \
+se.}\label{foot:Notaciones:POVM}} de $k$-uplet de matrices de \ $\Pos_d(\Kset)$ \
 sumando a la identidad~\footnote{Se dice que el $k$-uplet satisface a la {\em
 resoluci\'on de la identidad}, o a la {\em relaci\'on de
 completud}.\label{foot:Notaciones:ResolucionlIdentitad}},\vspace{1mm}\newline $\displaystyle
-\P_{d,k}(\Kset) = \left\{ \left( M_1 , \ldots , M_k \right) \in P_d(\Kset)^k \tq
+\P_{d,k}(\Kset) = \left\{ \left( M_1 , \ldots , M_k \right) \in \Pos_d(\Kset)^k \tq
 \sum_{i=1}^k M_i = I  \right\}$
 % \SZ{$(k-1)$-simplex  estandar}~\footnote{\SZ{Politopio,  convex hull  $\left\{
 %       \un_i   \right\}_{i=1}^k$}}    \SZ{de   \   $Rset_+^k$,   i.e.,}\newline
 % \SZ{$\displaystyle  \Simp_{k-1} =  \left\{ (M_1  ,  \ldots ,  M_k) \in  \left(
-%       P_d^+(\Rset) \right)^k, \:  \sum_{i=1}^k M_i = I \right\}$  donde $I$ es
+%       \Pos_d^+(\Rset) \right)^k, \:  \sum_{i=1}^k M_i = I \right\}$  donde $I$ es
 %   la  identidad (ver  m\'as abajo)}\newline  \SZ{Que suman  a la  identidad es
 %   conocido  como {\em  resoluci\'on  de  la identidad}  o  {\em relaci\'on  de
 %     completud}}~\footnote{\SZ{De  hecho, este  nombre viene  usualmente  de la
@@ -120,33 +138,17 @@ completud}.\label{foot:Notaciones:ResolucionlIdentitad}},\vspace{1mm}\newline $\
 \\[2.5mm]
 \hline
 %
-$\O_d(\Rset)$ & Conjunto de matrices ortogonales (groupo ortogonal):\vspace{1mm}\newline $\O_d(\Rset) = \left\{ Q \in \M_{d,d}(\Rset) \tq
-Q Q^t = Q^t Q = I \right\}$.\\[2.5mm]
-\hline
-%
-$\U_d(\Cset)$ & Conjunto de matrices unitarias:\vspace{1mm}\newline $\U_d(\Cset) = \left\{ Q \in \M_{d,d}(\Rset) \tq
-Q Q^\dag = Q^\dag Q = I \right\}$.\\[2.5mm]
-\hline
-%
-$\perm_d(\Kset)$ & Conjunto de las matrices de permutaciones de \
-$\M_{d,d}(\Kset)$\vspace{1mm}\newline $\displaystyle \perm_d(\Kset) = \left\{ \Pi =
-\protect\begin{bmatrix} \un_{\sigma(1)} & \cdots &
-\un_{\sigma(d)} \end{bmatrix}^t\protect = \sum_{i=1}^d \un_i \un_{\sigma(i)}^t, \quad \sigma \in \perm_d
-\right\}$\vspace{1mm}\newline Tiene exactamente un $1$ en cada linea y en cada
-columna, y $0$ en los otros componentes.\vspace{1mm}\newline Notar: \quad $\forall \: \Pi \in \perm_d(\Kset), \quad \Pi^{-1} = \Pi^t$.\\[2.5mm]
-\hline
-%
 $\P_{d,k}^+(\Kset)$ & Conjunto~\footref{foot:Notaciones:POVM} de $k$-uplet de
-matrices de \ $P_d^+(\Kset)$ \ sumando a la
+matrices de \ $\Pos_d^+(\Kset)$ \ sumando a la
 identidad~\footref{foot:Notaciones:ResolucionlIdentitad},\vspace{1mm}\newline $\displaystyle
-\P_{d,k}^+(\Kset) = \left\{ \left( M_1 , \ldots , M_k \right) \in P_d^+(\Kset)^k
+\P_{d,k}^+(\Kset) = \left\{ \left( M_1 , \ldots , M_k \right) \in \Pos_d^+(\Kset)^k
 \tq \sum_{i=1}^k M_i = I \right\}$\\[2.5mm]
 \hline
 %
-$\ge$ & $A \ge B$ \ significa que \ $(A - B) \in P_d(\Kset)$\\[2.5mm]
+$\ge$ & $A \ge B$ \ significa que \ $(A - B) \in \Pos_d(\Kset)$\\[2.5mm]
 \hline
 %
-$>$ & $A > B$ \ significa que \ $(A - B) \in P_d^+(\Kset)$\\[2.5mm]
+$>$ & $A > B$ \ significa que \ $(A - B) \in \Pos_d^+(\Kset)$\\[2.5mm]
 \hline
 %
 $\un$ & Vector de componentes iguales a 1, \ $\un = \protect\begin{bmatrix} 1\\
@@ -168,7 +170,7 @@ $\displaystyle \diag(v) = \sum_{i=1}^d \left( \un_i \un_i^t \right) v_i =
 %
 %$\diag$ & Matriz diagonal (bloc) con el argumento en su
 %diagonal,\vspace{1mm}\newline para \ $\displaystyle V = (V_1,\ldots,V_n) \in
-%\M_{d_1,d_1}(\Kset) \times \cdots \times \M_{d_n,d_n}(\Kset),$\vspace{1mm}\newline
+%\Mat_{d_1,d_1}(\Kset) \times \cdots \times \Mat_{d_n,d_n}(\Kset),$\vspace{1mm}\newline
 %$\diag(V) = \sum_{i=1}^d \left( \un_i \un_i^t \right) \otimes V_i =
 %\protect\begin{bmatrix}
 %  V_1  &   0    & \cdots &    0   \\
@@ -192,10 +194,10 @@ $I_d \quad , \quad I$ & Matriz cuadrada $d \times d$, identidad, \ $I \equiv I_d
 \hline
 %
 %$J$ & Matriz de comutaci\'on~\footnote{M\'as generalmente es definida sobre \
-%$\M_{d d',d d'}(\Kset)$ \ y los bloques son en \
-%$\M_{d,d'}(\Kset)$~\cite{MagNeu79, NeuWan83}.\label{Foot:MP:ComutacionMatriz}} de
-%\ $\M_{d^2,d^2}(\Kset)$ \ de bloques \ $J_{i,j} = \un_j \un_i^t \in
-%\M_{d,d}(\Kset)$ \ poniendo la componente (linea) \ $i$-\'esima de un vector
+%$\Mat_{d d',d d'}(\Kset)$ \ y los bloques son en \
+%$\Mat_{d,d'}(\Kset)$~\cite{MagNeu79, NeuWan83}.\label{Foot:MP:ComutacionMatriz}} de
+%\ $\Mat_{d^2,d^2}(\Kset)$ \ de bloques \ $J_{i,j} = \un_j \un_i^t \in
+%\Mat_{d,d}(\Kset)$ \ poniendo la componente (linea) \ $i$-\'esima de un vector
 %(matriz) \ en la componente (linea) \ $j$-\'esima,\vspace{1mm}\newline
 %%
 %$ \displaystyle J  = \sum_{i,j=1}^d \left( \un_i \un_j^t  \right) \otimes \left(
@@ -208,7 +210,7 @@ $I_d \quad , \quad I$ & Matriz cuadrada $d \times d$, identidad, \ $I \equiv I_d
 %\hline
 %%
 %$K$ & Matriz de no-comutaci\'on~\footref{Foot:MP:ComutacionMatriz} de \
-%$\M_{d^2,d^2}(\Kset)$ \ de bloques \ $K_{i,j} = \un_i \un_j^t \in \M_{d,d}(\Kset)$
+%$\Mat_{d^2,d^2}(\Kset)$ \ de bloques \ $K_{i,j} = \un_i \un_j^t \in \Mat_{d,d}(\Kset)$
 %\ poniendo la componente (linea) \ $j$-\'esima de un vector (matriz) \ en la
 %posici\'on (linea) \ $i$-\'esima,\vspace{1mm}\newline
 %%
@@ -221,7 +223,7 @@ $I_d \quad , \quad I$ & Matriz cuadrada $d \times d$, identidad, \ $I \equiv I_d
 %\protect\end{bmatrix}$.\vspace{1mm}\\[2.5mm]
 %\hline
 %
-$G^{(i,j)}$ & Matriz de agregaci\'on de \ $\M_{k-1,k}(\Kset)$. Para $i < j$,
+$G^{(i,j)}$ & Matriz de agregaci\'on de \ $\Mat_{k-1,k}(\Kset)$. Para $i < j$,
 multiplicado a un vector $x \in \Kset^k$ se saca la $j$-\'esima componente de
 $x$ y se reemplaza la $i$-\'esima por $x_i + x_j$ y similarmente por simetr\'ia
 para $i > j$:\vspace{1mm}\newline $\forall \: i < j, \quad G^{(i,j)} =
@@ -231,7 +233,7 @@ G^{(i,j)}$.\vspace{1mm}\\[2.5mm]
 \hline
 %
 $\Tr$ & Traza de una matriz (cuadrada) de \
-$\M_{d,d}(\Kset)$,\vspace{1mm}\newline $\displaystyle \Tr M = \sum_{i=1}^d
+$\Mat_{d,d}(\Kset)$,\vspace{1mm}\newline $\displaystyle \Tr M = \sum_{i=1}^d
 M_{i,i}$.\vspace{1mm}\\[2.5mm]
 \hline
 %
@@ -242,7 +244,7 @@ $\varepsilon(\sigma)$
 \ es la signatura de la permutaci\'on \ $\sigma$, $\displaystyle
 \varepsilon(\sigma) = \prod_{1 \le i \le j \le d} \sign\left( \sigma(j) -
 \sigma(i) \right)$ \ con \ $\sign$ \ funci\'on ``signo''.} de una matriz
-(cuadrada) de \ $\M_{d,d}(\Kset)$,\vspace{1mm}\newline $\displaystyle \det M =
+(cuadrada) de \ $\Mat_{d,d}(\Kset)$,\vspace{1mm}\newline $\displaystyle \det M =
 \sum_{\sigma \in \perm_d} \varepsilon(\sigma) \prod_{i=1}^d
 M_{\sigma(i),i}$\vspace{1mm}\newline con \ $\displaystyle
 \varepsilon(\sigma) = \prod_{1 \le i \le j \le d} \sign\left( \sigma(j) -
@@ -250,7 +252,7 @@ M_{\sigma(i),i}$\vspace{1mm}\newline con \ $\displaystyle
 \hline
 %
 $\left| \cdot \right|$ & Valor absoluto del determinante de una matriz
-(cuadrada) de $\M_{d,d}(\Kset)$.\\[2.5mm]
+(cuadrada) de $\Mat_{d,d}(\Kset)$.\\[2.5mm]
 \hline
 %
 $\cdot^{-1}$ & Matriz inversa (cuando existe), \ $M M^{-1} = M^{-1} M =
@@ -285,7 +287,7 @@ $\|\cdot\|_F$ & Norma de Frobenius, $\| M \|_F = \sqrt{\Tr\left( M M^\dag
 \hline
 %
 $\|\cdot\|_{q,p}$ & Norma de H\"older inducida, $\displaystyle \| M \|_{q,p} =
-\sup_{x \in \M_{d',1}(\Kset)^*} \frac{\| M x\|_q}{\| x \|_p}$.
+\sup_{x \in \Mat_{d',1}(\Kset)^*} \frac{\| M x\|_q}{\| x \|_p}$.
 \end{notation}
 
 \SZ{En todo el libro, acordar la notacion con $\M$ para los conjuntos de matrices, normas\ldots}

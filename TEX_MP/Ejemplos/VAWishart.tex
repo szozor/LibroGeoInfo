@@ -14,8 +14,8 @@ covarianza)  de  la  ley gaussiana  multivariada~\cite[Ec.~(4.4.5)]{Rob07}  (ver
 notas de pie~\ref{Foot:MP:BayesPrior} y~\ref{Foot:MP:BayesPriorConjugado}).
 
 Se denota  \ $X \, \sim  \, \W(V,\nu)$ \ donde  el dominio de  definici\'on es \
-$P_d^+(\Rset)$,  conjunto   matrices  simetricas  definida   positivas,  $V  \in
-P_d^+(\Rset)$ par\'ametro de escala  y \ $\nu > d-1$ \ es  el grado de libertad.
+$\Pos_d^+(\Rset)$,  conjunto   matrices  simetricas  definida   positivas,  $V  \in
+\Pos_d^+(\Rset)$ par\'ametro de escala  y \ $\nu > d-1$ \ es  el grado de libertad.
 Las caracter\'isticas de la distribuci\'on son las siguientes:
 
 \begin{caracteristicas}
@@ -24,15 +24,15 @@ Las caracter\'isticas de la distribuci\'on son las siguientes:
     aleatoria es equivalent a tener un vector \ $\frac{d (d+1)}{2}$-dimensional;
     por la simetria, claramente \ $X$  \ tiene solamente \ $\frac{d (d+1)}{2}$ \
     componentes diferentes; adem\'as, se puede  probar que cualquier matriz \ $A
-    \in P_d^+(\Rset)$ \ se  factoriza bajo la forma \ $A = L L^t$  \ con \ $L$ \
+    \in \Pos_d^+(\Rset)$ \ se  factoriza bajo la forma \ $A = L L^t$  \ con \ $L$ \
     triangular  inferior  con elementos  positivos  sobre  su diagonal,  llamado
     factorizaci\'on de Cholesky~\cite{Cho10, GupNag99, Bha07, Har08, HorJoh13} y
     reciprocamente. Eso  muestra que \  $A$ \ se  define a partir de  \ $\frac{d
       (d+1)}{2}$ \ ``grado de libertad''.\label{Foot:MP:WishartXtilde}} & $\X =
-  P_d^+(\Rset), \: d \in \Nset^*$\\[2mm]
+  \Pos_d^+(\Rset), \: d \in \Nset^*$\\[2mm]
   \hline
 %
-Par\'ametros & $V \in P_d^+(\Rset)$ (escala) y \ $\nu > d-1$ \ (grado de
+Par\'ametros & $V \in \Pos_d^+(\Rset)$ (escala) y \ $\nu > d-1$ \ (grado de
 libertad)\\[2mm]
 \hline
 %
@@ -60,13 +60,13 @@ Funci\'on caracter\'istica~\footnote{Se prueba que la funci\'on generadora de
 momentos no existe en
 general.\label{Foot:MP:CaracteristicaWishart}} &
 $\displaystyle \Phi_X(\omega) = \left| I - 2 \, \imath \, \omega V
-\right|^{-\frac{\nu}{2}}, \quad \omega \in S_d(\Rset)$
+\right|^{-\frac{\nu}{2}}, \quad \omega \in \Sim_d(\Rset)$
 \end{caracteristicas}
 %
 %(ver~\cite{PedRic91, SulTra96, And03}).
 
 Fijense que $p_X$ no es la  distribuci\'on conjunta de los componentes de \ $X$:
-el hecho  que \  $X$ \  sea una matriz  aleatoria de  \ $P_d^+(\Rset)$  \ impone
+el hecho  que \  $X$ \  sea una matriz  aleatoria de  \ $\Pos_d^+(\Rset)$  \ impone
 v\'inculos sobre sus compnentes; entre otros, $X_{i,j} = X_{j,i}$.
 
 Inmediatamente, si  $d = 1$, la  distribuci\'on de Whishart \  $\W(V,\nu)$ \ se
@@ -78,7 +78,7 @@ propiedades como las siguientes.
 \begin{lema}[Stabilidad por transformaci\'on lineal]
 \label{Lem:MP:StabilidadWishartLineal}
 %
-Sea $X \, \sim \, \W(V,\nu)$ \ y  \ $A \in \M_{d,d'}(\Rset)$ \ con \ $d' \le d$,
+Sea $X \, \sim \, \W(V,\nu)$ \ y  \ $A \in \Mat_{d,d'}(\Rset)$ \ con \ $d' \le d$,
 \ de rango lleno. Entonces
   \[
   A^t X A \, \sim \, \W\left( A^t V A , \nu \right)
@@ -140,7 +140,7 @@ de matriz de covarianza en el contexto gaussiano~\cite{Mui82, BilBre99, GupNag99
 %
   Sean \ $X_i \, \sim \, \N(0,V), \: i = 1, \ldots , n > d-1$ \ independientes y
   la  matriz  \  $S  =  \sum_{i=1}^n   X_i  X_i^t$  \  llamada  {\em  matriz  de
-    dispersi\'on} (scatter matrix en ingl\'es). Entonces, \ $S \in P_d^+(\Rset)$
+    dispersi\'on} (scatter matrix en ingl\'es). Entonces, \ $S \in \Pos_d^+(\Rset)$
   (c.   s.)   \  ($S$ es  sim\'etrica  definida  positiva  casi siempre,  o  con
   probabilidad uno) y \
   %
@@ -210,7 +210,7 @@ ortonormales~~\cite{Mui82, GupNag99, BilBre99, And03, Seb04, KotNad04}:
 %
   Sean \ $X_i \, \sim \, \N(0,V), \: i = 1, \ldots , n > d-1$ \ independientes y
   denotamos \ $X = \begin{bmatrix} X_1 & \cdots & X_n \end{bmatrix}$ \ matriz de
-  \ $\M_{d,n}(\Rset)$. Sea  \ $A \in S_n(\Rset)$ \  idempotenta, es decir \
+  \ $\Mat_{d,n}(\Rset)$. Sea  \ $A \in \Sim_n(\Rset)$ \  idempotenta, es decir \
   $A^2 = A$ \ de rango $q > d-1$. Entonces
   %
   \[
@@ -219,14 +219,14 @@ ortonormales~~\cite{Mui82, GupNag99, BilBre99, And03, Seb04, KotNad04}:
 \end{lema}
 %
 \begin{proof}
-  $A$ \  siendo idempotenta, existe una  matriz \ $B \in  \M_{n,q}(\Rset)$ \ tal
+  $A$ \  siendo idempotenta, existe una  matriz \ $B \in  \Mat_{n,q}(\Rset)$ \ tal
   que~\footnote{$A$ siendo idempotenta, si $x$  es un autovector con autovalor \
     $\lambda$ \ tenemos  \ $\lambda x = A x  = A^2 x = \lambda^2  x$, es decir \
     $\lambda (\lambda-1) = 0$: las autovalores  son $0$ o $1$.  Del rango $q$, y
-    $A \in S_n(\Rset)$  se diagonaliza bajo la forma \ $A  = \begin{bmatrix} B &
+    $A \in \Sim_n(\Rset)$  se diagonaliza bajo la forma \ $A  = \begin{bmatrix} B &
       \widetilde{B}   \end{bmatrix}    \begin{bmatrix}   I   &   0    \\   0   &
       0 \end{bmatrix} \begin{bmatrix} B^t\\ \widetilde{B}^t \end{bmatrix}$ \ con
-    $B    \in     \M_{n,q}(\Rset)$    \    y    \     $\begin{bmatrix}    B    &
+    $B    \in     \Mat_{n,q}(\Rset)$    \    y    \     $\begin{bmatrix}    B    &
       \widetilde{B}             \end{bmatrix}$            de            columnas
     ortonormales~\cite[Teo.~21.5.7]{Har08} o~\cite{HorJoh13}.}  \  $A = B B^t$ \
   y \ $B^t B = I$~\cite{Har08}. Entonces,
@@ -292,7 +292,7 @@ vectores gaussianos independientes de mismos parametros~\cite{KotNad04, BilBre99
 \begin{proof}
   Denotamos  \  $\widetilde{X}_i   =  X_i  -  m  \,   \sim  \,  \N(0,\Sigma)$  \
   independientes, \ $\widetilde{X} =  \begin{bmatrix} \widetilde{X}_1 & \cdots &
-    \widetilde{X}_n \end{bmatrix}$  \ matriz de  \ $\M_{d,n}(\Rset)$ \ y  \ $\un
+    \widetilde{X}_n \end{bmatrix}$  \ matriz de  \ $\Mat_{d,n}(\Rset)$ \ y  \ $\un
   \in  \Rset^n$ \  vector de  componentes  iguales a  $1$.  Entonces,  denotando
   $\overline{\widetilde{X}}   =  \frac{1}{n}   \sum_{i=1}^n   \widetilde{X}_i  =
   \frac{1}{n}  \sum_{i=1}^n (X_i  - m)  = \frac{1}{n}  \sum_{i=1}^n X_i  -  m$ \
@@ -306,7 +306,7 @@ vectores gaussianos independientes de mismos parametros~\cite{KotNad04, BilBre99
   \]
   %
   Adem\'as,  se  proba  sencillamente  que   \  $I  -  \frac{\un  \un^t}{n}  \in
-  S_n(\Rset)$ es idempotenta de rango $n-1$. El resultado es consecuencia de los
+  \Sim_n(\Rset)$ es idempotenta de rango $n-1$. El resultado es consecuencia de los
   lemas~\ref{Lem:MP:StabilidadWishartLineal}   (por    la   normalizaci\'on)   y
   de~\ref{Lem:MP:WishartGaussiana}       y~\ref{Lem:MP:WishartGaussianaIdempotenta}
   respectivamente.
@@ -316,8 +316,8 @@ Las distribuciones de Wishart tienen  varias propiedades m\'as que se encuentren
 por ejemplo  en los  libros especialisados~\cite{Mui82, GupNag99,  And03, Seb04,
   NadKot04}. Entre estas, terminaremos  esta secci\'on con la factorizaci\'on de
 una  matriz de  distribuci\'on de  Wishart  de la  manera siguiente:  sea \  $X$
-definido sobre  $P_d^+(\Rset)$; entonces, \ $\forall \:  \omega, \quad X(\omega)
-\in P_d^+(\Rset)$ \ puede escribirse por factorizaci\'on de Cholesky, es decir \
+definido sobre  $\Pos_d^+(\Rset)$; entonces, \ $\forall \:  \omega, \quad X(\omega)
+\in \Pos_d^+(\Rset)$ \ puede escribirse por factorizaci\'on de Cholesky, es decir \
 $X(\omega)  = T(\omega)  T(\omega)^t$  \ con  \  $T$ \  triangular inferior  con
 elementos     positivos      sobre     su     diagonal      (ver     nota     de
 pie~\footref{Foot:MP:WishartXtilde}).  En  el contexto de  Wishart (de parametro

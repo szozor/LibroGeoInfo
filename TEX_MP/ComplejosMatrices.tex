@@ -4,7 +4,7 @@
 En  varios campos, como  en mec\'anica  cu\'antica, procesamiento  de se\~nales,
 estad\'istica, estamos frente a datos complejas o puestas en matrices. A\'un que
 se  puede poner en  biyecci\'on \  $\Cset$ \  y \  $\Rset^2$ \  o, similarmente,
-$\M_{d,d'}(\Rset)$ \  y \ $\Rset^{d  d'}$, puede parecer m\'as  natural trabajar
+$\Mat_{d,d'}(\Rset)$ \  y \ $\Rset^{d  d'}$, puede parecer m\'as  natural trabajar
 conservando la  estructura de los  datos. Adem\'as, permite  frecuentemente usar
 escrituras m\'as compactas que pasar por vectores reales.
 
@@ -198,11 +198,11 @@ Resuelte de esta definici\'on equivalente los hechos siguientes:
   Los momentos  as\'i definidos heriden  naturalmente de las propiedades  de las
   del caso real.
 %
-\item  Se puede  ver que  \ $\Sigma_Z  \in P_d(\Cset)$  (hermitica semi-definida
+\item  Se puede  ver que  \ $\Sigma_Z  \in \Pos_d(\Cset)$  (hermitica semi-definida
   positiva), es decir que \ $\Sigma_Z = \Sigma_Z^\dag$ \ y \ $\forall \, \mu \in
   \Cset,  \quad \mu^\dag  \Sigma_Z \mu  \ge 0$.   Al  rev\'es, $\check{\Sigma}_Z
-  \not\in P_d(\Cset)$; esta matriz  es solamente sim\'etrica \ $\check{\Sigma}_Z
-  = \check{\Sigma}_Z^t \in S_d(\Cset)$.
+  \not\in \Pos_d(\Cset)$; esta matriz  es solamente sim\'etrica \ $\check{\Sigma}_Z
+  = \check{\Sigma}_Z^t \in \Sim_d(\Cset)$.
 %
 \item Las generadoras son respectivamente equivalentes a las de $\widetilde{Z}$,
   o  usando   a  la  vez   $Z$  y  $Z^*$.    Por  ejemplo,  para   la  funci\'on
@@ -338,7 +338,7 @@ Los vectores propios tienen  propiedades particulares, entre otros las siguiente
 \begin{teorema}[Conservaci\'on del car\'acter propio por transformaci\'on lineal]\label{Teo:MP:PropioLineal}
 %
   Sea  $Z$  vector  aleatorio  complejo  propio  de  $\Cset^d$,  entonces,  para
-  cualquier matriz $A \in \M_{d',d}(\Cset)$, el vector aleatorio $A Z$ es propio.
+  cualquier matriz $A \in \Mat_{d',d}(\Cset)$, el vector aleatorio $A Z$ es propio.
 \end{teorema}
 \begin{proof}
   La prueba es obiva, notando que $\Esp[A Z]  = A \Esp[Z] = 0$ y que $\pCov[A Z]
@@ -386,7 +386,7 @@ y tiene naturalmente la estructura de una matriz.
 
 En lo que sigue, nos enfocaremos  en las matrices reales. Para el caso complejo,
 se prodr\'a referirse a la subsecci\'on  anterior. Notando que se puede poner en
-biyecci\'on \ $\M_{d,d'}(\Rset)$  \ y \ $\Rset^{d d'}$, une  manera de tratar de
+biyecci\'on \ $\Mat_{d,d'}(\Rset)$  \ y \ $\Rset^{d d'}$, une  manera de tratar de
 matrices  aleatorias \  $X$ \  puede ser  de trabajar  con su  vectorizaci\'on \
 $\vec{X} = \begin{bmatrix} X_1^t &  \cdots & X_{d'}^t \end{bmatrix}^t$ \ donde \
 $X_i$  \ es  la  \ $i$-\'esima  columna de  \  $X$, las  vectorizaciones de  las
@@ -404,14 +404,14 @@ caso de vectores reales, de la manera siguiente:
   Una matriz aleatoria real es una funci\'on medible
   %
   \[
-  X:  (\Omega,\A,P) \mapsto  \left( \M_{d,d'}(\Rset)  ,  \B\left( \M_{d,d'}(\Rset)
+  X:  (\Omega,\A,P) \mapsto  \left( \Mat_{d,d'}(\Rset)  ,  \B\left( \Mat_{d,d'}(\Rset)
     \right) , P_X \right).
   \]
   %
-  donde   $\B\left(    \M_{d,d'}(\Rset)   \right)$   son    los   borelianos   de
-  $\M_{d,d'}(\Rset)$, $\sigma$-\'algebra  generada por los  productos cartesianos
+  donde   $\B\left(    \Mat_{d,d'}(\Rset)   \right)$   son    los   borelianos   de
+  $\Mat_{d,d'}(\Rset)$, $\sigma$-\'algebra  generada por los  productos cartesianos
   $\optimes_{i=1,j=1}^{i=d,j=d'}  \left( -\infty \;  b_{i,j} \right]$  \ y
-  donde la  medida \ $P_X$  sobre \ $\B\left(  \M_{d,d'}(\Rset) \right)$ \  es la
+  donde la  medida \ $P_X$  sobre \ $\B\left(  \Mat_{d,d'}(\Rset) \right)$ \  es la
   medida im\'agen de $P$. Nuevamente,
   %
   \[
@@ -421,8 +421,8 @@ caso de vectores reales, de la manera siguiente:
 \end{definicion}
 
 En lo que sigue, nos vamos  a concentrar sobre dos situaciones particulares: (i)
-el  caso general de  matrices de  \ $\M_{d',d}$  y (ii)  el conjunto  de matrices
-sim\'etricas  $S_d(\Rset)$ (o  un subconjunto)  que tiene  la  particularidad de
+el  caso general de  matrices de  \ $\Mat_{d',d}$  y (ii)  el conjunto  de matrices
+sim\'etricas  $\Sim_d(\Rset)$ (o  un subconjunto)  que tiene  la  particularidad de
 tener componentes  iguales. El el \'ultimo  caso, a veces  resuelte m\'as comodo
 tener en  cuenta esta  simetria, es  de decir que  la matriz  tiene a  los m\'as
 $\frac{d (d+1)}{2}$ componentes linealmente independientes.
@@ -438,7 +438,7 @@ $\frac{d (d+1)}{2}$ componentes linealmente independientes.
 De  manera general,  trabajamos en  el  contexto de  matrices no  necesiaramente
 cuadradas,  y  con componentes  potencialemnte  linealmente independientes  (sin
 simetria particular).  En este marco  general, $X$ viviendo sobre  $\X \subseteq
-\M_{d,d'}(\Rset)$:
+\Mat_{d,d'}(\Rset)$:
 %
 \begin{itemize}
 \item La funci\'on  de repartici\'on \ $F_X$ \ es  la distribuci\'on conjunta de
@@ -488,11 +488,11 @@ simetria particular).  En este marco  general, $X$ viviendo sobre  $\X \subseteq
 \item  Se puede  escribir  tambi\'en  las funciones  generadoras  con una  forma
   matricial; por  ejemplo, tratando de  la funci\'on caract\'eristica, va  a ser
   una  funci\'on de  $d d'$  variables que  se puede  poner en  una matriz  de \
-  $\M_{d,d'}(\Rset)$ \ de tal manera que
+  $\Mat_{d,d'}(\Rset)$ \ de tal manera que
   %
   \[
   \Phi_X(\omega) =  \Esp\left[ e^{\imath  \Tr\left( \omega^t X  \right)} \right]
-  \quad \mbox{con} \quad \omega \in \M_{d,d'}(\Rset)
+  \quad \mbox{con} \quad \omega \in \Mat_{d,d'}(\Rset)
   \]
   %
   De nuevo  se define la  secunda funci\'on caracter\'istica tomando  el logaritmo
@@ -547,12 +547,12 @@ simetria particular).  En este marco  general, $X$ viviendo sobre  $\X \subseteq
 %\label{Sssec:MP:MatricesAleatoriasSimetrico}
 
 En  el contexto  sim\'etrico,  \ie el  espacio  de llegada  es  \ $\X  \subseteq
-S_d(\Rset)$ (ej.   el cono $P_d^+(\Rset)$), aparece  que por lo  m\'as la matriz
+\Sim_d(\Rset)$ (ej.   el cono $\Pos_d^+(\Rset)$), aparece  que por lo  m\'as la matriz
 tiene  $\frac{d (d+1)}{2}$  \  componentes linealmente  independientes. A  veces
 resuelte m\'as  comodo definir  la funci\'on caracter\'istica  en este  caso con
-$\omega \in  S_d(\Rset)$ para  respectar las simetrias  del problema y  no tener
+$\omega \in  \Sim_d(\Rset)$ para  respectar las simetrias  del problema y  no tener
 ninguna degenerencia  de esa misma (ver por  ejemplo~\cite{PedRic91, And03}).  A
-veces, es a\'un  dificil o imposible calcular en  todo \ $\M_{d,d}(\Rset)$. Eso
+veces, es a\'un  dificil o imposible calcular en  todo \ $\Mat_{d,d}(\Rset)$. Eso
 tiene consecuencias:
 %
 \begin{itemize}

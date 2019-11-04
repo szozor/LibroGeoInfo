@@ -22,9 +22,9 @@ Sec.~\ref{Sec:MP:VectoresComplejosMatricesAleatorias}  por las  relaciones entre
 la  covarianza  de  \ $\widetilde{Z}$  \  y  estas  matrices).
 
 Se denota \ $Z \, \sim \, \CN(m,\Sigma,\check{\Sigma})$ \ con \ $m \in \Cset^d$,
-\ $\Sigma \in P_d^+(\Cset)$ \ conjunto  de las matrices de \ $\M_{d,d}(\Cset)$ \
-herm\'iticas definidas positivas, y  \ $\check{\Sigma} \in S_d(\Cset)$ \ conjunto
-de las matrices de \  $\M_{d,d}(\Cset)$ \ symmetricas (ver notaciones).  Un caso
+\ $\Sigma \in \Pos_d^+(\Cset)$ \ conjunto  de las matrices de \ $\Mat_{d,d}(\Cset)$ \
+herm\'iticas definidas positivas, y  \ $\check{\Sigma} \in \Sim_d(\Cset)$ \ conjunto
+de las matrices de \  $\Mat_{d,d}(\Cset)$ \ symmetricas (ver notaciones).  Un caso
 particular  aparece cuando  \ $Z$  \  es propio  en torno  a  \ $m$,  lo que  es
 equivalente en el caso gaussiano a tener \ $Z$ \ circular (ver m\'as adelante) en
 torno a  \ $m$, dado  cuando \  $\check{\Sigma} = 0$:  en este caso  usaremos la
@@ -37,8 +37,8 @@ gaussiana  compleja   son  las  siguientes~\cite{Lap17,   Pic96,  Goo63,  Bos95,
 Dominio de definici\'on & $\Z = \Cset^d$\\[2mm]
 \hline
 %
-Par\'ametros & $m \in \Cset^d, \:\: \Sigma \in P_d^+(\Cset), \:\: \check{\Sigma}
-\in S_d(\Cset)$\\[2mm]
+Par\'ametros & $m \in \Cset^d, \:\: \Sigma \in \Pos_d^+(\Cset), \:\: \check{\Sigma}
+\in \Sim_d(\Cset)$\\[2mm]
 \hline
 %
 Densidad de probabilidad & \\[1mm]
@@ -117,7 +117,7 @@ de vectores independientes:
 \begin{teorema}[Stabilidad]
 \label{Teo:MP:StabilidadGaussianaCompleja}
 %
-  Sean \ $A_i , i = 1,\ldots,n$  \ matrices de \ $\M_{d',d}(\Cset), \: d' \le d$
+  Sean \ $A_i , i = 1,\ldots,n$  \ matrices de \ $\Mat_{d',d}(\Cset), \: d' \le d$
   \  de   rango  lleno,   $b_i  \in  \Cset^{d'}$   \  y   \  $Z_i  \,   \sim  \,
   \CN(m_i,\Sigma_i,\check{\Sigma}_i)$   \   $d$-dimensionales,  independientes,
   entonces
@@ -154,7 +154,7 @@ $Z^*$:
 \begin{teorema}%[Stabilidad]
 \label{Teo:MP:StabilidadGaussianaComplejaZZestrella}
 %
-Sean \ $A \in \M_{d',d}(\Cset)$, \  $B \in \M_{d',d}(\Cset)$ \ tales que \ ambas
+Sean \ $A \in \Mat_{d',d}(\Cset)$, \  $B \in \Mat_{d',d}(\Cset)$ \ tales que \ ambas
 \ $A+B$ \ y \  $A-B$ \ \SZ{sean de rango lleno}, $c \in \Cset^{d'}$  \ y \ $Z \,
 \sim \, \CN(m,\Sigma,\check{\Sigma})$ \ $d$-dimensonal, entonces
   %
@@ -232,7 +232,7 @@ estandar~\cite{Lap17}:
 \label{Teo:MP:GaussianaComplejaWWestrella}
 %
 Sea \  $Z \sim  \CN(m,\Sigma,\check{\Sigma})$.  Entonces, existen  matrices (no
-\'unicas) \ $A \in \M_{d,d}(\Cset)$, \ $B \in \M_{d,d}(\Cset)$ \ tales que
+\'unicas) \ $A \in \Mat_{d,d}(\Cset)$, \ $B \in \Mat_{d,d}(\Cset)$ \ tales que
   %
   \[
   Z \egald A W + B W^* + m
@@ -254,7 +254,7 @@ Sea \  $Z \sim  \CN(m,\Sigma,\check{\Sigma})$.  Entonces, existen  matrices (no
   con \ $U \sim \N(0,I)$ \ y \  $V \sim \N(0,I)$ \ independientes, y \ $M$ \ tal
   que  \ $M  M^t =  \begin{bmatrix} \Sigma_X  & \Sigma_{X,Y}  \\  \Sigma_{X,Y}^t &
     \Sigma_Y  \end{bmatrix}$  \   (ej.  raiz  cuadrade  de  esta   matriz  de  \
-  $P_{2d}^+(\Rset)$,    o     descomposici\'on    de    Cholesky~\cite{HorJoh13,
+  $\Pos_{2d}^+(\Rset)$,    o     descomposici\'on    de    Cholesky~\cite{HorJoh13,
     Bha07}). Ahora, volviendo a la forma compleja tenemos
   %
   \[
@@ -311,22 +311,22 @@ conjugada~\cite{EriKoi06, SchSch03}:
 \label{Teo:MP:GaussianaComplejaWIDiago}
 %
   Sea \ $Z \sim \CN(m,\Sigma,\check{\Sigma})$. Entonces, existe una matriz \ $C
-  \in \M_{d,d}(\Cset)$ \ tal que
+  \in \Mat_{d,d}(\Cset)$ \ tal que
   %
   \[
   Z \egald C W + m
   \]
   %
-  con \ $W \sim \CN(0,I,\Delta)$ \ con \ $\Delta \in P_d(\Rset)$ \ (real) diagonal.
+  con \ $W \sim \CN(0,I,\Delta)$ \ con \ $\Delta \in \Pos_d(\Rset)$ \ (real) diagonal.
   %
 \end{teorema}
 \begin{proof}
   Eso  viene  de teoremas  de  diagonalizaci\'on  conjunta. M\'as  precisamente,
-  siendo \ $\Sigma  \in P_d^+(\Cset)$ \ y \  $\check{\Sigma} \in S_d(\Cset)$, se
+  siendo \ $\Sigma  \in \Pos_d^+(\Cset)$ \ y \  $\check{\Sigma} \in \Sim_d(\Cset)$, se
   aplica el  teorema~\cite[Teo.~7.6.5]{HorJoh13} diciendo que  existe una matriz
   no  singular (invertible)  \  $C$ \  tal  que \  $\Sigma  = C  C^\dag$  \ y  \
   $\check{\Sigma} = C  \Delta C^t$ \ con $\Delta$ \  real diagonal con elementos
-  positivos  ($\Delta  \in  P_d(\Rset)$  \  diagonal).  Inmediatamente,  por  el
+  positivos  ($\Delta  \in  \Pos_d(\Rset)$  \  diagonal).  Inmediatamente,  por  el
   teorema~\ref{Teo:MP:StabilidadGaussianaCompleja}, tenemos
   %
   \[

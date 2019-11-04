@@ -51,7 +51,7 @@ consideraciones  dan a la  ley gaussiana  un rol  central en  la teor\'ia  de la
 probabilidades.
 
 Se denota \  $X \, \sim \, \N(m,\Sigma)$ \  con \ $m \in \Rset^d$  \ y \ $\Sigma
-\in  P_d^+(\Rset)$  \  conjunto  de   las  matrices  de  \  $\M_{d,d}(\Rset)$  \
+\in  \Pos_d^+(\Rset)$  \  conjunto  de   las  matrices  de  \  $\M_{d,d}(\Rset)$  \
 s\'imetricas definidas positivas. Las  caracter\'isticas de la gaussiana son las
 siguientes:
 
@@ -60,7 +60,7 @@ siguientes:
 Dominio de definici\'on & $\X = \Rset^d$\\[2mm]
 \hline
 %
-Par\'ametros & $m \in \Rset^d, \:\: \Sigma \in P_d^+(\Rset)$\\[2mm]
+Par\'ametros & $m \in \Rset^d, \:\: \Sigma \in \Pos_d^+(\Rset)$\\[2mm]
 \hline
 %
 Densidad de probabilidad & $\displaystyle p_X(x) = \frac{1}{(2
@@ -280,7 +280,7 @@ prueba.  Dejamos el  lector a  libros m\'as  especializados como~\cite{AshDol99,
 %
   Sean  $\{  X_i \}_{i  \in  \Nset^*}$  vectores  aleatorios independientes,  no
   necesariamente de misma distribuci\'on de probabilidad, con \ $X_i$ \ de media
-  \ $m_i = \Esp[X_i]$ \ y de matriz de covarianza \ $\Sigma_i \in P_d^+(\Rset)$.
+  \ $m_i = \Esp[X_i]$ \ y de matriz de covarianza \ $\Sigma_i \in \Pos_d^+(\Rset)$.
   Sean \ $C_n = \sum_{i=1}^n \Sigma_i$, \ $c_n^2$ \ al autovalor m\'as peque\~na
   de $C_n$,  \ y  \ $Y_n  = C_n^{-\frac12} \sum_{i=1}^n  \left( X_i  - \Esp[X_i]
   \right)$.

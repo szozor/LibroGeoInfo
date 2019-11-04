@@ -339,7 +339,7 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
   Breit--Wigner), dada  por \ $p_X(x)  = \modif{\frac{\Gamma\left( \frac{d+1}{2}
       \right)}{\pi^{\frac{d+1}{2}} \, \left| R \right|^{\frac12}}} \, \left( 1 +
     (x-x_0)^t R^{-1}  (x-x_0) \right)^{-  \, \frac{d+1}{2}}$ \  sobre $\Rset^d$,
-  con  \ \modif{$R \in  P_d^+(\Rset), \:  x_0 \in  \Rset^d$}, no  tiene momentos
+  con  \ \modif{$R \in  \Pos_d^+(\Rset), \:  x_0 \in  \Rset^d$}, no  tiene momentos
   finitos de orden $k \geq 1$.
 %
 \item Frecuentemente (especialmente en el  caso de variables discretas $X$ sobre
@@ -428,13 +428,13 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
         - m_Y \right)^t \right].
     \]
     %
-    Esta  matriz   partenece  a  \  $\M_{d,d'}(\Rset)$  \   y  \[\Sigma_{X,Y}  =
+    Esta  matriz   partenece  a  \  $\Mat_{d,d'}(\Rset)$  \   y  \[\Sigma_{X,Y}  =
     \Sigma_{Y,X}^t.\].\newline Se  puede notar que, para dos  componentes $i \ne
     j$ de  $X$, $\Sigma_X$ tiene  como $(i,j)$-\'esima componente  la covarianza
     $\Cov[X_i,X_j]  = \Esp\left[  \left(  X_i  - m_{X_i}  \right)  \left( X_j  -
         m_{X_j} \right) \right]$  entre las variables $X_i$ y  $X_j$ y tiene las
     varianzas  de los  $X_i$ en  su diagonal.  Adem\'as, es  sencillo ver  que \
-    $\Sigma_X  \in   P_d(\Rset)$,  \ie  \   $\Cov[X]$  \  es   sim\'etrica,  por
+    $\Sigma_X  \in   \Pos_d(\Rset)$,  \ie  \   $\Cov[X]$  \  es   sim\'etrica,  por
     construcci\'on, y \ $\Cov[X] \ge 0$  ($\forall \, \mu \in \Rset, \quad \mu^t
     \Sigma_X \mu  \ge 0$; en el caso  escalar la varianza es  no negativa),} con
   igualdad  s\'olo cuando  $P_X =  \delta_{x_0}$ para  un $x_0$  dado,  esto es,
@@ -491,7 +491,7 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
   \modif{Adem\'as, inmediatamente,
   %
   \[
-  \forall \: A  \in \M_{n,d}(\Rset), \: B \in  \M_{n',d'}(\Rset), \: a \in
+  \forall \: A  \in \Mat_{n,d}(\Rset), \: B \in  \Mat_{n',d'}(\Rset), \: a \in
   \Rset^n, \: b \in \Rset^{n'}, \quad \Cov[A X + a , B Y + b] = A \Cov[X,Y]
   B^t.
   \]
@@ -550,7 +550,7 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
   tal  que su  $i$-\'esima componente  es la  suma en  $j,k$ de  las componentes
   $(j,k,i)$-\'esima  de   $\gamma_X$  en~\cite{Kol08}).   Todas   coinciden  con
   $\gamma_X$ o  su cuadrado en el caso  escalar y cada medida  es invariente por
-  transformaci\'on $X \mapsto A X +  b$ con $A \in \M_{d,d}(\Rset)$ invertible y
+  transformaci\'on $X \mapsto A X +  b$ con $A \in \Mat_{d,d}(\Rset)$ invertible y
   $b \in \Rset^d$.}
 %  Por ejemplo,  en~\cite{Mar70} (ver  tambi\'en~\cite{BalSca12, Seb04})  como \
 %  $\displaystyle  \gamma_X^{\mathrm{mar}}  = \sum_{i,j,k=1}^d  \left(  \gamma_X
@@ -654,10 +654,10 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
   en    $k,l$   de   las    componentes   $(k,l,i,j)$-\'esima    de   $\gamma_X$
   en~\cite{Kol08}).         Todas         coinciden        con        $\kappa_X$
   (resp. $\overline{\kappa}_X$) en  el caso escalar y cada  medida es invariente
-  por  transformaci\'on  $X  \mapsto  A  X  + b$  con  $A  \in  \M_{d,d}(\Rset)$
+  por  transformaci\'on  $X  \mapsto  A  X  + b$  con  $A  \in  \Mat_{d,d}(\Rset)$
   invertible y $b \in \Rset^d$.}
 % se encuentra en~\cite[\S~2.7]{Seb04} una extensi\'on multivariada de la
-% curtosis cuando $\Sigma_X \in P_d^+(\Rset)$ (no degenerada, \ie invertible):
+% curtosis cuando $\Sigma_X \in \Pos_d^+(\Rset)$ (no degenerada, \ie invertible):
 %    %
 %    \[
 %    \Curt[X] \equiv \kappa_X = \Esp\left[  \left( \left( X - m_X \right)^t
@@ -936,7 +936,7 @@ aleatorio.
   $\phi$ es dicha estrictamente convexa  si la desigualdad es estricta, salvo si
   $x_2  =  x_1$.\newline Se  puede  ver  de  que si  \  $\phi$  \ es  dos  veces
   diferenciable, su  matriz Hessiana  \modif{es sim\'etrica no  negativa, $\Hess
-    \phi \in  P_d(\Rset)$}.\newline \modif{Se muestra por  recurrencia que} para
+    \phi \in  \Pos_d(\Rset)$}.\newline \modif{Se muestra por  recurrencia que} para
   cualquier conjunto \ $\{ x_i \}_i$ numerable de elementos de \ $\X$ \ y reales
   positivos \ $\{ \pi_i \}_i$ \ tales que $\sum_i \pi_i = 1$,
   %

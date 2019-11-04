@@ -21,7 +21,7 @@ abajo), debido  a la  familia de Pearson~\cite{Pea95,  JohKot95:v1, JohKot95:v1,
 la media de una gaussiana en inferencia bayesiana~\cite{Rob07, KotNad04}.
 
 Se denota con \ $X \sim \T_\nu(m,\Sigma)$ \ con \ $m \in \Rset^d$, \ $\Sigma \in
-P_d^+(\Rset)$ \ conjunto  de las matrices de \  $\M_{d,d}(\Rset)$ \ sim\'etricas
+\Pos_d^+(\Rset)$ \ conjunto  de las matrices de \  $\Mat_{d,d}(\Rset)$ \ sim\'etricas
 definidas positivas. $m$ \ es llamado  {\em par\'ametro de posici\'on} (no es la
 media   que  puede  no   existir),  \   $\Sigma$  \   es  llamada   {\em  matriz
   caracter\'istica} (no es [proporcional a]  la covarianza que puede no existir)
@@ -34,7 +34,7 @@ Dominio de definici\'on & $\X = \Rset^d$\\[2mm]
 \hline
 %
 Par\'ametro & $\nu \in \Rset_+^*$ \ (grado de libertad), \ $m \in \Rset^d$ \
-(posici\'on), \ $\Sigma \in P_d^+(\Rset)$ \ (matriz caracter\'istica)\\[2mm]
+(posici\'on), \ $\Sigma \in \Pos_d^+(\Rset)$ \ (matriz caracter\'istica)\\[2mm]
 \hline
 %
 Densidad de probabilidad & $\displaystyle p_X(x) = \frac{\Gamma\left(
@@ -129,7 +129,7 @@ Sin embargo, las distribuciones Student-$t$ tienen varias propiedades notables.
 \begin{lema}[Stabilidad por transformaci\'on lineal]
 \label{Lem:MP:StabilidadLinealStudentT}
 %
-  Sea \ $X \, \sim \,  \T_\nu(m,\Sigma)$, \ $A$ \ matriz de \ $\M_{d',d}(\Rset)$
+  Sea \ $X \, \sim \,  \T_\nu(m,\Sigma)$, \ $A$ \ matriz de \ $\Mat_{d',d}(\Rset)$
   \ con \ $d' \le d$, y de rango lleno y \ $b \in \Rset^{d'}$. Entonces
   %
   \[
@@ -145,7 +145,7 @@ Sin embargo, las distribuciones Student-$t$ tienen varias propiedades notables.
 \begin{proof}
   La prueba es inmediata usando  la funci\'on caracter\'istica y sus propiedades
   por  transformaci\'on lineal.  La condici\'on  sobre \  $A$ \  es  necesaria y
-  suficiente para que \ $A \Sigma A^t \in P_{d'}^+(\Rset)$.
+  suficiente para que \ $A \Sigma A^t \in \Pos_{d'}^+(\Rset)$.
 \end{proof}
 
 \begin{lema}[V\'inculo con las distribuciones gamma y gaussiana (mezcla de escala gaussiana)]
@@ -153,7 +153,7 @@ Sin embargo, las distribuciones Student-$t$ tienen varias propiedades notables.
 %
   Sea \ $V \,  \sim \, \G\left( \frac{\nu}{2} , \frac{\nu}{2} \right)$  \ y \ $G
   \,  \sim  \,  \N(0,I)$  \ con  $\nu  >  0$  \  y  \ $G$  \  $d$-dimensional  e
-  independiente  de \ $V$.  Entonces, para  $\Sigma \in  P_d^+(\Rset)$ y  $m \in
+  independiente  de \ $V$.  Entonces, para  $\Sigma \in  \Pos_d^+(\Rset)$ y  $m \in
   \Rset^d$,
   %
   \[
@@ -236,9 +236,9 @@ lema~\ref{Lem:MP:StabilidadLinealStudentT} escribiendo \ $A X + b \egald \frac{A
 \begin{lema}[Relaci\'on con la distribuci\'on de Wishart]\label{Lem:MP:StudentWishart}
 %
   Sea \ $W \, \sim \, \W( \Sigma^{-1} \, , \, \nu+d-1)$ \ $d \times d$ \ Wishart
-  con \ $\Sigma \in P_d^+(\Rset)$, \ $Y \,  \sim \, \N(0,\nu I)$ \ con $\nu > 0$
+  con \ $\Sigma \in \Pos_d^+(\Rset)$, \ $Y \,  \sim \, \N(0,\nu I)$ \ con $\nu > 0$
   \ e \ $Y$ \ independiente de \  $W$. Entonces, para \ 
-  %$R \in P_d^+(\Rset)$ \ y
+  %$R \in \Pos_d^+(\Rset)$ \ y
   \ $m \in \Rset^d$,
   %
   \[
@@ -257,7 +257,7 @@ lema~\ref{Lem:MP:StabilidadLinealStudentT} escribiendo \ $A X + b \egald \frac{A
   \]
   %
   Denotamos  por \  $D =  \left\{ w_{ij},  \: 1  \le j  \le i  \le d  \tq  w \in
-    P_d^+(\Rset) \right\}$ \ y, por abuso de  escritura, \ $dw = \prod_{ 1 \le j
+    \Pos_d^+(\Rset) \right\}$ \ y, por abuso de  escritura, \ $dw = \prod_{ 1 \le j
     \le i \le d} dw_{ij}$.  Entonces,  multiplicando \ $p_{X|W=w}$ \ por \ $p_W$
   \ y por marginalizaci\'on, obtenemos
   % ($\propto$ significa ``proporcional  a'', i.e., olvidando el coefficiente de
@@ -286,7 +286,7 @@ lema~\ref{Lem:MP:StabilidadLinealStudentT} escribiendo \ $A X + b \egald \frac{A
   \right)} \, dw
   \end{eqnarray*}
   %
-  Para  \ $a, b  \in \Rset^d,  \: M  \in \M_{d,d}(\Rset)$,  en la  secunda linea
+  Para  \ $a, b  \in \Rset^d,  \: M  \in \Mat_{d,d}(\Rset)$,  en la  secunda linea
   usamos la  identidad \  $a^t M b  = \Tr(b a^t  M)$ \  y \ $\Gamma_d\left(  x -
     \frac12 \right) = \frac{\Gamma\left(  x - \frac{d}{2} \right)}{\Gamma(x)} \,
   \Gamma_d(x)$ \ (ver notaciones) y en  la tercera linea usamos $\left| \Sigma +
@@ -361,7 +361,7 @@ emp\'irica  de la  media  y covarianza~\cite{Mui82,  GupNag99, BilBre99,  And03,
   \right) \widetilde{X}^t
   \]
   %
-  $A = I - \frac{\un \un^t}{n} \in  P_n(\Rset)$ \ es idemponenta de rango 1, con
+  $A = I - \frac{\un \un^t}{n} \in  \Pos_n(\Rset)$ \ es idemponenta de rango 1, con
   $A  \un = 0$,  as\'i que  por diagonalizaci\'on~\cite{HorJoh13,  Bat97, Bat07}
   tenemos
   %
@@ -373,7 +373,7 @@ emp\'irica  de la  media  y covarianza~\cite{Mui82,  GupNag99, BilBre99,  And03,
   $P P^t = P P^t = I$ \ y
   %
   \[
-  B \in \M_{n,n-1}(\Rset) \quad \mbox{tal que} \quad  B^t B = I \: \mbox{ y } \:
+  B \in \Mat_{n,n-1}(\Rset) \quad \mbox{tal que} \quad  B^t B = I \: \mbox{ y } \:
   \un^t B = 0
   \]
   %
@@ -386,7 +386,7 @@ emp\'irica  de la  media  y covarianza~\cite{Mui82,  GupNag99, BilBre99,  And03,
   %
   Luego, de la gaussianidad y independencia de los \ $\widetilde{X}_i$ \ tenemos,
   para \   $\widetilde{x}   =    \begin{bmatrix}   \widetilde{x}_1   &   \cdots   &
-    \widetilde{x}_n \end{bmatrix} \in \M_{d,n}(\Rset)$
+    \widetilde{x}_n \end{bmatrix} \in \Mat_{d,n}(\Rset)$
   %
   \begin{eqnarray*}
   p_{\widetilde{X}}(\widetilde{x}) & = & (2 \pi)^{-\frac{n d}{2}}
@@ -407,7 +407,7 @@ emp\'irica  de la  media  y covarianza~\cite{Mui82,  GupNag99, BilBre99,  And03,
     \overline{\widetilde{X}} \end{bmatrix}  P^t$.  Se nota que  \ $|P| =  1$ \ y
   por                            transformaci\'on                           (ver
   teorema~\ref{Teo:MP:TransformacionInyectivaDensidad}),    para   \    $y   \in
-  \M_{d,n-1}(\Rset)$ \ y \ $x \in \Rset^d$
+  \Mat_{d,n-1}(\Rset)$ \ y \ $x \in \Rset^d$
   %
   \begin{eqnarray*}
   p_{Y,\sqrt{n} \overline{\widetilde{X}}}(y,x) & = & (2 \pi)^{-\frac{n d}{2}}
@@ -470,7 +470,7 @@ por ejemplo~\cite{KotNad04} completamente dedicado a esta distribuci\'on.
 
 La distribuci\'on  Student-$t$ se generaliza al  caso complejo \  $Z$ \ definido
 sobre $\Cset^d$; se denota  \ $Z \, \sim \, \CT_\nu(m,\Sigma)$ \  donde \ $m \in
-\Cset^d$, \ $\Sigma \in P_d^+(\Cset)$ \ y la densidad es dada por \
+\Cset^d$, \ $\Sigma \in \Pos_d^+(\Cset)$ \ y la densidad es dada por \
 %
 \[
 p_Z(z) = \frac{\Gamma\left( d  + \frac{\nu}{2} \right)}{\pi^d \nu^d \Gamma\left(
@@ -489,7 +489,7 @@ parecida).
 Tambi\'en, la  distribuci\'on Student-$t$  se generaliza al  caso matriz-variada
 $X$   definido  sobre   $M_{d,d'}(\Rset)$;   se   denota  \   $X   \,  \sim   \,
 \T_\nu(M,\Sigma,\Omega)$  \  donde  \  $M  \in M_{d,d'}(\Rset),  \:  \Sigma  \in
-P_d^+(\Rset),  \:  \Omega  \in  P_{d'}^+(\Rset)$  y  la  densidad  es  dada  por
+\Pos_d^+(\Rset),  \:  \Omega  \in  \Pos_{d'}^+(\Rset)$  y  la  densidad  es  dada  por
 $\displaystyle             p_X(x)             =             \frac{\Gamma_d\left(
     \frac{\nu+d+d'-1}{2}\right)}{\pi^{\frac{\nu       d}{2}}      \Gamma_d\left(
     \frac{\nu+d-1}{2}\right)  \,  \left|  \Sigma  \right|^{\frac{d'}{2}}  \left|

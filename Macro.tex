@@ -1,47 +1,45 @@
 % Letras caligraficas (alfabetos...)
 % ----------------------------------
 %
-\def\A{\mathcal{A}}
-\def\B{\mathcal{B}}
-\def\Be{\mathcal{B}e}
+\def\A{\mathcal{A}} % Alfabeto
+\def\B{\mathcal{B}} % Ley binomial, Bernoulli (caso especial)
+\def\Be{\mathcal{B}e} % ley beta
 \def\C{\mathcal{C}}
 \def\D{\mathcal{D}}
-\def\Dir{\mathcal{D}ir}
-\def\E{\mathcal{E}}
-\def\ED{\mathcal{ED}}
-\def\CED{\mathcal{CED}}
-\def\DED{\mathcal{DED}}
-\def\IED{\mathcal{IED}}
-\def\FED{\mathcal{FED}}
-\def\F{\mathcal{F}}
+\def\Dir{\mathcal{D}ir} % Dirichlet
+\def\E{\mathcal{E}} % funcion energia, 
+\def\ED{\mathcal{ED}} % Elipticamente Distribuida
+\def\CED{\mathcal{CED}} % Elipticamente Distribuida  Compleja
+\def\DED{\mathcal{DED}} % Elipticamente Distribuida a la Derecha
+\def\IED{\mathcal{IED}} % Elipticamente Distribuida a la Izquierda
+\def\FED{\mathcal{FED}} % Fuertamente Elipticamente Distribuida
+\def\F{\mathcal{F}} % Fuente (codificacion), transformada de Fourier
 \def\FS{\mathcal{FS}}
-\def\G{\mathcal{G}}
-\def\H{\mathcal{H}}
-\def\L{\mathcal{L}}
+\def\G{\mathcal{G}} % Ley Gamma
+\def\H{\mathcal{H}} % Ley hipergeometrica
+\def\L{\mathcal{L}} % 
 \def\LS{\mathcal{LS}}
-\def\M{\mathcal{M}}
+\def\M{\mathcal{M}} % Ley multinomial
 \def\MS{\mathcal{MS}}
-\def\N{\mathcal{N}}
-\def\CN{\mathcal{CN}}
+\def\N{\mathcal{N}} % Normal o Gaussiana
+\def\CN{\mathcal{CN}} % Normal Compleja
 \def\O{\mathcal{O}}
 \def\P{\mathcal{P}}
 \def\R{\mathcal{R}}
 \def\CR{\mathcal{CR}}
-\newcommand{\Simp}[1]{\Delta_{#1}}
-\newcommand{\Part}[1]{\mathrm{P}_{#1}}
-\def\Tri{\mathcal{T}}
-\def\T{\mathcal{T}}
+\def\Tri{\mathcal{T}} % Triangulo
+\def\T{\mathcal{T}} % Tensor
 \def\CT{\mathcal{CT}}
-\def\U{\mathcal{U}}
-\def\W{\mathcal{W}}
-\def\X{\mathcal{X}}
-\def\Y{\mathcal{Y}}
-\def\Z{\mathcal{Z}}
+\def\U{\mathcal{U}} % Uniforma
+\def\W{\mathcal{W}} % Wishart
+\def\X{\mathcal{X}} % espacio imagen X(Omega)
+\def\Y{\mathcal{Y}} % espacio imagen Y(Omega)
+\def\Z{\mathcal{Z}} % espacio imagen Z(Omega)
 %
 % letras frak
-\def\PD{\mathfrak{P}}
-\def\PDSI{\mathfrak{EP}}%{\mathfrak{P}^{\mathrm{e}}}
-\def\CM{\mathfrak{CM}}
+\def\PD{\mathfrak{P}} % conjunto de funciones definida positivas
+\def\PDSI{\mathfrak{EP}} % conjunto de generadora de funciones eliptica definida positivas {\mathfrak{P}^{\mathrm{e}}}
+\def\CM{\mathfrak{CM}} % conjunto de funciones completamente monotona
 \def\cod{\mathfrak{c}}
 \def\snr{\mathfrak{s}}
 \def\perm{\mathfrak{S}}
@@ -49,16 +47,30 @@
 % Conjuntos complejos, reales, enteros...
 % --------------------------------------
 %
-\def\Bset{\mathbb{B}}
-\def\Cset{\mathbb{C}}
-\def\Kset{\mathbb{K}}
-\def\Nset{\mathbb{N}}
-\def\Qset{\mathbb{Q}}
-\def\Rset{\mathbb{R}}
-\def\Sset{\mathbb{S}}
-\def\SCset{\mathbb{SC}}
-\def\Zset{\mathbb{Z}}
+\def\Bset{\mathbb{B}} % Bola
+\def\Cset{\mathbb{C}} % Complejos
+\def\Kset{\mathbb{K}} % Cuerpo
+\def\Nset{\mathbb{N}} % Enteros naturales
+\def\Qset{\mathbb{Q}} % Racionales
+\def\Rset{\mathbb{R}} % Reales
+\def\Sset{\mathbb{S}} % Esfera
+\def\SCset{\mathbb{SC}} % Esfera compleja
+\def\Zset{\mathbb{Z}} % Enteros relativos
 %
+\newcommand{\Simp}[1]{\Delta_{#1}} % simplex
+\newcommand{\Part}[1]{\mathrm{P}_{#1}} % partes 
+%
+%
+
+% Conjuntos de matrices
+% ------------------------------------------
+%
+\def\Mat{\mathrm{M}} % matrices
+\def\Sim{\mathrm{S}} % matrices simetricas
+\def\Her{\mathrm{H}} % matrices hermiticas
+\def\Pos{\mathrm{P}} % matrices positiva definida
+\def\Ort{\mathrm{O}} % matrices ortogonales
+\def\Unit{\mathrm{U}} % matrices unitarias
 %
 % reales e imaginarias
 \newcommand{\real}[1]{\Re e \left\{ #1 \right\}}

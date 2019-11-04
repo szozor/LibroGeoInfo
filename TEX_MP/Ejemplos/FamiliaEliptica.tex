@@ -1,3 +1,6 @@
+%\def\izq{\mathrm{i}}
+%\def\der{\mathrm{d}}
+
 % --------------------------------- Familia  eliptica
 \subseccion{Familia el\'iptica}
 \label{Ssec:MP:FamiliaEliptica}
@@ -43,8 +46,10 @@ propiedades remarcables.
   Sea  \  $X$  \  vector   aleatorio  $d$-dimensional  real.   $X$  \  es  dicho
   esfericamente  invariante,  o   rotacionalmente  invariante,  o  a  simetr\'ia
   esf\'erica,  o  de  distribuci\'on  esf\'erica  \  si  para  cualquier  matriz
-  ortogonal (o de rotaci\'on)~\footnote{Recordarse que \ $O$ \ es ortogonal o de
-    rotaci\'on si \ $O O^t = O^t O = I$.} \ $O \in \O_d(\Rset)$,
+  ortogonal (o de rotaci\'on)
+  % ~\footnote{Recordarse que \ $O$ \ es ortogonal o de rotaci\'on si \ $O O^t =
+  %   O^t O = I$.}
+  \ $O \in \Ort_d(\Rset)$ (ver notaciones),
   %
   \[
   O  X  \: \egald  \: X
@@ -61,7 +66,7 @@ pelota de rugby. Adem\'as, se puede que eso se pasa en torno a un punto no cero.
   Sea  \  $X$  \ vector  aleatorio  $d$-dimensional  real.   $X$  \ es  dicho  a
   simetr\'ia  el\'iptica,   o  elipticalmente  invariante,   o  de  distribuci\'on
   el\'iptica, en torno a \ $m \in  \Rset^d$, \ si existe una matriz \ $\Sigma \in
-  P_d^+(\Rset)$ \ tal que para cualquier matriz ortogonal \ $O \in \O_d(\Rset)$,
+  \Pos_d^+(\Rset)$ \ tal que para cualquier matriz ortogonal \ $O \in \Ort_d(\Rset)$,
   %
   \[
   O  \,   \Delta^{-\frac12}  \,  Q^t  \left(   X  -  m  \right)   \:  \egald  \:
@@ -69,7 +74,7 @@ pelota de rugby. Adem\'as, se puede que eso se pasa en torno a un punto no cero.
   \]
   %
   donde la  matriz diagonal \ $\Delta  > 0$ \ es  la matriz de  autovalores de \
-  $\Sigma$  \  y  \  $Q  \in  \O_d(\Rset)$  \  la  matriz  de  los  autovectores
+  $\Sigma$  \  y  \  $Q  \in  \Ort_d(\Rset)$  \  la  matriz  de  los  autovectores
   correspondientes~\cite{Bha97,   Bha07,  HorJoh13},  \   $\Sigma  =   Q  \Delta
   Q^t$. Dicho de  otra manera, \ $\Delta^{-\frac12} Q^t \left( X  - m \right)$ \
   es a simetr\'ia esf\'erica.
@@ -96,7 +101,7 @@ de  probabilidad,  o  equivalentemente  por su  funci\'on  car\'acteristica.  La
 %
   Sea \ $X$ \ vector aleatorio $d$-dimensional a simetr\'ia el\'iptica en torno a
   \   $m  \in  \Rset^d$   \  y   de  matriz   caracter\'istica  \   $\Sigma  \in
-  P_d^+(\Rset)$. Entonces la funci\'on caract\'eristica se escribe bajo la forma
+  \Pos_d^+(\Rset)$. Entonces la funci\'on caract\'eristica se escribe bajo la forma
   %
   \[
   \Phi_X(\omega)  = e^{\imath  \,  \omega^t m}  \varphi_X\left( \omega^t  \Sigma
@@ -105,7 +110,7 @@ de  probabilidad,  o  equivalentemente  por su  funci\'on  car\'acteristica.  La
   %
   donde  \  $\varphi_X:  \Rset_+  \mapsto  [-1 \; 1]$ \  escalar,  es  llamado  {\em
     generadora  caracter\'istica}. Tomando el  logaritmo, obviamente  la secunda
-  funci\'on caracteristica se escribe
+  funci\'on caracter\'istica se escribe
   %
   \[
   \Psi_X(\omega) =  \imath \, \omega^t  m + \psi_X\left( \omega^t  \Sigma \omega
@@ -121,7 +126,7 @@ de  probabilidad,  o  equivalentemente  por su  funci\'on  car\'acteristica.  La
   Sea \  $Y = \Delta^{-\frac12} Q^t  \left( X - m  \right)$ \ con \  $\Sigma = Q
   \Delta  Q^t$  \ diagonalizaci\'on  de  \  $\Sigma$.   Por definici\'on  y  del
   teorema~\ref{Teo:MP:PropiedadesFuncionCaracteristica},  para  cualquier matriz
-  ortogonal \ $O \in \O_d(\Rset)$ \ y cualquier \ $\omega \in \Rset^d$
+  ortogonal \ $O \in \Ort_d(\Rset)$ \ y cualquier \ $\omega \in \Rset^d$
   %
   \[
   \Phi_Y(\omega) = \Phi_{O Y}(\omega) = \Phi_Y(O^t \omega)
@@ -145,7 +150,7 @@ de  probabilidad,  o  equivalentemente  por su  funci\'on  car\'acteristica.  La
   \]
   % 
   lo que  cierra la prueba  directa.  Reciprocamente, si  \ $\Phi_X$ \  tiene la
-  forma dada, para  cualquier matriz ortogonal \ $O  \in \O_d(\Rset)$ \ $\Phi_{O
+  forma dada, para  cualquier matriz ortogonal \ $O  \in \Ort_d(\Rset)$ \ $\Phi_{O
     Y}(\omega)  = \Phi_Y( O^t  \omega )  = \Phi_Y(\omega)$  \ y,  por relaci\'on
   uno-uno  entre  la medida  de  probabilidad de  una  variable  aleatorio y  su
   funci\'on caracter\'istica, $Y \egald O Y$.
@@ -264,9 +269,9 @@ partir de un vector esf\'ericamente invariante de varias maneras, entre otros:
 %
 \begin{corolario}
   Sea  \ $Y  \sim  \ED(0,I,\varphi_Y)$, \  $m \in  \Rset^d$  \ y  \ $\Sigma  \in
-  P_d^+(\Rset)$. \ Sean \ $\Sigma = Q \Delta Q^t$ \ la descomposici\'on diagonal
+  \Pos_d^+(\Rset)$. \ Sean \ $\Sigma = Q \Delta Q^t$ \ la descomposici\'on diagonal
   de \ $\Sigma$, \ $\Sigma^{\frac12} = Q \Delta^{\frac12} Q^t$ \'unica matriz de
-  \  $P_d^+(\Rset)$ \  raiz cuadrada  de \  $\Sigma$,  y \  $\Sigma =  L L^t$  \
+  \  $\Pos_d^+(\Rset)$ \  raiz cuadrada  de \  $\Sigma$,  y \  $\Sigma =  L L^t$  \
   descomposici\'on  de  Cholesky   de  \  $\Sigma$,  con  \   $L$  \  triangular
   inferior~\cite{HorJoh13, Bha07}.  Entonces
   %
@@ -290,7 +295,7 @@ ley.  Eso vale tambi\'en para los cumulantes:
 %
   Sea \  $X$ \  vector aleatorio $d$-dimensional  de distribuci\'on  el\'iptica en
   torno a  un  vector \  $m$,  y  de  matriz  caracter\'istica \  $\Sigma  \in
-  P_d^+(\Rset)$.  Entonces, si  estos momentos y cumulantes existen,  \ $m$ \ es
+  \Pos_d^+(\Rset)$.  Entonces, si  estos momentos y cumulantes existen,  \ $m$ \ es
   la media de \ $X$, \ie
   %
   \[
@@ -448,7 +453,7 @@ tensor curtosis para un vector a simetr\'ia el\'iptica~\cite[p.~44]{FanKot90}:
 %
 \begin{corolario}\label{Lem:MP:MediaCovarianzaEliptica}
   Sea \  $X$ \  vector aleatorio $d$-dimensional  de distribuci\'on  el\'iptica de
-  matriz caracter\'istica \ $\Sigma \in P_d^+(\Rset)$. Entonces
+  matriz caracter\'istica \ $\Sigma \in \Pos_d^+(\Rset)$. Entonces
   %
   \[
   \Sigma_X = - 2 \,  \varphi_X'(0) \, \Sigma
@@ -494,7 +499,7 @@ simetr\'ia el\'iptica:
 %
 \begin{teorema}\label{Teo:MP:TranformacionAfinEliptica}
   Sea  \  $X \,  \sim  \,  \ED(m,\Sigma,\varphi_X)$  \ $d$-dimensional,  $A  \in
-  \M_{d',d}(\Rset)$  \ de  rango  lleno tal  que  \ $d'  \le  d$ \  y  \ $c  \in
+  \Mat_{d',d}(\Rset)$  \ de  rango  lleno tal  que  \ $d'  \le  d$ \  y  \ $c  \in
   \Rset^{d'}$. Entonces
   %
   \[
@@ -583,7 +588,7 @@ caso en general por adici\'on:
   simetr\'ia el\'iptica.
 
   Reciprocamente,  suponemos  que $X+Y$  es  a  simetr\'ia el\'iptica.  Entonces
-  existe  necesariamente una matriz  $\Sigma \in  \P_d^+(\Rset)$ y  $\varphi \in
+  existe  necesariamente una matriz  $\Sigma \in  \Pos_d^+(\Rset)$ y  $\varphi \in
   \PD_d$ tal que
   %
   \[
@@ -598,7 +603,7 @@ caso en general por adici\'on:
     diagonal} \quad = Q \Delta_Y Q^t
   \]
   %
-  Siendo $R_Y \in P_d^+(\Rset)$ \ se diagonaliza con $Q \in \O_d(\Rset)$ bajo la
+  Siendo $R_Y \in \Pos_d^+(\Rset)$ \ se diagonaliza con $Q \in \Ort_d(\Rset)$ bajo la
   forma~\cite{Bha97, Bha07, HorJoh13}
   %
   \[
@@ -607,7 +612,7 @@ caso en general por adici\'on:
   %
   donde    \    $\lambda    =    \begin{bmatrix}   \lambda_1    &    \cdots    &
     \lambda_d \end{bmatrix}^t$ \  es el vector conteniendo los  autovalores de \
-  $R_Y$ \ y \ $Q \in \O_d(\Rset)$ \ los autovectores. Sean ahora
+  $R_Y$ \ y \ $Q \in \Ort_d(\Rset)$ \ los autovectores. Sean ahora
   %
   \[
   R  =  Q^t \Sigma_X^{-\frac12}  \Sigma  \Sigma_X^{-\frac12}  Q \qquad  \mbox{y}
@@ -918,7 +923,7 @@ tambi\'en.
   Sin perdida de generalidad, se  puede considerar \ $X \sim \ED(0,I,\varphi_X)$
   \ y recuperar  el caso general por cambio de  variables.  Entonces, por cambio
   de   variables   (ver   secci\'on~\ref{Sec:MP:Transformacion})  tenemos   para
-  cualquier matriz ortogonal \ $O \in \O_d(\Rset)$ \ y cualquier \ $x$
+  cualquier matriz ortogonal \ $O \in \Ort_d(\Rset)$ \ y cualquier \ $x$
   %
   \[
   p_X(x)  = p_{O  X}(x)  =  |O|^{-\frac12} p_X\left(  O^{-\frac12}  x \right)  =
@@ -1225,7 +1230,7 @@ Si \  $X$ \ a simetr\'a  esf\'erica (y por transformaci\'on  af\'in a simetr\'ia
 el\'iptica)  se escribe  siempre  como mezcla  de  escala de  base uniforme,  esta
 escritura estoc\'astica  no es \'unica. Por  ejemplo, si consideramos $X  = A \,
 G$, con \
-%$m \in \Rset^d$, , $\Sigma \in P_d^+(\Rset)$, 
+%$m \in \Rset^d$, , $\Sigma \in \Pos_d^+(\Rset)$, 
 $A$ \ variable  aleatoria positiva \ y \ $G \sim  \N(0,I)$ independiente de $G$,
 queda claro  que \ $X$  \ es a  simetr\'ia esf\'erica. Estos  vectores, llamados
 {\em mezcla  de escala de base  gaussiana}, o simplemente {\em  mezcla de escala
@@ -1443,7 +1448,7 @@ generadora de la mezcla gaussiana:
 %
 \begin{proof}
   La  prueba  es  inmediata  del   hecho  que,  para  cualquier  matriz  $M  \in
-  \M_{d,n}(\Rset)$ de rango lleno con $d  \le n$, \ $X \egald A \Sigma^{\frac12}
+  \Mat_{d,n}(\Rset)$ de rango lleno con $d  \le n$, \ $X \egald A \Sigma^{\frac12}
   G $ \ con  \ $G \sim \N(0,I)$ \ $n$-dimensional, tenemos $X' =  M X \egald A M
   \Sigma^{\frac12} G \egald A \left( M  \Sigma M^t \right)^{\frac12} G'$ \ con \
   $G'         \sim        \N(0,I)$         \         $d$-dimensional        (ver
@@ -1982,7 +1987,7 @@ transformaci\'on unitaria (equivalente de una rotaci\'on) de manera siguiente:
   Sea  \ $Z$  \ vector  aleatorio $d$-dimensional  complejo.  $Z$  \ es  dicho a
   simetr\'ia  el\'iptica,   o  elipticalmente  invariante,   o  de  distribuci\'on
   el\'iptica, en torno a \ $m \in  \Cset^d$, \ si existe una matriz \ $\Sigma \in
-  P_d^+(\Cset)$ \ tal que para cualquier matriz unitaria \ $V \in \U_d(\Cset)$,
+  \Pos_d^+(\Cset)$ \ tal que para cualquier matriz unitaria \ $V \in \Unit_d(\Cset)$,
   %
   \[
   V  \,   \Delta^{-\frac12}  \,  Q^\dag  \left(   X  -  m  \right)   \:  \egald  \:
@@ -1990,7 +1995,7 @@ transformaci\'on unitaria (equivalente de una rotaci\'on) de manera siguiente:
   \]
   %
   donde la matriz real diagonal \ $\Delta  > 0$ \ es la matriz de autovalores de
-  \  $\Sigma$  \ y  \  $Q  \in \U_d(\Cset)$  \  la  matriz  de los  autovectores
+  \  $\Sigma$  \ y  \  $Q  \in \Unit_d(\Cset)$  \  la  matriz  de los  autovectores
   correspondientes~\cite{Bha97,   Bha07,  HorJoh13},  \   $\Sigma  =   Q  \Delta
   Q^\dag$. Es  decir, \ $\Delta^{-\frac12} Q^\dag \left(  X - m \right)$  \ es a
   simetr\'ia esf\'erica.
@@ -2013,13 +2018,13 @@ El v\'inculo entre la simetr\'ia el\'iptica y la circularidad es tambi\'en obvia
   La prueba es  inmediata de \ $Z-m \egald  Q \, \Delta^{\frac12} \, Y$  \ con \
   $Y$ \  a simetr\'ia  esf\'erica. Se  cierra la prueba  de, \  $e^{\imath \theta}
   (Z-m) \egald Q \, \Delta^{\frac12} \,  \big( e^{\imath \theta} I \big) \, Y$ \
-  conjuntamente a \ $e^{\imath \theta} I \in \U_d(\Cset)$.
+  conjuntamente a \ $e^{\imath \theta} I \in \Unit_d(\Cset)$.
 \end{proof}
 %Como antes,  para estudiar  los vectores a  simetr\'ia el\'iptica, sin  perdida de
 %generalidad se puede restringirnos al caso a simetr\'ia esf\'erica.
 
 Es importante notar  las inmersiones biyectivas de \ $\Cset^d$  \ en \ $\Rset^{2
-  d}$ \  y de $\M_{d',d}(\Cset)$ \  en un subconjunto de  \ $\M_{2 d', 2d}(\Rset)$
+  d}$ \  y de $\Mat_{d',d}(\Cset)$ \  en un subconjunto de  \ $\Mat_{2 d', 2d}(\Rset)$
 siguientes:
 %
 \[
@@ -2028,9 +2033,9 @@ siguientes:
 \]
 %
 \[
-\forall  \:  M \in  \M_{d',d}(\Cset)  \qquad  \mbox{en  biyecci\'on con}  \qquad
+\forall  \:  M \in  \Mat_{d',d}(\Cset)  \qquad  \mbox{en  biyecci\'on con}  \qquad
 \overline{M}   =   \begin{bmatrix}   \real{M}   &  -   \imag{M}\\   \imag{M}   &
-  \real{M} \end{bmatrix} \in \M_{2d',2d}(\Rset)
+  \real{M} \end{bmatrix} \in \Mat_{2d',2d}(\Rset)
 \]
 %
 Claramente para matrices $M, N$ y un vector $z$,
@@ -2047,14 +2052,14 @@ precedientes. Adem\'as, se ve sencillamente que
 \item  $\displaystyle   \overline{M^\dag}  =  \overline{M}^{\,   t}$,
 %  \quad  con  consecuencia
 %
-\item $\displaystyle M \in H_d(\Cset) \:\: \Leftrightarrow \:\:
-  \overline{M}  \in  S_{2d}(\Rset)  \:\:  \Leftrightarrow  \:\:  \real{M}^t  =
+\item $\displaystyle M \in \Her_d(\Cset) \:\: \Leftrightarrow \:\:
+  \overline{M}  \in  \Sim_{2d}(\Rset)  \:\:  \Leftrightarrow  \:\:  \real{M}^t  =
   \real{M} \, \et \, \imag{M}^t = - \imag{M}$,
 %
-\item  $\forall \:  M \in  H_d(\Cset), \:  z  \in \Cset^d,  \quad z^\dag  M z  =
-  \widetilde{z}^t \, \overline{M} \, \widetilde{z}$,
+\item  $\forall \:  M \in  \Her_d(\Cset), \:  z  \in \Cset^d,  \quad z^\dag  M z  =
+  \widetilde{z}^{\, t} \, \overline{M} \, \widetilde{z}$,
 %
-\item $M \in \U_d(\Cset) \quad \Leftrightarrow \quad \overline{M} \in \O_{2d}(\Rset)$.
+\item $M \in \Unit_d(\Cset) \quad \Leftrightarrow \quad \overline{M} \in \Ort_{2d}(\Rset)$.
 \end{itemize}
 %
 %\[
@@ -2075,10 +2080,10 @@ caso real:
   Se obtiene la forma real de la descomposici\'on \ $\Sigma = Q \Delta Q^\dag$ \
   bajo  la forma  \ $\overline{\Sigma}  = \overline{Q}  \,  \overline{\Delta} \,
   \overline{Q}^t$ \ con \ $\overline{\Delta}  = \begin{bmatrix} \Delta & 0\\ 0 &
-    \Delta  \end{bmatrix}  \in P_{2d}^+(\Rset)$  \  diagonal, $\overline{Q}  \in
-  \O_{2d}(\Rset)$.      La     prueba    se     cierra     saliendo    de     la
+    \Delta  \end{bmatrix}  \in \Pos_{2d}^+(\Rset)$  \  diagonal, $\overline{Q}  \in
+  \Ort_{2d}(\Rset)$.      La     prueba    se     cierra     saliendo    de     la
   definici\'on~\ref{Def:MP:ElipticoComplejo} escrita bajo su forma real, notando
-  que $\overline{\Delta^{-\frac12}} = \overline{\Delta}^{-\frac12}$.
+  que $\overline{\Delta^{-\frac12}} = \overline{\Delta}^{\: -\frac12}$.
 \end{proof}
 
 De esta equivalencia, todos  los resultados anteriores se extienden naturalmente
@@ -2113,7 +2118,7 @@ matriz caracter\'istica \ $\Sigma$:
       corrolario~\ref{Lem:MP:MediaCovarianzaEliptica}}~\cite{Kri76}
   %
   \item  Teorema~\ref{Teo:MP:TranformacionAfinEliptica}  en:  \  $Z \,  \sim  \,
-    \CED(m,\Sigma,\varphi_Z)$ \  $d$-dimensional, $A \in  \M_{d',d}(\Cset)$ \ de
+    \CED(m,\Sigma,\varphi_Z)$ \  $d$-dimensional, $A \in  \Mat_{d',d}(\Cset)$ \ de
     rango lleno tal que  \ $d' \le d$ \ y \  $c \in \Cset^{d'} \quad \Rightarrow
     \quad A X + c \: \sim \: \CED(A m + c , A \Sigma A^\dag , \varphi_Z)$;
   %
@@ -2202,20 +2207,21 @@ o~\cite{Mal61,   Tyl82,  GruRoc90,   GupVar94,   GupVar95,  gupNag99,   FanLi99,
   CarGon16}.   Tipicamente, si  uno  sale de  \  $X_1, \ldots,  X_n$ \  vectores
 aleatorios $d$-dimensionales independientes, de  misma ley, y suponemos la media
 cero  para  simplificar  el  ejemplo,  un  estimador natural  de  la  matriz  de
-covarianza \ $\Sigma_WX$ \  es \ $\displaystyle \widehat{\Sigma}_X = \frac{1}{n}
-\sum_{i=1}^n X_i X_i^t$,  matriz de $S_d(\Rset)$ (y a\'un  de $P_d(\Rset)$, y de
-$P_d^+(\Rset)$ casi siempre si $n \le  d$). Ahora, si los $X_i$ son a sim\'etria
-elipt\'ica, $W$ va  a tener simetr\'ia por cambio de  escala y rotaciones. M\'as
-precisamente, si  se supone $X_i$  esf\'erica, para cualquier rotaci\'on  $O$ se
-tiene   $O   X_i  \egald   X_i$,   dando   $O   \widehat{\Sigma}_X  O^t   \egald
-\widehat{\Sigma}_X$.  Esta  definici\'on de  una matriz a  simetr\'ia esf\'erica
-aparece por unas de las primeras veces en~\cite{Mal61}.Ahora, si uno quierre una
-matriz  de covarianza  $\Sigma_{X,Y}$  con $X$  vector  $d$-dimensional e  $Y_i$
-vector  $d'$-dimensional  a  partir  de  copias  independientes,  $\displaystyle
+covarianza \  $\Sigma_X$ \ es \ $\displaystyle  \widehat{\Sigma}_X = \frac{1}{n}
+\sum_{i=1}^n X_i X_i^t$, matriz  de $\Sim_d(\Rset)$ (y a\'un de $\Pos_d(\Rset)$,
+y de  $\Pos_d^+(\Rset)$ casi siempre si  $n \le d$).  Ahora, si los $X_i$  son a
+sim\'etria elipt\'ica, $\widehat{\Sigma}_X$ va  a tener simetr\'ia por cambio de
+escala  y rotaciones.  M\'as precisamente,  si  se supone  $X_i$ esf\'erica  por
+ejemplo, para  cualquier rotaci\'on $O$  se tiene $O  X_i \egald X_i$,  dando $O
+\widehat{\Sigma}_X O^t  \egald \widehat{\Sigma}_X$.  Esta propiedad  dio lugar a
+une definici\'on de  una matriz a simetr\'ia esf\'erica aparece  por unas de las
+primeras veces  en~\cite{Mal61}.  Ahora,  si uno quierre  estimar una  matriz de
+covarianza  $\Sigma_{X,Y}$  con  $X$   vector  $d$-dimensional  e  $Y_i$  vector
+$d'$-dimensional   a    partir   de   copias    independientes,   $\displaystyle
 \widehat{\Sigma}_{X,Y}  =   \frac{1}{n}  \sum_{i=1}^n  X_i   Y_i^t$,  matriz  de
-$\M_{d,d'}(\Rset)$. Se observa que cuando  los $X_i$ e $Y_i$ son esfericas, para
-cualquier   par   de   rotaciones   $O$   de   $\M_{d,d}(\Rset)$   y   $O'$   de
-$\M_{d',d'}(\Rset)$     se     tiene     $\widehat{\Sigma}_{X,Y}    \egald     O
+$\Mat_{d,d'}(\Rset)$. Se observa que cuando  los $X_i$ e $Y_i$ son esfericas por
+ejemplo, para cualquier  par de rotaciones $O$ de  $\Mat_{d,d}(\Rset)$ y $O'$ de
+$\Mat_{d',d'}(\Rset)$     se    tiene    $\widehat{\Sigma}_{X,Y}     \egald    O
 \widehat{\Sigma}_{X,Y}    \egald     \widehat{\Sigma}_{X,Y}    O'    \egald    O
 \widehat{\Sigma}_{X,Y} O'$.
 
@@ -2225,37 +2231,42 @@ Empezamos con las  definiciones de~\cite[\S~9.3]{GupNag99} o~\cite{Daw77, Daw78,
 %simetr\'ia esf\'erica, y luego el\'iptica.
 
 \begin{definicion}[Matriz a simetr\'ia esf\'erica]
-  Sea  $X$ matriz  aleatoria definida  sobre  $\X =  \M_{d,d'}(\Rset)$.  $X$  es
+  Sea  $X$ matriz  aleatoria definida  sobre  $\X =  \Mat_{d,d'}(\Rset)$.  $X$  es
   dicha:
   %
   \begin{enumerate}%[label={\normalsize (\roman*)}]
   \item[(i)] a simetr\'ia esf\'erica a la  derecha si para cualquier matriz \ $O'
-    \in \O_{d'}(\Rset)$ \ se tiene
+    \in \Ort_{d'}(\Rset)$ \ se tiene
     %
     \[
-    X Q \: \egald \: X;
+    X O' \: \egald \: X;
     \]
   %
   \item[(ii)] A simetr\'ia esf\'erica a  la izquierda si para cualquier matriz \
-    $O \in \O_d(\Rset)$ \ ortogonal se tiene
+    $O \in \Ort_d(\Rset)$ \ ortogonal se tiene
     %
     \[
     O X \: \egald \: X;
     \]
   %
   \item[(iii)] A  simetr\'ia esf\'erica si para  cualquier par de  matrices \ $O
-    \in \O_(\Rset)$ \ y \ $Q \in \O_{d'}(\Rset)$ \ se tiene
+    \in \Ort_d(\Rset)$ \ y \ $O' \in \Ort_{d'}(\Rset)$ \ se tiene
     %
     \[
-    O X Q \: \egald \: X;
+    O X O' \: \egald \: X;
     \]
   %
-  \item[(iv)]  cuando $d'  = d$  y $\X  = S_d(\Rset)$,  a  simetr\'ia esf\'erica
-    fuerte si para cualquier matriz \ $O \in \O_d(\Rset)$ \ se tiene
+    (ambas derecha y izquierda).
+  %
+  \item[(iv)]  cuando $d'  = d$  y $\X  = \Sim_d(\Rset)$,  a  simetr\'ia esf\'erica
+    fuerte si para cualquier matriz \ $O \in \Ort_d(\Rset)$ \ se tiene
     %
     \[
     O X O^t \: \egald \: X
     \]
+   %
+    (ambas derecha y  izquierda, con los v\'inculos adicionales  de simetr\'ia y
+    $O'=O^t$).
 \end{enumerate}
 \end{definicion}
 %
@@ -2264,40 +2275,72 @@ Naturlamente, se  extiende como en el  caso de vectores con  estiramientos y una
 translaci\'on:
 %
 \begin{definicion}[Vector a simetr\'ia el\'iptica]
-  \SZ{RETOMAR A LA LUZ DE LA DEFINICION PRECEDIENTE
-
-Sea \ $X$ \ matriz aleatoria $d$-dimensional definida sobre $\X = S_d(\Rset)$.
-  $X$  \ es dicha  a simetr\'ia  el\'iptica, o  elipticalmente invariante,  o de
-  distribuci\'on el\'iptica, en  torno a \ $M \in  \M_{d,d}(\Rset)$, \ si existe
-  una  matriz  \ $\Sigma  \in  P_d^+(\Rset)$ \  tal  que  para cualquier  matriz
-  ortogonal \ $O \in \O_d(\Rset)$,
+%
+  Sea $X$ matriz aleatoria definida  sobre $\X = \Mat_{d,d'}(\Rset)$.  Si existe
+  una matriz $m \in  \Mat_{d,d'}(\Rset)$ y matrices $\Sigma \in \Pos_d^+(\Rset)$
+  y $\Sigma' \in \Pos_{d'}^+(\Rset)$ tales que:
   %
-  \[
-  O \, \Delta^{-\frac12} \, Q^t \left( X - m \right) Q \, \Delta^{-\frac12} \, O
-  \:  \egald   \:  \Delta^{-\frac12}  \,  Q^t   \left(  X  -  m   \right)  Q  \,
-  \Delta^{-\frac12}
-  \]
+  \begin{enumerate}%[label={\normalsize (\roman*)}]
+  \item[(i)] si para cualquier matriz \ $O' \in \Ort_{d'}(\Rset)$ se tiene
+    %
+    \[
+    (X-m) Q' \Delta'^{-\frac12} O' \: \egald \: (X-m) Q' \Delta'^{-\frac12}
+    \]
+    %
+    $X$ es dicha a a simetr\'ia el\'iptica a la derecha en torno de $m$.
+  %
+  \item[(ii)] si para cualquier matriz \ $O \in \Ort_d(\Rset)$ se tiene
+    %
+    \[
+    O \, \Delta^{-\frac12} Q^t (X-m) \: \egald \: \Delta^{-\frac12} Q^t (X-m)
+    \]
+    %
+    $X$ es dicha a a simetr\'ia el\'iptica a la izquierda en torno de $m$.
+  %
+  \item[(iii)] si para  cualquier par de matrices \ $O \in  \Ort_d(\Rset)$ \ y \
+    $O' \in \Ort_{d'}(\Rset)$ se tiene
+    %
+    \[
+    O  \, \Delta^{-\frac12}  Q^t (X-m)  Q'  \Delta'^{-\frac12} O'  \: \egald  \:
+    \Delta^{-\frac12} Q^t (X-m) Q' \Delta'^{-\frac12}
+    \]
+    %
+    $X$ es dicha a simetr\'ia el\'iptica en torno de $m$.
+  %
+  \item[(iv)] si  cuando $d' = d$  y $\X = \Sim_d(\Rset)$,  $m = \Sim_d(\Rset)$,
+    para cualquier matriz \ $O \in \Ort_d(\Rset)$ \ se tiene
+    %
+    \[
+    O \Delta^{-\frac12} Q^t (X-m) Q \Delta^{-\frac12} O^t \: \egald \: \Delta^{-\frac12} Q^t (X-m) Q \Delta^{-\frac12}
+    \]
+    %
+    $X$ es dicha a simetr\'ia fuertemente el\'iptica en torno de $m$.
+  \end{enumerate}
   %
   donde la  matriz diagonal \ $\Delta  > 0$ \ es  la matriz de  autovalores de \
   $\Sigma$ \ y \ $Q$ \ la matriz de los autovectores correspondientes, \ $\Sigma
-  = Q \Delta Q^t$.  Dicho de otra manera, \ $\Delta^{-\frac12} Q^t  \left( X - m
-  \right) Q \Delta^{-\frac12}$ \ es a simetr\'ia esf\'erica.
+  = Q  \Delta Q^t$ y  similarmente la matriz  diagonal \ $\Delta'  > 0$ \  es la
+  matriz  de  autovalores  de \  $\Sigma'$  \  y  \  $Q'$  \ la  matriz  de  los
+  autovectores correspondientes, \ $\Sigma' = Q' \Delta' Q'^t$.
 
-  Llamaremos tambi\'en  $m$ \  {\em par\'ametro  de posici\'on} y  \ la  matriz \
-  $\Sigma$ \ {\em matriz caracter\'istica}.
+  Llamaremos tambi\'en a $m$ \  {\em par\'ametro  de posici\'on} y  \ las  matrices \
+  $\Sigma, \Sigma'$ \ {\em matrices caracter\'isticas}.
 
-Se denotar\'a respectivamente \ $X \sim \DED(m,S,\varphi_X)$ \ en el caso (i), \ $X \sim \IED(m,\Sigma,\varphi_X)$ \ en el caso (ii), \ $X \sim \ED(m,\Sigma,S,\varphi_X)$ \ en el caso (iii), \ $X \sim \FED(m,\Sigma,\varphi_X)$ \ en el caso (iv).}
+  % Se denotar\'a  respectivamente \ $X  \sim \DED(m,S,\varphi_X)$ \ en  el caso
+  % (i),  \ $X  \sim \IED(m,\Sigma,\varphi_X)$  \  en el  caso (ii),  \ $X  \sim
+  % \ED(m,\Sigma,S,\varphi_X)$    \   en    el   caso    (iii),   \    $X   \sim
+  % \FED(m,\Sigma,\varphi_X)$ \ en el caso (iv).}
 \end{definicion}
 
 Si denotamos  $\DED, \: \IED, \:  \ED$ y $\ED$ \  las clases de los  casos (i) a
 (iv) respectivamente, se tiene obviamente
 %
 \[
-\DED \, \cap \, \IED \: = \: \ED \quad \mbox{y, para } \: d'=d, \quad \ED \subset \FED
+\DED \, \cap \, \IED \: = \: \ED \quad \mbox{y, para } \: d'=d, \quad \FED \subset \ED
 \]
 
 
-\SZ{ADELANTAR covarianzas empiricas media cero, y sacando la media empirica en tal clase}
+\SZ{ADELANTAR funcion caracteristica, covarianzas empiricas media cero cae, y sacando la media empirica cae en tal clase}
  
 \vspace{2cm}
 
