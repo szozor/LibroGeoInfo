@@ -369,12 +369,12 @@ que los autovalores corespondientes  $\lambda^\N_i$ sean en orden creciente,
 \ie
 %
 \[
-\Sigma_\N  =  U  \diag\left(  \begin{bmatrix} \lambda^\N_1  &  \cdots  &
+\Sigma_\N  =  U  \Diag\left(  \begin{bmatrix} \lambda^\N_1  &  \cdots  &
     \lambda^\N_d \end{bmatrix}^t \right) U^t  \qquad \mbox{con} \qquad 0 \le
 \lambda^\N_1 \le \cdots \le \lambda^\N_d,
 \]
 %
-donde $\diag$ es la matriz diagonal teniendo los $\lambda_i$ en su diagonal (ver
+donde $\Diag$ es la matriz diagonal teniendo los $\lambda_i$ en su diagonal (ver
 notaciones).   Sea \ $R_X  = U^t  \Sigma_X U$.   Es sencillo  ver que  \ $\left|
   \Sigma_X + \Sigma_\N \right| = \left| R_X + \Lambda_\N \right|$ \ (de $|A B| =
 |A| \,  |B|$) \ y  que \ $\Tr \Sigma_X  = \Tr R_X$  (de $\Tr(A B) =  \Tr(B A)$).
@@ -408,7 +408,7 @@ $(\cdot)_+ = \max(\cdot,0)$ \ y \ $\lambda$ \ tal que \ $\sum_i \left( \lambda -
 \begin{eqnarray*}
 C =  \frac12 \log \left(  \frac{\left| \Sigma_\N +  \Sigma_X \right|}{\left|
       \Sigma_\N  \right|}  \right)  & \quad \mbox{con} \quad &  \Sigma_X  =  U
-\diag\left( \begin{bmatrix} \left(\lambda - \lambda^\N_1\right)_+ & \cdots & \left(\lambda -
+\Diag\left( \begin{bmatrix} \left(\lambda - \lambda^\N_1\right)_+ & \cdots & \left(\lambda -
     \lambda^\N_d \right)_+ \end{bmatrix}^t \right) U^t,\\[2.5mm]
 %
 & &  \lambda \ \mbox{ tal que } \:

@@ -109,7 +109,7 @@ Fig.~\ref{Fig:MP:Gaussiana}(c).
   covarianza \ $\Sigma_X = R(\theta)  \Delta^2 R(\theta)^t$ \ con \ $R(\theta) =
   \protect\begin{bmatrix}   \cos\theta  &   -  \sin\theta\\[2mm]   \sin\theta  &
     \cos\theta  \protect\end{bmatrix}$ \  matriz  de rotaci\'on  y  \ $\Delta  =
-  \diag\left(\protect\begin{bmatrix}  1   &  a\protect\end{bmatrix}  \right)$  \
+  \Diag\left(\protect\begin{bmatrix}  1   &  a\protect\end{bmatrix}^t  \right)$  \
   matriz  de   cambio  de  escala,   y  sus  marginales   \  $X_1  \,   \sim  \,
   \N\left(0,\cos^2\theta  + a^2  \sin^2\theta \right)$  \ y  \ $X_2  \,  \sim \,
   \N\left(0,\sin^2\theta + a^2 \cos^2\theta  \right)$ \ (ver m\'as adelante). En
@@ -185,7 +185,7 @@ La gaussiana tiene un par de propiedades particulares:
 \begin{teorema}[Independencia]
 \label{Teo:MP:IndependenciaGaussiana}
 %
-  Sea   \   $X  \,   \sim   \,   \N(m,\Delta)$  \   con   \   $\Delta  =   \diag
+  Sea   \   $X  \,   \sim   \,   \N(m,\Delta)$  \   con   \   $\Delta  =   \Diag
   \left(  \begin{bmatrix}  \sigma_1^2  &  \cdots  &  \sigma_d^2  \end{bmatrix}^t
   \right)$   \  diagonal.   Entonces  los   componentes  \   $X_i  \,   \sim  \,
   \N(m_i,\sigma_i^2)$ \ son independientes.

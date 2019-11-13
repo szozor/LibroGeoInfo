@@ -158,9 +158,18 @@ $\un$ & Vector de componentes iguales a 1, \ $\un = \protect\begin{bmatrix} 1\\
 $\un_i$ & Vector de componentes $j$-\'esima iguales a $\un_{\{i\}}(j)$.\\[2.5mm]
 \hline
 %
-$\diag$ & Matriz diagonal  con los componentes del vector argumento en su
+$\diag$ & Vector formado de los elementos diagonales su argumento, matriz cuadrada,\vspace{1mm}\newline para \ $\displaystyle M = \protect\begin{bmatrix}
+  m_{1,1}  & \cdots & m_{1,d} \\
+  \vdots  & \vdots & \vdots \\
+  m_{d,1}  & \cdots & m_{d,d}
+\end{bmatrix}\protect \in \Mat_{d,d}(\Kset), \quad \diag(M) = \protect\begin{bmatrix} m_{1,1} \\ m_{2,2} \\ \vdots \\ m_{d,d}
+\end{bmatrix}\protect$.\vspace{1mm}\\[2.5mm]
+%
+\hline
+%
+$\Diag$ & Matriz diagonal  con los componentes del vector argumento en su
 diagonal,\vspace{1mm}\newline para \ $\displaystyle v \in \Kset^d,$\vspace{1mm}\newline
-$\displaystyle \diag(v) = \sum_{i=1}^d \left( \un_i \un_i^t \right) v_i =
+$\displaystyle \Diag(v) = \sum_{i=1}^d \left( \un_i \un_i^t \right) v_i =
 \protect\begin{bmatrix}
   v_1  &   0    & \cdots &    0   \\
    0   & \ddots & \ddots & \vdots \\
@@ -168,10 +177,10 @@ $\displaystyle \diag(v) = \sum_{i=1}^d \left( \un_i \un_i^t \right) v_i =
    0   & \cdots &    0   &   v_d
 \end{bmatrix}\protect$.\vspace{1mm}\\[2.5mm]
 %
-%$\diag$ & Matriz diagonal (bloc) con el argumento en su
+%$\Diag$ & Matriz diagonal (bloc) con el argumento en su
 %diagonal,\vspace{1mm}\newline para \ $\displaystyle V = (V_1,\ldots,V_n) \in
 %\Mat_{d_1,d_1}(\Kset) \times \cdots \times \Mat_{d_n,d_n}(\Kset),$\vspace{1mm}\newline
-%$\diag(V) = \sum_{i=1}^d \left( \un_i \un_i^t \right) \otimes V_i =
+%$\Diag(V) = \sum_{i=1}^d \left( \un_i \un_i^t \right) \otimes V_i =
 %\protect\begin{bmatrix}
 %  V_1  &   0    & \cdots &    0   \\
 %   0   & \ddots & \ddots & \vdots \\
@@ -190,7 +199,7 @@ $0 \equiv \protect\begin{bmatrix}
 \hline
 %
 $I_d \quad , \quad I$ & Matriz cuadrada $d \times d$, identidad, \ $I \equiv I_d
-= \diag(\un)$\vspace{1mm}\newline (se saca el \'indice cuando no hay ambiguedad)\\[2.5mm]
+= \Diag(\un)$\vspace{1mm}\newline (se saca el \'indice cuando no hay ambiguedad)\\[2.5mm]
 \hline
 %
 %$J$ & Matriz de comutaci\'on~\footnote{M\'as generalmente es definida sobre \

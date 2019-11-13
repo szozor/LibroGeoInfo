@@ -37,6 +37,7 @@
 %\RequirePackage{boites,chngpage} % para poder cortar tablas cambiando de pagina
 \RequirePackage{footnote,footmisc} % to manage the numeration and reference to footnote
 \makesavenoteenv{tabular} % to manage the footnote in tabular environment
+\RequirePackage{multicol} % para manejar texto en multi colonas
 %\RequirePackage{tablefootnote} % to manage the footnote in tabular environment
 %\RequirePackage{xargs}
 %\RequirePackage{accents}

@@ -3,7 +3,7 @@
 %
 \def\A{\mathcal{A}} % Alfabeto
 \def\B{\mathcal{B}} % Ley binomial, Bernoulli (caso especial)
-\def\Be{\mathcal{B}e} % ley beta
+\def\Be{\mathcal{B}e} % ley 
 \def\C{\mathcal{C}}
 \def\D{\mathcal{D}}
 \def\Dir{\mathcal{D}ir} % Dirichlet
@@ -14,22 +14,22 @@
 \def\IED{\mathcal{IED}} % Elipticamente Distribuida a la Izquierda
 \def\FED{\mathcal{FED}} % Fuertamente Elipticamente Distribuida
 \def\F{\mathcal{F}} % Fuente (codificacion), transformada de Fourier
-\def\FS{\mathcal{FS}}
-\def\G{\mathcal{G}} % Ley Gamma
+\def\FS{\mathcal{FS}} % transformada de Fourier-Stieltjes
+\def\G{\mathcal{G}} % Ley Gamma, Ley Geometrica
 \def\H{\mathcal{H}} % Ley hipergeometrica
-\def\L{\mathcal{L}} % 
-\def\LS{\mathcal{LS}}
-\def\M{\mathcal{M}} % Ley multinomial
-\def\MS{\mathcal{MS}}
+\def\L{\mathcal{L}} % transformada de Laplace
+\def\LS{\mathcal{LS}} % transformada de Laplace-Stieltjes
+\def\M{\mathcal{M}} % Ley multinomial, transformada de Mellin
+\def\MS{\mathcal{MS}} % transformada de Mellin-Stieltjes
 \def\N{\mathcal{N}} % Normal o Gaussiana
 \def\CN{\mathcal{CN}} % Normal Compleja
 \def\O{\mathcal{O}}
-\def\P{\mathcal{P}}
-\def\R{\mathcal{R}}
-\def\CR{\mathcal{CR}}
-\def\Tri{\mathcal{T}} % Triangulo
+\def\P{\mathcal{P}} % conjunto de k-uplet de matrices de Pd^+ sumando a la unidad
+\def\R{\mathcal{R}} % Ley Student-R
+\def\CR{\mathcal{CR}} % ley Student-r compleja
+\def\Tri{\mathcal{T}} % Triangulo, ley Student-t
 \def\T{\mathcal{T}} % Tensor
-\def\CT{\mathcal{CT}}
+\def\CT{\mathcal{CT}} % ley Student-t compleja
 \def\U{\mathcal{U}} % Uniforma
 \def\W{\mathcal{W}} % Wishart
 \def\X{\mathcal{X}} % espacio imagen X(Omega)
@@ -92,11 +92,12 @@
 \def\Curt{\operatorname{Curt}} % Curtosis
 \def\Excurt{\operatorname{ExCurt}} % Curtosis por excesso
 \def\Asim{\operatorname{Asim}} % Asimetria {\operatorname{Asim}}
-\def\e{\operatorname{e}} % exponential con un e solo
+%\def\e{\operatorname{e}} % exponential con un e solo
 \def\Jac{\operatorname{J}} % Jacobiana
 \def\Hess{\mathcal{H}} % Hessiana
 \def\Tr{\operatorname{Tr}} % Traza
-\def\diag{\operatorname{diag}} % diagonal operador
+\def\diag{\operatorname{diag}} % diagonal operador sobre una matriz
+\def\Diag{\operatorname{diag}} % diagonal operador sobre un vector
 \def\det{\operatorname{det}} % determinente operador
 %\def\Gauss{\mathcal{N}} % notacion de la gaussiana
 \def\argmax{\operatorname*{argm\acute{a}x}} % operador argmax (se usa como el limite con \argmax_x)
@@ -104,7 +105,7 @@
 \def\argmin{\operatorname*{argm\acute{\upimath}n}} % operador argmin (se usa como el limite con \argmin_x)
 %
 \def\un{\mathbbm{1}} % funcion indicador
-\def\sign{\operatorname{sign}} % funcion indicador
+\def\sign{\operatorname{sign}} % funcion signo
 %\def\un{\mathbbm{0}} % vector 0
 \def\arccos{\operatorname{arccos}} % arcoseno
 \def\egald{\stackrel{\mathrm{d}}{=}} % igualdad en distribucion
@@ -125,6 +126,15 @@
 \def\dar{\mathrm{d}} % Daroczy
 \def\hcd{\mathrm{hcd}} % Havrda-Charvat-Daroczy
 \def\id{\mathrm{id}} % identidad
+%
+\def\izq{\mathrm{i}}
+\def\der{\mathrm{d}}
+\def\col{\mathrm{c}}
+\def\lin{\mathrm{l}}
+\def\vcol{\mathrm{vc}}
+\def\vlin{\mathrm{vl}}
+\def\bil{\mathrm{b}}
+\def\simed{\mathrm{s}}
 %
 %
 % Pochhammer creciente y decreciente

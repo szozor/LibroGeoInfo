@@ -102,7 +102,7 @@ contexto bi-dimensional figura Fig.~\ref{Fig:MP:StudentT}(c).
   R(\theta) \Delta^2  R(\theta)^t$ \ con \  $R(\theta) = \protect\begin{bmatrix}
     \cos\theta    &     -    \sin\theta\\[2mm]    \sin\theta     &    \cos\theta
     \protect\end{bmatrix}$   \   matriz   de    rotaci\'on   y   \   $\Delta   =
-  \diag\left(\protect\begin{bmatrix}  1   &  a\protect\end{bmatrix}  \right)$  \
+  \Diag\left(\protect\begin{bmatrix}  1   &  a\protect\end{bmatrix}^t  \right)$  \
   matriz  de   cambio  de  escala,   y  sus  marginales   \  $X_1  \,   \sim  \,
   \T_\nu\left(0,\cos^2\theta +  a^2 \sin^2\theta \right)$ \  y \ $X_2  \, \sim \,
   \T_\nu\left(0,\sin^2\theta   +   a^2  \cos^2\theta   \right)$   \  (ver   m\'as
@@ -487,14 +487,14 @@ parecida).
 \
 
 Tambi\'en, la  distribuci\'on Student-$t$  se generaliza al  caso matriz-variada
-$X$   definido  sobre   $M_{d,d'}(\Rset)$;   se   denota  \   $X   \,  \sim   \,
-\T_\nu(M,\Sigma,\Omega)$  \  donde  \  $M  \in M_{d,d'}(\Rset),  \:  \Sigma  \in
-\Pos_d^+(\Rset),  \:  \Omega  \in  \Pos_{d'}^+(\Rset)$  y  la  densidad  es  dada  por
+$X$   definido  sobre   $\Mat_{d,d'}(\Rset)$;   se   denota  \   $X   \,  \sim   \,
+\T_\nu(m,\Sigma,\Sigma')$  \  donde  \  $m  \in \Mat_{d,d'}(\Rset),  \:  \Sigma  \in
+\Pos_d^+(\Rset),  \:  \Sigma'  \in  \Pos_{d'}^+(\Rset)$  y  la  densidad  es  dada  por
 $\displaystyle             p_X(x)             =             \frac{\Gamma_d\left(
     \frac{\nu+d+d'-1}{2}\right)}{\pi^{\frac{\nu       d}{2}}      \Gamma_d\left(
     \frac{\nu+d-1}{2}\right)  \,  \left|  \Sigma  \right|^{\frac{d'}{2}}  \left|
-    \Omega \right|^{\frac{d}{2}}} \: \left| I + \Sigma^{-1} (x-M) \, \Omega^{-1}
-  \,      (x-M)^t     \right|^{-     \frac{\nu+d+d'-1}{2}}$.      Se     refiera
+    \Sigma' \right|^{\frac{d}{2}}} \: \left| I + \Sigma^{-1} (x-m) \, \Sigma'^{-1}
+  \,      (x-m)^t     \right|^{-     \frac{\nu+d+d'-1}{2}}$.      Se     refiera
 a~\cite{Dic67}, \cite[Cap.~4]{GupNag99} o~\cite[\S5.11   y
 ref.]{KotNag04}   para   tener   m\'as   detalles.
 % Dickey 66, Cornis 54
