@@ -2242,6 +2242,12 @@ Empezamos  con cada  definici\'on  de~\cite[\S~9.3]{GupNag99} y  de~\cite{Hsu40,
 
 \centerline{$(\simed) \:$ {\em sim\'etrica} si \ $d = d', \: \X = \Sim_d(\Rset)$
   \ y \ $\forall \: O \in \Ort_d(\Rset), \quad\qquad O X O^t \: \egald \: X$}
+
+\
+
+En   cada  definici\'on,   se   puede  reemplazar   $\Delta^{-\frac12}  Q$   por
+$\Sigma^{-\frac12}$    o   cualquier    inverse   raiz-cuadrada    de   $\Sigma$
+(ej. factorizaci\'on de Cholesky), y similarmente para $\Sigma'$.
 \end{definicion}
 
 Nota: para $d' = d'$, tomando $O' =  O^t$ con $O = \un_i \un_j^t + \un_j \un_i^t
@@ -2391,7 +2397,7 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   \Ort_d(\Rset),  \:  O'  \in  \Ort_{d'}(\Rset)$  \  e  \  $I$  \  identidad  de
   $\Mat_{d,d}(\Rset)$, necesariamente~\footnote{La matriz  bloc se escribe \ $O'^t
     \otimes I$ \ con \ $\otimes$ \  ac\'a el producto de Kronecker. No lo usamos
-    para que  no haya confusi\'on con el  producto extreno, a pesar  de que haya
+    para que  no haya confusi\'on con el  producto externo, a pesar  de que haya
     una correspondencia uno-uno entre ambos productos.}
   %
   \[
@@ -2434,7 +2440,8 @@ Nota:
   (ver ejemplo~\ref{Ej:MP:StudentTMatriz} m\'as adelante).
 %
 \item  \SZ{La  ley  de  Wishart,  secci\'on~\ref{Sssec:MP:Wishart}  partenece  a
-    $\ED_\bil$ pero no es ni en $\ED_\vcol$ ni en $\ED_\vlin$.}
+    $\ED_\bil$  pero   no  es   ni  en  $\ED_\vcol$   ni  en   $\ED_\vlin$  (ver
+    ejemplo~\ref{Ej:MP:WishartED} m\'as adelante).}
 %
 \item $X$ con componentes  gausianas independientes partenece obviamente a ambas
   $\ED_\vcol$ y $\ED_\vlin$: $\ED_\vcol \cap \ED_\vlin \neq \emptyset$.
@@ -2577,10 +2584,20 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
 %\item  \SZ{ Momentos  y  cumulantes~\ref{Teo:MP:MomentosCumulantesEliptica}, y
 %      corrolario~\ref{Lem:MP:MediaCovarianzaEliptica}}~\cite{Kri76}
 %
-\item  Teorema~\ref{Teo:MP:TranformacionAfinEliptica}  en:  \  $X \,  \sim  \,
-    \ED_\izq(m,\Sigma,\Phi_X) \quad \Rightarrow
-    \quad A X B + C \: \sim \: \ED_\izq(A m B + C , A \Sigma A^\dag , \varphi_Z)$;
-%  %
+\item La  versi\'on matricial del Teorema~\ref{Teo:MP:TranformacionAfinEliptica}
+  da:
+  %
+  \begin{itemize}
+  \item Denotamos por $\bullet$ los casos $(\izq), (\col)$ y $(\vcol)$. Entonces
+    $X \, \sim \, \ED_\bullet(m,\Sigma,\Phi_X) \quad \Rightarrow \quad A X B + C
+    \:  \sim \:  \ED_\bullet(A m  B +  C  , A  \Sigma A^\dag  , \varphi_{X B})$.  En
+    particular,  si  $X$  es a  simetr\'ia  esf\'erica  de  un de  estos  tipos,
+    multiplicar por $B$ a su derecha no cambia la esfericidad.
+  %
+  \item $X \, \sim \, \ED_\bil(m,\Sigma,\Sigma',\Phi_X)  \quad \Rightarrow \quad A X B +
+    C  \:  \sim  \: \ED_\bil(A  m  B  +  C  ,  A \Sigma  A^\dag  ,  B \Sigma  B^\dag , \varphi_X)$.
+\end{itemize}
+%
 %  \item Teorema~\ref{Teo:MP:ProyeccionComponentesEliptica} en: Sea \ $Z$, vector
 %    aleatorio   complejo   $d$-dimensonal   de   componentes   $Z_i$.   Entonces
 %    $\displaystyle Z  \sim \CED(m,\Sigma,\varphi_Z) \quad  \Leftrightarrow \quad
@@ -2591,12 +2608,36 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
 %    \ tiene  sus componentes independientes si  y solamente si \  $Z \sim \CN(m,
 %    \alpha I)$ con $\alpha > 0$;
 %  %
-%  \item  Teorema~\ref{Teo:MP:MezclaUniforme} en:  \ $Z  \sim \CED(0,I,\varphi_Z)
-%    \:\: \Leftrightarrow  \:\: Z \egald R \,  U$ \:\: con \:\:  $U \sim \U\left(
-%      \SCset_d \right)$  \ uniforme sobre  la esfera $d$-dimensional  compleja y
-%    m\'as generalmente, para \ $Z \sim \ED(m,\Sigma,\varphi_Z)$, \quad $Y \egald
-%    \Sigma^{\frac12} R \, U + m$.
-%  %
+\item El teorema  de mezcla uniforme~\ref{Teo:MP:MezclaUniforme} tambi\'en tiene
+  sus contra-partes matriciales~\cite[Teo.~1]{FanChe84}: Se supone ac\'a que $d'
+  \le d$ y luego
+  %
+  \begin{itemize}
+  \item $X \sim \ED_\izq(m,\Sigma,\varphi_X)  \:\: \Leftrightarrow \:\: X \egald
+    \Sigma^{\frac12}  \,  U_\izq \,  R_\izq  + m$  \:\:  con  \:\: $U_\izq  \sim
+    \U\left( \Sti_{d,d'}(\Rset)  \right)$ uniforme sobre la  variedad de Stiefel
+    (ver notaciones y~\cite[p.~67-70]{Mui82}), independiente de $R_\izq$, matriz
+    aleatoria de $\Mat_{d',d'}(\Rset)$.
+  %
+  \item $X \sim \ED_\col(m,\Sigma,\varphi_X)  \:\: \Leftrightarrow \:\: X \egald
+    \Sigma^{\frac12} U_\col R_\col + m$  \:\: con \:\: $U_\col = \begin{bmatrix}
+      U_{\col,1} &  \cdots & U_{\col,d'}  \end{bmatrix}$ tal que  los $U_{\col,j}
+    \sim   \U\left(   \Sset_d  \right)$   uniforme   sobre   la  esfera   son
+    independientes entre  si, y independientes  de $R_\col$ matriz  aleatoria de
+    $\Pos_{d'}(\Rset)$ diagonal.
+  %
+  \item $X \sim \ED_\vcol(m,\Sigma,\varphi_X) \:\: \Leftrightarrow \:\: X \egald
+    \Sigma^{\frac12}   U_\vcol   R_\vcol   +    m$   \:\:   con   \:\:   $U_\col
+    = \begin{bmatrix}  U_{\col,1} & \cdots & U_{\col,d'}  \end{bmatrix}$ tal que
+    $\begin{bmatrix}  U_{\col,1}^t & \cdots &  U_{\col,d'}^t \end{bmatrix}^t \sim  \U\left( \Sset_{d
+          d'} \right)$  uniforme sobre la esfera, independientes  de $R_\col \ge
+      0$ escalar.
+  \end{itemize}
+  %
+  En   ambos   casos,    para   $d'   =   1$,   se    recupera   obviamente   el
+  teorema~~\ref{Teo:MP:MezclaUniforme}.
+  %
+  %
 %  \item  Corolario~\ref{Cor:MP:MezclaUniforme} en: $Z  \sim \CED(0,I,\varphi_Z)$
 %    da $\| Z \|  \egald R$ \ y \ $\frac{Z}{\|Z\|} \egald  U \sim \U(\SCset_d)$ \
 %    son independientes;

@@ -95,16 +95,23 @@ Q Q^t = Q^t Q = I \right\}$.\\[2.5mm]
 \hline
 %
 $\Unit_d(\Cset)$ & Conjunto de matrices unitarias:\vspace{1mm}\newline
-$\Unit_d(\Cset) = \left\{ Q \in \Mat_{d,d}(\Rset) \tq Q Q^\dag = Q^\dag Q = I
-\right\}$.\\[2.5mm]
+$\Unit_d(\Cset) = \left\{ Q \in \Mat_{d,d}(\Cset) \tq Q Q^\dag = Q^\dag Q = I
+\right\}$.\vspace{1mm}\newline ($\Unit_d(\Rset) \equiv \Ort_d(\Rset)$)\\[2.5mm]
 \hline
 %
+$\Sti_{d,d'}(\Kset)$, $d' \le d, \: \Kset = \Rset$ o $\Cset$ & Variedad de Stiefel~\cite{Sti35, Ste51, Jam76}:\vspace{1mm}\newline $\Sti_{d,d'}(\Kset) = \left\{ Q \in \Mat_{d,d'}(\Kset)
+\tq Q^\dag Q = I \right\}$.\vspace{1mm}\newline Se notar\'a que
+$\Sti_{d,d}(\Kset) = \Unit_d(\Kset)$ y $\Sti_{d,1}(\Rset) = \Sset_d$ (y la
+esf\'era unitaria compleja en el caso complejo).\\[2.5mm] \hline
+%
 $\perm_d(\Kset)$ & Conjunto de las matrices de permutaciones de \
-$\Mat_{d,d}(\Kset)$\vspace{1mm}\newline $\displaystyle \perm_d(\Kset) = \left\{ \Pi =
-\protect\begin{bmatrix} \un_{\sigma(1)} & \cdots &
-\un_{\sigma(d)} \end{bmatrix}^t\protect = \sum_{i=1}^d \un_i \un_{\sigma(i)}^t, \quad \sigma \in \perm_d
-\right\}$\vspace{1mm}\newline Tiene exactamente un $1$ en cada linea y en cada
-columna, y $0$ en los otros componentes.\vspace{1mm}\newline Notar: \quad $\forall \: \Pi \in \perm_d(\Kset), \quad \Pi^{-1} = \Pi^t$.\\[2.5mm]
+$\Mat_{d,d}(\Kset)$\vspace{1mm}\newline $\displaystyle \perm_d(\Kset) = \left\{
+\Pi = \protect\begin{bmatrix} \un_{\sigma(1)} & \cdots &
+\un_{\sigma(d)} \end{bmatrix}^t\protect = \sum_{i=1}^d \un_i \un_{\sigma(i)}^t,
+\quad \sigma \in \perm_d \right\}$\vspace{1mm}\newline Tiene exactamente un $1$
+en cada linea y en cada columna, y $0$ en los otros
+componentes.\vspace{1mm}\newline Notar: \quad $\forall \: \Pi \in
+\perm_d(\Kset), \quad \Pi^{-1} = \Pi^t$.\\[2.5mm]
 \hline
 %
 $\Pos_d(\Kset)$ & Conjunto de matrices herm\'iticas semidefinida
@@ -158,11 +165,15 @@ $\un$ & Vector de componentes iguales a 1, \ $\un = \protect\begin{bmatrix} 1\\
 $\un_i$ & Vector de componentes $j$-\'esima iguales a $\un_{\{i\}}(j)$.\\[2.5mm]
 \hline
 %
-$\diag$ & Vector formado de los elementos diagonales su argumento, matriz cuadrada,\vspace{1mm}\newline para \ $\displaystyle M = \protect\begin{bmatrix}
+$\diag$  & Vector  formado  de  los elementos  diagonales  su argumento,  matriz
+cuadrada,\vspace{1mm}\newline para
+ \ $\displaystyle M = \protect\begin{bmatrix}
   m_{1,1}  & \cdots & m_{1,d} \\
   \vdots  & \vdots & \vdots \\
-  m_{d,1}  & \cdots & m_{d,d}
-\end{bmatrix}\protect \in \Mat_{d,d}(\Kset), \quad \diag(M) = \protect\begin{bmatrix} m_{1,1} \\ m_{2,2} \\ \vdots \\ m_{d,d}
+  m_{d,1} & \cdots & m_{d,d}
+\end{bmatrix}\protect
+\in \Mat_{d,d}(\Kset), \quad \diag(M) = \protect\begin{bmatrix} m_{1,1} \\
+m_{2,2} \\ \vdots \\ m_{d,d}
 \end{bmatrix}\protect$.\vspace{1mm}\\[2.5mm]
 %
 \hline

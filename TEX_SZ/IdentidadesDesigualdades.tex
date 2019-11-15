@@ -126,7 +126,7 @@ soluci\'on.
 Sea \  $\displaystyle \P_m = \left\{  p \ge 0 \tq  \int_\X p(x) \,  d\mu(x) = 1,
   \quad \int_\X M(x)  \, p(x) \, d\mu(x) = m \right\}$  \ conjunto de densidades
 con respeto a $\mu$, con los mismos momentos \ $M$, y sea \ $p^* \in \P_m$ \ que
-sea de la forma \ $p^*(x) = \e^{\eta^t M(x) - \varphi(\eta)}$. Entonces
+sea de la forma \ $p^*(x) = e^{\eta^t M(x) - \varphi(\eta)}$. Entonces
   %
   \[
   \forall \,  p \in \P_m, \quad  H(p) \le H(p^*) \qquad  \mbox{con igualdad ssi}
@@ -194,7 +194,7 @@ medida de probabilidad aparece inmediatamente
 \[
 P^* = \argmax_P \Dkl[P]{\widetilde{P}}  \quad \mbox{sujeto a}  \int_\X M(x)
 \,  dP(x) =  m  \qquad \Leftrightarrow  \qquad \frac{dP^*}{d\widetilde{P}}(x)  =
-\e^{\eta^t x - \varphi(\eta)}.
+e^{\eta^t x - \varphi(\eta)}.
 \]
 
 % ================================= EPI
@@ -239,9 +239,9 @@ desiguladad~\cite{Sha48, Lie78, CovTho06, DemCov91, Rio07}:
   %
   con igualdad si y solamente si \ $X$  \ e \ $Y$ \ son gaussianas. De hecho, la
   primera  formulaci\'on  es equivalente  a  $N(X+Y)  \ge N\left(  \widetilde{X}
-  \right) +  N\left( \widetilde{Y}  \right) = \frac{1}{2  \pi \e}  \left( \left|
+  \right) +  N\left( \widetilde{Y}  \right) = \frac{1}{2  \pi e}  \left( \left|
       \Sigma_{\widetilde{X}}  \right|^{\frac1d} +  \left| \Sigma_{\widetilde{Y}}
-    \right|^{\frac1d}     \right)    \ge     \frac{1}{2    \pi     \e}    \left|
+    \right|^{\frac1d}     \right)    \ge     \frac{1}{2    \pi     e}    \left|
     \Sigma_{\widetilde{X}} +  \Sigma_{\widetilde{Y}} \right|^{\frac1d} = N\left(
     \widetilde{X} + \widetilde{Y} \right)$  (la \'ultima desigualdad viniendo de
   la  desigualdad matricial de  Minkowski~\cite{HarLit52, Min10}).   Se notar\'a
@@ -486,7 +486,7 @@ desorganizado (ver ej.~\cite[y ref.]{CovTho06, Mer10, Mer18}).
   obtiene la primera  desigualdad.  La segunda desigualdad se  obtiene tomando \
   $q_{X_n} = p^*$.   Adem\'as, si \ $p^*$ \ es de  entrop\'ia m\'axima de mismos
   momentos $m  = \Esp[M(X_n)]$  que los $X_n$,  hemos visto  de que \  $p^*(x) =
-  \e^{\eta^t M(x)}$ \ ley de la familia exponencial, dando \ $\Dkl[p_{X_n}]{p^*}
+  e^{\eta^t M(x)}$ \ ley de la familia exponencial, dando \ $\Dkl[p_{X_n}]{p^*}
   = -H(X_n) - \eta^t m$, conduciendo a la \'ultima desigualdad.
 \end{proof}
 
@@ -1264,7 +1264,7 @@ entrop\'ia''~\cite{WanMad04}.
     \sqrt{\theta} \N) - N(X)}{\theta}  \ge 1$.  Entonces, tomando el l\'imite
   \ $\theta \to 0$, aparece  que \ $\left. \frac{d}{d\theta} N(X + \sqrt{\theta}
     \N)   \right|_{\theta  =   0}  \ge   1$.   La   prueba  se   cierra  con
-  $\frac{d}{d\theta}  N(X   +  \sqrt{\theta}   \N)  =  \frac{1}{2   \pi  \e}
+  $\frac{d}{d\theta}  N(X   +  \sqrt{\theta}   \N)  =  \frac{1}{2   \pi  e}
   \frac{d}{d\theta}  \exp\left( \frac2d  H(X +  \sqrt{\theta} \N)  \right) =
   \frac2d  N(X +  \sqrt{\theta}  \N) \frac{d}{d\theta}  H(X +  \sqrt{\theta}
   \N) = d N(X +  \sqrt{\theta} \N) \Tr\left( J(X + \sqrt{\theta} \N)
