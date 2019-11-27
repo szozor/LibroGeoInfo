@@ -57,7 +57,7 @@ espectral o de procesos estoc\'asticos autoregresivos~\cite{Bur67, Bur75, Jay82}
 o~\cite[cap.~12]{CovTho06}, entre otros~\cite[\& ref.]{Arn01, Kap89, KapKes92}.
 
 Sea \ $X$ \ variable aleatoria viviendo sobre (de distribuci\'on de probabilidad
-de soporte) \ $X(\Omega) = \X \subseteq \Rset^d$  \ con \ $K \ge 0$ \ momentos \
+de soporte) \ $X(\Omega) = \X \subset \Rset^d$  \ con \ $K \ge 0$ \ momentos \
 $\Esp\left[ M_k(X)  \right] = m_k$ \  fijos, con $M_x: \X  \to \Rset$. Suponemos
 que $X$ tiene una densidad \ $p$ \ con respeto a una medida $\mu$, basicamente \
 $\mu_L$ \ en el contexto continuo y $\mu_\X$ en el caso discreto. El problema de
@@ -514,9 +514,9 @@ par\'ametro~\cite{Fis22, Fis25:07, Kay93, Bos07, CovTho06, Fri04}.
 \label{Def:SZ:MatrizFisherParametrica}
 %
   Sea   $X$   una   variable   aleatoria  parametrizada   por   un   par\'ametro
-  $m$-dimensional, $\theta  \in \Theta \subseteq \Rset^m$,  de distribuci\'on de
+  $m$-dimensional, $\theta  \in \Theta \subset \Rset^m$,  de distribuci\'on de
   probabilidad $p_X(\cdot;\theta)$  (con respeto a una medida  $\mu$ dada) sobre
-  $\X \subseteq  \Rset^d$ su  soporte. Suponga que  $p_X$ sea  diferenciable con
+  $\X \subset  \Rset^d$ su  soporte. Suponga que  $p_X$ sea  diferenciable con
   respeto a $\theta$ sobre $\Theta$.  La matriz de Fisher, de tama\~no $m \times
   m$, es definida por
   %
@@ -569,7 +569,7 @@ Fisher no param\'etrica,
 \label{Def:SZ:MatrizFisherNoParametrica}
 %
   Sea  \  $X$ \  una  variable aleatoria  continua  admitiendo  una densidad  de
-  probabilidad \ $p_X$  \ definida sobre \ $\X \subseteq  \Rset^d$ \ su soporte.
+  probabilidad \ $p_X$  \ definida sobre \ $\X \subset  \Rset^d$ \ su soporte.
   Suponga que  \ $p_X$ \ sea  diferenciable con respeto  a \ $x$.  La  matriz de
   Fisher no param\'etrica, $d \times d$, es definida por
   %
@@ -677,7 +677,7 @@ covarianza.
 \label{Teo:SZ:CramerRao}
 %
   Sea  \ $X$  \  parametrizada por  \ $\theta$,  de  densidad de  soporte \  $\X
-  \subseteq \Rset^d$ \ independiente de  \ $\theta$, \ y \ $\widehat{\theta}(X)$
+  \subset \Rset^d$ \ independiente de  \ $\theta$, \ y \ $\widehat{\theta}(X)$
   \  un  estimador   de  \  $\theta$.   Sea  \  $b(\theta)$  \   su  sesgo  y  \
   $\Sigma_{\widehat{\theta}}$ \ su matriz de covarianza.  Sea \ $\Jac_b(\theta)$
   \ la matriz Jacobiana del sesgo \ $b$.  Entonces,
@@ -900,7 +900,7 @@ informaci\'on sobre \ $\theta_0$. Y vice-versa (figura (b)).
 %
 \leyenda{Ilustraci\'on         del        comportamiento         local        de
   $\Dkl[p_X(\cdot;\theta)]{p_X(\cdot;\theta_0)}$ \ en  funci\'on de \ $\theta$ \
-  en \ $\theta_0$ \ en el contexto escalar \ $\Theta \subseteq \Rset$.  (a) Caso
+  en \ $\theta_0$ \ en el contexto escalar \ $\Theta \subset \Rset$.  (a) Caso
   con \ $J_{\theta_0}(X)$  ``peque\~no'' \ y (b) caso  con \ $J_{\theta_0}(X)$ \
   ``grande''.   En  el caso  (b),  la determinaci\'on  de  \  $\theta$ \  usando
   $\Dkl{}$ \ va a  ser m\'as ``sencillo'' que en el caso  (a) porque el m\'inimo
@@ -1246,7 +1246,7 @@ entrop\'ia''~\cite{WanMad04}.
 \begin{teorema}[Desigualdad de Stam]
 \label{Teo:SZ:Stam}
 %
-  Sea  \  $X$   \  una  variable  aleatoria  continua   sobre  \  $\X  \subseteq
+  Sea  \  $X$   \  una  variable  aleatoria  continua   sobre  \  $\X  \subset
   \Rset^d$. Entonces,
   %
   \[
@@ -1311,7 +1311,7 @@ definici\'on~\ref{Def:SZ:entropiacondicional},
 \label{Def:SZ:MatrizFisherParametricaCondicional}
 %
 Sean  $X$ \  e \  $Y$ \  dos variables  aleatorias parametrizadas  por  el mismo
-par\'ametro   $m$-dimensional,  $\theta  \in   \Theta  \subseteq   \Rset^m$,  de
+par\'ametro   $m$-dimensional,  $\theta  \in   \Theta  \subset   \Rset^m$,  de
 distribuci\'on  de probabilidad conjunta  $p_{X,Y}(\cdot,\cdot;\theta)$ continua
 sobre  $\X \times  \Y$ su  soporte, $p_{X|Y=y}(\cdot;\theta)$  la distribuci\'on
 condicional  de $X$ conociendo  $Y=y$ y  \ $p_Y$  \ la  distribuci\'on marginal.

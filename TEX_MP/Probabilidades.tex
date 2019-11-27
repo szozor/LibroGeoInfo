@@ -287,7 +287,7 @@ En  el  ejemplo precedente,  la  probabilidad condicional  va  a  ser $P(A|B)  =
 \frac{P(A \cup B)}{P(B)} = \frac{\frac16}{\frac12} = \frac13$.
 
 Claramente  del  hecho  de  que  \  $P$  \ es  una  medida  de  probabilidad  se
-tiene \[P(A|B) \ge 0.\] Luego, de \ $A \cap B \subseteq B$ \ resulta \ $P(A \cap
+tiene \[P(A|B) \ge 0.\] Luego, de \ $A \cap B \subset B$ \ resulta \ $P(A \cap
 B) \le  P(B)$; es decir,  \[ P(A|B) \le  1. \] Adem\'as,  \ $P(\Omega \cap  B) =
 P(B)$ \ dando  \[P(\Omega|B) = 1.\] Para  cualquier conjunto \ $\{ A_i  \}$ \ de
 eventos  mutuamente  excluyentes,  los \  $\left(  A_i  \cap  B \right)$  \  son
@@ -309,7 +309,7 @@ probabilidades condicionales son ilustradas en la Fig.~\ref{Fig:MP:Condicional}.
 \leyenda{Ilustraci\'on  de la probabilidad  condicional con  $A$ interior  de la
   curva  en l\'inea  llena y  unos $B_i$  interiores de  las curvas  en l\'ineas
   discontinuas. Se tiene \ $\omega \in B_1 \Rightarrow \omega \in A$ \ as\'i que
-  \ $P(A|B_1) = 1$; por otro  lado, \ $\omega \in B_3 \Rightarrow \omega \not\in
+  \ $P(A|B_1) = 1$; por otro  lado, \ $\omega \in B_3 \Rightarrow \omega \notin
   A$  \ as\'i  que  \ $P(A|B_3)  =  0$.  Entre  estas  situaciones extremas,  si
   $P(\bar{A}  \cap B_2)  \ne 0$  \ y  \ $P(A  \cap B_2)  \ne 0$  \ tenemos  $0 <
   P(A|B_2) < 1$ (se puede tomar el ejemplo de probabilidad de un evento iguale a
@@ -326,7 +326,7 @@ Algunas propiedades interesantes son las siguientes:
 %
 \item si $A$ \ y \ $B$ \ son mutuamente excluyentes, obviamente \ $P(A|B) = 0$;
 %
-\item si $B \subseteq C$, entonces \ $P(A  | B \cap C) = P(A|B)$ \ \big(viene de
+\item si $B \subset C$, entonces \ $P(A  | B \cap C) = P(A|B)$ \ \big(viene de
   \ $P(A | B  \cap C) = \frac{P(A \cap B \cap C)}{P(B  \cap C)} = \frac{P(A \cap
     B)}{P(B)}$, \ pues\ $B \cap C = B$\big);
 %
@@ -349,7 +349,7 @@ Algunas propiedades interesantes son las siguientes:
 \begin{teorema}[F\'ormula de probabilidad total]
 \label{Teo:MP:ProbaTotalDiscreto}
 %
-  Sea \ $J \subseteq  \Nset$ \ y \ $\{ B_j \}_{j \in  J}$ \ un conjunto completo
+  Sea \ $J \subset  \Nset$ \ y \ $\{ B_j \}_{j \in  J}$ \ un conjunto completo
   de eventos  no nulos  mutuamente excluyentes, \ie  tal que  \ $B_i \cap  B_j =
   \emptyset$  \ si  \ $i  \ne j$  \ y  \ $\displaystyle  \bigcup_{j\in J}  B_j =
   \Omega$. Entonces
@@ -368,7 +368,7 @@ Algunas propiedades interesantes son las siguientes:
 
 \begin{lema}[F\'ormula de Bayes]\label{Lem:MP:BayesDiscreto}
 %
-  Sea \ $J \subseteq  \Nset$ \ y \ $\{ B_j \}_{j \in  J}$ \ un conjunto completo
+  Sea \ $J \subset  \Nset$ \ y \ $\{ B_j \}_{j \in  J}$ \ un conjunto completo
   de eventos  no nulos  mutuamente excluyentes. Entonces
   %
   \[

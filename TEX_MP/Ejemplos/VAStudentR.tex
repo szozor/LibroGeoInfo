@@ -175,13 +175,13 @@ Sin embargo, las distribuciones Student-$r$ tienen varias propiedades notables.
   estoc\'astica de $G$ tenemos
   %
   \[
-  X \egald \frac{\sqrt{d+2} \, R}{\sqrt{V + R^2}} \: U
+  X \egald \frac{\sqrt{\nu+2} \, R}{\sqrt{V + R^2}} \: U
   \]
   %
   Sea
   %
   \[
-  S = \frac{\sqrt{d+2} \, R}{\sqrt{V + R^2}}
+  S = \frac{\sqrt{\nu+2} \, R}{\sqrt{V + R^2}}
   \]
   %
   Claramente,  $R,  V$  siendo  independientes   de  $U$,  la  variable  $S$  es
@@ -232,6 +232,65 @@ Sin embargo, las distribuciones Student-$r$ tienen varias propiedades notables.
  %   Por marginalisaci\'on en $t$, se  obtiene el resultado esperado. Pasando, de
  %   la forma separable de \ $p_{S,T}$,  vemos que $S$ y $T$ son independientes y
  %   que $T^2 \sim \G\left( \frac{\nu}{2} , \frac12 \right)$.
+
+    Una prueba alternativa  que no usa resultados de  secciones siguientes sigue
+    los pasos del lema~\ref{Lem:MP:StudentWishart}.
+\end{proof}
+
+
+\begin{lema}[Relaci\'on con la distribuci\'on de Wishart]\label{Lem:MP:StudentWishart}
+
+%
+  Sea \ $W \, \sim \, \W( I \, ,  \, \nu+1)$ \ $d \times d$ \ Wishart, \ $Y \,
+  \sim  \, \N(0, (\nu+2)  I)$  \ con  $\nu  >  0$ \  e  \ $Y$  \  independiente de  \
+  $W$. Entonces, para \ $m \in \Rset^d$, \ $\Sigma \in \Pos_d^+(\Rset)$,
+  %
+  \[
+  \Sigma^{\frac12}  \left(  W +  Y  Y^t  \right)^{-\frac12} Y  +  m  \, \sim  \,
+  \R_\nu\left( m , \Sigma \right)
+  \]
+\end{lema}
+\begin{proof}
+  Sea \ $X  = \left( W + Y  Y^t \right)^{-\frac12} Y$.  De la  nota siguiendo la
+  tabla  de caracter\'isticas  es  necesario  y suficiente  probar  que $X  \sim
+  \R_\nu(0,I)$.  Por independencia, la ley conjunta de $(W,Y)$ tiene la forma
+  %
+  \[
+  p_{W,Y}(w,y)  =  \frac{|w|^{\frac{\nu-d}{2}}  \,  e^{-\frac12  \Tr\left(  w  +
+        \frac{y      y^t}{\nu+2}\right)}}{2^{\frac{d       (\nu+1)}{2}}      (2
+    \pi)^{\frac{d}{2}}   (\nu+2)^{\frac{d}{2}}   \Gamma_d\left(  \frac{\nu+1}{2}
+    \right)} \quad \mbox{sobre} \quad \Pos_d^+(\Rset) \times \Rset^d
+  \]
+  %
+  Sea  el cambio  de variables  $g: (W,Y)  \mapsto (V,Y)  = \left(  W  + \frac{Y
+      Y^t}{\nu+2} , Y \right)$, con $\Jac_g = 1$, dando
+  %
+  \[
+  p_{V,Y}(v,y) = \frac{\left|  v - \frac{y y^t}{\nu+2} \right|^{\frac{\nu-d}{2}}
+    \,   e^{-\frac12   \Tr\left(    v   \right)}}{2^{\frac{d   (\nu+1)}{2}}   (2
+    \pi)^{\frac{d}{2}}   (\nu+2)^{\frac{d}{2}}   \Gamma_d\left(  \frac{\nu+1}{2}
+    \right)}  \quad  \mbox{sobre} \quad  \{  (v,y)  \in \Pos_d^+(\Rset)  \times
+  \Rset^d \tq v - \frac{y y^t}{\nu+2} > 0 \}
+  \]
+  %
+  Por fin,  con el  cambio de  variables $h: (V,Y)  \mapsto (V,X)  = \left(  V ,
+    V^{-\frac12} X \right)$, con $\Jac_h = |v|^{-\frac12}$, dando
+  %
+ \[
+  p_{V,X}(v,x) = \left|  I - \frac{x x^t}{\nu+2} \right|^{\frac{\nu-d}{2}} \frac{|v|^{\frac{\nu-d}{2}}
+    \,   e^{-\frac12   \Tr\left(    v   \right)}}{2^{\frac{d   (\nu+1)}{2}}   (2
+    \pi)^{\frac{d}{2}}   (\nu+2)^{\frac{d}{2}}   \Gamma_d\left(  \frac{\nu+1}{2}
+    \right)} \quad \mbox{sobre}  \quad \Pos_d^+(\Rset)  \times \{  x \in 
+  \Rset^d \tq I - \frac{x x^t}{\nu+2} > 0 \}
+  \]
+  %
+  El resultado sigue por marginalizaci\'on con  respeto a \ $v$ \ y la identidad
+  de Sylvester~\cite{Syl51} o~\cite[\S~18.1]{Har08} \  $\left| I + a b^t \right|
+  = 1  + b^t a$ ($I  - \frac{x x^t}{\nu+2} >  0$ impone entonces  $1 - \frac{x^t
+    x}{\nu+2} > 0$).
+
+  Se nota pasando, de  la forma separable de la densidad, que \  $W+Y Y^t$ \ y \
+  $(W+Y Y^t)^{-\frac12} Y$ \ son independientes.
 \end{proof}
 
 M\'as propiedades de esta distribuci\'on se encuentran en libros especializados,
@@ -254,15 +313,21 @@ p_Z(z) = \frac{\Gamma\left( \frac{\nu}{2} + 1 \right)}{\pi^d (\nu+2)^d \Gamma\le
 
 \
 
-\SZ{Generalizaci\'on matriz variada?}
-% \SZ{  Como  en el  contexto  Student-$t$,  se  puede imaginar  generalizar  la
-%   Student-$r$ al caso matriz-variada  $X$ definido sobre $M_{d,d'}(\Rset)$; se
-%   denotar\'a  \  $X \,  \sim  \, \R_\nu(M,\Sigma,\Omega)$  \  donde  \ $M  \in
-%   M_{d,d'}(\Rset), \: \Sigma \in  \Pos_d^+(\Rset), \: \Omega \in \Pos_{d'}^+(\Rset)$
-%   y  la  densidad  dada   por  $\displaystyle  p_X(x)  =  \frac{\Gamma_d\left(
-%       \frac{\nu+d+d'-1}{2}\right)}{\pi^{\frac{\nu     d}{2}}    \Gamma_d\left(
-%       \frac{\nu+d-1}{2}\right) \,  \left| \Sigma \right|^{\frac{d'}{2}} \left|
-%       \Omega  \right|^{\frac{d}{2}}}  \:  \left|  I  +  \Sigma^{-1}  (x-M)  \,
-%     \Omega^{-1}  \,  (x-M)^t  \right|^{-  \frac{\nu+d+d'-1}{2}}$.  Se  refiera
-%   a~\cite[Cap.~4]{GupNag99} para tener m\'as detalles.
-%}
+Como en  el contexto  Student-$t$, se puede  generalizar la Student-$r$  al caso
+matriz-variada $X$  definido sobre $\Mat_{d,d'}(\Rset)$;  se denotar\'a \  $X \,
+\sim \, \R_\nu(m,\Sigma,\Sigma')$ \ donde \ $m \in \Mat_{d,d'}(\Rset), \: \Sigma
+\in \Pos_d^+(\Rset), \:  \Sigma' \in \Pos_{d'}^+(\Rset)$ y la  densidad dada por
+$\displaystyle      p_X(x)      =      \frac{\Gamma_d\left(      \frac{\nu}{2}+1
+  \right)}{\pi^{\frac{d   d'}{2}}    (\nu+2)^{\frac{d   d'}{2}}   \Gamma_d\left(
+    \frac{\nu-d'}{2} +  1\right) \, \left|  \Sigma \right|^{\frac{d'}{2}} \left|
+    \Sigma' \right|^{\frac{d}{2}}}  \: \left| I - \frac{1}{\nu+2}  \, (x-m)^t \,
+  \Sigma^{-1} (x-m) \,  \Sigma'^{-1} \right|^{\frac{\nu-d-d'+1}{2}}$ \ sobre $\X
+= \{  x \in  \Mat_{d,d'}(\Rset) \tq  I - \frac{(x-m)^t  \, \Sigma^{-1}  (x-m) \,
+  \Sigma'^{-1}}{\nu+2} > 0 \}$.  Se refiera a~\cite[Cap.~4]{GupNag99} para tener
+m\'as detalles. En particular, se puede  probar con los mismos pasos que para la
+ley Student-$t$  que se generaliza  el lema\ref{Lem:MP:StabilidadLinealStudentR}
+(ver              secci\'on~\ref{Ssec:MP:FamiliaElipticaMatriz}),             el
+lema~\ref{Lem:MP:LimiteStudentTGaussiana}                  y                  el
+lema~\ref{Lem:MP:StudentWishart}~\cite[Teo.~4.2.1]{GupNag99}.
+% (las formas son un poco diferentes, pero completamente
+%equivalente  a   la  de   este  libro).

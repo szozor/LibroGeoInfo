@@ -73,7 +73,7 @@ definir  una  medida  im\'agen   sobre  el  espacio  de  llegada~\cite{AshDol99,
   implica  que \  $\mu_f\left( \bigcup_j  B_j \right)  =  \mu\left( f^{-1}\left(
       \bigcup_j B_j \right) \right)  = \mu\left( \bigcup_j f^{-1}(B_j) \right) =
   \sum_j  \mu\left(  f^{-1}(B_j)  \right)  =  \sum_j  \mu_f(B_j)$.   Finalmente,
-  necesariamente  $f^{-1}(\Upsilon) =  \Omega$ (obviamente  $f(\Omega) \subseteq
+  necesariamente  $f^{-1}(\Upsilon) =  \Omega$ (obviamente  $f(\Omega) \subset
   \Upsilon$)  lo  que  cierra  la  prueba~\footnote{De hecho,  se  puede  probar
     sencillamente que la pre-im\'agen de  una uni\'on numerable (disjuntos o no)
     es la uni\'on de las  pre-im\'agenes; lo mismo occure para la intersecci\'on
@@ -166,7 +166,7 @@ con respecto a una medida:
   Para  los  $A_i$  disjuntos  es   la  consecuencia  directa  de  la  propiedad
   precedente, y  si $A_i,  A_j$ no son  disjuntos.  De hecho,  sufice considerar
   $A_i\setminus  A_j,  \:  A_j\setminus  A_i,  A_i \cap  A_j$  \  con  \modif{$A
-    \setminus B = \{ \omega \tq \omega \in  A \: \et \: \omega \not\in B \}$} \
+    \setminus B = \{ \omega \tq \omega \in  A \: \et \: \omega \notin B \}$} \
   y respectivamente los coefficientes \ $a_i,  \: a_j, \: a_i + a_j$ para volver
   al caso de conjuntos disjuntos.
   %
@@ -660,7 +660,7 @@ Naturalmente, de las propiedades de una medida de probabilidad se tiene:
   = 1$);
 %
 \item $F_X$ es creciente \big(viene de  que \ $x_1 \le x_2 \: \Leftrightarrow \:
-  (-\infty \; x_1] \subseteq (-\infty \; x_2]$\big);
+  (-\infty \; x_1] \subset (-\infty \; x_2]$\big);
 %
 \item $F_X$ no es necesariamente continua  (lo vamos a ver m\'as adelante); pero
   en cada punto $x$, $F_X$ es continua por la derecha (ver inciso anterior).
@@ -751,12 +751,12 @@ elementos de  $\{ 1 \; \ldots \;  d \}^k$, $X_{I_k} =  \begin{bmatrix} X_{i_1} &
 $k$-dimensional. Es entonces sencillo ver que
 %
 \[
-F_{X_{I_k}}(x_{I_k}) = \lim_{\forall i \not\in I_k, x_i \to +\infty} F_X(x)
+F_{X_{I_k}}(x_{I_k}) = \lim_{\forall i \notin I_k, x_i \to +\infty} F_X(x)
 \label{Pagina:MP:MarginalesF}
 \]
 %
 \Big(viene de  que $\bigcap_{j=1}^k (X_{i_j}  \le x_{i_j}) =  \left( \bigcap_{j=1}^k
-  (X_{i_j} \le x_{i_j}) \right) \bigcap  \left( \bigcap_{i \not\in I_k} (X_i \in
+  (X_{i_j} \le x_{i_j}) \right) \bigcap  \left( \bigcap_{i \notin I_k} (X_i \in
   \Rset)  \right)$\Big). Esta  funci\'on se llama {\it  funci\'on  de repartici\'on
   marginal} de $F_X$.
 
@@ -1174,7 +1174,7 @@ ilustra en el ejemplo siguiente:
   %
 \end{ejemplo}
 %\item Sea  $U$ \ variable  continua uniforme sobre $[0  \;  1)$ \ y \  $X =
-%  \un_{U \not\in \Qset}$. Claramente  $X$ no es continua, pero $\X =  [0 \;
+%  \un_{U \notin \Qset}$. Claramente  $X$ no es continua, pero $\X =  [0 \;
 %  1)   \setminus    \Qset$   \   siendo   no   numerable,    $X$   tampoco   es
 %  discreta~\footnote{\SZ{$X = 1$ casi siempre\ldots quizas m\'as adelante}}.
 %\end{itemize}
@@ -1290,7 +1290,7 @@ Un ejemplo de vector aleatorio discreto  puede ser dado por un conjunto de dados
   Un vector  aleatorio $d$-dimensional se escribe  \ $X =  \begin{bmatrix} X_1 &
     \cdots &  X_d \end{bmatrix}^t$ \ y  \ $\displaystyle \X  = X(\Omega) \subset
   \optimes_{i=1}^d \X_i$ \ donde \ $\X_i =  X_i(\Omega)$. Se dice que \ $X$ \ es
-  {\it discreto} cuando $\X \subseteq \Nset^d$, \ es discreto, finito o infinito
+  {\it discreto} cuando $\X \subset \Nset^d$, \ es discreto, finito o infinito
   numerable.
 \end{definicion}
 
@@ -1354,7 +1354,7 @@ $X_{I_k}   =  \begin{bmatrix}   X_{i_1}  &   \cdots   &  X_{i_k}\end{bmatrix}^t$
 \modif{tiene como} probabilidad marginal o distribuci\'on marginal
 %
 \[
-p_{X_{I_k}}(x_{I_k}) = \sum_{\forall i \not\in I_k, x_i \in \X_i} p_X(x).
+p_{X_{I_k}}(x_{I_k}) = \sum_{\forall i \notin I_k, x_i \in \X_i} p_X(x).
 \]
 
 
@@ -1440,8 +1440,8 @@ $X_{I_k}   =  \begin{bmatrix}   X_{i_1}  &   \cdots   &  X_{i_k}\end{bmatrix}^t$
 \modif{tiene la} {\it densidad de probabilidad marginal}
 %
 \[
-p_{X_{I_k}}(x_{I_k})  = \int_{\times_{i  \not\in  I_k} \X_i}  p_X(x) \,  \prod_{i
-    \not\in I_k}  dx_i =  \int_{\Rset^{d-k}} p_X(x) \,  \prod_{i \not\in
+p_{X_{I_k}}(x_{I_k})  = \int_{\times_{i  \notin  I_k} \X_i}  p_X(x) \,  \prod_{i
+    \notin I_k}  dx_i =  \int_{\Rset^{d-k}} p_X(x) \,  \prod_{i \notin
       I_k} dx_i.
 \]
 %
@@ -1491,8 +1491,8 @@ ensemble y luego de una densidad de probabilidad:
   %
 \end{definicion}
 %
-De  \ $\forall  \, t  < \tau  \: \Leftrightarrow  \: \P_\tau  \subseteq  \P_t \:
-\Leftrightarrow  \: \P_\tau^\downarrow  \subseteq \P_t^\downarrow$,  es sencillo
+De  \ $\forall  \, t  < \tau  \: \Leftrightarrow  \: \P_\tau  \subset  \P_t \:
+\Leftrightarrow  \: \P_\tau^\downarrow  \subset \P_t^\downarrow$,  es sencillo
 ver que si $x \in  \P_\tau^\downarrow$, entonces $x \in \P_t^\downarrow$, lo que
 conduce  a  $p_X^\downarrow(x)  >  \tau$,  y vice-versa.   M\'as  all\'a,  sobre
 $\P_{\tau+d\tau} \setminus  \P_\tau$ la  funci\'on $p_X$ ``vale''  $\tau$ \  y \

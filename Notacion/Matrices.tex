@@ -1,8 +1,9 @@
 \begin{notation}{Vectores, matrices, tensores}
 %
-$\Mat_d(\Kset) \equiv \Kset^d$ & Espacio de vector \ $M = \protect\begin{bmatrix} M_1\\
-\vdots\\ M_d \protect\end{bmatrix}$ \ con \ $M_i \in \Kset$ \ y \ $\Kset = \Rset$ \ o \
-$\Cset$.\\[2.5mm]
+$\Mat_d(\Kset) \equiv \Kset^d$
+%\vspace{1mm}\newline$\Kset = \Rset$ \ o \ $\Cset$
+ & Espacio de vector \ $M = \protect\begin{bmatrix} M_1\\
+\vdots\\ M_d \protect\end{bmatrix}$ \ con \ $M_i \in \Kset$.\\[2.5mm]
 \hline
 %
 $\Mat_{d,d'}(\Kset)$ & Espacio de matrices \ $M$, \ de tama\~no \ $d \times d'$, \
@@ -67,10 +68,10 @@ $\otimes$  &  Producto   tensorial  o  producto  externo~\footnote{Se  encuentra
   $A_{i,j}  B$. De hecho,  es equivalente  a ``desarollar''  el tensor  de forma
   matricial,   o  equivalente  de   la  vectorizaci\'on   de  una   matriz  (ver
   ej.~\cite{MagNeu79}).}:  para $A \in  \Mat_{d_1,\ldots,d_K}(\Kset), \quad  B \in
-\Mat_{d'_1,\ldots,d'_K}(\Kset)$ \  el producto  externo \ $A  \optimes B$ \  es el
-tensor      de      orden      \      $K+L$     \      de      componente      \
+\Mat_{d'_1,\ldots,d'_K}(\Kset)$,\newline  el producto  externo \ $A  \otimes B$ \  es el
+tensor      de      orden      \      $K+L$,\newline         de      componente      \
 $(i_1,\ldots,i_K,j_1,\ldots,j_L)$-\'esima          \         $A_{i_1,\ldots,i_K}
-B_{j_1,\ldots,j_L} $.\vspace{1mm}\newline Nota: para \ $a \in Kset^d, \quad
+B_{j_1,\ldots,j_L} $.\vspace{1mm}\newline Nota: para \ $a \in \Kset^d, \quad
 b \in \Kset^{d'}$, \ $a \otimes b = a b^t$.\\[2.5mm]
 \hline
 %
@@ -89,7 +90,7 @@ hermitica),\vspace{1mm}\newline $\Her_d(\Cset) = \left\{ M \in \Mat_{d,d}(\Cset)
 \Sim_d(\Rset)$.\\[2.5mm]
 \hline
 %
-$\Ort_d(\Rset)$ & Conjunto de matrices ortogonales (groupo
+$\Ort_d(\Rset)$ & Conjunto de matrices ortogonales (grupo
 ortogonal):\vspace{1mm}\newline $\Ort_d(\Rset) = \left\{ Q \in \Mat_{d,d}(\Rset) \tq
 Q Q^t = Q^t Q = I \right\}$.\\[2.5mm]
 \hline
@@ -99,10 +100,16 @@ $\Unit_d(\Cset) = \left\{ Q \in \Mat_{d,d}(\Cset) \tq Q Q^\dag = Q^\dag Q = I
 \right\}$.\vspace{1mm}\newline ($\Unit_d(\Rset) \equiv \Ort_d(\Rset)$)\\[2.5mm]
 \hline
 %
-$\Sti_{d,d'}(\Kset)$, $d' \le d, \: \Kset = \Rset$ o $\Cset$ & Variedad de Stiefel~\cite{Sti35, Ste51, Jam76}:\vspace{1mm}\newline $\Sti_{d,d'}(\Kset) = \left\{ Q \in \Mat_{d,d'}(\Kset)
-\tq Q^\dag Q = I \right\}$.\vspace{1mm}\newline Se notar\'a que
-$\Sti_{d,d}(\Kset) = \Unit_d(\Kset)$ y $\Sti_{d,1}(\Rset) = \Sset_d$ (y la
-esf\'era unitaria compleja en el caso complejo).\\[2.5mm] \hline
+% Se    notar\'a    que    estas    variedades   son    $\Sti_{d,d'}(\Rset)    =
+% \Ort_d(\Rset)/\Ort_{d-d'}(\Rset)$}
+$\Sti_{d,d'}(\Kset)$,\newline $d' \le d$\newline $\Kset = \Rset$ o $\Cset$ &
+Variedad de Stiefel~\footnote{Ver~\cite{Sti35} para la el estudio de este
+variedad, o~\cite{Ste51, Jam76} para estudios detallados de esta
+variedad.}:\vspace{1mm}\newline $\Sti_{d,d'}(\Kset) = \left\{ Q \in
+\Mat_{d,d'}(\Kset) \tq Q^\dag Q = I \right\}$.\vspace{1mm}\newline Se notar\'a
+que $\Sti_{d,d}(\Kset) = \Unit_d(\Kset)$, \ $\Sti_{d,1}(\Rset) = \Sset_d$ \ y \
+$\Sti_{d,1}(\Cset) = \SCset_d$.\\[2.5mm]
+\hline
 %
 $\perm_d(\Kset)$ & Conjunto de las matrices de permutaciones de \
 $\Mat_{d,d}(\Kset)$\vspace{1mm}\newline $\displaystyle \perm_d(\Kset) = \left\{
@@ -310,4 +317,4 @@ $\|\cdot\|_{q,p}$ & Norma de H\"older inducida, $\displaystyle \| M \|_{q,p} =
 \sup_{x \in \Mat_{d',1}(\Kset)^*} \frac{\| M x\|_q}{\| x \|_p}$.
 \end{notation}
 
-\SZ{En todo el libro, acordar la notacion con $\M$ para los conjuntos de matrices, normas\ldots}
+%\SZ{En todo el libro, acordar la notacion con $\M$ para los conjuntos de matrices, normas\ldots}

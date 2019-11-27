@@ -233,13 +233,11 @@ Nota:       este       lema        permite       tambi\'en       probar       el
 lema~\ref{Lem:MP:StabilidadLinealStudentT} escribiendo \ $A X + b \egald \frac{A
   \Sigma^{\frac12} G}{sqrt{V}} + A m + b$.
 
-\begin{lema}[Relaci\'on con la distribuci\'on de Wishart]\label{Lem:MP:StudentWishart}
+\begin{lema}[Relaci\'on con la distribuci\'on de Wishart]\label{Lem:MP:StudentTWishart}
 %
   Sea \ $W \, \sim \, \W( \Sigma^{-1} \, , \, \nu+d-1)$ \ $d \times d$ \ Wishart
-  con \ $\Sigma \in \Pos_d^+(\Rset)$, \ $Y \,  \sim \, \N(0,\nu I)$ \ con $\nu > 0$
-  \ e \ $Y$ \ independiente de \  $W$. Entonces, para \ 
-  %$R \in \Pos_d^+(\Rset)$ \ y
-  \ $m \in \Rset^d$,
+  con \ $\Sigma \in \Pos_d^+(\Rset)$, \ $Y  \, \sim \, \N(0,\nu I)$ \ con $\nu >
+  0$ \ e \ $Y$ \ independiente de \ $W$. Entonces, para \ \ $m \in \Rset^d$,
   %
   \[
   W^{-\frac12} Y + m \, \sim \, \T_\nu\left( m , \Sigma \right)
@@ -453,7 +451,7 @@ emp\'irica  de la  media  y covarianza~\cite{Mui82,  GupNag99, BilBre99,  And03,
     n-d+d-1 \right)
   \]
   %
-  Se   cierra   la  prueba   usando   los  lemas~\ref{Lem:MP:StudentWishart}   \
+  Se   cierra   la  prueba   usando   los  lemas~\ref{Lem:MP:StudentTWishart}   \
   y~\ref{Lem:MP:StabilidadLineal}.
 \end{proof}
 
@@ -486,15 +484,22 @@ parecida).
 
 \
 
+% \left|  \Sigma' \right|^{\frac{d}{2}}}  \:  \left| I  +  \Sigma^{-1} (x-m)  \,
+% \Sigma'^{-1} \, (x-m)^t \right|^{- \frac{\nu+d+d'-1}{2}}
 Tambi\'en, la  distribuci\'on Student-$t$  se generaliza al  caso matriz-variada
-$X$   definido  sobre   $\Mat_{d,d'}(\Rset)$;   se   denota  \   $X   \,  \sim   \,
-\T_\nu(m,\Sigma,\Sigma')$  \  donde  \  $m  \in \Mat_{d,d'}(\Rset),  \:  \Sigma  \in
-\Pos_d^+(\Rset),  \:  \Sigma'  \in  \Pos_{d'}^+(\Rset)$  y  la  densidad  es  dada  por
+$X$  definido   sobre  $\Mat_{d,d'}(\Rset)$;   se  denota  \   $X  \,   \sim  \,
+\T_\nu(m,\Sigma,\Sigma')$  \ donde \  $m \in  \Mat_{d,d'}(\Rset), \:  \Sigma \in
+\Pos_d^+(\Rset), \:  \Sigma' \in \Pos_{d'}^+(\Rset)$  y la densidad es  dada por
 $\displaystyle             p_X(x)             =             \frac{\Gamma_d\left(
-    \frac{\nu+d+d'-1}{2}\right)}{\pi^{\frac{\nu       d}{2}}      \Gamma_d\left(
+    \frac{\nu+d+d'-1}{2}\right)}{\pi^{\frac{d d'}{2}}      \Gamma_d\left(
     \frac{\nu+d-1}{2}\right)  \,  \left|  \Sigma  \right|^{\frac{d'}{2}}  \left|
-    \Sigma' \right|^{\frac{d}{2}}} \: \left| I + \Sigma^{-1} (x-m) \, \Sigma'^{-1}
-  \,      (x-m)^t     \right|^{-     \frac{\nu+d+d'-1}{2}}$.      Se     refiera
-a~\cite{Dic67}, \cite[Cap.~4]{GupNag99} o~\cite[\S5.11   y
-ref.]{KotNag04}   para   tener   m\'as   detalles.
+    \Sigma'  \right|^{\frac{d}{2}}} \:  \left| I  + \frac{1}{\nu}  \,  (x-m)^t \
+  \Sigma^{-1}  \, (x-m) \,  \Sigma'^{-1} \right|^{-  \frac{\nu+d+d'-1}{2}}$.  Se
+refiera a~\cite{Dic67}, \cite[Cap.~4]{GupNag99} o~\cite[\S5.11 y ref.]{KotNag04}
+para tener m\'as detalles (las formas son un poco diferentes, pero completamente
+equivalente  a   la  de   este  libro).  En   particular,  se   generalizan  los
+lema~\ref{Lem:MP:StabilidadLinealStudentT}~\cite[Teo.~4.3.5]{GupNag99}       (ver
+tambi\'en          secci\'on~\ref{Ssec:MP:FamiliaElipticaMatriz}),          el
+lema~\ref{Lem:MP:LimiteStudentTGaussiana}~\cite[Teo.~4.3.4]{GupNag99}    y    el
+lema~\ref{Lem:MP:StudentTWishart}~\cite[Teo.~4.2.1]{GupNag99}.
 % Dickey 66, Cornis 54
