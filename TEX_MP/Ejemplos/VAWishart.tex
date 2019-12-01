@@ -24,11 +24,12 @@ Las caracter\'isticas de la distribuci\'on son las siguientes:
     aleatoria es equivalent a tener un vector \ $\frac{d (d+1)}{2}$-dimensional;
     por la simetria, claramente \ $X$  \ tiene solamente \ $\frac{d (d+1)}{2}$ \
     componentes diferentes; adem\'as, se puede  probar que cualquier matriz \ $A
-    \in \Pos_d^+(\Rset)$ \ se  factoriza bajo la forma \ $A = L L^t$  \ con \ $L$ \
-    triangular  inferior  con elementos  positivos  sobre  su diagonal,  llamado
-    factorizaci\'on de Cholesky~\cite{Cho10, GupNag99, Bha07, Har08, HorJoh13} y
-    reciprocamente. Eso  muestra que \  $A$ \ se  define a partir de  \ $\frac{d
-      (d+1)}{2}$ \ ``grado de libertad''.\label{Foot:MP:WishartXtilde}} & $\X =
+    \in \Pos_d^+(\Rset)$ \ se  factoriza bajo la forma \ $A = L  L^t$ \ con \ $L
+    \in \TriI_d(\Rset)$  \ triangular inferior con elementos  positivos sobre su
+    diagonal, llamado factorizaci\'on  de Cholesky~\cite{Cho10, GupNag99, Bha07,
+      Har08, HorJoh13}  y reciprocamente. Eso  muestra que \  $A$ \ se  define a
+    partir      de     \      $\frac{d     (d+1)}{2}$      \      ``grado     de
+    libertad''.\label{Foot:MP:WishartXtilde}} & $\X =
   \Pos_d^+(\Rset), \: d \in \Nset^*$\\[2mm]
   \hline
 %
@@ -328,8 +329,9 @@ formaliza en el caso Wishart general de la manera siguiente:
 %
 \begin{teorema}[Descomposici\'on de Bartlett]\label{Teo:MP:Bartlett}
 %
-  Sea \ $X \, \sim \, \W(V,\nu)$ \  y \ $V = L L^t$ factorizaci\'on de Cholesky
-  de \ $V$ \ con \ $L$ \ triangular inferior. Entonces, tenemos
+  Sea \ $X \,  \sim \, \W(V,\nu)$ \ y \ $V =  L L^t$ factorizaci\'on de Cholesky
+  de  \ $V$  \ con  \ $L  \in \TriI_d(\Rset)$  \ triangular  inferior con elementos positivos en su diagonal. Entonces,
+  tenemos
   %
   \[
   X \, \egald \, L U U^t L^t
@@ -371,7 +373,7 @@ formaliza en el caso Wishart general de la manera siguiente:
   %
   (ver tambi\'en la prueba del teorema 7.2.1 de~\cite{And03} o~\cite[Prop.~2.22]{BilBre99}).
   
-  Se nota ahora que \ siendo \ $u$ \ triangular inferior,
+  Se nota ahora que \ siendo \ $u \in \TriI_d(\Rset)$,
   %
   \[
   \Tr(x) =  \sum_{i=1}^d x_{ii}  = \sum_{1 \le j \le i \le d} u_{ij}^2, \qquad

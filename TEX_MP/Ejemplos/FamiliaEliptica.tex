@@ -408,7 +408,7 @@ prueba m\'as directa, valida para ambos momentos y cumulantes.
   %
   Entonces,  en la formula  de Hardy  tomada en  $\omega =  0$ quedan  solas las
   particiones  que  contienen unicamente  pares  de  indices.   Eso da  momentos
-  centrales y cumulantes nulos para $k$ impar (obvio por sim\'etria). Adema\'as,
+  centrales y cumulantes nulos para $k$ impar (obvio por sim\'etria). Adem\'as,
   siendo \  $\Pi_{2 k , 2}$  \ el conjunto de  particiones por pares de  $\{ 1 ,
   \ldots , 2 k \}$, notando que necesariamente cada partici\'on de \ $\Pi_{2 k ,
     2}$ \ contiene \ $k$ \ pares,
@@ -2078,8 +2078,19 @@ matriz caracter\'istica \ $\Sigma$:
 %
   \begin{itemize}
   %
-  \item  \SZ{ Momentos  y  cumulantes~\ref{Teo:MP:MomentosCumulantesEliptica}, y
-      corrolario~\ref{Lem:MP:MediaCovarianzaEliptica}}~\cite{Kri76}
+  \item  El  teorema~\ref{Teo:MP:MomentosCumulantesEliptica}  da, con  el  mismo
+    enfoque: $\zeta_1[Z]  = 0$,  \ $\kappa_1[Z]  = m$, y  $\forall \:  (l,n) \in
+    \Nset \setminus \{ (0,0) \}$ \ tenemos \ $\zeta_{i_1 , \ldots , i_l ; i'_1 ,
+      \ldots , i'_n}[Z] = \widetilde{\alpha}_k(\varphi_X) \T_{i_1 , \ldots , i_l
+      ; i'_1 , \ldots , i'_n}(\Sigma)$ \  y \ $\kappa_{i_1 , \ldots , i_l ; i'_1
+      , \ldots , i'_n}[Z] =  \widetilde{\alpha}_k(\psi_X) \T_{i_1 , \ldots , i_l
+      ; i'_1 , \ldots , i'_n}(\Sigma)$ \ con \ $\widetilde{\alpha}_k(f) = (-4)^k
+    f^{(k)}(0)$ \ y \  $ \displaystyle \T_{i_1 , \ldots , i_l  ; i'_1 , \ldots ,
+      i'_n}(\Sigma)  =  \sum_{(\pi,\pi') \in  \Pi_{2  l,2}  \times \Pi_{2  l,2}}
+    \prod_{(r,s)  \in \pi  \cup \pi'}  \Sigma_{i_r,i_s}$, \  los  otros momentos
+    centrales  y  cumulantes  de  orden  mayor   o  igual  a  2  siendo  0  (ver
+    tambi\'en~\cite{Kri76}).
+%      corrolario~\ref{Lem:MP:MediaCovarianzaEliptica}
   %
   \item  Teorema~\ref{Teo:MP:TranformacionAfinEliptica}  en:  \  $Z \,  \sim  \,
     \CED(m,\Sigma,\varphi_Z)$ \ $d$-dimensional, $A \in \Mat_{d',d}(\Cset)$ \ de
@@ -2106,7 +2117,10 @@ matriz caracter\'istica \ $\Sigma$:
     da $\| Z \|  \egald R$ \ y \ $\frac{Z}{\|Z\|} \egald  U \sim \U(\SCset_d)$ \
     son independientes;
   %
-  \item \SZ{Lema para alpha momentos \ref{Lem:MP:AlphaConR}};
+  \item Con  el mismo enfoque,  el lema~\ref{Lem:MP:AlphaConR} se expresa  en el
+    caso          complejo:          $\widetilde{\alpha}_k(\varphi_X)          =
+    \frac{\Gamma(d)}{\Gamma(d+k)} \Esp\left[ \left( (Z-m)^\dag \Sigma^{-1} (Z-m)
+      \right)^k \right]$.
   %
   \item Teorema~\ref{Teo:MP:DensidadRayo} en: \ $Z  \sim \CED(0,I,d_Z)$ \ y \ $R
     \egald \|Z\|$ \  admite una densidad que se  escribe $\displaystyle p_R(r) =
@@ -2326,10 +2340,15 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   \item\label{Enum:MP:EDM_Transpuesta} $X \in \ED_\izq \:\: \Leftrightarrow \:\:
     X^t \in  \ED_\der, \qquad X \in  \ED_\col \:\: \Leftrightarrow  \:\: X^t \in
     \ED_\lin,  \qquad  X  \in   \ED_\vcol  \:\:  \Leftrightarrow  \:\:  X^t  \in
-    \ED_\vlin$
+    \ED_\vlin$\newline  Adem\'as si  visto  en  una clase  la  matriz tiene  el
+    par\'ametro de posici\'on  y $m$, y la matriz  car\'acteristica $\Sigma$, se
+    vuelven $m^t$ y $\Sigma^t$ en la otra clase.
   %
-  \item\label{Enum:MP:EDM_Inclusiones}   $\ED_\vcol  \varsubsetneq   \ED_\col  \varsubsetneq
-    \ED_\izq$ \qquad y \qquad $\ED_\vlin \varsubsetneq \ED_\lin \varsubsetneq \ED_\der$
+  \item\label{Enum:MP:EDM_Inclusiones}    $\ED_\vcol    \varsubsetneq   \ED_\col
+    \varsubsetneq  \ED_\izq$ \qquad y  \qquad $\ED_\vlin  \varsubsetneq \ED_\lin
+    \varsubsetneq \ED_\der$\newline  Adem\'as si visto  en una clase  la matriz
+    tiene  el par\'ametro  de posici\'on  y  $m$, y  la matriz  car\'acteristica
+    $\Sigma$ (resp. $\Sigma'$, son los mismos par\'ametros en la otra clase.
   %
   \item\label{Enum:MP:EDM_Bilateral}  $\ED_\bil  \: =  \:  \ED_\izq  \, \cap  \,
     \ED_\der$
@@ -2340,15 +2359,17 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   \item\label{Enum:MP:EDM_Simetrica}  \SZ{$\{ X  \in  \ED_\bil \tq  X  = X^t  \}
       \varsubsetneq \ED_\simed$}
   \end{enumerate}
+  %
 \end{lema}
 %
 \begin{proof}
 %
-  Por  lo del  punto~\ref{Enum:MP:EDM_Transpuesta},  se  nota que  si  \ $X  \in
-  \ED_\izq$, entonces \ $\forall \: O  \in \Ort_d(\Rset), \quad O Y \egald Y$, \
-  es decir  $\forall \: O \in \Ort_d(\Rset),  \quad Y^t O^t \egald  Y^t$, \ie $X
-  \in  \ED_\der$,  y  reciprocamente.   Obviamente, la  otras  equivalencias  se
-  prueban de la misma manera.
+  Por lo del punto~\ref{Enum:MP:EDM_Transpuesta}, sea  \ $X \in \ED_\vcol$ y sea
+  \  $Y  =  \Delta^{-\frac12}  Q^t   (X-m)$.   Entonces  \  $\forall  \:  O  \in
+  \Ort_d(\Rset),  \quad  O   Y  \egald  Y$,  \  es  decir   $\forall  \:  O  \in
+  \Ort_d(\Rset),  \quad   Y^t  O^t  \egald   Y^t$,  \ie  $X  \in   \ED_\der$,  y
+  reciprocamente.   Obviamente, la otras  equivalencias se  prueban de  la misma
+  manera.
 
   Para el punto~\ref{Enum:MP:EDM_Inclusiones},  sea \ $X \in \ED_\vcol$  y sea \
   $Y   =  \Delta^{-\frac12}   Q^t  (X-m)$.   Entonces  \   $\forall  \:   O  \in
@@ -2411,9 +2432,9 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   %
   Se  ve sencillamente que  el vector  resultado de  la multiplicaci\'on  por la
   matriz bloc formada con $O'$ es nada m\'as que el formado de la columnas de $Y
-  O'$   as\'i,  $O   Y  O'   \egald  Y$:   tambi\'en  $X   \in   \ED_\bil$.  Del
+  O'$   as\'i,  $O  Y   O'  \egald   Y$:  tambi\'en   $X  \in   \ED_\bil$.   Del
   punto~\ref{Enum:MP:EDM_Inclusiones},  $X  \in  \ED_\col$,  \ie  $\ED_\vcol  \,
-  \subset  \, \ED_\col  \, \cap  \,  \ED_\bil$. \SZ{Reciprocamente,  sea.} La  secunda
+  \subset \, \ED_\col \, \cap \, \ED_\bil$. \SZ{Reciprocamente, sea.} La secunda
   aserci\'on se deduce del punto~\ref{Enum:MP:EDM_Transpuesta}.
 
   Con respecto al punto~\ref{Enum:MP:EDM_Bilateral}, si  \ $X \in \ED_\bil$, e \
@@ -2444,11 +2465,11 @@ Nota:
 \item La ley  de Wishart (ver fin de  secci\'on~\ref{Sssec:MP:Wishart}) y la ley
   Student-$t$  matriz  variada  (ver fin  de  secci\'on~\ref{Sssec:MP:StudentT})
   partenecen a $\ED_\bil$  pero no son ni en $\ED_\vcol$  ni en $\ED_\vlin$ (ver
-  ejemplos~\ref{Ej:MP:WishartED}    y~\ref{Ej:MP:WishartED}   m\'as   adelante):
+  ejemplos~\ref{Ej:MP:StudentTMatriz}  y~\ref{Ej:MP:WishartED}  m\'as adelante):
   $\ED_\bil \setminus \left( \ED_\vcol \cup \ED_\vlin \right) \neq \emptyset$.
 %
 \item $X$ gausiana matriz-variada (ver fin de secci\'on~\ref{Sssec:MP:Gaussiana}
-  y  ejemplo(ver~\ref{Ej:MP:GaussianaED}  m\'as  adelante))  partenece  a  ambas
+  y   ejemplo~\ref{Ej:MP:GaussianaED}   m\'as   adelante)  partenece   a   ambas
   $\ED_\vcol$ y $\ED_\vlin$: $\ED_\vcol \cap \ED_\vlin \neq \emptyset$.
 \end{itemize}
 %
@@ -2458,7 +2479,7 @@ Los v\'inculos entre cada clase son ilustrados figura~\ref{Fig:MP:EDMatrix}.
 \begin{figure}[h!]
 \begin{center} \input{TIKZ_MP/EnsemblesEDMatriz} \end{center}
 % 
-\leyenda{Ilustraci\'on de los v\'inculos entre  cada clase de matris aleatoria a
+\leyenda{Ilustraci\'on de los v\'inculos entre  cada clase de matriz aleatoria a
   simetr\'ia el\'iptica.  Los ensembles adentro de las lineas llenas representan
   las simetrias  izquierdas, y adentra  de las lineas guionadas  representan las
   simetrias derechas. La parte grise  claro conjuntamente a la oscuro representa
@@ -2538,8 +2559,8 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   \Sigma')          =          \lambda(\omega          \Sigma'          \omega^t
   \Sigma)$~\cite[Teo.~21.10.1(2)]{Har08}.   Se   ve  tambi\'en  por  simetr\'ia,
   siendo  $X^t \in  \ED_\bil$.\newline Nota:  si $X  \in \ED_\col  \cap \ED_\lin
-  \varsubsetneq \ED_\bil$ la  funci\'on va a ser la suma de  las autovalores (ver caso
-  $(\col)$ y por transposici\'on), \ie
+  \varsubsetneq \ED_\bil$ la funci\'on va a  ser la suma de las autovalores (ver
+  caso $(\col)$ y por transposici\'on), \ie
   %
   \[
   \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_x\left(
@@ -2567,7 +2588,7 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
     entonces
   %
   \[
-  p_X(x)  = \left|  \Sigma \right|^{-\frac{d'}{2}}  d_x\left(  \Tr\left( (x-m)^t
+  p_X(x)  = \left|  \Sigma \right|^{-\frac{d'}{2}}  d_X\left(  \Tr\left( (x-m)^t
       \Sigma^{-1} (x-m)  \right) \right)  \qquad \mbox{con} \qquad  d_X: \Rset_+
   \mapsto \Rset_+
   \]
@@ -2578,7 +2599,7 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   \item Si $X \in \ED_\col$ entonces
   %
   \[
-  p_X(x) =  \left| \Sigma \right|^{-\frac{d'}{2}}  d_x\left( \diag\left( (x-m)^t
+  p_X(x) =  \left| \Sigma \right|^{-\frac{d'}{2}}  d_X\left( \diag\left( (x-m)^t
       \Sigma^{-1}   (x-m)  \right)   \right)  \qquad   \mbox{con}   \qquad  d_X:
   \Rset_+^{d'} \mapsto \Rset_+
   \]
@@ -2586,7 +2607,7 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   \item Si $X \in \ED_\izq$ entonces
   %
   \[
-  p_X(x) =  \left| \Sigma \right|^{-\frac{d'}{2}}  d_x\left( (x-m)^t \Sigma^{-1}
+  p_X(x) =  \left| \Sigma \right|^{-\frac{d'}{2}}  d_X\left( (x-m)^t \Sigma^{-1}
     (x-m) \right) \qquad \mbox{con} \qquad d_X: \Pos_{d'}(\Rset) \mapsto \Rset_+
   \]
   %
@@ -2594,9 +2615,9 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   %
   \[
   p_X(x)    =    \left|    \Sigma   \right|^{-\frac{d'}{2}}    \left|    \Sigma'
-  \right|^{-\frac{d}{2}} \, d_x\left( \lambda\left( (x-m)^t \Sigma (x-m) \Sigma'
-    \right)\right)  \qquad \mbox{con}  \qquad d_X:  \Rset_+^{\min(d,d')} \mapsto
-  \Rset_+
+  \right|^{-\frac{d}{2}}  \, d_X\left(  \lambda\left( (x-m)^t  \Sigma^{-1} (x-m)
+      \Sigma'^{-1}     \right)\right)    \qquad    \mbox{con}     \qquad    d_X:
+  \Rset_+^{\min(d,d')} \mapsto \Rset_+
   \]
   %
   \end{itemize}
@@ -2617,13 +2638,16 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
     $(\vcol)$.  Entonces  $X   \,  \sim  \,  \ED_\bullet(m,\Sigma,\Phi_X)  \quad
     \Rightarrow \quad  A X B  + C \: \sim  \: \ED_\bullet(A m  B + C ,  A \Sigma
     A^t , \varphi_{X B})$.  En  particular, si $X$ es a simetr\'ia esf\'erica
-    de  un de  estos  tipos,  multiplicar por  $B$  a su  derecha  no cambia  la
+    de  uno de  estos  tipos,  multiplicar por  $B$  a su  derecha  no cambia  la
     esfericidad.
   %
   \item $X \, \sim  \, \ED_\bil(m,\Sigma,\Sigma',\Phi_X) \quad \Rightarrow \quad
     A X B  + C \: \sim \:  \ED_\bil(A m B + C  , A \Sigma A^t , B  \Sigma' B^t ,
     \varphi_X)$.
-\end{itemize}
+  \end{itemize}
+  %
+  En  particular, si  $X$ es  a  simetr\'ia el\'iptica  de uno  de estos  tipos,
+  cualquier componente es un vector aleatorio a simetr\'ia el\'iptica.
 %
 %  \item Teorema~\ref{Teo:MP:ProyeccionComponentesEliptica} en: Sea \ $Z$, vector
 %    aleatorio   complejo   $d$-dimensonal   de   componentes   $Z_i$.   Entonces
@@ -2644,7 +2668,13 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
     \Sigma^{\frac12}  \,  U_\izq \,  R_\izq  + m$  \:\:  con  \:\: $U_\izq  \sim
     \U\left( \Sti_{d,d'}(\Rset)  \right)$ uniforme sobre la  variedad de Stiefel
     (ver      notaciones,~\cite[p.~67-70]{Mui82}     o~\cite[\S~8.2]{GupNag99}),
-    independiente de $R_\izq$, matriz aleatoria de $\Mat_{d',d'}(\Rset)$.
+    independiente  de $R_\izq$, matriz  aleatoria de  $\Mat_{d',d'}(\Rset)$ (ver
+    tambi\'en~\cite[Lem.~1]{Kar81}   o~\cite[Teo.~9.7.3]{GupNag99}).    En  esta
+    escritura,  la  matriz $R_\izq$  no  es  definida  de manera  \'unica,  pero
+    $R_\izq^t R_\izq$ es \'unica. Es  decir que, sin embargo, existe una \'unica
+    matriz aleatoria triangular inferior  (o una \'unica triangular superior) de
+    diagonal         positiva        que         satisfaga         a        esta
+    escritura~\cite[Teo.~9.7.3]{GupNag99}.
   %
   \item $X \sim \ED_\col(m,\Sigma,\varphi_X)  \:\: \Leftrightarrow \:\: X \egald
     \Sigma^{\frac12} U_\col R_\col + m$  \:\: con \:\: $U_\col = \begin{bmatrix}
@@ -2660,8 +2690,9 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
     \U\left( \Sset_{d  d'} \right)$ uniforme sobre la  esfera, independientes de
     $R_\col \ge 0$ escalar.
   %
-  \item \SZ{$X \sim \ED_\bil(m,\Sigma,\Sigma',\varphi_X) \:\: \Leftrightarrow \:\: X \egald
-    \Sigma^{\frac12}   ??? \Sigma'^{\frac12}   +    m$   \:\:   con   \:\:   ???.}
+  \item  \SZ{$X \sim  \ED_\bil(m,\Sigma,\Sigma',\varphi_X)  \:\: \Leftrightarrow
+      \:\: X  \egald \Sigma^{\frac12} ???  \Sigma'^{\frac12} + m$ \:\:  con \:\:
+      ???.}
   \end{itemize}
   %
   En   ambos   casos,    para   $d'   =   1$,   se    recupera   obviamente   el
@@ -2674,11 +2705,57 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   $\begin{bmatrix}  \| X_1  \| &  \cdots &  \| X_{d'}  \| \end{bmatrix}$  \  y \
   $\begin{bmatrix}  \frac{X_1}{\| X_1  \|}  & \cdots  & \frac{X_{d'}}{\|  X_{d'}
       \|} \end{bmatrix}$ son independientes~\cite[Lema~6]{FanChe84}.
-%  %
-%  \item Teorema~\ref{Teo:MP:DensidadRayo} en: \ $Z  \sim \CED(0,I,d_Z)$ \ y \ $R
-%    \egald \|Z\|$ \  admite una densidad que se  escribe $\displaystyle p_R(r) =
-%%    \frac{2 \pi^d}{\Gamma(d)} \, r^{2 d-1} \, d_X\left( r^2 \right)$;
-%  %
+%
+\item  Se  monstr\'o  que,  en  el  caso  $d'  =  1$  la  densidad  es  definida
+  completamente    por   lo    del   rayo,    con   densidad    dada    por   el
+  teorema~\ref{Teo:MP:DensidadRayo}. Se  lo puedo  probar directamente y  ver el
+  teorema de mezcla de escala de  base uniforme como consecuencia, o al rev\'es.
+  En el caso matricial, la contra-parte da en cada caso:
+  %
+  \begin{itemize}
+  \item Si $X \sim \ED_\izq(m,\Sigma,\varphi_X)$, la lei de $X$ es completamente
+    definida por la lei de $(X-m)^t \Sigma^{-1} (X-m)$. As\'i \ $R_\izq^t R_\izq
+    \egald  (X-m)^t \Sigma^{-1}  (X-m)$ \  es  definida de  manera \'unica.   Si
+    tomamos   la  raiz   triangular   inferior,  definida   de  manera   \'unica
+    (ver~\cite{HorJoh13, Bha97}), saliendo  de la forma de mezcla  y del calculo
+    de la Jacobiana de $y \mapsto u_\izq r_\izq$~\cite[Teo.~2.1.13]{Mui82} y del
+    volulmen de $\Sti_{d,d'}(\Rset)$~\cite[Teo.~2.1.15]{Mui82}, se obtiene
+    %
+    \[
+    p_{R_\izq}(r)   =   \frac{2^{d'}   \pi^{\frac{d   d'}{2}}}{\Gamma_{d'}\left(
+        \frac{d}{2} \right)} \:  \prod_{i=1}^{d'} r_{i,i}^{d-i} \, d_X\left( r^t
+      r \right), \quad r \in \TriI_{d'}(\Rset)
+    \]
+  %
+    (ver tambi\'en~\cite[Teo.~7.9.2]{And03}).
+  %
+  \item Si $X \sim \ED_\col(m,\Sigma,\varphi_X)$, la lei de $X$ es completamente
+    definida  por  la  lei  del  vector $R_\col  =  \begin{bmatrix}  (X_1-m_1)^t
+      \Sigma^{-1}    (X_1-m_1)    &    \cdots   (X_{d'}-m_{d'})^t    \Sigma^{-1}
+      (X_{d'}-m_{d'})  \end{bmatrix}^t$. Si existe la densidad, tiene la forma
+    %
+    \[
+    p_{R_\col}(r)  = \frac{2  \pi^{\frac{d d'}{2}}}{\Gamma\left(  \frac{d d'}{2}
+      \right)} \: |\diag(r)|^{d-1} \, d_X\left( r \right), \quad r \in \Rset_+^{d'}
+    \]
+  %
+  \item   Si  $X  \sim   \ED_\vcol(m,\Sigma,\varphi_X)$,  la   lei  de   $X$  es
+    completamente  definida   por  la  lei  de  $R_\vcol   =  \Tr\left(  (X-m)^t
+      \Sigma^{-1}  (X-m)   \right)  =   \left\|  \Sigma^{-  \,   \frac12}  (X-m)
+    \right\|_F$. Si existe la densidad, tiene la forma
+    %
+    \[
+    p_{R_\vcol}(r) = \frac{2  \pi^{\frac{d d'}{2}}}{\Gamma\left( \frac{d d'}{2} \right)}
+    \, r^{d d'-1} \, d_X\left( r^2 \right), \quad r \in \Rset_+
+    \]
+  %
+  \item  Si  $X \sim  \ED_\bil(m,\Sigma,\Sigma',\varphi_X)$  la  lei  de $X$  es
+    completamente  definida  por  la  lei  de $R_\bil  =  \lambda\left(  (X-m)^t
+      \Sigma^{-1} (X-m) \Sigma'^{-1} \right)$.
+  \end{itemize}
+  %
+\SZ{Se puede tener la forma a partir de $d_X$ en los casos $\izq$ y $\bil$?}
+%
 %  \item Teorema~\ref{Teo:MP:SchoenbergCaracteristica} en: \ $Z \sim \CED\left( m
 %      , \Sigma , \varphi_Z \right) \egald \, A \, \Sigma^{\frac12} \, G + m \:\:
 %    \Leftrightarrow \:\: \varphi_Z  \in \PDSI$, \ con \ $A  > 0$ \ independiente
@@ -2694,53 +2771,64 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
 %  %
 \end{itemize}
 
-\SZ{PONER ESO? Sea $X = \begin{bmatrix} X_1 & \cdots & X_{d'} \end{bmatrix} \sim
-  \ED_\bullet(m ,  \Sigma , \varphi_X)$. Entonces  $X_i \sim \ED(m_i  , \Sigma ,
-  \varphi_{X_i})$  con $\varphi_{X_i}$  definido  a partir  de $\varphi_X$  para
-  $\omega =  \begin{bmatrix} \omega_1 & \cdots &  \omega_{d'} \end{bmatrix}$ tal
-  que $\omega_k = w \un_{\{i\}}(k)$. Adem\'as, para $d' > 1$, \ $\left\{ X_i \tq
+\SZ{PONER ESO?
+% Sea $X = \begin{bmatrix} X_1 & \cdots & X_{d'} \end{bmatrix} \sim
+%  \ED_\bullet(m ,  \Sigma , \varphi_X)$. Entonces  $X_i \sim \ED(m_i  , \Sigma ,
+%  \varphi_{X_i})$  con $\varphi_{X_i}$  definido  a partir  de $\varphi_X$  para
+%  $\omega =  \begin{bmatrix} \omega_1 & \cdots &  \omega_{d'} \end{bmatrix}$ tal
+%  que $\omega_k = w \un_{\{i\}}(k)$. Adem\'as, p
+Para $d' > 1$, \ $\left\{ X_i \tq
     X \sim \ED_\vcol(m , \Sigma ,  \varphi_X) \right\} \varsubsetneq \left\{ X_i \tq X
-    \sim \ED_\bullet(m ,  \Sigma , \varphi_X) \right\} = \left\{  X_i \tq X \sim
-    \ED_\bullet(m , \Sigma , \varphi_X)  \right\}$ (para $d' = 1$ son obviamente
+    \sim \ED_\col(m ,  \Sigma , \varphi_X) \right\} = \left\{  X_i \tq X \sim
+    \ED_\izq(m , \Sigma , \varphi_X)  \right\}$ (para $d' = 1$ son obviamente
   todos iguales).}
 
 Para  tener   m\'as  propiedades,  el  lector  podr\'a   referirse  por  ejemplo
 a~\cite{FanChe84},  \cite[\S~9.2 \&~9.3]{GupNag99},  \cite[\S~13.2]{BilBre99}, o
 tambi\'en a~\cite{And03, Daw78, Daw81, LibrosABuscar}.
 
-\SZ{
-
 \begin{ejemplo}[Gaussiana matriz variada]\label{Ej:MP:GaussianaMatriz}
 %
   De la  forma de la  densidad de probabilidad  en el contexto  Gaussiano matriz
-  variada, secci\'on~\ref{Sssec:MP:StudentT}, se ve inmediatamente que la matriz
-  aleatoria  partenece a  $\ED_\col \cap  \ED_\lin$  (ver tambi\'en~\cite{Daw81,
-    FanKot99, FanNad04}).
-
-Se   muestra    que   no   satisface    al   la   extensi\'on    matricial   del
-corollario~\ref{Cor:MP:MezclaUniforme}, punto (ii).
+  variada $\displaystyle  p_X(x) =  \frac{1}{(2 \pi)^{\frac{d d'}{2}}  \, \left|
+      \Sigma  \right|^{\frac{d'}{2}}  \left|  \Sigma' \right|^{\frac{d}{2}}}  \:
+  e^{-\frac12 \Tr \left( (x-m)^t \Sigma^{-1} (x-m) \Sigma'^{-1} \right)}$ \ (ver
+  secci\'on~\ref{Sssec:MP:Gaussiana}), de $\Tr  \left( (x-m)^t \Sigma^{-1} (x-m)
+    \Sigma'^{-1}  \right) =  \Tr \left(  (x-m) \Sigma'^{-1}  (x-m)^t \Sigma^{-1}
+  \right)$ se ve  inmediatamente que la matriz aleatoria  partenece a $\ED_\vcol
+  \cap \ED_\vlin$  (ver tambi\'en~\cite{Daw81, FanKot99, FanNad04}).  Como en el
+  caso escalar, el cuadrado del  rayo tiene una distribuci\'on Gamma, $R_\vcol^2
+  \sim \G\left( \frac{d d'}{2} , \frac12 \right)$. \SZ{Que mas?}
 \end{ejemplo}
 
 \begin{ejemplo}[Student-$t$ matriz variada]\label{Ej:MP:StudentTMatriz}
 %
-De  la forma  de la  densidad de probabilidad  en el  contexto Student-$t$
-matriz variada,  secci\'on~\ref{Sssec:MP:StudentT}, se ve  inmediatamente que la
-matriz  aleatoria partenece  a $\ED_\bil$  pero no  es ni  en $\ED_\col$,  ni en
-$\ED_\lin$  y  entonces  tampoco  ni   en  $\ED_\vcol$  ni  en  $\ED_vlin$  (ver
-tambi\'en~\cite{Kar81, FanChe84}).
-
-Se   muestra    que   no   satisface    al   la   extensi\'on    matricial   del
-corollario~\ref{Cor:MP:MezclaUniforme}, punto (ii).
+  De la forma  de la densidad de probabilidad en  el contexto Student-$t$ matriz
+  variada,       $\displaystyle        p_X(x)       =       \frac{\Gamma_d\left(
+      \frac{\nu+d+d'-1}{2}\right)}{\pi^{\frac{d      d'}{2}}      \Gamma_d\left(
+      \frac{\nu+d-1}{2}\right)  \, \left|  \Sigma  \right|^{\frac{d'}{2}} \left|
+      \Sigma' \right|^{\frac{d}{2}}}  \: \left| I  + \frac{1}{\nu} \,  (x-m)^t \
+    \Sigma^{-1} \, (x-m)  \, \Sigma'^{-1} \right|^{- \frac{\nu+d+d'-1}{2}}$ (ver
+  secci\'on~\ref{Sssec:MP:StudentT}),  se   ve  inmediatamente  que   la  matriz
+  aleatoria  partenece  a  $\ED_\bil$.   Se  muestra  que  no  satisface  al  la
+  extensi\'on matricial  del corollario~\ref{Cor:MP:MezclaUniforme}, punto (ii),
+  as\'i que no esta ni en $\ED_\col$,  ni en $\ED_\lin$ y entonces tampoco ni en
+  $\ED_\vcol$ ni en  $\ED_\vlin$ (ver~\cite[Ej.~1]{FanChe84} o~\cite[ejemplo del
+  ec.~(2.3)]{Kar81}).  \SZ{La densidad  del  rayo, que  no  explicitamos ac\'a  (ver
+  f\'ormula   de   calculo   dado   anteriormente),   tiene   una   forma   beta
+  matricial genealizada~\cite[Cor.~9.3.12.2]{GupNag99}.}  \SZ{Que mas? GSM...}
 \end{ejemplo}
 
 
 \begin{ejemplo}[Wishart]\label{Ej:MP:WishartED}
-De  la forma  de la  densidad de probabilidad  en el  contexto Student-$t$
-matriz variada,  secci\'on~\ref{Sssec:MP:Wishart}, se ve  inmediatamente que la
-matriz  aleatoria partenece  a $\ED_\bil$  pero no  es ni  en $\ED_\col$,  ni en
-$\ED_\lin$  y  entonces  tampoco  ni   en  $\ED_\vcol$  ni  en  $\ED_vlin$.
+  De  la  forma   de  la  densidad  de  probabilidad   $\displaystyle  p_X(x)  =
+  \frac{|x|^{\frac{\nu-d-1}{2}}     \,      e^{-\frac12     \Tr\left(     V^{-1}
+        x\right)}}{2^{\frac{d \nu}{2}}  \, |V|^{\frac{\nu}{2}} \, \Gamma_d\left(
+      \frac{\nu}{2}  \right)}$   \  definido  sobre   \  $\Pos_d^+(\Rset)$  (ver
+  secci\'on~\ref{Sssec:MP:Wishart}),   se  ve   inmediatamente  que   la  matriz
+  aleatoria partenece a $\ED_\simed$ pero no es ni en \SZ{$\ED_\bil$ y entonces ni en $\ED_\col$, ni en $\ED_\lin$
+  y por consecuencia ni tampoco en $\ED_\vcol$ o en $\ED_\vlin$.  Que mas? GSM, rayo...}
 \end{ejemplo}
-}
 
 %\SZ{ADELANTAR funcion caracteristica, covarianzas empiricas media cero cae, y sacando la media empirica cae en tal clase}
  
