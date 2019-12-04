@@ -111,8 +111,8 @@ de  probabilidad,  o  equivalentemente  por su  funci\'on  car\'acteristica.  La
   \]
   %
   donde \  $\varphi_X: \Rset_+  \mapsto [-1  \; 1]$ \  escalar, es  llamado {\em
-    generadora  caracter\'istica}. Tomando el  logaritmo, obviamente  la secunda
-  funci\'on caracter\'istica se escribe
+    generadora  caracter\'istica},  y   reciprocamente.  Tomando  el  logaritmo,
+  obviamente la secunda funci\'on caracter\'istica se escribe
   %
   \[
   \Psi_X(\omega) =  \imath \, \omega^t  m + \psi_X\left( \omega^t  \Sigma \omega
@@ -2356,8 +2356,8 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   \item\label{Enum:MP:EDM_VcBilateral} $\ED_\vcol  \: =  \: \ED_\col \,  \cap \,
     \ED_\bil$ \qquad y \qquad $\ED_\vlin \: = \: \ED_\lin \, \cap \, \ED_\bil$
   %
-  \item\label{Enum:MP:EDM_Simetrica}  \SZ{$\{ X  \in  \ED_\bil \tq  X  = X^t  \}
-      \varsubsetneq \ED_\simed$}
+  \item\label{Enum:MP:EDM_Simetrica}  $\{  X  \in   \ED_\bil  \tq  X  =  X^t  \}
+    \varsubsetneq \ED_\simed$
   \end{enumerate}
   %
 \end{lema}
@@ -2413,29 +2413,6 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   punto~\ref{Enum:MP:EDM_Transpuesta}.
   % mismo enfoque.
 
-  Tratando del punto~\ref{Enum:MP:EDM_VcBilateral}, si  \ $X \in \ED_\vcol$, e \
-  $Y  =  \Delta^{-\frac12}  Q^t   (X-m)$,  entonces,  para  cualquieras  $O  \in
-  \Ort_d(\Rset),  \:  O'  \in  \Ort_{d'}(\Rset)$  \  e  \  $I$  \  identidad  de
-  $\Mat_{d,d}(\Rset)$, necesariamente~\footnote{La matriz  bloc se escribe \ $O'^t
-    \otimes I$ \ con \ $\otimes$ \  ac\'a el producto de Kronecker. No lo usamos
-    para que  no haya confusi\'on con el  producto externo, a pesar  de que haya
-    una correspondencia uno-uno entre ambos productos.}
-  %
-  \[
-   \begin{bmatrix} O & 0 & \cdots
-  & 0 \\ 0 & \ddots & \ddots & \vdots \\ \vdots & \ddots & \ddots & \vspace{1mm}
-  0\\ 0 & \cdots & 0 & O\end{bmatrix} \, \begin{bmatrix} O'_{1,1} I & \cdots & O'_{d',1} I\\ \vdots & \vdots &
-  \vdots\\ O'_{1,d'} I & \cdots & O'_{d',d'} I \end{bmatrix} \, \begin{bmatrix}
-  Y_1\\ \vdots\\ Y_{d'} \end{bmatrix} \: \egald \: \begin{bmatrix} Y_1\\ \vdots\\
-  Y_{d'} \end{bmatrix}
-  \]
-  %
-  Se  ve sencillamente que  el vector  resultado de  la multiplicaci\'on  por la
-  matriz bloc formada con $O'$ es nada m\'as que el formado de la columnas de $Y
-  O'$   as\'i,  $O  Y   O'  \egald   Y$:  tambi\'en   $X  \in   \ED_\bil$.   Del
-  punto~\ref{Enum:MP:EDM_Inclusiones},  $X  \in  \ED_\col$,  \ie  $\ED_\vcol  \,
-  \subset \, \ED_\col \, \cap \, \ED_\bil$. \SZ{Reciprocamente, sea.} La secunda
-  aserci\'on se deduce del punto~\ref{Enum:MP:EDM_Transpuesta}.
 
   Con respecto al punto~\ref{Enum:MP:EDM_Bilateral}, si  \ $X \in \ED_\bil$, e \
   $Y =  \Delta^{-\frac12} Q^t (X-m) Q' \Delta'^{-\frac12}$,  entonces \ $\forall
@@ -2446,30 +2423,75 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   O Y \egald Y$ \ y  a continuaci\'on $\forall \: O' \in \Ort_{d'}(\Rset), \quad
   O Y O' \egald Y O' \egald Y$: necesariamente $X \in \ED_\bil$.
 
-  \SZ{Con respecto al punto~\ref{Enum:MP:EDM_simetrica}, si \ $X$ sim\'etrica es
-    en   $\ED_{\mathrm{t}}$,  e   \   $Y  =   \Delta^{-\frac12}   Q^t  (X-m)   Q
-    \Delta^{-\frac12}$,  entonces \  $\forall  \: O  \in  \Ort_d(\Rset), O'  \in
-    \Ort_d(\Rset), \quad O Y  O' \egald Y$, y en particular para  $O' = O^t$: $X
-    \in \ED_\simed$.}
+  Tratando del punto~\ref{Enum:MP:EDM_VcBilateral}, si  \ $X \in \ED_\vcol$, e \
+  $Y  =  \Delta^{-\frac12}  Q^t   (X-m)$,  entonces,  para  cualquieras  $O  \in
+  \Ort_d(\Rset),  \:  O'  \in  \Ort_{d'}(\Rset)$  \  e  \  $I$  \  identidad  de
+  $\Mat_{d,d}(\Rset)$, necesariamente~\footnote{La matriz  bloc se escribe \ $O'^t
+    \otimes I$ \ con \ $\otimes$ \  ac\'a el producto de Kronecker. No lo usamos
+    para que  no haya confusi\'on con el  producto externo, a pesar  de que haya
+    una correspondencia uno-uno entre ambos productos.}
+  %
+  \[
+  \begin{bmatrix} O & 0 & \cdots & 0 \\ 0 & \ddots & \ddots & \vdots \\ \vdots &
+    \ddots  &  \ddots  & \vspace{1mm}  0\\  0  &  \cdots  & 0  &  O\end{bmatrix}
+  \,  \begin{bmatrix} O'_{1,1}  I &  \cdots &  O'_{d',1} I\\  \vdots &  \vdots &
+    \vdots\\   O'_{1,d'}    I   &   \cdots   &    O'_{d',d'}   I   \end{bmatrix}
+  \, \begin{bmatrix}
+    Y_1\\ \vdots\\ Y_{d'} \end{bmatrix} \: \egald \: \begin{bmatrix} Y_1\\ \vdots\\
+    Y_{d'} \end{bmatrix}
+  \]
+  %
+  Se  ve sencillamente que  el vector  resultado de  la multiplicaci\'on  por la
+  matriz bloc formada con $O'$ es nada m\'as que el formado de la columnas de $Y
+  O'$   as\'i,  $O  Y   O'  \egald   Y$:  tambi\'en   $X  \in   \ED_\bil$.   Del
+  punto~\ref{Enum:MP:EDM_Inclusiones},  $X  \in  \ED_\col$,  \ie  $\ED_\vcol  \,
+  \subset  \, \ED_\col  \, \cap  \,  \ED_\bil$.  Para  la reciproca,  se usa  un
+  resultado que vamos a ver m\'as adelante, a saber que por (i) $X \in \ED_\col$
+  si  y  solamente  si la  funci\'on  caracter\'istica  de  $Y$ tiene  la  forma
+  $\Phi_Y(\omega) =  \overline{\varphi}_Y( \diag( \omega^t \omega)  )$, (ii) que
+  $X \in \ED_\bil$ si y solamente  si la funci\'on caracter\'istica de $Y$ tiene
+  la forma  $\Phi_Y(\omega) = \widetilde{\varphi}_Y(\lambda(  \omega^t \omega))$
+  con  $\lambda$  el espectro  (vector  formado  de  las autovalores).   Tomando
+  $\omega$    ``diagonal''    (recorda    que   partenece    necesariamente    a
+  $\Mat_{d,d'}(\Rset)$, \ie no necesariamente  cuadrada), \ie $\omega_{i,j} = 0$
+  si   $i    \ne   j$,   es   sencillo   ver    que   $\widetilde{\varphi}_Y   =
+  \overline{\varphi}_Y$. En  otros terminos, siendo $\Phi_Y$  la misma funci\'on
+  de  la diagonal  y  del espectro  de  $\omega^t \omega$,  es  funci\'on de  la
+  cantidad que comparten estos  dos vecores, \ie $\un^t \lambda(\omega^t \omega)
+  = \Tr( \omega^t \omega) = \un^t \diag(\omega^t \omega)$, \ie $\Phi_Y(\omega) =
+  \varphi_Y\left(  \Tr(\omega^t   \omega)  \right)$.   Veremos   m\'as  adelante
+  tambi\'en  que $X \in  \ED_\vcol$ si  y solamente  si justamente  la funci\'on
+  c\'aracteristica de  $Y$ es una funci\'on  de $\Tr( \omega^t  \omega)$, lo que
+  cierra   la  prueba.    \newline   La  secunda   aserci\'on   se  deduce   del
+  punto~\ref{Enum:MP:EDM_Transpuesta}.
+
+  Con respecto al punto~\ref{Enum:MP:EDM_Simetrica},  si \ $X$ sim\'etrica es en
+  $\ED_\bil$,  e  \  $Y  =  \Delta^{-\frac12} Q^t  (X-m)  Q  \Delta^{-\frac12}$,
+  entonces \ $\forall \: O \in \Ort_d(\Rset), O' \in \Ort_d(\Rset), \quad O Y O'
+  \egald Y$, y en particular para $O' = O^t$: $X \in \ED_\simed$. Al rev\'es, de
+  $\Tr(A  B) = \Tr(B  A)$ se  nota que  la distribuci\'on  de Wishart  \ $p_X(x)
+  \propto |x|^{\frac{\nu-d-1}{2}} e^{-\frac12 \Tr\left( V^{-1} x\right)}$ \ dada
+  secci\'on   y  ejemplo~\ref{Ej:MP:WishartED}   m\'as   adelante  partenece   a
+  $\ED_\simed$, pero no esta en $\ED_\bil$: la inclusi\'on es estricta.
 \end{proof}
 %
 Nota:
 %
 \begin{itemize}
-\item \SZ{Buscar un que es izquierda,  pero no bilateral y no columna: $\ED_\izq
+\item Sea $X$ de densidad de probabilidad $p_X(x) \propto e^{- \| x^t x \|_q}$ con $q \ne 2$. Del hecho de que $\| A B\|_q \ne \| B A \|_q \ne \|A\|_q \|B\|_q$, claramente $X \in \ED_\izq$ pero $X \ne \ED_\der$ y tampoco...uy \SZ{Buscar un que es izquierda,  pero no bilateral y no columna: $\ED_\izq
     \setminus \left( \ED_\bil \cap \ED_\col \right) \neq \emptyset$.}
 % Veremos m\'as adelante en el ejemplo~\ref{Ej:MP} que $X  \sim
 %    \U\left( \Sti_{d,d'}(\Rset)  \right)$ uniforme sobre la  variedad de Stiefel
 %    (ver notaciones y~\cite[p.~67-70]{Mui82}) partenece a $\ED_\izq$ pero no 
 %
-\item La ley  de Wishart (ver fin de  secci\'on~\ref{Sssec:MP:Wishart}) y la ley
-  Student-$t$  matriz  variada  (ver fin  de  secci\'on~\ref{Sssec:MP:StudentT})
-  partenecen a $\ED_\bil$  pero no son ni en $\ED_\vcol$  ni en $\ED_\vlin$ (ver
-  ejemplos~\ref{Ej:MP:StudentTMatriz}  y~\ref{Ej:MP:WishartED}  m\'as adelante):
-  $\ED_\bil \setminus \left( \ED_\vcol \cup \ED_\vlin \right) \neq \emptyset$.
+\item     La    ley     Student-$t$     matriz    variada     (ver    fin     de
+  secci\'on~\ref{Sssec:MP:StudentT}  y  ejemplo~\ref{Ej:MP:StudentTMatriz} m\'as
+  adelante)  partenece  a  $\ED_\bil$ pero  no  esta  ni  en $\ED_\vcol$  ni  en
+  $\ED_\vlin$: $\ED_\bil \setminus \left(  \ED_\vcol \cup \ED_\vlin \right) \neq
+  \emptyset$.
 %
 \item $X$ gausiana matriz-variada (ver fin de secci\'on~\ref{Sssec:MP:Gaussiana}
-  y   ejemplo~\ref{Ej:MP:GaussianaED}   m\'as   adelante)  partenece   a   ambas
+  y  ejemplo~\ref{Ej:MP:GaussianaMatriz}  m\'as   adelante)  partenece  a  ambas
   $\ED_\vcol$ y $\ED_\vlin$: $\ED_\vcol \cap \ED_\vlin \neq \emptyset$.
 \end{itemize}
 %
@@ -2518,7 +2540,7 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   $\omega_j \in \Rset^d, \: j = 1, \ldots , d'$.
   %
   \begin{itemize}
-  \item Si $X \in \ED_\vcol$ entonces
+  \item  $X \in \ED_\vcol$ si y solamente si
   %
   \[
   \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_x\left(
@@ -2529,7 +2551,7 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   (m\'as  precisamente, $\varphi_X  \in  \PDSI_{d d'}$).  Esta  forma se  heride
   obviamente directamente del caso vectorial.
   %
-  \item Si $X \in \ED_\col$ entonces
+  \item  $X \in \ED_\col$ si y solamente si
   %
   \[
   \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_x\left(
@@ -2537,7 +2559,7 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   \varphi_X: \Rset_+^{d'} \mapsto [-1 \; 1]
   \]
   %
-  \item Si $X \in \ED_\izq$ entonces
+  \item $X \in \ED_\izq$  si y solamente si
   %
   \[
   \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_x\left(
@@ -2545,7 +2567,7 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   \Pos_{d'}(\Rset) \mapsto [-1 \; 1]
   \]
   %
-  \item Si $X \in \ED_\bil$ entonces
+  \item $X \in \ED_\bil$  si y solamente si
   %
   \[
   \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_x\left(
@@ -2596,7 +2618,7 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   % (m\'as precisamente, $\varphi_X \in \PDSI_{d d'}$).  Esta forma se heride
   % obviamente directamente del caso vectorial.
   %
-  \item Si $X \in \ED_\col$ entonces
+  \item $X \in \ED_\col$ si y solamente si
   %
   \[
   p_X(x) =  \left| \Sigma \right|^{-\frac{d'}{2}}  d_X\left( \diag\left( (x-m)^t
@@ -2604,14 +2626,14 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   \Rset_+^{d'} \mapsto \Rset_+
   \]
   %
-  \item Si $X \in \ED_\izq$ entonces
+  \item $X \in \ED_\izq$ si y solamente si
   %
   \[
   p_X(x) =  \left| \Sigma \right|^{-\frac{d'}{2}}  d_X\left( (x-m)^t \Sigma^{-1}
     (x-m) \right) \qquad \mbox{con} \qquad d_X: \Pos_{d'}(\Rset) \mapsto \Rset_+
   \]
   %
-  \item Si $X \in \ED_\bil$ entonces
+  \item $X \in \ED_\bil$ si y solamente si
   %
   \[
   p_X(x)    =    \left|    \Sigma   \right|^{-\frac{d'}{2}}    \left|    \Sigma'
@@ -2626,8 +2648,10 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   $X \sim \ED_\bullet(m,\Sigma,d_X)$ \ en los  casos \ $\bullet = \izq, \, \col,
   \,   \vcol$  \  respectivamente,   y  en   el  caso   bilateral,  \   $X  \sim
   \ED_\bil(m,\Sigma,\Sigma',d_X)$.
-%\item  \SZ{ Momentos  y  cumulantes~\ref{Teo:MP:MomentosCumulantesEliptica}, y
-%      corrolario~\ref{Lem:MP:MediaCovarianzaEliptica}}~\cite{Kri76}
+%
+\item  \SZ{ Momentos  y  cumulantes~\ref{Teo:MP:MomentosCumulantesEliptica}, y
+      corrolario~\ref{Lem:MP:MediaCovarianzaEliptica}}
+% Momentos y cumulantes... ver por lo menos promedio y covarianza
 %
 \item  El Teorema~\ref{Teo:MP:TranformacionAfinEliptica}  de  conservaci\'on del
   car\'acter  el\'iptico  por  transformaci\'on  lineal  tiene  su  contra-parte
@@ -2649,19 +2673,22 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   En  particular, si  $X$ es  a  simetr\'ia el\'iptica  de uno  de estos  tipos,
   cualquier componente es un vector aleatorio a simetr\'ia el\'iptica.
 %
-%  \item Teorema~\ref{Teo:MP:ProyeccionComponentesEliptica} en: Sea \ $Z$, vector
+\item \SZ{Teorema~\ref{Teo:MP:ProyeccionComponentesEliptica} Proyeccion Componentes Eliptica en:}
+% Sea \ $Z$, vector
 %    aleatorio   complejo   $d$-dimensonal   de   componentes   $Z_i$.   Entonces
 %    $\displaystyle Z  \sim \CED(m,\Sigma,\varphi_Z) \quad  \Leftrightarrow \quad
 %    \forall \:  a \in  \Cset^d, \quad a^\dag  (Z - m)  \egald \sqrt{\frac{a^\dag
 %        \Sigma a}{\Sigma_{i,i}}} (Z_i - m_i)$;
 %  %
-%  \item Teorema~\ref{Teo:MP:MaxwellHershell} en:  \ $Z \sim \CED(m,I,\varphi_Z)$
-%    \ tiene  sus componentes independientes si  y solamente si \  $Z \sim \CN(m,
-%    \alpha I)$ con $\alpha > 0$;
-%  %(o~\cite{BodGup09})
+\item  El  teorema~\ref{Teo:MP:MaxwellHershell}  de  Maxwell-Hershell  tiene  su
+  contra-parte para matrices de $\ED_\bil$:  Sea \ $X \in \ED_\bil$ con columnas
+  independientes. Entonces $X$ es  necesiaramente gausiana matricial (ver fin de
+  secci\'on~\ref{Sssec:MP:Gaussiana} y ejemplo~\ref{Ej:MP:GaussianaMatriz} m\'as
+  adelante)~\cite[Teo.~8]{FanChe84}.
+%
 \item El teorema  de mezcla uniforme~\ref{Teo:MP:MezclaUniforme} tambi\'en tiene
-  sus  contra-partes matriciales~\cite[Teorema~1]{FanChe84},  dependiendo  de la
-  clase: Se supone ac\'a que $d' \le d$ y luego
+  sus contra-partes  matriciales~\cite[Teo.~1 \& Lema.~9]{FanChe84}, dependiendo
+  de la clase: Se supone ac\'a que $d' \le d$ y luego
   %
   \begin{itemize}
   \item $X \sim \ED_\izq(m,\Sigma,\varphi_X)  \:\: \Leftrightarrow \:\: X \egald
@@ -2678,9 +2705,9 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   %
   \item $X \sim \ED_\col(m,\Sigma,\varphi_X)  \:\: \Leftrightarrow \:\: X \egald
     \Sigma^{\frac12} U_\col R_\col + m$  \:\: con \:\: $U_\col = \begin{bmatrix}
-      U_{\col,1} &  \cdots & U_{\col,d'}  \end{bmatrix}$ tal que  los $U_{\col,j}
-    \sim   \U\left(   \Sset_d  \right)$   uniforme   sobre   la  esfera   son
-    independientes entre  si, y independientes  de $R_\col$ matriz  aleatoria de
+      U_{\col,1} &  \cdots & U_{\col,d'} \end{bmatrix}$ tal  que los $U_{\col,j}
+    \sim \U\left(  \Sset_d \right)$ uniforme sobre la  esfera son independientes
+    entre   si,    y   independientes   de   $R_\col$    matriz   aleatoria   de
     $\Pos_{d'}(\Rset)$ diagonal.
   %
   \item $X \sim \ED_\vcol(m,\Sigma,\varphi_X) \:\: \Leftrightarrow \:\: X \egald
@@ -2690,9 +2717,13 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
     \U\left( \Sset_{d  d'} \right)$ uniforme sobre la  esfera, independientes de
     $R_\col \ge 0$ escalar.
   %
-  \item  \SZ{$X \sim  \ED_\bil(m,\Sigma,\Sigma',\varphi_X)  \:\: \Leftrightarrow
-      \:\: X  \egald \Sigma^{\frac12} ???  \Sigma'^{\frac12} + m$ \:\:  con \:\:
-      ???.}
+  \item $X \sim \ED_\bil(m,\Sigma,\Sigma',\varphi_X) \:\: \Leftrightarrow \:\: X
+    \egald \Sigma^{\frac12}  U_\izq \Lambda  V_\der \Sigma'^{\frac12} +  m$ \:\:
+    con  \:\: $U_\izq  \sim  \U\left( \Sti_{d,d'}(\Rset)  \right)$  \:\: y  \:\:
+    $V_\der  \sim   \U\left(  \Sti_{d',d'}(\Rset)  \right)$,   independientes  e
+    independiente    de   $\Lambda    \ge   0$    matriz    aleatoria   diagonal
+    positiva. Pasando, aparece que $\diag(\Lambda^2) = \lambda(X^t X)$ vector de
+    las autovalores de $X^t X$ (ver tambi\'en~\cite[Rep.~2]{Daw78}).
   \end{itemize}
   %
   En   ambos   casos,    para   $d'   =   1$,   se    recupera   obviamente   el
@@ -2727,12 +2758,12 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
       r \right), \quad r \in \TriI_{d'}(\Rset)
     \]
   %
-    (ver tambi\'en~\cite[Teo.~7.9.2]{And03}).
+    (ver tambi\'en~\cite[Teo.~7.9.2]{And03} o~\cite{Dia13}).
   %
   \item Si $X \sim \ED_\col(m,\Sigma,\varphi_X)$, la lei de $X$ es completamente
-    definida  por  la  lei  del  vector $R_\col  =  \begin{bmatrix}  (X_1-m_1)^t
-      \Sigma^{-1}    (X_1-m_1)    &    \cdots   (X_{d'}-m_{d'})^t    \Sigma^{-1}
-      (X_{d'}-m_{d'})  \end{bmatrix}^t$. Si existe la densidad, tiene la forma
+    definida por  la lei del vector $R_\col  = \begin{bmatrix} \sqrt{(X_1-m_1)^t
+        \Sigma^{-1}  (X_1-m_1)}  &  \cdots  \sqrt{(X_{d'}-m_{d'})^t  \Sigma^{-1}
+        (X_{d'}-m_{d'})} \end{bmatrix}^t$. Si existe la densidad, tiene la forma
     %
     \[
     p_{R_\col}(r)  = \frac{2  \pi^{\frac{d d'}{2}}}{\Gamma\left(  \frac{d d'}{2}
@@ -2740,13 +2771,13 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
     \]
   %
   \item   Si  $X  \sim   \ED_\vcol(m,\Sigma,\varphi_X)$,  la   lei  de   $X$  es
-    completamente  definida   por  la  lei  de  $R_\vcol   =  \Tr\left(  (X-m)^t
-      \Sigma^{-1}  (X-m)   \right)  =   \left\|  \Sigma^{-  \,   \frac12}  (X-m)
+    completamente  definida por  la lei  de $R_\vcol  =  \sqrt{\Tr\left( (X-m)^t
+        \Sigma^{-1}  (X-m)  \right)}  =  \left\|  \Sigma^{-  \,  \frac12}  (X-m)
     \right\|_F$. Si existe la densidad, tiene la forma
     %
     \[
-    p_{R_\vcol}(r) = \frac{2  \pi^{\frac{d d'}{2}}}{\Gamma\left( \frac{d d'}{2} \right)}
-    \, r^{d d'-1} \, d_X\left( r^2 \right), \quad r \in \Rset_+
+    p_{R_\vcol}(r) =  \frac{2 \pi^{\frac{d d'}{2}}}{\Gamma\left(  \frac{d d'}{2}
+      \right)} \, r^{d d'-1} \, d_X\left( r^2 \right), \quad r \in \Rset_+
     \]
   %
   \item  Si  $X \sim  \ED_\bil(m,\Sigma,\Sigma',\varphi_X)$  la  lei  de $X$  es
@@ -2754,7 +2785,7 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
       \Sigma^{-1} (X-m) \Sigma'^{-1} \right)$.
   \end{itemize}
   %
-\SZ{Se puede tener la forma a partir de $d_X$ en los casos $\izq$ y $\bil$?}
+\SZ{Se puede tener la forma a partir de $d_X$ en el caso $\bil$? \cite{Dia13}}
 %
 %  \item Teorema~\ref{Teo:MP:SchoenbergCaracteristica} en: \ $Z \sim \CED\left( m
 %      , \Sigma , \varphi_Z \right) \egald \, A \, \Sigma^{\frac12} \, G + m \:\:
@@ -2762,7 +2793,6 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
 %    de \ $G \sim \CN(0,I)$;
 %  % Distributions of the compound and scale mixture of vector and spherical matrix variate elliptical distributions  de Jose A.Diaz-Garcia Ramon Gutierrez-Jaimez JMVA 2003: 10.1016/j.jmva.2010.08.008
 %
-% Distributions of the compound and scale mixture of vector and spherical matrix variate elliptical distributions January 2011Journal of Multivariate Analysis 102(1):143-152 DOI: 10.1016/j.jmva.2010.08.008 José A. Díaz-GarcíaJosé A. Díaz-GarcíaRamón Gutiérrez Jáimez
 %
 %  \item  Teorema~\ref{Teo:MP:SchoenbergDensidad} en:  \ $Z  \sim \CED\left(  m ,
 %      \Sigma  , d_Z  \right)  \egald \,  A \,  \Sigma^{\frac12}  \, G  + m  \:\:
@@ -2793,12 +2823,12 @@ tambi\'en a~\cite{And03, Daw78, Daw81, LibrosABuscar}.
   variada $\displaystyle  p_X(x) =  \frac{1}{(2 \pi)^{\frac{d d'}{2}}  \, \left|
       \Sigma  \right|^{\frac{d'}{2}}  \left|  \Sigma' \right|^{\frac{d}{2}}}  \:
   e^{-\frac12 \Tr \left( (x-m)^t \Sigma^{-1} (x-m) \Sigma'^{-1} \right)}$ \ (ver
-  secci\'on~\ref{Sssec:MP:Gaussiana}), de $\Tr  \left( (x-m)^t \Sigma^{-1} (x-m)
-    \Sigma'^{-1}  \right) =  \Tr \left(  (x-m) \Sigma'^{-1}  (x-m)^t \Sigma^{-1}
-  \right)$ se ve  inmediatamente que la matriz aleatoria  partenece a $\ED_\vcol
-  \cap \ED_\vlin$  (ver tambi\'en~\cite{Daw81, FanKot99, FanNad04}).  Como en el
-  caso escalar, el cuadrado del  rayo tiene una distribuci\'on Gamma, $R_\vcol^2
-  \sim \G\left( \frac{d d'}{2} , \frac12 \right)$. \SZ{Que mas?}
+  fin de secci\'on~\ref{Sssec:MP:Gaussiana}), de $\Tr \left( (x-m)^t \Sigma^{-1}
+    (x-m)  \Sigma'^{-1}   \right)  =  \Tr  \left(   (x-m)  \Sigma'^{-1}  (x-m)^t
+    \Sigma^{-1} \right)$ se ve  inmediatamente que la matriz aleatoria partenece
+  a $\ED_\vcol \cap \ED_\vlin$ (ver tambi\'en~\cite{Daw81, FanKot99, FanNad04}).
+  Como en el caso escalar, el  cuadrado del rayo tiene una distribuci\'on Gamma,
+  $R_\vcol^2 \sim \G\left( \frac{d d'}{2} , \frac12 \right)$. \SZ{Que mas?}
 \end{ejemplo}
 
 \begin{ejemplo}[Student-$t$ matriz variada]\label{Ej:MP:StudentTMatriz}
@@ -2845,7 +2875,7 @@ tambi\'en a~\cite{And03, Daw78, Daw81, LibrosABuscar}.
 
 %\item Ver BilBre def 13 o \cite{Kri76}: extension matricial
 
-\item Karia Student-t izquierda, pero no es col
+%\item Karia Student-t izquierda, pero no es col
 
 \item Ver Shiryayev, \SZ{
 
