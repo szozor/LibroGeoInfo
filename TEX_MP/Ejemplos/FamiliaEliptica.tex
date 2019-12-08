@@ -2249,13 +2249,17 @@ Empezamos  con cada  definici\'on  de~\cite[\S~9.3]{GupNag99} y  de~\cite{Hsu40,
   \: \begin{bmatrix} X'_1 & \cdots & X'_d \end{bmatrix} \]
 \end{tabular}
 %
-\centerline{$(\bil) \:$ {\em bilateral} si \ $\forall \: O \in \Ort_d(\Rset), O'
-  \in \Ort_{d'}(\Rset), \quad\qquad O X O' \: \egald \: X$}
+\centerline{$(\bil)  \:$  {\em bilateral}~\footnote{En  la  literatura, se  dice
+    m\'as simplemente que  la matriz es a simetr\'ia  esf\'erica o esfericamente
+    distribuida,  ej. en~\cite{FanChe84,  GupNag99}.}  si  \ $\forall  \:  O \in
+  \Ort_d(\Rset), O' \in \Ort_{d'}(\Rset), \quad\qquad O X O' \: \egald \: X$}
 
 \
 
-\centerline{$(\simed) \:$ {\em sim\'etrica} si \ $d = d', \: \X = \Sim_d(\Rset)$
-  \ y \ $\forall \: O \in \Ort_d(\Rset), \quad\qquad O X O^t \: \egald \: X$}
+\centerline{$(\simed)  \:$  {\em  sim\'etrica}~\footnote{En  la  literatura,  se
+    encuentra frecuentemente que la matriz es a distribuci\'on radial o rotable,
+    ej. en~\cite{Tyl82, BilBre99}.} si  \ $d = d', \: \X =  \Sim_d(\Rset)$ \ y \
+  $\forall \: O \in \Ort_d(\Rset), \quad\qquad O X O^t \: \egald \: X$}
 
 \
 
@@ -2318,9 +2322,9 @@ como en el  caso de vectores con estiramientos  y una translaci\'on~\cite{Mal61,
   \item[$(\bil)$]   bilateral    si   \   $\Delta^{-\frac12}    Q^t   (X-m)   Q'
     \Delta'^{-\frac12}$ es esf\'erica bilateral;
   %
-  \item[$(\simed)$] simetricamente si \ $d = d', \: \X = \Sim_d(\Rset)$ \ y si \
-    $\Sigma = \Sigma'$ \ con \ $\Delta^{-\frac12} Q^t (X-m) Q \Delta^{-\frac12}$
-    es esf\'erica simetricamente;
+  \item[$(\simed)$] simetricamente si \ $d = d', \: \X = \Sim_d(\Rset), m^t = m$
+    \ y si  \ \ $\Delta^{-\frac12} Q^t (X-m)  Q \Delta^{-\frac12}$ es esf\'erica
+    simetricamente;
   \end{itemize}
   %
 \end{definicion}
@@ -2535,7 +2539,7 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
 \item Como  en el  contexto vectorial, la  funci\'on caracter\'istica  tiene una
   forma particular,  esta dependiente del  tipo de elipticidad. Las  pruebas son
   por ejemplo  en~\cite{FanChe84, JenGoo81, GupNag99}, pero siguen  pasos a paso
-  el enfoque  del caso vectorial.Notaremos $\omega =  \begin{bmatrix} \omega_1 &
+  el enfoque del caso vectorial.  Notaremos $\omega = \begin{bmatrix} \omega_1 &
     \cdots & \omega_{d'} \end{bmatrix}  \in \Mat_{d,d'}(\Rset)$ con las columnas
   $\omega_j \in \Rset^d, \: j = 1, \ldots , d'$.
   %
@@ -2577,25 +2581,36 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   %
   con   $\lambda(\cdot)$  spectra  de   la  matriz   (vector  formado   por  los
   autovectores). Siendo $\omega$ rectangular  el rango es necesariamente menor o
-  igual  a  $\min(d,d')$ y  tenemos  tambi\'en  $\lambda(\omega^t \Sigma  \omega
-  \Sigma')          =          \lambda(\omega          \Sigma'          \omega^t
-  \Sigma)$~\cite[Teo.~21.10.1(2)]{Har08}.   Se   ve  tambi\'en  por  simetr\'ia,
+  igual a  $\min(d,d')$ y tenemos tambi\'en  $\lambda\left( \Sigma'^{\frac12} \,
+    \omega^t \Sigma  \omega \Sigma'^{\frac12} \right)  = \lambda(\omega^t \Sigma
+  \omega  \Sigma') =  \lambda(\omega  \Sigma' \omega^t  \Sigma) =  \lambda\left(
+    \Sigma^{\frac12}    \,     \omega    \Sigma'    \omega^t    \Sigma^{\frac12}
+  \right)$~\cite[Teo.~21.10.1(2)]{Har08}  (en  la  literatura, se  encuentra  la
+  primera forma como argumento de $\varphi_X$).  Se ve tambi\'en por simetr\'ia,
   siendo  $X^t \in  \ED_\bil$.\newline Nota:  si $X  \in \ED_\col  \cap \ED_\lin
   \varsubsetneq \ED_\bil$ la funci\'on va a  ser la suma de las autovalores (ver
   caso $(\col)$ y por transposici\'on), \ie
   %
   \[
   \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_x\left(
-    \Tr\left( \omega^t \, \Sigma \, \omega \, \Sigma' \right) \right) \qquad
+    \Tr\left( \omega^t  \, \Sigma  \, \omega \,  \Sigma' \right)  \right) \qquad
   \mbox{con} \qquad \varphi_X: \Rset_+ \mapsto [-1 \; 1]
   \]
   %
   % (viene obviamente de la descomposici\'on en valores singulares~\cite{Bat}).
+  %
+\item \SZ{A VER... $X \in \ED_\simed$  si y solamente si 
+  %
+  \[
+  \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_x\left(
+    \lambda\left(  \Sigma \,  \omega  \right) \right)  \qquad \mbox{con}  \qquad
+  \varphi_X: \Rset_+^d \mapsto [-1 \; 1]
+  \]}
   \end{itemize}
   %
   Escribiremos en lo  que sigue \ $X \sim  \ED_\bullet(m,\Sigma,\varphi_X)$ \ en
-  los casos  \ $\bullet = \izq,  \, \col, \,  \vcol$ \ respectivamente, y  en el
-  caso bilateral, \ $X \sim \ED_\bil(m,\Sigma,\Sigma',\varphi_X)$.
+  los casos \  $\bullet = \izq, \, \col, \, \vcol,  \simed$ \ respectivamente, y
+  en el caso bilateral, \ $X \sim \ED_\bil(m,\Sigma,\Sigma',\varphi_X)$.
 %
 \item Igualmente,  como en  el contexto vectorial,  cuando existe,  tambi\'en la
   densidad de  probabiliad tiene una  forma particular, dependiente del  tipo de
@@ -2638,16 +2653,24 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   \[
   p_X(x)    =    \left|    \Sigma   \right|^{-\frac{d'}{2}}    \left|    \Sigma'
   \right|^{-\frac{d}{2}}  \, d_X\left(  \lambda\left( (x-m)^t  \Sigma^{-1} (x-m)
-      \Sigma'^{-1}     \right)\right)    \qquad    \mbox{con}     \qquad    d_X:
-  \Rset_+^{\min(d,d')} \mapsto \Rset_+
+      \Sigma' \right)\right) \qquad  \mbox{con} \qquad d_X: \Rset_+^{\min(d,d')}
+  \mapsto \Rset_+
   \]
   %
+  \item \SZ{A VER... $X \in \ED_\simed$ si y solamente si
+  %
+  \[
+  p_X(x)  = \left|  \Sigma \right|^{-\frac{d-1}{2}}  \,  d_X\left( \lambda\left(
+      \Sigma^{-1} (x-m)  \right)\right) \qquad \mbox{con}  \qquad d_X: \Rset_+^d
+  \mapsto \Rset_+
+  \]}
   \end{itemize}
   %
   Escribiremos tambi\'en cuando  \ $X$ \ admite una  densidad de probabilidad, \
   $X \sim \ED_\bullet(m,\Sigma,d_X)$ \ en los  casos \ $\bullet = \izq, \, \col,
-  \,   \vcol$  \  respectivamente,   y  en   el  caso   bilateral,  \   $X  \sim
+  \,  \vcol, \simed$  \  respectivamente, y  en  el caso  bilateral,  \ $X  \sim
   \ED_\bil(m,\Sigma,\Sigma',d_X)$.
+  %
 %
 \item  \SZ{ Momentos  y  cumulantes~\ref{Teo:MP:MomentosCumulantesEliptica}, y
       corrolario~\ref{Lem:MP:MediaCovarianzaEliptica}}
@@ -2668,6 +2691,13 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   \item $X \, \sim  \, \ED_\bil(m,\Sigma,\Sigma',\Phi_X) \quad \Rightarrow \quad
     A X B  + C \: \sim \:  \ED_\bil(A m B + C  , A \Sigma A^t , B  \Sigma' B^t ,
     \varphi_X)$.
+  %
+  \item \SZ{$X \, \sim  \, \ED_\simed(m,\Sigma,\Phi_X) \quad \Rightarrow \quad
+    A X A  + C \: \sim \:  \ED_\bil(A m A + C  , A \Sigma A^t,
+    \varphi_X)$ donde $C = C^t$.}
+  %
+  \item \SZ{$X \, \sim \,  \ED_\simed(m,\Sigma,\Phi_X) \quad \Rightarrow \quad A X B
+    + C \: \sim \: \ED_\bil(A m B + C , A \Sigma A^t , B B^t , \varphi_X)$.}
   \end{itemize}
   %
   En  particular, si  $X$ es  a  simetr\'ia el\'iptica  de uno  de estos  tipos,
@@ -2682,7 +2712,7 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
 %  %
 \item  El  teorema~\ref{Teo:MP:MaxwellHershell}  de  Maxwell-Hershell  tiene  su
   contra-parte para matrices de $\ED_\bil$:  Sea \ $X \in \ED_\bil$ con columnas
-  independientes. Entonces $X$ es  necesiaramente gausiana matricial (ver fin de
+  independientes. Entonces $X$ es  necesariamente gausiana matricial (ver fin de
   secci\'on~\ref{Sssec:MP:Gaussiana} y ejemplo~\ref{Ej:MP:GaussianaMatriz} m\'as
   adelante)~\cite[Teo.~8]{FanChe84}.
 %
@@ -2704,29 +2734,40 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
     escritura~\cite[Teo.~9.7.3]{GupNag99}.
   %
   \item $X \sim \ED_\col(m,\Sigma,\varphi_X)  \:\: \Leftrightarrow \:\: X \egald
-    \Sigma^{\frac12} U_\col R_\col + m$  \:\: con \:\: $U_\col = \begin{bmatrix}
-      U_{\col,1} &  \cdots & U_{\col,d'} \end{bmatrix}$ tal  que los $U_{\col,j}
-    \sim \U\left(  \Sset_d \right)$ uniforme sobre la  esfera son independientes
-    entre   si,    y   independientes   de   $R_\col$    matriz   aleatoria   de
+    \Sigma^{\frac12}   \,  U_\col   \,R_\col  +   m$  \:\:   con   \:\:  $U_\col
+    = \begin{bmatrix}  U_{\col,1} & \cdots & U_{\col,d'}  \end{bmatrix}$ tal que
+    los $U_{\col,j} \sim \U\left( \Sset_d  \right)$ uniforme sobre la esfera son
+    independientes entre  si, y independientes  de $R_\col$ matriz  aleatoria de
     $\Pos_{d'}(\Rset)$ diagonal.
   %
   \item $X \sim \ED_\vcol(m,\Sigma,\varphi_X) \:\: \Leftrightarrow \:\: X \egald
-    \Sigma^{\frac12}   U_\vcol   R_\vcol   +    m$   \:\:   con   \:\:   $U_\col
+    \Sigma^{\frac12}  \,  U_\vcol  \,  R_\vcol   +  m$  \:\:  con  \:\:  $U_\col
     = \begin{bmatrix}  U_{\col,1} & \cdots & U_{\col,d'}  \end{bmatrix}$ tal que
     $\begin{bmatrix} U_{\col,1}^t &  \cdots & U_{\col,d'}^t \end{bmatrix}^t \sim
     \U\left( \Sset_{d  d'} \right)$ uniforme sobre la  esfera, independientes de
     $R_\col \ge 0$ escalar.
   %
   \item $X \sim \ED_\bil(m,\Sigma,\Sigma',\varphi_X) \:\: \Leftrightarrow \:\: X
-    \egald \Sigma^{\frac12}  U_\izq \Lambda  V_\der \Sigma'^{\frac12} +  m$ \:\:
-    con  \:\: $U_\izq  \sim  \U\left( \Sti_{d,d'}(\Rset)  \right)$  \:\: y  \:\:
-    $V_\der  \sim   \U\left(  \Sti_{d',d'}(\Rset)  \right)$,   independientes  e
-    independiente    de   $\Lambda    \ge   0$    matriz    aleatoria   diagonal
-    positiva. Pasando, aparece que $\diag(\Lambda^2) = \lambda(X^t X)$ vector de
-    las autovalores de $X^t X$ (ver tambi\'en~\cite[Rep.~2]{Daw78}).
+    \egald    \Sigma^{\frac12}   \,   U_\izq    \,   \Lambda_\bil    \,   V_\der
+    \Sigma'^{\frac12}   +    m$   \:\:   con   \:\:    $U_\izq   \sim   \U\left(
+      \Sti_{d,d'}(\Rset)   \right)$   \:\:   y   \:\:  $V_\der   \sim   \U\left(
+      \Sti_{d',d'}(\Rset)   \right)$,    independientes   e   independiente   de
+    $\Lambda_\bil \ge  0$ matriz aleatoria diagonal  positiva.  Pasando, aparece
+    que $\Lambda_\bil = \Diag(\lambda\left(  (X^t X)^{\frac12} \right))$, \ie de
+    diagonal   el  vector  de   las  autovalores   de  $(X^t   X)^\frac12$  (ver
+    tambi\'en~\cite[Rep.~2]{Daw78}).
+%
+  \item \SZ{ME TENGO QUE FIJAR $X  \sim \ED_\simed(m,\Sigma,\varphi_X) \:\:  \Leftrightarrow \:\: X
+      \egald \Sigma^{\frac12} \, U \, \Lambda_\simed \, U^t \ \Sigma^{\frac12} +
+      m$ \:\: con  \:\: $U \sim \U\left( \Sti_{d,d}(\Rset)  \right)$ ($d' = d$),
+      independiente  de   $\Lambda_\simed  \ge  0$   matriz  aleatoria  diagonal
+      positiva.   Pasando, aparece que  $\Lambda_\simed =  \Diag(\lambda\left( X
+      \right))$, \ie de diagonal el vector de las autovalores de $X$.
+      % (ver tambi\'en~\cite[Rep.~2]{Daw78}).
+}
   \end{itemize}
   %
-  En   ambos   casos,    para   $d'   =   1$,   se    recupera   obviamente   el
+  En  los cuatro  primeros  casos, para  $d'  = 1$,  se  recupera obviamente  el
   teorema~~\ref{Teo:MP:MezclaUniforme}.
 %
 \item   Sin   embargo,   el   corolario~\ref{Cor:MP:MezclaUniforme}   no   tiene
@@ -2747,10 +2788,12 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   \item Si $X \sim \ED_\izq(m,\Sigma,\varphi_X)$, la lei de $X$ es completamente
     definida por la lei de $(X-m)^t \Sigma^{-1} (X-m)$. As\'i \ $R_\izq^t R_\izq
     \egald  (X-m)^t \Sigma^{-1}  (X-m)$ \  es  definida de  manera \'unica.   Si
-    tomamos   la  raiz   triangular   inferior,  definida   de  manera   \'unica
-    (ver~\cite{HorJoh13, Bha97}), saliendo  de la forma de mezcla  y del calculo
-    de la Jacobiana de $y \mapsto u_\izq r_\izq$~\cite[Teo.~2.1.13]{Mui82} y del
-    volulmen de $\Sti_{d,d'}(\Rset)$~\cite[Teo.~2.1.15]{Mui82}, se obtiene
+    tomamos  $R_\izq$ la raiz  triangular inferior,  definida de  manera \'unica
+    (ver~\cite{HorJoh13, Bha97}), esa define  completamente la lei de $X$. M\'as
+    all\'a, saliendo de la  forma de mezcla y del calculo de  la Jacobiana de $y
+    \mapsto   u_\izq  r_\izq$~\cite[Teo.~2.1.13]{Mui82}   y   del  volulmen   de
+    $\Sti_{d,d'}(\Rset)$~\cite[Teo.~2.1.15]{Mui82}                           (ver
+    tambi\'en~\cite[p.~15-17]{GuNag99}), se obtiene
     %
     \[
     p_{R_\izq}(r)   =   \frac{2^{d'}   \pi^{\frac{d   d'}{2}}}{\Gamma_{d'}\left(
@@ -2761,14 +2804,18 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
     (ver tambi\'en~\cite[Teo.~7.9.2]{And03} o~\cite{Dia13}).
   %
   \item Si $X \sim \ED_\col(m,\Sigma,\varphi_X)$, la lei de $X$ es completamente
-    definida por  la lei del vector $R_\col  = \begin{bmatrix} \sqrt{(X_1-m_1)^t
-        \Sigma^{-1}  (X_1-m_1)}  &  \cdots  \sqrt{(X_{d'}-m_{d'})^t  \Sigma^{-1}
-        (X_{d'}-m_{d'})} \end{bmatrix}^t$. Si existe la densidad, tiene la forma
+    definida  por  la  lei  del  vector $R_\col  =  \left(  \diag\left(  (X-m)^t
+        \Sigma^{-1}  (X-m)  \right) \right)^{\odot  \frac12}$  donde el  $\odot$
+    significa  que la  raiz  cuadrada  es tomada  componente  a componente  (ver
+    notaciones). Si existe la densidad, tiene la forma
     %
     \[
     p_{R_\col}(r)  = \frac{2  \pi^{\frac{d d'}{2}}}{\Gamma\left(  \frac{d d'}{2}
-      \right)} \: |\diag(r)|^{d-1} \, d_X\left( r \right), \quad r \in \Rset_+^{d'}
+      \right)}  \: \prod_{i=1}^{d'}  |\Diag(r)|^{d-1} \,  d_X\left(  r^{\odot 2}
+    \right), \quad r \in \Rset_+^{d'}
     \]
+    %
+    %donde el cuadrado en $r^2$ se entiende componente a componente.
   %
   \item   Si  $X  \sim   \ED_\vcol(m,\Sigma,\varphi_X)$,  la   lei  de   $X$  es
     completamente  definida por  la lei  de $R_\vcol  =  \sqrt{\Tr\left( (X-m)^t
@@ -2781,11 +2828,27 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
     \]
   %
   \item  Si  $X \sim  \ED_\bil(m,\Sigma,\Sigma',\varphi_X)$  la  lei  de $X$  es
-    completamente  definida  por  la  lei  de $R_\bil  =  \lambda\left(  (X-m)^t
-      \Sigma^{-1} (X-m) \Sigma'^{-1} \right)$.
+    completamente definida  por la lei  de $\lambda_\bil =  \left( \lambda\left(
+        \Sigma'^{-\frac12} (X-m)^t  \Sigma^{-1} (X-m) \Sigma'^{-\frac12} \right)
+    \right)^{\odot \frac12}$ donde , sin perdida de generalidad, las autovalores
+    son  tomadas   de  valores   decrecientes  (rearreglado;  sufice   poner  la
+    permutaci\'on dentro del  generador de densidad). Si existe,  la densidad de
+    probabilidad es dada por
+   %
+    \[
+    \SZ{p_{\lambda_\bil}(\lambda)      =      \frac{\pi^{\frac{d'      (d+d')}{2}}}{
+      \Gamma_{d'}\left(   \frac{d'}{2}  \right)   \Gamma_{d'}\left(  \frac{d}{2}
+      \right)} \: \left| \Diag(\lambda) \right|^{\frac{d-d'-1}{2}} \left( \prod_{i < j}
+      (\lambda_i-\lambda_j)  \right)  d_X\left(  \lambda^{\odot 2}
+    \right), \quad \lambda \in \Rset_+^{d'}}%, \: \Lambda = \diag(\lambda)}
+    \]
+    %
+    %donde  el  cuadrada en  $\lambda^2$  se  entiende  componente a  componente.
+    (ver~\cite[p.~146]{FanChe84} o~\cite[Teo.~13.3.1]{And03}).
+  %
+  \item \SZ{Que pasa en el caso $(\simed)$?}
   \end{itemize}
   %
-\SZ{Se puede tener la forma a partir de $d_X$ en el caso $\bil$? \cite{Dia13}}
 %
 %  \item Teorema~\ref{Teo:MP:SchoenbergCaracteristica} en: \ $Z \sim \CED\left( m
 %      , \Sigma , \varphi_Z \right) \egald \, A \, \Sigma^{\frac12} \, G + m \:\:
@@ -2840,13 +2903,27 @@ tambi\'en a~\cite{And03, Daw78, Daw81, LibrosABuscar}.
       \Sigma' \right|^{\frac{d}{2}}}  \: \left| I  + \frac{1}{\nu} \,  (x-m)^t \
     \Sigma^{-1} \, (x-m)  \, \Sigma'^{-1} \right|^{- \frac{\nu+d+d'-1}{2}}$ (ver
   secci\'on~\ref{Sssec:MP:StudentT}),  se   ve  inmediatamente  que   la  matriz
-  aleatoria  partenece  a  $\ED_\bil$.   Se  muestra  que  no  satisface  al  la
-  extensi\'on matricial  del corollario~\ref{Cor:MP:MezclaUniforme}, punto (ii),
-  as\'i que no esta ni en $\ED_\col$,  ni en $\ED_\lin$ y entonces tampoco ni en
-  $\ED_\vcol$ ni en  $\ED_\vlin$ (ver~\cite[Ej.~1]{FanChe84} o~\cite[ejemplo del
-  ec.~(2.3)]{Kar81}).  \SZ{La densidad  del  rayo, que  no  explicitamos ac\'a  (ver
-  f\'ormula   de   calculo   dado   anteriormente),   tiene   una   forma   beta
-  matricial genealizada~\cite[Cor.~9.3.12.2]{GupNag99}.}  \SZ{Que mas? GSM...}
+  aleatoria   partenece  a   $\ED_\bil$,  con   $d_X\left(  \lambda   \right)  =
+  \displaystyle  \frac{\Gamma_d\left(  \frac{\nu+d+d'-1}{2}\right)}{\pi^{\frac{d
+        d'}{2}}   \Gamma_d\left(  \frac{\nu+d-1}{2}\right)}   \:   \left|  I   +
+    \frac{\Diag(\lambda)}{\nu}  \right|^{- \frac{\nu+d+d'-1}{2}}$ .   Se muestra
+  que     no      satisface     al     la      extensi\'on     matricial     del
+  corollario~\ref{Cor:MP:MezclaUniforme}, punto  (ii), as\'i  que no esta  ni en
+  $\ED_\col$,  ni en  $\ED_\lin$  y entonces  tampoco  ni en  $\ED_\vcol$ ni  en
+  $\ED_\vlin$        (ver~\cite[Ej.~1]{FanChe84}       o~\cite[ejemplo       del
+  ec.~(2.3)]{Kar81}).
+  %  Se   notar\'a  que  $p_{\lambda_\bil}(\lambda)   =  \frac{\pi^{\frac{d}{2}}
+  %       \Gamma_d\left(     \frac{\nu+d+d'-1}{2}     \right)}{\Gamma_{d'}\left(
+  %     \frac{\nu+d'-1}{2}   \right)   \Gamma_{d'}\left(  \frac{d'}{2}   \right)
+  %            \Gamma_d\left(          \frac{d}{2}          \right)}          \:
+  %   \frac{|\Delta|^{\frac{d-d'-1}{2}}}{\left|  I   +   \frac{1}{\nu}  \Delta^2
+  %      \right|^{\frac{\nu+d+d'-1}{2}}}    \,     \left(    \prod_{i    <    j}
+  %   (\lambda_i-\lambda_j) \right)$.
+%
+% \SZ{La densidad  del  rayo, que  no  explicitamos ac\'a  (ver
+%  f\'ormula   de   calculo   dado   anteriormente),   tiene   una   forma   beta
+%  matricial genealizada~\cite[Cor.~9.3.12.2]{GupNag99}.}  
+\SZ{Que mas? La lei de $\lambda_\bil$ no tiene una forma que conozco...,; ver GSM...}
 \end{ejemplo}
 
 
@@ -2855,9 +2932,16 @@ tambi\'en a~\cite{And03, Daw78, Daw81, LibrosABuscar}.
   \frac{|x|^{\frac{\nu-d-1}{2}}     \,      e^{-\frac12     \Tr\left(     V^{-1}
         x\right)}}{2^{\frac{d \nu}{2}}  \, |V|^{\frac{\nu}{2}} \, \Gamma_d\left(
       \frac{\nu}{2}  \right)}$   \  definido  sobre   \  $\Pos_d^+(\Rset)$  (ver
-  secci\'on~\ref{Sssec:MP:Wishart}),   se  ve   inmediatamente  que   la  matriz
-  aleatoria partenece a $\ED_\simed$ pero no es ni en \SZ{$\ED_\bil$ y entonces ni en $\ED_\col$, ni en $\ED_\lin$
-  y por consecuencia ni tampoco en $\ED_\vcol$ o en $\ED_\vlin$.  Que mas? GSM, rayo...}
+  secci\'on~\ref{Sssec:MP:Wishart}),     de     $\Tr\left(    V^{-\frac12}     x
+    V^{-\frac12}\right) = \Tr\left( V^{-1} x\right)$ y de $|V^{-1} x| = |V|^{-1}
+  |x|$  se  ve inmediatamente  que  la  matriz  aleatoria es  de  distribuci\'on
+  $\ED_\simed\left( 0 , V , d_X \right)$  pero no es ni en $\ED_\bil$ y entonces
+  ni  en  $\ED_\col$,  ni  en  $\ED_\lin$  y  por  consecuencia  ni  tampoco  en
+  $\ED_\vcol$  o  en  $\ED_\vlin$.   El   generador  de  densidad  es  dado  por
+  $\displaystyle      d_X(\lambda)       =      \frac{\left|      \Diag(\lambda)
+    \right|^{\frac{\nu-d-1}{2}}   \,   e^{-\frac12  \un^t   \lambda}}{2^{\frac{d
+        \nu}{2}}  \Gamma_d\left(  \frac{\nu}{2}   \right)}$  \SZ{Que  mas?  GSM,
+    rayo...}
 \end{ejemplo}
 
 %\SZ{ADELANTAR funcion caracteristica, covarianzas empiricas media cero cae, y sacando la media empirica cae en tal clase}
@@ -2881,7 +2965,7 @@ tambi\'en a~\cite{And03, Daw78, Daw81, LibrosABuscar}.
 
 (1) Fang and Anderson, ``Statistical inference in elliptically contoured and related distributions'' a buscar
 
-(2) Gupta, Varga, ``Elliptically Contoured Models in Statistics'', Kluwer Acad Pub, 1993
+%(2) Gupta, Varga, ``Elliptically Contoured Models in Statistics'', Kluwer Acad Pub, 1993
 
 (3) Fang, Zhang, ``Generalized Multivariate Analysis'', Sc. Press Beujing and Springer, 1990}
 
