@@ -346,12 +346,59 @@ ejemplo~\cite[Sec.~6.4]{BroDav87}.
 \
 
 Terminamos este ejemplo notando que la distribuci\'on Gaussiana se generaliza al
-caso matriz-variada $X$  definido sobre $\Mat_{d,d'}(\Rset)$; se denota  \ $X \,
-\sim \, \N(m,\Sigma,\Sigma')$ \ donde \ $m \in \Mat_{d,d'}(\Rset), \: \Sigma \in
-\Pos_d^+(\Rset), \:  \Sigma' \in \Pos_{d'}^+(\Rset)$  y la densidad es  dada por
-$\displaystyle  p_X(x)  = \frac{1}{(2  \pi)^{\frac{d  d'}{2}}  \, \left|  \Sigma
-  \right|^{\frac{d'}{2}}  \left| \Sigma'  \right|^{\frac{d}{2}}}  \: e^{-\frac12
-  \Tr \left(  (x-m)^t \Sigma^{-1} (x-m) \Sigma'^{-1} \right)}$.   Se refiera por
-ejemplo a~\cite{GupNag99,  KotNad04, Daw81}.  En particular,  se generalizan los
-teoremas~\ref{Teo:MP:StabilidadGaussiana}, \ref{Teo:MP:IndependenciaGaussiana} y
-\ref{Teo:MP:CLT}.
+caso matriz-variada $X$ en varias direcciones. Presentamos dos casos
+%
+\begin{enumerate}
+\item {\bf  Gausiana matriz-variada}. En este  caso, $X$ es definido  sobre $\X =
+  \Mat_{d,d'}(\Rset)$; se denota \ $X \, \sim \, \N(m,\Sigma,\Sigma')$ \ donde \
+  $m  \in \Mat_{d,d'}(\Rset),  \:  \Sigma \in  \Pos_d^+(\Rset),  \: \Sigma'  \in
+  \Pos_{d'}^+(\Rset)$  y  la  densidad  es  dada  por  $\displaystyle  p_X(x)  =
+  \frac{1}{(2  \pi)^{\frac{d  d'}{2}}  \, \left|  \Sigma  \right|^{\frac{d'}{2}}
+    \left|  \Sigma'  \right|^{\frac{d}{2}}} \:  e^{-\frac12  \Tr \left(  (x-m)^t
+      \Sigma^{-1}  (x-m)   \Sigma'^{-1}  \right)}$.   Se   refiera  por  ejemplo
+  a~\cite{GupNag99,  KotNad04,  Daw81}.    En  particular,  se  generalizan  los
+  teoremas~\ref{Teo:MP:StabilidadGaussiana}, \ref{Teo:MP:IndependenciaGaussiana}
+  y \ref{Teo:MP:CLT}. Esta  matriz aleatoria cae en una  clase dicha el\'iptica,
+  que         vamos        a         ver         brevemente        en         la
+  secci\'on~\ref{Ssec:MP:FamiliaElipticaMatriz},  as\'i que propiedades  en este
+  marco general.
+%
+
+\item {\bf  Ensemble Gausiano Ortogonal} (GOE para  Gaussian Orthogonal Ensemble
+  en ingl\'es).  En este caso, $X$ es definido sobre $\X = \Sim_d(\Rset)$.
+  %  ; se  denota \  $X \,  \sim  \, \GOE(m,\Sigma,\Sigma')$  \ donde  \ $m  \in
+  %  \Mat_{d,d'}(\Rset),   \:  \Sigma   \in  \Pos_d^+(\Rset),  \:   \Sigma'  \in
+  % \Pos_{d'}^+(\Rset)$ y la densidad  es dada por $\displaystyle p_X(x) \propto
+  % e^{-\frac{d}{2} \Tr \left( x^2 \right)}$.
+  Esta  ley  aparece  en   contextos  f\'isicos,  en  particular  en  mec\'anica
+  cu\'antica.  Se  refiera por ejemplo a trabajos  de Wigner~\cite{Wig55, Wig57,
+    Por65} o  de Dyson~\cite{Dys62} para unos  de los primeros  estudios de esta
+  ley,  o  a~\cite{Meh04, AndGui10}  para  un  estudio  m\'as sistematico  y  el
+  v\'inculo con la  f\'isica.  Se extiende para $\X  = \Her_d(\Cset)$ (ensembles
+  gausianos  unitario o  GUE  en ingles)  y  al caso  cuaternionico~\footnote{El
+    conjunto de  los cuaterniones $\Hset$  es en biyecci\'on con  $\Cset^2$. Los
+    n\'umeros de este ensemble tiene una parte real (dicha tambi\'en) escalar, y
+    tres imaginarias  que pueden  representar los vectores  de la  base canonica
+    3-dimensional. La multiplicaci\'on es  tal que un cuaterni\'on imaginario de
+    norma unidad  representa una rotaci\'on  3-dimensional (como un  complejo de
+    norma  unitaria  hace   una  rotaci\'on  2-dimensional)~\cite{Ham44,  Wil00,
+      Alt05}.   Por eso, tal  n\'umeros aparecen  frecuentemente en  f\'isica, y
+    especialmente  en cristalografia, mec\'anica  cu\'antica o  cosmolog\'ia por
+    ejemplo (e.g.~\cite{Alt05, BenZyc06}.  De hecho, estos n\'umeros aparecieron
+    implicitamente  en  trabajos  de Euler  desde  1748,  y  m\'as tarde  en  de
+    Rodrigues  en  1840~\cite{Alt89}  o~\cite[p.~482]{JusTat80}. }   herm\'itico
+  (ensembles gausianos  unitario o GSE en  ingles). De manera general  la ley es
+  dada por $\displaystyle  p_X(x) = \: e^{- \frac{\beta \,  d}{4} \Tr \left( x^2
+    \right)}$ con $\beta = 1$ (GOE), $\beta = 2$ (GUE) o $\beta = 4$ (GSE) donde
+  $\beta$ es llamado  indice de Dyson. Se debe entender que  esta densidad es la
+  de las $\frac{d (d+1)}{2}$ componentes que son diferentes (la parte triangular
+  inferior  es el simetrico  de la  parte triangular  superior). Nota:  se puede
+  extender la  lei considerando $\Sigma^{-\frac12} X \Sigma^{-\frac12}  + m$ con
+  $m  \in \Her_d(\Kset)$  y $\Sigma  \in  \Pos_d^+(\Kset)$, $\Kset  = \Rset,  \:
+  \Cset, \:  \Hset$ respectivamente. Las leyes  GOE as\'i extendidas  caen en la
+  clase     el\'iptica,    que     vamos    a     ver    brevemente     en    la
+  secci\'on~\ref{Ssec:MP:FamiliaElipticaMatriz},  as\'i que propiedades  en este
+  marco general.
+\end{enumerate}
+
+

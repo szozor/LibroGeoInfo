@@ -2360,7 +2360,7 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   \item\label{Enum:MP:EDM_VcBilateral} $\ED_\vcol  \: =  \: \ED_\col \,  \cap \,
     \ED_\bil$ \qquad y \qquad $\ED_\vlin \: = \: \ED_\lin \, \cap \, \ED_\bil$
   %
-  \item\label{Enum:MP:EDM_Simetrica}  $\{  X  \in   \ED_\bil  \tq  X  =  X^t  \}
+  \item\label{Enum:MP:EDM_Simetrica}  \SZ{A VER BIEN, las rotaciones arruiniando  la simetr\'ia; creo que la interseccion es de hecho vacia; ver entonces lo que dije sobre la beta que es simed!} $\{  X  \in   \ED_\bil  \tq  X  =  X^t  \}
     \varsubsetneq \ED_\simed$
   \end{enumerate}
   %
@@ -2475,8 +2475,10 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   \egald Y$, y en particular para $O' = O^t$: $X \in \ED_\simed$. Al rev\'es, de
   $\Tr(A  B) = \Tr(B  A)$ se  nota que  la distribuci\'on  de Wishart  \ $p_X(x)
   \propto |x|^{\frac{\nu-d-1}{2}} e^{-\frac12 \Tr\left( V^{-1} x\right)}$ \ dada
-  secci\'on   y  ejemplo~\ref{Ej:MP:WishartED}   m\'as   adelante  partenece   a
-  $\ED_\simed$, pero no esta en $\ED_\bil$: la inclusi\'on es estricta.
+  secci\'on~\ref{Sssec:MP:Wishart}    y    ejemplo~\ref{Ej:MP:WishartED}   m\'as
+  adelante partenece a $\ED_\simed$, pero no esta en $\ED_\bil$ (lo mismo occure
+  para en ensemble gausiano ortogonal, fin de secci\'on~\ref{Sssec:MP:Gaussiana}
+  y ejemplo~\ref{Ej:MP:GOE}): la inclusi\'on es estricta.
 \end{proof}
 %
 Nota:
@@ -2491,8 +2493,9 @@ Nota:
 \item     La    ley     Student-$t$     matriz    variada     (ver    fin     de
   secci\'on~\ref{Sssec:MP:StudentT}  y  ejemplo~\ref{Ej:MP:StudentTMatriz} m\'as
   adelante)  partenece  a  $\ED_\bil$ pero  no  esta  ni  en $\ED_\vcol$  ni  en
-  $\ED_\vlin$: $\ED_\bil \setminus \left(  \ED_\vcol \cup \ED_\vlin \right) \neq
-  \emptyset$.
+  $\ED_\vlin$ (lo  mismo occure  para la ley  beta matriz-variada, vista  fin de
+  secci\'on~\ref{Sssec:MP:Beta}):  $\ED_\bil  \setminus  \left(  \ED_\vcol  \cup
+    \ED_\vlin \right) \neq \emptyset$.
 %
 \item $X$ gausiana matriz-variada (ver fin de secci\'on~\ref{Sssec:MP:Gaussiana}
   y  ejemplo~\ref{Ej:MP:GaussianaMatriz}  m\'as   adelante)  partenece  a  ambas
@@ -2599,13 +2602,13 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   %
   % (viene obviamente de la descomposici\'on en valores singulares~\cite{Bat}).
   %
-\item \SZ{A VER... $X \in \ED_\simed$  si y solamente si 
+\item $X \in \ED_\simed$ si y solamente si
   %
   \[
   \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_x\left(
     \lambda\left(  \Sigma \,  \omega  \right) \right)  \qquad \mbox{con}  \qquad
   \varphi_X: \Rset_+^d \mapsto [-1 \; 1]
-  \]}
+  \]
   \end{itemize}
   %
   Escribiremos en lo  que sigue \ $X \sim  \ED_\bullet(m,\Sigma,\varphi_X)$ \ en
@@ -2657,13 +2660,13 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   \mapsto \Rset_+
   \]
   %
-  \item \SZ{A VER... $X \in \ED_\simed$ si y solamente si
+  \item $X \in \ED_\simed$ si y solamente si
   %
   \[
   p_X(x)  = \left|  \Sigma \right|^{-\frac{d-1}{2}}  \,  d_X\left( \lambda\left(
       \Sigma^{-1} (x-m)  \right)\right) \qquad \mbox{con}  \qquad d_X: \Rset_+^d
   \mapsto \Rset_+
-  \]}
+  \]
   \end{itemize}
   %
   Escribiremos tambi\'en cuando  \ $X$ \ admite una  densidad de probabilidad, \
@@ -2757,14 +2760,18 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
     diagonal   el  vector  de   las  autovalores   de  $(X^t   X)^\frac12$  (ver
     tambi\'en~\cite[Rep.~2]{Daw78}).
 %
-  \item \SZ{ME TENGO QUE FIJAR $X  \sim \ED_\simed(m,\Sigma,\varphi_X) \:\:  \Leftrightarrow \:\: X
+  \item \SZ{ME TENGO QUE FIJAR BIEN... a\'un que sea seguro $X  \sim \ED_\simed(m,\Sigma,\varphi_X) \:\:  \Leftrightarrow \:\: X
       \egald \Sigma^{\frac12} \, U \, \Lambda_\simed \, U^t \ \Sigma^{\frac12} +
       m$ \:\: con  \:\: $U \sim \U\left( \Sti_{d,d}(\Rset)  \right)$ ($d' = d$),
       independiente  de   $\Lambda_\simed  \ge  0$   matriz  aleatoria  diagonal
-      positiva.   Pasando, aparece que  $\Lambda_\simed =  \Diag(\lambda\left( X
-      \right))$, \ie de diagonal el vector de las autovalores de $X$.
+      positiva.}
+    % Se   lo   puede   probar   escribiendo  $Y   =   \Sigma^{-\frac12}   (X-m)
+    % \Sigma^{-\frac12}$ bajo  la forma $Y  = \left( Q  \Delta^{\frac12} \right)
+    % \left( Q \Delta^{\frac12} \right)^t$ y aplicando la escritura estochastica
+    % del caso $(\izq)$ con $R
+    Pasando, aparece que $\Lambda_\simed  = \Diag(\lambda\left( X \right))$, \ie
+    de diagonal el vector de las autovalores de $X$.
       % (ver tambi\'en~\cite[Rep.~2]{Daw78}).
-}
   \end{itemize}
   %
   En  los cuatro  primeros  casos, para  $d'  = 1$,  se  recupera obviamente  el
@@ -2811,8 +2818,8 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
     %
     \[
     p_{R_\col}(r)  = \frac{2  \pi^{\frac{d d'}{2}}}{\Gamma\left(  \frac{d d'}{2}
-      \right)}  \: \prod_{i=1}^{d'}  |\Diag(r)|^{d-1} \,  d_X\left(  r^{\odot 2}
-    \right), \quad r \in \Rset_+^{d'}
+      \right)} \: |\Diag(r)|^{d-1} \, d_X\left( r^{\odot 2} \right), \quad r \in
+    \Rset_+^{d'}
     \]
     %
     %donde el cuadrado en $r^2$ se entiende componente a componente.
@@ -2829,24 +2836,46 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   %
   \item  Si  $X \sim  \ED_\bil(m,\Sigma,\Sigma',\varphi_X)$  la  lei  de $X$  es
     completamente definida  por la lei  de $\lambda_\bil =  \left( \lambda\left(
-        \Sigma'^{-\frac12} (X-m)^t  \Sigma^{-1} (X-m) \Sigma'^{-\frac12} \right)
-    \right)^{\odot \frac12}$ donde , sin perdida de generalidad, las autovalores
-    son  tomadas   de  valores   decrecientes  (rearreglado;  sufice   poner  la
-    permutaci\'on dentro del  generador de densidad). Si existe,  la densidad de
-    probabilidad es dada por
+         (X-m)^t  \Sigma^{-1} (X-m) \Sigma'^{-1} \right)
+    \right)^{\odot  \frac12}$  donde,   \SZ{sin  perdida  de  generalidad,}  las
+    autovalores  son tomadas  de valores  decrecientes  \SZ{(rearreglado; sufice
+      poner la permutaci\'on  dentro del generador de densidad)}.  Si existe, la
+    densidad de probabilidad es dada por
    %
     \[
-    \SZ{p_{\lambda_\bil}(\lambda)      =      \frac{\pi^{\frac{d'      (d+d')}{2}}}{
-      \Gamma_{d'}\left(   \frac{d'}{2}  \right)   \Gamma_{d'}\left(  \frac{d}{2}
-      \right)} \: \left| \Diag(\lambda) \right|^{\frac{d-d'-1}{2}} \left( \prod_{i < j}
-      (\lambda_i-\lambda_j)  \right)  d_X\left(  \lambda^{\odot 2}
-    \right), \quad \lambda \in \Rset_+^{d'}}%, \: \Lambda = \diag(\lambda)}
+    p_{\lambda_\bil}(\lambda)      =      \frac{\pi^{\frac{d'      (d+d')}{2}}}{
+      \Gamma_{d'}\!\left(   \frac{d'}{2}  \right)   \Gamma_{d'}\!\left(  \frac{d}{2}
+      \right)}   \left|  \Diag(\lambda)   \right|^{\frac{d-d'-1}{2}}  \left(
+       \prod_{i  < j} (\lambda_i-\lambda_j)  \!\! \right) \! d_X\left(  \lambda^{\odot 2}
+    \right), \quad \lambda \in \{ \mu  \in \Rset_+^{d'} \tq \mu_1 \ge \cdots \ge
+    \mu_{d'} \}
+      % , \: \Lambda = \diag(\lambda)}
     \]
     %
     %donde  el  cuadrada en  $\lambda^2$  se  entiende  componente a  componente.
-    (ver~\cite[p.~146]{FanChe84} o~\cite[Teo.~13.3.1]{And03}).
+    (ver~\cite[p.~146]{FanChe84}~\footnote{Notar  que los  autores  omitieron el
+      cuadrado    en    el    argumento    de   $d_X$.    De    hecho,    citant
+      a~\cite[Lem.~13.3.1]{And03},   pero   este   lema   da  la   densidad   de
+      $\Sigma'^{-\frac12} (X-m)^t \Sigma^{-1} (X-m) \Sigma'^{-\frac12}$. De esto
+      viene el cuadrado,  argumento en $p_X$ y hace falta  combinar el lemma con
+      el teorema~13.3.1 de~\cite{And03}.}).
   %
-  \item \SZ{Que pasa en el caso $(\simed)$?}
+  \item   Si  $X  \sim   \ED_\simed(m,\Sigma,\varphi_X)$  la   lei  de   $X$  es
+    completamente  definida  por  la  lei  de  $\lambda_\simed  =  \lambda\left(
+      \Sigma^{-1}  (X-m) \right)$  donde, \SZ{sin  perdida de  generalidad,} las
+    autovalores  son tomadas  de valores  decrecientes  \SZ{(rearreglado; sufice
+      poner la permutaci\'on  dentro del generador de densidad)}.  Si existe, la
+    densidad de probabilidad es dada por
+   %
+    \[
+    p_{\lambda_\simed}(\lambda)    =   \frac{\pi^{\frac{d^2}{2}}}{\Gamma_d\left(
+        \frac{d}{2} \right)} \left(  \prod_{i < j} (\lambda_i-\lambda_j) \right)
+    d_X\left( \lambda  \right), \quad  \lambda \in \{  \mu \in  \Rset_+^{d'} \tq
+    \mu_1 \ge \cdots \ge \mu_{d'} \}
+    \]
+    %
+    (ver~\cite[Def.~2.5.1]{AndGui10} para el determinente de la transformaci\'on
+    pasando de $X$ a los autovalores, o~\cite[Teo.~13.3.1]{And03}).
   \end{itemize}
   %
 %
@@ -2880,37 +2909,17 @@ Para  tener   m\'as  propiedades,  el  lector  podr\'a   referirse  por  ejemplo
 a~\cite{FanChe84},  \cite[\S~9.2 \&~9.3]{GupNag99},  \cite[\S~13.2]{BilBre99}, o
 tambi\'en a~\cite{And03, Daw78, Daw81, LibrosABuscar}.
 
-\begin{ejemplo}[Gaussiana matriz variada]\label{Ej:MP:GaussianaMatriz}
-%
-  De la  forma de la  densidad de probabilidad  en el contexto  Gaussiano matriz
-  variada $\displaystyle  p_X(x) =  \frac{1}{(2 \pi)^{\frac{d d'}{2}}  \, \left|
-      \Sigma  \right|^{\frac{d'}{2}}  \left|  \Sigma' \right|^{\frac{d}{2}}}  \:
-  e^{-\frac12 \Tr \left( (x-m)^t \Sigma^{-1} (x-m) \Sigma'^{-1} \right)}$ \ (ver
-  fin de secci\'on~\ref{Sssec:MP:Gaussiana}), de $\Tr \left( (x-m)^t \Sigma^{-1}
-    (x-m)  \Sigma'^{-1}   \right)  =  \Tr  \left(   (x-m)  \Sigma'^{-1}  (x-m)^t
-    \Sigma^{-1} \right)$ se ve  inmediatamente que la matriz aleatoria partenece
-  a $\ED_\vcol \cap \ED_\vlin$ (ver tambi\'en~\cite{Daw81, FanKot99, FanNad04}).
-  Como en el caso escalar, el  cuadrado del rayo tiene una distribuci\'on Gamma,
-  $R_\vcol^2 \sim \G\left( \frac{d d'}{2} , \frac12 \right)$. \SZ{Que mas?}
-\end{ejemplo}
 
 \begin{ejemplo}[Student-$t$ matriz variada]\label{Ej:MP:StudentTMatriz}
 %
   De la forma  de la densidad de probabilidad en  el contexto Student-$t$ matriz
-  variada,       $\displaystyle        p_X(x)       =       \frac{\Gamma_d\left(
-      \frac{\nu+d+d'-1}{2}\right)}{\pi^{\frac{d      d'}{2}}      \Gamma_d\left(
-      \frac{\nu+d-1}{2}\right)  \, \left|  \Sigma  \right|^{\frac{d'}{2}} \left|
-      \Sigma' \right|^{\frac{d}{2}}}  \: \left| I  + \frac{1}{\nu} \,  (x-m)^t \
-    \Sigma^{-1} \, (x-m)  \, \Sigma'^{-1} \right|^{- \frac{\nu+d+d'-1}{2}}$ (ver
-  secci\'on~\ref{Sssec:MP:StudentT}),  se   ve  inmediatamente  que   la  matriz
-  aleatoria   partenece  a   $\ED_\bil$,  con   $d_X\left(  \lambda   \right)  =
-  \displaystyle  \frac{\Gamma_d\left(  \frac{\nu+d+d'-1}{2}\right)}{\pi^{\frac{d
-        d'}{2}}   \Gamma_d\left(  \frac{\nu+d-1}{2}\right)}   \:   \left|  I   +
-    \frac{\Diag(\lambda)}{\nu}  \right|^{- \frac{\nu+d+d'-1}{2}}$ .   Se muestra
-  que     no      satisface     al     la      extensi\'on     matricial     del
-  corollario~\ref{Cor:MP:MezclaUniforme}, punto  (ii), as\'i  que no esta  ni en
-  $\ED_\col$,  ni en  $\ED_\lin$  y entonces  tampoco  ni en  $\ED_\vcol$ ni  en
-  $\ED_\vlin$        (ver~\cite[Ej.~1]{FanChe84}       o~\cite[ejemplo       del
+  variada,  ver secci\'on~\ref{Sssec:MP:StudentT}, se  ve inmediatamente  que la
+  matriz  aleatoria  partenece  a  $\ED_\bil$, con  $d_X\left(  \lambda  \right)
+  \propto    \left|   I   +    \frac{1}{\nu}   \,    \Diag(\lambda)   \right|^{-
+    \frac{\nu+d+d'-1}{2}}$  .  Se  muestra  que no  satisface  a la  extensi\'on
+  matricial del corollario~\ref{Cor:MP:MezclaUniforme}, punto (ii), as\'i que no
+  esta ni en  $\ED_\col$, ni en $\ED_\lin$ y entonces  tampoco ni en $\ED_\vcol$
+  ni    en   $\ED_\vlin$    (ver~\cite[Ej.~1]{FanChe84}    o~\cite[ejemplo   del
   ec.~(2.3)]{Kar81}).
   %  Se   notar\'a  que  $p_{\lambda_\bil}(\lambda)   =  \frac{\pi^{\frac{d}{2}}
   %       \Gamma_d\left(     \frac{\nu+d+d'-1}{2}     \right)}{\Gamma_{d'}\left(
@@ -2926,22 +2935,48 @@ tambi\'en a~\cite{And03, Daw78, Daw81, LibrosABuscar}.
 \SZ{Que mas? La lei de $\lambda_\bil$ no tiene una forma que conozco...,; ver GSM...}
 \end{ejemplo}
 
+\begin{ejemplo}[Gaussiana matriz variada]\label{Ej:MP:GaussianaMatriz}
+%
+  De la  forma de la  densidad de probabilidad  en el contexto  Gaussiano matriz
+  variada, vista
+% $\displaystyle  p_X(x) =  \frac{1}{(2 \pi)^{\frac{d d'}{2}}  \, \left|
+%      \Sigma  \right|^{\frac{d'}{2}}  \left|  \Sigma' \right|^{\frac{d}{2}}}  \:
+%  e^{-\frac12 \Tr \left( (x-m)^t \Sigma^{-1} (x-m) \Sigma'^{-1} \right)}$ \ (ver
+  fin  de  secci\'on~\ref{Sssec:MP:Gaussiana}  (primer  item),  de  $\Tr  \left(
+    (x-m)^t  \Sigma^{-1}   (x-m)  \Sigma'^{-1}   \right)  =  \Tr   \left(  (x-m)
+    \Sigma'^{-1} (x-m)^t \Sigma^{-1} \right)$ se ve inmediatamente que la matriz
+  aleatoria partenece a $\ED_\vcol \cap  \ED_\vlin$ con el generador de densidad
+  $d_X(r)   \propto  e^{-\frac{r}{2}}$  (ver   tambi\'en~\cite{Daw81,  FanKot99,
+    FanNad04}).   Como  en el  caso  escalar, el  cuadrado  del  rayo tiene  una
+  distribuci\'on  Gamma,  $R_\vcol^2  \sim  \G\left( \frac{d  d'}{2}  ,  \frac12
+  \right)$. \SZ{Que mas?}
+\end{ejemplo}
+
+\begin{ejemplo}[Ennsemble Gaussiano Ortogonal]\label{Ej:MP:GOE}
+%
+  De   la    forma   de   la    densidad   de   probabilidad   vista    fin   de
+  secci\'on~\ref{Sssec:MP:Gaussiana} (secundo item), se ve inmediatamente que la
+  matriz   aleatoria  partenece   a  $\ED_\simed$   (ver  tambi\'en~\cite{Meh89,
+    AndGui10}) pero  no es ni en $\ED_\bil$  y entonces ni en  $\ED_\col$, ni en
+  $\ED_\lin$ y por  consecuencia ni tampoco en $\ED_\vcol$  o en $\ED_\vlin$. El
+  generador  de densidad  se escribe  en  este caso  $d_X(\lambda) \propto  e^{-
+    \frac{d}{4} \, \un^t \lambda^{\odot 2}}$.
+  %Como en el caso escalar, el  cuadrado del rayo tiene una distribuci\'on Gamma,
+  %$R_\vcol^2 \sim \G\left( \frac{d d'}{2} , \frac12 \right)$. \SZ{Que mas?}
+\end{ejemplo}
+
 
 \begin{ejemplo}[Wishart]\label{Ej:MP:WishartED}
-  De  la  forma   de  la  densidad  de  probabilidad   $\displaystyle  p_X(x)  =
-  \frac{|x|^{\frac{\nu-d-1}{2}}     \,      e^{-\frac12     \Tr\left(     V^{-1}
-        x\right)}}{2^{\frac{d \nu}{2}}  \, |V|^{\frac{\nu}{2}} \, \Gamma_d\left(
-      \frac{\nu}{2}  \right)}$   \  definido  sobre   \  $\Pos_d^+(\Rset)$  (ver
-  secci\'on~\ref{Sssec:MP:Wishart}),     de     $\Tr\left(    V^{-\frac12}     x
-    V^{-\frac12}\right) = \Tr\left( V^{-1} x\right)$ y de $|V^{-1} x| = |V|^{-1}
-  |x|$  se  ve inmediatamente  que  la  matriz  aleatoria es  de  distribuci\'on
-  $\ED_\simed\left( 0 , V , d_X \right)$  pero no es ni en $\ED_\bil$ y entonces
-  ni  en  $\ED_\col$,  ni  en  $\ED_\lin$  y  por  consecuencia  ni  tampoco  en
-  $\ED_\vcol$  o  en  $\ED_\vlin$.   El   generador  de  densidad  es  dado  por
-  $\displaystyle      d_X(\lambda)       =      \frac{\left|      \Diag(\lambda)
-    \right|^{\frac{\nu-d-1}{2}}   \,   e^{-\frac12  \un^t   \lambda}}{2^{\frac{d
-        \nu}{2}}  \Gamma_d\left(  \frac{\nu}{2}   \right)}$  \SZ{Que  mas?  GSM,
-    rayo...}
+  De la  forma de  la densidad de  probabilidad $\displaystyle p_X(x)  = \propto
+  \left|  V^{-1} x \right|^{\frac{\nu-d-1}{2}}  \, e^{-\frac12  \Tr\left( V^{-1}
+      x\right)}$     \    definido     sobre     \    $\Pos_d^+(\Rset)$     (ver
+  secci\'on~\ref{Sssec:MP:Wishart}),   se  ve   inmediatamente  que   la  matriz
+  aleatoria es de distribuci\'on $\ED_\simed\left( 0  , V , d_X \right)$ pero no
+  es  ni en  $\ED_\bil$ y  entonces ni  en $\ED_\col$,  ni en  $\ED_\lin$  y por
+  consecuencia  ni tampoco  en $\ED_\vcol$  o en  $\ED_\vlin$.  El  generador de
+  densidad es dado por $\displaystyle d_X(\lambda) \propto \left| \Diag(\lambda)
+  \right|^{\frac{\nu-d-1}{2}}  \,  e^{-\frac12  \un^t \lambda}$.   \SZ{Que  mas?
+    GSM, rayo...}
 \end{ejemplo}
 
 %\SZ{ADELANTAR funcion caracteristica, covarianzas empiricas media cero cae, y sacando la media empirica cae en tal clase}
