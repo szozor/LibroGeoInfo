@@ -433,7 +433,7 @@ De este  resultado se puede tambi\'en  explicitar la matriz de  covariancia y el
 tensor curtosis para un vector a simetr\'ia el\'iptica~\cite[p.~44]{FanKot90}:
 %
 \begin{corolario}
-\label{Lem:MP:MediaCovarianzaEliptica}
+\label{Cor:MP:MediaCovarianzaEliptica}
 %
   Sea \ $X$  \ vector aleatorio $d$-dimensional de  distribuci\'on el\'iptica de
   matriz caracter\'istica \ $\Sigma \in \Pos_d^+(\Rset)$. Entonces
@@ -1919,7 +1919,7 @@ $n$ tiende al infinito de la ley de $B$.
 
 % --------------------------------- Familia  eliptica compleja
 
-\subsubseccion{Caso complejo en unas palabras}
+\subsubseccion{Caso complejo}
 \label{Ssec:MP:FamiliaElipticaCompleja}
 
 
@@ -2090,7 +2090,7 @@ matriz caracter\'istica \ $\Sigma$:
     \prod_{(r,s)  \in \pi  \cup \pi'}  \Sigma_{i_r,i_s}$, \  los  otros momentos
     centrales  y  cumulantes  de  orden  mayor   o  igual  a  2  siendo  0  (ver
     tambi\'en~\cite{Kri76}).
-%      corrolario~\ref{Lem:MP:MediaCovarianzaEliptica}
+%      corrolario~\ref{Cor:MP:MediaCovarianzaEliptica}
   %
   \item  Teorema~\ref{Teo:MP:TranformacionAfinEliptica}  en:  \  $Z \,  \sim  \,
     \CED(m,\Sigma,\varphi_Z)$ \ $d$-dimensional, $A \in \Mat_{d',d}(\Cset)$ \ de
@@ -2174,7 +2174,7 @@ matriz caracter\'istica \ $\Sigma$:
 
 % --------------------------------- Familia  eliptica matricial
 
-\subsubseccion{Caso matriz variada en unas palabras}
+\subsubseccion{Caso matriz variada}
 \label{Ssec:MP:FamiliaElipticaMatriz}
 
 % Fang Zang: Generalized Multivariate Analysis
@@ -2258,8 +2258,11 @@ Empezamos  con cada  definici\'on  de~\cite[\S~9.3]{GupNag99} y  de~\cite{Hsu40,
 
 \centerline{$(\simed)  \:$  {\em  sim\'etrica}~\footnote{En  la  literatura,  se
     encuentra frecuentemente que la matriz es a distribuci\'on radial o rotable,
-    ej. en~\cite{Tyl82, BilBre99}.} si  \ $d = d', \: \X =  \Sim_d(\Rset)$ \ y \
-  $\forall \: O \in \Ort_d(\Rset), \quad\qquad O X O^t \: \egald \: X$}
+    ej. en~\cite{Tyl82, BilBre99}. Fijense que para $d = 1$, necesariamente $O =
+    \pm 1$,  as\'i que,  obviamente, siempre  $O X O^t  = X$:  esta definici\'on
+    tiene  un inter\'es  solamente cuando  $d  > 1$.}  si \  $d  = d',  \: \X  =
+  \Sim_d(\Rset)$ \ y  \ $\forall \: O \in \Ort_d(\Rset), \quad\qquad  O X O^t \:
+  \egald \: X$}
 
 \
 
@@ -2360,8 +2363,11 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   \item\label{Enum:MP:EDM_VcBilateral} $\ED_\vcol  \: =  \: \ED_\col \,  \cap \,
     \ED_\bil$ \qquad y \qquad $\ED_\vlin \: = \: \ED_\lin \, \cap \, \ED_\bil$
   %
-  \item\label{Enum:MP:EDM_Simetrica}  \SZ{A VER BIEN, las rotaciones arruiniando  la simetr\'ia; creo que la interseccion es de hecho vacia; ver entonces lo que dije sobre la beta que es simed!} $\{  X  \in   \ED_\bil  \tq  X  =  X^t  \}
-    \varsubsetneq \ED_\simed$
+  \item\label{Enum:MP:EDM_Simetrica}  $\ED_\simed \cap \left( \ED_\izq \cup \ED_\der \right) = \emptyset$
+    % \SZ{A  VER BIEN,  las rotaciones  arruiniando la  simetr\'ia; creo  que la
+    %   interseccion es de  hecho vacia; ver entonces lo que  dije sobre la beta
+    %   que  es  simed!}  $\{ X  \in  \ED_\bil  \tq  X  = X^t  \}  \varsubsetneq
+    % \ED_\simed$
   \end{enumerate}
   %
 \end{lema}
@@ -2469,16 +2475,22 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   cierra   la  prueba.    \newline   La  secunda   aserci\'on   se  deduce   del
   punto~\ref{Enum:MP:EDM_Transpuesta}.
 
-  Con respecto al punto~\ref{Enum:MP:EDM_Simetrica},  si \ $X$ sim\'etrica es en
+  Con  respecto   al  punto~\ref{Enum:MP:EDM_Simetrica},  si  \  $X$   \  es  en
   $\ED_\bil$,  e  \  $Y  =  \Delta^{-\frac12} Q^t  (X-m)  Q  \Delta^{-\frac12}$,
   entonces \ $\forall \: O \in \Ort_d(\Rset), O' \in \Ort_d(\Rset), \quad O Y O'
-  \egald Y$, y en particular para $O' = O^t$: $X \in \ED_\simed$. Al rev\'es, de
-  $\Tr(A  B) = \Tr(B  A)$ se  nota que  la distribuci\'on  de Wishart  \ $p_X(x)
-  \propto |x|^{\frac{\nu-d-1}{2}} e^{-\frac12 \Tr\left( V^{-1} x\right)}$ \ dada
-  secci\'on~\ref{Sssec:MP:Wishart}    y    ejemplo~\ref{Ej:MP:WishartED}   m\'as
-  adelante partenece a $\ED_\simed$, pero no esta en $\ED_\bil$ (lo mismo occure
-  para en ensemble gausiano ortogonal, fin de secci\'on~\ref{Sssec:MP:Gaussiana}
-  y ejemplo~\ref{Ej:MP:GOE}): la inclusi\'on es estricta.
+  \egald Y$, y en particular para $O' = O^t$. Pero eso no implica que $X$ sea en
+  $\ED_\simed$. De hecho, saliendo de  una matriz $X$ simetrica, $Y$ es definida
+  sobre  $\Y =  \Sim_d(\Rset)$, pero  $\forall \:  O \in  \Ort_d(\Rset),  O' \in
+  \Ort_d(\Rset), O' \ne O^t$ aparece  que $O \Sim_d(\Rset) O' \ne \Sim_d(\Rset)$
+  as\'i que  $O Y O'  \negald Y$: una  matriz definida sobre  $\Sim_d(\Rset)$ no
+  puede ser a simetr\'ia esf\'erica.
+% Al rev\'es, de
+%  $\Tr(A  B) = \Tr(B  A)$ se  nota que  la distribuci\'on  de Wishart  \ $p_X(x)
+%  \propto |x|^{\frac{\nu-d-1}{2}} e^{-\frac12 \Tr\left( V^{-1} x\right)}$ \ dada
+%  secci\'on~\ref{Sssec:MP:Wishart}    y    ejemplo~\ref{Ej:MP:WishartED}   m\'as
+%  adelante partenece a $\ED_\simed$, pero no esta en $\ED_\bil$ (lo mismo occure
+%  para en ensemble gausiano ortogonal, fin de secci\'on~\ref{Sssec:MP:Gaussiana}
+%  y ejemplo~\ref{Ej:MP:GOE}): la inclusi\'on es estricta.
 \end{proof}
 %
 Nota:
@@ -2493,8 +2505,7 @@ Nota:
 \item     La    ley     Student-$t$     matriz    variada     (ver    fin     de
   secci\'on~\ref{Sssec:MP:StudentT}  y  ejemplo~\ref{Ej:MP:StudentTMatriz} m\'as
   adelante)  partenece  a  $\ED_\bil$ pero  no  esta  ni  en $\ED_\vcol$  ni  en
-  $\ED_\vlin$ (lo  mismo occure  para la ley  beta matriz-variada, vista  fin de
-  secci\'on~\ref{Sssec:MP:Beta}):  $\ED_\bil  \setminus  \left(  \ED_\vcol  \cup
+  $\ED_\vlin$:  $\ED_\bil  \setminus  \left(  \ED_\vcol  \cup
     \ED_\vlin \right) \neq \emptyset$.
 %
 \item $X$ gausiana matriz-variada (ver fin de secci\'on~\ref{Sssec:MP:Gaussiana}
@@ -2675,36 +2686,220 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   \ED_\bil(m,\Sigma,\Sigma',d_X)$.
   %
 %
-\item  \SZ{ Momentos  y  cumulantes~\ref{Teo:MP:MomentosCumulantesEliptica}, y
-      corrolario~\ref{Lem:MP:MediaCovarianzaEliptica}}
-% Momentos y cumulantes... ver por lo menos promedio y covarianza
-%
-\item  El Teorema~\ref{Teo:MP:TranformacionAfinEliptica}  de  conservaci\'on del
-  car\'acter  el\'iptico  por  transformaci\'on  lineal  tiene  su  contra-parte
-  matricial tambi\'en:
+\item La  extensi\'on del teorema~\ref{Teo:MP:MomentosCumulantesEliptica}  y del
+  corrolario~\ref{Lem:MP:MediaCovarianzaEliptica}  no   es  una  tarea  sencilla
+  porque $\varphi_X$ no queda una  funci\'on escalar en general. Sin embargo, se
+  puede   concentrarnos  en   los  momentos   de  orden   1  y   2,   los  m\'as
+  usados~\cite{Mal61, Daw81,  Tyl82, GruRoc90, BilBre99, GupNag99}.  En los item
+  que  siguen, notaremos  $Y$ l  matriz  a simetr\'ia  esf\'erica de  generadora
+  caracteristica \ $\varphi_X$.
   %
   \begin{itemize}
-  \item  Denotamos   por  \  $\bullet$  \   los  casos  \   $(\izq),  (\col)$  y
-    $(\vcol)$.  Entonces  $X   \,  \sim  \,  \ED_\bullet(m,\Sigma,\Phi_X)  \quad
-    \Rightarrow \quad  A X B  + C \: \sim  \: \ED_\bullet(A m  B + C ,  A \Sigma
-    A^t , \varphi_{X B})$.  En  particular, si $X$ es a simetr\'ia esf\'erica
-    de  uno de  estos  tipos,  multiplicar por  $B$  a su  derecha  no cambia  la
+  \item  Para $Y$  a sim\'etria  esf\'erica izquierda,  de $Y  \egald O  Y$ para
+    cualquier matriz ortogonal, se obtiene tambi\'en  $- Y \egald Y$, de lo cual
+    se deduce $\Esp[Y]  = 0$. Lo mismo occure con el  context derecho, as\'i que
+    para  cualquier  subcaso (ver  figura~\ref{Fig:MP:EDMatrix}):  para $X  \sim
+    \ED_\bullet(m,\Sigma,\varphi_X), \quad  \bullet =  \izq, \col, \vcol$,  \ $X
+    \sim \ED_\bullet(m,\Sigma',\varphi_X), \quad \bullet  = \der, \lin, \vlin$ \
+    o \ $X \sim \ED_\bil(m,\Sigma,\Sigma',\varphi_X)$, $$\Esp[X] = m$$
+  %
+  \item En el  caso $\ED_\simed$ esf\'erico, $Y  \egald O Y O^t$ \  se obtiene \
+    $\Esp[Y]  =  O \Esp[Y]  O^t$  \ para  cualquier  matriz  ortogonal. De  esta
+    identidad, viene que si \ $v$ \ es un autovector de \ $\Esp[Y]$ \ asociado a
+    un autovalor $\mu_1$, cualquier \ $O v$  \ va a ser autovector asociado a la
+    misma autovalor. De \ $\{ O v  \tq O \in \Ort_d(\Rset) \} = \Rset^d$ \ queda
+    claro para cualquier  \ $v \in \Rset^d$, \quad $\Esp[Y] v  = \mu_1 v$, dando
+    que existe un \ $\mu_1$ \ tal que \ $\Esp[Y] = \mu_1 I$.  Tommando la traza,
+    se   obtiene  $\mu_1   =  \frac{1}{d}   \Esp[\Tr(Y)]  =   \frac{1}{d}  \un^t
+    \Esp[\lambda(Y)]$.      En     conclusi\'on,      para     \     $X     \sim
+    \ED_\simed(m,\Sigma,\varphi_X)$,  $$  \Esp[X]  =  m +  \mu_1  \Sigma  \qquad
+    \mbox{con}  \qquad  \mu_1  =  \frac{1}{d} \un^t  \Esp\left[  \lambda  \left(
+        \Sigma^{-1} (X-m) \right) \right] $$ \SZ{Ver para obtener el coefficient
+      via $\nabla_\lambda \varphi_X(0)$ si es verdadero.}
+  %
+\item \SZ{Covarianza caso bil...}
+  %
+\item En el caso esf\'erico  \ $Y \sim \ED_\simed(0,I,\varphi_Y)$, escribimos la
+  covarianza  bajo la  forma  $\displaystyle \sum_{i,j,k,l=1}^d  \T_{i,j,k,l}[Y]
+  \un_i \otimes  \un_j \otimes \un_k \otimes  \un_l$ \ con  \ $\T_{i,j,k,l}[Y] =
+  \Esp\left[  (Y-\mu_1  I)_{i,j}  (Y-\mu_1  I)_{k,l}\right]$.   Luego,  usaremos
+  varias  veces para  cualquier  matriz $A  \in  \Mat_{d,d}(\Rset)$ la  relation
+  (i) $$  \T_{i,i,k,l}[ A  Y A^t] =  \sum_{r,s,u,v=1}^d A_{i,r}  A_{j,s} A_{k,u}
+  A_{l,v} \ \T_{r,s,u,v}[Y].  $$ Ahora, si se considera las matrices ortogonales
+  \ $O_\varepsilon  = \Diag(\varepsilon)$ \ con  \ $\varepsilon \in \{-1  \; + 1
+  \}^d$ \ de $Y \egald O Y  O^t$ \ se obtiene sencillamente \ $\T_{i,j,k,l}[Y] =
+  \varepsilon_i  \varepsilon_j   \varepsilon_k  \varepsilon_l  \T_{i,j,k,l}[Y]$.
+  Jugando sobre los signos, queda claro que $\T_{i,j,k,l}[Y] \ne 0$ solamente si
+%
+  \begin{itemize}
+  \item \ $i = j = k = l$, \ o
+  \item \ $i = j \ne k = l$, \ o
+  \item \ $i = k \ne j = l$, o
+  \item \ $i = l \ne j = k$.
+  \end{itemize}
+  % Eso simplifica  el tensor covarianza en la  forma $\displaystyle \sum_{i \ne
+  %   j}^d \Big(  \T_{i,i,j,j}[Y] \, \un_i  \otimes \un_i \otimes  \un_j \otimes
+  % \un_j + \T_{i,j,i,j}[Y] \, \un_i \otimes \un_j \otimes \un_i \otimes \un_j +
+  % \T_{i,j,j,i}[Y] \,  \un_i \otimes \un_j \otimes \un_j  \otimes \un_i \Big) +
+  % \sum_{i=1}^d  \T_{i,i,i,i}[Y] \, \un_i  \otimes \un_i \otimes  \un_i \otimes
+  % \un_i$.
+  A continuaci\'on,  si consideramos \ $O$  \ matriz que permuta  dos lineas, es
+  obvio que  $\forall \: i \ne j \in  \{ 1 \;  \ldots \; d\}$,
+%
+  \begin{itemize}
+  \item \ $\T_{i,i,i,i}[Y] = \sigma_0^2$ \ constante positiva (siento un momento
+    de orden 2),
+  \item \ $\T_{i,i,j,j}[Y] = \mu_2$ \ constante
+  \item \ $\T_{i,j,i,j}[Y] = \sigma_1^2$ \ constante positiva (siento un momento
+    de orden 2),
+  \item \ $\T_{i,j,j,i}[Y] = \mu'_2$ \ constante.
+  \end{itemize}
+  % as\'i  que se puede re-escribir  la covarianza bajo  la forma $\displaystyle
+  % \sum_{i,j}^d \Big( \mu_2 \,  \un_i \otimes \un_i \otimes \un_j \otimes \un_j
+  % \, + \,  \sigma_1^2 \, \un_i \otimes \un_j \otimes \un_i  \otimes \un_j \, +
+  %  \, \mu'_2  \,  \un_i \otimes  \un_j  \otimes \un_j  \otimes  \un_i \Big)  +
+  % \sum_{i=1}^d \left(  \sigma_0^2 - \mu_2 - \sigma_1^2  - \mu'_2 \right) \un_i
+  % \otimes \un_i \otimes \un_i \otimes \un_i$.  A continuaci\'on,
+%
+  % = \sum_{r,s,u,v=1}^d O_{i,r} O_{i,s} O_{j,u} O_{j,v} T_{r,s,u,v}
+  Adem\'as, aplicando la relaci\'on (i)  para cualquier matriz ortogonal \ $O$,
+  de $Y  \egald O  Y O^t$,  se obtiene para  $j \ne  i$, $\displaystyle  \mu_2 =
+  \T_{i,i,j,j}[Y]  =  \mu_2 \sum_{r,u=1}^d  O_{i,r}  O_{i,r}  O_{j,u} O_{j,u}  +
+  \sigma_1^2 \sum_{r,  u=1}^d O_{i,r} O_{i,u} O_{j,r} O_{j,u}  + \mu'_2 \sum_{r,
+    u=1}^d  O_{i,r}  O_{i,u} O_{j,u}  O_{j,r}  +  \left(  \sigma_0^2 -  \mu_2  -
+    \sigma_1^2 - \mu'_2 \right) \sum_{r=1}^d O_{i,r}^2 O_{j,r}^2$, lo que es, de
+  la ortogonalidad de $O$, \ $\displaystyle  \mu_2 = \mu_2 + \left( \sigma_0^2 -
+    \mu_2 -  \sigma_1^2 - \mu'_2  \right) \sum_{r=1}^d O_{i,r}^2  O_{j,r}^2$, es
+  decir  $\sigma_0^2 = \mu_2 +  \sigma_1^2 +  \mu'_2 =  0$. Se  puede  sacar un
+  p\'arametro  m\'as,  u\'as,  de   la  simetr\'ia  $(Y-\mu  I)_{i,j}  =  (Y-\mu
+  I)_{j,y}$,  dando \ $\T_{i,j,i,j}[Y]  = \T_{i,j,j,i}[Y]$,  es decir  $\mu'_2 =
+  \sigma_1^2$, \ie
+  %
+  \begin{itemize}
+  \item \ $\mu'_2 = \sigma_1^2$ \ y
+  \item  \ $\sigma_0^2  = \mu_2  + 2  \sigma_1^2$; \  pasando,  necesariamente \
+    $\mu_2 + 2 \sigma_1^2 \ge 0$.
+  \end{itemize}
+  %
+   En  conclusi\'on, $\forall \: i \ne j \in \{ 1 \; \ldots \; d \}$,
+  %
+  \begin{itemize}
+  \item \ $\T_{i,i,i,i}[Y] = \mu_2 + 2 \sigma_1^2$
+  \item \ $\T_{i,i,j,j}[Y]  = \mu_2$,
+  \item \ $\T_{i,j,i,j}[Y] = \T_{i,j,j,i}[Y] = \sigma_1^2$,
+  \item \ si no, $\T_{i,j,k,l}[Y] = 0$.
+  \end{itemize}
+  %
+  Ahora, usando de nuevo la relaci\'on (i), con $A$ tal que $A A^t = \Sigma$, se
+  obtiene  que  $\T_{i,j,k,l}[A  Y  A^t]  = \mu_2  \Sigma_{i,j}  \Sigma_{k,l}  +
+  \sigma_1^2  \big(   \Sigma_{i,k}  \Sigma_{j,l}  +   \Sigma_{i,l}  \Sigma_{j,k}
+  \big)$. Notamos que
+  %
+  \begin{itemize}
+  \item   \   $\Sigma_{i,j}  \Sigma_{k,l}   =   \big(   \Sigma  \otimes   \Sigma
+    \big)_{i,j,k,l}$\vspace{1.5mm}
+  %
+  \item \  $\Sigma_{i,l} \Sigma_{j,k} = \Sigma_{k,j} \Sigma_{i,l}  = \big( \un_i
+    \un_k^t  \Sigma   \big)_{i,j}  \big(  \un_k   \un_i^t  \Sigma  \big)_{k,l}$,
+    conduciendo  a\vspace{1mm}\newline $\Big( \big(  \un_i \un_k^t  \Sigma \big)
+    \otimes  \big( \un_k  \un_i^t  \Sigma \big)  \Big)_{u,j,v,l} =  \Sigma_{i,l}
+    \Sigma_{j,k} \un_{(i,k)}((u,v))$.
+  %
+  \item \ $\Sigma_{i,k} \Sigma_{j,l}  = \Sigma_{i,k} \Sigma_{l,j} = \big( \Sigma
+    \, \un_k  \un_l^t \, \Sigma  \big)_{i,j}$, conduciendo a\vspace{1mm}\newline
+    $\Big( \big(  \Sigma \, \un_k  \un_l^t \, \Sigma  \big) \! \otimes  \! \big(
+    \un_k   \un_l^t   \big)    \Big)_{i,j,u,v}   =   \Sigma_{i,k}   \Sigma_{j,l}
+    \un_{(k,l)}((u,v))$.
+  \end{itemize}
+  %
+  En conclusi\'on, con cambio de  indices adecuados, se obtiene la covarianza de
+  \ $X$ \ bajo la forma:
+  %
+  \[
+  \Cov[X] = \mu_2  \, \Sigma \otimes \Sigma +  \sigma_1^2 \sum_{k,l} \Big( \big(
+  \un_k \un_l^t  \, \Sigma \big) \otimes  \big( \un_l \un_k^t \,  \Sigma \big) +
+  \big(  \Sigma \, \un_k  \un_l^t \,  \Sigma \big)  \otimes \big(  \un_k \un_l^t
+  \big) \Big)
+  \]
+  % : de  $\displaystyle \sum_{i=1}^d \un_i \otimes  \un_i = I$, se  nota que la
+  % covarianza tiene la estructura \ $\displaystyle \Cov[Y] = \mu_2 \, I \otimes
+  % I  + \sigma_1^2  \sum_{i,j=1}^d  \left( \un_i  \otimes  \un_j \otimes  \un_i
+  %   \otimes  \un_j   +  \un_i  \otimes  \un_j  \otimes   \un_j  \otimes  \un_i
+  % \right)$. Ahora, usando de nuevo la relaci\'on (i), con $A$ tal que $A A^t =
+  % \Sigma$,  se obtiene  que \  $\T_{i,j,k,l}[ A  Y A^t]  =  \mu_2 \Sigma_{i,j}
+  % \Sigma_{k,l}  + \sigma_1^2  \big( \Sigma_{i,k}  \Sigma_{j,l}  + \Sigma_{i,l}
+  % \Sigma_{j,k} \big)$.
+  %
+  Finalmente, se  notar\'a que  \ $\Var\left[  \Tr(Y) \right] =  \left( d^2  - d
+  \right)  \mu_2 +  d  \left( \mu_2  +  2 \sigma_1^2  \right)$.  Similarmente  \
+  $\Tr\left( \Esp\left[ (Y - \Esp[Y] )  (Y - \Esp[Y])^t \right] \right) = \left(
+    d^2 -  d \right) \sigma_1^2  + d  \left( \mu_2 +  \sigma_1^2 \right) =  d \,
+  \mu_2 + d^2 \sigma_1^2$.  Se notara  que \ $\Tr(Y) = \un^t \lambda(Y)$ \ dando
+  $\Var[\Tr(Y)]  =  \un^t  \Cov[\lambda(Y)]  \un$ y por consecuencia
+  %
+  \[
+  d^2 \, \mu_2 + 2 \, d \, \sigma_1^2 = \un^t \Cov\left[ \lambda(Y) \right] \un
+  \]
+  %
+  Pasando,  de  la  positividad   de  la  covarianza,  necesariamente  $\mu_2  +
+  \frac{2}{d} \,  \sigma_1^2 \ge 0$  \ (lo que  es m\'as restrictivo que  lo que
+  obtuvimos unos pasos atr\'as).
+
+  Similarmente, $  \Tr\left( \Esp\left[  (Y - \Esp[Y])  (Y -  \Esp[Y])^t \right]
+  \right) = \Tr\left( \Esp[Y Y^t]  \right) - \Tr\left( \Esp[Y] \Esp[Y]^t \right)
+  = \Esp\left[  \un^t \lambda\left( Y  Y^t \right) \right] -  \frac{1}{d} \left(
+    \un^t  \Esp[   \lambda(Y)  ]  \right)^2   =  \Tr\left(  \Esp\left[\lambda(Y)
+      \lambda(Y)^t \right] \right) -  \frac{1}{d} \un^t \Esp[ \lambda(Y) ] \Esp[
+  \lambda(Y) ]^t \un = \Tr\left( \Cov\left[\lambda(Y) \right] + \Esp[\lambda(Y)]
+    \Esp[ \lambda(Y)]^t \right) -  \frac{1}{d} \Tr\left(\Esp[ \lambda(Y) ] \Esp[
+    \lambda(Y) ]^t  \un \un^t  \right) = \Tr\left(  \Cov\left[\lambda(Y) \right]
+  \right) + \Esp[ \lambda(Y) ]^t \left(  I - \frac{1}{d} \un \un^t \right) \Esp[
+  \lambda(Y) ]$ \ (donde  la secunda igualdad viene de la forma  de la media, la
+  tercera de la simetria  de $Y$, la cuarta de $u^t v =  \Tr(v u^t)$ y la quinta
+  de  $\Tr(A  B)  = \Tr(B  A)$.  En  conclusi\'on
+  %
+  \[
+  d  \, \mu_2  + d^2  \, \sigma_1^2  = \Tr\left(  \Cov\left[  \lambda(Y) \right]
+  \right) + \Esp[ \lambda(Y) ]^t \left(  I - \frac{1}{d} \un \un^t \right) \Esp[
+  \lambda(Y) ]
+  \]
+  %
+  y tabi\'en $\mu_2 + d \, \sigma_1^2  \ge 0$ \ (lo que es menos restrictivo que
+  el v\'inculo anterior cuando $d \ge 2$).  Se notar\'a tambi\'en que \ $\Pi = I
+  - \frac{1}{d} \un \un^t$ \ es una matriz de proyecci\'on sobre el ortogonal de
+  $\un$. \SZ{Ver para obtener el coefficient via $\Hess_\lambda \varphi_X(0)$ si
+    es verdadero.}
+\end{itemize}
+%
+  \item El  Teorema~\ref{Teo:MP:TranformacionAfinEliptica} de conservaci\'on del
+    car\'acter  el\'iptico  por transformaci\'on  lineal  tiene su  contra-parte
+    matricial tambi\'en. En lo que  sigue, denotamos \ $A \in \Mat_{n,d}(\Rset),
+    \: n \le d$ \ de rango lleno, $B \in \Mat_{d',n'}(\Rset), \: n' \le d'$ \ de
+    rango lleno, $C \in \Mat_{n,n'}(\Rset)$.
+  %
+  \begin{itemize}
+  \item Denotamos  por \ $\bullet$ \  los casos \ $(\izq),  (\col)$ y $(\vcol)$.
+    Entonces\newline   $X   \,   \sim  \,   \ED_\bullet(m,\Sigma,\Phi_X)   \quad
+    \Rightarrow \quad A X B + C \: \sim  \: \ED_\bullet(A m B + C , A \Sigma A^t
+    , \varphi_{X B})$\newline  En particular, si $X$ es  a simetr\'ia esf\'erica
+    de  uno de  estos  tipos, multiplicar  por $B$  a  su derecha  no cambia  la
     esfericidad.
   %
   \item $X \, \sim  \, \ED_\bil(m,\Sigma,\Sigma',\Phi_X) \quad \Rightarrow \quad
-    A X B  + C \: \sim \:  \ED_\bil(A m B + C  , A \Sigma A^t , B  \Sigma' B^t ,
+    A X B  + C \: \sim \:  \ED_\bil(A m B + C  , A \Sigma A^t , B^t  \Sigma' B ,
     \varphi_X)$.
   %
-  \item \SZ{$X \, \sim  \, \ED_\simed(m,\Sigma,\Phi_X) \quad \Rightarrow \quad
-    A X A  + C \: \sim \:  \ED_\bil(A m A + C  , A \Sigma A^t,
-    \varphi_X)$ donde $C = C^t$.}
+  \item $X \, \sim  \, \ED_\simed(m,\Sigma,\Phi_X) \quad \Rightarrow \quad
+    A X A^t  + c \: \sim \:  \ED_\simed(A m A^t + C  , A \Sigma A^t,
+    \varphi_X)$ donde $C = C^t$.
   %
-  \item \SZ{$X \, \sim \,  \ED_\simed(m,\Sigma,\Phi_X) \quad \Rightarrow \quad A X B
-    + C \: \sim \: \ED_\bil(A m B + C , A \Sigma A^t , B B^t , \varphi_X)$.}
+%  \item \SZ{$X \, \sim \,  \ED_\simed(m,\Sigma,\Phi_X) \quad \Rightarrow \quad A X B
+%    + C \: \sim \: \ED_\bil(A m B + C , A \Sigma A^t , B B^t , \varphi_X)$.}
   \end{itemize}
   %
-  En  particular, si  $X$ es  a  simetr\'ia el\'iptica  de uno  de estos  tipos,
-  cualquier componente es un vector aleatorio a simetr\'ia el\'iptica.
+  En particular,  si $X$  es a simetr\'ia  el\'iptica de tipos  $(\izq), (\col),
+  (\vcol)$, cualquier componente es  un vector aleatorio a simetr\'ia el\'iptica
+  del mismo tipo.
 %
 \item \SZ{Teorema~\ref{Teo:MP:ProyeccionComponentesEliptica} Proyeccion Componentes Eliptica en:}
 % Sea \ $Z$, vector
@@ -2784,6 +2979,14 @@ clases descritas. En  lo que sigue, de manere generica,  consideraremos \ $A \in
   $\begin{bmatrix}  \| X_1  \| &  \cdots &  \| X_{d'}  \| \end{bmatrix}$  \  y \
   $\begin{bmatrix}  \frac{X_1}{\| X_1  \|}  & \cdots  & \frac{X_{d'}}{\|  X_{d'}
       \|} \end{bmatrix}$ son independientes~\cite[Lema~6]{FanChe84}.
+%
+%\item \SZ{ El equivalente del lema~\ref{Lem:MP:AlphaConR} tratando de la media y covarianza  en el
+%    caso       matricial da: para $X \sim \ED_\simed(m,\Sigma,\varphi_X) $
+%
+%         $\widetilde{\alpha}_k(\varphi_X)          =
+%    \frac{\Gamma(d)}{\Gamma(d+k)} \Esp\left[ \left( (Z-m)^\dag \Sigma^{-1} (Z-m)
+%      \right)^k \right]$.
+%}
 %
 \item  Se  monstr\'o  que,  en  el  caso  $d'  =  1$  la  densidad  es  definida
   completamente    por   lo    del   rayo,    con   densidad    dada    por   el
@@ -2938,49 +3141,56 @@ tambi\'en a~\cite{And03, Daw78, Daw81, LibrosABuscar}.
 \begin{ejemplo}[Gaussiana matriz variada]\label{Ej:MP:GaussianaMatriz}
 %
   De la  forma de la  densidad de probabilidad  en el contexto  Gaussiano matriz
-  variada, vista
-% $\displaystyle  p_X(x) =  \frac{1}{(2 \pi)^{\frac{d d'}{2}}  \, \left|
-%      \Sigma  \right|^{\frac{d'}{2}}  \left|  \Sigma' \right|^{\frac{d}{2}}}  \:
-%  e^{-\frac12 \Tr \left( (x-m)^t \Sigma^{-1} (x-m) \Sigma'^{-1} \right)}$ \ (ver
-  fin  de  secci\'on~\ref{Sssec:MP:Gaussiana}  (primer  item),  de  $\Tr  \left(
-    (x-m)^t  \Sigma^{-1}   (x-m)  \Sigma'^{-1}   \right)  =  \Tr   \left(  (x-m)
+  variada,  vista fin  de secci\'on~\ref{Sssec:MP:Gaussiana}  (primer  item), de
+  $\Tr \left( (x-m)^t \Sigma^{-1} (x-m)  \Sigma'^{-1} \right) = \Tr \left( (x-m)
     \Sigma'^{-1} (x-m)^t \Sigma^{-1} \right)$ se ve inmediatamente que la matriz
   aleatoria partenece a $\ED_\vcol \cap  \ED_\vlin$ con el generador de densidad
   $d_X(r)   \propto  e^{-\frac{r}{2}}$  (ver   tambi\'en~\cite{Daw81,  FanKot99,
     FanNad04}).   Como  en el  caso  escalar, el  cuadrado  del  rayo tiene  una
   distribuci\'on  Gamma,  $R_\vcol^2  \sim  \G\left( \frac{d  d'}{2}  ,  \frac12
-  \right)$. \SZ{Que mas?}
+  \right)$.
+  %\SZ{Que mas?    GSM, rayo...}
 \end{ejemplo}
 
-\begin{ejemplo}[Ennsemble Gaussiano Ortogonal]\label{Ej:MP:GOE}
+\begin{ejemplo}[Ensemble Gaussiano Ortogonal]\label{Ej:MP:GOE}
 %
   De   la    forma   de   la    densidad   de   probabilidad   vista    fin   de
   secci\'on~\ref{Sssec:MP:Gaussiana} (secundo item), se ve inmediatamente que la
-  matriz   aleatoria  partenece   a  $\ED_\simed$   (ver  tambi\'en~\cite{Meh89,
-    AndGui10}) pero  no es ni en $\ED_\bil$  y entonces ni en  $\ED_\col$, ni en
-  $\ED_\lin$ y por  consecuencia ni tampoco en $\ED_\vcol$  o en $\ED_\vlin$. El
-  generador  de densidad  se escribe  en  este caso  $d_X(\lambda) \propto  e^{-
-    \frac{d}{4} \, \un^t \lambda^{\odot 2}}$.
-  %Como en el caso escalar, el  cuadrado del rayo tiene una distribuci\'on Gamma,
-  %$R_\vcol^2 \sim \G\left( \frac{d d'}{2} , \frac12 \right)$. \SZ{Que mas?}
+  matriz aleatoria, definida sobre \ $\X = \Sim_d(\Rset)$, \ es de distribuci\'on
+  \ $\ED_\simed(0,I,d_x)$,  con el  generador de densidad  $d_X(\lambda) \propto
+  e^{- \frac{d}{4}  \, \un^t  \lambda^{\odot 2}}$ \  (ver tambi\'en~\cite{Meh89,
+    AndGui10}).
+  % pero no es ni en $\ED_\bil$ y entonces ni en $\ED_\col$, ni en $\ED_\lin$ y
+  % por consecuencia ni tampoco en $\ED_\vcol$ o en $\ED_\vlin$.
+  \SZ{Que mas?    GSM, rayo...}
 \end{ejemplo}
 
 
 \begin{ejemplo}[Wishart]\label{Ej:MP:WishartED}
-  De la  forma de  la densidad de  probabilidad $\displaystyle p_X(x)  = \propto
-  \left|  V^{-1} x \right|^{\frac{\nu-d-1}{2}}  \, e^{-\frac12  \Tr\left( V^{-1}
-      x\right)}$     \    definido     sobre     \    $\Pos_d^+(\Rset)$     (ver
-  secci\'on~\ref{Sssec:MP:Wishart}),   se  ve   inmediatamente  que   la  matriz
-  aleatoria es de distribuci\'on $\ED_\simed\left( 0  , V , d_X \right)$ pero no
-  es  ni en  $\ED_\bil$ y  entonces ni  en $\ED_\col$,  ni en  $\ED_\lin$  y por
-  consecuencia  ni tampoco  en $\ED_\vcol$  o en  $\ED_\vlin$.  El  generador de
-  densidad es dado por $\displaystyle d_X(\lambda) \propto \left| \Diag(\lambda)
-  \right|^{\frac{\nu-d-1}{2}}  \,  e^{-\frac12  \un^t \lambda}$.   \SZ{Que  mas?
-    GSM, rayo...}
+  De     la     forma    de     la     densidad     de    probabilidad     vista
+  secci\'on~\ref{Sssec:MP:Wishart},   se  ve   inmediatamente   que  la   matriz
+  aleatoria, definida sobre  \ $\X = \Pos_d^+(\Rset)$, \  es de distribuci\'on \
+  $\ED_\simed\left( 0 , V , d_X \right)$ \ con el generador de densidad dado por
+  \     $\displaystyle     d_X(\lambda)     \propto    \left|     \Diag(\lambda)
+  \right|^{\frac{\nu-d-1}{2}} \, e^{-\frac12 \un^t \lambda}$.
+  % pero no es ni en $\ED_\bil$ y  entonces ni en $\ED_\col$, ni en $\ED_\lin$ y
+  % por consecuencia ni tampoco en $\ED_\vcol$ o en $\ED_\vlin$.
+ \SZ{Que  mas?    GSM, rayo...}
 \end{ejemplo}
 
-%\SZ{ADELANTAR funcion caracteristica, covarianzas empiricas media cero cae, y sacando la media empirica cae en tal clase}
- 
+
+\begin{ejemplo}[Beta]\label{Ej:MP:BetaED}
+  De   la    forma   de   la    densidad   de   probabilidad   vista    fin   de
+  secci\'on~\ref{Sssec:MP:Beta}, se  ve inmediatamente que  la matriz aleatoria,
+  definida sobre  \ $\X = \{  M \in \Pos_d^+(\Rset) \tq  I-M \in \Pos_d^+(\Rset)
+  \}$, \ es de distribuci\'on \ $\ED_\simed$ \ con el generador de densidad dado
+  por \  $\displaystyle d_X(\lambda) \propto \left|  \Diag(\lambda) \right|^{a -
+    \frac{d+1}{2}} \left| I - \Diag(\lambda) \right|^{b - \frac{d+1}{2}} $.
+  % pero no es ni en $\ED_\bil$ y  entonces ni en $\ED_\col$, ni en $\ED_\lin$ y
+  % por consecuencia ni tampoco en $\ED_\vcol$ o en $\ED_\vlin$.
+ \SZ{Que  mas?    GSM, rayo...}
+\end{ejemplo}
+
 \vspace{2cm}
 
 \centerline{\underline{\hspace{10cm}}}
