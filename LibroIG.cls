@@ -36,8 +36,11 @@
 \RequirePackage{ltxtable,longtable} % para manejar las tablas largas
 %\RequirePackage{boites,chngpage} % para poder cortar tablas cambiando de pagina
 \RequirePackage{footnote,footmisc} % to manage the numeration and reference to footnote
+%\patchcmd{\footnotemark}{\stepcounter{footnote}}{\refstepcounter{footnote}}{}{}
+%\RequirePackage[stable]{footmisc} % to manage the numeration and reference to footnote
 \makesavenoteenv{tabular} % to manage the footnote in tabular environment
 \RequirePackage{multicol} % para manejar texto en multi colonas
+\RequirePackage{makeidx} % para hacer los indices
 %\RequirePackage{tablefootnote} % to manage the footnote in tabular environment
 %\RequirePackage{xargs}
 %\RequirePackage{accents}
@@ -45,6 +48,8 @@
 \RequirePackage{apacite}
 %\providecommand{\BIBand}{e}
 \RequirePackage[spanish]{babel} % spanish mode for babel
+
+\makesavenoteenv{frame}
 
 \renewcommand{\rmdefault}{phv} % Arial
 \renewcommand{\sfdefault}{phv} % Arial
@@ -338,14 +343,14 @@
   {\fontsize{10}{10}\selectfont\normalfont\noindent ##2}}
 }{}
 
-% definicion de las definiciones, teoremas...
+% definicion de las definiciones, teoremas... y manejo de las footnotes adentro
 
-\newtheorem{definicion}{Definici\'on}
-\newtheorem{teorema}{Teorema}
-\newtheorem{corolario}{Corolario}
-\newtheorem{lema}{Lema}
-\newtheorem{propuesta}{Propuesta}
-\newtheorem{ejemplo}{Ejemplo}
+\newtheorem{definicion}{Definici\'on}\makesavenoteenv{definicion}
+\newtheorem{teorema}{Teorema}\makesavenoteenv{teorema}
+\newtheorem{corolario}{Corolario}\makesavenoteenv{corolario}
+\newtheorem{lema}{Lema}\makesavenoteenv{lema}
+\newtheorem{propuesta}{Propuesta}\makesavenoteenv{propuesta}
+\newtheorem{ejemplo}{Ejemplo}\makesavenoteenv{ejemplo}
 
 % numerotacion con el numero de capitulo
 \renewcommand\thedefinicion{\arabic{capitulo}-\arabic{definicion}}

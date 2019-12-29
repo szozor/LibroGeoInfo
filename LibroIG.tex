@@ -19,6 +19,7 @@
 \newcommand{\modif}[1]{{\color{darkgreen} #1}}
 \newcommand{\aver}[1]{{\color{blue} #1}}
 
+\makeindex
 
 \begin{document}
 
@@ -53,7 +54,7 @@
     el texto de agradecimiento, max una carilla.}
 \end{agradecimientos}
 
-% Epígrafe
+% Epigrafe
 \begin{epigrafe}
   \textcolor{red}{Esto es  un ep\'igrafe con  texto simulado.\\ Esto es  un ep\'grafe
     con  texto simulado.
@@ -63,13 +64,13 @@
 
 % Introduccion general
 \begin{preliminar}{Pr\'ologo}
-\input{IntroduccionGeneral}
+%\input{IntroduccionGeneral}
 \firma{Los autores}
 \end{preliminar}
  
 % Preliminar, tipo prologo
 \begin{preliminar}{Advertencia}
-\input{IntroduccionGeneral}
+%\input{IntroduccionGeneral}
 \firma{Mariela A. Portesi}
 \fecha{Grenoble, Junio de 2016}
 \end{preliminar}
@@ -98,6 +99,8 @@
 \input{ConclusionGeneral}
 \firma{Los autores}
 \end{preliminar}
+
+\printindex
 
 \bibliografia{LibroIG}
 
