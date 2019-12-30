@@ -313,7 +313,7 @@ ley.  Eso vale tambi\'en para los cumulantes:
   \kappa_{2 k}[X] = \alpha_k\left( \psi_X \right) \T_k(\Sigma)
   \]
   %
-  con el coefficient \ $\alpha_k$ \ dado por
+  con el coeficiente \ $\alpha_k$ \ dado por
   %
   \[
   \alpha_k(f) = (-2)^k f^{(k)}(0)
@@ -856,7 +856,7 @@ para $\Sigma \propto I$): la estructura, com\'un a cualquier vector aleatorio de
 $\ED(m,\Sigma,\varphi_X)$ es dada por \  $\zeta_k[\Sigma U]$ (cero cuando $l = 2
 k + 1$, por  simetr\'ia central) y el factor, dependiente de  la ley es dada por
 el  momento  del ``rayo''  $R$.   Adem\'as,  se puede  dar  una  otra forma  del
-coefficiente $\alpha_k$:
+coeficiente $\alpha_k$:
 %
 \begin{lema}\label{Lem:MP:AlphaConR}
   El coeficiente \ $\alpha_k(\varphi_X)$ \  del tensor de los momentos centrales
@@ -2516,21 +2516,39 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
 Nota:
 %
 \begin{itemize}
-\item Sea $X$ de densidad de probabilidad $p_X(x) \propto e^{- \| x^t x \|_q}$ con $q \ne 2$. Del hecho de que $\| A B\|_q \ne \| B A \|_q \ne \|A\|_q \|B\|_q$, claramente $X \in \ED_\izq$ pero $X \ne \ED_\der$ y tampoco...uy \SZ{Buscar un que es izquierda,  pero no bilateral y no columna: $\ED_\izq
-    \setminus \left( \ED_\bil \cap \ED_\col \right) \neq \emptyset$.}
-% Veremos m\'as adelante en el ejemplo~\ref{Ej:MP} que $X  \sim
-%    \U\left( \Sti_{d,d'}(\Rset)  \right)$ uniforme sobre la  variedad de Stiefel
-%    (ver notaciones y~\cite[p.~67-70]{Mui82}) partenece a $\ED_\izq$ pero no
-\item Sea  \ $X$ \ de  columnas \ $X_i \sim  \ED( m_i ,  \Sigma_i , \varphi_X)$.
-  Queda    claro    que   \    $X    \in    \ED_\col$.     Sin   embargo,    del
-  corolario~\ref{Cor:MP:MaxwellHershell},   $X  \ne   \ED_\vcol$:   \  $\ED_\col
-  \setminus \ED_\vcol \ne \emptyset$.
+\item Sea  \ $S \sim  \ED(0,I,\varphi_S)$ \ vector aleatorio  de distriibuci\'on
+  eliptica, y  \ $T$  \ vector aleatorio  \ $d'$-dimensional independiente  de \
+  $S$. Sea \ $X  = S T^t$. Inmediatamente, de \ $O S  \egald S$ \ para cualquier
+  matriz  \ $O  \in \Ort_d(\Rset)$  \ y  de la  independencia de  $S$ y  $T$, se
+  concluye   que  \   $X  \in   \ED_\izq$  (m\'as   precisamente   a  simetr\'ia
+  esf\'erica). Ahora, si  \ $T$ \ no  es a simetr\'ia eliptica, en  general \ $X
+  \not\in \ED_\der$ \ (ej. $T = \un$ determinista): $\ED_\izq \setminus \ED_\der
+  \neq \emptyset$. Luego, si denotamos $X_i$ las  columnas de \ $X$, y \ $T_i$ \
+  las componentes de \ $T$, sencillamente \ $X_i  = T_i S$ \ es de media cero. A
+  continuaci\'on, tomando  $O_k \in \Ort_d(\Rset),  \, k =  1, \ldots ,  d'$, se
+  obtiene las covarianzas para $i \ne j$ \ $\Cov[O_i X_i , O_j X_j] = \Esp\left[
+    O_i S T_i T_j S^t O_j^t \right] = \Esp[T_i T_j] O_i \Esp\left[ S S^t \right]
+  O_j^t$ \ de  la independencia, es decir,  de la forma de la  covarianza de $S$
+  del lema~\ref{Lem:MP:AlphaConR},  $\Cov[O_i X_i , O_j  X_j] = \frac{\Esp\left[
+      T_i  T_j  \right] \,  \Esp\left[  \|S\|^2  \right]}{d}  \, O_i  O_j^t  \ne
+  \Cov[X_i , X_j]$ \ aparte si $O_j  = O_i$. Siendo \ $\begin{bmatrix} O_1 X_1 &
+    \cdots  & O_{d'} X_{d'}  \end{bmatrix}$ \  a simetr\'ia  esf\'erica, y  de \
+  $\begin{bmatrix} O_1 X_1 & \cdots  & O_{d'} X_{d'} \end{bmatrix} \not\egald X$
+  \  $X$ \  no puede  partenecer a  \ $\ED_\col$.  En conclusi\'on,  \ $\ED_\izq
+  \setminus \left( \ED_\bil \cup \ED_\der \right) \neq \emptyset$.
+%
+\item Sea  \ $X$ \  de columnas \  $X_i \sim \ED( m_i  , \Sigma ,  \varphi_X)$ \
+  independientes  y no  gausianas.  Queda  claro que  \ $X  \in \ED_\col$  \ por
+  construcci\'on.   Sin embargo, del  corolario~\ref{Cor:MP:MaxwellHershell}, $X
+  \ne \ED_\vcol$: \ $\ED_\col \setminus \ED_\vcol \ne \emptyset$.
 %
 \item     La    ley     Student-$t$     matriz    variada     (ver    fin     de
   secci\'on~\ref{Sssec:MP:StudentT}  y  ejemplo~\ref{Ej:MP:StudentTMatriz} m\'as
   adelante)  partenece  a  $\ED_\bil$ pero  no  esta  ni  en $\ED_\vcol$  ni  en
   $\ED_\vlin$:  $\ED_\bil  \setminus  \left(  \ED_\vcol  \cup
     \ED_\vlin \right) \neq \emptyset$.
+%
+\item \SZ{Buscar un que sea vcol, pero no vlin}
 %
 \item $X$ gausiana matriz-variada (ver fin de secci\'on~\ref{Sssec:MP:Gaussiana}
   y  ejemplo~\ref{Ej:MP:GaussianaMatriz}  m\'as   adelante)  partenece  a  ambas
@@ -2554,18 +2572,18 @@ Los v\'inculos entre cada clase son ilustrados figura~\ref{Fig:MP:EDMatrix}.
 \end{figure}
 
 
-No vamos a entrar en detalles sobre las propiedades de cada clase; se encuentran
-el las referencias citadas. Las daremos sin pruebas. Notamos que, nuevamente, de
-$\Phi_{A  X B  + c}(\omega)  =  e^{\imath \,  \Tr\left( \omega^t  c \right)}  \,
-\Phi_X\left(   A^t  \omega  B^t   \right)$,  se   puede  deducir   la  funci\'on
-caracter\'istica de una matriz a  simetr\'ia el\'iptica a partir de la funci\'on
-caracter\'istica  del contexto esf\'erico,  y similarmente  para la  densidad de
-probabilidad cuando  la medida de  probabilidad admite una  densidad.  Adem\'as,
-del  item~\ref{Enum:MP:EDM_Transpuesta} nos restringimos  a los  casos $(\izq)$,
-$(\col)$, $(\vcol)$, $(\bil)$ y $(\simed)$.
+No vamos a entrar demasiado en  detalles sobre las propiedades de cada clase; se
+encuentran el las referencias citadas.  Las daremos sin pruebas para la mayoria.
+Notamos que, nuevamente,  de $\Phi_{A X B + C}(\omega)  = e^{\imath \, \Tr\left(
+    \omega^t  C \right)}  \,  \Phi_X\left(  A^t \omega  B^t  \right)$, se  puede
+deducir la  funci\'on caracter\'istica de  una matriz a simetr\'ia  el\'iptica a
+partir de la funci\'on  caracter\'istica del contexto esf\'erico, y similarmente
+para la  densidad de  probabilidad cuando la  medida de probabilidad  admite una
+densidad.  Adem\'as,  del item~\ref{Enum:MP:EDM_Transpuesta} nos  restringimos a
+los casos $(\izq)$, $(\col)$, $(\vcol)$, $(\bil)$ y $(\simed)$.
 
-Brevemente, los  teoremas del caso vectorial  tienen extensiones en  unas de las
-clases descritas. En  lo que sigue, de manere generica, notaremos
+Los  teoremas  del caso  vectorial  tienen extensiones  en  unas  de las  clases
+descritas. En lo que sigue, de manere generica, notaremos
 %
 \begin{enumerate}
 \item $A \in \Mat_{n,d}(\Rset)$ \ de rango lleno  tal que \ $n \le d$, \ $A' \in
@@ -2611,7 +2629,7 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
   \item $X \in \ED_\izq$  si y solamente si
   %
   \[
-  \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_x\left(
+  \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_X\left(
     \omega^t   \Sigma  \omega  \right)   \qquad  \mbox{con}   \qquad  \varphi_X:
   \Pos_{d'}(\Rset) \mapsto [-1 \; 1]
   \]
@@ -2619,7 +2637,7 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
   \item  $X \in \ED_\col$ si y solamente si
   %
   \[
-  \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_x\left(
+  \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_X\left(
     \diag\left( \omega^t \Sigma \omega  \right) \right) \qquad \mbox{con} \qquad
   \varphi_X: \Rset_+^{d'} \mapsto [-1 \; 1]
   \]
@@ -2627,21 +2645,23 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
   \item  $X \in \ED_\vcol$ si y solamente si
   %
   \[
-  \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_x\left(
+  \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_X\left(
     \Tr\left( \omega^t  \Sigma \omega  \right) \right) \qquad  \mbox{con} \qquad
   \varphi_X: \Rset_+ \mapsto [-1 \; 1]
   \]
   %
   (m\'as  precisamente, $\varphi_X  \in \PDSI_{d  d'}$).  Esta  forma  se heride
-  obviamente  directamente   del  caso  vectorial.  Pasando,   se  notar\'a  que
+  obviamente  directamente  del  caso   vectorial.   Pasando,  se  notar\'a  que
   $\Tr\left( \omega^t \Sigma \omega  \right) = \un^t \diag\left( \omega^t \Sigma
     \omega \right)$, lo  que enfatisa las inclusiones entre  estos tres tipos de
-  elipticidad.
+  elipticidad. Se  notara\'a tambi\'en que  \ $\Tr\left( \omega^t  \Sigma \omega
+  \right) = \left\| \Sigma^{\frac12} \omega \right\|_F^2$ \ cuadrado de la norma
+  de Frobenius (ver notaciones).
   %
   \item $X \in \ED_\bil$  si y solamente si
   %
   \[
-  \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_x\left(
+  \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_X\left(
     \lambda\left( \omega^t \, \Sigma \, \omega \, \Sigma' \right) \right) \qquad
   \mbox{con} \qquad \varphi_X: \Rset_+^{\min(d,d')} \mapsto [-1 \; 1]
   \]
@@ -2663,10 +2683,14 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
   se escribe
   %
   \[
-  \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_x\left(
+  \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_X\left(
     \Tr\left( \omega^t  \, \Sigma  \, \omega \,  \Sigma' \right)  \right) \qquad
   \mbox{con} \qquad \varphi_X: \Rset_+ \mapsto [-1 \; 1]
   \]
+  %
+  Nuevamente,  se notara\'a  que  \ $\Tr\left(  \omega^t  \Sigma \omega  \Sigma'
+  \right)  = \left\| \Sigma^{\frac12}  \omega \Sigma'^{\frac12}  \right\|_F^2$ \
+  cuadrado de la norma de Frobenius (ver notaciones).
   %
   %Pasando, $\Tr\left(  \omega^t \, \Sigma \,  \omega \, \Sigma'  \right) = \un^t
   %\lambda\left( \omega^t \,  \Sigma \, \omega \, \Sigma' \right)$,  lo que es en
@@ -2740,7 +2764,8 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
   %
   Nuevamente, la relaci\'on obvia \ $\Tr\left( (x-m)^t \Sigma^{-1} (x-m) \right)
   =  \un^t  \diag\left(  (x-m)^t  \Sigma^{-1}  (x-m)  \right)$  \  enfatisa  las
-  inclusiones entre estos tres tipos de elipticidad.
+  inclusiones  entre estos  tres tipos  de elipticidad,  y \  $\Tr\left( (x-m)^t
+    \Sigma^{-1} (x-m) \right) = \left\| \Sigma^{-\frac12} (x-m) \right\|_F^2$.
   % (m\'as precisamente, $\varphi_X \in \PDSI_{d d'}$).  Esta forma se heride
   % obviamente directamente del caso vectorial.
   %
@@ -2832,7 +2857,7 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
     % \Esp\left[ \lambda \left( \Sigma^{-1} (X-m) \right) \right] =
     \]
     %
-    % \SZ{Ver para obtener el coefficient
+    % \SZ{Ver para obtener el coeficient
     %   via $\nabla_\lambda \varphi_X(0)$ si es verdadero.}
    %
     Una pruba dada por ejemplo en~\cite[\S~13.2]{BilBre99} sale de \ $Y \egald O
@@ -3011,7 +3036,7 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
     \frac{\partial^2 \varphi_X}{\partial  \lambda_1^2}(0) \right) \sum_{i,j=1}^d
   \left( \un_i \otimes  \un_j \otimes \un_i \otimes \un_j  + \un_i \otimes \un_j
     \otimes \un_j  \otimes \un_i \right)$,  conduciendo a las  expresiones dadas
-  para los coefficientes $\mu_2$ y $\sigma_1^2$.
+  para los coeficientes $\mu_2$ y $\sigma_1^2$.
 \end{itemize}
 %
   \item El  Teorema~\ref{Teo:MP:TranformacionAfinEliptica} de conservaci\'on del
@@ -3063,7 +3088,9 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
   componentes tiene  una contra parte matricial  parcial, que se  prueba con los
   mismos  pasos: Sea  \ $X  \sim \ED_\izq(m,\Sigma,\varphi_X)  \quad \Rightarrow
   \quad  \forall \:  a \in  \Rset^d, \quad  a^t (X  - m)  \egald \sqrt{\frac{a^t
-      \Sigma a}{\Sigma_{i,i}}} (X'_i - m'_i)$.
+      \Sigma a}{\Sigma_{i,i}}} (X'_i - m'_i)$.  \SZ{A ver: para la reciproca, la
+    matiz del  caso matricial  es que  $a$ no es  una matriz,  \ie no  tiene las
+    domensiones de $X$, contrariamente a lo que pasaba en el caso vectorial.}
 %  %
 \item  El  teorema~\ref{Teo:MP:MaxwellHershell}  de  Maxwell-Hershell  tiene  su
   contra-parte para matrices de $\ED_\bil$:  Sea \ $X \in \ED_\bil$ con columnas
@@ -3242,6 +3269,11 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
   %
 %\SZ{Poner el teorema 7 de Fang y Chen?}
 %
+\item     \SZ{El     caso    de     mezcla     de     escala    de     Gausiana,
+    teoremas~\ref{Teo:MP:SchoenbergCaracteristica}
+    y~\ref{Teo:MP:SchoenbergDensidad}  ,  es m\'as  delicado  a  estudiar en  el
+    contexto matricial,  de la ``diversidad'' de elipticidades.  Sin embargo, la
+    literatura tiene algunos resultados.}
 %  \item Teorema~\ref{Teo:MP:SchoenbergCaracteristica} en: \ $Z \sim \CED\left( m
 %      , \Sigma , \varphi_Z \right) \egald \, A \, \Sigma^{\frac12} \, G + m \:\:
 %    \Leftrightarrow \:\: \varphi_Z  \in \PDSI$, \ con \ $A  > 0$ \ independiente
@@ -3300,10 +3332,11 @@ tambi\'en a~\cite{And03, Daw78, Daw81, LibrosABuscar}.
 
   Se puede ver esta distribuci\'on tambi\'en  como en \ $\ED_\bil$ \ y tiene con
   este enfoque el generador  de densidad \ $d_X(\lambda) \propto e^{-\frac{\un^t
-      \lambda}{2}}$: $\|X\|_F^2$ es nada m\'as que la suma de las autovalores de
-  $X X^t$ (ver m\'as arriba cuando tratamos de las densidades de probabilidad en
-  cada caso).
-  %\SZ{Que mas?    GSM, rayo...}
+      \lambda}{2}}$, lo que es coherente  con el punto de vista anterior, siendo
+  $\un^t \lambda(y y^t) = \| y \|_F^2 \equiv r^2$.
+  % : $\|X\|_F^2$ es  nada m\'as que la suma de las  autovalores de $X X^t$ (ver
+  %  m\'as arriba  cuando tratamos  de las  densidades de  probabilidad  en cada
+  % caso).  \SZ{Que mas?  GSM, rayo...}
 \end{ejemplo}
 
 \begin{ejemplo}[Ensemble Gaussiano Ortogonal]\label{Ej:MP:GOE}
@@ -3311,7 +3344,7 @@ tambi\'en a~\cite{And03, Daw78, Daw81, LibrosABuscar}.
   De   la    forma   de   la    densidad   de   probabilidad   vista    fin   de
   secci\'on~\ref{Sssec:MP:Gaussiana} (secundo item), se ve inmediatamente que la
   matriz aleatoria, definida sobre \ $\X = \Sim_d(\Rset)$, \ es de distribuci\'on
-  \ $\ED_\simed(0,I,d_x)$,  con el  generador de densidad  $d_X(\lambda) \propto
+  \ $\ED_\simed(0,I,d_X)$,  con el  generador de densidad  $d_X(\lambda) \propto
   e^{- \frac{d}{4}  \, \un^t  \lambda^{\odot 2}}$ \  (ver tambi\'en~\cite{Meh89,
     AndGui10}).
   % pero no es ni en $\ED_\bil$ y entonces ni en $\ED_\col$, ni en $\ED_\lin$ y
