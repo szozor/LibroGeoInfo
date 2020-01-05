@@ -444,13 +444,18 @@ tensor curtosis para un vector a simetr\'ia el\'iptica~\cite[p.~44]{FanKot90}:
   \Sigma_X = - 2 \,  \varphi_X'(0) \, \Sigma
   \]
   %
-  y
+  y~\footnote{Se usa $\tau_{(u,v)}  \equiv \tau_{\sigma_{(u,v)}}$  \  para la
+  transpuesta  de  los   indices  de  los  ordenes  $u  \ne   v$  de  un  tensor
+  ($\sigma_{(u,v)}(i)   =   v   \un_{\{u\}}(i)    +   u   \un_{\{v\}}(i)   +   i
+  (1-\un_{\{u,v\}}(i))$, ver notaciones).}
   %
   \[
-  \kappa_X   =   \frac{\varphi_X''(0)}{4    \,   \big(   \varphi_X(0)   \big)^2}
-  \sum_{i,j=1}^d \Big( \left( \un_i \un_i^t \right) \otimes \left( \un_j \un_j^t
-  \right) + \left( \un_i \un_j^t  \right) \otimes \left( \un_i \un_j^t \right) +
-  \left( \un_i \un_j^t \right) \otimes \left( \un_j \un_i^t \right) \Big)
+  \kappa_X  = \frac{\varphi_X''(0)}{4  \,  \big( \varphi_X(0)  \big)^2} \Big(  I
+  \otimes I + \tau_{(2,3)}\big[ I  \otimes I \big] + \tau_{(2,4)}\big[ I \otimes
+  I \big] \Big)
+  %\sum_{i,j=1}^d \Big( \left( \un_i \un_i^t \right) \otimes \left( \un_j \un_j^t
+  %\right) + \left( \un_i \un_j^t  \right) \otimes \left( \un_i \un_j^t \right) +
+  %\left( \un_i \un_j^t \right) \otimes \left( \un_j \un_i^t \right) \Big)
   \]
   %
 \end{corolario}
@@ -2519,25 +2524,25 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
 Nota:
 %
 \begin{itemize}
-\item Sea  \ $S \sim  \ED(0,I,\varphi_S)$ \ vector aleatorio  de distriibuci\'on
-  eliptica, y  \ $T$  \ vector aleatorio  \ $d'$-dimensional independiente  de \
-  $S$. Sea \ $X  = S T^t$. Inmediatamente, de \ $O S  \egald S$ \ para cualquier
-  matriz  \ $O  \in \Ort_d(\Rset)$  \ y  de la  independencia de  $S$ y  $T$, se
-  concluye   que  \   $X  \in   \ED_\izq$  (m\'as   precisamente   a  simetr\'ia
-  esf\'erica). Ahora, si  \ $T$ \ no  es a simetr\'ia eliptica, en  general \ $X
-  \not\in \ED_\der$ \ (ej. $T = \un$ determinista): $\ED_\izq \setminus \ED_\der
-  \neq \emptyset$. Luego, si denotamos $X_i$ las  columnas de \ $X$, y \ $T_i$ \
-  las componentes de \ $T$, sencillamente \ $X_i  = T_i S$ \ es de media cero. A
-  continuaci\'on, tomando  $O_k \in \Ort_d(\Rset),  \, k =  1, \ldots ,  d'$, se
-  obtiene las covarianzas para $i \ne j$ \ $\Cov[O_i X_i , O_j X_j] = \Esp\left[
-    O_i S T_i T_j S^t O_j^t \right] = \Esp[T_i T_j] O_i \Esp\left[ S S^t \right]
-  O_j^t$ \ de  la independencia, es decir,  de la forma de la  covarianza de $S$
-  del lema~\ref{Lem:MP:AlphaConR},  $\Cov[O_i X_i , O_j  X_j] = \frac{\Esp\left[
-      T_i  T_j  \right] \,  \Esp\left[  \|S\|^2  \right]}{d}  \, O_i  O_j^t  \ne
-  \Cov[X_i , X_j]$ \ aparte si $O_j  = O_i$. Siendo \ $\begin{bmatrix} O_1 X_1 &
-    \cdots  & O_{d'} X_{d'}  \end{bmatrix}$ \  a simetr\'ia  esf\'erica, y  de \
+\item Sea  \ $S$  \ vector aleatorio  de distriibuci\'on  esf\'erica, y \  $T$ \
+  vector  aleatorio \  $d'$-dimensional independiente  de \  $S$. Sea  \ $X  = S
+  T^t$. Inmediatamente,  de \ $O S  \egald S$ \  para cualquier matriz \  $O \in
+  \Ort_d(\Rset)$ \ y de la independencia de  $S$ y $T$, se concluye que \ $X \in
+  \ED_\izq$ (m\'as precisamente  a simetr\'ia esf\'erica). Ahora, si  \ $T$ \ no
+  es a simetr\'ia eliptica,  en general \ $X \not\in \ED_\der$ \  (ej. $T = \un$
+  determinista):  $\ED_\izq  \setminus   \ED_\der  \neq  \emptyset$.  Luego,  si
+  denotamos $X_i$ las columnas  de \ $X$, y \ $T_i$ \  las componentes de \ $T$,
+  sencillamente \  $X_i = T_i S$ \  es de media cero.  A continuaci\'on, tomando
+  $O_k \in  \Ort_d(\Rset), \, k  = 1, \ldots  , d'$, se obtiene  las covarianzas
+  para $i \ne j$ \ $\Cov[O_i X_i , O_j X_j] = \Esp\left[ O_i S T_i T_j S^t O_j^t
+  \right]  =  \Esp[T_i  T_j]  O_i  \Esp\left[  S S^t  \right]  O_j^t$  \  de  la
+  independencia,  es   decir,  de  la  forma   de  la  covarianza   de  $S$  del
+  lema~\ref{Lem:MP:AlphaConR}, $\Cov[O_i  X_i , O_j X_j]  = \frac{\Esp\left[ T_i
+      T_j \right] \, \Esp\left[ \|S\|^2  \right]}{d} \, O_i O_j^t \ne \Cov[X_i ,
+  X_j]$ \ aparte  si $O_j = O_i$.  Siendo \ $\begin{bmatrix} O_1 X_1  & \cdots &
+    O_{d'}   X_{d'}  \end{bmatrix}$   \  a   simetr\'ia  esf\'erica,   y   de  \
   $\begin{bmatrix} O_1 X_1 & \cdots  & O_{d'} X_{d'} \end{bmatrix} \not\egald X$
-  \  $X$ \  no puede  partenecer a  \ $\ED_\col$.  En conclusi\'on,  \ $\ED_\izq
+  \ $X$  \ no  puede partenecer  a \ $\ED_\col$.   En conclusi\'on,  \ $\ED_\izq
   \setminus \left( \ED_\bil \cup \ED_\der \right) \neq \emptyset$.
 %
 \item Sea  \ $X$ \  de columnas \  $X_i \sim \ED( m_i  , \Sigma ,  \varphi_X)$ \
@@ -2609,11 +2614,16 @@ descritas. En lo que sigue, de manere generica, notaremos
 \item  la notaci\'on \  $\T_{i,j,k,l}[X] =  \Cov[ X_{i,j}  X_{k,l}]$ \  para las
   componentes del tensor de covarianza,
 %
+\item  la notaci\'on  \ $\tau_{(u,v)}  \equiv \tau_{\sigma_{(u,v)}}$  \  para la
+  transpuesta  de  los   indices  de  los  ordenes  $u  \ne   v$  de  un  tensor
+  ($\sigma_{(u,v)}(i)   =   v   \un_{\{u\}}(i)    +   u   \un_{\{v\}}(i)   +   i
+  (1-\un_{\{u,v\}}(i))$, ver notaciones)
+%
 \item\label{Enum:MP:RelacionesObvias} y las relaciones obvias
 %
 \[
-\Esp[ A Y A' + C] = A  \Esp[Y] A' + C \qquad \mbox{y} \qquad \T_{i,j,k,l}[ A Y
-A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
+\Esp[ A Y B + C] = A  \Esp[Y] B + C \qquad \mbox{y} \qquad \T_{i,j,k,l}[ A Y
+B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
 \]
 \end{enumerate}
 %
@@ -2815,59 +2825,37 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
   corrolario~\ref{Lem:MP:MediaCovarianzaEliptica}  no   es  una  tarea  sencilla
   porque $\varphi_X$ no queda una  funci\'on escalar en general. Sin embargo, se
   puede   concentrarnos  en   los  momentos   de  orden   1  y   2,   los  m\'as
-  usados~\cite{Mal61, Daw81, Tyl82, GruRoc90,  BilBre99, GupNag99}.  En los item
-  que siguen, uaremos las mismas notaciones que entes, es decir
- %
- \begin{enumerate}
- \item $Y$  \ la matriz a  simetr\'ia esf\'erica de  generadora caracteristica \
-   $\varphi_X$ \ la de $X$;
- %
- \item \ $X = \begin{bmatrix} X_1  & \cdots X_{d'} \end{bmatrix}$ \ con \ $X_i$
-   \ la columnas de $X$, (lo mismo para $m$, $Y$, etc.);
- %
- \item Adem\'as usaremos la  notaci\'on  \  $\T_{i,j,k,l}[X] =  \Cov[  X_{i,j}
-   X_{k,l}]$ \ para las componentes del tensor de covarianza;
- %
- \item\label{Enum:MP:RelacionesObvias} Se  recupara la  media y covarianza  de \
-   $X$ \ a partir de las de \ $Y$ \ usando las relaciones obvias
- %
- \[
- \Esp[ A Y B^t + C] = A  \Esp[Y] B^t + C \qquad \mbox{y} \qquad \T_{i,j,k,l}[ A
- Y B^t + C] = \sum_{r,s,u,v} A_{i,r} B_{j,s} A_{k,u} B_{l,v} \, \T_{r,s,u,v}[Y]
- \]
-  %
- as\'i que daremos las expresiones de  la media y covarianza \'unicamente para \
- $Y$.
-  \end{enumerate}
+  usados~\cite{Mal61, Daw81,  Tyl82, GruRoc90, BilBre99,  GupNag99}. Notaremos \
+  $r$ \ el argumento de \  $\varphi_X$ \ funci\'on tomada en \ $\omega^t \omega,
+  \:  \diag(\omega^t \omega),  \:  \Tr(\omega^t \omega)  = \un^t  \diag(\omega^t
+  \omega)  = \un^t  \lambda(\omega^t  \omega)$  \ seg\'un  el  caso estudiado  \
+  $(\izq,\col,\vcol)$  \ y  \ $\lambda  \equiv \lambda(\omega^t  \omega)$ \  o \
+  $\lambda \equiv \lambda(\omega)$ \  en los casos \ $(\bil,\simed)$.  Adem\'as,
+  de  la  relaciones   obvias~\ref{Enum:MP:RelacionesObvias}  para  la  media  y
+  covarianza  se  recuperan  sencillamente la  media  y  covarianza  de \  $X  =
+  \Sigma^{\frac12} Y \Sigma'^{\frac12} + m$ \ a partir de las de \ $Y$.
   %
   \begin{itemize}
-  \item  Para  $Y  \sim  \ED_{\izq,\col,\vcol}(0,I,\varphi_X)$  \ o  \  $Y  \sim
-    \ED_\bil(0,I,I,\varphi_X)$,
-    % Para  $X \sim  \ED_{\izq,\col,\vcol}(m,\Sigma,\varphi_X)$  \ o  \ $X  \sim
-    % \ED_{\der,\lin,\vlin}(m,\Sigma',\varphi_X)$     \    o    \     $X    \sim
-    % \ED_\bil(m,\Sigma,\Sigma',\varphi_X)$,
+  \item Para  $X \sim \ED_{\izq,\col,\vcol}(m,\Sigma,\varphi_X)$  \ o \  $X \sim
+    \ED_{\der,\lin,\vlin}(m,\Sigma',\varphi_X)$     \     o     \    $X     \sim
+    \ED_\bil(m,\Sigma,\Sigma',\varphi_X)$,
     %
     \[
-    \Esp[Y] = 0 % m
+    \Esp[X] = m
     \]
     %
-    \newline De hecho, siendo \ $Y$ \ a sim\'etria esf\'erica izquierda, de \ $Y
-    \egald O Y$  \ para cualquier matriz ortogonal, se obtiene  tambi\'en \ $- Y
-    \egald Y$,  de lo cual  se deduce \  $\Esp[Y] = 0$.  Lo mismo occure  con el
-    context derecho,  as\'i que, como  consecuencia para cualquier  subcaso (ver
+    De hecho, siendo \ $Y$ \ a sim\'etria esf\'erica izquierda, de \ $Y \egald O
+    Y$ \ para cualquier matriz ortogonal, se obtiene tambi\'en \ $- Y \egald Y$,
+    de  lo cual  se deduce  \ $\Esp[Y]  = 0$.   Lo mismo  occure con  el context
+    derecho,  as\'i   que,  como   consecuencia  para  cualquier   subcaso  (ver
     figura~\ref{Fig:MP:EDMatrix}).
   %
-  \item Para \ $Y \sim
-    \ED_\simed(0,I,\varphi_X)$, %$X \sim \ED_\simed(m,\Sigma,\varphi_X)$,
+  \item Para \ $X \sim \ED_\simed(m,\Sigma,\varphi_X)$,
     %
     \[
-    \Esp[Y] = \mu_1 I \qquad  \mbox{con} \qquad  \mu_1 = -  \imath \,
-    \frac{\partial  \varphi_X}{\partial  \lambda_1}(0)  = \frac{1}{d}  \,  \un^t
-    \Esp\left[ \lambda(Y) \right]
-    %\Esp[X] =  m +  \mu_1 \Sigma \qquad  \mbox{con} \qquad  \mu_1 = -  \imath \,
-    %\frac{\partial  \varphi_X}{\partial  \lambda_1}(0)  = \frac{1}{d}  \,  \un^t
-    %\Esp\left[ \lambda(Y) \right]
-    % \Esp\left[ \lambda \left( \Sigma^{-1} (X-m) \right) \right] =
+    \Esp[X]  = m  + \mu_1  \Sigma,  \qquad \mu_1  = -  \imath \,  \frac{\partial
+      \varphi_X}{\partial  \lambda_1}(0)  =   \frac{1}{d}  \,  \un^t  \Esp\left[
+      \lambda(Y) \right]
     \]
     %
     Una pruba dada por ejemplo en~\cite[\S~13.2]{BilBre99} sale de \ $Y \egald O
@@ -2899,61 +2887,67 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
     vista  secci\'on~\ref{Ssec:MP:MA}, se recupera  bien \  $\Esp[Y] =  - \imath
     \frac{\partial \varphi_X}{\partial \lambda_1}(0) \, I$.
   %
-  \item %\SZ{Covarianza caso  izq, col, vcol, bil... ver~\cite[Lem.~8]{FanChe84}
-        %para col.}
- Tomando la  forma de $\Phi_X$  en cada  caso, y de  la formula
-    relaciando  la funci\'on  caracter\'istica y  los momentos,  se  obtiene las
-    formas de las covarianzas sencillamente. Adem\'as, a partir de estas formas,
-    los  terminos  usando  la  funci\'on  caracter\'istica  se  re-escriben  con
-    momentos escalares tipo normas:
+  \item Tomando la forma de $\Phi_X$ en cada caso, y de la formula relaciando la
+    funci\'on  caracter\'istica y  los momentos,  se obtiene  las formas  de las
+    covarianzas de $Y$. Adem\'as, a  partir de estas formas, los terminos usando
+    la  funci\'on caracter\'istica  se re-escriben  con momentos  escalares tipo
+    normas:
   %
   \begin{itemize}
-  \item Para \ $Y \sim \ED_\izq(0,I,\varphi_X)$ \ se obtiene
+  \item Para \ $X \sim \ED_\izq(m,\Sigma,\varphi_X)$ \ se obtiene
   %
   \[
-  \Cov[Y] =  \sum_{j,l=1}^{d'} \alpha_{j,l}(\varphi_X) \sum_{i=1}^d  \un_i \otimes \un_j
-  \otimes \un_i  \otimes \un_l \qquad \mbox{con} \qquad  \alpha_{j,}(\varphi_X) = -
-   \left( \frac{\partial  \varphi_X}{\partial w_{j,l}}(0) + \frac{\partial
-      \varphi_X}{\partial w_{l,j}}(0)
-  \right) %= \frac{1}{d} \Esp\left[ \| Y_j \|^2 \right]
+  \Cov[X] =  \tau_{(2,3)} \big[  \Sigma \otimes \alpha(\varphi_X)  \big], \qquad
+  \alpha(\varphi_X) =  - \nabla_r  \varphi_X(0) - \nabla_{r^t}  \varphi_X(0) \in
+  \Mat_{d',d'}(\Rset)
+  % \sum_{j,l=1}^{d'}  \alpha_{j,l}(\varphi_X) \sum_{i=1}^d \un_i  \otimes \un_j
+  % \otimes \un_i \otimes  \un_l \qquad \mbox{con} \qquad \alpha_{j,}(\varphi_X)
+  % =  - \left( \frac{\partial \varphi_X}{\partial  r_{j,l}}(0) + \frac{\partial
+  %     \varphi_X}{\partial r_{l,j}}(0) \right)  = \frac{1}{d} \Esp\left[ \| Y_j
+  %   \|^2 \right]
   \]
   %
-  \item Para \ $Y \sim \ED_\col(0,I,\varphi_X)$ \ se obtiene
+  \item Para \ $X \sim \ED_\col(m,\Sigma,\varphi_X)$ \ se obtiene
   %
   \[
-  \Cov[Y] =  \sum_{j=1}^{d'} \alpha_j(\varphi_X) \sum_{i=1}^d  \un_i \otimes \un_j
-  \otimes \un_i  \otimes \un_j \qquad \mbox{con} \qquad  \alpha_j(\varphi_X) = -
-  \frac{\partial \varphi_X}{\partial  w_j}(0) = \frac{1}{d} \Esp\left[ \|
-    Y_j \|^2 \right]
+  \Cov[X]  =  \tau_{(2,3)} \big[  \Sigma  \otimes \Diag\left(  \alpha(\varphi_X)
+  \right)  \big],   \qquad  \alpha(\varphi_X)   =  -  \nabla_r   \varphi_X(0)  =
+  \frac{1}{d} \diag\left(\Esp\left[ Y^t Y \right] \right) \in \Rset^{d'}
+  % \sum_{j=1}^{d'} \alpha_j(\varphi_X) \sum_{i=1}^d \un_i \otimes \un_j \otimes
+  %  \un_i  \otimes  \un_j  \qquad  \mbox{con} \qquad  \alpha_j(\varphi_X)  =  -
+  % \frac{\partial  \varphi_X}{\partial r_j}(0) = \frac{1}{d}  \Esp\left[ \| Y_j
+  %   \|^2 \right]
   \]
   %
   (ver tambi\'en~\cite[Lem.~8]{FanChe84}).
   %
-  \item Para \ $Y \sim \ED_\vcol(0,I,\varphi_X)$ \ se obtiene
+  \item Para \ $X \sim \ED_\vcol(m,\Sigma,\varphi_X)$ \ se obtiene
   %
   \[
-  \Cov[Y] = \alpha(\varphi_X) \sum_{i=1}^d \sum_{j=1}^{d'} \un_i \otimes \un_j
-  \otimes \un_i  \otimes \un_j \qquad \mbox{con} \qquad  \alpha(\varphi_X) = -
-   \varphi_X'(0) = \frac{1}{d d'} \Esp\left[ \| Y \|_F^2 \right]
+  \Cov[X] = \alpha(\varphi_X) \, \tau_{(2,3)} \big[ \Sigma \otimes I_{d'} \big],
+  \qquad \alpha(\varphi_X)  = - \varphi_X'(0)  = \frac{1}{d d'} \Esp\left[  \| Y
+    \|_F^2 \right]
+  % \sum_{i=1}^d \sum_{j=1}^{d'} \un_i \otimes \un_j
+  % \otimes \un_i \otimes \un_j
   \]
   %
-  \item Para \ $Y \sim \ED_\bil(0,I,I,\varphi_X)$ \ se obtiene
+  \item Para \ $Y \sim \ED_\bil(m,\Sigma,\Sigma',\varphi_X)$ \ se obtiene
   %
   \[
-  \Cov[Y] =  \alpha(\varphi_X) \sum_{i=1}^d \sum_{j=1}^{d'}  \un_i \otimes \un_j
-  \otimes \un_i \otimes  \un_j \qquad \mbox{con} \qquad \alpha(\varphi_X)  = - 2
-  \,   \frac{\partial  \varphi_X}{\partial   \lambda_1}(0)   =  \frac{1}{d   d'}
-  \Esp\left[ \| Y \|_F^2 \right]
+  \Cov[X]  =  \alpha(\varphi_X) \,  \tau_{(2,3)}  \big[  \Sigma \otimes  \Sigma'
+  \big], \qquad  \alpha(\varphi_X) =  - 2 \,  \frac{\partial \varphi_X}{\partial
+    \lambda_1}(0) = \frac{1}{d d'} \Esp\left[ \| Y \|_F^2 \right]
+  % \sum_{i=1}^d \sum_{j=1}^{d'} \un_i \otimes \un_j \otimes \un_i \otimes \un_j
   \]
   %
-  Se notar\'a que esta covarianza es la misma que para $Y \in \ED_\vcol$, siendo
-  este caso un  sub-caso de la clase $\ED_\vcol$.\newline La  prueba de la forma
-  de la  covarianza es un poco m\'as  sutil en la clase  $\ED_\bil$. Primero, se
-  nota que  para cualquier matriz de  permutaci\'on, como lo  vimos tratando del
-  caso   $(\simed)$   \   $\nabla_\lambda   \varphi_X   (0)   =   \frac{\partial
-    \varphi_X(0)}{\partial \lambda_1}  \: \un$.  Con  el mismo enfoque,  se nota
-  tambi\'en  que   para  cualquier  matriz   de  permutaci\'on  $\pi$,   \  $\pi
-  \Hess_\lambda         \varphi_X(0)        \pi^t         =        \Hess_\lambda
+  Se  notar\'a que  la  covarianza de  \  $Y$ \  es  la misma  que  para $Y  \in
+  \ED_\vcol$, siendo este  caso un sub-caso de la  clase $\ED_\vcol$.\newline La
+  prueba  de la  forma de  la covarianza  es  un poco  m\'as sutil  en la  clase
+  $\ED_\bil$. Primero, se nota que  para cualquier matriz de permutaci\'on, como
+  lo  vimos tratando  del  caso  $(\simed)$ \  $\nabla_\lambda  \varphi_X (0)  =
+  \frac{\partial  \varphi_X(0)}{\partial  \lambda_1}  \:  \un$.   Con  el  mismo
+  enfoque, se nota tambi\'en que para cualquier matriz de permutaci\'on $\pi$, \
+  $\pi      \Hess_\lambda      \varphi_X(0)      \pi^t      =      \Hess_\lambda
   \varphi_X(0)$. Inmediatamente, la diagonal de  la hessiana es constante, y los
   t\'erminos no diagonales son  todos iguales, \ie \ $\Hess_\lambda \varphi_X(0)
   = \frac{\partial^2 \varphi_X}{\partial \lambda_1 \partial \lambda_2}(0) \, \un
@@ -2999,17 +2993,18 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
   en $i, j$.
  \end{itemize}
   %
-\item Para  \ $Y  \sim \ED_\simed(0,I,\varphi_X)$  la covarianza de  \ $Y$  \ se
-  escribe bajo la forma:
+\item Para \ $X \sim \ED_\simed(m,\Sigma,\varphi_X)$ la covarianza es dada por:
   %
   \[
-  \Cov[Y] =  \mu_2 \, I  \otimes I +  \sigma_1^2 \sum_{i,j} \Big(  \un_i \otimes
-  \un_j \otimes \un_i \otimes \un_j  + \un_i \otimes \un_j \otimes \un_j \otimes
-  \un_i \Big)
-  %\Cov[X] = \mu_2  \, \Sigma \otimes \Sigma +  \sigma_1^2 \sum_{k,l} \Big( \big(
-  %\un_k \un_l^t  \, \Sigma \big) \otimes  \big( \un_l \un_k^t \,  \Sigma \big) +
-  %\big(  \Sigma \, \un_k  \un_l^t \,  \Sigma \big)  \otimes \big(  \un_k \un_l^t
-  %\big) \Big)
+  \Cov[X] = \mu_2 \, \Sigma  \otimes \Sigma + \sigma_1^2 \Big( \tau_{(2,3)}\big[
+  \Sigma \otimes  \Sigma \big] +  \tau_{(2,4)}\big[ \Sigma \otimes  \Sigma \big]
+  \Big)
+  % \sum_{i,j} \Big(  \un_i \otimes  \un_j \otimes \un_i  \otimes \un_j  + \un_i
+  % \otimes \un_j  \otimes \un_j \otimes \un_i  \Big) \Cov[X] =  \mu_2 \, \Sigma
+  % \otimes \Sigma + \sigma_1^2 \sum_{k,l} \Big( \big(
+  % \un_k \un_l^t \, \Sigma \big) \otimes \big( \un_l \un_k^t \, \Sigma \big) +
+  % \big( \Sigma \, \un_k \un_l^t \, \Sigma \big) \otimes \big( \un_k \un_l^t
+  % \big) \Big)
   \]
   %
   con \ $\sigma_1^2$ \ y \ $\mu_2 > \frac{2}{d} \,  \sigma_1^2$ \ dados por
@@ -3370,18 +3365,20 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
   %
 %\SZ{Poner el teorema 7 de Fang y Chen?}
 %
-\item     El     caso    de     mezcla     de     escala    de     Gausiana,
-    teoremas~\ref{Teo:MP:SchoenbergCaracteristica}
-    y~\ref{Teo:MP:SchoenbergDensidad}  ,  es m\'as  delicado  a  estudiar en  el
-    contexto matricial,  de la ``diversidad'' de elipticidades.  Sin embargo, la
-    literatura tiene algunos resultados que no detallamos ac\'a~\cite{GupVar95}~\cite[Teo.~10-12]{DigGut11}.
+\item     El      caso     de     mezcla     de      escala     de     Gausiana,
+  teoremas~\ref{Teo:MP:SchoenbergCaracteristica}
+  y~\ref{Teo:MP:SchoenbergDensidad}  ,  es  m\'as  delicado  a  estudiar  en  el
+  contexto matricial,  de la ``diversidad''  de elipticidades.  Sin  embargo, la
+  literatura  tiene  algunos  resultados   que  no  detallamos  ac\'a.  Ver  por
+  ejemplo~\cite{GupVar95}, o~\cite[Teo.~10-12]{DiaGut11}.
 %  \item Teorema~\ref{Teo:MP:SchoenbergCaracteristica} en: \ $Z \sim \CED\left( m
 %      , \Sigma , \varphi_Z \right) \egald \, A \, \Sigma^{\frac12} \, G + m \:\:
 %    \Leftrightarrow \:\: \varphi_Z  \in \PDSI$, \ con \ $A  > 0$ \ independiente
 %    de \ $G \sim \CN(0,I)$;
-%  % Distributions of the compound and scale mixture of vector and spherical matrix variate elliptical distributions  de Jose A.Diaz-Garcia Ramon Gutierrez-Jaimez JMVA 2003: 10.1016/j.jmva.2010.08.008
 %
-% Compound and scale mixture of matricvariate and matrix variate Kotz-type distributions, Jos\'e A.D\'iaz-Garc\'ia Ram\'on Guti\'errez-J\'aimez, https://doi.org/10.1016/j.jkss.2009.04.004
+%    Compound and  scale mixture of  matricvariate and matrix  variate Kotz-type
+%    distributions,   Jos\'e  A.D\'iaz-Garc\'ia   Ram\'on  Guti\'errez-J\'aimez,
+%    https://doi.org/10.1016/j.jkss.2009.04.004
 %
 % https://books.google.fr/books?id=ui5yIJcihCYC&pg=PA332&lpg=PA332&dq=%22schoenberg+theorem%22+%22scale+mixture%22+%22matrix+variate%22&source=bl&ots=_hLBik-90k&sig=ACfU3U3fXVqTQ-z3-FUjoArZ0oyBIBcArA&hl=fr&sa=X&ved=2ahUKEwi7pLHFqd7mAhW98uAKHa7TAVIQ6AEwAXoECAYQAQ#v=onepage&q=%22schoenberg%20theorem%22%20%22scale%20mixture%22%20%22matrix%20variate%22&f=false
 %

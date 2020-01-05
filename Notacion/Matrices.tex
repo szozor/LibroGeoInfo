@@ -28,11 +28,22 @@ $\cdot^*$ & Conjugaci\'on, componente por componente, $M^*$ \ es de componentes 
 %
 $\cdot^t$ & Transpuesta, $\forall M \in \Kset^d, \: M^t =
 \protect\begin{bmatrix} M_1 & \cdots & M_d \protect\end{bmatrix}$ \ y $ \forall
-M \in \Mat_{d,d'}(\Kset)$, $M^t$ \ es de componente \ $(i,j)$-\'esima \
-$M_{j,i}$\\[2.5mm]
+M \in \Mat_{d,d'}(\Kset)$, $M^t \in \Mat_{d',d}(\Kset)$ \ es de componente \
+$(i,j)$-\'esima \ $M_{j,i}$\\[2.5mm]
+\hline
+%
+$\tau_\sigma[\cdot]$ & Permutaciones de indices seg\'un la permutaci\'on \
+$\sigma \in \perm_K$ para un tensor $M \in \Mat_{d_1,\ldots,d_K}(\Kset)$, \ie
+$\tau_\sigma [M] \in \Mat_{d_{\sigma(1)},\ldots,d_{\sigma(K)}}(\Kset)$ \ es de
+componente \ $M_{i_{\sigma(1)},\ldots,i_{\sigma(K)}}$.\vspace{1mm}\newline Para $u  \ne   v$, $\sigma_{(u,v)}(i)   =   v   \un_{\{u\}}(i)    +   u   \un_{\{v\}}(i)   +   i
+  (1-\un_{\{u,v\}}(i))$, se usa m\'as simplemente \ $\tau_{(u,v)} \equiv \tau_{\sigma_{(u,v)}}$.\vspace{1mm}\newline Nota:
+para $K = 2, \: \tau_{(1,2)}[M] = M^t$.\\[2.5mm]
 \hline
 %
 $\cdot^\dag$ & Transconjugada, $M^\dag = \left( M^* \right)^t$\\[2.5mm]
+% \ es de
+%componente \ $(i_1,\ldots,i_K)$-\'esima \ $M_{i_K,\ldots,i_1}^*$\\[2.5mm]
+\hline
 % \ es de
 %componente \ $(i_1,\ldots,i_K)$-\'esima \ $M_{i_K,\ldots,i_1}^*$\\[2.5mm]
 \hline

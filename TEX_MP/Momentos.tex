@@ -629,19 +629,28 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
   %
     Se muestra  de nuevo que en  el contexto gausiano multivariado  $p_X(x) = (2
     \pi)^{-\frac{d}{2}}   |\Sigma|^{-\frac12}    \exp\left(   -\frac12   (x-m)^t
-      \Sigma^{-1} (x-m) \right)$ (ver m\'as adelante), \ $\displaystyle m_X = m,
-    \: \Sigma_X  = \Sigma, \: \gamma_X  = 0, \: \kappa_X  = \sum_{i,j=1}^d \Big(
-    \left(  \un_i \un_i^t  \right) \!\otimes\!  \left( \un_j  \un_j^t  \right) +
-    \left(  \un_i \un_j^t  \right) \!\otimes\!  \left( \un_i  \un_j^t  \right) +
-    \left( \un_i \un_j^t \right) \!\otimes\! \left( \un_j \un_i^t \right) \Big)$
+      \Sigma^{-1}   (x-m)  \right)$   (ver   m\'as  adelante)~\footnote{Se   usa
+      $\tau_{(u,v)} \equiv  \tau_{\sigma_{(u,v)}}$ \ para la  transpuesta de los
+      indices de  los ordenes  $u \ne  v$ de un  tensor ($\sigma_{(u,v)}(i)  = v
+      \un_{\{u\}}(i)   +  u  \un_{\{v\}}(i)   +  i   (1-\un_{\{u,v\}}(i))$,  ver
+      notaciones).}, \ $\displaystyle m_X = m, \: \Sigma_X = \Sigma, \: \gamma_X
+    = 0,  \: \kappa_X  = I  \otimes I +  \tau_{(2,3)}\big[ I  \otimes I  \big] +
+    \tau_{(2,4)}\big[ I \otimes I \big]$
+%\sum_{i,j=1}^d \Big(
+%    \left(  \un_i \un_i^t  \right) \!\otimes\!  \left( \un_j  \un_j^t  \right) +
+%    \left(  \un_i \un_j^t  \right) \!\otimes\!  \left( \un_i  \un_j^t  \right) +
+%    \left( \un_i \un_j^t \right) \!\otimes\! \left( \un_j \un_i^t \right) \Big)$
     \  as\'i  que  se  puede   definir  una  curtosis  multivariada  por  exceso
     (sub-entendido, con respeto a la gausiana) como:
   %
   \[
-  \Excurt[X] \equiv \widebar{\kappa}_X =  \Curt[X] - \sum_{i,j=1}^d \Big( \left(
-    \un_i \un_i^t  \right) \!\otimes\! \left(  \un_j \un_j^t \right) +  \left( \un_i
-    \un_j^t \right) \!\otimes\! \left( \un_i  \un_j^t \right) + \left( \un_i \un_j^t
-  \right) \!\otimes\! \left( \un_j \un_i^t \right) \Big).
+  \Excurt[X]  \equiv  \widebar{\kappa}_X  =  \Curt[X]  - \Big(  I  \otimes  I  +
+  \tau_{(2,3)}\big[  I \otimes  I \big]  + \tau_{(2,4)}\big[  I \otimes  I \big]
+  \Big)
+  % \sum_{i,j=1}^d  \Big( \left( \un_i \un_i^t \right)  \!\otimes\! \left( \un_j
+  %   \un_j^t \right)  + \left( \un_i  \un_j^t \right) \!\otimes\!  \left( \un_i
+  %   \un_j^t \right)  + \left( \un_i  \un_j^t \right) \!\otimes\!  \left( \un_j
+  %   \un_i^t \right) \Big).
   \]
   %
   Se encuentren en la literatura varias medidas alternativas dando un resumen de
