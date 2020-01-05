@@ -39,11 +39,12 @@ imagenes~\cite{Gol76, RanWei93, RanWei95, ZozVig10, Zoz12}, entre otros.
 Empezamos  por  la  definici\'on,  antes  de  ir  m\'as  all\'a  estudiando  sus
 propiedades remarcables.
 
+\index{Esf\'erica!invariance vectorial}
 \begin{definicion}[Vector esfericamente invariante]
   Sea  \  $X$  \  vector   aleatorio  $d$-dimensional  real.   $X$  \  es  dicho
-  esfericamente    invariante,    o    a    simetr\'ia    esf\'erica,    o    de
-  \index{distribuci\'on esf\'erica}  \ si para  cualquier matriz ortogonal  \ $O
-  \in \Ort_d(\Rset)$ (ver notaciones),
+  esfericamente  invariante,  o a  simetr\'ia  esf\'erica,  o de  distribuci\'on
+  esf\'erica \ si  para cualquier matriz ortogonal \  $O \in \Ort_d(\Rset)$ (ver
+  notaciones),
   %
   \[
   O  X  \: \egald  \: X
@@ -55,6 +56,7 @@ Se notar\'a  que tal vector aleatorio  no puede ser discreto  porque un conjunto
 numerable  no puede  ser invariante  por cualquier  rotaci\'on (y  entonces, por
 cualquier transformaci\'on ortogonal).
 
+\index{El\'iptica! invariance vectorial}
 Tales  vectores  modelizan naturalmente  fen\'omenos  isotr\'opicos. Pero  m\'as
 all\'a,  se  puede  que  haya  direcciones privilegiadas  ortogonales  pero  con
 simetrias,  \ie en  lugar de  simetr\'ias esf\'ericas,  simetr\'ias como  en una
@@ -2226,6 +2228,7 @@ Empezamos  con cada  definici\'on  de~\cite[\S~9.3]{GupNag99} y  de~\cite{Hsu40,
   Mal61, Dem69,  Daw77, Chm80,  FraNg80,Kar81:1, Kar81, Kar89,  JenGoo81, Tyl82,
   Daw78, Daw81, FanChe84, And03}.
 
+\index{Esf\'erica! invariance vectorial}
 \begin{definicion}[Matriz a simetr\'ia esf\'erica]
   Sea $X$ matriz aleatoria definida sobre $\X = \Mat_{d,d'}(\Rset)$. Denotamos \
   $X_j, \: j = 1, \ldots ,  d'$ \ sus columnas, definidas sobre \ $\Mat_{d,1}$ \
@@ -2294,7 +2297,7 @@ Y_{j,i}$, pero  la igualdad es  en distribuci\'on. en la  \'ultima definici\'on,
 propuesta entre otros por Mallows~\cite{Mal61},  impone la simetr\'ia, lo que es
 m\'as restrictivo.
 
-
+\index{El\'iptica! invariance matricial}
 Naturlamente, se  extiende la simetr\'ia esf\'erica a  una simetr\'ia el\'iptica
 como en el  caso de vectores con estiramientos  y una translaci\'on~\cite{Mal61,
   Tyl82, Chm80, FraNg80, Kar81:1, Kar81, Kar89, JenGoo81, GupNag99, GupVar13}:
@@ -2685,7 +2688,8 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
   \[
   \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_X\left(
     \Tr\left( \omega^t  \, \Sigma  \, \omega \,  \Sigma' \right)  \right) \qquad
-  \mbox{con} \qquad \varphi_X: \Rset_+ \mapsto [-1 \; 1]
+  \mbox{con} \qquad \varphi_X: \Rset_+ \mapsto [-1 \; 1]   \quad   \mbox{invariante   por
+    permutaci\'on}%~\footnotemark}
   \]
   %
   Nuevamente,  se notara\'a  que  \ $\Tr\left(  \omega^t  \Sigma \omega  \Sigma'
@@ -2704,22 +2708,22 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
   \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_X\left(
     \lambda\left(  \Sigma \,  \omega  \right) \right)  \qquad \mbox{con}  \qquad
   \varphi_X:   \Rset^d   \mapsto   [-1   \;  1]   \quad   \mbox{invariante   por
-    permutaci\'on~\footnotemark}
+    permutaci\'on}%~\footnotemark}
   \]
   %
-  \footnotetext{Notando  \ $Y  = \Sigma^{-\frac12}  (X-m)  \Sigma^{-\frac12}$, \
-    $\Phi_Y(\omega)  =  \Esp\left[  e^{\imath  \, \Tr\left(  \omega  Y  \right)}
-    \right] =  \Esp\left[ e^{\imath \, \Tr\left( Q  \Diag(\lambda(\omega)) Q^t Y
-        \right)}  \right]$  \  de  la  simetr\'ia  de \  $\omega$,  con  $Q  \in
-    \Ort_d(\Rset)$ \  (descomposici\'on espectral). Luego, de $\Tr(A  B) = \Tr(B
-    A)$  se   obtiene  $\Phi_Y(\omega)  =  \Esp\left[   e^{\imath  \,  \Tr\left(
-          \Diag(\lambda(\omega))     Q^t    Y     Q    \right)}     \right]    =
-    \Phi_Y(\Diag(\lambda(\omega)))  \equiv \varphi_Y(\lambda(\omega))$  de  $Q Y
-    Q^t  \egald Q$.   Al final,  para cualquier  matriz de  permitaci\'on $\Pi$,
-    necesariamente  en  $\Ort_d(\Rset)$  tenemos  $\varphi_Y(\lambda(\omega))  =
-    \Phi_Y(\Diag(\lambda(\omega))) =  \Phi_{\Pi^t Y \Pi}(\Diag(\lambda(\omega)))
-    =    \Phi(\Pi    \Diag(\lambda(\omega))    \Pi^t)    \equiv    \varphi_Y(\Pi
-    \lambda(\omega))$.\label{Foot:MP:PhiLambdaSimed}}
+  %\footnotetext{Notando  \ $Y  = \Sigma^{-\frac12}  (X-m)  \Sigma^{-\frac12}$, \
+  %  $\Phi_Y(\omega)  =  \Esp\left[  e^{\imath  \, \Tr\left(  \omega  Y  \right)}
+  %  \right] =  \Esp\left[ e^{\imath \, \Tr\left( Q  \Diag(\lambda(\omega)) Q^t Y
+  %      \right)}  \right]$ \  de  la simetr\'ia  de  \ $\omega$,  con  \ $Q  \in
+  %  \Ort_d(\Rset)$ \ (descomposici\'on espectral). Luego, de \ $\Tr(A B) = \Tr(B
+  %  A)$  \ se  obtiene \  $\Phi_Y(\omega)  = \Esp\left[  e^{\imath \,  \Tr\left(
+  %        \Diag(\lambda(\omega))     Q^t    Y     Q    \right)}     \right]    =
+  %  \Phi_Y(\Diag(\lambda(\omega))) \equiv \varphi_Y(\lambda(\omega))$  \ de \ $Q
+  %  Y Q^t \egald Q$.  Al final,  para cualquier matriz de permutaci\'on \ $\Pi$,
+  %  necesariamente en \  $\Ort_d(\Rset)$ \ tenemos \ $\varphi_Y(\lambda(\omega))
+  %  =        \Phi_Y(\Diag(\lambda(\omega)))        =        \Phi_{\Pi^t        Y
+  %    \Pi}(\Diag(\lambda(\omega)))  =   \Phi(\Pi  \Diag(\lambda(\omega))  \Pi^t)
+  %  \equiv \varphi_Y(\Pi \lambda(\omega))$.\label{Foot:MP:PhiLambdaSimed}}
   \end{itemize}
   %
   Escribiremos en lo  que sigue \ $X \sim  \ED_\bullet(m,\Sigma,\varphi_X)$ \ en
@@ -2811,35 +2815,40 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
   corrolario~\ref{Lem:MP:MediaCovarianzaEliptica}  no   es  una  tarea  sencilla
   porque $\varphi_X$ no queda una  funci\'on escalar en general. Sin embargo, se
   puede   concentrarnos  en   los  momentos   de  orden   1  y   2,   los  m\'as
-  usados~\cite{Mal61, Daw81, Tyl82, GruRoc90,  BilBre99, GupNag99}.
-%  En los item
-%  que siguen, uaremos las mismas notaciones que entes, es decir
-%  %
-%  \begin{enumerate}
-%  \item $Y$ \  la matriz a simetr\'ia esf\'erica  de generadora caracteristica \
-%    $\varphi_X$ \ la de $X$,
-%  %
-%  \item \ $X = \begin{bmatrix} X_1  & \cdots X_{d'} \end{bmatrix}$ \ con \ $X_i$
-%    \ la columnas de $X$, (lo mismo para $m$, $Y$, etc.),
-%  %
-%  \item adema\'as usaremos la  notaci\'on  \  $\T_{i,j,k,l}[X] =  \Cov[  X_{i,j}
-%    X_{k,l}]$ \ para las componentes del tensor de covarianza,
-%  %
-%  \item\label{Enum:MP:RelacionesObvias} y las relaciones obvias
-%  %
-%  \[
-%  \Esp[ A Y B^t + C] = A  \Esp[Y] B^t + C \qquad \mbox{y} \qquad \T_{i,j,k,l}[ A
-%  Y B^t + C] = \sum_{r,s,u,v} A_{i,r} B_{j,s} A_{k,u} B_{l,v} \, \T_{r,s,u,v}[Y]
-%  \]
-%  \end{enumerate}
+  usados~\cite{Mal61, Daw81, Tyl82, GruRoc90,  BilBre99, GupNag99}.  En los item
+  que siguen, uaremos las mismas notaciones que entes, es decir
+ %
+ \begin{enumerate}
+ \item $Y$  \ la matriz a  simetr\'ia esf\'erica de  generadora caracteristica \
+   $\varphi_X$ \ la de $X$;
+ %
+ \item \ $X = \begin{bmatrix} X_1  & \cdots X_{d'} \end{bmatrix}$ \ con \ $X_i$
+   \ la columnas de $X$, (lo mismo para $m$, $Y$, etc.);
+ %
+ \item Adem\'as usaremos la  notaci\'on  \  $\T_{i,j,k,l}[X] =  \Cov[  X_{i,j}
+   X_{k,l}]$ \ para las componentes del tensor de covarianza;
+ %
+ \item\label{Enum:MP:RelacionesObvias} Se  recupara la  media y covarianza  de \
+   $X$ \ a partir de las de \ $Y$ \ usando las relaciones obvias
+ %
+ \[
+ \Esp[ A Y B^t + C] = A  \Esp[Y] B^t + C \qquad \mbox{y} \qquad \T_{i,j,k,l}[ A
+ Y B^t + C] = \sum_{r,s,u,v} A_{i,r} B_{j,s} A_{k,u} B_{l,v} \, \T_{r,s,u,v}[Y]
+ \]
+  %
+ as\'i que daremos las expresiones de  la media y covarianza \'unicamente para \
+ $Y$.
+  \end{enumerate}
   %
   \begin{itemize}
-  \item Para  $X \sim \ED_{\izq,\col,\vcol}(m,\Sigma,\varphi_X)$  \ o \  $X \sim
-    \ED_{\der,\lin,\vlin}(m,\Sigma',\varphi_X)$     \     o     \    $X     \sim
-    \ED_\bil(m,\Sigma,\Sigma',\varphi_X)$,
+  \item  Para  $Y  \sim  \ED_{\izq,\col,\vcol}(0,I,\varphi_X)$  \ o  \  $Y  \sim
+    \ED_\bil(0,I,I,\varphi_X)$,
+    % Para  $X \sim  \ED_{\izq,\col,\vcol}(m,\Sigma,\varphi_X)$  \ o  \ $X  \sim
+    % \ED_{\der,\lin,\vlin}(m,\Sigma',\varphi_X)$     \    o    \     $X    \sim
+    % \ED_\bil(m,\Sigma,\Sigma',\varphi_X)$,
     %
     \[
-    \Esp[X] = m
+    \Esp[Y] = 0 % m
     \]
     %
     \newline De hecho, siendo \ $Y$ \ a sim\'etria esf\'erica izquierda, de \ $Y
@@ -2848,18 +2857,19 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
     context derecho,  as\'i que, como  consecuencia para cualquier  subcaso (ver
     figura~\ref{Fig:MP:EDMatrix}).
   %
-  \item Para \ $X \sim \ED_\simed(m,\Sigma,\varphi_X)$,
+  \item Para \ $Y \sim
+    \ED_\simed(0,I,\varphi_X)$, %$X \sim \ED_\simed(m,\Sigma,\varphi_X)$,
     %
     \[
-    \Esp[X] =  m +  \mu_1 \Sigma \qquad  \mbox{con} \qquad  \mu_1 = -  \imath \,
+    \Esp[Y] = \mu_1 I \qquad  \mbox{con} \qquad  \mu_1 = -  \imath \,
     \frac{\partial  \varphi_X}{\partial  \lambda_1}(0)  = \frac{1}{d}  \,  \un^t
     \Esp\left[ \lambda(Y) \right]
+    %\Esp[X] =  m +  \mu_1 \Sigma \qquad  \mbox{con} \qquad  \mu_1 = -  \imath \,
+    %\frac{\partial  \varphi_X}{\partial  \lambda_1}(0)  = \frac{1}{d}  \,  \un^t
+    %\Esp\left[ \lambda(Y) \right]
     % \Esp\left[ \lambda \left( \Sigma^{-1} (X-m) \right) \right] =
     \]
     %
-    % \SZ{Ver para obtener el coeficient
-    %   via $\nabla_\lambda \varphi_X(0)$ si es verdadero.}
-   %
     Una pruba dada por ejemplo en~\cite[\S~13.2]{BilBre99} sale de \ $Y \egald O
     Y  O^t$  \ dando  \  $\Esp[Y]  = O  \Esp[Y]  O^t$  \  para cualquier  matriz
     ortogonal. De  esta identidad, viene que  si \ $v$  \ es un autovector  de \
@@ -2889,16 +2899,117 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
     vista  secci\'on~\ref{Ssec:MP:MA}, se recupera  bien \  $\Esp[Y] =  - \imath
     \frac{\partial \varphi_X}{\partial \lambda_1}(0) \, I$.
   %
-\item \SZ{Covarianza caso izq, col, vcol, bil... ver~\cite[Lem.~8]{FanChe84} para col.}
+  \item %\SZ{Covarianza caso  izq, col, vcol, bil... ver~\cite[Lem.~8]{FanChe84}
+        %para col.}
+ Tomando la  forma de $\Phi_X$  en cada  caso, y de  la formula
+    relaciando  la funci\'on  caracter\'istica y  los momentos,  se  obtiene las
+    formas de las covarianzas sencillamente. Adem\'as, a partir de estas formas,
+    los  terminos  usando  la  funci\'on  caracter\'istica  se  re-escriben  con
+    momentos escalares tipo normas:
   %
-\item Para \ $X \sim \ED_\simed(m,\Sigma,\varphi_X)$ la covarianza de \ $X$ \ se
+  \begin{itemize}
+  \item Para \ $Y \sim \ED_\izq(0,I,\varphi_X)$ \ se obtiene
+  %
+  \[
+  \Cov[Y] =  \sum_{j,l=1}^{d'} \alpha_{j,l}(\varphi_X) \sum_{i=1}^d  \un_i \otimes \un_j
+  \otimes \un_i  \otimes \un_l \qquad \mbox{con} \qquad  \alpha_{j,}(\varphi_X) = -
+   \left( \frac{\partial  \varphi_X}{\partial w_{j,l}}(0) + \frac{\partial
+      \varphi_X}{\partial w_{l,j}}(0)
+  \right) %= \frac{1}{d} \Esp\left[ \| Y_j \|^2 \right]
+  \]
+  %
+  \item Para \ $Y \sim \ED_\col(0,I,\varphi_X)$ \ se obtiene
+  %
+  \[
+  \Cov[Y] =  \sum_{j=1}^{d'} \alpha_j(\varphi_X) \sum_{i=1}^d  \un_i \otimes \un_j
+  \otimes \un_i  \otimes \un_j \qquad \mbox{con} \qquad  \alpha_j(\varphi_X) = -
+  \frac{\partial \varphi_X}{\partial  w_j}(0) = \frac{1}{d} \Esp\left[ \|
+    Y_j \|^2 \right]
+  \]
+  %
+  (ver tambi\'en~\cite[Lem.~8]{FanChe84}).
+  %
+  \item Para \ $Y \sim \ED_\vcol(0,I,\varphi_X)$ \ se obtiene
+  %
+  \[
+  \Cov[Y] = \alpha(\varphi_X) \sum_{i=1}^d \sum_{j=1}^{d'} \un_i \otimes \un_j
+  \otimes \un_i  \otimes \un_j \qquad \mbox{con} \qquad  \alpha(\varphi_X) = -
+   \varphi_X'(0) = \frac{1}{d d'} \Esp\left[ \| Y \|_F^2 \right]
+  \]
+  %
+  \item Para \ $Y \sim \ED_\bil(0,I,I,\varphi_X)$ \ se obtiene
+  %
+  \[
+  \Cov[Y] =  \alpha(\varphi_X) \sum_{i=1}^d \sum_{j=1}^{d'}  \un_i \otimes \un_j
+  \otimes \un_i \otimes  \un_j \qquad \mbox{con} \qquad \alpha(\varphi_X)  = - 2
+  \,   \frac{\partial  \varphi_X}{\partial   \lambda_1}(0)   =  \frac{1}{d   d'}
+  \Esp\left[ \| Y \|_F^2 \right]
+  \]
+  %
+  Se notar\'a que esta covarianza es la misma que para $Y \in \ED_\vcol$, siendo
+  este caso un  sub-caso de la clase $\ED_\vcol$.\newline La  prueba de la forma
+  de la  covarianza es un poco m\'as  sutil en la clase  $\ED_\bil$. Primero, se
+  nota que  para cualquier matriz de  permutaci\'on, como lo  vimos tratando del
+  caso   $(\simed)$   \   $\nabla_\lambda   \varphi_X   (0)   =   \frac{\partial
+    \varphi_X(0)}{\partial \lambda_1}  \: \un$.  Con  el mismo enfoque,  se nota
+  tambi\'en  que   para  cualquier  matriz   de  permutaci\'on  $\pi$,   \  $\pi
+  \Hess_\lambda         \varphi_X(0)        \pi^t         =        \Hess_\lambda
+  \varphi_X(0)$. Inmediatamente, la diagonal de  la hessiana es constante, y los
+  t\'erminos no diagonales son  todos iguales, \ie \ $\Hess_\lambda \varphi_X(0)
+  = \frac{\partial^2 \varphi_X}{\partial \lambda_1 \partial \lambda_2}(0) \, \un
+  \un^t   +  \left(   \frac{\partial^2  \varphi_X}{\partial   \lambda_1^2}(0)  -
+    \frac{\partial^2   \varphi_X}{\partial   \lambda_1  \partial   \lambda_2}(0)
+  \right) \, I$.  Luego,  notando $\lambda \equiv \lambda(\omega^t \omega)$ para
+  simplificar las notaciones, $ \frac{\partial \varphi_X}{\partial \omega_{i,j}}
+  =    \nabla_\lambda    \varphi_X^t    \,   \frac{\partial    \lambda}{\partial
+    \omega_{i,j}}$ \ y, a continuaci\'on, $ \frac{\partial^2 \varphi_X}{\partial
+    \omega_{i,j}  \partial \omega_{k,l}}(0)  = \nabla_\lambda  \varphi_X(0)^t \,
+  \frac{\partial^2  \lambda}{\partial \omega_{i,j}  \partial  \omega_{k,l}}(0) +
+  \frac{\partial  \lambda^t}{\partial  \omega_{i,j}} \Hess_\lambda  \varphi_X(0)
+  \frac{\partial    \lambda}{\partial    \omega_{k,l}}(0)    =    \frac{\partial
+    \varphi_X}{\partial  \lambda_1}(0) \frac{\partial^2  \un^t \lambda}{\partial
+    \omega_{i,j}      \partial      \omega_{k,l}}(0)     +      \frac{\partial^2
+    \varphi_X}{\partial   \lambda_1    \partial   \lambda_2}(0)   \frac{\partial
+    \lambda^t     \un}{\partial     \omega_{i,j}}(0)    \frac{\partial     \un^t
+    \lambda}{\partial     \omega_{k,l}}(0)     +     \left(     \frac{\partial^2
+      \varphi_X}{\partial^2  \lambda_1}  - \frac{\partial^2  \varphi_X}{\partial
+      \lambda_1      \partial      \lambda_2}(0)     \right)      \frac{\partial
+    \lambda^t}{\partial     \omega_{i,j}}    \frac{\partial    \lambda}{\partial
+    \omega_{k,l}}(0)$.  Ahora, de \ $\un^t  \lambda = \Tr(\omega^t \omega)$ \ se
+  nota que el  primer t\'ermino vale \ $2  \, \frac{\partial \varphi_X}{\partial
+    \lambda_1}(0)  \, \un_{\{i\}}(k)  \un_{\{j\}}(l)$ \  y que  el  secundo vale
+  ceros.  Para el tercero t\'ermino,  \ $\lambda^t \lambda = \Tr(\omega^t \omega
+  \omega^t  \omega) = \sum_{r,s=1}^d  \sum_{u,v=1}^{d'} w_{r,u}  w_{r,v} w_{s,u}
+  w_{s,v}$. Ahora, \ $\frac{\partial \lambda^t \lambda}{\partial w_{i,j}} = 2 \,
+  \frac{\partial    \lambda^t}{\partial    \omega_{i,j}}    \lambda$,    y,    a
+  continuaci\'on,     \     $\frac{\partial^2    \lambda^t     \lambda}{\partial
+    w_{i,j}  \partial  w_{k,l}}  =  2  \,  \frac{\partial^2  \lambda^t}{\partial
+    \omega_{i,j}   \partial    w_{k,l}}   \lambda   +    2   \,   \frac{\partial
+    \lambda^t}{\partial     \omega_{i,j}}    \frac{\partial    \lambda}{\partial
+    \omega_{k,l}}$.   \ De  $\lambda(0) =  0$ \  se obtiene  \ $\frac{\partial^2
+    \lambda^t   \lambda}{\partial   w_{i,j}   \partial   w_{k,l}}(0)  =   2   \,
+  \frac{\partial     \lambda^t}{\partial     \omega_{i,j}}(0)     \frac{\partial
+    \lambda}{\partial  \omega_{k,l}}(0)$. Al  final, de  la forma  de $\lambda^t
+  \lambda$, queda claro  que la secundas derivadas se cancelan  en $\omega = 0$,
+  siendo   entonces  cero  el   tercero  t\'ermino   de  \   $  \frac{\partial^2
+    \varphi_X}{\partial  \omega_{i,j} \partial \omega_{k,l}}(0)$,  conduciendo a
+  la  expresi\'on dada para  la covarianza  (ver la  expresi\'on del  momento de
+  orden dos vista secci\'on~\ref{Ssec:MP:MA}).  La secunda forma del coeficiente
+  $\alpha$ viene de la forma  dada, sumando los t\'erminos del tensor covarianza
+  en $i, j$.
+ \end{itemize}
+  %
+\item Para  \ $Y  \sim \ED_\simed(0,I,\varphi_X)$  la covarianza de  \ $Y$  \ se
   escribe bajo la forma:
   %
   \[
-  \Cov[X] = \mu_2  \, \Sigma \otimes \Sigma +  \sigma_1^2 \sum_{k,l} \Big( \big(
-  \un_k \un_l^t  \, \Sigma \big) \otimes  \big( \un_l \un_k^t \,  \Sigma \big) +
-  \big(  \Sigma \, \un_k  \un_l^t \,  \Sigma \big)  \otimes \big(  \un_k \un_l^t
-  \big) \Big)
+  \Cov[Y] =  \mu_2 \, I  \otimes I +  \sigma_1^2 \sum_{i,j} \Big(  \un_i \otimes
+  \un_j \otimes \un_i \otimes \un_j  + \un_i \otimes \un_j \otimes \un_j \otimes
+  \un_i \Big)
+  %\Cov[X] = \mu_2  \, \Sigma \otimes \Sigma +  \sigma_1^2 \sum_{k,l} \Big( \big(
+  %\un_k \un_l^t  \, \Sigma \big) \otimes  \big( \un_l \un_k^t \,  \Sigma \big) +
+  %\big(  \Sigma \, \un_k  \un_l^t \,  \Sigma \big)  \otimes \big(  \un_k \un_l^t
+  %\big) \Big)
   \]
   %
   con \ $\sigma_1^2$ \ y \ $\mu_2 > \frac{2}{d} \,  \sigma_1^2$ \ dados por
@@ -2956,87 +3067,85 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
   \item \ si no, $\T_{i,j,k,l}[Y] = 0$.
   \end{itemize}
   %
-  Ahora, con $A$ tal que $A A^t = \Sigma$, se obtiene que $\T_{i,j,k,l}[A Y A^t]
-  = \mu_2 \Sigma_{i,j} \Sigma_{k,l} + \sigma_1^2 \big( \Sigma_{i,k} \Sigma_{j,l}
-  + \Sigma_{i,l} \Sigma_{j,k} \big)$. Notamos que \ $\Sigma_{i,j} \Sigma_{k,l} =
-  \big( \Sigma  \otimes \Sigma \big)_{i,j,k,l}$, \  $\Sigma_{i,l} \Sigma_{j,k} =
-  \Sigma_{k,j} \Sigma_{i,l} = \big( \un_i \un_k^t \Sigma \big)_{i,j} \big( \un_k
-  \un_i^t \Sigma \big)_{k,l}$, conduciendo a \ $\Big( \big( \un_i \un_k^t \Sigma
-  \big) \otimes \big( \un_k  \un_i^t \Sigma \big) \Big)_{u,j,v,l} = \Sigma_{i,l}
-  \Sigma_{j,k} \un_{(i,k)}((u,v))$, \  $\Sigma_{i,k} \Sigma_{j,l} = \Sigma_{i,k}
-  \Sigma_{l,j}  =  \big(  \Sigma   \,  \un_k  \un_l^t  \,  \Sigma  \big)_{i,j}$,
-  conduciendo a $\Big( \big( \Sigma \,  \un_k \un_l^t \, \Sigma \big) \! \otimes
-  \!   \big( \un_k  \un_l^t  \big) \Big)_{i,j,u,v}  = \Sigma_{i,k}  \Sigma_{j,l}
-  \un_{(k,l)}((u,v))$. Con cambio de indices adecuados, se obtiene la covarianza
-  de \  $X$ \ bajo la forma  dada.  Como por lo  de la media, se  puede hacer un
-  paso m\'as e identificar los  coeficientes $\mu_2$ y $\sigma_1^2$. Por eso, se
-  notar\'a que \ $\Var\left[  \Tr(Y) \right] = \left( d^2 - d  \right) \mu_2 + d
-  \left( \mu_2 + 2 \sigma_1^2 \right)$.  Similarmente \ $\Tr\left( \Esp\left[ (Y
-      -  \Esp[Y] ) (Y  - \Esp[Y])^t  \right] \right)  = \left(  d^2 -  d \right)
-  \sigma_1^2  +  d  \left( \mu_2  +  \sigma_1^2  \right)  =  d  \, \mu_2  +  d^2
-  \sigma_1^2$.   Se   notara  que  \   $\Tr(Y)  =  \un^t  \lambda(Y)$   \  dando
-  $\Var[\Tr(Y)] = \un^t  \Cov[\lambda(Y)] \un$, lo que da  la primera relaci\'on
-  v\'inculando \ $\mu_2$  \ y \ $\sigma_1^2$.  Pasando, de  la positividad de la
-  covarianza, necesariamente $\mu_2 + \frac{2}{d} \, \sigma_1^2 \ge 0$ \ (lo que
-  es m\'as restrictivo que lo  que obtuvimos unos pasos atr\'as).  Similarmente,
-  $  \Tr\left(  \Esp\left[ (Y  -  \Esp[Y]) (Y  -  \Esp[Y])^t  \right] \right)  =
-  \Tr\left(  \Esp[Y  Y^t]  \right)  -  \Tr\left(  \Esp[Y]  \Esp[Y]^t  \right)  =
-  \Esp\left[  \un^t \lambda\left(  Y Y^t  \right) \right]  -  \frac{1}{d} \left(
-    \un^t  \Esp[   \lambda(Y)  ]  \right)^2   =  \Tr\left(  \Esp\left[\lambda(Y)
-      \lambda(Y)^t \right] \right) -  \frac{1}{d} \un^t \Esp[ \lambda(Y) ] \Esp[
-  \lambda(Y) ]^t \un = \Tr\left( \Cov\left[\lambda(Y) \right] + \Esp[\lambda(Y)]
-    \Esp[ \lambda(Y)]^t \right) -  \frac{1}{d} \Tr\left(\Esp[ \lambda(Y) ] \Esp[
-    \lambda(Y) ]^t  \un \un^t  \right) = \Tr\left(  \Cov\left[\lambda(Y) \right]
-  \right) + \Esp[ \lambda(Y) ]^t \left(  I - \frac{1}{d} \un \un^t \right) \Esp[
-  \lambda(Y) ]$ \ (donde  la secunda igualdad viene de la forma  de la media, la
-  tercera de la simetria  de $Y$, la cuarta de $u^t v =  \Tr(v u^t)$ y la quinta
-  de $\Tr(A B) = \Tr(B A)$, dando la secunda relaci\'on v\'inculando \ $\mu_2$ \
-  y \ $\sigma_1^2$. Pasando \ $\mu_2 + d \, \sigma_1^2 \ge 0$ \ (lo que es menos
+  %Ahora, con $A$ tal que $A A^t = \Sigma$, se obtiene que $\T_{i,j,k,l}[A Y A^t]
+  %= \mu_2 \Sigma_{i,j} \Sigma_{k,l} + \sigma_1^2 \big( \Sigma_{i,k} \Sigma_{j,l}
+  %+ \Sigma_{i,l} \Sigma_{j,k} \big)$. Notamos que \ $\Sigma_{i,j} \Sigma_{k,l} =
+  %\big( \Sigma  \otimes \Sigma \big)_{i,j,k,l}$, \  $\Sigma_{i,l} \Sigma_{j,k} =
+  %\Sigma_{k,j} \Sigma_{i,l} = \big( \un_i \un_k^t \Sigma \big)_{i,j} \big( \un_k
+  %\un_i^t \Sigma \big)_{k,l}$, conduciendo a \ $\Big( \big( \un_i \un_k^t \Sigma
+  %\big) \otimes \big( \un_k  \un_i^t \Sigma \big) \Big)_{u,j,v,l} = \Sigma_{i,l}
+  %\Sigma_{j,k} \un_{(i,k)}((u,v))$, \  $\Sigma_{i,k} \Sigma_{j,l} = \Sigma_{i,k}
+  %\Sigma_{l,j}  =  \big(  \Sigma   \,  \un_k  \un_l^t  \,  \Sigma  \big)_{i,j}$,
+  %conduciendo a $\Big( \big( \Sigma \,  \un_k \un_l^t \, \Sigma \big) \! \otimes
+  %\!   \big( \un_k  \un_l^t  \big) \Big)_{i,j,u,v}  = \Sigma_{i,k}  \Sigma_{j,l}
+  %\un_{(k,l)}((u,v))$. Con cambio de indices adecuados, se obtiene la covarianza
+  %de \  $X$ \ bajo la forma  dada.  
+  Como  por lo  de la  media, se  puede hacer  un paso  m\'as e  identificar los
+  coeficientes $\mu_2$  y $\sigma_1^2$. Por  eso, se notar\'a que  \ $\Var\left[
+    \Tr(Y)  \right] =  \left(  d^2  - d  \right)  \mu_2 +  d  \left(  \mu_2 +  2
+    \sigma_1^2 \right)$.  Similarmente \ $\Tr\left( \Esp\left[ (Y - \Esp[Y] ) (Y
+      -  \Esp[Y])^t \right]  \right) =  \left( d^2  - d  \right) \sigma_1^2  + d
+  \left( \mu_2 +  \sigma_1^2 \right) = d \, \mu_2 +  d^2 \sigma_1^2$.  Se notara
+  que   \  $\Tr(Y)   =  \un^t   \lambda(Y)$  \   dando  $\Var[\Tr(Y)]   =  \un^t
+  \Cov[\lambda(Y)] \un$, lo que da  la primera relaci\'on v\'inculando \ $\mu_2$
+  \  y   \  $\sigma_1^2$.   Pasando,   de  la  positividad  de   la  covarianza,
+  necesariamente $\mu_2  + \frac{2}{d} \, \sigma_1^2  \ge 0$ \ (lo  que es m\'as
+  restrictivo  que  lo  que  obtuvimos  unos pasos  atr\'as).   Similarmente,  $
+  \Tr\left( \Esp\left[ (Y - \Esp[Y]) (Y - \Esp[Y])^t \right] \right) = \Tr\left(
+    \Esp[Y Y^t] \right) - \Tr\left( \Esp[Y] \Esp[Y]^t \right) = \Esp\left[ \un^t
+    \lambda\left(  Y  Y^t  \right)  \right]  - \frac{1}{d}  \left(  \un^t  \Esp[
+    \lambda(Y) ] \right)^2 = \Tr\left( \Esp\left[\lambda(Y) \lambda(Y)^t \right]
+  \right)  - \frac{1}{d} \un^t  \Esp[ \lambda(Y)  ] \Esp[  \lambda(Y) ]^t  \un =
+  \Tr\left( \Cov\left[\lambda(Y) \right]  + \Esp[\lambda(Y)] \Esp[ \lambda(Y)]^t
+  \right)  - \frac{1}{d} \Tr\left(\Esp[  \lambda(Y) ]  \Esp[ \lambda(Y)  ]^t \un
+    \un^t  \right)  = \Tr\left(  \Cov\left[\lambda(Y)  \right]  \right) +  \Esp[
+  \lambda(Y) ]^t \left( I - \frac{1}{d}  \un \un^t \right) \Esp[ \lambda(Y) ]$ \
+  (donde la  secunda igualdad viene de  la forma de  la media, la tercera  de la
+  simetria de $Y$, la cuarta de $u^t v  = \Tr(v u^t)$ y la quinta de $\Tr(A B) =
+  \Tr(B  A)$,  dando  la  secunda  relaci\'on  v\'inculando  \  $\mu_2$  \  y  \
+  $\sigma_1^2$. Pasando  \ $\mu_2 + d  \, \sigma_1^2 \ge  0$ \ (lo que  es menos
   restrictivo  que  el  v\'inculo  anterior  cuando $d  \ge  2$).\newline  M\'as
-  directamente, con  el mismo enfoque que para  el calculo de la  media, se nota
-  que  para  cualquier  matriz  de  permutaci\'on $\pi$,  \  $\pi  \Hess_\lambda
-  \varphi_X(0) \pi^t =  \Hess_\lambda \varphi_X(0)$. Inmediatamente, la diagonal
-  de la hessiana es constante, y los t\'erminos no diagonales son todos iguales,
-  \ie  \  $\Hess_\lambda  \varphi_X(0)  =  \frac{\partial^2  \varphi_X}{\partial
-    \lambda_1  \partial \lambda_2}(0)  \,  \un \un^t  + \left(  \frac{\partial^2
+  directamente, como lo vimos tratando  del caso bilateral, de la invarianza por
+  permutaci\'on   de  $\varphi_X$  tenemos   \  $\Hess_\lambda   \varphi_X(0)  =
+  \frac{\partial^2 \varphi_X}{\partial  \lambda_1 \partial \lambda_2}(0)  \, \un
+  \un^t   +  \left(   \frac{\partial^2  \varphi_X}{\partial   \lambda_1^2}(0)  -
+    \frac{\partial^2   \varphi_X}{\partial   \lambda_1  \partial   \lambda_2}(0)
+  \right)  \,   I$.   A  continuaci\'on,   notando  de  nuevo   $\lambda  \equiv
+  \lambda(\omega)$   para    simplificar   las   notaciones,   $\frac{\partial^2
+    \varphi_X}{\partial \omega_{i,j}  \partial \omega_{k,l}}(0) = \nabla_\lambda
+  \varphi_X(0)^t   \frac{\partial^2   \lambda}{\partial  \omega_{i,j}   \partial
+    \omega_{k,l}}(0)   +  \frac{\partial   \lambda}{\partial  \omega_{i,j}}(0)^t
+  \Hess_\lambda \varphi_X(0) \frac{\partial \lambda}{\partial \omega_{k,l}}(0) =
+  \frac{\partial   \varphi_X}{\partial   \lambda_1}(0)  \frac{\partial^2   \un^t
+    \lambda}{\partial \omega_{i,j}  \partial \omega_{k,l}}(0) + \frac{\partial^2
+    \varphi_X}{\partial   \lambda_1    \partial   \lambda_2}(0)   \frac{\partial
+    \lambda^t    \un    }{\partial    \omega_{i,j}}(0)   \frac{\partial    \un^t
+    \lambda}{\partial     \omega_{k,l}}(0)     +     \left(     \frac{\partial^2
       \varphi_X}{\partial \lambda_1^2}(0) - \frac{\partial^2 \varphi_X}{\partial
-      \lambda_1 \partial \lambda_2}(0) \right) \, I$.  A continuaci\'on, notando
-  de  nuevo $\lambda  \equiv \lambda(\omega)$  para simplificar  las notaciones,
-  $\frac{\partial^2 \varphi_X}{\partial \omega_{i,j} \partial \omega_{k,l}}(0) =
-  \nabla_\lambda      \varphi_X(0)^t      \frac{\partial^2     \lambda}{\partial
-    \omega_{i,j}  \partial \omega_{k,l}}(0)  +  \frac{\partial \lambda}{\partial
-    \omega_{i,j}}(0)^t       \Hess_\lambda      \varphi_X(0)      \frac{\partial
-    \lambda}{\partial  \omega_{k,l}}(0)   =  \frac{\partial  \varphi_X}{\partial
-    \lambda_1}(0) \frac{\partial^2 \un^t \lambda}{\partial \omega_{i,j} \partial
-    \omega_{k,l}}(0)  + \frac{\partial^2 \varphi_X}{\partial  \lambda_1 \partial
-    \lambda_2}(0)  \frac{\partial   \lambda^t  \un  }{\partial  \omega_{i,j}}(0)
-  \frac{\partial    \un^t    \lambda}{\partial    \omega_{k,l}}(0)   +    \left(
-    \frac{\partial^2  \varphi_X}{\partial   \lambda_1^2}(0)  -  \frac{\partial^2
-      \varphi_X}{\partial     \lambda_1    \partial     \lambda_2}(0)    \right)
-  \frac{\partial     \lambda}{\partial     \omega_{i,j}}(0)^t     \frac{\partial
-    \lambda}{\partial \omega_{k,l}}(0)$.   El primer  t\'ermino es cero  (ver la
-  primera derivada,  constante, calculada para  la media). El  secundo t\'ermino
-  vale  $\frac{\partial^2 \varphi_X}{\partial  \lambda_1  \partial \lambda_2}(0)
-  \un_{\{i\}}(j)  \un_{\{k\}}(l)$ (ver calculo  hecho para  la media).   Para el
-  tercero t\'ermino, se  nota que \ $\lambda^t \lambda  = \Tr(\omega^t \omega) =
-  \sum_{r,s=1}^d \omega_{r,s}^2$, lo  que da, de la simetr\'ia  de \ $\omega$, \
-  $\frac{\partial   \lambda^t}{\partial    \omega_{i,j}}   \lambda   =   \frac12
-  \frac{\partial  \lambda^t   \lambda}{\partial  \omega_{i,j}}  =   \left(  2  -
-    \un_{\{i\}}(j)    \right)   \,    \omega_{i,j}$,   y,    a   continuaci\'on,
-  $\frac{\partial^2  \lambda^t}{\partial   \omega_{i,j}  \partial  \omega_{k,l}}
-  \lambda  +  \frac{\partial  \lambda^t}{\partial  \omega_{i,j}}  \frac{\partial
-    \lambda}{\partial \omega_{k,l}} = \frac12  \left( 2 - \un_{\{i\}}(j) \right)
-  \left(  2  - \un_{\{k\}}(l)  \right)  \left(  \un_{\{i\}}(k) \un_{\{j\}}(l)  +
-    \un_{\{i\}}(l)  \un_{\{j\}}(k) \right)$.   Ahora, de  $\lambda(0) =  0$, con
-  cambios  adecuados de indices,  se obtiene  de la  expresi\'on del  momento de
-  orden  dos   vista  secci\'on~\ref{Ssec:MP:MA}  $\Esp[   Y  \otimes  Y]   =  -
-  \frac{\partial^2   \varphi_X}{\partial    \lambda_1   \partial   \lambda_2}(0)
-  \sum_{i,j=1}^d  \un_i \otimes  \un_i  \otimes \un_j  \otimes  \un_j +  \frac12
-  \left( \frac{\partial^2 \varphi_X}{\partial \lambda_1 \partial \lambda_2}(0) -
-    \frac{\partial^2 \varphi_X}{\partial  \lambda_1^2}(0) \right) \sum_{i,j=1}^d
-  \left( \un_i \otimes  \un_j \otimes \un_i \otimes \un_j  + \un_i \otimes \un_j
-    \otimes \un_j  \otimes \un_i \right)$,  conduciendo a las  expresiones dadas
-  para los coeficientes $\mu_2$ y $\sigma_1^2$.
+      \lambda_1 \partial  \lambda_2}(0) \right) \frac{\partial \lambda}{\partial
+    \omega_{i,j}}(0)^t  \frac{\partial \lambda}{\partial  \omega_{k,l}}(0)$.  El
+  primer t\'ermino es  cero (ver la primera derivada,  constante, calculada para
+  la  media). El  secundo t\'ermino  vale  $\frac{\partial^2 \varphi_X}{\partial
+    \lambda_1 \partial \lambda_2}(0) \un_{\{i\}}(j) \un_{\{k\}}(l)$ (ver calculo
+  hecho para  la media).  Para  el tercero t\'ermino,  se nota que  \ $\lambda^t
+  \lambda = \Tr(\omega^t \omega) = \sum_{r,s=1}^d \omega_{r,s}^2$, lo que da, de
+  la   simetr\'ia   de  \   $\omega$,   \  $\frac{\partial   \lambda^t}{\partial
+    \omega_{i,j}} \lambda  = \frac12 \frac{\partial  \lambda^t \lambda}{\partial
+    \omega_{i,j}} =  \left( 2  - \un_{\{i\}}(j) \right)  \, \omega_{i,j}$,  y, a
+  continuaci\'on,  $\frac{\partial^2  \lambda^t}{\partial \omega_{i,j}  \partial
+    \omega_{k,l}}  \lambda  +  \frac{\partial \lambda^t}{\partial  \omega_{i,j}}
+  \frac{\partial   \lambda}{\partial  \omega_{k,l}}   =  \frac12   \left(   2  -
+    \un_{\{i\}}(j)   \right)   \left(   2   -  \un_{\{k\}}(l)   \right)   \left(
+    \un_{\{i\}}(k)  \un_{\{j\}}(l)  +  \un_{\{i\}}(l)  \un_{\{j\}}(k)  \right)$.
+  Ahora, de $\lambda(0) = 0$, con cambios adecuados de indices, se obtiene de la
+  expresi\'on del momento de orden dos vista secci\'on~\ref{Ssec:MP:MA} $\Esp[ Y
+  \otimes  Y]  =   -  \frac{\partial^2  \varphi_X}{\partial  \lambda_1  \partial
+    \lambda_2}(0) \sum_{i,j=1}^d \un_i \otimes \un_i \otimes \un_j \otimes \un_j
+  +  \frac12  \left(  \frac{\partial^2  \varphi_X}{\partial  \lambda_1  \partial
+      \lambda_2}(0)   -  \frac{\partial^2   \varphi_X}{\partial  \lambda_1^2}(0)
+  \right) \sum_{i,j=1}^d \left( \un_i  \otimes \un_j \otimes \un_i \otimes \un_j
+    + \un_i  \otimes \un_j \otimes  \un_j \otimes \un_i \right)$,  conduciendo a
+  las expresiones dadas para los coeficientes $\mu_2$ y $\sigma_1^2$.
 \end{itemize}
 %
   \item El  Teorema~\ref{Teo:MP:TranformacionAfinEliptica} de conservaci\'on del
@@ -3168,14 +3277,6 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
   $\begin{bmatrix}  \frac{X_1}{\| X_1  \|}  & \cdots  & \frac{X_{d'}}{\|  X_{d'}
       \|} \end{bmatrix}$ son independientes~\cite[Lema~6]{FanChe84}.
 %
-%\item \SZ{ El equivalente del lema~\ref{Lem:MP:AlphaConR} tratando de la media y covarianza  en el
-%    caso       matricial da: para $X \sim \ED_\simed(m,\Sigma,\varphi_X) $
-%
-%         $\widetilde{\alpha}_k(\varphi_X)          =
-%    \frac{\Gamma(d)}{\Gamma(d+k)} \Esp\left[ \left( (Z-m)^\dag \Sigma^{-1} (Z-m)
-%      \right)^k \right]$.
-%}
-%
 \item  Se  monstr\'o  que,  en  el  caso  $d'  =  1$  la  densidad  es  definida
   completamente    por   lo    del   rayo,    con   densidad    dada    por   el
   teorema~\ref{Teo:MP:DensidadRayo}. Se  lo puedo  probar directamente y  ver el
@@ -3269,16 +3370,20 @@ A' + C] = \sum_{r,s,u,v} A_{i,r} A'_{s,j} A_{k,u} A'_{v,l} \, \T_{r,s,u,v}[Y]
   %
 %\SZ{Poner el teorema 7 de Fang y Chen?}
 %
-\item     \SZ{El     caso    de     mezcla     de     escala    de     Gausiana,
+\item     El     caso    de     mezcla     de     escala    de     Gausiana,
     teoremas~\ref{Teo:MP:SchoenbergCaracteristica}
     y~\ref{Teo:MP:SchoenbergDensidad}  ,  es m\'as  delicado  a  estudiar en  el
     contexto matricial,  de la ``diversidad'' de elipticidades.  Sin embargo, la
-    literatura tiene algunos resultados.}
+    literatura tiene algunos resultados que no detallamos ac\'a~\cite{GupVar95}~\cite[Teo.~10-12]{DigGut11}.
 %  \item Teorema~\ref{Teo:MP:SchoenbergCaracteristica} en: \ $Z \sim \CED\left( m
 %      , \Sigma , \varphi_Z \right) \egald \, A \, \Sigma^{\frac12} \, G + m \:\:
 %    \Leftrightarrow \:\: \varphi_Z  \in \PDSI$, \ con \ $A  > 0$ \ independiente
 %    de \ $G \sim \CN(0,I)$;
 %  % Distributions of the compound and scale mixture of vector and spherical matrix variate elliptical distributions  de Jose A.Diaz-Garcia Ramon Gutierrez-Jaimez JMVA 2003: 10.1016/j.jmva.2010.08.008
+%
+% Compound and scale mixture of matricvariate and matrix variate Kotz-type distributions, Jos\'e A.D\'iaz-Garc\'ia Ram\'on Guti\'errez-J\'aimez, https://doi.org/10.1016/j.jkss.2009.04.004
+%
+% https://books.google.fr/books?id=ui5yIJcihCYC&pg=PA332&lpg=PA332&dq=%22schoenberg+theorem%22+%22scale+mixture%22+%22matrix+variate%22&source=bl&ots=_hLBik-90k&sig=ACfU3U3fXVqTQ-z3-FUjoArZ0oyBIBcArA&hl=fr&sa=X&ved=2ahUKEwi7pLHFqd7mAhW98uAKHa7TAVIQ6AEwAXoECAYQAQ#v=onepage&q=%22schoenberg%20theorem%22%20%22scale%20mixture%22%20%22matrix%20variate%22&f=false
 %
 %
 %  \item  Teorema~\ref{Teo:MP:SchoenbergDensidad} en:  \ $Z  \sim \CED\left(  m ,
