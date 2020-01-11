@@ -2382,13 +2382,15 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
     \varsubsetneq  \ED_\izq$ \qquad y  \qquad $\ED_\vlin  \varsubsetneq \ED_\lin
     \varsubsetneq \ED_\der$\newline  Adem\'as si visto  en una clase  la matriz
     tiene  el par\'ametro  de posici\'on  y  $m$, y  la matriz  car\'acteristica
-    $\Sigma$ (resp. $\Sigma'$, son los mismos par\'ametros en la otra clase.
+    $\Sigma$ (resp. $\Sigma'$), son los mismos par\'ametros en la otra clase.
   %
   \item\label{Enum:MP:EDM_Bilateral}  $\ED_\bil  \: =  \:  \ED_\izq  \, \cap  \,
     \ED_\der$
   %
   \item\label{Enum:MP:EDM_VcBilateral} $\ED_\vcol  \: =  \: \ED_\col \,  \cap \,
     \ED_\bil$ \qquad y \qquad $\ED_\vlin \: = \: \ED_\lin \, \cap \, \ED_\bil$
+  %
+  \item\label{Enum:MP:EDM_VcVlIdenticos} $\ED_\vcol  \: =  \: \ED_\vlin$
   %
   \item\label{Enum:MP:EDM_Simetrica}  $\ED_\simed   \cap  \left(  \ED_\izq  \cup
       \ED_\der \right) = \emptyset$
@@ -2503,6 +2505,21 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   cierra   la  prueba.    \newline   La  secunda   aserci\'on   se  deduce   del
   punto~\ref{Enum:MP:EDM_Transpuesta}.
 
+  Tratando  del punto~\ref{Enum:MP:EDM_VcVlIdenticos}, si  \ $X  \in \ED_\vcol$,
+  entonces \  $Y = \Delta^{-\frac12} Q^t  (X-m)$ \ es a  simetria esf\'erica por
+  vectorizaci\'on columna, \ie \  $Y_\vcol \equiv \begin{bmatrix} Y_1^t & \cdots
+    &  Y_{d'}^t \end{bmatrix}^t  \sim  \ED(0,I,\varphi_{Y_\vcol})$. Del  estudio
+  anterior, la ley de \ $Y$ \  es entonces completamente determinada por la de \
+  $Y_\vcol^t Y_\vcol = \| Y \|_F^2$ (siendo la ley de $Y$ la ley conjunta de sus
+  componentes). Sea  ahora \ $Y_\vlin  \equiv \begin{bmatrix} Y'_1 &  \cdots &
+    Y'_d \end{bmatrix}^t$.  Claramente, la ley  de \ $Y$ \  siendo completamente
+  determinada  por  la de  \  $\|  Y  \|_F^2$, equivalentemente,  esta  \'ultima
+  determina completamente la ley de \ $Y_\vlin$. Siendo tambi\'en $\| Y \|_F^2 =
+  Y_\vlin^t     Y_\vlin$,     se     concluye     que    \     $Y_\vlin     \sim
+  \ED(0,I,\varphi_{Y_\vlin})$:   $\ED_\vcol   \subset   \ED_\vlin$.   El   mismo
+  razonamiento permite decir que $\ED_\vlin \subset \ED_\vcol$, lo que cierra la
+  prueba.
+
   Con  respecto   al  punto~\ref{Enum:MP:EDM_Simetrica},  si  \  $X$   \  es  en
   $\ED_\bil$,  e  \  $Y  =  \Delta^{-\frac12} Q^t  (X-m)  Q  \Delta^{-\frac12}$,
   entonces \ $\forall \: O \in \Ort_d(\Rset), O' \in \Ort_d(\Rset), \quad O Y O'
@@ -2556,11 +2573,11 @@ Nota:
   $\ED_\vlin$:  $\ED_\bil  \setminus  \left(  \ED_\vcol  \cup
     \ED_\vlin \right) \neq \emptyset$.
 %
-\item \SZ{Buscar un que sea vcol, pero no vlin}
-%
-\item $X$ gausiana matriz-variada (ver fin de secci\'on~\ref{Sssec:MP:Gaussiana}
-  y  ejemplo~\ref{Ej:MP:GaussianaMatriz}  m\'as   adelante)  partenece  a  ambas
-  $\ED_\vcol$ y $\ED_\vlin$: $\ED_\vcol \cap \ED_\vlin \neq \emptyset$.
+%\item \SZ{Buscar un que sea vcol, pero no vlin}
+%%
+%\item $X$ gausiana matriz-variada (ver fin de secci\'on~\ref{Sssec:MP:Gaussiana}
+%  y  ejemplo~\ref{Ej:MP:GaussianaMatriz}  m\'as   adelante)  partenece  a  ambas
+%  $\ED_\vcol$ y $\ED_\vlin$: $\ED_\vcol \cap \ED_\vlin \neq \emptyset$.
 \end{itemize}
 %
 Los v\'inculos entre cada clase son ilustrados figura~\ref{Fig:MP:EDMatrix}.
@@ -2571,11 +2588,12 @@ Los v\'inculos entre cada clase son ilustrados figura~\ref{Fig:MP:EDMatrix}.
 % 
 \leyenda{Ilustraci\'on de los v\'inculos entre  cada clase de matriz aleatoria a
   simetr\'ia el\'iptica.  Los ensembles adentro de las lineas llenas representan
-  las simetrias  izquierdas, y adentra  de las lineas guionadas  representan las
-  simetrias derechas. La parte grise  claro conjuntamente a la oscuro representa
-  $\ED_\col$  y la  parte grise  mediano  conjuntamente a  la oscuro  representa
-  $\ED_\bil$, siendo la parte oscuro la intersecci\'on $\ED_\bil \cap \ED_\col =
-  \ED_\vcol$.}
+  las simetrias  izquierdas, y adentra  de las lineas punteadas  representan las
+  simetrias derechas (en linea mixta  se representa cuando son en ambas izquiera
+  y  derecha).   La parte  grise  claro  conjuntamente  a la  oscuro  representa
+  $\ED_\col$ y la parte grise mediano conjuntamente a la grise oscuro representa
+  $\ED_\bil$,  siendo la  parte grise  oscura la  intersecci\'on  $\ED_\bil \cap
+  \ED_\col = \ED_\vcol = \ED_\vlin = \ED_\bil \cap \ED_\lin$.}
 \label{Fig:MP:EDMatrix}
 \end{figure}
 
@@ -2608,7 +2626,7 @@ descritas. En lo que sigue, de manere generica, notaremos
 \item \ $X = \begin{bmatrix} X_1 &  \cdots X_{d'} \end{bmatrix}$ \ con \ $X_j$ \
   la columnas de $X$, (lo mismo para \ $m$, \ $Y$, etc.),
 %
-\item \ $X = \begin{bmatrix} X'_1 \\ \vdots X'_d \end{bmatrix}$ \ con \ $X'_i$ \
+\item \ $X = \begin{bmatrix} X'_1 \\ \vdots \\ X'_d \end{bmatrix}$ \ con \ $X'_i$ \
   la lineas de \ $X$, (lo mismo para \ $m$, \ $Y$, etc.),
 %
 \item  la notaci\'on \  $\T_{i,j,k,l}[X] =  \Cov[ X_{i,j}  X_{k,l}]$ \  para las
@@ -2853,9 +2871,9 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \item Para \ $X \sim \ED_\simed(m,\Sigma,\varphi_X)$,
     %
     \[
-    \Esp[X]  = m  + \mu_1  \Sigma,  \qquad \mu_1  = -  \imath \,  \frac{\partial
-      \varphi_X}{\partial  \lambda_1}(0)  =   \frac{1}{d}  \,  \un^t  \Esp\left[
-      \lambda(Y) \right]
+    \Esp[X] = m + \mu_1(\varphi_X) \Sigma, \qquad \mu_1(\varphi_X) = - \imath \,
+    \frac{\partial  \varphi_X}{\partial  \lambda_1}(0)  = \frac{1}{d}  \,  \un^t
+    \Esp\left[ \lambda(Y) \right]
     \]
     %
     Una pruba dada por ejemplo en~\cite[\S~13.2]{BilBre99} sale de \ $Y \egald O
@@ -2897,8 +2915,8 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \item Para \ $X \sim \ED_\izq(m,\Sigma,\varphi_X)$ \ se obtiene
   %
   \[
-  \Cov[X] =  \tau_{(2,3)} \big[  \Sigma \otimes \alpha(\varphi_X)  \big], \qquad
-  \alpha(\varphi_X) =  - \nabla_r  \varphi_X(0) - \nabla_{r^t}  \varphi_X(0) \in
+  \Cov[X] = \tau_{(2,3)} \big[  \Sigma \otimes \alpha_1(\varphi_X) \big], \qquad
+  \alpha_1(\varphi_X) = - \nabla_{\! r}  \varphi_X(0) - \nabla_{\! r^t} \varphi_X(0) \in
   \Mat_{d',d'}(\Rset)
   % \sum_{j,l=1}^{d'}  \alpha_{j,l}(\varphi_X) \sum_{i=1}^d \un_i  \otimes \un_j
   % \otimes \un_i \otimes  \un_l \qquad \mbox{con} \qquad \alpha_{j,}(\varphi_X)
@@ -2910,8 +2928,8 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \item Para \ $X \sim \ED_\col(m,\Sigma,\varphi_X)$ \ se obtiene
   %
   \[
-  \Cov[X]  =  \tau_{(2,3)} \big[  \Sigma  \otimes \Diag\left(  \alpha(\varphi_X)
-  \right)  \big],   \qquad  \alpha(\varphi_X)   =  -  \nabla_r   \varphi_X(0)  =
+  \Cov[X]  = \tau_{(2,3)} \big[  \Sigma \otimes  \Diag\left( \alpha_1(\varphi_X)
+  \right)  \big],  \qquad  \alpha_1(\varphi_X)   =  -  \nabla_{\! r}  \varphi_X(0)  =
   \frac{1}{d} \diag\left(\Esp\left[ Y^t Y \right] \right) \in \Rset^{d'}
   % \sum_{j=1}^{d'} \alpha_j(\varphi_X) \sum_{i=1}^d \un_i \otimes \un_j \otimes
   %  \un_i  \otimes  \un_j  \qquad  \mbox{con} \qquad  \alpha_j(\varphi_X)  =  -
@@ -2924,9 +2942,9 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \item Para \ $X \sim \ED_\vcol(m,\Sigma,\varphi_X)$ \ se obtiene
   %
   \[
-  \Cov[X] = \alpha(\varphi_X) \, \tau_{(2,3)} \big[ \Sigma \otimes I_{d'} \big],
-  \qquad \alpha(\varphi_X)  = - \varphi_X'(0)  = \frac{1}{d d'} \Esp\left[  \| Y
-    \|_F^2 \right]
+  \Cov[X]  = \alpha_1(\varphi_X)  \,  \tau_{(2,3)} \big[  \Sigma \otimes  I_{d'}
+  \big],  \qquad   \alpha_1(\varphi_X)  =  -  \varphi_X'(0)   =  \frac{1}{d  d'}
+  \Esp\left[ \| Y \|_F^2 \right]
   % \sum_{i=1}^d \sum_{j=1}^{d'} \un_i \otimes \un_j
   % \otimes \un_i \otimes \un_j
   \]
@@ -2934,8 +2952,8 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \item Para \ $Y \sim \ED_\bil(m,\Sigma,\Sigma',\varphi_X)$ \ se obtiene
   %
   \[
-  \Cov[X]  =  \alpha(\varphi_X) \,  \tau_{(2,3)}  \big[  \Sigma \otimes  \Sigma'
-  \big], \qquad  \alpha(\varphi_X) =  - 2 \,  \frac{\partial \varphi_X}{\partial
+  \Cov[X]  = \alpha_1(\varphi_X)  \, \tau_{(2,3)}  \big[ \Sigma  \otimes \Sigma'
+  \big], \qquad \alpha_1(\varphi_X) =  - 2 \, \frac{\partial \varphi_X}{\partial
     \lambda_1}(0) = \frac{1}{d d'} \Esp\left[ \| Y \|_F^2 \right]
   % \sum_{i=1}^d \sum_{j=1}^{d'} \un_i \otimes \un_j \otimes \un_i \otimes \un_j
   \]
@@ -2996,9 +3014,9 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
 \item Para \ $X \sim \ED_\simed(m,\Sigma,\varphi_X)$ la covarianza es dada por:
   %
   \[
-  \Cov[X] = \mu_2 \, \Sigma  \otimes \Sigma + \sigma_1^2 \Big( \tau_{(2,3)}\big[
-  \Sigma \otimes  \Sigma \big] +  \tau_{(2,4)}\big[ \Sigma \otimes  \Sigma \big]
-  \Big)
+  \Cov[X] =  \mu_2(\varphi_X) \,  \Sigma \otimes \Sigma  + \sigma_1^2(\varphi_X)
+  \Big( \tau_{(2,3)}\big[ \Sigma \otimes \Sigma \big] + \tau_{(2,4)}\big[ \Sigma
+  \otimes \Sigma \big] \Big)
   % \sum_{i,j} \Big(  \un_i \otimes  \un_j \otimes \un_i  \otimes \un_j  + \un_i
   % \otimes \un_j  \otimes \un_j \otimes \un_i  \Big) \Cov[X] =  \mu_2 \, \Sigma
   % \otimes \Sigma + \sigma_1^2 \sum_{k,l} \Big( \big(
@@ -3007,29 +3025,30 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   % \big) \Big)
   \]
   %
-  con \ $\sigma_1^2$ \ y \ $\mu_2 > \frac{2}{d} \,  \sigma_1^2$ \ dados por
+  con  \  $\sigma_1^2(\varphi_X)$  \  y  \ $\mu_2(\varphi_X)  >  \frac{2}{d}  \,
+  \sigma_1^2(\varphi_X)$ \ dados por
   %
   \[
-  \mu_2 = \frac12 \left( \frac{\partial^2 \varphi_X}{\partial \lambda_1 \partial
-      \lambda_2}(0)   -  \frac{\partial^2   \varphi_X}{\partial  \lambda_1^2}(0)
-  \right)   \qquad    \mbox{y}   \qquad   \sigma_1^2    =   \left( \frac{\partial
-      \varphi_X}{\partial \lambda_1}(0) \right)^2 -   \frac{\partial^2
-    \varphi_X}{\partial \lambda_1 \partial \lambda_2}(0)
+  \mu_2(\varphi_X)   =  \frac12   \left(   \frac{\partial^2  \varphi_X}{\partial
+      \lambda_1  \partial \lambda_2}(0)  -  \frac{\partial^2 \varphi_X}{\partial
+      \lambda_1^2}(0)  \right) \qquad  \mbox{y}  \qquad \sigma_1^2(\varphi_X)  =
+  \left(   \frac{\partial    \varphi_X}{\partial   \lambda_1}(0)   \right)^2   -
+  \frac{\partial^2 \varphi_X}{\partial \lambda_1 \partial \lambda_2}(0)
   \]
   %
   o satisfaciendo
   %
   \[
-  d^2 \, \mu_2 + 2 \, d \, \sigma_1^2 \: = \: \un^t \Cov\left[
-    \lambda(Y) \right] \un
+  d^2  \, \mu_2(\varphi_X)  + 2  \,  d \,  \sigma_1^2(\varphi_X) \:  = \:  \un^t
+  \Cov\left[ \lambda(Y) \right] \un
   \]
   %
   y
   %
   \[
-  d \, \mu_2 + d^2 \, \sigma_1^2 \: = \: \Tr\left( \Cov\left[ \lambda(Y) \right]
-  \right) + \Esp[ \lambda(Y) ]^t \left(  I - \frac{1}{d} \un \un^t \right) \Esp[
-  \lambda(Y) ]
+  d  \,  \mu_2(\varphi_X) +  d^2  \,  \sigma_1^2(\varphi_X)  \: =  \:  \Tr\left(
+    \Cov\left[  \lambda(Y) \right]  \right) +  \Esp[ \lambda(Y)  ]^t \left(  I -
+    \frac{1}{d} \un \un^t \right) \Esp[ \lambda(Y) ]
   \]
   %
   Pasando, se notar\'a que  \ $\Pi = I - \frac{1}{d} \un  \un^t$ \ es una matriz
@@ -3192,9 +3211,9 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   componentes tiene  una contra parte matricial  parcial, que se  prueba con los
   mismos  pasos: Sea  \ $X  \sim \ED_\izq(m,\Sigma,\varphi_X)  \quad \Rightarrow
   \quad  \forall \:  a \in  \Rset^d, \quad  a^t (X  - m)  \egald \sqrt{\frac{a^t
-      \Sigma a}{\Sigma_{i,i}}} (X'_i - m'_i)$.  \SZ{A ver: para la reciproca, la
-    matiz del  caso matricial  es que  $a$ no es  una matriz,  \ie no  tiene las
-    domensiones de $X$, contrariamente a lo que pasaba en el caso vectorial.}
+      \Sigma a}{\Sigma_{i,i}}} (X'_i -  m'_i)$.  \SZ{Para la reciproca, la matiz
+    del caso matricial es que $a$ no es una matriz, \ie no tiene las dimensiones
+    de $X$, contrariamente a lo que pasa  en el caso vectorial.}
 %  %
 \item  El  teorema~\ref{Teo:MP:MaxwellHershell}  de  Maxwell-Hershell  tiene  su
   contra-parte para matrices de $\ED_\bil$:  Sea \ $X \in \ED_\bil$ con columnas
@@ -3250,8 +3269,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \item \SZ{ME TENGO QUE FIJAR BIEN... a\'un que sea seguro $X  \sim \ED_\simed(m,\Sigma,\varphi_X) \:\:  \Leftrightarrow \:\: X
       \egald \Sigma^{\frac12} \, U \, \Lambda_\simed \, U^t \ \Sigma^{\frac12} +
       m$ \:\: con  \:\: $U \sim \U\left( \Sti_{d,d}(\Rset)  \right)$ ($d' = d$),
-      independiente  de   $\Lambda_\simed  \ge  0$   matriz  aleatoria  diagonal
-      positiva.}
+      independiente  de   $\Lambda_\simed$   matriz  aleatoria  diagonal.}
     % Se   lo   puede   probar   escribiendo  $Y   =   \Sigma^{-\frac12}   (X-m)
     % \Sigma^{-\frac12}$ bajo  la forma $Y  = \left( Q  \Delta^{\frac12} \right)
     % \left( Q \Delta^{\frac12} \right)^t$ y aplicando la escritura estochastica

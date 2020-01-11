@@ -62,4 +62,139 @@ Fig.~\ref{Fig:MP:Certeza} en el caso escalar.
 
 Notar que todo se extiende al caso complejo sin costo adicional.
 
-\SZ{Poner ac\'a la ley de los gran n\'umeros? M\'as notas historicas.}
+\
+
+El caso  de variables  deterministicas puede ser  visto como caso  degenerado de
+variables aleatorias, pero aparecen de vez a cuando tambi\'en como caso l\'imite
+de  sucesiones o  series  de  variables aleatorias.   En  particular, aparece  a
+trav\'es de  la ley  de gran n\'umeros,  un de  los primeros casos  de l\'imites
+estudiado tratando  de variables aleatorias. Historicamente, un  de los primeros
+que  estudio  la convergencia  (sin  prueba  e  implicitamente) de  un  promedio
+empirico a esta ``ley'' es el  matem\'atico italiano y jugador de dados y cartas
+Gerolamo Cardano en el siglo~{XVI}, en su libro sobre los juegos de azar escrito
+en  1564   (ver  introducci\'on  y~\cite{Car63,   Bel05}  o~\cite[Cap.~4]{Hal90}
+o~\cite[Cpa.~3]{Mlo08}).  En  otras palabras,  explic\'o que la  precisi\'on las
+estadisticas empiricos se mejora con el  n\'umero de datos, lo que es nada m\'as
+que, en palabras,  el resultado de la ley dicha de  gran n\'umeros. En palabras,
+saliendo  de  variables  aleatoria  independientes  de misma  ley,  el  promedio
+empirico tiende a  la media donde enfatisaremos en que  sentido hay que entender
+``tiende a''. Tal  convergencia fue estudiada y probada  mucho m\'as tarde, bajo
+el  impulso  del suizo  Jacob  Bernoulli~\cite[Pars  4]{Ber1713} (ver  tambi\'en
+Montmort~\cite{Mon13, Pea25})  en el  contexto de variables  binarias, conocidos
+hoy  como  variables  de Bernoulli  (ver  subecci\'on~\ref{Sssec:MP:Bernoulli}).
+Luego,  el  teorema  fue   mejorado  por  ejemplo  por  de  Moivre~\cite{Moi46},
+Laplace~\cite{Lap12} o Poisson~\cite{Poi37}, yendo  m\'as all\'a de solamente la
+convergencia del  promedio empirico a la  media.  El teorema  fue ampliado m\'as
+all\'a  de la  ley  binomial como  suma  de variables  de  Bernoulli (ver  m\'as
+adelante),    por    varios    autores   tales    que    Chebyshev~\cite{Tch46},
+Markov~\cite{Mar13},    Borel~\cite{Bor09:12}     ,    Kinchin~\cite{Kin29}    o
+Kolmogoroff~\cite{Kol30} entre otros (ver~\cite{Sen13} y referencias).
+
+Formalmente,  las dos  versiones usuales  del  teoremas de  formaliza de  manera
+siguiente  (ver  tambi\'en~\cite{Fel71,  Shi84,  AshDol99,  JacPro03,  AthLah06,
+  Bil12, Coh13}).
+
+\begin{teorema}[Ley debil de los gran n\'umero]
+  Sea  \ $\left\{ X_k  \right\}_{k \in  \Nset^*}$ \  una sucesi\'on  de vectores
+  aleatorios  independientes e identicamente  distribuidas (iid),  admitiendo una
+  media  $m =  \Esp[X_k]$  \ y  sea  \ $\displaystyle  \widebar{X}_n =  \frac1n
+  \sum_{k=1}^n X_k$ \ el promedio empirico. Entonces
+  %
+  \[
+  \widebar{X}_n \limitP{n \to +\infty} m
+  \]
+  %
+  donde $\limitP{}$ significa que el l\'imite es en probabilidad, \ie
+  %
+  \[
+  \forall  \:  \varepsilon  >0,  \quad  \lim_{n  \to  +\infty}  P\left(  \left\|
+      \widebar{X}_n - m \right\| > \varepsilon \right) = 0
+  \]
+\end{teorema}
+\begin{proof}
+  Una    prueba    sencilla   se    apoya    en    el    teorema   de    Markov,
+  Cor.~\ref{Cor:MP:Markov},  cuando  los $X_k$  admiten  una  covarianza. De  la
+  independencia, es  sencillo ver que  \ $\Cov\left[ \widebar{X}_n \,  \right] =
+  \frac1n \Cov\left[ X_1 \right]$. Entonces,
+  %
+  \[
+  P\left(  \left\|  \widebar{X}_n  -  m  \right\|  >  \varepsilon  \right)  \le
+  \frac{\Esp\left[ \left\|  \widebar{X}_n - m\right\|^2 \right]}{\varepsilon^2}
+  =  \frac{\Tr\left(   \Cov\left[  X_1  \right]   \right)}{n  \,  \varepsilon^2}
+  \xrightarrow[n \to \infty]{} 0
+  \]
+  %
+  lo que cierra la prueba.
+
+  De hecho,  no es necesario  que los $X_k$  admitan una covarianza.  Una prueba
+  alternativa    se   apoya   sobre    la   funci\'on    caracter\'istica.   Del
+  teorema~\ref{Teo:MP:PropiedadesFuncionCaracteristica},   se   obtiene  de   la
+  independencia
+  %
+  \[
+  \Phi_{\widebar{X}_n}(\omega)   =  \left(   \Phi_{X_1}\left(  \frac{\omega}{n}
+    \right) \right)^n = \left( 1 + \frac{\imath}{n} m^t \omega + o\left( \left\|
+        \frac{\omega}{n} \right\| \right) \right)^n \xrightarrow[n \to \infty]{}
+  e^{\imath m^t \omega}
+  \]
+  %
+  En otros t\'erminos, la funci\'on caracter\'istica de $\widebar{X}_n$ tiende a
+  la   de  $m$   punto  a   punto.  Se   usa  el   teorema  de   continuidad  de
+  L\'evy~\cite{AshDol99, AthLah06, Bil12, Coh13}, no probado en este libro, para
+  concluir  que  \  $\widebar{X}_n$  \  tiende  en distribuci\'on  a  \  $m$,  y
+  equivalentemente tiende en probabilidad.
+\end{proof}
+%
+Pasando,  de  la primera  prueba,  se  puede notar  que  se  puede debilitar  la
+hypotesis  de  independencia,  y  a\'un  la  de misma  ley  para  los  $X_k$,  a
+condici\'on de que $\Cov\left[ \widebar{X}_n \right]$ \ tiende a cero cuando $n
+\to +\infty$ (por ejemplo, queda valide con la independencia y varianza acotada).
+
+En palabras, el teorema traduce el  pensamiento de Cardano, que es que cualquier
+sea el rayo de la bola centrada en $m$, cuando crece el n\'umero de variables en
+el promedio  empirico, la probabilidad de  que este promedio sea  afuera de esta
+bola tiende a cero.
+
+De hecho, como  para series de funciones (lo que  son las variables aleatorias),
+hay varias manera  de converger. Una m\'as fuerte  es conocido como convergencia
+casi  siempre,  dando  lugar a  la  ley  dicha  fuerte  de los  gran  n\'umeros.
+Historicamente, este teorema es dada en  el caso escalar, pero se extiende en el
+caso  vectorial.    No  daremos  la   prueba,  que  se  encuentra   por  ejemplo
+en~\cite[Teo.~6.4.2]{Gre63}    en   el   caso    vectorial,   o    entre   otros
+en~\cite[Teo.~22.1]{Bil12} en el caso escalar.
+%
+\begin{teorema}[Ley fuert de los gran n\'umero o teorema de Kolmogorov-Khintchine]
+%
+  Sea  \ $\left\{ X_k  \right\}_{k \in  \Nset^*}$ \  una sucesi\'on  de vectores
+  aleatorios independientes  e identicamente distribuidas  (iid), admitiendo una
+  media  $m =  \Esp[X_k]$ \  y  tales que  tambi\'en \  $\Esp\left[ \left\|  X_k
+    \right\| \right] <  \infty$, y sea \ $\displaystyle  \widebar{X}_n = \frac1n
+  \sum_{k=1}^n X_k$ \ el promedio empirico. Entonces
+  %
+  \[
+  \widebar{X}_n \limitcs{n \to +\infty} m
+  \]
+  %
+  donde $\limitcs{}$ significa que el l\'imite  es casi siempre (o a veces dicho
+  ``con probabiludad uno''), \ie
+  %
+  \[
+  P\left(    \lim_{n \to +\infty}   \widebar{X}_n =  m \right) = 1
+  \]
+  %
+  o, dicho  de otra  manera, la medida  del conjuto  $\{ \omega \tq  \lim_{n \to
+    +\infty} \widebar{X}_n \ne m \}$ es cero.
+\end{teorema}
+%\begin{proof}
+%Ver~\cite[Teo.~6.4.2]{Gre63}
+%\end{proof}
+%
+
+Esta versi\'on es dicha fuerte porque la convergencia casi siempre implica la en
+probabilidad~\cite{Fel71, Shi84, AshDol99, JacPro03, AthLah06, Bil12, Coh13}. Se
+puede debilitar un paso m\'as  las condiciones (ej. indemendencia, etc.) pero va
+m\'as all\'a  de la  meta de esta  secci\'on. El  lector se podr\'ea  referir en
+libros  especializados,  por  ejemplo~\cite{Fel71,  Shi84,  AshDol99,  JacPro03,
+  AthLah06, Bil12, Coh13}.
+
+%\SZ{Poner ac\'a la ley de los gran n\'umeros? M\'as notas historicas.}

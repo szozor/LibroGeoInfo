@@ -1,101 +1,80 @@
-\begin{tikzpicture}%[scale=.9]
+\begin{tikzpicture}[scale=1.25]
 \shorthandoff{>}
 %
 % Izq, Der
 % (x/ag)^2 + (y/bg)^2 = 1
-% (x/ag-cg)^2 + (y/bg)^2 = 1
+% ((x-cg)/ag)^2 + (y/bg)^2 = 1
 %
 % Col, Lin
-% (x/ap-cpi)^2 + (y/bp)^2 = 1
-% (x/ap-cpd)^2 + (y/bp)^2 = 1
+% ((x-cpi)/ap)^2 + (y/bp)^2 = 1
+% ((x-cpd)/ap)^2 + (y/bp)^2 = 1
 %
 % alpha = bp/ap = bg/ag! simplifica todo
 %
 % Izq y Der se cruzan cuando x = cg/2
 % Col y Bil se cruzan cuando x = (ag^2-ap^2)/2/(cpi-cg)+(cg+cpi)/2
+% Lin y Bil se cruzan cuando x = (ag^2 - ap^2)/2/cpd + cpd/2
 %
-\pgfmathsetmacro{\alpha}{2/3};
+\pgfmathsetmacro{\alpha}{.5};
 %
 \pgfmathsetmacro{\ag}{3};
 \pgfmathsetmacro{\bg}{\alpha*\ag};
-%\pgfmathsetmacro{\bg}{2};
-%\pgfmathsetmacro{\cg}{\ag};
 \pgfmathsetmacro{\cg}{3};
 %
-\pgfmathsetmacro{\ap}{1.75};
+\pgfmathsetmacro{\ap}{1.5};
 \pgfmathsetmacro{\bp}{\alpha*\ap};
-%\pgfmathsetmacro{\bp}{.75};
 \pgfmathsetmacro{\cpi}{.25};
 \pgfmathsetmacro{\cpd}{2.75};
 %
-%\pgfmathsetmacro{\alg}{\bg/\ag};
-%\pgfmathsetmacro{\alp}{\bp/\ap};
-%\pgfmathsetmacro{\Delta}{(\alg^2+\alpg^2)^2-2*\alpg*\alpp*\cg*\cpd};
-\pgfmathsetmacro{\xc}{(\cg+\cpi+(\ag^2-\ap^2)/(\cpi-\cg))/2};
+\pgfmathsetmacro{\xcd}{(\cg+\cpi+(\ag^2-\ap^2)/(\cpi-\cg))/2};
+\pgfmathsetmacro{\xli}{(\cpd+(\ag^2-\ap^2)/\cpd)/2};%
+%
+\pgfmathsetmacro{\tcdg}{acos((\xcd-\cg)/\ag)};% angulo inter col-der sobre EDi
+\pgfmathsetmacro{\tcdp}{acos((\xcd-\cpi)/\ap)};% angulo inter col-der sobre EDc
+\pgfmathsetmacro{\tli}{acos(\xli/\ag)};% angulo inter lin-izq sobre EDd
+\pgfmathsetmacro{\tbil}{acos(\cg/2/\ag)};% angulo inter izq-der sobre EDi
 %
 %
-\pgfmathsetmacro{\s}{acos(\cg/2/\ag)};
-\pgfmathsetmacro{\t}{acos((\xc-\cg)/\ag)};
-\pgfmathsetmacro{\u}{acos((\xc-\cpi)/\ap)};
-%
-%
-%Union
-\begin{scope}%[scale=1.5]
-%
-% interiores de col, lin, bil
-\fill[opacity=.1]plot[domain=0:360,samples=200] ({\ap*cos(\x)+\cpi},{\bp*sin(\x)});
-%\fill[opacity=.1] plot[domain=0:360,samples=200] ({\ap*cos(\x)+\cpd},{\bp*sin(\x)});
+% interiores de col, bil, vcol
+\fill[opacity=.1]
+plot[domain=\tcdp:360-\tcdp,samples=200] ({\ap*cos(\x)+\cpi},{\bp*sin(\x)})
+-- ({\ap*cos(\tcdp)+\cpi},{-\bp*sin(\tcdp)}) -- ({-\ap*cos(\tcdp)+\cpd},{-\bp*sin(\tcdp)})
+-- plot[domain=-\tli:\tli,samples=200] ({\ag*cos(\x)},{\bg*sin(\x)})
+--cycle;
 %
 \fill[opacity=.25]
-plot[domain=-\s:\s,samples=200] ({\ag*cos(\x)},{\bg*sin(\x)})
--- plot[domain=180-\s:180+\s,samples=200] ({\ag*cos(\x)+\cg},{\bg*sin(\x)})
+plot[domain=-\tbil:\tbil,samples=200] ({\ag*cos(\x)},{\bg*sin(\x)})
+-- plot[domain=180-\tbil:180+\tbil,samples=200] ({\ag*cos(\x)+\cg},{\bg*sin(\x)});
 -- cycle;
+%
 \fill[opacity=.25]
-plot[domain=\t:360-\t,samples=200] ({\ag*cos(\x)+\cg},{\bg*sin(\x)})
--- plot[domain=-\u:\u,samples=200] ({\ap*cos(\x)+\cpi},{\bp*sin(\x)})
+plot[domain=\tcdg:360-\tcdg,samples=200] ({\ag*cos(\x)+\cg},{\bg*sin(\x)})
+-- ({\ap*cos(\tcdp)+\cpi},{-\bp*sin(\tcdp)}) -- ({-\ap*cos(\tcdp)+\cpd},{-\bp*sin(\tcdp)})
+-- plot[domain=-180+\tcdg:180-\tcdg,samples=200] ({\ag*cos(\x)},{\bg*sin(\x)})
 -- cycle;
 
 %
-% bordes izq, der, col, lin
-\draw[domain=0:360,samples=200,thick] plot ({\ag*cos(\x)},{\bg*sin(\x)});
-\draw[dashed,domain=0:360,samples=200,thick] plot ({\ag*cos(\x)+\cg},{\bg*sin(\x)});
-\draw[domain=0:360,samples=200,thick] plot ({\ap*cos(\x)+\cpi},{\bp*sin(\x)});
-\draw[dashed,domain=0:360,samples=200,thick] plot ({\ap*cos(\x)+\cpd},{\bp*sin(\x)});
+% bordes izq, der, (y bil), col, lin (y ambas col & lin)
+\draw[domain=\tbil:360-\tbil,samples=200,thick] plot ({\ag*cos(\x)},{\bg*sin(\x)});
 %
-% A, B, Omega
+\draw[dotted,domain=-180+\tbil:180-\tbil,samples=200,thick] plot ({\ag*cos(\x)+\cg},{\bg*sin(\x)});
+%
+\draw[dash dot,domain=-\tbil:\tbil,samples=200,thick] plot ({\ag*cos(\x)},{\bg*sin(\x)});
+\draw[dash dot,domain=180-\tbil:180+\tbil,samples=200,thick] plot ({\ag*cos(\x)+\cg},{\bg*sin(\x)});
+%
+\draw[domain=\tcdp:360-\tcdp,samples=200,thick] plot ({\ap*cos(\x)+\cpi},{\bp*sin(\x)});
+%
+\draw[dotted,domain=-180+\tcdp:180-\tcdp,samples=200,thick] plot ({\ap*cos(\x)+\cpd},{\bp*sin(\x)});
+%
+\draw[dash dot,thick] ({\ap*cos(\tcdp)+\cpi},{\bp*sin(\tcdp)}) -- ({-\ap*cos(\tcdp)+\cpd},{\bp*sin(\tcdp)});
+\draw[dash dot,thick] ({\ap*cos(\tcdp)+\cpi},{-\bp*sin(\tcdp)}) -- ({-\ap*cos(\tcdp)+\cpd},{-\bp*sin(\tcdp)});
+%
 \draw ({-\ag+.25},{\bg/2-.25}) node[right,scale=.75]{$\ED_\izq$};
 \draw({\ag+\cg-.25},{.25-\bg/2}) node[left,scale=.75]{$\ED_\der$};
 \draw({\cg/2},{3*\bg/4}) node[below,scale=.75]{$\ED_\bil$};
 \draw ({-\ap+\cpi+.2},.25) node[right,scale=.75]{$\ED_\col$};
 \draw ({\ap+\cpd-.2},-.25) node[left,scale=.75]{$\ED_\lin$};
-\draw (.2,.45) node[right,scale=.75]{$\ED_\vcol$};
-\draw ({\cg-.2},-.45) node[left,scale=.75]{$\ED_\vlin$};
-%
-%\draw (.5,-2.5) node{(a)};
-\end{scope}
-%
-%
-\begin{comment}
-% Interseccion
-\begin{scope}[xshift=4.8cm]
-%
-\fill[opacity=.1]
-plot[domain=\s:\t,samples=200] ({cos(\x)},{.5*sin(\x)})
--- plot[domain=\u:\v,samples=200] ({cos(\x)+1},{.5*sin(\x)+.25})
--- cycle;
-%
-% borders A, B y Omega
-\draw[domain=0:360,samples=200,thick] plot ({cos(\x)},{.5*sin(\x)});
-\draw[dashed,domain=0:360,samples=200,thick] plot ({cos(\x)+1},{.5*sin(\x)+.25});
-\draw[domain=0:360,samples=200] plot ({2*cos(\x)+.5},{1.5*sin(\x)});
-%
-% A, B, Omega
-\draw (-.75,0) node[scale=.85]{\small $A$};
-\draw(1.75,.25) node[scale=.85]{\small $B$};
-\draw(-.5,1.375) node[left,scale=.9]{\small $\Omega$};
-%
-\draw (.5,-2.5) node{(b)};
-\end{scope}
-\end{comment}
+\draw ({\cg/2},0) node[scale=.75]{$\ED_\vcol = \ED_\vlin$};
+%\draw ({\cg-.2},-.45) node[left,scale=.75]{$\ED_\vlin$};
 %
 \end{tikzpicture}
