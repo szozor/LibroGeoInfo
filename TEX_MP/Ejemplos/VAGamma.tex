@@ -129,8 +129,40 @@ caracter\'istica un v\'inculo con variables gaussianas:
       \sigma^2} \right)
   \]
   %
-  (ley chi-cuadrado precisamente con \ $n$ \ grados de libertad).
+  En  esta situaci\'on,  con  $n$ entero,  la  ley es  precisamente  la ley  del
+  chi-cuadrado, con \ $n$ \ grados de libertad.
 \end{lema}
+
+\begin{ejemplo}[Distibuci\'on de Maxwell-Boltzmann]
+  Esta distribuci\'on apareci\'o en el  estudio de las velocidades de particulas
+  en el gas perfecto, bajo  el impulso de Maxwell~\cite{Max60A, Max60B, Max67} y
+  m\'as tarde de  Boltzmann~\cite{Bol77, Bol96, Bol98}.  En un  gas perfecto, se
+  supone que  las particulas se  mueven libremente, sin interacciones  entre si,
+  aparte  colisiones  breves con  intercambio  de  energ\'ia  entre si  (choques
+  elasticos).   La energia  de cada  particula es  su energ\'ia  cinetica  $\E =
+  \frac12   m  \|   v  \|^2$   donde   $v  =   \begin{bmatrix}  v_x   &  v_y   &
+    v_z\end{bmatrix}^t$ es  el vector velocidad  3-dimensional.  En un  gas, hay
+  tantas  particulas~\footnote{`!En   condiciones  normales  de   temperatura  y
+    presi\'on, un  litro contiene  \ $2.7 \times  10^{22}$ particulas!}   que es
+  imposible  describir tal  gas con  las leyes  de la  m\'ecanica.   Se modeliza
+  entonces  las  velocidades  como   aleatorias.   Adem\'as,  en  este  contexto
+  ``perfecto'', las particulas son  supuestas independientes entre si.  Se puede
+  focalizarse sobre una  particula, que representa de una  manera el conjunto de
+  particulas.          Como          lo         veremos         en         ambas
+  secci\'on~\ref{Ssec:MP:FamiliaExponencial}                                    y
+  cap\'itulo~\ref{Cap:SZ:Informacion},   sin   v\'inculos   adicional,   en   el
+  equilibrio termodin\'amico, la ley del  vector velocidad de la particula es la
+  que  maximiza la  entrop\'ia. Es  precisamente una  gausiana  3-dimensional de
+  covarianza  \  $\Sigma =  \frac{m}{2  \,  k_B  T} I$,  donde  \  $T$ \  es  la
+  temperatura del gas en Kelvin, y  \ $k_B \approx 1.38 \times 10^{-23}$ \ julio
+  por Kelvin es la constante  de Boltzmann. En otros t\'erminos, les velocidades
+  en cada direcci\'on \ $v_x, v_y,  v_z$ \ son gausianas de varianza \ $\sigma^2
+  = \frac{m}{2 \,  k_B T}$ independientes.  Resuelte que la ley  de la energia \
+  $\E = \frac12 m \| v \|^2$ \ es precisamente una ley chi-cuadrado con 3 grados
+  de  libertad  y  la  de  \  $\|  v \|$,  la  raiz  cuadrada  de  variable  del
+  chi-cuadrado, es conocida como ley  chi. En el vcaso presente, es precisamente
+  conocida como ley de Maxwell-Boltzmann.
+\end{ejemplo}
 
 %\SZ{Esta distribuci\'on aparece...}
 % en  el conteo  de conteo  de  une repetici\'on  de una  experiencia de  maneja

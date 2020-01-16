@@ -56,6 +56,33 @@ Se notar\'a  que tal vector aleatorio  no puede ser discreto  porque un conjunto
 numerable  no puede  ser invariante  por cualquier  rotaci\'on (y  entonces, por
 cualquier transformaci\'on ortogonal).
 
+En la definici\'on, $O$ es deterministica, pero como consecuencia, la invarianza
+esferica se conserva tomando $O$ aleatoria independiente de $X$:
+%
+\begin{lema}\label{Lem:MP:SIAleatoria}
+
+  Sea   \   $X$  \   vector   aleatorio   $d$-dimensional   real  a   simetr\'ia
+  esf\'erica.  Entonces, para  cualquier  matriza aleatoria  $0$ definida  sobre
+  $O(\Omega) = \Ort_d(\Rset)$,
+  %
+  \[
+  O  X  \: \egald  \: X
+  \]
+  %
+\end{lema}
+\begin{proof}
+  Se puede  por ejemplo  probar este lema  via la funci\'on  caracter\'istica, a
+  traves  de   la  esperanza  condicional,  $\Phi_{O   X}(\omega)  =  \Esp\left[
+    \left.     \Phi_{O    X}(\omega)     \right|    O\right]     =    \Esp\left[
+    \left.  \Phi_X(\omega)  \right|  O\right]$   \  de  la  definici\'on  de  la
+  invarianza esf\'erica.  La prueba  se cierra de  al independencia entre  $X$ y
+  $O$.
+\end{proof}
+
+En todo lo que  sigue, consideraremos matrices ortogonales deterministicas, pero
+se las podr\'as  re-emplazar por matrices ortogonales aleatoria  sin que cambien
+las deiniciones, los teoremas, lemas o corolarios.
+
 \index{El\'iptica! invariance vectorial}
 Tales  vectores  modelizan naturalmente  fen\'omenos  isotr\'opicos. Pero  m\'as
 all\'a,  se  puede  que  haya  direcciones privilegiadas  ortogonales  pero  con
@@ -75,7 +102,7 @@ pelota de rugby. Adem\'as, se puede que eso se pasa en torno a un punto no cero.
   \Delta^{-\frac12} \, Q^t \left( X - m \right)
   \]
   %
-  donde la  matriz diagonal \ $\Delta  > 0$ \ es  la matriz de  autovalores de \
+  donde la matriz diagonal \ $\Delta > 0$ \ es la matriz de los autovalores de \
   $\Sigma$  \  y  \ $Q  \in  \Ort_d(\Rset)$  \  la  matriz de  los  autovectores
   correspondientes~\cite{Bha97,   Bha07,  HorJoh13},  \   $\Sigma  =   Q  \Delta
   Q^t$. Dicho de  otra manera, \ $\Delta^{-\frac12} Q^t \left( X  - m \right)$ \
@@ -1154,7 +1181,7 @@ distribuci\'on~\cite{FanKot90, Lor54, Zoz, toto, titi}:
 %
 \begin{proof}
   Sea      la       transformaci\'on      $g:      (x_1,\ldots,x_d)      \mapsto
-  (r,\theta_1,\ldots,\theta_{d-1})$. La jacobiana de $g^{-1}$ tiene la forma
+  (r,\theta_1,\ldots,\theta_{d-1})$. La Jacobiana de $g^{-1}$ tiene la forma
   %
   \[
   \Jac_{g^{-1}} = \begin{bmatrix}
@@ -1939,6 +1966,8 @@ $d$-dimensional. As\'i, se puede imaginar  tambi\'en buscar la ley de una mezcla
 de gaussiana pasando por la de mezcla de Student-$r$, tomando el l\'imite cuando
 $n$ tiende al infinito de la ley de $B$.
 
+% \SZ{Varios   otros   resultados   se   encuentran  en   la   literatura,   por
+%   ejemplo~\cite[Teo.~1.5.7, ]{Mui82}}.
 
 % --------------------------------- Familia  eliptica compleja
 
@@ -1987,8 +2016,8 @@ transformaci\'on unitaria de manera siguiente:
   \Delta^{-\frac12} \, Q^\dag \left( X - m \right)
   \]
   %
-  donde la matriz real diagonal \ $\Delta  > 0$ \ es la matriz de autovalores de
-  \  $\Sigma$ \  y \  $Q \in  \Unit_d(\Cset)$ \  la matriz  de  los autovectores
+  donde la matriz real diagonal \ $\Delta > 0$ \ es la matriz de los autovalores
+  de \  $\Sigma$ \ y \  $Q \in \Unit_d(\Cset)$  \ la matriz de  los autovectores
   correspondientes~\cite{Bha97,   Bha07,  HorJoh13},  \   $\Sigma  =   Q  \Delta
   Q^\dag$. Es  decir, \ $\Delta^{-\frac12} Q^\dag \left(  X - m \right)$  \ es a
   simetr\'ia esf\'erica.
@@ -2491,7 +2520,7 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   $\Phi_Y(\omega) =  \overline{\varphi}_Y( \diag( \omega^t \omega)  )$, (ii) que
   $X \in \ED_\bil$ si y solamente  si la funci\'on caracter\'istica de $Y$ tiene
   la forma  $\Phi_Y(\omega) = \widetilde{\varphi}_Y(\lambda(  \omega^t \omega))$
-  con  $\lambda$  el espectro  (vector  formado  de  las autovalores).   Tomando
+  con  $\lambda$  el espectro  (vector  formado  por  los autovalores).   Tomando
   $\omega$    ``diagonal''    (recorda    que   partenece    necesariamente    a
   $\Mat_{d,d'}(\Rset)$, \ie no necesariamente  cuadrada), \ie $\omega_{i,j} = 0$
   si   $i    \ne   j$,   es   sencillo   ver    que   $\widetilde{\varphi}_Y   =
@@ -2708,7 +2737,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   siendo  $X^t \in  \ED_\bil$.
   %
 \item  Nota:  si  $X  \in  \ED_\col \cap  \ED_\lin  \varsubsetneq  \ED_\bil$  la
-  funci\'on  va a  ser  la suma  de las  autovalores  (ver caso  $(\col)$ y  por
+  funci\'on  va a  ser  la suma  de los  autovalores  (ver caso  $(\col)$ y  por
   transposici\'on), \ie  de $\Tr\left( \omega^t  \, \Sigma \, \omega  \, \Sigma'
   \right) = \un^t \lambda\left( \omega^t \, \Sigma \, \omega \, \Sigma' \right)$
   se escribe
@@ -2811,7 +2840,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \]
   %
 \item Obviamente, tambi\'en con la densidad si \ $X \in \ED_\vcol \cap \ED_\vlin
-  \varsubsetneq \ED_\bil$ la funci\'on va a  ser la suma de las autovalores (ver
+  \varsubsetneq \ED_\bil$ la funci\'on va a  ser la suma de los autovalores (ver
   caso $(\col)$  y por transposici\'on),  \ie de $\Tr\left(  (x-m)^t \Sigma^{-1}
     (x-m)  \Sigma'  \right)  =  \un^t \lambda\left(  (x-m)^t  \Sigma^{-1}  (x-m)
     \Sigma' \right)$ se escribe
@@ -2876,27 +2905,28 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     \Esp\left[ \lambda(Y) \right]
     \]
     %
-    Una pruba dada por ejemplo en~\cite[\S~13.2]{BilBre99} sale de \ $Y \egald O
-    Y  O^t$  \ dando  \  $\Esp[Y]  = O  \Esp[Y]  O^t$  \  para cualquier  matriz
-    ortogonal. De  esta identidad, viene que  si \ $v$  \ es un autovector  de \
-    $\Esp[Y]$ \ asociado  a un autovalor $\mu_1$,  cualquier \ $O v$ \  va a ser
-    autovector  asociado  a  la misma  autovalor.   De  \  $\{  O  v \tq  O  \in
-    \Ort_d(\Rset) \} = \Rset^d$ \ queda  claro para cualquier \ $v \in \Rset^d$,
-    \quad $\Esp[Y]  v =  \mu_1 v$, dando  que existe  un \ $\mu_1$  \ tal  que \
-    $\Esp[Y] = \mu_1 I$. Se puede hacer un paso m\'as para identificar el factor
-    \  $\mu_1$  \ tomando  la  traza.   Eso conduce  a  \  $\mu_1 =  \frac{1}{d}
-    \Esp[\Tr(Y)] = \frac{1}{d}  \un^t \Esp[\lambda(Y)]$.\newline De hecho, m\'as
-    directamente, primero se nota que  para cualquier matriz de permutaci\'on, \
-    $\varphi_X(\pi \lambda)  = \varphi_X(\lambda)$  \ dando por  un lado  \ $\pi
-    \nabla_\lambda \varphi_X (\pi \lambda) = \nabla_\lambda \varphi_X(\lambda)$.
-    En particular,  para $\lambda = 0$,  eso da \  $\pi \nabla_\lambda \varphi_X
-    (0) = \nabla_\lambda \varphi_X (0)$ \ para cualquier permutaci\'on, es decir
-    que   las  componentes   son  iguales:   $\nabla_\lambda  \varphi_X   (0)  =
-    \frac{\partial  \varphi_X(0)}{\partial \lambda_1}  \: \un$.   Ahora, notando
-    $\lambda  \equiv   \lambda(\omega)$  para  simplificar   las  notaciones,  $
-    \frac{\partial   \varphi_X}{\partial  \omega_{i,j}}(0)   =  \nabla_\lambda
-    \varphi_X(0)^t   \,   \frac{\partial   \lambda}{\partial  \omega_{i,j}}(0)   =
-    \frac{\partial  \varphi_X}{\partial  \lambda_1}(0)  \: \un^t  \frac{\partial
+    Una    pruba    dada    por   ejemplo    en~\cite[\S~13.2]{BilBre99}    (ver
+    tambi\'en~\cite{Mal61,  Tyl82}) sale  de \  $Y  \egald O  Y O^t$  \ dando  \
+    $\Esp[Y]  =  O \Esp[Y]  O^t$  \ para  cualquier  matriz  ortogonal. De  esta
+    identidad, viene que si \ $v$ \ es un autovector de \ $\Esp[Y]$ \ asociado a
+    un autovalor  $\mu_1$, cualquier \ $O v$  \ va a ser  autovector asociado al
+    mismo autovalor.  De \ $\{ O v \tq O \in \Ort_d(\Rset) \} = \Rset^d$ \ queda
+    claro para cualquier  \ $v \in \Rset^d$, \quad $\Esp[Y] v  = \mu_1 v$, dando
+    que existe un \  $\mu_1$ \ tal que \ $\Esp[Y] = \mu_1  I$. Se puede hacer un
+    paso m\'as  para identificar el  factor \ $\mu_1$  \ tomando la  traza.  Eso
+    conduce  a   \  $\mu_1  =  \frac{1}{d}  \Esp[\Tr(Y)]   =  \frac{1}{d}  \un^t
+    \Esp[\lambda(Y)]$.\newline De hecho, m\'as directamente, primero se nota que
+    para  cualquier  matriz  de   permutaci\'on,  \  $\varphi_X(\pi  \lambda)  =
+    \varphi_X(\lambda)$ \ dando por un lado \ $\pi \nabla_\lambda \varphi_X (\pi
+    \lambda) = \nabla_\lambda \varphi_X(\lambda)$.  En particular, para $\lambda
+    = 0$, eso da \  $\pi \nabla_\lambda \varphi_X (0) = \nabla_\lambda \varphi_X
+    (0)$  \ para  cualquier  permutaci\'on,  es decir  que  las componentes  son
+    iguales:     $\nabla_\lambda      \varphi_X     (0)     =     \frac{\partial
+      \varphi_X(0)}{\partial \lambda_1} \: \un$.  Ahora, notando $\lambda \equiv
+    \lambda(\omega)$   para  simplificar   las   notaciones,  $   \frac{\partial
+      \varphi_X}{\partial  \omega_{i,j}}(0) =  \nabla_\lambda  \varphi_X(0)^t \,
+    \frac{\partial    \lambda}{\partial   \omega_{i,j}}(0)    =   \frac{\partial
+      \varphi_X}{\partial     \lambda_1}(0)      \:     \un^t     \frac{\partial
       \lambda}{\partial \omega_{i,j}}(0) = \frac{\partial \varphi_X(0)}{\partial
       \lambda_1}  \: \frac{\partial  \un^t  \lambda}{\partial \omega_{i,j}}(0)$.
     Eso    da,    de   $\un^t    \lambda    =   \Tr(\omega)$,    $\frac{\partial
@@ -3233,9 +3263,9 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     independiente  de $R_\izq$, matriz  aleatoria de  $\Mat_{d',d'}(\Rset)$ (ver
     tambi\'en~\cite[Lem.~1]{Kar81}   o~\cite[Teo.~9.7.3]{GupNag99}).    En  esta
     escritura,  la  matriz $R_\izq$  no  es  definida  de manera  \'unica,  pero
-    $R_\izq^t R_\izq$ es \'unica. Es  decir que, sin embargo, existe una \'unica
-    matriz aleatoria triangular inferior  (o una \'unica triangular superior) de
-    diagonal         positiva        que         satisfaga         a        esta
+    $R_\izq^t R_\izq$ es  \'unica. Sin embargo, si $P(|X^t X| =  0) = 0$, existe
+    una \'unica  matriz aleatoria triangular inferior (o  una \'unica triangular
+    superior)    de    diagonal   no    negativa    que    satisfaga   a    esta
     escritura~\cite[Teo.~9.7.3]{GupNag99}.
   %
   \item $X \sim \ED_\col(m,\Sigma,\varphi_X)  \:\: \Leftrightarrow \:\: X \egald
@@ -3254,29 +3284,31 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
 %
     $\begin{bmatrix}  U_{\vcol,1}^t &  \cdots  & U_{\vcol,d'}^t  \end{bmatrix}^t
     \sim   \U\left(  \Sset_{d  d'}   \right)$  \   uniforme  sobre   la  esfera,
-    independiente de $R_\col \ge 0$ escalar.
+    independiente de $R_\vcol \ge 0$ escalar.
   %
   \item $X \sim \ED_\bil(m,\Sigma,\Sigma',\varphi_X) \:\: \Leftrightarrow \:\: X
     \egald    \Sigma^{\frac12}   \,   U_\izq    \,   \Lambda_\bil    \,   V_\der
     \Sigma'^{\frac12}   +    m$   \:\:   con   \:\:    $U_\izq   \sim   \U\left(
-      \Sti_{d,d'}(\Rset)   \right)$   \:\:   y   \:\:  $V_\der   \sim   \U\left(
-      \Sti_{d',d'}(\Rset)   \right)$,    independientes   e   independiente   de
-    $\Lambda_\bil \ge  0$ matriz aleatoria diagonal  positiva.  Pasando, aparece
-    que $\Lambda_\bil = \Diag(\lambda\left(  (X^t X)^{\frac12} \right))$, \ie de
-    diagonal   el  vector  de   las  autovalores   de  $(X^t   X)^\frac12$  (ver
-    tambi\'en~\cite[Rep.~2]{Daw78}).
+      \Sti_{d,d'}(\Rset)  \right)$   \:\:  y~\footnote{Nota:  $\Sti_{k,k}(\Rset)
+      \equiv  \Ort_k(\Rset)$.}   \:\:  $V_\der  \sim  \U\left(  \Ort_{d'}(\Rset)
+    \right)$,  independientes e  independiente  de $\Lambda_\bil  \ge 0$  matriz
+    aleatoria   diagonal  positiva.   Pasando,   aparece  que   $\Lambda_\bil  =
+    \Diag(\lambda\left( (X^t  X)^{\frac12} \right))$, \ie de  diagonal el vector
+    de      los       autovalores      de      $(X^t       X)^\frac12$      (ver
+    tambi\'en~\cite[Rep.~2]{Daw77}). La descomposici\'on no es \'unica, salvo si
+    imponemos que en $\Lambda_\bil$ los autovalors sean en orden decreciente por
+    ejemplo.
 %
-  \item \SZ{ME TENGO QUE FIJAR BIEN... a\'un que sea seguro $X  \sim \ED_\simed(m,\Sigma,\varphi_X) \:\:  \Leftrightarrow \:\: X
-      \egald \Sigma^{\frac12} \, U \, \Lambda_\simed \, U^t \ \Sigma^{\frac12} +
-      m$ \:\: con  \:\: $U \sim \U\left( \Sti_{d,d}(\Rset)  \right)$ ($d' = d$),
-      independiente  de   $\Lambda_\simed$   matriz  aleatoria  diagonal.}
-    % Se   lo   puede   probar   escribiendo  $Y   =   \Sigma^{-\frac12}   (X-m)
-    % \Sigma^{-\frac12}$ bajo  la forma $Y  = \left( Q  \Delta^{\frac12} \right)
-    % \left( Q \Delta^{\frac12} \right)^t$ y aplicando la escritura estochastica
-    % del caso $(\izq)$ con $R
-    Pasando, aparece que $\Lambda_\simed  = \Diag(\lambda\left( X \right))$, \ie
-    de diagonal el vector de las autovalores de $X$.
-      % (ver tambi\'en~\cite[Rep.~2]{Daw78}).
+  \item  \SZ{ME  TENGO  QUE  FIJAR   BIEN...   a\'un  que  sea  seguro  $X  \sim
+      \ED_\simed(m,\Sigma,\varphi_X)   \:\:   \Leftrightarrow   \:\:  X   \egald
+      \Sigma^{\frac12} \,  U \,  \Lambda_\simed \, U^t  \ \Sigma^{\frac12}  + m$
+      \:\:  con  \:\:  $U  \sim  \U\left( \Ort_d(\Rset)  \right)$  ($d'  =  d$),
+      independiente  de $\Lambda_\simed$  matriz  aleatoria diagonal.   Pasando,
+      aparece  que $\Lambda_\simed  =  \Diag(\lambda\left( X  \right))$, \ie  de
+      diagonal   el  vector  de   los  autovalores   de  $X$.    Nuevamente,  la
+      descomposici\'on no es \'unica, salvo si imponemos que en $\Lambda_\simed$
+      los autovalors sean de valor en orden decreciente por ejemplo.~\cite[Teo.~17.3, fin de \S~17.3.1, Teo.~17.6]{TemCal13}}
+      % (ver tambi\'en~\cite[Rep.~2]{Daw78}). 
   \end{itemize}
   %
   En  los cuatro  primeros  casos, para  $d'  = 1$,  se  recupera obviamente  el
@@ -3342,7 +3374,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \item  Si  $X \sim  \ED_\bil(m,\Sigma,\Sigma',\varphi_X)$  la  ley  de $X$  es
     completamente definida  por la ley  de $\lambda_\bil =  \left( \lambda\left(
         (X-m)^t \Sigma^{-1} (X-m)  \Sigma'^{-1} \right) \right)^{\odot \frac12}$
-    donde, de la  invarianza por permutaci\'on, sin perdida  de generalidad, las
+    donde, de la  invarianza por permutaci\'on, sin perdida  de generalidad, los
     autovalores son tomadas de valores decrecientes .  Si existe, la densidad de
     probabilidad es dada por
    %
@@ -3366,8 +3398,8 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   %
   \item   Si  $X  \sim   \ED_\simed(m,\Sigma,\varphi_X)$  la   ley  de   $X$  es
     completamente  definida  por  la  ley  de  $\lambda_\simed  =  \lambda\left(
-      \Sigma^{-1}  (X-m)  \right)$  donde,   sin  perdida  de  generalidad,  las
-    autovalores son tomadas de valores  decrecientes.  Si existe, la densidad de
+      \Sigma^{-1}  (X-m)  \right)$  donde,   sin  perdida  de  generalidad,  los
+    autovalores son tomados de valores  decrecientes.  Si existe, la densidad de
     probabilidad es dada por
    %
     \[
@@ -3377,8 +3409,10 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     \mu_1 \ge \cdots \ge \mu_{d'} \}
     \]
     %
-    (ver~\cite[Def.~2.5.1]{AndGui10} para el determinente de la transformaci\'on
-    pasando de $X$ a los autovalores, o~\cite[Teo.~13.3.1]{And03}).
+    (ver~\cite[\S~3.1]{Met04} o~\cite[\S~9.3]{Car83} o~\cite[\S~2.4.2]{DeiGio09} para  el  determinente  de  la  jacobiana  de  la
+    transformaci\'on  pasando   de  $X$   a  los  autovalores   y  autovectores,
+    o~\cite[Teo.~13.3.1]{And03}).
+    % \cite[Def.~2.5.1]{AndGui10} Def del det de Vandermonde
   \end{itemize}
   %
 %\SZ{Poner el teorema 7 de Fang y Chen?}
@@ -3454,7 +3488,7 @@ tambi\'en a~\cite{And03, Daw78, Daw81, LibrosABuscar}.
   este enfoque el generador  de densidad \ $d_X(\lambda) \propto e^{-\frac{\un^t
       \lambda}{2}}$, lo que es coherente  con el punto de vista anterior, siendo
   $\un^t \lambda(y y^t) = \| y \|_F^2 \equiv r^2$.
-  % : $\|X\|_F^2$ es  nada m\'as que la suma de las  autovalores de $X X^t$ (ver
+  % : $\|X\|_F^2$ es  nada m\'as que la suma de los  autovalores de $X X^t$ (ver
   %  m\'as arriba  cuando tratamos  de las  densidades de  probabilidad  en cada
   % caso).  \SZ{Que mas?  GSM, rayo...}
 \end{ejemplo}

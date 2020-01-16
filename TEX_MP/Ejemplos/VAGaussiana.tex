@@ -29,26 +29,26 @@ variables   aleatorias  (ver   por  ejemplo   trabajos   de  Galton~\cite{Gal77,
   Gal77:Nature, Pea20}).
 
 A pesar de que parece menos natural en la modelisaci\'on de fenomenos aleatorios
-que leyes uniformes, la ley gaussiana es seguramente unas de las m\'as importante
-en  probabilidad, sino  que  la m\'as  importante  y la  m\'as  expendida en  la
-naturaleza.   Eso  viene sin  duda  del teorema  del  l\'imite  central. En  dos
+que  leyes  uniformes,  la  ley  gaussiana  es seguramente  unas  de  las  m\'as
+importante en probabilidad, sino que la m\'as importante y la m\'as expendida en
+la naturaleza.   Eso viene  sin duda  del teorema del  l\'imite central.  En dos
 palabras,  cuando  se  suman  un  n\'umero importante  de  variables  aleatorias
 (independientes,   de  misma  ley,   admitiendo  una   varianza,  o   con  menos
 restricciones~\cite[Cap.~11]{AthLah06}),  correctamente  normalizado, esta  suma
-tiende a una gaussiana~\footnote{De hecho,  la approximaci\'on de la ley binomial
-  por una  gaussiana cuando  $n$ es  grande es una  caso particular  del teorema,
+tiende a una gaussiana~\footnote{De hecho, la approximaci\'on de la ley binomial
+  por una  gaussiana cuando $n$  es grande es  una caso particular  del teorema,
   siendo la binomial una suma  de Bernoulli independientes.}.  En la naturaleza,
 se puede ver el ruido (se\~nales) como suma de un n\'umero importante de fuentes
-de  ruido independientes,  justificando el  modelo  gaussiano~\cite{Fel71, Cam86,
+de  ruido independientes, justificando  el modelo  gaussiano~\cite{Fel71, Cam86,
   AshDol99, JacPro03, AthLah06, Ren07, Bil12}.  Ad\'emas, como lo vamos a ver en
 el  cap\'itulo~\ref{Cap:SZ:Informacion}, esta  ley es  la de  incerteza m\'axima
 (maximizando la entrop\'ia) teniendo  una dada varianza. Aparece naturalmente en
 termod\'inamica    (gaz    perfecto,   con    un    n\'umero    muy   alto    de
-particulas)~\cite{Max67, Bol96,  Bol98, Gib02, Jay65}. En  estimaci\'on, bajo la
-hipotesis  gaussiana,  los  estimadores  de  par\'ametros  minimizando  el  error
-cuadr\'atico promedio son  generalmente lineal~\cite{Kay93, Rob07}.  Todas estas
-consideraciones  dan a la  ley gaussiana  un rol  central en  la teor\'ia  de las
-probabilidades.
+particulas)~\cite{Max60A, Max60B, Max67, Bol77,  Bol96, Bol98, Gib02, Jay65}. En
+estimaci\'on,  bajo  la hipotesis  gaussiana,  los  estimadores de  par\'ametros
+minimizando el error  cuadr\'atico promedio son generalmente lineal~\cite{Kay93,
+  Rob07}.  Todas estas consideraciones dan a  la ley gaussiana un rol central en
+la teor\'ia de las probabilidades.
 
 Se denota \  $X \, \sim \, \N(m,\Sigma)$ \  con \ $m \in \Rset^d$  \ y \ $\Sigma
 \in  \Pos_d^+(\Rset)$  \  conjunto  de   las  matrices  de  \  $\M_{d,d}(\Rset)$  \
@@ -374,9 +374,9 @@ caso matriz-variada $X$ en varias direcciones. Presentamos dos casos
   Esta  ley  aparece  en   contextos  f\'isicos,  en  particular  en  mec\'anica
   cu\'antica.  Se  refiera por ejemplo a trabajos  de Wigner~\cite{Wig55, Wig57,
     Por65} o  de Dyson~\cite{Dys62} para unos  de los primeros  estudios de esta
-  ley,  o  a~\cite{Car83,  Meh04,  AndGui10,  LivNov18} para  un  estudio  m\'as
-  sistematico  y  el  v\'inculo  con  la  f\'isica.   Se  extiende  para  $\X  =
-  \Her_d(\Cset)$  (ensembles gausianos  unitario  o  GUE en  ingles)  y al  caso
+  ley,  o a~\cite{Car83,  Meh04, DeiGio09,  AndGui10, Tao12,  LivNov18}  para un
+  estudio m\'as  sistematico y el v\'inculo  con la f\'isica.   Se extiende para
+  $\X = \Her_d(\Cset)$ (ensembles gausianos unitario  o GUE en ingles) y al caso
   cuaternionico~\footnote{El  conjunto   de  los  cuaterniones   $\Hset$  es  en
     biyecci\'on con  $\Cset^2$. Los n\'umeros  de este ensemble tiene  una parte
     real (dicha  tambi\'en) escalar, y  tres imaginarias que  pueden representar
@@ -388,8 +388,8 @@ caso matriz-variada $X$ en varias direcciones. Presentamos dos casos
     cu\'antica  o  cosmolog\'ia por  ejemplo  (e.g.~\cite{Alt05, BenZyc06}.   De
     hecho, estos n\'umeros aparecieron implicitamente en trabajos de Euler desde
     1748,    y   m\'as    tarde   en    de   Rodrigues    en   1840~\cite{Alt89}
-    o~\cite[p.~482]{JusTat80}.  }  herm\'itico  (ensembles gausianos  unitario o
-  GSE en ingles).  De manera general la ley es dada  por $\displaystyle p_X(x) =
+    o~\cite[p.~482]{JusTat80}.  }   herm\'itico (ensembles gausianos  unitario o
+  GSE en ingles).  De manera general  la ley es dada por $\displaystyle p_X(x) =
   \: e^{- \frac{\beta  \, d}{4} \Tr \left( x^2 \right)}$ con  $\beta = 1$ (GOE),
   $\beta =  2$ (GUE)  o $\beta  = 4$ (GSE)  donde $\beta$  es llamado  indice de
   Dyson. Se  debe entender que  esta densidad es  la de las  $\frac{d (d+1)}{2}$
