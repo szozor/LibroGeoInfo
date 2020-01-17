@@ -72,16 +72,17 @@ esferica se conserva tomando $O$ aleatoria independiente de $X$:
 \end{lema}
 \begin{proof}
   Se puede  por ejemplo  probar este lema  via la funci\'on  caracter\'istica, a
-  traves  de   la  esperanza  condicional,  $\Phi_{O   X}(\omega)  =  \Esp\left[
-    \left.     \Phi_{O    X}(\omega)     \right|    O\right]     =    \Esp\left[
-    \left.  \Phi_X(\omega)  \right|  O\right]$   \  de  la  definici\'on  de  la
-  invarianza esf\'erica.  La prueba  se cierra de  al independencia entre  $X$ y
-  $O$.
+  trav\'es  de  la  esperanza  condicional,  $\Phi_{O  X}(\omega)  =  \Esp\left[
+    \Esp\left[  \left.  e^{\imath  \Tr\left(  \omega^t O  X  \right)} \right|  O
+    \right]  \right]  = \Esp\left[  \Esp\left[  e^{\imath  \Tr\left( \omega^t  X
+        \right)} \left.  \right|  O \right] \right]$ \ de  la definici\'on de la
+  invarianza esf\'erica e independencia entre $X$ y $O$.  La prueba se cierra de
+  la independencia entre $X$ y $O$ en el c\'alculo de la esperanza.
 \end{proof}
 
 En todo lo que  sigue, consideraremos matrices ortogonales deterministicas, pero
-se las podr\'as  re-emplazar por matrices ortogonales aleatoria  sin que cambien
-las deiniciones, los teoremas, lemas o corolarios.
+se las podr\'as re-emplazar por  matrices ortogonales aleatorias sin que cambien
+las definiciones, los teoremas, lemas o corolarios.
 
 \index{El\'iptica! invariance vectorial}
 Tales  vectores  modelizan naturalmente  fen\'omenos  isotr\'opicos. Pero  m\'as
@@ -3258,15 +3259,26 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \begin{itemize}
   \item $X \sim \ED_\izq(m,\Sigma,\varphi_X)  \:\: \Leftrightarrow \:\: X \egald
     \Sigma^{\frac12}  \,  U_\izq \,  R_\izq  + m$  \:\:  con  \:\: $U_\izq  \sim
-    \U\left( \Sti_{d,d'}(\Rset)  \right)$ uniforme sobre la  variedad de Stiefel
-    (ver      notaciones,~\cite[p.~67-70]{Mui82}     o~\cite[\S~8.2]{GupNag99}),
-    independiente  de $R_\izq$, matriz  aleatoria de  $\Mat_{d',d'}(\Rset)$ (ver
-    tambi\'en~\cite[Lem.~1]{Kar81}   o~\cite[Teo.~9.7.3]{GupNag99}).    En  esta
-    escritura,  la  matriz $R_\izq$  no  es  definida  de manera  \'unica,  pero
-    $R_\izq^t R_\izq$ es  \'unica. Sin embargo, si $P(|X^t X| =  0) = 0$, existe
-    una \'unica  matriz aleatoria triangular inferior (o  una \'unica triangular
-    superior)    de    diagonal   no    negativa    que    satisfaga   a    esta
-    escritura~\cite[Teo.~9.7.3]{GupNag99}.
+    \U\left(  \Sti_{d,d'}(\Rset)  \right)$  \  uniforme  sobre  la  variedad  de
+    Stiefel~\footnote{La  medida de probabilidad  es proporcional  a la  de Haar
+      $\mu_H$ (despu\'es de una normalizaci\'on  por el volumen de la variedad),
+      quien  por definici\'on  es tal  que para  cualquier subconjunto  \  $A$ \
+      medible de \  $\Sti_{d,d'}(\Rset)$, y cualquier matriz ortogonal  \ $O \in
+      \Ort_d(\Rset)$,                $\mu_H(O                A)                =
+      \mu_H(A)$~\cite[\S~4.6]{EdeRao05}. Deberiamos hablar de ``Haar izquierda''
+      del   hecho    de   que   la   transformaci\'on   ortogonal    es   a   la
+      izquierda.  Recordamos que  cuando  \ $d'  =  d$, la  variedad de  Stiefel
+      coincide con el  grupo ortogonal \ $\Ort_d(\Rset)$ (ver  tambi\'en en esta
+      situaci\'on~\cite[\S~2]{Gir96}.}   (ver notaciones,~\cite[p.~67-70]{Mui82}
+    o~\cite[\S~8.2]{GupNag99}), independiente  de $R_\izq$, matriz  aleatoria de
+    $\Mat_{d',d'}(\Rset)$           (ver          tambi\'en~\cite[Lem.~1]{Kar81}
+    o~\cite[Teo.~9.7.3]{GupNag99}).  En esta escritura, la matriz $R_\izq$ no es
+    definida de manera \'unica, pero  $R_\izq^t R_\izq$ es \'unica. Sin embargo,
+    si $P(|X^t  X| =  0) =  0$, existe una  \'unica matriz  aleatoria triangular
+    inferior (o  una \'unica  triangular superior) de  diagonal no  negativa que
+    satisfaga a esta escritura~\cite[Teo.~9.7.3]{GupNag99}. Se podr\'a referirse
+    a la  prueba de la descomposici\'on  en $\ED_\simed$ m\'as  adelante (y unas
+    referencias citadas) para tener un esquema de prueba.
   %
   \item $X \sim \ED_\col(m,\Sigma,\varphi_X)  \:\: \Leftrightarrow \:\: X \egald
     \Sigma^{\frac12}   \,  U_\col   \,R_\col  +   m$  \:\:   tal que  las columnas
@@ -3274,17 +3286,19 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     %   U_{\col,d'} \end{bmatrix}$ tal que los
     $U_{\col,j} \sim  \U\left( \Sset_d \right)$  \ uniforme sobre la  esfera son
     independientes entre si, y independientes  de \ $R_\col$, \ matriz aleatoria
-    de $\Pos_{d'}(\Rset)$ \ diagonal.
+    de $\Pos_{d'}(\Rset)$  \ diagonal.
+    % Se  podr\'a referirse a la  prueba de la  descomposici\'on en $\ED_\simed$
+    %  m\'as adelante  (y unas  referencias citadas)  para tener  un  esquema de
+    % prueba.
   %
   \item $X \sim \ED_\vcol(m,\Sigma,\varphi_X) \:\: \Leftrightarrow \:\: X \egald
     \Sigma^{\frac12} \, U_\vcol  \, R_\vcol + m$ \:\: con  el vector \ compuesta
-    de las columnas de $U_\vcol$, \
-    % \:\:    $U_\col    =     \begin{bmatrix}    U_{\col,1}    &    \cdots    &
-    %   U_{\col,d'} \end{bmatrix}$ tal que
-%
-    $\begin{bmatrix}  U_{\vcol,1}^t &  \cdots  & U_{\vcol,d'}^t  \end{bmatrix}^t
-    \sim   \U\left(  \Sset_{d  d'}   \right)$  \   uniforme  sobre   la  esfera,
-    independiente de $R_\vcol \ge 0$ escalar.
+    de las  columnas de $U_\vcol$,  \ $\begin{bmatrix} U_{\vcol,1}^t &  \cdots &
+      U_{\vcol,d'}^t  \end{bmatrix}^t  \sim  \U\left(  \Sset_{d d'}  \right)$  \
+    uniforme  sobre la  esfera, independiente  de  $R_\vcol \ge  0$ escalar.
+    % Se  podr\'a referirse a la  prueba de la  descomposici\'on en $\ED_\simed$
+    %  m\'as adelante  (y unas  referencias citadas)  para tener  un  esquema de
+    % prueba.
   %
   \item $X \sim \ED_\bil(m,\Sigma,\Sigma',\varphi_X) \:\: \Leftrightarrow \:\: X
     \egald    \Sigma^{\frac12}   \,   U_\izq    \,   \Lambda_\bil    \,   V_\der
@@ -3298,17 +3312,45 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     tambi\'en~\cite[Rep.~2]{Daw77}). La descomposici\'on no es \'unica, salvo si
     imponemos que en $\Lambda_\bil$ los autovalors sean en orden decreciente por
     ejemplo.
+    % Se  podr\'a referirse a la  prueba de la  descomposici\'on en $\ED_\simed$
+    %  m\'as adelante  (y unas  referencias citadas)  para tener  un  esquema de
+    % prueba.
 %
-  \item  \SZ{ME  TENGO  QUE  FIJAR   BIEN...   a\'un  que  sea  seguro  $X  \sim
-      \ED_\simed(m,\Sigma,\varphi_X)   \:\:   \Leftrightarrow   \:\:  X   \egald
-      \Sigma^{\frac12} \,  U \,  \Lambda_\simed \, U^t  \ \Sigma^{\frac12}  + m$
-      \:\:  con  \:\:  $U  \sim  \U\left( \Ort_d(\Rset)  \right)$  ($d'  =  d$),
-      independiente  de $\Lambda_\simed$  matriz  aleatoria diagonal.   Pasando,
-      aparece  que $\Lambda_\simed  =  \Diag(\lambda\left( X  \right))$, \ie  de
-      diagonal   el  vector  de   los  autovalores   de  $X$.    Nuevamente,  la
-      descomposici\'on no es \'unica, salvo si imponemos que en $\Lambda_\simed$
-      los autovalors sean de valor en orden decreciente por ejemplo.~\cite[Teo.~17.3, fin de \S~17.3.1, Teo.~17.6]{TemCal13}}
-      % (ver tambi\'en~\cite[Rep.~2]{Daw78}). 
+  \item  $X  \sim  \ED_\simed(m,\Sigma,\varphi_X)  \:\: \Leftrightarrow  \:\:  X
+    \egald \Sigma^{\frac12} \,  U \, \Lambda_\simed \, U^t  \ \Sigma^{\frac12} +
+    m$  \:\:  con \:\:  $U  \sim \U\left(  \Ort_d(\Rset)  \right)$  ($d' =  d$),
+    independiente  de  $\Lambda_\simed$  matriz  aleatoria  diagonal.   Pasando,
+    aparece  que  $\Lambda_\simed  =  \Diag(\lambda\left( X  \right))$,  \ie  de
+    diagonal   el  vector   de   los  autovalores   de   $X$.   Nuevamente,   la
+    descomposici\'on no es \'unica. Se puede imponer que en \ $\Lambda_\simed$ \
+    los autovalors sean de valor en orden decreciente por ejemplo. $U$ tambi\'en
+    no es \'unica: remplazar $U$ por  $U S$ con $S$ diagonal de componentes $\pm
+    1$ no cambia ni la distribuci\'on  ($U \egald U S$), ni la descomposici\'on.
+    A veces, se impone  que la primera columna de $U$ sea  positiva, lo que va a
+    dar  una descomposici\'on  \'unica (ver~\cite[Teo.~17.3,  fin  de \S~17.3.1,
+    Teo.~17.6]{TemCal13},~\cite[Cor.~2.5.2]{AndGui10},~\cite[\S~2.4.2]{DeiGio09}
+    o~\cite[\S~8,  p.~34-35]{Gir96}).  Una manera  de probar  eso es  primero de
+    escribir  $X$, siendo  sim\'etrica, bajo  su  forma diagonal~\cite{HorJoh13,
+      Bha97},  $X  = U  \Delta  U^t$  \ con  $U  \in  \Ort_d(\Rset)$ y  $\Delta$
+    diagonal. Sin perdida de generalidad,  se puede imponer el order decreciente
+    para las autovalores,  poniendo la permutaci\'on que lo  hace en $U$. Ahora,
+    se puede calcula la Jacobiana  de la transformaci\'on $X \mapsto (U,\Delta)$
+    parametrizando \ $U$ \ con \  $\frac{d (d-1)}{2}$ \ parametros (debido a los
+    v\'inculos dados por $U U^t =  I$) a adici\'on a los autovalores. Se muestra
+    que  el determinente  de la  Jacobiana  se separa  en un  t\'ermino con  los
+    autovalores  \   $\lambda_i$  \  (m\'as  precisamente  en   $\prod_{i  <  j}
+    (\lambda_i-\lambda_j)$) por una funci\'on de los par\'ametros parametrizando
+    \           $U$          (ver~\cite[\S~3.1]{Meh04},~\cite[\S~6.5          \&
+    Ec.~(6.13)]{LivNov18},~\cite[Teo.~17.3]{TemCal13},~\cite[\S~9.3]{Car83}
+    o~\cite[\S~8, p.~34-35]{Gir96}).  Con el hecho  de que la  distribuci\'on de
+    $X$ depende  solamente de $\lambda =  \diag(\Lambda)$, eso prueba  que $U$ y
+    $\Delta$ son independientes. A continuaci\'on, de $X = U \Delta U^t \egald O
+    U \Delta (O  U)^t$ se nota que la distribuci\'on de  los autovectores de $X$
+    es  invariante  por  transformaci\'on  ortogonal: por  definici\'on,  es  la
+    distribuci\'on   de  Haar   sobre   \  $\Ort_d(\Rset)$   (medida  de   Haar,
+    normalizada),    \ie   \   $U    \sim   \U\left(    \Ort_d(\Rset)   \right)$
+    (ver~\cite[\S~4.6]{EdeRao05},~\cite[Cor.~2.5.4]{AndGui10}       o~\cite[\S~2,
+    p.~30]{Gir96}).
   \end{itemize}
   %
   En  los cuatro  primeros  casos, para  $d'  = 1$,  se  recupera obviamente  el
