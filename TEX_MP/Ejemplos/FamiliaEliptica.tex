@@ -19,22 +19,23 @@
 % Ibarola Perez p.
 % Mukhopadhyay p.
 
-El estudio de  estos vectores es bastante antigua. Hace  falta volver a trabajos
+El estudio de  estos vectores es bastante antiguo. Hace  falta volver a trabajos
 de Maxwell en 1867 sobre la teor\'ia del gas para encontrar unas de las primeras
-menciones  a este  formalismo~\cite{Max67}  o~\cite[pp.~377--391]{Nie52:v1}.  El
+huellas  de  este  formalismo~\cite{Max67} o~\cite[pp.~377--391]{Nie52:v1}.   El
 problema de Maxwell era de encontrar una distribuci\'on (tridimensional) que sea
 isotr\'opica  y  separable  a  la  vez:  monstr\'o  que  tal  distribuci\'on  es
 necesariamente    gaussiana    (es    ahora    conocido    como    teorema    de
 Maxwell-Hershel~\footnote{Ver~\cite[Prop.~4.11]{BilBre99}.   Se notar\'a  que no
-  hay muchas menciones  de este teorema bajo esta  denominaci\'on. no sabemos si
+  hay muchas menciones  de este teorema bajo esta  denominaci\'on. No sabemos si
   la raz\'on es que  no tienen ni Maxwell, ni Herschel la  partenidad o si no lo
-  revendicaron. Sin embargo, ver~\cite{Max67}}.   Volveremos en este teorema. La
-clase de las distribuciones el\'iptical, o a simetr\'ia el\'iptica fue estudiada
-intensivamente  formalmente~\cite{Bar34,  Bar34:07,  Ver64, McgWag68,  CamHua81,
-  Eat81,  Kan94,  Lau75,  Yao73,  KotNad01,  FanKot90,  Mui82,  BilBre99}.   Fue
-tambi\'en  usadas   en  aplicaciones  en   estad\'istica~\cite{BlaTho68,  Chu73,
-  YanKot03,  ArePin06,  BauPas07,  ChiPas08},   o  procesamiento  de  se\~nal  o
-imagenes~\cite{Gol76, RanWei93, RanWei95, ZozVig10, Zoz12}, entre otros.
+  revendicaron.  Sin  embargo, ver~\cite{Max67}}).   Volveremos  a este  teorema
+m\'as  adelante. La  clase de  las  distribuciones el\'iptical,  o a  simetr\'ia
+el\'iptica  fue   estudiada  intensivamente  formalmente~\cite{Bar34,  Bar34:07,
+  Ver64,  McgWag68, CamHua81,  Eat81, Kan94,  Lau75, Yao73,  KotNad01, FanKot90,
+  Mui82,    BilBre99}.     Fue    tambi\'en    usadas   en    aplicaciones    en
+estad\'istica~\cite{BlaTho68, Chu73, YanKot03,  ArePin06, BauPas07, ChiPas08}, o
+procesamiento de  se\~nal o imagenes~\cite{Gol76,  RanWei93, RanWei95, ZozVig10,
+  Zoz12}, entre otros.
 
 Empezamos  por  la  definici\'on,  antes  de  ir  m\'as  all\'a  estudiando  sus
 propiedades remarcables.
@@ -43,7 +44,7 @@ propiedades remarcables.
 \begin{definicion}[Vector esfericamente invariante]
   Sea  \  $X$  \  vector   aleatorio  $d$-dimensional  real.   $X$  \  es  dicho
   esfericamente  invariante,  o a  simetr\'ia  esf\'erica,  o de  distribuci\'on
-  esf\'erica \ si  para cualquier matriz ortogonal \  $O \in \Ort_d(\Rset)$ (ver
+  esf\'erica \ si  para cualquiera matriz ortogonal \  $O \in \Ort_d(\Rset)$ (ver
   notaciones),
   %
   \[
@@ -53,16 +54,16 @@ propiedades remarcables.
 \end{definicion}
 
 Se notar\'a  que tal vector aleatorio  no puede ser discreto  porque un conjunto
-numerable  no puede  ser invariante  por cualquier  rotaci\'on (y  entonces, por
-cualquier transformaci\'on ortogonal).
+numerable  no puede  ser invariante  por cualquiera  rotaci\'on (y  entonces, por
+cualquiera transformaci\'on ortogonal).
 
 En la definici\'on, $O$ es deterministica, pero como consecuencia, la invarianza
-esferica se conserva tomando $O$ aleatoria independiente de $X$:
+esf\'erica se conserva tomando $O$ aleatoria independiente de $X$:
 %
 \begin{lema}\label{Lem:MP:SIAleatoria}
 
   Sea   \   $X$  \   vector   aleatorio   $d$-dimensional   real  a   simetr\'ia
-  esf\'erica.  Entonces, para  cualquier  matriza aleatoria  $0$ definida  sobre
+  esf\'erica.  Entonces, para  cualquiera  matriza aleatoria  $O$ definida  sobre
   $O(\Omega) = \Ort_d(\Rset)$,
   %
   \[
@@ -95,7 +96,7 @@ pelota de rugby. Adem\'as, se puede que eso se pasa en torno a un punto no cero.
   Sea  \  $X$  \ vector  aleatorio  $d$-dimensional  real.   $X$  \ es  dicho  a
   simetr\'ia  el\'iptica,  o  elipticalmente  invariante,  o  de  distribuci\'on
   el\'iptica, en torno a \ $m \in \Rset^d$, \ si existe una matriz \ $\Sigma \in
-  \Pos_d^+(\Rset)$  \  tal  que  para   cualquier  matriz  ortogonal  \  $O  \in
+  \Pos_d^+(\Rset)$  \  tal  que  para   cualquiera  matriz  ortogonal  \  $O  \in
   \Ort_d(\Rset)$,
   %
   \[
@@ -113,13 +114,13 @@ pelota de rugby. Adem\'as, se puede que eso se pasa en torno a un punto no cero.
   llamada {\em matriz caracter\'istica}.
 \end{definicion}
 %
-Se puede inmediatamente  ver que \ $\Sigma$ \ es definida  por lo menos mediante
-un factor escalar. De hecho, si un \ $\Sigma$ \ conviene, cualquier \ $a \Sigma$
-\ con \ $a > 0$ \ conviene tambi\'en.
+Se puede  inmediatamente ver  que \  $\Sigma$ \ es  definida mediante  un factor
+escalar. De hecho, si  un \ $\Sigma$ \ conviene, cualquier \  $a \Sigma$ \ con \
+$a > 0$ \ conviene tambi\'en.
 
 Comparativamente a un vector esf\'ericamente invariante, \ $m$ \ es el centro de
-simetr\'ia,   $P$   contiene   las   direciones   de   ``estiramientos''   y   \
-$\Delta^{\frac12}$  \   los  factores  de   estiramientos,  $X  \egald  m   +  P
+simetr\'ia,   $Q$   contiene   las   direciones   de   ``estiramientos''   y   \
+$\Delta^{\frac12}$  \   los  factores  de   estiramientos,  $X  \egald  m   +  Q
 \Delta^{\frac12} Y$ \ con \ $Y$ \ a  simetr\'ia esf\'erica. Para \ $m = 0$ \ y \
 $\Delta \propto I$, se recupera obviamente un vector a simetr\'ia esf\'erica.
 
@@ -132,7 +133,7 @@ de  probabilidad,  o  equivalentemente  por su  funci\'on  car\'acteristica.  La
 %
   Sea \ $X$ \ vector  aleatorio $d$-dimensional a simetr\'ia el\'iptica en torno
   a  \  $m   \in  \Rset^d$  \  y  de  matriz   caracter\'istica  \  $\Sigma  \in
-  \Pos_d^+(\Rset)$. Entonces  la funci\'on  caract\'eristica se escribe  bajo la
+  \Pos_d^+(\Rset)$. Entonces  la funci\'on  caracter\'istica se escribe  bajo la
   forma
   %
   \[
@@ -140,35 +141,35 @@ de  probabilidad,  o  equivalentemente  por su  funci\'on  car\'acteristica.  La
     \omega \right)
   \]
   %
-  donde \  $\varphi_X: \Rset_+  \mapsto [-1  \; 1]$ \  escalar, es  llamado {\em
-    generadora  caracter\'istica},  y   reciprocamente.  Tomando  el  logaritmo,
-  obviamente la secunda funci\'on caracter\'istica se escribe
+  donde \ $\varphi_X:  \Rset_+ \mapsto [-1 \; 1]$ \ funci\'on  de un escalar, es
+  llamado {\em  generadora caracter\'istica}.  Tomando  el logaritmo, obviamente
+  la secunda funci\'on caracter\'istica se escribe
   %
   \[
   \Psi_X(\omega) =  \imath \, \omega^t  m + \psi_X\left( \omega^t  \Sigma \omega
   \right)
   \]
   %
-  donde  \ $\psi_X  =  \log \varphi_X:  \Rset_+  \mapsto \Cset$  \ escalar.   La
-  llamaremos  {\em secunda generadora  caracter\'istica}. Reciprocamente,  si la
-  funci\'on  caracter\'istica  tiene  esta  forma,  \  $X$  \  es  a  simetr\'ia
-  el\'iptica.
+  donde \  $\psi_X = \log  \varphi_X: \Rset_+ \mapsto  \Cset$ \ funci\'on  de un
+  escalar.        La        llamaremos       {\em       secunda       generadora
+    caracter\'istica}.  Reciprocamente, si  la funci\'on  caracter\'istica tiene
+  esta forma, \ $X$ \ es a simetr\'ia el\'iptica.
 \end{teorema}
 %
 \begin{proof}
   Sea \  $Y = \Delta^{-\frac12} Q^t  \left( X - m  \right)$ \ con \  $\Sigma = Q
   \Delta  Q^t$  \ diagonalizaci\'on  de  \  $\Sigma$.   Por definici\'on  y  del
-  teorema~\ref{Teo:MP:PropiedadesFuncionCaracteristica},  para  cualquier matriz
+  teorema~\ref{Teo:MP:PropiedadesFuncionCaracteristica},  para  cualquiera matriz
   ortogonal \ $O \in \Ort_d(\Rset)$ \ y cualquier \ $\omega \in \Rset^d$
   %
   \[
   \Phi_Y(\omega) = \Phi_{O Y}(\omega) = \Phi_Y(O^t \omega)
   \]
   %
-  En  otros  terminos,  la  funci\'on  caracter\'istica  queda  invariante  bajo
-  cualquier  transformaci\'on  ortogonal  sobre  $\omega$,  y  entonces  depende
+  En  otros  t\'erminos,  la  funci\'on  caracter\'istica  queda  invariante  bajo
+  cualquiera  transformaci\'on  ortogonal  sobre  $\omega$,  y  entonces  depende
   solamente  de  la  norma euclideana  de  \  $\omega$.   Es decir,  existe  una
-  funci\'on escalar \ $\varphi_X$ \ tal que
+  funci\'on de un escalar \ $\varphi_X$ \ tal que
   %
   \[
   \Phi_Y(\omega) = \varphi_X(\omega^t \omega)
@@ -183,7 +184,7 @@ de  probabilidad,  o  equivalentemente  por su  funci\'on  car\'acteristica.  La
   \]
   % 
   lo que  cierra la prueba  directa.  Reciprocamente, si  \ $\Phi_X$ \  tiene la
-  forma dada, para cualquier matriz ortogonal \ $O \in \Ort_d(\Rset)$ \ $\Phi_{O
+  forma dada, para cualquiera matriz ortogonal \ $O \in \Ort_d(\Rset)$ \ $\Phi_{O
     Y}(\omega)  = \Phi_Y( O^t  \omega )  = \Phi_Y(\omega)$  \ y,  por relaci\'on
   uno-uno  entre  la medida  de  probabilidad de  una  variable  aleatorio y  su
   funci\'on caracter\'istica, $Y \egald O Y$.
@@ -196,7 +197,7 @@ de  probabilidad,  o  equivalentemente  por su  funci\'on  car\'acteristica.  La
 \end{proof}
 %
 Se notar\'a que si tomamos  una matriz caracter\'istica $\Sigma$ y la generadora
-correspondiente  $\varphi$, \  $a  \Sigma$ \  y  \ $\varphi_X\left(  \frac{u}{a}
+correspondiente  $\varphi_X$, \ $a  \Sigma$ \  y \  $\varphi_X\left( \frac{u}{a}
 \right)$ \ conviene tambi\'en, lo que  es de acuerdo con la indeterminencia de \
 $\Sigma$ \ bajo un factor positivo.  Se puede a\~nadir un v\'inculo, por ejemplo
 fijando  \  $\Tr \Sigma$  \  para  que  \ $\Sigma$  \  y  \ $\varphi_X$  \  sean
@@ -208,7 +209,7 @@ X \, \sim \, \ED \left( m , \Sigma , \varphi_X \right)
 \]
 %
 y   los  conjuntos  de   generadoras  caracter\'isticas   que  resultan   de  la
-restricci\'on  de   $\PD_d$  (y  de  $\PD$)  a   las  funciones  caracteristicas
+restricci\'on  de  $\PD_d$  (y  de  $\PD$)  a  las  funciones  caracter\'isticas
 esf\'ericamente invariante como
 %
 \[
@@ -245,7 +246,7 @@ uniforme sobre la esfera \ $\Sset_d$, \ $U \sim \U(\Sset_d)$~\cite{FanKot90}:
   %
   con \ $J_\nu$ \ funci\'on de Bessel~\footnote{Seg\'un Sch{\oe}nberg~\cite[Nota
     de  pie~9]{Sch38} and Watson~\cite[p.~24,  nota de  pie~*]{Wat22}, deber\'ia
-    llamarse  integral  de  Poisson  proque fue  introducida  primariamente  por
+    llamarse  integral  de  Poisson  porque fue  introducida  primariamente  por
     Poisson en 1823~\cite{Poi23}, pero  apareci\'o implicitamente a\'un antes en
     trabajos  de Euler~\cite[Cap.~X, \S~1036]{Eul1769}.}   primera especie  y de
   orden $\nu$ (ver notaciones).
@@ -314,7 +315,7 @@ partir de un vector esf\'ericamente invariante de varias maneras, entre otros:
 \end{proof}
 
 Una otra consecuencia es que, dado el orden, el tensor de los momentos tiene una
-estructura dada  para cualquier ley,  bajo un factor  escalar que depende  de la
+estructura dada  para cualquiera ley,  bajo un factor  escalar que depende  de la
 ley.  Eso vale tambi\'en para los cumulantes:
 %
 \begin{teorema}[Momentos centrales y cumulantes]
@@ -365,7 +366,7 @@ ley.  Eso vale tambi\'en para los cumulantes:
 \end{teorema}
 %
 Una prueba  es dada  por inducci\'on en~\cite{BerBen86}  para los  momentos (ver
-tambi\'en~\cite[p.~44]{FanKot90} para el resultat  con los momentos).  Damos una
+tambi\'en~\cite[p.~44]{FanKot90} para el resultado  con los momentos).  Damos una
 prueba m\'as directa, valida para ambos momentos y cumulantes.
 %
 \begin{proof}
@@ -407,7 +408,7 @@ prueba m\'as directa, valida para ambos momentos y cumulantes.
   \]
   %
   con \ $\Pi_n$ \ el conjunto de las particiones de \ $\{ 1 , \ldots , n \}$ \ y
-  \ $f^{(l)}$ la $l$-\'esima derivada de $f$.  En la expresi\'on de los momentos
+  \ $f^{(l)}$ la $l$-\'esima derivada de $f$.  En ambas expresi\'on de los momentos
   centrales y cumulantes tenemos
   %
   \[
@@ -419,7 +420,7 @@ prueba m\'as directa, valida para ambos momentos y cumulantes.
   \[
   \frac{\partial  g}{\partial   \omega_{j_1}}  =  2   \sum_{l=1}^d  \omega_{j_1}
   \Sigma_{j_1,l},  \qquad  \frac{\partial^2  g}{\partial  \omega_{j_1}  \partial
-    \omega_{j_2}}  =  2 \Sigma_{j_1,j_2},  \qquad  \forall  \:  n \ge  3,  \quad
+    \omega_{j_2}}  =  2 \, \Sigma_{j_1,j_2},  \qquad  \forall  \:  n \ge  3,  \quad
   \frac{\partial^n g}{\prod_{l=1}^n \partial \omega_{j_l}} = 0
   \]
   %
@@ -436,7 +437,7 @@ prueba m\'as directa, valida para ambos momentos y cumulantes.
   \end{array}\right.
   \]
   %
-  Entonces,  en la formula  de Hardy  tomada en  $\omega =  0$ quedan  solas las
+  Entonces,  en la f\'ormula  de Hardy  tomada en  $\omega =  0$ quedan  solas las
   particiones  que  contienen unicamente  pares  de  indices.   Eso da  momentos
   centrales y cumulantes nulos para $k$ impar (obvio por sim\'etria). Adem\'as,
   siendo \  $\Pi_{2 k , 2}$  \ el conjunto de  particiones por pares de  $\{ 1 ,
@@ -489,9 +490,9 @@ tensor curtosis para un vector a simetr\'ia el\'iptica~\cite[p.~44]{FanKot90}:
 \end{corolario}
 \begin{proof}
   El resultado es inmediato por lo  de la covarianza.  Para la curtosis, momento
-  central de  orden cuatro del  vector normalizado, es equivalente  considerar \
+  central de orden cuatro del  vector normalizado, es equivalente a considerar \
   $\Sigma  = -  \frac{1}{2  \, \varphi_X(0)}  I$,  lo que  da  el resultado  del
-  corrolario.
+  corolario.
 \end{proof}
 %
 Nota: de $\Tr(\Sigma_X) = \Tr\left( \Esp\left[ (X-m_X) (X-m_X)^t \right] \right)
@@ -511,7 +512,7 @@ $\Sigma$. Es decir que un v\'inculo que se puede poner tambi\'en para fijar \ $(
 tener  $\varphi_X'(0) =  - \frac12$,  para que  \ $\Sigma$  \ y  \  $\Sigma_X$ \
 coincidan.
 
-De la  forma de la funci\'on  caracter\'istica se proba  tambi\'en que cualquier
+De la  forma de la funci\'on  caracter\'istica se prueba  tambi\'en que cualquiera
 transformaci\'on  lineal de un  vector a  simetr\'ia el\'iptica  da un  vector a
 simetr\'ia el\'iptica:
 %
@@ -529,8 +530,8 @@ simetr\'ia el\'iptica:
 \end{teorema}
 %
 \begin{proof}
-  El  resultado es  inmediato  de  la forma  de  la funci\'on  caracter\'istica,
-  teorema~\ref{Teo:MP:GeneradorasCaracteristicas}   y   como  consecuencia   del
+  El resultado  es inmediato de la  forma de la  funci\'on caracter\'istica, del
+  teorema~\ref{Teo:MP:GeneradorasCaracteristicas},   y  como   consecuencia  del
   teorema~\ref{Teo:MP:PropiedadesFuncionCaracteristica}.
 \end{proof}
 %
@@ -539,7 +540,7 @@ el\'iptica  en torno  a  la proyecci\'on  del  vector posici\'on,  con la  misma
 generadora caracter\'istica.
 
 
-Eso  v\'incula  tambi\'en  un  vector  a  simetr\'ia  el\'iptica  con  cualquier
+Eso  v\'incula  tambi\'en  un  vector  a  simetr\'ia  el\'iptica  con  cualquiera
 proyecci\'on:
 %
 \begin{teorema}[Proyecci\'on y componentes]
@@ -614,15 +615,17 @@ caso en general por adici\'on:
   \PD_d$ tal que
   %
   \[
-  \varphi_X\left(  \omega^t \Sigma_X  \omega\right) \,  \varphi_Y\left( \omega^t
-    \Sigma_Y \omega\right) = \varphi\left( \omega^t \Sigma \omega\right)
+  e^{\imath  \omega^t   (m_X  +  m_Y)}  \,   \varphi_X\left(  \omega^t  \Sigma_X
+    \omega\right) \, \varphi_Y\left( \omega^t \Sigma_Y \omega\right) = e^{\imath
+    \omega^t m} \, \varphi\left( \omega^t \Sigma \omega\right)
   \]
   %
-  Introducemos la matriz
+  $\varphi_X,   \:  \varphi_Y,   \:  \varphi$   \  siendo   a   valores  reales,
+  necesariamente $m = m_X + m_Y$. A continuaci\'on, introducemos la matriz
   %
   \[
-  R_Y  = \Sigma_X^{-\frac12} \Sigma_Y  \Sigma_X^{-\frac12} \quad  \mbox{su forma
-    diagonal} \quad = Q \Delta_Y Q^t
+  R_Y  = \Sigma_X^{-\frac12} \Sigma_Y  \Sigma_X^{-\frac12}
+  % \quad \mbox{su forma diagonal} \quad = Q \Delta_Y Q^t
   \]
   %
   Siendo $R_Y  \in \Pos_d^+(\Rset)$ \  se diagonaliza con $Q  \in \Ort_d(\Rset)$
@@ -641,19 +644,19 @@ caso en general por adici\'on:
   \qquad \omega = \Sigma_X^{-\frac12} Q, \quad v \in \Rset^d
   \]
   %
-  Entonces,  si $X+Y$  es  a  simetr\'ia eli\'iptica,  la  relaci\'on entre  las
+  Entonces,  si  $X+Y$ es  a  simetr\'ia  el\'iptica,  la relaci\'on  entre  las
   generadoras caracter\'isticas debe tomar la forma
   %
   \[
-  \varphi_X\left( v^t v \right)  \, \varphi_Y\left( \omega^t \Lambda_Y v \right)
-  = \varphi\left( v^t R v \right)
+  \varphi_X\left( v^t  v \right)  \, \varphi_Y\left( v^t  \Lambda_Y v  \right) =
+  \varphi\left( v^t R v \right)
   \]
   %
   Diferenciendo en $v$ se obtiene necesariamente
   %
   \[
-  \left( \varphi_X'\left( v^t v  \right) \, \varphi_Y\left( \omega^t \Lambda_Y v
-    \right) \,  I + \varphi_X\left(  v^t v \right) \,  \varphi_Y'\left( \omega^t
+  \left( \varphi_X'\left( v^t v  \right) \, \varphi_Y\left( v^t \Lambda_Y v
+    \right) \,  I + \varphi_X\left(  v^t v \right) \,  \varphi_Y'\left( v^t
       \Lambda_Y  v \right)  \,  \Lambda_Y \right)  v  = \varphi'\left(  v^t R  v
   \right) R v
   \]
@@ -671,17 +674,17 @@ caso en general por adici\'on:
   A continuaci\'on, para cualquier $i = 1 , \ldots , d$ tenemos
   %
   \[
-  \varphi_X'\left( v^t v \right) \, \varphi_Y\left( \omega^t \Lambda_Y v \right)
-  +  \lambda_i \,  \varphi_X\left( v^t  v \right)  \,  \varphi_Y'\left( \omega^t
+  \varphi_X'\left( v^t v \right) \, \varphi_Y\left( v^t \Lambda_Y v \right)
+  +  \lambda_i \,  \varphi_X\left( v^t  v \right)  \,  \varphi_Y'\left( v^t
     \Lambda_Y v \right) = r_i \, \varphi'\left( v^t R v \right)
   \]
   %
   Para cualquier $i \ne j$, por combinaci\'on se obtiene entonces
   %
   \[
-  (r_j-r_i) \varphi_X'\left( v^t v \right) \, \varphi_Y\left( \omega^t \Lambda_Y
+  (r_j-r_i) \varphi_X'\left( v^t v \right) \, \varphi_Y\left( v^t \Lambda_Y
     v \right) + (\lambda_i r_j - \lambda_j r_i) \, \varphi_X\left( v^t v \right)
-  \, \varphi_Y'\left( \omega^t \Lambda_Y v \right) = 0
+  \, \varphi_Y'\left( v^t \Lambda_Y v \right) = 0
   \]
   %
   es decir
@@ -689,14 +692,14 @@ caso en general por adici\'on:
   \[
   (r_j-r_i)  \,  \frac{\varphi_X'\left(  v^t  v \right)}{\varphi_X\left(  v^t  v
     \right)}  +  (\lambda_i  r_j  -  \lambda_j  r_i)  \,  \frac{\varphi_Y'\left(
-      \omega^t  \Lambda_Y   v  \right)}{\varphi_Y\left(  \omega^t   \Lambda_Y  v
+      v^t  \Lambda_Y   v  \right)}{\varphi_Y\left(  v^t   \Lambda_Y  v
     \right)} = 0
   \]
   %
   Tomamos ahora \ $v  \in \Sset_d, \:\: w > 0$ \  dando el prim\'er t\'ermino de
   la  suma constante  as\'i que  el  secundo debe  necesariamente ser  constante
-  tambi\'en. Solamente dos casos pueden aparecen entonces: (i) $\forall \: i \ne
-  j, \quad \lambda_i r_j  = \lambda_j r_i$, es decir $\forall \:  i \ne j, \quad
+  tambi\'en. Solamente dos casos pueden aparecer: (i) $\forall \: i \ne j, \quad
+  \lambda_i  r_j  =  \lambda_j  r_i$,  es  decir $\forall  \:  i  \ne  j,  \quad
   \frac{\lambda_j}{\lambda_i} = \frac{r_j}{r_i}$,  \ie $R \propto \Lambda_Y$; en
   otras  palabras,  $\Sigma  \propto  \Sigma_Y$;  en adici\'on,  se  debe  tener
   tambi\'en $r_j = r_i$, \ie $R  \propto I$, es decir $\Sigma \propto \Sigma_X$;
@@ -712,7 +715,7 @@ caso en general por adici\'on:
 \end{proof}
 
 Vimos   en   las  secciones~\ref{Sssec:MP:StudentT}   y~\ref{Sssec:MP:StudentR},
-tratando de  vectores de  distribuci\'on Student-$t$ y  -$r$, situaciones  en la
+tratando de  vectores de distribuci\'on  Student-$t$ y -$r$, situaciones  en las
 cuales la  matriz de covarianza es  (proporcional a) la  identidad, mientras que
 las componentes del  vector no son independientes, contrariamente  a lo que pasa
 en  el caso  gaussiano.   De hecho  este resultado  es  general en  el marco  de
@@ -722,7 +725,7 @@ vectores a sim\'etria el\'iptica~\cite{BilBre99, Max67}:
 \label{Teo:MP:MaxwellHershell}
 %
   Sea \ $X \sim \ED(m,I,\varphi_X)$. Las componentes $X_i$ son independientes si
-  y solamente si $X  \sim \N(m, \alpha I)$ con $\alpha >  0$. En otros terminos,
+  y solamente si $X  \sim \N(m, \alpha I)$ con $\alpha >  0$. En otros t\'erminos,
   los  solos vectores  a simetr\'ia  esf\'erica  en torno  a un  vector $m$  son
   gaussianos de covarianza proporcional a la identidad y de media $m$.
 \end{teorema}
@@ -744,7 +747,7 @@ vectores a sim\'etria el\'iptica~\cite{BilBre99, Max67}:
   %
   La  sola  funci\'on  continua  satisfaciendo  este morfismo  es  la  funci\'on
   exponencial, es decir  $\varphi_X(u) = \exp(a u)$.  La  funci\'on debe ser una
-  generadora  caract\'eristica, asi  que  necesariamente $a  <  0$, que  podemos
+  generadora  caracter\'istica, asi  que  necesariamente $a  <  0$, que  podemos
   escribir $a = - \frac{\alpha}{2}$ con $\alpha > 0$, lo que cierra la prueba.
 \end{proof}
 %
@@ -755,7 +758,7 @@ Sean \ $X_i \sim \ED( m_i , \Sigma_i , \varphi_X), \: i = 1, 2$ \ tales que \ $X
 =  \begin{bmatrix} X_1\\X_2 \end{bmatrix}  \sim \ED\left(  \begin{bmatrix} m_1\\
     m_2   \end{bmatrix}    ,   \begin{bmatrix}   \Sigma_1    &   0   \\    0   &
     \Sigma_2 \end{bmatrix} , \varphi_X \right)$.   Las componentes \ $X_i$ \ son
-independientes si y solamente si $X_i  \sim \N(m_i , \Sigma_i)$. Se extiendo por
+independientes si y solamente si $X_i  \sim \N(m_i , \Sigma_i)$. Se extiende por
 inducci\'on a m\'as de dos componentes vectoriales.
 \end{corolario}
 %
@@ -819,9 +822,9 @@ tambi\'en~\cite{KeiSte74, Tei60}) y se enuncia como sigue:
   & = & \int_{\Rset^d} \varphi_U\left( w^2 \|x\|^2 \right) \, dP_X(x)
   \end{eqnarray*}
   %
-  con \ $\Phi_U$ \ funci\'on caracteristica  de un vector \ $U \sim \U(\Sset_d)$
-  \ y  \ $\varphi_U$  \ la generadora  caracter\'istica correspondiente.   Sea \
-  $F_R(r) = 0$ \ para \ $r \le 0$ \ y
+  con  \  $\Phi_U$  \  funci\'on   caracter\'istica  de  un  vector  \  $U  \sim
+  \U(\Sset_d)$   \   y   \   $\varphi_U$  \   la   generadora   caracter\'istica
+  correspondiente.  Sea \ $F_R(r) = 0$ \ para \ $r < 0$ \ y
   %
   \[
   F_R(r) = \int_{\Bset(0,r)} dP_X(x)
@@ -840,7 +843,7 @@ tambi\'en~\cite{KeiSte74, Tei60}) y se enuncia como sigue:
   \end{eqnarray*}
   %
   el paso  de la ante\'ultima  a la  \'ultima linea siendo  valido para \  $R$ \
-  independiente  de  \ $U$.   En  otros  terminos, con  \  $R$  \  de medida  de
+  independiente  de  \ $U$.   En  otros  t\'erminos, con  \  $R$  \  de medida  de
   probabilidad \  $P_R$ \  y \ $U  \sim \U(\Sset_d)$  \ independiente de  \ $R$,
   tenemos del teorema de esperanza total~\ref{Teo:MP:EsperanzaTotal},
   %
@@ -850,7 +853,9 @@ tambi\'en~\cite{KeiSte74, Tei60}) y se enuncia como sigue:
   %
   La prueba se  cierra de la relaci\'on uno-uno entre  la medida de probabilidad
   de un vector aleatorio y la funci\'on caracter\'istica. De \ $X \egald R \, U$
-  \ y \ $\| U \| = 1$ \ viene \ $R \egald \| X \|$.
+  \ y \ $\| U \| = 1$ \ viene  \ $R \egald \| X \|$. \SZ{Me tengo que fijar bien
+    el paso  introduciendo $F_R$  con la parametrizaci\'on  de $\Rset^d$  con la
+    esfera.}
 \end{proof}
 %
 Se puede referirse tambi\'en a \cite[Prop.~4.10]{BilBre99} para tener una prueba
@@ -882,12 +887,12 @@ como mu\~necas rusas: a cada escala o  capa \ $R = r$ tenemos una distribuci\'on
 uniforma sobre la esfera de este rayo  $r$. Por eso, $X$ es tambi\'en dicho {\em
   mezcla de  escala} de  una {\em base}  \ uniforme  y \ $R$  \ es  llamada {\em
   variable generadora} con respecto a  esta base. En esta situaci\'on, llamaremos
-tambi\'en la variable \ $R$ \ {\em rayo}.
+tambi\'en a la variable \ $R$ \ {\em rayo}.
 
-De  esta escritura,  queda ahora  claro que  cada tensor  de  momentos centrales
-tienen  una estructura  fija: de  \ $X  = R  \Sigma U$  \ tenemos  $\zeta_l[X] =
-\Esp\left[  R^l \right]  \zeta_l[\Sigma  U]$ (ver  ej.~\cite[teo.~2.8]{FanKot90}
-para $\Sigma \propto I$): la estructura, com\'un a cualquier vector aleatorio de
+De esta escritura, queda ahora claro que cada tensor de momentos centrales tiene
+una estructura fija:  de \ $X =  R \Sigma U$ \ tenemos  $\zeta_l[X] = \Esp\left[
+  R^l \right] \zeta_l[\Sigma U]$ (ver ej.~\cite[teo.~2.8]{FanKot90} para $\Sigma
+\propto   I$):  la  estructura,   com\'un  a   cualquier  vector   aleatorio  de
 $\ED(m,\Sigma,\varphi_X)$ es dada por \  $\zeta_k[\Sigma U]$ (cero cuando $l = 2
 k + 1$, por  simetr\'ia central) y el factor, dependiente de  la ley es dada por
 el  momento  del ``rayo''  $R$.   Adem\'as,  se puede  dar  una  otra forma  del
@@ -916,7 +921,7 @@ coeficiente $\alpha_k$:
   \]
   %
   A  continuaci\'on, para  \ $X  \sim \ED(m,\Sigma,\varphi_X)$,  de $X-m  =  R \
-  \Sigma  \ U$  \  ($R$ es  escalar)  y de  la formula  del  tensor de  momentos
+  \Sigma  \ U$  \ ($R$  es escalar)  y de  la f\'ormula  del tensor  de momentos
   centrales se obtiene
   %
   \[
@@ -948,32 +953,32 @@ remarcables tambi\'en.
 %
   Sea \  $X \sim  \ED(m,\Sigma,\varphi_X)$. Si admite  una densidad~\footnote{De
     hecho, sufice que admita una densidad  con respecto a una medida que depende
-    solamente  del volumen,  como  la  de Lebesgue  pero  tambi\'en, de  Haar.},
+    solamente  del volumen,  como  la  de Lebesgue,  pero  tambi\'en la de  Haar.},
   entonces esta densidad tiene la forma
   %
   \[
   p_X(x)  = |\Sigma|^{-\frac12} d_X\left( (x-m)^t \Sigma^{-1} (x-m) \right)
   \]
   %
-  donde \ $d_X:  \Rset_+ \mapsto \Rset_+$ \ escalar,  es llamada {\em generadora
-    de densidad}. Reciprocamente, si la densidad  tiene esta forma, \ $X$ \ es a
-  simetr\'ia el\'iptica.
+  donde \ $d_X:  \Rset_+ \mapsto \Rset_+$ \ funci\'on de  un escalar, es llamada
+  {\em generadora de densidad}. Reciprocamente, si la densidad tiene esta forma,
+  \ $X$ \ es a simetr\'ia el\'iptica.
 \end{teorema}
 %
 \begin{proof}
   Sin perdida de generalidad, se  puede considerar \ $X \sim \ED(0,I,\varphi_X)$
   \ y recuperar  el caso general por cambio de  variables.  Entonces, por cambio
   de   variables   (ver   secci\'on~\ref{Sec:MP:Transformacion})  tenemos   para
-  cualquier matriz ortogonal \ $O \in \Ort_d(\Rset)$ \ y cualquier \ $x$
+  cualquiera matriz ortogonal \ $O \in \Ort_d(\Rset)$ \ y cualquier \ $x$
   %
   \[
-  p_X(x)  = p_{O  X}(x)  =  |O|^{-\frac12} p_X\left(  O^{-\frac12}  x \right)  =
-  p_X\left( O^{-\frac12} x \right)
+  p_X(x)  = p_{O  X}(x)  =  |O|^{-1} p_X\left(  O^{-1}  x \right)  =
+  p_X\left( O^{-1} x \right)
   \]
   %
-  siendo \ $|O|  = 1$~\cite{Bha97, HorJoh13}. $O^{-\frac12}$ \  es tambi\'en una
-  matriz  orthogonal, probando  que \  $p_X$ \  queda invariante  bajo cualquier
-  rotaci\'on de su argumento, es decir que depende solamente de la norma de $x$.
+  siendo \ $|O| = 1$~\cite{Bha97,  HorJoh13}. $O^{-1}$ \ es tambi\'en una matriz
+  orthogonal, probando que \ $p_X$ \ queda invariante bajo cualquiera rotaci\'on
+  de su argumento, es decir que depende solamente de la norma de $x$.
 \end{proof}
 
 De este resultado, cuando \ $X$ \ admite una densidad de probablidad, se escribe
@@ -988,12 +993,12 @@ a\'un que puede ser confuso.
 
 Claramente, para \ $X \sim  \ED(m,\Sigma,d_X)$, los niveles de probabildad \ $\{
 x \tq p_X(x)  = c \} = \left\{  x \tq (x-m)^t \Sigma^{-1} (x-m) =  c \right\}$ \
-son   elipsiodes  centrados   en   \  $m$,   de   direcciones  y   estiramientos
+son   elipsoides  centrados   en   \  $m$,   de   direcciones  y   estiramientos
 respectivamente  dados por  los  autovectores y  autovalores  de $\Sigma$.   Eso
 justifica tambi\'en la denominaci\'on ``$X$ \ a simetr\'ia el\'iptica''.
 
-Como lo vimos, de una forma, todas las caracter\'isticas est\'adisticas de \ $X$
-\ es  en el ``rayo''  \ $R \egald  \sqrt{(X-m)^t \Sigma^{-1} (X-m)}$. En  lo que
+Como lo vimos, de una forma, todas las caracter\'isticas estad\'isticas de \ $X$
+\ son  en el ``rayo''  \ $R \egald  \sqrt{(X-m)^t \Sigma^{-1} (X-m)}$. En  lo que
 sigue,  sin   perdida  de  generalidad,   se  puede  concentrarse  en   $X  \sim
 \ED(0,I,d_X)$.
 
@@ -1080,7 +1085,7 @@ transformada de Fourier.
 %
 \begin{proof}
   Hay varias  pruebas de este  resultado. Una prueba  elegante se basa  sobre la
-  generadora caracteristica  de la variable $U \sim  \U(\Sset_d)$.  Primero, sin
+  generadora caracter\'istica de la variable $U \sim \U(\Sset_d)$.  Primero, sin
   perdida de generalidad,  consideramos $m = 0, \: \Sigma =  I$. Entonces, de la
   escritura \ $X \egald R \, U$ \ tenemos
   %
@@ -1090,7 +1095,7 @@ transformada de Fourier.
   & = & \Esp\left[ \Esp\left[ \left. e^{\imath \, R \omega^t U} \right| R \right]
   \right]\\[2mm]
   %
-  & = & \Esp\left[ \Phi_U\left( R^2 \| \omega \|^2 \right)  \right]
+  & = & \Esp\left[ \varphi_U\left( R^2 \| \omega \|^2 \right)  \right]
   \end{eqnarray*}
   %
   Es    decir,    del    ejemplo~\ref{Ej:MP:GeneCaracUniformeEsfera} se obtiene
@@ -1114,13 +1119,13 @@ transformada de Fourier.
   %
   Eso da  la expresi\'on  de \ $\varphi_X$  \ como  transformada de Hankel  de \
   $d_X$. Para la transformaci\'on inversa, sufice recordarse que $\Phi_X$ siendo
-  transformada  de  Fourier  de  $p_X$,  tenemos $p_X$  tranformada  inversa  de
+  transformada  de  Fourier  de  $p_X$,  tenemos $p_X$  transformada  inversa  de
   $\Phi_X$.  Luego,  por  simetr\'ia  (cambio  de variables  $w  \to  -w$,  esta
   transformada inversa  es nada mas que  la transformada directa,  por un factor
   $(2 \pi)^{-d}$ (ver teoremas~\ref{Teo:MP:InversionDensidad}).
 \end{proof}
 
-Tratando  de un vector  a simetr\'ia  esf\'erica, resuelte  frecuentemente m\'as
+Tratando  de un vector  a simetr\'ia  esf\'erica, resualta  frecuentemente m\'as
 comodo  tratarlo  en su  representaci\'on  en  coordenadas hiperesf\'ericas,  es
 decir, para $d \ge 2$
 %
@@ -1243,14 +1248,14 @@ marginalizaci\'on, y extensi\'on, como la gaussiana por ejemplo:
     consistente}   si  la   generadora  de   densidad  \   $d_{X'}$  \   de  $X'
   = \begin{bmatrix} X_1 & \cdots &  X_{d'} \end{bmatrix}$ \ tiene la misma forma
   que \ $d_X$  \ donde el par\'ametro  dimensional \ $d$ \ es  reemplazado por \
-  $d'$.  En  otros termoinos tenemos  invarianza por marginalizaci\'on si  $d' <
+  $d'$.  En  otros t\'erminos tenemos  invarianza por marginalizaci\'on si  $d' <
   d$, pero se puede ver $X$ como marginal de un vector m\'as grande con la misma
   generadora de probabilidad re-emplazando $d$ por $d'$.
 
-  Se proba  que, equivalentemente, la generadora caracteristica  \ $\varphi_X$ \
-  no  es  relacionada a  \  $d$  (ver~\cite{Kan94,  FanKot90} para  la  prueba).
+  Se prueba que, equivalentemente,  la generadora caracter\'istica \ $\varphi_X$
+  \  no es  relacionada a  \ $d$  (ver~\cite{Kan94, FanKot90}  para  la prueba).
   Entonces, $\varphi_X$  va a ser  una generadora caracter\'istica de  un vector
-  aleatorio   de  cualquier   dimensi\'on  \   $d  \in   \Nset^*$,  o,   con  la
+  aleatorio   de  cualquiera   dimensi\'on  \   $d  \in   \Nset^*$,  o,   con  la
   caracterisaci\'on por functiones definida no negativa (ver teorema de Bocher),
   \  $\varphi_X  \in  \PDSI$  (ver   notaciones,  y  las  a  continuaci\'on  del
   teorema~\ref{Teo:MP:GeneradorasCaracteristicas}).
@@ -1275,9 +1280,9 @@ simetr\'ia esf\'erica como mezcla de  escala de base gaussiana.  La respuesta es
 negativa. Por ejemplo,  del dominio de definici\'on de  la variable, queda claro
 que un  vector uniforme sobre la  esfera no puede  ser mezcla de escala  de base
 gaussiana (ver un otro  contra-ejemplo en~\cite{Pic70}).  Escribir un vecor como
-tal mezcla  resuelte posible solamente bajo  restricciones.  M\'as precisamente,
-una condici\'on necesaria y suficiente  es que la variable debe ser consistente,
-como       lo        prob\'o       Sch{\oe}nberg~\cite[Teo.~2]{Sch38}       (ver
+tal  mezcla es posible  solamente bajo  restricciones.  M\'as  precisamente, una
+condici\'on necesaria y suficiente es que la variable debe ser consistente, como
+lo           prob\'o           Sch{\oe}nberg~\cite[Teo.~2]{Sch38}           (ver
 tambi\'en~\cite[Teo.~2]{SteVan05},            \cite[Lem.~2.2]{Yao73}           o
 \cite[Teo.~1]{Kan94}).
 %
@@ -1296,7 +1301,7 @@ mezcla de gaussiana si y solamente si $X$ es consistente, es decir
 \end{teorema}
 %
 \begin{proof}
-  La directa es inmediata de la formula de esperanza total
+  La directa es inmediata de la f\'ormula de esperanza total
   %
   \[
   \varphi_X(w)  = \Esp\big[  \, \Esp\left[  \varphi_G\left( A  w  \right) \left.
@@ -1330,7 +1335,7 @@ mezcla de gaussiana si y solamente si $X$ es consistente, es decir
   Eso siendo valid para cualquier orden,  se nota $P_R$ el l\'imite de $P_{R_d}$
   cuando $d$ tiende al infinito.  Luego,  el desarollo de Taylor de la funci\'on
   de Bessel  y de  la f\'ormula de  Stirling~\cite[Ec.~8.402~y~8.327]{GraRyz} se
-  proba que
+  prueba que
   %
   \[
   \lim_{d \to +\infty} 2^{\frac{d}{2}-1} \Gamma\left( \frac{d}{2} \right) \left(
@@ -1370,7 +1375,7 @@ orden~\footnote{Una funci\'on  \ $f: I \subset  \Rset \mapsto \Rset$  \ es dicha
 %
 \[
 \CM_n = \left\{ f \in C^{n-1}(\Rset_+) \tq \forall \, k = 0 , \ldots , n-1, \:\:
-  (-1)^k  f^{(k)}  \ge 0  \:  \et \:(-1)^k  f^{(k)}  \:  \mbox{ es  decreciente}
+  (-1)^k  f^{(k)}  \ge 0  \:  \et \:(-1)^{n-1}  f^{(n-1)}  \:  \mbox{ es  decreciente}
 \right\}
 \]
 %
@@ -1397,19 +1402,19 @@ y
 \end{teorema}
 %
 \begin{proof}
-  La prueba se apoya sobre el teorema de Haussdorf-Bernstein-Widder que proba la
-  equivalencia entre la  clase de funciones completamente monotonas  y la de las
-  funciones   \   $f$   \   que   se   escriben   como   una   transformada   de
+  La prueba se  apoya sobre el teorema de  Haussdorf-Bernstein-Widder que prueba
+  la equivalencia  entre la clase de  funciones completamente monotonas  y la de
+  las   funciones  \  $f$   \  que   se  escriben   como  una   transformada  de
   Laplace-Stieltjes~\footnote{Por     definici\'on,    la     transformada    de
     Laplace-Stieltjes de una medida \ $\mu$  \ definida sobre $\Rset_+$ \ es una
     funci\'on   de  un   n\'umero  complejo   \  $\displaystyle   \LS[\mu](s)  =
-    \int_{\Rset_+} e^{-s t}  \, d\mu(t)$. Se proba que un  real \ $x_0$, llamado
-    abscisa de convergencia tal que la convergencia es uniforma en el semi-plano
-    \ $\real{s} > x_0$, y a  continuaci\'on tal que \ $\displaystyle \LS[\mu]$ \
-    es  anal\'itica  en este  semi-plano.   Si  \  $\displaystyle \mu  =  \sum_i
-    \alpha_i \delta_{t_i}$ \ es una  medida discreta se obtiene \ $\displaystyle
-    \LS[\mu](s)  =  \sum_i  \alpha_i  e^{-s  t_i}$  \  conocido  como  serie  de
-    Dirichlet,  y  si  \ $\mu$  \  admite  una  densidad \  $g$,  $\displaystyle
+    \int_{\Rset_+} e^{-s t}  \, d\mu(t)$. Se prueba que existe  un real \ $x_0$,
+    llamado abscisa  de convergencia tal que  la convergencia es  uniforma en el
+    semi-plano \ $\real{s}  > x_0$, y a continuaci\'on  tal que \ $\displaystyle
+    \LS[\mu]$ \  es anal\'itica en este  semi-plano.  Si \  $\displaystyle \mu =
+    \sum_i  \alpha_i  \delta_{t_i}$  \  es  una medida  discreta  se  obtiene  \
+    $\displaystyle  \LS[\mu](s) = \sum_i  \alpha_i e^{-s  t_i}$ \  conocido como
+    serie de Dirichlet, y si \ $\mu$ \ admite una densidad \ $g$, $\displaystyle
     \LS[\mu](s) \equiv  \L[g](s) = \int_{\Rset_+} e^{-s  t} \, g(t) \,  dt$ \ es
     dicha transformada de Laplace ordinaria de  \ $g$.  Para $s = \imath \omega$
     \ con  $\omega \in  \Rset$, las transformaciones  de Laplace-Stieltjes  y de
@@ -1435,14 +1440,14 @@ y
   % 
   Con el  cambio de variables  $u = \frac{1}{2  a^2}$ \ y  \ $\mu\big( (0  \; u)
   \big) =  (2 u)^{\frac{d}{2}} P_A\left( \left( \frac{1}{\sqrt{2  u}} \; +\infty
-    \right) \right)$, se aplica entonces este teorema a (formula de probabilidad
+    \right) \right)$, se aplica entonces este teorema a (f\'ormula de probabilidad
   total)
   %
   \[
   d_X(r)  =  (2 \pi)^{-\frac{d}{2}} \int_{\Rset_+} a^{-d} e^{-\frac{r}{2 a^2}} dP_A(a) 
   \]
 
-  Basicamente la  directa viene  de esta  formula de probabilidad  total y  de \
+  Basicamente la  directa viene  de esta  f\'ormula de probabilidad  total y  de \
   $\displaystyle     \frac{d^k    e^{-\frac{r}{2    a^2}}}{dr^k}     =    (-1)^k
   \frac{e^{-\frac{r}{2 a^2}}}{2^k  a^{2 k}}$ \  (se usa para  poder intercambiar
   derivada    e     integral    el    teorema     de    convergencia    dominada
@@ -1456,7 +1461,7 @@ y
   $\mu$~\cite{Hau21:I, Hau21:II},  visto como transformada  de Laplace-Stieltjes
   en \ $t  = n$.  Se define la funci\'on \  $\displaystyle f(r) = \int_{\Rset_+}
   e^{- r  u} d\mu\left( e^{-u}  \right)$ \  que coincide con  \ $d_X$ \  sobre \
-  $\Nset$.   Se  proba   finalmente  que  \  $d_X(r)  -   f(r)$  \  se  extiende
+  $\Nset$.   Se  prueba  finalmente  que   \  $d_X(r)  -  f(r)$  \  se  extiende
   analiticamente  en el  semi  plano  complejo \  $\real{s}  \ge 0$  \  y de  la
   analiticidad  que  \ $d_X$  \  y  \ $f$  \  coinciden  entonces  en todo  este
   semi-plano~\cite{Car21, CarKro05}.
@@ -1466,7 +1471,7 @@ Se  notar\'a  que  la consistencia  se  manifesta  tambi\'en  a trav\'es  de  la
 generadora de la mezcla gaussiana:
 %
 \begin{lema}\label{Lem:MP:AIndependienteD}
-  Sea  \ $\varphi_X  \in  \PDSI$ (o  $d_X  \in \CM$).  Entonces, para  cualquier
+  Sea  \ $\varphi_X  \in  \PDSI$ (o  $d_X  \in \CM$).  Entonces, para  cualquiera
   dimension \ $d$ \ y  $X \sim \ED(m,\Sigma,\varphi_X)$ \ $d$-dimensional, en la
   escritura  \ $X  \egald  A \,  \Sigma^{\frac12} G  +  m$ \  con  \ $A  > 0$  \
   independiente de \ $G  \sim \N(0,I)$ la ley de $A$ no  depende de la dimension
@@ -1474,7 +1479,7 @@ generadora de la mezcla gaussiana:
 \end{lema}
 %
 \begin{proof}
-  La  prueba  es  inmediata  del   hecho  que,  para  cualquier  matriz  $M  \in
+  La  prueba  es  inmediata  del   hecho  que,  para  cualquiera  matriz  $M  \in
   \Mat_{d,n}(\Rset)$ de rango lleno con $d  \le n$, \ $X \egald A \Sigma^{\frac12}
   G $ \ con  \ $G \sim \N(0,I)$ \ $n$-dimensional, tenemos $X' =  M X \egald A M
   \Sigma^{\frac12} G \egald A \left( M  \Sigma M^t \right)^{\frac12} G'$ \ con \
@@ -1531,9 +1536,9 @@ pie~\ref{Foot:MP:LaplaceStieltjes}).
   2^{\frac{d}{2}-1}  \Gamma\left(   \frac{d}{2}  \right)  \,  w^{-\frac{d-2}{4}}
   J_{\frac{d}{2}-1}(\sqrt{w})$  \ admite  una continuaci\'on  anal\'itica  en el
   semi-plano  complejo $\real{s}  >  0$.   De la  mezcla  uniforme, tambi\'en  \
-  $\varphi_X(w)  =   \int_{\Rset_+}  \varphi_X(r  w)  \,   dP_R(r)$  admite  una
-  continuaci\'on anal\'itica en el semi-plano complejo $\real{s} > 0$. Luego, de
-  la escritura de mezcla gaussiana tenemos
+  $\displaystyle \varphi_X(w) = \int_{\Rset_+} \varphi_X(r w) \, dP_R(r)$ admite
+  una  continuaci\'on   anal\'itica  en  el  semi-plano   complejo  $\real{s}  >
+  0$. Luego, de la escritura de mezcla gaussiana tenemos
   %
   \[
   \varphi_X(w) = \int_{\Rset_+} e^{-\frac{w a^2}{2}} \, dP_A(a) = \int_{\Rset_+}
@@ -1552,16 +1557,16 @@ pie~\ref{Foot:MP:LaplaceStieltjes}).
   $t \mapsto \frac{p_A(\sqrt{2 t})}{\sqrt{2 t}}$.
 
   La prueba que \ $d_X$ \  se extiende analiticamente en el semi-plano $\real{s}
-  >0 $ es dada en~\cite[Cap.~IV, Teo.~3a]{Wid46}~\footnote{Se proba de hecho que
-    una  funci\'on absolutamente  monotona  sobre  $\Rset_-$, como  lo  es \  $r
+  >0 $  es dada  en~\cite[Cap.~IV, Teo.~3a]{Wid46}~\footnote{Se prueba  de hecho
+    que una  funci\'on absolutamente monotona sobre  $\Rset_-$, como lo  es \ $r
     \mapsto d_X(-r)$,  se extiende analiticamente  en el semi-plano  $\real{s} <
-    0$.}. Basicamente, siendo  \ $d_X$ \ $C^\infty$, se  escribe su desarollo de
-  Taylor en torno a un  $r_0 > 0$ y se proba que sobre $r  \in (0 \; r_0)$, esta
-  serie de terminos todos positivos converge uniformamente. Por consecuencia, se
-  tiene la convergencia uniforme tambi\'en para \  $r = s$ \ en la bola compleja
-  \ $|s-r_0|  < r_0$. Se cierra  la prueba de  la validez para cualquier  $r_0 >
-  0$. A continuaci\'on, la forma de \ $P_A$ \  y \ $p_A$ \ a partir de \ $d_X$ \
-  viene de los mismos pasos, saliendo de
+    0$.}. Basicamente, siendo  \ $d_X \in C^\infty$, se  escribe su desarollo de
+  Taylor en torno a un $r_0 > 0$ y  se prueba que sobre $r \in (0 \; r_0)$, esta
+  serie de t\'erminos todos  positivos converge uniformamente. Por consecuencia,
+  se  tiene la  convergencia uniforme  tambi\'en para  \ $r  = s$  \ en  la bola
+  compleja \ $|s-r_0|  < r_0$. Se cierra la prueba de  la validez para cualquier
+  $r_0 > 0$. A continuaci\'on,  la forma de \ $P_A$ \ y \ $p_A$  \ a partir de \
+  $d_X$ \ viene de los mismos pasos, saliendo de
   %
   \[
   d_X(r) =  \int_{\Rset_+} (2 \pi)^{-\frac{d}{2}} \,  a^{-d} e^{-\frac{r}{2}} \,
@@ -1624,7 +1629,7 @@ como mezcla de escala de base gaussiana).
   equivalentemente \ $X \sim \ED(m,\Sigma,d_X)$ con
   %
   \[
-  \varphi_X(u) =  e^{-\frac{u}{2}} \qquad \mbox{y}  \qquad , \qquad d_X(r)  = (2
+  \varphi_X(u)   =  e^{-\frac{u}{2}}   \qquad  \mbox{y}   \qquad  d_X(r)   =  (2
   \pi)^{-\frac{d}{2}} e^{- \frac{r}{2}}
   \]
   
@@ -1640,10 +1645,10 @@ como mezcla de escala de base gaussiana).
   
   Adem\'as,   la  generadora   caracter\'istica  siendo   independiente   de  la
   dimensi\'on \  $d$, \  $\Phi_X \in \PD$,  o equivalentemente la  generadora de
-  densidad  \ $d_X$ \  teniendo la  forma que  damos para  cualquier dimensi\'on
+  densidad  \ $d_X$ \  teniendo la  forma que  damos para  cualquiera dimensi\'on
   (cambiar  de  dimensi\'on es  equivalente  a  cambiar  $d$), la  gaussiana  es
-  consistente;  Las marginales  de  una gaussiana  son  gaussianas, y  cualquier
-  gaussiana puede ser vista como  marginal de gaussiana de cualquier dimensi\'on
+  consistente;  Las marginales  de  una gaussiana  son  gaussianas, y  cualquiera
+  gaussiana puede ser vista como  marginal de gaussiana de cualquiera dimensi\'on
   m\'as grande.
 
   Obviamente, se  escribe como mezcla  de escala  de gaussiana con  \ $A =  1$ \
@@ -1679,18 +1684,18 @@ como mezcla de escala de base gaussiana).
     \right)^{\frac{d+\nu}{2}}}
   \]
   %
-  conocido como ley de Fisher-Snedecor (o $F$), de grados de libertad $(d,\nu)$,
-  o tipo Pearson VI, o  beta de secunda especie~\cite{JohKot95:v2, Muk00, Bre88,
-    IbaPer12} (ratio de gamma independientes).
+  conocido como  ley de Fisher-Snedecor  (o $F$), con  los grados de  libertad \
+  $(d,\nu)$,  o tipo Pearson  VI, o  beta de  secunda especie~\cite{JohKot95:v2,
+    Muk00, Bre88, IbaPer12} (ratio de gamma independientes).
 
   La Student-$t$ es tambi\'en consistence de la independencia de \ $\varphi_X$ \
   con la dimensi\'on \ $d$, \  $\Phi_X \in \PD$, o equivalentemente del hecho de
   que  la generadora de  densidad \  $d_X$ \  teniendo la  forma que  damos para
-  cualquier dimensi\'on  (cambiar de dimensi\'on es equivalente  a cambiar $d$);
+  cualquiera dimensi\'on (cambiar de  dimensi\'on es equivalente a cambiar $d$);
   Las  marginales de  una Student-$t$  con  \ $\nu$  \ grado  de libertad  queda
-  Student-$t$  con $\nu$  grado de  libertad y  cualquier Student-$t$  con $\nu$
-  grado de  libertad pued ser  vista como marginal  de un Student-$t$  con $\nu$
-  grado de libertad de cualquier dimensi\'on m\'as grande.
+  Student-$t$ con  $\nu$ grado  de libertad y  cualquiera Student-$t$  con $\nu$
+  grado de libertad  puede ser vista como marginal de  una Student-$t$ con $\nu$
+  grado de libertad de cualquiera dimensi\'on m\'as grande.
 
   V\'imos           en           la           secci\'on~\ref{Sssec:MP:StudentT},
   lema~\ref{Lem:MP:MezclaGaussianaEscalaStudentT},    que    se   escribe    una
@@ -1739,7 +1744,7 @@ como mezcla de escala de base gaussiana).
   condici\'on que $d < \nu+2$, \ie $\Phi_X \notin \PD$ \ ($\Phi_X \in \PD_n, \:
   n < \nu+2$).   Tratando de \ $d_X$, las marginales de  $X$ son Student-$r$ con
   grado  de  libertad  $\nu$, pero  una  Student-$r$  no  puede ser  vista  como
-  marginales  de  cualquier  dimensi\'on  m\'as  grande;  es  posible  hasta  la
+  marginales  de  cualquiera  dimensi\'on  m\'as  grande;  es  posible  hasta  la
   dimensi\'on m\'axima $\lceil \nu+2 \rceil-1$.
 
   Obviamente, sin calculos, se ve del soporte acotado de la densidad que \ $X$ \
@@ -1758,7 +1763,7 @@ como mezcla de escala de base gaussiana).
   Claramente, $U \sim \U(\Sset_d)$ tampoco es consistente: las marginales de $U$
   no pueden  ser uniformes sobre $\Sset_{d'}$;  sin calculo, se  queda claro que
   para $d' = d-1$, el vector es definido en la bola $\Bset_{d-1}(\Rset)$, y, por
-  inducci\'on es lo mismo para cualquier dimensi\'on m\'as baja.
+  inducci\'on es lo mismo para cualquiera dimensi\'on m\'as baja.
 
   En  calculos, recuendense del  ejemplo~\ref{Ej:MP:GeneCaracUniformeEsfera} que
   la generadora caracter\'istica toma la forma
@@ -1785,7 +1790,7 @@ como mezcla de escala de base gaussiana).
   Student-$r$ con \ $\nu = d-2$ \ el grado de libertad, a condici\'on que $\nu >
   d'-2$, es decir solamente cuando $d' < d$ (ver~\cite{titi, toto, Zoz}). Cuando
   \  $d'  =  d-1$, la  distribuci\'on  diverge  en  los  bordes del  dominio  de
-  definici\'on.   Notar que si  no cambia  el grado  de libertad  para cualquier
+  definici\'on.   Notar que si  no cambia  el grado  de libertad  para cualquiera
   marginales,  depende de  la  dimensi\'on  $d$: la  generadora  de densidad  no
   depende solamente de $d'$.  Obviamente, del soporte acotado de la densidad, se
   vio que \ $X$ \ no pod\'ia ser mezcla de escala de gaussiana.
@@ -1820,7 +1825,7 @@ extiende sencillamente al caso multivariado:
   escribir \ $Y \egald  R \, U$ \ con \ $U  \sim \U(\Sset_n)$, y reciprocamente.
   Ahora, del ejemplo~\ref{Ej:MP:UniformeCnt}, la proyecci\'on $d$-dimensional de
   \ $U$  \ es Student-$r$  con $n-2$ el  grado de libertad, y  reciprocamente se
-  puede  ver  cualquier  Student-$r$  con   $n-2$  el  grado  de  libertad  como
+  puede  ver  cualquiera  Student-$r$  con   $n-2$  el  grado  de  libertad  como
   proyecci\'on de un uniforme  m\'as grande.  Adem\'as, $U$ siendo independiente
   de  $R$, la proyecci\'on  es tambi\'en  independiente de  $R$.  Eso  cierra la
   prueba.
@@ -1901,7 +1906,7 @@ De nuevo, existe un teorema equivalente tratando de la generadora de densidad:
 
   Una prueba detallada  de la propiedad directa se  encuentra en~\cite{Wil56} en
   el  contexto  escalar,  pero  se  extiende  al  caso  multivariado  sin  costo
-  adicional.  Basicamente, se proba que para \  $f \in \CM_n$, \ $\forall \: k =
+  adicional.  Basicamente, se prueba que para \  $f \in \CM_n$, \ $\forall \: k =
   1,  \ldots ,  n-1$ \  y \  $\alpha >  0$, \  (i) \  $t^{k-1} f^{(k)}(t)$  \ es
   integrable sobre \  $(\alpha \; +\infty)$ \ y \  (ii) \ $\displaystyle \lim_{t
     \to +\infty} t^k f^{(k)}(t) = 0$. \SZ{Luego, sea \ $P_n$  \ tal que
@@ -1933,8 +1938,8 @@ De nuevo, existe un teorema equivalente tratando de la generadora de densidad:
   %
   Ahora, dejando $\alpha$ tender al infinito, se nota que: \ $d_X(\alpha) \to 0$
   \ (generadora de densidad $d$-dimensional, $\alpha^{d-1} d_X(\alpha^2)$ \ debe
-  tender a 0); \ del punto (ii), cada  termino de la suma tiende a 0. Queda solo
-  el termino integral, que se escribe tambi\'en
+  tender a 0); \ del punto (ii), cada  t\'ermino de la suma tiende a 0. Queda solo
+  el t\'ermino integral, que se escribe tambi\'en
   %
   \[
   d_X(r) =  \frac{(2 n +  d)^{n-1}}{\Gamma(n)} \int_{\Rset_+} b^{-d} \left(  1 -
@@ -1981,18 +1986,18 @@ de vectores aleatorio reales, y la noci\'on de circularidad. No es equivalente a
 la de esf\'ericidad, a\'un que hay v\'inculos, como lo vamos a ver. De hecho, la
 necesidad de  trabajar con vector a  simetr\'ia el\'iptica se  justifica con los
 mismos argumentos que  llevaron al estudio de vectores  aleatorios complejos. Se
-encontrar\'a  estudios de  esta  familia en  referencias tales  que~\cite{Kri76,
+encontrar\'an  estudios de  esta familia  en referencias  tales que~\cite{Kri76,
   KriLin86,   MicDey06,  OllEri11,   OllTyl12,  FanKot90,   BesAbr13,  BauPas07,
   ChiPas08} por ejemplo. Damos en esta secci\'on lo esencial.
 
 Antes de  ir m\'as  all\'a, empezamos  con la definici\'on  de tales  vectores a
 simetr\'ia el\'iptica.
 %
-\begin{definicion}[Vector complejo esf\'ericamente invariante]
+\begin{definicion}[Vector complejo esfericamente invariante]
   Sea  \  $Z$ \  vector  aleatorio $d$-dimensional  complejo.   $X$  \ es  dicho
   esfericamente  invariante,  o a  simetr\'ia  esf\'erica,  o de  distribuci\'on
-  esf\'erica \ si para  cualquier matriz unitaria~\footnote{Recordarse que \ $V$
-    \ es unitaria si \ $V V^\dag = V^\dag V = I$.} \ $V$,
+  esf\'erica \ si para cualquiera matriz unitaria~\footnote{Recordarse que \ $V$
+    \ es unitaria significa que \ $V V^\dag = V^\dag V = I$.} \ $V$,
   %
   \[
   V  Z  \: \egald  \: Z
@@ -2009,7 +2014,7 @@ transformaci\'on unitaria de manera siguiente:
   Sea  \ $Z$  \ vector  aleatorio $d$-dimensional  complejo.  $Z$  \ es  dicho a
   simetr\'ia  el\'iptica,  o  elipticalmente  invariante,  o  de  distribuci\'on
   el\'iptica, en torno a \ $m \in \Cset^d$, \ si existe una matriz \ $\Sigma \in
-  \Pos_d^+(\Cset)$  \  tal   que  para  cualquier  matriz  unitaria   \  $V  \in
+  \Pos_d^+(\Cset)$  \  tal   que  para  cualquiera  matriz  unitaria   \  $V  \in
   \Unit_d(\Cset)$,
   %
   \[
@@ -2045,8 +2050,9 @@ El v\'inculo entre la simetr\'ia el\'iptica y la circularidad es tambi\'en obvia
 \end{proof}
 
 Es importante notar  las inmersiones biyectivas de \ $\Cset^d$  \ en \ $\Rset^{2
-  d}$  \  y de  $\Mat_{d',d}(\Cset)$  \  en un  subconjunto  de  \ $\Mat_{2  d',
-  2d}(\Rset)$ siguientes:
+  d}$  \   y  de  $\Mat_{d',d}(\Cset)$  \   en  el  subconjunto   \  $\left\{  M
+  =  \begin{bmatrix}  A   &  -  B  \\   B  &  A  \end{bmatrix}  \tq   A,  B  \in
+  \Mat_{d,d}(\Rset) \right\} \subset \Mat_{2 d', 2d}(\Rset)$ \ siguientes:
 %
 \[
 \forall \: z  \in \Cset^d \qquad \mbox{en biyecci\'on  con} \qquad \widetilde{z}
@@ -2095,12 +2101,12 @@ caso real:
 %
 \begin{proof}
   Se obtiene la forma real de la descomposici\'on \ $\Sigma = Q \Delta Q^\dag$ \
-  bajo  la forma  \ $\overline{\Sigma}  = \overline{Q}  \,  \overline{\Delta} \,
-  \overline{Q}^t$ \ con \ $\overline{\Delta}  = \begin{bmatrix} \Delta & 0\\ 0 &
+  bajo  la forma  \ $\overline{\Sigma}  = \overline{Q}  \,  \bar{\Delta} \,
+  \overline{Q}^t$ \ con \ $\bar{\Delta}  = \begin{bmatrix} \Delta & 0\\ 0 &
     \Delta \end{bmatrix}  \in \Pos_{2d}^+(\Rset)$ \  diagonal, $\overline{Q} \in
   \Ort_{2d}(\Rset)$.      La    prueba    se     cierra    saliendo     de    la
   definici\'on~\ref{Def:MP:ElipticoComplejo} escrita bajo su forma real, notando
-  que $\overline{\Delta^{-\frac12}} = \overline{\Delta}^{\: -\frac12}$.
+  que $\overline{\Delta^{-\frac12}} = \bar{\Delta}^{-\frac12}$.
 \end{proof}
 
 De esta equivalencia, todos  los resultados anteriores se extienden naturalmente
@@ -2114,7 +2120,7 @@ matriz caracter\'istica \ $\Sigma$:
     \widetilde{\omega}^t  \, \overline{\Sigma}  \, \widetilde{\omega}  \right) =
   e^{\imath  \real{\omega^\dag m}} \varphi_{\widetilde{Z}}\left(  \omega^\dag \,
     \Sigma  \omega   \right)$;\newline  Denotaremos  \  $\varphi_{\widetilde{Z}}
-  \equiv  \varphi_Z$  \ quien,  con  $m$  y  $\Sigma$ caracteriza  completamente
+  \equiv \varphi_Z$ \ quien, con \ $m$ \ y \ $\Sigma$, caracteriza completamente
   $Z$;\newline Escribiremos $Z \sim \CED\left( m , \Sigma , \varphi_Z \right)$.
 %
 \item Similarmente, si \ $Z$ \  admite una densidad, se obtiene la densidad bajo
@@ -2133,17 +2139,17 @@ matriz caracter\'istica \ $\Sigma$:
   %
   \item  El  teorema~\ref{Teo:MP:MomentosCumulantesEliptica}  da, con  el  mismo
     enfoque: $\zeta_1[Z]  = 0$,  \ $\kappa_1[Z]  = m$, y  $\forall \:  (l,n) \in
-    \Nset \setminus \{ (0,0) \}$ \ tenemos \ $\zeta_{i_1 , \ldots , i_l ; i'_1 ,
-      \ldots , i'_n}[Z] = \widetilde{\alpha}_k(\varphi_X) \T_{i_1 , \ldots , i_l
-      ; i'_1 , \ldots , i'_n}(\Sigma)$ \  y \ $\kappa_{i_1 , \ldots , i_l ; i'_1
-      , \ldots , i'_n}[Z] =  \widetilde{\alpha}_k(\psi_X) \T_{i_1 , \ldots , i_l
-      ; i'_1 , \ldots , i'_n}(\Sigma)$ \ con \ $\widetilde{\alpha}_k(f) = (-4)^k
-    f^{(k)}(0)$ \ y \  $ \displaystyle \T_{i_1 , \ldots , i_l  ; i'_1 , \ldots ,
-      i'_n}(\Sigma)  =  \sum_{(\pi,\pi') \in  \Pi_{2  l,2}  \times \Pi_{2  l,2}}
-    \prod_{(r,s)  \in \pi  \cup \pi'}  \Sigma_{i_r,i_s}$, \  los  otros momentos
-    centrales  y  cumulantes  de  orden  mayor   o  igual  a  2  siendo  0  (ver
-    tambi\'en~\cite{Kri76}).
-%      corrolario~\ref{Cor:MP:MediaCovarianzaEliptica}
+    \Nset \setminus \{ (0,0) \}, \: l+n  = 2 k$ \ tenemos \ $\zeta_{i_1 , \ldots
+      ,  i_l ;  i'_1 ,  \ldots ,  i'_n}[Z] =  \widetilde{\alpha}_k(\varphi_X) \,
+    \T_{i_1 , \ldots , i_l ; i'_1 , \ldots , i'_n}(\Sigma)$ \ y \ $\kappa_{i_1 ,
+      \ldots , i_l ; i'_1  , \ldots , i'_n}[Z] = \widetilde{\alpha}_k(\psi_X) \,
+    \T_{i_1  ,  \ldots  ,  i_l  ;  i'_1  ,  \ldots  ,  i'_n}(\Sigma)$  \  con  \
+    $\widetilde{\alpha}_k(f) = (-4)^k f^{(k)}(0)$  \ y \ $ \displaystyle \T_{i_1
+      , \ldots  , i_l  ; i'_1  , \ldots ,  i'_n}(\Sigma) =  \sum_{(\pi,\pi') \in
+      \Pi_{2  l,2}   \times  \Pi_{2  l,2}}  \prod_{(r,s)  \in   \pi  \cup  \pi'}
+    \Sigma_{i_r,i_s}$,  \ los  otros momentos  centrales y  cumulantes  de orden
+    mayor o igual a 2 siendo 0 (ver tambi\'en~\cite{Kri76}).
+%      corolario~\ref{Cor:MP:MediaCovarianzaEliptica}
   %
   \item  Teorema~\ref{Teo:MP:TranformacionAfinEliptica}  en:  \  $Z \,  \sim  \,
     \CED(m,\Sigma,\varphi_Z)$ \ $d$-dimensional, $A \in \Mat_{d',d}(\Cset)$ \ de
@@ -2167,7 +2173,7 @@ matriz caracter\'istica \ $\Sigma$:
     \Sigma^{\frac12} R \, U + m$.
   %
   \item  Corolario~\ref{Cor:MP:MezclaUniforme} en: $Z  \sim \CED(0,I,\varphi_Z)$
-    da $\| Z \|  \egald R$ \ y \ $\frac{Z}{\|Z\|} \egald  U \sim \U(\SCset_d)$ \
+    da \ $\| Z \| \egald R$ \ y \ $\frac{Z}{\|Z\|} \egald U \sim \U(\SCset_d)$ \
     son independientes;
   %
   \item Con  el mismo enfoque,  el lema~\ref{Lem:MP:AlphaConR} se expresa  en el
@@ -2200,18 +2206,19 @@ matriz caracter\'istica \ $\Sigma$:
     \sim \CN(0,I)$;
   %
   \item Lema~\ref{Lem:MP:AIndependienteD}  en: \  $\varphi_Z \in \PDSI$  (o $d_Z
-    \in   \CM$)  \   y   para  cualquier   dimension   \  $d$   \   y  $Z   \sim
+    \in   \CM$)  \   y   para  cualquiera   dimension   \  $d$   \   y  $Z   \sim
     \CED(m,\Sigma,\varphi_Z)$ \  $d$-dimensional, en la escritura \  $X \egald A
     \, \Sigma^{\frac12}  G + m$  \ con \  $A > 0$ \  independiente de \  $G \sim
     \CN(0,I)$ la ley de \ $A$ \ no depende de la dimension $d$;
   %
   \item   Teorema~\ref{Teo:MP:MezclaStudentRCaracteristica}   en:   \  $Z   \sim
     \CED(m,\Sigma,\varphi_Z)$ \ $d$-dimensional con \ $\varphi_z \in \PDSI_n, \:
-    n > 2 d$, dando la escritura  estoc\'astica \ $Z$ \ como mezcla de escala de
-    Student-$r$ compleja con $\nu = n-2$ el grado de libertad, y reciprocamente:
-    \ $\varphi_Z \in \PDSI_n, \: n >  2 d \quad \Leftrightarrow \quad X \egald B
-    \, \Sigma^{\frac12}  \, S_{n-2} + m$  \ con \ $B  > 0$ \  independiente de \
-    $S_{n-2} \sim \CR_{n-2}(0,I)$ (ver secci\'on~\ref{Sssec:MP:StudentR});
+    n > 2 d$, dando la escritura  estoc\'astica de \ $Z$ \ como mezcla de escala
+    de  Student-$r$  compleja   con  $\nu  =  n-2$  el   grado  de  libertad,  y
+    reciprocamente: \ $\varphi_Z  \in \PDSI_n, \: n >  2 d \quad \Leftrightarrow
+    \quad X  \egald B  \, \Sigma^{\frac12} \,  S_{n-2} + m$  \ con  \ $B >  0$ \
+    independiente     de     \     $S_{n-2}    \sim     \CR_{n-2}(0,I)$     (ver
+    secci\'on~\ref{Sssec:MP:StudentR});
   %
   \item    Teorema~\ref{Teo:MP:MezclaStudentRDensidad}    en:    \    $Z    \sim
     \CED(m,\Sigma,d_Z)$  \  $d$-dimensional con  \  $d_X  \in  \CM_n, \:  n  \in
@@ -2232,10 +2239,12 @@ matriz caracter\'istica \ $\Sigma$:
 
 % Fang Zang: Generalized Multivariate Analysis
 La  extensi\'on  matriz  variada  de   vector  a  simetr\'ia  el\'iptica  no  es
-trivial. De hecho, hay pocas resultados en la literatura y aparece esencialmente
-en  contexto de estimaci\'on  de matriz  de covarianza~\cite[\S.~13.2]{BilBre99}
-o~\cite{Mal61,  Dem69, Tyl82, GruRoc90,  GupVar94, GupVar95,  GupNag99, FanLi99,
-  And03, CarGon16}.  Tipicamente, si uno sale de \ $X_1, \ldots, X_n$ \ vectores
+trivial. De  hecho, no hay tantos resultados  en la literatura que  para el caso
+vectorial.   Aparece  mayoriamente en  contexto  de  estimaci\'on  de matriz  de
+covarianza~\cite[\S.~13.2]{BilBre99}  o~\cite{Mal61,   Dem69,  Tyl82,  GruRoc90,
+  GupVar94,  GupVar95, GupNag99,  FanLi99, And03,  CarGon16} \  o  en mec\'anica
+estad\'istica   y  cu\'antica~\cite{Car83,   Meh04,  AndGui10,   LivNov18}.   En
+estimaci\'on,  tipicamente, si  uno  sale de  \  $X_1, \ldots,  X_n$ \  vectores
 aleatorios $d$-dimensionales independientes, de  misma ley, y suponemos la media
 cero  para  simplificar  el  ejemplo,  un  estimador natural  de  la  matriz  de
 covarianza \  $\Sigma_X$ \ es \ $\displaystyle  \widehat{\Sigma}_X = \frac{1}{n}
@@ -2243,20 +2252,20 @@ covarianza \  $\Sigma_X$ \ es \ $\displaystyle  \widehat{\Sigma}_X = \frac{1}{n}
 y de $\Pos_d^+(\Rset)$  casi siempre si $n  \le d$).  Ahora, si los  $X_i$ son a
 sim\'etria elipt\'ica, $\widehat{\Sigma}_X$ va  a tener simetr\'ia por cambio de
 escala  y transformaci\'on ortogonal.   M\'as precisamente,  si se  supone $X_i$
-esf\'erica por ejemplo, para cualquier matriz ortogonal $O \in \Ort_d(\Rset)$ se
-tiene   $O   X_i  \egald   X_i$,   dando   $O   \widehat{\Sigma}_X  O^t   \egald
+esf\'erica por  ejemplo, para cualquiera matriz ortogonal  $O \in \Ort_d(\Rset)$
+se  tiene   $O  X_i  \egald   X_i$,  dando  $O  \widehat{\Sigma}_X   O^t  \egald
 \widehat{\Sigma}_X$.  Esta propiedad dio lugar  a une definici\'on de una matriz
 a simetr\'ia esf\'erica aparece por  unas de las primeras veces en~\cite{Mal61}.
 Ahora, si  uno quierre estimar una  matriz de covarianza  $\Sigma_{X,Y}$ con $X$
 vector  $d$-dimensional  e $Y_i$  vector  $d'$-dimensional  a  partir de  copias
 independientes, $\displaystyle \widehat{\Sigma}_{X,Y} = \frac{1}{n} \sum_{i=1}^n
 X_i Y_i^t$,  matriz de $\Mat_{d,d'}(\Rset)$. Se  observa que cuando  los $X_i$ e
-$Y_i$ son esfericas  por ejemplo, para cualquier par  de matrices ortogonales $O
+$Y_i$ son esf\'ericas por ejemplo, para cualquier par de matrices ortogonales $O
 \in \Ort_d(\Rset)$ y $O'  \in \Ort_{d'}(\Rset)$ se tiene $\widehat{\Sigma}_{X,Y}
 \egald  O  \widehat{\Sigma}_{X,Y}  \egald  \widehat{\Sigma}_{X,Y}  O'  \egald  O
 \widehat{\Sigma}_{X,Y}  O'$.   Cuando  se   limita  a  la  primera  igualdad  en
 distribuci\'on,  es  lo que  dio  lugar  a la  esfericidad  a  la izquierda  que
-apareci\'on por unas de las  primeras veces en~\cite{Hsu40} (20 a\~nos antes del
+apareci\'o por unas  de las primeras veces en~\cite{Hsu40}  (20 a\~nos antes del
 papel de Mallows).
 
 Empezamos  con cada  definici\'on  de~\cite[\S~9.3]{GupNag99} y  de~\cite{Hsu40,
@@ -2266,9 +2275,10 @@ Empezamos  con cada  definici\'on  de~\cite[\S~9.3]{GupNag99} y  de~\cite{Hsu40,
 \index{Esf\'erica! invariance vectorial}
 \begin{definicion}[Matriz a simetr\'ia esf\'erica]
   Sea $X$ matriz aleatoria definida sobre $\X = \Mat_{d,d'}(\Rset)$. Denotamos \
-  $X_j, \: j = 1, \ldots ,  d'$ \ sus columnas, definidas sobre \ $\Mat_{d,1}$ \
-  y  \  $X'_i,  \:  i  =  1  ,  \ldots  ,  d$  \  sus  lineas,  definidas  sobre
-  $\Mat_{1,d'}(\Rset)$.  $X$ es dicha {\em a simetr\'ia esf\'erica}
+  $X_j,  \:   j  =  1,  \ldots  ,   d'$  \  sus  columnas,   definidas  sobre  \
+  $\Mat_{d,1}(\Rset)$  \ y  \ $X'_i,  \:  i =  1 ,  \ldots  , d$  \ sus  lineas,
+  definidas  sobre  $\Mat_{1,d'}(\Rset)$.   $X$   es  dicha  {\em  a  simetr\'ia
+    esf\'erica}
   %
   \begin{tabular}
   {>{}p{.015\textwidth}
@@ -2313,16 +2323,16 @@ Empezamos  con cada  definici\'on  de~\cite[\S~9.3]{GupNag99} y  de~\cite{Hsu40,
 
 \centerline{$(\simed)  \:$  {\em  sim\'etrica}~\footnote{En  la  literatura,  se
     encuentra frecuentemente que la matriz es a distribuci\'on radial o rotable,
-    ej. en~\cite{Tyl82, BilBre99}. Fijense que para $d = 1$, necesariamente $O =
-    \pm 1$,  as\'i que,  obviamente, siempre  $O X O^t  = X$:  esta definici\'on
-    tiene  un inter\'es  solamente cuando  $d  > 1$.}  si \  $d  = d',  \: \X  =
-  \Sim_d(\Rset)$ \ y  \ $\forall \: O \in \Ort_d(\Rset), \quad\qquad  O X O^t \:
-  \egald \: X$}
+    ej. en~\cite{Tyl82,  BilBre99}, o ensembles  ortogonales~\cite{Car83, Meh04,
+      AndGui10, LivNov18}. Fijense que para $d = 1$, necesariamente $O = \pm 1$,
+    as\'i que,  obviamente, siempre $O  X O^t =  X$: esta definici\'on  tiene un
+    inter\'es solamente cuando $d > 1$.}  si \ $d = d', \: \X = \Sim_d(\Rset)$ \
+  y \ $\forall \: O \in \Ort_d(\Rset), \quad\qquad O X O^t \: \egald \: X$}
 
 \
 
 En   cada  definici\'on,   se   puede  reemplazar   $\Delta^{-\frac12}  Q$   por
-$\Sigma^{-\frac12}$    o   cualquier    inverse   raiz-cuadrada    de   $\Sigma$
+$\Sigma^{-\frac12}$    o   cualquiera    inverse   raiz-cuadrada    de   $\Sigma$
 (ej. factorizaci\'on de Cholesky), y similarmente para $\Sigma'$.
 \end{definicion}
 
@@ -2343,7 +2353,7 @@ como en el  caso de vectores con estiramientos  y una translaci\'on~\cite{Mal61,
   dicha  {\em  a  simetr\'ia  el\'iptica  en   torno  a  una  matriz  $m  =  \in
     \Mat_{d,d'}(\Rset)$}    de    matrices    caracter\'isticas   $\Sigma    \in
   \Pos_d^+(\Rset)$  y  $\Sigma'  \in  \Pos_{d'}^+(\Rset)$  de  diagonalizaciones
-  $\Sigma = Q \Delta Q^t$ y $\Sigma = Q' \Delta' Q'^t$,
+  respectivamente \ $\Sigma = Q \Delta Q^t$ \ y \ $\Sigma = Q' \Delta' Q'^t$,
   %
   \begin{itemize}
   %
@@ -2358,8 +2368,8 @@ como en el  caso de vectores con estiramientos  y una translaci\'on~\cite{Mal61,
         &      \cdots      &      \Delta_{\izq,d'}^{-\frac12}      Q_{\izq,d'}^t
         (X_{d'}-m_{d'})   \end{bmatrix}$,   pero   en  tal   caso   tendr\'iamos
       estiramientos  en direcciones diferentes  en cada  columnas, as\'i  que se
-      conservar\'ia  la noci\'on  de elipticidad  solamente a  columna,  pero no
-      global.    Lo    mismo   a   a    occurir   para   la    elipticidad   por
+      conservar\'ia la  noci\'on de  elipticidad solamente columna  por columna,
+      pero  no  ``global''.  Lo  mismo  va a  occurir  para  la elipticidad  por
       lineas.   \label{Foot:MP:EDc}}  \   $\Delta^{-\frac12}  Q^t  (X-m)$  \  es
     esf\'erica por columnas;
   %
@@ -2383,17 +2393,18 @@ como en el  caso de vectores con estiramientos  y una translaci\'on~\cite{Mal61,
   \item[$(\simed)$] simetricamente si \ $d = d', \: \X = \Sim_d(\Rset), m^t = m$
     \ y si  \ \ $\Delta^{-\frac12} Q^t (X-m)  Q \Delta^{-\frac12}$ es esf\'erica
     simetricamente~\footnote{De hecho, se  podr\'ia extender la definici\'on sin
-      imponer  simetr\'ia de  $m$,  pero en  tal  caso $X$  no ser\'i  simetrico
+      imponer simetr\'ia  de $m$,  pero en tal  caso $X$ no  ser\'ia sim\'etrico
       m\'as. Sin embargo, la disimetr\'ia vendr\'ia \'unicamente de la de $m$.};
   \end{itemize}
   %
 \end{definicion}
 
-Voveremos  m\'as  adelante,  brevemente,  sobre  la  funci\'on  caracter\'istica
-$\Phi_X$.
+%Voveremos  m\'as  adelante,  brevemente,  sobre  la  funci\'on  caracter\'istica
+%$\Phi_X$.
 
-Por ahora,  si denotamos $\ED_\bullet$  el conjunto de  todo los vectores  de la
-clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
+%Por ahora,  s
+Si  denotamos  $\ED_\bullet$  el conjunto  de  todo  los  vectores de  la  clase
+$(\bullet)$, se tiene los v\'inculos siguientes entre las clases
 %
 \begin{lema}
 
@@ -2404,15 +2415,17 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   \item\label{Enum:MP:EDM_Transpuesta} $X \in \ED_\izq \:\: \Leftrightarrow \:\:
     X^t \in  \ED_\der, \qquad X \in  \ED_\col \:\: \Leftrightarrow  \:\: X^t \in
     \ED_\lin,  \qquad  X  \in   \ED_\vcol  \:\:  \Leftrightarrow  \:\:  X^t  \in
-    \ED_\vlin$\newline  Adem\'as si  visto  en  una clase  la  matriz tiene  el
-    par\'ametro de posici\'on  y $m$, y la matriz  car\'acteristica $\Sigma$, se
-    vuelven $m^t$ y $\Sigma^t$ en la otra clase.
+    \ED_\vlin$\newline Adem\'as si  visto en una clase (ej.  $(\izq)$) la matriz
+    tiene el  par\'ametro de  posici\'on \ $m$,  y es matriz  caracter\'istica \
+    $\Sigma$,  se  vuelven  \  $m^t$  \  y  \ $\Sigma^t$  \  en  la  otra  clase
+    (ej. $(\der)$).
   %
   \item\label{Enum:MP:EDM_Inclusiones}    $\ED_\vcol    \varsubsetneq   \ED_\col
     \varsubsetneq  \ED_\izq$ \qquad y  \qquad $\ED_\vlin  \varsubsetneq \ED_\lin
-    \varsubsetneq \ED_\der$\newline  Adem\'as si visto  en una clase  la matriz
-    tiene  el par\'ametro  de posici\'on  y  $m$, y  la matriz  car\'acteristica
-    $\Sigma$ (resp. $\Sigma'$), son los mismos par\'ametros en la otra clase.
+    \varsubsetneq   \ED_\der$\newline   Adem\'as   si   visto   en   una   clase
+    (ej. $(\col)$) la  matriz tiene el par\'ametro de posici\'on \  $m$, y es de
+    matriz   car\'acteristica  $\Sigma$  (resp.   $\Sigma'$),  son   los  mismos
+    par\'ametros en la que contiene la clase que se considera (ej. $(\izq)$).
   %
   \item\label{Enum:MP:EDM_Bilateral}  $\ED_\bil  \: =  \:  \ED_\izq  \, \cap  \,
     \ED_\der$
@@ -2434,15 +2447,15 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
 %
 \begin{proof}
 %
-  Por lo del punto~\ref{Enum:MP:EDM_Transpuesta}, sea  \ $X \in \ED_\vcol$ y sea
-  \  $Y  =  \Delta^{-\frac12}  Q^t   (X-m)$.   Entonces  \  $\forall  \:  O  \in
+  Por lo del punto~\ref{Enum:MP:EDM_Transpuesta}, sea \ $X \in \ED_\izq$ y sea \
+  $Y  =   \Delta^{-\frac12}  Q^t   (X-m)$.   Entonces  \   $\forall  \:   O  \in
   \Ort_d(\Rset),  \quad  O   Y  \egald  Y$,  \  es  decir   $\forall  \:  O  \in
-  \Ort_d(\Rset),  \quad   Y^t  O^t  \egald   Y^t$,  \ie  $X  \in   \ED_\der$,  y
+  \Ort_d(\Rset),  \quad  Y^t  O^t  \egald   Y^t$,  \ie  $X^t  \in  \ED_\der$,  y
   reciprocamente.   Obviamente, la otras  equivalencias se  prueban de  la misma
   manera.
 
-  Para el punto~\ref{Enum:MP:EDM_Inclusiones},  sea \ $X \in \ED_\vcol$  y sea \
-  $Y   =  \Delta^{-\frac12}   Q^t  (X-m)$.   Entonces  \   $\forall  \:   O  \in
+  Para el punto~\ref{Enum:MP:EDM_Inclusiones}, sea \ $X \in \ED_\col$ y sea \ $Y
+  =   \Delta^{-\frac12}   Q^t   (X-m)$.    Entonces   \  $\forall   \:   O   \in
   \Ort_{dd'}(\Rset)$,
   %
   \[
@@ -2472,14 +2485,14 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   lo que prueba  que tambi\'en \ $X \in \ED_\col$.  Luego,  si $X \in \ED_\col$,
   entonces  \  $\forall  \:  O_1  ,  \ldots  ,  O_{d'}  \in  \Ort_d(\Rset)$,  de
   $\begin{bmatrix} O_1 X_1  & \cdots & O_{d'} X_{d'}  \end{bmatrix} \egald Y$, y
-  en particular para cualquier $O \in \Ort_d(\Rset)$ se obtiene
+  en particular para cualquiera $O \in \Ort_d(\Rset)$ se obtiene
   %
   \[
-  O Y = \begin{bmatrix} O Y_1 & \cdots & O_{d'} Y_{d'} \end{bmatrix} \egald Y
+  O Y = \begin{bmatrix} O Y_1 & \cdots & O Y_{d'} \end{bmatrix} \egald Y
   \]
   %
   lo que  cierra la  prueba que  tambi\'en \ $X  \in \ED_\izq$.   Obviamente, la
-  secunda        sucesi\'on        de        inclusi\'on        sigue        del
+  secunda        sucesi\'on        de        inclusiones        sigue        del
   punto~\ref{Enum:MP:EDM_Transpuesta}.
   % mismo enfoque.
 
@@ -2516,18 +2529,18 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   O'$   as\'i,  $O  Y   O'  \egald   Y$:  tambi\'en   $X  \in   \ED_\bil$.   Del
   punto~\ref{Enum:MP:EDM_Inclusiones},  $X  \in  \ED_\col$,  \ie  $\ED_\vcol  \,
   \subset  \, \ED_\col  \, \cap  \,  \ED_\bil$.  Para  la reciproca,  se usa  un
-  resultado que vamos a ver m\'as adelante, a saber que por (i) $X \in \ED_\col$
-  si  y  solamente  si la  funci\'on  caracter\'istica  de  $Y$ tiene  la  forma
+  resultado que vamos a ver m\'as adelante,  a saber que (i) $X \in \ED_\col$ si
+  y  solamente  si   la  funci\'on  caracter\'istica  de  $Y$   tiene  la  forma
   $\Phi_Y(\omega) =  \overline{\varphi}_Y( \diag( \omega^t \omega)  )$, (ii) que
   $X \in \ED_\bil$ si y solamente  si la funci\'on caracter\'istica de $Y$ tiene
   la forma  $\Phi_Y(\omega) = \widetilde{\varphi}_Y(\lambda(  \omega^t \omega))$
-  con  $\lambda$  el espectro  (vector  formado  por  los autovalores).   Tomando
+  con  $\lambda$ el  espectro  (vector formado  por  los autovalores).   Tomando
   $\omega$    ``diagonal''    (recorda    que   partenece    necesariamente    a
   $\Mat_{d,d'}(\Rset)$, \ie no necesariamente  cuadrada), \ie $\omega_{i,j} = 0$
   si   $i    \ne   j$,   es   sencillo   ver    que   $\widetilde{\varphi}_Y   =
-  \overline{\varphi}_Y$. En  otros terminos, siendo $\Phi_Y$  la misma funci\'on
+  \overline{\varphi}_Y$. En otros t\'erminos, siendo $\Phi_Y$ la misma funci\'on
   de  la diagonal  y  del espectro  de  $\omega^t \omega$,  es  funci\'on de  la
-  cantidad que comparten estos  dos vecores, \ie $\un^t \lambda(\omega^t \omega)
+  cantidad que comparten estos dos vectores, \ie $\un^t \lambda(\omega^t \omega)
   = \Tr( \omega^t \omega) = \un^t \diag(\omega^t \omega)$, \ie $\Phi_Y(\omega) =
   \varphi_Y\left(  \Tr(\omega^t   \omega)  \right)$.   Veremos   m\'as  adelante
   tambi\'en  que $X \in  \ED_\vcol$ si  y solamente  si justamente  la funci\'on
@@ -2539,26 +2552,27 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   entonces \  $Y = \Delta^{-\frac12} Q^t  (X-m)$ \ es a  simetria esf\'erica por
   vectorizaci\'on columna, \ie \  $Y_\vcol \equiv \begin{bmatrix} Y_1^t & \cdots
     &  Y_{d'}^t \end{bmatrix}^t  \sim  \ED(0,I,\varphi_{Y_\vcol})$. Del  estudio
-  anterior, la ley de \ $Y$ \  es entonces completamente determinada por la de \
-  $Y_\vcol^t Y_\vcol = \| Y \|_F^2$ (siendo la ley de $Y$ la ley conjunta de sus
-  componentes). Sea  ahora \ $Y_\vlin  \equiv \begin{bmatrix} Y'_1 &  \cdots &
-    Y'_d \end{bmatrix}^t$.  Claramente, la ley  de \ $Y$ \  siendo completamente
-  determinada  por  la de  \  $\|  Y  \|_F^2$, equivalentemente,  esta  \'ultima
-  determina completamente la ley de \ $Y_\vlin$. Siendo tambi\'en $\| Y \|_F^2 =
-  Y_\vlin^t     Y_\vlin$,     se     concluye     que    \     $Y_\vlin     \sim
-  \ED(0,I,\varphi_{Y_\vlin})$:   $\ED_\vcol   \subset   \ED_\vlin$.   El   mismo
-  razonamiento permite decir que $\ED_\vlin \subset \ED_\vcol$, lo que cierra la
-  prueba.
+  anterior, secci\'on~\ref{Ssec:MP:FamiliaElipticaReal},  la ley  de \ $Y$  \ es
+  entonces  completamente determinada  por la  de \  $Y_\vcol^t Y_\vcol  =  \| Y
+  \|_F^2$ (siendo la ley de $Y$ la ley conjunta de sus componentes). Sea ahora \
+  $Y_\vlin  \equiv  \begin{bmatrix}  Y'_1  &  \cdots  &  Y'_d  \end{bmatrix}^t$.
+  Claramente, la ley de \ $Y$ \ siendo completamente determinada por la de \ $\|
+  Y \|_F^2$, equivalentemente, esta \'ultima determina completamente la ley de \
+  $Y_\vlin$. Siendo tambi\'en $\| Y \|_F^2 = Y_\vlin^t Y_\vlin$, se concluye que
+  \  $Y_\vlin \sim  \ED(0,I,\varphi_{Y_\vlin})$: $\ED_\vcol  \subset \ED_\vlin$.
+  El mismo razonamiento permite decir  que $\ED_\vlin \subset \ED_\vcol$, lo que
+  cierra la prueba.
 
   Con  respecto   al  punto~\ref{Enum:MP:EDM_Simetrica},  si  \  $X$   \  es  en
   $\ED_\bil$,  e  \  $Y  =  \Delta^{-\frac12} Q^t  (X-m)  Q  \Delta^{-\frac12}$,
   entonces \ $\forall \: O \in \Ort_d(\Rset), O' \in \Ort_d(\Rset), \quad O Y O'
   \egald Y$, y en particular para $O' = O^t$. Pero eso no implica que $X$ sea en
-  $\ED_\simed$. De hecho, saliendo de  una matriz $X$ simetrica, $Y$ es definida
-  sobre  $\Y =  \Sim_d(\Rset)$, pero  $\forall \:  O \in  \Ort_d(\Rset),  O' \in
-  \Ort_d(\Rset), O' \ne O^t$ aparece  que $O \Sim_d(\Rset) O' \ne \Sim_d(\Rset)$
-  as\'i que  $O Y O'  \negald Y$: una  matriz definida sobre  $\Sim_d(\Rset)$ no
-  puede ser a simetr\'ia esf\'erica.
+  $\ED_\simed$.  De  hecho, saliendo  de  una  matriz  $X$ sim\'etrica,  $Y$  es
+  definida sobre $\Y = \Sim_d(\Rset)$,  pero $\forall \: O \in \Ort_d(\Rset), O'
+  \in  \Ort_d(\Rset),  O'   \ne  O^t$  aparece  que  $O   \Sim_d(\Rset)  O'  \ne
+  \Sim_d(\Rset)$  as\'i  que $O  Y  O' \negald  Y$:  una  matriz definida  sobre
+  $\Sim_d(\Rset)$ no puede ser a  simetr\'ia esf\'erica ni izquierda ($O' = I$),
+  ni derecha ($O = I$).
 % Al rev\'es, de
 %  $\Tr(A  B) = \Tr(B  A)$ se  nota que  la distribuci\'on  de Wishart  \ $p_X(x)
 %  \propto |x|^{\frac{\nu-d-1}{2}} e^{-\frac12 \Tr\left( V^{-1} x\right)}$ \ dada
@@ -2571,26 +2585,26 @@ clase $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
 Nota:
 %
 \begin{itemize}
-\item Sea  \ $S$  \ vector aleatorio  de distriibuci\'on  esf\'erica, y \  $T$ \
+\item  Sea \ $S$  \ vector  aleatorio de  distribuci\'on esf\'erica,  y \  $T$ \
   vector  aleatorio \  $d'$-dimensional independiente  de \  $S$. Sea  \ $X  = S
-  T^t$. Inmediatamente,  de \ $O S  \egald S$ \  para cualquier matriz \  $O \in
+  T^t$. Inmediatamente, de  \ $O S \egald  S$ \ para cualquiera matriz  \ $O \in
   \Ort_d(\Rset)$ \ y de la independencia de  $S$ y $T$, se concluye que \ $X \in
   \ED_\izq$ (m\'as precisamente  a simetr\'ia esf\'erica). Ahora, si  \ $T$ \ no
   es a simetr\'ia eliptica,  en general \ $X \not\in \ED_\der$ \  (ej. $T = \un$
-  determinista):  $\ED_\izq  \setminus   \ED_\der  \neq  \emptyset$.  Luego,  si
+  determinista):  $\ED_\izq  \setminus  \ED_\der  \neq  \emptyset$.   Luego,  si
   denotamos $X_i$ las columnas  de \ $X$, y \ $T_i$ \  las componentes de \ $T$,
-  sencillamente \  $X_i = T_i S$ \  es de media cero.  A continuaci\'on, tomando
+  sencillamente \ $X_i  = T_i S$ \ es de media  cero.  A continuaci\'on, tomando
   $O_k \in  \Ort_d(\Rset), \, k  = 1, \ldots  , d'$, se obtiene  las covarianzas
   para $i \ne j$ \ $\Cov[O_i X_i , O_j X_j] = \Esp\left[ O_i S T_i T_j S^t O_j^t
   \right]  =  \Esp[T_i  T_j]  O_i  \Esp\left[  S S^t  \right]  O_j^t$  \  de  la
   independencia,  es   decir,  de  la  forma   de  la  covarianza   de  $S$  del
   lema~\ref{Lem:MP:AlphaConR}, $\Cov[O_i  X_i , O_j X_j]  = \frac{\Esp\left[ T_i
       T_j \right] \, \Esp\left[ \|S\|^2  \right]}{d} \, O_i O_j^t \ne \Cov[X_i ,
-  X_j]$ \ aparte  si $O_j = O_i$.  Siendo \ $\begin{bmatrix} O_1 X_1  & \cdots &
+  X_j]$ \ aparte si  $O_j = O_i$.  Siendo \ $\begin{bmatrix} O_1  X_1 & \cdots &
     O_{d'}   X_{d'}  \end{bmatrix}$   \  a   simetr\'ia  esf\'erica,   y   de  \
-  $\begin{bmatrix} O_1 X_1 & \cdots  & O_{d'} X_{d'} \end{bmatrix} \not\egald X$
+  $\begin{bmatrix} O_1 X_1 & \cdots  & O_{d'} X_{d'} \end{bmatrix} \not\egald X$,
   \ $X$  \ no  puede partenecer  a \ $\ED_\col$.   En conclusi\'on,  \ $\ED_\izq
-  \setminus \left( \ED_\bil \cup \ED_\der \right) \neq \emptyset$.
+  \setminus \left( \ED_\bil \cup \ED_\col \right) \neq \emptyset$.
 %
 \item Sea  \ $X$ \  de columnas \  $X_i \sim \ED( m_i  , \Sigma ,  \varphi_X)$ \
   independientes  y no  gausianas.  Queda  claro que  \ $X  \in \ED_\col$  \ por
@@ -2618,18 +2632,19 @@ Los v\'inculos entre cada clase son ilustrados figura~\ref{Fig:MP:EDMatrix}.
 % 
 \leyenda{Ilustraci\'on de los v\'inculos entre  cada clase de matriz aleatoria a
   simetr\'ia el\'iptica.  Los ensembles adentro de las lineas llenas representan
-  las simetrias  izquierdas, y adentra  de las lineas punteadas  representan las
-  simetrias derechas (en linea mixta  se representa cuando son en ambas izquiera
-  y  derecha).   La parte  grise  claro  conjuntamente  a la  oscuro  representa
-  $\ED_\col$ y la parte grise mediano conjuntamente a la grise oscuro representa
-  $\ED_\bil$,  siendo la  parte grise  oscura la  intersecci\'on  $\ED_\bil \cap
-  \ED_\col = \ED_\vcol = \ED_\vlin = \ED_\bil \cap \ED_\lin$.}
+  las simetrias tipo izquierdas (y  subcasos), y adentra de las lineas punteadas
+  representan  las simetrias  tipo  derechas  (y subcasos).  En  linea mixta  se
+  representa  cuando son en  ambas izquiera  y derecha).   La parte  grise claro
+  conjuntamente  a la  oscuro representa  $\ED_\col$  y la  parte grise  mediano
+  conjuntamente a la  grise oscuro representa $\ED_\bil$, siendo  la parte grise
+  oscura la  intersecci\'on $\ED_\bil  \cap \ED_\col =  \ED_\vcol =  \ED_\vlin =
+  \ED_\bil \cap \ED_\lin$.}
 \label{Fig:MP:EDMatrix}
 \end{figure}
 
 
 No vamos a entrar demasiado en  detalles sobre las propiedades de cada clase; se
-encuentran el las referencias citadas.  Las daremos sin pruebas para la mayoria.
+encuentran en las referencias citadas.  Las daremos sin pruebas para la mayoria.
 Notamos que, nuevamente,  de $\Phi_{A X B + C}(\omega)  = e^{\imath \, \Tr\left(
     \omega^t  C \right)}  \,  \Phi_X\left(  A^t \omega  B^t  \right)$, se  puede
 deducir la  funci\'on caracter\'istica de  una matriz a simetr\'ia  el\'iptica a
@@ -2641,16 +2656,16 @@ los casos $(\izq)$, $(\col)$, $(\vcol)$, $(\bil)$ y $(\simed)$.
 Los  teoremas  del caso  vectorial  tienen extensiones  en  unas  de las  clases
 descritas. En lo que sigue, de manere generica, notaremos
 %
-\begin{enumerate}
+\begin{enumerate}[label = (N \arabic*)]
 \item $A \in \Mat_{n,d}(\Rset)$ \ de rango lleno  tal que \ $n \le d$, \ $A' \in
   \Mat_{d',n'}(\Rset)$  \  de  rango  lleno  tal  que \  $n'  \le  d'$,  $C  \in
   \Mat_{n,n'}(\Rset)$,
 %
 \item $m$  \ el par\'ametro de posici\'on  y \ $\Sigma, \Sigma'$  \ las matrices
   caracter\'isticas de  \ $X$ \ matriz  aleatoria de \  $\Mat_{d,d'}(\Rset)$ \ a
-  simetr\'ia eli\'iptica,
+  simetr\'ia el\'iptica,
 %
-\item $Y$  \ la  matriz a simetr\'ia  esf\'erica de generadora  caracteristica \
+\item $Y$ \  la matriz a simetr\'ia esf\'erica  de generadora caracter\'istica \
   $\varphi_X$ \ la de $X$,
 %
 \item \ $X = \begin{bmatrix} X_1 &  \cdots X_{d'} \end{bmatrix}$ \ con \ $X_j$ \
@@ -2680,8 +2695,8 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
 %
 \item Como  en el  contexto vectorial, la  funci\'on caracter\'istica  tiene una
   forma particular,  esta dependiente del  tipo de elipticidad. Las  pruebas son
-  por ejemplo  en~\cite{FanChe84, JenGoo81, GupNag99}, pero siguen  pasos a paso
-  el enfoque del caso vectorial.
+  por ejemplo  en~\cite{FanChe84, JenGoo81, GupNag99}, pero  siguen, en general,
+  paso a paso el enfoque del caso vectorial.
 %  Notaremos \ $\omega = \begin{bmatrix} \omega_1
 %    &  \cdots &  \omega_{d'}  \end{bmatrix} \in  \Mat_{d,d'}(\Rset)$  \ con  las
 %  columnas $\omega_j \in \Rset^d, \: j = 1, \ldots , d'$.
@@ -2715,7 +2730,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   obviamente  directamente  del  caso   vectorial.   Pasando,  se  notar\'a  que
   $\Tr\left( \omega^t \Sigma \omega  \right) = \un^t \diag\left( \omega^t \Sigma
     \omega \right)$, lo  que enfatisa las inclusiones entre  estos tres tipos de
-  elipticidad. Se  notara\'a tambi\'en que  \ $\Tr\left( \omega^t  \Sigma \omega
+  elipticidad. Se  notar\'a tambi\'en que  \ $\Tr\left( \omega^t  \Sigma \omega
   \right) = \left\| \Sigma^{\frac12} \omega \right\|_F^2$ \ cuadrado de la norma
   de Frobenius (ver notaciones).
   %
@@ -2727,15 +2742,15 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \mbox{con} \qquad \varphi_X: \Rset_+^{\min(d,d')} \mapsto [-1 \; 1]
   \]
   %
-  con   $\lambda(\cdot)$  spectra  de   la  matriz   (vector  formado   por  los
+  con  \  $\lambda(\cdot)$ \  espectro  de la  matriz  (vector  formado por  los
   autovectores). Siendo $\omega$ rectangular  el rango es necesariamente menor o
   igual a  $\min(d,d')$ y tenemos tambi\'en  $\lambda\left( \Sigma'^{\frac12} \,
     \omega^t \Sigma  \omega \Sigma'^{\frac12} \right)  = \lambda(\omega^t \Sigma
   \omega  \Sigma') =  \lambda(\omega  \Sigma' \omega^t  \Sigma) =  \lambda\left(
     \Sigma^{\frac12}    \,     \omega    \Sigma'    \omega^t    \Sigma^{\frac12}
   \right)$~\cite[Teo.~21.10.1(2)]{Har08}  (en  la  literatura, se  encuentra  la
-  primera forma como argumento de $\varphi_X$).  Se ve tambi\'en por simetr\'ia,
-  siendo  $X^t \in  \ED_\bil$.
+  primera escritura para $\varphi_X$).  Se ve tambi\'en por simetr\'ia,
+  siendo $X^t \in \ED_\bil$.
   %
 \item  Nota:  si  $X  \in  \ED_\col \cap  \ED_\lin  \varsubsetneq  \ED_\bil$  la
   funci\'on  va a  ser  la suma  de los  autovalores  (ver caso  $(\col)$ y  por
@@ -2745,12 +2760,12 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   %
   \[
   \Phi_X(\omega) = e^{\imath \, \Tr\left( \omega^t m \right)} \, \varphi_X\left(
-    \Tr\left( \omega^t  \, \Sigma  \, \omega \,  \Sigma' \right)  \right) \qquad
-  \mbox{con} \qquad \varphi_X: \Rset_+ \mapsto [-1 \; 1]   \quad   \mbox{invariante   por
+    \Tr\left( \omega^t  \, \Sigma  \, \omega \,  \Sigma' \right)  \right) \quad
+  \mbox{con} \quad \varphi_X: \Rset_+ \mapsto [-1 \; 1]   \quad   \mbox{invariante   por
     permutaci\'on}%~\footnotemark}
   \]
   %
-  Nuevamente,  se notara\'a  que  \ $\Tr\left(  \omega^t  \Sigma \omega  \Sigma'
+  Nuevamente,  se  notar\'a que  \  $\Tr\left(  \omega^t  \Sigma \omega  \Sigma'
   \right)  = \left\| \Sigma^{\frac12}  \omega \Sigma'^{\frac12}  \right\|_F^2$ \
   cuadrado de la norma de Frobenius (ver notaciones).
   %
@@ -2870,10 +2885,10 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   caso bilateral, \ $X \sim \ED_\bil(m,\Sigma,\Sigma',d_X)$.
 %
 \item La  extensi\'on del teorema~\ref{Teo:MP:MomentosCumulantesEliptica}  y del
-  corrolario~\ref{Lem:MP:MediaCovarianzaEliptica}  no   es  una  tarea  sencilla
-  porque $\varphi_X$ no queda una  funci\'on escalar en general. Sin embargo, se
-  puede   concentrarnos  en   los  momentos   de  orden   1  y   2,   los  m\'as
-  usados~\cite{Mal61, Daw81,  Tyl82, GruRoc90, BilBre99,  GupNag99}. Notaremos \
+  corolario~\ref{Cor:MP:MediaCovarianzaEliptica} no es una tarea sencilla porque
+  \ $\varphi_X$ \ no queda una funci\'on de un escalar en general.  Sin embargo,
+  se  puede  concentrarnos   en  los  momentos  de  orden  1   y  2,  los  m\'as
+  usados~\cite{Mal61, Daw81, Tyl82,  GruRoc90, BilBre99, GupNag99}.  Notaremos \
   $r$ \ el argumento de \  $\varphi_X$ \ funci\'on tomada en \ $\omega^t \omega,
   \:  \diag(\omega^t \omega),  \:  \Tr(\omega^t \omega)  = \un^t  \diag(\omega^t
   \omega)  = \un^t  \lambda(\omega^t  \omega)$  \ seg\'un  el  caso estudiado  \
@@ -2893,7 +2908,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     \]
     %
     De hecho, siendo \ $Y$ \ a sim\'etria esf\'erica izquierda, de \ $Y \egald O
-    Y$ \ para cualquier matriz ortogonal, se obtiene tambi\'en \ $- Y \egald Y$,
+    Y$ \ para cualquiera matriz ortogonal, se obtiene tambi\'en \ $- Y \egald Y$,
     de  lo cual  se deduce  \ $\Esp[Y]  = 0$.   Lo mismo  occure con  el context
     derecho,  as\'i   que,  como   consecuencia  para  cualquier   subcaso  (ver
     figura~\ref{Fig:MP:EDMatrix}).
@@ -2901,27 +2916,27 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \item Para \ $X \sim \ED_\simed(m,\Sigma,\varphi_X)$,
     %
     \[
-    \Esp[X] = m + \mu_1(\varphi_X) \Sigma, \qquad \mu_1(\varphi_X) = - \imath \,
-    \frac{\partial  \varphi_X}{\partial  \lambda_1}(0)  = \frac{1}{d}  \,  \un^t
+    \Esp[X] = m + \mu_1(\varphi_X) \, \Sigma, \qquad \mu_1(\varphi_X) = - \imath
+    \, \frac{\partial  \varphi_X}{\partial \lambda_1}(0) =  \frac{1}{d} \, \un^t
     \Esp\left[ \lambda(Y) \right]
     \]
     %
     Una    pruba    dada    por   ejemplo    en~\cite[\S~13.2]{BilBre99}    (ver
     tambi\'en~\cite{Mal61,  Tyl82}) sale  de \  $Y  \egald O  Y O^t$  \ dando  \
-    $\Esp[Y]  =  O \Esp[Y]  O^t$  \ para  cualquier  matriz  ortogonal. De  esta
+    $\Esp[Y]  = O  \Esp[Y]  O^t$ \  para  cualquiera matriz  ortogonal. De  esta
     identidad, viene que si \ $v$ \ es un autovector de \ $\Esp[Y]$ \ asociado a
-    un autovalor  $\mu_1$, cualquier \ $O v$  \ va a ser  autovector asociado al
+    un autovalor $\mu_1$,  cualquiera \ $O v$ \ va a  ser autovector asociado al
     mismo autovalor.  De \ $\{ O v \tq O \in \Ort_d(\Rset) \} = \Rset^d$ \ queda
-    claro para cualquier  \ $v \in \Rset^d$, \quad $\Esp[Y] v  = \mu_1 v$, dando
-    que existe un \  $\mu_1$ \ tal que \ $\Esp[Y] = \mu_1  I$. Se puede hacer un
-    paso m\'as  para identificar el  factor \ $\mu_1$  \ tomando la  traza.  Eso
-    conduce  a   \  $\mu_1  =  \frac{1}{d}  \Esp[\Tr(Y)]   =  \frac{1}{d}  \un^t
+    claro que  para cualquier \  $v \in \Rset^d$,  \quad $\Esp[Y] v =  \mu_1 v$,
+    dando que  existe un \  $\mu_1$ \ tal  que \ $\Esp[Y]  = \mu_1 I$.  Se puede
+    hacer un paso m\'as para identificar el factor \ $\mu_1$ \ tomando la traza.
+    Eso  conduce a  \  $\mu_1  = \frac{1}{d}  \Esp[\Tr(Y)]  = \frac{1}{d}  \un^t
     \Esp[\lambda(Y)]$.\newline De hecho, m\'as directamente, primero se nota que
-    para  cualquier  matriz  de   permutaci\'on,  \  $\varphi_X(\pi  \lambda)  =
+    para  cualquiera  matriz  de  permutaci\'on,  \  $\varphi_X(\pi  \lambda)  =
     \varphi_X(\lambda)$ \ dando por un lado \ $\pi \nabla_\lambda \varphi_X (\pi
     \lambda) = \nabla_\lambda \varphi_X(\lambda)$.  En particular, para $\lambda
     = 0$, eso da \  $\pi \nabla_\lambda \varphi_X (0) = \nabla_\lambda \varphi_X
-    (0)$  \ para  cualquier  permutaci\'on,  es decir  que  las componentes  son
+    (0)$  \ para  cualquiera permutaci\'on,  es  decir que  las componentes  son
     iguales:     $\nabla_\lambda      \varphi_X     (0)     =     \frac{\partial
       \varphi_X(0)}{\partial \lambda_1} \: \un$.  Ahora, notando $\lambda \equiv
     \lambda(\omega)$   para  simplificar   las   notaciones,  $   \frac{\partial
@@ -2936,9 +2951,9 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     vista  secci\'on~\ref{Ssec:MP:MA}, se recupera  bien \  $\Esp[Y] =  - \imath
     \frac{\partial \varphi_X}{\partial \lambda_1}(0) \, I$.
   %
-  \item Tomando la forma de $\Phi_X$ en cada caso, y de la formula relaciando la
+  \item Tomando la forma de $\Phi_X$ en cada caso, y de la f\'ormula relaciando la
     funci\'on  caracter\'istica y  los momentos,  se obtiene  las formas  de las
-    covarianzas de $Y$. Adem\'as, a  partir de estas formas, los terminos usando
+    covarianzas de $Y$. Adem\'as, a  partir de estas formas, los t\'erminos usando
     la  funci\'on caracter\'istica  se re-escriben  con momentos  escalares tipo
     normas:
   %
@@ -2990,28 +3005,28 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \]
   %
   Se  notar\'a que  la  covarianza de  \  $Y$ \  es  la misma  que  para $Y  \in
-  \ED_\vcol$, siendo este  caso un sub-caso de la  clase $\ED_\vcol$.\newline La
-  prueba  de la  forma de  la covarianza  es  un poco  m\'as sutil  en la  clase
-  $\ED_\bil$. Primero, se nota que  para cualquier matriz de permutaci\'on, como
-  lo  vimos tratando  del  caso  $(\simed)$ \  $\nabla_\lambda  \varphi_X (0)  =
+  \ED_\vcol$, siendo este  caso un sub-caso de la  clase $\ED_\vcol$.\newline El
+  enfoque conduciendo a  la forma de la  covarianza de \ $X \in  \ED_\bil$ es un
+  poco sutil. Primero, se nota que para cualquiera matriz de permutaci\'on, como
+  lo vimos  tratando del  caso \ $(\simed)$,  \ $\nabla_\lambda \varphi_X  (0) =
   \frac{\partial  \varphi_X(0)}{\partial  \lambda_1}  \:  \un$.   Con  el  mismo
-  enfoque, se nota tambi\'en que para cualquier matriz de permutaci\'on $\pi$, \
-  $\pi      \Hess_\lambda      \varphi_X(0)      \pi^t      =      \Hess_\lambda
+  enfoque,  se nota  tambi\'en que  para  cualquiera matriz  de permutaci\'on  \
+  $\pi$,   \    $\pi   \Hess_\lambda   \varphi_X(0)    \pi^t   =   \Hess_\lambda
   \varphi_X(0)$. Inmediatamente, la diagonal de  la hessiana es constante, y los
   t\'erminos no diagonales son  todos iguales, \ie \ $\Hess_\lambda \varphi_X(0)
   = \frac{\partial^2 \varphi_X}{\partial \lambda_1 \partial \lambda_2}(0) \, \un
   \un^t   +  \left(   \frac{\partial^2  \varphi_X}{\partial   \lambda_1^2}(0)  -
     \frac{\partial^2   \varphi_X}{\partial   \lambda_1  \partial   \lambda_2}(0)
-  \right) \, I$.  Luego,  notando $\lambda \equiv \lambda(\omega^t \omega)$ para
-  simplificar las notaciones, $ \frac{\partial \varphi_X}{\partial \omega_{i,j}}
-  =    \nabla_\lambda    \varphi_X^t    \,   \frac{\partial    \lambda}{\partial
-    \omega_{i,j}}$ \ y, a continuaci\'on, $ \frac{\partial^2 \varphi_X}{\partial
-    \omega_{i,j}  \partial \omega_{k,l}}(0)  = \nabla_\lambda  \varphi_X(0)^t \,
-  \frac{\partial^2  \lambda}{\partial \omega_{i,j}  \partial  \omega_{k,l}}(0) +
-  \frac{\partial  \lambda^t}{\partial  \omega_{i,j}} \Hess_\lambda  \varphi_X(0)
-  \frac{\partial    \lambda}{\partial    \omega_{k,l}}(0)    =    \frac{\partial
-    \varphi_X}{\partial  \lambda_1}(0) \frac{\partial^2  \un^t \lambda}{\partial
-    \omega_{i,j}      \partial      \omega_{k,l}}(0)     +      \frac{\partial^2
+  \right) \, I$.   Luego, notando \ $\lambda \equiv  \lambda(\omega^t \omega)$ \
+  para  tener  notaciones  mas  ligieras, $  \frac{\partial  \varphi_X}{\partial
+    \omega_{i,j}}    =     \nabla_\lambda    \varphi_X^t    \,    \frac{\partial
+    \lambda}{\partial \omega_{i,j}}$ \ y, a continuaci\'on, \ $ \frac{\partial^2
+    \varphi_X}{\partial \omega_{i,j}  \partial \omega_{k,l}}(0) = \nabla_\lambda
+  \varphi_X(0)^t  \,  \frac{\partial^2  \lambda}{\partial \omega_{i,j}  \partial
+    \omega_{k,l}}(0)   +    \frac{\partial   \lambda^t}{\partial   \omega_{i,j}}
+  \Hess_\lambda \varphi_X(0) \frac{\partial \lambda}{\partial \omega_{k,l}}(0) =
+  \frac{\partial   \varphi_X}{\partial   \lambda_1}(0)  \frac{\partial^2   \un^t
+    \lambda}{\partial \omega_{i,j}  \partial \omega_{k,l}}(0) + \frac{\partial^2
     \varphi_X}{\partial   \lambda_1    \partial   \lambda_2}(0)   \frac{\partial
     \lambda^t     \un}{\partial     \omega_{i,j}}(0)    \frac{\partial     \un^t
     \lambda}{\partial     \omega_{k,l}}(0)     +     \left(     \frac{\partial^2
@@ -3032,14 +3047,14 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     \omega_{k,l}}$.   \ De  $\lambda(0) =  0$ \  se obtiene  \ $\frac{\partial^2
     \lambda^t   \lambda}{\partial   w_{i,j}   \partial   w_{k,l}}(0)  =   2   \,
   \frac{\partial     \lambda^t}{\partial     \omega_{i,j}}(0)     \frac{\partial
-    \lambda}{\partial  \omega_{k,l}}(0)$. Al  final, de  la forma  de $\lambda^t
-  \lambda$, queda claro  que la secundas derivadas se cancelan  en $\omega = 0$,
-  siendo   entonces  cero  el   tercero  t\'ermino   de  \   $  \frac{\partial^2
-    \varphi_X}{\partial  \omega_{i,j} \partial \omega_{k,l}}(0)$,  conduciendo a
+    \lambda}{\partial \omega_{k,l}}(0)$.  Al final, de la forma  de \ $\lambda^t
+  \lambda$, queda  claro que las secundas  derivadas se cancelan en  \ $\omega =
+  0$,  siendo  entonces  cero  el  tercero t\'ermino  de  \  $  \frac{\partial^2
+    \varphi_X}{\partial \omega_{i,j}  \partial \omega_{k,l}}(0)$. Eso  conduce a
   la  expresi\'on dada para  la covarianza  (ver la  expresi\'on del  momento de
   orden dos vista secci\'on~\ref{Ssec:MP:MA}).  La secunda forma del coeficiente
-  $\alpha$ viene de la forma  dada, sumando los t\'erminos del tensor covarianza
-  en $i, j$.
+  \  $\alpha$ \  viene  de la  forma  dada, sumando  los  t\'erminos del  tensor
+  covarianza en \ $i, j$.
  \end{itemize}
   %
 \item Para \ $X \sim \ED_\simed(m,\Sigma,\varphi_X)$ la covarianza es dada por:
@@ -3086,7 +3101,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   de  proyecci\'on  sobre  el  ortogonal  de  $\un$.
 
   La pruba,  dada por ejemplo  en~\cite[\S~13.2]{BilBre99}, sale de nuevo  de la
-  relaci\'on \ $Y  \egald O Y O^t$ \ para cualquier  matrices ortogonales. Si se
+  relaci\'on \ $Y  \egald O Y O^t$ \ para cualquieras  matrices ortogonales. Si se
   considera las  matrices ortogonales  \ $O_\varepsilon =  \Diag(\varepsilon)$ \
   con  \  $\varepsilon  \in  \{-1  \;   +  1  \}^d$  \  se  obtiene  entonces  \
   $\T_{i,j,k,l}[Y]  =  \varepsilon_i  \varepsilon_j \varepsilon_k  \varepsilon_l
@@ -3098,7 +3113,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   un  momento  de   orden  2),  \  $\T_{i,i,j,j}[Y]  =   \mu_2$  \  constante  \
   $\T_{i,j,i,j}[Y] = \sigma_1^2 =  \T_{i,j,j,i}[Y]$ \ constante positiva (siendo
   un momento de orden 2, y la  secunda relaci\'on viniendo de la simetr\'ia $Y =
-  Y^t$).  Adem\'as,  para cualquier  matriz ortogonal  \ $O$, de  $Y \egald  O Y
+  Y^t$).  Adem\'as,  para cualquiera  matriz ortogonal  \ $O$, de  $Y \egald  O Y
   O^t$, se  obtiene sencillamente, de la  ortogonalidad de $O$, que  para $j \ne
   i$, $\displaystyle  \mu_2 = \mu_2 +  \left( \sigma_0^2 - \mu_2  - 2 \sigma_1^2
   \right) \sum_{r=1}^d  O_{i,r}^2 O_{j,r}^2$, es  decir $\sigma_0^2 - \mu_2  - 2
@@ -3130,8 +3145,8 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     \Tr(Y)  \right] =  \left(  d^2  - d  \right)  \mu_2 +  d  \left(  \mu_2 +  2
     \sigma_1^2 \right)$.  Similarmente \ $\Tr\left( \Esp\left[ (Y - \Esp[Y] ) (Y
       -  \Esp[Y])^t \right]  \right) =  \left( d^2  - d  \right) \sigma_1^2  + d
-  \left( \mu_2 +  \sigma_1^2 \right) = d \, \mu_2 +  d^2 \sigma_1^2$.  Se notara
-  que   \  $\Tr(Y)   =  \un^t   \lambda(Y)$  \   dando  $\Var[\Tr(Y)]   =  \un^t
+  \left( \mu_2 + \sigma_1^2 \right) = d \, \mu_2 + d^2 \sigma_1^2$.  Se notar\'a
+  que  \   $\Tr(Y)  =   \un^t  \lambda(Y)$)  \   dando  $\Var[\Tr(Y)]   =  \un^t
   \Cov[\lambda(Y)] \un$, lo que da  la primera relaci\'on v\'inculando \ $\mu_2$
   \  y   \  $\sigma_1^2$.   Pasando,   de  la  positividad  de   la  covarianza,
   necesariamente $\mu_2  + \frac{2}{d} \, \sigma_1^2  \ge 0$ \ (lo  que es m\'as
@@ -3183,7 +3198,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     \un_{\{i\}}(j)   \right)   \left(   2   -  \un_{\{k\}}(l)   \right)   \left(
     \un_{\{i\}}(k)  \un_{\{j\}}(l)  +  \un_{\{i\}}(l)  \un_{\{j\}}(k)  \right)$.
   Ahora, de $\lambda(0) = 0$, con cambios adecuados de indices, se obtiene de la
-  expresi\'on del momento de orden dos vista secci\'on~\ref{Ssec:MP:MA} $\Esp[ Y
+  expresi\'on del momento de orden dos vista secci\'on~\ref{Ssec:MP:MA}, $\Esp[ Y
   \otimes  Y]  =   -  \frac{\partial^2  \varphi_X}{\partial  \lambda_1  \partial
     \lambda_2}(0) \sum_{i,j=1}^d \un_i \otimes \un_i \otimes \un_j \otimes \un_j
   +  \frac12  \left(  \frac{\partial^2  \varphi_X}{\partial  \lambda_1  \partial
@@ -3218,7 +3233,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \item $X  \, \sim \,  \ED_\simed(m,\Sigma,\Phi_X) \quad \Rightarrow \quad  A X
     A^t +  C \:  \sim \: \ED_\simed(A  m A^t +  C ,  A \Sigma A^t,  \varphi_{A X
       A^t})$ donde~\footnote{De hecho, si se considera la definici\'on extendida
-      con $m$ no necesariamente simetrica, no es necesario imponer la simetr\'ia
+      con $m$ no necesariamente sim\'etrica, no es necesario imponer la simetr\'ia
       de $C$ tampoco.} $C = C^t$.
   %
 %  \item \SZ{$X \, \sim \,  \ED_\simed(m,\Sigma,\Phi_X) \quad \Rightarrow \quad A X B
@@ -3263,7 +3278,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     Stiefel~\footnote{La  medida de probabilidad  es proporcional  a la  de Haar
       $\mu_H$ (despu\'es de una normalizaci\'on  por el volumen de la variedad),
       quien  por definici\'on  es tal  que para  cualquier subconjunto  \  $A$ \
-      medible de \  $\Sti_{d,d'}(\Rset)$, y cualquier matriz ortogonal  \ $O \in
+      medible de \  $\Sti_{d,d'}(\Rset)$, y cualquiera matriz ortogonal  \ $O \in
       \Ort_d(\Rset)$,                $\mu_H(O                A)                =
       \mu_H(A)$~\cite[\S~4.6]{EdeRao05}. Deberiamos hablar de ``Haar izquierda''
       del   hecho    de   que   la   transformaci\'on   ortogonal    es   a   la
@@ -3295,7 +3310,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     \Sigma^{\frac12} \, U_\vcol  \, R_\vcol + m$ \:\: con  el vector \ compuesta
     de las  columnas de $U_\vcol$,  \ $\begin{bmatrix} U_{\vcol,1}^t &  \cdots &
       U_{\vcol,d'}^t  \end{bmatrix}^t  \sim  \U\left(  \Sset_{d d'}  \right)$  \
-    uniforme  sobre la  esfera, independiente  de  $R_\vcol \ge  0$ escalar.
+    uniforme sobre la esfera, independiente de $R_\vcol \ge 0$ \ escalar.
     % Se  podr\'a referirse a la  prueba de la  descomposici\'on en $\ED_\simed$
     %  m\'as adelante  (y unas  referencias citadas)  para tener  un  esquema de
     % prueba.
@@ -3581,6 +3596,8 @@ tambi\'en a~\cite{And03, Daw78, Daw81, LibrosABuscar}.
 \SZ{
 \begin{itemize}
 
+\item Equivalente de Bartlett? Ver tambi:'en ORIAM en el libro de GupNad cap. 9.
+%
 \item Volver a los cumulantes $2 k$: se puede decir m\'as? Forma del alpha con los momentos de $R$ (ver  Faa di Bruno, y forma con los polinomios de Bell por ejemplo).
 
 \item Citar mi HDR~\cite[Sec.~3.2.1]{Zoz12}

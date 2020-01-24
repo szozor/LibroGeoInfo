@@ -75,11 +75,12 @@ p^* = \argmax_p H(p) \qquad \mbox{sujeto a} \qquad p \ge 0, \quad \int_\X p(x) \
 %
 donde los dos primeros v\'inculos (positividad, normalizaci\'on) aseguran de que
 $p^*$ sea una distribuci\'on de probabilidad. En el ejemplo del gas perfecto, $K
-=   1,  \,  M_1(x)   =  \frac12   m  \sum_i   x_i^2$  \   (los  $x_i$   son  las
-velocidades).   Introduciendo   factores  de   Lagrange   $\eta_0,  \quad   \eta
-=  \begin{bmatrix} \eta_1 &  \cdots &  \eta_K \end{bmatrix}^t$  \ para  tener en
-cuenta    los     v\'inculos,    el    problema     variacional    consiste    a
-resolver~\cite{GelFom63, Bru04, Mil00, CamMar09, CovTho06}
+= 1, \, M_1(x) = \frac12 m \sum_i x_i^2$ \ (los $x_i$ son las velocidades).  Con
+la t\'ecnica del Lagrangiano para  tomar en cuenta los v\'inculos, introduciendo
+factores de  Lagrange $\eta_0,  \quad \eta =  \begin{bmatrix} \eta_1 &  \cdots &
+  \eta_K \end{bmatrix}^t$  \ para  tener en cuenta  los v\'inculos,  el problema
+variacional   consiste  a   resolver~\cite{GelFom63,  Bru04,   Mil00,  CamMar09,
+  CovTho06}
 %
 \[
 p^* = \argmax_p \int_\X  \left( - p(x) \log p(x) + \eta_0  \, p(x) + \eta^t M(x)
@@ -196,6 +197,298 @@ P^* = \argmax_P \Dkl[P]{\widetilde{P}}  \quad \mbox{sujeto a}  \int_\X M(x)
 \,  dP(x) =  m  \qquad \Leftrightarrow  \qquad \frac{dP^*}{d\widetilde{P}}(x)  =
 e^{\eta^t x - \varphi(\eta)}.
 \]
+
+\modif{ 
+
+\
+
+
+\index{Estadistica   de    Boltzmann}   \index{Estadistica   de   Bose-Einstein}
+\index{Estadistica de Fermi-Dirac}  Vamos a ilustrar este principio  ahora en el
+tema  f\'isico de  ocupaci\'on de  niveles de  energ\'ia en  un  sistema cerrado~\cite{LanLif80, Mer18}
+%
+\begin{ejemplo}[Estadistica de ocupaci\'on de niveles energeticos]
+  Consideramos un sistema  con niveles de energ\'ia \  $\E_i$ (n\'umero finito o
+  infinito de niveles). Supenomos  que haya $g_i$ estados posibles distinguibles
+  con   el  mismo   nivel   de   energ\'ia  $\E_i$;   $g_i$   es  llamado   {\em
+    degenerenc\'ia}~\ref{toto}.    Supenos   que    el    sistema   tiene    $n$
+  particulas.  Queremos estudiar  la  probabilidad (o  el  n\'umero promedio  de
+  particulas)  de  ocupaci\'on  de  cada  nivel  de  energ\'ia.  Vamos  ahora  a
+  considerar tres situaciones para describir tal distribuci\'on de probabilidad.
+
+  {\bf Enfoque de Boltzmann:} suponemos  que las particulas son distingables. Es
+  decir que,  por ejemplo  tener solamente la  particula $k$  en en nivel  $i$ o
+  solamente la $l\ne  k$ en este nivel son dos  micro-estados distinctos. Eso es
+  ilustrado  figura~\ref{Fig:SZ:BBEFD}-(a),  donde   se  representan  todos  los
+  mocroestados  posibles  para  $n_i =  2,  g_i  =  3$.  Llamamos  $p_{i,j}$  la
+  probabilidad para una particula de estar  en estado $j$ del nivel de energ\'ia
+  $i$.   Seg\'un el  principio  de  entrop\'ia maxima,  sujeto  al v\'inculo  de
+  normalisaci\'on, y  el de energ\'ia total/promedia del  sistema $\Esp[\E(x)] =
+  \sum_{i,j}  p_{i,j}   \E_i$,  con  la  tecnca  del   Lagrangiano  que  v\'imos
+  anteriormente, queremos resolver el problema de maximizaci\'on
+  %
+  \[
+  p_{i,j}^*  = \argmax_{p_{i,j}}  \left( -  \sum_{i,j} p_{i,j}  \log p_{i,j}  - \alpha
+    \sum_{i,j} p_{i,j} - \beta \sum_{i,j} p_{i,j} \E_i \right)
+  \]
+  %
+  Anulando la derivada en cada $p_{i,j}$ conduce a la probabilidad de la familia
+  exponencial, \  $p_{i,j}^* = \frac{1}{Z(\beta)}  e^{-\beta \, \E_i}$ \  con, \
+  $\beta$ \ dado, \ $Z$ \ es la constante de normalizaci\'on y luego \ $\beta$ \
+  es  tal que se  obtiene el  v\'inculo de  energ\'ia, como  lo v\'imos  en esta
+  secci\'on   y  en   la  secci\'on~\ref{Ssec:MP:FamiliaExponencial}.    Si  nos
+  focalizamos  en   la  distribuci\'on  $p_i$  de  los   niveles  de  energ\'ia,
+  escribiendo \ $\mu  = \frac{1}{\beta} \log Z = - F$  (menos la energ\'ia libre
+  de  Helmoltz,  o a  veces  conocido  como potencial  qu\'imico~\cite{LanLif80,
+    Mer18}) \ se obtiene
+  %
+  \[
+  p_i^* = \frac{g_i}{Z(\beta)} \, e^{-\beta \, \E_i} = g_i \, e^{-\beta \, (\E_i -
+    \mu)}
+  \]
+  %
+  No  entraremos en  los  detailles,  pero a  partir  de la  primera  ley de  la
+  termodin\'amica,  se v\'incula la  energi\'a, la  entrop\'ia y  la temperatura
+  $T$, dando
+  %
+  \[
+  \beta  =  \frac{1}{k_B  T}, \qquad  k_B  =  \approx  1.38 \times  10^{-23}  \:
+  \mbox{julio por Kelvin, constante de Boltzmann}
+  \]
+  %
+  (ver~\cite{Jay57},~\cite[Cap.~IV]{LanLif80}).
+
+  Se  puedo  obtener esta  distribuci\'on  como  lo hizo  Boltzmann~\cite{Bol96,
+    Bol98}, con un enfoque micro-canonico.  Se puede ver los niveles como cajas,
+  as\'i que buscamos como se puede repartir las particulas en cada caja.  Siendo
+  distinguibles  las particulas,  si tenemos  \ $n_i$  \ particulas  al  nivel \
+  $\E_i$,    existen   \   $g_i^{n_i}$    \   configuraciones    posibles   (ver
+  figura~\ref{Fig:SZ:BBEFD}-(a)).  Luego, con  $n$  particulas en  total, si  la
+  ponemos en una  recta para repartirlas en los niveles,  diciendo que las $n_1$
+  primeras van al nivel $\E_1$, las $n_2$ siguientes al nivel $\E_2$,\ldots, hay
+  que considerar las  $n!$ permutaciones posibles en la recta  y tomar en cuenta
+  que hay  \ $n_i!$ \  de las permutaciones  con las mismas particulas  al nivel
+  $\E_i$. Es decir que el n\'umero de configuraciones total es
+  %
+  \[
+  W = n! \prod_i \frac{g_i^{n_i}}{n_i!}
+  \]
+  %
+  La entrop\'ia de Boltzmann \ $S = k_B  T \log W$ \ debe ser m\'axima subjeto a
+  los v\'inculos del sistema, es decir \  $\sum_i n_i = n, \quad \sum_i n_i \E_i
+  = \E$  \ fijo. Se  puede ver en  este problema los  micro-configuraciones como
+  uniformamente  distribuidas,  as\'i  que  $1/W$  es la  probabilidad  de  cada
+  configuraci\'on  y \  $\log W$  \ representa  la entrop\'ia  a la  Shannon. El
+  problema consiste ahora a resolver el problema de maximizaci\'on
+  %
+  \[
+  n_i^* = \argmax_{n_i} \sum_i \left( n_i \log g_i - \log \Gamma(n_i+1) - \alpha
+    n_i - \beta n_i \E_i \right)
+  \]
+  %
+  donde  \ $p_i^*  =  \frac{n_i^*}{n}$ \  va  a representar  la probabilidad  de
+  ocupaci\'on  del   nivel  $\E_i$.    $n_i^*$  no  es   necesariamente  entero,
+  representando el n\'umero de ocupaci\'on promedio. Ahora, anulando la derivada
+  en cada \ $n_i$ \ conduce a resolver
+  %
+  \[
+  \psi(n_i+1) = \log g_i - \alpha - \beta \, \E_i
+  \]
+  %
+  con      $\psi$      derivada       de      $\log      \Gamma$,      funci\'on
+  digamma~\cite[\S~8.36]{GraRyz15},~\cite[\S~6.3]{AbrSte70}.    Se   supono  que
+  $n_i$ es muy grande y se usa el desarollo asimtotico $\psi(n_i+1) = \log n_i +
+  o(1)$~\cite[6.3.18]{AbrSte70} para obtener $n_i^*  = g_i e^{-\alpha - \beta \,
+    \E_i}$, que podemos reescribir bajo la forma
+  %
+  \[
+  n_i^* = \frac{n \, g_i}{Z(\beta)} \, e^{- \beta \, \E_i}
+  \]
+  %
+  \SZ{Ver aproximaci\'on continua de  Thomas-Fermi, con la degenerancia continua
+    \   $g$   \  proportional   a   la  raiz   cuadrada   de   la  energ\'ia   \
+    $\sqrt{\varepsilon}$~\cite{ThoFer}  \  conduciendo  a  \  $p_\E(\varepsilon)
+    \propto   \sqrt{\varepsilon}  \,   e^{-  \beta   \varepsilon}$  \,   ley  de
+    Maxwell-Boltzmann            (ver            secci\'on~\ref{Sssec:MP:Gamma},
+    ejemplo~\ref{Ej:MP:MaxwellBoltzmann}).}
+
+
+  {\bf Enfoque de  Bose-Einstein:} este modelo fue propuesto  por Satyendra Nath
+  Bose  en 1924  para explicar~\footnote{En  realidad, la  meta de  Bose  fue de
+    probar a sus estudiantes la  inadecuaci\'on del modelo de Boltzmann, pero se
+    equivoco en la  aplicaci\'on de esta teoria. Su  ``error'' fue de considerar
+    las   particulas   como  indistingables,   contrariamente   al  enfoque   de
+    Boltzmann. Pero condujo a una adecuaci\'on entre esta ``falsa teoria'' y las
+    observaciones.}   la inadecuaci\'on  entre la  teoria de  Boltzmann  con las
+  observaci\'on de ocupaci\'on de niveles  para fotones. Bose mando su trabajo a
+  A.   Einstein lo  cual  generalis\'o  este a  bosones  (en colaboraci\'on  con
+  Bose)~\cite{Bos24}.   Para  dar  una  ilustraci\'on, si  tomamos  dos  monedas
+  independientes   y    equilibriadas,   siendo   distinguibles,    hay   cuatro
+  configuraciones   posibles    ``cara-cara'',   ``cara-ceca'',   ``ceca-cara'',
+  ``ceca-ceca'' con una  probabilidad de aparici\'on de $\frac14$  cada una.  Si
+  ahora  las monedas  son  indistingables, las  configuraciones ``cara-ceca''  y
+  ``ceca-cara''   es   una  configuraci\'on   \'unica   y   si   se  supone   la
+  equiprobabilidad,   en  este   enfoque  hay   tres   configuraciones  posibles
+  ``cara-cara'', ``cara-ceca'' ``ceca-ceca'' con una probabilidad de aparici\'on
+  de $\frac13$ cada  una. Aparece que los fotones, o bosones  entre otros no son
+  distingables y as\'i no satisfacen a la teoria de Boltzmann.
+
+  Volmemos al  problema de ocupaci\'on de  niveles de energ\'ia,  pero ahora con
+  particulas no  distingables y volmemos  al enfoque micro-canonico.   Se supone
+  tamb\'ien que en el caso de  fotones por ejemplo, no se satisface el principio
+  de exclusi\'on de Pauli que dice que una degenerancia no puede tener m\'as que
+  una particula,  es decir que  en el  enfoque de Bose,  un estado del  nivel de
+  nerg\'ia $\E_i$ puede tener  m\'as de una particula~\cite[Cap.~4]{Mer18}. Como
+  antes, se  puede ver el  problema como  el de repartici\'on  de las \  $n_i$ \
+  particulas en las \ $g_i$ \ cajas, o  separar las \ $n_i$ \ particulas \ con \
+  $g_i-1$ \ separadores (ver  figura~\ref{Fig:SZ:BBEFD}).  Como lo ilustramos en
+  el ejemplo de las monedas, siendo indistinguibles las particulas, permutar dos
+  particulas en una configuraci\'on no  va a dar dos configuraciones diferentes,
+  sino que la misma, como ilustrado en la figura~\ref{Fig:SZ:BBEFD}-(b).  As\'i,
+  en esta situaci\'on, se puede ver el n\'umero de configuraciones posibles como
+  las combinaciones posibles de  alternancias particulas/separador, es decir que
+  existen \ $\bino{n_i  + g_i - 1}{n_i} =  \frac{(n_i+g_i-1)!}{n_i! (g_i-1)!}$ \
+  configuraciones  posibles (ver  figura~\ref{Fig:SZ:BBEFD}-(b)). Contrariamente
+  al  enfoque de  Boltzmann,  no entra  en  juega ninguna  permutaci\'on, de  al
+  indistingabilidad. En  otros t\'erminos, el n\'umero  de configuraciones total
+  es ahora
+  %
+  \[
+  W = \prod_i \frac{(n_i + g_i - 1)!}{n_i! (g_i-1)!}
+  \]
+  %
+  De nuevo, la entrop\'ia de Boltzmann \ $S  = k_B T \log W$ \ debe ser m\'axima
+  subjeto a los v\'inculos del sistema, es decir \ $\sum_i n_i = n, \quad \sum_i
+  n_i \E_i =  \E$ \ fijo; El  problema consiste ahora a resolver  el problema de
+  maximizaci\'on
+  %
+  \[
+  n_i^* = \argmax_{n_i} \sum_i \left( \log \Gamma(n_i + g_i) - \log \Gamma(n_i +
+    1) - \log \Gamma(g_i) - \alpha n_i - \beta n_i \E_i \right)
+  \]
+  %
+  donde  \ $p_i^*  =  \frac{n_i^*}{n}$ \  va  a representar  la probabilidad  de
+  ocupaci\'on  del nivel  $\E_i$.  Nuevamente, $n_i^*$  \  no es  necesariamente
+  entero, representando el n\'umero  de ocupaci\'on promedio. Ahora, anulando la
+  derivada en cada \ $n_i$ \ conduce a resolver
+  %
+  \[
+  \psi(n_i+g_i) - \psi(n_i+1) = \alpha + \beta \, \E_i
+  \]
+  %
+  con $\psi$ funci\'on digamma.   Se supono que ambos \ $n_i$ \  y \ $g_i$ \ son
+  muy grandes, comensurables $\frac{n_i}{g_i}$ tiene un l\'imite finita no nula,
+  y  se  usa el  desarollo  asimtotico  de $\psi(n_i+1)  =  \log  n_i  + o(1)  =
+  \log(n_i+1)    +    o(1)$~\cite[6.3.18]{AbrSte70}    para   obtener    $n_i^*$
+  aproximadamente soluci\'on de
+  %
+  \[
+  \log\left( 1 + \frac{g_i}{n_i} \right) = \alpha + \beta \, \E_i
+  \]
+  %
+  es decir  $n_i^* = \frac{g_i}{e^{\alpha  + \beta \,  \E_i} - 1}$,  que podemos
+  reescribir bajo la forma
+  %
+  \[
+  n_i^* = \frac{g_i}{e^{\frac{\E_i - \mu}{k_B T}} - 1}
+  \]
+  %
+  (el coeficiente \ $\beta$ \ viene de nuevo de consideraciones termodinamicas y
+  para cada nivel, $\mu < \E_i$). \SZ{Aparece que en alta temperatura, tambi\'en
+    los niveles de energ\'ia son altos  y tales que \ $\frac{\E_i-\mu}{k_B T}$ \
+    es  muy  grande:  la  estad\'istica  de  Bose-Einstein se  reduce  a  la  de
+    Boltzmann. Similarmente, cuando la densidad de particulas es baja, \ $n_i^*$
+    \ debe ser peque\~no, es decir que de nuevo \ $e^{\frac{\E_i-\mu}{k_B T}}$ \
+    es  muy  grande y  la  estad\'istica  de Bose-Einstein  se  reduce  a la  de
+    Boltzmann. Finalmente, en alta temperatura  y bajos niveles de energ\'ia, la
+    estad\'istica   vale   aproximadamente    $n_i^*   \approx   \frac{g_i   k_B
+      T}{\E_u-\mu}$ conocida como ley de Rayleigh-Jeans~\cite{toto}.}
+
+  {\bf  Enfoque   de  Fermi-Dirac:}  este   modelo  fue  propuesto   por  Enrico
+  Fermi~\cite{Fer26, Fer26:2}  e independientemente por  Paul Dirac~\cite{Dir26}
+  para  explicar el comportamiento  de los  fermiones, y  lo us\'o  luego Arnold
+  Sommerfeld  para  modelizar/explicar  la  capacidad  calorifica  debido  a  la
+  conducci\'on  de  los  electrones  en  un metal~\cite{Som27}.   En  este  caso
+  tambi\'en, en enfoque  de Boltzmann dio resultados en  contradicci\'on con las
+  medidas experimentales.  Estas particulas  son indistigables, como los fotonos
+  y bosones, pero no satisfacen  a la estad\'istica de Bose-Einstein.  De hecho,
+  la particularidad de estas particulas es que satisfacen al principio de Pauli,
+  es decir que  dos particulas no pueden tener  simulteantemente el mismo estado
+  cu\'antico~\cite[Cap.~3]{Mer18}. Dicho  de otra manera, en  enfoque es similar
+  al de  Bose, pero al maximo  una particula puede ``estar''  a una degenerencia
+  dada,   como   ilustrado   figura~\ref{Fig:SZ:BBEFD}-(c).   As\'i,   en   esta
+  situaci\'on, $g_i  \ge n_i$ \  y se puede  ver el n\'umero  de configuraciones
+  posibles como las elecciones posibles de los estados que tendran una particula
+  en  este estado  es decir  que existen  \ $\bino{g_i}{n_i}  = \frac{g_i!}{n_i!
+    (n_i-g_i)!}$ \ configuraciones posibles (ver figura~\ref{Fig:SZ:BBEFD}-(b)).
+  De nuevo, no entra en  juega ninguna adicional permutaci\'on de particulas, de
+  la  indistingabilidad. En  otros  t\'erminos, el  n\'umero de  configuraciones
+  total es ahora
+  %
+  \[
+  W = \prod_i \frac{g_i!}{n_i! (n_i - g_i)!}
+  \]
+  %
+  Nuevamente,  la entrop\'ia  de Boltzmann  \ $S  =  k_B T  \log W$  \ debe  ser
+  m\'axima subjeto  a los v\'inculos  del sistema, es  decir \ $\sum_i n_i  = n,
+  \quad \sum_i n_i \E_i  = \E$ \ fijo; El conduciendo a  resolver el problema de
+  maximizaci\'on
+  %
+  \[
+  n_i^* = \argmax_{n_i}  \sum_i \left( \log \Gamma(g_i + 1)  - \log \Gamma(n_i +
+    1) - \log \Gamma(g_i - n_i + 1) - \alpha n_i - \beta n_i \E_i \right)
+  \]
+  %
+  Anulando la derivada en cada \ $n_i$ \ conduce a resolver
+  %
+  \[
+  \psi(g_i - n_i) - \psi(n_i+1) = \alpha + \beta \, \E_i
+  \]
+  %
+  con $\psi$ funci\'on digamma.   Se supono que ambos \ $n_i$ \  y \ $g_i$ \ son
+  muy  grandes y  comensurables con  $g_i/n_i >  1$ (es  decir que  $g_i-n_i$ es
+  tambi\'en   muy    grande)   y   se    usa   el   desarollo    asimtotico   de
+  $\psi$~\cite[6.3.18]{AbrSte70} para obtener $n_i^*$ aproximadamente soluci\'on
+  de
+  %
+  \[
+  \log\left( \frac{g_i}{n_i} - 1 \right) = \alpha + \beta \, \E_i
+  \]
+  %
+  es decir  $n_i^* = \frac{g_i}{e^{\alpha  + \beta \,  \E_i} + 1}$,  que podemos
+  reescribir bajo la forma
+  %
+  \[
+  n_i^* = \frac{g_i}{e^{\frac{\E_i - \mu}{k_B T}} + 1}
+  \]
+  %
+  (el coeficiente \ $\beta$ \ viene de nuevo de consideraciones termodinamicas y
+  para cada nivel, $\mu < \E_i$).  \SZ{Se recuperan los mismos l\'imites en alta
+    temperatura y/o  baja densidad  de particulas que  para la  estad\'istica de
+    Bose-Einstein.}
+
+  %%%
+
+  \begin{figure}[h!]
+  %
+  \begin{center} \input{TIKZ_SZ/BoltzmannBoseEinsteinFermiDirac} \end{center}
+  %
+  \leyenda{\modif{Configuraciones  de  ocupaci\'on de  un  nivel  de eneg\'ia  \
+      $\E_i$ \ de degenerencia \ $g_i =  3$, por \ $n_i = 2$ \ particulas. (Bol)
+      Enfoque  de  Boltzmann  con  particulas  \  $\pi_1,  \pi_2$  distingables,
+      conduciendo  a   $g_i^{n_i}  =   9$  configuraciones.   (BE)   Enfoque  de
+      Bose-Einstein con particulas \  $\pi, \pi$ \ indistingables, conduciendo a
+      \ $\bino{4}{2}  = 6$ \  configuraciones.  (FD) Enfoque de  Fermi-Dirac con
+      particulas \  $\pi, \pi$ \ indistingables  y excmusi\'on de  Pauli (no hay
+      m\'as de  una particula por estado),  conduciendo a \ $\bino{3}{2}  = 3$ \
+      configuraciones}.}
+%
+\label{Fig:SZ:BBEFD}
+\end{figure}
+
+\end{ejemplo}
+%
+}
 
 % ================================= EPI
 
@@ -655,9 +948,9 @@ Es interesante notar que:
 
 Una  otra  interpretaci\'on  de \  $J$  \  como  informaci\'on  es debido  a  la
 desigualdad   de   Cram\'er-Rao   que   la   relaciona  a   la   covarianza   de
-estimaci\'on~\footnote{De hecho, pareci\'o esta formula tambi\'en en los papeles
+estimaci\'on~\footnote{De hecho, pareci\'o esta f\'ormula tambi\'en en los papeles
   de  Fr\'echet y  de Darmois~\cite{Fre43,  Dar45}. Como  citado  por Fr\'echet,
-  aparece que la primera versi\'on de esta formula es mucho m\'as vieja y debido
+  aparece que la primera versi\'on de esta f\'ormula es mucho m\'as vieja y debido
   a K.  Pearson  \& L. N.  G Filon~\cite{PeaFil98} en  1898; luego fue extendida
   por          Edgeworth~\cite{Edg08},          Fisher~\cite{Fis25:07}         o
   Doob~\cite{Doo36}.}~\cite{Rao45,  Rao92,  RaoWis47,  Cra46,  Rio07,  CovTho06,
@@ -1208,7 +1501,7 @@ identidad entre \ $I(X;Y)$ \ y \ $\E(X|Y)$:
   %
   la \'ultima l\'inea viniendo de $Y  = S X + \N$ con $\N$ independiente
   de  $X$ y  de  promedio 0.   La prueba  se  cierra notando  que \  $\Esp\left[
-    \Esp[X|Y] \right]  = \Esp[X]$  \ y por  la formula de  K\"onig-Huyggens (ver
+    \Esp[X|Y] \right]  = \Esp[X]$  \ y por  la f\'ormula de  K\"onig-Huyggens (ver
   cap\'itulo~\ref{cap:MP:TeoriaProbabilidades},
   subsecci\'on~\ref{Ssec:MP:Momentos}).
   % , pagina~\pageref{Ssec:MP:Momentos}).
@@ -1445,7 +1738,7 @@ Entonces
   S_W(w) = \Esp\left[ \left. a S_X(X) + (1-a) S_Y(Y) \right| W = w \right].
   \]
   %
-  A    continuaci\'on,    de     la    formula    de    K\"onig-Huyggens    (ver
+  A    continuaci\'on,    de     la    f\'ormula    de    K\"onig-Huyggens    (ver
   cap\'itulo~\ref{cap:MP:TeoriaProbabilidades},
   subsecci\'on~\ref{Ssec:MP:Momentos}),
   % pagina~\pageref{Ssec:MP:Momentos}),
@@ -1468,7 +1761,7 @@ Entonces
   versi\'on dada se recupera re-emplazando \ $X$ \ por \ $\sqrt{a} \, X$ \ e \
   $Y$ \ por \ $\sqrt{1-a} \, Y$.
 
-  Escribiendo la desigualdad viniendo de la formula de K\"onig-Huyggens, se nota
+  Escribiendo la desigualdad viniendo de la f\'ormula de K\"onig-Huyggens, se nota
   que la igualdad es  satisfecha si y solamente si $a S_X(w-x)  + (1-a) S_Y(x) =
   S_W(w)$ para cualquier $x, w$. Integrando  en $x$ se obtiene $-a \log p_X(w-x)
   +  (1-a) \log  p_Y(x) =  x S_W(w)  + g(w)$.   Derivando en  $w$  obtenemos $-a
