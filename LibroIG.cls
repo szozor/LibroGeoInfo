@@ -3,7 +3,7 @@
 
 % clase de base
 
-\LoadClass[a4paper, 10pt, twoside, openright]{article}
+\LoadClass[a4paper, 10pt, twoside, openright]{book}
 
 
 % extensions
@@ -31,6 +31,8 @@
 \RequirePackage{comment}
 \RequirePackage{ccaption,caption} % ease the management of captions
 \RequirePackage{etoolbox,ifthen,xifthen} % conditioning packages
+\RequirePackage[spanish]{minitoc}
+%\setcounter{minitocdepth}{2}
 \RequirePackage{titletoc,tocloft} % table of content managment package
 \RequirePackage{tabularx,supertabular,fullpage} % para manejar las tablas y tablas largas
 \RequirePackage{ltxtable,longtable} % para manejar las tablas largas
@@ -317,7 +319,9 @@
 \newcommand{\bibliografia}[1]{
 \cleardoublepage
 \thispagestyle{empty}
-\renewcommand{\refname}{\fontsize{18}{18}\selectfont\bf Referencias\vspace{4cm}}
+%\chapter*{Referencias}
+%\addcontentsline{toc}{chapter}{Referencias}
+%\renewcommand{\refname}{}%\fontsize{18}{18}\selectfont\bf Referencias\vspace{4cm}}
 % Bibliograf\'ia sugerida\vspace{4cm}}
  \bibliography{#1}
 \cleardoublepage

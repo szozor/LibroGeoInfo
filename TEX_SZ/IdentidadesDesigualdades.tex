@@ -69,12 +69,12 @@ desaparece)
 % M = m = 1$), \ se busca,
 %
 \[
-p^* = \argmax_p H(p) \qquad \mbox{sujeto a} \qquad p \ge 0, \quad \int_\X p(x) \, d\mu(x) = 1 \quad \mbox{y} 
+p_{\mathrm{em}} = \argmax_p H(p) \qquad \mbox{sujeto a} \qquad p \ge 0, \quad \int_\X p(x) \, d\mu(x) = 1 \quad \mbox{y} 
 \quad \int_\X M(x) \, p(x) \, d\mu(x) = m,
 \]
 %
 donde los dos primeros v\'inculos (positividad, normalizaci\'on) aseguran de que
-$p^*$ sea una distribuci\'on de probabilidad. En el ejemplo del gas perfecto, $K
+$p_{\mathrm{em}}$ sea una distribuci\'on de probabilidad. En el ejemplo del gas perfecto, $K
 = 1, \, M_1(x) = \frac12 m \sum_i x_i^2$ \ (los $x_i$ son las velocidades).  Con
 la t\'ecnica del Lagrangiano para  tomar en cuenta los v\'inculos, introduciendo
 factores de  Lagrange $\eta_0,  \quad \eta =  \begin{bmatrix} \eta_1 &  \cdots &
@@ -83,7 +83,7 @@ variacional   consiste  a   resolver~\cite{GelFom63,  Bru04,   Mil00,  CamMar09,
   CovTho06}
 %
 \[
-p^* = \argmax_p \int_\X  \left( - p(x) \log p(x) + \eta_0  \, p(x) + \eta^t M(x)
+p_{\mathrm{em}} = \argmax_p \int_\X  \left( - p(x) \log p(x) + \eta_0  \, p(x) + \eta^t M(x)
   \, p(x) \right) d\mu(x),
 \]
 %
@@ -95,7 +95,7 @@ gradiente con respeto a los componentes de $p$. Reparametrizando los factores de
 Lagrange, se obtiene as\'i
 %
 \[
-p^*(x) = \frac{1}{Z(\eta)} e^{\eta^t M(x)} = e^{\eta^t M(x) - \varphi(\eta)},
+p_{\mathrm{em}}(x) = \frac{1}{Z(\eta)} e^{\eta^t M(x)} = e^{\eta^t M(x) - \varphi(\eta)},
 \]
 %
 con  $\eta$ tal que  se satisfacen  los v\'inculos  de momentos  y \  $Z(\eta) =
@@ -126,12 +126,12 @@ soluci\'on.
 %
 Sea \  $\displaystyle \P_m = \left\{  p \ge 0 \tq  \int_\X p(x) \,  d\mu(x) = 1,
   \quad \int_\X M(x)  \, p(x) \, d\mu(x) = m \right\}$  \ conjunto de densidades
-con respeto a $\mu$, con los mismos momentos \ $M$, y sea \ $p^* \in \P_m$ \ que
-sea de la forma \ $p^*(x) = e^{\eta^t M(x) - \varphi(\eta)}$. Entonces
+con respeto a $\mu$, con los mismos momentos \ $M$, y sea \ $p_{\mathrm{em}} \in \P_m$ \ que
+sea de la forma \ $p_{\mathrm{em}}(x) = e^{\eta^t M(x) - \varphi(\eta)}$. Entonces
   %
   \[
-  \forall \,  p \in \P_m, \quad  H(p) \le H(p^*) \qquad  \mbox{con igualdad ssi}
-  \quad p = p^* \quad \mu\mbox{-(c. s.)},
+  \forall \,  p \in \P_m, \quad  H(p) \le H(p_{\mathrm{em}}) \qquad  \mbox{con igualdad ssi}
+  \quad p = p_{\mathrm{em}} \quad \mu\mbox{-(c. s.)},
   \]
   %
   donde   $H$  es   de  la   definici\'on   general  Def.~\ref{Def:SZ:ShanonMu}
@@ -143,26 +143,26 @@ sea de la forma \ $p^*(x) = e^{\eta^t M(x) - \varphi(\eta)}$. Entonces
   \begin{eqnarray*}
   H(p) & = & - \int_\X p(x) \, \log p(x) \, d\mu(x)\\[2.5mm]
   %
-  & = & - \int_\X p(x) \, \log\left( \frac{p(x)}{p^*(x)} \right) \, d\mu(x) - \int_\X
-  p(x) \, \log p^*(x) \, d\mu(x)
+  & = & - \int_\X p(x) \, \log\left( \frac{p(x)}{p_{\mathrm{em}}(x)} \right) \, d\mu(x) - \int_\X
+  p(x) \, \log p_{\mathrm{em}}(x) \, d\mu(x)
   \end{eqnarray*}
   %
-  De $\log p^* = \eta^t M - \varphi(\eta)$ se obtiene
+  De $\log p_{\mathrm{em}} = \eta^t M - \varphi(\eta)$ se obtiene
   %
   \begin{eqnarray*}
-  H(p) & = & - \Dkl[p]{p^*} - \int_\X \left( \eta^t M(x) - \varphi(\eta) \right) p(x)
+  H(p) & = & - \Dkl[p]{p_{\mathrm{em}}} - \int_\X \left( \eta^t M(x) - \varphi(\eta) \right) p(x)
   \, d\mu(x)\\[2.5mm]
   %
-  & = & - \Dkl[p]{p^*} - \int_\X \left( \eta^t M(x) - \varphi(\eta) \right) p^*(x) \, d\mu(x)\\[2.5mm]
+  & = & - \Dkl[p]{p_{\mathrm{em}}} - \int_\X \left( \eta^t M(x) - \varphi(\eta) \right) p_{\mathrm{em}}(x) \, d\mu(x)\\[2.5mm]
   %
-  & = & - \Dkl[p]{p^*} - \int_\X p^*(x) \log p^*(x) \, d\mu(x)\\[2.5mm]
+  & = & - \Dkl[p]{p_{\mathrm{em}}} - \int_\X p_{\mathrm{em}}(x) \log p_{\mathrm{em}}(x) \, d\mu(x)\\[2.5mm]
   %
-  & = & - \Dkl[p]{p^*} + H(p^*)
+  & = & - \Dkl[p]{p_{\mathrm{em}}} + H(p_{\mathrm{em}})
   \end{eqnarray*}
   %
-  porque $p,  p^* \in \P_m$ \  (segunda linea) y  \ $\eta^t M -  \varphi(\eta) =
-  \log p^*$ (tercera  linea). La prueba se cierra  notando que $\Dkl[p]{p^*} \ge
-  0$ con igualdad si y solamente si $p = p^* \quad (\mu$-c.s.).
+  porque $p,  p_{\mathrm{em}} \in \P_m$ \  (segunda linea) y  \ $\eta^t M -  \varphi(\eta) =
+  \log p_{\mathrm{em}}$ (tercera  linea). La prueba se cierra  notando que $\Dkl[p]{p_{\mathrm{em}}} \ge
+  0$ con igualdad si y solamente si $p = p_{\mathrm{em}} \quad (\mu$-c.s.).
 \end{proof}
 %
 Este lema prueba que, dados  v\'inculos ``razonables'', la entrop\'ia es acotada
@@ -193,8 +193,8 @@ Def.~\ref{Def:SZ:entropiarelativa}). Es decir, tomando \ $\mu = \widetilde{P}$ \
 medida de probabilidad aparece inmediatamente
 %
 \[
-P^* = \argmax_P \Dkl[P]{\widetilde{P}}  \quad \mbox{sujeto a}  \int_\X M(x)
-\,  dP(x) =  m  \qquad \Leftrightarrow  \qquad \frac{dP^*}{d\widetilde{P}}(x)  =
+P_{\mathrm{em}} = \argmax_P \Dkl[P]{\widetilde{P}}  \quad \mbox{sujeto a}  \int_\X M(x)
+\,  dP(x) =  m  \qquad \Leftrightarrow  \qquad \frac{dP_{\mathrm{em}}}{d\widetilde{P}}(x)  =
 e^{\eta^t x - \varphi(\eta)}.
 \]
 
@@ -228,12 +228,12 @@ tema  f\'isico de  ocupaci\'on de  niveles de  energ\'ia en  un  sistema cerrado
   anteriormente, queremos resolver el problema de maximizaci\'on
   %
   \[
-  p_{i,j}^*  = \argmax_{p_{i,j}}  \left( -  \sum_{i,j} p_{i,j}  \log p_{i,j}  - \alpha
+  p_{\mathrm{em},i,j}  = \argmax_{p_{i,j}}  \left( -  \sum_{i,j} p_{i,j}  \log p_{i,j}  - \alpha
     \sum_{i,j} p_{i,j} - \beta \sum_{i,j} p_{i,j} \E_i \right)
   \]
   %
   Anulando la derivada en cada $p_{i,j}$ conduce a la probabilidad de la familia
-  exponencial, \  $p_{i,j}^* = \frac{1}{Z(\beta)}  e^{-\beta \, \E_i}$ \  con, \
+  exponencial, \  $p_{\mathrm{em},i,j} = \frac{1}{Z(\beta)}  e^{-\beta \, \E_i}$ \  con, \
   $\beta$ \ dado, \ $Z$ \ es la constante de normalizaci\'on y luego \ $\beta$ \
   es  tal que se  obtiene el  v\'inculo de  energ\'ia, como  lo v\'imos  en esta
   secci\'on   y  en   la  secci\'on~\ref{Ssec:MP:FamiliaExponencial}.    Si  nos
@@ -243,7 +243,7 @@ tema  f\'isico de  ocupaci\'on de  niveles de  energ\'ia en  un  sistema cerrado
     Mer18}) \ se obtiene
   %
   \[
-  p_i^* = \frac{g_i}{Z(\beta)} \, e^{-\beta \, \E_i} = g_i \, e^{-\beta \, (\E_i -
+  p_{\mathrm{em},i} = \frac{g_i}{Z(\beta)} \, e^{-\beta \, \E_i} = g_i \, e^{-\beta \, (\E_i -
     \mu)}
   \]
   %
@@ -282,12 +282,12 @@ tema  f\'isico de  ocupaci\'on de  niveles de  energ\'ia en  un  sistema cerrado
   problema consiste ahora a resolver el problema de maximizaci\'on
   %
   \[
-  n_i^* = \argmax_{n_i} \sum_i \left( n_i \log g_i - \log \Gamma(n_i+1) - \alpha
+  n_{\mathrm{em},i} = \argmax_{n_i} \sum_i \left( n_i \log g_i - \log \Gamma(n_i+1) - \alpha
     n_i - \beta n_i \E_i \right)
   \]
   %
-  donde  \ $p_i^*  =  \frac{n_i^*}{n}$ \  va  a representar  la probabilidad  de
-  ocupaci\'on  del   nivel  $\E_i$.    $n_i^*$  no  es   necesariamente  entero,
+  donde  \ $p_{\mathrm{em},i}  =  \frac{n_{\mathrm{em},i}}{n}$ \  va  a representar  la probabilidad  de
+  ocupaci\'on  del   nivel  $\E_i$.    $n_{\mathrm{em},i}$  no  es   necesariamente  entero,
   representando el n\'umero de ocupaci\'on promedio. Ahora, anulando la derivada
   en cada \ $n_i$ \ conduce a resolver
   %
@@ -298,11 +298,11 @@ tema  f\'isico de  ocupaci\'on de  niveles de  energ\'ia en  un  sistema cerrado
   con      $\psi$      derivada       de      $\log      \Gamma$,      funci\'on
   digamma~\cite[\S~8.36]{GraRyz15},~\cite[\S~6.3]{AbrSte70}.    Se   supono  que
   $n_i$ es muy grande y se usa el desarollo asimtotico $\psi(n_i+1) = \log n_i +
-  o(1)$~\cite[6.3.18]{AbrSte70} para obtener $n_i^*  = g_i e^{-\alpha - \beta \,
+  o(1)$~\cite[6.3.18]{AbrSte70} para obtener $n_{\mathrm{em},i}  = g_i e^{-\alpha - \beta \,
     \E_i}$, que podemos reescribir bajo la forma
   %
   \[
-  n_i^* = \frac{n \, g_i}{Z(\beta)} \, e^{- \beta \, \E_i}
+  n_{\mathrm{em},i} = \frac{n \, g_i}{Z(\beta)} \, e^{- \beta \, \E_i}
   \]
   %
   \SZ{Ver aproximaci\'on continua de  Thomas-Fermi, con la degenerancia continua
@@ -372,12 +372,12 @@ tema  f\'isico de  ocupaci\'on de  niveles de  energ\'ia en  un  sistema cerrado
   maximizaci\'on
   %
   \[
-  n_i^* = \argmax_{n_i} \sum_i \left( \log \Gamma(n_i + g_i) - \log \Gamma(n_i +
+  n_{\mathrm{em},i} = \argmax_{n_i} \sum_i \left( \log \Gamma(n_i + g_i) - \log \Gamma(n_i +
     1) - \log \Gamma(g_i) - \alpha n_i - \beta n_i \E_i \right)
   \]
   %
-  donde  \ $p_i^*  =  \frac{n_i^*}{n}$ \  va  a representar  la probabilidad  de
-  ocupaci\'on  del nivel  $\E_i$.  Nuevamente, $n_i^*$  \  no es  necesariamente
+  donde  \ $p_{\mathrm{em},i}  =  \frac{n_{\mathrm{em},i}}{n}$ \  va  a representar  la probabilidad  de
+  ocupaci\'on  del nivel  $\E_i$.  Nuevamente, $n_{\mathrm{em},i}$  \  no es  necesariamente
   entero, representando el n\'umero  de ocupaci\'on promedio. Ahora, anulando la
   derivada en cada \ $n_i$ \ conduce a resolver
   %
@@ -388,29 +388,29 @@ tema  f\'isico de  ocupaci\'on de  niveles de  energ\'ia en  un  sistema cerrado
   con $\psi$ funci\'on digamma.   Se supono que ambos \ $n_i$ \  y \ $g_i$ \ son
   muy grandes, comensurables $\frac{n_i}{g_i}$ tiene un l\'imite finita no nula,
   y  se  usa el  desarollo  asimtotico  de $\psi(n_i+1)  =  \log  n_i  + o(1)  =
-  \log(n_i+1)    +    o(1)$~\cite[6.3.18]{AbrSte70}    para   obtener    $n_i^*$
+  \log(n_i+1)    +    o(1)$~\cite[6.3.18]{AbrSte70}    para   obtener    $n_{\mathrm{em},i}$
   aproximadamente soluci\'on de
   %
   \[
   \log\left( 1 + \frac{g_i}{n_i} \right) = \alpha + \beta \, \E_i
   \]
   %
-  es decir  $n_i^* = \frac{g_i}{e^{\alpha  + \beta \,  \E_i} - 1}$,  que podemos
+  es decir  $n_{\mathrm{em},i} = \frac{g_i}{e^{\alpha  + \beta \,  \E_i} - 1}$,  que podemos
   reescribir bajo la forma
   %
   \[
-  n_i^* = \frac{g_i}{e^{\frac{\E_i - \mu}{k_B T}} - 1}
+  n_{\mathrm{em},i} = \frac{g_i}{e^{\frac{\E_i - \mu}{k_B T}} - 1}
   \]
   %
   (el coeficiente \ $\beta$ \ viene de nuevo de consideraciones termodinamicas y
   para cada nivel, $\mu < \E_i$). \SZ{Aparece que en alta temperatura, tambi\'en
     los niveles de energ\'ia son altos  y tales que \ $\frac{\E_i-\mu}{k_B T}$ \
     es  muy  grande:  la  estad\'istica  de  Bose-Einstein se  reduce  a  la  de
-    Boltzmann. Similarmente, cuando la densidad de particulas es baja, \ $n_i^*$
+    Boltzmann. Similarmente, cuando la densidad de particulas es baja, \ $n_{\mathrm{em},i}$
     \ debe ser peque\~no, es decir que de nuevo \ $e^{\frac{\E_i-\mu}{k_B T}}$ \
     es  muy  grande y  la  estad\'istica  de Bose-Einstein  se  reduce  a la  de
     Boltzmann. Finalmente, en alta temperatura  y bajos niveles de energ\'ia, la
-    estad\'istica   vale   aproximadamente    $n_i^*   \approx   \frac{g_i   k_B
+    estad\'istica   vale   aproximadamente    $n_{\mathrm{em},i}   \approx   \frac{g_i   k_B
       T}{\E_u-\mu}$ conocida como ley de Rayleigh-Jeans~\cite{toto}.}
 
   {\bf  Enfoque   de  Fermi-Dirac:}  este   modelo  fue  propuesto   por  Enrico
@@ -444,7 +444,7 @@ tema  f\'isico de  ocupaci\'on de  niveles de  energ\'ia en  un  sistema cerrado
   maximizaci\'on
   %
   \[
-  n_i^* = \argmax_{n_i}  \sum_i \left( \log \Gamma(g_i + 1)  - \log \Gamma(n_i +
+  n_{\mathrm{em},i} = \argmax_{n_i}  \sum_i \left( \log \Gamma(g_i + 1)  - \log \Gamma(n_i +
     1) - \log \Gamma(g_i - n_i + 1) - \alpha n_i - \beta n_i \E_i \right)
   \]
   %
@@ -457,18 +457,18 @@ tema  f\'isico de  ocupaci\'on de  niveles de  energ\'ia en  un  sistema cerrado
   con $\psi$ funci\'on digamma.   Se supono que ambos \ $n_i$ \  y \ $g_i$ \ son
   muy  grandes y  comensurables con  $g_i/n_i >  1$ (es  decir que  $g_i-n_i$ es
   tambi\'en   muy    grande)   y   se    usa   el   desarollo    asimtotico   de
-  $\psi$~\cite[6.3.18]{AbrSte70} para obtener $n_i^*$ aproximadamente soluci\'on
+  $\psi$~\cite[6.3.18]{AbrSte70} para obtener $n_{\mathrm{em},i}$ aproximadamente soluci\'on
   de
   %
   \[
   \log\left( \frac{g_i}{n_i} - 1 \right) = \alpha + \beta \, \E_i
   \]
   %
-  es decir  $n_i^* = \frac{g_i}{e^{\alpha  + \beta \,  \E_i} + 1}$,  que podemos
+  es decir  $n_{\mathrm{em},i} = \frac{g_i}{e^{\alpha  + \beta \,  \E_i} + 1}$,  que podemos
   reescribir bajo la forma
   %
   \[
-  n_i^* = \frac{g_i}{e^{\frac{\E_i - \mu}{k_B T}} + 1}
+  n_{\mathrm{em},i} = \frac{g_i}{e^{\frac{\E_i - \mu}{k_B T}} + 1}
   \]
   %
   (el coeficiente \ $\beta$ \ viene de nuevo de consideraciones termodinamicas y
@@ -745,16 +745,16 @@ desorganizado (ver ej.~\cite[y ref.]{CovTho06, Mer10, Mer18}).
   las  distribuciones   $p_{X_n}$  y  $q_{X_n}$  no  se   ``alejan''  (tiende  a
   acercarse);
 %
-\item  Si  $p^*$  es  una  distribuci\'on  estacionaria,
+\item  Si  $p$  es  una  distribuci\'on  estacionaria,
   %
   \[
-  \Dkl[p_{X_{n+1}}]{p^*} \le \Dkl[p_{X_n}]{p^*};
+  \Dkl[p_{X_{n+1}}]{p} \le \Dkl[p_{X_n}]{p};
   \]
   %
   la distribuci\'on no se aleja de la distribuci\'on estacionaria.
 %
 \item Adem\'as, si  los $X_n$ tienen $K$ momentos fijos  $m = \Esp[M(X_n)] \quad
-  \forall \,  n$ y si \  $p^*$ \ es la  densidad (con respeto a  la medida $\mu$
+  \forall \,  n$ y si \  $p_{\mathrm{me}}$ \ es la  densidad (con respeto a  la medida $\mu$
   dada)  de  entrop\'ia  m\'axima  tiendo  los  mismos  momentos  como  descrito
   subsecci\'on  Sec.~\ref{Ssec:SZ:MaxEnt}, (ej.   $K =  0$, $\X$  de  cardenal o
   volumen finito y ley uniforme, $K = 2$, $M_k(x) = x^k$ y ley gausiana),
@@ -786,9 +786,9 @@ desorganizado (ver ej.~\cite[y ref.]{CovTho06, Mer10, Mer18}).
   d\mu(x_{n+1})$.  \ $p_{X_n|X_{n+1} = x_{n+1}}$  no es necesariamente igual a \
   $q_{X_n|X_{n+1}  =  x_{n+1}}$, pero  la  divergencia  siendo  no negativa,  se
   obtiene la primera  desigualdad.  La segunda desigualdad se  obtiene tomando \
-  $q_{X_n} = p^*$.   Adem\'as, si \ $p^*$ \ es de  entrop\'ia m\'axima de mismos
-  momentos $m  = \Esp[M(X_n)]$  que los $X_n$,  hemos visto  de que \  $p^*(x) =
-  e^{\eta^t M(x)}$ \ ley de la familia exponencial, dando \ $\Dkl[p_{X_n}]{p^*}
+  $q_{X_n} = p$.   Adem\'as, si \ $p$ \ es de  entrop\'ia m\'axima de mismos
+  momentos $m  = \Esp[M(X_n)]$  que los $X_n$,  hemos visto  de que \  $p(x) =
+  e^{\eta^t M(x)}$ \ ley de la familia exponencial, dando \ $\Dkl[p_{X_n}]{p}
   = -H(X_n) - \eta^t m$, conduciendo a la \'ultima desigualdad.
 \end{proof}
 

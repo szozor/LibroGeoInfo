@@ -20,6 +20,7 @@
 \newcommand{\aver}[1]{{\color{blue} #1}}
 
 \makeindex
+%\dominitoc
 
 \begin{document}
 
@@ -64,7 +65,7 @@
 
 % Introduccion general
 \begin{preliminar}{Pr\'ologo}
-%\input{IntroduccionGeneral}
+\input{IntroduccionGeneral}
 \firma{Los autores}
 \end{preliminar}
  
@@ -77,16 +78,21 @@
 
 
 % Indice de los capitulos
+%\dosecttoc
+%\doparttoc
+\dominitoc
 \indice
+
 
 \sloppy % para facilitar las cortas de palabras
 
 % el corazon del libro
-%\input{Notaciones} % Steeve
+\input{Notaciones} % Steeve
 %
+%\mtcaddchapter 
 \input{ElementosTeoriaProbabilidades} % Steeve/Mariela
 %
-%\input{NocionesTeoriaInformacion} % Steeve
+\input{NocionesTeoriaInformacion} % Steeve
 %
 %\input{IntroduccionGeometriaDiferencial} % Walter/Mariela
 %{\color{red}\bf CF libro de Bullet et al.~\cite{BulFea17}, Cencov~\cite{Cen82}, Amari~\cite{AmaNag00}.}

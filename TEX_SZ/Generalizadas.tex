@@ -299,8 +299,8 @@ Con respecto a la concavidad~\ref{Prop:SZ:concavidad}, no se conserva en general
   $\phi$ y  decrecencia de $h$ (resp.  convexidad/crecencia)  conjuntamente a la
   concavidad de $h$.  La rec\'iproca no  es verdad.  Por ejemplo, se puede ver que
   si $\lambda  < 1$, la  entrop\'ia de R\'enyi  es c\'oncava, pero se  proba que
-  existe  un  $\lambda^*(\alpha)  >  1$  tal que  para  cualquier  $\lambda  \le
-  \lambda^*(\alpha)$  se conserva  la  concavidad, a  pesar  de que  $h$ no  sea
+  existe  un  $\lambda^c(\alpha)  >  1$  tal que  para  cualquier  $\lambda  \le
+  \lambda^c(\alpha)$  se conserva  la  concavidad, a  pesar  de que  $h$ no  sea
   necesariamente c\'oncava~\cite[p.~57]{BenZyc06}.
 \end{propiedadesPhi}
 
@@ -1273,36 +1273,36 @@ Las divergencias de Csisz\'ar tienen las propiedades siguientes
   D_{\phi_1}^{\mathrm{c}}  +  a_2  D_{\phi_2}^{\mathrm{c}}$ (con  $\phi_i$
   convexas y $a_i \ge 0$).
 %
-\item Sea $\phi^*(u) = u \phi\left(  \frac1u \right)$. Es sencillo ver de que si
-  $\phi$  es   convexa  (resp.    c\'oncava),  $\phi^*$  es   tambi\'en  convexa
-  (resp.   c\'oncava).   $\phi^*$  es   llamada   {\it  $^*$-conjugada   convexa
+\item Sea $\phi^\star(u) = u \phi\left(  \frac1u \right)$. Es sencillo ver de que si
+  $\phi$  es   convexa  (resp.    c\'oncava),  $\phi^\star$  es   tambi\'en  convexa
+  (resp.   c\'oncava).   $\phi^\star$  es   llamada   {\it  $^\star$-conjugada   convexa
     (resp. c\'oncava)} de $\phi$. Luego,
   %
   \[
-  \chphi[Q]{P} = D^{\mathrm{c}}_{(h,\phi^*)}\left( \left. P \right\| Q \right).
+  \chphi[Q]{P} = D^{\mathrm{c}}_{(h,\phi^\star)}\left( \left. P \right\| Q \right).
   \]
 %
-\item $\chphi{}$ es  sim\'etrica si y solamente si $\phi =  \phi^* + c (\id-1)$;
+\item $\chphi{}$ es  sim\'etrica si y solamente si $\phi =  \phi^\star + c (\id-1)$;
   sin perdida  de generalidad, consideramos  $c = 0$.   Sin embargo, en  el caso
   general,  se  puede  definir  una   versi\'on  simetrizada  al  imagen  de  la
-  $J$-divergencia,  considerando $\chphi{}  +  D^{\mathrm{c}}_{(h,\phi^*)}$.  En
+  $J$-divergencia,  considerando $\chphi{}  +  D^{\mathrm{c}}_{(h,\phi^\star)}$.  En
   particular, cuando $h = \id$, tenemos
   %
   \[
-  \cphi{} + D^{\mathrm{c}}_{\phi^*} = D^{\mathrm{c}}_{\phi+\phi^*}
+  \cphi{} + D^{\mathrm{c}}_{\phi^\star} = D^{\mathrm{c}}_{\phi+\phi^\star}
   \]
   %
-  que es sim\'etrica ($(\phi^*)^* = \phi$).
+  que es sim\'etrica ($(\phi^\star)^\star = \phi$).
 %
 \item Cota superior:
   %
   \[
-  \chphi{} \le h\left( \phi(0) + \phi^*(0) \right)
+  \chphi{} \le h\left( \phi(0) + \phi^\star(0) \right)
   \]
   %
   posiblemente   infinita~\footnote{Por   ejemplo,   para  la   divergencia   de
-    Kullback-Leibler,  $\phi(u) =  u \log  u$, dando  $\phi^*(u) =  - \frac{\log
-      u}{u}$,  tales que  $\phi(0) =  0$ \  y \  $\phi^*(0) =  + \infty$:  no es
+    Kullback-Leibler,  $\phi(u) =  u \log  u$, dando  $\phi^\star(u) =  - \frac{\log
+      u}{u}$,  tales que  $\phi(0) =  0$ \  y \  $\phi^\star(0) =  + \infty$:  no es
     acotada por arriba.}.
 %
 \end{enumerate}
@@ -1310,7 +1310,7 @@ Las divergencias de Csisz\'ar tienen las propiedades siguientes
 \noindent  Estas  propiedades  con   varias  otras  se  encuentran  por  ejemplo
 en~\cite{Vaj72,  Csi74, LieVaj87,  KafOst91, Ost96,  OstVaj03,  Vaj09, KumChi05,
   LieVaj06}.   Como en  el caso  de las  divegencias de  Jensen, en  general las
-divergencias  sim\'etricas ($\phi  =  \phi^*$) no  satisfacen  a la  desigualdad
+divergencias  sim\'etricas ($\phi  =  \phi^\star$) no  satisfacen  a la  desigualdad
 triangular,  y entonces no  dan lugar  a una  distancia entre  distribuciones de
 probabilidad, aparte  en casos particulares  (ej. divergencia de  la variaci\'on
 total,  divergencia  de Hellinger  o  R\'enyi  con  $\lambda =  \frac12$).   Sin
@@ -1321,11 +1321,11 @@ una potencia de la divergencia satisfaga a la desigualdad triangular:
 \begin{lema}
 \label{Lem:SZ:PotenciaCziszarDesigualdadTriangular}
 %
-Sea \ $\phi$ \  una funci\'on convexa tal que \ $\phi^*  = \phi$, \ $\phi(0) \ne
+Sea \ $\phi$ \  una funci\'on convexa tal que \ $\phi^\star  = \phi$, \ $\phi(0) \ne
 0$  \  y  \  $\cphi{}$  su  divergencia  de  Csisz\'ar  asociada  ($h  =  \id$).
 Adicionalmente    se   supone    que   $\phi(1)    =   0$    (ver   definici\'on
 Def.~\ref{Def:SZ:HPhiDivergencia}) y  de que $\phi$ es  estrictamente convexa en
-$1$.  Si existe $\kappa \in \Rset_+^*$ tal que
+$1$.  Si existe $\kappa \in \Rset_{0,+}$ tal que
   %
   \[
   h(u) = \frac{\left( 1-u^\kappa  \right)^{\frac{1}{\kappa}}}{\phi(u)}, \quad u \in [ 0
@@ -1398,11 +1398,11 @@ formula de  la manera  siguiente: sean \  $M(x) =  \begin{bmatrix} M_1(x) &
   m_K \end{bmatrix}^t$, \ se busca,
 %
 \[
-p^* = \argmax_p  \hhphi[p] \qquad \mbox{sujeto a} \qquad p  \ge 0, \quad \int_\X
+p_{\mathrm{em}} = \argmax_p  \hhphi[p] \qquad \mbox{sujeto a} \qquad p  \ge 0, \quad \int_\X
 \, p(x) \, d\mu(x) = 1, \quad \int_\X M(x) \, p(x) \, d\mu(x) = m.
 \]
 %
-donde  los   dos  primeros  v\'inculos  aseguran  de   que  $p^*$  (positividad,
+donde  los   dos  primeros  v\'inculos  aseguran  de   que  $p_{\mathrm{em}}$  (positividad,
 normalizaci\'on) sea  una distribuci\'on de  probabilidad. Si $\phi$  es convexa
 (resp.  c\'oncava),  $h$ es creciente  (resp.  decreciente) as\'i  que maximizar
 $\hhphi$ es  equivalente a maximizar $\hphi$ (resp.   $H_{-\phi}$).  Sin perdida
@@ -1413,7 +1413,7 @@ los  v\'inculos,  el problema  variacional  consiste a  resolver~\cite{GelFom63,
   Bru04, Mil00, CamMar09, CovTho06}
 %
 \[
-p^* =  \argmax_p \int_\X  \left( - \phi\left(  p(x) \right)  + \eta_0 \,  p(x) +
+p_{\mathrm{em}} =  \argmax_p \int_\X  \left( - \phi\left(  p(x) \right)  + \eta_0 \,  p(x) +
   \eta^t M(x) \, p(x) \right) d\mu(x)
 \]
 %
@@ -1425,12 +1425,12 @@ entr\'opica $\phi$ es c\'oncava y de  clase $C^2$, as\'i que $\phi'$ es continua
 decreciente, y de la monotonicidad es invertible. Entonces,
 %
 \[
-p^*(x) = \phi'^{-1}\left( \eta^t M(x) - \varphi(\eta) \right)
+p_{\mathrm{em}}(x) = \phi'^{-1}\left( \eta^t M(x) - \varphi(\eta) \right)
 \]
 %
 con $\eta$  tal que se satisfacen  los v\'inculos de  momentos y $\varphi(\eta)$
 tal que  se satisface el  v\'inculo de normalizaci\'on.   Si el resultado  no es
-positivo  en $\X$,  de las  condiciones  KKT, $p^*(x)  = \Big(  \phi'^{-1}\left(
+positivo  en $\X$,  de las  condiciones  KKT, $p_{\mathrm{em}}(x)  = \Big(  \phi'^{-1}\left(
   \eta^t M(x) - \varphi(\eta)  \right) \Big)_+$.  Estas distribuci\'ones no caen
 en general en la familia exponencial.  De una forma, usando entrop\'ia generales
 permite escaparse de esta familia.
@@ -1445,33 +1445,33 @@ Tal como en el caso Shannon, existe una prueba informacional:
 %
   Sea \  $\displaystyle \P_m =  \left\{ p  \ge 0 \tq  \int_\X  p(x) \,
     d\mu(x) =  1, \quad \int_\X M(x)  \, p(x) \, d\mu(x)  = m \right\}$  \ y \
-  $p^*  \in   \P_m$  \   que  satisfaga  \   $\phi'(p^*(x))  =  \eta^t   M(x)  +
+  $p_{\mathrm{em}}  \in   \P_m$  \   que  satisfaga  \   $\phi'(p_{\mathrm{em}}(x))  =  \eta^t   M(x)  +
   \eta_0$. Entonces
   %
   \[
-  \forall  \, p  \in  \P_m,  \quad \hhphi[p]  \le  \hhphi[p^*] \qquad  \mbox{con
-    igualdad ssi} \quad p = p^* \quad (\mu\mbox{-c. s.)}.
+  \forall  \, p  \in  \P_m,  \quad \hhphi[p]  \le  \hhphi[p_{\mathrm{em}}] \qquad  \mbox{con
+    igualdad ssi} \quad p = p_{\mathrm{em}} \quad (\mu\mbox{-c. s.)}.
   \]
   %
 \end{lema}
 \begin{proof}
   Sin  perdida  de  generalidad,   consideramos  $\phi$  convexa.  Calcuando  la
-  divergencia de Bregman asociado a $\phi$ de $p$ relativamente a $p^*$ da
+  divergencia de Bregman asociado a $\phi$ de $p$ relativamente a $p_{\mathrm{em}}$ da
   %
   \begin{eqnarray*}
-  \bphi[p]{p^*} & = & \hphi[p^*] - \hphi[p] - \int_\X \big( p(x) - p^*(x) \big)
-  \, \phi'\left( p^*(x) \right) \, d\mu(x)\\[2.5mm]
+  \bphi[p]{p_{\mathrm{em}}} & = & \hphi[p_{\mathrm{em}}] - \hphi[p] - \int_\X \big( p(x) - p_{\mathrm{em}}(x) \big)
+  \, \phi'\left( p_{\mathrm{em}}(x) \right) \, d\mu(x)\\[2.5mm]
   %
-  & = & \hphi[p^*] - \hphi[p] - \eta_0 \int_\X \big( p(x) - p^*(x) \big)
-  \, d\mu(x) - \eta^t \int_\X \big( p(x) - p^*(x) \big)
+  & = & \hphi[p_{\mathrm{em}}] - \hphi[p] - \eta_0 \int_\X \big( p(x) - p_{\mathrm{em}}(x) \big)
+  \, d\mu(x) - \eta^t \int_\X \big( p(x) - p_{\mathrm{em}}(x) \big)
   \, M(x) \, d\mu(x)\\[2.5mm]
   %
-  & = & \hphi[p^*] - \hphi[p]
+  & = & \hphi[p_{\mathrm{em}}] - \hphi[p]
   \end{eqnarray*}
   %
-  siendo \  $p$ \ y \  $p^*$ \ en \  $\P_m$. El resulta proviene  entonces de la
+  siendo \  $p$ \ y \  $p_{\mathrm{em}}$ \ en \  $\P_m$. El resulta proviene  entonces de la
   positividad de la divergencia de Bregman,  con igualdad si y solamente si $p =
-  p^*$ conjuntamente a la crecencia de $h$.
+  p_{\mathrm{em}}$ conjuntamente a la crecencia de $h$.
 \end{proof}
 %
 Este lema prueba que,  dando v\'inculos ``razonables'', la $(h,\phi)$-entrop\'ia
@@ -1495,8 +1495,8 @@ es acotada por arriba, y que se alcanza la cota. Por ejemplo,
 
 Como  en el  caso de  Shannon, si  $\mu =  Q$ es  una medida  de  referencia, el
 problema vuelev  ser un problema de minimizaci\'on  de la $(h,\phi)$-divergencia
-de  $P   \ll  Q$  con   respeto  a  $Q$.    La  densidad  obtenida  es   $p^*  =
-\frac{dP^*}{dQ}$.
+de $P  \ll Q$  con respeto a  $Q$.  La  densidad obtenida es  $p_{\mathrm{em}} =
+\frac{dP_{\mathrm{em}}}{dQ}$.
 
 \
 

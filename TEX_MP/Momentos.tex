@@ -123,7 +123,7 @@ En el  caso de variables  aleatorias discretas, de soporte  \modif{$\X$ discreto
 \begin{ejemplo}
 \label{Ej:MP:DiscretaSinMedia}
 %
-Sea  \ $\X  = \Nset^*$  \ con  \modif{$P(X =  x) =  \frac{6}{\pi^2 \,  x^2}$}. \
+Sea  \ $\X  = \Nset_0$  \ con  \modif{$P(X =  x) =  \frac{6}{\pi^2 \,  x^2}$}. \
 Claramente, \modif{$\sum_x\frac{6}{\pi^2 \, x}$} diverge, as\'i que $X$ no tiene
 una media.
 \end{ejemplo}
@@ -302,7 +302,7 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
     $k$-dimensional teniendo como  componentes $ \displaystyle \left[ x^{\otimes
         k}  \right]_{i_1,\ldots,i_k} =  \prod_{j=1}^k x_{i_j}$.}
    de $x$  \ $K$
-  veces \ siendo \ $k \in \Nset^*$, se obtiene \modif{el tensor conteniendo todo
+  veces \ siendo \ $k \in \Nset_0$, se obtiene \modif{el tensor conteniendo todo
     los} $k${\it-\'esimo momentos (ordinarios)} de $X$:
   %
   \[
@@ -1020,13 +1020,13 @@ en   los   espacios   de    Hilbert,   conocida   como   {\it   desigualdad   de
 \label{Teo:MP:Holder}
 %
 Sean \ $X$ \  e \ $Y$ \ dos vectores aleatorios $d$-dimensionales y  \ $r > 1$ \
-real y \ $r^*  > 1$ \ tal que \ $\frac1r  + \frac1{r^*}$, llamado {\it conjugado
+real y \ $r^\star  > 1$ \ tal que \ $\frac1r  + \frac1{r^\star}$, llamado {\it conjugado
   de H\"older} de \ $r$. Entonces,
   %
   \[
   \left|  \Esp\left[  X^t Y  \right]  \right| \:  \le  \:  \Esp\left[ \left\|  X
     \right\|_r^r   \right]^{\frac1r}  \:  \Esp\left[   \left\|  Y
-    \right\|_{r^*}^{r^*} \right]^{\frac1{r^*}}.
+    \right\|_{r^\star}^{r^\star} \right]^{\frac1{r^\star}}.
   \]
   %
   Se obtiene la igualda si y solamente si existe un \ $\lambda$ \ tal que \ $X =
@@ -1036,21 +1036,21 @@ real y \ $r^*  > 1$ \ tal que \ $\frac1r  + \frac1{r^*}$, llamado {\it conjugado
 \begin{proof}
   Obviamente, $\left| \Esp\left[ X^t Y \right] \right| \le \Esp\left[ \left| X^t
       Y \right| \right]$. \ Luego, de  la convexidad de la funci\'on \ $-\log$ \
-  se obtiene  la desigualdad \ $\log(|a  b|) = \frac1r \log  |a|^r + \frac1{r^*}
-  \log |b|^{r^*} \le \log\left( \frac{|a|^r}{r} + \frac{|b|^{r^*}}{r^*} \right)$
+  se obtiene  la desigualdad \ $\log(|a  b|) = \frac1r \log  |a|^r + \frac1{r^\star}
+  \log |b|^{r^\star} \le \log\left( \frac{|a|^r}{r} + \frac{|b|^{r^\star}}{r^\star} \right)$
   \  con  igualdad si  y  solamente si  \  $a$  \ es  proporcional  a  \ $b$.  \
   \modif{Ahora, para dos vectores \ $a$ \ y \ $b$, tenemos \ $|a^t b| \le \sum_i
     |a_i b_i|$;  se aplica la  desigualdad con el  logaritmo a cada  $|a_i b_i|$
     para obtener}
   % Aplicado a las componentes de dos vectores \ $a$ \ y \ $b$ \ se obtiene
   la  desigualdad de Young  \ $\left|  a^t b  \right| \le  \frac{\|a\|_r^r}{r} +
-  \frac{\|b\|_{r^*}^{r^*}}{r^*}$ \  con igualdad si y solamente  si los vectores
+  \frac{\|b\|_{r^\star}^{r^\star}}{r^\star}$ \  con igualdad si y solamente  si los vectores
   son proporcional. A continuaci\'on, denotando
   %
   \[
   \widetilde{X}         =         \frac{X}{\Esp\left[        \|X\|_r^r
     \right]^{\frac1r}}    \qquad    \mbox{y}    \qquad   \widetilde{Y}    =
-  \frac{Y}{\Esp\left[ \|Y\|_{r^*}^{r^*} \right]^{\frac1{r^*}}}
+  \frac{Y}{\Esp\left[ \|Y\|_{r^\star}^{r^\star} \right]^{\frac1{r^\star}}}
   \]
   %
   tenemos
@@ -1058,7 +1058,7 @@ real y \ $r^*  > 1$ \ tal que \ $\frac1r  + \frac1{r^*}$, llamado {\it conjugado
   \[
   \Esp\left[   \left|   X^t  Y   \right|   \right]   =   \Esp\left[  \left\|   X
     \right\|_r^r   \right]^{\frac1r}  \:  \Esp\left[   \left\|  Y
-    \right\|_{r^*}^{r^*}   \right]^{\frac1{r^*}}   \:  \Esp\left[
+    \right\|_{r^\star}^{r^\star}   \right]^{\frac1{r^\star}}   \:  \Esp\left[
     \left| \widetilde{X}^t \widetilde{Y} \right| \right].
   \]
   %
@@ -1067,8 +1067,8 @@ real y \ $r^*  > 1$ \ tal que \ $\frac1r  + \frac1{r^*}$, llamado {\it conjugado
   \[
   \Esp\left[   \left|   \widetilde{X}^t   \widetilde{Y}  \right|   \right]   \le
   \frac{\Esp\left[ \left\| \widetilde{X} \right\|_r^r \right]}{r}
-  +   \frac{\Esp\left[   \left\|  \widetilde{Y}   \right\|_{r^*}^{r^*}
-    \right]}{r^*} = \frac1r + \frac1{r^*} = 1,
+  +   \frac{\Esp\left[   \left\|  \widetilde{Y}   \right\|_{r^\star}^{r^\star}
+    \right]}{r^\star} = \frac1r + \frac1{r^\star} = 1,
   \]
   %
   lo que cierra la prueba.
