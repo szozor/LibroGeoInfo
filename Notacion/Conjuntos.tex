@@ -95,39 +95,57 @@ $\Cset$ & N\'umeros complejos\\[2.5mm]
 %\hline
 %
 $\Kset_0$ & Conjunto \ $\Kset$ \ privado de \ $0$: $\Kset_0 = \{ x \in \Kset
-\tq x \ne 0 \}$ \ ($\Kset = \Nset, \Zset, \Qsetn \Rset$ \ o \ $\Cset$)\\[2.5mm]
+\tq x \ne 0 \}$ \ ($\Kset = \Nset, \Zset, \Qset, \Rset$ \ o \ $\Cset$)\\[2.5mm]
 \hline
 %
 $\Kset_+$ & Elementos de \ $\Kset$ \ no negativos, $\Kset_+ = \{ x \in \Kset \tq
-x \ge 0 \}$ \ ($\Kset = \Zset, \Qset$ \ o \ $\Rset$).\\[2.5mm]
+x \ge 0 \}$ \ ($\Kset = \Qset$ \ o \ $\Rset$)\\[2.5mm]
 \hline
 %
-$\protect\begin{array}{c}\Kset^d\\[-1mm] =\\[-1mm] \underbrace{\Kset \! \times
-\! \cdots \! \times \! \Kset}_{d \:\, \mbox{\footnotesize
-veces}}\protect\end{array}$ & Se usar\'a la misma notaci\'on para los vectores,
-$M_{d,1}(\Kset) \equiv \Kset^d$ (ver m\'as abajo):\vspace{1mm}\newline
-$x \in \Kset^d \: \Leftrightarrow \: x = (x_1,\ldots,x_d) \, \equiv
-\, \protect\begin{bmatrix} x_1\\ \vdots \\ x_d \protect\end{bmatrix}$ \ con \ $x_i \in
-\Kset$.\vspace{1mm}\\[2.5mm]
+$\Kset_{0,+}$ & Elementos de \ $\Kset$ \ estrictamente positivos, $\Kset_{0,+} =
+\Kset_+ \setminus \{0\} = \{ x \in \Kset \tq x > 0 \}$ \ ($\Kset = \Qset$ \ o \
+$\Rset$)\\[2.5mm]
 \hline
 %
-$[a \; b]$ & Intervalo real cerrado en $a$ y $b$, \: $[a \; b] = \{ x \in \Rset
+$\Kset_-$ & Elementos de \ $\Kset$ \ no positivos, $\Kset_- = \{ x \in \Kset \tq
+x \le 0 \}$ \ ($\Kset = \Zset, \Qset$ \ o \ $\Rset$)\\[2.5mm]
+\hline
+%
+$\Kset_{0,-}$ & Elementos de \ $\Kset$ \ estrictamente negativos, $\Kset_{0,-} =
+\Kset_- \setminus \{0\} = \{ x \in \Kset \tq x < 0 \}$ \ ($\Kset = \Zset, \Qset$
+\ o \ $\Rset$)\\[2.5mm]
+\hline
+%
+%$\protect\begin{array}{c}\Kset^d\\[-1mm] =\\[-1mm] \underbrace{\Kset \! \times
+%\! \cdots \! \times \! \Kset}_{d \:\, \mbox{\footnotesize
+%veces}}\protect\end{array}$ & Se usar\'a la misma notaci\'on para los vectores,
+%$M_{d,1}(\Kset) \equiv \Kset^d$ (ver m\'as abajo):\vspace{1mm}\newline
+%$x \in \Kset^d \: \Leftrightarrow \: x = (x_1,\ldots,x_d) \, \equiv
+%\, \protect\begin{bmatrix} x_1\\ \vdots \\ x_d \protect\end{bmatrix}$ \ con \ $x_i \in
+%\Kset$.\vspace{1mm}\\[2.5mm]
+$\Kset^d =$\newline $\underbrace{\Kset \! \times \! \cdots \! \times \!
+\Kset}_{d \:\, \mbox{\footnotesize veces}}$ & Conjunto de las $d$-uplas de elementos
+de $\Kset$ (siendo $d \in \Nset_0$): $x \in \Kset^d \: \Leftrightarrow \: x =
+\left( x_1 , \ldots , x_d \right)$ \ con \ $x_i \in \Kset$\vspace{1mm}\\[2.5mm]
+\hline
+%
+$[a \; b]$ & Intervalo real cerrado en $a$ y $b$:  $[a \; b] = \{ x \in \Rset
 \tq a \le x \le b \}$\\[2.5mm]
 \hline
 %
-$(a \; b)$ & Intervalo real abierto en $a$ y $b$, \: $(a \; b) = \{ x \in \Rset
+$(a \; b)$ & Intervalo real abierto en $a$ y $b$: $(a \; b) = \{ x \in \Rset
 \tq a < x < b \}$\\[2.5mm]
 \hline
 %
-$[a \; b)$ & Intervalo real cerrado en $a$ y abierto en $b$, \: $[a \; b) = \{ x
+$[a \; b)$ & Intervalo real cerrado en $a$ y abierto en $b$: $[a \; b) = \{ x
 \in \Rset \tq a \le x < b \}$\\[2.5mm]
 \hline
 %
-$(a \; b]$ & Intervalo real abierto en $a$ y cerrado en $b$, \: $(a \; b] = \{ x
+$(a \; b]$ & Intervalo real abierto en $a$ y cerrado en $b$: $(a \; b] = \{ x
 \in \Rset \tq a < x \le b \}$\\[2.5mm]
 \hline
 %
-$\imath$ & Imaginario puro, $\imath = \sqrt{-1}$\\[2.5mm]
+$\imath$ & Unidad imaginaria: $\imath = \sqrt{-1}$\\[2.5mm]
 \hline
 %
 % pi, e?
@@ -144,52 +162,64 @@ $\cdot^*$ & Conjugaci\'on compleja\vspace{1mm}\newline (componente a
 componente sobre $\Cset^d$)\\[2.5mm]
 \hline
 %
-$|\cdot|$ & Valor absoluto o modulus tratando de un real o complejo\vspace{1mm}\newline
-Cardenal (posiblemente infinito) tratando de un conjunto discreto\vspace{1mm}\newline
-Volumen (posiblemente infinito) tratando de un conjunto continuo\\[2.5mm]
+$|\cdot|$ & Valor absoluto de un n\'umero real\vspace{1mm}\newline
+M\'odulo de un n\'umero complejo\vspace{1mm}\newline
+Cardinal (posiblemente infinito) de un conjunto discreto\vspace{1mm}\newline
+Volumen (posiblemente infinito) de un conjunto continuo\\[2.5mm]
 \hline
 %
-$\|\cdot\|_p$ & Norma \ $p$, \:
-$\displaystyle \|x\|_p = \left( \sum_{i=1}^d |x|^p
-\right)^{\frac1p}$.\vspace{1mm}\\[2.5mm]
+$\|\cdot\|_p$ & Norma \ $p$: $\displaystyle \|x\|_p = \left( \sum_{i=1}^d |x|^p
+\right)^{\frac1p}$ \ siendo \ $x = \left( x_1 , \ldots , x_d \right) \in \Cset^d$ \ y
+para \ $p \in \Rset_{0,+}$\vspace{1mm}\\[2.5mm]
 \hline
 %
-$\|\cdot\|$ o $|\cdot|$ & Norma \ $2$.\\[2.5mm]
+$\|\cdot\|$ o $|\cdot|$ & Norma \ $2$\\[2.5mm]
 \hline
 %
-$\Sset_d$ & Esfera unitaria de \ $\Rset^d$, \: $\Sset_d = \left\{ x \in \Rset^d
-\tq \|x\| = 1 \right\}$\\[2.5mm]
+$\Sset_d(c,r)$ & Superficie esf\'erica de \ $\Rset^d$, centrada en $c \in
+\Rset^d$ y de rayo $r$, \: $\Sset_d(c,r) = \left\{ x \in \Rset^d \tq \|x-c\| = r
+\right\}$\\[2.5mm]
+%,\vspace{1mm}\newline$\Sset_d \equiv \Sset_d(0,1)$\\[2.5mm]
 \hline
 %
-$\Sset_d(c,r)$ & Esfera de \ $\Rset^d$, centrada en $c \in \Rset^d$ y de rayo
-$r$\: $\Sset_d(c,r) = \left\{ x \in \Rset^d \tq \|x-c\| = r \right\}$,\vspace{1mm}\newline
-$\Sset_d \equiv \Sset_d(0,1)$\\[2.5mm]
+$\Sset_d$ & Superficie esf\'erica unitaria de \ $\Rset^d$, centrada en el
+origen, \ $\Sset_d : \Sset_d(0,1)$\\[2.5mm]
+% = \left\{ x \in \Rset^d\tq \|x\| = 1 \right\}$\\[2.5mm]
 \hline
 %
-$\SCset_d$ & Esfera unitaria de \ $\Cset^d$, \: $\SCset_d = \left\{ z \in \Cset^d
-\tq \|z\| = 1 \right\}$\\[2.5mm]
+$\SCset_d(c,r)$ & Superficie esf\'erica de \ $\Cset^d$, centrada en $c \in
+\Cset^d$ y de rayo $r$: $\SCset_d(c,r) = \left\{ z \in \Cset^d \tq \|z-c\| = r
+\right\}$\\[2.5mm]
 \hline
 %
-$\Bset_d$ & Bola abierta unitaria de \ $\Rset^d$, \: $\Bset_d = \left\{ x \in \Rset^d
-\tq \|x\| < 1 \right\}$\\[2.5mm]
+$\SCset_d$ & Superficie unitaria de \ $\Cset^d$, centrada en el origen $\SCset_d
+= \SCset_d(0,1)$\\[2.5mm]
+%\: $\SCset_d = \left\{ z \in \Cset^d
+%\tq \|z\| = 1 \right\}$\\[2.5mm]
 \hline
 %
-$\Bset_d(c,r)$ & Bola abierta de \ $\Rset^d$, centrada en $c \in \Rset^d$ y de rayo
-$r$\: $\Bset_d(c,r) = \left\{ x \in \Rset^d \tq \|x-c\| < r \right\}$,\vspace{1mm}\newline
-$\Bset_d \equiv \Bset_d(0,1)$\\[2.5mm]
+$\Bset_d(c,r)$ & Bola abierta de \ $\Rset^d$, centrada en $c \in \Rset^d$ y de
+rayo $r$: $\Bset_d(c,r) = \left\{ x \in \Rset^d \tq \|x-c\| < r
+\right\}$\\[2.5mm]
+%,\vspace{1mm}\newline $\Bset_d \equiv \Bset_d(0,1)$\\[2.5mm]
 \hline
 %
-$\Simp{k-1}$ & $(k-1)$-simplex estandar~\footnote{\SZ{Politopio, convex hull
-$\left\{ \un_i \right\}_{i=1}^k$ (ver notaciones matriciales
-pagina~\pageref{toto}).}}de \ $\Rset_+^k$, o simplex de probabilidad,
-i.e.,\vspace{1mm}\newline $\displaystyle \Simp{k-1} = \left\{ x \in \Rset_+^k \tq
-\sum_{i=1}^k x_i = 1 \right\}$\\[2.5mm]
+$\Bset_d$ & Bola abierta unitaria de \ $\Rset^d$, centrada en el origen,
+$\Bset_d =\Bset_d(0,1)$\\[2.5mm]
+%\: $\Bset_d = \left\{ x \in \Rset^d
+%\tq \|x\| < 1 \right\}$\\[2.5mm]
 \hline
 %
-$\Part{k,d}$ & Partici\'on (con las permutaciones) de \ $k \in \Nset$ \ de \
-tama\~no \ $d \in \Nset^*$,\vspace{1mm}\newline $\displaystyle \Part{k,d} =
-\left\{ n = \begin{bmatrix} n_1 & \cdots & n_d \end{bmatrix}^t \in \Nset^d \tq
-\sum_{i=1}^d n_i = k \right\}$\\[2.5mm]
+$\Simp{k-1}$ & $(k-1)$-simplex estandar~\footnote{Politopio, c\'apsula convexa
+de $\left\{ \un_i \right\}_{i=1}^k$ (ver notaciones matriciales).} de \
+$\Rset_+^k$, o simplex de probabilidad, \ie\vspace{1mm}\newline $\displaystyle
+\Simp{k-1} = \left\{ x \in \Rset_+^k \tq \sum_{i=1}^k x_i = 1 \right\}$\\[2.5mm]
+\hline
+%
+$\Part{k,d}$ & Partici\'on (con las permutaciones) del n\'umero \ $k \in \Nset$
+\ de \ tama\~no \ $d \in \Nset_0$,\vspace{1mm}\newline $\displaystyle \Part{k,d}
+= \left\{ n = \left( n_1 , \ldots , n_d \right) \in \Nset^d \tq \sum_{i=1}^d n_i
+= k \right\}$\\[2.5mm]
 \hline
 %
 $\perm_n$ & Conjunto de las permutaciones \ $\sigma : \{ 1 \, , \, \ldots \, , \, n
@@ -197,39 +227,40 @@ $\perm_n$ & Conjunto de las permutaciones \ $\sigma : \{ 1 \, , \, \ldots \, , \
 \}$\\[2.5mm]
 \hline
 %
-$C^k(I)$ & Conjunto de las functiones \ $f:\Rset \mapsto \Rset$ \ $k$ veces
+$C^k(I)$ & Conjunto de las functiones \ $f:I \mapsto \Rset$ \ $k$ veces
 diferenciable y de derivadas continuas\\[2.5mm]
 \hline
 %
-$\PD_d$ & Conjuntos (convexo) de las funciones \ $f: \Rset^d \mapsto \Cset$
-continuas, a simetr\'ia herm\'itica \ $f(-x) = f^*(x)$,\newline definida
-no negativas, \ $\forall \: n \in \Nset^*$, \ $a_i \in \Cset, x_i \in \Rset^d, \: i
-= 1, \ldots , n$, \ $\displaystyle \sum_{i,j=1}^n a_i a_j^* f(x_j-x_i) \ge
-0$,\newline con \ $f(0) = 1$.\\[2.5mm]
+$\PD_d$ & Conjunto (convexo) de las funciones \ $f: \Rset^d \mapsto \Cset$
+continuas tales que $f(0) = 1$, con simetr\'ia herm\'itica \ $f(-x) = f^*(x)$,
+definida no negativas, \ie tal que \ $\forall \: n \in \Nset_0$, \ $a_i \in
+\Cset, x_i \in \Rset^d, \: i = 1, \ldots , n$, \ $\displaystyle \sum_{i,j=1}^n
+a_i a_j^* f(x_j-x_i) \ge 0$\\[2.5mm]
 \hline
 %
-$\PD$ & Conjuntos (convexo) \ $\displaystyle \bigcap_{d=1}^{+\infty} \, \PD_d$ \
-de todas las funciones continuas, a simetr\'ia herm\'itica, definida positivas,
-de valor unidad al origen.\\[2.5mm]
+$\PD$ & Conjunto (convexo) \ $\displaystyle \bigcap_{d=1}^{+\infty} \, \PD_d$ \
+de todas las funciones continuas tales que $f(0) = 1$, con simetr\'ia
+herm\'itica, definida positivas\\[2.5mm]
 \hline
 %
-$\PDSI_d$ & Conjuntos (convexo) de las funciones \ $f: \Rset_+ \mapsto [-1 \;
-1]$ continuas con \ $f(0) = 1$ \ tal que $F: x \mapsto f\left( \|x\|^2 \right)
-\: \in \PD_d$.\\[2.5mm]
+$\PDSI_d$ & Conjunto (convexo) de las funciones \ $f: \Rset_+ \mapsto [-1 \;
+1]$ continuas con \ $f(0) = 1$ \ tales que $F: x \mapsto f\left( \|x\|^2 \right)
+\: \in \PD_d$\\[2.5mm]
 \hline
 %
 $\PDSI$ & Conjuntos (convexo) $\displaystyle \bigcap_{d=1}^{+\infty} \, \PDSI_d$
 de las funciones \ $f: \Rset_+ \mapsto [-1 \; 1]$ continuas con \ $f(0) = 1$ \
-tal que $F: x \mapsto f\left( \|x\|^2 \right) \: \in \PD$.\\[2.5mm]
+tales que $F: x \mapsto f\left( \|x\|^2 \right) \: \in \PD$\\[2.5mm]
 \hline
 %
-$\CM_n$ & Conjuntos (convexo) de las funciones \ $f \in C^{n-1}(\Rset_+)$ \
-tales que \ $\forall \, k = 0 , \ldots , n-1, \:\: (-1)^k f^{(k)} \ge 0$ \ y \
-$(-1)^{n-1} f^{(n-1)}$ \ es decreciente.\newline Dicho de otra manera, cuando \
-$n \ge 2$, \ $(-1)^k f^{(k)}$ \ es convexa, $k = 0, \ldots , n-2$.\\[2.5mm]
+$\CM_n$ & Conjunto (convexo) de las funciones \ $f \in C^{n-1}(\Rset_+)$ \ tales
+que \ $\forall \, k = 0 , \ldots , n-1, \:\: (-1)^k f^{(k)} \ge 0$ \ y \
+$(-1)^{n-1} f^{(n-1)}$ \ es decreciente, siendo \ $n \in \Nset_0$.\newline Dicho
+de otra manera, cuando \ $n \ge 2$, \ $(-1)^k f^{(k)}$ \ es convexa, $k = 0,
+\ldots , n-2$.\\[2.5mm]
 \hline
 %
-$\CM$ & Conjuntos (convexo) $\displaystyle \bigcap_{n=0}^{+\infty} \, \CM_n$ de
+$\CM$ & Conjunto (convexo) $\displaystyle \bigcap_{n=1}^{+\infty} \, \CM_n$ de
 las funciones \ $f \in C^{\infty}(\Rset_+)$ \ tales que \ $\forall \, k \in
-\Nset, \:\: (-1)^k f^{(k)} \ge 0$.
+\Nset, \:\: (-1)^k f^{(k)} \ge 0$
 \end{notation}
