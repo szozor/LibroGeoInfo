@@ -59,7 +59,7 @@ o~\cite[cap.~12]{CovTho06}, entre otros~\cite[\& ref.]{Arn01, Kap89, KapKes92}.
 Sea \ $X$ \ variable aleatoria viviendo sobre (de distribuci\'on de probabilidad
 de soporte) \ $X(\Omega) = \X \subset \Rset^d$  \ con \ $K \ge 0$ \ momentos \
 $\Esp\left[ M_k(X)  \right] = m_k$ \  fijos, con $M_x: \X  \to \Rset$. Suponemos
-que $X$ tiene una densidad \ $p$ \ con respeto a una medida $\mu$, basicamente \
+que $X$ tiene una densidad \ $p$ \ con respecto a una medida $\mu$, basicamente \
 $\mu_L$ \ en el contexto continuo y $\mu_\X$ en el caso discreto. El problema de
 entrop\'ia  m\'axima   se  formula  de   la  manera  siguiente:  sean   \  $M(x)
 =  \begin{bmatrix}  M_1(x)  &  \cdots   &  M_K(x)  \end{bmatrix}^t$  \  y  \  $m
@@ -90,8 +90,8 @@ p_{\mathrm{em}} = \argmax_p \int_\X  \left( - p(x) \log p(x) + \eta_0  \, p(x) +
 donde $\eta_0, \eta$ ser\'an determinados  para satisfacer a los v\'inculos.  En
 el    caso   continuo    $\mu   =    \mu_L$    se   usa    la   ecuaci\'on    de
 Euler-Lagrange~\cite{GelFom63, Bru04}, esquematicamente anulando la ``derivada''
-del integrande  con respeto a  $p$; en el  caso discreto, se anula  realmente un
-gradiente con respeto a los componentes de $p$. Reparametrizando los factores de
+del integrande  con respecto a  $p$; en el  caso discreto, se anula  realmente un
+gradiente con respecto a los componentes de $p$. Reparametrizando los factores de
 Lagrange, se obtiene as\'i
 %
 \[
@@ -126,7 +126,7 @@ soluci\'on.
 %
 Sea \  $\displaystyle \P_m = \left\{  p \ge 0 \tq  \int_\X p(x) \,  d\mu(x) = 1,
   \quad \int_\X M(x)  \, p(x) \, d\mu(x) = m \right\}$  \ conjunto de densidades
-con respeto a $\mu$, con los mismos momentos \ $M$, y sea \ $p_{\mathrm{em}} \in \P_m$ \ que
+con respecto a $\mu$, con los mismos momentos \ $M$, y sea \ $p_{\mathrm{em}} \in \P_m$ \ que
 sea de la forma \ $p_{\mathrm{em}}(x) = e^{\eta^t M(x) - \varphi(\eta)}$. Entonces
   %
   \[
@@ -136,7 +136,7 @@ sea de la forma \ $p_{\mathrm{em}}(x) = e^{\eta^t M(x) - \varphi(\eta)}$. Entonc
   %
   donde   $H$  es   de  la   definici\'on   general  Def.~\ref{Def:SZ:ShanonMu}
   %pagina~\pageref{Def:SZ:ShanonMu}, 
-  de la entrop\'ia con respeto a $\mu$.
+  de la entrop\'ia con respecto a $\mu$.
 \end{lema}
 %
 \begin{proof}
@@ -184,11 +184,11 @@ exponencial. Por ejemplo,
 \end{itemize}
 %
 Con el enfoque del lema~\ref{Lem:SZ:MaxEntPruebaInfo}, se necesita solamente que
-$p$  sea una  densidad con  respeto  a una  medida $\mu$  fija, cualquiera.   En
+$p$  sea una  densidad con  respecto  a una  medida $\mu$  fija, cualquiera.   En
 particular, si es una medida de probabilidad (de referencia) $\widetilde{P}$, el
 problema de entrop\'ia m\'axima vuelve a ser un problema de minimizaci\'on de la
 divergencia de Kullback-Leibler entre $P$  y la medida de referencia, siendo $p$
-la    densidad    con    respeto     a    esta    medida    (ver    definici\'on
+la    densidad    con    respecto     a    esta    medida    (ver    definici\'on
 Def.~\ref{Def:SZ:entropiarelativa}). Es decir, tomando \ $\mu = \widetilde{P}$ \
 medida de probabilidad aparece inmediatamente
 %
@@ -732,7 +732,7 @@ desorganizado (ver ej.~\cite[y ref.]{CovTho06, Mer10, Mer18}).
   (independientemente de la condici\'on  inicial).  Estas \'ultimas modelizan el
   sistema, independiente de las  condiciones iniciales.  Sean dos distribuciones
   (condiciones) iniciales  diferentes $p_{X_1}$  y $q_{X_1}$, conduciendo  a las
-  distribuciones $p_{X_n}$  y $q_{X_n}$  (con respeto a  una medida  $\mu$ dada)
+  distribuciones $p_{X_n}$  y $q_{X_n}$  (con respecto a  una medida  $\mu$ dada)
   para $X_n$. Entonces:
 %
 \begin{itemize}
@@ -754,7 +754,7 @@ desorganizado (ver ej.~\cite[y ref.]{CovTho06, Mer10, Mer18}).
   la distribuci\'on no se aleja de la distribuci\'on estacionaria.
 %
 \item Adem\'as, si  los $X_n$ tienen $K$ momentos fijos  $m = \Esp[M(X_n)] \quad
-  \forall \,  n$ y si \  $p_{\mathrm{me}}$ \ es la  densidad (con respeto a  la medida $\mu$
+  \forall \,  n$ y si \  $p_{\mathrm{me}}$ \ es la  densidad (con respecto a  la medida $\mu$
   dada)  de  entrop\'ia  m\'axima  tiendo  los  mismos  momentos  como  descrito
   subsecci\'on  Sec.~\ref{Ssec:SZ:MaxEnt}, (ej.   $K =  0$, $\X$  de  cardenal o
   volumen finito y ley uniforme, $K = 2$, $M_k(x) = x^k$ y ley gausiana),
@@ -817,9 +817,9 @@ par\'ametro~\cite{Fis22, Fis25:07, Kay93, Bos07, CovTho06, Fri04}.
 %
   Sea   $X$   una   variable   aleatoria  parametrizada   por   un   par\'ametro
   $m$-dimensional, $\theta  \in \Theta \subset \Rset^m$,  de distribuci\'on de
-  probabilidad $p_X(\cdot;\theta)$  (con respeto a una medida  $\mu$ dada) sobre
+  probabilidad $p_X(\cdot;\theta)$  (con respecto a una medida  $\mu$ dada) sobre
   $\X \subset  \Rset^d$ su  soporte. Suponga que  $p_X$ sea  diferenciable con
-  respeto a $\theta$ sobre $\Theta$.  La matriz de Fisher, de tama\~no $m \times
+  respecto a $\theta$ sobre $\Theta$.  La matriz de Fisher, de tama\~no $m \times
   m$, es definida por
   %
   \[
@@ -872,7 +872,7 @@ Fisher no param\'etrica,
 %
   Sea  \  $X$ \  una  variable aleatoria  continua  admitiendo  una densidad  de
   probabilidad \ $p_X$  \ definida sobre \ $\X \subset  \Rset^d$ \ su soporte.
-  Suponga que  \ $p_X$ \ sea  diferenciable con respeto  a \ $x$.  La  matriz de
+  Suponga que  \ $p_X$ \ sea  diferenciable con respecto  a \ $x$.  La  matriz de
   Fisher no param\'etrica, $d \times d$, es definida por
   %
   \[
@@ -934,7 +934,7 @@ Es interesante notar que:
   falta probarlo para \ $K=2$ \ y, por recurrencia, se extiende para cualquier \
   $K$. En  este caso, observando que \  $\big( \nabla \log p  \big) \big( \nabla
   \log p \big)^t \, p =  \frac{\big( \nabla p \big) \big( \nabla p \big)^t}{p}$,
-  considerando el gradiente con respeto a \ $\theta$ (resp. a \ $x$) tratando de
+  considerando el gradiente con respecto a \ $\theta$ (resp. a \ $x$) tratando de
   \  $J_\theta$ (resp. \  $J$), se  obtiene \  $\sum_k \pi_k  \frac{\big( \nabla
     p_{(k)} \big)  \big( \nabla p_{(k)} \big)^t}{p_{(k)}}  - \frac{\left( \nabla
       \sum_k  \pi_k   p_{(k)}  \right)   \left(  \nabla  \sum_k   \pi_k  p_{(k)}
@@ -1226,7 +1226,7 @@ aparece a trav\'es de la identidad  de de Bruijn~\footnote{A pesar de que tom\'o
   Bar86,  PalVer06, TorZoz18}.  Esta  identidad caracteriza  lo que  es conocido
 como  canal gaussiano  de la  figura Fig~\ref{Fig:SZ:deBruijnVerdu}-(a),  \ie la
 salida \ $Y$  \ es una versi\'on ruidosa de la  entrada.  La identidad v\'incula
-las variaciones  de entrop\'ia  de salida con  respeto al  nivel de ruido,  y la
+las variaciones  de entrop\'ia  de salida con  respecto al  nivel de ruido,  y la
 informaci\'on de Fisher.
 
 \begin{figure}[h!]
@@ -1258,7 +1258,7 @@ informaci\'on de Fisher.
   donde \ $\nabla_T \, \cdot$ \ es la matriz de componentes \ $\frac{\partial \,
     \cdot}{\partial T_{i,j}}$.  Si \ $T = T(\theta)$ \ depende de un par\'ametro
   escalar~\footnote{Si el  par\'ametro es  multivariado, hace falta  entender la
-    desigualdad a trav\'es de derivas parciales con respeto a los componentes de
+    desigualdad a trav\'es de derivas parciales con respecto a los componentes de
     $\theta$.}  $\theta$,
   %
   \[
@@ -1327,7 +1327,7 @@ informaci\'on de Fisher.
     \right)^{-1} \right) T \Sigma_\N \, p(x).
   \]
   %
-  Tomando la Hessiana de \ $p$ \  con respeto a \ $x$ \ se obtiene sencillamente
+  Tomando la Hessiana de \ $p$ \  con respecto a \ $x$ \ se obtiene sencillamente
   que \ $p$ \ satisface la ecuaci\'on diferencial
   %
   \[
@@ -1384,7 +1384,7 @@ se recupera  en el caso particular  \ $T =  \sqrt{\theta} I$.  En este  caso, la
 ecuac\'ion diferencial satisfecha por la densidad  de probabilidad \ $p$ \ es la
 {\it  ecuaci\'on del  calor}.  Esta  desigualdad cuantifica  las  variaciones de
 entrop\'ias   bajo  variaciones   de  ``niveles''   del  ruido   del   canal  de
-comunicaci\'on. De una  forma, caracteriza la robustez del  canal con respeto al
+comunicaci\'on. De una  forma, caracteriza la robustez del  canal con respecto al
 nivel de ruido gaussiano (la gaussiana juega de nuevo un rol central ac\'a).
 
 \
@@ -1524,7 +1524,7 @@ identidad entre \ $I(X;Y)$ \ y \ $\E(X|Y)$:
 \sqrt{\snr}$, \ $\Sigma_\N = I$ \ y \ $X$ \ de covarianza la identidad; $\snr$ \
 es conocido como relaci\'on se\~nale/ruido en este caso.
 
-Existen versiones a\'un m\'as completas  (con gradientes con respeto a la matriz
+Existen versiones a\'un m\'as completas  (con gradientes con respecto a la matriz
 \  $\Sigma_\N$  \  por  ejemplo)  que se  pueden  consultar  en~\cite{Joh04,
   PalVer06, PayPal09}.
 

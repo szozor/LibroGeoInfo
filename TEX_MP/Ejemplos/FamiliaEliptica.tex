@@ -31,7 +31,7 @@ Maxwell-Hershel~\footnote{Ver~\cite[Prop.~4.11]{BilBre99}.   Se notar\'a  que no
   revendicaron.  Sin  embargo, ver~\cite{Max67}}).   Volveremos  a este  teorema
 m\'as  adelante. La  clase de  las  distribuciones el\'iptical,  o a  simetr\'ia
 el\'iptica  fue   estudiada  intensivamente  formalmente~\cite{Bar34,  Bar34:07,
-  Ver64,  McgWag68, CamHua81,  Eat81, Kan94,  Lau75, Yao73,  KotNad01, FanKot90,
+  Ver64,  McgWag68, CamHua81,  Eat81, Kan94,  Lau75, Yao73,  KotNad04, FanKot90,
   Mui82,    BilBre99}.     Fue    tambi\'en    usadas   en    aplicaciones    en
 estad\'istica~\cite{BlaTho68, Chu73, YanKot03,  ArePin06, BauPas07, ChiPas08}, o
 procesamiento de  se\~nal o imagenes~\cite{Gol76,  RanWei93, RanWei95, ZozVig10,
@@ -408,7 +408,7 @@ prueba m\'as directa, valida para ambos momentos y cumulantes.
   \]
   %
   con \ $\Pi_n$ \ el conjunto de las particiones de \ $\{ 1 , \ldots , n \}$ \ y
-  \ $f^{(l)}$ la $l$-\'esima derivada de $f$.  En ambas expresi\'on de los momentos
+  \ $f^{(l)}$ la $l$-\'esima derivada de $f$.  En ambas expresiones de los momentos
   centrales y cumulantes tenemos
   %
   \[
@@ -517,7 +517,7 @@ transformaci\'on  lineal de un  vector a  simetr\'ia el\'iptica  da un  vector a
 simetr\'ia el\'iptica:
 %
 \begin{teorema}
-\label{Teo:MP:TranformacionAfinEliptica}
+\label{Teo:MP:TransformacionAfinEliptica}
 %
   Sea  \  $X \,  \sim  \,  \ED(m,\Sigma,\varphi_X)$  \ $d$-dimensional,  $A  \in
   \Mat_{d',d}(\Rset)$  \ de  rango lleno  tal que  \ $d'  \le d$  \ y  \  $c \in
@@ -731,7 +731,7 @@ vectores a sim\'etria el\'iptica~\cite{BilBre99, Max67}:
 \end{teorema}
 %
 \begin{proof}
-  Del teorema~\cite{Teo:MP:TranformacionAfinEliptica},  \ $\begin{bmatrix} X_1 &
+  Del teorema~\ref{Teo:MP:TransformacionAfinEliptica},  \ $\begin{bmatrix} X_1 &
     X_2    \end{bmatrix}^t     \sim    \ED\left(    \begin{bmatrix}     m_1    &
       m_2 \end{bmatrix}^t, I, \varphi_X \right)$ \ y  \ $X_i \sim \ED( m_i , 1 ,
   \varphi_X)$.  Si  estas variables son  independientes (condici\'on necesaria),
@@ -1334,7 +1334,7 @@ mezcla de gaussiana si y solamente si $X$ es consistente, es decir
   %
   Eso siendo valid para cualquier orden,  se nota $P_R$ el l\'imite de $P_{R_d}$
   cuando $d$ tiende al infinito.  Luego,  el desarollo de Taylor de la funci\'on
-  de Bessel  y de  la f\'ormula de  Stirling~\cite[Ec.~8.402~y~8.327]{GraRyz} se
+  de Bessel y de  la f\'ormula de Stirling~\cite[Ec.~8.402~y~8.327]{GraRyz15} se
   prueba que
   %
   \[
@@ -1433,7 +1433,7 @@ y
   \]
   %
   donde  $\mu$  es  una  medida finita  (ver~\cite[Teo.~3]{Sch38},  \cite{Ber29,
-    Haus21:I, Haus21:II,  Wid32}, \cite[\S~12]{Wid46}, \cite[\S~XIII.4]{Fel71}).
+    Hau21:I, Hau21:II,  Wid31}, \cite[\S~12]{Wid46}, \cite[\S~XIII.4]{Fel71}).
   %
   % Feller v2, p.  439; Widder p. 160; Schoenberg th. 3  y sec. 4 (Hausdorff'21,
   % Bernstein'29, Carlson'21),
@@ -2151,7 +2151,7 @@ matriz caracter\'istica \ $\Sigma$:
     mayor o igual a 2 siendo 0 (ver tambi\'en~\cite{Kri76}).
 %      corolario~\ref{Cor:MP:MediaCovarianzaEliptica}
   %
-  \item  Teorema~\ref{Teo:MP:TranformacionAfinEliptica}  en:  \  $Z \,  \sim  \,
+  \item  Teorema~\ref{Teo:MP:TransformacionAfinEliptica}  en:  \  $Z \,  \sim  \,
     \CED(m,\Sigma,\varphi_Z)$ \ $d$-dimensional, $A \in \Mat_{d',d}(\Cset)$ \ de
     rango lleno tal que  \ $d' \le d$ \ y \  $c \in \Cset^{d'} \quad \Rightarrow
     \quad A X + c \: \sim \: \CED(A m + c , A \Sigma A^\dag , \varphi_Z)$;
@@ -2269,7 +2269,7 @@ apareci\'o por unas  de las primeras veces en~\cite{Hsu40}  (20 a\~nos antes del
 papel de Mallows).
 
 Empezamos  con cada  definici\'on  de~\cite[\S~9.3]{GupNag99} y  de~\cite{Hsu40,
-  Mal61, Dem69,  Daw77, Chm80,  FraNg80,Kar81:1, Kar81, Kar89,  JenGoo81, Tyl82,
+  Mal61, Dem69,  Daw77, Chm80,  FraNg80, Kar81:1, Kar81, Kar89,  JenGoo81, Tyl82,
   Daw78, Daw81, FanChe84, And03}.
 
 \index{Esf\'erica! invariance vectorial}
@@ -3208,7 +3208,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   las expresiones dadas para los coeficientes $\mu_2$ y $\sigma_1^2$.
 \end{itemize}
 %
-  \item El  Teorema~\ref{Teo:MP:TranformacionAfinEliptica} de conservaci\'on del
+  \item El  Teorema~\ref{Teo:MP:TransformacionAfinEliptica} de conservaci\'on del
     car\'acter  el\'iptico  por transformaci\'on  lineal  tiene su  contra-parte
     matricial tambi\'en.
     % En lo que  sigue, denotamos \ $A  \in \Mat_{n,d}(\Rset), \: n \le  d$ \ de
@@ -3394,7 +3394,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     all\'a, saliendo de la  forma de mezcla y del calculo de  la Jacobiana de $y
     \mapsto   u_\izq  r_\izq$~\cite[Teo.~2.1.13]{Mui82}   y   del  volulmen   de
     $\Sti_{d,d'}(\Rset)$~\cite[Teo.~2.1.15]{Mui82}                           (ver
-    tambi\'en~\cite[p.~15-17]{GuNag99}), se obtiene
+    tambi\'en~\cite[p.~15-17]{GupNag99}), se obtiene
     %
     \[
     p_{R_\izq}(r)   =   \frac{2^{d'}   \pi^{\frac{d   d'}{2}}}{\Gamma_{d'}\left(
@@ -3466,9 +3466,9 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     \mu_1 \ge \cdots \ge \mu_{d'} \}
     \]
     %
-    (ver~\cite[\S~3.1]{Met04} o~\cite[\S~9.3]{Car83} o~\cite[\S~2.4.2]{DeiGio09} para  el  determinente  de  la  jacobiana  de  la
-    transformaci\'on  pasando   de  $X$   a  los  autovalores   y  autovectores,
-    o~\cite[Teo.~13.3.1]{And03}).
+    (ver~\cite[\S~3.1]{Meh04} o~\cite[\S~9.3]{Car83} o~\cite[\S~2.4.2]{DeiGio09}
+    para el determinente de la jacobiana de la transformaci\'on pasando de $X$ a
+    los autovalores y autovectores, o~\cite[Teo.~13.3.1]{And03}).
     % \cite[Def.~2.5.1]{AndGui10} Def del det de Vandermonde
   \end{itemize}
   %
@@ -3536,8 +3536,8 @@ tambi\'en a~\cite{And03, Daw78, Daw81, LibrosABuscar}.
   $\Tr \left( (x-m)^t \Sigma^{-1} (x-m)  \Sigma'^{-1} \right) = \Tr \left( (x-m)
     \Sigma'^{-1} (x-m)^t \Sigma^{-1} \right)$ se ve inmediatamente que la matriz
   aleatoria partenece a $\ED_\vcol \cap  \ED_\vlin$ con el generador de densidad
-  $d_X(r)   \propto  e^{-\frac{r}{2}}$  (ver   tambi\'en~\cite{Daw81,  FanKot99,
-    FanNad04}).   Como  en el  caso  escalar, el  cuadrado  del  rayo tiene  una
+  $d_X(r)   \propto  e^{-\frac{r}{2}}$  (ver   tambi\'en~\cite{Daw81,  FanKot90,
+    GupNag99}).   Como  en el  caso  escalar, el  cuadrado  del  rayo tiene  una
   distribuci\'on  Gamma,  $R_\vcol^2  \sim  \G\left( \frac{d  d'}{2}  ,  \frac12
   \right)$.
 
@@ -3556,7 +3556,7 @@ tambi\'en a~\cite{And03, Daw78, Daw81, LibrosABuscar}.
   secci\'on~\ref{Sssec:MP:Gaussiana} (secundo item), se ve inmediatamente que la
   matriz aleatoria, definida sobre \ $\X = \Sim_d(\Rset)$, \ es de distribuci\'on
   \ $\ED_\simed(0,I,d_X)$,  con el  generador de densidad  $d_X(\lambda) \propto
-  e^{- \frac{d}{4}  \, \un^t  \lambda^{\odot 2}}$ \  (ver tambi\'en~\cite{Meh89,
+  e^{- \frac{d}{4}  \, \un^t  \lambda^{\odot 2}}$ \  (ver tambi\'en~\cite{Meh04,
     AndGui10}).
   % pero no es ni en $\ED_\bil$ y entonces ni en $\ED_\col$, ni en $\ED_\lin$ y
   % por consecuencia ni tampoco en $\ED_\vcol$ o en $\ED_\vlin$.

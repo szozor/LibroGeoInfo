@@ -53,7 +53,7 @@ generalizada (v')  $H^\ren(p \, \cup \,  q) = g^{-1} \left(  \frac{w_p \, g\big(
     H^\ren(p) \big) + w_q \,  g\big( H^\ren(q) \big)}{w_p + w_q}\right)$ con $g$
 estrictamente mon\'otona  y continua,  llamada media {\it  cuasi-aritm\'etica, o
   cuasi-lineal,  o  de  Kolmogorov-Nagumo}.   De  las propiedades  de  la  media
-cuasi-aritm\'etica~\cite{Nag30,  Kol30, Kol91, HarLit52},  eso es  equivalente a
+cuasi-aritm\'etica~\cite{Nag30, Kol30:2, Kol91,  HarLit52}, eso es equivalente a
 buscar una entrop\'ia elemental $H^\ren(p_i)$ y reemplazar la media aritm\'etica
 \ $\sum_i  p_i H^\ren(p_i)$ por  una media de Kolmogorov-Nagumo,  $g^{-1} \left(
   \sum_i p_i g\big( H^\ren(p_i)  \big) \right)$.  R\'enyi propus\'o la funci\'on
@@ -615,16 +615,16 @@ p  \prec q  \quad \Rightarrow  \quad \hhphi[p]  \ge \hhphi[q]  \quad  \forall \:
 
 Terminamos esta subsecci\'on notando que, como para la entrop\'ia de Shannon, el
 enfoque  discreto  y  diferencial  son  contenido en  la  forma  general  usando
-densidades con respeto  a una medida (respectivamente discreta  y de Lebesgue en
+densidades con respecto  a una medida (respectivamente discreta  y de Lebesgue en
 estos casos).
 %
 \begin{definicion}[Escritura \'unica de las $(h,\phi)$-entrop\'ias]
 \label{Def:SZ:HPhiEntropiaMu}
 %
 Sea \ $X$ \ variable aleatoria definida sobre $\X \subset \Rset^d$, admitiendo
-una densidad de probabilidad  \ $p_X$ \ con respeto a una  medida \ $\mu$ \ (ej.
+una densidad de probabilidad  \ $p_X$ \ con respecto a una  medida \ $\mu$ \ (ej.
 $\mu_\X$ \ en  el caso discreto \ $\mu  = \mu_L$ \ en el  caso diferencial).  La
-$(h,\phi)$-entrop\'ia de $X$ con respeto a $\mu$ se escribe como
+$(h,\phi)$-entrop\'ia de $X$ con respecto a $\mu$ se escribe como
   %
   \[
   \hhphi[X] \equiv \hhphi[p_X] = h\left(  - \int_\X \phi\left( p_X(x) \right) \,
@@ -634,7 +634,7 @@ $(h,\phi)$-entrop\'ia de $X$ con respeto a $\mu$ se escribe como
   con  $h$  \   y  \  $\phi$  cumpliendo  los   requisitos  de  la  definici\'on
   discreta~\ref{Def:SZ:HPhiEntropia}  (de   $\phi(0)$,  se  puede   escribir  la
   integraci\'on sobre $\Rset^d$).\newline Insistamos de nuevo en el hecho que se
-  puede entender esta definici\'on para cualquier $\mu$ y densidad con respeto a
+  puede entender esta definici\'on para cualquier $\mu$ y densidad con respecto a
   $\mu$, que sea discreta, de Lebesgue, o mixta.
 \end{definicion}
 
@@ -700,7 +700,7 @@ P_{(1)} + \pi_2 P_{(2)}}\\[2.5mm]
 \qquad \pi = [\pi_1 \quad \pi_2], \quad 0 \le \pi_1 = 1-\pi_2 \le 1
 \end{eqnarray*}
 %
-\noindent con $p_{(i)}$  densidades de $P_{(i)}$ con respeto  a una misma medida
+\noindent con $p_{(i)}$  densidades de $P_{(i)}$ con respecto  a una misma medida
 $\mu$ (puede ser discreta, de Lebesgue, o mixta).
 
 $\Djs$ heride obviamente de $\Dkl{}$  su positividad con igualdad si y solamente
@@ -712,7 +712,7 @@ $\pi =  \pi_{\mathrm{u}} \equiv [\frac12  \quad \frac12]^t$.  Adem\'as,  en este
 caso, a pesar de que la divergencia no cumpla la desigualdad triangular, aparece
 que $\Big(  J_{\mathrm{js}}^{\pi_{\mathrm{u}}}(P_{(1)},P_{(2)}) \Big)^s, \quad 0
 <  s  \le  \frac12$ es  una  metrica~\footnote{Se  necesita  sol\'o de  que  los
-  $P_{(i)}$ admiten una  densidad con respeto a una  medida $\sigma$-finita; nos
+  $P_{(i)}$ admiten una  densidad con respecto a una  medida $\sigma$-finita; nos
   referiremos           al           resultado~\ref{Teo:MP:DescompositionMixta}.
 %,  pagina~\pageref{Teo:MP:DescompositionMixta}.
 }~\cite[Teorema~1  \& Nota~2]{OstVaj03}  o~\cite{EndSch03,  KafOst91, OsaBus18}.
@@ -728,7 +728,7 @@ bayesiano  m\'as  natural  consiste   maximizar  la  probabilidad  a  posteriori
 (probabilidad de estar en hypotesis  $i$ condicionalmente a la observaci\'on), y
 se  prueba que  la probabilidad  de error  es dada  por \  $\displaystyle  P_e =
 \int_\X \min( \pi_1  p_{(1)}(x) \, , \,  \pi_2 p_{(2)}(x) ) \, d\mu(x)$  \ con \
-$p_{(i)}$ densidad con respeto a $\mu$~\cite{Kay93}. Prob\'o Lin de que
+$p_{(i)}$ densidad con respecto a $\mu$~\cite{Kay93}. Prob\'o Lin de que
 %
 \[
 \frac14 \left(  H(\pi) - \Djs(P_{(1)},P_{(2)})  \right)^2 \le P_e  \le \frac12
@@ -851,7 +851,7 @@ $-\hhphi$ convexa, se puede entonces asociar una divergencia de Jensen
   \hhphi[p_{(2)}].
   \]
   %
-  \noindent con \ $p_{(i)}$ \ densidad con respeto a una medida $\mu$. Cuando $h
+  \noindent con \ $p_{(i)}$ \ densidad con respecto a una medida $\mu$. Cuando $h
   \equiv \id$ identidad, se notar\'a $\jphi{}$.
 
   La definici\'on se generaliza a  cualquier conjunto $\{ p_{(i)} \}_{i=1}^n$ de
@@ -940,6 +940,8 @@ distancias $L^2$ con un nucleo.
 \subsubseccion{Clase de Bregman}
 \label{Sssec:SZ:Bregman}
 
+\SZ{Ver Nielsen and Nock 2010 sobre la divergence entre dos leyes de la famlilia exponencial~\cite{NieNoc10}}
+
 Estas divergencias  fueron intoducidos en  el campo de la  programaci\'on lineal
 convexa, para  resolver problemas de  minimizaci\'on convexa~\footnote{A\'un que
   aparece en una revista de matem\'atica y f\'isica matem\'atica, una gracia del
@@ -1010,7 +1012,7 @@ entrop\'ia una divergencia tipo Bregman:
   %
   Cuando  $h \equiv \id$  identidad, se  notar\'a $\bphi{}$  y es  equivalente a
   salir  de la  definici\'on  inicial  $u =  p(x)$,  \ $v  =  q(x)$  y sumar  la
-  divergencia obtenida sobre  \ $\X$ \ con  respeto a la medida \  $\mu$.  En el
+  divergencia obtenida sobre  \ $\X$ \ con  respecto a la medida \  $\mu$.  En el
   caso particular discreto toma la expresi\'on
   %
   \begin{eqnarray*}
@@ -1049,7 +1051,7 @@ de Bregman, y vice-versa:
     P_{(2)})}{\pi_1 \pi_2}
   \]
   %
-  (o  similarmente  con densidad  $p_{(i)}$  con  respeto  a una  medida  $\mu$;
+  (o  similarmente  con densidad  $p_{(i)}$  con  respecto  a una  medida  $\mu$;
   recuerdense tambi\'en que $\pi_1 = 1-\pi_2$).
 \end{lema}
 %
@@ -1173,7 +1175,7 @@ tambi\'en~\cite[Sec.~I]{OrsPar95}):
 \label{Def:SZ:HPhiDivergencia}
 %
   La  $(h,\phi)$-divergencia  de  una  distribuci\'on de  probabilidad  $Q$  con
-  respeto a una  distribuci\'on de referencia $P$ tal que $Q  \ll P$ es definida
+  respecto a una  distribuci\'on de referencia $P$ tal que $Q  \ll P$ es definida
   por
   %
   \[
@@ -1181,7 +1183,7 @@ tambi\'en~\cite[Sec.~I]{OrsPar95}):
   \right)
   \]
   %
-  Si $P$  y $Q$ admiten  una densidad  con respeto a  una medida $\mu$,  toma la
+  Si $P$  y $Q$ admiten  una densidad  con respecto a  una medida $\mu$,  toma la
   forma
   %
   \[
@@ -1250,7 +1252,7 @@ Las divergencias de Csisz\'ar tienen las propiedades siguientes
 \item $\chphi{}$ satisface  un teorema de procesamiento de  datos (o secunda ley
   de  la  termodin\'amica)  en el  sentido  de  que  si dos  distribuciones  son
   consecuencias   de  la  misma   probabilidad  de   transici\'on  (condicional)
-  $p_{X_{n+1}|X_n=x_n}  =  q_{X_{n+1}|X_n=x_n}$ (densidades  con  respeto a  una
+  $p_{X_{n+1}|X_n=x_n}  =  q_{X_{n+1}|X_n=x_n}$ (densidades  con  respecto a  una
   medida $\mu$), entonces
   %
   \[
@@ -1262,7 +1264,7 @@ Las divergencias de Csisz\'ar tienen las propiedades siguientes
   con  respecto  a  $p$  solamente  y/o  $q$. En  el  caso  $\phi$  convexa,  es
   consecuencia directa de la convexidad~\footnote{Con la hipotesis de que $\phi$
     sea  de clase $C^2$,  es sencillo  ver de  que la  Hessiana de  la funci\'on
-    $(u,v) \mapsto  u \, \phi\left(\frac{v}{u}\right)$ con respeto  a $(u,v)$ es
+    $(u,v) \mapsto  u \, \phi\left(\frac{v}{u}\right)$ con respecto  a $(u,v)$ es
     no    negativa,    implicando    la    convexidad    de    esta    funci\'on
     bi-variada~\cite{CamMar09}.}  (resp.   c\'oncavidad) de $(u,v)  \mapsto u \,
   \phi\left(\frac{v}{u}\right)$ sobre  $\Rset_+^2$ conjuntamente a  la crecencia
@@ -1419,7 +1421,7 @@ p_{\mathrm{em}} =  \argmax_p \int_\X  \left( - \phi\left(  p(x) \right)  + \eta_
 %
 donde $\eta_0, \eta$ ser\'an determinados  para satisfacer a los v\'inculos.  De
 nuevo,  de la  ecuaci\'on de  Euler-Lagrange~\cite{GelFom63, Bru04}  en  el caso
-continuo, o derivando  con respeto a las probabilidades en  el caso discreto, se
+continuo, o derivando  con respecto a las probabilidades en  el caso discreto, se
 obtiene la ecuaci\'on $- \phi'(p(x)) +  \eta_0 + \eta^t M(x) = 0$.  La funci\'on
 entr\'opica $\phi$ es c\'oncava y de  clase $C^2$, as\'i que $\phi'$ es continua
 decreciente, y de la monotonicidad es invertible. Entonces,
@@ -1495,7 +1497,7 @@ es acotada por arriba, y que se alcanza la cota. Por ejemplo,
 
 Como  en el  caso de  Shannon, si  $\mu =  Q$ es  una medida  de  referencia, el
 problema vuelev  ser un problema de minimizaci\'on  de la $(h,\phi)$-divergencia
-de $P  \ll Q$  con respeto a  $Q$.  La  densidad obtenida es  $p_{\mathrm{em}} =
+de $P  \ll Q$  con respecto a  $Q$.  La  densidad obtenida es  $p_{\mathrm{em}} =
 \frac{dP_{\mathrm{em}}}{dQ}$.
 
 \
@@ -1506,7 +1508,7 @@ de $P  \ll Q$  con respeto a  $Q$.  La  densidad obtenida es  $p_{\mathrm{em}} =
 
 \cite{WanMad04}: EPI Renyi y reareglo
 
-\cite[p. 499]{CovTho15}: tipo EPI via Renyi (ver Beckner)
+\cite[p. 499]{CovTho06}: tipo EPI via Renyi (ver Beckner)
 
 Ver \cite{Sta59, Hir57, Sobolev, DemCov91}
 }
