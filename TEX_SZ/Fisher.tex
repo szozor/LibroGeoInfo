@@ -1,0 +1,206 @@
+\seccion{Informaci\'on de Fisher}
+\label{Ssec:SZ:Fisher}
+
+Si la  entrop\'ia y las heramientas  relacionadas son naturales  como medidas de
+informaci\'on, no se  puede resumir una distribuci\'on a  una medida escalar. En
+el marco de la teor\'ia de  la estimaci\'on, R. Fisher introdujo una noci\'on de
+informaci\'on intimamente  relacionada al error cuadr\'atico  en la estimaci\'on
+de   un  par\'ametro   a  partir   de  una   variable  parametrizado   por  este
+par\'ametro~\cite{Fis22, Fis25:07, Kay93, Bos07, CovTho06, Fri04}.
+
+\begin{definicion}[Matriz informaci\'on de Fisher param\'etrica]
+\label{Def:SZ:MatrizFisherParametrica}
+%
+  Sea   $X$   una   variable   aleatoria  parametrizada   por   un   par\'ametro
+  $m$-dimensional,  $\theta \in  \Theta \subset  \Rset^m$, de  distribuci\'on de
+  probabilidad $p_X(\cdot;\theta)$ (con respecto a  una medida $\mu$ dada) sobre
+  $\X  \subset \Rset^d$  su soporte.  Suponga  que $p_X$  sea diferenciable  con
+  respecto  a  $\theta$  sobre  $\Theta$.   La matriz  de  Fisher,  de  tama\~no
+  $m \times m$, es definida por
+  %
+  \[
+  J_\theta(X)  =  \Esp\left[  \Big(  \nabla_\theta \log  p_X(X;\theta)  \Big)
+    \Big( \nabla_\theta \log p_X(X;\theta) \Big)^t \right],
+  \]
+  %
+  donde \  $\nabla_\theta = \left[ \cdots  \: \frac{\partial}{\partial \theta_i}
+    \: \cdots  \right]^t$ \  es el gradiente  en \  $\theta$ \ y  \ $\log$  \ el
+  logaritmo natural.  Es la matriz de covarianza del {\it score param\'etrico} \
+  $S_\theta(X) =  \nabla_\theta \log  p_X(X;\theta)$ \ notando  que su  media es
+  igual a cero (escribiando el  promedio y intercambiando integral y gradiente),
+  siendo  \  $\log p_X$  \  la  {\it  log-verosimilitud}.  Bajo  condiciones  de
+  regularidad, se puede mostrar~\footnote{Es  una consecuencia del teorema de la
+    divergencia, suponiendo que los bordes del soporte \ $\X$ \ no dependen de \
+    $\theta$ \  y que  la funci\'on score  se cancela  en estos bordes.}   que \
+  $J_\theta(X) =  - \Esp[\Hess_\theta \log p_X(X;\theta)]$  \ con $\Hess_\theta$
+  la  Hessiana
+  %~\footnote{Recordamos de que,  para \  $f: \Rset^m  \mapsto \Rset,
+  %  \quad  \Hess_\theta f$  \ es  la matriz  de componentes  \ $\frac{\partial^2
+  %    f}{\partial \theta_i  \partial \theta_j}$.}
+  \ de  \ $\log  p_X(X;\theta)$ (ver  notaciones).  Nota: a  veces se  define la
+  informaci\'on de  Fisher como  $\Tr(J)$, traza de  la matriz  informaci\'on de
+  Fisher.
+\end{definicion}
+%
+Como  para  la  entrop\'ia,  la  matriz  de Fisher  se  escribe  generalmente  \
+$J_\theta(X)$, \ a pesar de que no sea  funci\'on de \ $X$ \ pero de la densidad
+de  probabilidad.  Se  la  notar\'a  tambi\'en \  $J_\theta(p_X)$  \ seg\'un  la
+escritura la m\'as conveniente.
+
+Notar  que para  une  distribuci\'on  de la  familia  exponencial natural  vista
+secci\'on~\ref{Ssec:MP:FamiliaExponencial},  $p_X(x;\eta)  =  \exp\left(  \eta^t
+  S(x)  - \varphi(\eta)  \right)$  \  tenemos \  $S_\eta(x)  = \nabla_\eta  \log
+p_X(x;\eta) = S(x) - \nabla \varphi(\eta) = S(x) - \Esp[S(X)]$ as\'i que
+%
+\[
+J_\eta(X) = \Cov[S(X)] = \Hess \varphi(\eta)
+\]
+%
+(ver por ejemplo~\cite{LehCas98, Bos07}).
+% resp p. 116, p. 33
+
+En el caso  continuo, $\mu = \mu_L$, con una  densidad diferenciable, tomando el
+gradiente en \ $x$  \ en lugar de \ $\theta$ \ da  la matriz de informaci\'on de
+Fisher no param\'etrica,
+%
+\begin{definicion}[Matriz informaci\'on de Fisher no param\'etrica]
+\label{Def:SZ:MatrizFisherNoParametrica}
+%
+  Sea  \  $X$ \  una  variable aleatoria  continua  admitiendo  una densidad  de
+  probabilidad \ $p_X$  \ definida sobre \ $\X \subset  \Rset^d$ \ su soporte.
+  Suponga que  \ $p_X$ \ sea  diferenciable con respecto  a \ $x$.  La  matriz de
+  Fisher no param\'etrica, $d \times d$, es definida por
+  %
+  \[
+  J(X) =  \Esp\left[ \Big(  \nabla_x \log p_X(X)  \Big) \Big(  \nabla_x \log
+      p_X(X) \Big)^t \right].
+  \]
+  %
+  Es  la matriz  de covarianza  de  la {\it  funci\'on score}  \ $\nabla_x  \log
+  p_X(X)$ \ (escribiendo la media y $p_X$  siendo cero el los bordes de $\X$, se
+  ve que  el promedio  de $\nabla_x  \log p_X(X)$ tambi\'en  vale cero)  o, bajo
+  condiciones de regularidad,
+  %
+  \[
+  J(X) = - \Esp[\Hess_x \log p_X(X;\theta)]
+  \]
+  % menos el promedio de la Hessiana en \ $x$ \ de la log-verosimilitud.
+\end{definicion}
+%
+Es interesante notar que:
+%
+\begin{itemize}
+\item Cuando  \ $\theta$ \ es  un par\'ametro de posici\'on,  \ $p_X(x;\theta) =
+  p(x - \theta)$, \ $\nabla_\theta \log p_X  = - \nabla_x \log p_X$ \ tal que la
+  informaci\'on param\'etrica se reduce a la informaci\'on no param\'etrica.
+%
+\item Si \ $X$ \ es gaussiano  de matriz de covarianza \ $\Sigma_X$, entonces se
+  muestra sencillamente de que \  $J(X) = \Sigma_X^{-1}$ \ matriz de precisi\'on
+  (o,  de una  forma, inversa  de la  dispersi\'on o  incerteza en  t\'ermino de
+  estad\'isticas de orden 2).
+%
+\item Es sencillo ver  que, por definici\'on \ $J_\theta(X)$ \ y  \ $J(X)$ \ son
+  sim\'etricas y que \ $J_\theta(X) > 0$ \ y \ $J(X) > 0$ \ \ie $J_\theta(X) \in
+  \Pos_m^+(\Rset), \:\: J(X) \in \Pos_m^+(\Rset)$.  Adem\'as,
+  %
+  \[
+  \forall \ A \ \mbox{matrix no singular}, \quad J(AX) = A^{-t} J(X) A^{-1},
+  \]
+  %
+  con   $A^{-t}  =   \left(   A^{-1}  \right)^t   =   \left(  A^t   \right)^{-1}
+  $~\cite{CovTho06, DemCov91, Bar86}.  Esta relaci\'on  da a \ $J(X)$ \ un sabor
+  de  informaci\'on en  el sentido  que, cuando  \  $A$ \  es real  y tiende  al
+  infinito, \ $J(AX)$ \ tiende a 0; \  $A X$ \ tiende a ser muy dispersada as\'i
+  que no hay informaci\'on sobre su posici\'on.
+%
+\item $J_\theta$  \ y  \ $J$  \ son convexas  en el  sentido que  para cualquier
+  conjunto  de \  $\pi_k \ge  0, \,  \sum_{k=1}^K  \pi_k =  1$ \  y \  cualquier
+  conjunto  de distribuciones  \ $p_{(k)},  \ k  = 1,  \ldots  , K$~\cite{Coh68,
+    Fri04},
+  %
+  \[
+  J_\theta\left(  \sum_{k=1}^K  \pi_k  p_{(k)}  \right)  \:  <  \:  \sum_{k=1}^K
+  \pi_k  \,  J_\theta\left(  p_{(k)}  \right)  \qquad  \mbox{y}  \qquad  J\left(
+    \sum_{k=1}^K \pi_k  p_{(k)} \right) \:  < \: \sum_{k=1}^K  \pi_k J\left(
+    p_{(k)} \right),
+  \]
+  % donde $A <  B$ significa que $B-A >  0$.  La prueba es dada por  Cohen en el
+  caso escalar,  pero se extiende sin  costo adicional en el  caso multivariado.
+  Hace  falta probarlo  para \  $K=2$  \ y,  por recurrencia,  se extiende  para
+  cualquier  \  $K$.  En  este  caso,   observando  que  \  $\big(  \nabla  \log
+  p   \big)  \big(   \nabla  \log   p  \big)^t   \,  p   =  \frac{\big(   \nabla
+  p \big)  \big( \nabla p  \big)^t}{p}$, considerando el gradiente  con respecto
+  a  \ $\theta$  (resp. a  \ $x$)  tratando de  \ $J_\theta$  (resp. \  $J$), se
+  obtiene  \  $\sum_k  \pi_k  \frac{\big(  \nabla  p_{(k)}  \big)  \big(  \nabla
+  p_{(k)}    \big)^t}{p_{(k)}}    -    \frac{\left(    \nabla    \sum_k    \pi_k
+  p_{(k)}  \right) \left(  \nabla \sum_k  \pi_k p_{(k)}  \right)^t}{\sum_k \pi_k
+  p_{(k)}}                =                 \frac{1}{\sum_k                \pi_k
+  p_{(k)}} \, \sum_{k,l} \pi_k  \pi_l \Big( \frac{p_{(l)}}{p_{(k)}} \big( \nabla
+  p_{(k)}    \big)   \big(    \nabla    p_{(k)}   \big)^t    -   \big(    \nabla
+  p_{(k)} \big) \big( \nabla p_l \big)^t  \Big)$, lo que vale, tratando del caso
+  $K  = 2$,  \  $  \frac{\pi_1 \pi_2}{p_{(2)}  p_{(2)}  (\pi_1  p_{(1)} +  \pi_2
+  p_{(2)})} \big(  p_{(2)} \nabla p_{(1)}  - p_{(1)} \nabla p_{(2)}  \big) \big(
+  p_{(2)} \nabla p_{(1)} - p_{(1)} \nabla  p_{(2)} \big)^t \ge 0$.  No puede ser
+  identicamente  cero  (salvo  si  \  $\pi_1  \pi_2  =  0$  \  o  \  $p_{(1)}  =
+  p_{(2)}$\ldots) as\'i que se obtiene la  desigualdad sobre la matriz de Fisher
+  integrando esta \'ultima desigualdad.
+\end{itemize}
+
+\
+
+Al  imagen de  la entrop\'ia  condicional,  se puede  definir una  informaci\'on
+condicional como en la definici\'on~\ref{Def:SZ:entropiacondicional},
+%
+\begin{definicion}[Matriz informaci\'on de Fisher param\'etrica condicional]
+\label{Def:SZ:MatrizFisherParametricaCondicional}
+%
+Sean  $X$ \  e \  $Y$ \  dos variables  aleatorias parametrizadas  por  el mismo
+par\'ametro   $m$-dimensional,  $\theta  \in   \Theta  \subset   \Rset^m$,  de
+distribuci\'on  de probabilidad conjunta  $p_{X,Y}(\cdot,\cdot;\theta)$ continua
+sobre  $\X \times  \Y$ su  soporte, $p_{X|Y=y}(\cdot;\theta)$  la distribuci\'on
+condicional  de $X$ conociendo  $Y=y$ y  \ $p_Y$  \ la  distribuci\'on marginal.
+Suponga que estas distribuciones  sean diferenciable en $\theta$ sobre $\Theta$.
+La matriz de  Fisher de $X$ condicionalmente a $Y$  es el promedio estad\'istico
+sobre $p_Y$ de la matriz de Fisher de $p_{X|Y}(\cdot;\theta)$, es decir
+  %
+  \[
+  J_\theta(X|Y)  = \Esp\left[ \Big(  \nabla_\theta \log  p_{X|Y}(X;\theta) \Big)
+    \Big( \nabla_\theta \log p_{X|Y}(X;\theta) \Big)^t \right].
+  \]
+  %
+  donde  $p_{X|Y}(\cdot;\theta)   =  \frac{p_{X,Y}(\cdot,Y;\theta)}{p_Y(Y)}$  es
+  ac\'a una variable aleatoria.
+\end{definicion}
+
+De esta definici\'on,  es sencillo probar que la  matriz de Fisher param\'etrica
+sigue una regla de cadena al imagen de la propiedad~\ref{Prop:SZ:cadena},
+%
+\[
+J_\theta(X,Y) = J_\theta(X|Y) + J_\theta(Y).
+\]
+%
+Adem\'as, si $X$ e $Y$ son independientes, la informaci\'on de Fisher es aditiva
+de la  misma manera  que $H$ satisface  las propiedades~\ref{Prop:SZ:aditividad}
+y~\ref{Prop:SZ:independenciacondicional}, \ie
+%
+\[
+J_\theta(X|Y)  =   J_\theta(X)  \quad  \Leftrightarrow  \quad   J_\theta(X,Y)  =
+J_\theta(X) + J_\theta(Y) \quad \Leftrightarrow \quad  X \: \& \: Y \: \mbox{son
+independientes.}
+\]
+%
+En particular,  tratando de una  secuencia $X =  \{ X_i \}_{i=1}^n$  de vectores
+aleatorias  independientes   parametrizados  por  $\theta$,   $J_\theta(X)  =  n
+J_\theta(X_i)$.
+%,  lo  que  significa  que  estimando  $\theta$  a  partir  de  la
+%secuencia,  baja  de  un  factor  $\frac{1}{n}$ la  cota  de  Cram\'er-Rao.   Se
+%referir\'a  a~\cite{Fis25:07, Sta59,  Kay93, KagSmi99,  Joh04,  CovTho06, Rio07}
+%entre otros para estas propiedades.
+
+Adem\'as,  de la  regla de  cadena, viene  obviamente la  desigualdad siguiente,
+parecida a la propiedad de super-aditividad~\ref{Prop:SZ:superaditividad},
+%
+\[
+J_\theta(X_1,\ldots,X_n) \, \ge \,  J_\theta(X_i) \quad \forall \, 1 \le i \le n,
+\]
+%

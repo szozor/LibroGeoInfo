@@ -1,6 +1,524 @@
 \seccion{Unos ejemplos y aplicaciones}
 \label{Sec:SZ:Ejemplos}
 
+% ================================= MaxEnt
+
+\subseccion{El principio de entrop\'ia m\'axima}
+\label{Ssec:SZ:MaxEnt}
+
+En  la  termodin\'amica, el  estudio  de  las caracter\'isticas  macrosc\'opicas
+(din\'amica de las mol\'eculas) es prohibitivo tan el n\'umero de mol\'eculas es
+importante. Por  ejemplo, un litro del  gas que respiramos  contiene $2.7 \times
+10^{22}$  mol\'eculas.   De  esta  constataci\'on  se  desaroll\'o  la  f\'isica
+estad\'isticas    bajo   el    impulso    de   Boltzmann~\cite{Bol96,    Bol98},
+Maxwell~\cite{Max67},  Gibbs~\cite{Gib02}, Planck~\cite{Pla15} entre  otros (ver
+tambi\'en~\cite[y   ref.]{Jay65,  Mer10,   Mer18}),   considerando  el   sistema
+macrosc\'opico  a  trav\'es de  lo  que  llamaron  ensembles estad\'isticos:  el
+sistema  global  (macrosc\'opico)  es  al equilibrio  pero  las  configuraciones
+(micro-estados)  son  fluctuantes.   De  una  forma,  se  puede  asociar  a  una
+configuraci\'on su  frecuencia de ocurrencia (imaginando tener  une infinidad de
+copias del sistema en el  mismo estado macrosc\'opico), es decir su probabilidad
+de occurencia (ver  secci\'on~\ref{Ssec:MP:FamiliaExponencial}).  En este marco,
+la entrop\'ia, describiendo la falta de informaci\'on, juega un rol fundamental.
+Un sistema  sujeto a v\'inculos, como  por ejemplo teniendo  una energ\'ia dada,
+debe estar  en sus estado  lo m\'as desorganizado  dados los v\'inculos.   En su
+marco, se introdujo la noci\'on  de entrop\'ia termodin\'amica, pero la misma es
+tremendamente vinculada a la  entrop\'ia de Shannon~\footnote{Ver ep\'igrafe del
+  cap\'itulo\ldots} (claramente, identificando  las frecuencias a probabilidades
+de  ocurrencia).    En  otros  terminos,  la   distribuci\'on  describiendo  los
+micro-estados  debe  ser de  entrop\'ia  m\'axima,  dados  los v\'inculos.   Por
+ejemplo,  en un  gas perfecto,  donde  las part\'iculas  no interactuan  (aparte
+chocandose), la  energ\'ia es dada por  las velocidades (suma  de las energ\'ias
+cin\'eticas individuales).   Dada una energ\'ia  fija, la distribuci\'on  de las
+velocidades debe  ser de  entrop\'ia m\'axima sujeto  a la energ\'ia  dada (nada
+m\'as  que  la  energ\'ia  va  a ``organizar''  las  configuraciones  posibles).
+Intuitivamente, en  un sistema aislado de $N$  part\'iculas, las configuraciones
+van  a   ser  equiprobables,  precisamente  la   distribuci\'on  maximizando  la
+entrop\'ia.   \SZ{ En  la  subsecci\'on Sec.~\ref{Ssec:SZ:GasPerfecto}  se va  a
+  desarollar un poco m\'as este ejemplo.}
+
+De manera general, el problema se  formaliza como la b\'usqueda de la entrop\'ia
+m\'axima  sujeto  a  v\'inculos.    Si  este  principio  naci\'o  en  mec\'anica
+estad\'istica  (ver  tambi\'en~\cite{Jay57,   Jay57:2,  Jay65,  Mer10,  Mer18}),
+encontr\'o  un  echo en  varios  campos:  en  inferencia bayesiana  para  elegir
+distribuciones del a  priori~\footnote{Ver notas de pie~\ref{Foot:MP:BayesPrior}
+  y~\ref{Foot:MP:BayesPriorConjugado}.    Recuerdense  que   en   la  inferencia
+  bayesiana de un par\'ametro modelizado como aleatorio $\theta$, para eligir la
+  ley a  priori \ $p_\Theta(\theta)$, si  se conocen momentos por  una raz\'on o
+  una otra,  se puede elegir  esta distribuci\'on como la  ``menos informativa''
+  posible,  \ie de  entrop\'ia m\'axima  dados los  momentos.}   conociendo unos
+momentos  de  la  ley~\cite{Rob07,  Jay68,  Jay82,  Csi91},  hacer  estimaci\'on
+espectral o de procesos estoc\'asticos autoregresivos~\cite{Bur67, Bur75, Jay82}
+o~\cite[cap.~12]{CovTho06}, entre otros~\cite[\& ref.]{Arn01, Kap89, KapKes92}.
+
+Sea \ $X$ \ variable aleatoria viviendo sobre (de distribuci\'on de probabilidad
+de soporte) \ $X(\Omega) = \X \subset \Rset^d$  \ con \ $K \ge 0$ \ momentos \
+$\Esp\left[ M_k(X)  \right] = m_k$ \  fijos, con $M_x: \X  \to \Rset$. Suponemos
+que $X$ tiene una densidad \ $p$ \ con respecto a una medida $\mu$, basicamente \
+$\mu_L$ \ en el contexto continuo y $\mu_\X$ en el caso discreto. El problema de
+entrop\'ia  m\'axima   se  formula  de   la  manera  siguiente:  sean   \  $M(x)
+=  \begin{bmatrix}  M_1(x)  &  \cdots   &  M_K(x)  \end{bmatrix}^t$  \  y  \  $m
+=  \begin{bmatrix} m_1  &  \cdots  & m_K  \end{bmatrix}^t$  (si $K  =  0$ \  $M$
+desaparece)
+%, \:
+% M = m = 1$), \ se busca,
+%
+\[
+p_{\mathrm{em}} = \argmax_p H(p) \qquad \mbox{sujeto a} \qquad p \ge 0, \quad \int_\X p(x) \, d\mu(x) = 1 \quad \mbox{y} 
+\quad \int_\X M(x) \, p(x) \, d\mu(x) = m,
+\]
+%
+donde los dos primeros v\'inculos (positividad, normalizaci\'on) aseguran de que
+$p_{\mathrm{em}}$ sea una distribuci\'on de probabilidad. En el ejemplo del gas perfecto, $K
+= 1, \, M_1(x) = \frac12 m \sum_i x_i^2$ \ (los $x_i$ son las velocidades).  Con
+la t\'ecnica del Lagrangiano para  tomar en cuenta los v\'inculos, introduciendo
+factores de  Lagrange $\eta_0,  \quad \eta =  \begin{bmatrix} \eta_1 &  \cdots &
+  \eta_K \end{bmatrix}^t$  \ para  tener en cuenta  los v\'inculos,  el problema
+variacional   consiste  a   resolver~\cite{GelFom63,  Bru04,   Mil00,  CamMar09,
+  CovTho06}
+%
+\[
+p_{\mathrm{em}} = \argmax_p \int_\X  \left( - p(x) \log p(x) + \eta_0  \, p(x) + \eta^t M(x)
+  \, p(x) \right) d\mu(x),
+\]
+%
+donde $\eta_0, \eta$ ser\'an determinados  para satisfacer a los v\'inculos.  En
+el    caso   continuo    $\mu   =    \mu_L$    se   usa    la   ecuaci\'on    de
+Euler-Lagrange~\cite{GelFom63, Bru04}, esquematicamente anulando la ``derivada''
+del integrande  con respecto a  $p$; en el  caso discreto, se anula  realmente un
+gradiente con respecto a los componentes de $p$. Reparametrizando los factores de
+Lagrange, se obtiene as\'i
+%
+\[
+p_{\mathrm{em}}(x) = \frac{1}{Z(\eta)} e^{\eta^t M(x)} = e^{\eta^t M(x) - \varphi(\eta)},
+\]
+%
+con  $\eta$ tal que  se satisfacen  los v\'inculos  de momentos  y \  $Z(\eta) =
+e^{\varphi(\eta)} =  \displaystyle \int_\X e^{\eta^t  M(x)} d\mu(x)$ coeficiente
+de  normalizaci\'on.   Esta  distribuci\'on   cae  precisamente  en  la  familia
+exponencial  que hemos  visto  secci\'on~\ref{Ssec:MP:FamiliaExponencial}, donde
+$M$ es  la estad\'istica suficiente y  $\eta$ el par\'ametros  naturale (en este
+caso, $h(x) = 1$).
+
+Un problema que puede  aparecer es que no se puede determinar  $\eta$ tal que se
+satisfacen todos los  v\'inculos, en particular se puede que  no se normaliza la
+ley.  Por ejemplo,  si $\X = \Rset$ y  $K = 0$, \ $p$ \  deber\'ia ser constante
+(ley  uniforme) sobre\ldots  $\Rset$, lo  que no  es normalizable.  De  la misma
+manera, si $K  = 3$ \ y \  $M_k(x) = x^k$, tampoco es  normalizable la funci\'on
+obtenida~\footnote{En el  enfoque bayesiano se puede que  no sea problem\'atico,
+  si el  a posteriori es normalizable~\cite{Rob07},  pero va m\'as  all\'a de la
+  meta de  esta secci\'on.}.  En  otros terminos, en  este caso, el  problema no
+tiene soluci\'on~\footnote{M\'as  precisamente, existen  casos en los  cuales se
+  puede acotar la entrop\'ia por arriba  por un $H^{\sup}$, tal que $\sup_p H(p)
+  \le H^{\sup}$ pero no  se puede alcanzar esta cota, \ie es  un supremum, no un
+  m\'aximo~\cite[sec.~12.3]{CovTho06}.}.
+
+Existe   una  prueba   informacional   de  este   resultado,   saliendo  de   la
+soluci\'on.
+%
+\begin{lema}
+\label{Lem:SZ:MaxEntPruebaInfo}
+%
+Sea \  $\displaystyle \P_m = \left\{  p \ge 0 \tq  \int_\X p(x) \,  d\mu(x) = 1,
+  \quad \int_\X M(x)  \, p(x) \, d\mu(x) = m \right\}$  \ conjunto de densidades
+con respecto a $\mu$, con los mismos momentos \ $M$, y sea \ $p_{\mathrm{em}} \in \P_m$ \ que
+sea de la forma \ $p_{\mathrm{em}}(x) = e^{\eta^t M(x) - \varphi(\eta)}$. Entonces
+  %
+  \[
+  \forall \,  p \in \P_m, \quad  H(p) \le H(p_{\mathrm{em}}) \qquad  \mbox{con igualdad ssi}
+  \quad p = p_{\mathrm{em}} \quad \mu\mbox{-(c. s.)},
+  \]
+  %
+  donde   $H$  es   de  la   definici\'on   general  Def.~\ref{Def:SZ:ShanonMu}
+  %pagina~\pageref{Def:SZ:ShanonMu}, 
+  de la entrop\'ia con respecto a $\mu$.
+\end{lema}
+%
+\begin{proof}
+  \begin{eqnarray*}
+  H(p) & = & - \int_\X p(x) \, \log p(x) \, d\mu(x)\\[2.5mm]
+  %
+  & = & - \int_\X p(x) \, \log\left( \frac{p(x)}{p_{\mathrm{em}}(x)} \right) \, d\mu(x) - \int_\X
+  p(x) \, \log p_{\mathrm{em}}(x) \, d\mu(x)
+  \end{eqnarray*}
+  %
+  De $\log p_{\mathrm{em}} = \eta^t M - \varphi(\eta)$ se obtiene
+  %
+  \begin{eqnarray*}
+  H(p) & = & - \Dkl[p]{p_{\mathrm{em}}} - \int_\X \left( \eta^t M(x) - \varphi(\eta) \right) p(x)
+  \, d\mu(x)\\[2.5mm]
+  %
+  & = & - \Dkl[p]{p_{\mathrm{em}}} - \int_\X \left( \eta^t M(x) - \varphi(\eta) \right) p_{\mathrm{em}}(x) \, d\mu(x)\\[2.5mm]
+  %
+  & = & - \Dkl[p]{p_{\mathrm{em}}} - \int_\X p_{\mathrm{em}}(x) \log p_{\mathrm{em}}(x) \, d\mu(x)\\[2.5mm]
+  %
+  & = & - \Dkl[p]{p_{\mathrm{em}}} + H(p_{\mathrm{em}})
+  \end{eqnarray*}
+  %
+  porque $p,  p_{\mathrm{em}} \in \P_m$ \  (segunda linea) y  \ $\eta^t M -  \varphi(\eta) =
+  \log p_{\mathrm{em}}$ (tercera  linea). La prueba se cierra  notando que $\Dkl[p]{p_{\mathrm{em}}} \ge
+  0$ con igualdad si y solamente si $p = p_{\mathrm{em}} \quad (\mu$-c.s.).
+\end{proof}
+%
+Este lema prueba que, dados  v\'inculos ``razonables'', la entrop\'ia es acotada
+por  arriba, y que  se alcanza  la cota  para una  distribuci\'on de  la familia
+exponencial. Por ejemplo,
+%
+\begin{itemize}
+\item Con  $K =  0$ \  y \  $\X$ \ de  volumen finito  \ $|\X|  < +  \infty$, la
+  distribuci\'on  de entrop\'ia  m\'axima es  la distribuci\'on  uniforme  de la
+  propiedad~\ref{Prop:SZ:cotamaximauniforme}      \     de      la     subsecci\'on
+  Sec.~\ref{Ssec:SZ:Diferencial}      en       el      caso      continuo,      o
+  propiedad~\ref{Prop:SZ:cotamaxima}        \       de        la       secci\'on
+  Sec.~\ref{Ssec:SZ:DefinicionShannon} en el caso discreto.
+%
+\item Con $K = 1$,  \ $\X = \Rset^d$ \ y \ $M(x) = x  x^t$ (visto como $K = d^2$
+  momentos),  la  distribuci\'on de  entrop\'ia  m\'axima  es la  distribuci\'on
+  gausiana de  la propiedad~\ref{Prop:SZ:cotamaximagaussiana} \  de la secci\'on
+  Sec.~\ref{Ssec:SZ:Diferencial}.
+\end{itemize}
+%
+Con el enfoque del lema~\ref{Lem:SZ:MaxEntPruebaInfo}, se necesita solamente que
+$p$  sea una  densidad con  respecto  a una  medida $\mu$  fija, cualquiera.   En
+particular, si es una medida de probabilidad (de referencia) $\widetilde{P}$, el
+problema de entrop\'ia m\'axima vuelve a ser un problema de minimizaci\'on de la
+divergencia de Kullback-Leibler entre $P$  y la medida de referencia, siendo $p$
+la    densidad    con    respecto     a    esta    medida    (ver    definici\'on
+Def.~\ref{Def:SZ:entropiarelativa}). Es decir, tomando \ $\mu = \widetilde{P}$ \
+medida de probabilidad aparece inmediatamente
+%
+\[
+P_{\mathrm{em}} = \argmax_P \Dkl[P]{\widetilde{P}}  \quad \mbox{sujeto a}  \int_\X M(x)
+\,  dP(x) =  m  \qquad \Leftrightarrow  \qquad \frac{dP_{\mathrm{em}}}{d\widetilde{P}}(x)  =
+e^{\eta^t x - \varphi(\eta)}.
+\]
+
+\modif{ 
+
+\
+
+
+\index{Estadistica   de    Boltzmann}   \index{Estadistica   de   Bose-Einstein}
+\index{Estadistica de Fermi-Dirac}  Vamos a ilustrar este principio  ahora en el
+tema  f\'isico de  ocupaci\'on de  niveles de  energ\'ia en  un  sistema cerrado~\cite{LanLif80, Mer18}
+%
+\begin{ejemplo}[Estadistica de ocupaci\'on de niveles energeticos]
+  Consideramos un sistema  con niveles de energ\'ia \  $\E_i$ (n\'umero finito o
+  infinito de niveles). Supenomos  que haya $g_i$ estados posibles distinguibles
+  con   el  mismo   nivel   de   energ\'ia  $\E_i$;   $g_i$   es  llamado   {\em
+    degenerenc\'ia}~\ref{toto}.    Supenos   que    el    sistema   tiene    $n$
+  particulas.  Queremos estudiar  la  probabilidad (o  el  n\'umero promedio  de
+  particulas)  de  ocupaci\'on  de  cada  nivel  de  energ\'ia.  Vamos  ahora  a
+  considerar tres situaciones para describir tal distribuci\'on de probabilidad.
+
+  {\bf Enfoque de Boltzmann:} suponemos  que las particulas son distingables. Es
+  decir que,  por ejemplo  tener solamente la  particula $k$  en en nivel  $i$ o
+  solamente la $l\ne  k$ en este nivel son dos  micro-estados distinctos. Eso es
+  ilustrado  figura~\ref{Fig:SZ:BBEFD}-(a),  donde   se  representan  todos  los
+  mocroestados  posibles  para  $n_i =  2,  g_i  =  3$.  Llamamos  $p_{i,j}$  la
+  probabilidad para una particula de estar  en estado $j$ del nivel de energ\'ia
+  $i$.   Seg\'un el  principio  de  entrop\'ia maxima,  sujeto  al v\'inculo  de
+  normalisaci\'on, y  el de energ\'ia total/promedia del  sistema $\Esp[\E(x)] =
+  \sum_{i,j}  p_{i,j}   \E_i$,  con  la  tecnca  del   Lagrangiano  que  v\'imos
+  anteriormente, queremos resolver el problema de maximizaci\'on
+  %
+  \[
+  p_{\mathrm{em},i,j}  = \argmax_{p_{i,j}}  \left( -  \sum_{i,j} p_{i,j}  \log p_{i,j}  - \alpha
+    \sum_{i,j} p_{i,j} - \beta \sum_{i,j} p_{i,j} \E_i \right)
+  \]
+  %
+  Anulando la derivada en cada $p_{i,j}$ conduce a la probabilidad de la familia
+  exponencial, \  $p_{\mathrm{em},i,j} = \frac{1}{Z(\beta)}  e^{-\beta \, \E_i}$ \  con, \
+  $\beta$ \ dado, \ $Z$ \ es la constante de normalizaci\'on y luego \ $\beta$ \
+  es  tal que se  obtiene el  v\'inculo de  energ\'ia, como  lo v\'imos  en esta
+  secci\'on   y  en   la  secci\'on~\ref{Ssec:MP:FamiliaExponencial}.    Si  nos
+  focalizamos  en   la  distribuci\'on  $p_i$  de  los   niveles  de  energ\'ia,
+  escribiendo \ $\mu  = \frac{1}{\beta} \log Z = - F$  (menos la energ\'ia libre
+  de  Helmoltz,  o a  veces  conocido  como potencial  qu\'imico~\cite{LanLif80,
+    Mer18}) \ se obtiene
+  %
+  \[
+  p_{\mathrm{em},i} = \frac{g_i}{Z(\beta)} \, e^{-\beta \, \E_i} = g_i \, e^{-\beta \, (\E_i -
+    \mu)}
+  \]
+  %
+  No  entraremos en  los  detailles,  pero a  partir  de la  primera  ley de  la
+  termodin\'amica,  se v\'incula la  energi\'a, la  entrop\'ia y  la temperatura
+  $T$, dando
+  %
+  \[
+  \beta  =  \frac{1}{k_B  T}, \qquad  k_B  =  \approx  1.38 \times  10^{-23}  \:
+  \mbox{julio por Kelvin, constante de Boltzmann}
+  \]
+  %
+  (ver~\cite{Jay57},~\cite[Cap.~IV]{LanLif80}).
+
+  Se  puedo  obtener esta  distribuci\'on  como  lo hizo  Boltzmann~\cite{Bol96,
+    Bol98}, con un enfoque micro-canonico.  Se puede ver los niveles como cajas,
+  as\'i que buscamos como se puede repartir las particulas en cada caja.  Siendo
+  distinguibles  las particulas,  si tenemos  \ $n_i$  \ particulas  al  nivel \
+  $\E_i$,    existen   \   $g_i^{n_i}$    \   configuraciones    posibles   (ver
+  figura~\ref{Fig:SZ:BBEFD}-(a)).  Luego, con  $n$  particulas en  total, si  la
+  ponemos en una  recta para repartirlas en los niveles,  diciendo que las $n_1$
+  primeras van al nivel $\E_1$, las $n_2$ siguientes al nivel $\E_2$,\ldots, hay
+  que considerar las  $n!$ permutaciones posibles en la recta  y tomar en cuenta
+  que hay  \ $n_i!$ \  de las permutaciones  con las mismas particulas  al nivel
+  $\E_i$. Es decir que el n\'umero de configuraciones total es
+  %
+  \[
+  W = n! \prod_i \frac{g_i^{n_i}}{n_i!}
+  \]
+  %
+  La entrop\'ia de Boltzmann \ $S = k_B  T \log W$ \ debe ser m\'axima subjeto a
+  los v\'inculos del sistema, es decir \  $\sum_i n_i = n, \quad \sum_i n_i \E_i
+  = \E$  \ fijo. Se  puede ver en  este problema los  micro-configuraciones como
+  uniformamente  distribuidas,  as\'i  que  $1/W$  es la  probabilidad  de  cada
+  configuraci\'on  y \  $\log W$  \ representa  la entrop\'ia  a la  Shannon. El
+  problema consiste ahora a resolver el problema de maximizaci\'on
+  %
+  \[
+  n_{\mathrm{em},i} = \argmax_{n_i} \sum_i \left( n_i \log g_i - \log \Gamma(n_i+1) - \alpha
+    n_i - \beta n_i \E_i \right)
+  \]
+  %
+  donde  \ $p_{\mathrm{em},i}  =  \frac{n_{\mathrm{em},i}}{n}$ \  va  a representar  la probabilidad  de
+  ocupaci\'on  del   nivel  $\E_i$.    $n_{\mathrm{em},i}$  no  es   necesariamente  entero,
+  representando el n\'umero de ocupaci\'on promedio. Ahora, anulando la derivada
+  en cada \ $n_i$ \ conduce a resolver
+  %
+  \[
+  \psi(n_i+1) = \log g_i - \alpha - \beta \, \E_i
+  \]
+  %
+  con      $\psi$      derivada       de      $\log      \Gamma$,      funci\'on
+  digamma~\cite[\S~8.36]{GraRyz15},~\cite[\S~6.3]{AbrSte70}.    Se   supono  que
+  $n_i$ es muy grande y se usa el desarollo asimtotico $\psi(n_i+1) = \log n_i +
+  o(1)$~\cite[6.3.18]{AbrSte70} para obtener $n_{\mathrm{em},i}  = g_i e^{-\alpha - \beta \,
+    \E_i}$, que podemos reescribir bajo la forma
+  %
+  \[
+  n_{\mathrm{em},i} = \frac{n \, g_i}{Z(\beta)} \, e^{- \beta \, \E_i}
+  \]
+  %
+  \SZ{Ver aproximaci\'on continua de  Thomas-Fermi, con la degenerancia continua
+    \   $g$   \  proportional   a   la  raiz   cuadrada   de   la  energ\'ia   \
+    $\sqrt{\varepsilon}$~\cite{Fer28,  Tho27,   LieSim77}  \  conduciendo   a  \
+    $p_\E(\varepsilon) \propto \sqrt{\varepsilon} \, e^{- \beta \varepsilon}$ \,
+    ley     de     Maxwell-Boltzmann    (ver     secci\'on~\ref{Sssec:MP:Gamma},
+    ejemplo~\ref{Ej:MP:MaxwellBoltzmann}).}
+
+
+  {\bf Enfoque de  Bose-Einstein:} este modelo fue propuesto  por Satyendra Nath
+  Bose  en 1924  para explicar~\footnote{En  realidad, la  meta de  Bose  fue de
+    probar a sus estudiantes la  inadecuaci\'on del modelo de Boltzmann, pero se
+    equivoco en la  aplicaci\'on de esta teoria. Su  ``error'' fue de considerar
+    las   particulas   como  indistingables,   contrariamente   al  enfoque   de
+    Boltzmann. Pero condujo a una adecuaci\'on entre esta ``falsa teoria'' y las
+    observaciones. Para  la historia, en su  articulo ``Croix ou  Pile'' (Cruz o
+    Cara), d'Alembert quizo calcular la  probabilidad de ganar tirando dos veces
+    una  moneda,  sabiendo  que  se  ganaba  cuando  apareci\'o  una  cruz.   Su
+    razonamiento, falso, fue  de decir que si se tir\'o primero  una crux, no se
+    necesitaba   tirar  nuevamente  la   moneda,  así   que  haya   solamente  3
+    posibilidades (Crux,  Cara-Cruz, Cara-Cara), conduciendo  a una probabilidad
+    de   ganar    de   2/3   en   lugar   de    3/4~\cite[``Croix   ou   Pile'',
+    p.~478-479]{AleBos1784}.     Implicitamente,    consider\'o    monedas    no
+    distinguibles (la fasla  es que sus 3 posibilidades  no son equiprobables).}
+  la  inadecuaci\'on entre  la  teoria  de Boltzmann  con  las observaci\'on  de
+  ocupaci\'on de niveles  para fotones. Bose mando su trabajo  a A.  Einstein lo
+  cual generalis\'o  este a  bosones (en colaboraci\'on  con Bose)~\cite{Bos24}.
+  Para  dar   una  ilustraci\'on,  si  tomamos  dos   monedas  independientes  y
+  equilibriadas,  siendo  distinguibles,  hay  cuatro  configuraciones  posibles
+  ``cara-cara'',    ``cara-ceca'',   ``ceca-cara'',   ``ceca-ceca''    con   una
+  probabilidad de aparici\'on  de $\frac14$ cada una.  Si  ahora las monedas son
+  indistingables,  las  configuraciones  ``cara-ceca''  y ``ceca-cara''  es  una
+  configuraci\'on \'unica  y si se  supone la equiprobabilidad, en  este enfoque
+  hay tres  configuraciones posibles ``cara-cara'',  ``cara-ceca'' ``ceca-ceca''
+  con una  probabilidad de  aparici\'on de $\frac13$  cada una. Aparece  que los
+  fotones, o bosones entre otros no  son distingables y as\'i no satisfacen a la
+  teoria de Boltzmann.
+
+  Volmemos al  problema de ocupaci\'on de  niveles de energ\'ia,  pero ahora con
+  particulas no  distingables y volmemos  al enfoque micro-canonico.   Se supone
+  tamb\'ien que en el caso de  fotones por ejemplo, no se satisface el principio
+  de exclusi\'on de Pauli que dice que una degenerancia no puede tener m\'as que
+  una particula,  es decir que  en el  enfoque de Bose,  un estado del  nivel de
+  nerg\'ia $\E_i$ puede tener  m\'as de una particula~\cite[Cap.~4]{Mer18}. Como
+  antes, se  puede ver el  problema como  el de repartici\'on  de las \  $n_i$ \
+  particulas en las \ $g_i$ \ cajas, o  separar las \ $n_i$ \ particulas \ con \
+  $g_i-1$ \ separadores (ver  figura~\ref{Fig:SZ:BBEFD}).  Como lo ilustramos en
+  el ejemplo de las monedas, siendo indistinguibles las particulas, permutar dos
+  particulas en una configuraci\'on no  va a dar dos configuraciones diferentes,
+  sino que la misma, como ilustrado en la figura~\ref{Fig:SZ:BBEFD}-(b).  As\'i,
+  en esta situaci\'on, se puede ver el n\'umero de configuraciones posibles como
+  las combinaciones posibles de  alternancias particulas/separador, es decir que
+  existen \ $\bino{n_i  + g_i - 1}{n_i} =  \frac{(n_i+g_i-1)!}{n_i! (g_i-1)!}$ \
+  configuraciones  posibles (ver  figura~\ref{Fig:SZ:BBEFD}-(b)). Contrariamente
+  al  enfoque de  Boltzmann,  no entra  en  juega ninguna  permutaci\'on, de  al
+  indistingabilidad. En  otros t\'erminos, el n\'umero  de configuraciones total
+  es ahora
+  %
+  \[
+  W = \prod_i \frac{(n_i + g_i - 1)!}{n_i! (g_i-1)!}
+  \]
+  %
+  De nuevo, la entrop\'ia de Boltzmann \ $S  = k_B T \log W$ \ debe ser m\'axima
+  subjeto a los v\'inculos del sistema, es decir \ $\sum_i n_i = n, \quad \sum_i
+  n_i \E_i =  \E$ \ fijo; El  problema consiste ahora a resolver  el problema de
+  maximizaci\'on
+  %
+  \[
+  n_{\mathrm{em},i} = \argmax_{n_i} \sum_i \left( \log \Gamma(n_i + g_i) - \log \Gamma(n_i +
+    1) - \log \Gamma(g_i) - \alpha n_i - \beta n_i \E_i \right)
+  \]
+  %
+  donde  \ $p_{\mathrm{em},i}  =  \frac{n_{\mathrm{em},i}}{n}$ \  va  a representar  la probabilidad  de
+  ocupaci\'on  del nivel  $\E_i$.  Nuevamente, $n_{\mathrm{em},i}$  \  no es  necesariamente
+  entero, representando el n\'umero  de ocupaci\'on promedio. Ahora, anulando la
+  derivada en cada \ $n_i$ \ conduce a resolver
+  %
+  \[
+  \psi(n_i+g_i) - \psi(n_i+1) = \alpha + \beta \, \E_i
+  \]
+  %
+  con $\psi$ funci\'on digamma.   Se supono que ambos \ $n_i$ \  y \ $g_i$ \ son
+  muy grandes, comensurables $\frac{n_i}{g_i}$ tiene un l\'imite finita no nula,
+  y  se  usa el  desarollo  asimtotico  de $\psi(n_i+1)  =  \log  n_i  + o(1)  =
+  \log(n_i+1)    +    o(1)$~\cite[6.3.18]{AbrSte70}    para   obtener    $n_{\mathrm{em},i}$
+  aproximadamente soluci\'on de
+  %
+  \[
+  \log\left( 1 + \frac{g_i}{n_i} \right) = \alpha + \beta \, \E_i
+  \]
+  %
+  es decir  $n_{\mathrm{em},i} = \frac{g_i}{e^{\alpha  + \beta \,  \E_i} - 1}$,  que podemos
+  reescribir bajo la forma
+  %
+  \[
+  n_{\mathrm{em},i} = \frac{g_i}{e^{\frac{\E_i - \mu}{k_B T}} - 1}
+  \]
+  %
+  (el coeficiente \ $\beta$ \ viene de nuevo de consideraciones termodinamicas y
+  para cada nivel, $\mu < \E_i$). \SZ{Aparece que en alta temperatura, tambi\'en
+    los niveles de energ\'ia son altos  y tales que \ $\frac{\E_i-\mu}{k_B T}$ \
+    es  muy  grande:  la  estad\'istica  de  Bose-Einstein se  reduce  a  la  de
+    Boltzmann. Similarmente, cuando la densidad de particulas es baja, \ $n_{\mathrm{em},i}$
+    \ debe ser peque\~no, es decir que de nuevo \ $e^{\frac{\E_i-\mu}{k_B T}}$ \
+    es  muy  grande y  la  estad\'istica  de Bose-Einstein  se  reduce  a la  de
+    Boltzmann. Finalmente, en alta temperatura  y bajos niveles de energ\'ia, la
+    estad\'istica   vale   aproximadamente    $n_{\mathrm{em},i}   \approx   \frac{g_i   k_B
+      T}{\E_u-\mu}$ conocida como ley de Rayleigh-Jeans~\cite{toto}.}
+
+  {\bf  Enfoque   de  Fermi-Dirac:}  este   modelo  fue  propuesto   por  Enrico
+  Fermi~\cite{Fer26, Fer26:2}  e independientemente por  Paul Dirac~\cite{Dir26}
+  para  explicar el comportamiento  de los  fermiones, y  lo us\'o  luego Arnold
+  Sommerfeld  para  modelizar/explicar  la  capacidad  calorifica  debido  a  la
+  conducci\'on  de  los  electrones  en  un metal~\cite{Som27}.   En  este  caso
+  tambi\'en, en enfoque  de Boltzmann dio resultados en  contradicci\'on con las
+  medidas experimentales.  Estas particulas  son indistigables, como los fotonos
+  y bosones, pero no satisfacen  a la estad\'istica de Bose-Einstein.  De hecho,
+  la particularidad de estas particulas es que satisfacen al principio de Pauli,
+  es decir que  dos particulas no pueden tener  simulteantemente el mismo estado
+  cu\'antico~\cite[Cap.~3]{Mer18}. Dicho  de otra manera, en  enfoque es similar
+  al de  Bose, pero al maximo  una particula puede ``estar''  a una degenerencia
+  dada,   como   ilustrado   figura~\ref{Fig:SZ:BBEFD}-(c).   As\'i,   en   esta
+  situaci\'on, $g_i  \ge n_i$ \  y se puede  ver el n\'umero  de configuraciones
+  posibles como las elecciones posibles de los estados que tendran una particula
+  en  este estado  es decir  que existen  \ $\bino{g_i}{n_i}  = \frac{g_i!}{n_i!
+    (n_i-g_i)!}$ \ configuraciones posibles (ver figura~\ref{Fig:SZ:BBEFD}-(b)).
+  De nuevo, no entra en  juega ninguna adicional permutaci\'on de particulas, de
+  la  indistingabilidad. En  otros  t\'erminos, el  n\'umero de  configuraciones
+  total es ahora
+  %
+  \[
+  W = \prod_i \frac{g_i!}{n_i! (n_i - g_i)!}
+  \]
+  %
+  Nuevamente,  la entrop\'ia  de Boltzmann  \ $S  =  k_B T  \log W$  \ debe  ser
+  m\'axima subjeto  a los v\'inculos  del sistema, es  decir \ $\sum_i n_i  = n,
+  \quad \sum_i n_i \E_i  = \E$ \ fijo; El conduciendo a  resolver el problema de
+  maximizaci\'on
+  %
+  \[
+  n_{\mathrm{em},i} = \argmax_{n_i}  \sum_i \left( \log \Gamma(g_i + 1)  - \log \Gamma(n_i +
+    1) - \log \Gamma(g_i - n_i + 1) - \alpha n_i - \beta n_i \E_i \right)
+  \]
+  %
+  Anulando la derivada en cada \ $n_i$ \ conduce a resolver
+  %
+  \[
+  \psi(g_i - n_i) - \psi(n_i+1) = \alpha + \beta \, \E_i
+  \]
+  %
+  con $\psi$ funci\'on digamma.   Se supono que ambos \ $n_i$ \  y \ $g_i$ \ son
+  muy  grandes y  comensurables con  $g_i/n_i >  1$ (es  decir que  $g_i-n_i$ es
+  tambi\'en   muy    grande)   y   se    usa   el   desarollo    asimtotico   de
+  $\psi$~\cite[6.3.18]{AbrSte70} para obtener $n_{\mathrm{em},i}$ aproximadamente soluci\'on
+  de
+  %
+  \[
+  \log\left( \frac{g_i}{n_i} - 1 \right) = \alpha + \beta \, \E_i
+  \]
+  %
+  es decir  $n_{\mathrm{em},i} = \frac{g_i}{e^{\alpha  + \beta \,  \E_i} + 1}$,  que podemos
+  reescribir bajo la forma
+  %
+  \[
+  n_{\mathrm{em},i} = \frac{g_i}{e^{\frac{\E_i - \mu}{k_B T}} + 1}
+  \]
+  %
+  (el coeficiente \ $\beta$ \ viene de nuevo de consideraciones termodinamicas y
+  para cada nivel, $\mu < \E_i$).  \SZ{Se recuperan los mismos l\'imites en alta
+    temperatura y/o  baja densidad  de particulas que  para la  estad\'istica de
+    Bose-Einstein.}
+
+  %%%
+
+  \begin{figure}[h!]
+  %
+  \begin{center} \input{TIKZ_SZ/BoltzmannBoseEinsteinFermiDirac} \end{center}
+  %
+  \leyenda{\modif{Configuraciones  de  ocupaci\'on de  un  nivel  de eneg\'ia  \
+      $\E_i$ \ de degenerencia \ $g_i =  3$, por \ $n_i = 2$ \ particulas. (Bol)
+      Enfoque  de  Boltzmann  con  particulas  \  $\pi_1,  \pi_2$  distingables,
+      conduciendo  a   $g_i^{n_i}  =   9$  configuraciones.   (BE)   Enfoque  de
+      Bose-Einstein con particulas \  $\pi, \pi$ \ indistingables, conduciendo a
+      \ $\bino{4}{2}  = 6$ \  configuraciones.  (FD) Enfoque de  Fermi-Dirac con
+      particulas \  $\pi, \pi$ \ indistingables  y excmusi\'on de  Pauli (no hay
+      m\'as de  una particula por estado),  conduciendo a \ $\bino{3}{2}  = 3$ \
+      configuraciones}.}
+%
+\label{Fig:SZ:BBEFD}
+\end{figure}
+
+\end{ejemplo}
+%
+}
+
+
+
+% ================================= MaxEnt
+
+\subseccion{El principio de informaci\'on de Fisher m\'inima}
+\label{Ssec:SZ:MinFisher}
+
+
+\SZ{  (2) ver MinFisher Frieden p. 235, Berchet Vignat 2009, Ernst 2017; cf. travaux
+  rederivant MQ de Frieden-Plastino-Soffer  (1999, 2002), Reginato 98, Bickel 81
+"On the theory of Fisher's amount of information" Kagan 63, Chimento et al 2000
+}
+
+
+Se notar\'a que, al imagen de las leyes de entrop\'ia m\'axima, la informaci\'on
+de  Fisher  juega tambi\'en  un  rol particular  en  la  inferencia bayesiana  a
+trav\'es del prior de Jeffrey~\cite{Jef46, Jef48, LehCas98, Rob07}~\footnote{Ver
+  nota de  pie~\ref{Foot:SZ:Prior}.
+  %pagina~\pageref{Foot:SZ:Prior}. 
+  A  veces, se  toma como  distribuci\'on a  priori \  $p_\Theta(\theta) \propto
+  |J_\theta(X)|^\frac12$ \  por su invarianza por reparametrizaci\'on  \ $\eta =
+  \eta(\theta)$,  \ie  el prior  de  Jeffrey en  \  $\eta$  \ es  un\'ivocamente
+  obtenido con la Fisher  en \ $\eta$ \ o por cambio  de variables saliendo de \
+  $p_\Theta$.}.
+
 
 % ================================= canal
 
@@ -1320,6 +1838,17 @@ para tener m\'as detalles sobre varios esquemas de codificaci\'on/compresi\'on.
 En el marco del gas perfecto
 
 \SZ{Va donner un lien avec Boltzmann}
+
+
+% ================================= Principop de incerteza
+
+\subseccion{\SZ{Principio de incerteza entr\'opico}}
+\label{Ssec:SZ:EUR}
+
+\SZ{Bourret 58, Leipnik 59, Stam59, entre otros que ya citamos un par de veces
+
+Poner solo a la Shannon aca, caso discreto continuo con Fourier, mixto; generalizaciones van a ser mas adelante
+}
 
 
 \

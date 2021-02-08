@@ -1,0 +1,96 @@
+\documentclass{LibroIG}
+
+\input Macro.tex
+\newcommand{\ii}{\'{\i}}
+\newcommand{\nh}{\~n}
+\newcommand{\sen}{\,\mathrm{sen}\,}
+\newcommand{\senh}{\,\mathrm{senh}\,}
+\newcommand{\vi}{\breve{\imath}}
+\newcommand{\vj}{\breve{\jmath}}
+\newcommand{\vk}{\breve{k}}
+
+\hyphenation{desi-gual-dad pro-ble-mas lo-ga-rit-mo si-guien-tes per-pen-di-cu-la-ri-dad}
+
+
+\begin{document}
+
+% Titulos y subtitulos llevan mayuscula solo en la inicial de la primera palabra
+% Titulo: m·ximo 4 palabras; Subt√≠tulo (optativo): m√°ximo 80 caracteres con espacios
+
+\begin{portada}
+\titulo{Geometr\'ia e informaci\'on}
+\subtitulo{\color{red} Optativo}
+\autores{Mariela Adelina Portesi}{Pedro Walter Lamberti}{Steeve Zozor}
+\facultad{Facultad de Ciencias Exactas}
+\centerline{\includegraphics[height=2cm]{logoUNLP}}
+\centerline{\includegraphics[height=2cm]{logo_large}}
+\end{portada}
+
+% Dedicatoria
+\begin{dedicatoria}
+{\color{red} Esto es una  dedicatoria\\ del libro.}
+\end{dedicatoria}
+
+% Agradecimientos
+\begin{agradecimientos}
+  \textcolor{red}{ Este es el texto  de agradecimiento, max una carilla. Este es
+    el  texto  de  agradecimiento,  max  una  carilla.   Este  es  el  texto  de
+    agradecimiento, max  una carilla.  Este  es el texto de  agradecimiento, max
+    una carilla.  Este es el texto  de agradecimiento, max una carilla.  Este es
+    el texto de agradecimiento, max una carilla.}
+\end{agradecimientos}
+
+% Ep√≠grafe
+\begin{epigrafe}
+  \textcolor{red}{Esto es  un ep\'igrafe con  texto simulado.\\ Esto es  un ep\'grafe
+    con  texto simulado.
+\autortituloepigrafe{Autor del ep\'igrafe, T\'itulo de la obra}
+}
+\end{epigrafe}
+
+% Introduccion general
+\begin{preliminar}{Pr\'ologo}
+\input{IntroduccionGeneral}
+\firma{Los autores}
+\end{preliminar}
+ 
+% Preliminar, tipo prologo
+\begin{preliminar}{Advertencia}
+\input{IntroduccionGeneral}
+\firma{Mariela A. Portesi}
+\fecha{Grenoble, Junio de 2016}
+\end{preliminar}
+
+
+% Indice de los capitulos
+\indice
+
+\sloppy % para facilitar las cortas de palabras
+
+% el corazon del libro
+\input{ElementosTeoriaProbabilidades} % Mariela
+\input{NocionesTeoriaInformacion} % Steeve
+\input{IntroduccionGeometriaDiferencial} % Walter
+\input{GeometriaInformacion} % ?
+\input{Aplicaciones} % ?
+
+
+% ConclusiÛn general
+\begin{preliminar}{Ep\'ilologo}
+\input{IntroduccionGeneral}
+\firma{Los autores}
+\end{preliminar}
+
+% Bibliografia - aÒadir en nocite los que queremos poner y que no son citados
+%\nocite{Fel71,JohKot97,JohKot95:v2,JohKot92,KotBal00}
+\bibliografia{LibroIG}
+
+
+% Los autores
+\begin{losautores}
+\elautor{Lamberti, Pedro Walter}{\input{Lamberti}}
+\elautor{Portesi, Mariela Adelina}{\input{Portesi}}
+\elautor{Zozor, Steeve}{\input{Zozor}}
+\end{losautores}
+
+\end{document}
