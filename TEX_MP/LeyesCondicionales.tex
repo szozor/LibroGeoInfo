@@ -48,11 +48,9 @@ funci\'on  de  repartici\'on tomando  $\displaystyle  \modif{B} =  \prod_{i=1}^d
 
 Ahora, cuando  \ $Y$ \ tambi\'en es  discreta, se puede definir  la funci\'on de
 masa discreta de probabilidad condicional, y si \ $Y$ \ es continua y admite una
-densidad  de  probabilidad,  se  puede  definir  una  densidad  de  probabilidad
-condicional:
+densidad  de  probabilidad,  se  puede  definir  una  densidad  de  probabilidad condicional:
 %
-\begin{definicion}[Funci\'on de masa o densidad de probabilidad condicional ($X$
-  discreta)]
+\begin{definicion}[Funci\'on de masa o densidad de probabilidad condicional ($X$ discreta)]
 \label{Def:MP:ReparticionCondicionalDiscreta}
 %
   Por  definici\'on,  cuando  $\Y$  es   discreta,  la  funci\'on  de  masa  de
@@ -85,6 +83,67 @@ condicional:
   \]
 \end{definicion}
 
+
+\modif{Considerando los eventos $(X = x)$, de  f\'ormula  que  define la  medida  de
+probabilidad condicional se recupera el  equivalente de la f\'ormula de
+probabilidad total~\ref{Teo:MP:ProbaTotalDiscreto} bajo la forma:
+%
+\begin{teorema}[F\'ormula de probabilidad total ($X$ discreta)]
+\label{Teo:MP:ProbaTotalGeneral}
+%
+  %
+  \[
+  \forall \  y \in  \Y, \qquad F_Y(y)  = \sum_{x \in \X}
+  F_{Y|X=x}(y) \, p_X(x)
+  \]
+  %
+  lo que da en  termino de densidad de probabilidad si $Y$  est continua, o en
+  termino de funcion de masa si $Y$ es discreta
+  %
+  \[
+  p_Y(y) = \sum_{x \in \X} p_{Y|X=x}(y) \, p_X(x)
+  \]
+  %
+  Al final, cuando ambas \ $X$ \ e  \ $Y$ \ son discretas, resuelte muy comodo
+  usar la notaci\'on  vectorial $p_X, p_Y$, para las masas  de probabilidad y la
+  matriz de probabilidades condicionales $\Pi_{Y|X}$
+  %
+  \[
+  p_X = \begin{bmatrix} & \cdots & p_X(x_i) & \cdots \end{bmatrix}^t, \qquad p_Y
+  = \begin{bmatrix} & \cdots & p_Y(y_i)
+  & \cdots \end{bmatrix}^t, \qquad \Pi_{X|Y} = \begin{bmatrix} & \vdots & \\ \cdots & \Pr\left[ Y = y_i | X =
+  x_j \right] & \cdots\\ & \vdots & \end{bmatrix} 
+  \]
+  %
+  as\'i que la f\'ormula de probabilidades total se escribe matricialmente
+  %
+  \[
+  p_Y = \Pi_{Y|X} p_X
+  \]
+\end{teorema}
+
+Siendo $P_{Y|X=x}$  una medida de probabilidad,  las compopentes de cada  du sus
+columnas suma a uno, \ie la matriz $\Pi_{Y|Z}$ es estoc\'astica:
+%
+\begin{definicion}[Matriz estoc\'astica]
+Una matriz $\Pi$ (posiblemente de dimensiones infinita) es dicha estochastica si
+%
+\begin{itemize}
+\item Sus componentes son positivos
+\item $\un^t \Pi = \un^t$ ($\un$ es un autovector a su izquierda)
+\end{itemize}
+%
+En  otros  terminos,   tal  matriz  se  escribe  $\displaystyle   \Pi  =  \sum_j
+p_j \un_j^t$ con $p_j$ vectores de probabilidad.
+\end{definicion}
+%se notar\'a que
+%
+%\begin{itemize}
+%\item Cuando $Y$ es continua, $\displaystyle \forall \, x \in \X, \quad \int_{\Y} p_{Y|X=x}(y) \, dy = 1$
+%%
+%\item Cuando $Y$ es discreta
+%\end{itemize}
+}
 
 % ---------- Caso continuo
 

@@ -3,70 +3,76 @@
 
 % Photophone - Bell, ver Bru90 sec. 26 
 
-La  noci\'on  de informaci\'on  encuentra  su origen  con  el  desarrollo de  la
- comunicaci\'on  moderna, por ejemplo  a trav\'es  del tel\'egrafo  siguiendo la
- patente de Morse en 1840. La idea  de asignar un c\'odigo (punto o barra, m\'as
- espacio entre letras y entre palabras)  a las letras del alfabeto es la semilla
- de  la  codificaci\'on  entr\'opica,  la  que se  basa  precisamente  sobre  la
- asignaci\'on  de un  c\'odigo a  s\'imbolos  de una  fuente (codificaci\'on  de
- fuente)  seg\'un  las  frecuencias  (o  probabilidad de  aparici\'on)  de  cada
- s\'imbolo en  una cadena.   De hecho,  el principio de  codificar un  mensaje y
- mandar la  versi\'on codificada  por un canal  de transmisi\'on es  mucho m\'as
- antiguo,  a pesar  de que  no hab\'ia  ninguna formalizaci\'on  matem\'atica ni
- siquiera expl\'icitamente una noci\'on de informaci\'on.  Entre otros, se puede
- mencionar el fotofone de A.  G.  Bell en 1880~\cite{Bel1880, Bru90} (sistema de
- comunicaci\'on  con luz),  el  tel\'egrafo \'optico  de  Claude Chappe  (1794),
- experimentos con luces por Guillaume Amontons  (en los a\~nos 1690 en Paris), o
- a\'un m\'as antiguamente la transmisi\'on de mensaje con antorchas en la Grecia
- antigua, con  humo por  los indios o  chiflando en  la prehistoria~\cite{Mon08}
- o~\cite[Cap.~3]{Arn01}.  Cada forma es  una instancia pr\'actica del esquema de
- comunicaci\'on de Shannon~\cite{Sha48, ShaWea64}, es decir la codificaci\'on de
- la informaci\'on, potencialmente  de la manera m\'as econ\'omica  que se puede,
- su   transmisi\'on  a   un  ``receptor''   (por  un   canal  ruidoso)   que  la
- interpreta/lee/decodifica.  Impl\'icitamente,  la noci\'on de  informaci\'on es
- al menos tan antigua como la humanidad.
+El  concepto noci\'on  de  informaci\'on pla,teado  en t\'erminos  cuantitativos
+ encuentra su origen en el desarrollo  de la comunicaci\'on moderna, por ejemplo
+ a trav\'es del tel\'egrafo con la patente  de Morse en 1840. La idea de asignar
+ un  c\'odigo (usando  puntos  y barras,  m\'as espacios  entre  letras y  entre
+ palabras)  a  las letras  del  alfabeto  es  la  semilla de  la  codificaci\'on
+ entr\'opica, la  que se basa precisamente  en la asignaci\'on de  un c\'odigo a
+ s\'imbolos de una fuente (codificaci\'on  de fuente) seg\'un las frecuencias (o
+ probabilidad de aparici\'on)  de cada s\'imbolo en una cadena.  El principio de
+ codificar  un  mensaje  y  enviar  la versi\'on  codificada  por  un  canal  de
+ transmisi\'on  es mucho  m\'as antiguo  de  hecho, a  pesar de  que no  hubiera
+ ninguna formalizaci\'on matem\'atica ni  siquiera expl\'icitamente una noci\'on
+ de informaci\'on.  Entre otros, se puede  mencionar el fotofone de A.  G.  Bell
+ en  1880~\cite{Bel1880,   Bru90}  (sistema  de  comunicaci\'on   con  luz),  el
+ tel\'egrafo  \'optico  de Claude  Chappe  (1794),  experimentos con  luces  por
+ Guillaume Amontons (alrededor de 1690 en  Paris), o a\'un m\'as antiguamente la
+ transmisi\'on  de   mensajes  con  antorchas   en  la  antigua  Grecia,   o  la
+ transmisi\'on de mensajes con humo por los indios o la comunicacci\'on silbando
+ en  la  prehistoria~\cite{Mon08}  o~\cite[Cap.~3]{Arn01}.  Cada  forma  es  una
+ instancia    pr\'actica   del    esquema    de    comunicaci\'on   de    Claude
+ Shannon~\cite{Sha48, ShaWea64}, es decir la codificaci\'on de la informaci\'on,
+ potencialmente de la manera m\'as econ\'omica  que se puede, y su transmisi\'on
+ a un receptor  (por un canal en general  ruidoso) que interpreta/lee/decodifica
+ el mensaje.   Impl\'icitamente, la  noci\'on de informaci\'on  es al  menos tan
+ antigua como la humanidad.
 
-A  pesar  de  que  la  idea  de codificar  y  transmitir  ``informaci\'on''  sea
+A  pesar  de  que  la  idea de  codificar  y  transmitir  ``informaci\'on''  sea
 tremendamente  antigua,  la  formalizaci\'on  matem\'atica  de  la  noci\'on  de
-incerteza o  falta de  informaci\'on, \'intimamente vinculada  a la  noci\'on de
-informaci\'on, naci\'o bajo  el impulso de Claude Shannon  y la publicaci\'on de
-su   papel   seminal,   ``A    mathematical   theory   of   communication''   en
-1948~\cite{Sha48},  o   un  a\~no  despu\'es  en  su   libro  re-titulado  ``The
-mathematical  theory  of communication''  reemplazando  el  ``A''  (Una) por  un
-``The''  (La). Desde  estos a\~nos,  las herramientas  de dicha  teor\'ia  de la
-informaci\'on   dieron   lugar    a   muchas   aplicaciones   especialmente   en
-comunicaci\'on~\cite[y  ref.]{CovTho06, Ver98, Gal01},  pero tambi\'en  en otros
-campos  muy diversos  tal  como la  estimaci\'on  o la  discriminaci\'on~\cite[y
-ref.]{CovTho06,      Kay93,       Bos07,      LehCas98},      la      inferencia
-estad\'istica~\cite{Rob07,   Par06},   el   procesamiento   de  se\~nal   o   de
-datos~\cite[y   Ref.]{PhiRou92,   EbeMol00,    Bas13},   en   ciencias   de   la
-ingener\'ia~\cite{Arn01,    Kap89,    KapKes92,   PhiRou92},    f\'isica~\cite[y
-Ref.]{Arn01, OhyPet93,  Mer18} entre  muchas otras (ver  por ejemplo  el esquema
-pagina~2 de~\cite{CovTho06}).
+ignorancia  o falta  de informaci\'on,  \'intimamente vinculada  al concepto  de
+informaci\'on, naci\'o bajo  el impulso de Claude Shannon y  la publicaci\'on de
+su   trabajo   seminal,   ``A   mathematical  theory   of   communication''   en
+1948~\cite{Sha48},  y   un  a\~no  despu\'es   de  su  libro   retitulado  ``The
+mathematical  theory of  communication''  reemplazando ``A''  (Una) por  ``The''
+(La).  A  partir de  ese  momento,  las herramientas  de  dicha  teor\'ia de  la
+informaci\'on   dieron   lugar   a    muchas   aplicaciones   especialmente   en
+comunicaci\'on~\cite{CovTho06, Ver98, Gal01},
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%~\cite[y  ref.]{CovTho06, Ver98, Gal01},
+pero tambi\'en  en otros  campos muy  diversos tales como  la estimaci\'on  o la
+discriminaci\'on~\cite{CovTho06, Kay93, Bos07, LehCas98},
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%~\cite[y ref.]{CovTho06, Kay93,  Bos07, LehCas98},
+la inferencia  estad\'istica~\cite{Rob07, Par06}, el procesamiento  de se\~nal o
+de datos\cite{PhiRou92, EbeMol00, Bas13},
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%~\cite[y   Ref.]{PhiRou92,   EbeMol00,   Bas13},
+en  ciencias  de la  ingenier\'ia~\cite{Arn01,  Kap89,  KapKes92, PhiRou92},  en
+f\'isica~\cite{Arn01, OhyPet93, Mer18}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%~\cite[y Ref.]{Arn01, OhyPet93,  Mer18}
+entre muchas otras (ver por ejemplo  el esquema de comunicaci\'on del art\'iculo
+de Shannon reproducido en la p\'agina~2 de~\cite{CovTho06}).
 
-La meta de este  cap\'itulo es describir las ideas y los  pasos dando lugar a la
-definici\'on  de  la   entrop\'ia,  como  medida  de  incerteza   o  (falta  de)
-informaci\'on.  En  este cap\'itulo, se  empieza con la  descripci\'on intuitiva
-que  subyace  a  la  noci\'on  de  informaci\'on  contenida  en  una  cadena  de
-s\'imbolos,  lo  que   condujo  a  la  definici\'on  de   la  entrop\'ia.   Esta
-definici\'on  puede  ser  deducida  tambi\'en  de  un  conjunto  de  propiedades
-``razonables''  que   deber\'ia  cumplir   una  medida  de   incerteza  (enfoque
-axiom\'atico).   Se  continuar\'a  con  la  descripci\'on  de  tal  noci\'on  de
-entrop\'ia, pasando del mundo discreto (s\'imbolos, alfabeto) al mundo continuo,
-lo  que no es  trivial ni  siquiera intuitivo.   Se adelantar\'a  presentando el
-concepto  de entrop\'ia condicional,  lo que  va a  dar lugar  a la  noci\'on de
+La meta de este cap\'itulo es describir las ideas y los pasos que dan lugar a la
+definici\'on  de  la  entrop\'ia,  como   medida  de  ignorencia  o  (falta  de)
+informaci\'on.   Comenzamos con  la  descripci\'on intuitiva  que  subyace a  la
+noci\'on de informaci\'on contenida en una  cadena de s\'imbolos, lo que conduce
+a la definici\'on de entrop\'ia.  Esta definici\'on puede ser deducida tambi\'en
+de un conjunto de propiedades ``razonables'' que deber\'ia cumplir una medida de
+incerteza  (enfoque  axiom\'atico).  Continuamos  con  la  descripci\'on de  tal
+noci\'on de  entrop\'ia, pasando  del mundo  discreto (s\'imbolos,  alfabeto) al
+mundo continuo, lo  que no es trivial ni siquiera  intuitivo.  Presentamos luego
+el  concepto  de entrop\'ia  condicional,  lo  que da  lugar  a  la noci\'on  de
 informaci\'on  compartida entre  dos sistemas  o variables  aleatorias, concepto
 fundamental en  el marco de la  transmisi\'on de informaci\'on o  de mensajes. A
-continuaci\'on,  se  presentar\'a  la  noci\'on  de entrop\'ia  relativa  a  una
-distribuci\'on de probabilidad de referencia, as\'i que el concepto de distancia
-estad\'istica  o   divergencia  de  una   distribuci\'on  con  respecto   a  una
-referencia. En  este cap\'itulo veremos  como estas medidas  informacionales son
-entrelazadas  a trav\'es varias  identidades y  desigualdades, as\'i  que varias
-relaciones  con medidas  del  mundo de  la  estimaci\'on. Al  final, se  dar\'an
-ejemplos  y aplicaciones,  as\'i que  varias generalizaciones  de  las medidades
-informacionales.
+continuaci\'on,  introducimos   la  noci\'on   de  entrop\'ia  relativa   a  una
+distribuci\'on  de  probabilidad  de  referencia,  as\'i  como  el  concepto  de
+distancia estad\'istica o divergencia de  una distribuci\'on con respecto de una
+referencia.  En este  cap\'itulo  veremos c\'omo  estas medidas  informacionales
+est\'an interconectadas a trav\'es de  varias identidades y desigualdades, as\'i
+que vinculadas a medidas del mundo  de la estimaci\'on. Al final, damos ejemplos
+y aplicaciones, y varias generalizaciones de las medidas informacionales.
 
 \
 
-\modif{En todo  este cap\'itulo, hablaremos  de ``variable'' aleatoria,  que sea
-escalar o multivariata (vector, matriz).}
+\modif{
+Nota: En  todo este  cap\'itulo, hablaremos de  ``variable'' aleatoria,  que sea
+escalar o multivariata (vector, matriz).  }

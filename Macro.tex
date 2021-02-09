@@ -43,6 +43,7 @@
 \def\cod{\mathfrak{c}}
 \def\snr{\mathfrak{s}}
 \def\perm{\mathfrak{S}}
+\def\Perm{\mathfrak{S}}
 %
 % Conjuntos complejos, reales, enteros...
 % --------------------------------------
@@ -67,7 +68,7 @@
 % ------------------------------------------
 %
 \def\Mat{\mathrm{M}} % matrices
-\def\TriS{\mathrm{T}^\triangle} % matrices triangular superior
+\def\TriS{\mathrm{T}^\vartriangle} % matrices triangular superior
 \def\TriI{\mathrm{T}^\triangledown} % matrices triangular inferior
 \def\Sim{\mathrm{S}} % matrices simetricas
 \def\Her{\mathrm{H}} % matrices hermiticas
@@ -87,6 +88,7 @@
 % Operadores
 % ----------
 %
+\DeclareMathSymbol{\upimath}{\mathalpha}{operators}{"10}% para redefinir el \i en modo math 
 \def\optimes{\operatorname*{\bigtimes}}
 %\def\otimeso{\otimes_{\mathrm{o}}} % producto externo
 \def\Esp{\operatorname{E}} % esperanza matematica
@@ -105,9 +107,9 @@
 \def\det{\operatorname{det}} % determinente operador
 %\def\Gauss{\mathcal{N}} % notacion de la gaussiana
 \def\argmax{\operatorname*{argm\acute{a}x}} % operador argmax (se usa como el limite con \argmax_x)
-\DeclareMathSymbol{\upimath}{\mathalpha}{operators}{"10}% para redefinir el \i en modo math 
 \def\argmin{\operatorname*{argm\acute{\upimath}n}} % operador argmin (se usa como el limite con \argmin_x)
 %
+\def\supp{\operatorname{supp}} % soporte
 \def\un{\mathbbm{1}} % funcion indicador
 \def\sign{\operatorname{sign}} % funcion signo
 %\def\un{\mathbbm{0}} % vector 0
@@ -148,7 +150,7 @@
 \newcommand{\PocC}[2]{\left(#1\right)^{\overline{#2}}}
 \newcommand{\PocD}[2]{\left(#1\right)^{\underline{#2}}}
 % Coefficiente binomial
-\newcommand{\bino}[2]{\Big( \hspace{-1mm} \protect\begin{array}{c} #1 \\[-2.5mm] #2 \protect\end{array} \hspace{-1mm} \Big)}
+\newcommand{\bino}[2]{\Big( \hspace{-1mm} \protect\begin{array}{c} #1 \\[-1mm] #2 \protect\end{array} \hspace{-1mm} \Big)}
 %\newcommand{\bino}[2]{\begin{pmatrix} \! #1 \!\\[-1.5mm] \! #2 \! \end{pmatrix}}
 %\newcommand{\bino}[2]{\begin{psmallmatrix} \! #1 \! \\ \! #2 \!\vspace{.25mm} \end{psmallmatrix}}
 \newcommand{\smallbino}[2]{\begin{psmallmatrix} \! #1 \! \\ \! #2 \!\vspace{.25mm} \end{psmallmatrix}}

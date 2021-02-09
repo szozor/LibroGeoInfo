@@ -525,23 +525,30 @@ trav\'es del prior de Jeffrey~\cite{Jef46, Jef48, LehCas98, Rob07}~\footnote{Ver
 \subseccion{Canal de transmisi\'on y su capacidad}
 \label{Ssec:SZ:CanalCapacidad}
 
-Siguiendo el  esquema de comunicaci\'on de  Shannon, un mensaje  que se modeliza
+Siguiendo el  esquema de comunicaci\'on de  Shannon, un mensaje que  se modeliza
 como  un vector  aleatorio~\footnote{De  punto  de vista  de  un receptor,  este
-  mensaje es  desconocido. Adem\'as, se lo  puede ver como una  instancia de una
-  clase  importante   de  posibles  mensajes,   justificando  la  modelizaci\'on
-  aleatoria.} $X$  pasa por un  canal de comunicaci\'on  y se recibe  un mensaje
-$Y$, vector  aleatorio. En el trabajo de  Shannon, el canal es  supuesto a ruido
-aditivo,  es decir  que se  a\~nade un  ruido a  $X$.  De  manera  general, para
-conocer la informaci\'on de $X$ que se recibe, se calcula la informaci\'on mutua
-$I(X;Y)$, es  decir la cantidad de  informaci\'on que comparten la  entrada y la
-salida  del  canal.  Lo  m\'as  $I$  es grande,  lo  m\'as  de informaci\'on  se
-transmite.  Dado el canal, se puede arreglar $X$ (su distribuci\'on) de manera a
-maximizar $I(X;Y)$,  es decir  la cantidad m\'axima  que se puede  transmitir en
-este    canal.    Es    lo     que    es    conocido    como    capacidad    del
+mensaje es  desconocido. Adem\'as,  se lo  puede ver como  una instancia  de una
+clase   importante  de   posibles  mensajes,   justificando  la   modelizaci\'on
+aleatoria.} $X$ pasa por un canal de  comunicaci\'on y se recibe un mensaje $Y$,
+vector  aleatorio. En  el  trabajo de  Shannon,  el canal  es  supuesto a  ruido
+aditivo,  es decir  que se  a\~nade  un ruido  a  $X$. \modif{En  el enfoque  de
+Shannon,   el  ruido   se  supo   independiente   de  la   entrada}.  De   manera
+general, \modif{se  trata de canales  dichos {\em sin  memoria}, es decir  que a
+cada tiempo la salida depende solamente de  la entrada al mismo tiempo (y no del
+pasado). Eso se  caracteriza por el hecho de que  la probabilidad condicional, o
+{\em probabilidad de  transici\'on} es dada (no dependede  la entrada). Adem\'as
+el canal  es dicho {\em homogeno}  si esta transici\'on no  depende del tiempo.}
+Para conocer la informaci\'on de $X$  que se recibe, se calcula la informaci\'on
+mutua $I(X;Y)$, es decir la cantidad de informaci\'on que comparten la entrada y
+la salida  del canal.   Lo m\'as  $I$ es  grande, lo  m\'as de  informaci\'on se
+transmite.   As\'i, dado  el canal,  es decir  dada la  probabilidad condicional
+(fija),  se  puede  arreglar  $X$  (su distribuci\'on)  de  manera  a  maximizar
+$I(X;Y)$, es decir la cantidad m\'axima de informaci\'on que se puede transmitir
+en   este    canal.    Es    lo   que   es    conocido   como    capacidad   del
 canal~\cite[part.~II~\&~III]{Sha48} (ver  tambi\'en~\cite{CovTho06, Rio07} entre
 otros):
 %
-\begin{definicion}[Capacidad de canal]
+\begin{definicion}[Capacidad de canal (sin memoria)]
 \label{Def:SZ:CapacidadCanal}
 %
   Sea un canal de transmisi\'on, $X$  su entrada e $Y$ su salida, como ilustrado
@@ -570,11 +577,60 @@ otros):
 \label{Fig:SZ:CanalComunicacion}
 \end{figure}
 
+\modif{En general, es conviente escribir la informaci\'on mutua bajo la forma \ $I(X;Y)
+= H(Y) - H(Y|X)$ \ as\'i que,  fijando ``$X = x$'', la entrop\'ia condicional es
+dada por el canal. Lo vamos a ver m\'as adelante en las secciones que siguen.  }
 
-% ================================= canal binario
+% ================================= canal discreto
 
-\subsubseccion{Canal binario}
-\label{Sssec:SZ:CanalBinario}
+\modif{
+\subsubseccion{Canal discreto finito}
+\label{Sssec:SZ:CanalDiscretoFinito}
+
+En tal  canal el  espacio de estado  de entrada  es discreto finito  \ $\X  = \{
+x_1 \,  , \, \ldots \,  , \, x_{|\X|} \}  $ \ tal como  el de salida \  $\Y = \{
+y_1 \, , \, \ldots \, , \,  y_{|\Y|} \} $. El canal de transmisi\'on es definido
+por la distribuci\'on condicional $p_{Y|X=x}(y)$  es decir, en el caso presente,
+por la matriz de probabilidades  condicionales $\Pi \equiv \Pi_{Y|X}$, tambi\'en
+conocida  como  {\em  matriz  de transici\'on}~\cite{CovTho06,  Rio07}  (da  las
+probabilidades de transici\'on de la entrada  a la salida). En el canal, sacamos
+Denotando $H(\Pi_{Y|X})$ vector linea de componente $j$-\'esima la entrop\'ia de
+la columna $j$ de la matriz de transici\'on, \ie
+%
+\[
+H(\Pi_{Y|X}) = \begin{bmatrix} H( p_{Y|X = x_1} ) & \cdots &  H( p_{Y|X = x_{|\X|}} ) \end{bmatrix}
+\]
+%
+y de la f\'ormula de probabilidades total, se obtiene la capacidad del canal bajo la forma
+%
+\[
+C = \max_{p_X \in \Simp{|\X|-1}} \left( H\left( \Pi_{Y|X} \, p_X \right) -  H\left( \Pi_{Y|X} \right) p_X \right)
+\]
+
+Se notar\'a de que, obviamente de $I(X;Y) = H(X) - H(X|Y) = H(Y) - H(Y|X) \ge 0$
+con  las  entrop\'ias condicionales  siendas  positivas,  y entrop\'ias  siendas
+m\'axima en el caso de probabilididades uniformes, que
+\[
+0 \le C \le \min( \log_2 |\X| \, , \, \log_2 |\Y| ) 
+\]
+%
+Adem\'as, de  la propiedad~\ref{Prop:SZ:concavidad} de concavidad  de $H$, queda
+claro que,  siendo $\Pi_  H\left( \Pi_{Y|X}  \, p_X  \right)$ sea  c\'oncava con
+respecto a  $p_X$.  Ademas,  siendo $H\left( \Pi_{Y|X}  \right) p_X$  lineal con
+respecto  a  $p_X$,  aparece  que  $I(X  ;  Y)$  es  c\'oncava  con  respecto  a
+$p_X$ \SZ{Ponerlo antes? en las propiedades  de $I$?}. Eso asegura que existe un
+m\'aximo y que es \'unico.
+
+Dado  el canal,  hay que  resolver el  problema de  optimizaci\'on, pero  no hay
+siepre una  soluci\'on explicitaa de $C$.  Pero en casos particulares,  se puede
+simplificar el problema.}
+
+
+% ---------- canal binario
+
+%\subsubseccion
+\paragraph{Canal binario}
+%\label{Sssec:SZ:CanalBinario}
 
 Suponiendo  que el  mensaje mandado  en un  canal es  una cadena  de s\'imbolos,
 variables   aleatorias  independientes,   se  puede   concentrarse   sobre  cada
@@ -583,19 +639,17 @@ como  {\it canal  binario}~\cite[Sec.~15]{Sha48}: $X$  es una  variable definida
 sobre $\X =  \{ 0 \, , \, 1  \}$; tal tipo de entrada es  natural, pensando a la
 codificaci\'on  binaria.  La  salida $Y$  es tambi\'en  definida sobre  $\X$; se
 puede imaginar medir y tomar una decisi\'on binaria usando la medida.  Tal canal
-es  definido por  sus  probabilidaded de  transici\'on  $p_{Y|X=x}(y)$, \ie  las
-probabilidades que un 0 (resp. un 1) se transmite correctamente o cambia en un 1
-(resp. 0), \ie
+es  definido por \modif{la matriz de transici\'on
 %
 \[
-\varepsilon = P(Y  = 1 | X =  0) = 1 - P(Y  = 0 | X = 0)  \qquad \mbox{y} \qquad
-\vartheta = P(Y = 0 | X = 1) = 1 - P(Y = 1 | X = 1).
+\Pi = \begin{bmatrix} 1 - \varepsilon & \vartheta \\ \varepsilon & 1 - \vartheta \end{bmatrix}
 \]
 %
-$\varepsilon$ y $\vartheta$ representan errores de comunicaci\'on.  Tal canal es
-descrito      figura     Fig.~\ref{Fig:SZ:CanalBinario}-(a).       La     figura
+(\ie \ $\varepsilon  = P(Y = 1 | X  = 0)$ \ y \  $\vartheta = P(Y = 0 |  X = 1)$
+representan  errores   de  comunicaci\'on).}   Tal  canal   es  descrito  figura
+Fig.~\ref{Fig:SZ:CanalBinario}-(a).                   La                  figura
 Fig.~\ref{Fig:SZ:CanalBinario}-(b) da un esquema ``pr\'actico'' que podr\'ia ser
-al origen  de un  tal canal.  Cuando  \ $\varepsilon  = \vartheta$, el  canal es
+al origen  de un  tal canal.  Cuando  \ $\varepsilon =  \vartheta$, el  canal es
 conocido como {\it canal binario sim\'etrico}.  Cuando \ $\varepsilon = 0$ \ y \
 $\vartheta \in (0 \; 1)$, el canal es conocido como {\it canal binario en Z}.
 
@@ -617,23 +671,31 @@ $\vartheta \in (0 \; 1)$, el canal es conocido como {\it canal binario en Z}.
 \label{Fig:SZ:CanalBinario}
 \end{figure}
 
-En este caso, trabajando con bits, aparece leg\'itimo usar el logaritmo de base
-2. Luego, sean
+En este caso, trabajando con bits,  aparece leg\'itimo usar el logaritmo de base
+2. Luego, \modif{sean $p_X$ la distribuci\'on de entrada y $p_Y = \Pi \, p_X$ la
+de salida,
 %
 \[
-r = P(X = 0),
+p_X =  \begin{bmatrix} r\\  1-r \end{bmatrix} \qquad  p_Y =  \begin{bmatrix} s\\
+1-s  \end{bmatrix}  =  r  (1  - \varepsilon  -  \vartheta)  \begin{bmatrix}  1\\
+-1\end{bmatrix} + \begin{bmatrix} \vartheta\\ 1 - \vartheta \end{bmatrix}
+%r = P(X = 0),
 \]
 %
-dando la distribuci\'on  de la entrada. La distribuci\'on de la  salida va a ser
-dada a partir de $s = P(Y = 0) = P(Y = 0 | X = 0) P(X = 0) + P(Y = 0 | X
-= 1) P(X = 1)$ es decir
+%dando la distribuci\'on  de la entrada.
+%La distribuci\'on de la  salida va a ser
+%dada a partir de $s = P(Y = 0) = P(Y = 0 | X = 0) P(X = 0) + P(Y = 0 | X
+%= 1) P(X = 1)$ es decir
+%%
+%\[
+%s = P(Y  = 0) = \vartheta +  r (1-\varepsilon-\vartheta).
+%\]
 %
-\[
-s = P(Y  = 0) = \vartheta +  r (1-\varepsilon-\vartheta).
-\]
-%
-La informaci\'on  mutua se escribe  \ $I_2(X;Y) =  H_2(Y) - H_2(Y|X) =  H_2(Y) -
-H_2(Y|X=0) P(X = 0) + H_2(Y|X=1) P(X = 1)$, lo que toma la expresi\'on
+La informaci\'on  mutua,  \ $I_2(X;Y) =  H_2(p_Y) - H_2(\Pi) \, p_X$,}
+%=  H_2(Y) -
+%H_2(Y|X=0) P(X = 0) + H_2(Y|X=1) P(X = 1)$,
+%lo que
+toma la expresi\'on
 %
 \[
 I_2(X;Y) = h_2(s) - r h_2(\varepsilon) - (1-r) h_2(\vartheta),
@@ -802,6 +864,154 @@ figura Fig.~\ref{Fig:SZ:CCanalBinario}-(c).
 \label{Fig:SZ:CCanalBinario}
 \end{figure}
 
+
+
+\modif{
+% ---------- canal binario
+
+%\subsubseccion
+\paragraph{Canales sim\'etricos}
+%\label{Sssec:SZ:CanalBinario}
+
+Se  simplifica  tambi\'en  el  estudio  de capacidad  de  un  canal  cuando  hay
+simetr\'ias.  Empezamos  con   las  definiciones  siguentes~\cite{Sha48,  Gal01,
+CovTho06}:
+%
+\begin{definicion}[Canal sim\'etrico en entrada]
+Un  canal es  dicho sim\'etrico  en  entrada si  cada  columna de  su matriz  de
+transici\'on $\Pi$ se deduce como permutaci\'on de un vector $\pi$, \ie
+%
+\[
+\exists \, \pi \in \Simp{|\Y|-1}, \quad \forall \, j = 1, \ldots , |\X|, \:\:
+\exists \, \Sigma_j \in \Perm_{|\Y|}, \:\: p_{Y|x=x_j} = \Sigma_j \, \pi
+\]
+\end{definicion}
+
+\begin{definicion}[Canal sim\'etrico en salida]
+Un  canal es  dicho sim\'etrico  en  salida si  cada  linea de  su matriz  de
+transici\'on $\Pi$ se deduce como permutaci\'on de un vector $\widetilde{\pi}$, \ie
+%
+\[
+\exists \, \widetilde{\pi} \in \Simp{|\X|-1}, \quad \forall \, i = 1, \ldots , |\Y|, \:\:
+\exists \, \Sigma_i \in \Perm_{|\X|}, \:\: \begin{bmatrix} p_{Y|x=x_1}(y_i) & \cdots &  p_{Y|x=x_{|\X|}}(y_i) \end{bmatrix} = \widetilde{\pi}^t \Sigma_i
+\]
+\end{definicion}
+
+
+\begin{definicion}[Canal uniforme en salida]
+Un  canal es  dicho uniforme  en  salida si  $\un$  autovector de  la matriz  de
+transici\'on, $\Pi  \un \propto  \un$, \ie si  la entrada de  un canal  con esta
+transici\'on es uniforme, la salida tambi\'en. Necesariamente, $\Pi \un = \frac{|\X|}{|\Y|} \, \un$.
+
+Cuando $|\Y|=|\X|$,  el autovalor  es igual  a uno  y la  matriz est  dicha {\em
+bi-estocastica} (recordar que es estochastica, $\un^t \Pi = \un^t$).
+\end{definicion}
+
+
+\begin{definicion}[Canal sim\'etrico]
+Un canal es dicho {\em  fuertement sim\'etrico}, o simplemente {\em sim\'etrico}
+si es a la vez sim\'etrico en entrada y en salida.
+
+
+Un canal  es dicho {\em  debilmente sim\'etrico} si es  a la vez  sim\'etrico en
+entrada y uniforme en salida. De hecho,  se puede ver sencillamente de que si un
+canal es sim\'etrico, es obviamente uniforme  en salido (si cada linea se deduce
+de una por permutaciones de componentes,  las suma de sus componentes no depende
+del \'indice de linea).
+
+\end{definicion}
+
+Cuando  el  canal sigue  una(s)  de  estas  simetrias,  se simplifican  a  veces
+drasticamente el calcilo de la capacidad del canal:
+
+\begin{teorema}[Capacidad del canal s\'imetrico en entrada]
+Si el  canal de  transmisi\'on es  s\'imetrico en entrada,  con $\pi$  el vector
+columna (bajo permutaciones),  la capacidad del canal se alcanza  para la salida
+de entrop\'ia m\'axima (con respect a la distribuci\'on de entrada):
+%
+\[
+C = \max_{p_X \in \Simp{|\X|-1}} H(\Pi p_X) - H(\pi)
+\]
+\end{teorema}
+\begin{proof}
+El resultat viene  inmediatamente de $H(Y|X) = H(\Pi) p_X$,  siendo en este caso
+$H(\Pi) = H(\pi) \un^t$.
+\end{proof}
+
+
+\begin{teorema}[Capacidad del canal debilmente s\'imetrico]
+Si el  canal de  transmisi\'on es  debilmente s\'imetrico  con $\pi$  el vector
+columna (bajo permutaciones),  la capacidad del canal es dado por
+%
+\[
+C = \log |\Y| - H(\pi)
+\]
+%
+y se alcanza  para la entrada uniforme.
+\end{teorema}
+\begin{proof}
+Siendo     el      canal     sim\'etrico     en     entrada,      tenemos     $C
+= \max_{p_X  \in \Simp{|\X|-1}}  H(\Pi p_X)  - H(\pi)$.  Ahora, siendo  el canal
+uniforme en salida, si la entrada es uniforme, tambi\'en es la salida, lo que es
+de entrop\'ia m\'axima y vale $\log |\Y|$.
+\end{proof}
+
+Se puede notar que si el canal es solamente sim\'etrico en entrada, el resultado
+no  vale siempre  porque no  siempre se  puede encontrar  una entrada  dando una
+salida uniforme.  Un contra-ejemplo es dado  por el canal borrador  de la figura
+Fig.~\ref{Fig:SZ:CanalesDiscretos}-(a). En este caso,  la matriz de transici\'on
+es dada por
+%
+\[
+\Pi = \begin{bmatrix} 1 - \varepsilon & 0 \\ \varepsilon & \varepsilon \\ 0 & 1 - \varepsilon \end{bmatrix}
+\]
+%
+Claramente, el canal es sim\'etrico en entrada,  pero no es en salida, y tampoco
+es uniforme  en salida  si $\varepsilon  \ne \frac13$. De  nuevo, si  perdida de
+generalidad, tratando de bits, consideramos  la entrop\'ia en bits (logaritmo de
+base  2).   Sencillamente,  $I(X   ;  Y)  =   H(p_Y)  -   h_2(\varepsilon)$  con
+$h_2(\varepsilon) =  - \varepsilon  \log_2 \varepsilon -  (1-\varepsilon) \log_2
+(1-\varepsilon)$  entrop\'ia  binaria.   Con  la probabilidad  de  entrada  $p_X
+= \begin{bmatrix} r & 1-r \end{bmatrix}^t$ se calcula la probabilidad de salida
+%
+\[
+p_Y =  \begin{bmatrix} r (1-\varepsilon) \\ \varepsilon \\ (1-r) \varepsilon \end{bmatrix}
+\]
+%
+as\'i que, claramente, cuando $\varepsilon \ne \frac13$ no se puede alcanzar una
+distrinuci\'on de salida uniforme. De hecho,  se calcula la entrop\'ia de salida
+como
+%
+\[
+H(p_Y) = (1 - \varepsilon) h_2(r) + h_2(\varepsilon)
+\]
+%
+Es m\'aximo  cuando la entrada es  uniforme (pero, nuevamente, no  es la salida)
+tal que $\max_{p_X} H(p_Y) =  (1-\varepsilon) + h_2(\varepsilon)$ (no vale $\log
+3$) dando la capacidad
+%
+\[
+C = 1 - \varepsilon
+\]
+
+
+Un ejemplo particular de canal sim\'etrico es un canal de matriz de transici\'on dicha {\em circulante},
+%
+\[
+\Pi = \begin{bmatrix}
+  a_1   &   a_n  & a_{n-1} & \cdots & a_2 \\
+%
+  a_2   &   a_1  &   a_n  & \cdots & a_3\\
+%
+  a_3   &   a_2  &   a_1  & \cdots & \vdots\\
+%
+ \vdots & \vdots & \vdots & \vdots & \vdots\\
+%
+  a_n   & a_{n-1} & \cdots & a_2 & a_1
+\end{bmatrix}
+\]
+}
+
 En~\cite{CovTho06,  Rio07}  entre  otros,  se estudian  diversos  otros  canales
 discretos, binarios  o con m\'as estados.   Unos son representados  en la figura
 Fig.~\ref{Fig:SZ:CanalesDiscretos}     (ver     tambi\'en~\cite{Sha48,    Eli57}
@@ -814,16 +1024,20 @@ o~\cite{Ari72} para el c\'alculo num\'erico de la capacidad en el caso general).
 %
 \leyenda{Ejemplos de canales discretos usuales.  (a): canal borrador, donde un 0
   (de probabilidad de ocurrencia $r$) o 1 (de probabilidad de occurrencia $1-r$)
-  puede  transmitirse correctamente or  ser borado/perdido  (estado $\emptyset$)
+  puede transmitirse  correctamente or  ser borado/perdido  (estado $\emptyset$)
   con una  probabilidad $\varepsilon$.   Se calcula $I_2(X;Y)  = (1-\varepsilon)
   h_2(r)$, dando la capacidad $C_2  = 1-\varepsilon$, alcanzada para una entrada
-  uniforme.   (b): canal tipo  machina de  escribir~\protect\footnotemark, donde
+  uniforme.  (b):  canal tipo  machina de  escribir~\protect\footnotemark, donde
   cada letra  de un ensemble  de $n$  letras (ac\'a con  $n = 26$)  se transmite
   correctamente con una probabilidad $1-\varepsilon$  o a la letra siguiente (de
-  manera c\'iclica) con una probabilidad $\varepsilon$.  De $I_n(X;Y) = H_n(Y) -
-  H_n(Y|X) = H_n(Y)  - h_n(\varepsilon)$ se deduce que $I_n$  es m\'axima si $Y$
-  es  uniforme,  lo que  es  posible  si  $X$ es  uniforma,  dando  $C_n =  1  -
-  h_n(\varepsilon)$.}
+  manera  c\'iclica) con  una probabilidad  $\varepsilon$. \modif{Este  canal es
+  sim\'etrico (de matriz de transici\'on circulante, as\'i que, inmediatamente,
+  %De $I_n(X;Y) = H_n(Y) -
+  %H_n(Y|X) = H_n(Y)  - h_n(\varepsilon)$ se deduce que $I_n$  es m\'axima si $Y$
+  %es uniforme,  lo que es  posible si $X$  es uniforma, dando
+  $C = \log_2  n -
+  h_2(\varepsilon)$.  Pasando,  para $n  =  2$,  se  recupera el  canal  binario
+  sim\'etrico.}.  }
 \label{Fig:SZ:CanalesDiscretos}
 \end{figure}
 %
