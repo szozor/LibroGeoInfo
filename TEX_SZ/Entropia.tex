@@ -1,4 +1,5 @@
-\seccion{Entrop\'ia como medida de incerteza}
+\seccion{Entrop\'ia como medida de ignorancia}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ncerteza}
 \label{Sec:SZ:Entropia}
 
 % ================================= Axiomas
@@ -6,103 +7,110 @@
 \subseccion{Entrop\'ia de Shannon, propiedades}
 \label{Ssec:SZ:DefinicionShannon}
 
-Uno de los primeros trabajos tratando de formalizar la noci\'on de informaci\'on
-de  una cadena  de s\'imbolos  es debido  a Ralph  Hartley~\cite{Har28}.   En su
-papel,  Hartley  defini\'o  la   informaci\'on  de  una  secuencia  como  siendo
+Uno de los primeros trabajos donde  se formaliza la noci\'on de informaci\'on de
+una  cadena  de  s\'imbolos  es  debido a  Ralph  Hartley~\cite{Har28}.   En  su
+art\'iculo,  Hartley defini\'o  la informaci\'on  de una  secuencia como  siendo
 proporcional a su longitud.  M\'as  precisamente, para s\'imbolos de un alfabeto
-de cardenal $\alpha$,  existen $\alpha^n$ cadenas distintas de  longitud $n$. Se
-defini\'o la informaci\'on  de tales cadenas como siendo  $K n$ ($K$ dependiente
-de  $\alpha$).    Para  ser  consistente,  dos  conjuntos   del  mismo  tama\~no
-$\alpha_1^{n_1} =  \alpha_2^{n_2}$ deben llegar a la  misma informaci\'on, as\'i
-que  la informaci\'on  de  Hartley es  definida  como $H  = \log\left(  \alpha^n
-\right)$  donde la  base del  logaritmo es  arbitraria.  Dicho  de  otra manera,
-tomando  un logaritmo  de  base 2,  esta  informaci\'on es  nada  m\'as que  los
-n\'umeros de bits (0-1) necesarios  para codificar todas las cadenas de longitud
-$n$  de s\'imbolos de  un alfabeto  de cardenal  $\alpha$.  La  informaci\'on de
-Hartley  es  el equivalente  de  la entrop\'ia  de  Boltzmann  de la  mec\'anica
-estad\'istica, la famosa  f\'ormula $S = k_B \log  W$~\cite{Bol96, Bol98, Jay65,
-  Mer10, Mer18}.
+de cardenal \  $\alpha$, existen \ $\alpha^n$ \ cadenas  distintas de longitud \
+$n$.  Se  defini\'o la  informaci\'on de  tales cadenas  como \  $K n$  (con $K$
+dependiente  de \  $\alpha$).  Para  ser consistentes,  dos conjuntos  del mismo
+tama\~no  \  $\alpha_1^{n_1}  =  \alpha_2^{n_2}$   \  deben  contener  la  misma
+informaci\'on.  De  este requisito,  Hartley defin\'o  la informaci\'on  como $H
+=  \log \alpha^n$  donde la  base del  logaritmo es  arbitraria.  Dicho  de otra
+manera, tomando en particular el logaritmo de base 2, esta informaci\'on es nada
+m\'as  que los  n\'umeros  de bits  (0-1) necesarios  para  codificar todas  las
+cadenas de longitud  $n$ de s\'imbolos de un alfabeto  de cardenal $\alpha$.  La
+informaci\'on de Hartley  es el equivalente de la entrop\'ia  de Boltzmann de la
+mec\'anica  estad\'istica,  la   famosa  f\'ormula~\footnote{Esta  f\'ormula  se
+encuentra grabada el la tumba de Ludwig Boltzmann (1844-1906) en Viena donde fue
+enterrado despu\'es de su suicidio en Duino (cerca de Trieste y del ICTP--Centro
+internacional de  F\'isica T\'eorica) el  5 de  septiembre de 1906,  sin razones
+aparentes~\cite{Cer08, ArrPer13,  ArrPer15}.}  $S  = k_B \log  W$, donde  $k_B =
+1.380689   \times  10^{-23}   \operatorname{J.K}^{-1}$   es   la  constante   de
+Boltzmann~\cite{Bol96, Bol98, Jay65, Mer10, Mer18}.
 
 Una debilidad del enfoque de Hartley es que considera impl\'icitamente que en un
-mensaje, cada cadena de longitud dada  puede aparecer con la misma frecuencia, o
-probabilidad   $1/\alpha^n$   (en   Boltzmann,   misma  probabilidad   de   cada
-configuraci\'on),  siendo   la  informaci\'on   menos  el  logaritmo   de  estas
-probabilidades.  Al  contrario, parece m\'as l\'ogico  considerar que secuencias
+mensaje cada cadena  de longitud dada puede aparecer con  la misma frecuencia, o
+probabilidad, $1/\alpha^n$  (en Boltzmann,  corresponde a la  misma probabilidad
+para cada configuraci\'on), siendo la  informaci\'on menos el logaritmo de estas
+probabilidades.  Sin embargo, parece m\'as l\'ogico  considerar que secuencias
 muy frecuentes  no llevan mucha  informaci\'on (se sabe que  aparecen), mientras
 que las que  aparecen raramente llevan m\'as informaci\'on  (hay m\'as sorpresa,
 m\'as incerteza  en observarlas).  Volviendo  a los s\'imbolos  elementales $x$,
-vistos  como aleatorios  (o  valores, o  estados  que puede  tomar una  variable
+vistos  como aleatorios  (o  valores, o  estados que  puede  tomar una  variable
 aleatoria), la  (falta de)  informaci\'on o incerteza  va a  estar \'intimamente
 vinculada a la probabilidad de aparici\'on de estos s\'imbolos $x$. Siguiendo la
-idea de Hartley,  la informaci\'on elemental asociada al estado $x$  va a ser $-
-\log p(x)$ donde $p(x)$ es la  probabilidad de aparici\'on de $x$.  Se define la
+idea de Hartley, la informaci\'on elemental asociada al estado $x$ va a ser $-
+\log p(x)$, donde $p(x)$ es la  probabilidad de aparici\'on de $x$.  Se define la
 incerteza asociada a la variable  aleatoria como el promedio estad\'istico sobre
-todos  los  estados posibles  $x$~\cite{Sha48,  ShaWea64}~\footnote{En la  misma
-  \'epoca que Shannon, independientemente, medidades informacionales aparecieron
-  en  c\'alculos de  capacidad  de canal  en  varios trabajos  como  los de  los
-  ingenieros     franceses     Andr\'e     Clavier~\cite{Cla48}    o     Jacques
-  Laplume~\cite{Lap48},   o    en   el   libro    del   estadounidense   Norbert
-  Wiener~\cite[Cap.~III]{Wie48}  entre  varios  otros (ver~\cite[y  Ref.]{Ver98,
-    Lun02, RioMag14, FlaRio16, RioFla17, Che17}).}.
+todos   los   estados   posibles  $x$~\cite{Sha48,   ShaWea64}~\footnote{En   la
+misma  \'epoca   que  Shannon,  independientemente,   medidades  informacionales
+aparecieron en c\'alculos  de capacidad de canal en varios  trabajos como los de
+los    ingenieros    franceses    Andr\'e   Clavier~\cite{Cla48}    o    Jacques
+Laplume~\cite{Lap48},    o   en    el   libro    del   estadounidense    Norbert
+Wiener~\cite[Cap.~III]{Wie48}  entre  varios   otros  (ver~\cite[y  Ref.]{Ver98,
+Lun02, RioMag14, FlaRio16, RioFla17, Che17}).}.
 %
 \begin{definicion}[Entrop\'ia de Shannon]
 \label{Def:SZ:Shannon}
 %
   Sea  $X$  una  variable  aleatoria  definida  sobre  un  alfabeto  discreto  \
-  $X(\Omega) = \X = \{ x_1 \, , \, \ldots \,  , \, x_\alpha \}$ \ de cardenal $\alpha = |\X|
-  < + \infty$ finito. Sea $p_X$  la distribuci\'on de probabilidad de $X$, \ie $
-  \forall \, x \in \X, \quad p_X(x) = P(X = x)$.  La entrop\'ia de Shannon de la
-  variable $X$ est\'a definida por
+  $X(\Omega) = \X  = \{ x_1 \,  , \, \ldots \,  , \, x_\alpha \}$  \ de cardenal
+  $\alpha = |\X| < + \infty$ finito. Sea $p_X$ la distribuci\'on de probabilidad
+  de $X$, \ie $ \forall \, x \in \X, \quad p_X(x) = P(X = x)$.  La entrop\'ia de
+  Shannon de la  variable~\footnote{Recordar que $X \sim  p_X$ significa ``$X$''
+  distribuida de acuerdo a la distribuci\'on de probabilidad $p_X$} $X \sim p_X$
+  se define como
   %
   \[
-    H(p_X) = H(X) = - \sum_{x \in \X} p_X(x) \, \log p_X(x),
+    H(X) = H(p_X) = - \sum_{x \in \X} p_X(x) \, \log p_X(x),
   \]
   %
-  con la  convenci\'on \ $0 \log  0 = 0$ \  ($\displaystyle \lim_{t \to  0} \, t
-  \log t = 0$).
+  con   la   convenci\'on   \   $0   \log    0   =   0$   \   (a   partir   de
+  $\displaystyle \lim_{t \to 0^+} \, t \log t = 0$).
 \end{definicion}
 %
-\noindent La  base del logaritmo es  arbitraria; si es $\log_2$  el logaritmo de
-base  2, $H$  est\'a en  unidades  binarias o  bits (se  encuentra tamb\'ien  la
-denominaci\'on Shannons),  si se usa el  logaritmo natural $\ln$,  $H$ est\'a en
-unidades naturales o nats, si es el de base 10, $H$ se da en d\'igitos decimales
-o dits (se encuentra tamb\'ien la denominaci\'on bans o Hartleys).  {\it En este
-  cap\'itulo,  se usar\'a  $H$ sin  especificar la  base del  logaritmo.   Si es
-  necesario  que  tenga   una  base  $a$  dada,  se   denotar\'a  la  entrop\'ia
-  correspondiente  $H_a$ y se  especificar\'a la  base del  logaritmo $\log_a$}.
-Notar que $\log_a x = \frac{\log x}{\log a}$, dando
+\noindent La  base del logaritmo es  arbitraria: si es $\log_2$  el logaritmo de
+base 2, $H$ est\'a  dada en unidades binarias o bits  (se encuentra tambi\'en la
+denominaci\'on Shannons);  si se usa el  logaritmo natural $\ln$, $H$  est\'a en
+unidades naturales o nats; si es el de base 10, $H$ se da en d\'igitos decimales
+o dits  (se encuentra  tambi\'en la  denominaci\'on bans  o Hartleys).   En este
+libro, se  usar\'a $H$ sin especificar  la base del logaritmo.   Si es necesario
+que tenga una base $a$ dada, se denotar\'a la entrop\'ia correspondiente $H_a$ y
+se  especificar\'a  la  base  del  logaritmo  $\log_a$.   Notar  que  $\log_a  x
+= \frac{\log x}{\log a}$, dando
 %
 \[
 H_a(X)  =  H_b(X)  \log_a b.
 \]
 %
-En  lo  que  sigue, a\'un  que,  rigurosamente,  $H$  sea  una funci\'on  de  la
-distribuci\'on  de  probabilidad $p_X$  y  no de  la  variable  $X$, se  usar\'a
-indistintamente  tanto  la notaci\'on  $H(p_X)$  como  $H(X)$  seg\'un lo  m\'as
-conveniente.  Adem\'as, $p_X$  podr\'a denotar indistintamente la distribuci\'on
-de  probabilidad,  o  el  vector  de probabilidad  $p_X  \equiv  \begin{bmatrix}
-  p_X(x_1) & \cdots & p_X(x_\alpha) \end{bmatrix}^t$.  En lo que sigue, de vez a
-cuando, usaremos $p_i \equiv p_X(x_i)$ por simplificaci\'on de escritura.
+En  lo que  sigue,  a\'un cuando,  rigurosamente,  $H$ es  una  funcional de  la
+distribuci\'on  de  probabilidad  $p_X$  y  no  de  la  variable  $X$,  usaremos
+indistintamente  tanto  la notaci\'on  $H(p_X)$  como  $H(X)$ seg\'un  convenga.
+Adem\'as,   $p_X$  podr\'a   denotar   indistintamente   la  distribuci\'on   de
+probabilidad, o el  vector de probabilidad $p_X  \equiv \begin{bmatrix} p_X(x_1)
+&  \cdots &  p_X(x_\alpha)  \end{bmatrix}^t$.  Tambi\'en,  usaremos $p_i  \equiv
+p_X(x_i)$ por simplificaci\'on de escritura en algunas expresiones.
 
 \modif{$H$  es  el   equivalente  de  la  entrop\'ia  de   Gibbs  en  mec\'anica
-  estad\'istica (denotata  \ $S$  \ en este  marco), como  lo hemos visto  en la
-  secci\'on~\ref{Ssec:MP:FamiliaExponencial}.   Precisamente, se reconoce  en la
+  estad\'istica (denotada  \ $S$  \ en este  marco), como lo  hemos visto  en la
+  secci\'on~\ref{Ssec:MP:FamiliaExponencial}.  Precisamente,  se reconoce  en la
   f\'ormula de le entrop\'ia de Shannon la forma ya vista tratando de la familia
   exponencial, secci\'on~\ref{Ssec:MP:FamiliaExponencial}, como fluctuaciones de
-  la energ\'ia libre. En la secci\'on  mencionada, la vimos en el contexto de la
-  ley  de Boltzmann,  dada  una funci\'on  energ\'ia.   En el  contexto de  este
-  cap\'itulo,  quitamos  el  contexto   de  la  mec\'anica  estad\'istica  y  la
+  la energ\'ia libre. En la secci\'on mencionada,  la vimos en el contexto de la
+  ley  de Boltzmann,  dada  una funci\'on  energ\'ia.  En  el  contexto de  este
+  cap\'itulo,  quitamos  el  contexto  de   la  mec\'anica  estad\'istica  y  la
   definici\'on es dada para cualquier densidad de probabilidad. Sin embargo, los
   v\'inculos entre  ambas son  impotante, como  lo vamos a  ver tambi\'en  en el
-  problema  de  entrop\'ia  m\'axima   (ver  tambi\'en  el  ep\'igrafo  de  este
-  cap\'itulo).}  La  letra  $H$   viene  del  teorema-H  debido  a\ldots  Ludwig
-Boltzmann~\cite{Jay65,  Mer10,  Mer18}\modif{,  a  pesar de  que  en  mec\'anica
+  problema  de  entrop\'ia  m\'axima  (ver   tambi\'en  el  ep\'igrafo  de  este
+  cap\'itulo).}    La  letra   $H$   viene  del   teorema-H   debido  a   Ludwig
+  Boltzmann~\cite{Jay65,  Mer10, Mer18}\modif{,  a  pesar de  que en  mec\'anica
   estad\'istica se  encuentra frecuentemente la letra\ldots  $S$ (sin relaci\'on
   con Shannon) y tambi\'en en mec\'anica c\'uantica tratando de la entrop\'ia de
   von Neuman (ver m\'as adelante).}
 
 \modif{La entrop\'ia de Shannon} $H$ tiene propiedades notables que corresponden
-a  las que  se puede  exigir a  una medida  de  incerteza~\cite{Sha48, ShaWea64,
+a  las que  se puede  exigir a  una medida  de  ignorancia~\cite{Sha48, ShaWea64,
   CovTho06, Rio07, DemCov91, Joh04}.
 %
 \begin{propiedades}
@@ -111,64 +119,64 @@ a  las que  se puede  exigir a  una medida  de  incerteza~\cite{Sha48, ShaWea64,
   los $p_i$.
 %
 \setcounter{PropPermutacion}{\value{enumi}}
-\item\label{Prop:SZ:permutacion}   {\it  Invariance  bajo   una  permutaci\'on:}
+\item\label{Prop:SZ:permutacion}   {\it  Invarianza bajo   permutaci\'on:}
   obviamente,  la  entrop\'ia  es  invariante  bajo  una  permutaci\'on  de  las
   probabilidades, \ie
   %
   \[
-  \mbox{para   cualquiera   permutaci\'on   }   \sigma:   \X   \to   \X,   \quad
+  \mbox{para   cualquier   permutaci\'on   }   \sigma:   \X   \to   \X,   \quad
   H(p_{\sigma(X)})   =  H(p_X)   \quad  \mbox{con}   \quad   p_{\sigma(X)}(x)  =
   p_X(\sigma(x)),
   \]
   %
-  lo que se  escribe tambi\'en $H(\sigma(X)) = H(X)$.   En particular, denotando
-  $p_X^\downarrow$  el vector  de  probabilidades obtenido  a  partir de  $p_X$,
-  clasificando  las  probabilidades en  orden  decreciente, $p_1^\downarrow  \ge
-  p_2^\downarrow \ge  \cdots \ge p_\alpha^\downarrow$  donde $p_i^\downarrow$ es
-  la     $i$-\'esima      componente     de     $p_X^\downarrow$     \modif{(ver
-    secci\'on~\ref{Ssec:MP:VADiscreta},
-    definici\'on~\ref{Def:MP:Mayorizacion})},
+  lo que se escribe tambi\'en $H(\sigma(X)) = H(X)$.  En particular, denotando
+  $p_X^\downarrow$  el  vector de  probabilidades  obtenido  a partir  de  $p_X$
+  clasificando  las probabilidades  en  orden  decreciente, $p_1^\downarrow  \ge
+  p_2^\downarrow \ge  \cdots \ge p_\alpha^\downarrow$ donde  $p_i^\downarrow$ es
+  la     $i$-\'esima     componente      de     $p_X^\downarrow$     \modif{(ver
+  secci\'on~\ref{Ssec:MP:VADiscreta},  definici\'on~\ref{Def:MP:Mayorizacion})},
+  se tiene
   %
   \[
   H(p_X^\downarrow) = H(p_X).
   \]
 %
 \setcounter{PropBiyeccion}{\value{enumi}}
-\item\label{Prop:SZ:biyeccion}   {\it  Invariance   bajo   una  transformaci\'on
-    biyectiva:}  la entrop\'ia  es invariante  bajo  cualquiera transformaci\'on
+\item\label{Prop:SZ:biyeccion}   {\it  Invarianza   bajo   transformaci\'on
+    biyectiva:}   la  entrop\'ia   es  invariante   bajo  una   transformaci\'on
   biyectiva, \ie
   %
   \[
-  \mbox{para cualquiera  funci\'on biyectiva } g:  \X \to g(\X),  \quad H(g(X)) =
+  \mbox{para cualquier  funci\'on biyectiva } g:  \X \to g(\X),  \quad H(g(X)) =
   H(X).
   \]
   %
-  A  trav\'es  tal transformaci\'on  los  estados  cambian,  pero no  cambia  la
+  Mediante  la  transformaci\'on  los  estados  cambian,  pero  no  cambia  la
   distribuci\'on de probabilidad vinculada al alfabeto transformado.  Tomando el
-  ejemplo de  un dado, la  incerteza vinculada al  dado no debe depender  de los
-  s\'imbolos escritos sobre las caras, sean enteras o cualesquiera letras.
+  ejemplo de  un dado, la  incerteza vinculada al dado  no debe depender  de los
+  s\'imbolos  escritos  sobre las  caras,  sean  n\'umeros enteros  o  cualquier
+  conjunto de letras.
 %
-\item\label{Prop:SZ:positividad} {\it Positividad:} la entrop\'ia es acotada por
-  debajo,
+\item\label{Prop:SZ:positividad} {\it Positividad:} la entrop\'ia est\'a acotada por abajo,
   %
   \[
   H(X) \ge 0,
   \]
   %
-  con igualdad si y solamente si existe un $x_j \in \X$ tal que $p_X(x_j) = 1$ \
-  y \ $p_X(x) = 0$ \ para \ $x \ne x_j$, \ie $p_X = \un_j$,
+  con igualdad si y solamente si \ $X$ \ est determinista, \ie
   %
   \[
-  H(X)  =  0 \quad  \mbox{ssi}  \quad X  \mbox{  es  determinista.}
+  H(X)  =  0 \quad  \mbox{ssi}  \quad \exists \, x_j \in \X, \:\: p_X(x) = \un_j
   \]
   %
-  En  otras  palabras, cuando  $X$  no  es aleatoria,  \ie  $X  =  x_j$, no  hay
-  incerteza, o  la observaci\'on  no lleva  informaci\'on (se sabe  lo que  va a
-  salir, sin duda): $H = 0$.   La positividad es consecuencia de $p_X(x) \le 1$,
+  En  otras palabras,  cuando $X$  no  es aleatoria,  \ie  $X =  x_j$, no  hay
+  ignorancia, o  la observaci\'on no  lleva informaci\'on (se  sabe lo que  va a
+  salir, sin duda): $H = 0$.  La  positividad es consecuencia de $p_X(x) \le 1$,
   dando $- p_X(x) \log p_X(x) \ge 0$.  Adem\'as, la suma de t\'erminos positivos
   vale cero  si y  solamente si  cada t\'ermino de  la suma  vale cero,  dando \
-  $p_X(x) = 0$ \  o \ $p_X(x) = 1$. Se concluye  $p_X$ siendo una distribuci\'on
-  de probabilidad, sumando a 1.
+  $p_X(x) =  0$ \ o  \ $p_X(x) =  1$. Se concluye  de que solo  una probabilidad
+  puede ser 1, las otras 0 $p_X$ siendo una distribuci\'on de probabilidad (suma
+  a 1).
 %
 \setcounter{PropCotamaxima}{\value{enumi}}
 \item\label{Prop:SZ:cotamaxima} {\it Maximalidad:}  la entrop\'ia es acotada por
