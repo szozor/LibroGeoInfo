@@ -34,8 +34,8 @@
 \RequirePackage[spanish]{minitoc}
 %\setcounter{minitocdepth}{2}
 \RequirePackage{titletoc,tocloft} % table of content managment package
-\RequirePackage{tabularx,supertabular,fullpage} % para manejar las tablas y tablas largas
-\RequirePackage{ltxtable,longtable} % para manejar las tablas largas
+\RequirePackage{tabularx,fullpage,xtab} % para manejar las tablas y tablas largas
+%\RequirePackage{ltxtable,longtable} % para manejar las tablas largas
 %\RequirePackage{boites,chngpage} % para poder cortar tablas cambiando de pagina
 \RequirePackage{footnote,footmisc} % to manage the numeration and reference to footnote
 %\patchcmd{\footnotemark}{\stepcounter{footnote}}{\refstepcounter{footnote}}{}{}
@@ -49,7 +49,9 @@
 %\providecommand{\BIBand}{e}
 \RequirePackage{apacite}
 %\providecommand{\BIBand}{e}
-\RequirePackage[spanish]{babel} % spanish mode for babel
+\RequirePackage[spanish,english]{babel} % spanish mode for babel
+%\long\newcommand\/*#1*/{} -> english en babel... problema de \/ en la biblio que se resolva asi (no se porque)
+%\def\/{}
 
 \makesavenoteenv{frame}
 
@@ -315,7 +317,8 @@
 
 
 % Definition del tipo de la bibliografia
-\bibliographystyle{newapa}
+%\bibliographystyle{newapa}
+\bibliographystyle{chicago}
 \newcommand{\bibliografia}[1]{
 \cleardoublepage
 \thispagestyle{empty}

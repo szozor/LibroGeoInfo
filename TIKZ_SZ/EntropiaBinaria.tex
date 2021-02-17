@@ -9,6 +9,7 @@
 \draw[thick,domain=.01:.99,samples=200] (0,0)-- plot (\x,{-\x*log2(\x)-(1-\x)*log2(1-\x)}) --(1,0);
 \draw (0,0)--(0,-.02) node[below]{\small $0$};
 \draw (1,0)--(1,-.02) node[below]{\small $1$};
+\draw (.5,0)--(.5,-.02) node[below]{\small $\frac12$};
 \draw (0,1)--(-.02,1) node[left]{\small $\log 2$};
 \end{scope}
 \end{tikzpicture}

@@ -11,29 +11,30 @@ Uno de los primeros trabajos donde  se formaliza la noci\'on de informaci\'on de
 una  cadena  de  s\'imbolos  es  debido a  Ralph  Hartley~\cite{Har28}.   En  su
 art\'iculo,  Hartley defini\'o  la informaci\'on  de una  secuencia como  siendo
 proporcional a su longitud.  M\'as  precisamente, para s\'imbolos de un alfabeto
-de cardenal \  $\alpha$, existen \ $\alpha^n$ \ cadenas  distintas de longitud \
-$n$.  Se  defini\'o la  informaci\'on de  tales cadenas  como \  $K n$  (con $K$
-dependiente  de \  $\alpha$).  Para  ser consistentes,  dos conjuntos  del mismo
-tama\~no  \  $\alpha_1^{n_1}  =  \alpha_2^{n_2}$   \  deben  contener  la  misma
-informaci\'on.  De  este requisito,  Hartley defin\'o  la informaci\'on  como $H
-=  \log \alpha^n$  donde la  base del  logaritmo es  arbitraria.  Dicho  de otra
-manera, tomando en particular el logaritmo de base 2, esta informaci\'on es nada
-m\'as  que los  n\'umeros  de bits  (0-1) necesarios  para  codificar todas  las
-cadenas de longitud  $n$ de s\'imbolos de un alfabeto  de cardenal $\alpha$.  La
-informaci\'on de Hartley  es el equivalente de la entrop\'ia  de Boltzmann de la
-mec\'anica  estad\'istica,  la   famosa  f\'ormula~\footnote{Esta  f\'ormula  se
-encuentra grabada el la tumba de Ludwig Boltzmann (1844-1906) en Viena donde fue
-enterrado despu\'es de su suicidio en Duino (cerca de Trieste y del ICTP--Centro
-internacional de  F\'isica T\'eorica) el  5 de  septiembre de 1906,  sin razones
-aparentes~\cite{Cer08, ArrPer13,  ArrPer15}.}  $S  = k_B \log  W$, donde  $k_B =
-1.380689   \times  10^{-23}   \operatorname{J.K}^{-1}$   es   la  constante   de
-Boltzmann~\cite{Bol96, Bol98, Jay65, Mer10, Mer18}.
+$\X$  de cardenal  finito  \ $|\X|  <  +\infty$, existen  \  $|\X|^n$ \  cadenas
+distintas de  longitud \ $n$.   Se defini\'o  la informaci\'on de  tales cadenas
+como \  $K n$  (con $K$ dependiente  de \ $|\X|$).   Para ser  consistentes, dos
+conjuntos  $\X_1^{n_1}$ y  $\X_2^{n_2}$  del mismo  tama\~no  \ $|\X_1|^{n_1}  =
+|\X_2|^{n_2}$  \ deben  contener  la misma  informaci\'on.   De este  requisito,
+Hartley  defin\'o la  informaci\'on como  $H =  \log |\X|^n$  donde la  base del
+logaritmo  es  arbitraria.  Dicho  de  otra  manera,  tomando en  particular  el
+logaritmo de base 2, esta informaci\'on es  nada m\'as que los n\'umeros de bits
+(0-1) necesarios para codificar todas las  cadenas de longitud $n$ de s\'imbolos
+de  un alfabeto  $\X$ de  cardenal $|\X|$.   La informaci\'on  de Hartley  es el
+equivalente de  la entrop\'ia  de Boltzmann de  la mec\'anica  estad\'istica, la
+famosa f\'ormula~\footnote{Esta  f\'ormula se encuentra  grabada el la  tumba de
+Ludwig  Boltzmann (1844-1906)  en  Viena  donde fue  enterrado  despu\'es de  su
+suicidio en Duino (cerca de Trieste y del ICTP--Centro internacional de F\'isica
+T\'eorica)  el  5 de  septiembre  de  1906, sin  razones  aparentes~\cite{Cer08,
+ArrPer13,  ArrPer15}.}   $S  =  k_B  \log  W$,  donde  $k_B  =  1.380689  \times
+10^{-23}  \operatorname{J.K}^{-1}$  es  la constante  de  Boltzmann~\cite{Bol96,
+Bol98, Jay65, Mer10, Mer18}.
 
 Una debilidad del enfoque de Hartley es que considera impl\'icitamente que en un
 mensaje cada cadena  de longitud dada puede aparecer con  la misma frecuencia, o
-probabilidad, $1/\alpha^n$  (en Boltzmann,  corresponde a la  misma probabilidad
-para cada configuraci\'on), siendo la  informaci\'on menos el logaritmo de estas
-probabilidades.  Sin embargo, parece m\'as l\'ogico  considerar que secuencias
+probabilidad, $1/|\X|^n$ (en Boltzmann, corresponde a la misma probabilidad para
+cada  configuraci\'on), siendo  la  informaci\'on menos  el  logaritmo de  estas
+probabilidades.  Sin  embargo, parece  m\'as l\'ogico considerar  que secuencias
 muy frecuentes  no llevan mucha  informaci\'on (se sabe que  aparecen), mientras
 que las que  aparecen raramente llevan m\'as informaci\'on  (hay m\'as sorpresa,
 m\'as incerteza  en observarlas).  Volviendo  a los s\'imbolos  elementales $x$,
@@ -55,9 +56,9 @@ Lun02, RioMag14, FlaRio16, RioFla17, Che17}).}.
 \label{Def:SZ:Shannon}
 %
   Sea  $X$  una  variable  aleatoria  definida  sobre  un  alfabeto  discreto  \
-  $X(\Omega) = \X  = \{ x_1 \,  , \, \ldots \,  , \, x_\alpha \}$  \ de cardenal
-  $\alpha = |\X| < + \infty$ finito. Sea $p_X$ la distribuci\'on de probabilidad
-  de $X$, \ie $ \forall \, x \in \X, \quad p_X(x) = P(X = x)$.  La entrop\'ia de
+  $X(\Omega) = \X  = \{ x_1 \,  , \, \ldots \,  , \, x_{|\X|} \}$  \ de cardenal
+  $|\X|  < +  \infty$ finito.  Sea $p_X$  la distribuci\'on  de probabilidad  de
+  $X$, \ie $  \forall \, x \in \X,  \quad p_X(x) = P(X = x)$.   La entrop\'ia de
   Shannon de la  variable~\footnote{Recordar que $X \sim  p_X$ significa ``$X$''
   distribuida de acuerdo a la distribuci\'on de probabilidad $p_X$} $X \sim p_X$
   se define como
@@ -89,7 +90,7 @@ distribuci\'on  de  probabilidad  $p_X$  y  no  de  la  variable  $X$,  usaremos
 indistintamente  tanto  la notaci\'on  $H(p_X)$  como  $H(X)$ seg\'un  convenga.
 Adem\'as,   $p_X$  podr\'a   denotar   indistintamente   la  distribuci\'on   de
 probabilidad, o el  vector de probabilidad $p_X  \equiv \begin{bmatrix} p_X(x_1)
-&  \cdots &  p_X(x_\alpha)  \end{bmatrix}^t$.  Tambi\'en,  usaremos $p_i  \equiv
+&  \cdots  & p_X(x_{|\X|})  \end{bmatrix}^t$.   Tambi\'en,  usaremos $p_i  \equiv
 p_X(x_i)$ por simplificaci\'on de escritura en algunas expresiones.
 
 \modif{$H$  es  el   equivalente  de  la  entrop\'ia  de   Gibbs  en  mec\'anica
@@ -115,7 +116,7 @@ a  las que  se puede  exigir a  una medida  de  ignorancia~\cite{Sha48, ShaWea64
 %
 \begin{propiedades}
 \item\label{Prop:SZ:continuidad} {\it Continuidad:}  vista como una funci\'on de
-  \ $\alpha$ \ variables  \ $p_i = p_X(x_i)$, \ $H$ \  es continua con respecto a
+  \ $|\X|$ \ variables  \ $p_i = p_X(x_i)$, \ $H$ \  es continua con respecto a
   los $p_i$.
 %
 \setcounter{PropPermutacion}{\value{enumi}}
@@ -132,7 +133,7 @@ a  las que  se puede  exigir a  una medida  de  ignorancia~\cite{Sha48, ShaWea64
   lo que se escribe tambi\'en $H(\sigma(X)) = H(X)$.  En particular, denotando
   $p_X^\downarrow$  el  vector de  probabilidades  obtenido  a partir  de  $p_X$
   clasificando  las probabilidades  en  orden  decreciente, $p_1^\downarrow  \ge
-  p_2^\downarrow \ge  \cdots \ge p_\alpha^\downarrow$ donde  $p_i^\downarrow$ es
+  p_2^\downarrow \ge  \cdots \ge p_{|\X|}^\downarrow$ donde  $p_i^\downarrow$ es
   la     $i$-\'esima     componente      de     $p_X^\downarrow$     \modif{(ver
   secci\'on~\ref{Ssec:MP:VADiscreta},  definici\'on~\ref{Def:MP:Mayorizacion})},
   se tiene
@@ -179,109 +180,123 @@ a  las que  se puede  exigir a  una medida  de  ignorancia~\cite{Sha48, ShaWea64
   a 1).
 %
 \setcounter{PropCotamaxima}{\value{enumi}}
-\item\label{Prop:SZ:cotamaxima} {\it Maximalidad:}  la entrop\'ia es acotada por
+\item\label{Prop:SZ:cotamaxima} {\it Maximalidad:}  la entrop\'ia est\'a acotada por
   arriba,
   %
   \[
-  H(X) \le \log \alpha,
+  H(X) \le \log |\X|,
   \]
   %
   con igualdad si y solamente si $X$ es uniforme sobre $\X$, \ie
   %
   \[
-  H(X) =  \log \alpha \quad \mbox{ssi}  \quad \forall \,  x \in \X, \:  p_X(x) =
-  \frac{1}{\alpha}.
+  H(X) =  \log |\X| \quad \mbox{sii}  \quad \forall \,  x \in \X, \:  p_X(x) =
+  \frac{1}{|\X|}.
   \]
   %
-  En otras palabras, la incerteza  es m\'axima cuando cualquier estado $x$ puede
-  aparecer con la misma probabilidad; cada observaci\'on lleva una informaci\'on
-  importante sobre el  sistema que genera $X$.  La cota  m\'axima resuelta de la
-  maximizaci\'on de $H$ sujeto a $\sum_x p_X(x) = 1$, es decir, con la t\'ecnica
-  del  Lagrangiano para  tomar  en cuenta  el v\'inculo~\cite{Mil00,  CamMar09},
-  notando $p_i = p_X(x_i)$, hay que minimizar  $\sum_i (- p_i \log p_i + \eta \,
-  p_i)$ donde el factor de Lagrange  \ $\eta$ \ se determinar\'a para satisfacer
-  el  v\'inculo.  Se  obtiene sencillamente  que $\log  p_i =  -\eta$,  dando la
-  distribuci\'on  uniforma.\newline La  figura Fig.~\ref{Fig:SZ:EntropiaBinaria}
-  representa la entrop\'ia de un sistema a dos estados, de probabilidades \ $p_X
-  = \begin{bmatrix}  1-p & p \end{bmatrix}^t$  \ (ley de  Bernoulli de parametro
-  $p$), entrop\'ia a veces dicha  {\it entrop\'ia binaria}, en funci\'on de $p$.
-  Esta figura  ilustra ambas cotas  ($p = 1$  o 1, $p  = \frac12$) as\'i  que la
-  invariancia bajo una permutaci\'on ($h(p) = H(1-p,p) = H(p,1-p) = h(1-p)$).
+  En otras  palabras, la incerteza es  m\'axima cuando cualquier estado  \ $x$ \
+  puede  aparecer con  la misma  probabilidad; el  sistema siendo  completamente
+  ``desorganisado'',  de una  forma  una observaci\'on  (un  sampleo) lleva  una
+  informaci\'on importante sobre  el sistema que genera $X$ al  opuesto del caso
+  deterministico (se sabe que val $X$, as\'i que no nos informa un sampleo).  La
+  cota m\'axima resuelta  de la maximizaci\'on de $H$ sujeto  a $\sum_x p_X(x) =
+  1$,  es decir,  con  la t\'ecnica  del  Lagrangiano para  tomar  en cuenta  el
+  v\'inculo~\cite{Mil00, CamMar09}, notando $p_i  = p_X(x_i)$, hay que maximizar
+  $\sum_i (- p_i \log p_i + \eta \, p_i)$ donde el factor de Lagrange \ $\eta$ \
+  se determinar\'a para  satisfacer el v\'inculo. Cancelado la  derivada en cada
+  $p_j$, se obtiene sencillamente que $\log p_j$ debe ser constante (la derivada
+  secunda   es   negativa  sobre   $[0   \;   1]$),  dando   la   distribuci\'on
+  uniforme.\newline  La figura  Fig.~\ref{Fig:SZ:EntropiaBinaria} representa  la
+  entrop\'ia  de  un   sistema  con  dos  estados,  de   probabilidades  \  $p_X
+  = \begin{bmatrix} 1-p & p \end{bmatrix}^t$  \ (ley de Bernoulli de par\'ametro
+  $p$), entrop\'ia  a veces dicha  {\it binaria}, en funci\'on  de $p \in  [0 \;
+  1]$.  Esta figura  ilustra las cotas inferior  y superior de $H$ ($p  = 0$ \'o
+  $1$, $p =  \frac12$) as\'i como la invarianza bajo  una permutaci\'on ($h(p) =
+  H\left(    \begin{bmatrix}    1-p    &    p    \end{bmatrix}^t    \right)    =
+  H\left( \begin{bmatrix} p & 1-p \end{bmatrix}^t \right)  = h(1-p) = - p \log p
+  - (1-p) \log (1-p)$).
   %
   \begin{figure}[h!]
   %
   \begin{center}\input{TIKZ_SZ/EntropiaBinaria}\end{center}
   %
-  \leyenda{Entrop\'ia binaria  (de una variable de Bernoulli)  $h(p) = H(1-p,p)$
-    en funci\'on de $p \in [0 \; 1]$.}
+  \leyenda{Entrop\'ia  binaria   (de  una  variable  de   Bernoulli)  $h(p)  =
+  H\left(  \begin{bmatrix} 1-p  &  p \end{bmatrix}^t  \right)$  en funci\'on  de
+  $p \in [0 \; 1]$.}
   %
   \label{Fig:SZ:EntropiaBinaria}
   \end{figure}
 %
 \item\label{Prop:SZ:expansabilidad} {\it Expansibilidad:}  A\~nadir un estado de
-  probabilidad 0 no cambia la entrop\'ia, \ie sean \ $X$ \ definido sobre \ $\X$
-  \ y  \ $\widetilde{X}$ \ sobre  \ $\widetilde{X} = \X  \cup \{ \widetilde{x}_0
-  \}, \:\: \widetilde{x}_0 \notin \X$, con
+  probabilidad nula no cambia  la entrop\'ia, \ie sean \ $X$  \ definido sobre \
+  $\X$    \     y    \    $\widetilde{X}$    \     sobre    \    $\widetilde{\X}
+  = \X \cup \{ \widetilde{x}_0 \}, \:\: \widetilde{x}_0 \notin \X$, con
   %
   \[
-  p_{\widetilde{X}}(x)  =   p_X(x)  \quad  \mbox{si}  \quad  x   \in  \X,  \quad
-  p_{\widetilde{X}}(\widetilde{x}_0)   =   0,   \qquad   \mbox{entonces}   \quad
-  H(p_{\widetilde{X}}) = H(p_X).
+  p_{\widetilde{X}}(x)      =       p_X(x)      \quad       \mbox{si}      \quad
+  x   \in  \X,   \quad  \mbox{y}   \quad  p_{\widetilde{X}}(\widetilde{x}_0)   =
+  0, \quad \mbox{entonces} \quad H(p_{\widetilde{X}}) = H(p_X).
   \]
   %
-  Esta propiedad  es obvia, consecuencia de  $\displaystyle \lim_{t \to  0} \, t
-  \log t = 0$.
+  Esta propiedad  es obvia,  consecuencia de  la convenci\'on $0  \log =  0$ que
+  viene de $\displaystyle \lim_{t \to 0^+} \, t \log t = 0$.
 %
 \setcounter{PropRecursividad}{\value{enumi}}
-\item\label{Prop:SZ:recursividad} {\it Recursividad:} Juntar dos estados baja la
-  entrop\'ia de  una cantidad igual a  la entrop\'ia interna de  los dos estados
-  por  la   probabilidad  de   ocurrencia  de  este   conjunto  de   estados,  y
-  vice-versa. De la  invarianza de la entrop\'ia por  permutaci\'on, sin perdida
-  de generalidad se  puede considerar que los estados que se  juntan son los dos
-  \'ultimos, \ie sean \ $X$ \ definido  sobre \ $\X$ \ y \ $\breve{X}$ \ sobre
-  \ $\breve{\X}$ \ tales que,
+\item\label{Prop:SZ:recursividad} {\it Recursividad:} Agrupar dos estados baja la
+  entrop\'ia en  una cantidad igual a  la entrop\'ia interna de  los dos estados
+  por la probabilidad de ocurrencia de este  par de estados. De la invarianza de
+  la  entrop\'ia  por  permutaci\'on,  sin p\'erdida  de  generalidad  se  puede
+  considerar que los  estados que se agrupan  son los dos \'ultimos,  \ie sean \
+  $X$ \  definido sobre  \ $\X$  \ con  $|\X| > 2$,  y \  $\breve{X}$ \  sobre \
+  $\breve{\X}$ \ tales que
+  %\{ x_1 , \ldots , x_{|\X|-2} , \breve{x}_{|\X|-1}\},   %1 \le i \le |\X|-2
   %
   \[
-  \left\{  \begin{array}{l}\breve{\X}  = \{  x_1  ,  \ldots  , x_{\alpha-2}  ,
-      \breve{x}_{\alpha-1}\} \quad \mbox{con el estado interno} \quad
-      \breve{x}_{\alpha-1}   =  \{   x_{\alpha-1} \,  , \,   x_\alpha  \},\\[2.5mm]
-      p_{\breve{X}}(x_i) = p_X(x_i), \quad 1 \le i \le \alpha-1 \quad \mbox{y}
-      \quad p_{\breve{X}}(\breve{x}_{\alpha-1}) = p_X(x_{\alpha-1}) +
-      p(x_\alpha)  \quad  \mbox{distribuci\'on  sobre  }  \breve{\X}\\[2.5mm]
-      \displaystyle   \breve{q}(x_j)  =   \frac{p_X(x_j)}{p_X(x_{\alpha-1})  +
-        p_X(x_\alpha)},  \quad j =  \alpha-1, \alpha  \quad \mbox{distribuci\'on
+  \left\{  \begin{array}{l}\breve{\X}  = \big( \X \setminus \{ x_{|\X|-1} , x_{|\X|} \} \big) \cup \{ \breve{x}_{|\X|-1} \}
+  \quad \mbox{con el estado interno} \quad
+      \breve{x}_{|\X|-1}   =  \{   x_{|\X|-1} \,  , \,   x_{|\X|}  \},\\[2.5mm]
+      p_{\breve{X}}(x_i) = p_X(x_i), \quad \forall \, x_i \in \X \setminus \{ x_{|\X|-1} , x_{|\X|} \}
+      \quad \mbox{y}
+      \quad p_{\breve{X}}(\breve{x}_{|\X|-1}) = p_X(x_{|\X|-1}) +
+      p_X(x_{|\X|})  \quad  \mbox{distribuci\'on  sobre  }  \breve{\X}\\[2.5mm]
+      \displaystyle   \breve{q}(x_j)  =   \frac{p_X(x_j)}{p_X(x_{|\X|-1})  +
+        p_X(x_{|\X|})},  \quad j =  |\X|-1, |\X|  \quad \mbox{distribuci\'on
         del estado interno}\end{array}\right.
   \]
   %
   entonces,
   %
   \[
-  H(p_X)  =   H(p_{\breve{X}})  +  p_{\breve{X}}(\breve{x}_{\alpha-1})  \,
+  H(p_X)  =   H(p_{\breve{X}})  +  p_{\breve{X}}(\breve{x}_{|\X|-1})  \,
   H(\breve{q}),
   \]
   %
-  lo que se escribe tambi\'en
+  %lo que se escribe tambi\'en
   %
-  \[
-  H(p_1,\ldots,p_\alpha)  =  H(p_1,\ldots,p_{\alpha-2},p_{\alpha-1}+p_\alpha)  +
-  \left(             p_{\alpha-1}+p_\alpha            \right)            H\left(
-    \frac{p_{\alpha-1}}{p_{\alpha-1}+p_\alpha}                                  ,
-    \frac{p_\alpha}{p_{\alpha-1}+p_\alpha}\right).
-  \]
+  %\[
+  %H(p_1,\ldots,p_{|\X|})  =  H(p_1,\ldots,p_{|\X|-2},p_{|\X|-1}+p_{|\X|})  +
+  %\left(             p_{|\X|-1}+p_{|\X|}            \right)            H\left(
+  %  \frac{p_{|\X|-1}}{p_{|\X|-1}+p_{|\X|}}                                  ,
+  %  \frac{p_{|\X|}}{p_{|\X|-1}+p_{|\X|}}\right).
+  %H(p_1,\ldots,p_{|\X|})  =  H(p_1,\ldots,p_{|\X|-2},p_{|\X|-1}+p_{|\X|})  +
+  %\left(             p_{|\X|-1}+p_{|\X|}            \right)            H\left(
+  %  \frac{p_{|\X|-1}}{p_{|\X|-1}+p_{|\X|}}                                  ,
+  %  \frac{p_{|\X|}}{p_{|\X|-1}+p_{|\X|}}\right).
+  %\]
   %
-  Esta relaci\'on  viene de $a \log  a + b  \log b = (a+b)  \left( \frac{a}{a+b}
-    \log\left(  \frac{a}{a+b} \right)  + \frac{b}{a+b}  \log\left( \frac{a}{a+b}
-    \right)   -   \log(  a   +   b  )\right)$   es   ilustrada   en  la   figura
-  Fig.~\ref{Fig:SZ:Recursividad}.\newline
+  Esta relaci\'on que viene de $a \log  a + b  \log b = (a+b)  \left( \frac{a}{a+b}
+    \log\left(  \frac{a}{a+b} \right)  + \frac{b}{a+b}  \log\left( \frac{b}{a+b}
+    \right)   +  \log(  a   +   b  )\right)$,   es   ilustrada   en  la   figura
+  Fig.~\ref{Fig:SZ:Recursividad} (para $|\X| > 2$).\newline
   %
   \begin{figure}[h!]
   %
   \begin{center} \input{TIKZ_SZ/Recursividad} \end{center}
   %
-  \leyenda{Ilustraci\'on de  la propiedad  de recursividad, que  cuantifica como
-    decrece  la  entrop\'ia  en  un  conjunto  cuando  se  juntan  dos  estados,
-    relacionando   la  entrop\'ia   total,  la   entrop\'ia  despu\'es   del  la
-    agrupaci\'on y la entrop\'ia interna a los dos estados juntados.}
+  \leyenda{Ilustraci\'on de  la propiedad  de recursividad, que  cuantifica c\'omo
+    decrece  la  entrop\'ia  en  un  conjunto  cuando  se  agrupan  dos  estados,
+    relacionando   la  entrop\'ia   total,  la   entrop\'ia  despu\'es   de  la
+    agrupaci\'on y la entrop\'ia interna de los dos estados agrupados.}
   %
   \label{Fig:SZ:Recursividad}
   \end{figure}
@@ -289,24 +304,25 @@ a  las que  se puede  exigir a  una medida  de  ignorancia~\cite{Sha48, ShaWea64
 \setcounter{PropConcavidad}{\value{enumi}}
 \item\label{Prop:SZ:concavidad}  {\it Concavidad:}  la  entrop\'ia es  c\'oncava
   ($-H$ es convexa, ver definici\'on~\ref{Def:MP:convexa}),
-  %  pagina~\pageref{Def:MP:convexa}), 
-  en  el  sentido  de  que   la  entrop\'ia  de  una  combinaci\'on  convexa  de
-  distribuciones  (mezcla) de  probabilidades  es  siempre mayor  o  igual a  la
-  combinaci\'on convexa de entrop\'ias:
+  %  pagina~\pageref{Def:MP:convexa}),  
+  en el  sentido de que la  entrop\'ia de una combinaci\'on  convexa (mezcla) de
+  distribuciones de probabilidad  es siempre mayor o igual  que la combinaci\'on
+  convexa de entrop\'ias:
   %
   \[
-  \forall \:  \{ \pi_i \}_{i=1}^n, \quad  0 \le \pi_i \le  1, \quad \sum_{i=1}^n
-  \pi_i  = 1  \quad \mbox{and  cualquier  conjunto de  distribuciones} \quad  \{
-  p_{(i)} \}_{i=1}^n,
+  \forall \:  \pi = \begin{bmatrix} \pi_1 & cdots &  \pi_n \end{bmatrix}^t \in \Simp{n-1}
+  %, \quad  0 \le \pi_k \le  1, \quad \sum_{k=1}^n \pi_k  = 1
+  \quad \mbox{and  cualquier  conjunto de  distribuciones} \quad  \{
+  p_{(k)} \}_{k=1}^n \in \Simp{\alpha-1}^n, \: \alpha > 1,
   \]
   %
   \[
-  H\left( \sum_{i=1}^n \pi_i \, p_{(i)} \right) \ge \sum_{i=1}^n \pi_i H(p_{(i)}).
+  H\left( \sum_{k=1}^n \pi_k \, p_{(k)} \right) \ge \sum_{k=1}^n \pi_k H(p_{(k)}).
   \]
   %
   Esta relaci\'on es conocida tambi\'en como desigualdad de Jensen~\cite{Jen06}.
   Es una consecuencia directa de la  convexidad de la funci\'on $\phi: t \mapsto
-  t \log  t$, como ilustrado en la  figura Fig.~\ref{Fig:SZ:Concavidad}-(a).  La
+  t \log  t$, como se ilustra en la  figura Fig.~\ref{Fig:SZ:Concavidad}-(a).  La
   figura  Fig.~\ref{Fig:SZ:Concavidad}-(b)  ilustra como  se  puede obtener  una
   mezcla  de distribuciones  de dos  probabilidad $p_{(1)}$  (dado  izquierda) y
   $p_{(2)}$ (dado  derecho) haciendo  una elecci\'on aleatoria  a partir  de una
@@ -330,16 +346,15 @@ a  las que  se puede  exigir a  una medida  de  ignorancia~\cite{Sha48, ShaWea64
   \end{figure}
 %
 \setcounter{PropSchurConcavidad}{\value{enumi}}
-\item\label{Prop:SZ:Schurconcavidad}  {\it Schur-concavidad:}  como se  lo puede
-  querrer, lo  m\'as ``concentrado'' es  una distribuci\'on de  probabilidad, lo
-  menos hay  incerteza, y  entonces lo m\'as  peque\~no debe ser  la entrop\'ia.
-  Esta propiedad intuitiva  se resuma a partir de  la noci\'on de mayorizaci\'on
-  vista       en      la       definici\'on~\ref{Def:MP:Mayorizacion},
+\item\label{Prop:SZ:Schurconcavidad}  {\it Concavidad de Schur:}  como se  puede
+  querrer, cuanto  m\'as ``concentrada'' es una  distribuci\'on de probabilidad,
+  menos ignorancia hay, y entonces m\'as peque\~na debe ser la entrop\'ia.  Esta
+  propiedad intuitiva se resume a partir  de la noci\'on de mayorizaci\'on vista
+  en la definici\'on~\ref{Def:MP:Mayorizacion},
 %  pagina~\pageref{Def:MP:Mayorizacion}
-  (recuerdense  que  si  los  vectores  no
-  tienen  el mismo  tama\~no, el  m\'as peque\~no  es completado  por  ceros; es
-  equivalente a a\~nadir estados fictivos de probabilidad nula, lo que no cambia
-  la entrop\'ia).
+  (recuerdense  que si  los  vectores  no tienen  el  mismo  tama\~no, el  m\'as
+  peque\~no es completado por ceros;  es equivalente a a\~nadir estados fictivos
+  de probabilidad nula, lo que no cambia la entrop\'ia).
   %
   La  Schur-concavidad  se  traduce  por  la  relaci\'on
   %
@@ -353,11 +368,11 @@ a  las que  se puede  exigir a  una medida  de  ignorancia~\cite{Sha48, ShaWea64
   (6)-(8)]{MarOlk11}.  Adem\'as, de la Schur-concavidad se obtiene que
   %
   \[
-  H\left( \begin{bmatrix}  \frac1\alpha & \cdots  & \frac1\alpha \end{bmatrix}^t
-  \right) \quad \mbox{es una funci\'on creciente de } \alpha.
+  H\left( \begin{bmatrix}  \frac{1}{|\X|} & \cdots  & \frac{1}{|\X|} \end{bmatrix}^t
+  \right) \quad \mbox{es una funci\'on creciente de } |\X|.
   \]
   %
-  La prueba  de la  Schur-concavidad se  apoya sobre la  desigualdad de  Schur o
+  La prueba  de la  concavidad de Schur se  apoya sobre la  desigualdad de  Schur o
   Hardy-Littlewood-P\'olya    o     Karamata~\cite{Sch23,    HarLit29,    Kar32,
     HarLit52},~\cite[Cap.~3,                                 Prop.~C.1]{MarOlk11}
   o~\cite[Teorema~II.3.1]{Bha97}: $t \prec t' \: \Rightarrow \: \sum_i \phi(t_i)
@@ -372,9 +387,9 @@ a  las que  se puede  exigir a  una medida  de  ignorancia~\cite{Sha48, ShaWea64
 En muchos  casos, uno tiene que  trabajar con varias  variables aleatorias. Para
 simplificar las notaciones, consideramos  un par de variables \ $X$ \  y \ $Y$ \
 definidas respectivamente sobre los alfabetos \ $\X$  \ y \ $\Y$ \ de cardenal \
-$\alpha = |\X|$ \ y \ $\beta = |\Y|$.  Tal par de variables puede ser vista como
+$|\X|$ \ y \ $|\Y|$.  Tal par de variables puede ser vista como
 una variable $\begin{bmatrix} X\\ Y\end{bmatrix}$ definida sobre el alfabeto $\X
-\times  \Y$  de  cardenal \ $\alpha  \beta$ \  tal  que  se define  naturalmente  la
+\times  \Y$  de  cardenal \ $|\X| |\Y|$ \  tal  que  se define  naturalmente  la
 entrop\'ia  para  esta  variable;  tal entrop\'ia  es  llamada  {\it  entrop\'ia
   conjunta} de $X$ y $Y$:
 %
@@ -382,9 +397,9 @@ entrop\'ia  para  esta  variable;  tal entrop\'ia  es  llamada  {\it  entrop\'ia
 \label{Def:SZ:EntropiaConjunta}
 %
   Sean \ $X$ \ e \ $Y$  \ dos variables aleatorias definidas sobre los alfabetos
-  discretos \ $\X$  \ y \ $\Y$,  de cardenal \ $\alpha  = |\X| < +\infty$  \ y \
-  $\beta  =  |\Y|   <  +\infty$  \  respectivamente.   Sea  \   $p_{X,Y}$  \  la
-  distribuci\'on de probabilidad conjunta de \ $X$ \ e \ $Y$, \ \ie $ \forall \,
+  discretos \  $\X$ \ y \  $\Y$, de cardenal  \ $|\X| <  +\infty$ \ y \  $|\Y| <
+  +\infty$  \  respectivamente.    Sea  \  $p_{X,Y}$  \   la  distribuci\'on  de
+  probabilidad  conjunta   de  \   $X$  \  e   \  $Y$,  \   \ie  $   \forall  \,
   (x,y)  \in \X  \times  \Y, \quad  p_{X,Y}(x,y)  = P\big(  (X =  x)  \cap (Y  =
   y) \big)$.   La entrop\'ia conjunta de  Shannon de las  variables \ $X$ \  e \
   $Y$ \ es definida por
@@ -484,9 +499,10 @@ as\'i que una tasa de entrop\'ia cuando $n$ va al infinito.
 \end{definicion}
 %
 \noindent Esta  cantidad siempre existe  porque $\displaystyle H(X_1 ,  \ldots ,
-X_n) \le \sum_{i=1}^n H(X_i) \le \sum_{i=1}^n  \log \alpha_i \le n \max_{1 \le i
-  \le n} \alpha_i$  donde los $\alpha_i$ son los cardenales  de los alfabetos de
-definici\'on de los $X_i$.
+X_n) \le \sum_{i=1}^n H(X_i) \le \sum_{i=1}^n  \log |\X_i| \le n \max_{1 \le i
+  \le n} |\X_i|$.
+  %donde los $\alpha_i$  son los cardenales de los alfabetos  de definici\'on de
+  %los $X_i$.
 
 \
 

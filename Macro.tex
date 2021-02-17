@@ -238,8 +238,9 @@ D^{\mathrm{b}}_{(h,\phi)}\ifthenelse{\isempty{#1}}{}{\left( \left. #1 \right\| #
 %   \hline}
 \tabletail{\hline}
 %\renewcommand{\arraystretch}{2}
+\begin{xtabular}
 %\begin{longtable}
-\begin{supertabular}
+%\begin{supertabular}
 {
 |>{\vspace{-2mm}}p{.12\textwidth}
 |>{\vspace{-2mm}}p{.88\textwidth}
@@ -250,8 +251,10 @@ D^{\mathrm{b}}_{(h,\phi)}\ifthenelse{\isempty{#1}}{}{\left( \left. #1 \right\| #
 %
 {
 \\[2.5mm]
-\end{supertabular}\vspace{2cm}
-%\end{longtable}
+\hline
+%\end{supertabular}\vspace{2cm}
+\end{xtabular}\vspace{2cm}
+%\end{longtable}\vspace{2cm}
 }
 
 
@@ -269,7 +272,8 @@ D^{\mathrm{b}}_{(h,\phi)}\ifthenelse{\isempty{#1}}{}{\left( \left. #1 \right\| #
 %\renewcommand{\arraystretch}{2}
 %\begin{longtable}
 \tabletail{\hline}
-\begin{supertabular}
+\begin{xtabular}
+%supertabular}
 {
 |>{\vspace{-2mm}}p{.275\textwidth}|
 >{\vspace{-2mm}}p{.675\textwidth}|
@@ -279,6 +283,7 @@ D^{\mathrm{b}}_{(h,\phi)}\ifthenelse{\isempty{#1}}{}{\left( \left. #1 \right\| #
 %
 {
 \\[2.5mm]
-\end{supertabular}\newline
-%\end{longtable}
+\end{xtabular}\newline
+%supertabular}\newline
+%\end{longtable}\newline
 }
