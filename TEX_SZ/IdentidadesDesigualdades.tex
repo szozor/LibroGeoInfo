@@ -137,7 +137,7 @@ informaci\'on de Fisher:
 \end{teorema}
 %
 \begin{proof}
-  De la regla de cadena tenemos
+  De la regla de la cadena tenemos
   %
   \[
   J_\theta(Y|X) + J_\theta(Y) = J_\theta(X|Y) + J_\theta(X).
@@ -791,21 +791,21 @@ informaci\'on de Fisher.
   \right)^{-1}  =  I$ \  viene  \  $\frac{\partial  \left( T  \Sigma_\N  T^t
     \right)^{-1}}{\partial T_{i,j}} = -  \left( T \Sigma_\N T^t \right)^{-1}
   \frac{\partial \left( T \Sigma_\N  T^t \right)}{\partial T_{i,j}} \left( T
-    \Sigma_\N T^t \right)^{-1}$.  Usando le vector \ $\un_i$ \ con 1 en su \
+    \Sigma_\N T^t \right)^{-1}$.  Usando le vector \ $\uno_i$ \ con 1 en su \
   $i$-\'esima componente, y cero si no (ver notaciones), se obtiene
   %
   \begin{eqnarray*}
   \frac{\partial \left( x^t \left( T \Sigma_\N T^t \right)^{-1} x
   \right)}{\partial T_{i,j}} & = & - x^t \left( T \Sigma_\N T^t \right)^{-1}
-  \left( \un_i \un_j^t \Sigma_\N T^t + T \Sigma_\N \un_j \un_i^t \right) \left( T
+  \left( \uno_i \uno_j^t \Sigma_\N T^t + T \Sigma_\N \uno_j \uno_i^t \right) \left( T
   \Sigma_\N T^t \right)^{-1} x\\[2.5mm]
   %
-  & = & - 2 \, \un_i^t \left( T \Sigma_\N T^t \right)^{-1} x x^t \left( T
-  \Sigma_\N T^t \right)^{-1} T \Sigma_\N \un_j
+  & = & - 2 \, \uno_i^t \left( T \Sigma_\N T^t \right)^{-1} x x^t \left( T
+  \Sigma_\N T^t \right)^{-1} T \Sigma_\N \uno_j
   \end{eqnarray*}
   %
-  usando la relaci\'on  \ $x^t A \un_k \un_l^t B  x = \un_l^t B x  x^t A \un_k =
-  \un_k^t A^t x x^t  B^t \un_l$ \ (escalares comutan y un  escalar es igual a su
+  usando la relaci\'on  \ $x^t A \uno_k \uno_l^t B  x = \uno_l^t B x  x^t A \uno_k =
+  \uno_k^t A^t x x^t  B^t \uno_l$ \ (escalares comutan y un  escalar es igual a su
   traspuesta) y usando la simetr\'ia de \ $T \Sigma_\N T^t$.  Eso significa
   que
   %

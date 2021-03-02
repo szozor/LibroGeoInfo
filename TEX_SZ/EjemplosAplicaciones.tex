@@ -64,30 +64,51 @@ desaparece)
 % M = m = 1$), \ se busca,
 %
 \[
-p_{\mathrm{em}} = \argmax_p H(p) \qquad \mbox{sujeto a} \qquad p \ge 0, \quad \int_\X p(x) \, d\mu(x) = 1 \quad \mbox{y} 
+p_{\mathrm{em}}  =   \argmax_p  H(p)  \qquad   \mbox{sujeto  a}  \qquad   p  \ge
+0, \quad \int_\X p(x) \, d\mu(x) = 1 \quad \mbox{y}
 \quad \int_\X M(x) \, p(x) \, d\mu(x) = m,
 \]
 %
 donde los dos primeros v\'inculos (positividad, normalizaci\'on) aseguran de que
-$p_{\mathrm{em}}$ sea una distribuci\'on de probabilidad. En el ejemplo del gas perfecto, $K
-= 1, \, M_1(x) = \frac12 m \sum_i x_i^2$ \ (los $x_i$ son las velocidades).  Con
-la t\'ecnica del Lagrangiano para  tomar en cuenta los v\'inculos, introduciendo
-factores de  Lagrange $\eta_0,  \quad \eta =  \begin{bmatrix} \eta_1 &  \cdots &
-  \eta_K \end{bmatrix}^t$  \ para  tener en cuenta  los v\'inculos,  el problema
-variacional   consiste  a   resolver~\cite{GelFom63,  Bru04,   Mil00,  CamMar09,
-  CovTho06}
+$p_{\mathrm{em}}$ sea una distribuci\'on de  probabilidad. En el ejemplo del gas
+perfecto, $K  = 1,  \, M_1(x) =  \frac12 m  \sum_i x_i^2$ \  (los $x_i$  son las
+velocidades).   Con  la t\'ecnica  del  Lagrangiano  para  tomar en  cuenta  los
+v\'inculos,   introduciendo   factores   de   Lagrange   $\eta_0,   \quad   \eta
+= \begin{bmatrix}  \eta_1 &  \cdots &  \eta_K \end{bmatrix}^t$  \ para  tener en
+cuenta  los  v\'inculos,  el  problema   variacional  consiste  a  maximizar  la
+integral~\cite{GelFom63, Bru04, Mil00, CamMar09, CovTho06}
 %
 \[
-p_{\mathrm{em}} = \argmax_p \int_\X  \left( - p(x) \log p(x) + \eta_0  \, p(x) + \eta^t M(x)
-  \, p(x) \right) d\mu(x),
+p_{\mathrm{em}} =  \argmax_p \int_\X \left(  - p(x) \log  p(x) + \eta_0  \, p(x)
+  + \eta^t M(x) \, p(x) \right) d\mu(x),
 \]
 %
-donde $\eta_0, \eta$ ser\'an determinados  para satisfacer a los v\'inculos.  En
-el    caso   continuo    $\mu   =    \mu_L$    se   usa    la   ecuaci\'on    de
-Euler-Lagrange~\cite{GelFom63, Bru04}, esquematicamente anulando la ``derivada''
-del integrande  con respecto a  $p$; en el  caso discreto, se anula  realmente un
-gradiente con respecto a los componentes de $p$. Reparametrizando los factores de
-Lagrange, se obtiene as\'i
+donde $\eta_0, \eta$  ser\'an determinados para satisfacer a  los v\'inculos. Se
+puede ver que el problema es c\'oncava  con respecto a $p$ (\ie el integrande es
+una funci\'on  c\'oncava de  $p$), as\'i  que existe  una soluci\'on  \'unica al
+problema~\cite{GelFom63, Wei74,  Bru04, Mil00,  CamMar09, Cla13, Kom14}.   En el
+caso continuo $\mu = \mu_L$ se usa la ecuaci\'on de Euler-Lagrange~ \footnote{En
+el caso  discreto, queda claro  que los $p_i$  se buscan anulando  las derivadas
+parciales. En  el caso  continuo, el problema  es un  extremizaci\'on functional
+conocida como problema variacional.  En el  caso general inicial, el problema es
+extremizar $\displaystyle \I[f]  = \int_\X \L\left( x , f(x)  , f'(x) \right) \,
+dx$ con $\L  \in C^2\left( \Rset^3 , \Rset \right)$.   Si el calculo variacional
+es debido a I.  Newton o G. W.  Leibniz, los primeros que  se enfocaron en tales
+problemas   de    optimizaci\'on   variacionales   fueron   los    hermanos   J.
+Bernoulli~\cite{Ber1697,       Ber1701,       Ber1718}      (ver       tambi\'en
+I. Newton~\cite{New1696}), L.  Euler~\cite{Eul1738, Eul1744, Eul1766} y luego J.
+L.   Lagrange~\cite{Lag1760:1,  Lag1760:2,  Lag1766}  a partir  del  trabajo  de
+Euler~\cite{Gol80, Fra92, Fra94, BraSan07}, por  ejemplo en problemas de buscada
+de  camino m\'inimo  (en  termino de  tiempo) entre  dos  puntos en  mec\'anica.
+Volviendo a la extremiezaci\'on,  si $f_e$ es el extremo, se escribe  $f = f_e +
+delta f$ y se hace un desarollo de  $\L$ en $\delta$ para obtener que $f^*$ debe
+satisfacer    la    famosa    ecuaci\'on   (diferencial)    de    Euler-Lagrange
+$\displaystyle \frac{\partial L}{\partial f} - frac{d}{dx} \left( \frac{\partial
+L}{\partial  f'}   \right)  =  0$.\label{Foot:SZ:EulerLagrange}}~\cite{GelFom63,
+Wei74,  Bru04,  Cla13, Kom14},  esquematicamente  anulando  la ``derivada''  del
+integrande  con respecto  a $p$;  en  el caso  discreto, se  anula realmente  un
+gradiente con respecto a los  componentes de $p$.  Reparametrizando los factores
+de Lagrange, se obtiene as\'i
 %
 \[
 p_{\mathrm{em}}(x) = \frac{1}{Z(\eta)} e^{\eta^t M(x)} = e^{\eta^t M(x) - \varphi(\eta)},
@@ -496,28 +517,173 @@ tema  f\'isico de  ocupaci\'on de  niveles de  energ\'ia en  un  sistema cerrado
 
 
 
-% ================================= MaxEnt
+% ================================= MinFisher
 
 \subseccion{El principio de informaci\'on de Fisher m\'inima}
 \label{Ssec:SZ:MinFisher}
 
+Ya que la informaci\'on de  Fisher, contra-parte estadistica de la informaci\'on
+n t\'erminos entr\'opicos,  una pregunta natural es estudiar como  se traduce el
+principio de entrop\'ia m\'axima  en el marco de Fisher. La  respuesta no es tan
+sencilla del hecho que en general la  informaci\'on de Fisher es matricial en su
+marco  general,  y  m\'as  all\'a,  implica   a  la  vez  la  distribuci\'on  de
+probabilidad y su gradiente. El problema de minimisac\'on de la informaci\'on de
+Fisher bajo varios v\'inculos  no es un problema my antiguo  y no hay soluciones
+bastantes generales como para el problema de entrop\'ia m\'inima. Fue estudia en
+marcos particulares como se lo puede ver por ejemplo en~\cite{}.
+
+\SZ{Caso no parametrica,
+}
+
+Siendo  $J$ una  matriz,  se enfoca  sobre su  traza,  informaci\'on escalar  de
+Fisher.  Sea   entonces  \   $X$  \  variable   aleatoria  viviendo   sobre  (de
+distribuci\'on de probabilidad de soporte) \  $X(\Omega) = \X \subset \Rset^d$ \
+con \  $K \ge 0$  \ momentos \  $\Esp\left[ M_k(X) \right]  = m_k$ \  fijos, con
+$M_x: \X  \to \Rset$. Suponemos que  $X$ tiene una densidad  \ $p$ \ de  clase \
+$C^1$. El problema  de informaci\'on de Fisher m\'inima se  formula de la manera
+siguiente:   sean    \   $M(x)   =    \begin{bmatrix}   M_1(x)   &    \cdots   &
+M_K(x)  \end{bmatrix}^t$   \  y  \   $m  =   \begin{bmatrix}  m_1  &   \cdots  &
+m_K \end{bmatrix}^t$ (si $K = 0$ \ $M$ desaparece)
+%
+\[
+p_{\mathrm{fm}}  =   \argmin_p  \Tr(J(p))  \qquad   \mbox{sujeto  a}  \qquad   p  \ge
+0, \quad \int_\X p(x) \, d\mu(x) = 1 \quad \mbox{y}
+\quad \int_\X M(x) \, p(x) \, dx = m,
+\]
+%
+donde los dos primeros v\'inculos (positividad, normalizaci\'on) aseguran de que
+$p_{\mathrm{fm}}$  sea una  distribuci\'on de  probabilidad. Nuevamente,  con la
+t\'ecnica del  Lagrangiano para  tomar en  cuenta los  v\'inculos, introduciendo
+factores  de Lagrange  $\eta_0, \quad  \eta  = \begin{bmatrix}  \eta_1 &  \cdots
+& \eta_K  \end{bmatrix}^t$ \ para  tener en  cuenta los v\'inculos,  el problema
+variacional  consiste  a  maximizar la  integral~\cite{GelFom63,  Bru04,  Mil00,
+CamMar09, CovTho06}
+%
+\[
+p_{\mathrm{fm}} =  \argmin_p \int_\X \left(  \frac{\left\| \nabla_x p(x)  \right\|^2}{p(x)} + \eta_0  \, p(x)
+  + \eta^t M(x) \, p(x) \right) dx,
+\]
+%
+donde $\eta_0, \eta$  ser\'an determinados para satisfacer a  los v\'inculos. \SZ{Se
+puede ver que el problema es c\'oncava  con respecto a $p$ (\ie el integrande es
+una funci\'on  c\'oncava de  $p$), as\'i  que existe  una soluci\'on  \'unica al
+problema~\cite{GelFom63, Wei74,  Bru04, Mil00,  CamMar09, Cla13, Kom14}. } 
+
+En  el  context de  distribuciones  con  densidades  de probabilidad,  de  clase
+$C^1(\X,\Rset_+)$,  se puede  de nuevo  usar el  enfoque de  Euler-Lagrange. Sin
+embardo, eso conduce a una ecuaci\'on  diferencial no lineal, dificil a resolver
+(a\'un  numericamente).  En la  literatura,  se  encuentra  (a  lo m\'as  qe  lo
+conocemos) dos enfoques:
+%
+\begin{itemize}
+\item El  primero  consiste  a  escribir  \  $p(x) =  \exp\left(  -  \int  \psi(x)  \,
+dx \right)$.  Por una parte, eso  permite cancelar el v\'inculo  de positivdad y
+luego  conduce a  una ecuaci\'on  conocida en  varios casos  como ecuaci\'on  de
+Riccati. Esa es muy estudiada~\cite{}.
+%
+\item El secundo enfoque  consiste a escribir \ $p(x) = \left| \psi(x) \right|^2$. De nuevo, eso permite cancelar el v\'inculo de positivdad. M\'as all\'a, $\Psi$ juega un rol de funci\'on de onda en mec\'anica cu\'antica y precisamente va a satisfacer una acuaci\'on tipo Schr\"odinger~\cite{}.
+\end{itemize}
+
+En ambos casos, tal como en la escritura con la densidad $p$, tenemos a resolver
+la minimizaci\'on de una integral bajo la forma
+%
+\[
+g_{\mathrm{m}} = \argmin_p \int_\X \L\left( x \, , \, g(x) \, , \, \nabla g(x) \right) \, dx
+\]
+%
+con \ $\L(x,g,g') \in C^1\left( \Rset^d \times \Rset \times \Rset^d \, , \, \Rset \right)$.
+Del     enfoque    de     Euler-Lagrange,     generalizado     en    el     caso
+multivariado~\footnote{Ver                        nota                        de
+pie~\ref{Foot:SZ:EulerLagrange}}~\cite{GelFom63, Wei74, Bru04,  Cla13, Kom1}, si
+existe la soluci\'on debe satisfacer a la ecuaci\'on de Euler-Lagrange
+%
+\[
+ \frac{\partial L}{\partial g} - \div \left( \nabla_{\! g'} \L \right) = 0  \qquad \mbox{donde}  \qquad  g' =  \nabla_x g
+\]
+%
+donde \ $\div$ \ es es operador divergencia (ver notaciones), o sea
+%
+\[
+\frac{\partial \L}{\partial g} - \sum_{j=1}^d \frac{\partial}{\partial x_j} \left( \frac{\partial \L}{\partial  g'_j}
+\right) = 0
+%\qquad  \mbox{donde}  \qquad  g_j  =  \frac{\partial g}{\partial x_j}
+\]
+
+
+
+%%%%%%%%%%
+\paragraph{Enfoque ``\`a la Schr\"odinger''}
+
+
+Sea $p(x)  = \psi^2(x)$. Entonces,  se nota  inmediatamente que
+$\left\| \nabla_x p \right\|^2 = 4 \, p \, \left\| \nabla_x p \right\|^2$ dando el problema de minimizaci\'on (minimizar $J$ o $J/4$ es equivalente)
+%
+\[
+\psi_{\mathrm{fm}} = \argmin_\psi \int_\X  \left( \left\| \nabla \psi(x) \right\|^2 + \left( \eta_0 \,  
+  + \eta^t M(x) \right) \, \psi^2(x) \right)  \, dx
+\]
+%
+En otros t\'erminos, $\displaystyle \L(x , \psi , \psi') = \left( \left\| \nabla \psi(x) \right\|^2 + \left( \eta_0 \,  
+  + \eta^t M(x) \right) \, \psi^2(x) \right)$ que da la ecuaci\'on de Euler-Lagrange
+%
+\[
+\div\left( \nabla_x \psi \right) - \eta^t M \, \psi =  \eta_0 \, \psi
+\]
+%
+Esta ecuaci\'on es nada m\'as que la ecuaci\'on multidimensional de Schr\"odinger~\cite{} con un potencial de la forma
+%
+\[
+V(x) =  \eta^t M(x)
+\]
+
+
+%%%%%%%%%%
+\paragraph{Enfoque ``\`a la Riccati''}
+
+% Riccati 1720
+% https://fr.wikipedia.org/wiki/Équation_de_Riccati
+%  Riccati, Jacopo (1724) "Animadversiones in aequationes differentiales secundi gradus" (Observations regarding differential equations of the second order), Actorum Eruditorum, quae Lipsiae publicantur, Supplementa, 8 : 66-73. Translation of the original Latin into English by Ian Bruce.
+
+Sea $p(x)  = e^{  - g(x)}$. Entonces,  se nota  inmediatamente que
+$\nabla_x p = - p \nabla_x g$ dando el problema de minimizaci\'on
+%
+\[
+g_{\mathrm{fm}} = \argmin_g \int_\X  \left( \left\| \nabla g(x) \right\|^2 + \eta_0  
+  + \eta^t M(x) \right) \, e^{- g(x) } \, dx
+\]
+%
+En otros t\'erminos, $\displaystyle \L(x , g , g') = \left( \left\| \nabla g(x) \right\|^2 + \eta_0  
+  + \eta^t M(x) \right) \, e^{- g(x) }$ que da la ecuaci\'on de Euler-Lagrange
+%
+\[
+2 \, \div\left( \Psi \right) - \left\| \Psi \right\|^2 = \eta_0 + \eta^t M \qquad \mbox{con} \qquad \Psi = \nabla_x g
+\]
+%
+o sea
+
+
+
+
+
+%\ref{GelFom63,  Bru04,   Cla13,  Kom14} (\ref{Wei74,  Kom14} caso doble o triple)
 
 \SZ{  (2) ver MinFisher Frieden p. 235, Berchet Vignat 2009, Ernst 2017; cf. travaux
-  rederivant MQ de Frieden-Plastino-Soffer  (1999, 2002), Reginato 98, Bickel 81
-"On the theory of Fisher's amount of information" Kagan 63, Chimento et al 2000
+  rederivant MQ de Frieden-Plastino-Soffer (1999,  2002), Reginato 98, Bickel 81
+"On the theory of Fisher's amount of  information" Kagan 63, Chimento et al 2000
 }
 
 
-Se notar\'a que, al imagen de las leyes de entrop\'ia m\'axima, la informaci\'on
-de  Fisher  juega tambi\'en  un  rol particular  en  la  inferencia bayesiana  a
-trav\'es del prior de Jeffrey~\cite{Jef46, Jef48, LehCas98, Rob07}~\footnote{Ver
-  nota de  pie~\ref{Foot:SZ:Prior}.
-  %pagina~\pageref{Foot:SZ:Prior}. 
-  A  veces, se  toma como  distribuci\'on a  priori \  $p_\Theta(\theta) \propto
-  |J_\theta(X)|^\frac12$ \  por su invarianza por reparametrizaci\'on  \ $\eta =
-  \eta(\theta)$,  \ie  el prior  de  Jeffrey en  \  $\eta$  \ es  un\'ivocamente
-  obtenido con la Fisher  en \ $\eta$ \ o por cambio  de variables saliendo de \
-  $p_\Theta$.}.
+\
+
+Para  cerra esta  secci\'on, nota  que,  al imagen  de las  leyes de  entrop\'ia
+m\'axima, la informaci\'on  de Fisher (sin poner v\'inculos)  juega tambi\'en un
+rol   particular  en   la  inferencia   bayesiana  a   trav\'es  del   prior  de
+Jeffrey~\cite{Jef46,    Jef48,    LehCas98,   Rob07}~\footnote{Ver    nota    de
+pie~\ref{Foot:SZ:Prior}.   A  veces, se  toma  como  distribuci\'on a  priori  \
+$p_\Theta(\theta)  \propto  |J_\theta(X)|^\frac12$  \   por  su  invarianza  por
+reparametrizaci\'on  \ $\eta  =  \eta(\theta)$, \ie  el prior  de  Jeffrey en  \
+$\eta$ \ es un\'ivocamente obtenido con la Fisher  en \ $\eta$ \ o por cambio de
+variables saliendo de \ $p_\Theta$.}.
 
 
 % ================================= canal
@@ -899,12 +1065,12 @@ transici\'on $\Pi$ se deduce como permutaci\'on de un vector $\widetilde{\pi}$, 
 
 
 \begin{definicion}[Canal uniforme en salida]
-Un  canal es  dicho uniforme  en  salida si  $\un$  autovector de  la matriz  de
-transici\'on, $\Pi  \un \propto  \un$, \ie si  la entrada de  un canal  con esta
-transici\'on es uniforme, la salida tambi\'en. Necesariamente, $\Pi \un = \frac{|\X|}{|\Y|} \, \un$.
+Un  canal es  dicho uniforme  en  salida si  $\uno$  autovector de  la matriz  de
+transici\'on, $\Pi  \uno \propto  \uno$, \ie si  la entrada de  un canal  con esta
+transici\'on es uniforme, la salida tambi\'en. Necesariamente, $\Pi \uno = \frac{|\X|}{|\Y|} \, \uno$.
 
 Cuando $|\Y|=|\X|$,  el autovalor  es igual  a uno  y la  matriz est  dicha {\em
-bi-estocastica} (recordar que es estochastica, $\un^t \Pi = \un^t$).
+bi-estocastica} (recordar que es estochastica, $\uno^t \Pi = \uno^t$).
 \end{definicion}
 
 
@@ -934,8 +1100,8 @@ C = \max_{p_X \in \Simp{|\X|-1}} H(\Pi p_X) - H(\pi)
 \]
 \end{teorema}
 \begin{proof}
-El resultat viene  inmediatamente de $H(Y|X) = H(\Pi) p_X$,  siendo en este caso
-$H(\Pi) = H(\pi) \un^t$.
+El resultat viene  inmediatamente de $H(Y|X) = H(\Pi) \, p_X$,  siendo en este caso
+$H(\Pi) = H(\pi) \uno^t$.
 \end{proof}
 
 
@@ -963,24 +1129,24 @@ Fig.~\ref{Fig:SZ:CanalesDiscretos}-(a). En este caso,  la matriz de transici\'on
 es dada por
 %
 \[
-\Pi = \begin{bmatrix} 1 - \varepsilon & 0 \\ \varepsilon & \varepsilon \\ 0 & 1 - \varepsilon \end{bmatrix}
+\Pi = \begin{bmatrix}
+1 - \varepsilon & 0 \\
+\varepsilon & \varepsilon \\
+0 & 1 - \varepsilon
+\end{bmatrix}
 \]
 %
 Claramente, el canal es sim\'etrico en entrada,  pero no es en salida, y tampoco
 es uniforme  en salida  si $\varepsilon  \ne \frac13$. De  nuevo, si  perdida de
 generalidad, tratando de bits, consideramos  la entrop\'ia en bits (logaritmo de
-base  2).   Sencillamente,  $I(X   ;  Y)  =   H(p_Y)  -   h_2(\varepsilon)$  con
+base  2).    Sencillamente,  $I(X  ;   Y)  =  H(p_Y)  -   h_2(\varepsilon)$  con
 $h_2(\varepsilon) =  - \varepsilon  \log_2 \varepsilon -  (1-\varepsilon) \log_2
 (1-\varepsilon)$  entrop\'ia  binaria.   Con  la probabilidad  de  entrada  $p_X
-= \begin{bmatrix} r & 1-r \end{bmatrix}^t$ se calcula la probabilidad de salida
-%
-\[
-p_Y =  \begin{bmatrix} r (1-\varepsilon) \\ \varepsilon \\ (1-r) \varepsilon \end{bmatrix}
-\]
-%
-as\'i que, claramente, cuando $\varepsilon \ne \frac13$ no se puede alcanzar una
-distrinuci\'on de salida uniforme. De hecho,  se calcula la entrop\'ia de salida
-como
+= \begin{bmatrix} r & 1-r \end{bmatrix}^t$  se calcula la probabilidad de salida
+$p_Y    =     \begin{bmatrix}    r     (1-\varepsilon)    &     \varepsilon    &
+(1-r)    \varepsilon   \end{bmatrix}^t$    as\'i    que,   claramente,    cuando
+$\varepsilon  \ne \frac13$  no se  puede alcanzar  una distribuci\'on  de salida
+uniforme. De hecho, se calcula la entrop\'ia de salida como
 %
 \[
 H(p_Y) = (1 - \varepsilon) h_2(r) + h_2(\varepsilon)
@@ -995,22 +1161,51 @@ C = 1 - \varepsilon
 \]
 
 
-Un ejemplo particular de canal sim\'etrico es un canal de matriz de transici\'on dicha {\em circulante},
+Un ejemplo particular de canal sim\'etrico es un canal de matriz de transici\'on
+dicha {\em circulante}, donde la columna $k+1$ se deduce de la columna $k$ por una permutaci\'on circular de un \'indice
 %
 \[
-\Pi = \begin{bmatrix}
-  a_1   &   a_n  & a_{n-1} & \cdots & a_2 \\
+\begin{bmatrix}
+\pi & \Pi_c \, \pi & \cdots & \Pi_c^{n-1} \, \pi
+\end{bmatrix} \qquad \mbox{con} \qquad
 %
-  a_2   &   a_1  &   a_n  & \cdots & a_3\\
+\pi = \begin{bmatrix} \pi_1 \\ \vdots \\ \pi_n \end{bmatrix}
+\quad \mbox{y} \quad
+\Pi_c =
+%\begin{bmatrix}
+%   0   &    1   &    0    & \cdots &   0  \\
+%%
+%%   0   &    0   & \ddots & \ddots &   0   \\
+%%
+%\vdots & \vdots & \ddots & \ddots & \vdots\\
+%%
+%   0   &    0   & \cdots &   0    &   1   \\
+%%
+%   1   &    0   & \cdots &   0    &   0
+%\end{bmatrix}
+%=
+\sum_{k=1}^n \uno_k \uno_{k+1}^t, \quad \uno_{n+1} \igualc \uno_1
+\]
 %
-  a_3   &   a_2  &   a_1  & \cdots & \vdots\\
+o sea, para $n \ge 3$ ($n = 2$ da el canal binario sim\'etrico),
+%
+$\Pi  =  \begin{bmatrix}
+  \pi_1   &   \pi_n  & \pi_{n-1} & \cdots & \pi_2 \\
+%
+  \pi_2   &   \pi_1  &   \pi_n  & \cdots & \pi_3\\
+%
+  \pi_3   &   \pi_2  &   \pi_1  & \cdots & \vdots\\
 %
  \vdots & \vdots & \vdots & \vdots & \vdots\\
 %
-  a_n   & a_{n-1} & \cdots & a_2 & a_1
+  \pi_n   & \pi_{n-1} & \cdots & \pi_2 & \pi_1
 \end{bmatrix}
-\]
+$
+%
+%(ver notaciones).
 }
+
+\
 
 En~\cite{CovTho06,  Rio07}  entre  otros,  se estudian  diversos  otros  canales
 discretos, binarios  o con m\'as estados.   Unos son representados  en la figura

@@ -15,7 +15,7 @@
 \pgfmathsetmacro{\El}{35} % Elevacion
 \pgfmathsetmacro{\Az}{-105}% Azimuth
 %
-\pgfmathsetmacro\r{3.5} % rayo del circulo (d=2) y de la esfera (d=3)
+\pgfmathsetmacro\r{3.5} % radio del circulo (d=2) y de la esfera (d=3)
 %
 %
 % punto x para el caso d = 2
@@ -158,14 +158,14 @@ node[right]{$\boldsymbol{x}$};
 %\draw[thick,dashed] ({projx(0,\yp},{projy(0,\yp,0})--({projx(0,\yp},{projy(0,\yp,\zp});
 %
 %
-% notacion del rayo
-\pgfmathsetmacro{\propr}{.6} % distancia del rayo para anotar "r"
+% notacion del radio
+\pgfmathsetmacro{\propr}{.6} % distancia del radio para anotar "r"
 \draw ({projx(\propr*\xp,\propr*\yp},{projy(\propr*\xp,\propr*\yp,\propr*\zp})
 node[below,scale=.75] {$\boldsymbol{r}$};
 %
 %
 % notacion del angulo theta_1
-\pgfmathsetmacro{\proptu}{.45} % "rayo" para dibujar el angulo
+\pgfmathsetmacro{\proptu}{.45} % "radio" para dibujar el angulo
 \draw[thick,dotted] ({projx(\xp,\yp},{projy(\xp,\yp,\zp})--({projx(\xp,0},{projy(\xp,0,\zp});;% proy x2=0
 \draw[thick,dotted] (0,0)--({projx(\xp,0},{projy(\xp,0,\zp}) node[scale=.7]{$\bullet$};% proy x2=0
 \draw[->,>=stealth]
@@ -175,7 +175,7 @@ node[pos=0,left,scale=.75] {$\boldsymbol{\theta_1}$}
 %
 %
 % notacion del angulo theta_2
-\pgfmathsetmacro{\propp}{.55} % "rayo" para dibujar el angulo
+\pgfmathsetmacro{\propp}{.55} % "radio" para dibujar el angulo
 \draw[thick,dashed] ({projx(\xp,\yp},{projy(\xp,\yp,\zp})--({projx(0,\yp},{projy(0,\yp,\zp});;% proy x1=0
 \draw[thick,dashed] (0,0)--({projx(0,\yp},{projy(0,\yp,\zp}) node[scale=.7]{$\bullet$};% proy x1=0
 \draw[->,>=stealth]

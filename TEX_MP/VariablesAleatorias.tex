@@ -4,7 +4,7 @@
 En un experimento  o un dado proceso, los  posibles resultados son t\'ipicamente
 n\'umeros  reales, siendo  cada n\'umero  un evento.   Luego los  resultados son
 mutuamente  excluyentes. Se  considera  a  esos n\'umeros  como  valores de  una
-\emph{variable aleatoria} $X$ a valores reales, que puede ser discreta, continua
+{\it variable aleatoria} $X$ a valores reales, que puede ser discreta, continua
 o mixta.
 
 Formalmente, la  noci\'on de  variable aleatoria se  apoya sobre la  noci\'on de
@@ -142,25 +142,25 @@ con respecto a una medida:
   define la integraci\'on a partir de
   %
   \[
-  \forall \, A \in \A,  \quad \int_A d\mu(\omega) = \int_\Omega \un_A(\omega) \,
+  \forall \, A \in \A,  \quad \int_A d\mu(\omega) = \int_\Omega \uno_A(\omega) \,
   d\mu(\omega) = \mu(A),
   \]
   %
-  donde  \  $\un_A$  \  es   la  funci\'on  indicadora  del  conjunto  $A$  (ver
+  donde  \  $\uno_A$  \  es   la  funci\'on  indicadora  del  conjunto  $A$  (ver
   notaciones).   $d\mu(\omega)$  se escribe  a  veces tambi\'en  $\mu(d\omega)$,
   medida de  un ``infinit\'esimo''.  Claramente, por propiedades  de una medida,
-  para $ A_i, A_j$ disjuntos $\un_{A_i} + \un_{A_j} = \un_{A_i \cup A_j}$, dando
-  $\displaystyle \int_\Omega \left( \un_{A_i} + \un_{A_j} \right) d\mu(\omega) =
-  \mu(A_i \cup A_j) = \mu(A_i) + \mu(A_j) = \int_\Omega \un_{A_i} d\mu(\omega) +
-  \int_\Omega  \un_{A_j} d\mu(\omega)$  y entonces,  sin perdida  de generalidad
+  para $ A_i, A_j$ disjuntos $\uno_{A_i} + \uno_{A_j} = \uno_{A_i \cup A_j}$, dando
+  $\displaystyle \int_\Omega \left( \uno_{A_i} + \uno_{A_j} \right) d\mu(\omega) =
+  \mu(A_i \cup A_j) = \mu(A_i) + \mu(A_j) = \int_\Omega \uno_{A_i} d\mu(\omega) +
+  \int_\Omega  \uno_{A_j} d\mu(\omega)$  y entonces,  sin perdida  de generalidad
   para un conjunto $\{ A_j \}$ numerable
   %, con los $A_j$ disjuntos,  
   y $\{  a_j \}$ reales no negativos,  la integral de la  funci\'on escalonada \
-  $\displaystyle \sum_j a_j \un_{A_j}$ \ es dada por
+  $\displaystyle \sum_j a_j \uno_{A_j}$ \ es dada por
   %
   \[
-  \int_\Omega \left( \sum_j a_j \un_{A_j}(\omega) \right) \, d\mu(\omega) =
-  \sum_j a_j \int_\Omega \un_{A_j}(\omega) \, d\mu(\omega).
+  \int_\Omega \left( \sum_j a_j \uno_{A_j}(\omega) \right) \, d\mu(\omega) =
+  \sum_j a_j \int_\Omega \uno_{A_j}(\omega) \, d\mu(\omega).
   \]
   %
   Para  los  $A_i$  disjuntos  es   la  consecuencia  directa  de  la  propiedad
@@ -186,8 +186,8 @@ Antes de definir la integraci\'on de una funci\'on real, medible, cualquiera, el
 %
 \begin{proof}
   La  sucesi\'on \ $\displaystyle  g_n =  \sum_{k=0}^{n 2^n-1}  \frac{k}{2^n} \,
-  \un_{g^{-1}\left( \left[ \frac{k}{2^n} \; \frac{k+1}{2^n} \right) \right)} + n
-  \, \un_{g^{-1}\left(  \left[ n \;  +\infty \right) \right)}$ \  es escalonada,
+  \uno_{g^{-1}\left( \left[ \frac{k}{2^n} \; \frac{k+1}{2^n} \right) \right)} + n
+  \, \uno_{g^{-1}\left(  \left[ n \;  +\infty \right) \right)}$ \  es escalonada,
   creciente y converge  hacia $g$ \ (notar que esta  sucesi\'on comparte la idea
   que subyace a la integraci\'on de Riemann).
 \end{proof}
@@ -454,11 +454,11 @@ densidades.
 \end{lema}
 %
 \begin{proof}
-  Tomando \ $f =  \un_A$, de la definici\'on Def.~\ref{Def:MP:DensidadMedida} se
+  Tomando \ $f =  \uno_A$, de la definici\'on Def.~\ref{Def:MP:DensidadMedida} se
   obtiene
   %
   \[
-  \int_\Omega  \un_A(\omega)  \,  \frac{d\nu}{d\mu}(\omega)  \,  d\mu(\omega)  =
+  \int_\Omega  \uno_A(\omega)  \,  \frac{d\nu}{d\mu}(\omega)  \,  d\mu(\omega)  =
   \int_A   \frac{d\nu}{d\mu}(\omega)   \,  d\mu(\omega)   =   \nu(A)  =   \int_A
   d\nu(\omega)
   \]
@@ -493,7 +493,7 @@ densidades.
   \nu(A) =  0$. El  segunndo resultado  se obtiene escribiendo  la medida  en su
   forma integral.   Ad\'emas, por definici\'on de la  densidad, \ $\displaystyle
   \forall  \: A  \in  \A,  \quad \nu(A)  =  \int_A \frac{d\nu}{d\mu}(\omega)  \,
-  d\mu(\omega)$.   Luego,   aplicando  el   lema  anterior  a   \  $f   =  \un_A
+  d\mu(\omega)$.   Luego,   aplicando  el   lema  anterior  a   \  $f   =  \uno_A
   \frac{d\nu}{d\mu}$  \ se  obtiene que,  tambi\'en, \  $\displaystyle  \nu(A) =
   \int_A    \frac{d\nu}{d\lambda}(\omega)   \,    d\lambda(\omega)    =   \int_A
   \frac{d\nu}{d\lambda}(\omega)      \,     \frac{d\lambda}{d\mu}(\omega)     \,
@@ -548,7 +548,7 @@ dando lugar a medidas discretas:
   La medida de Dirac al punto \ $x_0$, \ denotada \ $\delta_{x_0}$, \ es tal que
   %
   \[
-  \forall   \  B  \in   \B(\Rset^d),  \quad   \delta_{x_0}(B)  =   \un_B(x_0)
+  \forall   \  B  \in   \B(\Rset^d),  \quad   \delta_{x_0}(B)  =   \uno_B(x_0)
   \]
   %
   Dado un conjunto \ $\X = \{  x_i \}_i$ \ discreto (finito o infinito numerable),
@@ -579,7 +579,7 @@ Notar que,
   \]
   %
   luego la integraci\'on se  vuelve una suma.  Se prueba saliendo de  \ $g$ \ de
-  la   forma  \  $g   =  \un_C$   \  y   del  Teorema~\ref{Teo:MP:MedibleLimite}
+  la   forma  \  $g   =  \uno_C$   \  y   del  Teorema~\ref{Teo:MP:MedibleLimite}
   conjuntamente   con  las   definiciones   Def.~\ref{Def:MP:IntegracionReal}  y
   Def.~\ref{Def:MP:Dirac}.
 \end{itemize}
@@ -827,7 +827,7 @@ escribir a \  $X$ \ como una {\it  variable escalonada} (ver ej.~\cite{AthLah06,
   HogMck13}),
   %
   \[
-  X = \sum_j x_j \un_{A_j} \quad \mbox{con} \quad A_j = X^{-1}(\{ x_j \}).
+  X = \sum_j x_j \uno_{A_j} \quad \mbox{con} \quad A_j = X^{-1}(\{ x_j \}).
   \]
 \end{definicion}
 %
@@ -872,17 +872,18 @@ obviamente normalizada en el sentido de que
 \sum_{x \in \X} p_X(x) = 1.
 \]
 %
-\modif{Dicho de  otra manera, en  el caso finito  $|\X| = \alpha <  +\infty$, el
-  vector  de probabilidad  $p_X$  partenece  al simplex  estandar  o simplex  de
-  probabilidad  $p_X \in  \Simp{\alpha-1}$ (ver  notaciones). La  condici\'on de
-  normalizaci\'on se escribe tambi\'en de manera vectorial bajo la forma
+\modif{
+Dicho  de  otra manera,  en  el  caso finito  $|\X|  <  +\infty$, el  vector  de
+  probabilidad $p_X$  partenece al  simplex estandar  o simplex  de probabilidad
+  $p_X \in \Simp{|\X|-1}$ (ver  notaciones). La condici\'on de normalizaci\'on
+  se escribe tambi\'en de manera vectorial bajo la forma
   %
  \[
- \un^t p_X = 1
+ \uno^t p_X = 1
  \]
  %
- donde  $\un =  \begin{bmatrix} 1  & \cdots  & 1  \end{bmatrix}^t$ de  tama\~{n}o
- $\alpha$ (ver notaciones).}
+ donde  $\uno =  \begin{bmatrix} 1  & \cdots  & 1  \end{bmatrix}^t$ de  tama\~{n}o
+ $|\X|$ (ver notaciones).}
 
 \modif{Volviendo a la medida de probabilidad $P_X$ se nota que}
 %
@@ -915,7 +916,7 @@ figura~\ref{Fig:MP:ProbaDiscreta}-(b).
 Un caso especial se tiene cuando un  valor $x_k$ es cierto o seguro, y no ocurre
 ninguno de los  otros valores $x_j \  (j \ne k)$. La forma  de la distribuci\'on
 es: \ $p_X(x) = 1$ \ si \ $x =  x_k$ \ y $0$ si no; el vector de probabilidad se
-escribir\'a  \  $p_X  =  \un_k$  (ver  notaciones;  el  vector  posiblemente  de
+escribir\'a  \  $p_X  =  \uno_k$  (ver  notaciones;  el  vector  posiblemente  de
 dimensi\'on infinita).  Se denota tambi\'en  con el {\it s\'imbolo de Kronecker}
 \ $\delta_{j,k} = 1$ \  si \ $j = k$ \ y 0 si  no. En este libro, evitaremos usar
 este  s\'imbolo  para no  confundirlo  con la  medida  de  Dirac.  Sin  embargo,
@@ -924,13 +925,13 @@ Def.~\ref{Def:MP:Dirac}).
 
 
 Otra   situaci\'on  particular   es  la   de  {\it   equiprobabilidad}   o  {\it
-  distribuci\'on  uniforme} cuando  $|\X|  =  \alpha <  +\infty,  \: \alpha  \in
-\Nset_0$.  La  forma de la distribuci\'on  es: \ $p_X(x_j)  = \frac1\alpha \quad
-\forall \, j =  1 , \ldots , \alpha$, \ie $p_X  = \begin{bmatrix} \frac1\alpha &
-  \cdots &  \frac1\alpha \end{bmatrix}^t$ \ o,  en t\'erminos de  medida, $P_X =
-\frac1\alpha  \sum_{j=1}^\alpha \delta_{x_j}$.   La  funci\'on de  repartici\'on
-resulta una funci\'on escalonada, con  saltos de altura \ $\frac1\alpha$ en cada
-$x_j, \quad j = 1 \, , \, \ldots \, , \, \alpha$.
+  distribuci\'on  uniforme} cuando  $|\X| <  +\infty,  \: |\X|  \in
+\Nset_0$.  La  forma de la distribuci\'on  es: \ $p_X(x_j)  = \frac{1}{|\X|} \quad
+\forall \, j =  1 , \ldots , |\X|$, \ie $p_X  = \begin{bmatrix} \frac{1}{|\X|} &
+  \cdots &  \frac{1}{|\X|} \end{bmatrix}^t$ \ o,  en t\'erminos de  medida, $P_X =
+\frac{1}{|\X|}  \sum_{j=1}^{|\X|} \delta_{x_j}$.   La  funci\'on de  repartici\'on
+resulta una funci\'on escalonada, con  saltos de altura \ $\frac{1}{|\X|}$ en cada
+$x_j, \quad j = 1 \, , \, \ldots \, , \, |\X|$.
 
 De manera general, la medida de probabilidad de una variable discreta se escribe
 como combinaci\'on convexa de medidas de Dirac,
@@ -947,7 +948,7 @@ P_X =  \sum_j p_j  \delta_{x_j}, \quad  \mbox{con} \quad p_j =  P(X=x_j) \ge  0,
 Para comparar  dos distribuciones discretas  es \'util reordenar cada  vector de
 probabilidad permutando  sus elementos hasta listarlos de  forma decreciente. El
 vector  reordenado a  partir  de $p$  se  anota $p^\downarrow$,  de  modo que  \
-$p^\downarrow_1 \ge  p^\downarrow_2 \ge \ldots \ge  p^\downarrow_\alpha$.  En el
+$p^\downarrow_1 \ge  p^\downarrow_2 \ge \ldots \ge  p^\downarrow_{|\X|}$.  En el
 ejemplo del caso con certeza se tiene  \ $p^\downarrow = \begin{bmatrix} 1 & 0 &
   \cdots  &  0 \end{bmatrix}^t$,  mientras  que  la  distribuci\'on uniforme  no
 var\'ia.  La comparaci\'on de dos vectores de probabilidad se puede apoyar sobre
@@ -957,7 +958,8 @@ la noci\'on de mayorizaci\'on:
 \label{Def:MP:Mayorizacion}
 %
   Un vector  de probabilidad  (distribuci\'on) $p$ mayorizado  por un  vector de
-  probabilidad (distribuci\'on) $q$, denotado $p \prec q$, se define como:
+  probabilidad  (distribuci\'on) $q$,  ambas de  dimensi\'on $\alpha$,  denotado
+  $p \prec q$, se define como:
   %
   \[
   p   \prec  q   \qquad  \mbox{sii}   \qquad  \sum_{i=1}^k   p_i^\downarrow  \le
@@ -977,7 +979,7 @@ la noci\'on de mayorizaci\'on:
   0.10   \end{bmatrix}^t  \prec   \begin{bmatrix}   0.50  &   0.30   &  0.15   &
   0.05 \end{bmatrix}^t$ \ (ver Fig.~\ref{Fig:MP:mayorizacionplot}-(a)).
 
-Es importante resaltar  que la mayorizaci\'on provee un  {\em orden parcial} (no
+Es importante resaltar  que la mayorizaci\'on provee un  {\it orden parcial} (no
 total)  entre  distribuciones,  existiendo  pares de  distribuciones  tales  que
 ninguna mayoriza a la otra.  Por  ejemplo, $\begin{bmatrix} 0.50 & 0.35 & 0.10 &
   0.05  \end{bmatrix}^t$  \   y  \  $\begin{bmatrix}  0.60  &   0.20  &  0.17  &
@@ -1002,7 +1004,7 @@ conocimiento completo.  \modif{Veremos en el cap\'itulo~\ref{Cap:SZ:Informacion}
 
 La     relaci\'on      de     mayorizaci\'on     es      ilustrada     en     la
 figura~\ref{Fig:MP:mayorizacionplot}, donde  se representan las  sumas parciales
-en  funci\'on  de  $k$,  llamadas  {\em curvas  de  Lorentz~\footnote{Se  prueba
+en  funci\'on  de  $k$,  llamadas  {\it curvas  de  Lorentz~\footnote{Se  prueba
     sencillamente      que      estas      curvas     son      crecientes      y
     c\'oncavas.}}~\cite{MarOlk11,  Lor05}.   Gr\'aficamente,   $p  \prec  q$  es
 equivalente a tener la curva de Lorentz asociada a $p$ por debajo de la asociada
@@ -1113,9 +1115,9 @@ esto  es, $\{  x \}$  es de  medida $P_X$  nula.  \modif{Similarmente, cualquier
   conjuntos numerable de $\Rset$ es de medida $P_X$ nula.}
 
 Notar que  a\'un cuando $0 \le  F_X \le 1$, \  $p_X$ puede ser mayor  que uno. Por
-ejemplo, para  \ $F_X(x)  = 2  \, x \,  \un_{\left[ 0  \; \frac12  \right)}(x) +
-\un_{\left[  \frac12  \;  +\infty  \right)}(x)$, que  define  una
-funci\'on  de   repartici\'on,  \   $p_X(x)  =  2   \un_{\left[  0   \;  \frac12
+ejemplo, para  \ $F_X(x)  = 2  \, x \,  \uno_{\left[ 0  \; \frac12  \right)}(x) +
+\uno_{\left[  \frac12  \;  +\infty  \right)}(x)$, que  define  una
+funci\'on  de   repartici\'on,  \   $p_X(x)  =  2   \uno_{\left[  0   \;  \frac12
   \right)}(x)$.  No es  contradictorio en  el  sentido de  que $p_X$  no es  una
 probabilidad, sino  que $p_X(x) \, dx$  puede ser visto como  la probabilidad de
 hallar a  la variable con  valores en el  ``intervalo infinitesimal entre  $x$ y
@@ -1135,9 +1137,9 @@ funci\'on de repartici\'on correspondiente.
 %
 \leyenda{Ilustraci\'on de:  (a) una  distribuci\'on de probabilidad  continua, y
   (b) la funci\'on  de repartici\'on asociada, con \  $\X = [0 \; 1)  \cup [2 \;
-  3)$ \ y \ $p_X(x) = \frac12 \un_{[0 \; 1)}(x) + \frac{5 (x-2)^{\frac32}}{4} \un_{[2
-    \; 3)}(x)$,  \ \ie \  $F_X(x) = \frac{x}{2}  \, \un_{[0 \; 1)}(x)  + \frac12
-  \un_{[1 \; 2)}(x)  + \frac{1+(x-2)^{\frac52}}{2} \un_{[2 \; 3)}(x)  + \un_{[3 \;
+  3)$ \ y \ $p_X(x) = \frac12 \uno_{[0 \; 1)}(x) + \frac{5 (x-2)^{\frac32}}{4} \uno_{[2
+    \; 3)}(x)$,  \ \ie \  $F_X(x) = \frac{x}{2}  \, \uno_{[0 \; 1)}(x)  + \frac12
+  \uno_{[1 \; 2)}(x)  + \frac{1+(x-2)^{\frac52}}{2} \uno_{[2 \; 3)}(x)  + \uno_{[3 \;
     +\infty)}(x)$.  }
 \label{Fig:MP:ProbaContinua}
 \end{figure}
@@ -1149,8 +1151,8 @@ ilustra en el ejemplo siguiente:
 \label{Ej:MP:Mixta}
 %
   Sean  $U$ \  y \  $V$ \  variables continuas,  independientes, de  densidad de
-  probabilidad \  $p_U = p_V  = \un_{[0 \; 1)}$  \ ($U$ \  y \ $V$ \  son
-  uniformes sobre $[0  \; 1)$) \ y sea \  $X = V \un_{U <  \frac12} + \un_{U \ge
+  probabilidad \  $p_U = p_V  = \uno_{[0 \; 1)}$  \ ($U$ \  y \ $V$ \  son
+  uniformes sobre $[0  \; 1)$) \ y sea \  $X = V \uno_{U <  \frac12} + \uno_{U \ge
     \frac12}$, \ es decir \ $X(\omega) = V(\omega)$ \ si \ $U(\omega) < \frac12$
   \ y  \ $1$ \  si no.   Entonces de la  f\'ormula de probabilidades  totales, \
   $F_X(x) =  P(X \le x) =  P\left( (X \le x)  \left| \left( U  < \frac12 \right)
@@ -1160,10 +1162,10 @@ ilustra en el ejemplo siguiente:
         U < \frac12  \right) \right.  \right) \, + \, \frac12  P\left( (1 \le x)
     \left|  \left(  U  \ge  \frac12  \right)\right. \right)$.  \  Ahora,  de  la
   independencia de  \ $U$  \ y \  $V$, \  tenemos \ $F_X(x)  = \frac12  F_V(x) +
-  \frac12 \un_{[1 \; +\infty)}(x)$ \ es decir
+  \frac12 \uno_{[1 \; +\infty)}(x)$ \ es decir
   %
   \[
-  F_X(x) = \frac{x}{2} \un_{[0 \; 1)}(x) + \un_{[1 \; +\infty)}(x).
+  F_X(x) = \frac{x}{2} \uno_{[0 \; 1)}(x) + \uno_{[1 \; +\infty)}(x).
   \]
   %
   Esta     funci\'on    de     repartici\'on    es     representada     en    la
@@ -1174,8 +1176,8 @@ ilustra en el ejemplo siguiente:
   \begin{figure}[h!]
   \begin{center} \input{TIKZ_MP/ReparticionMixta} \end{center}
   %
-  \leyenda{Funci\'on de repartici\'on $F_X(x)  = \frac{x}{2} \un_{[0 \; 1)}(x) +
-    \un_{[1 \; +\infty)}(x)$ asociada a \ $X  = V \un_{U < \frac12} + \un_{U \ge
+  \leyenda{Funci\'on de repartici\'on $F_X(x)  = \frac{x}{2} \uno_{[0 \; 1)}(x) +
+    \uno_{[1 \; +\infty)}(x)$ asociada a \ $X  = V \uno_{U < \frac12} + \uno_{U \ge
       \frac12}$ \  con \ $U$  \ y \  $V$ \ variables  independientes, continuas,
     uniformes sobre $\X = [0 \; 1)$.   $F_X$ no es tipo escal\'on, as\'i que $X$
     no es  discreta. A pesar  de que $\X =  [0 \; 1]$  \ es un intervalo,  de la
@@ -1185,7 +1187,7 @@ ilustra en el ejemplo siguiente:
   %
 \end{ejemplo}
 %\item Sea  $U$ \ variable  continua uniforme sobre $[0  \;  1)$ \ y \  $X =
-%  \un_{U \notin \Qset}$. Claramente  $X$ no es continua, pero $\X =  [0 \;
+%  \uno_{U \notin \Qset}$. Claramente  $X$ no es continua, pero $\X =  [0 \;
 %  1)   \setminus    \Qset$   \   siendo   no   numerable,    $X$   tampoco   es
 %  discreta~\footnote{\SZ{$X = 1$ casi siempre\ldots quizas m\'as adelante}}.
 %\end{itemize}
@@ -1220,7 +1222,7 @@ la  medida  de  Lebesgue.  Se  la  llama  {\it  funci\'on generalizada}  o  {\it
   car\'acter no ordinario  (la integral siendo divergente en  el sentido usual).
   Esto va m\'as all\'a de la meta  del cap\'itulo y el lector se podr\'a referir
   a~\cite{Sch66, GelShi64,  GelShi68} por  ejemplo.}.  En particular,  $F_X(x) =
-\un_{\Rset_+}(x-x_k)$  \modif{($\un_{\Rset_+}$ es  conocido tambi\'en  como {\it
+\uno_{\Rset_+}(x-x_k)$  \modif{($\uno_{\Rset_+}$ es  conocido tambi\'en  como {\it
     funci\'on  de  Heaviside}~\footnote{\modif{Viene  del  nombre  del  f\'isico
       ingles Oliver  Heaviside quien estudio  las ecuaciones electromagn\'eticas
       de Maxwell.}})} y en el sentido de las distribuciones, $\frac{d F_X}{dx} =
@@ -1250,7 +1252,7 @@ Terminamos mencionando el  resultado siguiente, probado en~\cite[Ec.~(2.5)~p.~47
   \  $\displaystyle \widetilde{X}  =  \{ x  \in \X  \tq  \quad p(x)  = F_X(x)  -
   \liminf_{u  \to  x}  F(u)  >  0  \}$ \  es  numerable.   A  continuaci\'on,  \
   $\displaystyle F(x) - \sum_{\widetilde{x} \in \widetilde{\X}} p(\widetilde{x})
-  \un_{(-\infty  \;  \widetilde{x}]}(x)$  \   es  continua,  y  se  recupera  la
+  \uno_{(-\infty  \;  \widetilde{x}]}(x)$  \   es  continua,  y  se  recupera  la
   descomposici\'on    con   $\displaystyle    a   =    \sum_{\widetilde{x}   \in
     \widetilde{\X}} p(\widetilde{x})$.}:
 %
@@ -1325,18 +1327,18 @@ completamente este vector aleatorio:
     $X_i$} o, por  abuso de denominaci\'on,  llamaremos  a $p_X$ {\it
     distribuci\'on  de probabilidad  (conjunta)}.   Notar  que  $\X$ no  es
   necesariamente igual al  producto cartesiano de los $\X_i$.\newline
-  %,  de hecho una probabilidad  conjunta para  este producto  puede ser  nula.\newline 
-  En el  caso multivariado, la notaci\'on  vectorial es m\'as  delicada de usar:
-  $p_X$ ser\'ia un ``tensor'' \modif{(o tabla)} $d$-dimensional (una matriz para
-  $d   =  2$,  \modif{una   ``tabla''  3   dimensonal  para   $d=3$,\ldots;  ver
-    notaciones}).  Pero es posible usar una notaci\'on vectorial, recordando que
-  $\Nset^d$ puede ser puesto en  biyecci\'on con $\Nset$, y dada una biyecci\'on
-  usarla para etiquetar los componentes de  $p_X$ puestos en vector.  En el caso
-  finito \ $\X_i = \{ x_{j_i}  \}_{j=1}^{\alpha_i}$ \ con \ $\alpha_i = |\X_i| <
-  +\infty$, \ se  puede organizar los componentes tales  que $p_X(x_{j_1}\, , \,
-  \ldots \,  , \,  x_{j_d})$ sea  la $j$-\'esima componente  del vector  $p_X$ con
-  \modif{$\displaystyle  j =  1  +  \sum_{i=1}^d (j_i  -  1) \,  \prod_{k=i+1}^d
-    \alpha_k$}.
+  %,  de  hecho   una  probabilidad  conjunta  para  este   producto  puede  ser
+  nula.\newline  En  el caso  multivariado,  la  notaci\'on vectorial  es  m\'as
+  delicada   de   usar:   $p_X$   ser\'ia  un   ``tensor''   \modif{(o   tabla)}
+  $d$-dimensional (una  matriz para $d  = 2$, \modif{una ``tabla''  3 dimensonal
+  para  $d=3$,\ldots; ver  notaciones}).  Pero  es posible  usar una  notaci\'on
+  vectorial,  recordando  que $\Nset^d$  puede  ser  puesto en  biyecci\'on  con
+  $\Nset$, y dada una biyecci\'on usarla para etiquetar los componentes de $p_X$
+  puestos    en    vector.    En    el    caso    finito    \   $\X_i    =    \{
+  x_{j_i} \}_{j=1}^{|\X|_i}$  \ con \ $|\X_i|  < +\infty$, \ se  puede organizar
+  los componentes tales que $p_X(x_{j_1}\, , \,  \ldots \, , \, x_{j_d})$ sea la
+  $j$-\'esima  componente  del vector  $p_X$  con  \modif{$\displaystyle j  =  1
+  + \sum_{i=1}^d (j_i - 1) \, \prod_{k=i+1}^d |\X|_k$}.
 \end{definicion}
 %
 \noindent  De  nuevo,  \modif{se  puede  interpretar $p_X$}  como  densidad  con
@@ -1476,13 +1478,14 @@ ensemble y luego de una densidad de probabilidad:
  igual volumen que $\P$, \ie
   %
   \[
-  \P^\downarrow  =   \left\{  x   \in  \Rset^d  \tq   \frac{2  \pi^{\frac{d}{2}}
-      \|x\|^d}{\Gamma\left(\frac{d}{2}\right)} \modif{<} |\P| \right\} = \Bset_d\left(
-    0  \,  , \,  \frac1{\sqrt{\pi}}  \left(  \frac{|\P| \Gamma\left(  \frac{d}{2}
-        \right)}{2} \right)^{\frac1d} \right),
+    \P^\downarrow = \left\{
+      x \in \Rset^d \tq \frac{\pi^{\frac{d}{2}} \|x\|^d}{\Gamma\left(\frac{d}{2}
+      + 1\right)} \modif{<} |\P| \right\} = \Bset_d\left( 0 \,
+      , \, \frac1{\sqrt{\pi}} \left( \frac{|\P| \Gamma\left( \frac{d}{2}
+      \right)}{2} \right)^{\frac1d} \right),
   \]
   %
-  Esto se ilustra en la figura~\ref{Fig:MP:ensemblerearreglado}-a.
+  Esto se ilustra en la figura fig.~\ref{Fig:MP:ensemblerearreglado}-(a).
 \end{definicion}
 
 
@@ -1497,7 +1500,7 @@ ensemble y luego de una densidad de probabilidad:
     de $\|x\|$ y decrece con $\|x\|$.}
   %
   \[
-  p^\downarrow_X(x)  =  \int_0^{+\infty}  \un_{\P_u^\downarrow}(x) \,  du.
+  p^\downarrow_X(x)  =  \int_0^{+\infty}  \uno_{\P_t^\downarrow}(x) \,  dt.
   \]
   %
 \end{definicion}
@@ -1511,23 +1514,25 @@ sobre  $\P_{\tau+d\tau}^\downarrow  \setminus  \P_\tau^\downarrow$ la  funci\'on
 $p_X^\downarrow$  ``vale''   tambi\'en  $\tau$,  lo  que   da  \  $\displaystyle
 \int_{\P_\tau^\downarrow} p_X^\downarrow(x) \, dx = \int_{\P_\tau} p_X(x) \, dx$
 \  (ver~\cite{LieLos01,   WanMad04}  para   une  prueba  m\'as   rigurosa).   La
-representaci\'on de  la definici\'on es conocida como  representaci\'on tarta en
-capas  (``layer cake  representation''  en  ingles).  Esto  es  ilustrado en  la
-figura~\ref{Fig:MP:ensemblerearreglado}-b para el caso escalar $d=1$.
+representaci\'on de  la definici\'on es conocida como  representaci\'on torta en
+capas  (``layer cake  representation''  en  ingl\'es).  Esto  es  ilustrado en  la
+figura~\ref{Fig:MP:ensemblerearreglado}-(b) para el caso escalar $d=1$.
 %
 \begin{figure}[h!]
 %
 \begin{center} \input{TIKZ_MP/Rearreglo} \end{center}
 %
 \leyenda{(a):  Ilustraci\'on  del rearreglo  sim\'etrico  $\P^\downarrow$ de  un
-  conjunto $\P$, siendo  $\P^\downarrow$ la bola centrada en  0 de mismo volumen
+  conjunto $\P$, siendo  $\P^\downarrow$ la bola centrada en 0  de mismo volumen
   que $\P$, en el caso bi-dimensional $d = 2$.  (b) Construcci\'on del rearreglo
-  $p_X^\downarrow$       \modif{en      un      contexto       escalar      (ver
-    ejemplo~\ref{Ej:MP:Rearreglo} para $d  = 1, \: \nu = 5, \:  m = 1$)}: dado
-  un  $\tau$, se busca  $\P_\tau$ (izquierda)  y se  deduce $\P_\tau^\downarrow$
-  (derecha); dado un $x$, se busca el mayor $t$ tal que $x \in \P_t^\downarrow$,
-  siendo  entonces  este $t$  m\'aximo  igual  a $p_X^\downarrow(x)$  (derecha);
-  adem\'as, por construcci\'on, las superficies en grise son iguales.}
+  sim\'etrico    $p_X^\downarrow$   \modif{en    un   contexto    escalar   (ver
+  ejemplo~\ref{Ej:MP:Rearreglo} para $d  = 1, \: \nu  = 5, \: m =  1$)}: dado un
+  $\tau$,  se  busca  $\P_\tau$  (izquierda) y  se  deduce  $\P_\tau^\downarrow$
+  (derecha); dado un $x$, se busca el mayor $u$ tal que $x \in \P_u^\downarrow$,
+  siendo  entonces este  $u$  supremo igual  a $p_X^\downarrow(x)$,  \modif{\ie
+  $\displaystyle   p_X^\downarrow(x)    =   \sup   \{   u   > 0   \tq
+  x  \in  \P_u^\downarrow  \}$}  (derecha); adem\'as,  por  construcci\'on,  las
+  superficies en gris son iguales.}
   %
 \label{Fig:MP:ensemblerearreglado}
 \end{figure}
@@ -1543,8 +1548,8 @@ de mayorizaci\'on del caso discreto al caso continuo de la manera siguiente:
 \begin{definicion}[Mayorizaci\'on en el contexto continuo]
 \label{Def:MP:MayorizacionContinua}
 %
-Una densidad de  probabilidad $p$ se dice mayorizada  por una distribuci\'on $q$
-sii:
+Una  densidad  de probabilidad  $p$  se  dice  mayorizada  por una  densidad  de
+probabilidad $q$ sii:
   %
   \[
   p \prec  q \qquad \mbox{sii}  \qquad \int_{\Bset_d(0,r)} p^\downarrow(x) \,  dx \le
@@ -1576,13 +1581,13 @@ repartici\'on de $\| Y \|$, que llamaremos el rayo, $\L_p \equiv F_{\| Y \|}$.
 
 \begin{ejemplo}\label{Ej:MP:Rearreglo}
   Consideramos la densidad  de probabilidad $d$-dimensional mezcla~\footnote{Una
-    mezcla  de ley  es definida  como  combinaci\'on convexa  $f =  \sum_{i=1}^k
-    \alpha_i f_i$ de leyes  $f_i$ con $\alpha = \protect\begin{bmatrix} \alpha_1
-      &   \cdots  &  \alpha_k   \end{bmatrix}^t\protect  \in   \Simp{k-1}$.}  de
+    mezcla  de ley  es definida  como  combinaci\'on convexa  $p =  \sum_{k=1}^n
+    \pi_k p_{(k)}$ de leyes  $p_{(k)}$ con $\pi = \protect\begin{bmatrix} \pi_1
+      &   \cdots  &  \pi_n   \end{bmatrix}^t\protect  \in   \Simp{n-1}$.}  de
   Student-$r$ (ver secci\'on~\ref{Sssec:MP:StudentR})
   %
   \[
-  %\displaystyle   \un_{\Bset_d(-m,1)}(x)   \un_{\Bset_d(m,1)}(x)
+  %\displaystyle   \uno_{\Bset_d(-m,1)}(x)   \uno_{\Bset_d(m,1)}(x)
   p_X(x)   =   \alpha   \left(  \left(   1   -   \left\|   x  +   m   \right\|^2
     \right)_+^{\frac{\nu-d}{2}} + \left(  1 - \left\| x - m
       \right\|^2 \right)_+^{\frac{\nu-d}{2}} \right)
@@ -1600,7 +1605,7 @@ repartici\'on de $\| Y \|$, que llamaremos el rayo, $\L_p \equiv F_{\| Y \|}$.
   y \ $(\cdot)_+ = \max(x,0)$ \ (ver notaciones).  Esta densidad de probabilidad
   es dibujada figura~\ref{Fig:MP:ensemblerearreglado}-((b)  izquierda) para $d =
   1, \:  \nu = 5, m =  1$ y figura~\ref{Fig:MP:RearregloMayorizacionEjemplo}-(a)
-  para  $d = 2,  \: \nu  = 6,  \: m  = \frac{1}{\sqrt{d}}  \un$.  El  dominio de
+  para  $d = 2,  \: \nu  = 6,  \: m  = \frac{1}{\sqrt{d}}  \uno$.  El  dominio de
   definici\'on,    el   m\'aximo,    y    la   matriz    de   covarianza    (ver
   secci\'on~\ref{Sssec:MP:StudentR}) son dados por
   %
@@ -1636,7 +1641,7 @@ repartici\'on de $\| Y \|$, que llamaremos el rayo, $\L_p \equiv F_{\| Y \|}$.
   \displaystyle  u   <  \frac{\Gamma\left(  \frac{\nu}{2}  +   1  \right)}{2  \,
     \pi^{\frac{d}{2}} \Gamma\left(  \frac{\nu-d}{2} + 1  \right)} \, \left(  1 -
     \frac{\|x\|^2}{4^{\frac1d}}  \right)_+^{\frac{\nu-d}{2}}
-  % \un_{\Bset_d\left(0 ,      2^{\frac1d} \right)}(x)
+  % \uno_{\Bset_d\left(0 ,      2^{\frac1d} \right)}(x)
   \]
   %
   De la definici\'on~\ref{Def:MP:RearregloDensidad} obtenemos al final
@@ -1645,7 +1650,7 @@ repartici\'on de $\| Y \|$, que llamaremos el rayo, $\L_p \equiv F_{\| Y \|}$.
   p^{\downarrow}_X(x)  =  \frac{\Gamma\left(  \frac{\nu}{2}  + 1  \right)}{2  \,
     \pi^{\frac{d}{2}} \Gamma\left(  \frac{\nu-d}{2} + 1  \right)} \, \left(  1 -
     \frac{\|x\|^2}{4^{\frac1d}}  \right)_+^{\frac{\nu-d}{2}}
-  % \un_{\Bset_d\left(0 ,      2^{\frac1d} \right)}(x)
+  % \uno_{\Bset_d\left(0 ,      2^{\frac1d} \right)}(x)
  \]
   %
  dibujada figura~\ref{Fig:MP:ensemblerearreglado}-((b) derecha)  para $d = 1, \:
@@ -1658,12 +1663,12 @@ repartici\'on de $\| Y \|$, que llamaremos el rayo, $\L_p \equiv F_{\| Y \|}$.
   \L_{p_X}(r) & = & \frac{\Gamma\left( \frac{\nu}{2} + 1 \right)}{2 \,
   \pi^{\frac{d}{2}} \Gamma\left( \frac{\nu-d}{2} + 1 \right)} \int_{\Bset_d(0,r)}
   \left( 1 - \frac{\|x\|^2}{4^{\frac1d}} \right)^{\frac{\nu-d}{2}}
-  \un_{\Bset_d\left(0 , 2^{\frac1d} \right)}(x) \, dx\\
+  \uno_{\Bset_d\left(0 , 2^{\frac1d} \right)}(x) \, dx\\
   %
   & = & \frac{\Gamma\left( \frac{\nu}{2} + 1 \right)}{2 \, \pi^{\frac{d}{2}}
   \Gamma\left( \frac{\nu-d}{2} + 1 \right)} \frac{2 \,
   \pi^{\frac{d}{2}}}{\Gamma\left( \frac{d}{2} \right)} \int_0^r \rho^{d-1} \left( 1 -
-  \frac{\rho^2}{4^{\frac1d}} \right)^{\frac{\nu-d}{2}} \un_{\left[ 0 \; 2^{\frac1d}
+  \frac{\rho^2}{4^{\frac1d}} \right)^{\frac{\nu-d}{2}} \uno_{\left[ 0 \; 2^{\frac1d}
   \right]}(\rho) \, d\rho
   \end{eqnarray*}
   %
@@ -1692,7 +1697,7 @@ repartici\'on de $\| Y \|$, que llamaremos el rayo, $\L_p \equiv F_{\| Y \|}$.
   %
   \leyenda{(a) Densidad de  probabilidad $p_X$ del ejemplo~\ref{Ej:MP:Rearreglo}
     en  el  contexto  bi-dimensional  $d  =  2$   y  para  $\nu  =  6,  \:  m  =
-    \frac{1}{\sqrt{d}}  \un$. (b)  Densidad rearreglada  $p^{\downarrow}_X$. (c)
+    \frac{1}{\sqrt{d}}  \uno$. (b)  Densidad rearreglada  $p^{\downarrow}_X$. (c)
     Equivalente continua  de la curva de  Lorentz para la  densidad $p_X$ (linea
     llena), la  densidad gausiana esf\'erica \  $g_X$ \ con  covarianza de misma
     traza que  la de  $p_X$ (linea con  guiones) y  la densidad Student-t  \ con

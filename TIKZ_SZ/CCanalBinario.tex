@@ -15,14 +15,14 @@
 %+((1-\y)*(\x*log2(\x)+(1-\x)*log2(1-\x))-\x*(\y*log2(\y)+(1-\y)*log2(\y)))/(1-\x-\y)};
 %\end{axis}
 %\draw(0,0) node{\color{red}\bf A faire};
-\draw(1,.75) node{\includegraphics[width=4cm]{TIKZ_SZ/CapacidadBinaria}};
+\node at (1,.75){\includegraphics[width=4cm]{TIKZ_SZ/CapacidadBinaria}};
 \draw[>=stealth,->] (-.1,0)--(1.7,0) node[below]{\small $\varepsilon$};
 \draw[>=stealth,->] (0,-.1)--(0,1.7) node[left]{\small $\vartheta$};
 \draw (1.5,0)--(1.5,-.05) node[below,scale=.8]{\small 1};
 \draw (0,1.5)--(-.05,1.5) node[left,scale=.8]{\small 1};
 %
-\draw (2.075,.02) node[scale=.8]{\small 0};
-\draw (2.075,1.48) node[scale=.8]{\small 1};
+\node[scale=.8] at (2.075,.02){\small 0};
+\node[scale=.8] at (2.075,1.48){\small 1};
 \end{scope}
 %
 %
@@ -37,7 +37,7 @@
 {1+\x*log2(\x)+(1-\x)*log2(1-\x)})
 --(1,1);
 %
-\draw (.5,.75) node[scale=.8]{\small $(\vartheta = \varepsilon)$};
+\node[scale=.8] at (.5,.75){\small $(\vartheta = \varepsilon)$};
 \draw (1,0)--(1,-.05) node[below,scale=.8]{\small 1};
 \draw (0,1)--(-.05,1) node[left,scale=.8]{\small 1};
 \end{scope}
@@ -54,11 +54,11 @@
 {log2(1+2^(log2(1-\x)+(\x/(1-\x))*log2(1-\x)))})
 -- (1,0);
 %
-\draw (.75,.75) node[scale=.8]{\small $(\varepsilon = 0)$};
+\node[scale=.8] at (.75,.75){\small $(\varepsilon = 0)$};
 \draw (1,0)--(1,-.05) node[below,scale=.8]{\small 1};
 \draw (0,1)--(-.05,1) node[left,scale=.8]{\small 1};
 \end{scope}
-\draw (.8,-.4) node {\small (a)};
-\draw (3.85,-.4) node {\small (b)};
-\draw (6.75,-.4) node {\small (c)};
+\node at (.8,-.4){\small (a)};
+\node at (3.85,-.4){\small (b)};
+\node at (6.75,-.4){\small (c)};
 \end{tikzpicture}

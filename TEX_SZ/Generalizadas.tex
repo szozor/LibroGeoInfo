@@ -155,31 +155,31 @@ H_\lambda^\dar(p) = \frac{1}{1-2^{1-\lambda}} \left( 1 - \sum_i p_i^\lambda \rig
 \]
 %
 \noindent  es decir  nada  m\'as que  la  entrop\'ia introducida  por Havdra  \&
-Charv\'at. En lo  que sigue, se la denotar\'a  $H_\lambda^\hcd$. Sin embargo, el
-estudio  de  Dar\'oczy  fue m\'as  intensivo  que  el  de Havdra  \&  Charv\'at.
+Charv\'at. En lo  que sigue, se la denotar\'a $H_\lambda^\hcd$.  Sin embargo, el
+estudio  de  Dar\'oczy fue  m\'as  intensivo  que  el  de Havdra  \&  Charv\'at.
 Primero, not\'o  el mapa entre su  entrop\'ia y la de  R\'enyi. Adicionalmente a
 Havdra-Charv\'at prob\'o que  se conserva la propiedad~\ref{Prop:SZ:permutacion}
 (invarianza  por   permutaci\'on,  que  no   era  un  axioma  en   su  enfoque),
 $H_\lambda^\hcd\left( \frac12 , \frac12 \right) = 1$ (lo llama normalizaci\'on),
 la  expansividad~\ref{Prop:SZ:expansabilidad},  una  aditividad  extendida,  una
-recursividad extendida precisamente  del modelo de Havrda-Charv\'at (teorema~4).
+recursividad extendida precisamente del  modelo de Havrda-Charv\'at (teorema~4).
 Prob\'o  tambi\'en~\ref{Prop:SZ:positividad}, positividad  alcanzado en  el caso
-determinista  y  la  maximalidad~\ref{Prop:SZ:cotamaxima}  en el  caso  uniforme
-(teorema~6), que  incidentalmente $H_\lambda^\hcd\left( \frac1\alpha  , \ldots ,
-  \frac1\alpha \right)$ crece con el  cardenal $|\X| = \alpha$.  Muy interesante
+determinista  y  la  maximalidad~\ref{Prop:SZ:cotamaxima} en  el  caso  uniforme
+(teorema~6), que  incidentalmente $H_\lambda^\hcd\left( \frac{1}{|\X|}  , \ldots
+,  \frac{1}{|\X|}  \right)$  crece  con el  cardenal  $|\X|$.   Muy  interesante
 tambi\'en es que se puede definir  una entrop\'ia condicional en el mismo modelo
-que en el  caso de Shannon, \ $H_\lambda^\hcd(X|Y)  = \sum_y \left[ p_{X|Y=y}(x)
+que en el caso de Shannon, \ $H_\lambda^\hcd(X|Y) = \sum_y \left[ p_{X|Y=y}(x)
 \right]^\lambda  H_\lambda^\hcd(   p_{X|Y=y}  )$,   que  existe  una   regla  de
-cadena~\ref{Prop:SZ:cadena},   $H_\lambda^\hcd(X,Y)    =   H_\lambda^\hcd(Y)   +
+la  cadena~\ref{Prop:SZ:cadena},  $H_\lambda^\hcd(X,Y)   =  H_\lambda^\hcd(Y)  +
 H_\lambda^\hcd(X|Y)$ y que condicionar reduce la entrop\'ia $H_\lambda^\hcd(X|Y)
 \le    H_\lambda^\hcd(X)$    (teorema~8)~\ref{Prop:SZ:condicionar}.     Mostr\'o
 tambi\'en que  si se  pierde la aditividad,  se obiene para  \ $X$  \ e \  $Y$ \
 independientes \ $H_\lambda^\hcd(X,Y)  = H_\lambda^\hcd(X) + H_\lambda^\hcd(Y) +
 \left(  2^{1-\lambda}  -  1  \right) H_\lambda^\hcd(X)  H_\lambda^\hcd(Y)$.   La
-propiedades de regla  de cadena le permiti\'o revisitar  la caracterisaci\'on de
-un canal de transmisi\'on y  redefinir una capacidad canal extendidas (capacidad
-tipo $\lambda$;  basicamente se  usa el mismo  enfoque que Shannon,  pero usando
-$H_\lambda^\hcd$ en lugar de $H$, ver secci\'on~6 del papel).
+propiedades de regla  de la cadena le permiti\'o  revisitar la caracterisaci\'on
+de  un  canal  de  transmisi\'on  y redefinir  una  capacidad  canal  extendidas
+(capacidad tipo $\lambda$; basicamente se usa el mismo enfoque que Shannon, pero
+usando $H_\lambda^\hcd$ en lugar de $H$, ver secci\'on~6 del papel).
 
 \
 
@@ -214,7 +214,7 @@ luego)~\footnote{En  la literatura,  no hay  el signo  $-$, y  hay  que invertir
 \label{Def:SZ:HPhiEntropia}
 %
   La $(h,\phi)$-entrop\'ia de una  distribuci\'on de probabilidad $p_X$ definida
-  sobre $\X$ de cardenal finito $|\X| = \alpha$ es definida por
+  sobre $\X$ de cardenal finito $|\X| < +\infty$ es definida por
   %
   \[
   \hhphi[X] \equiv  \hhphi[p_X] =  h\left( - \sum_{x  \in \X}  \phi\left( p_X(x)
@@ -270,7 +270,7 @@ Adem\'as  se conserva  la  Schur-concavidad \ con una rec\'iproca:
   $\phi$ convexa, y reciprocamente.
 \end{propiedadesPhi}
 % Schur, I.  (1923). Issai Schur Collected  Works (A.  Brauer  and H.  Rohrbach,
-% eds.), Vol. II. pp. 416úÙÚÛ427. Springer-Verlag, Berlin, 1973]
+% eds.), Vol. II. pp. 416ï°π427. Springer-Verlag, Berlin, 1973]
 %
 %
 % Ver Schur-Ostrowski f  sym, Schur-convexe ssi (xi - xj)  (df/dx_i - df/dxj) \ge
@@ -281,14 +281,14 @@ a \ $\phi(0) = 0$ \ y \ $h(-\phi(1)) = 0$ \ (alcanzado en el caso determinista),
 la maximalidad~\ref{Prop:SZ:cotamaxima} (caso uniforme),
 %
 \[
-0 \le \hhphi[p_X] \le h\left( - \alpha \, \phi\left( \frac1\alpha \right) \right),
+0 \le \hhphi[p_X] \le h\left( - |\X| \, \phi\left( \frac{1}{|\X|} \right) \right),
 \]
 %
 as\'i que
 %
 \[
-\hhphi[\begin{bmatrix}  \frac1\alpha &  \cdots  & \frac1\alpha  \end{bmatrix}^t]
-\quad \mbox{funci\'on creciente de } \alpha.
+\hhphi[\begin{bmatrix}  \frac{1}{|\X|} &  \cdots  & \frac{1}{|\X|}  \end{bmatrix}^t]
+\quad \mbox{funci\'on creciente de } |\X|.
 \]
 
 Con respecto a la concavidad~\ref{Prop:SZ:concavidad}, no se conserva en general:
@@ -299,30 +299,50 @@ Con respecto a la concavidad~\ref{Prop:SZ:concavidad}, no se conserva en general
   $\phi$ y  decrecencia de $h$ (resp.  convexidad/crecencia)  conjuntamente a la
   concavidad de $h$.  La rec\'iproca no  es verdad.  Por ejemplo, se puede ver que
   si $\lambda  < 1$, la  entrop\'ia de R\'enyi  es c\'oncava, pero se  proba que
-  existe  un  $\lambda^c(\alpha)  >  1$  tal que  para  cualquier  $\lambda  \le
-  \lambda^c(\alpha)$  se conserva  la  concavidad, a  pesar  de que  $h$ no  sea
+  existe  un  $\lambda^c(|\X|)  >  1$  tal que  para  cualquier  $\lambda  \le
+  \lambda^c(|\X|)$  se conserva  la  concavidad, a  pesar  de que  $h$ no  sea
   necesariamente c\'oncava~\cite[p.~57]{BenZyc06}.
 \end{propiedadesPhi}
 
 Se pierde la propiedad de recursividad~\ref{Prop:SZ:recursividad}, pero se puede
 vincular  la  entrop\'ia  total con  la  obtenida  juntando  dos estados  por  una
-desigualdad:
+desigualdad: \SZ{Revoir pour faire comme avec Shannon}
 %
 \begin{propiedadesPhi}\setcounter{enumi}{\value{PropRecursividad}}
-\item  Sean \  $X$  \ definido  sobre  \ $\X$  \  y \  $\breve{X}$  \ sobre  \
-  $\breve{X}$,
+\item  Sean \  $X$  \ definido  sobre  \ $\X$   \ con  $|\X| > 2$,  y \  $\breve{X}$ \  sobre \
+  $\breve{\X}$  \  de   cardenal  \  $|\breve{\X}|  =  |\X|-1$   \  formado  por
+  agregaci\'on de los dos \'ultimos estados de $\X$, \ie
   %
-  \[
-  \left\{  \begin{array}{l}\breve{\X}  = \{  x_1 \,  ,  \, \ldots \,  , \, x_{\alpha-2} \,  ,
-      \, \breve{x}_{\alpha-1} \} \quad \mbox{con el estado interno} \quad
-      \breve{x}_{\alpha-1}   =  \{   x_{\alpha-1} \,  , \,   x_\alpha  \},\\[2.5mm]
-      p_{\breve{X}}(x_i) = p_X(x_i), \quad 1 \le i \le \alpha-1 \quad \mbox{y}
-      \quad p_{\breve{X}}(\breve{x}_{\alpha-1}) = p_X(x_{\alpha-1}) +
-      p(x_\alpha)  \quad  \mbox{distribuci\'on  sobre  }  \breve{\X}\\[2.5mm]
-      \displaystyle   \breve{q}(x_j)  =   \frac{p_X(x_j)}{p_X(x_{\alpha-1})  +
-        p_X(x_\alpha)},  \quad j =  \alpha-1, \alpha  \quad \mbox{distribuci\'on
-        del estado interno}\end{array}\right.,
-  \]
+  \begin{itemize}
+  \item    $\breve{\X}    =    \big(    \X    \setminus    \{    x_{|\X|-1}    ,
+  x_{|\X|}  \} \big)  \cup \{  \breve{x}_{|\X|-1} \}$ \quad con  el estado
+  interno \quad $\breve{x}_{|\X|-1} = \{ x_{|\X|-1} \, , \, x_{|\X|} \}$,
+  %
+  \item $p_{\breve{X}}(x_i) = p_X(x_i), \quad \forall \, x_i \in \X \setminus \{
+      x_{|\X|-1} , x_{|\X|} \}$ \quad y \quad $p_{\breve{X}}(\breve{x}_{|\X|-1})
+      = p_X(x_{|\X|-1}) + p_X(x_{|\X|})$, distribuci\'on correspondiente sobre \
+      $\breve{\X}$,
+  %  
+  \item  $\displaystyle   \breve{q}(x_j)  =   \frac{p_X(x_j)}{p_X(x_{|\X|-1})  +
+        p_X(x_{|\X|})},  \quad j  = |\X|-1,  |\X|$ \quad  distribuci\'on de  los
+        estados  \ $\{  x_{|\X|-1} \,  , \,  x_{|\X|} \}$  \ adentro  del estado
+        interno.
+  %
+  \end{itemize}
+  %
+  %% \[
+  %% \left\{  \begin{array}{l}\breve{\X}  = \{  x_1 \,  ,  \, \ldots \,  , \, x_{|\X|-2} \,  ,
+  %%     \, \breve{x}_{|\X|-1} \} \quad \mbox{con el estado interno} \quad
+  %%     \breve{x}_{|\X|-1}   =  \{   x_{|\X|-1} \,  , \,   x_{|\X|}  \},\\[2.5mm]
+  %%     p_{\breve{X}}(x_i) = p_X(x_i), \quad 1 \le i \le |\X|-1 \quad \mbox{y}
+  %%     \quad p_{\breve{X}}(\breve{x}_{|\X|-1}) = p_X(x_{|\X|-1}) +
+  %%     p(x_{|\X|})  \quad  \mbox{distribuci\'on  sobre  }  \breve{\X}\\[2.5mm]
+  %%     \displaystyle   \breve{q}(x_j)  =   \frac{p_X(x_j)}{p_X(x_{|\X|-1})  +
+  %%       p_X(x_{|\X|})},  \quad j =  |\X|-1, |\X|  \quad \mbox{distribuci\'on
+  %%       del estado interno}\end{array}\right.,
+  %% \]
+  %
+  entonces,
   %
   \[
   \hhphi[p_X] \ge \hhphi[p_{\breve{X}}].
@@ -532,20 +552,20 @@ p_Y]$ \ (consecuencia de la  Schur-concavidad) y \ $\hhphi[p_{XY}] > \hhphi[p_X]
 
 La definici\'on  de entrop\'ias generalizadas condicionales  aparece mucho m\'as
 problem\'atico. Por  ejemplo, si se define  a la Shannon, es  decir definiendo \
-$\hhphi[X|Y]$ \ tomando \ $\sum_{y \in \Y} p_Y(y) \hhphi[p_{X|Y=y}]$ \ se
-pierde la regla de cadena~\ref{Prop:SZ:cadena}. Como se lo ha visto, en el marco
-de la entrop\'ia de Havdra-Charv\'at-Dar\'oczy se conserva la regla de cadena si
+$\hhphi[X|Y]$ \ tomando \ $\sum_{y \in \Y} p_Y(y) \hhphi[p_{X|Y=y}]$ \ se pierde
+la regla de la cadena~\ref{Prop:SZ:cadena}. Como se  lo ha visto, en el marco de
+la entrop\'ia de Havdra-Charv\'at-Dar\'oczy se conserva la regla de la cadena si
 se reemplaza $p_Y$ por su potencia $p_Y^\lambda$.  Sin embargo, generalizar este
 esquema en el caso general  falla (la gracia en Havdra-Charv\'at-Dar\'oczy viene
 de  la  propiedad  de  morfismo  de  la  exponencial  y  del  logaritmo).   Como
 consecuencia, generalizar  la noci\'on se vuelve  problem\'atico tambi\'en.  Por
 ejemple  se  pierde el  diagrama  de  Venn aparte  si  se  define la  entrop\'ia
-condicional  a  partir  de  la  regla  de  cadena. Pero  en  este  caso,  si  la
+condicional  a partir  de la  regla de  la  cadena.  Pero  en este  caso, si  la
 super-aditividad  garantiza  la positividad  de  la  entrop\'ia condicional,  se
 pierde  la propiedad~\ref{Prop:SZ:independenciacondicional}  por  perdida de  la
 aditividad,       y      por       consecuencia       la      propiedad       de
 positividad/independencia~\ref{Prop:SZ:Ipositive}  de  una  informaci\'on  mutua
-construida sobre un  modelo diagrama de Venn. Veremos  en la secci\'on siguiente
+construida sobre un  modelo diagrama de Venn. Veremos en  la secci\'on siguiente
 que un tercer camino puede ser usar divergencias.
 % \SZ{ver con detalles \ref{Prop:SZ:condicionar} (condiconar)} \SZ{VajVas85 pour
 %   la Schur-concavite}
@@ -871,12 +891,12 @@ discreta, \ $\hhphi[X|Y] =  \sum_y p_Y(y) \hhphi[p_{X|Y=y}]$, entonces, con $\pi
 \equiv p_Y$  \ y \  $\{ p_{(i)} \}_i  \equiv \{ p_{X|Y=y}  \}_y $ aparece  que \
 $D_{(h,\phi)}^{\mathrm{j},p_Y}( \{ p_{X|Y=y} \}_y  ) = \hhphi[X] - \hhphi[X|Y]$.
 \ Esta expresi\'on es parecida a una  de las formas de la informaci\'on mutua de
-Shannon,  justificando la  terminolog\'ia de  Burbea-Rao. Sin  embargo,  hay que
+Shannon,  justificando la  terminolog\'ia de  Burbea-Rao. Sin  embargo, hay  que
 tener conciencia  de que no  todo se translata  obviamente del mundo  Shannon al
-mundo  generalizado.   Por  ejemplo,   con  tal  definic\'on  de  la  entrop\'ia
-condicional, se pierde  la regla de cadena, y por  consecuencia la simetr\'ia de
-tal informaci\'on mutua generalizada o  la forma usando la entrop\'ia conjunta y
-las marginales.
+mundo  generalizado.   Por  ejemplo,  con   tal  definic\'on  de  la  entrop\'ia
+condicional, se pierde  la regla de la cadena, y  por consecuencia la simetr\'ia
+de tal informaci\'on mutua generalizada o la forma usando la entrop\'ia conjunta
+y las marginales.
 
 \SZ{A ver  si se generaliza  bajo la forma  $ \hhphi[\int \pi(y) p(x;y)]  - \int
   \pi(y) \hhphi[p(x,y)]$.}
@@ -1200,7 +1220,7 @@ tambi\'en~\cite[Sec.~I]{OrsPar95}):
   \end{itemize}
   %
   y  $\X  = X(\Omega)$  para  $X$  de  distribuci\'on~\footnote{En general,  por
-    convenci\'on,  $0 \,  \phi\left(  \frac{0}{0} \right)  =  0$.  Adem\'as,  se
+    convenci\'on,  $0 \,  \phi\left(  \frac{0}{0} \right)  \igualc  0$.  Adem\'as,  se
     requiere  de  que  $\displaystyle  0  \, \phi\left(  \frac{a}{0}  \right)  =
     \lim_{\varepsilon \to  0^+} \varepsilon \,  \phi\left( \frac{a}{\varepsilon}
     \right) = a \lim_{u \to +\infty} \frac{\phi(u)}{u}$.} $P$.
@@ -1360,7 +1380,7 @@ divergencia de Csisz\'ar particular.  Se us\'o tambi\'en para probar que $\left(
 \right)$ \ y  \ $\kappa = \min\left( \lambda  \, , \, \frac12 \right)$  \ es una
 m\'etrica~\cite{OstVaj03}.
 
-% I.CsiszÅ·r,Informationmeasures:Acriticalsurvey,In:Trans.7thPragueConf.onInformationTheory,Vol.A,1974,73úÙÚÛ86.
+% I.CsiszÅ·r,Informationmeasures:Acriticalsurvey,In:Trans.7thPragueConf.onInformationTheory,Vol.A,1974,73ï°π86.
 % [22]
 % F.Liese,I.Vajda,ConvexStatisticalDistances,In:Band95,TeubnerTextezurMathematik,Leipzig,1987.
 
@@ -1373,6 +1393,15 @@ referencias de esta secci\'on, para dar unas.
 
 \SZ{
 cf Bha 43 egalement
+}
+
+
+
+\SZ{
+% ----- Integral Probability Metric
+
+\subsubseccion{IPM}
+\label{Sssec:SZ:IPM}
 }
 
 
@@ -1404,27 +1433,32 @@ p_{\mathrm{em}} = \argmax_p  \hhphi[p] \qquad \mbox{sujeto a} \qquad p  \ge 0, \
 \, p(x) \, d\mu(x) = 1, \quad \int_\X M(x) \, p(x) \, d\mu(x) = m.
 \]
 %
-donde  los   dos  primeros  v\'inculos  aseguran  de   que  $p_{\mathrm{em}}$  (positividad,
-normalizaci\'on) sea  una distribuci\'on de  probabilidad. Si $\phi$  es convexa
-(resp.  c\'oncava),  $h$ es creciente  (resp.  decreciente) as\'i  que maximizar
-$\hhphi$ es  equivalente a maximizar $\hphi$ (resp.   $H_{-\phi}$).  Sin perdida
-de generalidad, se  puede considerar la situaci\'on $\phi$  convexa.  Como en el
-caso  de   Shannon,  introduciendo  factores   de  Lagrange  $\eta_0,   \:  \eta
+donde   los  dos   primeros   v\'inculos  aseguran   de  que   $p_{\mathrm{em}}$
+(positividad, normalizaci\'on) sea una distribuci\'on de probabilidad. Si $\phi$
+es convexa (resp.   c\'oncava), $h$ es creciente (resp.   decreciente) as\'i que
+maximizar $\hhphi$ es equivalente a maximizar $\hphi$ (resp.  $H_{-\phi}$).  Sin
+perdida de generalidad, se puede considerar la situaci\'on $\phi$ convexa.  Como
+en  el caso  de Shannon,  introduciendo factores  de Lagrange  $\eta_0, \:  \eta
 = \begin{bmatrix} \eta_1 & \cdots & \eta_K \end{bmatrix}^t$ para tener en cuenta
-los  v\'inculos,  el problema  variacional  consiste a  resolver~\cite{GelFom63,
-  Bru04, Mil00, CamMar09, CovTho06}
+los  v\'inculos, el  problema (variacional)  consiste  de nuevo  a maximizar  la
+integral~\cite{GelFom63, Wei74, Bru04, Cla13, Kom14, Mil00, CamMar09, CovTho06}
 %
 \[
-p_{\mathrm{em}} =  \argmax_p \int_\X  \left( - \phi\left(  p(x) \right)  + \eta_0 \,  p(x) +
-  \eta^t M(x) \, p(x) \right) d\mu(x)
+p_{\mathrm{em}} = \argmax_p \int_\X \left( - \phi\left( p(x) \right) + \eta_0 \,
+  p(x) + \eta^t M(x) \, p(x) \right) d\mu(x)
 \]
 %
-donde $\eta_0, \eta$ ser\'an determinados  para satisfacer a los v\'inculos.  De
-nuevo,  de la  ecuaci\'on de  Euler-Lagrange~\cite{GelFom63, Bru04}  en  el caso
-continuo, o derivando  con respecto a las probabilidades en  el caso discreto, se
-obtiene la ecuaci\'on $- \phi'(p(x)) +  \eta_0 + \eta^t M(x) = 0$.  La funci\'on
-entr\'opica $\phi$ es c\'oncava y de  clase $C^2$, as\'i que $\phi'$ es continua
-decreciente, y de la monotonicidad es invertible. Entonces,
+donde $\eta_0, \eta$ ser\'an determinados  para satisfacer a los v\'inculos.  Se
+puede ver  que, como  en el  caso de la  entrop\'ia de  Shannon, el  problema es
+c\'oncava con  respecto a $p$ (\ie  el integrande es una  funci\'on c\'oncava de
+$p$), as\'i que existe una soluci\'on \'unica al problema~\cite{GelFom63, Wei74,
+Bru04,  Mil00,  CamMar09,   Cla13,  Kom14}.  De  nuevo,  de   la  ecuaci\'on  de
+Euler-Lagrange~\footnote{Ver                       nota                       de
+pie~\ref{Foot:SZ:EulerLagrange}}~\cite{GelFom63, Wei74, Bru04,  Cla13, Kom14} en
+el  caso continuo,  o derivando  con respecto  a las  probabilidades en  el caso
+discreto, se obtiene la  ecuaci\'on $- \phi'(p(x)) + \eta_0 +  \eta^t M(x) = 0$.
+La funci\'on entr\'opica $\phi$ es c\'oncava y de clase $C^2$, as\'i que $\phi'$
+es continua decreciente, y de la monotonicidad es invertible. Entonces,
 %
 \[
 p_{\mathrm{em}}(x) = \phi'^{-1}\left( \eta^t M(x) - \varphi(\eta) \right)
@@ -1538,7 +1572,7 @@ Ver \cite{Sta59, Hir57, Sobolev, DemCov91}
 % Nota para mi
 % Schut-Ostrowsky: f sym, Schur convex ssi
 %
-% $\forall \: 0 \le i \ne j \le \alpha$, \qquad $(x_i-x_j) \left( \frac{\partial
+% $\forall \: 0 \le i \ne j \le |\X|$, \qquad $(x_i-x_j) \left( \frac{\partial
 %     f}{\partial x_i} - \frac{\partial f}{\partial x_j} \right) \ge 0
 %
 % Ver libro de Loss y Ruskai

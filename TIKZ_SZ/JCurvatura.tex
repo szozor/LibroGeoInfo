@@ -18,6 +18,6 @@
 \draw[thick,domain=.25:1.75,samples=200] plot ({\x+\dx},{2.25*abs(\x-\t)^2});
 \draw ({\t+\dx},0)--({\t+\dx},-.1) node[below]{\small $\theta_0$};
 %
-\draw (\t,-1) node{\small (a)};
-\draw ({\t+\dx},-1) node{\small (b)};
+\node at (\t,-1){\small (a)};
+\node at ({\t+\dx},-1){\small (b)};
 \end{tikzpicture}

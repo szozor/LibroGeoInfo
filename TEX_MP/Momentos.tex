@@ -46,7 +46,7 @@ probabilidad asociada a ese valor~\cite{AshDol99, AthLah06},
 \begin{definicion}[Media o valor/vector medio]
 \label{Def:MP:ValorMedio}
 %
-  Formalmente, la media de  una variable aleatoria $X$ \underline{integrable} es
+  Formalmente, la media de  una variable aleatoria $X$ {\it integrable} es
   definida por
   %
   \[
@@ -76,8 +76,8 @@ probabilidad asociada a ese valor~\cite{AshDol99, AthLah06},
 \end{definicion}
 %
 La secunda formulaci\'on  del valor medio se proba  sencillamente, empezando por
-$X =  \un_A$ para unos $A \in  \B(\Rset)$.  Entonces $P_X =  (1-P(A)) \delta_0 +
-P(A)  \delta_1$.  Luego  $\displaystyle \int_\Omega  \un_A(\omega)  dP(\omega) =
+$X =  \uno_A$ para unos $A \in  \B(\Rset)$.  Entonces $P_X =  (1-P(A)) \delta_0 +
+P(A)  \delta_1$.  Luego  $\displaystyle \int_\Omega  \uno_A(\omega)  dP(\omega) =
 P(A) = (1-P(A)) \times 0 + P(A)  \times 1 = \int_\Rset x dP_X(x)$.  Se cierra la
 prueba  con  el  teorema~\ref{Teo:MP:MedibleLimite}  dando  cualquier  funci\'on
 medible    como    l\'imite    de    funciones    escalonadas,    y    por    la
@@ -141,8 +141,8 @@ en el caso continuo:
 \begin{ejemplo}
 \label{Ej:MP:MediaNoEnX}
 %
-Sea \ $X$ \ de densidad de  probabilidad \ $p_X(x) = \frac12 \un_{[0 \; 1)}(x) +
-\frac{3   \sqrt{x-2}}{4}   \un_{[2   \;   3)}(x)$  \   como   ilustrado   figura
+Sea \ $X$ \ de densidad de  probabilidad \ $p_X(x) = \frac12 \uno_{[0 \; 1)}(x) +
+\frac{3   \sqrt{x-2}}{4}   \uno_{[2   \;   3)}(x)$  \   como   ilustrado   figura
 Fig.~\ref{Fig:MP:ProbaContinua}.
 %,    pagina~\pageref{Fig:MP:ProbaContinua}.    
 Se calcula \ $\Esp[X] = \frac{31}{20} \notin \X = [0 \; 1] \cup [2 \; 3]$.
@@ -164,9 +164,9 @@ $P_X$, como en el ejemplo~\ref{Ej:MP:Mixta}:
 \begin{ejemplo}[Continuaci\'on del ejemplo~\ref{Ej:MP:Mixta}]
 \label{Ej:MP:EspMixta}
 %
-Sea $X =  V \, \un_{U <  \frac12} + \un_{U \ge \frac12}$  \ con \ $U$ \  y \ $V$
+Sea $X =  V \, \uno_{U <  \frac12} + \uno_{U \ge \frac12}$  \ con \ $U$ \  y \ $V$
 variables aleatorias  independientes de distribuci\'on uniformas sobre  \ $[0 \;
-1)$, \ie  $p_U(x) = \un_{[0 \;  1)}(x)$. \ De \  $(X \in B)  \: \Leftrightarrow \:
+1)$, \ie  $p_U(x) = \uno_{[0 \;  1)}(x)$. \ De \  $(X \in B)  \: \Leftrightarrow \:
 \left( \left( U < \frac12 \right) \cap \left( V \in B \right) \right) \, \cup \,
 \left( \left( U \ge \frac12 \right) \cap  \left( 1 \in B \right) \right)$, \ del
 hecho de que  los eventos de la uni\'on son incompatibles  y de la independencia
@@ -187,10 +187,10 @@ admitiendo una media, se obtiene
 \right) \, dt.
 \]
 %
-Se proba saliendo  de \ $\displaystyle x = \int_0^x  dt = \int_{\Rset_+} \un_{(t
+Se proba saliendo  de \ $\displaystyle x = \int_0^x  dt = \int_{\Rset_+} \uno_{(t
   \; +\infty)}(x)  \, dt$ \ dando  \ $\displaystyle \Esp[X]  = \int_\Rset \left(
-  \int_{\Rset_+}   \un_{(t  \;  +\infty)}(x)   \,  dt   \right)  \,   dP_X(x)  =
-\int_{\Rset_+} \left(  \int_\Rset \un_{(t \; +\infty)}(x) \,  dP_X(x) \right) \,
+  \int_{\Rset_+}   \uno_{(t  \;  +\infty)}(x)   \,  dt   \right)  \,   dP_X(x)  =
+\int_{\Rset_+} \left(  \int_\Rset \uno_{(t \; +\infty)}(x) \,  dP_X(x) \right) \,
 dt$ \ por el teorema de Fubini Th.~\ref{Teo:MP:Fubini}.
 %pagina~\pageref{Teo:MP:Fubini}. 
 Se cierra la prueba observando que la integral interior es nada m\'as que $P(X >
@@ -208,11 +208,11 @@ Esta f\'ormula se aplica al ejemplo~\ref{Ej:MP:Mixta} que tratamos:
 \begin{ejemplo}[Continuaci\'on del ejemplo~\ref{Ej:MP:Mixta}]
 \label{Ej:MP:EspMixtaPositiva}
 %
-Sea $X =  V \, \un_{U <  \frac12} + \un_{U \ge \frac12}$  \ con \ $U$ \  y \ $V$
+Sea $X =  V \, \uno_{U <  \frac12} + \uno_{U \ge \frac12}$  \ con \ $U$ \  y \ $V$
 variables aleatorias  independientes de distribuci\'on uniformas sobre  \ $[0 \;
 1)$.  \modif{Tratando de este ejemplo, o}btuvimos
 % pagina~\pageref{Ej:MP:Mixta} 
-\  $F_X(x)  = \frac{x}{2}  \un_{[0  \; 1)}(x)  +  \un_{[1  \; +\infty)}(x)$.   A
+\  $F_X(x)  = \frac{x}{2}  \uno_{[0  \; 1)}(x)  +  \uno_{[1  \; +\infty)}(x)$.   A
 continuaci\'on,  reobtenemos \  $\displaystyle  \Esp[X] =  \int_0^1  \left( 1  -
   \frac{x}{2} \right) \, dx = \frac34$.
 \end{ejemplo}.
@@ -269,7 +269,7 @@ medio se calcula a partir del de $X$:
 \end{teorema}
 %
 \begin{proof}
-  Sea $B \in \B(\Rset^d)$ \ y consideramos \ $f(x) = \un_B(x)$. Entonces, $\Y
+  Sea $B \in \B(\Rset^d)$ \ y consideramos \ $f(x) = \uno_B(x)$. Entonces, $\Y
   = \{  0 \;  1 \}$ y inmediatamente
   %
   \[
@@ -280,7 +280,7 @@ medio se calcula a partir del de $X$:
   %
   \[
   \Esp[f(X)]  =  \int_\Rset  P_X(B)  \,  d\delta_1 +  \int_\Rset  (1-P_X(B))  \,
-  d\delta_0 = P_X(B) = \int_{\Rset^d} \un_B(x) \, dP_X(x).
+  d\delta_0 = P_X(B) = \int_{\Rset^d} \uno_B(x) \, dP_X(x).
   \]
   %
   En el caso  $d' = 1$, para $f  \ge 0$, se cierra entonces la  prueba usando el
@@ -320,7 +320,7 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
   \]
   %
   \modif{que son los  componentes de $m_k[X]$.}  Se puede  incluir el caso $k=0$
-  con la convenci\'on  $x^{\otimes 0} = 1$, que corresponde  a la condici\'on de
+  con la convenci\'on  $x^{\otimes 0} \igualc 1$, que corresponde  a la condici\'on de
   normalizaci\'on: \ $\displaystyle m_0[X] =  \int_\Rset dP_X(x) = 1$.  La media
   es el primer  momento: $m_1[X] = \Esp[X] =  m_X$.  T\'ipicamente, los primeros
   momentos  son  m\'as  relevantes  que   los  de  \'ordenes  mayores,  para  la
@@ -386,8 +386,8 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
   \]
   %
   Se deduce que si la  distribuci\'on de probabilidad satisface a una simetr\'ia
-  central  con respecto a  la media,  \ie \  $X-m_X \egald  -(X-m_X)$ \  donde \
-  $\egald$ \ significa que los vectores aleatorios tiene la misma distribuci\'on
+  central  con respecto a  la media,  \ie \  $X-m_X \iguald  -(X-m_X)$ \  donde \
+  $\iguald$ \ significa que los vectores aleatorios tiene la misma distribuci\'on
   de probabilidad, entonces todos los momentos centrales impares son nulos.  Los
   momentos     (centrales)    brindan     medidas     que    caracterizan     la
   distribuci\'on. \modif{Cuando existen:}
@@ -632,14 +632,14 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
       \Sigma^{-1}   (x-m)  \right)$   (ver   m\'as  adelante)~\footnote{Se   usa
       $\tau_{(u,v)} \equiv  \tau_{\sigma_{(u,v)}}$ \ para la  traspuesta de los
       indices de  los ordenes  $u \ne  v$ de un  tensor ($\sigma_{(u,v)}(i)  = v
-      \un_{\{u\}}(i)   +  u  \un_{\{v\}}(i)   +  i   (1-\un_{\{u,v\}}(i))$,  ver
+      \uno_{\{u\}}(i)   +  u  \uno_{\{v\}}(i)   +  i   (1-\uno_{\{u,v\}}(i))$,  ver
       notaciones).}, \ $\displaystyle m_X = m, \: \Sigma_X = \Sigma, \: \gamma_X
     = 0,  \: \kappa_X  = I  \otimes I +  \tau_{(2,3)}\big[ I  \otimes I  \big] +
     \tau_{(2,4)}\big[ I \otimes I \big]$
 %\sum_{i,j=1}^d \Big(
-%    \left(  \un_i \un_i^t  \right) \!\otimes\!  \left( \un_j  \un_j^t  \right) +
-%    \left(  \un_i \un_j^t  \right) \!\otimes\!  \left( \un_i  \un_j^t  \right) +
-%    \left( \un_i \un_j^t \right) \!\otimes\! \left( \un_j \un_i^t \right) \Big)$
+%    \left(  \uno_i \uno_i^t  \right) \!\otimes\!  \left( \uno_j  \uno_j^t  \right) +
+%    \left(  \uno_i \uno_j^t  \right) \!\otimes\!  \left( \uno_i  \uno_j^t  \right) +
+%    \left( \uno_i \uno_j^t \right) \!\otimes\! \left( \uno_j \uno_i^t \right) \Big)$
     \  as\'i  que  se  puede   definir  una  curtosis  multivariada  por  exceso
     (sub-entendido, con respecto a la gausiana) como:
   %
@@ -647,10 +647,10 @@ aleatoria $X$. Los momentos relevantes usuales son los siguientes:
   \Excurt[X]  \equiv  \widebar{\kappa}_X  =  \Curt[X]  - \Big(  I  \otimes  I  +
   \tau_{(2,3)}\big[  I \otimes  I \big]  + \tau_{(2,4)}\big[  I \otimes  I \big]
   \Big)
-  % \sum_{i,j=1}^d  \Big( \left( \un_i \un_i^t \right)  \!\otimes\! \left( \un_j
-  %   \un_j^t \right)  + \left( \un_i  \un_j^t \right) \!\otimes\!  \left( \un_i
-  %   \un_j^t \right)  + \left( \un_i  \un_j^t \right) \!\otimes\!  \left( \un_j
-  %   \un_i^t \right) \Big).
+  % \sum_{i,j=1}^d  \Big( \left( \uno_i \uno_i^t \right)  \!\otimes\! \left( \uno_j
+  %   \uno_j^t \right)  + \left( \uno_i  \uno_j^t \right) \!\otimes\!  \left( \uno_i
+  %   \uno_j^t \right)  + \left( \uno_i  \uno_j^t \right) \!\otimes\!  \left( \uno_j
+  %   \uno_i^t \right) \Big).
   \]
   %
   Se encuentren en la literatura varias medidas alternativas dando un resumen de
@@ -739,14 +739,14 @@ y como se comporta la covarianza de estas:
 \end{lema}
 %
 \begin{proof}
-  Sean \ $X = \sum_j x_j \un_{A_j}$  \ e \ $Y = \sum_k y_k \un_{B_k}$ \
+  Sean \ $X = \sum_j x_j \uno_{A_j}$  \ e \ $Y = \sum_k y_k \uno_{B_k}$ \
   dos variables escalonadas. Entonces, \ $A_j =  (X = x_j)$ \ y \ $B_k = (Y
   = y_k)$. Luego
   %
   \begin{eqnarray*}
-  \Esp[X Y] & = & \sum_{j,k} x_j y_k \Esp\left[ \un_{A_j} \un_{B_k} \right]\\[2.5mm]
+  \Esp[X Y] & = & \sum_{j,k} x_j y_k \Esp\left[ \uno_{A_j} \uno_{B_k} \right]\\[2.5mm]
   %
-  & = & \sum_{j,k} x_j y_k \Esp\left[ \un_{A_j \cap B_k} \right]\\[2.5mm]
+  & = & \sum_{j,k} x_j y_k \Esp\left[ \uno_{A_j \cap B_k} \right]\\[2.5mm]
   %
   & = & \sum_{j,k} x_j y_k P(A_j \cap B_k)\\[2.5mm]
   %
@@ -766,7 +766,7 @@ y como se comporta la covarianza de estas:
 %
 Sea \ $X = (X_1,X_2)$ \  uniforme sobre el disco unitario \modif{o bola unitaria
   2-dimensional  $\Bset_2$  (ver  notaciones)},  i.e., $p_X(x)  =  \frac{1}{\pi}
-\un_{\Sset^2}(x)$.   Claramente, los \  $X_i$ no  pueden ser  independientes del
+\uno_{\Sset^2}(x)$.   Claramente, los \  $X_i$ no  pueden ser  independientes del
 hecho  que \  $\X_i  =  [-1 \;  1]$  \ y  \  $\X  \ne \X_1  \times  \X_2$ \  (es
 estrictamente incluido  en el producto  cartesiano).  Por simetr\'ia  central de
 $p_X$, es sencillo ver  que $\Esp[X_1 X_2] = 0$ \ y  similarmente \ $\Esp[X_i] =
@@ -780,10 +780,10 @@ frecuentemente los calculos de media.  Volviendo al ejemplo~\ref{Ej:MP:Mixta}:
 \begin{ejemplo}[Continuaci\'on del ejemplo~\ref{Ej:MP:Mixta}]
 \label{Ej:EspMixtaInd}
 %
-Tratando de la media  de \ $X = V \, \un_{U < \frac12}  + \un_{U \ge \frac12}$ \
+Tratando de la media  de \ $X = V \, \uno_{U < \frac12}  + \uno_{U \ge \frac12}$ \
 con \ $U$ \ y \ $V$ \ variables independientes de distribuci\'on uniformas sobre
 $(0 \; 1)$, se calcula gracia a la linealidad y a la independencia, \ $\Esp[X] =
-\Esp[V] \Esp\left[  \un_{U < \frac12}  \right] + \Esp\left[ \un_{U  \ge \frac12}
+\Esp[V] \Esp\left[  \uno_{U < \frac12}  \right] + \Esp\left[ \uno_{U  \ge \frac12}
 \right] = \frac12  \times \frac12 + \frac12 = \frac34$ \  como lo hemos obtenido
 usando   $P_X$   \modif{en   Ej.~\ref{Ej:MP:EspMixta}   o  la   positividad   en
   Ej.~\ref{Ej:MP:EspMixtaPositiva}}.
@@ -829,8 +829,8 @@ y \ $g$, medibles y acotadas de dimensiones adecuadas.
 \begin{proof}
   Se puede referirse a~\cite{Fel71,  JacPro03} para \modif{una prueba rigurosa}.
   En  el caso  escalar, el  principio consiste  a ver  \ $f$  \ y  \ $g$  \ como
-  l\'imites de funciones escalonadas. Para  \ $f(x) = \sum_i a_i \un_{A_i}(x)$ \
-  y \ $g(y) = \sum_j b_j \un_{B_j}(y)$ se obtiene $E[f(X) g(Y)]=E[f(X)] E[g(Y)]$
+  l\'imites de funciones escalonadas. Para  \ $f(x) = \sum_i a_i \uno_{A_i}(x)$ \
+  y \ $g(y) = \sum_j b_j \uno_{B_j}(y)$ se obtiene $E[f(X) g(Y)]=E[f(X)] E[g(Y)]$
   si y s\'olo si  $\sum_{i,j} a_i b_j \left( P( (X \in A_i)  \cap (Y \in B_j)) -
     P(X \in A_i) P(Y \in B_j)  \right) = 0$.  B\'asicamente, eso debe valer para
   cualquieras $A_i, B_j$  y $a_i, b_j$, as\'i que  el t\'ermino entre parentesis
@@ -992,8 +992,8 @@ precisamente el  teorema de Jensen~\footnote{En~\cite{Jen06} se trata  del en el
 \end{teorema}
 %
 \begin{proof}
-  Sea \ $X = \sum_i x_i  \un_{A_i}$ \ variable escalonada. Entonces \ $\phi(X) =
-  \sum_i \phi(x_i) \un_{A_i}$, dando
+  Sea \ $X = \sum_i x_i  \uno_{A_i}$ \ variable escalonada. Entonces \ $\phi(X) =
+  \sum_i \phi(x_i) \uno_{A_i}$, dando
   %
   \[
   \Esp[\phi(X)]  = \sum_i  P(A_i)  \phi(x_i) \ge  \phi\left(  \sum_i P(A_i)  x_i

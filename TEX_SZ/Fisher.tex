@@ -1,12 +1,15 @@
 \seccion{Informaci\'on de Fisher}
 \label{Ssec:SZ:Fisher}
 
-Si la  entrop\'ia y las heramientas  relacionadas son naturales  como medidas de
-informaci\'on, no se  puede resumir una distribuci\'on a  una medida escalar. En
-el marco de la teor\'ia de  la estimaci\'on, R. Fisher introdujo una noci\'on de
-informaci\'on intimamente  relacionada al error cuadr\'atico  en la estimaci\'on
-de   un  par\'ametro   a  partir   de  una   variable  parametrizado   por  este
-par\'ametro~\cite{Fis22, Fis25:07, Kay93, Bos07, CovTho06, Fri04}.
+Si la  entrop\'ia y las heramientas  relacionadas son naturales como  medidas de
+informaci\'on, no se  puede resumir una distribuci\'on a una  medida escalar. En
+el marco  de la teor\'ia  de la  estimaci\'on, R. Fisher~\footnote{De  hecho, la
+informaci\'on de  Fisher habia  estudiado antes  por varios  estatisticianos tal
+como  F.  Y. Edgeworth  en  1908-1909  o a\'un  antes,  en  1898 por  Pearson  y
+Fillon~\cite{Hal06, Edg08,  PeaFil98}} introdujo  una noci\'on  de informaci\'on
+intimamente  relacionada  al  error  cuadr\'atico   en  la  estimaci\'on  de  un
+par\'ametro    a   partir    de    una   variable    parametrizado   por    este
+par\'ametro~\cite{Fis22, Fis25:07, Kay93, LehCas08, Bos07, CovTho06, Fri04}.
 
 \begin{definicion}[Matriz informaci\'on de Fisher param\'etrica]
 \label{Def:SZ:MatrizFisherParametrica}
@@ -38,14 +41,19 @@ par\'ametro~\cite{Fis22, Fis25:07, Kay93, Bos07, CovTho06, Fri04}.
   %  \quad  \Hess_\theta f$  \ es  la matriz  de componentes  \ $\frac{\partial^2
   %    f}{\partial \theta_i  \partial \theta_j}$.}
   \ de  \ $\log  p_X(X;\theta)$ (ver  notaciones).  Nota: a  veces se  define la
-  informaci\'on de  Fisher como  $\Tr(J)$, traza de  la matriz  informaci\'on de
+  informaci\'on de  Fisher como  $\Tr(J_\theta)$, traza de  la matriz  informaci\'on de
   Fisher.
 \end{definicion}
 %
 Como  para  la  entrop\'ia,  la  matriz  de Fisher  se  escribe  generalmente  \
 $J_\theta(X)$, \ a pesar de que no sea  funci\'on de \ $X$ \ pero de la densidad
-de  probabilidad.  Se  la  notar\'a  tambi\'en \  $J_\theta(p_X)$  \ seg\'un  la
-escritura la m\'as conveniente.
+de  probabilidad.  Se  la  notar\'a  tambi\'en
+%
+\[
+J_\theta(p_X) \equiv J_\theta(X)
+\]
+%
+seg\'un la escritura la m\'as conveniente.
 
 Notar  que para  une  distribuci\'on  de la  familia  exponencial natural  vista
 secci\'on~\ref{Ssec:MP:FamiliaExponencial},  $p_X(x;\eta)  =  \exp\left(  \eta^t
@@ -66,13 +74,13 @@ Fisher no param\'etrica,
 \begin{definicion}[Matriz informaci\'on de Fisher no param\'etrica]
 \label{Def:SZ:MatrizFisherNoParametrica}
 %
-  Sea  \  $X$ \  una  variable aleatoria  continua  admitiendo  una densidad  de
-  probabilidad \ $p_X$  \ definida sobre \ $\X \subset  \Rset^d$ \ su soporte.
-  Suponga que  \ $p_X$ \ sea  diferenciable con respecto  a \ $x$.  La  matriz de
-  Fisher no param\'etrica, $d \times d$, es definida por
+  Sea  \ $X$  \  una  variable aleatoria  continua  admitiendo  una densidad  de
+  probabilidad \  $p_X$ \ definida  sobre \ $\X  \subset \Rset^d$ \  su soporte.
+  Suponga que \  $p_X$ \ sea diferenciable  con respecto a \ $x$.   La matriz de
+  Fisher no param\'etrica $d \times d$ es definida por
   %
   \[
-  J(X) =  \Esp\left[ \Big(  \nabla_x \log p_X(X)  \Big) \Big(  \nabla_x \log
+  J(X) \equiv J(p_X) =  \Esp\left[ \Big(  \nabla_x \log p_X(X)  \Big) \Big(  \nabla_x \log
       p_X(X) \Big)^t \right].
   \]
   %
@@ -82,26 +90,37 @@ Fisher no param\'etrica,
   condiciones de regularidad,
   %
   \[
-  J(X) = - \Esp[\Hess_x \log p_X(X;\theta)]
+  J(X) \equiv J(p_X) = - \Esp[\Hess_x \log p_X(X)]
   \]
   % menos el promedio de la Hessiana en \ $x$ \ de la log-verosimilitud.
 \end{definicion}
 %
+Como para la entrop\'ia, y la matriz  de Fisher parametrica, la matriz de Fisher
+no parametrica es funci\'on de la densidad y se la notar\'a tambi\'en
+%
+\[
+J(p_X) \equiv J(X)
+\]
+%
+seg\'un la escritura la m\'as conveniente.
+
 Es interesante notar que:
 %
 \begin{itemize}
-\item Cuando  \ $\theta$ \ es  un par\'ametro de posici\'on,  \ $p_X(x;\theta) =
-  p(x - \theta)$, \ $\nabla_\theta \log p_X  = - \nabla_x \log p_X$ \ tal que la
-  informaci\'on param\'etrica se reduce a la informaci\'on no param\'etrica.
+\item Volviendo a una familia param\'etrica \ $p_X(\cdot;\theta)$, cuando \ $\theta$ \
+es un  par\'ametro de posici\'on,  en el  caso de distribuci\'on  admitiendo una
+densidad,  \ $p_X(x;\theta)  =  p(x  - \theta)$,  \  $\nabla_\theta  \log p_X  =
+- \nabla_x \log  p_X$ \ tal  que la informaci\'on  param\'etrica se reduce  a la
+informaci\'on no param\'etrica.
 %
 \item Si \ $X$ \ es gaussiano  de matriz de covarianza \ $\Sigma_X$, entonces se
-  muestra sencillamente de que \  $J(X) = \Sigma_X^{-1}$ \ matriz de precisi\'on
-  (o,  de una  forma, inversa  de la  dispersi\'on o  incerteza en  t\'ermino de
+  muestra sencillamente que \ $J(X) = \Sigma_X^{-1}$ \ matriz de precisi\'on (o,
+  de  una  forma,  inversa  de  la dispersi\'on  o  incerteza  en  t\'ermino  de
   estad\'isticas de orden 2).
 %
 \item Es sencillo ver  que, por definici\'on \ $J_\theta(X)$ \ y  \ $J(X)$ \ son
-  sim\'etricas y que \ $J_\theta(X) > 0$ \ y \ $J(X) > 0$ \ \ie $J_\theta(X) \in
-  \Pos_m^+(\Rset), \:\: J(X) \in \Pos_m^+(\Rset)$.  Adem\'as,
+  sim\'etricas y que \ $J_\theta(X) \ge 0$ \ y \ $J(X) \ge 0$ \ \ie $J_\theta(X) \in
+  \Pos_m(\Rset), \:\: J(X) \in \Pos_m(\Rset)$~\cite{LehCas98}.  Adem\'as,
   %
   \[
   \forall \ A \ \mbox{matrix no singular}, \quad J(AX) = A^{-t} J(X) A^{-1},
@@ -172,8 +191,8 @@ sobre $p_Y$ de la matriz de Fisher de $p_{X|Y}(\cdot;\theta)$, es decir
   ac\'a una variable aleatoria.
 \end{definicion}
 
-De esta definici\'on,  es sencillo probar que la  matriz de Fisher param\'etrica
-sigue una regla de cadena al imagen de la propiedad~\ref{Prop:SZ:cadena},
+De esta definici\'on,  es sencillo probar que la matriz  de Fisher param\'etrica
+sigue una regla de la cadena al imagen de la propiedad~\ref{Prop:SZ:cadena},
 %
 \[
 J_\theta(X,Y) = J_\theta(X|Y) + J_\theta(Y).
@@ -197,7 +216,7 @@ J_\theta(X_i)$.
 %referir\'a  a~\cite{Fis25:07, Sta59,  Kay93, KagSmi99,  Joh04,  CovTho06, Rio07}
 %entre otros para estas propiedades.
 
-Adem\'as,  de la  regla de  cadena, viene  obviamente la  desigualdad siguiente,
+Adem\'as, de la  regla de la cadena, viene obviamente  la desigualdad siguiente,
 parecida a la propiedad de super-aditividad~\ref{Prop:SZ:superaditividad},
 %
 \[

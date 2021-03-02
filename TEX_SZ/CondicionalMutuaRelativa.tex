@@ -2,30 +2,30 @@
 \label{Sec:SZ:Mutua}
 
 Tratando de un par de variables aleatorias $X$ e $Y$, una cuesti\'on natural que
-ocurre  es de  cuantificar la  incerteza que  queda sobre  una de  las variables
-cuando se  observa la otra.   Dicho de otra  manera, si se  mide $Y =  y$, ?`que
-informaci\'on lleva sobre  $X$? La respuesta a esta  interogaci\'on se encuentra
-en la noci\'on de entrop\'ia condicional.  Si uno mide $Y = y$, la descripci\'on
-estad\'istica  de $X$  conociendo este  $Y =  y$ se  resuma a  la distribuci\'on
-condicional de probabilidad  $p_{X|Y=y} = \frac{p_{X,Y}(\cdot,y)}{p_Y(y)}$.  Con
-esta  restricci\'on, se  puede evaluar  una  incerteza sobre  $X$, sabiendo  que
-$Y=y$,
+se  plantea es  la  de cuantificar  la  incerteza  que queda  sobre  una de  las
+variables cuando se observa la otra.  Dicho de  otra manera, si se mide $Y = y$,
+?`qu\'e informaci\'on  tenemos sobre  $X$? La respuesta  a esta  interrogante se
+encuentra en  la noci\'on de  entrop\'ia condicional.  Si uno  mide $Y =  y$, la
+descripci\'on  estad\'istica de  $X$  conociendo que  $Y  = y$  se  resume a  la
+distribuci\'on      condicional      de      probabilidad      $p_{X|Y=y}(\cdot)
+= \frac{p_{X,Y}(\cdot,y)}{p_Y(y)}$.   Con esta  restricci\'on, se  puede evaluar
+una incerteza sobre $X$, sabiendo que $Y=y$,
 %
 \[
 H(X|Y=y) = H\left( p_{X|Y=y} \right).
 \]
 %
 Entonces, condicionalmente a la variable aleatoria $Y$, la incerteza va a ser el
-promedio  estad\'istico sobre  todos  los estados  $Y$  es decir  $\displaystyle
-H(X|Y)  = \int_{\Rset^d}  p_Y(y) H(X|Y=y)  \, d\mu(y)$  \ (con  la  medida $\mu$
+promedio estad\'istico sobre  todos los estados de $Y$,  es decir $\displaystyle
+H(X|Y)  = \int_{\Rset^d}  p_Y(y) H(X|Y=y)  \, d\mu(y)$  \ (con  la medida  $\mu$
 adecuada).
 %
 \begin{definicion}[Entrop\'ia condicional]
 \label{Def:SZ:entropiacondicional}
 %
-  Sean \ $X$ \ e \ $Y$ \ dos variables aleatorias, respectivamente \ $d$ \ y \
-  $d'$-dimensionales. La entrop\'ia condicional de  \ $X$, con respecto a \ $Y$,
-  es definida por
+  Sean \ $X$ \  e \ $Y$ \ dos variables aleatorias, respectivamente  \ $d$ \ y \
+  $d'$-dimensionales. La entrop\'ia condicional de \ $X$ con respecto a \ $Y$ se
+  define como
   %
   \[
   H(X|Y)   =   -  \int_{\Rset^d   \times   \Rset^{d'}}  p_{X,Y}(x,y)   \log
@@ -36,8 +36,9 @@ adecuada).
   en el caso diferencial).
 \end{definicion}
 
-Si  $X$ e  $Y$ son  independientes,  $p_{X|Y=y}$ se  reduce a  $p_X$, as\'i  que
-obviamente,
+Cuando $X$ e  $Y$ son independientes, $\forall  \, y \in \Rset^{d_Y}  \in \Y, \:
+p_{X|Y=y} = p_X$:  la entrop\'ia condicional $H(X|Y)$  se reduce a la  de $X$, y
+reciprocamente
 %
 \begin{propiedades}
 \item\label{Prop:SZ:independenciacondicional}
@@ -50,14 +51,14 @@ obviamente,
 %
 Esta  propiedad  se   interpreta  como  el  hecho  que   $Y$  no  lleva  ninguna
 informaci\'on sobre  $X$, y entonces ninguna  medici\'on de $Y$ va  a cambiar la
-incerteza sobre $X$.
+incerteza en $X$.
 
-Siendo $H(X|Y=y)$  una entrop\'ia, va a  heredar de todas las  propiedades de la
-entrop\'ia  (o  entrop\'ia   diferencial).   Adem\'as,  de  $p_{X,Y}(\cdot,y)  =
-p_{X|Y=y} p_Y(y)$ se deduce la propiedad siguiente
+Siendo  $H(X|Y=y)$ una  entrop\'ia, va  a heredar  todas las  propiedades de  la
+entrop\'ia  (o  entrop\'ia  diferencial).    Adem\'as,  de  $p_{X,Y}(\cdot,y)  =
+p_{X|Y=y}(\cdot) p_Y(y)$ se deduce la propiedad siguiente:
 %
 \begin{propiedades}
-\item\label{Prop:SZ:cadena}  {\it Regla de  cadena}
+\item\label{Prop:SZ:cadena}  {\it Regla de la cadena}
   %
   \[
   H(X,Y) =  H(X|Y) +  H(Y).
@@ -68,8 +69,8 @@ p_{X|Y=y} p_Y(y)$ se deduce la propiedad siguiente
   \[
   H(X_1 , \ldots , X_n) = H(X_1) + \sum_{i=2}^n H(X_i|X_{i-1} , \ldots , X_1).
   \]
-  %
-  De       esta       regla      de       cadena       se      recupera       la
+  %  
+  De      esta     regla      de      la     cadena      se     recupera      la
   propiedad~\ref{Prop:SZ:independenciacondicional}     a     partir    de     la
   propiedad~\ref{Prop:SZ:aditividad}.
 \end{propiedades}
@@ -78,9 +79,9 @@ Siendo  $H(X|Y=y)$  una  entrop\'ia,  en  el  caso  discreto  esta  cantidad  es
 positiva. Entonces, en el caso discreto,  $H(X|Y)$ es positiva, lo que prueba la
 super-aditividad~\ref{Prop:SZ:superaditividad}.
 
-De la regla de  cadena $H(X,Y) = H(X|Y) + H(Y) = H(Y|X)  + H(X)$ aparece que las
+De la regla de la cadena $H(X,Y) = H(X|Y)  + H(Y) = H(Y|X) + H(X)$ surge que las
 cantidades \ $H(X|Y)-H(X)$, \  $H(Y|X)-H(Y)$ \ y \ $H(X,Y) - H(X)  - H(Y)$ \ son
-todas iguales. Estas  cantidades definen lo que se  llama la informaci\'on mutua
+todas iguales. Estas  cantidades definen lo que se llama  la informaci\'on mutua
 entre \ $X$ \ e \ $Y$:
 
 \begin{definicion}[Informaci\'on mutua]
@@ -143,9 +144,9 @@ Kullback-Leibler~\cite{KulLei51,    Kul68,    CovTho06,    Rio07}~\footnote{Esta
 \begin{definicion}[Entrop\'ia relativa]
 \label{Def:SZ:entropiarelativa}
 %
-La entrop\'ia  relativa, o  divergencia de una  medida de probabilidad  $Q$, con
-respecto a una medida de probabilidad de referencia $P$ tal que \underline{$Q \ll
-  P$}, ambas definidas sobre $\Rset^d$, es definida como
+La entrop\'ia  relativa, o divergencia  de una  medida de probabilidad  $Q$, con
+respecto a una medida de probabilidad de referencia $P$ tal que $Q \ll P$, ambas
+definidas sobre $\Rset^d$, es definida como
   %
   \[
   \Dkl[Q]{P}  =  \int_{\Rset^d}  \frac{dQ}{dP}(x) \, \log  \left(  \frac{dQ}{dP}(x)
@@ -256,18 +257,17 @@ discreta o continua admitiendo una densidad.
   \[
   H(X|Y) \le H(X) \quad \mbox{con igualdad ssi $X$ e $Y$ son independientes.}
   \]
-  %
-  Esta    desigualdad,     con    la     regla    de    cadena,     prueba    la
+  %  
+  Esta    desigualdad,   con    la    regla   de    la    cadena,   prueba    la
   sub-aditividad~\ref{Prop:SZ:subaditividad}.   Esta  reducci\'on  de  incerteza
   vale en  promedio, pero el conocimiento  de un valor particular  puede ser tal
-  que $H(X|Y =  y) > H(X)$, \ie \ !`un conocimiento  particular puede aumentar la
+  que $H(X|Y = y) > H(X)$, \ie  \ !`un conocimiento particular puede aumentar la
   entrop\'ia!  (ver ejemplos en~\cite[p.~59]{Rio07}).
 \end{propiedades}
 
-Fijense  que   si  $\Dkl{}$  es   positiva,  \underline{no  es   sim\'etrica}  y
-\underline{tampoco  satisface la  desigualdad triangular}.  Por eso,  no  es una
-distancia  y  tiene  el  nombre  de {\it  divergencia}.   La  distribuci\'on  de
-referencia $P$ juega un rol fundamental.
+Fijense que  si $\Dkl{}$ es positiva,  no es sim\'etrica y  tampoco satisface la
+desigualdad triangular.  Por eso, no es una  distancia y tiene el nombre de {\it
+divergencia}.  La distribuci\'on de referencia $P$ juega un rol fundamental.
 
 Al  final, se mencionar\'a las propiedades adicionales siguientes:
 %

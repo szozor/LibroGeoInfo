@@ -1,6 +1,6 @@
 \begin{notation}{Funciones}
 %
-$\supp$ & Soporte de una funci\'on, $\supp f = \overline{\{ x tq f(x) \ne 0\}}$
+$\sop$ & Soporte de una funci\'on, $\sop f = \overline{\{ x tq f(x) \ne 0\}}$
 \ donde $\overline{\cdot}$ denota la clausura~\footnote{Es el menor cerrado que
 contiene el conjunto.} de un conjunto\\[2.5mm]
 \hline
@@ -46,12 +46,12 @@ $\log_a$ & Logaritmo de base $a > 0$, \ $\displaystyle\log_a x = \frac{\log
 x}{\log a}$\\[2.5mm]
 \hline
 %
-$\un_A$ & Funci\'on indicadora o indicatriz del conjunto \ $A$: \ $\un_A(x) =
+$\uno_A$ & Funci\'on indicadora o indicatriz del conjunto \ $A$: \ $\uno_A(x) =
 \left\{ \protect\begin{array}{lll} 1 & \mbox{si} & x \in A\\[1mm] 0 & \mbox{si} & x
 \notin A \protect\end{array}\right.$\\[2.5mm]
 \hline
 %
-$\big( \, \cdot \, \big)_+$ &  $(x)_+ = \max(x,0) = \un_{\Rset_+}(x)$\\[2.5mm]
+$\big( \, \cdot \, \big)_+$ &  $(x)_+ = \max(x,0) = \uno_{\Rset_+}(x)$\\[2.5mm]
 \hline
 %
 $\displaystyle \Gamma \quad , \quad !$ & Funci\'on Gamma o
@@ -170,7 +170,7 @@ $\frac{\partial}{\partial x}$ & Derivada parcial con respecto a la variable $x$\
 %$\cdot''$ & derivada, para $f: \Rset \mapsto$\\[2.5mm]\hline
 %$\cdot^{(k)}$ & derivada, para $f: \Rset \mapsto$\\[2.5mm]\hline
 %
-$\nabla_x$ & Gradiente con respecto a $x$, para
+$\nabla_x \equiv \grad$ & Gradiente con respecto a $x$, para
 \protect$f: \Rset^d \mapsto \Rset, \quad \nabla_x f = \begin{bmatrix}
 \frac{\partial f}{\partial x_1}\\ \vdots\\ \frac{\partial f}{\partial
 x_d}\end{bmatrix}$\protect\newline Se denota $f' = \frac{df}{dx}$ cuando $d = 1$\\[2.5mm]
@@ -183,6 +183,10 @@ f_{d'}}{\partial x_1} & \cdots & \frac{\partial f_{d'}}{\partial
 x_d}\end{bmatrix} \equiv \frac{\partial (f_1,\ldots,f_{d'})}{\partial
 (x_1,\ldots,x_d)}$\protect.\newline Notar que si $d' = 1, \: \Jac_f^t \equiv
 \nabla_x f$\\[2.5mm]
+\hline
+%
+$\div$ & Operador divergencia, para
+\protect$f = \begin{bmatrix} f_1 & \cdost & f_d \end{bmatrix}^t: \Rset^d \mapsto \Rset^d, \quad \div f = \sum_{j=1}^d \frac{\partial f_j}{\partial x_j} = \Tr \left( \Jac_f \right)$\protect\newline Se denota $f' = \frac{df}{dx}$ cuando $d = 1$\\[2.5mm]
 \hline
 %
 $\Hess_x$ & Matriz Hessiana: para \protect$f: \Rset^d \mapsto \Rset, \quad
@@ -202,7 +206,7 @@ y_{d'}}\end{bmatrix}$\protect\\[2.5mm]
 \hline
 %
 $f^{(k)}$ & Derivada de orden $k \in \Nset $ para funciones $f: \Rset \mapsto
-\Rset$, con la convenci\'on $f^{(0)} = f$\\[2.5mm]
+\Rset$, con la convenci\'on $f^{(0)} \igualc f$\\[2.5mm]
 \hline
 %
 $\circ$ & Composici\'on de funciones, $(f \circ g) (x) = f\left( g(x)

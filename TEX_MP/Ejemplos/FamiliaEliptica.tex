@@ -48,7 +48,7 @@ propiedades remarcables.
   notaciones),
   %
   \[
-  O  X  \: \egald  \: X
+  O  X  \: \iguald  \: X
   \]
   %
 \end{definicion}
@@ -67,7 +67,7 @@ esf\'erica se conserva tomando $O$ aleatoria independiente de $X$:
   $O(\Omega) = \Ort_d(\Rset)$,
   %
   \[
-  O  X  \: \egald  \: X
+  O  X  \: \iguald  \: X
   \]
   %
 \end{lema}
@@ -100,7 +100,7 @@ pelota de rugby. Adem\'as, se puede que eso se pasa en torno a un punto no cero.
   \Ort_d(\Rset)$,
   %
   \[
-  O  \,   \Delta^{-\frac12}  \,  Q^t  \left(   X  -  m  \right)   \:  \egald  \:
+  O  \,   \Delta^{-\frac12}  \,  Q^t  \left(   X  -  m  \right)   \:  \iguald  \:
   \Delta^{-\frac12} \, Q^t \left( X - m \right)
   \]
   %
@@ -110,8 +110,8 @@ pelota de rugby. Adem\'as, se puede que eso se pasa en torno a un punto no cero.
   Q^t$. Dicho de  otra manera, \ $\Delta^{-\frac12} Q^t \left( X  - m \right)$ \
   es a simetr\'ia esf\'erica.
 
-  $m$ \ es llamado {\em par\'ametro de posici\'on} y \ la matriz \ $\Sigma$ \ es
-  llamada {\em matriz caracter\'istica}.
+  $m$ \ es llamado {\it par\'ametro de posici\'on} y \ la matriz \ $\Sigma$ \ es
+  llamada {\it matriz caracter\'istica}.
 \end{definicion}
 %
 Se puede  inmediatamente ver  que \  $\Sigma$ \ es  definida mediante  un factor
@@ -120,7 +120,7 @@ $a > 0$ \ conviene tambi\'en.
 
 Comparativamente a un vector esf\'ericamente invariante, \ $m$ \ es el centro de
 simetr\'ia,   $Q$   contiene   las   direciones   de   ``estiramientos''   y   \
-$\Delta^{\frac12}$  \   los  factores  de   estiramientos,  $X  \egald  m   +  Q
+$\Delta^{\frac12}$  \   los  factores  de   estiramientos,  $X  \iguald  m   +  Q
 \Delta^{\frac12} Y$ \ con \ $Y$ \ a  simetr\'ia esf\'erica. Para \ $m = 0$ \ y \
 $\Delta \propto I$, se recupera obviamente un vector a simetr\'ia esf\'erica.
 
@@ -142,7 +142,7 @@ de  probabilidad,  o  equivalentemente  por su  funci\'on  car\'acteristica.  La
   \]
   %
   donde \ $\varphi_X:  \Rset_+ \mapsto [-1 \; 1]$ \ funci\'on  de un escalar, es
-  llamado {\em  generadora caracter\'istica}.  Tomando  el logaritmo, obviamente
+  llamado {\it  generadora caracter\'istica}.  Tomando  el logaritmo, obviamente
   la secunda funci\'on caracter\'istica se escribe
   %
   \[
@@ -151,7 +151,7 @@ de  probabilidad,  o  equivalentemente  por su  funci\'on  car\'acteristica.  La
   \]
   %
   donde \  $\psi_X = \log  \varphi_X: \Rset_+ \mapsto  \Cset$ \ funci\'on  de un
-  escalar.        La        llamaremos       {\em       secunda       generadora
+  escalar.        La        llamaremos       {\it       secunda       generadora
     caracter\'istica}.  Reciprocamente, si  la funci\'on  caracter\'istica tiene
   esta forma, \ $X$ \ es a simetr\'ia el\'iptica.
 \end{teorema}
@@ -187,7 +187,7 @@ de  probabilidad,  o  equivalentemente  por su  funci\'on  car\'acteristica.  La
   forma dada, para cualquiera matriz ortogonal \ $O \in \Ort_d(\Rset)$ \ $\Phi_{O
     Y}(\omega)  = \Phi_Y( O^t  \omega )  = \Phi_Y(\omega)$  \ y,  por relaci\'on
   uno-uno  entre  la medida  de  probabilidad de  una  variable  aleatorio y  su
-  funci\'on caracter\'istica, $Y \egald O Y$.
+  funci\'on caracter\'istica, $Y \iguald O Y$.
 
   Al final, de la simetr\'ia herm\'itica  de la funci\'on de repartici\'on, y de
   la simetr\'ia el\'iptica, tenemos  $\varphi_X^*\left( \| \omega \|^2 \right) =
@@ -303,7 +303,7 @@ partir de un vector esf\'ericamente invariante de varias maneras, entre otros:
   inferior~\cite{HorJoh13, Bha07}.  Entonces
   %
   \[
-  Q \Delta^{\frac12} Y + m \: \egald \:  \Sigma^{\frac12} Y + m \: \egald \: L Y
+  Q \Delta^{\frac12} Y + m \: \iguald \:  \Sigma^{\frac12} Y + m \: \iguald \: L Y
   + m \: \sim \: \ED(m,\Sigma,\varphi_Y)
   \]
 \end{corolario}
@@ -475,16 +475,16 @@ tensor curtosis para un vector a simetr\'ia el\'iptica~\cite[p.~44]{FanKot90}:
   %
   y~\footnote{Se usa $\tau_{(u,v)}  \equiv \tau_{\sigma_{(u,v)}}$  \  para la
   traspuesta  de  los   indices  de  los  ordenes  $u  \ne   v$  de  un  tensor
-  ($\sigma_{(u,v)}(i)   =   v   \un_{\{u\}}(i)    +   u   \un_{\{v\}}(i)   +   i
-  (1-\un_{\{u,v\}}(i))$, ver notaciones).}
+  ($\sigma_{(u,v)}(i)   =   v   \uno_{\{u\}}(i)    +   u   \uno_{\{v\}}(i)   +   i
+  (1-\uno_{\{u,v\}}(i))$, ver notaciones).}
   %
   \[
   \kappa_X  = \frac{\varphi_X''(0)}{4  \,  \big( \varphi_X(0)  \big)^2} \Big(  I
   \otimes I + \tau_{(2,3)}\big[ I  \otimes I \big] + \tau_{(2,4)}\big[ I \otimes
   I \big] \Big)
-  %\sum_{i,j=1}^d \Big( \left( \un_i \un_i^t \right) \otimes \left( \un_j \un_j^t
-  %\right) + \left( \un_i \un_j^t  \right) \otimes \left( \un_i \un_j^t \right) +
-  %\left( \un_i \un_j^t \right) \otimes \left( \un_j \un_i^t \right) \Big)
+  %\sum_{i,j=1}^d \Big( \left( \uno_i \uno_i^t \right) \otimes \left( \uno_j \uno_j^t
+  %\right) + \left( \uno_i \uno_j^t  \right) \otimes \left( \uno_i \uno_j^t \right) +
+  %\left( \uno_i \uno_j^t \right) \otimes \left( \uno_j \uno_i^t \right) \Big)
   \]
   %
 \end{corolario}
@@ -550,7 +550,7 @@ proyecci\'on:
   %
   \[
   X \sim \ED(m,\Sigma,\varphi_X) \qquad  \Longleftrightarrow \qquad \forall \: a
-  \in \Rset^d, \quad a^t (X - m) \egald \sqrt{\frac{a^t \Sigma a}{\Sigma_{i,i}}}
+  \in \Rset^d, \quad a^t (X - m) \iguald \sqrt{\frac{a^t \Sigma a}{\Sigma_{i,i}}}
   (X_i - m_i)
   \]
 \end{teorema}
@@ -566,9 +566,9 @@ proyecci\'on:
   \]
   %
   (se puede sacar el valor absoluto a $\omega$ porque, necesariamente, $X_i-m_i$
-  es     a    simetr\'ia    el\'iptica,     es    decir     $(X_i-m_i)    \egald
+  es     a    simetr\'ia    el\'iptica,     es    decir     $(X_i-m_i)    \iguald
   -(X_i-m_i)$). Reciprocamente, si para cualquier  \ $a \in \Rset^d$ \ tenemos \
-  $a^t (X  - m)  \egald \sqrt{\frac{a^t \Sigma  a}{\Sigma_{i,i}}} (X_i  - m_i)$,
+  $a^t (X  - m)  \iguald \sqrt{\frac{a^t \Sigma  a}{\Sigma_{i,i}}} (X_i  - m_i)$,
   necesariamente
   %
   \[
@@ -661,13 +661,13 @@ caso en general por adici\'on:
   \right) R v
   \]
   %
-  Para cualquier  $1 \le i  \le d$, tomando  $v = w  \un_i$ con $w  \in \Rset_0$
+  Para cualquier  $1 \le i  \le d$, tomando  $v = w  \uno_i$ con $w  \in \Rset_0$
   tenemos necesariamente
   %
   \[
   \left( \varphi_X'\left( w^2 \right) \, \varphi_Y\left( w^2 \lambda_i \right) +
     w \lambda_i  \varphi_X\left( w^2  \right) \, \varphi_Y'\left(  w^2 \lambda_i
-    \right) \right) \un_i = \varphi'\left( w^2 R_{i,i} \right) R \un_i
+    \right) \right) \uno_i = \varphi'\left( w^2 R_{i,i} \right) R \uno_i
   \]
   %
   De esta ecuaci\'on, queda claro que \ $R$ \ debe ser diagonal, $R = \Diag(r)$.
@@ -780,23 +780,23 @@ tambi\'en~\cite{KeiSte74, Tei60}) y se enuncia como sigue:
   escribe estocasticamente como
   %
   \[
-  X \egald R \, U \qquad \mbox{con} \qquad U \sim \U(\Sset_d), \quad R > 0 \quad
+  X \iguald R \, U \qquad \mbox{con} \qquad U \sim \U(\Sset_d), \quad R > 0 \quad
   \mbox{independientes}
   \]
   %
   M\'as generalmente, para \ $Y \sim \ED(m,\Sigma,\varphi_Y)$,
   %
   \[
-  Y \egald \Sigma^{\frac12} R \, U + m
+  Y \iguald \Sigma^{\frac12} R \, U + m
   \]
   %
   Adem\'as, inmediatamente
   %
   \[
-  R \egald \| X \|
+  R \iguald \| X \|
   \]
   %
-  (obviamente, $\frac{X}{\| X \|} \egald U$).
+  (obviamente, $\frac{X}{\| X \|} \iguald U$).
 \end{teorema}
 %
 \begin{proof}
@@ -852,8 +852,8 @@ tambi\'en~\cite{KeiSte74, Tei60}) y se enuncia como sigue:
   \]
   %
   La prueba se  cierra de la relaci\'on uno-uno entre  la medida de probabilidad
-  de un vector aleatorio y la funci\'on caracter\'istica. De \ $X \egald R \, U$
-  \ y \ $\| U \| = 1$ \ viene  \ $R \egald \| X \|$. \SZ{Me tengo que fijar bien
+  de un vector aleatorio y la funci\'on caracter\'istica. De \ $X \iguald R \, U$
+  \ y \ $\| U \| = 1$ \ viene  \ $R \iguald \| X \|$. \SZ{Me tengo que fijar bien
     el paso  introduciendo $F_R$  con la parametrizaci\'on  de $\Rset^d$  con la
     esfera.}
 \end{proof}
@@ -872,22 +872,22 @@ De esta escritura, se puede ir un paso m\'as all\'a~\cite[Teo~2.3]{FanKot90}:
   X =  \|X\| \: \frac{X}{\|X\|}
   \]
   %
-  tales  que  \ $\|  X  \|  \egald  R$ \  y  \  $\frac{X}{\|X\|} \egald  U  \sim
+  tales  que  \ $\|  X  \|  \iguald  R$ \  y  \  $\frac{X}{\|X\|} \iguald  U  \sim
   \U(\Sset_d)$ \ son independientes.
 \end{corolario}
 %
 \begin{proof}
   Se  aplica  el  teorema~\ref{Teo:MP:IgualdadDistribucionFuncionVA} a  \  $f(x)
-  = \begin{bmatrix} \|x\|\\ \frac{x}{\|x\|} \end{bmatrix}$ \ con \ $X \egald Y =
+  = \begin{bmatrix} \|x\|\\ \frac{x}{\|x\|} \end{bmatrix}$ \ con \ $X \iguald Y =
   R \ U$.
 \end{proof}.
 
-De la escritura  $X \egald R \,  U$, se puede ver $X  \sim \ED(0,I,\varphi_X)$ \
+De la escritura  $X \iguald R \,  U$, se puede ver $X  \sim \ED(0,I,\varphi_X)$ \
 como mu\~necas rusas: a cada escala o  capa \ $R = r$ tenemos una distribuci\'on
-uniforma sobre la esfera de este rayo  $r$. Por eso, $X$ es tambi\'en dicho {\em
-  mezcla de  escala} de  una {\em base}  \ uniforme  y \ $R$  \ es  llamada {\em
+uniforma sobre la esfera de este radio  $r$. Por eso, $X$ es tambi\'en dicho {\it
+  mezcla de  escala} de  una {\it base}  \ uniforme  y \ $R$  \ es  llamada {\it
   variable generadora} con respecto a  esta base. En esta situaci\'on, llamaremos
-tambi\'en a la variable \ $R$ \ {\em rayo}.
+tambi\'en a la variable \ $R$ \ {\it radio}.
 
 De esta escritura, queda ahora claro que cada tensor de momentos centrales tiene
 una estructura fija:  de \ $X =  R \Sigma U$ \ tenemos  $\zeta_l[X] = \Esp\left[
@@ -895,7 +895,7 @@ una estructura fija:  de \ $X =  R \Sigma U$ \ tenemos  $\zeta_l[X] = \Esp\left[
 \propto   I$):  la  estructura,   com\'un  a   cualquier  vector   aleatorio  de
 $\ED(m,\Sigma,\varphi_X)$ es dada por \  $\zeta_k[\Sigma U]$ (cero cuando $l = 2
 k + 1$, por  simetr\'ia central) y el factor, dependiente de  la ley es dada por
-el  momento  del ``rayo''  $R$.   Adem\'as,  se puede  dar  una  otra forma  del
+el  momento  del ``radio''  $R$.   Adem\'as,  se puede  dar  una  otra forma  del
 coeficiente $\alpha_k$:
 %
 \begin{lema}\label{Lem:MP:AlphaConR}
@@ -961,7 +961,7 @@ remarcables tambi\'en.
   \]
   %
   donde \ $d_X:  \Rset_+ \mapsto \Rset_+$ \ funci\'on de  un escalar, es llamada
-  {\em generadora de densidad}. Reciprocamente, si la densidad tiene esta forma,
+  {\it generadora de densidad}. Reciprocamente, si la densidad tiene esta forma,
   \ $X$ \ es a simetr\'ia el\'iptica.
 \end{teorema}
 %
@@ -998,16 +998,16 @@ respectivamente  dados por  los  autovectores y  autovalores  de $\Sigma$.   Eso
 justifica tambi\'en la denominaci\'on ``$X$ \ a simetr\'ia el\'iptica''.
 
 Como lo vimos, de una forma, todas las caracter\'isticas estad\'isticas de \ $X$
-\ son  en el ``rayo''  \ $R \egald  \sqrt{(X-m)^t \Sigma^{-1} (X-m)}$. En  lo que
+\ son  en el ``radio''  \ $R \iguald  \sqrt{(X-m)^t \Sigma^{-1} (X-m)}$. En  lo que
 sigue,  sin   perdida  de  generalidad,   se  puede  concentrarse  en   $X  \sim
 \ED(0,I,d_X)$.
 
 Primero, se puede escribir la ley de $R$ a partir de $d_X$:
 %
-\begin{teorema}[Densidad del rayo]
-\label{Teo:MP:DensidadRayo}
+\begin{teorema}[Densidad del radio]
+\label{Teo:MP:DensidadRadio}
 %
-  Sea \ $X \sim \ED(0,I,d_X)$ \ y \ $R \egald \|X\|$. \ $R$ admite tambi\'en una
+  Sea \ $X \sim \ED(0,I,d_X)$ \ y \ $R \iguald \|X\|$. \ $R$ admite tambi\'en una
   densidad que se escribe
   %
   \[
@@ -1067,13 +1067,13 @@ transformada de Fourier.
   %
   La transformaci\'on dando \  $w^{\frac{d}{2}-1} \varphi_X\left( w^2 \right)$ \
   a partir  de \  $r^{\frac{d}{2}-1} d_X\left( r^2  \right)$ \ es  conocida como
-  {\em transformada  de Hankel}  de orden \  $\frac{d}{2}-1$~\cite{Sch38, Sch69,
+  {\it transformada  de Hankel}  de orden \  $\frac{d}{2}-1$~\cite{Sch38, Sch69,
     Sch71,  Lor54,  Pou99,  Pou10}.    A  veces,  la  transformaci\'on  dando  \
   $\varphi_X\left( w^2  \right)$ \ a  partir de \  $d_X\left( r^2 \right)$  \ es
-  llamada {\em transformada de Hankel modificada} de orden \ $\frac{d}{2}-1$.
+  llamada {\it transformada de Hankel modificada} de orden \ $\frac{d}{2}-1$.
 
   M\'as generalmente, \ $\varphi_X$ \ es relacionada a la medida de probabilidad
-  \   $P_R$  \  del   rayo  por   transformaci\'on  dicha   de  Hankel-Stieltjes
+  \   $P_R$  \  del   radio  por   transformaci\'on  dicha   de  Hankel-Stieltjes
   (modificada)~\cite{Sch38, Nus73, ChoHai70, Sch71}
   %
   \[
@@ -1087,7 +1087,7 @@ transformada de Fourier.
   Hay varias  pruebas de este  resultado. Una prueba  elegante se basa  sobre la
   generadora caracter\'istica de la variable $U \sim \U(\Sset_d)$.  Primero, sin
   perdida de generalidad,  consideramos $m = 0, \: \Sigma =  I$. Entonces, de la
-  escritura \ $X \egald R \, U$ \ tenemos
+  escritura \ $X \iguald R \, U$ \ tenemos
   %
   \begin{eqnarray*}
   \Phi_X(\omega) & = & \Esp\left[ e^{\imath \, R \omega^t U} \right]\\[2mm]
@@ -1107,7 +1107,7 @@ transformada de Fourier.
   \]
   %
   transformada de Hankel-Stieltes (modificada)  de \ $P_R$. A continuaci\'on del
-  teorema~\ref{Teo:MP:DensidadRayo} se obtiene
+  teorema~\ref{Teo:MP:DensidadRadio} se obtiene
   %
   \[
   \varphi_X\left(  \|  \omega  \|^2  \right)  =  2^{\frac{d}{2}-1}  \Gamma\left(
@@ -1144,10 +1144,10 @@ con
 y las convenciones
 %
 \[
-\theta_d = 0, \quad \prod_{k=1}^{0} = 1
+\theta_d \igualc 0, \quad \prod_{k=1}^{0} \igualc 1
 \]
 
-Los  par\'ametros  de  las  coordenadas  hiperesf\'ericas  (rayo,  angulos)  son
+Los  par\'ametros  de  las  coordenadas  hiperesf\'ericas  (radio,  angulos)  son
 representadas en las figuras~\ref{Fig:MP:CoordenadasHiperesfericas}(a) para $d =
 2$, y~\ref{Fig:MP:CoordenadasHiperesfericas}(b) para $d = 3$.
 
@@ -1160,7 +1160,7 @@ representadas en las figuras~\ref{Fig:MP:CoordenadasHiperesfericas}(a) para $d =
 \label{Fig:MP:CoordenadasHiperesfericas}
 \end{figure}
 
-En el  caso de vector  a simetr\'ia  esf\'erica, aparece que  el rayo $R$  y los
+En el  caso de vector  a simetr\'ia  esf\'erica, aparece que  el radio $R$  y los
 angulos     son     independientes      y     se     puede     calcular     cada
 distribuci\'on~\cite{FanKot90, And03, Lor54, Zoz12}:
 %
@@ -1178,8 +1178,8 @@ distribuci\'on~\cite{FanKot90, And03, Lor54, Zoz12}:
   \[
   p_{\Theta_i}(\theta_i)        =       \frac{\Gamma\left(       \frac{d-j+1}{2}
     \right)}{\sqrt{\pi}   \,  \Gamma\left(   \frac{d-j}{2}  \right)}   \,  \big(
-  \sin\theta_i \big)^{d-i-1}  \, \un_{[0 \;  \pi)}(\theta_i), \quad 1 \le  i \le
-  d-2 , \qquad p_{\Theta_{d-1}}(\theta_{d-1}) =  \frac{1}{2 \pi} \, \un_{[0 \; 2
+  \sin\theta_i \big)^{d-i-1}  \, \uno_{[0 \;  \pi)}(\theta_i), \quad 1 \le  i \le
+  d-2 , \qquad p_{\Theta_{d-1}}(\theta_{d-1}) =  \frac{1}{2 \pi} \, \uno_{[0 \; 2
     \pi)}(\theta_{d-1})
   \]
   %
@@ -1221,17 +1221,17 @@ distribuci\'on~\cite{FanKot90, And03, Lor54, Zoz12}:
   \[
   f_{R,\Theta_1,\ldots,\Theta_{d-1}}(r,\theta_1,\ldots,\theta_{d-1}) = d_X\left(
     r^2    \right)     r^{d-1}    \prod_{j=1}^{d-2}    \left(     \left(    \sin
-      \theta_i\right)^{d-j-1} \un_{[0 \; \pi)}(\theta_i) \right) \, \un_{[0 \; 2
+      \theta_i\right)^{d-j-1} \uno_{[0 \; \pi)}(\theta_i) \right) \, \uno_{[0 \; 2
     \pi)}(\theta_{d-1})
   \]
   %
   Claramente  se  factoriza  probando  la  independencia  y  la  forma  de  cada
   distribuci\'on   marginal.    El   factor   viene    de   la   normalizaci\'on
   (ver~\cite[Ec.~8.380-2]{GraRyz15}   para  los   angulos,   lo  que   determina
-  necesariamente el del rayo).
+  necesariamente el del radio).
 \end{proof}
 %
-Obviamente,  se  recupera la  ley  de  \ $R  \egald  \|X\|$  \ que  encontramos.
+Obviamente,  se  recupera la  ley  de  \ $R  \iguald  \|X\|$  \ que  encontramos.
 Ad\'emas, estas  coordenadas hiperesf\'ericas, a $r=1$,  parametriza $\Sset_d$ y
 permite por ejemplo de probar la independencia entre $\|X\|$ y $\frac{X}{\|X\|}$
 (y entonces la escritura en mezcla), de calcular directamente \ $\Phi_U(\omega)$
@@ -1244,7 +1244,7 @@ marginalizaci\'on, y extensi\'on, como la gaussiana por ejemplo:
 \begin{definicion}[Consistencia~\cite{Yao73, Kan94}]
 %
   Sea \  $X = \begin{bmatrix} X_1 &  \cdots & X_d \end{bmatrix}$  \ a simetr\'ia
-  el\'iptica  de  generadora de  densidad  $d_X$.   Este  vector es  dicho  {\em
+  el\'iptica  de  generadora de  densidad  $d_X$.   Este  vector es  dicho  {\it
     consistente}   si  la   generadora  de   densidad  \   $d_{X'}$  \   de  $X'
   = \begin{bmatrix} X_1 & \cdots &  X_{d'} \end{bmatrix}$ \ tiene la misma forma
   que \ $d_X$  \ donde el par\'ametro  dimensional \ $d$ \ es  reemplazado por \
@@ -1267,7 +1267,7 @@ el\'iptica)  se escribe siempre  como mezcla  de escala  de base  uniforme, esta
 escritura estoc\'astica  no es \'unica. Por  ejemplo, si consideramos $X  = A \,
 G$, con \ $A$ \ variable aleatoria positiva \ y \ $G \sim \N(0,I)$ independiente
 de $G$,  queda claro  que \ $X$  \ es  a simetr\'ia esf\'erica.  Estos vectores,
-llamados {\em mezcla de escala de  base gaussiana}, o simplemente {\em mezcla de
+llamados {\it mezcla de escala de  base gaussiana}, o simplemente {\it mezcla de
   escala  gaussiana}  (GSM  para  gaussian  scale mixture  en  ingl\'es)  fueron
 estudiados  intensivamente de  manera formal~\cite{Kan94,  Yao73,  Ver64, Pic70,
   Kel71,  Kin72, KeiSte74,  Tei60, AndMal74}.   Ecuentra aplicaciones  en varias
@@ -1293,7 +1293,7 @@ Sea \ $X  \sim \ED\left( m ,  \Sigma , \varphi_X \right)$.  Entonces  $X$ es una
 mezcla de gaussiana si y solamente si $X$ es consistente, es decir
   %
   \[
-  X \,  \egald \,  A \, \Sigma^{\frac12}  \, G  + m \quad  \Leftrightarrow \quad
+  X \,  \iguald \,  A \, \Sigma^{\frac12}  \, G  + m \quad  \Leftrightarrow \quad
   \varphi_X \in \PDSI
   \]
   %
@@ -1368,9 +1368,9 @@ de  densidad,  el teorema  de  Sch{\oe}nberg  tiene  una versi\'on  usando  esta
 generadora.   Por  eso,  introducimos  el conjunto  de  funciones  complatemente
 monotonas   sobre  $\Rset_+$   hasta   un  cierto   orden,   y  para   cualquier
 orden~\footnote{Una funci\'on  \ $f: I \subset  \Rset \mapsto \Rset$  \ es dicha
-  {\em absolutamente monotona} si es continua, diferenciable a todos los ordenes
+  {\it absolutamente monotona} si es continua, diferenciable a todos los ordenes
   en el interior de $I$, y todas sus derivadas son positivas, $ \forall \: k \in
-  \Nset, \quad f^{(k)} \ge 0$.  $f$ \ es dicha {\em completamente monotona} si \
+  \Nset, \quad f^{(k)} \ge 0$.  $f$ \ es dicha {\it completamente monotona} si \
   $f(-x)$ \ es absolutamente monotona~\cite{Ber29}.} (ver notaciones):
 %
 \[
@@ -1394,7 +1394,7 @@ y
   de gaussiana si y solamente si $d_X$ es completamente monotona sobre $\Rset_+$
   %
   \[
-  X \, \egald \, A \, \Sigma^{\frac12}  \, G + m \quad \Leftrightarrow \quad d_X
+  X \, \iguald \, A \, \Sigma^{\frac12}  \, G + m \quad \Leftrightarrow \quad d_X
   \in \CM
   \]
   %
@@ -1473,16 +1473,16 @@ generadora de la mezcla gaussiana:
 \begin{lema}\label{Lem:MP:AIndependienteD}
   Sea  \ $\varphi_X  \in  \PDSI$ (o  $d_X  \in \CM$).  Entonces, para  cualquiera
   dimension \ $d$ \ y  $X \sim \ED(m,\Sigma,\varphi_X)$ \ $d$-dimensional, en la
-  escritura  \ $X  \egald  A \,  \Sigma^{\frac12} G  +  m$ \  con  \ $A  > 0$  \
+  escritura  \ $X  \iguald  A \,  \Sigma^{\frac12} G  +  m$ \  con  \ $A  > 0$  \
   independiente de \ $G  \sim \N(0,I)$ la ley de $A$ no  depende de la dimension
   $d$.
 \end{lema}
 %
 \begin{proof}
   La  prueba  es  inmediata  del   hecho  que,  para  cualquiera  matriz  $M  \in
-  \Mat_{d,n}(\Rset)$ de rango lleno con $d  \le n$, \ $X \egald A \Sigma^{\frac12}
-  G $ \ con  \ $G \sim \N(0,I)$ \ $n$-dimensional, tenemos $X' =  M X \egald A M
-  \Sigma^{\frac12} G \egald A \left( M  \Sigma M^t \right)^{\frac12} G'$ \ con \
+  \Mat_{d,n}(\Rset)$ de rango lleno con $d  \le n$, \ $X \iguald A \Sigma^{\frac12}
+  G $ \ con  \ $G \sim \N(0,I)$ \ $n$-dimensional, tenemos $X' =  M X \iguald A M
+  \Sigma^{\frac12} G \iguald A \left( M  \Sigma M^t \right)^{\frac12} G'$ \ con \
   $G'         \sim        \N(0,I)$         \         $d$-dimensional        (ver
   teorema~\ref{Teo:MP:StabilidadGaussiana}).  Una   mezcla  de  gaussiana  queda
   mezcla por proyecci\'on,  con la misma generadora $A$, y  al rev\'es puede ser
@@ -1494,7 +1494,7 @@ generadora de la mezcla gaussiana:
 \end{proof}
 
 Si  en  la  escritura  como  mezcla  de  escala  de  base  uniforme  se  escribe
-sencillamente  la  ley  del rayo  \  $R$,  se  puede tambi\'en  caracterizar  la
+sencillamente  la  ley  del radio  \  $R$,  se  puede tambi\'en  caracterizar  la
 generadora en  el caso de mezcla de  base gaussiana. Viene de  la escritura como
 mezcla, donde  se reconoce  une transformada de  Laplace-Stieltjes (ver  nota de
 pie~\ref{Foot:MP:LaplaceStieltjes}).
@@ -1590,9 +1590,9 @@ inversas)~\footnote{Se   puede  tambi\'en  pensar   a  la   transformaci\'on  de
   sobre una  franja del plano  complejo del tipo  \ $\real{s} \in (x_m  \; x_M)$
   (abscisas de convergencia), \  y usar sus propiedades remarcables~\cite{Zol57,
     Pou99, Pou10,  Wid46, ParKam01}.   En el caso  con densidad por  ejemplo, se
-  reconoce en \  $g_X(r) = r^{d-1} d_X\left( r^2 \right)$ \  (ley del rayo, bajo
+  reconoce en \  $g_X(r) = r^{d-1} d_X\left( r^2 \right)$ \  (ley del radio, bajo
   un factor) lo  que se llama convoluci\'on af\'in, entre \  $g_G(r)$ \ (ley del
-  rayo  de la  gaussiana)  \  y la  medida  de \  $A$,  $\displaystyle g_X(r)  =
+  radio  de la  gaussiana)  \  y la  medida  de \  $A$,  $\displaystyle g_X(r)  =
   \int_{\Rset_+} \frac{1}{a} g_G\left( \frac{r}{a} \right) \, p_A(a) \, da$.  Al
   imagen de las  propiedades de la transformada de  Laplace, la transformaci\'on
   de Mellin de  una convoluci\'on af\'in es el  producto de las transformaciones
@@ -1633,7 +1633,7 @@ como mezcla de escala de base gaussiana).
   \pi)^{-\frac{d}{2}} e^{- \frac{r}{2}}
   \]
   
-  Eso da la ley del rayo
+  Eso da la ley del radio
   %
   \[
   p_R(r)  =  \frac{1}{2^{\frac{d}{2}-1}  \Gamma\left(  \frac{d}{2}  \right)}  \:
@@ -1669,7 +1669,7 @@ como mezcla de escala de base gaussiana).
     \frac{d+\nu}{2}}
   \]
 
-  Se obtiene de \ $d_X$ \ la ley de rayo
+  Se obtiene de \ $d_X$ \ la ley de radio
   %
   \[
   p_R(r)  =  \frac{2}{\nu^{\frac{d}{2}}   B\left(  \frac{\nu}{2}  ,  \frac{d}{2}
@@ -1699,7 +1699,7 @@ como mezcla de escala de base gaussiana).
 
   V\'imos           en           la           secci\'on~\ref{Sssec:MP:StudentT},
   lema~\ref{Lem:MP:MezclaGaussianaEscalaStudentT},    que    se   escribe    una
-  Student-$t$   como   mezcla   de   escala   gaussiana  donde   \   $A   \egald
+  Student-$t$   como   mezcla   de   escala   gaussiana  donde   \   $A   \iguald
   \frac{1}{\sqrt{V}},  \: V \sim  \G\left( \frac{\nu}{2}  \, ,  \, \frac{\nu}{2}
   \right)$ ley gamma, \ie \ $A$ \  es la raiz cuadrada de una gamma inversa (ver
   tambi\'en~\cite{FanKot90,  KotNad04}).   Se  puede re-obtener  este  resultado
@@ -1724,11 +1724,11 @@ como mezcla de escala de base gaussiana).
     \frac{r}{\nu+2} \right)_+^{\frac{\nu-d}{2}}
   \]
   
-  Se obtiene as\'i la ley del rayo bajo la forma
+  Se obtiene as\'i la ley del radio bajo la forma
   %
   \[
   p_R(r)   =    \frac{2}{(\nu+2)^{\frac{d}{2}}}   \:   r^{d-1}    \left(   1   -
-    \frac{r^2}{\nu+2}    \right)^{\frac{\nu-d}{2}}    \un_{(0    \;    1)}\left(
+    \frac{r^2}{\nu+2}    \right)^{\frac{\nu-d}{2}}    \uno_{(0    \;    1)}\left(
     \frac{r^2}{\nu+2} \right)
   \]
   %
@@ -1750,7 +1750,7 @@ como mezcla de escala de base gaussiana).
   Obviamente, sin calculos, se ve del soporte acotado de la densidad que \ $X$ \
   no  puede   ser  mezcla  de  escala   de  gaussiana.   Pero   recordar  de  la
   secci\'on~\ref{Sssec:MP:StudentR},  lema~\ref{Lem:MP:StudentRGamma}, que  \ $X
-  \egald \frac{\sqrt{\nu+2} \: \Sigma^{\frac12} \, G}{\sqrt{V + \|G\|^2}} + m \,
+  \iguald \frac{\sqrt{\nu+2} \: \Sigma^{\frac12} \, G}{\sqrt{V + \|G\|^2}} + m \,
   \sim \, \R_\nu( m , \Sigma )$  \ con \ $V \sim \G\left( \frac{\nu-d}{2}+1 \, ,
     \,  \frac12 \right)$  \  y \  $G \,  \sim  \, \N(0,I)$  \ $d$-dimensional  e
   independientes de $V$.  Parece una mezcla de gaussiana, pero con la generadora
@@ -1780,7 +1780,7 @@ como mezcla de escala de base gaussiana).
   \[
   d_{X'}\left(     r^2      \right)     =     \frac{\Gamma\left(     \frac{d}{2}
     \right)}{\pi^{\frac{d'}{2}} \Gamma\left( \frac{d-d'}{2}  \right)} \left( 1 -
-    r^2 \right)^{\frac{d-2-d'}{2}} \un_{(0 \; 1)}(r)
+    r^2 \right)^{\frac{d-2-d'}{2}} \uno_{(0 \; 1)}(r)
   \]
   %
   y no existe para  $d' > d$.  Claramente lar marginales depende  de ambas $d$ y
@@ -1811,7 +1811,7 @@ extiende sencillamente al caso multivariado:
   Student-$r$ con $\nu = n-2$ el grado de libertad, y reciprocamente
   %
   \[
-  \varphi_X \in  \PDSI_n, \:  n > d  \quad \Leftrightarrow  \quad X \egald  B \,
+  \varphi_X \in  \PDSI_n, \:  n > d  \quad \Leftrightarrow  \quad X \iguald  B \,
   \Sigma^{\frac12} \, S_{n-2} + m
   \]
   %
@@ -1822,7 +1822,7 @@ extiende sencillamente al caso multivariado:
   La prueba la  m\'as sencilla se apoya  sobre el hecho que si  \ $\varphi_X \in
   \PDSI_n$,   se  puede  considerar   un  vector   $n$-dimensional  \   $Y  \sim
   \ED(0,I,\varphi_X)$  \  de  generadora  caracter\'istica  \  $\varphi_X$  \  y
-  escribir \ $Y \egald  R \, U$ \ con \ $U  \sim \U(\Sset_n)$, y reciprocamente.
+  escribir \ $Y \iguald  R \, U$ \ con \ $U  \sim \U(\Sset_n)$, y reciprocamente.
   Ahora, del ejemplo~\ref{Ej:MP:UniformeCnt}, la proyecci\'on $d$-dimensional de
   \ $U$  \ es Student-$r$  con $n-2$ el  grado de libertad, y  reciprocamente se
   puede  ver  cualquiera  Student-$r$  con   $n-2$  el  grado  de  libertad  como
@@ -1849,12 +1849,12 @@ extiende sencillamente al caso multivariado:
 
 Pasando, se notar\'a que para buscar la  ley de \ $B$, sufice ver la Student-$r$
 como  proyecci\'on  de una  uniforme  de  dimensi\'on \  $d+2$,  \ie  \ $X  \sim
-\ED(m,\Sigma,\varphi_X) \egald B \Sigma^{\frac12} S_{n-2} + m$, $d$-dimensional:
+\ED(m,\Sigma,\varphi_X) \iguald B \Sigma^{\frac12} S_{n-2} + m$, $d$-dimensional:
 %
 \[
 \mbox{Construimos     }     \:\:     Y     \sim     \ED(0,I,\varphi_X)     \quad
-(d+2)\mbox{-dimensional}  \qquad   \mbox{y}  \qquad  Y   \egald  R  \,   U  \:\:
-\Leftrightarrow \:\: B \egald R
+(d+2)\mbox{-dimensional}  \qquad   \mbox{y}  \qquad  Y   \iguald  R  \,   U  \:\:
+\Leftrightarrow \:\: B \iguald R
 \]
 
 
@@ -1868,7 +1868,7 @@ De nuevo, existe un teorema equivalente tratando de la generadora de densidad:
   Student-$r$ con $\nu = 2 n + d - 2$ el grado de libertad, y reciprocamente,
   %
   \[
-  d_X \in  \CM_n, \:  n \in \Nset_0  \quad \Leftrightarrow  \quad X \egald  B \,
+  d_X \in  \CM_n, \:  n \in \Nset_0  \quad \Leftrightarrow  \quad X \iguald  B \,
   \Sigma^{\frac12} \, S_{2 n + d - 2} + m
   \]
   %
@@ -2000,7 +2000,7 @@ simetr\'ia el\'iptica.
     \ es unitaria significa que \ $V V^\dag = V^\dag V = I$.} \ $V$,
   %
   \[
-  V  Z  \: \egald  \: Z
+  V  Z  \: \iguald  \: Z
   \]
   %
 \end{definicion}
@@ -2018,7 +2018,7 @@ transformaci\'on unitaria de manera siguiente:
   \Unit_d(\Cset)$,
   %
   \[
-  V  \,  \Delta^{-\frac12}  \,  Q^\dag  \left(  X  -  m  \right)  \:  \egald  \:
+  V  \,  \Delta^{-\frac12}  \,  Q^\dag  \left(  X  -  m  \right)  \:  \iguald  \:
   \Delta^{-\frac12} \, Q^\dag \left( X - m \right)
   \]
   %
@@ -2043,9 +2043,9 @@ El v\'inculo entre la simetr\'ia el\'iptica y la circularidad es tambi\'en obvia
 \end{lema}
 %
 \begin{proof}
-  La prueba es  inmediata de \ $Z-m \egald  Q \, \Delta^{\frac12} \, Y$  \ con \
+  La prueba es  inmediata de \ $Z-m \iguald  Q \, \Delta^{\frac12} \, Y$  \ con \
   $Y$ \  a simetr\'ia esf\'erica. Se  cierra la prueba de,  \ $e^{\imath \theta}
-  (Z-m) \egald Q \, \Delta^{\frac12} \,  \big( e^{\imath \theta} I \big) \, Y$ \
+  (Z-m) \iguald Q \, \Delta^{\frac12} \,  \big( e^{\imath \theta} I \big) \, Y$ \
   conjuntamente a \ $e^{\imath \theta} I \in \Unit_d(\Cset)$.
 \end{proof}
 
@@ -2072,7 +2072,7 @@ M z \quad \mbox{es en biyecci\'on con} \quad \overline{M} \, \widetilde{z}, \qqu
 M N \quad \mbox{es en biyecci\'on con} \quad \overline{M} \, \overline{N}
 \]
 %
-Llamaremos   {\em    forma   real}   ambas   inmersiones    y   las   escrituras
+Llamaremos   {\it    forma   real}   ambas   inmersiones    y   las   escrituras
 precedientes. Adem\'as, se ve sencillamente que
 %
 \begin{itemize}
@@ -2159,7 +2159,7 @@ matriz caracter\'istica \ $\Sigma$:
   \item Teorema~\ref{Teo:MP:ProyeccionComponentesEliptica} en: Sea \ $Z$, vector
     aleatorio   complejo  $d$-dimensional   de   componentes  $Z_i$.    Entonces
     $\displaystyle Z  \sim \CED(m,\Sigma,\varphi_Z) \quad  \Leftrightarrow \quad
-    \forall \:  a \in  \Cset^d, \quad a^\dag  (Z - m)  \egald \sqrt{\frac{a^\dag
+    \forall \:  a \in  \Cset^d, \quad a^\dag  (Z - m)  \iguald \sqrt{\frac{a^\dag
         \Sigma a}{\Sigma_{i,i}}} (Z_i - m_i)$;
   %
   \item Teorema~\ref{Teo:MP:MaxwellHershell} en:  \ $Z \sim \CED(m,I,\varphi_Z)$
@@ -2167,13 +2167,13 @@ matriz caracter\'istica \ $\Sigma$:
     \alpha I)$ con $\alpha > 0$;
   %
   \item  Teorema~\ref{Teo:MP:MezclaUniforme} en:  \ $Z  \sim \CED(0,I,\varphi_Z)
-    \:\: \Leftrightarrow  \:\: Z \egald R \,  U$ \:\: con \:\:  $U \sim \U\left(
+    \:\: \Leftrightarrow  \:\: Z \iguald R \,  U$ \:\: con \:\:  $U \sim \U\left(
       \SCset_d \right)$  \ uniforme sobre  la esfera $d$-dimensional  compleja y
-    m\'as generalmente, para \ $Z \sim \ED(m,\Sigma,\varphi_Z)$, \quad $Y \egald
+    m\'as generalmente, para \ $Z \sim \ED(m,\Sigma,\varphi_Z)$, \quad $Y \iguald
     \Sigma^{\frac12} R \, U + m$.
   %
   \item  Corolario~\ref{Cor:MP:MezclaUniforme} en: $Z  \sim \CED(0,I,\varphi_Z)$
-    da \ $\| Z \| \egald R$ \ y \ $\frac{Z}{\|Z\|} \egald U \sim \U(\SCset_d)$ \
+    da \ $\| Z \| \iguald R$ \ y \ $\frac{Z}{\|Z\|} \iguald U \sim \U(\SCset_d)$ \
     son independientes;
   %
   \item Con  el mismo enfoque,  el lema~\ref{Lem:MP:AlphaConR} se expresa  en el
@@ -2181,8 +2181,8 @@ matriz caracter\'istica \ $\Sigma$:
     \frac{\Gamma(d)}{\Gamma(d+k)} \Esp\left[ \left( (Z-m)^\dag \Sigma^{-1} (Z-m)
       \right)^k \right]$.
   %
-  \item Teorema~\ref{Teo:MP:DensidadRayo} en: \ $Z  \sim \CED(0,I,d_Z)$ \ y \ $R
-    \egald \|Z\|$ \  admite una densidad que se  escribe $\displaystyle p_R(r) =
+  \item Teorema~\ref{Teo:MP:DensidadRadio} en: \ $Z  \sim \CED(0,I,d_Z)$ \ y \ $R
+    \iguald \|Z\|$ \  admite una densidad que se  escribe $\displaystyle p_R(r) =
     \frac{2 \pi^d}{\Gamma(d)} \, r^{2 d-1} \, d_X\left( r^2 \right)$;
   %
   \item   Teorema~\ref{Teo:MP:TransformadaDeHankel}   en:   para   \   $Z   \sim
@@ -2196,18 +2196,18 @@ matriz caracter\'istica \ $\Sigma$:
   % \item Coordenadas hiperesf\'ericas
   %
   \item Teorema~\ref{Teo:MP:SchoenbergCaracteristica} en: \ $Z \sim \CED\left( m
-      , \Sigma , \varphi_Z \right) \egald \, A \, \Sigma^{\frac12} \, G + m \:\:
+      , \Sigma , \varphi_Z \right) \iguald \, A \, \Sigma^{\frac12} \, G + m \:\:
     \Leftrightarrow \:\: \varphi_Z  \in \PDSI$, \ con \ $A  > 0$ \ independiente
     de \ $G \sim \CN(0,I)$;
   %
   \item  Teorema~\ref{Teo:MP:SchoenbergDensidad} en:  \ $Z  \sim \CED\left(  m ,
-      \Sigma  , d_Z  \right)  \egald \,  A \,  \Sigma^{\frac12}  \, G  + m  \:\:
+      \Sigma  , d_Z  \right)  \iguald \,  A \,  \Sigma^{\frac12}  \, G  + m  \:\:
     \Leftrightarrow \:\: d_Z \in  \CM$, \ con \ $A > 0$  \ independiente de \ $G
     \sim \CN(0,I)$;
   %
   \item Lema~\ref{Lem:MP:AIndependienteD}  en: \  $\varphi_Z \in \PDSI$  (o $d_Z
     \in   \CM$)  \   y   para  cualquiera   dimension   \  $d$   \   y  $Z   \sim
-    \CED(m,\Sigma,\varphi_Z)$ \  $d$-dimensional, en la escritura \  $X \egald A
+    \CED(m,\Sigma,\varphi_Z)$ \  $d$-dimensional, en la escritura \  $X \iguald A
     \, \Sigma^{\frac12}  G + m$  \ con \  $A > 0$ \  independiente de \  $G \sim
     \CN(0,I)$ la ley de \ $A$ \ no depende de la dimension $d$;
   %
@@ -2216,7 +2216,7 @@ matriz caracter\'istica \ $\Sigma$:
     n > 2 d$, dando la escritura  estoc\'astica de \ $Z$ \ como mezcla de escala
     de  Student-$r$  compleja   con  $\nu  =  n-2$  el   grado  de  libertad,  y
     reciprocamente: \ $\varphi_Z  \in \PDSI_n, \: n >  2 d \quad \Leftrightarrow
-    \quad X  \egald B  \, \Sigma^{\frac12} \,  S_{n-2} + m$  \ con  \ $B >  0$ \
+    \quad X  \iguald B  \, \Sigma^{\frac12} \,  S_{n-2} + m$  \ con  \ $B >  0$ \
     independiente     de     \     $S_{n-2}    \sim     \CR_{n-2}(0,I)$     (ver
     secci\'on~\ref{Sssec:MP:StudentR});
   %
@@ -2225,7 +2225,7 @@ matriz caracter\'istica \ $\Sigma$:
     \Nset_0$, dando la escritura estoc\'astica \  $Z$ \ como mezcla de escala de
     Student-$r$  con  $\nu  =  2  n  +  2  d  -  2$  el  grado  de  libertad,  y
     reciprocamente: \  $d_Z \in  \CM_n, \: n  \in \Nset_0  \quad \Leftrightarrow
-    \quad Z \egald B \, \Sigma^{\frac12} \, S_{2 n +  2 d - 2} + m$ \ con \ $B >
+    \quad Z \iguald B \, \Sigma^{\frac12} \, S_{2 n +  2 d - 2} + m$ \ con \ $B >
     0$ \ independiente de \ $S_{2 n + 2 d - 2} \sim \CR_{2 n + 2 d - 2}(0,I)$.
   \end{itemize}
 %
@@ -2253,7 +2253,7 @@ y de $\Pos_d^+(\Rset)$  casi siempre si $n  \le d$).  Ahora, si los  $X_i$ son a
 sim\'etria elipt\'ica, $\widehat{\Sigma}_X$ va  a tener simetr\'ia por cambio de
 escala  y transformaci\'on ortogonal.   M\'as precisamente,  si se  supone $X_i$
 esf\'erica por  ejemplo, para cualquiera matriz ortogonal  $O \in \Ort_d(\Rset)$
-se  tiene   $O  X_i  \egald   X_i$,  dando  $O  \widehat{\Sigma}_X   O^t  \egald
+se  tiene   $O  X_i  \iguald   X_i$,  dando  $O  \widehat{\Sigma}_X   O^t  \iguald
 \widehat{\Sigma}_X$.  Esta propiedad dio lugar  a une definici\'on de una matriz
 a simetr\'ia esf\'erica aparece por  unas de las primeras veces en~\cite{Mal61}.
 Ahora, si  uno quierre estimar una  matriz de covarianza  $\Sigma_{X,Y}$ con $X$
@@ -2262,7 +2262,7 @@ independientes, $\displaystyle \widehat{\Sigma}_{X,Y} = \frac{1}{n} \sum_{i=1}^n
 X_i Y_i^t$,  matriz de $\Mat_{d,d'}(\Rset)$. Se  observa que cuando  los $X_i$ e
 $Y_i$ son esf\'ericas por ejemplo, para cualquier par de matrices ortogonales $O
 \in \Ort_d(\Rset)$ y $O'  \in \Ort_{d'}(\Rset)$ se tiene $\widehat{\Sigma}_{X,Y}
-\egald  O  \widehat{\Sigma}_{X,Y}  \egald  \widehat{\Sigma}_{X,Y}  O'  \egald  O
+\iguald  O  \widehat{\Sigma}_{X,Y}  \iguald  \widehat{\Sigma}_{X,Y}  O'  \iguald  O
 \widehat{\Sigma}_{X,Y}  O'$.   Cuando  se   limita  a  la  primera  igualdad  en
 distribuci\'on,  es  lo que  dio  lugar  a la  esfericidad  a  la izquierda  que
 apareci\'o por unas  de las primeras veces en~\cite{Hsu40}  (20 a\~nos antes del
@@ -2277,7 +2277,7 @@ Empezamos  con cada  definici\'on  de~\cite[\S~9.3]{GupNag99} y  de~\cite{Hsu40,
   Sea $X$ matriz aleatoria definida sobre $\X = \Mat_{d,d'}(\Rset)$. Denotamos \
   $X_j,  \:   j  =  1,  \ldots  ,   d'$  \  sus  columnas,   definidas  sobre  \
   $\Mat_{d,1}(\Rset)$  \ y  \ $X'_i,  \:  i =  1 ,  \ldots  , d$  \ sus  lineas,
-  definidas  sobre  $\Mat_{1,d'}(\Rset)$.   $X$   es  dicha  {\em  a  simetr\'ia
+  definidas  sobre  $\Mat_{1,d'}(\Rset)$.   $X$   es  dicha  {\it  a  simetr\'ia
     esf\'erica}
   %
   \begin{tabular}
@@ -2287,47 +2287,47 @@ Empezamos  con cada  definici\'on  de~\cite[\S~9.3]{GupNag99} y  de~\cite{Hsu40,
    >{}p{.015\textwidth}
    >{}p{.43\textwidth}}
   %
-  $(\izq)$ & {\em a la izquierda} si \ $\forall \: O \in \Ort_d(\Rset)$, \[ O X
-  \: \egald \: X \] & &
+  $(\izq)$ & {\it a la izquierda} si \ $\forall \: O \in \Ort_d(\Rset)$, \[ O X
+  \: \iguald \: X \] & &
   %
-  $(\der)$ & {\em a la derecha} si \ $\forall \: O' \in \Ort_{d'}(\Rset)$, \[ X
-  O' \: \egald \: X \]\\
+  $(\der)$ & {\it a la derecha} si \ $\forall \: O' \in \Ort_{d'}(\Rset)$, \[ X
+  O' \: \iguald \: X \]\\
   %
-  $(\col)$ & {\em por columnas} si \ $\forall \: O_1 , \ldots , O_{d'} \in
+  $(\col)$ & {\it por columnas} si \ $\forall \: O_1 , \ldots , O_{d'} \in
   \Ort_d(\Rset) $, \[ \begin{bmatrix} O_1 X_1 & \cdots & O_{d'}
-  X_{d'} \end{bmatrix} \: \egald \: \begin{bmatrix} X_1 & \cdots &
+  X_{d'} \end{bmatrix} \: \iguald \: \begin{bmatrix} X_1 & \cdots &
   X_{d'} \end{bmatrix} \] & &
   %
-  $(\lin)$ & {\em por lineas} si \ $\forall \: O'_1 , \ldots , O'_d \in
+  $(\lin)$ & {\it por lineas} si \ $\forall \: O'_1 , \ldots , O'_d \in
   \Ort_{d'}(\Rset) $, \[ \begin{bmatrix} X'_1 O'_1 \\ \vdots \\ X'_d
-  O'_d \end{bmatrix} \: \egald \: \begin{bmatrix} X'_1 \\ \vdots \\
+  O'_d \end{bmatrix} \: \iguald \: \begin{bmatrix} X'_1 \\ \vdots \\
   X'_d \end{bmatrix} \]\\
   %
-  $(\vcol)$ & {\em por vectorizaci\'on columna} si \ $\forall \: O
+  $(\vcol)$ & {\it por vectorizaci\'on columna} si \ $\forall \: O
   \in \Ort_{d d'}(\Rset) $, \[ O \begin{bmatrix} X_1 \\ \vdots \\
-  X_{d'} \end{bmatrix} \: \egald \: \begin{bmatrix} X_1 \\ \vdots \\
+  X_{d'} \end{bmatrix} \: \iguald \: \begin{bmatrix} X_1 \\ \vdots \\
   X_{d'} \end{bmatrix} \] & &
   %
-  $(\vlin)$ & {\em por vectorizaci\'on linea} si \ $\forall \: O' \in \Ort_{d
-  d'}(\Rset) $, \[ \begin{bmatrix} X'_1 & \cdots & X'_d \end{bmatrix} O' \: \egald
+  $(\vlin)$ & {\it por vectorizaci\'on linea} si \ $\forall \: O' \in \Ort_{d
+  d'}(\Rset) $, \[ \begin{bmatrix} X'_1 & \cdots & X'_d \end{bmatrix} O' \: \iguald
   \: \begin{bmatrix} X'_1 & \cdots & X'_d \end{bmatrix} \]
   %
   \end{tabular}
 %
-\centerline{$(\bil)  \:$  {\em bilateral}~\footnote{En  la  literatura, se  dice
+\centerline{$(\bil)  \:$  {\it bilateral}~\footnote{En  la  literatura, se  dice
     m\'as simplemente que  la matriz es a simetr\'ia  esf\'erica o esfericamente
     distribuida,  ej. en~\cite{FanChe84,  GupNag99}.}  si  \ $\forall  \:  O \in
-  \Ort_d(\Rset), O' \in \Ort_{d'}(\Rset), \quad\qquad O X O' \: \egald \: X$}
+  \Ort_d(\Rset), O' \in \Ort_{d'}(\Rset), \quad\qquad O X O' \: \iguald \: X$}
 
 \
 
-\centerline{$(\simed)  \:$  {\em  sim\'etrica}~\footnote{En  la  literatura,  se
+\centerline{$(\simed)  \:$  {\it  sim\'etrica}~\footnote{En  la  literatura,  se
     encuentra frecuentemente que la matriz es a distribuci\'on radial o rotable,
     ej. en~\cite{Tyl82,  BilBre99}, o ensembles  ortogonales~\cite{Car83, Meh04,
       AndGui10, LivNov18}. Fijense que para $d = 1$, necesariamente $O = \pm 1$,
     as\'i que,  obviamente, siempre $O  X O^t =  X$: esta definici\'on  tiene un
     inter\'es solamente cuando $d > 1$.}  si \ $d = d', \: \X = \Sim_d(\Rset)$ \
-  y \ $\forall \: O \in \Ort_d(\Rset), \quad\qquad O X O^t \: \egald \: X$}
+  y \ $\forall \: O \in \Ort_d(\Rset), \quad\qquad O X O^t \: \iguald \: X$}
 
 \
 
@@ -2336,8 +2336,8 @@ $\Sigma^{-\frac12}$    o   cualquiera    inverse   raiz-cuadrada    de   $\Sigma
 (ej. factorizaci\'on de Cholesky), y similarmente para $\Sigma'$.
 \end{definicion}
 
-Nota: para $d' = d$, tomando $O' =  O^t$ con $O = \un_i \un_j^t + \un_j \un_i^t
-+ \sum_{k \ne i,j} \un_k \un_k^t$,  se observa, por inducci\'on, que $Y^t \egald
+Nota: para $d' = d$, tomando $O' =  O^t$ con $O = \uno_i \uno_j^t + \uno_j \uno_i^t
++ \sum_{k \ne i,j} \uno_k \uno_k^t$,  se observa, por inducci\'on, que $Y^t \iguald
 Y_{j,i}$, pero  la igualdad es  en distribuci\'on. en la  \'ultima definici\'on,
 propuesta entre otros por Mallows~\cite{Mal61},  impone la simetr\'ia, lo que es
 m\'as restrictivo.
@@ -2350,7 +2350,7 @@ como en el  caso de vectores con estiramientos  y una translaci\'on~\cite{Mal61,
 \begin{definicion}[Matriz a simetr\'ia el\'iptica]
 %
   Sea $X$  matriz aleatoria  definida sobre $\X  = \Mat_{d,d'}(\Rset)$.   $X$ es
-  dicha  {\em  a  simetr\'ia  el\'iptica  en   torno  a  una  matriz  $m  =  \in
+  dicha  {\it  a  simetr\'ia  el\'iptica  en   torno  a  una  matriz  $m  =  \in
     \Mat_{d,d'}(\Rset)$}    de    matrices    caracter\'isticas   $\Sigma    \in
   \Pos_d^+(\Rset)$  y  $\Sigma'  \in  \Pos_{d'}^+(\Rset)$  de  diagonalizaciones
   respectivamente \ $\Sigma = Q \Delta Q^t$ \ y \ $\Sigma = Q' \Delta' Q'^t$,
@@ -2449,8 +2449,8 @@ $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
 %
   Por lo del punto~\ref{Enum:MP:EDM_Traspuesta}, sea \ $X \in \ED_\izq$ y sea \
   $Y  =   \Delta^{-\frac12}  Q^t   (X-m)$.   Entonces  \   $\forall  \:   O  \in
-  \Ort_d(\Rset),  \quad  O   Y  \egald  Y$,  \  es  decir   $\forall  \:  O  \in
-  \Ort_d(\Rset),  \quad  Y^t  O^t  \egald   Y^t$,  \ie  $X^t  \in  \ED_\der$,  y
+  \Ort_d(\Rset),  \quad  O   Y  \iguald  Y$,  \  es  decir   $\forall  \:  O  \in
+  \Ort_d(\Rset),  \quad  Y^t  O^t  \iguald   Y^t$,  \ie  $X^t  \in  \ED_\der$,  y
   reciprocamente.   Obviamente, la otras  equivalencias se  prueban de  la misma
   manera.
 
@@ -2459,7 +2459,7 @@ $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   \Ort_{dd'}(\Rset)$,
   %
   \[
-  O \begin{bmatrix}  Y_1\\ \vdots\\ Y_{d'}  \end{bmatrix} \egald \begin{bmatrix}
+  O \begin{bmatrix}  Y_1\\ \vdots\\ Y_{d'}  \end{bmatrix} \iguald \begin{bmatrix}
     Y_1 \\ \vdots \\ Y_{d'} \end{bmatrix}
   \]
   %
@@ -2476,19 +2476,19 @@ $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   %
   \[
   \begin{bmatrix}    O_1   Y_1\\    \vdots\\    O_{d'}   Y_{d'}    \end{bmatrix}
-  \egald   \begin{bmatrix}  Y_1   \\  \vdots   \\  Y_{d'}   \end{bmatrix}  \quad
+  \iguald   \begin{bmatrix}  Y_1   \\  \vdots   \\  Y_{d'}   \end{bmatrix}  \quad
   \Leftrightarrow   \quad    \begin{bmatrix}   O_1   Y_1&    \cdots   &   O_{d'}
-    Y_{d'}    \end{bmatrix}   \egald    \begin{bmatrix}   Y_1    &    \cdots   &
+    Y_{d'}    \end{bmatrix}   \iguald    \begin{bmatrix}   Y_1    &    \cdots   &
     Y_{d'} \end{bmatrix} = Y
   \]
   %
   lo que prueba  que tambi\'en \ $X \in \ED_\col$.  Luego,  si $X \in \ED_\col$,
   entonces  \  $\forall  \:  O_1  ,  \ldots  ,  O_{d'}  \in  \Ort_d(\Rset)$,  de
-  $\begin{bmatrix} O_1 X_1  & \cdots & O_{d'} X_{d'}  \end{bmatrix} \egald Y$, y
+  $\begin{bmatrix} O_1 X_1  & \cdots & O_{d'} X_{d'}  \end{bmatrix} \iguald Y$, y
   en particular para cualquiera $O \in \Ort_d(\Rset)$ se obtiene
   %
   \[
-  O Y = \begin{bmatrix} O Y_1 & \cdots & O Y_{d'} \end{bmatrix} \egald Y
+  O Y = \begin{bmatrix} O Y_1 & \cdots & O Y_{d'} \end{bmatrix} \iguald Y
   \]
   %
   lo que  cierra la  prueba que  tambi\'en \ $X  \in \ED_\izq$.   Obviamente, la
@@ -2499,12 +2499,12 @@ $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
 
   Con respecto al punto~\ref{Enum:MP:EDM_Bilateral}, si  \ $X \in \ED_\bil$, e \
   $Y =  \Delta^{-\frac12} Q^t (X-m) Q' \Delta'^{-\frac12}$,  entonces \ $\forall
-  \: O \in \Ort_d(\Rset), O' \in \Ort_{d'}(\Rset),  \quad O Y O' \egald Y$, y en
+  \: O \in \Ort_d(\Rset), O' \in \Ort_{d'}(\Rset),  \quad O Y O' \iguald Y$, y en
   particular para  $O' = I$:  $X \in \ED_\izq$; Similarmente,  necesariamente $X
   \in \ED_\der$, \ie $X \subset \ED_\izq \cap \ED_\der$.  Reciprocamente, sea $X
   \in \ED_\izq \cap \ED_\der$.  Entonces  $\forall \: O \in \Ort_d(\Rset), \quad
-  O Y \egald Y$ \ y  a continuaci\'on $\forall \: O' \in \Ort_{d'}(\Rset), \quad
-  O Y O' \egald Y O' \egald Y$: necesariamente $X \in \ED_\bil$.
+  O Y \iguald Y$ \ y  a continuaci\'on $\forall \: O' \in \Ort_{d'}(\Rset), \quad
+  O Y O' \iguald Y O' \iguald Y$: necesariamente $X \in \ED_\bil$.
 
   Tratando del punto~\ref{Enum:MP:EDM_VcBilateral}, si  \ $X \in \ED_\vcol$, e \
   $Y  =  \Delta^{-\frac12}  Q^t   (X-m)$,  entonces,  para  cualquieras  $O  \in
@@ -2520,13 +2520,13 @@ $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   \,  \begin{bmatrix} O'_{1,1}  I &  \cdots &  O'_{d',1} I\\  \vdots &  \vdots &
     \vdots\\   O'_{1,d'}    I   &   \cdots   &    O'_{d',d'}   I   \end{bmatrix}
   \, \begin{bmatrix}
-    Y_1\\ \vdots\\ Y_{d'} \end{bmatrix} \: \egald \: \begin{bmatrix} Y_1\\ \vdots\\
+    Y_1\\ \vdots\\ Y_{d'} \end{bmatrix} \: \iguald \: \begin{bmatrix} Y_1\\ \vdots\\
     Y_{d'} \end{bmatrix}
   \]
   %
   Se  ve sencillamente que  el vector  resultado de  la multiplicaci\'on  por la
   matriz bloc formada con $O'$ es nada m\'as que el formado de la columnas de $Y
-  O'$   as\'i,  $O  Y   O'  \egald   Y$:  tambi\'en   $X  \in   \ED_\bil$.   Del
+  O'$   as\'i,  $O  Y   O'  \iguald   Y$:  tambi\'en   $X  \in   \ED_\bil$.   Del
   punto~\ref{Enum:MP:EDM_Inclusiones},  $X  \in  \ED_\col$,  \ie  $\ED_\vcol  \,
   \subset  \, \ED_\col  \, \cap  \,  \ED_\bil$.  Para  la reciproca,  se usa  un
   resultado que vamos a ver m\'as adelante,  a saber que (i) $X \in \ED_\col$ si
@@ -2540,8 +2540,8 @@ $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   si   $i    \ne   j$,   es   sencillo   ver    que   $\widetilde{\varphi}_Y   =
   \overline{\varphi}_Y$. En otros t\'erminos, siendo $\Phi_Y$ la misma funci\'on
   de  la diagonal  y  del espectro  de  $\omega^t \omega$,  es  funci\'on de  la
-  cantidad que comparten estos dos vectores, \ie $\un^t \lambda(\omega^t \omega)
-  = \Tr( \omega^t \omega) = \un^t \diag(\omega^t \omega)$, \ie $\Phi_Y(\omega) =
+  cantidad que comparten estos dos vectores, \ie $\uno^t \lambda(\omega^t \omega)
+  = \Tr( \omega^t \omega) = \uno^t \diag(\omega^t \omega)$, \ie $\Phi_Y(\omega) =
   \varphi_Y\left(  \Tr(\omega^t   \omega)  \right)$.   Veremos   m\'as  adelante
   tambi\'en  que $X \in  \ED_\vcol$ si  y solamente  si justamente  la funci\'on
   c\'aracteristica de  $Y$ es una funci\'on  de $\Tr( \omega^t  \omega)$, lo que
@@ -2566,11 +2566,11 @@ $(\bullet)$, se tiene los v\'inculos siguientes entre las clases
   Con  respecto   al  punto~\ref{Enum:MP:EDM_Simetrica},  si  \  $X$   \  es  en
   $\ED_\bil$,  e  \  $Y  =  \Delta^{-\frac12} Q^t  (X-m)  Q  \Delta^{-\frac12}$,
   entonces \ $\forall \: O \in \Ort_d(\Rset), O' \in \Ort_d(\Rset), \quad O Y O'
-  \egald Y$, y en particular para $O' = O^t$. Pero eso no implica que $X$ sea en
+  \iguald Y$, y en particular para $O' = O^t$. Pero eso no implica que $X$ sea en
   $\ED_\simed$.  De  hecho, saliendo  de  una  matriz  $X$ sim\'etrica,  $Y$  es
   definida sobre $\Y = \Sim_d(\Rset)$,  pero $\forall \: O \in \Ort_d(\Rset), O'
   \in  \Ort_d(\Rset),  O'   \ne  O^t$  aparece  que  $O   \Sim_d(\Rset)  O'  \ne
-  \Sim_d(\Rset)$  as\'i  que $O  Y  O' \negald  Y$:  una  matriz definida  sobre
+  \Sim_d(\Rset)$  as\'i  que $O  Y  O' \niguald  Y$:  una  matriz definida  sobre
   $\Sim_d(\Rset)$ no puede ser a  simetr\'ia esf\'erica ni izquierda ($O' = I$),
   ni derecha ($O = I$).
 % Al rev\'es, de
@@ -2587,10 +2587,10 @@ Nota:
 \begin{itemize}
 \item  Sea \ $S$  \ vector  aleatorio de  distribuci\'on esf\'erica,  y \  $T$ \
   vector  aleatorio \  $d'$-dimensional independiente  de \  $S$. Sea  \ $X  = S
-  T^t$. Inmediatamente, de  \ $O S \egald  S$ \ para cualquiera matriz  \ $O \in
+  T^t$. Inmediatamente, de  \ $O S \iguald  S$ \ para cualquiera matriz  \ $O \in
   \Ort_d(\Rset)$ \ y de la independencia de  $S$ y $T$, se concluye que \ $X \in
   \ED_\izq$ (m\'as precisamente  a simetr\'ia esf\'erica). Ahora, si  \ $T$ \ no
-  es a simetr\'ia eliptica,  en general \ $X \not\in \ED_\der$ \  (ej. $T = \un$
+  es a simetr\'ia eliptica,  en general \ $X \not\in \ED_\der$ \  (ej. $T = \uno$
   determinista):  $\ED_\izq  \setminus  \ED_\der  \neq  \emptyset$.   Luego,  si
   denotamos $X_i$ las columnas  de \ $X$, y \ $T_i$ \  las componentes de \ $T$,
   sencillamente \ $X_i  = T_i S$ \ es de media  cero.  A continuaci\'on, tomando
@@ -2602,7 +2602,7 @@ Nota:
       T_j \right] \, \Esp\left[ \|S\|^2  \right]}{d} \, O_i O_j^t \ne \Cov[X_i ,
   X_j]$ \ aparte si  $O_j = O_i$.  Siendo \ $\begin{bmatrix} O_1  X_1 & \cdots &
     O_{d'}   X_{d'}  \end{bmatrix}$   \  a   simetr\'ia  esf\'erica,   y   de  \
-  $\begin{bmatrix} O_1 X_1 & \cdots  & O_{d'} X_{d'} \end{bmatrix} \not\egald X$,
+  $\begin{bmatrix} O_1 X_1 & \cdots  & O_{d'} X_{d'} \end{bmatrix} \not\iguald X$,
   \ $X$  \ no  puede partenecer  a \ $\ED_\col$.   En conclusi\'on,  \ $\ED_\izq
   \setminus \left( \ED_\bil \cup \ED_\col \right) \neq \emptyset$.
 %
@@ -2679,8 +2679,8 @@ descritas. En lo que sigue, de manere generica, notaremos
 %
 \item  la notaci\'on  \ $\tau_{(u,v)}  \equiv \tau_{\sigma_{(u,v)}}$  \  para la
   traspuesta  de  los   indices  de  los  ordenes  $u  \ne   v$  de  un  tensor
-  ($\sigma_{(u,v)}(i)   =   v   \un_{\{u\}}(i)    +   u   \un_{\{v\}}(i)   +   i
-  (1-\un_{\{u,v\}}(i))$, ver notaciones)
+  ($\sigma_{(u,v)}(i)   =   v   \uno_{\{u\}}(i)    +   u   \uno_{\{v\}}(i)   +   i
+  (1-\uno_{\{u,v\}}(i))$, ver notaciones)
 %
 \item\label{Enum:MP:RelacionesObvias} y las relaciones obvias
 %
@@ -2728,7 +2728,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   %
   (m\'as  precisamente, $\varphi_X  \in \PDSI_{d  d'}$).  Esta  forma  se heride
   obviamente  directamente  del  caso   vectorial.   Pasando,  se  notar\'a  que
-  $\Tr\left( \omega^t \Sigma \omega  \right) = \un^t \diag\left( \omega^t \Sigma
+  $\Tr\left( \omega^t \Sigma \omega  \right) = \uno^t \diag\left( \omega^t \Sigma
     \omega \right)$, lo  que enfatisa las inclusiones entre  estos tres tipos de
   elipticidad. Se  notar\'a tambi\'en que  \ $\Tr\left( \omega^t  \Sigma \omega
   \right) = \left\| \Sigma^{\frac12} \omega \right\|_F^2$ \ cuadrado de la norma
@@ -2755,7 +2755,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
 \item  Nota:  si  $X  \in  \ED_\col \cap  \ED_\lin  \varsubsetneq  \ED_\bil$  la
   funci\'on  va a  ser  la suma  de los  autovalores  (ver caso  $(\col)$ y  por
   transposici\'on), \ie  de $\Tr\left( \omega^t  \, \Sigma \, \omega  \, \Sigma'
-  \right) = \un^t \lambda\left( \omega^t \, \Sigma \, \omega \, \Sigma' \right)$
+  \right) = \uno^t \lambda\left( \omega^t \, \Sigma \, \omega \, \Sigma' \right)$
   se escribe
   %
   \[
@@ -2769,7 +2769,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \right)  = \left\| \Sigma^{\frac12}  \omega \Sigma'^{\frac12}  \right\|_F^2$ \
   cuadrado de la norma de Frobenius (ver notaciones).
   %
-  %Pasando, $\Tr\left(  \omega^t \, \Sigma \,  \omega \, \Sigma'  \right) = \un^t
+  %Pasando, $\Tr\left(  \omega^t \, \Sigma \,  \omega \, \Sigma'  \right) = \uno^t
   %\lambda\left( \omega^t \,  \Sigma \, \omega \, \Sigma' \right)$,  lo que es en
   %adecuaci\'on con las  formas de los casos  \ $(\vcol)$ \ y \  $(\vlin)$ \ (por
   %simetr\'ia).
@@ -2792,7 +2792,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   %  A)$  \ se  obtiene \  $\Phi_Y(\omega)  = \Esp\left[  e^{\imath \,  \Tr\left(
   %        \Diag(\lambda(\omega))     Q^t    Y     Q    \right)}     \right]    =
   %  \Phi_Y(\Diag(\lambda(\omega))) \equiv \varphi_Y(\lambda(\omega))$  \ de \ $Q
-  %  Y Q^t \egald Q$.  Al final,  para cualquier matriz de permutaci\'on \ $\Pi$,
+  %  Y Q^t \iguald Q$.  Al final,  para cualquier matriz de permutaci\'on \ $\Pi$,
   %  necesariamente en \  $\Ort_d(\Rset)$ \ tenemos \ $\varphi_Y(\lambda(\omega))
   %  =        \Phi_Y(\Diag(\lambda(\omega)))        =        \Phi_{\Pi^t        Y
   %    \Pi}(\Diag(\lambda(\omega)))  =   \Phi(\Pi  \Diag(\lambda(\omega))  \Pi^t)
@@ -2840,7 +2840,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \]
   %
   Nuevamente, la relaci\'on obvia \ $\Tr\left( (x-m)^t \Sigma^{-1} (x-m) \right)
-  =  \un^t  \diag\left(  (x-m)^t  \Sigma^{-1}  (x-m)  \right)$  \  enfatisa  las
+  =  \uno^t  \diag\left(  (x-m)^t  \Sigma^{-1}  (x-m)  \right)$  \  enfatisa  las
   inclusiones  entre estos  tres tipos  de elipticidad,  y \  $\Tr\left( (x-m)^t
     \Sigma^{-1} (x-m) \right) = \left\| \Sigma^{-\frac12} (x-m) \right\|_F^2$.
   % (m\'as precisamente, $\varphi_X \in \PDSI_{d d'}$).  Esta forma se heride
@@ -2858,7 +2858,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
 \item Obviamente, tambi\'en con la densidad si \ $X \in \ED_\vcol \cap \ED_\vlin
   \varsubsetneq \ED_\bil$ la funci\'on va a  ser la suma de los autovalores (ver
   caso $(\col)$  y por transposici\'on),  \ie de $\Tr\left(  (x-m)^t \Sigma^{-1}
-    (x-m)  \Sigma'  \right)  =  \un^t \lambda\left(  (x-m)^t  \Sigma^{-1}  (x-m)
+    (x-m)  \Sigma'  \right)  =  \uno^t \lambda\left(  (x-m)^t  \Sigma^{-1}  (x-m)
     \Sigma' \right)$ se escribe
   %
   \[
@@ -2890,8 +2890,8 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   se  puede  concentrarnos   en  los  momentos  de  orden  1   y  2,  los  m\'as
   usados~\cite{Mal61, Daw81, Tyl82,  GruRoc90, BilBre99, GupNag99}.  Notaremos \
   $r$ \ el argumento de \  $\varphi_X$ \ funci\'on tomada en \ $\omega^t \omega,
-  \:  \diag(\omega^t \omega),  \:  \Tr(\omega^t \omega)  = \un^t  \diag(\omega^t
-  \omega)  = \un^t  \lambda(\omega^t  \omega)$  \ seg\'un  el  caso estudiado  \
+  \:  \diag(\omega^t \omega),  \:  \Tr(\omega^t \omega)  = \uno^t  \diag(\omega^t
+  \omega)  = \uno^t  \lambda(\omega^t  \omega)$  \ seg\'un  el  caso estudiado  \
   $(\izq,\col,\vcol)$  \ y  \ $\lambda  \equiv \lambda(\omega^t  \omega)$ \  o \
   $\lambda \equiv \lambda(\omega)$ \  en los casos \ $(\bil,\simed)$.  Adem\'as,
   de  la  relaciones   obvias~\ref{Enum:MP:RelacionesObvias}  para  la  media  y
@@ -2907,8 +2907,8 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     \Esp[X] = m
     \]
     %
-    De hecho, siendo \ $Y$ \ a sim\'etria esf\'erica izquierda, de \ $Y \egald O
-    Y$ \ para cualquiera matriz ortogonal, se obtiene tambi\'en \ $- Y \egald Y$,
+    De hecho, siendo \ $Y$ \ a sim\'etria esf\'erica izquierda, de \ $Y \iguald O
+    Y$ \ para cualquiera matriz ortogonal, se obtiene tambi\'en \ $- Y \iguald Y$,
     de  lo cual  se deduce  \ $\Esp[Y]  = 0$.   Lo mismo  occure con  el context
     derecho,  as\'i   que,  como   consecuencia  para  cualquier   subcaso  (ver
     figura~\ref{Fig:MP:EDMatrix}).
@@ -2917,12 +2917,12 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     %
     \[
     \Esp[X] = m + \mu_1(\varphi_X) \, \Sigma, \qquad \mu_1(\varphi_X) = - \imath
-    \, \frac{\partial  \varphi_X}{\partial \lambda_1}(0) =  \frac{1}{d} \, \un^t
+    \, \frac{\partial  \varphi_X}{\partial \lambda_1}(0) =  \frac{1}{d} \, \uno^t
     \Esp\left[ \lambda(Y) \right]
     \]
     %
     Una    pruba    dada    por   ejemplo    en~\cite[\S~13.2]{BilBre99}    (ver
-    tambi\'en~\cite{Mal61,  Tyl82}) sale  de \  $Y  \egald O  Y O^t$  \ dando  \
+    tambi\'en~\cite{Mal61,  Tyl82}) sale  de \  $Y  \iguald O  Y O^t$  \ dando  \
     $\Esp[Y]  = O  \Esp[Y]  O^t$ \  para  cualquiera matriz  ortogonal. De  esta
     identidad, viene que si \ $v$ \ es un autovector de \ $\Esp[Y]$ \ asociado a
     un autovalor $\mu_1$,  cualquiera \ $O v$ \ va a  ser autovector asociado al
@@ -2930,7 +2930,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     claro que  para cualquier \  $v \in \Rset^d$,  \quad $\Esp[Y] v =  \mu_1 v$,
     dando que  existe un \  $\mu_1$ \ tal  que \ $\Esp[Y]  = \mu_1 I$.  Se puede
     hacer un paso m\'as para identificar el factor \ $\mu_1$ \ tomando la traza.
-    Eso  conduce a  \  $\mu_1  = \frac{1}{d}  \Esp[\Tr(Y)]  = \frac{1}{d}  \un^t
+    Eso  conduce a  \  $\mu_1  = \frac{1}{d}  \Esp[\Tr(Y)]  = \frac{1}{d}  \uno^t
     \Esp[\lambda(Y)]$.\newline De hecho, m\'as directamente, primero se nota que
     para  cualquiera  matriz  de  permutaci\'on,  \  $\varphi_X(\pi  \lambda)  =
     \varphi_X(\lambda)$ \ dando por un lado \ $\pi \nabla_\lambda \varphi_X (\pi
@@ -2938,16 +2938,16 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     = 0$, eso da \  $\pi \nabla_\lambda \varphi_X (0) = \nabla_\lambda \varphi_X
     (0)$  \ para  cualquiera permutaci\'on,  es  decir que  las componentes  son
     iguales:     $\nabla_\lambda      \varphi_X     (0)     =     \frac{\partial
-      \varphi_X(0)}{\partial \lambda_1} \: \un$.  Ahora, notando $\lambda \equiv
+      \varphi_X(0)}{\partial \lambda_1} \: \uno$.  Ahora, notando $\lambda \equiv
     \lambda(\omega)$   para  simplificar   las   notaciones,  $   \frac{\partial
       \varphi_X}{\partial  \omega_{i,j}}(0) =  \nabla_\lambda  \varphi_X(0)^t \,
     \frac{\partial    \lambda}{\partial   \omega_{i,j}}(0)    =   \frac{\partial
-      \varphi_X}{\partial     \lambda_1}(0)      \:     \un^t     \frac{\partial
+      \varphi_X}{\partial     \lambda_1}(0)      \:     \uno^t     \frac{\partial
       \lambda}{\partial \omega_{i,j}}(0) = \frac{\partial \varphi_X(0)}{\partial
-      \lambda_1}  \: \frac{\partial  \un^t  \lambda}{\partial \omega_{i,j}}(0)$.
-    Eso    da,    de   $\un^t    \lambda    =   \Tr(\omega)$,    $\frac{\partial
+      \lambda_1}  \: \frac{\partial  \uno^t  \lambda}{\partial \omega_{i,j}}(0)$.
+    Eso    da,    de   $\uno^t    \lambda    =   \Tr(\omega)$,    $\frac{\partial
       \varphi_X}{\partial \omega_{i,j}}(0)  = \frac{\partial \varphi_X}{\partial
-      \lambda_1}(0) \un_{\{i\}}(j)$, es decir que, de la expresi\'on de la media
+      \lambda_1}(0) \uno_{\{i\}}(j)$, es decir que, de la expresi\'on de la media
     vista  secci\'on~\ref{Ssec:MP:MA}, se recupera  bien \  $\Esp[Y] =  - \imath
     \frac{\partial \varphi_X}{\partial \lambda_1}(0) \, I$.
   %
@@ -2964,8 +2964,8 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \Cov[X] = \tau_{(2,3)} \big[  \Sigma \otimes \alpha_1(\varphi_X) \big], \qquad
   \alpha_1(\varphi_X) = - \nabla_{\! r}  \varphi_X(0) - \nabla_{\! r^t} \varphi_X(0) \in
   \Mat_{d',d'}(\Rset)
-  % \sum_{j,l=1}^{d'}  \alpha_{j,l}(\varphi_X) \sum_{i=1}^d \un_i  \otimes \un_j
-  % \otimes \un_i \otimes  \un_l \qquad \mbox{con} \qquad \alpha_{j,}(\varphi_X)
+  % \sum_{j,l=1}^{d'}  \alpha_{j,l}(\varphi_X) \sum_{i=1}^d \uno_i  \otimes \uno_j
+  % \otimes \uno_i \otimes  \uno_l \qquad \mbox{con} \qquad \alpha_{j,}(\varphi_X)
   % =  - \left( \frac{\partial \varphi_X}{\partial  r_{j,l}}(0) + \frac{\partial
   %     \varphi_X}{\partial r_{l,j}}(0) \right)  = \frac{1}{d} \Esp\left[ \| Y_j
   %   \|^2 \right]
@@ -2977,8 +2977,8 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \Cov[X]  = \tau_{(2,3)} \big[  \Sigma \otimes  \Diag\left( \alpha_1(\varphi_X)
   \right)  \big],  \qquad  \alpha_1(\varphi_X)   =  -  \nabla_{\! r}  \varphi_X(0)  =
   \frac{1}{d} \diag\left(\Esp\left[ Y^t Y \right] \right) \in \Rset^{d'}
-  % \sum_{j=1}^{d'} \alpha_j(\varphi_X) \sum_{i=1}^d \un_i \otimes \un_j \otimes
-  %  \un_i  \otimes  \un_j  \qquad  \mbox{con} \qquad  \alpha_j(\varphi_X)  =  -
+  % \sum_{j=1}^{d'} \alpha_j(\varphi_X) \sum_{i=1}^d \uno_i \otimes \uno_j \otimes
+  %  \uno_i  \otimes  \uno_j  \qquad  \mbox{con} \qquad  \alpha_j(\varphi_X)  =  -
   % \frac{\partial  \varphi_X}{\partial r_j}(0) = \frac{1}{d}  \Esp\left[ \| Y_j
   %   \|^2 \right]
   \]
@@ -2991,8 +2991,8 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \Cov[X]  = \alpha_1(\varphi_X)  \,  \tau_{(2,3)} \big[  \Sigma \otimes  I_{d'}
   \big],  \qquad   \alpha_1(\varphi_X)  =  -  \varphi_X'(0)   =  \frac{1}{d  d'}
   \Esp\left[ \| Y \|_F^2 \right]
-  % \sum_{i=1}^d \sum_{j=1}^{d'} \un_i \otimes \un_j
-  % \otimes \un_i \otimes \un_j
+  % \sum_{i=1}^d \sum_{j=1}^{d'} \uno_i \otimes \uno_j
+  % \otimes \uno_i \otimes \uno_j
   \]
   %
   \item Para \ $Y \sim \ED_\bil(m,\Sigma,\Sigma',\varphi_X)$ \ se obtiene
@@ -3001,7 +3001,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \Cov[X]  = \alpha_1(\varphi_X)  \, \tau_{(2,3)}  \big[ \Sigma  \otimes \Sigma'
   \big], \qquad \alpha_1(\varphi_X) =  - 2 \, \frac{\partial \varphi_X}{\partial
     \lambda_1}(0) = \frac{1}{d d'} \Esp\left[ \| Y \|_F^2 \right]
-  % \sum_{i=1}^d \sum_{j=1}^{d'} \un_i \otimes \un_j \otimes \un_i \otimes \un_j
+  % \sum_{i=1}^d \sum_{j=1}^{d'} \uno_i \otimes \uno_j \otimes \uno_i \otimes \uno_j
   \]
   %
   Se  notar\'a que  la  covarianza de  \  $Y$ \  es  la misma  que  para $Y  \in
@@ -3009,13 +3009,13 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   enfoque conduciendo a  la forma de la  covarianza de \ $X \in  \ED_\bil$ es un
   poco sutil. Primero, se nota que para cualquiera matriz de permutaci\'on, como
   lo vimos  tratando del  caso \ $(\simed)$,  \ $\nabla_\lambda \varphi_X  (0) =
-  \frac{\partial  \varphi_X(0)}{\partial  \lambda_1}  \:  \un$.   Con  el  mismo
+  \frac{\partial  \varphi_X(0)}{\partial  \lambda_1}  \:  \uno$.   Con  el  mismo
   enfoque,  se nota  tambi\'en que  para  cualquiera matriz  de permutaci\'on  \
   $\pi$,   \    $\pi   \Hess_\lambda   \varphi_X(0)    \pi^t   =   \Hess_\lambda
   \varphi_X(0)$. Inmediatamente, la diagonal de  la hessiana es constante, y los
   t\'erminos no diagonales son  todos iguales, \ie \ $\Hess_\lambda \varphi_X(0)
-  = \frac{\partial^2 \varphi_X}{\partial \lambda_1 \partial \lambda_2}(0) \, \un
-  \un^t   +  \left(   \frac{\partial^2  \varphi_X}{\partial   \lambda_1^2}(0)  -
+  = \frac{\partial^2 \varphi_X}{\partial \lambda_1 \partial \lambda_2}(0) \, \uno
+  \uno^t   +  \left(   \frac{\partial^2  \varphi_X}{\partial   \lambda_1^2}(0)  -
     \frac{\partial^2   \varphi_X}{\partial   \lambda_1  \partial   \lambda_2}(0)
   \right) \, I$.   Luego, notando \ $\lambda \equiv  \lambda(\omega^t \omega)$ \
   para  tener  notaciones  mas  ligieras, $  \frac{\partial  \varphi_X}{\partial
@@ -3025,17 +3025,17 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \varphi_X(0)^t  \,  \frac{\partial^2  \lambda}{\partial \omega_{i,j}  \partial
     \omega_{k,l}}(0)   +    \frac{\partial   \lambda^t}{\partial   \omega_{i,j}}
   \Hess_\lambda \varphi_X(0) \frac{\partial \lambda}{\partial \omega_{k,l}}(0) =
-  \frac{\partial   \varphi_X}{\partial   \lambda_1}(0)  \frac{\partial^2   \un^t
+  \frac{\partial   \varphi_X}{\partial   \lambda_1}(0)  \frac{\partial^2   \uno^t
     \lambda}{\partial \omega_{i,j}  \partial \omega_{k,l}}(0) + \frac{\partial^2
     \varphi_X}{\partial   \lambda_1    \partial   \lambda_2}(0)   \frac{\partial
-    \lambda^t     \un}{\partial     \omega_{i,j}}(0)    \frac{\partial     \un^t
+    \lambda^t     \uno}{\partial     \omega_{i,j}}(0)    \frac{\partial     \uno^t
     \lambda}{\partial     \omega_{k,l}}(0)     +     \left(     \frac{\partial^2
       \varphi_X}{\partial^2  \lambda_1}  - \frac{\partial^2  \varphi_X}{\partial
       \lambda_1      \partial      \lambda_2}(0)     \right)      \frac{\partial
     \lambda^t}{\partial     \omega_{i,j}}    \frac{\partial    \lambda}{\partial
-    \omega_{k,l}}(0)$.  Ahora, de \ $\un^t  \lambda = \Tr(\omega^t \omega)$ \ se
+    \omega_{k,l}}(0)$.  Ahora, de \ $\uno^t  \lambda = \Tr(\omega^t \omega)$ \ se
   nota que el  primer t\'ermino vale \ $2  \, \frac{\partial \varphi_X}{\partial
-    \lambda_1}(0)  \, \un_{\{i\}}(k)  \un_{\{j\}}(l)$ \  y que  el  secundo vale
+    \lambda_1}(0)  \, \uno_{\{i\}}(k)  \uno_{\{j\}}(l)$ \  y que  el  secundo vale
   ceros.  Para el tercero t\'ermino,  \ $\lambda^t \lambda = \Tr(\omega^t \omega
   \omega^t  \omega) = \sum_{r,s=1}^d  \sum_{u,v=1}^{d'} w_{r,u}  w_{r,v} w_{s,u}
   w_{s,v}$. Ahora, \ $\frac{\partial \lambda^t \lambda}{\partial w_{i,j}} = 2 \,
@@ -3063,11 +3063,11 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \Cov[X] =  \mu_2(\varphi_X) \,  \Sigma \otimes \Sigma  + \sigma_1^2(\varphi_X)
   \Big( \tau_{(2,3)}\big[ \Sigma \otimes \Sigma \big] + \tau_{(2,4)}\big[ \Sigma
   \otimes \Sigma \big] \Big)
-  % \sum_{i,j} \Big(  \un_i \otimes  \un_j \otimes \un_i  \otimes \un_j  + \un_i
-  % \otimes \un_j  \otimes \un_j \otimes \un_i  \Big) \Cov[X] =  \mu_2 \, \Sigma
+  % \sum_{i,j} \Big(  \uno_i \otimes  \uno_j \otimes \uno_i  \otimes \uno_j  + \uno_i
+  % \otimes \uno_j  \otimes \uno_j \otimes \uno_i  \Big) \Cov[X] =  \mu_2 \, \Sigma
   % \otimes \Sigma + \sigma_1^2 \sum_{k,l} \Big( \big(
-  % \un_k \un_l^t \, \Sigma \big) \otimes \big( \un_l \un_k^t \, \Sigma \big) +
-  % \big( \Sigma \, \un_k \un_l^t \, \Sigma \big) \otimes \big( \un_k \un_l^t
+  % \uno_k \uno_l^t \, \Sigma \big) \otimes \big( \uno_l \uno_k^t \, \Sigma \big) +
+  % \big( \Sigma \, \uno_k \uno_l^t \, \Sigma \big) \otimes \big( \uno_k \uno_l^t
   % \big) \Big)
   \]
   %
@@ -3085,8 +3085,8 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   o satisfaciendo
   %
   \[
-  d^2  \, \mu_2(\varphi_X)  + 2  \,  d \,  \sigma_1^2(\varphi_X) \:  = \:  \un^t
-  \Cov\left[ \lambda(Y) \right] \un
+  d^2  \, \mu_2(\varphi_X)  + 2  \,  d \,  \sigma_1^2(\varphi_X) \:  = \:  \uno^t
+  \Cov\left[ \lambda(Y) \right] \uno
   \]
   %
   y
@@ -3094,14 +3094,14 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \[
   d  \,  \mu_2(\varphi_X) +  d^2  \,  \sigma_1^2(\varphi_X)  \: =  \:  \Tr\left(
     \Cov\left[  \lambda(Y) \right]  \right) +  \Esp[ \lambda(Y)  ]^t \left(  I -
-    \frac{1}{d} \un \un^t \right) \Esp[ \lambda(Y) ]
+    \frac{1}{d} \uno \uno^t \right) \Esp[ \lambda(Y) ]
   \]
   %
-  Pasando, se notar\'a que  \ $\Pi = I - \frac{1}{d} \un  \un^t$ \ es una matriz
-  de  proyecci\'on  sobre  el  ortogonal  de  $\un$.
+  Pasando, se notar\'a que  \ $\Pi = I - \frac{1}{d} \uno  \uno^t$ \ es una matriz
+  de  proyecci\'on  sobre  el  ortogonal  de  $\uno$.
 
   La pruba,  dada por ejemplo  en~\cite[\S~13.2]{BilBre99}, sale de nuevo  de la
-  relaci\'on \ $Y  \egald O Y O^t$ \ para cualquieras  matrices ortogonales. Si se
+  relaci\'on \ $Y  \iguald O Y O^t$ \ para cualquieras  matrices ortogonales. Si se
   considera las  matrices ortogonales  \ $O_\varepsilon =  \Diag(\varepsilon)$ \
   con  \  $\varepsilon  \in  \{-1  \;   +  1  \}^d$  \  se  obtiene  entonces  \
   $\T_{i,j,k,l}[Y]  =  \varepsilon_i  \varepsilon_j \varepsilon_k  \varepsilon_l
@@ -3113,7 +3113,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   un  momento  de   orden  2),  \  $\T_{i,i,j,j}[Y]  =   \mu_2$  \  constante  \
   $\T_{i,j,i,j}[Y] = \sigma_1^2 =  \T_{i,j,j,i}[Y]$ \ constante positiva (siendo
   un momento de orden 2, y la  secunda relaci\'on viniendo de la simetr\'ia $Y =
-  Y^t$).  Adem\'as,  para cualquiera  matriz ortogonal  \ $O$, de  $Y \egald  O Y
+  Y^t$).  Adem\'as,  para cualquiera  matriz ortogonal  \ $O$, de  $Y \iguald  O Y
   O^t$, se  obtiene sencillamente, de la  ortogonalidad de $O$, que  para $j \ne
   i$, $\displaystyle  \mu_2 = \mu_2 +  \left( \sigma_0^2 - \mu_2  - 2 \sigma_1^2
   \right) \sum_{r=1}^d  O_{i,r}^2 O_{j,r}^2$, es  decir $\sigma_0^2 - \mu_2  - 2
@@ -3131,14 +3131,14 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   %= \mu_2 \Sigma_{i,j} \Sigma_{k,l} + \sigma_1^2 \big( \Sigma_{i,k} \Sigma_{j,l}
   %+ \Sigma_{i,l} \Sigma_{j,k} \big)$. Notamos que \ $\Sigma_{i,j} \Sigma_{k,l} =
   %\big( \Sigma  \otimes \Sigma \big)_{i,j,k,l}$, \  $\Sigma_{i,l} \Sigma_{j,k} =
-  %\Sigma_{k,j} \Sigma_{i,l} = \big( \un_i \un_k^t \Sigma \big)_{i,j} \big( \un_k
-  %\un_i^t \Sigma \big)_{k,l}$, conduciendo a \ $\Big( \big( \un_i \un_k^t \Sigma
-  %\big) \otimes \big( \un_k  \un_i^t \Sigma \big) \Big)_{u,j,v,l} = \Sigma_{i,l}
-  %\Sigma_{j,k} \un_{(i,k)}((u,v))$, \  $\Sigma_{i,k} \Sigma_{j,l} = \Sigma_{i,k}
-  %\Sigma_{l,j}  =  \big(  \Sigma   \,  \un_k  \un_l^t  \,  \Sigma  \big)_{i,j}$,
-  %conduciendo a $\Big( \big( \Sigma \,  \un_k \un_l^t \, \Sigma \big) \! \otimes
-  %\!   \big( \un_k  \un_l^t  \big) \Big)_{i,j,u,v}  = \Sigma_{i,k}  \Sigma_{j,l}
-  %\un_{(k,l)}((u,v))$. Con cambio de indices adecuados, se obtiene la covarianza
+  %\Sigma_{k,j} \Sigma_{i,l} = \big( \uno_i \uno_k^t \Sigma \big)_{i,j} \big( \uno_k
+  %\uno_i^t \Sigma \big)_{k,l}$, conduciendo a \ $\Big( \big( \uno_i \uno_k^t \Sigma
+  %\big) \otimes \big( \uno_k  \uno_i^t \Sigma \big) \Big)_{u,j,v,l} = \Sigma_{i,l}
+  %\Sigma_{j,k} \uno_{(i,k)}((u,v))$, \  $\Sigma_{i,k} \Sigma_{j,l} = \Sigma_{i,k}
+  %\Sigma_{l,j}  =  \big(  \Sigma   \,  \uno_k  \uno_l^t  \,  \Sigma  \big)_{i,j}$,
+  %conduciendo a $\Big( \big( \Sigma \,  \uno_k \uno_l^t \, \Sigma \big) \! \otimes
+  %\!   \big( \uno_k  \uno_l^t  \big) \Big)_{i,j,u,v}  = \Sigma_{i,k}  \Sigma_{j,l}
+  %\uno_{(k,l)}((u,v))$. Con cambio de indices adecuados, se obtiene la covarianza
   %de \  $X$ \ bajo la forma  dada.  
   Como  por lo  de la  media, se  puede hacer  un paso  m\'as e  identificar los
   coeficientes $\mu_2$  y $\sigma_1^2$. Por  eso, se notar\'a que  \ $\Var\left[
@@ -3146,20 +3146,20 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     \sigma_1^2 \right)$.  Similarmente \ $\Tr\left( \Esp\left[ (Y - \Esp[Y] ) (Y
       -  \Esp[Y])^t \right]  \right) =  \left( d^2  - d  \right) \sigma_1^2  + d
   \left( \mu_2 + \sigma_1^2 \right) = d \, \mu_2 + d^2 \sigma_1^2$.  Se notar\'a
-  que  \   $\Tr(Y)  =   \un^t  \lambda(Y)$)  \   dando  $\Var[\Tr(Y)]   =  \un^t
-  \Cov[\lambda(Y)] \un$, lo que da  la primera relaci\'on v\'inculando \ $\mu_2$
+  que  \   $\Tr(Y)  =   \uno^t  \lambda(Y)$)  \   dando  $\Var[\Tr(Y)]   =  \uno^t
+  \Cov[\lambda(Y)] \uno$, lo que da  la primera relaci\'on v\'inculando \ $\mu_2$
   \  y   \  $\sigma_1^2$.   Pasando,   de  la  positividad  de   la  covarianza,
   necesariamente $\mu_2  + \frac{2}{d} \, \sigma_1^2  \ge 0$ \ (lo  que es m\'as
   restrictivo  que  lo  que  obtuvimos  unos pasos  atr\'as).   Similarmente,  $
   \Tr\left( \Esp\left[ (Y - \Esp[Y]) (Y - \Esp[Y])^t \right] \right) = \Tr\left(
-    \Esp[Y Y^t] \right) - \Tr\left( \Esp[Y] \Esp[Y]^t \right) = \Esp\left[ \un^t
-    \lambda\left(  Y  Y^t  \right)  \right]  - \frac{1}{d}  \left(  \un^t  \Esp[
+    \Esp[Y Y^t] \right) - \Tr\left( \Esp[Y] \Esp[Y]^t \right) = \Esp\left[ \uno^t
+    \lambda\left(  Y  Y^t  \right)  \right]  - \frac{1}{d}  \left(  \uno^t  \Esp[
     \lambda(Y) ] \right)^2 = \Tr\left( \Esp\left[\lambda(Y) \lambda(Y)^t \right]
-  \right)  - \frac{1}{d} \un^t  \Esp[ \lambda(Y)  ] \Esp[  \lambda(Y) ]^t  \un =
+  \right)  - \frac{1}{d} \uno^t  \Esp[ \lambda(Y)  ] \Esp[  \lambda(Y) ]^t  \uno =
   \Tr\left( \Cov\left[\lambda(Y) \right]  + \Esp[\lambda(Y)] \Esp[ \lambda(Y)]^t
-  \right)  - \frac{1}{d} \Tr\left(\Esp[  \lambda(Y) ]  \Esp[ \lambda(Y)  ]^t \un
-    \un^t  \right)  = \Tr\left(  \Cov\left[\lambda(Y)  \right]  \right) +  \Esp[
-  \lambda(Y) ]^t \left( I - \frac{1}{d}  \un \un^t \right) \Esp[ \lambda(Y) ]$ \
+  \right)  - \frac{1}{d} \Tr\left(\Esp[  \lambda(Y) ]  \Esp[ \lambda(Y)  ]^t \uno
+    \uno^t  \right)  = \Tr\left(  \Cov\left[\lambda(Y)  \right]  \right) +  \Esp[
+  \lambda(Y) ]^t \left( I - \frac{1}{d}  \uno \uno^t \right) \Esp[ \lambda(Y) ]$ \
   (donde la  secunda igualdad viene de  la forma de  la media, la tercera  de la
   simetria de $Y$, la cuarta de $u^t v  = \Tr(v u^t)$ y la quinta de $\Tr(A B) =
   \Tr(B  A)$,  dando  la  secunda  relaci\'on  v\'inculando  \  $\mu_2$  \  y  \
@@ -3167,8 +3167,8 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   restrictivo  que  el  v\'inculo  anterior  cuando $d  \ge  2$).\newline  M\'as
   directamente, como lo vimos tratando  del caso bilateral, de la invarianza por
   permutaci\'on   de  $\varphi_X$  tenemos   \  $\Hess_\lambda   \varphi_X(0)  =
-  \frac{\partial^2 \varphi_X}{\partial  \lambda_1 \partial \lambda_2}(0)  \, \un
-  \un^t   +  \left(   \frac{\partial^2  \varphi_X}{\partial   \lambda_1^2}(0)  -
+  \frac{\partial^2 \varphi_X}{\partial  \lambda_1 \partial \lambda_2}(0)  \, \uno
+  \uno^t   +  \left(   \frac{\partial^2  \varphi_X}{\partial   \lambda_1^2}(0)  -
     \frac{\partial^2   \varphi_X}{\partial   \lambda_1  \partial   \lambda_2}(0)
   \right)  \,   I$.   A  continuaci\'on,   notando  de  nuevo   $\lambda  \equiv
   \lambda(\omega)$   para    simplificar   las   notaciones,   $\frac{\partial^2
@@ -3176,35 +3176,35 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   \varphi_X(0)^t   \frac{\partial^2   \lambda}{\partial  \omega_{i,j}   \partial
     \omega_{k,l}}(0)   +  \frac{\partial   \lambda}{\partial  \omega_{i,j}}(0)^t
   \Hess_\lambda \varphi_X(0) \frac{\partial \lambda}{\partial \omega_{k,l}}(0) =
-  \frac{\partial   \varphi_X}{\partial   \lambda_1}(0)  \frac{\partial^2   \un^t
+  \frac{\partial   \varphi_X}{\partial   \lambda_1}(0)  \frac{\partial^2   \uno^t
     \lambda}{\partial \omega_{i,j}  \partial \omega_{k,l}}(0) + \frac{\partial^2
     \varphi_X}{\partial   \lambda_1    \partial   \lambda_2}(0)   \frac{\partial
-    \lambda^t    \un    }{\partial    \omega_{i,j}}(0)   \frac{\partial    \un^t
+    \lambda^t    \uno    }{\partial    \omega_{i,j}}(0)   \frac{\partial    \uno^t
     \lambda}{\partial     \omega_{k,l}}(0)     +     \left(     \frac{\partial^2
       \varphi_X}{\partial \lambda_1^2}(0) - \frac{\partial^2 \varphi_X}{\partial
       \lambda_1 \partial  \lambda_2}(0) \right) \frac{\partial \lambda}{\partial
     \omega_{i,j}}(0)^t  \frac{\partial \lambda}{\partial  \omega_{k,l}}(0)$.  El
   primer t\'ermino es  cero (ver la primera derivada,  constante, calculada para
   la  media). El  secundo t\'ermino  vale  $\frac{\partial^2 \varphi_X}{\partial
-    \lambda_1 \partial \lambda_2}(0) \un_{\{i\}}(j) \un_{\{k\}}(l)$ (ver calculo
+    \lambda_1 \partial \lambda_2}(0) \uno_{\{i\}}(j) \uno_{\{k\}}(l)$ (ver calculo
   hecho para  la media).  Para  el tercero t\'ermino,  se nota que  \ $\lambda^t
   \lambda = \Tr(\omega^t \omega) = \sum_{r,s=1}^d \omega_{r,s}^2$, lo que da, de
   la   simetr\'ia   de  \   $\omega$,   \  $\frac{\partial   \lambda^t}{\partial
     \omega_{i,j}} \lambda  = \frac12 \frac{\partial  \lambda^t \lambda}{\partial
-    \omega_{i,j}} =  \left( 2  - \un_{\{i\}}(j) \right)  \, \omega_{i,j}$,  y, a
+    \omega_{i,j}} =  \left( 2  - \uno_{\{i\}}(j) \right)  \, \omega_{i,j}$,  y, a
   continuaci\'on,  $\frac{\partial^2  \lambda^t}{\partial \omega_{i,j}  \partial
     \omega_{k,l}}  \lambda  +  \frac{\partial \lambda^t}{\partial  \omega_{i,j}}
   \frac{\partial   \lambda}{\partial  \omega_{k,l}}   =  \frac12   \left(   2  -
-    \un_{\{i\}}(j)   \right)   \left(   2   -  \un_{\{k\}}(l)   \right)   \left(
-    \un_{\{i\}}(k)  \un_{\{j\}}(l)  +  \un_{\{i\}}(l)  \un_{\{j\}}(k)  \right)$.
+    \uno_{\{i\}}(j)   \right)   \left(   2   -  \uno_{\{k\}}(l)   \right)   \left(
+    \uno_{\{i\}}(k)  \uno_{\{j\}}(l)  +  \uno_{\{i\}}(l)  \uno_{\{j\}}(k)  \right)$.
   Ahora, de $\lambda(0) = 0$, con cambios adecuados de indices, se obtiene de la
   expresi\'on del momento de orden dos vista secci\'on~\ref{Ssec:MP:MA}, $\Esp[ Y
   \otimes  Y]  =   -  \frac{\partial^2  \varphi_X}{\partial  \lambda_1  \partial
-    \lambda_2}(0) \sum_{i,j=1}^d \un_i \otimes \un_i \otimes \un_j \otimes \un_j
+    \lambda_2}(0) \sum_{i,j=1}^d \uno_i \otimes \uno_i \otimes \uno_j \otimes \uno_j
   +  \frac12  \left(  \frac{\partial^2  \varphi_X}{\partial  \lambda_1  \partial
       \lambda_2}(0)   -  \frac{\partial^2   \varphi_X}{\partial  \lambda_1^2}(0)
-  \right) \sum_{i,j=1}^d \left( \un_i  \otimes \un_j \otimes \un_i \otimes \un_j
-    + \un_i  \otimes \un_j \otimes  \un_j \otimes \un_i \right)$,  conduciendo a
+  \right) \sum_{i,j=1}^d \left( \uno_i  \otimes \uno_j \otimes \uno_i \otimes \uno_j
+    + \uno_i  \otimes \uno_j \otimes  \uno_j \otimes \uno_i \right)$,  conduciendo a
   las expresiones dadas para los coeficientes $\mu_2$ y $\sigma_1^2$.
 \end{itemize}
 %
@@ -3222,9 +3222,9 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     \Rightarrow \quad A  X A' + C \: \sim  \: \ED_\bullet(A m A' +  C , A \Sigma
     A^t  ,  \varphi_{X A'})$\newline  En  particular,  si  $X$ es  a  simetr\'ia
     esf\'erica  de uno  de estos  tipos, multiplicar  por $A'$  a su  derecha no
-    cambia la  esfericidad. Adem\'as,  para \  $A' = \un_i$  \ ($n'  = 1$)  \ se
+    cambia la  esfericidad. Adem\'as,  para \  $A' = \uno_i$  \ ($n'  = 1$)  \ se
     obtiene  que\newline  $X \,  \sim  \, \ED_\bullet(m,\Sigma,\varphi_X)  \quad
-    \Rightarrow \quad X_i \: \sim \: \ED(m_i , \Sigma , \varphi_{X \un_i})$ 
+    \Rightarrow \quad X_i \: \sim \: \ED(m_i , \Sigma , \varphi_{X \uno_i})$ 
   %
   \item $X \, \sim  \, \ED_\bil(m,\Sigma,\Sigma',\Phi_X) \quad \Rightarrow \quad
     A X A'  + C \: \sim \:  \ED_\bil(A m A' + C  , A \Sigma A^t , A'^t  \Sigma' A' ,
@@ -3256,7 +3256,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
 \item  El  teorema~\ref{Teo:MP:ProyeccionComponentesEliptica}  de  proyeccion  y
   componentes tiene  una contra parte matricial  parcial, que se  prueba con los
   mismos  pasos: Sea  \ $X  \sim \ED_\izq(m,\Sigma,\varphi_X)  \quad \Rightarrow
-  \quad  \forall \:  a \in  \Rset^d, \quad  a^t (X  - m)  \egald \sqrt{\frac{a^t
+  \quad  \forall \:  a \in  \Rset^d, \quad  a^t (X  - m)  \iguald \sqrt{\frac{a^t
       \Sigma a}{\Sigma_{i,i}}} (X'_i -  m'_i)$.  \SZ{Para la reciproca, la matiz
     del caso matricial es que $a$ no es una matriz, \ie no tiene las dimensiones
     de $X$, contrariamente a lo que pasa  en el caso vectorial.}
@@ -3272,7 +3272,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   de la clase: Se supone ac\'a que $d' \le d$ y luego
   %
   \begin{itemize}
-  \item $X \sim \ED_\izq(m,\Sigma,\varphi_X)  \:\: \Leftrightarrow \:\: X \egald
+  \item $X \sim \ED_\izq(m,\Sigma,\varphi_X)  \:\: \Leftrightarrow \:\: X \iguald
     \Sigma^{\frac12}  \,  U_\izq \,  R_\izq  + m$  \:\:  con  \:\: $U_\izq  \sim
     \U\left(  \Sti_{d,d'}(\Rset)  \right)$  \  uniforme  sobre  la  variedad  de
     Stiefel~\footnote{La  medida de probabilidad  es proporcional  a la  de Haar
@@ -3295,7 +3295,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     a la  prueba de la descomposici\'on  en $\ED_\simed$ m\'as  adelante (y unas
     referencias citadas) para tener un esquema de prueba.
   %
-  \item $X \sim \ED_\col(m,\Sigma,\varphi_X)  \:\: \Leftrightarrow \:\: X \egald
+  \item $X \sim \ED_\col(m,\Sigma,\varphi_X)  \:\: \Leftrightarrow \:\: X \iguald
     \Sigma^{\frac12}   \,  U_\col   \,R_\col  +   m$  \:\:   tal que  las columnas
     % \:\:    $U_\col    =     \begin{bmatrix}    U_{\col,1}    &    \cdots    &
     %   U_{\col,d'} \end{bmatrix}$ tal que los
@@ -3306,7 +3306,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     %  m\'as adelante  (y unas  referencias citadas)  para tener  un  esquema de
     % prueba.
   %
-  \item $X \sim \ED_\vcol(m,\Sigma,\varphi_X) \:\: \Leftrightarrow \:\: X \egald
+  \item $X \sim \ED_\vcol(m,\Sigma,\varphi_X) \:\: \Leftrightarrow \:\: X \iguald
     \Sigma^{\frac12} \, U_\vcol  \, R_\vcol + m$ \:\: con  el vector \ compuesta
     de las  columnas de $U_\vcol$,  \ $\begin{bmatrix} U_{\vcol,1}^t &  \cdots &
       U_{\vcol,d'}^t  \end{bmatrix}^t  \sim  \U\left(  \Sset_{d d'}  \right)$  \
@@ -3316,7 +3316,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     % prueba.
   %
   \item $X \sim \ED_\bil(m,\Sigma,\Sigma',\varphi_X) \:\: \Leftrightarrow \:\: X
-    \egald    \Sigma^{\frac12}   \,   U_\izq    \,   \Lambda_\bil    \,   V_\der
+    \iguald    \Sigma^{\frac12}   \,   U_\izq    \,   \Lambda_\bil    \,   V_\der
     \Sigma'^{\frac12}   +    m$   \:\:   con   \:\:    $U_\izq   \sim   \U\left(
       \Sti_{d,d'}(\Rset)  \right)$   \:\:  y~\footnote{Nota:  $\Sti_{k,k}(\Rset)
       \equiv  \Ort_k(\Rset)$.}   \:\:  $V_\der  \sim  \U\left(  \Ort_{d'}(\Rset)
@@ -3332,7 +3332,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     % prueba.
 %
   \item  $X  \sim  \ED_\simed(m,\Sigma,\varphi_X)  \:\: \Leftrightarrow  \:\:  X
-    \egald \Sigma^{\frac12} \,  U \, \Lambda_\simed \, U^t  \ \Sigma^{\frac12} +
+    \iguald \Sigma^{\frac12} \,  U \, \Lambda_\simed \, U^t  \ \Sigma^{\frac12} +
     m$  \:\:  con \:\:  $U  \sim \U\left(  \Ort_d(\Rset)  \right)$  ($d' =  d$),
     independiente  de  $\Lambda_\simed$  matriz  aleatoria  diagonal.   Pasando,
     aparece  que  $\Lambda_\simed  =  \Diag(\lambda\left( X  \right))$,  \ie  de
@@ -3340,7 +3340,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     descomposici\'on no es \'unica. Se puede imponer que en \ $\Lambda_\simed$ \
     los autovalors sean de valor en orden decreciente por ejemplo. $U$ tambi\'en
     no es \'unica: remplazar $U$ por  $U S$ con $S$ diagonal de componentes $\pm
-    1$ no cambia ni la distribuci\'on  ($U \egald U S$), ni la descomposici\'on.
+    1$ no cambia ni la distribuci\'on  ($U \iguald U S$), ni la descomposici\'on.
     A veces, se impone  que la primera columna de $U$ sea  positiva, lo que va a
     dar  una descomposici\'on  \'unica (ver~\cite[Teo.~17.3,  fin  de \S~17.3.1,
     Teo.~17.6]{TemCal13},~\cite[Cor.~2.5.2]{AndGui10},~\cite[\S~2.4.2]{DeiGio09}
@@ -3359,7 +3359,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
     Ec.~(6.13)]{LivNov18},~\cite[Teo.~17.3]{TemCal13},~\cite[\S~9.3]{Car83}
     o~\cite[\S~8, p.~34-35]{Gir96}).  Con el hecho  de que la  distribuci\'on de
     $X$ depende  solamente de $\lambda =  \diag(\Lambda)$, eso prueba  que $U$ y
-    $\Delta$ son independientes. A continuaci\'on, de $X = U \Delta U^t \egald O
+    $\Delta$ son independientes. A continuaci\'on, de $X = U \Delta U^t \iguald O
     U \Delta (O  U)^t$ se nota que la distribuci\'on de  los autovectores de $X$
     es  invariante  por  transformaci\'on  ortogonal: por  definici\'on,  es  la
     distribuci\'on   de  Haar   sobre   \  $\Ort_d(\Rset)$   (medida  de   Haar,
@@ -3380,15 +3380,15 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
       \|} \end{bmatrix}$ son independientes~\cite[Lema~6]{FanChe84}.
 %
 \item  Se  monstr\'o  que,  en  el  caso  $d'  =  1$  la  densidad  es  definida
-  completamente    por   lo    del   rayo,    con   densidad    dada    por   el
-  teorema~\ref{Teo:MP:DensidadRayo}. Se  lo puedo  probar directamente y  ver el
+  completamente    por   lo    del   radio,    con   densidad    dada    por   el
+  teorema~\ref{Teo:MP:DensidadRadio}. Se  lo puedo  probar directamente y  ver el
   teorema de mezcla de escala de  base uniforme como consecuencia, o al rev\'es.
   En el caso matricial, la contra-parte da en cada caso:
   %
   \begin{itemize}
   \item Si $X \sim \ED_\izq(m,\Sigma,\varphi_X)$, la ley de $X$ es completamente
     definida por la ley de $(X-m)^t \Sigma^{-1} (X-m)$. As\'i \ $R_\izq^t R_\izq
-    \egald  (X-m)^t \Sigma^{-1}  (X-m)$ \  es  definida de  manera \'unica.   Si
+    \iguald  (X-m)^t \Sigma^{-1}  (X-m)$ \  es  definida de  manera \'unica.   Si
     tomamos  $R_\izq$ la raiz  triangular inferior,  definida de  manera \'unica
     (ver~\cite{HorJoh13, Bha97}), esa define  completamente la ley de $X$. M\'as
     all\'a, saliendo de la  forma de mezcla y del calculo de  la Jacobiana de $y
@@ -3481,7 +3481,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
   literatura  tiene  algunos  resultados   que  no  detallamos  ac\'a.  Ver  por
   ejemplo~\cite{GupVar95}, o~\cite[Teo.~10-12]{DiaGut11}.
 %  \item Teorema~\ref{Teo:MP:SchoenbergCaracteristica} en: \ $Z \sim \CED\left( m
-%      , \Sigma , \varphi_Z \right) \egald \, A \, \Sigma^{\frac12} \, G + m \:\:
+%      , \Sigma , \varphi_Z \right) \iguald \, A \, \Sigma^{\frac12} \, G + m \:\:
 %    \Leftrightarrow \:\: \varphi_Z  \in \PDSI$, \ con \ $A  > 0$ \ independiente
 %    de \ $G \sim \CN(0,I)$;
 %
@@ -3493,7 +3493,7 @@ B + C] = \sum_{r,s,u,v} A_{i,r} B_{s,j} A_{k,u} B_{v,l} \, \T_{r,s,u,v}[Y]
 %
 %
 %  \item  Teorema~\ref{Teo:MP:SchoenbergDensidad} en:  \ $Z  \sim \CED\left(  m ,
-%      \Sigma  , d_Z  \right)  \egald \,  A \,  \Sigma^{\frac12}  \, G  + m  \:\:
+%      \Sigma  , d_Z  \right)  \iguald \,  A \,  \Sigma^{\frac12}  \, G  + m  \:\:
 %    \Leftrightarrow \:\: d_Z \in  \CM$, \ con \ $A > 0$  \ independiente de \ $G
 %    \sim \CN(0,I)$;
 %  %
@@ -3523,7 +3523,7 @@ tambi\'en a~\cite{And03, Daw78, Daw81, LibrosABuscar}.
   %      \right|^{\frac{\nu+d+d'-1}{2}}}    \,     \left(    \prod_{i    <    j}
   %   (\lambda_i-\lambda_j) \right)$.
 %
-% \SZ{La densidad  del  rayo, que  no  explicitamos ac\'a  (ver
+% \SZ{La densidad  del  radio, que  no  explicitamos ac\'a  (ver
 %  f\'ormula   de   calculo   dado   anteriormente),   tiene   una   forma   beta
 %  matricial genealizada~\cite[Cor.~9.3.12.2]{GupNag99}.}  
 \SZ{Que mas? La ley de $\lambda_\bil$ no tiene una forma que conozco...,; ver GSM...}
@@ -3537,17 +3537,17 @@ tambi\'en a~\cite{And03, Daw78, Daw81, LibrosABuscar}.
     \Sigma'^{-1} (x-m)^t \Sigma^{-1} \right)$ se ve inmediatamente que la matriz
   aleatoria partenece a $\ED_\vcol \cap  \ED_\vlin$ con el generador de densidad
   $d_X(r)   \propto  e^{-\frac{r}{2}}$  (ver   tambi\'en~\cite{Daw81,  FanKot90,
-    GupNag99}).   Como  en el  caso  escalar, el  cuadrado  del  rayo tiene  una
+    GupNag99}).   Como  en el  caso  escalar, el  cuadrado  del  radio tiene  una
   distribuci\'on  Gamma,  $R_\vcol^2  \sim  \G\left( \frac{d  d'}{2}  ,  \frac12
   \right)$.
 
   Se puede ver esta distribuci\'on tambi\'en  como en \ $\ED_\bil$ \ y tiene con
-  este enfoque el generador  de densidad \ $d_X(\lambda) \propto e^{-\frac{\un^t
+  este enfoque el generador  de densidad \ $d_X(\lambda) \propto e^{-\frac{\uno^t
       \lambda}{2}}$, lo que es coherente  con el punto de vista anterior, siendo
-  $\un^t \lambda(y y^t) = \| y \|_F^2 \equiv r^2$.
+  $\uno^t \lambda(y y^t) = \| y \|_F^2 \equiv r^2$.
   % : $\|X\|_F^2$ es  nada m\'as que la suma de los  autovalores de $X X^t$ (ver
   %  m\'as arriba  cuando tratamos  de las  densidades de  probabilidad  en cada
-  % caso).  \SZ{Que mas?  GSM, rayo...}
+  % caso).  \SZ{Que mas?  GSM, radio...}
 \end{ejemplo}
 
 \begin{ejemplo}[Ensemble Gaussiano Ortogonal]\label{Ej:MP:GOE}
@@ -3556,11 +3556,11 @@ tambi\'en a~\cite{And03, Daw78, Daw81, LibrosABuscar}.
   secci\'on~\ref{Sssec:MP:Gaussiana} (secundo item), se ve inmediatamente que la
   matriz aleatoria, definida sobre \ $\X = \Sim_d(\Rset)$, \ es de distribuci\'on
   \ $\ED_\simed(0,I,d_X)$,  con el  generador de densidad  $d_X(\lambda) \propto
-  e^{- \frac{d}{4}  \, \un^t  \lambda^{\odot 2}}$ \  (ver tambi\'en~\cite{Meh04,
+  e^{- \frac{d}{4}  \, \uno^t  \lambda^{\odot 2}}$ \  (ver tambi\'en~\cite{Meh04,
     AndGui10}).
   % pero no es ni en $\ED_\bil$ y entonces ni en $\ED_\col$, ni en $\ED_\lin$ y
   % por consecuencia ni tampoco en $\ED_\vcol$ o en $\ED_\vlin$.
-  \SZ{Que mas?    GSM, rayo...}
+  \SZ{Que mas?    GSM, radio...}
 \end{ejemplo}
 
 
@@ -3570,10 +3570,10 @@ tambi\'en a~\cite{And03, Daw78, Daw81, LibrosABuscar}.
   aleatoria, definida sobre  \ $\X = \Pos_d^+(\Rset)$, \  es de distribuci\'on \
   $\ED_\simed\left( 0 , V , d_X \right)$ \ con el generador de densidad dado por
   \     $\displaystyle     d_X(\lambda)     \propto    \left|     \Diag(\lambda)
-  \right|^{\frac{\nu-d-1}{2}} \, e^{-\frac12 \un^t \lambda}$.
+  \right|^{\frac{\nu-d-1}{2}} \, e^{-\frac12 \uno^t \lambda}$.
   % pero no es ni en $\ED_\bil$ y  entonces ni en $\ED_\col$, ni en $\ED_\lin$ y
   % por consecuencia ni tampoco en $\ED_\vcol$ o en $\ED_\vlin$.
- \SZ{Que  mas?    GSM, rayo...}
+ \SZ{Que  mas?    GSM, radio...}
 \end{ejemplo}
 
 
@@ -3586,7 +3586,7 @@ tambi\'en a~\cite{And03, Daw78, Daw81, LibrosABuscar}.
     \frac{d+1}{2}} \left| I - \Diag(\lambda) \right|^{b - \frac{d+1}{2}} $.
   % pero no es ni en $\ED_\bil$ y  entonces ni en $\ED_\col$, ni en $\ED_\lin$ y
   % por consecuencia ni tampoco en $\ED_\vcol$ o en $\ED_\vlin$.
- \SZ{Que  mas?    GSM, rayo...}
+ \SZ{Que  mas?    GSM, radio...}
 \end{ejemplo}
 
 \vspace{2cm}

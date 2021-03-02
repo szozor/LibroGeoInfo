@@ -67,7 +67,7 @@ Lun02, RioMag14, FlaRio16, RioFla17, Che17}).}.
     H(X) = H(p_X) = - \sum_{x \in \X} p_X(x) \, \log p_X(x),
   \]
   %
-  con   la   convenci\'on   \   $0   \log    0   =   0$   \   (a   partir   de
+  con   la   convenci\'on   \   $0   \log    0   \igualc   0$   \   (a   partir   de
   $\displaystyle \lim_{t \to 0^+} \, t \log t = 0$).
 \end{definicion}
 %
@@ -111,8 +111,8 @@ p_X(x_i)$ por simplificaci\'on de escritura en algunas expresiones.
   von Neuman (ver m\'as adelante).}
 
 \modif{La entrop\'ia de Shannon} $H$ tiene propiedades notables que corresponden
-a  las que  se puede  exigir a  una medida  de  ignorancia~\cite{Sha48, ShaWea64,
-  CovTho06, Rio07, DemCov91, Joh04}.
+a las que se puede exigir  a una medida de ignorancia (o incerteza)~\cite{Sha48,
+  ShaWea64, CovTho06, Rio07, DemCov91, Joh04}.
 %
 \begin{propiedades}
 \item\label{Prop:SZ:continuidad} {\it Continuidad:}  vista como una funci\'on de
@@ -167,7 +167,7 @@ a  las que  se puede  exigir a  una medida  de  ignorancia~\cite{Sha48, ShaWea64
   con igualdad si y solamente si \ $X$ \ est determinista, \ie
   %
   \[
-  H(X)  =  0 \quad  \mbox{ssi}  \quad \exists \, x_j \in \X, \:\: p_X(x) = \un_j
+  H(X)  =  0 \quad  \mbox{ssi}  \quad \exists \, x_j \in \X, \:\: p_X(x) = \uno_j
   \]
   %
   En  otras palabras,  cuando $X$  no  es aleatoria,  \ie  $X =  x_j$, no  hay
@@ -238,7 +238,7 @@ a  las que  se puede  exigir a  una medida  de  ignorancia~\cite{Sha48, ShaWea64
   0, \quad \mbox{entonces} \quad H(p_{\widetilde{X}}) = H(p_X).
   \]
   %
-  Esta propiedad  es obvia,  consecuencia de  la convenci\'on $0  \log =  0$ que
+  Esta propiedad  es obvia,  consecuencia de  la convenci\'on $0  \log \igualc  0$ que
   viene de $\displaystyle \lim_{t \to 0^+} \, t \log t = 0$.
 %
 \setcounter{PropRecursividad}{\value{enumi}}
@@ -310,7 +310,8 @@ a  las que  se puede  exigir a  una medida  de  ignorancia~\cite{Sha48, ShaWea64
   convexa de entrop\'ias:
   %
   \[
-  \forall \:  \pi = \begin{bmatrix} \pi_1 & cdots &  \pi_n \end{bmatrix}^t \in \Simp{n-1}
+  \forall      \:     \pi      =     \begin{bmatrix}      \pi_1     &      cdots
+  & \pi_n \end{bmatrix}^t \in \Simp{n-1}
   %, \quad  0 \le \pi_k \le  1, \quad \sum_{k=1}^n \pi_k  = 1
   \quad \mbox{and  cualquier  conjunto de  distribuciones} \quad  \{
   p_{(k)} \}_{k=1}^n \in \Simp{\alpha-1}^n, \: \alpha > 1,
@@ -333,17 +334,27 @@ a  las que  se puede  exigir a  una medida  de  ignorancia~\cite{Sha48, ShaWea64
   %
   \begin{center} \input{TIKZ_SZ/Concavidad} \end{center}
   %
-  \leyenda{(a) $\phi(t)  = t \log t$ es  convexa: la curva es  siempre debajo de
-    sus cuerdas; entonces, cada promedio de $\phi(t_1)$ y $\phi(t_2)$ estando en
-    la cuerda juntando  estos puntos, queda arriba de la  funci\'on tomada en el
-    promedio de $t_1$ y $t_2$.  Escribiendo eso para (m\'as de dos puntos) sobre
-    los $\sum_i \pi_i \, p_{(i)}(x)$ y sumando sobre los $x$  da la desigualdad de
-    Jensen.  (b) Ilustraci\'on de  una distribuci\'on de mezcla, ac\'a mezclando
-    $p_{(1)}$ y $p_{(2)}$  a partir de una tercera  variable aleatoria (ac\'a de
-    Bernoulli).}
+  \leyenda{(a) $\phi(t) =  t \log t$ es convexa: la  curva est\'a siempre debajo
+  de sus cuerdas. Dicho de otra manera, sean los puntos \ $A_1$ \ de coordenadas
+  $(t_1  \,  ,   \,  \phi(t_1)$  \  y   \  $A_2$  \  de   coordenadas  $(t_2  \,
+  , \,  \phi(t_2)$: cualquier punto \  $A_\pi$ \ de coordenadas  \ $\left( \pi_1
+  t_1 +  \pi_2 t_2 \,  , \, \phi(\pi_1  t_1 + \pi_2 t_2)  \right)$ \ con  \ $\pi
+  =  \begin{bmatrix} \pi_1  & \pi_2  \end{bmatrix}^t \in  \Simp{1}$ \  queda por
+  abajo del segmento \  $\left[ A_1 \; A_2 \right]$, \ie  $\phi(\pi_1 t_1 + \pi_2
+  t_2) \le  \pi_1 \phi(t_1) + \pi_2  \phi(t_2)$. Por recurencia se  generaliza a
+  m\'as de  dos punto $t_1,  \ldots ,  t_n, \: n  \in \Nset_0$ y  cualquier $\pi
+  = \begin{bmatrix}  \pi_1 &  \cdots & \pi_n  \end{bmatrix}^t \in  \Simp{n-1}$ \
+  as\'i como, fijando  $x \in \X$, tomando puntos $t_k  = p_{(k)}(x)$, aplicando
+  la desigualdad y sumando cada lado sobre  $x \in \X$ se obtiene la desigualdad
+  de Jensen (desigualdad al rev\'es por el signo ``-'' delante de la funci\'on \
+  $t \log t$ \  en la definici\'on de la entrop\'ia).   (b) Ilustraci\'on de una
+  distribuci\'on de  mezcla de dos  distribuciones, ac\'a mezclando  $p_{(1)}$ y
+  $p_{(2)}$ a partir de una tercera variable aleatoria (ac\'a de Bernoulli).}
   %
   \label{Fig:SZ:Concavidad}
   \end{figure}
+  %
+  \SZ{Ver para dibujar la figura en tikz (no importar figuras extrenas)}
 %
 \setcounter{PropSchurConcavidad}{\value{enumi}}
 \item\label{Prop:SZ:Schurconcavidad}  {\it Concavidad de Schur:}  como se  puede
@@ -356,80 +367,82 @@ a  las que  se puede  exigir a  una medida  de  ignorancia~\cite{Sha48, ShaWea64
   peque\~no es completado por ceros;  es equivalente a a\~nadir estados fictivos
   de probabilidad nula, lo que no cambia la entrop\'ia).
   %
-  La  Schur-concavidad  se  traduce  por  la  relaci\'on
+  La  concavidad de Schur  se  traduce  por  la  relaci\'on
   %
   \[
   p \prec  q \quad \Rightarrow  \quad H(p) \ge  H(q).
   \]
   %
-  Fijense de  que las cotas  sobre $H$ pueden  ser vistas como  consecuencias de
-  esta desigualdad: la  distribuci\'on cierta mayoriza cualquiera distribuci\'on
-  y  cualquiera distribuci\'on  mayoriza la  distribuci\'on uniforme~\cite[p.~9,
-  (6)-(8)]{MarOlk11}.  Adem\'as, de la Schur-concavidad se obtiene que
+  Notar que  las cotas sobre  $H$ pueden ser  vistas como consecuencias  de esta
+  desigualdad:  la distribuci\'on  cierta mayoriza  cualquiera distribuci\'on  y
+  cualquiera distribuci\'on mayoriza la uniforme~\cite[p.~9, (6)-(8)]{MarOlk11}.
+  Adem\'as, de la concavidad de Schur se obtiene que
   %
   \[
   H\left( \begin{bmatrix}  \frac{1}{|\X|} & \cdots  & \frac{1}{|\X|} \end{bmatrix}^t
   \right) \quad \mbox{es una funci\'on creciente de } |\X|.
   \]
   %
-  La prueba  de la  concavidad de Schur se  apoya sobre la  desigualdad de  Schur o
+  La prueba de la  concavidad de Schur se apoya sobre la  desigualdad de Schur o
   Hardy-Littlewood-P\'olya    o     Karamata~\cite{Sch23,    HarLit29,    Kar32,
-    HarLit52},~\cite[Cap.~3,                                 Prop.~C.1]{MarOlk11}
-  o~\cite[Teorema~II.3.1]{Bha97}: $t \prec t' \: \Rightarrow \: \sum_i \phi(t_i)
-  \le  \sum_i  \phi(t'_i)$  para  cualquiera  funci\'on  $\phi$  convexa.  Basta
-  considerar $\phi(t) = t \log t$ para concluir.
+  HarLit52},~\cite[Cap.~3,  Prop.~C.1]{MarOlk11} o~\cite[Teorema~II.3.1]{Bha97}:
+  $p  \prec q  \: \Rightarrow  \: \sum_i  \phi(p_i) \le  \sum_i \phi(q_i)$  para
+  cualquiera funci\'on  $\phi$ convexa.  Basta  considerar $\phi(t) = t  \log t$
+  para concluir  (se reversa  la desigualdad  por el signo  ``-'' delante  de la
+  funci\'on $\phi$ en la definici\'on de la entrop\'ia).
 \end{propiedades}
 %
-% Ver Schur-Ostrowski f  sym, Scur-convexe ssi (xi - xj)  (df/dx_i - df/dxj) \ge
-% 0, 1 \le i \ne j \le alpha
+\SZ{
+Ver Schur-Ostrowski f sym, Scur-convexe ssi $(xi  - xj) (df/dx_i - df/dxj) \ge 0,
+ 1 \le i \ne j \le alpha$}
 
 
 En muchos  casos, uno tiene que  trabajar con varias  variables aleatorias. Para
-simplificar las notaciones, consideramos  un par de variables \ $X$ \  y \ $Y$ \
-definidas respectivamente sobre los alfabetos \ $\X$  \ y \ $\Y$ \ de cardenal \
-$|\X|$ \ y \ $|\Y|$.  Tal par de variables puede ser vista como
-una variable $\begin{bmatrix} X\\ Y\end{bmatrix}$ definida sobre el alfabeto $\X
-\times  \Y$  de  cardenal \ $|\X| |\Y|$ \  tal  que  se define  naturalmente  la
+simplificar las notaciones, consideramos  un par de variables \ $X$ \  e \ $Y$ \
+definidas respectivamente sobre los alfabetos \ $\X$  \ e \ $\Y$ \ de cardenales \
+$|\X|$ \ e \ $|\Y|$. Este par de variables puede ser vista como
+una variable $\begin{bmatrix} X & Y\end{bmatrix}^t$ definida sobre el alfabeto $\X
+\times  \Y$  de  cardenal \ $|\X| |\Y|$ \ as\'i como  se define  naturalmente  la
 entrop\'ia  para  esta  variable;  tal entrop\'ia  es  llamada  {\it  entrop\'ia
-  conjunta} de $X$ y $Y$:
+  conjunta} de \ $X$ \ e \ $Y$:
 %
 \begin{definicion}[Entrop\'ia conjunta]
 \label{Def:SZ:EntropiaConjunta}
 %
   Sean \ $X$ \ e \ $Y$  \ dos variables aleatorias definidas sobre los alfabetos
-  discretos \  $\X$ \ y \  $\Y$, de cardenal  \ $|\X| <  +\infty$ \ y \  $|\Y| <
+  discretos \ $\X$  \ e \ $\Y$, de cardenales  \ $|\X| < +\infty$ \ y  \ $|\Y| <
   +\infty$  \  respectivamente.    Sea  \  $p_{X,Y}$  \   la  distribuci\'on  de
   probabilidad  conjunta   de  \   $X$  \  e   \  $Y$,  \   \ie  $   \forall  \,
   (x,y)  \in \X  \times  \Y, \quad  p_{X,Y}(x,y)  = P\big(  (X =  x)  \cap (Y  =
   y) \big)$.   La entrop\'ia conjunta de  Shannon de las  variables \ $X$ \  e \
-  $Y$ \ es definida por
+  $Y$ \ se define como
   %
   \[
   H(p_{X,Y}) =  H(X,Y) = -  \sum_{(x,y) \in \X  \times \Y} p_{X,Y}(x,y)  \, \log
   p_{X,Y}(x,y),
   \]
   %
-  con la convenci\'on \ $0 \log 0 = 0$.
+  con la convenci\'on \ $0 \log 0 \igualc 0$.
 \end{definicion}
 
-A partir de esta definici\'on,  aparecen otras propiedades importantes, sino que
+A partir  de esta  definici\'on, aparecen otras  propiedades importantes,  si no
 fundamentales, de la entrop\'ia de Shannon.
 %
 \begin{propiedades}
 \item\label{Prop:SZ:aditividad} {\it Aditividad:}  la entrop\'ia conjunta de dos
-  variables aleatorias  \ $X$  \ e \  $Y$ \ independientes se  suma, y
-  rec\'iprocamente:
+  variables  aleatorias \  $X$ \  e \  $Y$ \  independientes es  la suma  de las
+  entrop\'ias individuales, y rec\'iprocamente:
   %
   \[
-  X \: \mbox{e} \: Y \: \mbox{independientes} \quad \Leftrightarrow \quad H(X,Y)
+  X \: \mbox{e} \: Y \:\ \mbox{independientes} \quad \Leftrightarrow \quad H(X,Y)
   =  H(X) +  H(Y).
   \]
   %
-  Dicho de otra manera, para dos variables aleatorias, la incerteza global es la
-  suma   de  las  incertezas   de  cada   variable  individual.    La  propiedad
-  ``$\Rightarrow$'' es consecuencia directa de \ $p_{X,Y}(x,y) = p_X(x) p_Y(y)$.
-  Se va  a probar en  la secci\'on siguiente  la rec\'iproca. Esta  propiedad se
-  escribe tambi\'en
+  Dicho de otra  manera, para dos variables aleatorias, la  incerteza global es
+  la  suma  de  las  incertezas  de cada  variable  individual.   La  propiedad
+  ``$\Rightarrow$''  es consecuencia  directa  de \  $p_{X,Y}(x,y)  = p_X(x)  \,
+  p_Y(y)$.   Se va  a  probar en  la secci\'on  siguiente  la rec\'iproca.  Esta
+  propiedad se escribe tambi\'en
   %
   \[
   H\left( p_X \otimes p_Y \right) = H\left( p_X \right) + H\left( p_Y \right),
@@ -444,52 +457,53 @@ fundamentales, de la entrop\'ia de Shannon.
 %    definido sobre \  $\Y$, \ el producto tensorial siendo  definido sobre \ $\X
 %    \times      Y$.       Ver      nota      de      pie~\ref{Foot:MP:Kronecker}
 %    pagina~\pageref{Foot:MP:Kronecker}.}.
-  Se  generaliza sencillamente  a un  conjunto de  variables aleatorias  $\{ X_i
-  \}_{i=1}^n$ (o, equivalentemente a  un producto \modif{externo} de un conjunto
+  Se  generaliza sencillamente  a un  conjunto de  variables aleatorias  $\{ X_k
+  \}_{k=1}^n$ (o, equivalentemente a  un producto \modif{externo} de un conjunto
   de vectores de probabilidades).
 %
 \item\label{Prop:SZ:subaditividad} {\it  Sub-aditividad:} la entrop\'ia conjunta
-  de $n$ variables  aleatorias $\{ X_i \}_{i=1}^n$ es siempre  menor que la suma
-  de cada entrop\'ia individual:
+  de $n$ variables  aleatorias $\{ X_k \}_{k=1}^n$ es siempre  menor o igual que la suma
+  de las entrop\'ias individuales:
   %
   \[
-  H(X_1,\ldots,X_n)  \,  \le \,  \sum_{i=1}^n  H(X_i)  \qquad \mbox{\ie}  \qquad
-  H\left(  p_{X_1,, \ldots  , X_n}  \right) \,  \le \,  H\left(  p_{X_1} \otimes
-    \cdots \otimes p_{X_n} \right) = \sum_{i=1}^n H\left( p_{X_i} \right).
+  H(X_1,\ldots,X_n)  \,  \le \,  \sum_{k=1}^n  H(X_k)  \qquad \mbox{\ie}  \qquad
+  H\left(  p_{X_1 , \ldots  , X_n}  \right) \,  \le \,  H\left(  p_{X_1} \otimes
+    \cdots \otimes p_{X_n} \right) = \sum_{k=1}^n H\left( p_{X_k} \right).
   \]
   %
   Dicho de otra manera, las variables aleatorias pueden compartir informaci\'on,
-  de  tal  manera que  la  entrop\'ia  global sea  menor  que  la  suma de  cada
-  entrop\'ia.  De la  propiedad anterior, se obtiene la  igualdad si y solamente
-  si los $X_i$ son independientes.
+  de  tal  manera  que la  entrop\'ia  global  sea  menor  que la  suma  de  las
+  entrop\'ias  de  cada variable.   De  la  propiedad  anterior, se  obtiene  la
+  igualdad si y solamente si las \ $X_i$ \ son independientes.
 %
 \item\label{Prop:SZ:superaditividad}   {\it  Super-aditividad:}   la  entrop\'ia
-  conjunta de $n$ variables aleatorias  $\{ X_i \}_{i=1}^n$ es siempre mayor que
-  cualesquiera de las entrop\'ias individuales
+  conjunta de  $n$ variables aleatorias $\{  X_k \}_{k=1}^n$ es siempre  mayor o
+  igual que cualesquiera de las entrop\'ias individuales:
   %
   \[
-  H(X_1,\ldots,X_n) \, \ge \, \max_{1 \le i \le n} H(X_i).
+  H(X_1,\ldots,X_n) \, \ge \, \max_{1 \le k \le n} H(X_k).
   \]
 \end{propiedades}
 
-Es  importante notar  que existen  varios enfoques  basados sobre  una  serie de
-axiomas, dando lugar a la definici\'on de la entrop\'ia tal como definida. Estos
-axiomas   son   conocidos   como   axiomas   de  Shannon-Khinchin   y   son   la
-continuidad~\ref{Prop:SZ:continuidad},  la maximalidad~\ref{Prop:SZ:cotamaxima},
-la           expansabilidad~\ref{Prop:SZ:expansabilidad}           y          la
-aditividad~\ref{Prop:SZ:aditividad}.  Existen varios otros conjuntos de axiomas,
-conduciendo  tambi\'en a  la entrop\'ia  de Shannon  (ver~\cite[Sec.~6]{Sha48} o
+Es importante notar que existen varios  enfoques basados en una serie de axiomas
+que dan  lugar a la definici\'on  de la entrop\'ia. Estos  axiomas son conocidos
+como {\it axiomas de Shannon-Khinchin}; estos requisitos (m\'as que propiedades)
+son            la           continuidad~\ref{Prop:SZ:continuidad},            la
+maximalidad~\ref{Prop:SZ:cotamaxima},                                         la
+expansabilidad~\ref{Prop:SZ:expansabilidad}                 y                 la
+aditividad~\ref{Prop:SZ:aditividad}.  Existen varios  otros conjuntos de axiomas
+que conducen tambi\'en a la entrop\'ia de Shannon (ver~\cite[Sec.~6]{Sha48} o
 \cite{ShaWea64, Fad56, Fad58, Khi57, Ren61}, entre otros).
 
-Para  una  serie de  variables  aleatorias,  $X_1,  X_2, \ldots$,  representando
-s\'imbolos, se  puede definir una  entrop\'ia por s\'imbolo como  una entrop\'ia
-conjunta  divido por el  n\'umero de  s\'imbolos, $\frac{H(X_1,\ldots,x_n)}{n}$,
-as\'i que una tasa de entrop\'ia cuando $n$ va al infinito.
+Para  una  serie de  variables  aleatorias,  $X_1, X_2,  \ldots$,  representando
+s\'imbolos, se define tambi\'en una  entrop\'ia por s\'imbolo como la entrop\'ia
+conjunta  dividida  por el  n\'umero  de  s\'imbolos,  $\frac{H(X_1 ,  \ldots  ,
+X_n)}{n}$, as\'i como una tasa de entrop\'ia cuando $n$ va a infinito.
 %
 \begin{definicion}[Tasa de entrop\'ia]
 \label{Def:SZ:TasaDeEntropia}
 %
-  Sea $X \equiv \{ X_i \}_{i  \in \Nset_0}$ una serie de variables aleatorias, o
+  Sea $X \equiv \{ X_k \}_{k  \in \Nset_0}$ una serie de variables aleatorias, o
   proceso estoc\'astico.  La tasa de entrop\'ia del proceso es definida por
   %
   \[
@@ -499,8 +513,8 @@ as\'i que una tasa de entrop\'ia cuando $n$ va al infinito.
 \end{definicion}
 %
 \noindent Esta  cantidad siempre existe  porque $\displaystyle H(X_1 ,  \ldots ,
-X_n) \le \sum_{i=1}^n H(X_i) \le \sum_{i=1}^n  \log |\X_i| \le n \max_{1 \le i
-  \le n} |\X_i|$.
+X_n) \le \sum_{k=1}^n H(X_k) \le \sum_{k=1}^n  \log |\X_k| \le n \max_{1 \le k
+  \le n} \log |\X_k|$.
   %donde los $\alpha_i$  son los cardenales de los alfabetos  de definici\'on de
   %los $X_i$.
 
@@ -509,15 +523,14 @@ X_n) \le \sum_{i=1}^n H(X_i) \le \sum_{i=1}^n  \log |\X_i| \le n \max_{1 \le i
 Se termina esta subsecci\'on con el caso de variables discretas definidas sobre
 un  alfabeto $\X$ de  cardenal infinito  $|\X| =  + \infty$,  por ejemplo  $\X =
 \Nset$.   Por analog\'ia,  se puede  siempre definir  la entrop\'ia  como  en la
-definici\'on Def.~\ref{Def:SZ:Shannon}. Esta extensi\'on resuelta delicada dando
-de que unas propiedades se perdien.  Por ejemplo, la entrop\'ia no queda acotada
-por arriba  como se  lo puede  probar para la  distribuci\'on de  probabilidad \
-$\displaystyle p(x)  \propto \frac{1}{(x+2) \left(  \log (x+2) \right)^2},  \: x
+definici\'on Def.~\ref{Def:SZ:Shannon}. Esta extensi\'on resulta delicada dado
+ que algunas propiedades se perdien.  Por ejemplo, la entrop\'ia no queda acotada
+por arriba  como se puede  probar con la  distribuci\'on de  probabilidad \
+$\displaystyle p(x)  \propto \frac{1}{(x+2) \big(  \log (x+2) \big)^2},  \: x
 \in \Nset$, correctamente  normalizada ($\propto$ significa ``proporcional a''):
-\ $\displaystyle \frac{\log \log(x+2)}{(x+2) \left( \log (x+2) \right)^2} \ge 0$
+\ $\displaystyle \frac{\log \log(x+2)}{(x+2) \big( \log (x+2) \big)^2} \ge 0$
 \  y  \ la  serie  \  $\displaystyle \sum_x  \frac{1}{(x+2)  \log  (x+2)}$ \  es
-divergente,  as\'i que  la serie  \ $\displaystyle  - \sum_x  p(x) \log  p(x)$ \
-diverge.
+divergente, luego la serie \ $\displaystyle - \sum_x p(x) \log p(x)$ \ diverge.
 
 % ================================= Entropia diferencial
 
@@ -526,49 +539,55 @@ diverge.
 
 Volviendo  a  la  definici\'on  Def.~\ref{Def:SZ:Shannon} de  la  entrop\'ia  de
 Shannon,  usando   el  operador   $\Esp$  promedio  estad\'istico   o  esperanza
-matem\'atica,  se  puede  reescribir  la  entrop\'ia de  Shannon  como  $H(X)  =
-\Esp\left[ - \log p_X(X) \right]$.  Con este punto de vista, es f\'acil extender
-la definici\'on de la  entrop\'ia para variables aleatorias continuas admitiendo
-una densidad de  probabilidad.  Eso da lugar  a lo que es conocido  como la {\it
-  entrop\'ia diferencial}:
+matem\'atica, se puede reescribir la entrop\'ia de Shannon de la variable $X$ de
+distribuci\'on de  probabilidad $p_X$ como~\footnote{Por  definici\'on, $p_X(X)$
+es una variable aleatoria, transformada de $X$ por su distribuci\'on. Se obtiene
+la forma  por teorema de transferencia  Teo.~\ref{Teo:MP:Transferencia}.}  $H(X)
+=  \Esp\left[ -  \log p_X(X)  \right]$.   Con este  punto de  vista, es  f\'acil
+extender  la definici\'on  de entrop\'ia  a variables  aleatorias continuas  que
+admiten una  densidad de probabilidad.   Esto da lugar a  lo que se  conoce como
+{\it entrop\'ia diferencial}:
 
 \begin{definicion}[Entrop\'ia diferencial]
 \label{Def:SZ:EntropiaDiferencial}
 %
-  Sea  $X$   una  variable  aleatoria   continua  admitiendo  una   densidad  de
-  probabilidad \ $p_X$, definida sobre \ $\Rset^d$  \ y \ $X(\Omega) = \X = \{ x
-  \in  \Rset^d:  \:  p_X(x)  >  0  \}  \subset \Rset^d$  \  el  soporte  de  \
-  $p_X(x)$. La entrop\'ia diferencial de la variable $X$ es definida por
+  Sea  $X$  una   variable  aleatoria  continua  que  admite   una  densidad  de
+  probabilidad \ $p_X$,  definida sobre \ $\Rset^d$,  \ y sea \  $X(\Omega) = \X
+  = \{  x \in  \Rset^d: \:  p_X(x) >  0 \}  = \sop(p_X)  \subset \Rset^d$  \ el
+  soporte  de \  $p_X(x)$.  La  entrop\'ia diferencial  de  la  variable $X$  se
+  define como
   %
   \[
   H(p_X) = H(X) = - \int_\X p_X(x) \, \log p_X(x) \, dx
   \]
   %
-  (con la  convenci\'on $0 \log  0 = 0$,  se puede escribir la  integraci\'on en
+  (con la  convenci\'on $0 \log  0 \igualc 0$,  se puede escribir la  integraci\'on en
   $\Rset^d$).
 \end{definicion}
 %
-Como en el caso discreto, para $X = (X_1,\ldots,X_d)$, esta entrop\'ia de $X$ es
-dicha entrop\'ia conjunta de los $X_i$.
+Como  en   el  caso  discreto,  con   $X  =  \begin{bmatrix}  X_1   &  \cdots  &
+X_d \end{bmatrix}^d$,  la entrop\'ia de  $X$ se llama tambi\'en  {\it entrop\'ia
+diferecial conjunta} de los $X_k$.
 
-Como se lo va a ver, la entrop\'ia diferencial no tiene la misma significaci\'on
-de  incerteza,  siendo de  que  depende no  solamente  de  la distribuci\'on  de
-probabilidad, sino que  de los estados tambi\'en.  M\'as all\'a,  no se la puede
-ver como l\'imite  continua de un caso discreto: a trav\'es  de tal l\'imite, se
-va  a ver  que se  llama diferencial,  a causa  del efecto  de  la ``diferencial
-$dx$''.  Para ilustrar este hecho, consideramos una variable aleatoria escalar \
-$X$ \ y \ $p_X$ \ su densidad de probabilidad de soporte $\Rset$.  Sea \ $\Delta
-> 0$  \ y sea el alfabeto  $\X^\Delta = \{ x_k  \}_{k \in \Zset}$ \  donde los \
-$x_k$ se definen tal que $\displaystyle p_X(x_k) \Delta = \int_{k \Delta}^{(k+1)
-  \Delta}     p_X(x)    \,     dx$,    como     ilustrado    en     la    figura
-Fig.~\ref{Fig:SZ:CuantificacionX}.  Se  define la variable  aleatoria discreta \
-$X^\Delta =  \sum_k x_k \un_{(X  \in [k  \Delta \; (k+1)  \Delta ))}$ \  sobre \
-$\X^\Delta$  \ tal  que  \ $P(X^\Delta  =  x_k) =  p_{X^\Delta}(x_k) =  p_X(x_k)
-\Delta$.  \ Se puede ver \ $X^\Delta$ \ como la versi\'on cuantificada de \ $X$,
-\ con \ $X^\Delta =  x_k$ \ cuando \ $X \in [k \Delta \;  (k+1) \Delta )$.  \ Al
-rev\'es,  a\'un  que  sea  delicado,  se  puede interpretar  \  $X$  \  como  el
-``l\'imite'' de \ $X^\Delta$  \ cuando \ $\Delta$ \ tiende a  0. Ahora, es claro
-que
+Como veremos,  la entrop\'ia  diferencial no tiene  la misma  significaci\'on de
+ignorancia o  incerteza, ya  que no  depende solamente  de la  distribuci\'on de
+probabilidad, sino tambi\'en de los estados.   Adem\'as, no se la puede ver como
+l\'imite continuo de  un caso discreto: v\'inculando  la entrop\'ia ``l\'imite''
+de  la versi\'on  cuantificada  de  $X$ y  la  entrop\'ia diferencial,  l\'imite
+precisamente,  veremos que  se  llama  diferencial, a  causa  del  efecto de  la
+``diferencial  $dx$''.   Para ilustrar  este  hecho,  consideramos una  variable
+aleatoria escalar  \ $X$ \ y  \ $p_X$ \  su densidad de probabilidad  de soporte
+$\Rset$.   Sea  \   $\Delta  >  0$  \   y  sea  el  alfabeto   $\X^\Delta  =  \{
+x_k \}_{k \in  \Zset}$ \ donde los  \ $x_k$ se definen  tales que $\displaystyle
+p_X(x_k) \Delta = \int_{k \Delta}^{(k+1) \Delta}  p_X(x) \, dx$, como se ilustra
+en la figura Fig.~\ref{Fig:SZ:CuantificacionX}.  Se define la variable aleatoria
+discreta \ $X^\Delta =  \sum_k x_k \uno_{(X \in [k \Delta \;  (k+1) \Delta ))}$ \
+sobre  \ $\X^\Delta$  \  tal que  \  $P(X^\Delta =  x_k)  = p_{X^\Delta}(x_k)  =
+p_X(x_k)  \Delta$.   \  Se  puede  ver  a  \  $X^\Delta$  \  como  la  versi\'on
+cuantificada de \ $X$, \  con \ $X^\Delta = x_k$ \ cuando \  $X \in [k \Delta \;
+(k+1) \Delta )$.   \ Al rev\'es, aunque  sea delicado, se puede  interpretar a \
+$X$ \  como el ``l\'imite'' de  \ $X^\Delta$ \ cuando  \ $\Delta$ \ tiende  a 0.
+Ahora bien, es claro que
 %
 \begin{eqnarray*}
 H(X^\Delta) & = & - \sum_k p_{X^\Delta}(x_k) \log p_{X^\Delta}(x_k)\\[2.5mm]
@@ -576,22 +595,24 @@ H(X^\Delta) & = & - \sum_k p_{X^\Delta}(x_k) \log p_{X^\Delta}(x_k)\\[2.5mm]
 & = & - \log \Delta - \sum_k \Big( p_X(x_k) \log p_X(x_k) \Big) \, \Delta
 \end{eqnarray*}
 %
-lo que se escribe tambi\'en
+donde usamos la condici\'on de normalizaci\'on; luego
 %
 \[
 H(X^\Delta)  + \log  \Delta =  - \sum_k  \Big( p_X(x_k)  \log p_X(x_k)  \Big) \,
 \Delta.
 \]
 %
-Entonces, de la integraci\'on de Riemann sale que
+Entonces,  en el  l\'imite de  $\Delta$ tendiendo  a 0,  de la  integraci\'on de
+Riemann sale que
 %
 \[
-\lim_{\Delta \to 0} \left( H(X^\Delta) + \log \Delta \right) = H(X).
+\lim_{\Delta \to 0} \big( H(X^\Delta) + \log \Delta \big) = H(X).
 \]
 %
 Dicho de otra manera,  la entrop\'ia diferencial de $X$ no es  el l\'imite de la
-entrop\'ia de su versi\'on cuantificada:  aparece con la entrop\'ia el t\'ermino
-``diferencial'' $\log \Delta$.
+entrop\'ia  de  la  versi\'on  cuantificada  de  la  variable:  aparece  con  la
+entrop\'ia  el  t\'ermino  $\log  \Delta$  que  se  puede  interpretar  como  la
+``entrop\'ia de un  t\'ermino diferencial, $\log dx$''.
 %
 \begin{figure}[h!]
 %
@@ -599,8 +620,8 @@ entrop\'ia de su versi\'on cuantificada:  aparece con la entrop\'ia el t\'ermino
 %
 \leyenda{Densidad  de probabilidad  $p_X$  de $X$,  construcci\'on del  alfabeto
   $\X^\Delta$ donde se define la versi\'on cuantificada $X^\Delta$ de $X$ con su
-  distribuci\'on discreta de probabilidad  $p_{X^\Delta}$. La superficia en gris
-  oscuro es igual a la superficia definida por el rect\'angulo en gris claro.}
+  distribuci\'on  discreta de  probabilidad  $p_{X^\Delta}$. El  \'area en  gris
+  oscuro es igual aa \'area definida por el rect\'angulo en gris claro.}
 %
 \label{Fig:SZ:CuantificacionX}
 \end{figure}
@@ -619,9 +640,11 @@ H(Y) & = & - \int_{\Rset^d} p_Y(y) \log p_Y(y) \, dy\\[2.5mm]
 \log |\modif{\Jac_g(x)}| \Big) \, |\Jac_g(x)| \, dx
 \end{eqnarray*}
 %
-donde  $\Jac_g$ es  la matriz  Jacobiana de  la transformaci\'on  \  $g: \Rset^d
-\mapsto \Rset^d$ \ \ y \ $|\cdot|$ representa el valor absoluto del determinante
-de   la  matriz \modif{(ver notaciones)}.   Recordando   que  $p_X(x)   =  p_Y(g(x))   |\Jac_g(x)|$  (ver
+donde   $\Jac_g$   es   la   matriz   Jacobiana   de   la   transformaci\'on   \
+$g: \Rset^d \mapsto \Rset^d$ \ \ y  \ $|\cdot|$ representa el valor absoluto del
+determinante de  la matriz \modif{(ver  notaciones)}. La secunda linea  viene de
+$log p_Y(g(x)) = log  \frac{p_Y(g(x)) \, |\Jac_g(x)|}{|\Jac_g(x)|}$.  Recordando
+que         $p_X(x)         =        p_Y(g(x))         |\Jac_g(x)|$         (ver
 subsecci\'on~\ref{Ssec:MP:Transformacion}),
 %pagina~\pageref{Ssec:MP:Transformacion}), 
 se obtiene la propiedad siguiente:
@@ -629,79 +652,84 @@ se obtiene la propiedad siguiente:
 \begin{propiedadesC}\setcounter{enumi}{\value{PropBiyeccion}}
 %
 \item\label{Prop:SZ:biyeccionC}
-Para  cualquiera biyecci\'on $g:  \Rset^d \mapsto  \Rset^d$
+Para  cualquier biyecci\'on $g:  \Rset^d \mapsto  \Rset^d$ se tiene
   %
   \[
   H(g(X)) = H(X) + \int_{\Rset^d} p_X(x) \log |\Jac_g(x)| \, dx,
   \]
   %
   donde el \'ultimo t\'ermino, $\Esp\left[  \log |\Jac_g(X)| \right]$ no vale cero
-  en general.  En particular, si $H$ es invariante bajo una translaci\'on,
+  en general. Por ejemplo, $H$ es invariante bajo una translaci\'on,
   %
   \[
   H(X+b) = H(X) \quad \forall \: b \in \Rset^d,
   \]
   %
-  no  es invariante  por cambio  de escala,
+  pero no  es invariante  por cambio  de escala,
   %
   \[
-  H(a X) = H(X) + \log |a| \quad \forall \: a \in \Rset_0.
+  H(a X) = H(X) + d \, \log |a| \quad \forall \: a \in \Rset_0.
   \]
 \end{propiedadesC}
 %
-Esta \'ultima  relaci\'on queda v\'alido  para $a$ matriz invertible.   Por esta
-\'ultima  relaci\'on, se puede  ver que,  dado $X$,  cuando $a$  tiende a  0, la
+Esta \'ultima  relaci\'on queda v\'alida  para $a$ matriz invertible.   Por esta
+\'ultima  relaci\'on, se puede  ver que,  dado $X$,  cuando $|a|$  tiende a  0, la
 entrop\'ia de $a X$ tiende a  $-\infty$.  Es decir que, para $a$ suficientemente
-peque\~no,  se puede  tener  $H(a X)  < 0$,  as\'i  que se  pierde tambi\'en  la
-positividad~\ref{Prop:SZ:positividad}.     Por    esta    perdida,   se    quita
-definitivamente  la  interpretaci\'on  de  incerteza/informaci\'on  que  hubiera
-podido tener la entrop\'ia diferencial.
+peque\~no,  se puede  tener $H(a  X)  < 0$,  as\'i  que se  pierde tambi\'en  la
+positividad~\ref{Prop:SZ:positividad}.  Por  este motivo, definitivamente  no es
+posible asignar la interpretaci\'on  de ignorancia/informaci\'on a la entrop\'ia
+diferencial.
 
-A veces, se usa lo que es llamado potencia entr\'opica:
+A veces, se usa lo que se llama potencia entr\'opica:
 %
 \begin{definicion}[Potencia entr\'opica]
 \label{Def:SZ:PotenciaEntropica}
 %
-  Sea $X$ una variable aleatoria $d$-dimensional. La potencia entr\'opica de $X$
-  es definida por
+  Sea $X$  una variable aleatoria  $d$-dimensional de entrop\'ia $H(X)$  en nats
+  (logaritmo     natural)~\footnote{Si    la     base    del     logaritmo    es
+  $\alpha  \in \Rset_0$,  en lugar  del  exponencial se  tomar\'a obviamente  la
+  potencia de $\alpha$ en  lugar de la de $e$.}. La  potencia entr\'opica de $X$
+  se define como
   %
   \[
   N(X) = \frac{1}{2 \pi e} \exp\left( \frac2d H(X) \right).
   \]
 \end{definicion}
 %
-\noindent Por construcci\'on, $N(X) \ge 0$.  Adem\'as, en el caso continuo, $N(a
-X+b)  =  |a|^2 N(X)$  (queda  v\'alido para  una  matriz  $a$ invertible):  esta
-propiedad puede justificar  la idea de ``potencia''; adem\'as  $N(a X+b)$ tiende
-naturalmente a  cero cuando $a$  tiende a cero.   Se recupera as\'i  la noci\'on
-informacional a trav\'es  de $N$ en este  contexto ($a X + b$  ``tiende'' a $b$,
-variable determinista).
+\noindent Por construcci\'on,  $N(X) >  0$.  Adem\'as,  en el caso  continuo,
+$N(a X+b)  = |a|^2 N(X)$  (v\'alido tambi\'en  para una matriz  $a$ invertible):
+esta propiedad  puede justificar  la idea de  ``potencia''; adem\'as  $N(a X+b)$
+tiende  naturalmente a  cero cuando  $a$ tiende  a cero.   Se recupera  as\'i la
+noci\'on informacional a trav\'es de $N$ en  este contexto ($a X + b$ ``tiende''
+a $b$, variable determinista).
 
-Si se pierde la propiedad de invarianza bajo una biyecci\'on, sorprendentemente,
-se conserva la entrop\'ia bajo el equivalente continuo del rearreglo.
+Aun   si  se   pierde  la   propiedad  de   invarianza  bajo   una  biyecci\'on,
+sorprendentemente se  conserva la  entrop\'ia bajo  el equivalente  continuo del
+rearreglo.
 
 \begin{propiedadesC}\setcounter{enumi}{\value{PropPermutacion}}
-\item\label{Prop:SZ:permutacionC} {\it invarianza  bajo un rearreglo:} Sea $p_X$
-  densidad de probabilidad sobre un abierto de $\Rset^d$,
+\item\label{Prop:SZ:permutacionC} {\it Invarianza  bajo un rearreglo sim\'etrico:}
+Sea  $p_X$   densidad  de   probabilidad  sobre  un   abierto  de   $\Rset^d$  y
+$p_X^\downarrow$ su rearreglo sim\'etrico, Def.~\ref{Def:MP:rearreglo}. Entonces,
   %
   \[
   H\left( p_X^\downarrow \right) = H(p_X).
   \]
-  donde  $p_X^\downarrow$   es  el  rearreglo  s\'imetrico   de  $p_X$  definido
-  Def.~\ref{Def:MP:rearreglo}.
+%  donde  $p_X^\downarrow$   es  el  rearreglo  s\'imetrico   de  $p_X$  .
 % pagina~\pageref{Def:MP:rearreglo}.
 \end{propiedadesC}
 %
-\noindent Esta  propiedad es probada para  funciones convexas de  la densidad de
-probabilidad              por             ejemplo             en~\cite{LieLos01}
+\noindent
+Esta propiedad es probada para la integral de cualquier funci\'on $\phi$ convexa
+de    la   densidad    de    probabilidad    por   ejemplo    en~\cite{LieLos01}
 o~\cite[Lema~7.2]{WanMad04}~\footnote{En~\cite[Sec.~3.3]{LieLos01}  lo  muestran
-  para $\phi(p_X)$  donde $\phi$  es la diferencia  de dos  funciones monotonas,
-  siendo $\phi(t)  = t  \log t$ un  caso particular.},  y entonces para  el caso
-particular $\phi(t) = t \log t$.
+para  $\phi$ diferencia  de dos  funciones  monotonas, siendo  $\phi: t  \mapsto
+t  \log t$  un caso  particular.},  y entonces  para el  caso particular  $\phi:
+t \mapsto t \log t$.
 
-Una pregunta natural  es de saber lo que pasa en  t\'ermino de mayorizaci\'on en
-el      contexto     continuo      $d$-dimensional.      Aparece      que     la
-Schur-concavidad~\ref{Prop:SZ:Schurconcavidad} se conserva  en el caso continuo,
+Una pregunta  natural es saber  que pasa en  t\'erminos de mayorizaci\'on  en el
+contexto   continuo    $d$-dimensional.    Aparece   que   la    concavidad   de
+Schur~\ref{Prop:SZ:Schurconcavidad} se verifica tambi\'en en el caso continuo,
 \ie
 %
 \[
@@ -709,22 +737,20 @@ p \prec  q  \quad \Rightarrow  \quad H(p)  \ge H(q).
 \]
 %
 con      la      relaci\'on      de      mayorizaci\'on      continua      vista
-Def.~\ref{Def:MP:MayorizacionC}.
-%      pagina~\pageref{Def:MP:MayorizacionC}.       
-La desigualdad inversa es probada  para cualquier funci\'on $\phi$ convexa de la
-densidad~\cite{Cho74} o~\cite[Prop.~7.3]{WanMad04},  en particular para $\phi(t)
-= t \log t$.
+Def.~\ref{Def:MP:MayorizacionC}.   La  desigualdad  inversa se  prueba  para  la
+integral  de  cualquier funci\'on  $\phi$  convexa  de la  densidad~\cite{Cho74}
+o~\cite[Prop.~7.3]{WanMad04}, en particular para $\phi: t \mapsto t \log t$.
 
 Como se  lo ha  visto, la  entrop\'ia diferencial no  es siempre  positiva, como
-consecuencia de la  propiedad~\ref{Prop:SZ:biyeccionC}.  Tambi\'en, la propiedad
-de  cota superior~\ref{Prop:SZ:cotamaxima}  se pierde  en general,  salvo  si se
+consecuencia de  la propiedad~\ref{Prop:SZ:biyeccionC}.  Tambi\'en  la propiedad
+de cota  superior~\ref{Prop:SZ:cotamaxima} se  pierde, en  general, salvo  si se
 ponen v\'inculos:
 %
 \begin{propiedadesC}\setcounter{enumi}{\value{PropCotamaxima}}
 \item
   \begin{enumerate}
   \item\label{Prop:SZ:cotamaximauniforme} Si $\X$ es de volumen finito $|\X| < +
-    \infty$, la entrop\'ia es acotada por arriba,
+    \infty$, la entrop\'ia est\'a acotada por arriba,
     %
     \[
     H(X) \le \log |\X|,
@@ -732,9 +758,10 @@ ponen v\'inculos:
     %
     con igualdad si y solamente si $X$ es uniforme.
     %
-  \item\label{Prop:SZ:cotamaximagaussiana}  Si  $\X =\Rset^d$  y  $X$ tiene  una
+  \item\label{Prop:SZ:cotamaximagaussiana}  Si $\X  =\Rset^d$  y  $X$ tiene  una
     matriz  de covarianza  dada \  $\Sigma_X =  \Esp\left[ X  X^t \right]  - m_X
-    m_X^t$ \ ($m_X = \Esp[X]$), la entrop\'ia es tambi\'en acotada por arriba,
+    m_X^t$ \  donde \ $m_X  = \Esp[X]$, la  entrop\'ia est\'a  acotada por
+    arriba,
     %
     \[
     H(X) \le \frac{d}{2} \log(2 \pi e) + \frac12 \log |\Sigma_X|,
@@ -742,56 +769,59 @@ ponen v\'inculos:
     %
     con igualdad si y solamente si $X$ es gaussiana.  En particular, la potencia
     entr\'opica de la gaussiana vale $N(X) = \left| \Sigma_X \right|^{\frac1d}$,
-    dando de nuevo un ``sabor'' de potencia a  $N$.  Como se lo va a ver en este
-    cap\'itulo,  la  gaussiana  juega  un  rol  central en  la  teor\'ia  de  la
+    dando de nuevo un  rol de potencia a $N$.  Como  veremos en este cap\'itulo,
+    la  distribuci\'on gaussiana  juega  un rol  central en  la  teor\'ia de  la
     informaci\'on.
   \end{enumerate}
+  %
   En  ambos casos,  estas  desigualdades con  la  distribuci\'on maximizante  se
-  obtienen resolviendo el  problema de maximizaci\'on de la  entrop\'ia sujeto a
-  v\'inculos.    Se  trata   del   caso  m\'as   general   en  la   subsecci\'on
-  Sec.~\ref{Ssec:SZ:MaxEnt}.
+    obtienen resolviendo el problema de maximizaci\'on de la entrop\'ia sujeto a
+    v\'inculos.   Trataremos  el caso  con  v\'inculos  m\'as generales  que  la
+    covarianza en la subsecci\'on Sec.~\ref{Ssec:SZ:MaxEnt}.
 \end{propiedadesC}
 
-Al     final,     se     conservan     obviamente     las     propiedades     de
+Por    \'ultimo,     se    verifican     obviamente    las     propiedades    de
 concavidad~\ref{Prop:SZ:concavidad}, de aditividad~\ref{Prop:SZ:aditividad} y de
 sub-aditividad~\ref{Prop:SZ:subaditividad}.   Es  interesante  notar que  de  la
 desigualdad~\ref{Prop:SZ:subaditividad}, puramente entr\'opica, se puede deducir
-la desigualdad  de Hadamard, desigualdad  puramente matricial: $|R|  \le \prod_i
-R_{i,i}$  para cualquiera  matriz  sim\'etrica definida  positiva  (viene de  la
-propiedad~\ref{Prop:SZ:subaditividad} escrita  para una gaussiana  de covarianza
-$R$ y tomando una exponencial de la desigualdad).
+la  desigualdad de  Hadamard, que  es  una relaci\'on  puramente matricial:  sea
+$R  \in \Pos_d^+(\Rset)$  \ y  \ $R_{k,k}$  sus t\'erminos  diagonales; entonces
+$\displaystyle    |R|    \le    \prod_{k=1}^d     R_{k,k}$    (viene    de    la
+propiedad~\ref{Prop:SZ:subaditividad}  escrita  para  un  vector  aleatorio  $X$
+gaussiano de  matriz de covarianza  $R$ (siendo  $R_{k,k}$ las varianzas  de las
+componentes $X_k$) y tomando la exponencial de la desigualdad).
 
 \
 
-Como lo hemos  visto, la entrop\'ia y su versi\'on diferencial  no tienen ni las
-mismas  propiedades, ni  completamente la  misma interpretaci\'on.  Sin embargo,
-varias  propiedades  se  comparten y  se  proban  de  la  misma manera.  De  las
-escrituras, con una  suma o una integral, a veces se  encuentra en la literatura
-la escritura \'unica \ $\sumint$ \ para significar que se usa la suma en el caso
-discreto, y la integraci\'on en el caso continuo con densidad~\cite{Rio07}.  Sin
-embargo,   volviendo  al   fin   de  la   subsecci\'on~\ref{Ssec:MP:VAContinua}
-%pagina~\pageref{Pagina:MP:DensidadDiscreta}    \    
-y a la  definici\'on~\ref{Def:MP:Dirac} de una medida discreta sobre  \ $\X = \{
-x_j \}_j$ \ dada  por \ $\mu_\X = \sum_j \delta_{x_j}$, vimos  de que en el caso
-discreto \ $p_X$ \  es la densidad de la medida de  probabilidad con respecto a \
-$\mu_\X$.   Adem\'as,   de  la   propiedad  $\displaystyle  \int_\Rset   f(x)  \
-d\delta_{x_j} =  f(x_j)$ se puede ver una  suma como una integral  con respecto a
-une medida discreta.  De estas observacione, se puede escribir de la misma forma
-la entrop\'ia discreta y diferencial:
+Como hemos  visto, la  entrop\'ia y  su versi\'on diferencial  no tienen  ni las
+mismas propiedades,  ni completamente  la misma interpretaci\'on.   Sin embargo,
+varias propiedades  se comparten y  se prueban de la  misma manera.  A  veces se
+encuentra en la  literatura la notaci\'on \'unica \ $\sumint$,  para indicar que
+se usa la  suma en el caso discreto  y la integraci\'on en el  caso continuo con
+densidad~\cite{Rio07}.     No    obstante,    volviendo    al    fin    de    la
+subsecci\'on~\ref{Ssec:MP:VAContinua} y a  la definici\'on~\ref{Def:MP:Dirac} de
+medida  discreta   sobre  \  $\X   =  \{  x_j  \}_j$   \  dada  por   \  $\mu_\X
+= \sum_j \delta_{x_j}$, vimos  que en el caso discreto \ $p_X$  \ es la densidad
+de  la medida  de  probabilidad con  respecto  a \  $\mu_\X$.   Adem\'as, de  la
+propiedad $\displaystyle \int_\Rset f(x) \  d\delta_{x_j} = f(x_j)$ se puede ver
+una  suma como  una  integral con  respecto  a une  medida  discreta.  De  estas
+observaciones, se  puede escribir de la  misma forma las entrop\'ias  discreta y
+diferencial:
 %
 \begin{definicion}[Escritura \'unica de la entrop\'ia]
 \label{Def:SZ:ShanonMu}
 %
-Sea \ $X$ \ variable aleatoria definida sobre $\X \subset \Rset^d$, admitiendo
+Sea \ $X$ \ variable aleatoria definida sobre $\X \subset \Rset^d$, que admite
 una  densidad de  probabilidad \  $p_X$ \  con respecto  a una  medida \  $\mu$ \
 (ej.  $\mu_\X$  \  en   el  caso  discreto  \  $\mu  =  \mu_L$   \  en  el  caso
 diferencial). La entrop\'ia de $X$ con respecto a $\mu$ se escribe como
   %
   \[
-  H(X) \equiv H(p_X) = - \int_\X p_X(x) \, \log(p_X) \, d\mu(x)
+  H(X) \equiv H(p_X) = - \int_\X p_X(x) \, \log p_X(x) \, d\mu(x)
   \]
   %
-  Insistamos  en  el hecho  de  que se  puede  entender  esta definici\'on  para
-  cualquier $\mu$ y densidad con respecto a $\mu$, que sea discreta, de Lebesgue,
-  o cualquiera.
 \end{definicion}
+%
+Insistimos en el hecho de que se puede entender esta definici\'on para cualquier
+  $\mu$  y densidad  con  respecto a  $\mu$,  ya sea  discreta,  de Lebesgue,  o
+  cualquiera.

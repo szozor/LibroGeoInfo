@@ -30,7 +30,7 @@
 % xk y Delta
 \draw (\xk,0)--(\xk,-.05) node[below]{\small $x_k$};
 \draw[>=stealth,<->] ({\xk-\dx/2},.15)--({\xk+\dx/2},.15);
-\draw (\xk,.15) node[above]{\small $\Delta$};
+\node[above] at (\xk,.15){\small $\Delta$};
 %
 % recta sobre Delta a altura de p(xk)
 \draw ({\xk+\dx/2},{bimod(\xk)})-- ({\xk-\dx/2},{bimod(\xk)});

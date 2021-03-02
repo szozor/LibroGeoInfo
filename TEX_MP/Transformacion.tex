@@ -66,13 +66,13 @@ en $\Y$),  el vector  de probabilidad queda  invariante, $p_Y =  p_X$; solamente
 cambian los estados.
 
 Es  importante  mencionar que  con  $\Y$  discreto,  $\X$ no  es  necesariamente
-discreto~\cite{AthLah06}. Por ejemplo, $Y = \un_{X>0}$  es tal que $\Y = \{ 0 \;
+discreto~\cite{AthLah06}. Por ejemplo, $Y = \uno_{X>0}$  es tal que $\Y = \{ 0 \;
 1 \}$ a pesar de que $\X$ puede no ser discreto.
 
 Tratar con  variables aleatorias continuas  resulta m\'as delicado. Vimos  en el
 ejemplo   precedente   que   el   car\'acter   continuo   puede   perderse   por
 transformaci\'on. De  la misma manera, en  un ejemplo de  la secci\'on anterior,
-vimos  que  $Y =  X_1  \un_{X_2>0}$ con  $X_i$  independientes  uniformes no  es
+vimos  que  $Y =  X_1  \uno_{X_2>0}$ con  $X_i$  independientes  uniformes no  es
 continua  ni  discreta.   En  el  enfoque  de  variables  continuas,  una  clase
 importante de  funciones en las cuales  nos vamos a interesar  son las funciones
 continuas (y diferenciables):
@@ -253,7 +253,7 @@ $g$ es inyectiva, dando
   \[
   P_Y(B)  =   \sum_{k=1}^m \int_{B \cap g(\X_{[k]})}
   p_X\left( g_k^{-1}(y) \right) \left| \Jac_{g_k^{-1}}(y) \right| \, dy  =   \int_B
-  \sum_{k=1}^m  \un_{g(\X_{[k]})}(y) \, p_X\left( g_k^{-1}(y) \right) \left| \Jac_{g_k^{-1}}(y) \right| \, dy
+  \sum_{k=1}^m  \uno_{g(\X_{[k]})}(y) \, p_X\left( g_k^{-1}(y) \right) \left| \Jac_{g_k^{-1}}(y) \right| \, dy
   \]
   %
   Por definici\'on de $I(y)$, $y \in B \cap g(\X_{[k]}) \:\: \Leftrightarrow \:\: k \in I(y) $, lo conduce finalmente a
@@ -348,13 +348,13 @@ ejemplo siguiente.
 \label{Ej:MP:X0MedidaNoNula}
 %
 Sea \ $X$ \ uniforme sobre  \ $\X = ( 3 \; 3)$ \ e \ $Y  = g(X)$ \ con \ $g(x) =
-\Big(  1 +  \cos\left(  (|x|-1) \frac{\pi}{2} \right) \Big)  \un_{(1 \;  3)}(|x|) +  2
-  \un_{[0    \;   1]}(|x|)$.     Esta    funci\'on   se    representa   en    la
+\Big(  1 +  \cos\left(  (|x|-1) \frac{\pi}{2} \right) \Big)  \uno_{(1 \;  3)}(|x|) +  2
+  \uno_{[0    \;   1]}(|x|)$.     Esta    funci\'on   se    representa   en    la
   figura~\ref{Fig:MP:TransformacionVANoContinua}-(a).   Claramente, \  $g$  \ es
   continua y diferenciable sobre $\X$, pero con \ $\X_{[0]} = [ -1 \; 1]$ que no
   es  de  medida  nula.   Saliendo  de  $F_Y(y) =  P(g(X)  \le  y)$  se  calcula
   sencillamente  $F_Y(y) =  \frac23 \left(  1 -  \frac1\pi  \arccos(y-1) \right)
-  \un_{[0   \;   2)}   +   \un_{[   2  \;   +\infty)}(y)$,   ilustrada   en   la
+  \uno_{[0   \;   2)}   +   \uno_{[   2  \;   +\infty)}(y)$,   ilustrada   en   la
   figura~\ref{Fig:MP:TransformacionVANoContinua}-(b).   Claramente \ $F_Y$  \ es
   discontinua en \ $y = 2$: \ $Y$ \ no es continua.
   %
@@ -362,7 +362,7 @@ Sea \ $X$ \ uniforme sobre  \ $\X = ( 3 \; 3)$ \ e \ $Y  = g(X)$ \ con \ $g(x) =
   \begin{center} \input{TIKZ_MP/TransformacionVANoContinua} \end{center}
   %
   \leyenda{(a): Gr\'afica de $g(x) =  \Big( 1 + \cos\left( (|x|-1) \frac{\pi}{2}
-    \right) \Big) \un_{(1  \; 3)}(|x|) + 2 \un_{[0  \; 1]}(|x|)$. Suponiendo que
+    \right) \Big) \uno_{(1  \; 3)}(|x|) + 2 \uno_{[0  \; 1]}(|x|)$. Suponiendo que
     $\X  = (-3  \; 3)$,  claramente $\X_{[0]}  = [  -1 \;  1]$ no  es  de medida
     nula. (b): Para $X$ uniforme sobre  $\X$, la variable $Y = g(X)$ resulta con
     funci\'on de repartici\'on $F_Y$ no continua.  }

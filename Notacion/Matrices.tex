@@ -44,8 +44,8 @@ $(i,j)$-\'esima \ $M_{j,i}$\\[2.5mm]
 $\sigma \in \perm_K$ para un tensor $M \in \Mat_{d_1,\ldots,d_K}(\Kset)$, \ie
 $\tau_\sigma [M] \in \Mat_{d_{\sigma(1)},\ldots,d_{\sigma(K)}}(\Kset)$ \ es de
 componente \ $M_{i_{\sigma(1)},\ldots,i_{\sigma(K)}}$.\vspace{1mm}\newline Para
-$u \ne v$, $\sigma_{(u,v)}(i) = v \un_{\{u\}}(i) + u \un_{\{v\}}(i) + i
-(1-\un_{\{u,v\}}(i))$, se usa m\'as simplemente \ $\tau_{(u,v)} \equiv
+$u \ne v$, $\sigma_{(u,v)}(i) = v \uno_{\{u\}}(i) + u \uno_{\{v\}}(i) + i
+(1-\uno_{\{u,v\}}(i))$, se usa m\'as simplemente \ $\tau_{(u,v)} \equiv
 \tau_{\sigma_{(u,v)}}$.\vspace{1mm}\newline Nota: para $K = 2, \:
 \tau_{(1,2)}[M] = M^t$}\\[2.5mm]
 \hline
@@ -116,17 +116,17 @@ $I_d \quad , \quad I$ & Matriz cuadrada $d \times d$, identidad, \ $I \equiv I_d
    0   & \cdots &    0   &   1
    \protect\end{bmatrix}$\newline
 %
-Por convenci\'on, $I_0 = []$ matriz ``vacia'' 
-%= \Diag(\un)$
+Por convenci\'on, $I_0 \igualc [ \: ]$ matriz ``vacia'' 
+%= \Diag(\uno)$
 %\vspace{1mm}\newline (se saca el \'indice cuando no hay ambiguedad)
 \\[2.5mm]
 \hline
 %
-$\un$ & Vector de componentes iguales a 1, \ $\un = \protect\begin{bmatrix} 1\\
+$\uno$ & Vector de componentes iguales a 1, \ $\uno = \protect\begin{bmatrix} 1\\
 \vdots \\ 1 \protect\end{bmatrix}$.\vspace{1mm}\\[2.5mm]
 \hline
 %
-$\un_i$ & Vector de componentes $j$-\'esima iguales a $\un_{\{i\}}(j)$\\[2.5mm]
+$\uno_i$ & Vector de componentes $j$-\'esima iguales a $\uno_{\{i\}}(j)$\\[2.5mm]
 \hline
 %
 $\TriS_d(\Kset)$ & Conjunto de las matrices de \ $\Mat_{d,d}(\Kset)$, \
@@ -175,8 +175,8 @@ $\Sti_{d,1}(\Rset) = \Sset_d$ \ y \ $\Sti_{d,1}(\Cset) = \SCset_d$\\[2.5mm]
 \hline
 %
 $\Perm_d$ & (tambi\'en) Conjunto de las matrices de permutaciones $d \times d$\vspace{1mm}\newline $\displaystyle \Perm_d = \left\{
-\Sigma = \protect\begin{bmatrix} \un_{\sigma(1)} & \cdots &
-\un_{\sigma(d)} \end{bmatrix}^t\protect = \sum_{i=1}^d \un_i \un_{\sigma(i)}^t,
+\Sigma = \protect\begin{bmatrix} \uno_{\sigma(1)} & \cdots &
+\uno_{\sigma(d)} \end{bmatrix}^t\protect = \sum_{i=1}^d \uno_i \uno_{\sigma(i)}^t,
 \quad \sigma \in \perm_d \right\}$\vspace{1mm}\newline Tiene exactamente un $1$
 en cada linea y en cada columna, y los dem\'as elementos son
 $0$\vspace{1mm}\newline Notar que \ $\forall \: \Sigma \in \Perm_d, \quad
@@ -206,7 +206,7 @@ completud}.\label{foot:Notaciones:ResolucionlIdentitad}},\vspace{1mm}\newline $\
 \P_{d,k}(\Kset) = \left\{ \left( M_1 , \ldots , M_k \right) \in \Pos_d(\Kset)^k \tq
 \sum_{i=1}^k M_i = I  \right\}$
 % \SZ{$(k-1)$-simplex  estandar}~\footnote{\SZ{Politopio,  convex hull  $\left\{
-%       \un_i   \right\}_{i=1}^k$}}    \SZ{de   \   $Rset_+^k$,   i.e.,}\newline
+%       \uno_i   \right\}_{i=1}^k$}}    \SZ{de   \   $Rset_+^k$,   i.e.,}\newline
 % \SZ{$\displaystyle  \Simp_{k-1} =  \left\{ (M_1  ,  \ldots ,  M_k) \in  \left(
 %       \Pos_d^+(\Rset) \right)^k, \:  \sum_{i=1}^k M_i = I \right\}$  donde $I$ es
 %   la  identidad (ver  m\'as abajo)}\newline  \SZ{Que suman  a la  identidad es
@@ -245,7 +245,7 @@ $.\vspace{1mm}\\[2.5mm]
 %
 $\Diag(\cdot)$ & Matriz diagonal  con los componentes del vector argumento en su
 diagonal,\vspace{1mm}\newline para \ $\displaystyle v \in \Kset^d,$\vspace{1mm}\newline
-$\displaystyle \Diag(v) = \sum_{i=1}^d \left( \un_i \un_i^t \right) v_i =
+$\displaystyle \Diag(v) = \sum_{i=1}^d \left( \uno_i \uno_i^t \right) v_i =
 \protect\begin{bmatrix}
   v_1  &   0    & \cdots &    0   \\[-.25mm]
    0   & \ddots & \ddots & \vdots \\[-1mm]
@@ -256,7 +256,7 @@ $\displaystyle \Diag(v) = \sum_{i=1}^d \left( \un_i \un_i^t \right) v_i =
 %$\Diag$ & Matriz diagonal (bloc) con el argumento en su
 %diagonal,\vspace{1mm}\newline para \ $\displaystyle V = (V_1,\ldots,V_n) \in
 %\Mat_{d_1,d_1}(\Kset) \times \cdots \times \Mat_{d_n,d_n}(\Kset),$\vspace{1mm}\newline
-%$\Diag(V) = \sum_{i=1}^d \left( \un_i \un_i^t \right) \otimes V_i =
+%$\Diag(V) = \sum_{i=1}^d \left( \uno_i \uno_i^t \right) \otimes V_i =
 %\protect\begin{bmatrix}
 %  V_1  &   0    & \cdots &    0   \\
 %   0   & \ddots & \ddots & \vdots \\
@@ -268,30 +268,30 @@ $\displaystyle \Diag(v) = \sum_{i=1}^d \left( \un_i \un_i^t \right) v_i =
 %$J$ & Matriz de comutaci\'on~\footnote{M\'as generalmente es definida sobre \
 %$\Mat_{d d',d d'}(\Kset)$ \ y los bloques son en \
 %$\Mat_{d,d'}(\Kset)$~\cite{MagNeu79, NeuWan83}.\label{Foot:MP:ComutacionMatriz}} de
-%\ $\Mat_{d^2,d^2}(\Kset)$ \ de bloques \ $J_{i,j} = \un_j \un_i^t \in
+%\ $\Mat_{d^2,d^2}(\Kset)$ \ de bloques \ $J_{i,j} = \uno_j \uno_i^t \in
 %\Mat_{d,d}(\Kset)$ \ poniendo la componente (linea) \ $i$-\'esima de un vector
 %(matriz) \ en la componente (linea) \ $j$-\'esima,\vspace{1mm}\newline
 %%
-%$ \displaystyle J  = \sum_{i,j=1}^d \left( \un_i \un_j^t  \right) \otimes \left(
-%  \un_j \un_i^t \right) =
+%$ \displaystyle J  = \sum_{i,j=1}^d \left( \uno_i \uno_j^t  \right) \otimes \left(
+%  \uno_j \uno_i^t \right) =
 %\protect\begin{bmatrix}
-%\un_1 \un_1^t & \un_2 \un_1^t & \cdots & \un_d \un_1^t\\
+%\uno_1 \uno_1^t & \uno_2 \uno_1^t & \cdots & \uno_d \uno_1^t\\
 %    \vdots    &    \vdots     & \cdots &     \vdots   \\
-%\un_1 \un_d^t & \un_2 \un_d^t & \cdots & \un_d \un_d^t
+%\uno_1 \uno_d^t & \uno_2 \uno_d^t & \cdots & \uno_d \uno_d^t
 %\protect\end{bmatrix}$.\vspace{1mm}\\[2.5mm]
 %\hline
 %%
 %$K$ & Matriz de no-comutaci\'on~\footref{Foot:MP:ComutacionMatriz} de \
-%$\Mat_{d^2,d^2}(\Kset)$ \ de bloques \ $K_{i,j} = \un_i \un_j^t \in \Mat_{d,d}(\Kset)$
+%$\Mat_{d^2,d^2}(\Kset)$ \ de bloques \ $K_{i,j} = \uno_i \uno_j^t \in \Mat_{d,d}(\Kset)$
 %\ poniendo la componente (linea) \ $j$-\'esima de un vector (matriz) \ en la
 %posici\'on (linea) \ $i$-\'esima,\vspace{1mm}\newline
 %%
-%$ \displaystyle K  = \sum_{i,j=1}^d \left( \un_i \un_j^t  \right) \otimes \left(
-%  \un_i \un_j^t \right)
+%$ \displaystyle K  = \sum_{i,j=1}^d \left( \uno_i \uno_j^t  \right) \otimes \left(
+%  \uno_i \uno_j^t \right)
 %\protect\begin{bmatrix}
-%\un_1 \un_1^t & \un_1 \un_2^t & \cdots & \un_1 \un_d^t\\
+%\uno_1 \uno_1^t & \uno_1 \uno_2^t & \cdots & \uno_1 \uno_d^t\\
 %   \vdots     &    \vdots    & \cdots &     \vdots   \\
-%\un_d \un_1^t & \un_d \un_2^t & \cdots & \un_d \un_d^t
+%\uno_d \uno_1^t & \uno_d \uno_2^t & \cdots & \uno_d \uno_d^t
 %\protect\end{bmatrix}$.\vspace{1mm}\\[2.5mm]
 %\hline
 %
@@ -299,7 +299,7 @@ $G^{(i,j)}$ & Matriz de agregaci\'on de \ $\Mat_{k-1,k}(\Kset)$. Para $i < j$,
 multiplicado a un vector $x \in \Kset^k$ se saca la $j$-\'esima componente de
 $x$ y se reemplaza la $i$-\'esima por $x_i + x_j$ y similarmente por simetr\'ia
 para $i > j$:\vspace{1mm}\newline $\forall \: i < j, \quad G^{(i,j)} =
-\protect\begin{bmatrix} I_{j-1} & \un_i & 0\\ 0 & 0 &
+\protect\begin{bmatrix} I_{j-1} & \uno_i & 0\\ 0 & 0 &
 I_{k-j} \end{bmatrix}\protect, \quad G^{(j,i)} =
 G^{(i,j)}$.\vspace{1mm}\\[2.5mm]
 \hline
@@ -360,7 +360,7 @@ $\|\cdot\|_F$ & Norma de Frobenius, $\| M \|_F = \sqrt{\Tr\left( M M^\dag
 \hline
 %
 $\|\cdot\|_{q,p}$ & Norma de H\"older inducida, $\displaystyle \| M \|_{q,p} =
-\sup_{x \in \Mat_{d',1}(\Kset)^*} \frac{\| M x\|_q}{\| x \|_p}$\\[2.5mm]
+\sup_{x \in \Mat_{d',1}(\Kset)_0} \frac{\| M x\|_q}{\| x \|_p}$\\[2.5mm]
 \hline
 %
 $\odot$ & Producto de Schur, o componente a componente:\vspace{1mm}\newline $( M

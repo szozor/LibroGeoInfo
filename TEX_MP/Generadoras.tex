@@ -58,7 +58,7 @@ anillos~\footnote{Para \ $i =  1, \ldots, d$, sean los reales \  $r_i, \: R_i$ \
     \cdots & j_d  \end{bmatrix}^t \in \{ -1  \; +1 \}^d$ \ y  a continuaci\'on \
   $\D_j  =  \optimes_{i=1}^d  \left(  j_i  \Rset_+  \right)$  \  ($  -\Rset_+  =
   \Rset_-$),  \  los  \ $2^d$  \  hipercuadrantes  de  \ $\Rset^d$.   Notamos  \
-  $\rho_{j_i} = r_i \un_{\{-1\}}(j_i)  + R_i \un_{\{+1\}}(j_i)$.  Supongamos que
+  $\rho_{j_i} = r_i \uno_{\{-1\}}(j_i)  + R_i \uno_{\{+1\}}(j_i)$.  Supongamos que
   en   cada  hipercuadrante  \   $\displaystyle  \int_{\D_j}   \,  \prod_{i=1}^d
   \rho_{j_i}^{x_i} \,  dP_X(x) < +\infty$. \ Es  sencillo ver que \  para \ $x_i
   \in \left(  j_i \Rset_+ \right)$,  \ $r_i \le  |z_i| \le R_i  \:\: \Rightarrow
@@ -153,7 +153,7 @@ en ingles):
   \]
   %
   momento  factorial~\footnote{Recuerdense que $\PocD{x}{n}  = \prod_{i=0}^{n-1}
-    (x-i), \quad n > 0$ \  s\'imbolo de Pochhammer, con la convenci\'on $(x)_0 =
+    (x-i), \quad n > 0$ \  s\'imbolo de Pochhammer, con la convenci\'on $(x)_0 \igualc
     1$; ver nota de pie~\ref{Foot:MP:Pochhammer}.} de $X$.
 \end{lema}
 
@@ -596,7 +596,7 @@ $P_X$ \ a partir de \ $\Phi_X$~\cite{AshDol99, Sas13}:
   =\\[2.5mm]
   %
    \displaystyle \int_{\Rset^d} \prod_{j=1}^d \left(
-     \un_{\left(  a_j \;  b_j \right)}(x_j)  +  \frac12 \un_{\left\{  a_j \;  b_j
+     \uno_{\left(  a_j \;  b_j \right)}(x_j)  +  \frac12 \uno_{\left\{  a_j \;  b_j
        \right\}}(x_j) \right) dP_X(x)
   \end{array}
   \]
@@ -675,7 +675,7 @@ veces \ $\displaystyle \operatorname{vp} \!  \int_\Rset$, integral {\it en valor
       \sin(\omega_j  (a_j -  x_j))}{\omega_j} \right|  < 2$  \  conjuntamente al
   teorema de convergencia dominada~\ref{Teo:MP:ConvergenciaDominada} permitiendo
   permutar integral  y l\'imite,  y de $\sign(b_j-x_i)  - \sign(a_j-x_i) =  2 \,
-  \un_{\left(   a_j   \;  b_j   \right)}(x_j)   +   \un_{\left\{   a_j  \;   b_j
+  \uno_{\left(   a_j   \;  b_j   \right)}(x_j)   +   \uno_{\left\{   a_j  \;   b_j
     \right\}}(x_j)$.
 \end{proof}
 
@@ -738,7 +738,7 @@ probabilidad.
   cas general acotando  el integrande, por el teorema  de convergencia dominada,
   se  puede  intercambiar  l\'imite  e  integral,  as\'i  que  \  $\displaystyle
   \lim_{x_j   \to   \infty}    \frac{\sin(w_j   (y_j-x_j))}{w_j(   y_j-x_j)}   =
-  \un_{x_j}(y_j)$, lo cierra la prueba
+  \uno_{x_j}(y_j)$, lo cierra la prueba
 \end{proof}
 
 Como las  funciones \  $G_X$ \  y \ $M_X$,  la funci\'on  caracter\'istica tiene
@@ -845,7 +845,7 @@ que se va a revelar frecuentement muy \'util:
   \ie
   %
   \[
-  X  \egald  Y \quad  \Longrightarrow  \quad  f(X) \, \egald \, f(Y)
+  X  \iguald  Y \quad  \Longrightarrow  \quad  f(X) \, \iguald \, f(Y)
   \]
 \end{teorema}
 %
@@ -1028,10 +1028,10 @@ las relaciones siguientes (formula  de Leonov y Shiryayev~\cite{LeoShi59, Shi84,
   %
   \[\left\{\begin{array}{lll} \zeta_{i_1,\ldots,i_k}[X] & = & \displaystyle
   \sum_{\pi \in \Pi_k} \prod_{B \in \pi} \Big( \kappa_{i_B}[X] - m_{X_{i_B}}
-  \un_{\{1\}}(|B|) \Big) \\[5mm]
+  \uno_{\{1\}}(|B|) \Big) \\[5mm]
   %
   \kappa_{i_1,\ldots,i_k}[X]  &  = &  \displaystyle  m_{X_{i_1}}
-  \un_{\{1\}}(k) +  \sum_{\pi \in  \Pi_k}
+  \uno_{\{1\}}(k) +  \sum_{\pi \in  \Pi_k}
   (-1)^{|\pi|-1}  \Gamma(|\pi|) \prod_{B \in  \pi} \zeta_{i_B}[X]
   \end{array}\right.\]
   %

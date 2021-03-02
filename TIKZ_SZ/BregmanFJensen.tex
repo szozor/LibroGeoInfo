@@ -1,53 +1,93 @@
-\begin{tikzpicture}[xscale=8,yscale=6.5]
+\begin{tikzpicture}
 \shorthandoff{>}
 %
-\pgfmathsetmacro{\u}{.22};
-\pgfmathsetmacro{\v}{1};
-\pgfmathsetmacro{\al}{.65};
-\pgfmathsetmacro{\mid}{\al*\u+(1-\al)*\v};
-\pgfmathsetmacro{\dt}{.02}; % debut trace tangente
-\pgfmathsetmacro{\ft}{1.05}; % fin trace tangente
 \pgfmathdeclarefunction{sha}{1}{\pgfmathparse{#1*ln(#1)}}
 \pgfmathdeclarefunction{shap}{1}{\pgfmathparse{1+ln(#1)}}
 %
+% Divergencia de Bregman
+\begin{scope}[scale=5]
+\pgfmathsetmacro{\u}{.25};
+\pgfmathsetmacro{\v}{.8};
+\pgfmathsetmacro{\al}{.65};
+\pgfmathsetmacro{\mid}{\al*\u+(1-\al)*\v};
+\pgfmathsetmacro{\dt}{.0225}; % debut trace tangente
+\pgfmathsetmacro{\ft}{1.05}; % fin trace tangente
+%
 % Axes et f convexe (t log t ici)
-\draw[>=stealth,->] (-.1,-.5)--(1.6,-.5) node[right]{\small $t$};
-\draw[>=stealth,->] (0,-.7)--(0,.3) node[above]{\small $f(t)$};
-\draw[thick,domain=.005:1.2,samples=199] (0,0)-- plot (\x,{sha(\x)});
+\draw[>=stealth,->] (-.05,-.5)--(1.1,-.5) node[right]{\small $t$};
+\draw[>=stealth,->] (0,-.7)--(0,.15) node[above]{\small $f(t)$};
+\draw[thick,domain=.005:.95,samples=199] (0,0)-- plot (\x,{sha(\x)});
 %
 %\draw[dotted] (\u,-.5)--(\u,{sha(\u)});
 \draw (\u,-.5)--(\u,-.52) node[below]{\small $u_1$};
-\draw (\v,-.5) node[below right]{\small $u_2$};
+\node[below right] at (\v,-.5){\small $u_2$};
 %
 % ---
 % tangente en u_1 y B_f(u_2 || u_1)
-\draw (\dt,{shap(\u)*(\dt-\u)+sha(\u)})--(\ft,{(1+ln(\u))*(\ft-\u)+sha(\u)})
-node[right,scale=.7]{$\quad f'(u_1) \, (t-u_1) + f(u_1)$};
+\draw (\dt,{shap(\u)*(\dt-\u)+sha(\u)})--(\ft,{shap(\u)*(\ft-\u)+sha(\u)})
+node[below left,scale=.7]{$\quad f'(u_1) \, (t-u_1) + f(u_1)$};
 %
 \draw[>=stealth,<->] (\v,{shap(\u)*(\v-\u)+sha(\u)}) -- (\v,{sha(\v)});
-\draw (\v,{.5*(shap(\u)*(\v-\u)+sha(\u)+sha(\v))}) node[right,scale=.9]{$B_f(u_2\|u_1)$};
+\node[right,scale=.9] at (\v,{.5*(shap(\u)*(\v-\u)+sha(\u)+sha(\v))}){$B_f(u_2\|u_1)$};
 %
 % ---
-% tangente en pi_1 iu_1 + pi_2 u_2
-% y B_f(u_1 || pi_1 u_1 + pi_2 u_2)
-%\draw[dashed] (\dt,{shap(\mid)*(\dt-\mid)+sha(\mid)})--
-%(\ft,{shap(\mid)*(\ft-\mid)+sha(\mid)})
-%node[right,scale=.7]{$\quad \displaystyle f'\big(\sum_i \pi_i u_i \big)
-%\, \left( t-\sum_i \pi_i u_i \right) + f\left( \sum_i \pi_i u_i \right)$};
+% corde u_1 - u_2 et f-Jensen
+%\draw[dashed] (\u,{sha(\u)})--(\v,{sha(\v)});
 %%
-%\draw[>=stealth,dashed,<->] (\v+.01,{shap(\mid)*(\v-\mid)+sha(\mid)})
-% -- (\v+.01,{sha(\v)});
-%\draw (\v,{.5*(shap(\mid)*(\v-\mid)+sha(\mid)+sha(\v))}) 
-%node[right,scale=.7]{$B_f\big( u_1\|\sum_i \pi_i u_i \big)$};
+%\draw[>=stealth,<->] (\mid,{sha(\mid)})--(\mid,{\al*sha(\u)+(1-\al)*sha(\v)});
+%\draw (\mid,{.75*sha(\mid)+.25*(\al*sha(\u)+(1-\al)*sha(\v))})
+%node[above left,scale=.85]{$J_f^\pi(u_1,u_2)$};
+%\draw (\mid,-.5) -- (\mid,-.52) node[below]{\small $u_\pi$};
+%$\begin{array}{c}u_\pi\\[-2mm]=\\\pi_1 u_1 + \pi_2 u_2\end{array}$};
+%node[right,scale=.9]{$B_f(u_2\|u_1)$};
+\node at (.6,-.75){(a)};
+\end{scope}
+%
+%
+% Vinculo Jensen Bregman
+% -----------------------
+%
+\begin{scope}[xshift=8cm,xscale=6,yscale=5]
+\pgfmathsetmacro{\u}{.2};
+\pgfmathsetmacro{\v}{1};
+\pgfmathsetmacro{\al}{.7};
+\pgfmathsetmacro{\mid}{\al*\u+(1-\al)*\v};
+\pgfmathsetmacro{\dt}{.0225}; % debut trace tangente
+\pgfmathsetmacro{\ft}{1.05}; % fin trace tangente
+%
+% Axes et f convexe (t log t ici)
+\draw[>=stealth,->] (-.05,-.5)--(1.2,-.5) node[right]{\small $t$};
+\draw[>=stealth,->] (0,-.7)--(0,.2) node[above]{\small $f(t)$};
+\draw[thick,domain=.005:1.1,samples=199] (0,0)-- plot (\x,{sha(\x)});
+%
+%\draw[dotted] (\u,-.5)--(\u,{sha(\u)});
+\draw (\u,-.5)--(\u,-.52) node[below]{\small $u_1$};
+\draw (\v,-.5)--(\v,-.52) node[below]{\small $u_2$};
+%
+% ---
+% tangente en pi_1 u_1 + pi_2 u_2  y  B_f(u_i || pi_1 u_1 + pi_2 u_2)
+\draw (\dt,{shap(\mid)*(\dt-\mid)+sha(\mid)})--(\ft,{shap(\mid)*(\ft-\mid)+sha(\mid)});
+\node[below,scale=.7] at
+(\ft,{shap(\mid)*(\ft-\mid)+sha(\mid)-.02}){$\quad f'(u_1) \, (t-u_1) + f(u_1)$};
+%
+\draw[>=stealth,<->] (\v,{shap(\mid)*(\v-\mid)+sha(\mid)}) -- (\v,{sha(\v)});
+\node[right,scale=.8] at
+(\v,{.5*(shap(\mid)*(\v-\mid)+sha(\mid)+sha(\v))}){$B_f(u_2\| u_\pi)$};
+%
+\draw[>=stealth,<->] (\u,{shap(\mid)*(\u-\mid)+sha(\mid)}) -- (\u,{sha(\u)});
+\node[left,scale=.8] at
+(\u,{.5*(shap(\mid)*(\u-\mid)+sha(\mid)+sha(\u))}){$B_f(u_1\| u_\pi)$};
 %
 % ---
 % corde u_1 - u_2 et f-Jensen
 \draw[dashed] (\u,{sha(\u)})--(\v,{sha(\v)});
 %
 \draw[>=stealth,<->] (\mid,{sha(\mid)})--(\mid,{\al*sha(\u)+(1-\al)*sha(\v)});
-\draw (\mid,{.75*sha(\mid)+.25*(\al*sha(\u)+(1-\al)*sha(\v))})
-node[left,scale=.85]{$J_f^\pi(u_1,u_2)$};
-\draw (\mid,-.5) -- (\mid,-.52) node[below]{\small $\pi_1 u_1 + \pi_2 u_2$};
+\node[above left,scale=.85] at
+(\mid,{.75*sha(\mid)+.25*(\al*sha(\u)+(1-\al)*sha(\v))}){$J_f^\pi(u_1,u_2)$};
+\draw (\mid,-.5) -- (\mid,-.52) node[below]{\small $u_\pi$};
 %node[right,scale=.9]{$B_f(u_2\|u_1)$};
+\node at (.6,-1){(b)};
+\end{scope}
 %
 \end{tikzpicture}

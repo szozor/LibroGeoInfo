@@ -63,9 +63,9 @@ si no~\footref{Foot:MP:ExistenciaMomentosStudent}.\\[2mm]
 Curtosis por exceso & \modif{$\displaystyle \widebar{\kappa}_X = \frac{2}{\nu-4}
 \Big( I \otimes I + \tau_{(2,3)}\big[ I \otimes I \big] + \tau_{(2,4)}\big[ I
 \otimes I \big] \Big)$
-%\sum_{i,j=1}^d \Big( \! \left( % \un_i \un_i^t \right) \otimes \left( \un_j
-%\un_j^t \right) + \left( \un_i % \un_j^t \right) \otimes \left( \un_i \un_j^t
-%\right) + \left( \un_i \un_j^t % \right) \otimes \left( \un_j \un_i^t \right) \!
+%\sum_{i,j=1}^d \Big( \! \left( % \uno_i \uno_i^t \right) \otimes \left( \uno_j
+%\uno_j^t \right) + \left( \uno_i % \uno_j^t \right) \otimes \left( \uno_i \uno_j^t
+%\right) + \left( \uno_i \uno_j^t % \right) \otimes \left( \uno_j \uno_i^t \right) \!
 %\Big)$
 }\newline si \ $\nu >
 4$; \ no existe si no~\footref{Foot:MP:ExistenciaMomentosStudent}.\\[2mm]
@@ -83,7 +83,7 @@ $\displaystyle  \Phi_X(\omega)  = \frac{\nu^{\frac{\nu}{4}}}{2^{\frac{\nu}{2}-1}
   \sqrt{\nu \, \omega^t \Sigma \omega} \right)$
 \end{caracteristicas}
 
-Nota: nuevamente se puede escribir $X \, \egald \, \Sigma^{\frac12} S + m$ \ con
+Nota: nuevamente se puede escribir $X \, \iguald \, \Sigma^{\frac12} S + m$ \ con
 \ $S \, \sim \, \T_\nu(0,I)$ \  donde \ $S$ \ es dicha {\em Student-$t$ estandar}
 y  las caracter\'isticas  de \  $X$  \ son  v\'inculadas a  las  de \  $S$ \  (y
 vice-versa) por transformaci\'on lineal (ver secciones anteriores).
@@ -214,7 +214,7 @@ Sin embargo, las distribuciones Student-$t$ tienen varias propiedades notables.
 \end{proof}
 %
 Nota: este  lema permite tambi\'en  probar el lema~\ref{Lem:MP:StabilidadLineal}
-escribiendo \ $A X + b \egald  \sqrt{\frac{\nu}{V}} A \Sigma^{\frac12} G + A m +
+escribiendo \ $A X + b \iguald  \sqrt{\frac{\nu}{V}} A \Sigma^{\frac12} G + A m +
 b$.
 
 \begin{lema}[L\'imite gaussiana]
@@ -248,7 +248,7 @@ relacionadas a la gaussiana~\cite{FanKot90, And03, KotNad04, AndKau65}:
 \end{proof}
 %
 Nota:       este       lema        permite       tambi\'en       probar       el
-lema~\ref{Lem:MP:StabilidadLinealStudentT} escribiendo \ $A X + b \egald \frac{A
+lema~\ref{Lem:MP:StabilidadLinealStudentT} escribiendo \ $A X + b \iguald \frac{A
   \Sigma^{\frac12} G}{sqrt{V}} + A m + b$.
 
 \begin{lema}[Relaci\'on con la distribuci\'on de Wishart]\label{Lem:MP:StudentTWishart}
@@ -366,31 +366,31 @@ emp\'irica  de la  media  y covarianza~\cite{Mui82,  GupNag99, BilBre99,  And03,
     \widetilde{X}_n \end{bmatrix}$. Obviamente
   %
   \[
-  \overline{\widetilde{X}} \equiv \overline{X} - m = \frac{1}{n} \, \widetilde{X} \un
+  \overline{\widetilde{X}} \equiv \overline{X} - m = \frac{1}{n} \, \widetilde{X} \uno
   \]
   %
-  con \ $\un \in  \Rset^n$ \ vector de componentes iguales a \  $1$ \ y vimos en
+  con \ $\uno \in  \Rset^n$ \ vector de componentes iguales a \  $1$ \ y vimos en
   la prueba del corolario~\ref{Cor:MP:WishartEstimacion} que
   %
   \[
-  \overline{\Sigma} = \frac{1}{n-1} \widetilde{X} \left( I - \frac{\un \un^t}{n}
+  \overline{\Sigma} = \frac{1}{n-1} \widetilde{X} \left( I - \frac{\uno \uno^t}{n}
   \right) \widetilde{X}^t
   \]
   %
-  $A = I - \frac{\un \un^t}{n} \in  \Pos_n(\Rset)$ \ es idemponenta de rango 1, con
-  $A  \un = 0$,  as\'i que  por diagonalizaci\'on~\cite{HorJoh13,  Bha97, Bha07}
+  $A = I - \frac{\uno \uno^t}{n} \in  \Pos_n(\Rset)$ \ es idemponenta de rango 1, con
+  $A  \uno = 0$,  as\'i que  por diagonalizaci\'on~\cite{HorJoh13,  Bha97, Bha07}
   tenemos
   %
   \[
   A = P \begin{bmatrix} I_{n-1} & 0\\ 0 & 0 \end{bmatrix} P^t \qquad \mbox{con} \qquad
-  P = \begin{bmatrix} B & \frac{1}{\sqrt{n}} \un \end{bmatrix}
+  P = \begin{bmatrix} B & \frac{1}{\sqrt{n}} \uno \end{bmatrix}
   \]
   %
   $P P^t = P P^t = I$ \ y
   %
   \[
   B \in \Mat_{n,n-1}(\Rset) \quad \mbox{tal que} \quad  B^t B = I \: \mbox{ y } \:
-  \un^t B = 0
+  \uno^t B = 0
   \]
   %
   Ahora,   poniendo   la  descomposici\'on   diagonal   de   \   $A$  \   en   \
