@@ -186,7 +186,7 @@ x_d}\end{bmatrix} \equiv \frac{\partial (f_1,\ldots,f_{d'})}{\partial
 \hline
 %
 $\div$ & Operador divergencia, para
-\protect$f = \begin{bmatrix} f_1 & \cdost & f_d \end{bmatrix}^t: \Rset^d \mapsto \Rset^d, \quad \div f = \sum_{j=1}^d \frac{\partial f_j}{\partial x_j} = \Tr \left( \Jac_f \right)$\protect\newline Se denota $f' = \frac{df}{dx}$ cuando $d = 1$\\[2.5mm]
+\protect$f = \begin{bmatrix} f_1 & \cdots & f_d \end{bmatrix}^t: \Rset^d \mapsto \Rset^d, \quad \div f = \sum_{j=1}^d \frac{\partial f_j}{\partial x_j} = \Tr \left( \Jac_f \right)$\protect\newline Se denota $f' = \frac{df}{dx}$ cuando $d = 1$\\[2.5mm]
 \hline
 %
 $\Hess_x$ & Matriz Hessiana: para \protect$f: \Rset^d \mapsto \Rset, \quad
@@ -203,6 +203,10 @@ f}{\partial x_1 \, \partial y_1} & \cdots & \frac{\partial^2 f}{\partial x_1
 \, \partial y_{d'}}\\ \vdots & \vdots & \vdots\\ \frac{\partial^2 f}{\partial
 x_d \, \partial y_1} & \cdots & \frac{\partial^2 f}{\partial x_d \, \partial
 y_{d'}}\end{bmatrix}$\protect\\[2.5mm]
+\hline
+%
+$\Delta$ & Operador Laplaciano, para
+$f : \Rset^d \mapsto \Rset, \quad \Delta f = \div\left( \nabla_x f \right) = \sum_{j=1}^d \frac{\partial^2 f}{\partial x_j^2} = \Tr \left( \Hess_x f \right)$\protect\newline Se denota $f'' = \frac{d^2f}{dx^2}$ cuando $d = 1$\\[2.5mm]
 \hline
 %
 $f^{(k)}$ & Derivada de orden $k \in \Nset $ para funciones $f: \Rset \mapsto

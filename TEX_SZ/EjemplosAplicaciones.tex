@@ -87,7 +87,7 @@ donde $\eta_0, \eta$  ser\'an determinados para satisfacer a  los v\'inculos. Se
 puede ver que el problema es c\'oncava  con respecto a $p$ (\ie el integrande es
 una funci\'on  c\'oncava de  $p$), as\'i  que existe  una soluci\'on  \'unica al
 problema~\cite{GelFom63, Wei74,  Bru04, Mil00,  CamMar09, Cla13, Kom14}.   En el
-caso continuo $\mu = \mu_L$ se usa la ecuaci\'on de Euler-Lagrange~ \footnote{En
+caso continuo $\mu = \mu_L$ se usa la ecuaci\'on de Euler-Lagrange~Â \footnote{En
 el caso  discreto, queda claro  que los $p_i$  se buscan anulando  las derivadas
 parciales. En  el caso  continuo, el problema  es un  extremizaci\'on functional
 conocida como problema variacional.  En el  caso general inicial, el problema es
@@ -339,7 +339,7 @@ tema  f\'isico de  ocupaci\'on de  niveles de  energ\'ia en  un  sistema cerrado
     Cara), d'Alembert quizo calcular la  probabilidad de ganar tirando dos veces
     una  moneda,  sabiendo  que  se  ganaba  cuando  apareci\'o  una  cruz.   Su
     razonamiento, falso, fue  de decir que si se tir\'o primero  una crux, no se
-    necesitaba   tirar  nuevamente  la   moneda,  así   que  haya   solamente  3
+    necesitaba   tirar  nuevamente  la   moneda,  asÃ­   que  haya   solamente  3
     posibilidades (Crux,  Cara-Cruz, Cara-Cara), conduciendo  a una probabilidad
     de   ganar    de   2/3   en   lugar   de    3/4~\cite[``Croix   ou   Pile'',
     p.~478-479]{AleBos1784}.     Implicitamente,    consider\'o    monedas    no
@@ -515,6 +515,7 @@ tema  f\'isico de  ocupaci\'on de  niveles de  energ\'ia en  un  sistema cerrado
 %
 }
 
+\SZ{Ajouter Aliaga et al. sur derivation de MQ via ce principe}
 
 
 % ================================= MinFisher
@@ -522,28 +523,57 @@ tema  f\'isico de  ocupaci\'on de  niveles de  energ\'ia en  un  sistema cerrado
 \subseccion{El principio de informaci\'on de Fisher m\'inima}
 \label{Ssec:SZ:MinFisher}
 
-Ya que la informaci\'on de  Fisher, contra-parte estadistica de la informaci\'on
-n t\'erminos entr\'opicos,  una pregunta natural es estudiar como  se traduce el
-principio de entrop\'ia m\'axima  en el marco de Fisher. La  respuesta no es tan
-sencilla del hecho que en general la  informaci\'on de Fisher es matricial en su
-marco  general,  y  m\'as  all\'a,  implica   a  la  vez  la  distribuci\'on  de
-probabilidad y su gradiente. El problema de minimisac\'on de la informaci\'on de
-Fisher bajo varios v\'inculos  no es un problema my antiguo  y no hay soluciones
-bastantes generales como para el problema de entrop\'ia m\'inima. Fue estudia en
-marcos particulares como se lo puede ver por ejemplo en~\cite{}.
+Ya  que  la informaci\'on  de  Fisher  sea  la  contra-parte estadistica  de  la
+informaci\'on n t\'erminos  entr\'opicos, una pregunta natural  es estudiar como
+se traduce el principio de entrop\'ia m\'axima en el marco de Fisher. Siendo $H$
+una medida de ignorancia,  y $J$ una medida de informaci\'on,  el problema es de
+minimizar $J$ bajo v\'inculos.  El problema no  es tan sencillo del hecho que en
+general la  informaci\'on de Fisher  es matricial en  su marco general,  y m\'as
+all\'a, implica a  la vez la distribuci\'on de probabilidad  y su gradiente. Del
+enfoque  de Eurel-Lagrange  que  vamos  a recordar  brevemente,  se obtiene  una
+ecuaci\'on  diferencial que  no se  soluciona  siempre.  As\'i,  al rev\'es  del
+principio de entrop\'ia  m\'axima, no hay soluciones generales, y  no se obtiene
+necesariamente familias  tipo exponencial  (o distribuciones de  Boltzman).  Por
+eso, fue estudiada  en marcos particulares y mayormente en  un contexto escalar,
+como se lo puede ver por ejemplo en~\cite{Fri98, Fri04}.
 
-\SZ{Caso no parametrica,
-}
+El  problema  de  minimizaci\'on  de  la informaci\'on  de  Fisher  bajo  varios
+v\'inculos no es un problema my antiguo.  Se menciono por ejemplo en trabajos de
+Huber  desde  1964~\cite{Hub64}  (ver  tambi\'en~\cite{Hub92})  o  el  libro  de
+Kagan \& Rao en 1973~\cite[Cp.~13 y p.~465]{KagLin73}, pero como un problema sin
+soluci\'on (aparte en dos casos  particulares).  Este tema tom\'o importancia en
+las  decadas  1990--2000,  en  un  lado  en  f\'isica  bajo  el  impulso  de  R.
+Frieden~\cite{Fri89},  A.    \&  A.   R.    Plastino,  B.   H.    Soffer,  entre
+otros~\cite{Fri89,  Fri90,  FriSof95,  FriPla99, FriPla02,  Fri98,  Fri04}.   En
+particular,  se   enmarca  en  f\'isica   y  entre  otros  se   desaroll\'o  una
+termodinamica basada sore  la informaci\'on de Fisher en lugar  de le entrop\'ia
+de Shannon (Boltzman). En  el otro lado, en las mismas  decadas, el problema fue
+estudiado en matematica, estadistica y  procesamiento de se\~nales en particular
+por    J.    M.    Bornwein   y    colabordores~\cite{BorLew96,   BorLew95}    o
+Uhrmann-Klingen~\cite{Uhr92,  Uhr95} (ver  tambi\'en~\cite{Ziv98, BerVig09})  en
+marcos  particulares (ej.   distribuciones  escalares de  soporte acotados,  y/o
+v\'inculos de momentos de orden 1 y 2, o enteros,\ldots).
 
-Siendo  $J$ una  matriz,  se enfoca  sobre su  traza,  informaci\'on escalar  de
-Fisher.  Sea   entonces  \   $X$  \  variable   aleatoria  viviendo   sobre  (de
-distribuci\'on de probabilidad de soporte) \  $X(\Omega) = \X \subset \Rset^d$ \
-con \  $K \ge 0$  \ momentos \  $\Esp\left[ M_k(X) \right]  = m_k$ \  fijos, con
-$M_x: \X  \to \Rset$. Suponemos que  $X$ tiene una densidad  \ $p$ \ de  clase \
-$C^1$. El problema  de informaci\'on de Fisher m\'inima se  formula de la manera
-siguiente:   sean    \   $M(x)   =    \begin{bmatrix}   M_1(x)   &    \cdots   &
-M_K(x)  \end{bmatrix}^t$   \  y  \   $m  =   \begin{bmatrix}  m_1  &   \cdots  &
-m_K \end{bmatrix}^t$ (si $K = 0$ \ $M$ desaparece)
+
+\SZ{Primero,  hay  que  notar  que  si  se  considera  la  informaci\'on  de  Fisher
+parametrica, uno se mete en una familia y el problema se reduce a un problema de
+optimizaci\'on  de una  funci\'on  de  un par\'ametro.   Si  se quiere  a\~nadir
+v\'inculos,  el nu\'ero  debe ser  necesariamente menor  que la  dimensi\'on del
+parametro. Luo'02}
+
+\SZ(M\'as  interesante es  el   caso no  parametrico,  que  parece realmente  la
+contra-parte \`a  la Fisher  del principio  de entrop\'ia  m\'axima}.  Si  en la
+literatura  se  trata  mayormente  del  caso  de  densidades  de  probabilidades
+univariadas,  los estudios  pueden  ser extendidos  al  caso multivariado,  bajo
+resctricciones: siendo $J$  una matriz, se enfoca sobre  su traza, informaci\'on
+escalar de Fisher (ej.  ver~\cite{Fri98, Fri04}).  Sea entonces \ $X$ \ variable
+aleatoria  viviendo  sobre (de  distribuci\'on  de  probabilidad de  soporte)  \
+$X(\Omega) =  \X \subset \Rset^d$  \ con  \ $K \ge  0$ \ momentos  \ $\Esp\left[
+M_k(X) \right] = m_k$ \ fijos, con  $M_k: \X \to \Rset$. Suponemos que $X$ tiene
+una densidad \  $p$ \ de clase  \ $C^1$. El problema de  informaci\'on de Fisher
+m\'inima  se formula  de la  manera siguiente:  sean \  $M(x) =  \begin{bmatrix}
+M_1(x)  & \cdots  &  M_K(x) \end{bmatrix}^t$  \  y \  $m  = \begin{bmatrix}  m_1
+& \cdots & m_K \end{bmatrix}^t$ (si $K = 0$ \ $M$ desaparece)
 %
 \[
 p_{\mathrm{fm}}  =   \argmin_p  \Tr(J(p))  \qquad   \mbox{sujeto  a}  \qquad   p  \ge
@@ -572,17 +602,19 @@ problema~\cite{GelFom63, Wei74,  Bru04, Mil00,  CamMar09, Cla13, Kom14}. }
 En  el  context de  distribuciones  con  densidades  de probabilidad,  de  clase
 $C^1(\X,\Rset_+)$,  se puede  de nuevo  usar el  enfoque de  Euler-Lagrange. Sin
 embardo, eso conduce a una ecuaci\'on  diferencial no lineal, dificil a resolver
-(a\'un  numericamente).  En la  literatura,  se  encuentra  (a  lo m\'as  qe  lo
+(a\'un  numericamente).  En la  literatura, se  encuentra  (a  lo m\'as  qe  lo
 conocemos) dos enfoques:
 %
 \begin{itemize}
-\item El  primero  consiste  a  escribir  \  $p(x) =  \exp\left(  -  \int  \psi(x)  \,
-dx \right)$.  Por una parte, eso  permite cancelar el v\'inculo  de positivdad y
-luego  conduce a  una ecuaci\'on  conocida en  varios casos  como ecuaci\'on  de
-Riccati. Esa es muy estudiada~\cite{}.
+\item El primero que  se encuentra tratando del caso univariado  consiste a escribir \
+$\displaystyle p(x) = \exp\left( - \int  \psi(x) \, dx \right)$.  Por una parte,
+eso permite cancelar el v\'inculo de positivdad y luego conduce a una ecuaci\'on
+conocida   en  varios   casos  como   ecuaci\'on   de  Riccati.    Esa  es   muy
+estudiada~\cite{BorLew96, BorLew96, Ziv98, FriPla99}.
 %
-\item El secundo enfoque  consiste a escribir \ $p(x) = \left| \psi(x) \right|^2$. De nuevo, eso permite cancelar el v\'inculo de positivdad. M\'as all\'a, $\Psi$ juega un rol de funci\'on de onda en mec\'anica cu\'antica y precisamente va a satisfacer una acuaci\'on tipo Schr\"odinger~\cite{}.
+\item El secundo enfoque  consiste a escribir \ $p(x) =  \psi^2(x)$. De nuevo, eso permite cancelar el v\'inculo de positivdad. M\'as all\'a, $\psi$ juega un rol de funci\'on de onda en mec\'anica cu\'antica y precisamente va a satisfacer una acuaci\'on tipo Schr\"odinger~\cite{Fri89, Fri90, FriSof95, FriPla99, FriPla02, Fri98, Fri04} o~\cite{BorLew96, BorLew95, BerVig09}.
 \end{itemize}
+
 
 En ambos casos, tal como en la escritura con la densidad $p$, tenemos a resolver
 la minimizaci\'on de una integral bajo la forma
@@ -610,39 +642,78 @@ donde \ $\div$ \ es es operador divergencia (ver notaciones), o sea
 \]
 
 
+\SZ{Ajouter Villani et al. sur derivation de physique via ce principe}
+
+
+
 
 %%%%%%%%%%
 \paragraph{Enfoque ``\`a la Schr\"odinger''}
 
-
-Sea $p(x)  = \psi^2(x)$. Entonces,  se nota  inmediatamente que
-$\left\| \nabla_x p \right\|^2 = 4 \, p \, \left\| \nabla_x p \right\|^2$ dando el problema de minimizaci\'on (minimizar $J$ o $J/4$ es equivalente)
+Este enfoque es el que aparece bajo el impulso de R.  Frieden, y que se encentra
+mayoriamente en la  literatura.  Consiste a escribir \ $p(x)  = \psi^2(x)$ \ con
+$\psi$     lamada    ``amplituda''~\footnote{Como     lo    menciono     Frieden
+en~\cite{FriSof95}, aparece que R. Fisher mismo uso la amplituda $\psi$ en lugar
+de la  densidad de probabilidad, a  pesar de que no  quizo hacer (aparentemente)
+ninguna conecci\'on con la  mec\'anica cu\'antica~\cite{Fis}}. Entonces, se nota
+inmediatamente que $\left\|  \nabla_x p \right\|^2 = 4 \,  p \, \left\| \nabla_x
+p \right\|^2$  dando el  problema de  minimizaci\'on (minimizar  $J$ o  $J/4$ es
+equivalente)
 %
 \[
 \psi_{\mathrm{fm}} = \argmin_\psi \int_\X  \left( \left\| \nabla \psi(x) \right\|^2 + \left( \eta_0 \,  
   + \eta^t M(x) \right) \, \psi^2(x) \right)  \, dx
 \]
 %
-En otros t\'erminos, $\displaystyle \L(x , \psi , \psi') = \left( \left\| \nabla \psi(x) \right\|^2 + \left( \eta_0 \,  
-  + \eta^t M(x) \right) \, \psi^2(x) \right)$ que da la ecuaci\'on de Euler-Lagrange
+En    otros    t\'erminos,    $\displaystyle    \L(x    ,    \psi    ,    \psi')
+  =  \left( \left\|  \nabla  \psi(x)  \right\|^2 +  \left(  \eta_0  \, +  \eta^t
+  M(x) \right)  \, \psi^2(x)  \right)$ que da  la ecuaci\'on  de Euler-Lagrange,
+  notando que $\div\left( \nabla_x \psi \right)  = \Delta \psi$ es el Laplaciano
+  de $\psi$ (ver notaciones)
 %
 \[
-\div\left( \nabla_x \psi \right) - \eta^t M \, \psi =  \eta_0 \, \psi
+%\div\left( \nabla_x \psi \right) - \eta^t M \, \psi =  \eta_0 \, \psi
+\Delta \psi - \eta^t M \, \psi =  \eta_0 \, \psi
 \]
 %
-Esta ecuaci\'on es nada m\'as que la ecuaci\'on multidimensional de Schr\"odinger~\cite{} con un potencial de la forma
+Esta  ecuaci\'on   es  nada   m\'as  que   la  ecuaci\'on   multidimensional  de
+Schr\"odinger estacionar~\cite{} con un potencial de la forma
 %
 \[
 V(x) =  \eta^t M(x)
 \]
+%
+Con tal enfoque, se puede ver  la ecuaci\'on de Schr\"odinger (estacionar) de la
+mecanica cu\'antica, con $\psi$ que describe  los estado de un sistema sujecto a
+un  potencial,  como  derivando  del  problema  de  Fisher  m\'inimo.  En  otros
+t\'erminos,  saliendo  de  la  ecuaci\'on  de  Schr\"odinger  que  satisface  la
+funci\'on de onda $\psi$, la  funci\'on $\psi^2(x)$ que tiene la significaci\'on
+de de la densidad de probabilidad que el sistema este al estado \ $x$ \ a traves
+e la  regal de Born~\footnote{Si esta  regla fue propuesta inicialmente  por Max
+Born  in  1926~\cite{Bor26}, pero  fue  aplicada  a  la  funci\'on de  onda  (en
+posici\'on)     luego      por     Wolfgang      Pauli~\cite{Pau27},     Pascual
+Jordan~\cite{Jor27:09,    Jor27:11},   Werner    Heisenberg~\cite{Hei27},   Paul
+Dirac~\cite{Dir27} o Johann  von Neumann~\cite{Neu32}.  Ver~\cite{MehRec00} para
+notas   historicas.}~\cite{Bor26}  puede   ser   vista  como   la  densidad   de
+informaci\'on de Fisher m\'inima~\footnote{De hecho,  se puede incluir el tiempo
+y llegar a la ecuaci\'on de Schr\"odinger m\'as general, ver~\cite{Fri98, Fri04}
+y referencias. Eso va m\'as all\'a de la meta de este p\'arafo.}.
+%Coneciones  entre $J$ y al f\'isica fueron  estudiado  intensivamente  en  particular  por  \SZ{Frieden y colaboradores
+%Plastino...}
 
+Se notar\'a que, seg\'un los v\'inculos, se re-ecuentran varias ecuaciones de la
+f\'isica con  soluciones coocidas~\cite{Fri98, Fri04}.  Entre  otros, citamos la
+ecuaci\'on   de   Klein-Gordon~\cite{Fri90,    FriSof95,   Fri98,   Fri04},   de
+Helmoltz~\cite{Fri90, FriSof95,  Fri98, Fri04}, de  Dirac~\cite{FriSof95, Fri98,
+Fri04}.
+
+
+\SZ{Soporte aotado y momentos de orden 1 y 2~\cite{BerVig09}}
 
 %%%%%%%%%%
 \paragraph{Enfoque ``\`a la Riccati''}
 
-% Riccati 1720
-% https://fr.wikipedia.org/wiki/Équation_de_Riccati
-%  Riccati, Jacopo (1724) "Animadversiones in aequationes differentiales secundi gradus" (Observations regarding differential equations of the second order), Actorum Eruditorum, quae Lipsiae publicantur, Supplementa, 8 : 66-73. Translation of the original Latin into English by Ian Bruce.
+\cite{BorLew96, BorLew95, Ziv98, FriPla99}
 
 Sea $p(x)  = e^{  - g(x)}$. Entonces,  se nota  inmediatamente que
 $\nabla_x p = - p \nabla_x g$ dando el problema de minimizaci\'on
@@ -661,16 +732,17 @@ En otros t\'erminos, $\displaystyle \L(x , g , g') = \left( \left\| \nabla g(x) 
 %
 o sea
 
+En el caso escalar, esta ecuaci\'on es una instancia particular de las ecuaciones de Riccati~\cite{Ric1724, Ric59}. Eso es 
 
+\SZ{De hecho, por reparametrizaci\'on, se cambia este ecuaci\'on no lineal de primer orden por una ecuaci\'on lineal de secunden orden que es precisamente la ecuaci\'on de Schr\"odinger que ya vimos.}
 
-
+\SZ{T de Legendre: \cite{FriPla99}}
 
 %\ref{GelFom63,  Bru04,   Cla13,  Kom14} (\ref{Wei74,  Kom14} caso doble o triple)
 
 \SZ{  (2) ver MinFisher Frieden p. 235, Berchet Vignat 2009, Ernst 2017; cf. travaux
-  rederivant MQ de Frieden-Plastino-Soffer (1999,  2002), Reginato 98, Bickel 81
-"On the theory of Fisher's amount of  information" Kagan 63, Chimento et al 2000
-}
+  rederivant MQ  de Frieden-Plastino-Soffer (2002),  Reginato 98, Bickel  81 "On
+the theory of Fisher's amount of information" Kagan 63, Chimento et al 2000 }
 
 
 \
@@ -921,7 +993,7 @@ respecto   a   $r$.    Diferenciando    $I_2$   en   $r$,   \ie   $\frac{\partia
   %
   % ---
   %
-  % \newline{\color{red}\bf ¿Interpretacion?  no hay combinacion convexa
+  % \newline{\color{red}\bf Â¿Interpretacion?  no hay combinacion convexa
   %   $\frac{\varepsilon}{1-\varepsilon-\vartheta}$ siendo del mismo signo que
   %   $\frac{1-\vartheta}{1-\varepsilon-\vartheta}$; nota: $C
   %   = \log_2\left( 1 + 2^{-
@@ -2249,7 +2321,7 @@ En el marco del gas perfecto
 \SZ{Va donner un lien avec Boltzmann}
 
 
-% ================================= Principop de incerteza
+% ================================= Principio de incerteza entropico
 
 \subseccion{\SZ{Principio de incerteza entr\'opico}}
 \label{Ssec:SZ:EUR}
@@ -2260,7 +2332,15 @@ Poner solo a la Shannon aca, caso discreto continuo con Fourier, mixto; generali
 }
 
 
+% ================================= Principio de incerteza a la Fisher
+
+\subseccion{\SZ{Principio de incerteza \`a la fishzr}}
+\label{Ssec:SZ:FUR}
+
+\SZ{Ver Pablo \& al.}
+
 \
 
 \SZ{Feder  Merhav  IT'94  et  lien  avec  discrimination;  Vacisek  en  test  de
   Gaussianite et cf plus loin avec generalises Gok75 etc}
+
