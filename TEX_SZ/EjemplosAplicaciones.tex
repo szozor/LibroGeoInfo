@@ -101,9 +101,9 @@ L.   Lagrange~\cite{Lag1760:1,  Lag1760:2,  Lag1766}  a partir  del  trabajo  de
 Euler~\cite{Gol80, Fra92, Fra94, BraSan07}, por  ejemplo en problemas de buscada
 de  camino m\'inimo  (en  termino de  tiempo) entre  dos  puntos en  mec\'anica.
 Volviendo a la extremiezaci\'on,  si $f_e$ es el extremo, se escribe  $f = f_e +
-delta f$ y se hace un desarollo de  $\L$ en $\delta$ para obtener que $f^*$ debe
+\delta f$ y se hace un desarollo de  $\L$ en $\delta$ para obtener que $f_e$ debe
 satisfacer    la    famosa    ecuaci\'on   (diferencial)    de    Euler-Lagrange
-$\displaystyle \frac{\partial L}{\partial f} - frac{d}{dx} \left( \frac{\partial
+$\displaystyle \frac{\partial L}{\partial f} - \frac{d}{dx} \left( \frac{\partial
 L}{\partial  f'}   \right)  =  0$.\label{Foot:SZ:EulerLagrange}}~\cite{GelFom63,
 Wei74,  Bru04,  Cla13, Kom14},  esquematicamente  anulando  la ``derivada''  del
 integrande  con respecto  a $p$;  en  el caso  discreto, se  anula realmente  un
@@ -114,12 +114,17 @@ de Lagrange, se obtiene as\'i
 p_{\mathrm{em}}(x) = \frac{1}{Z(\eta)} e^{\eta^t M(x)} = e^{\eta^t M(x) - \varphi(\eta)},
 \]
 %
-con  $\eta$ tal que  se satisfacen  los v\'inculos  de momentos  y \  $Z(\eta) =
-e^{\varphi(\eta)} =  \displaystyle \int_\X e^{\eta^t  M(x)} d\mu(x)$ coeficiente
+con $\eta$  tal que  se satisfacen  los v\'inculos  de momentos  y \  $Z(\eta) =
+e^{\varphi(\eta)} =  \displaystyle \int_\X e^{\eta^t M(x)}  d\mu(x)$ coeficiente
 de  normalizaci\'on.   Esta  distribuci\'on   cae  precisamente  en  la  familia
-exponencial  que hemos  visto  secci\'on~\ref{Ssec:MP:FamiliaExponencial}, donde
-$M$ es  la estad\'istica suficiente y  $\eta$ el par\'ametros  naturale (en este
-caso, $h(x) = 1$).
+exponencial  que hemos  visto secci\'on~\ref{Ssec:MP:FamiliaExponencial},  donde
+$M$ es  la estad\'istica suficiente y  $\eta$ el par\'ametros naturale  (en este
+caso, $h(x) = 1$). Adem\'as, la entrop\'ia m\'axima se obtiene inmediatamente de
+$\log p_{\mathrm{em}} = \eta^t M - \varphi(\eta)$.
+%
+%\[
+%\max_p H(p) = H(p_{\mathrm{em}}) = - \eta^t m + \varphi(\eta)
+%\]
 
 Un problema que puede  aparecer es que no se puede determinar  $\eta$ tal que se
 satisfacen todos los  v\'inculos, en particular se puede que  no se normaliza la
@@ -146,7 +151,7 @@ con respecto a $\mu$, con los mismos momentos \ $M$, y sea \ $p_{\mathrm{em}} \i
 sea de la forma \ $p_{\mathrm{em}}(x) = e^{\eta^t M(x) - \varphi(\eta)}$. Entonces
   %
   \[
-  \forall \,  p \in \P_m, \quad  H(p) \le H(p_{\mathrm{em}}) \qquad  \mbox{con igualdad ssi}
+  \forall \,  p \in \P_m, \quad  H(p) \le H(p_{\mathrm{em}}) = - \eta^t m + \varphi(\eta) \qquad  \mbox{con igualdad ssi}
   \quad p = p_{\mathrm{em}} \quad \mu\mbox{-(c. s.)},
   \]
   %
@@ -176,9 +181,12 @@ sea de la forma \ $p_{\mathrm{em}}(x) = e^{\eta^t M(x) - \varphi(\eta)}$. Entonc
   & = & - \Dkl[p]{p_{\mathrm{em}}} + H(p_{\mathrm{em}})
   \end{eqnarray*}
   %
-  porque $p,  p_{\mathrm{em}} \in \P_m$ \  (segunda linea) y  \ $\eta^t M -  \varphi(\eta) =
-  \log p_{\mathrm{em}}$ (tercera  linea). La prueba se cierra  notando que $\Dkl[p]{p_{\mathrm{em}}} \ge
-  0$ con igualdad si y solamente si $p = p_{\mathrm{em}} \quad (\mu$-c.s.).
+  porque  $p, p_{\mathrm{em}}  \in  \P_m$  \ (segunda  linea)  y  \ $\eta^t  M
+  - \varphi(\eta) = \log  p_{\mathrm{em}}$ (tercera linea). La  prueba se cierra
+  notando que $\Dkl[p]{p_{\mathrm{em}}} \ge 0$ con igualdad si y solamente si $p
+  =  p_{\mathrm{em}}  \quad  (\mu$-c.s.).\newline  La  forma  de  la  entrop\'ia
+  m\'axima  sale  inmediatamente de  $  -  p_{\mathrm{em}} \log  p_{\mathrm{em}}
+  = \left( - eta^t M + \varphi(\eta) \right) \, p_{\mathrm{em}}$.
 \end{proof}
 %
 Este lema prueba que, dados  v\'inculos ``razonables'', la entrop\'ia es acotada
@@ -227,21 +235,21 @@ tema  f\'isico de  ocupaci\'on de  niveles de  energ\'ia en  un  sistema cerrado
   Consideramos un sistema  con niveles de energ\'ia \  $\E_i$ (n\'umero finito o
   infinito de niveles). Supenomos  que haya $g_i$ estados posibles distinguibles
   con   el  mismo   nivel   de   energ\'ia  $\E_i$;   $g_i$   es  llamado   {\em
-    degenerenc\'ia}~\ref{toto}.    Supenos   que    el    sistema   tiene    $n$
+    degenerenc\'ia}~\ref{toto}.    Suponemos   que    el    sistema   tiene    $n$
   particulas.  Queremos estudiar  la  probabilidad (o  el  n\'umero promedio  de
   particulas)  de  ocupaci\'on  de  cada  nivel  de  energ\'ia.  Vamos  ahora  a
   considerar tres situaciones para describir tal distribuci\'on de probabilidad.
 
   {\bf Enfoque de Boltzmann:} suponemos  que las particulas son distingables. Es
-  decir que,  por ejemplo  tener solamente la  particula $k$  en en nivel  $i$ o
-  solamente la $l\ne  k$ en este nivel son dos  micro-estados distinctos. Eso es
-  ilustrado  figura~\ref{Fig:SZ:BBEFD}-(a),  donde   se  representan  todos  los
-  mocroestados  posibles  para  $n_i =  2,  g_i  =  3$.  Llamamos  $p_{i,j}$  la
-  probabilidad para una particula de estar  en estado $j$ del nivel de energ\'ia
-  $i$.   Seg\'un el  principio  de  entrop\'ia maxima,  sujeto  al v\'inculo  de
-  normalisaci\'on, y  el de energ\'ia total/promedia del  sistema $\Esp[\E(x)] =
-  \sum_{i,j}  p_{i,j}   \E_i$,  con  la  tecnca  del   Lagrangiano  que  v\'imos
-  anteriormente, queremos resolver el problema de maximizaci\'on
+  decir que, por  ejemplo tener solamente la particula n\'umero  $k$ en en nivel
+  $i$  o solamente  la n\'umero  $l\ne k$  en este  nivel son  dos micro-estados
+  distinctos.   Eso  es   ilustrado   figura~\ref{Fig:SZ:BBEFD}-(a),  donde   se
+  representan todos los microestados posibles para $n_i = 2, g_i = 3$.  Llamamos
+  $p_{i,j}$ la probabilidad para una particula  de estar en estado $j$ del nivel
+  de  energ\'ia $i$.   Seg\'un  el  principio de  entrop\'ia  maxima, sujeto  al
+  v\'inculo de  normalisaci\'on, y  el de  energ\'ia total/promedia  del sistema
+  $\Esp[\E(x)] =  \sum_{i,j} p_{i,j}  \E_i$, con la  tecnica del  Lagrangiano que
+  v\'imos anteriormente, queremos resolver el problema de maximizaci\'on
   %
   \[
   p_{\mathrm{em},i,j}  = \argmax_{p_{i,j}}  \left( -  \sum_{i,j} p_{i,j}  \log p_{i,j}  - \alpha
@@ -504,7 +512,7 @@ tema  f\'isico de  ocupaci\'on de  niveles de  energ\'ia en  un  sistema cerrado
       conduciendo  a   $g_i^{n_i}  =   9$  configuraciones.   (BE)   Enfoque  de
       Bose-Einstein con particulas \  $\pi, \pi$ \ indistingables, conduciendo a
       \ $\bino{4}{2}  = 6$ \  configuraciones.  (FD) Enfoque de  Fermi-Dirac con
-      particulas \  $\pi, \pi$ \ indistingables  y excmusi\'on de  Pauli (no hay
+      particulas \  $\pi, \pi$ \ indistingables  y exclusi\'on de  Pauli (no hay
       m\'as de  una particula por estado),  conduciendo a \ $\bino{3}{2}  = 3$ \
       configuraciones}.}
 %
@@ -540,16 +548,16 @@ como se lo puede ver por ejemplo en~\cite{Fri98, Fri04}.
 El  problema  de  minimizaci\'on  de  la informaci\'on  de  Fisher  bajo  varios
 v\'inculos no es un problema my antiguo.  Se menciono por ejemplo en trabajos de
 Huber  desde  1964~\cite{Hub64}  (ver  tambi\'en~\cite{Hub92})  o  el  libro  de
-Kagan \& Rao en 1973~\cite[Cp.~13 y p.~465]{KagLin73}, pero como un problema sin
-soluci\'on (aparte en dos casos  particulares).  Este tema tom\'o importancia en
-las  decadas  1990--2000,  en  un  lado  en  f\'isica  bajo  el  impulso  de  R.
-Frieden~\cite{Fri89},  A.    \&  A.   R.    Plastino,  B.   H.    Soffer,  entre
-otros~\cite{Fri89,  Fri90,  FriSof95,  FriPla99, FriPla02,  Fri98,  Fri04}.   En
-particular,  se   enmarca  en  f\'isica   y  entre  otros  se   desaroll\'o  una
-termodinamica basada sore  la informaci\'on de Fisher en lugar  de le entrop\'ia
-de Shannon (Boltzman). En  el otro lado, en las mismas  decadas, el problema fue
-estudiado en matematica, estadistica y  procesamiento de se\~nales en particular
-por    J.    M.    Bornwein   y    colabordores~\cite{BorLew96,   BorLew95}    o
+Kagan \&  Rao en 1973~\cite[Cap.~13  y p.~465]{KagLin73}, pero como  un problema
+sin  soluci\'on (aparte  en  dos casos  particulares, ej~\cite{KagLin73,  Bic81,
+BicCol83}).  Este tema tom\'o importancia en  las decadas 1990--2000, en un lado
+en  f\'isica  bajo  el  impulso  de R.   Frieden~\cite{Fri89},  A.   \&  A.   R.
+Plastino, B.   H.  Soffer,  entre otros~\cite{Fri89, Fri90,  FriSof95, FriPla99,
+FriPla02, Fri98, Fri04}.  En particular, se enmarca en f\'isica y entre otros se
+desaroll\'o una termodinamica basada sore la informaci\'on de Fisher en lugar de
+le entrop\'ia de Shannon (Boltzman). En el  otro lado, en las mismas decadas, el
+problema fue estudiado  en matematica, estadistica y  procesamiento de se\~nales
+en particular  por J.  M.   Bornwein y colabordores~\cite{BorLew96,  BorLew95} o
 Uhrmann-Klingen~\cite{Uhr92,  Uhr95} (ver  tambi\'en~\cite{Ziv98, BerVig09})  en
 marcos  particulares (ej.   distribuciones  escalares de  soporte acotados,  y/o
 v\'inculos de momentos de orden 1 y 2, o enteros,\ldots).
@@ -561,7 +569,7 @@ optimizaci\'on  de una  funci\'on  de  un par\'ametro.   Si  se quiere  a\~nadir
 v\'inculos,  el nu\'ero  debe ser  necesariamente menor  que la  dimensi\'on del
 parametro. Luo'02}
 
-\SZ(M\'as  interesante es  el   caso no  parametrico,  que  parece realmente  la
+\SZ{M\'as  interesante es  el   caso no  parametrico,  que  parece realmente  la
 contra-parte \`a  la Fisher  del principio  de entrop\'ia  m\'axima}.  Si  en la
 literatura  se  trata  mayormente  del  caso  de  densidades  de  probabilidades
 univariadas,  los estudios  pueden  ser extendidos  al  caso multivariado,  bajo
@@ -665,47 +673,92 @@ equivalente)
   + \eta^t M(x) \right) \, \psi^2(x) \right)  \, dx
 \]
 %
-En    otros    t\'erminos,    $\displaystyle    \L(x    ,    \psi    ,    \psi')
-  =  \left( \left\|  \nabla  \psi(x)  \right\|^2 +  \left(  \eta_0  \, +  \eta^t
-  M(x) \right)  \, \psi^2(x)  \right)$ que da  la ecuaci\'on  de Euler-Lagrange,
-  notando que $\div\left( \nabla_x \psi \right)  = \Delta \psi$ es el Laplaciano
-  de $\psi$ (ver notaciones)
+Si la soluci\'on existe, cuando $\psi_{\mathrm{fm}} \in C^2(\X)$ satisface a una ecuaci\'on diferencial:
 %
-\[
+\begin{lema}
+\label{Lem:SZ:MinFisher}
+%
+Sea  \  $\displaystyle  \P_m =  \left\{  p  \ge  0  \tq   \int_\X p(x)  \,  dx  =
+  1,  \quad  \int_\X M(x)  \,  p(x)  \, d\mu(x)  =  m  \right\}$ \  conjunto  de
+  densidades, con los mismos momentos \ $M$. Entonces
+  %,  y   sea  \  $p_{\mathrm{fm}}   \in  \P_m$  \  que   sea  de  la   forma  \
+  %$p_{\mathrm{em}}(x) = e^{\eta^t M(x) - \varphi(\eta)}$. Entonces
+  %
+  \[
+  p_{\mathrm{fm}} = \argmin_{p \in \P_m} \Tr(J(p)) = |\Psi_{\mathrm{fm}}|^2 \qquad  \mbox{con $\psi_{\mathrm{fm}}$ que satisface} \qquad 
+%
 %\div\left( \nabla_x \psi \right) - \eta^t M \, \psi =  \eta_0 \, \psi
 \Delta \psi - \eta^t M \, \psi =  \eta_0 \, \psi
 \]
 %
-Esta  ecuaci\'on   es  nada   m\'as  que   la  ecuaci\'on   multidimensional  de
-Schr\"odinger estacionar~\cite{} con un potencial de la forma
+donde los $\eta_k$ se obtienen a partir de la soluci\'on para satisfacer a los v\'inculos y $\Delta \psi$ es el Laplaciano
+  de $\psi$ (ver notaciones). Adem\'as, la information de Fisher  m\'inima toma la forma
+%
+\[
+\min_{p \in \P_m} \Tr J(p) = - 4 \, \eta_0 - 4 \, \eta^t m
+\]
+\end{lema}
+%
+\begin{proof}
+El   resulta  sale   notando   que   $\displaystyle  \L(x   ,   \psi  ,   \psi')
+  =  \left( \left\|  \nabla  \psi(x)  \right\|^2 +  \left(  \eta_0  \, +  \eta^t
+  M(x)  \right)  \,  \psi^2(x)  \right)$  que   se  pone  en  la  ecuaci\'on  de
+  Euler-Lagrange,   y   notando   que    $\div\left(   \nabla_x   \psi   \right)
+  = \Delta \psi$.  \newline Luego, de la  forma de la informaci\'on  de Fisher a
+  partir  de la  hessiana  (ver secci\'on~\ref{Ssec:SZ:Fisher}),  $\displaystyle
+  J(p) = - \int_\X \big( \Hess_x \left( \log  p(x) \right) \big) \, p(x) \, dx =
+  - \int_\X \big(  \Hess_x \left( \log  \psi^2(x) \right) \big) \,  \psi^2(x) \,
+  dx$.   Ahora,  de   \  $\displaystyle  \Hess_x  \left(   \log  \psi^2  \right)
+  =     \frac{2      \,     \left(      \psi     \,     \Hess_x      \psi     \,
+  - \,  \nabla_x  \psi   \,  \nabla_x^t  \psi  \right)}{\psi^2(x)}$   \  sale  \
+  $\displaystyle J(p) = \frac12  \, J(p) - 2 \, \int_\X  \Hess_x \psi(x) \, dx$,
+  es decir
+%
+\[
+\Tr J(p) = - 4 \, \int_\X \psi \, \Delta \psi(x) \, dx
+\]
+%
+(de $\Delta =  \Tr \Hess_x$, ver notaciones). El resultado  sigue de la ecuacion
+diferencial  que da  \ $\psi  \Delta  \psi =  \eta^0  \psi^2 +  \eta^t M  \psi^2
+= \eta_0 p + \eta^t M p$, y por integraci\'on sobre $\X$.
+\end{proof}
+%
+Aparece que la ecuaci\'on diferencial que  satisface $\psi$ es nada m\'as que la
+ecuaci\'on multidimensional de Schr\"odinger estacionar~\cite{} con un potencial
+de la forma
 %
 \[
 V(x) =  \eta^t M(x)
 \]
 %
-Con tal enfoque, se puede ver  la ecuaci\'on de Schr\"odinger (estacionar) de la
-mecanica cu\'antica, con $\psi$ que describe  los estado de un sistema sujecto a
-un  potencial,  como  derivando  del  problema  de  Fisher  m\'inimo.  En  otros
-t\'erminos,  saliendo  de  la  ecuaci\'on  de  Schr\"odinger  que  satisface  la
-funci\'on de onda $\psi$, la  funci\'on $\psi^2(x)$ que tiene la significaci\'on
-de de la densidad de probabilidad que el sistema este al estado \ $x$ \ a traves
-e la  regal de Born~\footnote{Si esta  regla fue propuesta inicialmente  por Max
-Born  in  1926~\cite{Bor26}, pero  fue  aplicada  a  la  funci\'on de  onda  (en
-posici\'on)     luego      por     Wolfgang      Pauli~\cite{Pau27},     Pascual
+Con  tal   enfoque,  se  puede   interpretar  la  ecuaci\'on   de  Schr\"odinger
+(estacionar) de la mec\'anica cu\'antica, con $\psi$ que describe los estados de
+un  sistema  sujeto a  un  potencial,  como  derivando  del problema  de  Fisher
+m\'inimo.  En otros  t\'erminos, saliendo de la ecuaci\'on  de Schr\"odinger que
+satisface la  funci\'on de onda  $\psi$, la  funci\'on $\psi^2(x)$ que  tiene la
+significaci\'on de la  densidad de probabilidad que el sistema  este al estado \
+$x$  \  a trav\'es  de  la  regal  de  Born~\footnote{Esta regla  fue  propuesta
+inicialmente por Max Born in 1926~\cite{Bor26}, pero fue aplicada a la funci\'on
+de  onda   (en  posici\'on)  luego  por   Wolfgang  Pauli~\cite{Pau27},  Pascual
 Jordan~\cite{Jor27:09,    Jor27:11},   Werner    Heisenberg~\cite{Hei27},   Paul
 Dirac~\cite{Dir27} o Johann  von Neumann~\cite{Neu32}.  Ver~\cite{MehRec00} para
 notas   historicas.}~\cite{Bor26}  puede   ser   vista  como   la  densidad   de
 informaci\'on de Fisher m\'inima~\footnote{De hecho,  se puede incluir el tiempo
 y llegar a la ecuaci\'on de Schr\"odinger m\'as general, ver~\cite{Fri98, Fri04}
 y referencias. Eso va m\'as all\'a de la meta de este p\'arafo.}.
-%Coneciones  entre $J$ y al f\'isica fueron  estudiado  intensivamente  en  particular  por  \SZ{Frieden y colaboradores
-%Plastino...}
+%Coneciones  entre  $J$  y  al   f\'isica  fueron  estudiado  intensivamente  en
+%particular por \SZ{Frieden y colaboradores Plastino...}
 
-Se notar\'a que, seg\'un los v\'inculos, se re-ecuentran varias ecuaciones de la
+Notar  que, seg\'un  los v\'inculos,  se re-encuentran  varias ecuaciones  de la
 f\'isica con  soluciones coocidas~\cite{Fri98, Fri04}.  Entre  otros, citamos la
 ecuaci\'on   de   Klein-Gordon~\cite{Fri90,    FriSof95,   Fri98,   Fri04},   de
 Helmoltz~\cite{Fri90, FriSof95,  Fri98, Fri04}, de  Dirac~\cite{FriSof95, Fri98,
-Fri04}.
+Fri04}. Ejemplos de soluciones son
+%
+\begin{itemize}
+\end{itemize}
+
+\SZ{Existe una prueba parecida a una prueba informacional?}
 
 
 \SZ{Soporte aotado y momentos de orden 1 y 2~\cite{BerVig09}}
@@ -738,11 +791,10 @@ En el caso escalar, esta ecuaci\'on es una instancia particular de las ecuacione
 
 \SZ{T de Legendre: \cite{FriPla99}}
 
+%\SZ{
 %\ref{GelFom63,  Bru04,   Cla13,  Kom14} (\ref{Wei74,  Kom14} caso doble o triple)
-
-\SZ{  (2) ver MinFisher Frieden p. 235, Berchet Vignat 2009, Ernst 2017; cf. travaux
-  rederivant MQ  de Frieden-Plastino-Soffer (2002),  Reginato 98, Bickel  81 "On
-the theory of Fisher's amount of information" Kagan 63, Chimento et al 2000 }
+%, Bickel  81
+%"Onthe theory of Fisher's amount of information" Kagan 63, Chimento et al 2000 
 
 
 \
