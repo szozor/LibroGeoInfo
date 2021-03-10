@@ -5,10 +5,11 @@ Si la  entrop\'ia y las heramientas  relacionadas son naturales como  medidas de
 informaci\'on, no se  puede resumir una distribuci\'on a una  medida escalar. En
 el marco  de la teor\'ia  de la  estimaci\'on, R. Fisher~\footnote{De  hecho, la
 informaci\'on de  Fisher habia  estudiado antes  por varios  estatisticianos tal
-como  F.  Y. Edgeworth  en  1908-1909  o a\'un  antes,  en  1898 por  Pearson  y
-Fillon~\cite{Hal06, Edg08,  PeaFil98}} introdujo  una noci\'on  de informaci\'on
-intimamente  relacionada  al  error  cuadr\'atico   en  la  estimaci\'on  de  un
-par\'ametro    a   partir    de    una   variable    parametrizado   por    este
+como  F.  Y.  Edgeworth  en 1908-1909  o  a\'un  antes, en  1898  por Pearson  y
+Fillon~\cite{Hal06, Edg08,  PeaFil98}. Adem\'as,  le versi\'on  multivariada fue
+introducida m\'as tarde, por Doob~\cite{Doo34, Doo36}} introdujo una noci\'on de
+informaci\'on intimamente  relacionada al error cuadr\'atico  en la estimaci\'on
+de   un  par\'ametro   a  partir   de  una   variable  parametrizado   por  este
 par\'ametro~\cite{Fis22, Fis25:07, Kay93, LehCas08, Bos07, CovTho06, Fri04}.
 
 \begin{definicion}[Matriz informaci\'on de Fisher param\'etrica]
@@ -17,7 +18,7 @@ par\'ametro~\cite{Fis22, Fis25:07, Kay93, LehCas08, Bos07, CovTho06, Fri04}.
   Sea   $X$   una   variable   aleatoria  parametrizada   por   un   par\'ametro
   $m$-dimensional,  $\theta \in  \Theta \subset  \Rset^m$, de  distribuci\'on de
   probabilidad $p_X(\cdot;\theta)$ (con respecto a  una medida $\mu$ dada) sobre
-  $\X  \subset \Rset^d$  su soporte.  Suponga  que $p_X$  sea diferenciable  con
+  $\X  \subset \Rset^d$  su soporte.   Suponga que  $p_X$ sea  diferenciable con
   respecto  a  $\theta$  sobre  $\Theta$.   La matriz  de  Fisher,  de  tama\~no
   $m \times m$, es definida por
   %
@@ -34,15 +35,27 @@ par\'ametro~\cite{Fis22, Fis25:07, Kay93, LehCas08, Bos07, CovTho06, Fri04}.
   siendo  \  $\log p_X$  \  la  {\it  log-verosimilitud}.  Bajo  condiciones  de
   regularidad, se puede mostrar~\footnote{Es  una consecuencia del teorema de la
     divergencia, suponiendo que los bordes del soporte \ $\X$ \ no dependen de \
-    $\theta$ \  y que  la funci\'on score  se cancela  en estos bordes.}   que \
-  $J_\theta(X) =  - \Esp[\Hess_\theta \log p_X(X;\theta)]$  \ con $\Hess_\theta$
-  la  Hessiana
+    $\theta$ \  y que  la funci\'on score  se cancela  en estos bordes.}   que
+    %
+    \[
+    J_\theta(X) =  - \Esp\big[ \Hess_\theta \log p_X(X;\theta) \big]
+    \]
+    %
+    \ con $\Hess_\theta$  la  Hessiana
   %~\footnote{Recordamos de que,  para \  $f: \Rset^m  \mapsto \Rset,
   %  \quad  \Hess_\theta f$  \ es  la matriz  de componentes  \ $\frac{\partial^2
   %    f}{\partial \theta_i  \partial \theta_j}$.}
   \ de  \ $\log  p_X(X;\theta)$ (ver  notaciones).  Nota: a  veces se  define la
-  informaci\'on de  Fisher como  $\Tr(J_\theta)$, traza de  la matriz  informaci\'on de
-  Fisher.
+  informaci\'on de  Fisher como
+  %
+  \[
+  \Tr(J_\theta(X))    =     \Esp\left[    \Big\|     \nabla_\theta    \log
+  p_X(X;\theta)   \Big\|^2   \right]   =   -   \Esp\big[   \Delta_\theta   \log
+  p_X(X;\theta) \big] \]
+  %  
+  traza~\footnote{Recordar que para dos vectores $a$ y  $b$, $\Tr a b^t = b^t a$
+  y que  $\Tr \Hess  = \div  \nabla =  \Delta$ (ver  notaciones).} de  la matriz
+  informaci\'on de Fisher.
 \end{definicion}
 %
 Como  para  la  entrop\'ia,  la  matriz  de Fisher  se  escribe  generalmente  \
@@ -80,7 +93,7 @@ Fisher no param\'etrica,
   Fisher no param\'etrica $d \times d$ es definida por
   %
   \[
-  J(X) \equiv J(p_X) =  \Esp\left[ \Big(  \nabla_x \log p_X(X)  \Big) \Big(  \nabla_x \log
+  J(X) =  \Esp\left[ \Big(  \nabla_x \log p_X(X)  \Big) \Big(  \nabla_x \log
       p_X(X) \Big)^t \right].
   \]
   %
@@ -90,9 +103,17 @@ Fisher no param\'etrica,
   condiciones de regularidad,
   %
   \[
-  J(X) \equiv J(p_X) = - \Esp[\Hess_x \log p_X(X)]
+  J(X) = - \Esp[\Hess_x \log p_X(X)]
   \]
-  % menos el promedio de la Hessiana en \ $x$ \ de la log-verosimilitud.
+  % menos el promedio de la Hessiana en \ $x$ \ de la log-verosimilitud.  
+  Como para el caso param\'etrico, a  veces se define la informaci\'on de Fisher
+  no-parametrica como
+  %
+  \[  
+  \Tr(J(X))  =  \Esp\left[  \Big\|  \nabla_x  \log  p_X(X)  \Big\|^2  \right]  =
+  - \Esp\big[ \Delta_x \log p_X(X) \big] \]
+  % 
+  traza de  la matriz  informaci\'on de Fisher.
 \end{definicion}
 %
 Como para la entrop\'ia, y la matriz  de Fisher parametrica, la matriz de Fisher
