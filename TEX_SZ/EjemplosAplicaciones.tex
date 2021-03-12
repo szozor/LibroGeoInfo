@@ -103,12 +103,19 @@ de  camino m\'inimo  (en  termino de  tiempo) entre  dos  puntos en  mec\'anica.
 Volviendo a la extremiezaci\'on, si $f_e$ es el extremo, se escribe $f = f_e +
 \delta f$ y se hace un desarollo de  $\L$ en $\delta$ para obtener que $f_e$ debe
 satisfacer    la    famosa    ecuaci\'on   (diferencial)    de    Euler-Lagrange
-$\displaystyle \frac{\partial L}{\partial f} - \frac{d}{dx} \left( \frac{\partial
-L}{\partial  f'}   \right)  =  0$.\label{Foot:SZ:EulerLagrange}}~\cite{GelFom63,
-Wei74,  Bru04,  Cla13, Kom14},  esquematicamente  anulando  la ``derivada''  del
-integrande  con respecto  a $p$;  en  el caso  discreto, se  anula realmente  un
-gradiente con respecto a los  componentes de $p$.  Reparametrizando los factores
-de Lagrange, se obtiene as\'i
+$\displaystyle             \frac{\partial             L}{\partial             f}
+- \frac{d}{dx} \left(  \frac{\partial L}{\partial  f'} \right)  = 0$.  Ver m\'as
+adelante        la        extensi\'on         multivariada        de        esta
+ecuaci\'on.\label{Foot:SZ:EulerLagrange}}~\cite{GelFom63,  Wei74, Bru04,  Cla13,
+Kom14}, esquematicamente anulando la ``derivada''  del integrande con respecto a
+$p$; en  el caso discreto,  se anula realmente un  gradiente con respecto  a los
+componentes de $p$. Eso da que $p$ debe satisfacer a la ecuaci\'on
+%
+\[
+- \log p(x) - 1 + \eta_0 + \eta^t M(x) = 0
+\]
+%
+Reparametrizando los factores de Lagrange, se obtiene as\'i
 %
 \[
 p_{\mathrm{em}}(x) = \frac{1}{Z(\eta)} e^{\eta^t M(x)} = e^{\eta^t M(x) - \varphi(\eta)},
@@ -163,33 +170,50 @@ soluci\'on.
 %
 \begin{proof}
   \begin{eqnarray*}
-  H(p) & = & - \int_\X p(x) \, \log p(x) \, d\mu(x)\\[2.5mm]
+  \Dkl[p]{p_{\mathrm{em}}} & = & \int_\X
+  p(x) \, \log\left( \frac{p(x)}{p_{\mathrm{em}}(x)} \right) \, d\mu(x)\\[2.5mm]
   %
-  & = & - \int_\X p(x) \, \log\left( \frac{p(x)}{p_{\mathrm{em}}(x)} \right) \,
-  d\mu(x) - \int_\X p(x) \, \log p_{\mathrm{em}}(x) \, d\mu(x)
+  & = & - H(p) - \int_\X p(x) \, \log p_{\mathrm{em}}(x) \,  d\mu(x)\\[2.5mm]
+  %
+  & = & - H(p) - \int_\X p(x) \, \big(  \eta^t M(x) - \varphi(\eta) \big) \,  d\mu(x)\\[2.5mm]
+  %
+  & = & - H(p) - \int_\X p_{\mathrm{em}}(x) \, \big(  \eta^t M(x) - \varphi(\eta) \big) \,  d\mu(x)\\[2.5mm]
+  %
+  & = & - H(p) - \int_\X p_{\mathrm{em}}(x) \, \log p_{\mathrm{em}}(x) \,  d\mu(x)\\[2.5mm]
+  %
+  & = & H(p_{\mathrm{em}}) - H(p)
+  %H(p) & = & - \int_\X p(x) \, \log p(x) \, d\mu(x)\\[2.5mm]
+  %
+  %& = & - \int_\X p(x) \, \log\left( \frac{p(x)}{p_{\mathrm{em}}(x)} \right) \,
+  %d\mu(x) - \int_\X p(x) \, \log p_{\mathrm{em}}(x) \, d\mu(x)
   \end{eqnarray*}
   %
-  De $\log p_{\mathrm{em}} = \eta^t M - \varphi(\eta)$ se obtiene
+  donde en la tercera y la quinta  linea se usa $\log p_{\mathrm{em}} = \eta^t M
+  - \varphi(\eta)$,   mientras    que   en   la    quarta   se   usa    qu   $p,
+  p_{\mathrm{em}} \in \P_m$ (tienen los mismos momentos).
+  %De la positividad de la divergencia de Kullback-Leibler
+  %se obtiene
   %
-  \begin{eqnarray*}
-  H(p) & = & - \Dkl[p]{p_{\mathrm{em}}} - \int_\X \left( \eta^t M(x)
-  - \varphi(\eta) \right) p(x) \, d\mu(x)\\[2.5mm]
-  %
-  & = & - \Dkl[p]{p_{\mathrm{em}}} - \int_\X \left( \eta^t M(x)
-  - \varphi(\eta) \right) p_{\mathrm{em}}(x) \, d\mu(x)\\[2.5mm]
-  %
-  & = & - \Dkl[p]{p_{\mathrm{em}}} - \int_\X p_{\mathrm{em}}(x) \log
-  p_{\mathrm{em}}(x) \, d\mu(x)\\[2.5mm]
-  %
-  & = & - \Dkl[p]{p_{\mathrm{em}}} + H(p_{\mathrm{em}})
-  \end{eqnarray*}
+  %\begin{eqnarray*}
+  %H(p) & = & - \Dkl[p]{p_{\mathrm{em}}} - \int_\X \left( \eta^t M(x)
+  %- \varphi(\eta) \right) p(x) \, d\mu(x)\\[2.5mm]
+  %%
+  %& = & - \Dkl[p]{p_{\mathrm{em}}} - \int_\X \left( \eta^t M(x)
+  %- \varphi(\eta) \right) p_{\mathrm{em}}(x) \, d\mu(x)\\[2.5mm]
+  %%
+  %& = & - \Dkl[p]{p_{\mathrm{em}}} - \int_\X p_{\mathrm{em}}(x) \log
+  %p_{\mathrm{em}}(x) \, d\mu(x)\\[2.5mm]
+  %%
+  %& = & - \Dkl[p]{p_{\mathrm{em}}} + H(p_{\mathrm{em}})
+  %\end{eqnarray*}
   %  
-  porque  $p,  p_{\mathrm{em}}  \in  \P_m$  \ (segunda  linea)  y  \  $\eta^t  M
-  - \varphi(\eta) = \log  p_{\mathrm{em}}$ (tercera linea). La  prueba se cierra
+  %porque  $p,  p_{\mathrm{em}}  \in  \P_m$  \ (segunda  linea)  y  \  $\eta^t  M
+  %- \varphi(\eta) = \log  p_{\mathrm{em}}$ (tercera linea).
+  La  prueba se cierra
   notando que $\Dkl[p]{p_{\mathrm{em}}} \ge 0$ con igualdad si y solamente si $p
   =  p_{\mathrm{em}}  \quad  (\mu$-c.s.).\newline  La  forma  de  la  entrop\'ia
   m\'axima  sale  inmediatamente de  $  -  p_{\mathrm{em}} \log  p_{\mathrm{em}}
-  = \left( - eta^t M + \varphi(\eta) \right) \, p_{\mathrm{em}}$.
+  = \left( - \eta^t M + \varphi(\eta) \right) \, p_{\mathrm{em}}$.
 \end{proof}
 %
 Este lema prueba que, dados  v\'inculos ``razonables'', la entrop\'ia es acotada
@@ -610,7 +634,7 @@ p_{\mathrm{fm}}    =   \argmin_p    \int_\X   \left(    \frac{\left\|   \nabla_x
 donde $\eta_0, \eta$  ser\'an determinados para satisfacer a  los v\'inculos. Se
 puede ver  que el problema  es c\'onvexo  con respecto a  $p$ (\ie vimos  que la
 informaci\'on de  Fisher es convexa  y los v\'inculos  siendo lineal en  $p$, el
-termino con  factores de Lagrange es  tambi\'ien convexo), as\'i que  existe una
+termino con  factores de Lagrange es  tambi\'en convexo), as\'i que  existe una
 soluci\'on \'unica  al problema~\cite{GelFom63,  Wei74, Bru04,  Mil00, CamMar09,
 Cla13,  Kom14}.  El lector  puede  referirse  a~\cite[Teo.~2.1]{Bor95} para  una
 prueba   rigorosa~\footnote{En~\cite{Bor95}  se   considera   el  v\'inculo   de
@@ -618,10 +642,158 @@ normalizaci\'on  indirectamente, suponiendo  que 1  partenece al  espacio lineal
 generado por los $M$ (span, o linear hull en ingl\'es).}.
 
 En  el  context de  distribuciones  con  densidades  de probabilidad,  de  clase
-$C^1(\X,\Rset_+)$,  se puede  de nuevo  usar el  enfoque de  Euler-Lagrange. Sin
-embardo, eso conduce a una ecuaci\'on  diferencial no lineal, dificil a resolver
-(a\'un  numericamente).  En la  literatura, se  encuentra  (a  lo m\'as  qe  lo
-conocemos) dos enfoques:
+$C^2(\X,\Rset_+)$, dos veces diferenciables se puede de nuevo usar el enfoque de
+Euler-Lagrange.  De  manera general,  para  resolver  la minimizaci\'on  de  una
+integral bajo la forma
+%
+\[
+f_{\mathrm{m}}  = \argmin_f  \int_\X \L\left(  x \,  , \,  f(x) \,  , \, \nabla_x
+f(x) \right) \, dx
+\]
+%
+con
+%
+\[
+\L(x,u,v)  \in  C^1\left(   \Rset^d  \times  \Rset  \times  \Rset^d  \,
+, \,  \Rset \right).
+\]
+%
+Del     enfoque    de     Euler-Lagrange,     generalizado     en    el     caso
+multivariado~\footnote{Ver                        nota                        de
+pie~\ref{Foot:SZ:EulerLagrange}}~\cite{GelFom63, Wei74, Bru04,  Cla13, Kom1}, si
+existe la soluci\'on debe satisfacer a la ecuaci\'on de Euler-Lagrange
+%
+\[
+\frac{\partial  L}{\partial  u}\big(  x  \,  , \,  f(x)  \,  ,  \,  \nabla_x
+ f(x) \big) - \div_x  \left( \nabla_v \L \big( x \, , \,  f(x) \, , \, \nabla_x
+ f(x) \big) \right) = 0
+%\qquad \mbox{donde} \qquad f' = \nabla_x f
+\]
+%
+donde \ $\div_x$ \ es es operador divergencia (ver notaciones), o sea
+%
+\[
+\frac{\partial  \L}{\partial  u}\big( x  \,  ,  \,  f(x)  \, ,  \,  \nabla_x
+f(x)        \big)         -        \sum_{j=1}^d        \frac{\partial}{\partial
+x_j}  \left(  \frac{\partial  \L}{\partial  v_j}  \big(  x  \,  ,  \,  f(x)  \,
+,  \,  \nabla_x  f(x)  \big)  \right)   =  0
+%\qquad  \mbox{donde}  \qquad  g_j
+%= \frac{\partial g}{\partial x_j}
+\]
+
+Aplicado  al   problema  de  minimizac\'on   de  la  informaci\'on   de  Fisher,
+$\displaystyle \L(x,u,v) = \frac{\| v \|^2}{u} + \eta_0 u + \eta^t M(x) u$, as\'i
+que \  $\displaystyle \frac{\partial \L}{\partial  u} = - \frac{\|  v \|^2}{u^2}
++ \eta_0 + \eta^t M(x)$ \ y \ $ \nabla_v L = \frac{2 \, v}{u}$. En conclus\'ion,
+de  la  ecuaci\'on  de  Euler-Lagrange,  $p$ debe  satisfacer  a  la  ecuaci\'on
+diferencial
+%
+\[
+2  \,  \div_x  \left(  \frac{\nabla_x p}{p}  \right)  +  \left\| \frac{ \nabla_x
+p}{p} \right\|^2 = \eta_0 + \eta^t M
+\]
+%
+donde la soluci\'on es parametrizada por  $\eta_0, \eta$ que se obtienen tal que
+se satisfacen los  v\'inculos de normalizaci\'on y de  momentos. Esta ecuaci\'on
+se  re-escribe con  un  Laplaciano, notando  que  $\div_x \left(  \frac{\nabla_x
+p}{p} \right) = \frac{\Delta_x p}{p} - \frac{\left\| \nabla_x p \right\|^2}{p^2}
+$ de $\div_x \nabla_x = \Delta_x$, Laplaciano (ver notaciones):
+%
+\[
+\frac{2 \, \Delta_x p}{p} - \left\|  \frac{\nabla_x  p}{p}  \right\|^2 = \eta_0 + \eta^t M
+\]
+%
+\SZ{Como en el caso de la entrop\'ia, un problema que puede  aparecer es que no se puede determinar  $\eta$ tal que se
+satisfacen todos los  v\'inculos, en particular se puede que  no se normaliza la
+ley.}.
+
+Al imagen  de lo que  se hace  en el problema  de entrop\'ia m\'axima,  se puede
+probar  informacionalmente este  resultado  saliendo del  resultado~\footnote{De
+nuestro  conocimiento a  la  escritura  de este  libro,  no  se ecuentra  prueba
+informacional en la literatura de este resultado}:
+%
+\begin{lema}
+\label{Lem:SZ:MinFisherPruebaInfo}
+%
+  Sea   \    $\displaystyle   \P_m    =   \left\{    p   \in    C^1(\Rset^d   \,
+  , \,  \Rset_+), \  \mbox{2 veces diferenciable,}  \ \tq \int_\X  p(x) \,  dx =
+  1, \quad \int_\X M(x)  \, p(x) \, dx = m \right\}$ \  conjunto de densidades 2
+  veces   diferenciables,   con  los   mismos   momentos   \   $M$,  y   sea   \
+  $p_{\mathrm{pm}} \in \P_m$ \ que satisface a la ecuaci\'on diferencial
+  %
+  \[
+  2 \, \div_x \left(  \frac{\nabla_x p}{p} \right) + \left\| \frac{\nabla_x
+  p}{p}  \right\|^2 = \eta_0 + \eta^t M
+  \]
+  %
+  Entonces
+  %
+  \[
+  \forall  \,  p \in  \P_m,  \quad  \Tr J(p) \ge  \Tr J(p_{\mathrm{fm}})  =  - \eta^t  m
+  +    \varphi(\eta)    \qquad   \mbox{con    igualdad    ssi}    \quad   p    =
+  p_{\mathrm{fm}} \quad \mu\mbox{-(c. s.)}, \]
+  %
+  %donde   $J$  es   de  la   definici\'on   general  Def.~\ref{Def:SZ:ShanonMu}
+  %pagina~\pageref{Def:SZ:ShanonMu}, 
+  %de la entrop\'ia con respecto a $\mu$.
+\end{lema}
+%
+\begin{proof}
+  %
+  \begin{eqnarray*}
+  %\Dkl[p]{p_{\mathrm{em}}}
+  \left\| \frac{\nabla_x \, p}{p} - \frac{\nabla_x
+  \, p_{\mathrm{fm}}}{p_{\mathrm{fm}}} \right\|^2 \, p
+  %
+  & = & \frac{\left\| \nabla_x \, p \right\|^2}{p} +
+  p \, \left\| \frac{\nabla_x \, p_{\mathrm{fm}}}{p_{\mathrm{fm}}} \right\|^2 -
+  2 \, \left( \nabla_x \, p \right)^t \frac{\nabla_x \,
+  p_{\mathrm{fm}}}{p_{\mathrm{fm}}} \\[2.5mm]
+  %
+  & = & \frac{\left\| \nabla_x \, p \right\|^2}{p} - \frac{\left\| \nabla_x \,
+  p_{\mathrm{fm}} \right\|^2}{p_{\mathrm{fm}}} + \left( p -
+  p_{\mathrm{fm}} \right) \left\| \frac{\nabla_x \,
+  p_{\mathrm{fm}}}{p_{\mathrm{fm}}}  \right\|^2 - 2 \, \left( \nabla_x \, \left( p -
+  p_{\mathrm{fm}} \right) \right)^t \frac{\nabla_x \, p_{\mathrm{fm}}}{p_{\mathrm{fm}}}\\[2.5mm]
+  %
+  & = & \frac{\left\| \nabla_x \, p \right\|^2}{p} - \frac{\left\| \nabla_x \,
+  p_{\mathrm{fm}} \right\|^2}{p_{\mathrm{fm}}} + \left( p -
+  p_{\mathrm{fm}} \right) \left( \eta_0 + \eta^t M \right) - 2 \, \div_x\left( \left(
+  p        -       p_{\mathrm{fm}}        \right)       \frac{\nabla_x        \,
+  p_{\mathrm{fm}}}{p_{\mathrm{fm}}}      \right)
+  %
+  \end{eqnarray*}
+  %
+  donde   la   \'ultima   linea   viene   de   la   ecuaci\'on   diferencial   \
+  $\left\|   \frac{\nabla_x   p}{p}  \right\|^2   =   \eta_0   +  \eta^t   M   -
+  2 \, \div_x \left( \frac{\nabla_x p}{p} \right)$ \ y de \ $\div_x\left( \left(
+  p        -       p_{\mathrm{fm}}        \right)       \frac{\nabla_x        \,
+  p_{\mathrm{fm}}}{p_{\mathrm{fm}}}      \right)      =     \left(      p      -
+  p_{\mathrm{fm}}       \right)       \div_x\left(       \frac{\nabla_x       \,
+  p_{\mathrm{fm}}}{p_{\mathrm{fm}}}  \right)  +  \left(   \nabla_x  \left(  p  -
+  p_{\mathrm{fm}}        \right)     \right)^t            \frac{\nabla_x             \,
+  p_{\mathrm{fm}}}{p_{\mathrm{fm}}}$.
+  %
+  Ahora, por integraci\'on, el tercero t\'ermino de la derecha va a dar cero 
+  porque \ $p$ \ y \ $p_{\mathrm{fm}}(x)$ \ tienen los mismos momentos y el cuarto tambi\'en va a dar cero por el teorema de la divergecia~\footnote{\SZ{A dar}}~\cite{toto}. En conclusi\'on,
+  %
+  \[
+  \int_\X \left\| \frac{\nabla_x \, p(x)}{p(x)} - \frac{\nabla_x
+  \, p_{\mathrm{fm}}(x)}{p_{\mathrm{fm}}(x)} \right\|^2 \, p(x) \, dx = J(p) - J(p_{\mathrm{fm}})
+  \]
+  %
+  La  prueba se cierra notando que
+  %$\Dkl[p]{p_{\mathrm{em}}} \ge 0$
+  %
+  el  t\'ermino de  izquierda es  positivo,  y cero  si  y solamente  si $p  =
+  p_{\mathrm{fm}} \quad (\mu$-c.s.).\newline La forma de la informaci\'on Fisher
+  m\'inima sale de \SZ{finir}.
+\end{proof}
+
+
+Sin  embardo, eso  conduce a  una ecuaci\'on  diferencial no  lineal, dificil  a
+resolver (a\'un numericamente).   En la literatura, se encuentra (a  lo m\'as qe
+lo conocemos) dos enfoques:
 %
 \begin{itemize}
 %
@@ -637,35 +809,6 @@ una parte, eso permite cancelar el v\'inculo de positivdad y luego conduce a una
 ecuaci\'on conocida  en varios  casos como  ecuaci\'on de  Riccati~\cite{Ric1724}.  Esa  es
 estudiada en~\cite{Ziv98} tratando del problema de informaci\'on m\'inima  (ver tambi\'en~\cite{BorLew96, BorLew96, Ziv98, FriPla99}), o por ejemplo en~\cite{}.
 \end{itemize}
-
-
-En ambos casos, tal como en la escritura con la densidad $p$, tenemos a resolver
-la minimizaci\'on de una integral bajo la forma
-%
-\[
-f_{\mathrm{m}}  = \argmin_f  \int_\X \L\left(  x \,  , \,  f(x) \,  , \,  \nabla
-f(x) \right) \, dx
-\]
-%
-con  \  $\L(x,u,v)  \in  C^1\left(   \Rset^d  \times  \Rset  \times  \Rset^d  \,
-, \,  \Rset \right)$.  Del  enfoque de  Euler-Lagrange, generalizado en  el caso
-multivariado~\footnote{Ver                        nota                        de
-pie~\ref{Foot:SZ:EulerLagrange}}~\cite{GelFom63, Wei74, Bru04,  Cla13, Kom1}, si
-existe la soluci\'on debe satisfacer a la ecuaci\'on de Euler-Lagrange
-%
-\[
-\frac{\partial L}{\partial  f} - \div_x  \left( \nabla_{\! f'} \L  \right) =
-0 \qquad \mbox{donde} \qquad f' = \nabla_x f
-\]
-%
-%
-donde \ $\div_x$ \ es es operador divergencia (ver notaciones), o sea
-%
-\[
-\frac{\partial  \L}{\partial  f}   -  \sum_{j=1}^d  \frac{\partial}{\partial
-x_j} \left( \frac{\partial \L}{\partial f'_j} \right) = 0
-%\qquad  \mbox{donde}  \qquad  g_j  =  \frac{\partial g}{\partial x_j}
-\]
 
 
 \SZ{Ajouter Villani et al. sur derivation de physique via ce principe}
