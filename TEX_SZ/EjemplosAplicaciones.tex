@@ -92,20 +92,21 @@ el caso  discreto, queda claro  que los $p_i$  se buscan anulando  las derivadas
 parciales. En  el caso  continuo, el problema  es un  extremizaci\'on functional
 conocida como problema variacional.  En el  caso general inicial, el problema es
 extremizar $\displaystyle \I[f]  = \int_\X \L\left( x , f(x)  , f'(x) \right) \,
-dx$ con $\L  \in C^2\left( \Rset^3 , \Rset \right)$.   Si el calculo variacional
-es debido a I.  Newton o G. W.   Leibniz, los primeros que se enfocaron en tales
-problemas   de    optimizaci\'on   variacionales   fueron   los    hermanos   J.
-Bernoulli~\cite{Ber1697,       Ber1701,       Ber1718}      (ver       tambi\'en
-I. Newton~\cite{New1696}), L.  Euler~\cite{Eul1738, Eul1744, Eul1766} y luego J.
-L.   Lagrange~\cite{Lag1760:1,  Lag1760:2,  Lag1766}  a partir  del  trabajo  de
+dx$ \ con  \ $\L(x,u,v) \in C^1\left(  \Rset^3 , \Rset \right)$.   Si el calculo
+variacional  es debido  a I.   Newton o  G.  W.   Leibniz, los  primeros que  se
+enfocaron en tales problemas de optimizaci\'on variacionales fueron los hermanos
+J.      Bernoulli~\cite{Ber1697,     Ber1701,    Ber1718}     (ver     tambi\'en
+I. Newton~\cite{New1696}),  L.  Euler~\cite{Eul1738,  Eul1744, Eul1766}  y luego
+J. L.   Lagrange~\cite{Lag1760:1, Lag1760:2,  Lag1766} a  partir del  trabajo de
 Euler~\cite{Gol80, Fra92, Fra94, BraSan07}, por  ejemplo en problemas de buscada
-de  camino m\'inimo  (en  termino de  tiempo) entre  dos  puntos en  mec\'anica.
-Volviendo a la extremiezaci\'on, si $f_e$ es el extremo, se escribe $f = f_e +
-\delta f$ y se hace un desarollo de  $\L$ en $\delta$ para obtener que $f_e$ debe
-satisfacer    la    famosa    ecuaci\'on   (diferencial)    de    Euler-Lagrange
-$\displaystyle             \frac{\partial             L}{\partial             f}
-- \frac{d}{dx} \left(  \frac{\partial L}{\partial  f'} \right)  = 0$.  Ver m\'as
-adelante        la        extensi\'on         multivariada        de        esta
+de   camino   m\'inimo   (en   termino   de  tiempo)   entre   dos   puntos   en
+mec\'anica.  Volviendo  a  la  extremiezaci\'on,  si $f_e$  es  el  extremo,  se
+escribe  \   $f  =  f_e   +  \delta  f$   \  y  se   hace  un  desarollo   de  \
+$\L(x,f(x),f'(x))$  \ en  $\delta$ para  obtener  que $f_e$  debe satisfacer  la
+famosa       ecuaci\'on       (diferencial)      de       Euler-Lagrange       \
+$\displaystyle        \frac{\partial         L}{\partial        u}(x,f(x),f'(x))
+- \frac{d}{dx}  \left(  \frac{\partial  L}{\partial v}(x,f(x),f'(x))  \right)  =
+0$.    Ver    m\'as   adelante    la    extensi\'on    multivariada   de    esta
 ecuaci\'on.\label{Foot:SZ:EulerLagrange}}~\cite{GelFom63,  Wei74, Bru04,  Cla13,
 Kom14}, esquematicamente anulando la ``derivada''  del integrande con respecto a
 $p$; en  el caso discreto,  se anula realmente un  gradiente con respecto  a los
@@ -654,8 +655,11 @@ f(x) \right) \, dx
 con
 %
 \[
-\L(x,u,v)  \in  C^1\left(   \Rset^d  \times  \Rset  \times  \Rset^d  \,
-, \,  \Rset \right).
+\begin{array}{rcrlll}
+\L & : & \Rset^d  \times  \Rset  \times  \Rset^d & \to & \Rset &  \in \:\:  C^1\\[.5mm]
+%
+& & (x,u,v) & \mapsto & \L(x,u,v) &
+\end{array}
 \]
 %
 Del     enfoque    de     Euler-Lagrange,     generalizado     en    el     caso
@@ -694,14 +698,7 @@ p}{p} \right\|^2 = \eta_0 + \eta^t M
 \]
 %
 donde la soluci\'on es parametrizada por  $\eta_0, \eta$ que se obtienen tal que
-se satisfacen los  v\'inculos de normalizaci\'on y de  momentos. Esta ecuaci\'on
-se  re-escribe con  un  Laplaciano, notando  que  $\div_x \left(  \frac{\nabla_x
-p}{p} \right) = \frac{\Delta_x p}{p} - \frac{\left\| \nabla_x p \right\|^2}{p^2}
-$ de $\div_x \nabla_x = \Delta_x$, Laplaciano (ver notaciones):
-%
-\[
-\frac{2 \, \Delta_x p}{p} - \left\|  \frac{\nabla_x  p}{p}  \right\|^2 = \eta_0 + \eta^t M
-\]
+se satisfacen los  v\'inculos de normalizaci\'on y de  momentos.
 %
 \SZ{Como en el caso de la entrop\'ia, un problema que puede  aparecer es que no se puede determinar  $\eta$ tal que se
 satisfacen todos los  v\'inculos, en particular se puede que  no se normaliza la
@@ -717,7 +714,7 @@ informacional en la literatura de este resultado}:
 %
   Sea   \    $\displaystyle   \P_m    =   \left\{    p   \in    C^1(\Rset^d   \,
   , \,  \Rset_+), \  \mbox{2 veces diferenciable,}  \ \tq \int_\X  p(x) \,  dx =
-  1, \quad \int_\X M(x)  \, p(x) \, dx = m \right\}$ \  conjunto de densidades 2
+  1, \quad \int_\X M(x)  \, p(x) \, dx = m \right\}$ \  conjunto de densidades $C^1$ y 2
   veces   diferenciables,   con  los   mismos   momentos   \   $M$,  y   sea   \
   $p_{\mathrm{pm}} \in \P_m$ \ que satisface a la ecuaci\'on diferencial
   %
@@ -729,9 +726,10 @@ informacional en la literatura de este resultado}:
   Entonces
   %
   \[
-  \forall  \,  p \in  \P_m,  \quad  \Tr J(p) \ge  \Tr J(p_{\mathrm{fm}})  =  - \eta^t  m
-  +    \varphi(\eta)    \qquad   \mbox{con    igualdad    ssi}    \quad   p    =
-  p_{\mathrm{fm}} \quad \mu\mbox{-(c. s.)}, \]
+  \forall \, p \in \P_m, \quad \Tr J(p) \ge \Tr J(p_{\mathrm{fm}}) = -\eta_0
+    - \eta^t m \qquad \mbox{con igualdad ssi} \quad p =
+    p_{\mathrm{fm}} \quad \mu\mbox{-(c. s.)},
+  \]
   %
   %donde   $J$  es   de  la   definici\'on   general  Def.~\ref{Def:SZ:ShanonMu}
   %pagina~\pageref{Def:SZ:ShanonMu}, 
@@ -774,8 +772,10 @@ informacional en la literatura de este resultado}:
   p_{\mathrm{fm}}        \right)     \right)^t            \frac{\nabla_x             \,
   p_{\mathrm{fm}}}{p_{\mathrm{fm}}}$.
   %
-  Ahora, por integraci\'on, el tercero t\'ermino de la derecha va a dar cero 
-  porque \ $p$ \ y \ $p_{\mathrm{fm}}(x)$ \ tienen los mismos momentos y el cuarto tambi\'en va a dar cero por el teorema de la divergecia~\footnote{\SZ{A dar}}~\cite{toto}. En conclusi\'on,
+  Ahora, por  integraci\'on, el tercero  t\'ermino de la  derecha va a  dar cero
+  porque \  $p$ \  y \ $p_{\mathrm{fm}}(x)$  \ tienen los  mismos momentos  y el
+  cuarto tambi\'en va a dar cero por el teorema de la divergecia~\footnote{\SZ{A
+  dar}}~\cite{toto}. En conclusi\'on,
   %
   \[
   \int_\X \left\| \frac{\nabla_x \, p(x)}{p(x)} - \frac{\nabla_x
@@ -787,9 +787,21 @@ informacional en la literatura de este resultado}:
   %
   el  t\'ermino de  izquierda es  positivo,  y cero  si  y solamente  si $p  =
   p_{\mathrm{fm}} \quad (\mu$-c.s.).\newline La forma de la informaci\'on Fisher
-  m\'inima sale de \SZ{finir}.
+  m\'inima  sale de  la ecuaci\'on  diferencial,  y de  las dos  formas de  $J$:
+  multiplicando la  ecuaci\'on diferencial en $p_{\mathrm{fm}}$  por la densidad
+  mismo,  y  por integraci\'on  obtenemos  $-  2  \Tr J(p_{\mathrm{fm}})  +  \Tr
+  J(p_{\mathrm{fm}}) = \eta_0 + \eta^t m$, lo que da el resulado del lema.
 \end{proof}
-
+%
+%De  hecho,  la  ecuaci\'on  diferencial   que  satisface  la  distribuci\'on  de
+%informaci\'on de  Fisher m\'inima se  re-escribe con un Laplaciano,  notando que
+%$\div_x   \left(   \frac{\nabla_x   p}{p}   \right)   =   \frac{\Delta_x   p}{p}
+%- \frac{\left\| \nabla_x p  \right\|^2}{p^2} $ de $\div_x  \nabla_x = \Delta_x$,
+%Laplaciano (ver notaciones):
+%%
+%\[
+%\frac{2 \, \Delta_x p}{p} - \left\|  \frac{\nabla_x  p}{p}  \right\|^2 = \eta_0 + \eta^t M
+%\]
 
 Sin  embardo, eso  conduce a  una ecuaci\'on  diferencial no  lineal, dificil  a
 resolver (a\'un numericamente).   En la literatura, se encuentra (a  lo m\'as qe
@@ -797,17 +809,18 @@ lo conocemos) dos enfoques:
 %
 \begin{itemize}
 %
-\item El  primer enfoque consiste a escribir \ $p(x) = \psi^2(x)$. De nuevo, eso
-permite cancelar el  v\'inculo de positivdad. M\'as all\'a, $\psi$  juega un rol
-de funci\'on de onda en mec\'anica cu\'antica y precisamente va a satisfacer una
+\item El primer enfoque consiste  a escribir \  $p(x) = \psi^2(x)$.  Eso permite
+cancelar el  v\'inculo de  positividad y  m\'as all\'a, $\psi$  juega un  rol de
+funci\'on de  onda en mec\'anica cu\'antica  y precisamente va a  satisfacer una
 ecuaci\'on tipo Schr\"odinger~\cite{Fri89,  Fri90, FriSof95, FriPla99, FriPla02,
 Fri98, Fri04} o~\cite{BorLew96, BorLew95, BerVig09}.
 %
-\item El secundo enfoque que se encuentra tratando del caso univariado consiste a
-escribir \ $\displaystyle  p(x) = \exp\left( - \int \psi(x)  \, dx \right)$. Por
-una parte, eso permite cancelar el v\'inculo de positivdad y luego conduce a una
-ecuaci\'on conocida  en varios  casos como  ecuaci\'on de  Riccati~\cite{Ric1724}.  Esa  es
-estudiada en~\cite{Ziv98} tratando del problema de informaci\'on m\'inima  (ver tambi\'en~\cite{BorLew96, BorLew96, Ziv98, FriPla99}), o por ejemplo en~\cite{}.
+\item El  secundo enfoque que se encuentra tratando del caso univariado consiste
+a escribir  \ $\displaystyle  p = \exp\left(  - g \right)$.  Por una  parte, eso
+permite cancelar  el v\'inculo de  positivdad y  luego conduce a  una ecuaci\'on
+conocida  en varios  casos como  ecuaci\'on de  Riccati~\cite{Ric1724}.  Esa  es
+estudiada en~\cite{Ziv98}  tratando del problema de  informaci\'on m\'inima (ver
+tambi\'en~\cite{BorLew96, BorLew96, Ziv98, FriPla99}), o por ejemplo en~\cite{}.
 \end{itemize}
 
 
@@ -842,11 +855,13 @@ equivalente)
 + \left( \eta_0 \, + \eta^t M(x) \right) \, \psi^2(x) \right) \, dx
 \]
 %
-Si la soluci\'on existe, cuando $\psi_{\mathrm{fm}} \in C^2(\X)$ satisface a una
-ecuaci\'on diferencial:
+\SZ{Sin embargo,  contrariamente al la formulaci\'on  con la densidad \  $p$, el
+problema  no  es convexo  m\'as  en  \ $\psi$.  Pero,  se  proba que  tiene  una
+soluci\'on    \'unica~\cite{BorLew96,    BorLew95}}.    Aparece    que    cuando
+$\psi_{\mathrm{fm}} \in C^2(\X)$ satisface a una ecuaci\'on diferencial:
 %
-\begin{lema}
-\label{Lem:SZ:MinFisherSchrodinger}
+\begin{corolario}
+\label{Cor:SZ:MinFisherSchrodinger}
 %
 Sea  \  $\displaystyle  \P_m =  \left\{  p  \ge  0  \tq   \int_\X p(x)  \,  dx  =
   1,  \quad  \int_\X M(x)  \,  p(x)  \, d\mu(x)  =  m  \right\}$ \  conjunto  de
@@ -869,30 +884,44 @@ Sea  \  $\displaystyle  \P_m =  \left\{  p  \ge  0  \tq   \int_\X p(x)  \,  dx  
 \[
 \min_{p \in \P_m} \Tr J(p) = - 4 \, \eta_0 - 4 \, \eta^t m
 \]
-\end{lema}
+\end{corolario}
 %
 \begin{proof}
-El   resulta  sale   notando   que   $\displaystyle  \L(x   ,   \psi  ,   \psi')
-  =  \left( \left\|  \nabla  \psi(x)  \right\|^2 +  \left(  \eta_0  \, +  \eta^t
-  M(x)  \right)  \,  \psi^2(x)  \right)$  que   se  pone  en  la  ecuaci\'on  de
-  Euler-Lagrange,   y   notando   que    $\div_x\left(   \nabla_x   \psi   \right)
-  = \Delta_x \psi$.  \newline Luego, de la  forma de la informaci\'on  de Fisher a
-  partir  de la  hessiana  (ver secci\'on~\ref{Ssec:SZ:Fisher}),  $\displaystyle
-  J(p) = - \int_\X \big( \Hess_x \left( \log  p(x) \right) \big) \, p(x) \, dx =
-  - \int_\X \big(  \Hess_x \left( \log  \psi^2(x) \right) \big) \,  \psi^2(x) \,
-  dx$.   Ahora,  de   \  $\displaystyle  \Hess_x  \left(   \log  \psi^2  \right)
-  =     \frac{2      \,     \left(      \psi     \,     \Hess_x      \psi     \,
-  - \,  \nabla_x  \psi   \,  \nabla_x^t  \psi  \right)}{\psi^2(x)}$   \  sale  \
-  $\displaystyle J(p) = \frac12  \, J(p) - 2 \, \int_\X  \Hess_x \psi(x) \, dx$,
-  es decir
+Primero, notar que  \ $\frac{\nabla_x p}{p} = 2  \, \frac{\nabla_x \psi}{\psi}$.
+Luego,     \    $\div_x     \left(     \frac{\nabla_x    \psi}{\psi}     \right)
+= \frac{\Delta_x  \psi}{\psi} -  \left\| \frac{\nabla_x  \psi}{\psi} \right\|^2$
+(de $\div_x \nabla_x = \Delta_x$, Laplaciano; ver notacones). Entonces,
 %
 \[
-\Tr J(p) = - 4 \, \int_\X \psi \, \Delta_x \psi(x) \, dx
+2  \,  \div_x  \left(  \frac{\nabla_x p}{p}  \right)  +  \left\|  \frac{\nabla_x
+p}{p} \right\|^2 = 4 \: \frac{\Delta_x \psi}{\psi}
 \]
 %
-(de $\Delta_x =  \Tr \Hess_x$, ver notaciones). El resultado  sigue de la ecuacion
-diferencial  que da  \ $\psi  \Delta_x  \psi =  \eta^0  \psi^2 +  \eta^t M  \psi^2
-= \eta_0 p + \eta^t M p$, y por integraci\'on sobre $\X$.
+El resultado (ecuaci\'on  diferencial, forma de la  informaci\'on m\'inima) sale
+de     $p     =     \psi^2$     en     la     ecuaci\'on     diferencial     del
+lema~\ref{Lem:SZ:MinFisherPruebaInfo},     reparametrizando     los     $\eta_k$
+($\frac{\eta_k}{4}$ en $\eta_k$).\newline De hecho, las pruebas de la literatura
+salen  del  problema  de  minimizaci\'on  con  $\displaystyle  \L(x  ,  u  ,  v)
+=  \left( \left\|  v \right\|^2  + \left(  \eta_0 \,  + \eta^t  M(x) \right)  \,
+u^2 \right)$ que se pone en la ecuaci\'on de Euler-Lagrange.
+%,   y   notando   que    $\div_x\left(   \nabla_x   \psi   \right)
+%  = \Delta_x \psi$.  \newline Luego, de la  forma de la informaci\'on  de Fisher a
+%  partir  de la  hessiana  (ver secci\'on~\ref{Ssec:SZ:Fisher}),  $\displaystyle
+%  J(p) = - \int_\X \big( \Hess_x \left( \log  p(x) \right) \big) \, p(x) \, dx =
+%  - \int_\X \big(  \Hess_x \left( \log  \psi^2(x) \right) \big) \,  \psi^2(x) \,
+%  dx$.   Ahora,  de   \  $\displaystyle  \Hess_x  \left(   \log  \psi^2  \right)
+%  =     \frac{2      \,     \left(      \psi     \,     \Hess_x      \psi     \,
+%  - \,  \nabla_x  \psi   \,  \nabla_x^t  \psi  \right)}{\psi^2(x)}$   \  sale  \
+%  $\displaystyle J(p) = \frac12  \, J(p) - 2 \, \int_\X  \Hess_x \psi(x) \, dx$,
+%  es decir
+%%
+%\[
+%\Tr J(p) = - 4 \, \int_\X \psi \, \Delta_x \psi(x) \, dx
+%\]
+%
+%(de $\Delta_x =  \Tr \Hess_x$, ver notaciones). El resultado  sigue de la ecuacion
+%diferencial  que da  \ $\psi  \Delta_x  \psi =  \eta^0  \psi^2 +  \eta^t M  \psi^2
+%= \eta_0 p + \eta^t M p$, y por integraci\'on sobre $\X$.
 \end{proof}
 %
 Aparece que la ecuaci\'on diferencial que  satisface $\psi$ es nada m\'as que la
@@ -941,31 +970,33 @@ Fri04}. Ejemplos de soluciones son
 \item \SZ{Ver~\cite[Cap.~2 y 4]{Gri05}}
 \end{itemize}
 
-\SZ{Existe una prueba parecida a una prueba informacional?}
-
-
 \SZ{Soporte aotado y momentos de orden 1 y 2~\cite{BerVig09}}
 
 %%%%%%%%%%
 \paragraph{Enfoque ``\`a la Riccati''}
 
 Este enfoque es  el que aparece entre otros  en~\cite{BorLew96, BorLew95, Ziv98,
-FriPla99}  y consiste  a escribir  \ $p(x)  = e^{  - g(x)}$.  Entonces, se  nota
-inmediatamente  que  $\nabla_x  p  =  -  p \nabla_x  g$  dando  el  problema  de
-minimizaci\'on
-%
-\[
-g_{\mathrm{fm}} = \argmin_g \int_\X  \left( \left\| \nabla g(x) \right\|^2 + \eta_0  
-  + \eta^t M(x) \right) \, e^{- g(x) } \, dx
-\]
-%
-Como  el el  enfoque  del p\'arafo  anterior, si  la  soluci\'on existe,  cuando
-$g_{\mathrm{fm}} \in C^2(\X)$ satisface a una ecuaci\'on diferencial:
+FriPla99}.  Se puede  ver que  la ecuaci\'on  diferencial que  satisface $p$  de
+informaci\'on  de Fisher  m\'inima es  una ecuaci\'on  que, de  hecho, satisface
+$\frac{\nabla_x p}{p} =  \nabla_x \left( \log p  \right)$: a pesar de  que no se
+introdujo  explicitamente as\'i  en la  literatura una  escritura natural  de la
+densidad es $p = e^{ - g}$.
+%Entonces, se  nota
+%inmediatamente  que  $\frac{\nabla_x  p}{p}  =  - \nabla_x  g$.  dando  el  problema  de
+%minimizaci\'on
+%%
+%\[
+%g_{\mathrm{fm}} = \argmin_g \int_\X  \left( \left\| \nabla g(x) \right\|^2 + \eta_0  
+%  + \eta^t M(x) \right) \, e^{- g(x) } \, dx
+%\]
+%%
+%Como  el el  enfoque  del p\'arafo  anterior, si  la  soluci\'on existe,  cuando
+%$g_{\mathrm{fm}} \in C^2(\X)$ satisface a una ecuaci\'on diferencial:
 %
 
 %
-\begin{lema}
-\label{Lem:SZ:MinFisherRiccati}
+\begin{corolario}
+\label{Cor:SZ:MinFisherRiccati}
 %
 Sea  \  $\displaystyle  \P_m =  \left\{  p  \ge  0  \tq   \int_\X p(x)  \,  dx  =
   1,  \quad  \int_\X M(x)  \,  p(x)  \, d\mu(x)  =  m  \right\}$ \  conjunto  de
@@ -973,7 +1004,7 @@ Sea  \  $\displaystyle  \P_m =  \left\{  p  \ge  0  \tq   \int_\X p(x)  \,  dx  
   %
   \[
   p_{\mathrm{fm}}      =     \argmin_{p      \in      \P_m}     \Tr(J(p))      =
-  \exp\left( g_{\mathrm{fm}} \right)   \qquad  \mbox{con   \   $g_{\mathrm{fm}}$  \   que
+  e^{- g_{\mathrm{fm}}}   \qquad  \mbox{con   \   $g_{\mathrm{fm}}$  \   que
   satisface} \qquad 2 \, \div_x\left( \nabla_x g \right) - \left\| \nabla_x g \right\|^2 = \eta_0 + \eta^t M
   %
   \]
@@ -985,16 +1016,19 @@ Sea  \  $\displaystyle  \P_m =  \left\{  p  \ge  0  \tq   \int_\X p(x)  \,  dx  
 \min_{p \in \P_m} \Tr J(p) = \eta_0 + \eta^t m
 \]
 %
-\end{lema}
+\end{corolario}
 %
 \begin{proof}
-El resulta  sale notando  que $\displaystyle  \L(x ,  g ,  g') =  \left( \left\|
-  g'  \right\|^2 +  \eta_0 +  \eta^t M(x)  \right)  \, e^{-  g(x) }$  \ con  $g'
-  = \nabla_x g $ \ que que se pone en la ecuaci\'on de Euler-Lagrange. Luego, de
-  las dos formas  de la informaci\'on de Fisher,  con $\log p = -  g$ se obtiene
-  $\displaystyle \Tr  J(p) = -  \int_\X \div_x  \left( \nabla_x g(x)  \right) \,
-  p(x) \,  dx =  \int_\X \left\|  \nabla_x g(x)  \right\|^2 \,  p(x) \,  dx$ (de
-  $\Delta_x = \div_x \nabla_x = \Tr \Hess_x$, ver notaciones).
+El  resulta sale  de \  $\frac{\nabla_x  p}{p} =  -\nabla_x  g$ \  puesto en  la
+ecuaci\'on      diferencial      del      lema~\ref{Lem:SZ:MinFisherPruebaInfo},
+reparametrizando los $\eta_k$ ($-\eta_k$ en $\eta_k$).
+%notando  que $\displaystyle  \L(x ,  g ,  g') =  \left( \left\|
+%  g'  \right\|^2 +  \eta_0 +  \eta^t M(x)  \right)  \, e^{-  g(x) }$  \ con  $g'
+%  = \nabla_x g $ \ que que se pone en la ecuaci\'on de Euler-Lagrange. Luego, de
+%  las dos formas  de la informaci\'on de Fisher,  con $\log p = -  g$ se obtiene
+%  $\displaystyle \Tr  J(p) = -  \int_\X \div_x  \left( \nabla_x g(x)  \right) \,
+%  p(x) \,  dx =  \int_\X \left\|  \nabla_x g(x)  \right\|^2 \,  p(x) \,  dx$ (de
+%  $\Delta_x = \div_x \nabla_x = \Tr \Hess_x$, ver notaciones).
 \end{proof}
 %\[  2 \,  \div_x\left( g'  \right)  - \left\|  g'  \right\|^2 =  \eta_0 +  \eta^t
 %M \qquad \mbox{con} \qquad g' = \nabla_x g \]
@@ -1011,18 +1045,6 @@ ecuaciones de Riccati~\cite{Ric1724, Ric59}. Eso es
 %, Bickel  81
 %"Onthe theory of Fisher's amount of information" Kagan 63, Chimento et al 2000 
 
-
-\
-
-Para  cerra esta  secci\'on, nota  que,  al imagen  de las  leyes de  entrop\'ia
-m\'axima, la informaci\'on  de Fisher (sin poner v\'inculos)  juega tambi\'en un
-rol   particular  en   la  inferencia   bayesiana  a   trav\'es  del   prior  de
-Jeffrey~\cite{Jef46,    Jef48,    LehCas98,   Rob07}~\footnote{Ver    nota    de
-pie~\ref{Foot:SZ:Prior}.   A  veces, se  toma  como  distribuci\'on a  priori  \
-$p_\Theta(\theta)  \propto  |J_\theta(X)|^\frac12$  \   por  su  invarianza  por
-reparametrizaci\'on  \ $\eta  =  \eta(\theta)$, \ie  el prior  de  Jeffrey en  \
-$\eta$ \ es un\'ivocamente obtenido con la Fisher  en \ $\eta$ \ o por cambio de
-variables saliendo de \ $p_\Theta$.}.
 
 
 % ================================= canal
