@@ -1,6 +1,8 @@
 \seccion{Unas identidades y desigualdades}
 \label{Sec:SZ:Desigualdades}
 
+\modif{\bf En esta secci\'on, por simplificaci\'on de notaciones, se olvidar\'a mencionar la medida con respecto a la cual se consideran las densidades, salvo si es necesario. Adem\'as, como lo vimos, varias cantidades informacionales no depende de esta medida (divergencias, informaci\'on de Fisher param\'etrica con $\mu$ independiente del param\'etro).}.
+%vamos a considerar solamente los casos $\mu = \mu_L$ medida de Lebesgue o $\mu = \mu_\X$ discreta, \ie los casos de variables continuas o discretas. La mayoria de los resultados se generalizan sin costo adicional (queda obvio de las prubas de estos).
 % Libro Loss Ruskai [Lieb]
 
 \SZ{Desigualdades de Fano? Rioul p.  78, Cover P.~663, Sanov? Pythagorean? Gene:
@@ -119,9 +121,10 @@ informaci\'on de Fisher:
 \begin{teorema}[Desigualdad de procesamiento de datos tipo Fisher]
 \label{Teo:SZ:DesigualdadProcesamientoDatosFisher}
 %
-  Sea  $\theta  \mapsto  X  \mapsto   Y$  un  proceso  de  Markov  con  $\theta$
-  determinista y $p_{X,Y}$ parametrizado por $\theta$, es decir en este contexto
-  que, $p_{Y|X=x}$ no es parametrizado por $\theta$. Entonces
+  Sea  $\theta  \mapsto  X  \mapsto  Y$   un  proceso  de  Markov  con  $\theta$
+  determinista y $p_{X,Y}$ \modif{densidad diferenciable} parametrizado por $\theta$, es
+  decir   en  este   contexto   que,  $p_{Y|X=x}$   no   es  parametrizado   por
+  $\theta$. Entonces
   %
   \[
   J_\theta(X) \ge J_\theta(Y),
@@ -143,11 +146,12 @@ informaci\'on de Fisher:
   J_\theta(Y|X) + J_\theta(Y) = J_\theta(X|Y) + J_\theta(X).
   \]
   %
-  Del hecho que $p_{Y|X=x}$ no es parametrizado por $\theta$ es sencillo ver que
-  $J_\theta(Y|X) = 0$, la prueba  se cerrando de $J_\theta(X|Y) \ge 0$. Adem\'as
-  se obtiene la igualdad  si y solamente si $J_\theta(X|Y) = 0$,  es decir de la
-  ``positividad'' del  integrante dando la matrix  de Fisher, si  y solamente si
-  $p_{X|Y=y}$ no es parametrizado por $\theta$.
+  Del hecho que, por definici\'on de un processo de Markov, \ $p_{Y|X=x}$ \ no
+  es parametrizado  por $\theta$  es sencillo  ver que  $J_\theta(Y|X) =  0$, la
+  prueba se cerrando  de $J_\theta(X|Y) \ge 0$. Adem\'as se  obtiene la igualdad
+  si y  solamente si  $J_\theta(X|Y) =  0$, es decir  de la  ``positividad'' del
+  integrante dando  la matrix  de Fisher,  si y solamente  si $p_{X|Y=y}$  no es
+  parametrizado por $\theta$.
 \end{proof}
 
 
@@ -274,8 +278,6 @@ tambi\'en~\cite{JohYu10, HagAbb14}).
 \label{Ssec:SZ:FisherConvolucional}
 
 
-
-
 Mencionamos de que existe tambi\'en una desigualdad parecida a la de la potencia
 entr\'opica,  teorema~\ref{Teo:SZ:EPI}, dada en  el caso  escalar en~\cite{Joh04,
   Bla65, Zam98, DemCov91, KagYu08}:
@@ -283,7 +285,7 @@ entr\'opica,  teorema~\ref{Teo:SZ:EPI}, dada en  el caso  escalar en~\cite{Joh04
 \begin{teorema}[Desigualdad convolucional de Fisher]
 \label{Teo:SZ:DesigualdadConvolucionalFisher}
 %
-Sean  $X$  e  $Y$  dos  variables  $d$-dimensionales  continuas  independientes.
+Sean  $X$  e  $Y$  dos  variables  $d$-dimensionales \modif{independientes, con densidades diferenciables.}
 Entonces
   %
   \[
@@ -297,22 +299,22 @@ Entonces
 %
 \begin{proof}
   $X$  \  e  \  $Y$  \  siendo  independientes,  tenemos  para  $W  =  X  +  Y$,
-  $\displaystyle p_W(w)  = \int_\X p_X(x)  p_Y(w-x) \, dx$ convoluci\'on  de las
+  $\displaystyle p_W(w)  = \int_\X p_X(x)  p_Y(w-x) \, d\mu(x)$ convoluci\'on  de las
   distribuciones de \ $X$ \ y de \ $Y$ (ver ejemplo~\ref{Ej:MP:Suma}).
   %pagina~\pageref{Ej:MP:Suma}).  
   Escribiendo $S_X =  \nabla_x \log p_X$ el score  de $X$ y lo mismo  para $Y$ y
   $W$,
   %
   \begin{eqnarray*}
-  S_W(w) & = & \int_\X \frac{p_X(x)}{p_W(w)} \, \nabla_w p_Y(w-x) \, dx\\[2.5mm]
+  S_W(w) & = & \int_\X \frac{p_X(x)}{p_W(w)} \, \nabla_w p_Y(w-x) \, d\mu(x)\\[2.5mm]
   %
-  & = & - \int_\X \frac{p_X(x)}{p_W(w)} \, \nabla_x p_Y(w-x) \, dx\\[2.5mm]
+  & = & - \int_\X \frac{p_X(x)}{p_W(w)} \, \nabla_x p_Y(w-x) \, d\mu(x)\\[2.5mm]
   %
-  & = & \int_\X \frac{p_Y(w-x)}{p_W(w)} \, \nabla_x p_X(x) \, dx\\[2.5mm]
+  & = & \int_\X \frac{p_Y(w-x)}{p_W(w)} \, \nabla_x p_X(x) \, d\mu(x)\\[2.5mm]
   %
-  & = & \int_\X \frac{p_Y(w-x) p_X(x)}{p_W(w)} \, \nabla_x \log p_X(x) \, dx\\[2.5mm]
+  & = & \int_\X \frac{p_Y(w-x) p_X(x)}{p_W(w)} \, \nabla_x \log p_X(x) \, d\mu(x)\\[2.5mm]
   %
-  & = & \int_\X p_{X|W=w}(w) \, \nabla_x \log p_X(x) \, dx\\[2.5mm]
+  & = & \int_\X p_{X|W=w}(w) \, \nabla_x \log p_X(x) \, d\mu(x)\\[2.5mm]
   %
   & = & \Esp\left[ \left. S_X(X) \right| W = w \right]
   \end{eqnarray*}
@@ -348,17 +350,25 @@ Entonces
   versi\'on dada se recupera re-emplazando \ $X$ \ por \ $\sqrt{a} \, X$ \ e \
   $Y$ \ por \ $\sqrt{1-a} \, Y$.
 
-  Escribiendo la desigualdad viniendo de la f\'ormula de K\"onig-Huyggens, se nota
-  que la igualdad es  satisfecha si y solamente si $a S_X(w-x)  + (1-a) S_Y(x) =
-  S_W(w)$ para cualquier $x, w$. Integrando  en $x$ se obtiene $-a \log p_X(w-x)
-  +  (1-a) \log  p_Y(x) =  x S_W(w)  + g(w)$.   Derivando en  $w$  obtenemos $-a
-  \nabla_w  \log p_X(w-x)  = S_W(w)  + \nabla_w  g(w)$, es  decir, en  $w  = 0$,
-  notando que  $\nabla_w \log p_X(w-x) =  -\nabla_x \log p_X(w-x)$,  se nota que
-  $\nabla_x  \log p_X(x)$  es  constante, \ie  $X$  es necesariamente  gausiana.
-  Similarmente, $Y$  es necesariamente gausiana  tambi\'en. Adem\'as, calculando
-  las informaciones de Fisher en  el caso gausiano, obtenemos $\left( \Sigma_X +
-    \Sigma_Y \right)^{-1} = \Sigma_X^{-1} +  \Sigma_Y^{-1}$ lo que es posible si
-  y solamente si $\Sigma_X$ \ y \ $\Sigma_Y$ \ son proporcionales.
+  Escribiendo la  desigualdad viniendo de  la f\'ormula de  K\"onig-Huyggens, se
+  nota que  la igualdad  es satisfecha si  y solamente si  \ \modif{$a  S_X(x) +
+  (1-a) S_Y(y) =  S_W(w)$ \ para cualquier \ $y,  w$ \ y \ $x =  w-y$, es decir,
+  para cualquier \  $w, y$, \ $a  S_X(w-y) + (1-a) S_Y(y) =  S_W(w)$. Tomando la
+  ``primitiva'' en \ $y$ \ se obtiene \  $-a \log p_X(w-y) + (1-a) \log p_Y(y) =
+  y^t  S_W(w) +  g(w)$  \ donde  $g(w)$  \ es  una  constante de  integraci\'on.
+  Diferenciando  ahora  esta  igualdad  con  respecto a  \  $w$  \  obtenemos  \
+  $-a \nabla_w \log p_X(w-y)  = \Hess_w S_W(w) \: y +  \nabla_w g(w)$, es decir,
+  en $w = 0$, notando que $\nabla_w \log p_X(w-y) = -\nabla_y \log p_X(w-y)$, se
+  nota que \ $\nabla_y \log p_X(-y)$ \ es de la forma \ $\nabla_y \log p_X(-y) =
+  R (y  + m)$ \  con \ $R  \in \Pos_d^+(\Rset), \: m  \in \Rset^d$, \ie  \ $\log
+  p_X(y)  = \frac12  (y  -  m)^t R  (y  - m)  +  c$ \  con  $c$  \ constante  de
+  integrac\'on:}  $X$   es  necesariamente   gausiana.   Similarmente,   $Y$  es
+  necesariamente gausiana  tambi\'en \modif{y, por stabilidad  por combinaci\'on
+  lineal     Teorema~\ref{Teo:MP:StabilidadGaussiana},     $W$    es     tambi\'en
+  Gausiana}.  Adem\'as,  calculando  las  informaciones de  Fisher  en  el  caso
+  gausiano, obtenemos  $\left( \Sigma_X + \Sigma_Y  \right)^{-1} = \Sigma_X^{-1}
+  +  \Sigma_Y^{-1}$ lo  que  es posible  si  y  solamente si  $\Sigma_X$  \ y  \
+  $\Sigma_Y$ \ son proporcionales.
 \end{proof}
 %
 Este teorema  tiene varias consecuencias.  En  particular, interviene justamente
@@ -477,11 +487,14 @@ covarianza.
 \begin{teorema}[Desigualdad de Cram\'er-Rao]
 \label{Teo:SZ:CramerRao}
 %
-  Sea  \ $X$  \  parametrizada por  \ $\theta$,  de  densidad de  soporte \  $\X
-  \subset \Rset^d$ \ independiente de  \ $\theta$, \ y \ $\widehat{\theta}(X)$
-  \  un  estimador   de  \  $\theta$.   Sea  \  $b(\theta)$  \   su  sesgo  y  \
-  $\Sigma_{\widehat{\theta}}$ \ su matriz de covarianza.  Sea \ $\Jac_b(\theta)$
-  \ la matriz Jacobiana del sesgo \ $b$.  Entonces,
+  Sea \ $X$  \ parametrizada por \ $\theta$, \modif{que  admite una densidad con
+  respecto  a una  medida $\mu$  dada independiente  de $\theta$}  de soporte  \
+  $\X \subset \Rset^d$  \ independiente de \  $\theta$\modif{, diferenciable con
+  respecto  a \  $\theta$}, \  y  \ $\widehat{\theta}(X)$  \ un  estimador de  \
+  $\theta$   \modif{(funci\'on   determinista   solamete  de   $X$)}.    Sea   \
+  $b(\theta)$  \  su  sesgo  y  \ $\Sigma_{\widehat{\theta}}$  \  su  matriz  de
+  covarianza.  Sea  \ $\Jac_b(\theta)$ \  la matriz  Jacobiana del sesgo  \ $b$.
+  Entonces,
   %
   \[
   \Sigma_{\widehat{\theta}} - \left( I + \Jac_b(\theta) \right) J_\theta(X)^{-1}
@@ -530,11 +543,11 @@ informaci\'on de Fisher, \ie \  $J_\theta(X)$ \ caracteriza la informaci\'on que
   %
   \begin{eqnarray*}
   \Esp\left[ S_\theta(X) \left( \widehat{\theta}(X) - \theta_0 \right)^t \right] & = &
-  \int_\X \nabla_\theta p_X(x;\theta) \widehat{\theta}(x)^t \, dx - \left(
-  \int_\X \nabla_\theta p_X(x;\theta) \, dx \right) \theta_0^t\\[2.5mm]
+  \int_\X \nabla_\theta p_X(x;\theta) \, \widehat{\theta}(x)^t \, d\mu(x) - \left(
+  \int_\X \nabla_\theta p_X(x;\theta) \, d\mu(x) \right) \theta_0^t\\[2.5mm]
   %
-  & = & \nabla_\theta \int_{\Rset^d} p_X(x;\theta) \widehat{\theta}(x)^t \, dx -
-  \left( \nabla_\theta \int_{\Rset^d} p_X(x;\theta) \, dx \right)
+  & = & \nabla_\theta \int_{\Rset^d} p_X(x;\theta) \, \widehat{\theta}(x)^t \, d\mu(x) -
+  \left( \nabla_\theta \int_{\Rset^d} p_X(x;\theta) \, d\mu(x) \right)
   \theta_0^t\\[2.5mm]
   %
   & = & \nabla_\theta \left( \theta + b(\theta) \right)^t  - 
@@ -547,7 +560,7 @@ informaci\'on de Fisher, \ie \  $J_\theta(X)$ \ caracteriza la informaci\'on que
   $\Esp\left[   \left(    \widehat{\theta}(X)   -   \theta_0    \right)   \left(
       \widehat{\theta}(X)      -      \theta_0      \right)^t     \right]      =
   \Sigma_{\widehat{\theta}}$, la  desigualdad de Cauchy-Bunyakovsky-Schwarz (ver
-  corolario~\ref{Cor:MP:CBS}
+  corolario~\ref{Cor:MP:CBS})
   %, pagina~\pageref{Cor:MP:CBS}) 
   conduce a
   %
@@ -649,10 +662,15 @@ entrop\'ia relativa~\cite{CovTho06, Fri04}:
 \begin{teorema}[Fisher como curvatura de la entrop\'ia relativa]
 \label{Teo:SZ:FisherCurvatura}
 %
-  Sea \ $X$ \ parametrizado por \ $\theta_0 \in \mathring{\Theta}$ \ interior de
-  $\Theta$  ($\Theta$  \  contiene  un  vecinaje de  \  $\theta_0$).   Siendo  \
-  $\Dkl[p_X(\cdot;\theta)]{p_X(\cdot;\theta_0)}$  \ funci\'on  de \  $\theta \in
-  \Theta$, aparece que
+  Sea  \  $X$   \  parametrizado  por  \  \modif{$\theta  \in   \Theta$  \  y  \
+  $\theta_0 \in \mathring{\Theta}$ \ interior de  \ $\Theta$ \ dado} ($\Theta$ \
+  contiene   un    vecinaje   de   \   $\theta_0$).     \modif{Suponga   que   \
+  $P_X(\cdot;\theta)  \ll P_X(\cdot;\theta_0)$  \ sobre  \  $\Theta$ \  y sea  \
+  $p_X(\cdot  ; \theta)$  \ densidad  de \  $X$ \  con respecto  a una  medida \
+  $\mu$  \ dada  independiente de  \ $\theta$  \  y suponga  que \  $p_X$ \  sea
+  diferenciable con  respecto a \  $\theta$ \ en  un vecinaje de  \ $\theta_0$}.
+  Siendo  \  $\Dkl[p_X(\cdot;\theta)]{p_X(\cdot;\theta_0)}$  \  funci\'on  de  \
+  $\theta \in \Theta$, aparece que
   %
   \[
   \Dkl[p_X(\cdot;\theta)]{p_X(\cdot;\theta_0)}   =  \frac12   \left(   \theta  -
@@ -676,27 +694,29 @@ entrop\'ia relativa~\cite{CovTho06, Fri04}:
   \begin{eqnarray*}
   \nabla_\theta \Dkl[p_X(\cdot;\theta)]{p_X(\cdot;\theta_0)} & =
   & \nabla_\theta \int_\X p_X(x;\theta) \log \left(
-  \frac{p_X(x;\theta)}{p_X(x;\theta_0)} \right) dx\\[2.5mm]
+  \frac{p_X(x;\theta)}{p_X(x;\theta_0)} \right) d\mu(x)\\[2.5mm]
   %
   & = & \int_\X \nabla_\theta p_X(x;\theta) \log \left(
-  \frac{p_X(x;\theta)}{p_X(x;\theta_0)} \right) dx + \int_\X \nabla_\theta
-  p_X(x;\theta) \, dx\\[2.5mm]
+  \frac{p_X(x;\theta)}{p_X(x;\theta_0)} \right) d\mu(x) + \int_\X \nabla_\theta
+  p_X(x;\theta) \, d\mu(x)\\[2.5mm]
   %
   & = & \int_\X \nabla_\theta p_X(x;\theta) \log \left(
-  \frac{p_X(x;\theta)}{p_X(x;\theta_0)} \right) dx + \nabla_\theta \int_\X
-  p_X(x;\theta) \, dx\\[2.5mm]
+  \frac{p_X(x;\theta)}{p_X(x;\theta_0)} \right) d\mu(x) + \nabla_\theta \int_\X
+  p_X(x;\theta) \, d\mu(x)\\[2.5mm]
   %
   & = & \int_\X \nabla_\theta p_X(x;\theta) \log \left(
-  \frac{p_X(x;\theta)}{p_X(x;\theta_0)} \right) dx
+  \frac{p_X(x;\theta)}{p_X(x;\theta_0)} \right) d\mu(x)
   \end{eqnarray*}
   %
-  la \'ultima ecuaci\'on como consecuencia de que \ $p_X$ \ suma a 1.  Entonces,
+  la \'ultima ecuaci\'on como consecuencia de que  \ $p_X$ \ suma a 1. \modif{Se
+  confirma   de  esta   forma   que   el  gradiente   se   cancela  en   $\theta
+  = \theta_0$. Luego},
   %
   \[
   \Hess_\theta     \Dkl[p_X(\cdot;\theta)]{p_X(\cdot;\theta_0)}     =    \int_\X
   \Hess_\theta  p_X(x;\theta) \log  \left( \frac{p_X(x;\theta)}{p_X(x;\theta_0)}
-  \right)  dx  + \int_\X  \frac{\nabla_\theta  p_X(x;\theta) \,  \nabla^t_\theta
-    p_X(x;\theta)}{p_X(x;\theta)} \, dx.
+  \right)  d\mu(x)  + \int_\X  \frac{\nabla_\theta  p_X(x;\theta) \,  \nabla^t_\theta
+    p_X(x;\theta)}{p_X(x;\theta)} \, d\mu(x).
   \]
   %
   Tomado en \ $\theta = \theta_0$  el primer t\'ermino vale cero.  En el segundo
@@ -758,13 +778,13 @@ informaci\'on de Fisher.
 \begin{teorema}[Identidad de de Bruijn]
 \label{Teo:SZ:DeBruijn}
 %
-  Sea \ $X$ \  un vector aleatorio continuo sobre un abierto  de \ $\Rset^d$ \ y
-  admitiendo una matriz de covarianza, y sea \  $Y = X + T \N$ \ donde \ $T$
-  \ es determinista, $d  \times d'$ \ con \ $ d \le d'$,  de rango m\'aximo, y \
-  $\N$ \  un vector  gaussiano centrado y  de covarianza  \ $\Sigma_\N$,
-  independiente  de \  $X$ \  (ver  figura Fig.~\ref{Fig:SZ:deBruijnVerdu}-(a)).
-  Entonces, la  entrop\'ia de Shannon  y la informaci\'on  de Fisher de \  $Y$ \
-  satisfacen
+  Sea \ $X$ \  un vector aleatorio continuo sobre un abierto de  \ $\Rset^d$ \ y
+  admitiendo una matriz de covarianza, y sea \ $Y = X + T \N$ \ donde \ $T$ \ es
+  determinista, $d \times d'$ \ con \ $ d \le d'$, de rango m\'aximo, y \ $\N$ \
+  un vector gaussiano centrado y de covarianza \ $\Sigma_\N$, independiente de \
+  $X$   \  (ver   figura  Fig.~\ref{Fig:SZ:deBruijnVerdu}-(a)).    Entonces,  la
+  entrop\'ia \modif{(diferencial)}  de Shannon y la  \modif{matriz informaci\'on
+  no param\'etrica} de Fisher de \ $Y$ \ satisfacen
   %
   \[
   \nabla_T H(Y) = J(Y) \, T \, \Sigma_\N,
@@ -967,19 +987,17 @@ identidad entre \ $I(X;Y)$ \ y \ $\E(X|Y)$:
   \nabla_S I(X;Y) & = & \nabla_S H(Y)\\[2.5mm]
   %
   & = & - \int_{\Rset^d \times \Rset^{d'}} \nabla_S \Big( p_{X,Y}(x,y) \, \log
-  p_Y(y) \Big) \, dx \, dy\\[2.5mm]
+  p_Y(y) \Big) \, d\mu(x,y)\\[2.5mm]
   %
   & = & - \int_{\Rset^d \times \Rset^{d'}} \nabla_S \, p_{X,Y}(x,y) \, \log p_Y(y) \,
-  dx \, dy - \int_{\Rset^d \times \Rset^{d'}} p_{X|Y=y}(x) \, \nabla_S \, p_Y(y) \, dx \,
-  dy\\[2.5mm]
+  d\mu(x,y) - \int_{\Rset^d \times \Rset^{d'}} p_{X|Y=y}(x) \, \nabla_S \, p_Y(y) \, d\mu(x,y)\\[2.5mm]
   %
   & = & \int_{\Rset^d \times \Rset^{d'}} \nabla_y \, p_{X,Y}(x,y) \, x^t \log p_Y(y)
-  \, dx \, dy - \int_{\Rset^d} \nabla_S \, p_Y(y) \, dy\\[2.5mm]
+  \, d\mu(x,y) - \int_{\Rset^d} \nabla_S \, p_Y(y) \, d\mu(y)\\[2.5mm]
   %
-  & = & - \int_{\Rset^d \times \Rset^{d'}} \nabla_y \, p_Y(y) x^t p_{X|Y=y}(x) \, dx
-  \, dy\\[2.5mm]
+  & = & - \int_{\Rset^d \times \Rset^{d'}} \nabla_y \, p_Y(y) x^t p_{X|Y=y}(x) \, d\mu(x,y)\\[2.5mm]
   %
-  & = & - \int_{\Rset^d} \nabla_y \, p_Y(y) \, \Esp\left[X^t | Y = y \right] \, dy
+  & = & - \int_{\Rset^d} \nabla_y \, p_Y(y) \, \Esp\left[X^t | Y = y \right] \, d\mu(y)
   \end{eqnarray*}
   %
   La  segunda l\'inea  viene  de la  escritura  de \  $H(Y)$  usando $p_Y$  como
@@ -994,12 +1012,12 @@ identidad entre \ $I(X;Y)$ \ y \ $\E(X|Y)$:
   %
   \begin{eqnarray*}
   \nabla_y p_Y(y) & = & \int_{\Rset^{d'}} \nabla_y \, p_{Y|X=x}(y) \, p_X(x) \,
-  dx\\[2.5mm]
+  d\mu(x)\\[2.5mm]
   %
   & = & - \Sigma_\N^{-1} \int_{\Rset^{d'}} (y - S x) \, p_{Y|X=x}(y) \, p_X(x) \,
-  dx\\[2.5mm]
+  d\mu(x)\\[2.5mm]
   %
-  & = & - \Sigma_\N^{-1} \left( y - S \int_{\Rset^{d'}} x \, p_{X|Y=y}(x) \,dx
+  & = & - \Sigma_\N^{-1} \left( y - S \int_{\Rset^{d'}} x \, p_{X|Y=y}(x) \,d\mu(x)
   \right) p_Y(y)\\[2.5mm]
   %
   & = & - \Sigma_\N^{-1} \Big( y - S \Esp\left[X | Y=y \right] \Big) \, p_Y(y)
@@ -1010,7 +1028,7 @@ identidad entre \ $I(X;Y)$ \ y \ $\E(X|Y)$:
   %
   \begin{eqnarray*}
   \nabla_S I(X;Y) & = & \Sigma_\N^{-1} \int_{\Rset^d} \Big( y - S \Esp\left[X |
-  Y=y \right] \Big) \Esp\left[X^t | Y=y \right] \, p_Y(y) \, dy\\[2.5mm]
+  Y=y \right] \Big) \Esp\left[X^t | Y=y \right] \, p_Y(y) \, d\mu(y)\\[2.5mm]
   %
   & = & \Sigma_\N^{-1} \left( \Esp\left[ Y \Esp\left[ X^t|Y \right] \right] - S
   \Esp\left[ \Esp\left[X | Y \right] \Esp\left[X | Y \right]^t \right]

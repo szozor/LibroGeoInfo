@@ -1,73 +1,97 @@
-\seccion{Entrop\'ia condicional, informaci\'on mutua, entrop\'ia relativa}
+\seccion{Entrop\'ia condicional, informaci\'on mutua, entrop\'ias relativa \modif{y cruzada}.}
 \label{Sec:SZ:Mutua}
 
 Tratando de un par de variables aleatorias $X$ e $Y$, una cuesti\'on natural que
 se  plantea es  la  de cuantificar  la  incerteza  que queda  sobre  una de  las
 variables cuando se observa la otra.  Dicho de  otra manera, si se mide $Y = y$,
-?`qu\'e informaci\'on  tenemos sobre  $X$? La respuesta  a esta  interrogante se
-encuentra en  la noci\'on de  entrop\'ia condicional.  Si uno  mide $Y =  y$, la
-descripci\'on  estad\'istica de  $X$  conociendo que  $Y  = y$  se  resume a  la
-distribuci\'on      condicional      de      probabilidad      $p_{X|Y=y}(\cdot)
-= \frac{p_{X,Y}(\cdot,y)}{p_Y(y)}$.   Con esta  restricci\'on, se  puede evaluar
-una incerteza sobre $X$, sabiendo que $Y=y$,
+?`qu\'e informaci\'on  tenemos sobre  $X$? \modif{En la  misma vaina,  uno puede
+interesarse  a  la informaci\'on  que  comparten  dos variables  aleatorias.  La
+respuestas  a estas  interrogantes se  encuentra en  las nociones  de entrop\'ia
+condicional  y de  informaci\'on mutua.  Estos conceptos  son v\'inculados  a la
+noci\'on de divergencia  entre distribuciones de probabilidades  y de entrop\'ia
+cruzada.}
+
+
+% ================================= Condicional
+
+\modif{
+\subseccion{Entrop\'ia condicional}
+\label{Ssec:SZ:Condicional}
+
+La  respuesta  a  la  primera  interrogante} se  encuentra  en  la  noci\'on  de
+entrop\'ia condicional.  Si uno mide $Y  = y$, la descripci\'on estad\'istica de
+$X$  conociendo  que $Y  =  y$  se resume  a  la  distribuci\'on condicional  de
+probabilidad  \modif{$P_{X|Y=y}(\cdot)$. \modif{Notando  $p_{X,Y}$ densidad  con
+respecto  a  una  medida $\mu$,  y  usando  la  misma  notaci\'i $\mu$  para  la
+restricci\'on  de  la  medida  a  $\X  = X(\Omega)$  o  $\Y  =  Y(\Omega)$  (con
+$\X\Y \subseteq \X \times \Y$ dominio de $(X,Y)$)}
+%= \frac{p_{X,Y}(\cdot,y)}{p_Y(y)}$.
+%Con esta restricci\'on,
+se puede evaluar una incerteza sobre  $X$, sabiendo que
+$Y=y$ bajo la forma,
 %
 \[
-H(X|Y=y) = H\left( p_{X|Y=y} \right).
+H(X|Y=y \| \mu) = H\left( p_{X|Y=y} \| \mu\right).
 \]
+}
 %
 Entonces, condicionalmente a la variable aleatoria $Y$, la incerteza va a ser el
-promedio estad\'istico sobre  todos los estados de $Y$,  es decir $\displaystyle
-H(X|Y)  = \int_{\Rset^d}  p_Y(y) H(X|Y=y)  \, d\mu(y)$  \ (con  la medida  $\mu$
-adecuada).
+promedio estad\'istico sobre  todos los estados de $Y$,  es decir \modif{$\displaystyle
+H(X|Y \| \mu)  = \int_\Y  H(X|Y=y \| \mu)  \, dP_Y(y)$.}
+%\ (con  la medida  $\mu$ adecuada).
 %
+\modif{
 \begin{definicion}[Entrop\'ia condicional]
 \label{Def:SZ:entropiacondicional}
 %
-  Sean \ $X$ \  e \ $Y$ \ dos variables aleatorias, respectivamente  \ $d$ \ y \
-  $d'$-dimensionales. La entrop\'ia condicional de \ $X$ con respecto a \ $Y$ se
-  define como
+  Sean \ $X$ \  e \ $Y$ \ dos variables aleatorias con
+  %,  respectivamente \  $d$ \  y \  $d'$-dimensionales \  $p_{X,Y}$ \  densidad
+  conjunta  con respecto  a  una  medida \  $\mu$,  definida  sobre $\X\Y$.  La
+  entrop\'ia condicional de \ $X$ con respecto a \ $Y$ se define como
   %
   \[
-  H(X|Y)   =   -  \int_{\Rset^d   \times   \Rset^{d'}}  p_{X,Y}(x,y)   \log
-  p_{X|Y=y}(x) \, d\mu(x,y),
+  H(X|Y \| \mu)   =   -  \int_{\X\Y}    \log
+  p_{X|Y=y}(x) \, dP_{X,Y}(x,y).
   \]
   %
-  con \ $\mu$ \ medida adecuada (ej.  discreta en el caso discreto o de Lebesgue
-  en el caso diferencial).
+  %con \ $\mu$ \ medida adecuada (ej.  discreta en el caso discreto o de Lebesgue
+  %en el caso diferencial).
 \end{definicion}
+}
 
-Cuando $X$ e  $Y$ son independientes, $\forall  \, y \in \Rset^{d_Y}  \in \Y, \:
-p_{X|Y=y} = p_X$:  la entrop\'ia condicional $H(X|Y)$  se reduce a la  de $X$, y
-reciprocamente
+Cuando $X$ e $Y$ son independientes, \modif{necesariamente $\X\Y = \X \times \Y$
+y  m\'as all\'a  $\forall  \, y  \in  \Y,  \: p_{X|Y=y}  =  p_X$: la  entrop\'ia
+condicional $H(X|Y \| \mu)$ se reduce a la de $X$, y reciprocamente}
 %
 \begin{propiedades}
 \item\label{Prop:SZ:independenciacondicional}
   %
   \[
-  X \: \mbox{e} \: Y \: \mbox{independientes} \quad \Leftrightarrow \quad H(X|Y)
-  = H(X).
+  X \: \mbox{e} \: Y \: \mbox{independientes} \quad \Leftrightarrow \quad \modif{H(X|Y \| \mu)
+  = H(X \| \mu)}.
   \]
+  \modif{donde se usa la misma escritura $\mu$ para la medida sobre $\X\Y$ y su restricci\'on a $\X$}.
 \end{propiedades}
 %
 Esta  propiedad  se   interpreta  como  el  hecho  que   $Y$  no  lleva  ninguna
 informaci\'on sobre  $X$, y entonces ninguna  medici\'on de $Y$ va  a cambiar la
 incerteza en $X$.
 
-Siendo  $H(X|Y=y)$ una  entrop\'ia, va  a heredar  todas las  propiedades de  la
-entrop\'ia  (o  entrop\'ia  diferencial).    Adem\'as,  de  $p_{X,Y}(\cdot,y)  =
-p_{X|Y=y}(\cdot) p_Y(y)$ se deduce la propiedad siguiente:
+Siendo  \modif{$H(X|Y=y  \|  \mu)$}  una  entrop\'ia, va  a  heredar  todas  las
+propiedades  de   la  entrop\'ia  (o  entrop\'ia   diferencial).   Adem\'as,  de
+$p_{X,Y}(\cdot,y) = p_{X|Y=y}(\cdot) \, p_Y(y)$ se deduce la propiedad siguiente:
 %
 \begin{propiedades}
 \item\label{Prop:SZ:cadena}  {\it Regla de la cadena}
   %
   \[
-  H(X,Y) =  H(X|Y) +  H(Y).
+  \modif{H(X,Y \| \mu) =  H(X|Y \| \mu) +  H(Y \| \mu)}.
   \]
   %
   Esta regla se generaliza sencillamente a
   %
   \[
-  H(X_1 , \ldots , X_n) = H(X_1) + \sum_{i=2}^n H(X_i|X_{i-1} , \ldots , X_1).
+  \modif{H(X_1 , \ldots , X_n \| \mu) = H(X_1 \| \mu) + \sum_{i=2}^n H(X_i|X_{i-1} , \ldots , X_1 \| \mu)}.
   \]
   %  
   De      esta     regla      de      la     cadena      se     recupera      la
@@ -75,15 +99,28 @@ p_{X|Y=y}(\cdot) p_Y(y)$ se deduce la propiedad siguiente:
   propiedad~\ref{Prop:SZ:aditividad}.
 \end{propiedades}
 %
-Siendo  $H(X|Y=y)$  una  entrop\'ia,  en  el  caso  discreto  esta  cantidad  es
+Siendo  \modif{$H(X|Y=y \| \mu)$}  una  entrop\'ia,  en  el  caso  discreto  esta  cantidad  es
 positiva. Entonces, en el caso discreto,  $H(X|Y)$ es positiva, lo que prueba la
 super-aditividad~\ref{Prop:SZ:superaditividad}.
 
-De la regla de la cadena $H(X,Y) = H(X|Y)  + H(Y) = H(Y|X) + H(X)$ surge que las
-cantidades \ $H(X|Y)-H(X)$, \  $H(Y|X)-H(Y)$ \ y \ $H(X,Y) - H(X)  - H(Y)$ \ son
-todas iguales. Estas  cantidades definen lo que se llama  la informaci\'on mutua
-entre \ $X$ \ e \ $Y$:
 
+% ================================= Mutua
+
+\modif{
+\subseccion{Informaci\'on mutua}
+\label{Ssec:SZ:Mutua}
+
+De una  forma, cuando quitamos  la ignorancia de  una variable de  la ignorancia
+condicional de esta  condicionalmente a una otra variable aleatoria,  se mide la
+informaci\'on  que  comparten.   De  eso  viene  el  concepto  de  informaci\'on
+mutua. Dicho de otra  manera, de} la regla de la cadena  \modif{$H(X,Y \| \mu) =
+H(X|Y \|  \mu) +  H(Y \| \mu)  = H(Y|X  \| \mu)  + H(X \|  \mu)$} surge  que las
+cantidades  \  \modif{$H(X|Y  \| \mu)  -  H(X  \|  \mu)$,  \ $H(Y|X  \|  \mu)  -
+H(Y \|  \mu)$ \ y \  $H(X,Y \| \mu) -  H(X \| \mu) -  H(Y \| \mu)$} \  son todas
+iguales.   Estas cantidades  definen  \modif{precisamente} lo  que  se llama  la
+informaci\'on mutua entre \ $X$ \ e \  $Y$ \modif{y aparece que no depende de la
+medida $\mu$ (que vamos a quitar en la definici\'on siguiente)}:
+%
 \begin{definicion}[Informaci\'on mutua]
 \label{Def:SZ:mutua}
 %
@@ -97,17 +134,17 @@ entre \ $X$ \ e \ $Y$:
   Se expresa
   %
   \[
-  I(X;Y)  =  \int_{\Rset^d  \times  \Rset^{d'}}  p_{X,Y}(x,y)  \log  \left(
-    \frac{p_{X,Y}(x,y)}{p_X(x) p_Y(y)} \right) \, d\mu(x,y)
+  \modif{I(X;Y)  =  \int_{\X\Y}  \log  \left(
+    \frac{p_{X,Y}(x,y)}{p_X(x) p_Y(y)} \right) \, dP_{X,Y}(x,y)}
   \]
   %
-  con \ $\mu$ \  medida adecuada (discreta en el caso discreto  o de Lebesgue en
-  el caso diferencial).
+  %con \ $\mu$ \  medida adecuada (discreta en el caso discreto  o de Lebesgue en
+  %el caso diferencial).
 \end{definicion}
 
 Las  diferentes  cantidades  pueden  ser  vistas  a  trav\'es  de  una  visi\'on
 ensemblista, como descrita en la figura Fig.~\ref{Fig:SZ:Venn}, diagrama de Venn
-o de Euler (ver nota de pie~\ref{Foot:MP:Euler}.
+o de Euler (ver nota de pie~\ref{Foot:MP:Euler}).
 % pagina~\pageref{Foot:MP:Euler}.
 
 \begin{figure}[h!]
@@ -133,18 +170,26 @@ significaci\'on de  la informaci\'on que  estas variables tienen en  com\'un. En
 particular, de $I(X;X) = H(X)$ se denoma a veces $H(X)$ {\it auto informaci\'on}
 de $X$.
 
+
+% ================================= Relativa y cruzada
+
+\modif{
+\subseccion{Entop\'ia relativa y entrop\'ia cruzada}
+\label{Ssec:SZ:KL}
+}
+
 Para  probar la  positividad de  $I$, se  introduce de  manera m\'as  general la
 noci\'on  de  entrop\'ia  relativa,   conocida  tambi\'en  como  divergencia  de
 Kullback-Leibler~\cite{KulLei51,    Kul68,    CovTho06,    Rio07}~\footnote{Esta
   divergencia fue introducida despu\'es de  la secunda guerra, en el contexto de
   la guerra  fr\'ia. Kuulback y Leibler  trabajon para la  NSA en cryptolog\'ia,
-  as\'i que esta medida ncontr\'o  inicialmente aplicaciones en este macro, y el
+  as\'i que esta medida encontr\'o  inicialmente aplicaciones en este macro, y el
   de la compresi\'on de datos.}:
 %
 \begin{definicion}[Entrop\'ia relativa]
 \label{Def:SZ:entropiarelativa}
 %
-La entrop\'ia  relativa, o divergencia  de una  medida de probabilidad  $Q$, con
+La entrop\'ia  relativa, o divergencia \modif{de Kullback-Leibler} de una  medida de probabilidad  $Q$, con
 respecto a una medida de probabilidad de referencia $P$ tal que $Q \ll P$, ambas
 definidas sobre $\Rset^d$, es definida como
   %
@@ -166,43 +211,110 @@ definidas sobre $\Rset^d$, es definida como
     cantidad dependiendo en general de los estados\ldots}
   %
  \[
- \Dkl[q]{p}  \equiv \Dkl[Q]{P}  = \int_{\Rset^d}  \log  \left( \frac{q(x)}{p(x)}
- \right) \, q(x) \, d\mu(x).
+ \Dkl[q]{p}  \equiv \Dkl[Q]{P}  = \modif{\int_{\Rset^d}  \log  \left( \frac{q(x)}{p(x)}
+ \right) \, dQ(x)  = \int_{\Rset^d}  \log  \left( \frac{q(x)}{p(x)}
+ \right) \, q(x) \, d\mu(x)}.
  \]
   %
 \end{definicion}
 %
-Inicialmente, esta  medida fue  introducida por Kullback  y Leibler en  la misma
-linea  que Shannon, interpretando  \ $\log\left(\frac{dQ}{dP}(x)\right)$  \ como
-una informaci\'on de discriminaci\'on  entre dos hip\'otesis de distribuciones \
-$Q$ \ y \  $P$ \ a partir de la observaci\'on \ $x$,  \ la divergencia siendo la
-informaci\'on   de  discriminaci\'on   promedia.   Introdujeron   tambi\'en  una
-versi\'on sim\'etrica, que veremos m\'as adelante.  Se notar\'a que, $\Dkl[Q]{P}
-=  - \int_{\Rset^d}  q(x)  \, \log(q(x))  \,  d\mu(x) +  \int_{\Rset^d} p(x)  \,
-\log(q(x)) \, d\mu(x)$.  El primer termino es nada mas que la entrop\'ia de $q$,
-que se puede  ver como distribuci\'on ``presupuesta''. Menos  el secundo termino
-se interpreta como el promedio de la incerteza elemental $\log(q)$ con respecto a
-la distribuci\'on de referencia (``verdadera''), a veces llamado {\it entrop\'ia
-  cruzada}.   Por eso,  esta divergencia  es una  entrop\'ia relativamente  a la
-distribuci\'on  $p$.  En  la  misma linea,  se  puede inmediatamente  ver de  la
-definici\'on general Def.~\ref{Def:SZ:ShanonMu},
+\modif{Se notar\'a que, tratando de densidades, esta definici\'on no depende de la medida $\mu$ que se usa para definir las densidades.}
+
+Inicialmente, esta  medida \modif{informacional} fue introducida  por Kullback y
+Leibler    en     la    misma    linea    que     Shannon,    interpretando    \
+$\log\left(\frac{dQ}{dP}(x)\right)$ \ como una informaci\'on de discriminaci\'on
+entre  dos hip\'otesis  de distribuciones  \ $Q$  \ y  \ $P$  \ a  partir de  la
+observaci\'on   \   $x$,  \   la   divergencia   siendo  la   informaci\'on   de
+discriminaci\'on    promedia.     Introdujeron     tambi\'en    una    versi\'on
+sim\'etrica~\footnote{De hecho, en~\cite{KulLei51} introdujeron primariamente la
+versi\'on s\'imetrica  que se escribé  ahora \ $\Dkl[P]{Q} +  \Dkl[Q]{P}$.}, que
+veremos m\'as adelante.   \modif{Se puede inmediatamente ver  de la definici\'on
+general Def.~\ref{Def:SZ:ShanonMu},
 %pagina~\pageref{Def:SZ:ShanonMu}, 
-que  $\displaystyle  \Dkl[Q]{P} \equiv  -H\left(  \frac{dQ}{dP}  \right)$ \  con
-respecto a la medida $\mu = P$.   Por ejemplo, en el caso discreto finito, si $p$
-es  la   distribuci\'on  uniforme  sobre  un  alfabeto   de  cardenal  $\alpha$,
-$\Dkl[q]{p} =  \log \alpha  - H(q)$,  lo que representa  una desviaci\'on  de la
-entrop\'ia de  su valor  m\'aximo.  La misma  interpretaci\'on queda en  el caso
-continuo con  la ley  uniforme ($p$ y  $q$ definidas  sobre el mismo  espacio de
-volumen  finito) o  con la  gaussiana ($p$  y $q$  teniendo la  misma  matriz de
-covarianza).  {\it Como para la  entrop\'ia, cuando se necesitar\'a un logaritmo
-  especificamente de base $a$, se notar\'a la divergencia $D_{\mathrm{kl},a}$.}
+que $\displaystyle  \Dkl[Q]{P} =  -H( Q \|  P)$: a pesar  del signo  menos, este
+justifica el nombre  ``entrop\'ia relativa''.  Por ejemplo, en  el caso discreto
+finito,  si $p$  es la  distribuci\'on uniforme  sobre un  alfabeto de  cardenal
+$\alpha$, $\Dkl[q]{p} = \log \alpha -  H(q)$, lo que representa una desviaci\'on
+de la  entrop\'ia de su valor  m\'aximo.  La misma interpretaci\'on  queda en el
+caso continuo con la ley uniforme ($p$ y $q$ definidas sobre el mismo espacio de
+volumen  finito) o  con la  gaussiana ($p$  y $q$  teniendo la  misma matriz  de
+covarianza).
+
+Se notar\'a  que en la  entrop\'ia relativa aparece  menos la entrop\'ia  de $q$
+m\'as un otro t\'ermino parecido a una  entrop\'ia, pero donde el promedio de la
+ignorancia elemental $\log(p)$ (``referencia'') con respecto a la distribuci\'on
+$q$. Este t\'ermino es llamado a veces {\it entrop\'ia cruzada}:
+%
+\begin{definicion}[Entrop\'ia cruzada]
+\label{Def:SZ:entropiacruzada}
+%
+Sean  dos  distribuciones  de probabilidad  \  $P$  \  y  \ $Q$  \  tal que \ $P$ \  admite una
+densidad  \ $p$   con respecto  a una  medida \
+$\mu$  \  sobre $\Rset^d$. La  entrop\'ia  cruzada  de  $Q$  con respecto  a  $P$
+(referencia) es definida como
+  %
+  \[
+  \Hcruz[Q]{P;\mu}   = - \int_{\Rset^d}  \log \left(  \frac{dP}{d\mu}(x)  \right) \,
+  dQ(x).
+  \]
+  %
+  Cuando $Q$ admite tambi\'en una densidad con respecto a $\mu$, se escribe tambi\'en
+  %
+  \[
+  \Hcruz[Q]{P;\mu} \equiv \Hcruz[q]{p;\mu}  = - \int_{\Rset^d} \log \left(
+  p(x) \right) \, q(x) \, d\mu(x)
+  \]
+  %
+\end{definicion}
+%
+Pasando, cuando $\mu = Q$ (si $P \ll Q$ y $Q \ll P$), se recupera la divergencia
+de Kullback-Leibler, es decir $\Hcruz[Q]{P;Q} = \Dkl[Q]{P}$.
+
+De esta definici\'on, se connecta ahora  la entrop\'ia, la entrop\'ia relativa y
+la entrop\'ia cruzada naturalmente de la manera siguiente:
+%
+\begin{lema}[Descomposici\'on de la entrop\'ia cruzada a partir de la entrop\'ia y la entrop\'ia relativa]
+\label{Lem:SZ:DescomposicionEntropiaCruzada}
+%
+Sean $P$ y  $Q$ dos distribuciones de probabilidades que  admiten las densidades
+respectiva \  $p$ \ y  \ $q$ \  con respecto a  una medida $\mu$.  La entrop\'ia
+cruzada de $Q$ con  respeto a $P$ se descompone como la  entrop\'ia de $Q$ m\'as
+la entrop\'ia relativa de $Q$ con respecto a $P$, \ie
+%
+\[
+\Hcruz[Q]{P;\mu} = H(Q \| \mu) + \Dkl[Q]{P}
+\]
+%
+\end{lema}
+%
+\begin{proof}
+La  prueba sale  inmediatamente de  las definiciones  de la  entrop\'ia relativa
+escribiendo $\log \frac{q}{p} = \log q - \log p$.
+\end{proof}
+%
+Esta relaci\'on, parecida a  la regla de cadena, muestra de  una otra manera que
+la  divergencia  de  Kullback-Leibler  es  una  entrop\'ia  relativamente  a  la
+distribuci\'on $p$.}
+
+\
+
+\modif{\bf Nuevamente, en general se tratan de  los contextos \ $\mu = \mu_L$ \ medida
+de Lebesgues, o \ $\mu = \mu_\X$ \ discreta: en tales casos, se olvida mencionar
+la medida $\mu$ en la escritura formal.}
+
+{\it   Como  para   la   entrop\'ia,  cuando   se   necesitar\'a  un   logaritmo
+  especificamente de base $a$, se  notar\'a la divergencia $D_{\mathrm{kl},a}$ y
+  la entrop\'ia cruzada $H_{\mathrm{cruz},a}$.}
+
+\
+
+\modif{La entrop\'ia relativa tiene varias propiedades y se v\'incula con la informaci\'on mutua.}
 
 \begin{lema}[Positividad de la entrop\'ia relativa]
 \label{Lem:SZ:PositividadEntropiaRelativa}
 %
-  \[
-  \Dkl[Q]{P} \ge 0 \quad \mbox{con igualdad ssi} \quad P = Q. %\quad (c.s.)
-  \]
+  \[  \Dkl[Q]{P}  \ge 0  \quad  \mbox{con  igualdad ssi}  \quad  P  = Q.  %\quad
+  (c.s.)  \]
   %
 \end{lema}
 %
@@ -255,13 +367,13 @@ discreta o continua admitiendo una densidad.
 \item\label{Prop:SZ:condicionar} {\it  Condicionar reduce la  entrop\'ia}
   %
   \[
-  H(X|Y) \le H(X) \quad \mbox{con igualdad ssi $X$ e $Y$ son independientes.}
+  H(X|Y \| \mu) \le H(X \| \mu) \quad \mbox{con igualdad ssi $X$ e $Y$ son independientes.}
   \]
   %  
   Esta    desigualdad,   con    la    regla   de    la    cadena,   prueba    la
   sub-aditividad~\ref{Prop:SZ:subaditividad}.   Esta  reducci\'on  de  incerteza
   vale en  promedio, pero el conocimiento  de un valor particular  puede ser tal
-  que $H(X|Y = y) > H(X)$, \ie  \ !`un conocimiento particular puede aumentar la
+  que $H(X|Y = y \| \mu) > H(X \| \mu)$, \ie  \ !`un conocimiento particular puede aumentar la
   entrop\'ia!  (ver ejemplos en~\cite[p.~59]{Rio07}).
 \end{propiedades}
 
@@ -272,8 +384,8 @@ divergencia}.  La distribuci\'on de referencia $P$ juega un rol fundamental.
 Al  final, se mencionar\'a las propiedades adicionales siguientes:
 %
 \begin{enumerate}
-\item $\Dkl[q]{p}$  queda invariante  bajo una misma  transformaci\'on biyectiva
-  sobre  ambos $p$ y  $q$. Es  trivial en  el caso  discreto y  si no  se prueba
+\item $\Dkl[Q]{P}$  queda invariante  bajo una misma  transformaci\'on biyectiva
+  sobre  ambos $P$ y  $Q$. Es  trivial en  el caso  discreto y  si no  se prueba
   sencillamente por un cambio de variables en la forma integral.
 %
 \item $\Dkl{}$  es convexa con respecto al  par $(P,Q)$ en el  sentido que, para

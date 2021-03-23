@@ -248,21 +248,39 @@ a las que se puede exigir  a una medida de ignorancia (o incerteza)~\cite{Sha48,
   la  entrop\'ia  por  permutaci\'on,  sin p\'erdida  de  generalidad  se  puede
   considerar que los  estados que se agrupan  son los dos \'ultimos,  \ie sean \
   $X$ \  definido sobre  \ $\X$  \ con  $|\X| > 2$,  y \  $\breve{X}$ \  sobre \
-  $\breve{\X}$ \ tales que
+  $\breve{\X}$  \  de   cardenal  \  $|\breve{\X}|  =  |\X|-1$   \  formado  por
+  agregaci\'on de los dos \'ultimos estados de $\X$, \ie
   %\{ x_1 , \ldots , x_{|\X|-2} , \breve{x}_{|\X|-1}\},   %1 \le i \le |\X|-2
   %
-  \[
-  \left\{  \begin{array}{l}\breve{\X}  = \big( \X \setminus \{ x_{|\X|-1} , x_{|\X|} \} \big) \cup \{ \breve{x}_{|\X|-1} \}
-  \quad \mbox{con el estado interno} \quad
-      \breve{x}_{|\X|-1}   =  \{   x_{|\X|-1} \,  , \,   x_{|\X|}  \},\\[2.5mm]
-      p_{\breve{X}}(x_i) = p_X(x_i), \quad \forall \, x_i \in \X \setminus \{ x_{|\X|-1} , x_{|\X|} \}
-      \quad \mbox{y}
-      \quad p_{\breve{X}}(\breve{x}_{|\X|-1}) = p_X(x_{|\X|-1}) +
-      p_X(x_{|\X|})  \quad  \mbox{distribuci\'on  sobre  }  \breve{\X}\\[2.5mm]
-      \displaystyle   \breve{q}(x_j)  =   \frac{p_X(x_j)}{p_X(x_{|\X|-1})  +
-        p_X(x_{|\X|})},  \quad j =  |\X|-1, |\X|  \quad \mbox{distribuci\'on
-        del estado interno}\end{array}\right.
-  \]
+  \begin{itemize}
+  \item    $\breve{\X}    =    \big(    \X    \setminus    \{    x_{|\X|-1}    ,
+  x_{|\X|}  \} \big)  \cup \{  \breve{x}_{|\X|-1} \}$  \quad  con  el estado
+  interno \quad $\breve{x}_{|\X|-1} = \{ x_{|\X|-1} \, , \, x_{|\X|} \}$,
+  %
+  
+  \item $p_{\breve{X}}(x_i) = p_X(x_i), \quad \forall \, x_i \in \X \setminus \{
+      x_{|\X|-1} , x_{|\X|} \}$ \quad y \quad $p_{\breve{X}}(\breve{x}_{|\X|-1})
+      = p_X(x_{|\X|-1}) + p_X(x_{|\X|})$, distribuci\'on correspondiente sobre \
+      $\breve{\X}$,
+  %  
+  \item  $\displaystyle   \breve{q}(x_j)  =   \frac{p_X(x_j)}{p_X(x_{|\X|-1})  +
+        p_X(x_{|\X|})},  \quad j  = |\X|-1,  |\X|$ \quad  distribuci\'on de  los
+        estados  \ $\{  x_{|\X|-1} \,  , \,  x_{|\X|} \}$  \ adentro  del estado
+        interno.
+  %
+  \end{itemize}
+  %% \[
+  %% \left\{  \begin{array}{l}\breve{\X}  = \big( \X \setminus \{ x_{|\X|-1} , x_{|\X|} \} \big) \cup \{ \breve{x}_{|\X|-1} \}
+  %% \quad \mbox{con el estado interno} \quad
+  %%     \breve{x}_{|\X|-1}   =  \{   x_{|\X|-1} \,  , \,   x_{|\X|}  \},\\[2.5mm]
+  %%     p_{\breve{X}}(x_i) = p_X(x_i), \quad \forall \, x_i \in \X \setminus \{ x_{|\X|-1} , x_{|\X|} \}
+  %%     \quad \mbox{y}
+  %%     \quad p_{\breve{X}}(\breve{x}_{|\X|-1}) = p_X(x_{|\X|-1}) +
+  %%     p_X(x_{|\X|})  \quad  \mbox{distribuci\'on  sobre  }  \breve{\X}\\[2.5mm]
+  %%     \displaystyle   \breve{q}(x_j)  =   \frac{p_X(x_j)}{p_X(x_{|\X|-1})  +
+  %%       p_X(x_{|\X|})},  \quad j =  |\X|-1, |\X|  \quad \mbox{distribuci\'on
+  %%       del estado interno}\end{array}\right.
+  %% \]
   %
   entonces,
   %
@@ -817,11 +835,12 @@ una  densidad de  probabilidad \  $p_X$ \  con respecto  a una  medida \  $\mu$ 
 diferencial). La entrop\'ia de $X$ con respecto a $\mu$ se escribe como
   %
   \[
-  H(X) \equiv H(p_X) = - \int_\X p_X(x) \, \log p_X(x) \, d\mu(x)
+  \modif{H(X \| \mu) \equiv H(p_X \| \mu) \equiv H(P_X \| \mu) = - \int_\X p_X(x) \, \log p_X(x) \, d\mu(x) = - \int_\X \log\left( \frac{dP_X}{d\mu}(x) \right) \, dP_X(x)}
   \]
   %
 \end{definicion}
 %
 Insistimos en el hecho de que se puede entender esta definici\'on para cualquier
   $\mu$  y densidad  con  respecto a  $\mu$,  ya sea  discreta,  de Lebesgue,  o
-  cualquiera.
+  cualquiera.  \modif{\bf  En general,  tratando  de  la  medida de  Lebesgue  o
+  $\mu_\X$ discreta, se quita la medida $\mu$ et la escritura formal de $H$.}

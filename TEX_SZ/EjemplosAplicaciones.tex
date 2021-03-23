@@ -87,7 +87,7 @@ donde $\eta_0, \eta$  ser\'an determinados para satisfacer a  los v\'inculos. Se
 puede ver que el problema es c\'oncava  con respecto a $p$ (\ie el integrande es
 una funci\'on  c\'oncava de  $p$), as\'i  que existe  una soluci\'on  \'unica al
 problema~\cite{GelFom63, Wei74,  Bru04, Mil00,  CamMar09, Cla13, Kom14}.   En el
-caso continuo $\mu = \mu_L$ se usa la ecuaci\'on de Euler-Lagrange~ \footnote{En
+caso continuo $\mu = \mu_L$ se usa la ecuaci\'on de Euler-Lagrange~\footnote{En
 el caso  discreto, queda claro  que los $p_i$  se buscan anulando  las derivadas
 parciales. En  el caso  continuo, el problema  es un  extremizaci\'on functional
 conocida como problema variacional.  En el  caso general inicial, el problema es
@@ -242,16 +242,35 @@ problema de entrop\'ia m\'axima vuelve a ser un problema de minimizaci\'on de la
 divergencia de Kullback-Leibler entre $P$  y la medida de referencia, siendo $p$
 la    densidad    con    respecto     a    esta    medida    (ver    definici\'on
 Def.~\ref{Def:SZ:entropiarelativa}). Es decir, tomando \ $\mu = \widetilde{P}$ \
-medida de probabilidad aparece inmediatamente
+medida de probabilidad aparece inmediatamente\modif{
 %
 \[
-P_{\mathrm{em}} = \argmax_P \Dkl[P]{\widetilde{P}} \quad \mbox{sujeto a} \int_\X
-M(x)                       \,                      dP(x)                       =
-m  \qquad  \Leftrightarrow \qquad  \frac{dP_{\mathrm{em}}}{d\widetilde{P}}(x)  =
-e^{\eta^t x - \varphi(\eta)}.
+P_{\mathrm{em}} = \argmin_P \Dkl[P]{\widetilde{P}} \quad \mbox{sujeto a} \quad \int_\X
+M(x)                       \,                      dP(x) \equiv \int_\X
+M(x)    \frac{dP}{d\widetilde{P}}(x)                   \,                      d\widetilde{P}(x)                       =
+m
+%\qquad
+%\Leftrightarrow \qquad  \frac{dP_{\mathrm{em}}}{d\widetilde{P}}(x)  =
+%e^{\eta^t M(x) - \varphi(\eta)}.
 \]
+%
+es \'unica, de la forma
+%
+\[
+\frac{dP_{\mathrm{em}}}{d\widetilde{P}}(x)  =
+e^{\eta^t M(x) - \varphi(\eta)}.
+\]
+}
 
-\modif{ 
+\SZ{Ver como conectar con la minimizaci\'on de entrop\'ia cruzada.}
+
+\modif{
+
+%Se  notar\'a  que   si  $P$  y  $\widetilde{P}$  tienen  una   densidad  $p$  y
+%$\widetilde{p}$     con     respecto     a    una     medida     $\mu$,     del
+%lema~\ref{Lem:SZ:DescomposicionEntropiaCruzada}, siendo $H(\widetile{p})$ dado,
+%minimizar la divergencia \  $\Dkl[p]{\widetilde{p}}$ es equivalente a minimizar
+%la entrop\'ia cruzada \ $\Hcruz[\widetilde{p}]{p}$.
 
 \
 
@@ -616,7 +635,7 @@ M_1(x)  & \cdots  &  M_K(x) \end{bmatrix}^t$  \  y \  $m  = \begin{bmatrix}  m_1
 \[
 p_{\mathrm{fm}}  =   \argmin_p  \Tr(J(p))  \qquad   \mbox{sujeto  a}  \qquad   p  \ge
 0, \quad \int_\X p(x) \, d\mu(x) = 1 \quad \mbox{y}
-\quad \int_\X M(x) \, p(x) \, dx = m,
+\quad \int_\X M(x) \, p(x) \, d\mu(x) = m,
 \]
 %
 donde los dos primeros v\'inculos (positividad, normalizaci\'on) aseguran de que
@@ -772,20 +791,24 @@ informacional en la literatura de este resultado}:
   p_{\mathrm{fm}}        \right)     \right)^t            \frac{\nabla_x             \,
   p_{\mathrm{fm}}}{p_{\mathrm{fm}}}$.
   %
-  Ahora, por  integraci\'on, el tercero  t\'ermino de la  derecha va a  dar cero
-  porque \  $p$ \  y \ $p_{\mathrm{fm}}(x)$  \ tienen los  mismos momentos  y el
-  cuarto tambi\'en va a dar cero por el teorema de la divergecia~\footnote{\SZ{A
-  dar}}~\cite{toto}. En conclusi\'on,
+  Ahora, por integraci\'on, t\'ermino de la  izquierda va a ser nada m\'as que
+  la divergencia de Fisher  de \ $p_{\mathrm{fm}}$ \ con respecto a  \ $p$ \. El
+  tercero  t\'ermino  de  la  derecha  va  a  dar  cero  porque  \  $p$  \  y  \
+  $p_{\mathrm{fm}}(x)$ \ tienen  los mismos momentos y el cuarto  tambi\'en va a
+  dar cero por el teorema de la divergecia~\footnote{\SZ{A dar}}~\cite{toto}. En
+  conclusi\'on,
   %
   \[
-  \int_\X \left\| \frac{\nabla_x \, p(x)}{p(x)} - \frac{\nabla_x
-  \, p_{\mathrm{fm}}(x)}{p_{\mathrm{fm}}(x)} \right\|^2 \, p(x) \, dx = J(p) - J(p_{\mathrm{fm}})
+  %\int_\X \left\| \frac{\nabla_x \, p(x)}{p(x)} - \frac{\nabla_x
+  %\, p_{\mathrm{fm}}(x)}{p_{\mathrm{fm}}(x)} \right\|^2 \, p(x) \, dx
+  J( p_{\mathrm{fm}} \| p ) = J(p) - J(p_{\mathrm{fm}})
   \]
   %
-  La  prueba se cierra notando que
+  La  prueba se cierra notando que $J( p_{\mathrm{fm}} \| p) \ge 0$
   %$\Dkl[p]{p_{\mathrm{em}}} \ge 0$
   %
-  el  t\'ermino de  izquierda es  positivo,  y cero  si  y solamente  si $p  =
+  %el  t\'ermino de  izquierda es  positivo,  y cero
+  con igualdad si  y solamente  si $p  =
   p_{\mathrm{fm}} \quad (\mu$-c.s.).\newline La forma de la informaci\'on Fisher
   m\'inima  sale de  la ecuaci\'on  diferencial,  y de  las dos  formas de  $J$:
   multiplicando la  ecuaci\'on diferencial en $p_{\mathrm{fm}}$  por la densidad
@@ -1789,7 +1812,12 @@ palabras.  En una computadora en general todo  se codifica en bits $\C = \{ 0 \,
 \bigcup_{k=0}^{\infty} \C^k,
 \]
 %
-uni\'on  de  secuencias de  $k$  letras de  $\X$  y  $\C$ respectivamente.   Una
+uni\'on  de  secuencias de  $k$  letras de  $\X$  y  $\C$ respectivamente.
+%
+\modif{
+\begin{definicion}[Codificaci\'on de  fuente]
+\label{Def:SZ:CodificationDeFuente}
+Una
 codificaci\'on de  fuente consiste  en una  funci\'on de \  $\F_\X$ \  dentro de
 $\F_\C$. En lo  que sigue, nos concentramos en  c\'odigos definidos para bloques
 de s\'imbolos de tama\~no $m \ge 1$:
@@ -1812,6 +1840,8 @@ y
 %
 lo  que  es  llamado {\it  extensi\'on  del  c\'odigo}.   En  lo que  sigue,  se
 escribir\'a $c \equiv c_1$.
+\end{definicion}
+}
 
 Una manera ingenua de codificar consiste a apoyarse sobre la descomposici\'on de
 base \ $d$  \ de un entero, \ie para  $1 \le i \le \alpha$  se puede escribir de
@@ -1892,16 +1922,71 @@ Adem\'as  de   la  decodificaci\'on  sin   ambig\"uedad,  una  caracterizaci\'on
 importante del  c\'odigo es la  taza de codificaci\'on~\footnote{En~\cite{Rio07}
   por  ejemplo, se  define esta  taza suponiendo  que cada  secuencia  fuente es
   codificada por el  mismo n\'umero de bits. La taza es  entonces el n\'umero de
-  bits por s\'imbolo.}
+  bits por s\'imbolo.}:
+%
+\modif{
+\begin{definicion}[Taza de codificaci\'on y largo promedio]
+\label{Def:SZ:TazaDeCodificacionLargoPromedio}
+%
+Sea $X$ una  secuencia de $m \ge  1$ variables $X_t$ tomado su  valores sobre el
+alfabeto $\X$.  Sea $c_m$ un c\'odigo  de fuente con $l_{c_m}(x)$  los largos de
+los c\'odigos $c_m(x),  \: x \in \X^m$. La taza  de codificaci\'on est definida
+por
 %
 \[
-R_{c_m} = \frac{\log_d \left( \sum_{x \in \X^m} l(x) P(X = x) \right)}{m},
+R_{c_m} = \frac{\displaystyle \log_d \left( \sum_{x \in \X^m} l_{c_m}(x) \modif{p_X(x)} \right)}{m},
 \]
 %
-donde $X$  representa una  secuencia de $m$  variables $X_t$.  El  argumento del
-logaritmo (de base adecuada al cardenal  de $\C$) es el {\it largo promedio} del
-c\'odigo. Por ejemplo,  para $d = 2$, $R_{c_m}$ es el  n\'umero de bits promedio
+El argumento  del logaritmo (de  base adecuada al cardenal  de $\C$) es  el {\it
+largo promedio} del c\'odigo:
+%
+\[
+L(c_m) = \sum_{x \in \X^m} l_{c_m}(x) \modif{p_X(x)}
+\]
+%
+\modif{con $p_X(x) =  P(X = x)$.}
+\end{definicion}
+%donde $X$  representa una  secuencia de $m$  variables $X_t$.  El  argumento del
+%logaritmo (de base adecuada al cardenal  de $\C$) es el {\it largo promedio} del
+%c\'odigo.
+Por ejemplo,  para $d = 2$, $R_{c_m}$ es el  n\'umero de bits promedio
 del c\'odigo por s\'imbolo.
+
+Antes de ir  m\'as adelante, en esta  secci\'on, ya se puede  notar el v\'inculo
+entre la codificaci\'on y la noci\'on de entrop\'ia. M\'as precisamente, aparece
+que el largo promedio de un c\'odigo es nada m\'as que una entrop\'ia cruzada:
+%
+\begin{lema}[Largo promedio y entrop\'ia cruzada]
+%
+Sea $X$ una  secuencia de $m \ge  1$ variables $X_t$ tomado su  valores sobre el
+alfabeto $\X$.  Sea  $c_m$ un c\'odigo de fuente con  $l_{c_m}(x)$ los largos de
+los c\'odigos $c_m(x) \in F_{\C}, \: x \in \X^m$. Sean $p_X$ la distrbuci\'on de
+$X$ y la distribuci\'on
+%
+\[
+q_{c_m}(x) = \frac{d^{-l_{c_m}(x)}}{\sum_{y \in \X^m} d^{-l_{c_m}(y)}}
+\]
+%
+Entonces, el largo promedio se escribe usando una entrop\'ia cruzada
+%
+\[
+L(c_m) = H_{\mathrm{cruz},d}\left( p_X \| q_{c_m} \right) - \log_d\left( \sum_{x \in \X^m} d^{-l_{c_m}(x)} \right)
+\]
+%
+entrop\'ia cruzada de la distribuci\'on de la fuente con referencia \ $q_{c_m}$:
+es el promedio de la ingnorancia  de $q_{c_m}$ (distribuci\'on de largo promedio
+m\'inimo como lo veremos) sobre la distribuci\'on de la fuente.
+\end{lema}
+%
+\begin{proof}
+El resultado sale inmediatamente de la  definici\'on del largo promedio donde se
+usa      $l_{c_m}(x)      =      -     \log_d\left(      q_{c_m}(x)      \right)
+- \log_d\left( \sum_{y \in \X^m} d^{-l_{c_m}(y)} \right)$.
+\end{proof}
+
+Este  resultado da  un  primera justificaci\'on  del hecho  de  que hablamos  en
+general de {\em codificaci\'on entropica}.
+}
 
 En general,  se quiere minimizar $R_{c_m}$  (compresar el mensaje  a mandar), lo
 que puede  ser contradictorio con la  necesidad de a\~nadir  redundancia para no
@@ -1912,11 +1997,11 @@ equivalente a minimizar el largo  promedio. Adem\'as, se puede focalisarse en $m
 = 1$; todo se extiende sencillamente a $m > 1$.
 
 La meta de  la compresi\'on es entonces construir  un c\'odigo $c$, descifrable,
-que minimizar el largo promedio
+que minimizar el largo promedio $L(c)$.
 %
-\[
-L(c) = \sum_{x \in \X} p_X(x) \, l(x).
-\]
+%\[
+%L(c) = \sum_{x \in \X} p_X(x) \, l(x).
+%\]
 %
 Antes de ir  m\'as adelante, hace falta traducir en  ecuaci\'on el v\'inculo que
 $c$    sea    descifrable.    Eso    es    dado    por    la   desigualdad    de
@@ -2059,23 +2144,33 @@ cota de la codificaci\'on de fuente sin perdida:
 \end{teorema}
 %
 \begin{proof}
-  Sea \ $q(x)  = \frac{d^{-l_c(x)}}{\sum_{x \in \X} d^{-l_c(x)}}$,  \ siendo una
-  distribuci\'on de  probabilidad por  construcci\'on.  Escribiendo \  $l_c(x) =
-  \log_d d^{-l_c(x)}$, \ se puede expresar el largo promedio de la forma
+  \modif{Sea  \ $q_c(x)  = \frac{d^{-l_c(x)}}{\sum_{y  \in \X}  d^{-l_c(y)}}$, \
+   distribuci\'on  de  probabilidad  por  construcci\'on. Del  lema~\ref  y  del
+   lema~\ref{Lem:SZ:DescomposicionEntropiaCruzada} tenemos
   %
   \[
-  L(c) =  - \sum_{x  \in \X}  p_X(x) \, \log_d  d^{-l_c(x)} =  - \sum_{x  \in \X}
-  p_X(x) \, \log_d q(x) - \log_d \sum_{x \in \X} d^{-l_c(x)}.
+  L(c)   =   H_{\mathrm{cruz},d}\left(   \left.   q_c   \right\|   p_X   \right)
+  - \log_d   \left(   \sum_{x   \in   \X}   d^{-l_c(x)}   \right)   =   H(X)   +
+  D_{\mathrm{kl},d}\left(     \left.       p_X     \right\|      q_c     \right)
+  - \log_d \left( \sum_{x \in \X} d^{-l_c(x)} \right)
   \]
+  %Escribiendo \  $l_c(x) =
+  %\log_d d^{-l_c(x)}$, \ se puede expresar el largo promedio de la forma
+  %%
+  %\[
+  %L(c) =  - \sum_{x  \in \X}  p_X(x) \, \log_d  d^{-l_c(x)} =  - \sum_{x  \in \X}
+  %p_X(x) \, \log_d q(x) - \log_d \sum_{x \in \X} d^{-l_c(x)}.
+  %\]
   %
-  Notando que \ $- \log_d q  = \log_d \left( \frac{p_X}{q} \right) - \log_d p_X$
-  \ se obtiene
-  %
-  \[
-  L(c)  = H_d(X)  + D_{\mathrm{kl},d}\left(  \left.   p_X \right\|  q \right)  -
-  \log_d \sum_{x \in \X} d^{-l_c(x)}.
-  \]
-  %
+  %Notando que \ $- \log_d q  = \log_d \left( \frac{p_X}{q} \right) - \log_d p_X$
+  %\ se obtiene
+  %%
+  %\[
+  %L(c)  = H_d(X)  + D_{\mathrm{kl},d}\left(  \left.   p_X \right\|  q \right)  -
+  %\log_d \sum_{x \in \X} d^{-l_c(x)}.
+  %\]
+  %%
+  }
   El resultado proviene de la  positividad de la divergencia de Kullback-Leibler
   y de la desigualdad de Kraft-McMillan (el argumento del logaritmo siende menor
   que $1$).
@@ -2552,24 +2647,36 @@ Sea $c^\sh(p)$  el c\'odigo  de Shannon sobre  el alfabeto  c\'odigo \ $\C  = \{
 \cod_1 \, , \, \ldots \, ,  \, \cod_d \}$ asociado a la distribuci\'on $p$.  Sea
 $X$  \  fuente  sobre  \  $\X$,  de  distribuci\'on  \  $p_X$  \  y  \  $q$  una
 distribuci\'on cualquiera (ej.   estimada de $p_X$ presupuesta\ldots).  Entonces
-el largo promedio  \ $L_{c^\sh(q)}$ \ del c\'odigo \ $c^\sh(q)$  \ aplicado a la
+el largo promedio  \ $L(c^\sh(q))$ \ del c\'odigo \ $c^\sh(q)$  \ aplicado a la
 fuente \ $X$ \ satisface las desigualdades siguientes
   %
   \[
-  H_d(p_X) +  D_{\mathrm{kl},d}\left( \left.  p_X \right\| q  \right) \:  \le \:
-  L_{c^\sh(q)} \: < \: H_d(p_X)  + D_{\mathrm{kl},d}\left( \left. p_X \right\| q
+  H_d(X) +  D_{\mathrm{kl},d}\left( \left.  p_X \right\| q  \right) \:  \le \:
+  L(c^\sh(q)) \: < \: H_d(X)  + D_{\mathrm{kl},d}\left( \left. p_X \right\| q
   \right) + 1.
   \]
+  %
+  \modif{o sea
+  %
+  \[
+  H_{\mathrm{cruz},d}\left( \left.  q \right\| p_X  \right) \:  \le \:
+  L(c^\sh(q)) \: < \: H_{\mathrm{cruz},d}\left( \left. q \right\| p_X
+  \right) + 1.
+  \]
+  }
 \end{teorema}
 %
 \begin{proof}
   Por definici\'on,
   \[
-  L_{c^\sh}(q) = \sum_{x \in X} p_X(x) \, \Big\lceil\! -\log_d q(x) \Big\rceil.
+  L(c^\sh(q)) = \sum_{x \in X} p_X(x) \, \Big\lceil\! -\log_d q(x) \Big\rceil.
   \]
   %
-  La desigualdad viene de  \ $a \le \lceil a \rceil < a +  1$ \ y escribiendo $-
-  p_X \log_d q = - p_X \log_d p_X + p_X \log \left( \frac{p_X}{q} \right)$.
+  La  desigualdad viene  de  \ $a  \le  \lceil  a \rceil  <  a +  1$  \ y  del
+  lema~\ref{Lem:SZ:DescomposicionEntropiaCruzada}  para  la escritura   con  la
+  entrop\'ia relativa.
+  %escribiendo $-
+  %p_X \log_d q = - p_X \log_d p_X + p_X \log \left( \frac{p_X}{q} \right)$.
 \end{proof}
 %
 Olvidando el  posible extra dit (pensar  a la c\'odification  por bloques), este
@@ -2599,6 +2706,15 @@ para tener m\'as detalles sobre varios esquemas de codificaci\'on/compresi\'on.
 %  capacite cf. Elias 1954 - error free coding, Elias 1955 - error noisy channel,
 %  Elias 57  - list  for decoding noisy  channels, Berlekamp (serie  papiers cles
 %  dans les premiers).}
+
+
+% ================================= Estimacion max verosimulitud
+
+\subseccion{Entrop\'ia cruzada y verosimilitud}
+\label{Ssec:SZ:EntropiaCruzadaML}
+
+\SZ{Voir detection de langue du TD et log vraisemblance via entropie cruzada; min entropia cruzada
+qi vrais, pi esti par comptage, $L = \prod_i q_i^{N p_i}$ et don $\log L = -N Hcruz(q \| p)$; relier a MaxEnt}
 
 % ================================= Gaz perfecto
 

@@ -12,20 +12,26 @@ informaci\'on intimamente  relacionada al error cuadr\'atico  en la estimaci\'on
 de   un  par\'ametro   a  partir   de  una   variable  parametrizado   por  este
 par\'ametro~\cite{Fis22, Fis25:07, Kay93, LehCas08, Bos07, CovTho06, Fri04}.
 
-\begin{definicion}[Matriz informaci\'on de Fisher param\'etrica]
-\label{Def:SZ:MatrizFisherParametrica}
+\modif{
+\begin{definicion}[Matriz informaci\'on de Fisher param\'etrica con respecto a una medida]
+\label{Def:SZ:MatrizFisherParametricaMu}
 %
   Sea   $X$   una   variable   aleatoria  parametrizada   por   un   par\'ametro
-  $m$-dimensional,  $\theta \in  \Theta \subset  \Rset^m$, de  distribuci\'on de
-  probabilidad $p_X(\cdot;\theta)$ (con respecto a  una medida $\mu$ dada) sobre
+  $m$-dimensional,   $\theta  \in   \Theta  \subset   \Rset^m$,  de   medida  de
+  probabilidad  $P_X(\cdot ;  \theta)$ que  admite una  densidad de  probabilidad
+  $p_X(\cdot;\theta)$  con respecto  a  una medida  $\mu$  dada, definida  sobre
   $\X  \subset \Rset^d$  su soporte.   Suponga que  $p_X$ sea  diferenciable con
   respecto  a  $\theta$  sobre  $\Theta$.   La matriz  de  Fisher,  de  tama\~no
   $m \times m$, es definida por
   %
-  \[
-  J_\theta(X)  =  \Esp\left[  \Big(  \nabla_\theta \log  p_X(X;\theta)  \Big)
-    \Big( \nabla_\theta \log p_X(X;\theta) \Big)^t \right],
-  \]
+  \begin{eqnarray*}
+    J_\theta(X    \|    \mu)  &  = &    \Esp\left[    \Big(    \nabla_\theta    \log
+    p_X(X;\theta) \Big)  \Big( \nabla_\theta \log p_X(X;\theta)  \Big)^t \right]\\[2.5mm]
+    %
+    & = & \int_\X \, \left( \nabla_\theta \log \left( \frac{dP_X}{d\mu}(x;\theta) \right)
+    \right) \left( \nabla_\theta \log \left( \frac{dP_X}{d\mu}(x;\theta) \right)
+    \right)^t \, dP_X(x;\theta)
+  \end{eqnarray*}
   %
   donde \  $\nabla_\theta = \left[ \cdots  \: \frac{\partial}{\partial \theta_i}
     \: \cdots  \right]^t$ \  es el gradiente  en \  $\theta$ \ y  \ $\log$  \ el
@@ -38,18 +44,20 @@ par\'ametro~\cite{Fis22, Fis25:07, Kay93, LehCas08, Bos07, CovTho06, Fri04}.
     $\theta$ \  y que  la funci\'on score  se cancela  en estos bordes.}   que
     %
     \[
-    J_\theta(X) =  - \Esp\big[ \Hess_\theta \log p_X(X;\theta) \big]
+    J_\theta(X  \|  \mu) =  -  \Esp\big[  \Hess_\theta  \log p_X(X;\theta)  \big]  =
+    - \int_\X \, \Hess_\theta \left( \log \left( \frac{dP_X}{d\mu}(x;\theta) \right) \right)\,
+    dP_X(x;\theta)
     \]
     %
     \ con $\Hess_\theta$  la  Hessiana
   %~\footnote{Recordamos de que,  para \  $f: \Rset^m  \mapsto \Rset,
   %  \quad  \Hess_\theta f$  \ es  la matriz  de componentes  \ $\frac{\partial^2
   %    f}{\partial \theta_i  \partial \theta_j}$.}
-  \ de  \ $\log  p_X(X;\theta)$ (ver  notaciones).  Nota: a  veces se  define la
-  informaci\'on de  Fisher como
+  %\ de  \ $\log  p_X(X;\theta)$
+  (ver notaciones).  Nota: a veces se define la informaci\'on de Fisher como
   %
   \[
-  \Tr(J_\theta(X))    =     \Esp\left[    \Big\|     \nabla_\theta    \log
+  \Tr(J_\theta(X \| \mu ))    =     \Esp\left[    \Big\|     \nabla_\theta    \log
   p_X(X;\theta)   \Big\|^2   \right]   =   -   \Esp\big[   \Delta_\theta   \log
   p_X(X;\theta) \big] \]
   %  
@@ -59,43 +67,51 @@ par\'ametro~\cite{Fis22, Fis25:07, Kay93, LehCas08, Bos07, CovTho06, Fri04}.
 \end{definicion}
 %
 Como  para  la  entrop\'ia,  la  matriz  de Fisher  se  escribe  generalmente  \
-$J_\theta(X)$, \ a pesar de que no sea  funci\'on de \ $X$ \ pero de la densidad
-de  probabilidad.  Se  la  notar\'a  tambi\'en
+\modif{$J_\theta(X \| \mu)$, \ a pesar de que no sea  funci\'on de \ $X$ \ pero de la densidad
+de  probabilidad y de la medida $\mu$}.  Se  la  notar\'a  tambi\'en
 %
 \[
-J_\theta(p_X) \equiv J_\theta(X)
+\modif{J_\theta(p_X \| \mu) \equiv J_\theta(P_X \| \mu) \equiv J_\theta(X \| \mu)}
 \]
 %
 seg\'un la escritura la m\'as conveniente.
+}
 
 Notar  que para  une  distribuci\'on  de la  familia  exponencial natural  vista
-secci\'on~\ref{Ssec:MP:FamiliaExponencial},  $p_X(x;\eta)  =  \exp\left(  \eta^t
-  S(x)  - \varphi(\eta)  \right)$  \  tenemos \  $S_\eta(x)  = \nabla_\eta  \log
-p_X(x;\eta) = S(x) - \nabla \varphi(\eta) = S(x) - \Esp[S(X)]$ as\'i que
+secci\'on~\ref{Ssec:MP:FamiliaExponencial},   \modif{de  densidad   $p_X(x;\eta)
+= \exp\left( \eta^t S(x) - \varphi(\eta) \right)$  \ con respecto a una medida \
+$\mu$,}  \  tenemos   \  $S_\eta(x)  =  \nabla_\eta  \log   p_X(x;\eta)  =  S(x)
+- \nabla \varphi(\eta) = S(x) - \Esp[S(X)]$ as\'i que
 %
 \[
-J_\eta(X) = \Cov[S(X)] = \Hess \varphi(\eta)
+\modif{J_\eta(X \| \mu) = \Cov[S(X)] = \Hess_\eta \varphi(\eta)}
 \]
 %
 (ver por ejemplo~\cite{LehCas98, Bos07}).
 % resp p. 116, p. 33
 
-En el caso  continuo, $\mu = \mu_L$, con una  densidad diferenciable, tomando el
+\modif{Cuando la densidad de proablidad es continua y
+%En el caso  continuo, $\mu = \mu_L$, con una  densidad
+diferenciable, tomando el
 gradiente en \ $x$  \ en lugar de \ $\theta$ \ da  la matriz de informaci\'on de
 Fisher no param\'etrica,
 %
-\begin{definicion}[Matriz informaci\'on de Fisher no param\'etrica]
-\label{Def:SZ:MatrizFisherNoParametrica}
+\begin{definicion}[Matriz informaci\'on de Fisher no param\'etrica con respecto a una medida]
+\label{Def:SZ:MatrizFisherNoParametricaMu}
 %
-  Sea  \ $X$  \  una  variable aleatoria  continua  admitiendo  una densidad  de
-  probabilidad \  $p_X$ \ definida  sobre \ $\X  \subset \Rset^d$ \  su soporte.
-  Suponga que \  $p_X$ \ sea diferenciable  con respecto a \ $x$.   La matriz de
+  Sea \ $X$  \ una variable aleatoria  de medidad de probabilidad \  $P_X$ \ que
+  admite una  densidad de  probabilidad \  $p_X$ \  con respecto  a una  medida \
+  $\mu$ \  dada, definida sobre  \ $\X \subset  \Rset^d$ \ su  soporte.  Suponga
+  que \ $p_X$ \ sea continua y diferenciable con respecto a \ $x$.  La matriz de
   Fisher no param\'etrica $d \times d$ es definida por
   %
-  \[
-  J(X) =  \Esp\left[ \Big(  \nabla_x \log p_X(X)  \Big) \Big(  \nabla_x \log
-      p_X(X) \Big)^t \right].
-  \]
+  \begin{eqnarray*}
+  J(X \| \mu) & = &  \Esp\left[ \Big(  \nabla_x \log p_X(X)  \Big) \Big(  \nabla_x \log
+      p_X(X) \Big)^t \right]\\[2.5mm]
+  %
+  & = & \int_\X \, \left(  \nabla_x \log \left( \frac{dP_X}{d\mu}(x) \right)  \right)
+  \left(  \nabla_x \log \left( \frac{dP_X}{d\mu}(x) \right)  \right)^t \, dP_X(x)
+  \end{eqnarray*}
   %
   Es  la matriz  de covarianza  de  la {\it  funci\'on score}  \ $\nabla_x  \log
   p_X(X)$ \ (escribiendo la media y $p_X$  siendo cero el los bordes de $\X$, se
@@ -103,27 +119,106 @@ Fisher no param\'etrica,
   condiciones de regularidad,
   %
   \[
-  J(X) = - \Esp[\Hess_x \log p_X(X)]
+  J(X \| \mu) = - \Esp[\Hess_x \log p_X(X)]
+  = \int_\X \left( \Hess_x \log\left( \frac{dP_X}{d\mu}(x)\right) \right) \, dP_X(x)
   \]
   % menos el promedio de la Hessiana en \ $x$ \ de la log-verosimilitud.  
   Como para el caso param\'etrico, a  veces se define la informaci\'on de Fisher
   no-parametrica como
   %
   \[  
-  \Tr(J(X))  =  \Esp\left[  \Big\|  \nabla_x  \log  p_X(X)  \Big\|^2  \right]  =
+  \Tr(J(X \| \mu ))  =  \Esp\left[  \Big\|  \nabla_x  \log  p_X(X)  \Big\|^2  \right]  =
   - \Esp\big[ \Delta_x \log p_X(X) \big] \]
   % 
   traza de  la matriz  informaci\'on de Fisher.
 \end{definicion}
+}
 %
-Como para la entrop\'ia, y la matriz  de Fisher parametrica, la matriz de Fisher
-no parametrica es funci\'on de la densidad y se la notar\'a tambi\'en
+\modif{Como para la entrop\'ia, y la matriz  de Fisher parametrica, la matriz de Fisher
+no parametrica es funci\'on de distribuci\'on o densidad y $\mu$ y se la notar\'a tambi\'en
 %
 \[
-J(p_X) \equiv J(X)
+J(p_X \| \mu) \equiv J( P_X \| \mu ) \equiv J(X \| \mu)
 \]
+}
 %
 seg\'un la escritura la m\'as conveniente.
+
+\modif{
+En la  literatura se  encuentra mayormente  el caso  donde $\mu  = \mu_L$  es la
+medida de Lebesgue,  o cuando $\mu$ es  una medida de probabilidad, lo  que va a
+dar respectivamente la informaci\'on de  Fisher (impl\'icito ``con respecto a la
+medida de Lebesgue'') y la divergencia de Fisher~\cite[Def.~13]{Joh04} o~\cite{JohBar04}:
+%
+\begin{definicion}[Informaci\'on de Fisher y divergencia de Fisher o informaci\'on de Fisher relativa]
+\label{Def:SZ:MatrizFisherDivergencia}
+%
+Sea     $X$      que     satisface      a     los     requisitos      de     las
+definiciones~\ref{Def:SZ:MatrizFisherParametricaMu}
+o~\ref{Def:SZ:MatrizFisherNoParametricaMu} seg\'un el caso. Entonces
+%
+\begin{itemize}
+\item Cuando  $\mu =  \mu_L$  se  hablar\'e simplemente  de  {\it  matriz de  Fisher},
+respectivamente param\'etrica y no param\'etrica)  y se notar\'a esta matriz sin
+mencionar $\mu_L$,
+%
+\[
+\mbox{Notaci\'on para } \: \mu = \mu_L \: \mbox{Lebesgues: } \: J_\theta(X) \equiv J_\theta(p_X) \quad \mbox{y} \quad J(X) \equiv J(p_X).
+\]
+%
+\item Cuando $\mu  = Q$  es una  medida de probabilidad,  $J_\theta(P_X \|  Q)$ \  y \
+$J(P_X \| Q)$  son llamadas {\it divergencia de Fisher}  o {\it informaci\'on de
+Fisher relativa}, $Q$  jugando un rol de referencia (al  imagen de la entrop\'ia
+relativa)~\cite{}.
+%
+\item Si  \ $P_X$  \ y  \ $Q$  \  admiten una  densidad con  respecto a  una medida $\mu$,  respectivamente  \   $p_X$  \  y  \  $q$,  se   escribe  tambi\'en
+%
+\[
+J_\theta(p_X                                \|                                q)
+= \int_\X \left( \nabla_\theta \log\left( \frac{p_X(x)}{q(x)} \right) \right)
+\left( \nabla_\theta \log\left( \frac{p_X(x)}{q(x)} \right) \right)^t \, dQ(x)
+\]
+%
+y
+%
+\[
+J(p_X \| q) = \int_\X \left( \nabla_x \log\left( \frac{p_X(x)}{q(x)} \right) \right)
+\left( \nabla_x \log\left( \frac{p_X(x)}{q(x)} \right) \right)^t \, dQ(x) 
+\]
+\end{itemize}
+\end{definicion}
+
+Si la matriz de Fisher depende de la medida de referencia en general, aparece que, en el caso parametrico, queda constante si se considera una otra referencia tal que la derivada de Rado-Nykodym de la primera con respecto a la secunda no depende del parametro:
+%
+\begin{lema}[Matriz de Fisher parametrica inariante por cambio de medida]
+  Sea        $X$        variable       aleatoria        parametrizada        por
+  $\theta  \in \Theta  \subset \Rset^m$,  de medida  de probabilidad  $P_X(\cdot
+  ; \theta)$.  Sean  dos  medidas  \  $\mu,   \nu$  \  tales  que  \  $P_X(\cdot
+  ; \theta) \ll  \mu \ll \nu$ \  y \ $\frac{d\mu}{d\nu}$ \  sea independiente de
+  $\theta$. Supone que  la densidad \ $\frac{dP_X(\cdot ;  \theta)}{d\mu}$ \ sea
+  diferenciable en \ $\theta$ \ sobre \ $\Theta$. Entonces  la densidad \ $\frac{dP_X(\cdot ;  \theta)}{d\mu}$ \ es
+  diferenciable en \ $\theta$ \ sobre \ $\Theta$ \ y
+  %
+  \[
+  J_\theta( X \| \nu) = J_\theta( X \| \mu )
+  \]
+  %
+  En particular, la matriz de Fisher queda la misma para cualquier $\mu$ independiente del parametro.
+\end{lema}
+%
+\begin{proof}
+La   prueba   sigue  obviamente   del   lema~\ref{Lem:RelacionesDerivadasRadon},
+$\frac{dP_X(\cdot        ;        \theta)}{d\nu}       =        \frac{dP_X(\cdot
+; \theta)}{d\mu} \frac{d\mu}{d\nu}$: el secundo factor siendo independiente de \
+$\theta$,   por   un   lado   la  diferenciabilidad   de   \   $\frac{dP_X(\cdot
+; \theta)}{d\mu}$ \ implica la de \ $\frac{dP_X(\cdot ; \theta)}{d\nu}$ y por el
+otro  lado  por  el  logaritmo  y  derivada en  \  $\theta$  \  el  t\'ermino  \
+$\frac{d\mu}{d\nu}$  desaparece de  integrante en  la  formula de  la matriz  de
+Fisher.
+%(ver tambi\'en lema~\ref{Lem:RelacionIntegracionDerivadasRadon}).
+\end{proof}
+%
+}
 
 Es interesante notar que:
 %
@@ -139,31 +234,32 @@ informaci\'on no param\'etrica.
   de  una  forma,  inversa  de  la dispersi\'on  o  incerteza  en  t\'ermino  de
   estad\'isticas de orden 2).
 %
-\item Es sencillo ver  que, por definici\'on \ $J_\theta(X)$ \ y  \ $J(X)$ \ son
-  sim\'etricas y que \ $J_\theta(X) \ge 0$ \ y \ $J(X) \ge 0$ \ \ie $J_\theta(X) \in
-  \Pos_m(\Rset), \:\: J(X) \in \Pos_m(\Rset)$~\cite{LehCas98}.  Adem\'as,
+\item Es sencillo ver  que, por definici\'on \ \modif{$J_\theta(X \| \mu)$ \ y  \ $J(X \| \mu)$} \ son
+  sim\'etricas y que \ \modif{$J_\theta(X \| \mu) \ge 0$ \ y \ $J(X \| \mu) \ge 0$ \ \ie $J_\theta(X \| \mu) \in
+  \Pos_m(\Rset), \:\: J(X \| \mu) \in \Pos_m(\Rset)$}~\cite{LehCas98}.  Adem\'as,
   %
   \[
-  \forall \ A \ \mbox{matrix no singular}, \quad J(AX) = A^{-t} J(X) A^{-1},
+  \forall \ A \ \mbox{matrix no singular}, \quad \modif{J(AX \| \mu) = A^{-t} J(X \| \mu) A^{-1}},
   \]
   %
   con   $A^{-t}  =   \left(   A^{-1}  \right)^t   =   \left(  A^t   \right)^{-1}
-  $~\cite{CovTho06, DemCov91, Bar86}.  Esta relaci\'on  da a \ $J(X)$ \ un sabor
+  $~\cite{CovTho06, DemCov91, Bar86}.  Esta relaci\'on  da a \ \modif{$J(X \| \mu)$} \ un sabor
   de  informaci\'on en  el sentido  que, cuando  \  $A$ \  es real  y tiende  al
-  infinito, \ $J(AX)$ \ tiende a 0; \  $A X$ \ tiende a ser muy dispersada as\'i
+  infinito, \ \modif{$J(AX \| \mu)$} \ tiende a 0; \  $A X$ \ tiende a ser muy dispersada as\'i
   que no hay informaci\'on sobre su posici\'on.
 %
 \item $J_\theta$  \ y  \ $J$  \ son convexas  en el  sentido que  para cualquier
   conjunto  de \  $\pi_k \ge  0, \,  \sum_{k=1}^K  \pi_k =  1$ \  y \  cualquier
   conjunto  de distribuciones  \ $p_{(k)},  \ k  = 1,  \ldots  , K$~\cite{Coh68,
-    Fri04},
+    Fri04},\modif{
   %
   \[
-  J_\theta\left(  \sum_{k=1}^K  \pi_k  p_{(k)}  \right)  \:  <  \:  \sum_{k=1}^K
-  \pi_k  \,  J_\theta\left(  p_{(k)}  \right)  \qquad  \mbox{y}  \qquad  J\left(
-    \sum_{k=1}^K \pi_k  p_{(k)} \right) \:  < \: \sum_{k=1}^K  \pi_k J\left(
-    p_{(k)} \right),
+  J_\theta\left(  \left. \sum_{k=1}^K  \pi_k  p_{(k)} \right\| \mu  \right)  \:  <  \:  \sum_{k=1}^K
+  \pi_k  \,  J_\theta\left(  \left. p_{(k)} \right\| \mu  \right)  \qquad  \mbox{y}  \qquad  J\left(
+    \left. \sum_{k=1}^K \pi_k  p_{(k)} \right\| \mu \right) \:  < \: \sum_{k=1}^K  \pi_k J\left(
+    \left. p_{(k)} \right\| \mu \right),
   \]
+  }
   % donde $A <  B$ significa que $B-A >  0$.  La prueba es dada por  Cohen en el
   caso escalar,  pero se extiende sin  costo adicional en el  caso multivariado.
   Hace  falta probarlo  para \  $K=2$  \ y,  por recurrencia,  se extiende  para
@@ -183,8 +279,13 @@ informaci\'on no param\'etrica.
   p_{(2)} \nabla p_{(1)} - p_{(1)} \nabla  p_{(2)} \big)^t \ge 0$.  No puede ser
   identicamente  cero  (salvo  si  \  $\pi_1  \pi_2  =  0$  \  o  \  $p_{(1)}  =
   p_{(2)}$\ldots) as\'i que se obtiene la  desigualdad sobre la matriz de Fisher
-  integrando esta \'ultima desigualdad.
+  integrando esta \'ultima desigualdad \modif{(con respecto a la medida $\mu$)}.
+  %
+  \item \SZ{Existe una ``doble convexidad''wrt p y mu?}
 \end{itemize}
+
+En lo que sigue en este p\'arafo, nos concentramos en la informaci\'on de Fisher
+param\'etrica, siendo la no param\'etrica un caso particular.
 
 \
 
@@ -196,19 +297,22 @@ condicional como en la definici\'on~\ref{Def:SZ:entropiacondicional},
 %
 Sean  $X$ \  e \  $Y$ \  dos variables  aleatorias parametrizadas  por  el mismo
 par\'ametro   $m$-dimensional,  $\theta  \in   \Theta  \subset   \Rset^m$,  de
-distribuci\'on  de probabilidad conjunta  $p_{X,Y}(\cdot,\cdot;\theta)$ continua
-sobre  $\X \times  \Y$ su  soporte, $p_{X|Y=y}(\cdot;\theta)$  la distribuci\'on
-condicional  de $X$ conociendo  $Y=y$ y  \ $p_Y$  \ la  distribuci\'on marginal.
-Suponga que estas distribuciones  sean diferenciable en $\theta$ sobre $\Theta$.
-La matriz de  Fisher de $X$ condicionalmente a $Y$  es el promedio estad\'istico
-sobre $p_Y$ de la matriz de Fisher de $p_{X|Y}(\cdot;\theta)$, es decir
+\modif{densidad}  de probabilidad conjunta  $p_{X,Y}(\cdot,\cdot;\theta)$ \modif{
+con respecto  a una  medida $\mu$,  definida sobre} $\X  \times \Y$  su soporte,
+$p_{X|Y=y}(\cdot;\theta)$ la distribuci\'on condicional  de $X$ conociendo $Y=y$
+y \  \modif{$p_Y(\cdot;\theta)$} \ la distribuci\'on  marginal. Suponga que estas  distribuciones sean
+diferenciable  en  $\theta$   sobre  $\Theta$.  La  matriz  de   Fisher  de  $X$
+condicionalmente a $Y$ es el promedio  estad\'istico sobre \modif{$p_Y(\cdot;\theta)$} de la matriz de
+Fisher de $p_{X|Y}(\cdot;\theta)$, es decir
   %
-  \[
-  J_\theta(X|Y)  = \Esp\left[ \Big(  \nabla_\theta \log  p_{X|Y}(X;\theta) \Big)
-    \Big( \nabla_\theta \log p_{X|Y}(X;\theta) \Big)^t \right].
-  \]
+  \begin{eqnarray*}
+  \modif{J_\theta(X|Y \| \mu)} & = & \Esp\left[ \Big(  \nabla_\theta \log  p_{X|Y}(X;\theta) \Big)
+    \Big( \nabla_\theta \log p_{X|Y}(X;\theta) \Big)^t \right]\\[2.5mm]
+    %
+    & = & \int_{\X \times \Y} \left( \nabla_\theta \log  p_{X|Y=y}(x;\theta) \right) \left( \nabla_\theta \log  p_{X|Y=y}(x;\theta) \right)^t \, dP_{X,Y}(x,y)
+  \end{eqnarray*}
   %
-  donde  $p_{X|Y}(\cdot;\theta)   =  \frac{p_{X,Y}(\cdot,Y;\theta)}{p_Y(Y)}$  es
+  donde  $p_{X|Y}(\cdot;\theta)   =  \frac{p_{X,Y}(\cdot,Y;\theta)}{\modif{p_Y(Y;\theta)}}$  es
   ac\'a una variable aleatoria.
 \end{definicion}
 
@@ -216,7 +320,7 @@ De esta definici\'on,  es sencillo probar que la matriz  de Fisher param\'etrica
 sigue una regla de la cadena al imagen de la propiedad~\ref{Prop:SZ:cadena},
 %
 \[
-J_\theta(X,Y) = J_\theta(X|Y) + J_\theta(Y).
+\modif{J_\theta(X,Y \| \mu) = J_\theta(X|Y \| \mu) + J_\theta(Y \| \mu).}
 \]
 %
 Adem\'as, si $X$ e $Y$ son independientes, la informaci\'on de Fisher es aditiva
@@ -224,14 +328,14 @@ de la  misma manera  que $H$ satisface  las propiedades~\ref{Prop:SZ:aditividad}
 y~\ref{Prop:SZ:independenciacondicional}, \ie
 %
 \[
-J_\theta(X|Y)  =   J_\theta(X)  \quad  \Leftrightarrow  \quad   J_\theta(X,Y)  =
-J_\theta(X) + J_\theta(Y) \quad \Leftrightarrow \quad  X \: \& \: Y \: \mbox{son
+\modif{J_\theta(X|Y \| \mu)  =   J_\theta(X \| \mu)  \quad  \Leftrightarrow  \quad   J_\theta(X,Y \| \mu)  =
+J_\theta(X \| \mu) + J_\theta(Y \| \mu)} \quad \Leftrightarrow \quad  X \: \& \: Y \: \mbox{son
 independientes.}
 \]
 %
 En particular,  tratando de una  secuencia $X =  \{ X_i \}_{i=1}^n$  de vectores
-aleatorias  independientes   parametrizados  por  $\theta$,   $J_\theta(X)  =  n
-J_\theta(X_i)$.
+aleatorias  independientes   parametrizados  por  $\theta$,   \modif{$J_\theta(X \| \mu)  =  n
+J_\theta(X_i \| \mu)$.}
 %,  lo  que  significa  que  estimando  $\theta$  a  partir  de  la
 %secuencia,  baja  de  un  factor  $\frac{1}{n}$ la  cota  de  Cram\'er-Rao.   Se
 %referir\'a  a~\cite{Fis25:07, Sta59,  Kay93, KagSmi99,  Joh04,  CovTho06, Rio07}
@@ -241,6 +345,13 @@ Adem\'as, de la  regla de la cadena, viene obviamente  la desigualdad siguiente,
 parecida a la propiedad de super-aditividad~\ref{Prop:SZ:superaditividad},
 %
 \[
-J_\theta(X_1,\ldots,X_n) \, \ge \,  J_\theta(X_i) \quad \forall \, 1 \le i \le n,
+\modif{J_\theta(X_1,\ldots,X_n \| \mu) \, \ge \,  J_\theta(X_i \| \mu)} \quad \forall \, 1 \le i \le n,
 \]
 %
+
+\
+
+\modif{\bf  Terminamos esta  secci\'on notando  que muy  frecuentemente, cuando  no se
+interesa  a divergencias  de Fisher,  en el  contexto parametrico  se consideran
+medidas  $\mu$ independientes  del parametro,  y se  omita en  la notaci\'on  la
+referencia $\mu$.}
